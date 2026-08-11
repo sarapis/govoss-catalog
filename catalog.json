@@ -1056,8 +1056,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Advocacy Training for Community Health Workers",
-  "repo": "https://show.pics.io/chw-advocacy/search?collectionIds=623b78588e4d9800135c4ca2 , https://www.youtube.com/playlist?list=PLuhZ6_ONjgIms5ui9UuzB5AhCWYPq13nw",
-  "repo_key": "show.pics.io/chw-advocacy/search?collectionids=623b78588e4d9800135c4ca2 , https://www.youtube.com/playlist?list=pluhz6_onjgims5ui9uuzb5ahcwypq13nw",
+  "repo": "https://show.pics.io/chw-advocacy/search?collectionIds=623b78588e4d9800135c4ca2",
+  "repo_key": "show.pics.io/chw-advocacy/search?collectionids=623b78588e4d9800135c4ca2",
   "landing": "https://digitalmedic.stanford.edu/advocacy-training-community-health-workers, https://joinchic.org/resources/chw-advocates/",
   "entry_url": "https://www.digitalpublicgoods.net/r/advocacy-training-for-community-health-workers",
   "license": "CC-BY-NC-SA-4.0",
@@ -1079,6 +1079,9 @@
    "SDG8: Decent Work and Economic Growth"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://www.youtube.com/playlist?list=PLuhZ6_ONjgIms5ui9UuzB5AhCWYPq13nw"
+  ],
   "upstream_id": "GID0090695",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -1090,7 +1093,7 @@
     "source": "GLOBAL/dpg",
     "name": "Advocacy Training for Community Health Workers",
     "entry_url": "https://www.digitalpublicgoods.net/r/advocacy-training-for-community-health-workers",
-    "repo_url": "https://show.pics.io/chw-advocacy/search?collectionIds=623b78588e4d9800135c4ca2 , https://www.youtube.com/playlist?list=PLuhZ6_ONjgIms5ui9UuzB5AhCWYPq13nw"
+    "repo_url": "https://show.pics.io/chw-advocacy/search?collectionIds=623b78588e4d9800135c4ca2"
    }
   ],
   "catalogue_count": 1
@@ -1100,8 +1103,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "African Storybook",
-  "repo": " https://github.com/global-asp/global-asp, https://storybookscanada.ca/downloads/",
-  "repo_key": "github.com/global-asp/global-asp, https://storybookscanada.ca/downloads",
+  "repo": "https://github.com/global-asp/global-asp",
+  "repo_key": "github.com/global-asp/global-asp",
   "landing": "https://www.africanstorybook.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/african-storybook",
   "license": "CC-BY-4.0",
@@ -1144,6 +1147,9 @@
    "SDG4: Quality Education"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://storybookscanada.ca/downloads/"
+  ],
   "upstream_id": "GID0090137",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [],
@@ -1153,7 +1159,7 @@
     "source": "GLOBAL/dpg",
     "name": "African Storybook",
     "entry_url": "https://www.digitalpublicgoods.net/r/african-storybook",
-    "repo_url": " https://github.com/global-asp/global-asp, https://storybookscanada.ca/downloads/"
+    "repo_url": "https://github.com/global-asp/global-asp"
    }
   ],
   "catalogue_count": 1
@@ -2385,53 +2391,6 @@
     "name": "Anaconda",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Anaconda",
     "repo_url": null
-   }
-  ],
-  "catalogue_count": 1
- },
- {
-  "source": "GLOBAL/dpg",
-  "country": "GLOBAL",
-  "tier": "index",
-  "name": "Android FHIR SDK",
-  "repo": "https://github.com/google/android-fhir",
-  "repo_key": "github.com/google/android-fhir",
-  "landing": "https://developers.google.com/open-health-stack/android-fhir",
-  "entry_url": "https://www.digitalpublicgoods.net/r/android-fhir-sdk",
-  "license": "Apache-2.0",
-  "short_desc": "The Android FHIR SDK is a set of Kotlin libraries for building offline-capable, mobile-first healthcare applications using the HL7\u00ae FHIR\u00ae standard on Android.",
-  "desc_lang": "en",
-  "dpg_type": [
-   "Open Software"
-  ],
-  "keywords": [
-   "SDG3"
-  ],
-  "repo_owner": "Android FHIR SDK",
-  "used_by": [
-   "India",
-   "Indonesia",
-   "Kenya",
-   "Nigeria",
-   "Uganda",
-   "United States of America"
-  ],
-  "sdgs": [
-   "SDG3: Good Health and Well-Being"
-  ],
-  "dpg": true,
-  "upstream_id": "GID0090186",
-  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": true,
-  "catalogue_entries": [
-   {
-    "source": "GLOBAL/dpg",
-    "name": "Android FHIR SDK",
-    "entry_url": "https://www.digitalpublicgoods.net/r/android-fhir-sdk",
-    "repo_url": "https://github.com/google/android-fhir"
    }
   ],
   "catalogue_count": 1
@@ -6961,8 +6920,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Bebbo Parenting App",
-  "repo": "https://github.com/UNICEFECAR/parenting-app-bebbo-mobile/ , https://github.com/UNICEFECAR/parenting-app-bebbo-CMS/",
-  "repo_key": "github.com/unicefecar/parenting-app-bebbo-mobile/ , https://github.com/unicefecar/parenting-app-bebbo-cms",
+  "repo": "https://github.com/UNICEFECAR/parenting-app-bebbo-mobile/",
+  "repo_key": "github.com/unicefecar/parenting-app-bebbo-mobile",
   "landing": "https://bebbo.app",
   "entry_url": "https://www.digitalpublicgoods.net/r/bebbo-parenting-app",
   "license": "GPL-3.0",
@@ -7001,10 +6960,13 @@
    "SDG5: Gender Equity"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/UNICEFECAR/parenting-app-bebbo-CMS/"
+  ],
   "upstream_id": "GID0090946",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
-   "web-content"
+   "learning-knowledge"
   ],
   "functions_inferred": true,
   "catalogue_entries": [
@@ -7012,7 +6974,7 @@
     "source": "GLOBAL/dpg",
     "name": "Bebbo Parenting App",
     "entry_url": "https://www.digitalpublicgoods.net/r/bebbo-parenting-app",
-    "repo_url": "https://github.com/UNICEFECAR/parenting-app-bebbo-mobile/ , https://github.com/UNICEFECAR/parenting-app-bebbo-CMS/"
+    "repo_url": "https://github.com/UNICEFECAR/parenting-app-bebbo-mobile/"
    }
   ],
   "catalogue_count": 1
@@ -12461,8 +12423,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "CIEL terminology",
-  "repo": "www.CIELterminology.org",
-  "repo_key": "cielterminology.org",
+  "repo": null,
+  "repo_key": null,
   "landing": "https://www.CIELterminology.org, https://app.openconceptlab.org/#/orgs/CIEL/sources/CIEL/",
   "entry_url": "https://www.digitalpublicgoods.net/r/ciel-terminology",
   "license": "CC-BY-4.0",
@@ -12525,7 +12487,7 @@
     "source": "GLOBAL/dpg",
     "name": "CIEL terminology",
     "entry_url": "https://www.digitalpublicgoods.net/r/ciel-terminology",
-    "repo_url": "www.CIELterminology.org"
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -14314,8 +14276,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Code Your Future",
-  "repo": "https://github.com/CodeYourFuture/curriculum , https://github.com/CodeYourFuture/immersive-go-course/",
-  "repo_key": "github.com/codeyourfuture/curriculum , https://github.com/codeyourfuture/immersive-go-course",
+  "repo": "https://github.com/CodeYourFuture/curriculum",
+  "repo_key": "github.com/codeyourfuture/curriculum",
   "landing": "https://curriculum.codeyourfuture.io/",
   "entry_url": "https://www.digitalpublicgoods.net/r/code-your-future",
   "license": "CC-BY-SA-4.0",
@@ -14343,6 +14305,9 @@
    "SDG10: Reduced Inequalities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/CodeYourFuture/immersive-go-course/"
+  ],
   "upstream_id": "GID0090192",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -14354,7 +14319,7 @@
     "source": "GLOBAL/dpg",
     "name": "Code Your Future",
     "entry_url": "https://www.digitalpublicgoods.net/r/code-your-future",
-    "repo_url": "https://github.com/CodeYourFuture/curriculum , https://github.com/CodeYourFuture/immersive-go-course/"
+    "repo_url": "https://github.com/CodeYourFuture/curriculum"
    }
   ],
   "catalogue_count": 1
@@ -18413,8 +18378,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Creative Commons Legal Tools",
-  "repo": "https://github.com/creativecommons/cc-legal-tools-app/,  https://github.com/creativecommons/cc-legal-tools-data",
-  "repo_key": "github.com/creativecommons/cc-legal-tools-app/,  https://github.com/creativecommons/cc-legal-tools-data",
+  "repo": "https://github.com/creativecommons/cc-legal-tools-app/",
+  "repo_key": "github.com/creativecommons/cc-legal-tools-app",
   "landing": "https://creativecommons.org/share-your-work/cclicenses/",
   "entry_url": "https://www.digitalpublicgoods.net/r/creative-commons-legal-tools",
   "license": "CC-BY-4.0",
@@ -18439,18 +18404,19 @@
    "SDG17: Partnerships for the Goals"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/creativecommons/cc-legal-tools-data"
+  ],
   "upstream_id": "GID0091413",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": true,
+  "functions": [],
+  "functions_inferred": false,
   "catalogue_entries": [
    {
     "source": "GLOBAL/dpg",
     "name": "Creative Commons Legal Tools",
     "entry_url": "https://www.digitalpublicgoods.net/r/creative-commons-legal-tools",
-    "repo_url": "https://github.com/creativecommons/cc-legal-tools-app/,  https://github.com/creativecommons/cc-legal-tools-data"
+    "repo_url": "https://github.com/creativecommons/cc-legal-tools-app/"
    }
   ],
   "catalogue_count": 1
@@ -19627,8 +19593,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Data exchange agreement protocol suit for auditable, privacy-preserving data transactions in dataspaces",
-  "repo": "https://github.com/decentralised-dataexchange/data-exchange-agreements , https://github.com/decentralised-dataexchange/dexa-protocol , https://github.com/decentralised-dataexchange/dexa-sdk , https://github.com/decentralised-dataexchange/dexa-smartcontracts",
-  "repo_key": "github.com/decentralised-dataexchange/data-exchange-agreements , https://github.com/decentralised-dataexchange/dexa-protocol , https://github.com/decentralised-dataexchange/dexa-sdk , https://github.com/decentralised-dataexchange/dexa-smartcontracts",
+  "repo": "https://github.com/decentralised-dataexchange/data-exchange-agreements",
+  "repo_key": "github.com/decentralised-dataexchange/data-exchange-agreements",
   "landing": "https://ontochain.ngi.eu/content/ps-sda",
   "license": "Apache-2.0",
   "short_desc": "DEXA protocol is key for developing and deploying trustworthy, human-centric decentralised data applications (dApps) across domains using data intermediation services within dataspaces. ",
@@ -19650,6 +19616,11 @@
    "SDG11: Sustainable Cities and Communities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/decentralised-dataexchange/dexa-protocol",
+   "https://github.com/decentralised-dataexchange/dexa-sdk",
+   "https://github.com/decentralised-dataexchange/dexa-smartcontracts"
+  ],
   "upstream_id": "GID0090210",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -19661,7 +19632,7 @@
     "source": "GLOBAL/dpg",
     "name": "Data exchange agreement protocol suit for auditable, privacy-preserving data transactions in dataspaces",
     "entry_url": null,
-    "repo_url": "https://github.com/decentralised-dataexchange/data-exchange-agreements , https://github.com/decentralised-dataexchange/dexa-protocol , https://github.com/decentralised-dataexchange/dexa-sdk , https://github.com/decentralised-dataexchange/dexa-smartcontracts"
+    "repo_url": "https://github.com/decentralised-dataexchange/data-exchange-agreements"
    }
   ],
   "catalogue_count": 1
@@ -31614,8 +31585,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "FarmStack",
-  "repo": "https://github.com/digitalgreenorg/farmstack-frontend , https://github.com/digitalgreenorg/farmstack-backend",
-  "repo_key": "github.com/digitalgreenorg/farmstack-frontend , https://github.com/digitalgreenorg/farmstack-backend",
+  "repo": "https://github.com/digitalgreenorg/farmstack-frontend",
+  "repo_key": "github.com/digitalgreenorg/farmstack-frontend",
   "landing": "https://www.farmstack.co/",
   "entry_url": "https://www.digitalpublicgoods.net/r/farmstack",
   "license": "Apache-2.0",
@@ -31640,6 +31611,9 @@
    "SDG10: Reduced Inequalities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/digitalgreenorg/farmstack-backend"
+  ],
   "upstream_id": "GID0090034",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -31651,7 +31625,7 @@
     "source": "GLOBAL/dpg",
     "name": "FarmStack",
     "entry_url": "https://www.digitalpublicgoods.net/r/farmstack",
-    "repo_url": "https://github.com/digitalgreenorg/farmstack-frontend , https://github.com/digitalgreenorg/farmstack-backend"
+    "repo_url": "https://github.com/digitalgreenorg/farmstack-frontend"
    }
   ],
   "catalogue_count": 1
@@ -39118,8 +39092,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Global Healthsites Mapping Project",
-  "repo": "https://healthsites.io/map, https://data.humdata.org/organization/healthsites, https://github.com/healthsites/healthsites",
-  "repo_key": "healthsites.io/map, https://data.humdata.org/organization/healthsites, https://github.com/healthsites/healthsites",
+  "repo": "https://healthsites.io/map",
+  "repo_key": "healthsites.io/map",
   "landing": "https://healthsites.io/",
   "entry_url": "https://www.digitalpublicgoods.net/r/global-healthsites-mapping-project",
   "license": "OdbL-1.0",
@@ -39198,6 +39172,10 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://data.humdata.org/organization/healthsites",
+   "https://github.com/healthsites/healthsites"
+  ],
   "upstream_id": "GID0090039",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -39209,7 +39187,7 @@
     "source": "GLOBAL/dpg",
     "name": "Global Healthsites Mapping Project",
     "entry_url": "https://www.digitalpublicgoods.net/r/global-healthsites-mapping-project",
-    "repo_url": "https://healthsites.io/map, https://data.humdata.org/organization/healthsites, https://github.com/healthsites/healthsites"
+    "repo_url": "https://healthsites.io/map"
    }
   ],
   "catalogue_count": 1
@@ -46939,6 +46917,111 @@
   "catalogue_count": 1
  },
  {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "GOV.UK Forms Admin",
+  "repo": "https://github.com/moda-gov-tw/alphagov.forms-admin/",
+  "repo_key": "github.com/moda-gov-tw/alphagov.forms-admin",
+  "license": "MIT License",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "GOV.UK Forms Admin. GOV.UK Forms is the UK Government Digital Service's public-sector online forms platform; this is the administration software behind it. Agencies can use its templates to build simple external forms, with automatic submission checking and submission tracking.",
+  "desc_lang": "en",
+  "desc_src": "GOV.UK Forms \u662f\u82f1\u570b GDS \u653f\u5e9c\u6578\u4f4d\u670d\u52d9\u5718\u968a\u7dad\u904b\u4e4b\u516c\u90e8\u9580\u7dda\u4e0a\u8868\u55ae\u5e73\u53f0\u3002\u6b64\u70ba\u8a72\u670d\u52d9\u80cc\u5f8c\u7684\u7ba1\u7406\u8edf\u9ad4\u3002\u6b64\u670d\u52d9\u958b\u653e\u7a0b\u5f0f\u539f\u59cb\u78bc\uff0c\u53ef\u63d0\u4f9b\u653f\u5e9c\u5404\u6a5f\u95dc\u8207\u55ae\u4f4d\u5229\u7528\u8a72\u5e73\u53f0\u4e4b\u6a21\u7248\uff0c\u5efa\u7acb\u53ef\u4f9b\u5916\u90e8\u586b\u5beb\u4e4b\u7c21\u6613\u8868\u55ae\u3002 \u6b64\u670d\u52d9\u5177\u6709\u81ea\u52d5\u6aa2\u67e5\u905e\u4ea4\u5167\u5bb9\u529f\u80fd\uff0c\u78ba\u8a8d\u56de\u586b\u8cc7\u6599\u6b63\u78ba\u6027\uff1b\u7bc4\u672c\u529f\u80fd\u8b93\u4f7f\u7528\u66f4\u4fbf\u5229\uff1b\u53ef\u8ffd\u8e64\u8868\u55ae\u905e\u4ea4\u72c0\u614b\uff0c\u8861\u91cf\u8868\u55ae\u7684\u6613\u7528\u6027\u3002\u7a0b\u5f0f\u8a2d\u8a08\u7b26\u5408\u82f1\u570b\u653f\u5e9c\u5236\u5b9a\u4e4b\u7db2\u8def\u5b89\u5168\u6a19\u6e96\uff0c\u4fdd\u8b77\u8cc7\u6599\u5b89\u5168\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "HTML/CSS",
+   "Ruby",
+   "SCSS"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "GOV.UK Forms Admin",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/alphagov.forms-admin/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "GOV.UK Forms Product Pages",
+  "repo": "https://github.com/moda-gov-tw/alphagov.forms-product-page/",
+  "repo_key": "github.com/moda-gov-tw/alphagov.forms-product-page",
+  "license": "MIT License",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "GOV.UK Forms Product Pages. GOV.UK Forms is the UK Government Digital Service's public-sector online forms platform; this is its page generator. Agencies can use the platform's templates to build simple external forms with automatic submission checking and tracking.",
+  "desc_lang": "en",
+  "desc_src": "GOV.UK Forms \u662f\u82f1\u570b GDS \u653f\u5e9c\u6578\u4f4d\u670d\u52d9\u5718\u968a\u7dad\u904b\u4e4b\u516c\u90e8\u9580\u7dda\u4e0a\u8868\u55ae\u5e73\u53f0\u3002\u6b64\u70ba\u8a72\u670d\u52d9\u7684\u9801\u9762\u7522\u751f\u5668\u3002\u6b64\u670d\u52d9\u958b\u653e\u7a0b\u5f0f\u539f\u59cb\u78bc\uff0c\u53ef\u63d0\u4f9b\u653f\u5e9c\u5404\u6a5f\u95dc\u8207\u55ae\u4f4d\u5229\u7528\u8a72\u5e73\u53f0\u4e4b\u6a21\u7248\uff0c\u5efa\u7acb\u53ef\u4f9b\u5916\u90e8\u586b\u5beb\u4e4b\u7c21\u6613\u8868\u55ae\u3002 \u6b64\u670d\u52d9\u5177\u6709\u81ea\u52d5\u6aa2\u67e5\u905e\u4ea4\u5167\u5bb9\u529f\u80fd\uff0c\u78ba\u8a8d\u56de\u586b\u8cc7\u6599\u6b63\u78ba\u6027\uff1b\u7bc4\u672c\u529f\u80fd\u8b93\u4f7f\u7528\u66f4\u4fbf\u5229\uff1b\u53ef\u8ffd\u8e64\u8868\u55ae\u905e\u4ea4\u72c0\u614b\uff0c\u8861\u91cf\u8868\u55ae\u7684\u6613\u7528\u6027\u3002\u7a0b\u5f0f\u8a2d\u8a08\u7b26\u5408\u82f1\u570b\u653f\u5e9c\u5236\u5b9a\u4e4b\u7db2\u8def\u5b89\u5168\u6a19\u6e96\uff0c\u4fdd\u8b77\u8cc7\u6599\u5b89\u5168\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "HTML/CSS",
+   "Ruby",
+   "SCSS"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "GOV.UK Forms Product Pages",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/alphagov.forms-product-page/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "GOV.UK Notify",
+  "repo": "https://github.com/moda-gov-tw/notifications-admin/",
+  "repo_key": "github.com/moda-gov-tw/notifications-admin",
+  "license": "MIT License",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "GOV.UK Notify. The UK Government Digital Service's public-sector messaging platform for email, SMS and letters; this is the admin interface. Users can edit message templates, track delivery status and send manually or automatically without writing code.",
+  "desc_lang": "en",
+  "desc_src": "GOV.UK Notify \u662f\u82f1\u570b GDS \u653f\u5e9c\u6578\u4f4d\u670d\u52d9\u5718\u968a\u7dad\u904b\u7684\u516c\u90e8\u9580\u696d\u52d9\u8a0a\u606f\u50b3\u905e\u670d\u52d9\u5e73\u53f0\u3002\u696d\u52d9\u8a0a\u606f\u5305\u542b\u96fb\u5b50\u90f5\u4ef6\u3001\u7c21\u8a0a\u3001\u4fe1\u51fd\u7b49\u3002\u6b64\u70ba\u8a72\u670d\u52d9\u80cc\u5f8c\u7684 Admin \u7ba1\u7406\u9801\u9762\u3002\u9019\u670d\u52d9\u8b93\u4f7f\u7528\u8005\u7121\u9700\u7a0b\u5f0f\u7de8\u78bc\u80fd\u529b\u4e5f\u53ef\u4ee5\u7de8\u8f2f\u9810\u8a2d\u8a0a\u606f\u7bc4\u672c\u3001\u8ffd\u8e64\u8a0a\u606f\u50b3\u9001\u72c0\u614b\u3001\u624b\u52d5\u6216\u81ea\u52d5\u50b3\u9001\u8a0a\u606f\u3002\u6b64\u7a0b\u5f0f\u63d0\u4f9b\u958b\u653e\u539f\u59cb\u78bc\uff0c\u5404\u55ae\u4f4d\u53ef\u4ee5\u6574\u5408\u9700\u8981\u7684\u529f\u80fd\u81f3\u81ea\u5df1\u7684\u696d\u52d9\u7cfb\u7d71\u6216\u5e73\u53f0\u4ee5\u589e\u52a0\u8a0a\u606f\u50b3\u905e\u8207\u901a\u77e5\u7684\u529f\u80fd\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u516c\u5171\u670d\u52d9\u901a\u77e5",
+   "HTML/CSS",
+   "Javascript",
+   "Python"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "GOV.UK Notify",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/notifications-admin/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -46993,7 +47076,7 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Govdirectory",
-  "repo": " https://govdirectory.org/countries/",
+  "repo": "https://govdirectory.org/countries/",
   "repo_key": "govdirectory.org/countries",
   "landing": "https://govdirectory.org",
   "entry_url": "https://www.digitalpublicgoods.net/r/govdirectory",
@@ -47020,7 +47103,7 @@
     "source": "GLOBAL/dpg",
     "name": "Govdirectory",
     "entry_url": "https://www.digitalpublicgoods.net/r/govdirectory",
-    "repo_url": " https://govdirectory.org/countries/"
+    "repo_url": "https://govdirectory.org/countries/"
    }
   ],
   "catalogue_count": 1
@@ -48064,6 +48147,72 @@
   "catalogue_count": 1
  },
  {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Green Web \u7db2\u9801\u78b3\u6392\u8a08\u7b97\u6a5f",
+  "repo": "https://github.com/moda-gov-tw/tw-web-carbon",
+  "repo_key": "github.com/moda-gov-tw/tw-web-carbon",
+  "landing": "https://greenweb.moda.gov.tw",
+  "license": "Apache",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Green Web site. Results site for moda's 2024 green digital net-zero programme, including a web page carbon calculator, an outcomes section and draft internet sustainability design guidelines.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u7db2\u7ad9\u70ba\u6578\u4f4d\u767c\u5c55\u90e8113\u5e74\u5ea6\u7da0\u8272\u6578\u4f4d\u884c\u70ba\u6de8\u96f6\u767c\u5c55\u8a08\u756b\u7684\u6210\u679c\u7db2\u7ad9\uff0c\u5305\u542b\u7db2\u9801\u78b3\u6392\u8a08\u7b97\u529f\u80fd\u3001\u6210\u679c\u5c08\u5340\u3001\u7db2\u969b\u7db2\u8def\u6c38\u7e8c\u8a2d\u8a08\u6307\u5f15\uff08\u8349\u6848\uff09\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u78b3\u6392\u8a08\u7b97\u6a5f",
+   "Vue.js",
+   "PHP"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Green Web \u7db2\u9801\u78b3\u6392\u8a08\u7b97\u6a5f",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/tw-web-carbon"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Green Web\u7db2\u7ad9",
+  "repo": "https://github.com/moda-gov-tw/tw-greenweb",
+  "repo_key": "github.com/moda-gov-tw/tw-greenweb",
+  "landing": "https://greenweb.moda.gov.tw",
+  "license": "CC0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Green Web site. Results site for moda's 2024 green digital net-zero programme, including a web page carbon calculator, an outcomes section and draft internet sustainability design guidelines.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u7db2\u7ad9\u70ba\u6578\u4f4d\u767c\u5c55\u90e8113\u5e74\u5ea6\u7da0\u8272\u6578\u4f4d\u884c\u70ba\u6de8\u96f6\u767c\u5c55\u8a08\u756b\u7684\u6210\u679c\u7db2\u7ad9\uff0c\u5305\u542b\u7db2\u9801\u78b3\u6392\u8a08\u7b97\u529f\u80fd\u3001\u6210\u679c\u5c08\u5340\u3001\u7db2\u969b\u7db2\u8def\u6c38\u7e8c\u8a2d\u8a08\u6307\u5f15\uff08\u8349\u6848\uff09\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u78b3\u6392\u8a08\u7b97\u6a5f",
+   "Vue.js",
+   "PHP"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Green Web\u7db2\u7ad9",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/tw-greenweb"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -48186,8 +48335,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Grievance Redress  System (GRS)",
-  "repo": "Frontend Source Code: https://github.com/GRS-DPG/GRS-WEB and Backend Source Code: https://github.com/GRS-DPG/GRS-API ",
-  "repo_key": "frontend source code: https://github.com/grs-dpg/grs-web and backend source code: https://github.com/grs-dpg/grs-api",
+  "repo": "https://github.com/GRS-DPG/GRS-WEB",
+  "repo_key": "github.com/grs-dpg/grs-web",
   "landing": "https://dpg.grs.gov.bd",
   "entry_url": "https://www.digitalpublicgoods.net/r/grievance-redress-system-grs",
   "license": "Apache-2.0",
@@ -48211,18 +48360,19 @@
    "SDG16: Peace\u00b8 Justice and Strong Institutions"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/GRS-DPG/GRS-API"
+  ],
   "upstream_id": "GID0090502",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": true,
+  "functions": [],
+  "functions_inferred": false,
   "catalogue_entries": [
    {
     "source": "GLOBAL/dpg",
     "name": "Grievance Redress  System (GRS)",
     "entry_url": "https://www.digitalpublicgoods.net/r/grievance-redress-system-grs",
-    "repo_url": "Frontend Source Code: https://github.com/GRS-DPG/GRS-WEB and Backend Source Code: https://github.com/GRS-DPG/GRS-API "
+    "repo_url": "https://github.com/GRS-DPG/GRS-WEB"
    }
   ],
   "catalogue_count": 1
@@ -49257,8 +49407,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Health Claims Data Exchange",
-  "repo": "https://github.com/Swasth-Digital-Health-Foundation/hcx-platform, https://github.com/Swasth-Digital-Health-Foundation/hcx-apps",
-  "repo_key": "github.com/swasth-digital-health-foundation/hcx-platform, https://github.com/swasth-digital-health-foundation/hcx-apps",
+  "repo": "https://github.com/Swasth-Digital-Health-Foundation/hcx-platform",
+  "repo_key": "github.com/swasth-digital-health-foundation/hcx-platform",
   "landing": "https://swasthalliance.org/health-claims-exchange.html",
   "license": "MIT",
   "short_desc": "The HCX Platform by Swasth Alliance enables seamless health claims data exchange with tools like SDKs, management apps, and an exchange switch\u2014boosting collaboration and interoperability across the health ecosystem.",
@@ -49279,6 +49429,9 @@
    "SDG9: Industry\u00b8 Innovation and Infrastructure"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Swasth-Digital-Health-Foundation/hcx-apps"
+  ],
   "upstream_id": "GID0091685",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -49290,7 +49443,7 @@
     "source": "GLOBAL/dpg",
     "name": "Health Claims Data Exchange",
     "entry_url": null,
-    "repo_url": "https://github.com/Swasth-Digital-Health-Foundation/hcx-platform, https://github.com/Swasth-Digital-Health-Foundation/hcx-apps"
+    "repo_url": "https://github.com/Swasth-Digital-Health-Foundation/hcx-platform"
    }
   ],
   "catalogue_count": 1
@@ -50239,7 +50392,7 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "HOT Tasking Manager",
-  "repo": " https://github.com/hotosm/tasking-manager/",
+  "repo": "https://github.com/hotosm/tasking-manager/",
   "repo_key": "github.com/hotosm/tasking-manager",
   "landing": "https://tasks.hotosm.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/hot-tasking-manager",
@@ -50336,7 +50489,7 @@
     "source": "GLOBAL/dpg",
     "name": "HOT Tasking Manager",
     "entry_url": "https://www.digitalpublicgoods.net/r/hot-tasking-manager",
-    "repo_url": " https://github.com/hotosm/tasking-manager/"
+    "repo_url": "https://github.com/hotosm/tasking-manager/"
    }
   ],
   "catalogue_count": 1
@@ -51131,8 +51284,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "if me",
-  "repo": "https://github.com/ifmeorg/ifme, https://github.com/ifmeorg/ifme-languagetools",
-  "repo_key": "github.com/ifmeorg/ifme, https://github.com/ifmeorg/ifme-languagetools",
+  "repo": "https://github.com/ifmeorg/ifme",
+  "repo_key": "github.com/ifmeorg/ifme",
   "landing": "https://www.if-me.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/if-me",
   "license": "AGPL-3.0",
@@ -51153,6 +51306,9 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/ifmeorg/ifme-languagetools"
+  ],
   "upstream_id": "GID0090047",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [],
@@ -51162,7 +51318,7 @@
     "source": "GLOBAL/dpg",
     "name": "if me",
     "entry_url": "https://www.digitalpublicgoods.net/r/if-me",
-    "repo_url": "https://github.com/ifmeorg/ifme, https://github.com/ifmeorg/ifme-languagetools"
+    "repo_url": "https://github.com/ifmeorg/ifme"
    }
   ],
   "catalogue_count": 1
@@ -53668,8 +53824,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Indonesian Phoneme Recognizer",
-  "repo": "https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id",
-  "repo_key": "huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id",
+  "repo": "https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id",
+  "repo_key": "huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id",
   "landing": "https://github.com/bookbot-hive/k2-indonesian-asr , https://bookbot-hive.github.io/k2-indonesian-asr/ , https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id",
   "entry_url": "https://www.digitalpublicgoods.net/r/indonesian-phoneme-recognizer",
   "license": "Apache-2.0",
@@ -53689,6 +53845,9 @@
    "SDG4: Quality Education"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id"
+  ],
   "upstream_id": "GID0090764",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [],
@@ -53698,7 +53857,7 @@
     "source": "GLOBAL/dpg",
     "name": "Indonesian Phoneme Recognizer",
     "entry_url": "https://www.digitalpublicgoods.net/r/indonesian-phoneme-recognizer",
-    "repo_url": "https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id"
+    "repo_url": "https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id"
    }
   ],
   "catalogue_count": 1
@@ -63417,6 +63576,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Lighthouse \u5e73\u81fa",
+  "repo": "https://github.com/PDIS/lighthouse",
+  "repo_key": "github.com/pdis/lighthouse",
+  "landing": "https://lighthouse.pdis.run/",
+  "license": "CC0-1.0",
+  "repo_owner": "\u884c\u653f\u9662\u516c\u5171\u6578\u4f4d\u5275\u65b0\u7a7a\u9593\uff08PDIS\uff09",
+  "short_desc": "Lighthouse platform. Uses GitHub Actions to run Lighthouse scans automatically and presents the reports centrally. Lighthouse is an open source tool for improving web page performance, quality and correctness, producing a report and score from a series of tests.",
+  "desc_lang": "en",
+  "desc_src": "Lighthouse \u5e73\u81fa\u4f7f\u7528 GitHub Actions \u81ea\u52d5\u57f7\u884c Lighthouse \u6383\u63cf\uff0c\u5c07\u5831\u544a\u96c6\u4e2d\u5c55\u793a\u3002 Lighthouse \u662f\u4e00\u500b\u958b\u6e90\u7684\u81ea\u52d5\u5316\u5de5\u5177\uff0c\u7528\u65bc\u6539\u5584\u7db2\u9801\u7684\u6548\u80fd\u3001\u54c1\u8cea\u548c\u6b63\u78ba\u6027\u3002 Lighthouse \u5c0d\u7db2\u9801\u9032\u884c\u4e00\u7cfb\u5217\u6e2c\u8a66\u4e26\u7522\u751f\u4e00\u4efd\u5831\u544a\u53ca\u8a55\u5206\u3002\u900f\u904e\u5831\u544a\uff0c\u6211\u5011\u53ef\u4ee5\u5be9\u8996\u672a\u901a\u904e\u6e2c\u8a66\u7684\u9805\u76ee\u4ee5\u4e86\u89e3\u5982\u4f55\u6539\u9032\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u7db2\u9801\u6548\u80fd\u6aa2\u6e2c",
+   "Lighthouse"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Lighthouse \u5e73\u81fa",
+    "entry_url": null,
+    "repo_url": "https://github.com/PDIS/lighthouse"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -66476,6 +66669,78 @@
     "name": "Matomo",
     "entry_url": null,
     "repo_url": "https://matomo.org"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Matrix Client (Element Series) matrix-react-sdk",
+  "repo": "https://github.com/moda-gov-tw/matrix-org.matrix-react-sdk/",
+  "repo_key": "github.com/moda-gov-tw/matrix-org.matrix-react-sdk",
+  "license": "Apache-2.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Matrix client (Element series) matrix-react-sdk. Element is open source communication software built on decentralised standards by the Matrix core team; this is the underlying matrix-react-sdk, usable for building other software and for IP-based real-time messaging that can integrate with Slack, Telegram and others.",
+  "desc_lang": "en",
+  "desc_src": "Element \u662f Matrix \u6838\u5fc3\u5718\u968a\u57fa\u65bc\u53bb\u4e2d\u5fc3\u5316\u6a19\u6e96\u958b\u767c\u7684\u958b\u653e\u539f\u59cb\u78bc\u901a\u8a0a\u8edf\u9ad4\u3002\u6b64\u70ba\u8a72\u670d\u52d9\u5e95\u5c64\u7684 matrix-react-sdk \uff0c\u53ef\u7528\u65bc\u5efa\u7f6e\u5404\u7a2e\u5176\u4ed6\u8edf\u9ad4\u3002\u53ef\u61c9\u7528\u7db2\u969b\u7db2\u8def IP based \u9032\u884c\u5373\u6642\u901a\u8a0a\u3002\u57fa\u65bc\u5176\u958b\u653e\u7279\u6027\uff0c\u53ef\u6574\u5408\u5176\u4ed6\u7a0b\u5f0f\uff0c\u5feb\u901f\u5efa\u69cb\u5373\u6642\u4ea4\u63db\u8cc7\u6599\u7cfb\u7d71\u3002\u9664\u6b64\u4e4b\u5916\uff0c\u4ea6\u53ef\u8207 Slack\u3001Telegram \u7b49\u5176\u5b83\u901a\u8a0a\u8edf\u9ad4\u9032\u884c\u4e32\u806f\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5373\u6642\u901a\u8a0a",
+   "HTML/CSS",
+   "Javascript",
+   "TypeScript",
+   "React"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Matrix Client (Element Series) matrix-react-sdk",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/matrix-org.matrix-react-sdk/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Matrix Client (Element Series) Web",
+  "repo": "https://github.com/moda-gov-tw/vector-im.element-web/",
+  "repo_key": "github.com/moda-gov-tw/vector-im.element-web",
+  "license": "Apache-2.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Matrix client (Element series) Web. Element is open source communication software built on decentralised standards by the Matrix core team; this is the web client built on matrix-react-sdk, for IP-based real-time messaging that can integrate with Slack, Telegram and others.",
+  "desc_lang": "en",
+  "desc_src": "Element \u662f Matrix \u6838\u5fc3\u5718\u968a\u57fa\u65bc\u53bb\u4e2d\u5fc3\u5316\u6a19\u6e96\u958b\u767c\u7684\u958b\u653e\u539f\u59cb\u78bc\u901a\u8a0a\u8edf\u9ad4\u3002\u6b64\u70ba\u8a72\u670d\u52d9\u57fa\u65bc matrix-react-sdk \u5efa\u7f6e\u7684\u7db2\u9801\u7248\u8edf\u9ad4\u3002\u53ef\u61c9\u7528\u7db2\u969b\u7db2\u8def IP based \u9032\u884c\u5373\u6642\u901a\u8a0a\u3002\u57fa\u65bc\u5176\u958b\u653e\u7279\u6027\uff0c\u53ef\u6574\u5408\u5176\u4ed6\u7a0b\u5f0f\uff0c\u5feb\u901f\u5efa\u69cb\u5373\u6642\u4ea4\u63db\u8cc7\u6599\u7cfb\u7d71\u3002\u9664\u6b64\u4e4b\u5916\uff0c\u4ea6\u53ef\u8207 Slack\u3001Telegram \u7b49\u5176\u5b83\u901a\u8a0a\u8edf\u9ad4\u9032\u884c\u4e32\u806f\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5373\u6642\u901a\u8a0a",
+   "HTML/CSS",
+   "Javascript",
+   "TypeScript",
+   "React"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Matrix Client (Element Series) Web",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/vector-im.element-web/"
    }
   ],
   "catalogue_count": 1
@@ -75342,6 +75607,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "ODF\u6587\u4ef6\u61c9\u7528\u5de5\u5177",
+  "repo": "https://github.com/MODAODF/MODA_ODF_Application_Tools",
+  "repo_key": "github.com/modaodf/moda_odf_application_tools",
+  "landing": "https://moda.gov.tw/digital-affairs/digital-service/app-services/248",
+  "license": "LGPL-3.0\u3001MPL-2.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "ODF document tools. Helps public bodies create and retain documents in Open Document Format so government documents can move between agencies. Built on open document software, it edits standard ODF files, supports the full CNS 11643 Chinese character set, and includes a Q&A issue-reporting tool with a support workflow.",
+  "desc_lang": "en",
+  "desc_src": "\u70ba\u5f15\u5c0e\u516c\u52d9\u6a5f\u95dc\u5f9e\u6587\u4ef6\u88fd\u4f5c\u3001\u4fdd\u5b58\u5747\u4ee5\u958b\u653e\u6587\u4ef6\u683c\u5f0f(ODF)\u8655\u7406\uff0c\u4e14\u4f7f\u653f\u5e9cODF\u6587\u4ef6\u80fd\u8de8\u6a5f\u95dc\u6d41\u901a\uff0c\u672c\u90e8\u57fa\u65bc\u958b\u653e\u6587\u4ef6\u8edf\u9ad4\uff0c\u767c\u5c55\u9069\u5408\u516c\u52d9\u6a5f\u95dc\u4f7f\u7528\u4e4b\u300cODF\u6587\u4ef6\u61c9\u7528\u5de5\u5177\u300d\uff0c\u63d0\u4f9b\u7de8\u8f2f\u6a19\u6e96ODF\u6587\u4ef6\u53ca\u652f\u63f4CNS11643\u4e2d\u6587\u6a19\u6e96\u4ea4\u63db\u78bc\u5168\u5b57\u5eab\uff0c\u4e26\u63d0\u4f9b Q\uff06A \u554f\u984c\u56de\u5831\u7a0b\u5f0f\uff0c\u5efa\u7acb\u5ba2\u670d\u6d41\u7a0b\u53ca\u8aee\u8a62\u670d\u52d9\uff0c\u4e26\u5c07\u76f8\u95dc\u554f\u984c\u8207\u56de\u61c9\u63d0\u4f9b\u5176\u4ed6\u4f7f\u7528\u8005\u67e5\u8a62\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6587\u66f8\u8655\u7406",
+   "Open Document Format",
+   "C++"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "ODF\u6587\u4ef6\u61c9\u7528\u5de5\u5177",
+    "entry_url": null,
+    "repo_url": "https://github.com/MODAODF/MODA_ODF_Application_Tools"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "GLOBAL/dpg",
   "country": "GLOBAL",
   "tier": "index",
@@ -76895,8 +77195,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Open Food Facts",
-  "repo": "https://github.com/openfoodfacts/, https://huggingface.co/openfoodfacts",
-  "repo_key": "github.com/openfoodfacts/, https://huggingface.co/openfoodfacts",
+  "repo": "https://github.com/openfoodfacts/",
+  "repo_key": "github.com/openfoodfacts",
   "landing": "https://openfoodfacts.org",
   "entry_url": "https://www.digitalpublicgoods.net/r/open-food-facts",
   "license": "CC-BY-SA-3.0",
@@ -76977,6 +77277,9 @@
    "SDG13: Climate Action"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://huggingface.co/openfoodfacts"
+  ],
   "upstream_id": "GID0091516",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -76988,7 +77291,7 @@
     "source": "GLOBAL/dpg",
     "name": "Open Food Facts",
     "entry_url": "https://www.digitalpublicgoods.net/r/open-food-facts",
-    "repo_url": "https://github.com/openfoodfacts/, https://huggingface.co/openfoodfacts"
+    "repo_url": "https://github.com/openfoodfacts/"
    }
   ],
   "catalogue_count": 1
@@ -77065,8 +77368,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Open Health Stack",
-  "repo": "https://github.com/google/android-fhir, https://github.com/google/fhir-data-pipes, https://github.com/google/fhir-gateway",
-  "repo_key": "github.com/google/android-fhir, https://github.com/google/fhir-data-pipes, https://github.com/google/fhir-gateway",
+  "repo": "https://github.com/google/android-fhir",
+  "repo_key": "github.com/google/android-fhir",
   "landing": "https://developers.google.com/open-health-stack",
   "entry_url": "https://www.digitalpublicgoods.net/r/open-health-stack",
   "license": "Apache-2.0",
@@ -77087,16 +77390,22 @@
    "Malawi",
    "Nigeria",
    "Sri Lanka",
-   "Uganda"
+   "Uganda",
+   "United States of America"
   ],
   "sdgs": [
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/google/fhir-data-pipes",
+   "https://github.com/google/fhir-gateway"
+  ],
   "upstream_id": "GID0090320",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
-   "data-analytics"
+   "data-analytics",
+   "dev-tools"
   ],
   "functions_inferred": true,
   "catalogue_entries": [
@@ -77104,10 +77413,20 @@
     "source": "GLOBAL/dpg",
     "name": "Open Health Stack",
     "entry_url": "https://www.digitalpublicgoods.net/r/open-health-stack",
-    "repo_url": "https://github.com/google/android-fhir, https://github.com/google/fhir-data-pipes, https://github.com/google/fhir-gateway"
+    "repo_url": "https://github.com/google/android-fhir"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 1,
+  "sources": [
+   "GLOBAL/dpg"
+  ],
+  "countries": [
+   "GLOBAL"
+  ],
+  "merged_count": 2,
+  "also_known_as": [
+   "Android FHIR SDK"
+  ]
  },
  {
   "source": "IT/developers-italia",
@@ -80132,8 +80451,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenHexa",
-  "repo": "https://github.com/BLSQ/openhexa, https://github.com/BLSQ/openhexa-app, https://github.com/BLSQ/openhexa-frontend,https://github.com/BLSQ/openhexa-notebooks, https://github.com/BLSQ/openhexa-sdk-python, https://github.com/BLSQ/openhexa-toolbox",
-  "repo_key": "github.com/blsq/openhexa, https://github.com/blsq/openhexa-app, https://github.com/blsq/openhexa-frontend,https://github.com/blsq/openhexa-notebooks, https://github.com/blsq/openhexa-sdk-python, https://github.com/blsq/openhexa-toolbox",
+  "repo": "https://github.com/BLSQ/openhexa",
+  "repo_key": "github.com/blsq/openhexa",
   "landing": "https://www.bluesquarehub.com/openhexa/",
   "entry_url": "https://www.digitalpublicgoods.net/r/openhexa",
   "license": "MIT",
@@ -80161,6 +80480,13 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/BLSQ/openhexa-app",
+   "https://github.com/BLSQ/openhexa-frontend",
+   "https://github.com/BLSQ/openhexa-notebooks",
+   "https://github.com/BLSQ/openhexa-sdk-python",
+   "https://github.com/BLSQ/openhexa-toolbox"
+  ],
   "upstream_id": "GID0090194",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -80172,7 +80498,7 @@
     "source": "GLOBAL/dpg",
     "name": "OpenHexa",
     "entry_url": "https://www.digitalpublicgoods.net/r/openhexa",
-    "repo_url": "https://github.com/BLSQ/openhexa, https://github.com/BLSQ/openhexa-app, https://github.com/BLSQ/openhexa-frontend,https://github.com/BLSQ/openhexa-notebooks, https://github.com/BLSQ/openhexa-sdk-python, https://github.com/BLSQ/openhexa-toolbox"
+    "repo_url": "https://github.com/BLSQ/openhexa"
    }
   ],
   "catalogue_count": 1
@@ -80388,8 +80714,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenMandriva Lx",
-  "repo": "https://github.com/OpenMandrivaSoftware, https://github.com/OpenMandrivaAssociation",
-  "repo_key": "github.com/openmandrivasoftware, https://github.com/openmandrivaassociation",
+  "repo": "https://github.com/OpenMandrivaSoftware",
+  "repo_key": "github.com/openmandrivasoftware",
   "landing": "https://openmandriva.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/openmandriva-lx",
   "license": "Apache-2.0",
@@ -80425,6 +80751,9 @@
    "SDG12: Responsible Consumption and Production"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/OpenMandrivaAssociation"
+  ],
   "upstream_id": "GID0090896",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [],
@@ -80434,7 +80763,7 @@
     "source": "GLOBAL/dpg",
     "name": "OpenMandriva Lx",
     "entry_url": "https://www.digitalpublicgoods.net/r/openmandriva-lx",
-    "repo_url": "https://github.com/OpenMandrivaSoftware, https://github.com/OpenMandrivaAssociation"
+    "repo_url": "https://github.com/OpenMandrivaSoftware"
    }
   ],
   "catalogue_count": 1
@@ -81384,7 +81713,7 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenSPP",
-  "repo": "https://github.com/OpenSPP/OpenSPP2 ",
+  "repo": "https://github.com/OpenSPP/OpenSPP2",
   "repo_key": "github.com/openspp/openspp2",
   "landing": "http://openspp.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/openspp",
@@ -81416,7 +81745,7 @@
     "source": "GLOBAL/dpg",
     "name": "OpenSPP",
     "entry_url": "https://www.digitalpublicgoods.net/r/openspp",
-    "repo_url": "https://github.com/OpenSPP/OpenSPP2 "
+    "repo_url": "https://github.com/OpenSPP/OpenSPP2"
    }
   ],
   "catalogue_count": 1
@@ -82067,8 +82396,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenTeleRehab",
-  "repo": "https://github.com/OpenTeleRehab/therapist-web-app, https://github.com/OpenTeleRehab/patient-app, and https://github.com/OpenTeleRehab/patient-service.",
-  "repo_key": "github.com/opentelerehab/therapist-web-app, https://github.com/opentelerehab/patient-app, and https://github.com/opentelerehab/patient-service.",
+  "repo": "https://github.com/OpenTeleRehab/therapist-web-app",
+  "repo_key": "github.com/opentelerehab/therapist-web-app",
   "landing": "https://www.opentelerehab.com",
   "entry_url": "https://www.digitalpublicgoods.net/r/opentelerehab",
   "license": "Apache-2.0",
@@ -82093,18 +82422,20 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/OpenTeleRehab/patient-app",
+   "https://github.com/OpenTeleRehab/patient-service"
+  ],
   "upstream_id": "GID0090196",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "functions": [
-   "health-social"
-  ],
-  "functions_inferred": true,
+  "functions": [],
+  "functions_inferred": false,
   "catalogue_entries": [
    {
     "source": "GLOBAL/dpg",
     "name": "OpenTeleRehab",
     "entry_url": "https://www.digitalpublicgoods.net/r/opentelerehab",
-    "repo_url": "https://github.com/OpenTeleRehab/therapist-web-app, https://github.com/OpenTeleRehab/patient-app, and https://github.com/OpenTeleRehab/patient-service."
+    "repo_url": "https://github.com/OpenTeleRehab/therapist-web-app"
    }
   ],
   "catalogue_count": 1
@@ -90791,8 +91122,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "PrepTime Analytics",
-  "repo": "https://github.com/Scribble-Works/preptime-api - Backend https://github.com/Scribble-Works/preptime-analytics - Frontend",
-  "repo_key": "github.com/scribble-works/preptime-api - backend https://github.com/scribble-works/preptime-analytics - frontend",
+  "repo": "https://github.com/Scribble-Works/preptime-api",
+  "repo_key": "github.com/scribble-works/preptime-api",
   "landing": "https://preptimeanalytics.com/",
   "entry_url": "https://www.digitalpublicgoods.net/r/preptime-analytics",
   "license": "GPL-3.0",
@@ -90812,6 +91143,9 @@
    "SDG4: Quality Education"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Scribble-Works/preptime-analytics"
+  ],
   "upstream_id": "GID0090191",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -90823,7 +91157,7 @@
     "source": "GLOBAL/dpg",
     "name": "PrepTime Analytics",
     "entry_url": "https://www.digitalpublicgoods.net/r/preptime-analytics",
-    "repo_url": "https://github.com/Scribble-Works/preptime-api - Backend https://github.com/Scribble-Works/preptime-analytics - Frontend"
+    "repo_url": "https://github.com/Scribble-Works/preptime-api"
    }
   ],
   "catalogue_count": 1
@@ -91394,8 +91728,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Productive Forests",
-  "repo": "https://github.com/Bioverse-Labs/image-processing , https://github.com/Bioverse-Labs/deep-learning , https://github.com/Bioverse-Labs/forest-map-app",
-  "repo_key": "github.com/bioverse-labs/image-processing , https://github.com/bioverse-labs/deep-learning , https://github.com/bioverse-labs/forest-map-app",
+  "repo": "https://github.com/Bioverse-Labs/image-processing",
+  "repo_key": "github.com/bioverse-labs/image-processing",
   "landing": "https://www.bioverse.io/",
   "entry_url": "https://www.digitalpublicgoods.net/r/productive-forests",
   "license": "MIT",
@@ -91417,10 +91751,14 @@
    "SDG12: Responsible Consumption and Production"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Bioverse-Labs/deep-learning",
+   "https://github.com/Bioverse-Labs/forest-map-app"
+  ],
   "upstream_id": "GID0090088",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
-   "geospatial"
+   "data-analytics"
   ],
   "functions_inferred": true,
   "catalogue_entries": [
@@ -91428,7 +91766,7 @@
     "source": "GLOBAL/dpg",
     "name": "Productive Forests",
     "entry_url": "https://www.digitalpublicgoods.net/r/productive-forests",
-    "repo_url": "https://github.com/Bioverse-Labs/image-processing , https://github.com/Bioverse-Labs/deep-learning , https://github.com/Bioverse-Labs/forest-map-app"
+    "repo_url": "https://github.com/Bioverse-Labs/image-processing"
    }
   ],
   "catalogue_count": 1
@@ -92989,6 +93327,72 @@
     "name": "publiccode editor",
     "entry_url": null,
     "repo_url": "https://github.com/italia/publiccode-editor"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "publiccode.yml Editor",
+  "repo": "https://github.com/moda-gov-tw/italia-publiccode-editor",
+  "repo_key": "github.com/moda-gov-tw/italia-publiccode-editor",
+  "license": "AGPL-3.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "publiccode.yml editor. Helps you create and validate a publiccode.yml for your project: fill in a form to generate a standards-compliant YAML file to download or copy into your repository root, or upload an existing file to check and correct it.",
+  "desc_lang": "en",
+  "desc_src": "\u9019\u500b\u61c9\u7528\u7a0b\u5f0f\u5e6b\u52a9\u60a8\u70ba\u60a8\u7684\u5c08\u6848\u5275\u5efa\u4e26\u9a57\u8b49\u4e00\u500b publiccode.yml \u6a94\u6848\u3002\u53ea\u9700\u586b\u5beb\u8868\u55ae\u5373\u53ef\u751f\u6210\u4e00\u500b\u7b26\u5408\u6700\u65b0\u6a19\u6e96\u7684 YAML \u6a94\u6848\uff0c\u7136\u5f8c\u60a8\u53ef\u4ee5\u4e0b\u8f09\u6216\u8907\u88fd\u5230\u60a8\u7684\u5c08\u6848\u6839\u76ee\u9304\u4e2d\u3002\u60a8\u4e5f\u53ef\u4ee5\u4f7f\u7528\u9019\u500b\u61c9\u7528\u7a0b\u5f0f\u4f86\u6aa2\u67e5\u4e26\u7cfe\u6b63\u73fe\u6709\u7684 publiccode.yml \u6a94\u6848\u3002\u53ea\u9700\u4e0a\u50b3\u6a94\u6848\u9032\u884c\u5c0e\u5165\uff0c\u61c9\u7528\u7a0b\u5f0f\u5c07\u9032\u884c\u9a57\u8b49\u4e26\u5e6b\u52a9\u4fee\u6b63\u4efb\u4f55\u554f\u984c\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u516c\u5171\u670d\u52d9\u901a\u77e5",
+   "HTML/CSS",
+   "Javascript",
+   "SCSS"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "publiccode.yml Editor",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/italia-publiccode-editor"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "publiccode.yml Standard",
+  "repo": "https://github.com/moda-gov-tw/publiccodeyml-publiccode.yml/",
+  "repo_key": "github.com/moda-gov-tw/publiccodeyml-publiccode.yml",
+  "license": "CC0 v1.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "publiccode.yml standard. A metadata description standard for public software, easy for developers and non-technical readers alike, intended to make software built by public administrations discoverable.",
+  "desc_lang": "en",
+  "desc_src": "\u4e00\u7a2e\u91dd\u5c0d\u516c\u5171\u8edf\u9ad4\u7684\u8a6e\u91cb\u8cc7\u6599\uff08metadata\uff09\u63cf\u8ff0\u6a19\u6e96\uff0c\u9019\u6a19\u6e96\u5c0d\u958b\u767c\u8005\u4ee5\u53ca\u6280\u8853\u80cc\u666f\u8f03\u6dfa\u7684\u4eba\u58eb\u90fd\u6613\u65bc\u4f7f\u7528\uff0c\u76ee\u7684\u662f\u8b93\u7531\u516c\u5171\u884c\u653f\u6a5f\u95dc\u548c\u516c\u5171\u7d44\u7e54\u958b\u767c\u7684\u8edf\u9ad4\u5bb9\u6613\u88ab\u767c\u73fe\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6a19\u6e96",
+   "Python"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "publiccode.yml Standard",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/publiccodeyml-publiccode.yml/"
    }
   ],
   "catalogue_count": 1
@@ -108774,6 +109178,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Standard for Public Code",
+  "repo": "https://github.com/moda-gov-tw/publiccodenet.standard/",
+  "repo_key": "github.com/moda-gov-tw/publiccodenet.standard",
+  "license": "CC0 v1.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Standard for Public Code. A standard from the Foundation for Public Code giving government departments and collaborating organisations shared standards and guidance for developing software, so work can be co-developed and reused.",
+  "desc_lang": "en",
+  "desc_src": "Standard for Public Code \u662f\u7531\u516c\u5171\u7a0b\u5f0f\u78bc\u57fa\u91d1\u6703\uff08Foundation for Public Code\uff09\u6240\u5236\u5b9a\u7684\u516c\u5171\u7a0b\u5f0f\u6a19\u6e96\u3002\u76ee\u7684\u70ba\u63d0\u4f9b\u653f\u5e9c\u4e0d\u540c\u90e8\u9580\u6216\u5354\u4f5c\u7d44\u7e54\u4e4b\u9593\uff0c\u4f9d\u5faa\u6a19\u6e96\u53ca\u6307\u5357\u958b\u767c\u8edf\u9ad4\u6642\uff0c\u4ee5\u5229\u5f8c\u7e8c\u9032\u884c\u4e92\u76f8\u5354\u4f5c\u958b\u767c\uff0c\u4e26\u4e14\u91cd\u8907\u4f7f\u7528\u5404\u81ea\u7684\u6210\u679c\u3002\u6b64\u6a19\u6e96\u6709\u5229\u65bc\u516c\u5bb6\u6a5f\u95dc\u900f\u904e\u5354\u4f5c\u65b9\u5f0f\uff0c\u5275\u9020\u51fa\u597d\u7528\u3001\u958b\u653e\u3001\u6613\u61c2\u3001\u8ab2\u8cac\u3001\u8fd1\u7528\u3001\u6c38\u7e8c\u7684\u7a0b\u5f0f\u57fa\u5e95\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6a19\u6e96",
+   "HTML/CSS",
+   "Shell"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Standard for Public Code",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/publiccodenet.standard/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -109904,8 +110342,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Sunbird Lern",
-  "repo": "https://github.com/Sunbird-Lern,https://github.com/project-sunbird/sunbird-lms-service,https://github.com/project-sunbird/sunbird-course-service,https://github.com/project-sunbird/groups-service,https://github.com/project-sunbird/sunbird-notification-service,https://lern.sunbird.org/use/developer-installation",
-  "repo_key": "github.com/sunbird-lern,https://github.com/project-sunbird/sunbird-lms-service,https://github.com/project-sunbird/sunbird-course-service,https://github.com/project-sunbird/groups-service,https://github.com/project-sunbird/sunbird-notification-service,https://lern.sunbird.org/use/developer-installation",
+  "repo": "https://github.com/Sunbird-Lern",
+  "repo_key": "github.com/sunbird-lern",
   "landing": "https://lern.sunbird.org",
   "entry_url": "https://www.digitalpublicgoods.net/r/sunbird-lern",
   "license": "MIT",
@@ -109931,6 +110369,13 @@
    "SDG8: Decent Work and Economic Growth"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/project-sunbird/sunbird-lms-service",
+   "https://github.com/project-sunbird/sunbird-course-service",
+   "https://github.com/project-sunbird/groups-service",
+   "https://github.com/project-sunbird/sunbird-notification-service",
+   "https://lern.sunbird.org/use/developer-installation"
+  ],
   "upstream_id": "GID0090106",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -109942,7 +110387,7 @@
     "source": "GLOBAL/dpg",
     "name": "Sunbird Lern",
     "entry_url": "https://www.digitalpublicgoods.net/r/sunbird-lern",
-    "repo_url": "https://github.com/Sunbird-Lern,https://github.com/project-sunbird/sunbird-lms-service,https://github.com/project-sunbird/sunbird-course-service,https://github.com/project-sunbird/groups-service,https://github.com/project-sunbird/sunbird-notification-service,https://lern.sunbird.org/use/developer-installation"
+    "repo_url": "https://github.com/Sunbird-Lern"
    }
   ],
   "catalogue_count": 1
@@ -110047,8 +110492,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Sunbird SERVE",
-  "repo": "https://github.com/Sunbird-Serve/sunbird-serve-need , https://github.com/Sunbird-Serve/sunbird-serve-fulfill, https://github.com/Sunbird-Serve/sunbird-serve-volunteering,UI Service -  https://github.com/Sunbird-Serve/sunbird-serve-ui, Content Management system -  https://github.com/Sunbird-Serve/sunbird-serve-jCMS, Previous Version - https://github.com/Sunbird-Serve/serve-v0",
-  "repo_key": "github.com/sunbird-serve/sunbird-serve-need , https://github.com/sunbird-serve/sunbird-serve-fulfill, https://github.com/sunbird-serve/sunbird-serve-volunteering,ui service -  https://github.com/sunbird-serve/sunbird-serve-ui, content management system -  https://github.com/sunbird-serve/sunbird-serve-jcms, previous version - https://github.com/sunbird-serve/serve-v0",
+  "repo": "https://github.com/Sunbird-Serve/sunbird-serve-need",
+  "repo_key": "github.com/sunbird-serve/sunbird-serve-need",
   "landing": "https://serve.evean.net/",
   "entry_url": "https://www.digitalpublicgoods.net/r/sunbird-serve",
   "license": "MIT",
@@ -110070,6 +110515,13 @@
    "SDG10: Reduced Inequalities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Sunbird-Serve/sunbird-serve-fulfill",
+   "https://github.com/Sunbird-Serve/sunbird-serve-volunteering",
+   "https://github.com/Sunbird-Serve/sunbird-serve-ui",
+   "https://github.com/Sunbird-Serve/sunbird-serve-jCMS",
+   "https://github.com/Sunbird-Serve/serve-v0"
+  ],
   "upstream_id": "GID0090589",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -110081,7 +110533,7 @@
     "source": "GLOBAL/dpg",
     "name": "Sunbird SERVE",
     "entry_url": "https://www.digitalpublicgoods.net/r/sunbird-serve",
-    "repo_url": "https://github.com/Sunbird-Serve/sunbird-serve-need , https://github.com/Sunbird-Serve/sunbird-serve-fulfill, https://github.com/Sunbird-Serve/sunbird-serve-volunteering,UI Service -  https://github.com/Sunbird-Serve/sunbird-serve-ui, Content Management system -  https://github.com/Sunbird-Serve/sunbird-serve-jCMS, Previous Version - https://github.com/Sunbird-Serve/serve-v0"
+    "repo_url": "https://github.com/Sunbird-Serve/sunbird-serve-need"
    }
   ],
   "catalogue_count": 1
@@ -111024,8 +111476,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Synthea",
-  "repo": "https://github.com/synthetichealth/synthea,https://github.com/synthetichealth/synthea-international",
-  "repo_key": "github.com/synthetichealth/synthea,https://github.com/synthetichealth/synthea-international",
+  "repo": "https://github.com/synthetichealth/synthea",
+  "repo_key": "github.com/synthetichealth/synthea",
   "landing": "https://synthetichealth.github.io/synthea/",
   "entry_url": "https://www.digitalpublicgoods.net/r/synthea",
   "license": "Apache-2.0",
@@ -111048,6 +111500,9 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/synthetichealth/synthea-international"
+  ],
   "upstream_id": "GID0090111",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -111059,7 +111514,7 @@
     "source": "GLOBAL/dpg",
     "name": "Synthea",
     "entry_url": "https://www.digitalpublicgoods.net/r/synthea",
-    "repo_url": "https://github.com/synthetichealth/synthea,https://github.com/synthetichealth/synthea-international"
+    "repo_url": "https://github.com/synthetichealth/synthea"
    }
   ],
   "catalogue_count": 1
@@ -112848,8 +113303,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "The Ushahidi Platform",
-  "repo": "https://github.com/ushahidi/platform/ , https://github.com/ushahidi/platform-client-mzima",
-  "repo_key": "github.com/ushahidi/platform/ , https://github.com/ushahidi/platform-client-mzima",
+  "repo": "https://github.com/ushahidi/platform/",
+  "repo_key": "github.com/ushahidi/platform",
   "landing": "https://www.ushahidi.com/",
   "license": "AGPL-3.0",
   "short_desc": "The Ushahidi Platform is an integrated data crowdsourcing and mapping tool that allows people to rapidly collect, manage and analyze crowdsourced information from their communities. Empowering communities to thrive as a result of accessible data and technology.",
@@ -112933,6 +113388,9 @@
    "SDG16: Peace\u00b8 Justice and Strong Institutions"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/ushahidi/platform-client-mzima"
+  ],
   "upstream_id": "GID0090118",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -112944,7 +113402,7 @@
     "source": "GLOBAL/dpg",
     "name": "The Ushahidi Platform",
     "entry_url": null,
-    "repo_url": "https://github.com/ushahidi/platform/ , https://github.com/ushahidi/platform-client-mzima"
+    "repo_url": "https://github.com/ushahidi/platform/"
    }
   ],
   "catalogue_count": 1
@@ -117301,8 +117759,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "VaccineLedger",
-  "repo": "https://gitlab.com/statwig-public/theledger , https://gitlab.com/statwig-public/BlockchainEngine , https://gitlab.com/statwig-public/theledgermobileapp , https://gitlab.com/statwig-public/SupplyChainDemo , https://gitlab.com/statwig-public/UserInterface",
-  "repo_key": "gitlab.com/statwig-public/theledger , https://gitlab.com/statwig-public/blockchainengine , https://gitlab.com/statwig-public/theledgermobileapp , https://gitlab.com/statwig-public/supplychaindemo , https://gitlab.com/statwig-public/userinterface",
+  "repo": "https://gitlab.com/statwig-public/theledger",
+  "repo_key": "gitlab.com/statwig-public/theledger",
   "landing": "https://vaccineledger.com/",
   "entry_url": "https://www.digitalpublicgoods.net/r/vaccineledger",
   "license": "MIT",
@@ -117328,6 +117786,12 @@
    "SDG12: Responsible Consumption and Production"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://gitlab.com/statwig-public/BlockchainEngine",
+   "https://gitlab.com/statwig-public/theledgermobileapp",
+   "https://gitlab.com/statwig-public/SupplyChainDemo",
+   "https://gitlab.com/statwig-public/UserInterface"
+  ],
   "upstream_id": "GID0090120",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "functions": [
@@ -117339,7 +117803,7 @@
     "source": "GLOBAL/dpg",
     "name": "VaccineLedger",
     "entry_url": "https://www.digitalpublicgoods.net/r/vaccineledger",
-    "repo_url": "https://gitlab.com/statwig-public/theledger , https://gitlab.com/statwig-public/BlockchainEngine , https://gitlab.com/statwig-public/theledgermobileapp , https://gitlab.com/statwig-public/SupplyChainDemo , https://gitlab.com/statwig-public/UserInterface"
+    "repo_url": "https://gitlab.com/statwig-public/theledger"
    }
   ],
   "catalogue_count": 1
@@ -124385,6 +124849,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Yascms",
+  "repo": "https://github.com/bjes/yascms",
+  "repo_key": "github.com/bjes/yascms",
+  "landing": "https://www.bjes.tp.edu.tw",
+  "license": "AGPL 3.0",
+  "repo_owner": "\u81fa\u5317\u5e02\u4e2d\u5c71\u5340\u6ff1\u6c5f\u570b\u5c0f",
+  "short_desc": "School website system.",
+  "desc_lang": "en",
+  "desc_src": "\u5b78\u6821\u7db2\u7ad9\u7cfb\u7d71",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5b78\u6821\u7db2\u7ad9",
+   "Python",
+   "MariaDB"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Yascms",
+    "entry_url": null,
+    "repo_url": "https://github.com/bjes/yascms"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -124420,6 +124919,75 @@
     "name": "YesWiki",
     "entry_url": "https://code.gouv.fr/sill/detail?name=YesWiki",
     "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Yivi (IRMA)",
+  "repo": "https://github.com/moda-gov-tw/privacybydesign.irmamobile/",
+  "repo_key": "github.com/moda-gov-tw/privacybydesign.irmamobile",
+  "license": "GPL v3",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Yivi (IRMA). Yivi is an open source identity verification service; this is the app source. Users can disclose different amounts of identity data as needed, with personal data stored on-device encrypted by PIN, enabling passwordless login and document signing.",
+  "desc_lang": "en",
+  "desc_src": "Yivi \u662f\u958b\u653e\u539f\u59cb\u78bc\u7684\u8eab\u4efd\u9a57\u8b49\u670d\u52d9\u3002\u6b64\u70ba\u8a72\u670d\u52d9 App \u7684\u539f\u59cb\u78bc\u3002\u6b64\u670d\u52d9\u53ef\u56e0\u61c9\u4e0d\u540c\u9700\u6c42\uff0c\u8b93\u4f7f\u7528\u8005\u53ef\u9078\u64c7\u4e0d\u540c\u7a0b\u5ea6\u7684\u8eab\u4efd\u8cc7\u6599\u63ed\u9732\u3002\u500b\u4eba\u8cc7\u6599\u5c07\u4ee5 PIN \u78bc\u52a0\u5bc6\u7684\u65b9\u5f0f\u5132\u5b58\u5728\u88dd\u7f6e\u4e2d\u3002\u4f7f\u7528\u8005\u53ef\u4ee5\u81ea\u884c\u638c\u63a7\u500b\u4eba\u8cc7\u6599\uff0c\u9032\u884c\u7121\u5bc6\u78bc\u9a57\u8b49\u767b\u5165\u7db2\u7ad9\u3001\u7c3d\u7f72\u6587\u4ef6\u7b49\u76ee\u7684\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8eab\u4efd\u9a57\u8b49",
+   "Go",
+   "Dart",
+   "Java"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Yivi (IRMA)",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/privacybydesign.irmamobile/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "Yivi (IRMA) scheme manager",
+  "repo": "https://github.com/moda-gov-tw/privacybydesign.pbdf-schememanager",
+  "repo_key": "github.com/moda-gov-tw/privacybydesign.pbdf-schememanager",
+  "license": "GPL v3",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Yivi (IRMA) scheme manager. Yivi is an open source identity verification service; this is the scheme manager source. Users can disclose different amounts of identity data, stored on-device encrypted by PIN, for passwordless login and document signing.",
+  "desc_lang": "en",
+  "desc_src": "Yivi \u662f\u958b\u653e\u539f\u59cb\u78bc\u7684\u8eab\u4efd\u9a57\u8b49\u670d\u52d9\u3002\u6b64\u70ba\u8a72\u670d\u52d9\u7ba1\u7406\u5668\u7684\u539f\u59cb\u78bc\u3002\u56e0\u61c9\u4e0d\u540c\u9700\u6c42\uff0c\u4f7f\u7528\u8005\u53ef\u9078\u64c7\u4e0d\u540c\u7a0b\u5ea6\u7684\u8eab\u4efd\u8cc7\u6599\u63ed\u9732\u3002\u500b\u4eba\u8cc7\u6599\u5c07\u4ee5 PIN \u78bc\u52a0\u5bc6\u7684\u65b9\u5f0f\u5132\u5b58\u5728\u88dd\u7f6e\u4e2d\u3002\u4f7f\u7528\u8005\u53ef\u4ee5\u81ea\u884c\u638c\u63a7\u500b\u4eba\u8cc7\u6599\uff0c\u9032\u884c\u7121\u5bc6\u78bc\u9a57\u8b49\u767b\u5165\u7db2\u7ad9\u3001\u7c3d\u7f72\u6587\u4ef6\u7b49\u76ee\u7684\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8eab\u4efd\u9a57\u8b49",
+   "Python",
+   "Shell"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "Yivi (IRMA) scheme manager",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/privacybydesign.pbdf-schememanager"
    }
   ],
   "catalogue_count": 1
@@ -125190,6 +125758,1561 @@
     "name": "{shinygouv}",
     "entry_url": null,
     "repo_url": "https://github.com/spyrales/shinygouv"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u4f7f\u7528\u8005\u64cd\u4f5c\u7a3d\u6838\u8a18\u9304\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/user-operation-recording-module",
+  "repo_key": "github.com/moda-gov-tw/user-operation-recording-module",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "User action audit logging system. Captures and stores significant actions - logins and logouts, queries, edits, deletions - for transparency and traceability, with flexible reporting so administrators can review activity by user or period for internal audit and compliance.",
+  "desc_lang": "en",
+  "desc_src": "\u8ffd\u8e64\u4f7f\u7528\u8005\u5728\u7cfb\u7d71\u4e2d\u7684\u64cd\u4f5c\u884c\u70ba\u3002\u8a72\u7cfb\u7d71\u80fd\u5920\u5373\u6642\u6355\u6349\u4e26\u5132\u5b58\u91cd\u8981\u7684\u64cd\u4f5c\u8cc7\u8a0a\uff0c\u5305\u62ec\u767b\u5165\u767b\u51fa\u3001\u8cc7\u6599\u67e5\u8a62\u3001\u4fee\u6539\u3001\u522a\u9664\u53ca\u5176\u4ed6\u95dc\u9375\u6027\u64cd\u4f5c\uff0c\u78ba\u4fdd\u6578\u64da\u900f\u660e\u6027\u8207\u884c\u70ba\u53ef\u8ffd\u6eaf\u6027\u3002\r\n\r\n\u900f\u904e\u9748\u6d3b\u7684\u5831\u8868\u751f\u6210\u529f\u80fd\uff0c\u7ba1\u7406\u8005\u53ef\u5feb\u901f\u6aa2\u8996\u7279\u5b9a\u4f7f\u7528\u8005\u6216\u6642\u9593\u7bc4\u570d\u5167\u7684\u64cd\u4f5c\u8a18\u9304\uff0c\u8f15\u9b06\u61c9\u5c0d\u5167\u90e8\u7a3d\u6838\u9700\u6c42\u8207\u6cd5\u898f\u9075\u5faa\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u884c\u70ba\u8ffd\u8e64",
+   "\u7a3d\u6838\u5831\u8868",
+   "Spring Boot",
+   "Spring Data JPA",
+   "Hibernate",
+   "H2 Database"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u4f7f\u7528\u8005\u64cd\u4f5c\u7a3d\u6838\u8a18\u9304\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/user-operation-recording-module"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u500b\u4eba\u8cc7\u6599\u4ecb\u63a5\u670d\u52d9\u9a57\u8b49\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/mydata-notify-and-authentication-testing-module",
+  "repo_key": "github.com/moda-gov-tw/mydata-notify-and-authentication-testing-module",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Personal data interface verification system. Uses the MyData platform's transfer verification service as a worked example of secure personal-data handling: request patterns, security token validation and data packaging, covering both message and file transfer formats.",
+  "desc_lang": "en",
+  "desc_src": "\u8cc7\u8a0a\u7cfb\u7d71\u5728\u63d0\u4f9b\u500b\u4eba\u8cc7\u8a0a\u7684\u8655\u7406\u904e\u7a0b\u4e2d\uff0c\u78ba\u4fdd\u8cc7\u6599\u50b3\u8f38\u7684\u6a5f\u5bc6\u6027\u53ca\u5b8c\u6574\u6027\u5f88\u91cd\u8981\uff1b\u56e0\u6b64\u672c\u7cfb\u7d71\u4ee5MyData\u5e73\u53f0\u4e4b\u8cc7\u8a0a\u50b3\u8f38\u4e4b\u9a57\u8b49\u670d\u52d9\u70ba\u7bc4\u4f8b\uff0c\u63d0\u4f9b\u7b26\u5408\u500b\u4eba\u8cc7\u6599\u50b3\u8f38\u5b89\u5168\u8655\u7406\u7684\u7a0b\u5e8f\u53ca\u6b65\u9a5f\uff0c\u5305\u542b\u500b\u4eba\u8cc7\u6599\u7684\u8acb\u6c42\u65b9\u5f0f\u3001\u5b89\u5168\u6b0a\u6756\u7684\u9a57\u8b49\u53ca\u500b\u4eba\u8cc7\u6599\u7684\u5c01\u88dd\uff0c\u652f\u63f4\u8a0a\u606f\u53ca\u6a94\u6848\u50b3\u8f38\u683c\u5f0f\u7684\u50b3\u8f38\u529f\u80fd\u9a57\u8b49\u3002\r\n\r\n\u900f\u904e\u672c\u7cfb\u7d71\uff0c\u53ef\u5354\u52a9\u6539\u5584\u6280\u8853\u4eba\u54e1\u56e0\u4e0d\u719f\u6089\u8655\u7406\u500b\u4eba\u8cc7\u8a0a\u8a0a\u606f\u6d41\u7a0b\u53ca\u932f\u8aa4\u8655\u7406\u6a5f\u5236\uff0c\u800c\u5728\u958b\u767c\u6e2c\u8a66\u904e\u7a0b\u4e2d\u8017\u6642\u8cbb\u529b\u7684\u60c5\u5883\uff0c\u52a0\u901f\u5c07\u6a5f\u95dc\u8cc7\u8a0a\u7cfb\u7d71\u500b\u4eba\u8cc7\u6599\u63d0\u7d66\u4f8b\u5982MyData\u7b49\u5e73\u53f0\u7684\u5275\u65b0\u670d\u52d9\u61c9\u7528\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u6a21\u64ec\u8cc7\u8a0a\u670d\u52d9\u63d0\u4f9b\u8005(Service Provider)\u3001\u8cc7\u6599\u8acb\u6c42\u8005(Data Requester)\u53ca\u8cc7\u6599\u63d0\u4f9b\u8005(Data Provider)\u9593\uff0c\u9032\u884c\u5b89\u5168\u5730\u9032\u884c\u500b\u4eba\u8cc7\u6599\u50b3\u8f38\u6b65\u9a5f\u3002\r\n2. \u6a21\u64ecMyData\u6b0a\u6756\u9a57\u8b49\u6d41\u7a0b\u53ca\u8a0a\u606f\u8655\u7406\u6d41\u7a0b\u3002\r\n3. \u6a21\u64ecMyData\u5e73\u53f0\u5fc5\u8981\u53c3\u6578\u4e4b\u6aa2\u6838\u3002\r\n4. \u8f38\u51faMyData\u4ecb\u63a5\u8a0a\u606f\u5b8c\u6574Log\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5b89\u5168\u9a57\u8b49",
+   "\u8a0a\u606f\u8655\u7406/\u901a\u77e5",
+   "\u4ecb\u63a5/\u50b3\u8f38",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u500b\u4eba\u8cc7\u6599\u4ecb\u63a5\u670d\u52d9\u9a57\u8b49\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/mydata-notify-and-authentication-testing-module"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u5152\u7ae5\u65e9\u7642\u806f\u5408\u8a55\u4f30\u9580\u8a3a\u5f85\u6392\u4eba\u6578\u7dda\u4e0a\u67e5\u8a62\u7cfb\u7d71(\u524d\u7aef)",
+  "repo": "https://github.com/shuanowenLiou/dowcd-ei-frontend",
+  "repo_key": "github.com/shuanowenliou/dowcd-ei-frontend",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Online waiting-list lookup for children's early-intervention joint assessment clinics (front end). A moda Civic Technology Pilot Field demonstrator built by OneStep MAP with Taoyuan City's Women and Children's Bureau, letting parents check hospital waiting numbers in real time. A demonstrator, not yet in production.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300cOneStep MAP\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u5152\u7ae5\u65e9\u7642\u806f\u5408\u8a55\u4f30\u9580\u8a3a\u5f85\u6392\u4eba\u6578\u7dda\u4e0a\u67e5\u8a62\u7cfb\u7d71\u300d\uff0c\u900f\u904e\u8207\u6843\u5712\u5e02\u653f\u5e9c\u5a66\u5e7c\u5c40\u7684\u5408\u4f5c\uff0c\u8b93\u5bb6\u9577\u53ef\u5373\u6642\u67e5\u8a62\u5404\u91ab\u9662\u65e9\u7642\u806f\u8a55\u9580\u8a3a\u7684\u7b49\u5019\u4eba\u6578\uff0c\u52a0\u5feb\u66f4\u65b0\u983b\u7387\u3002\u672c\u6848\u70ba\u793a\u7bc4\u6848\u4f8b\u5c1a\u672a\u6b63\u5f0f\u4e0a\u7dda\u63d0\u4f9b\u670d\u52d9\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u91ab\u9662\u806f\u7e6b\u8cc7\u8a0a",
+   "\u6392\u968a\u4eba\u6578\u66f4\u65b0",
+   "React"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u5152\u7ae5\u65e9\u7642\u806f\u5408\u8a55\u4f30\u9580\u8a3a\u5f85\u6392\u4eba\u6578\u7dda\u4e0a\u67e5\u8a62\u7cfb\u7d71(\u524d\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/shuanowenLiou/dowcd-ei-frontend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u5152\u7ae5\u65e9\u7642\u806f\u5408\u8a55\u4f30\u9580\u8a3a\u5f85\u6392\u4eba\u6578\u7dda\u4e0a\u67e5\u8a62\u7cfb\u7d71(\u5f8c\u7aef)",
+  "repo": "https://github.com/shuanowenLiou/dowcd-ei-main",
+  "repo_key": "github.com/shuanowenliou/dowcd-ei-main",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Online waiting-list lookup for children's early-intervention joint assessment clinics (back end). Adds a management interface for hospital case managers to update waiting numbers and a query back office for bureau staff. A demonstrator, not yet in production.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300cOneStep MAP\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u5152\u7ae5\u65e9\u7642\u806f\u5408\u8a55\u4f30\u9580\u8a3a\u5f85\u6392\u4eba\u6578\u7dda\u4e0a\u67e5\u8a62\u7cfb\u7d71\u300d\uff0c\u900f\u904e\u8207\u6843\u5712\u5e02\u653f\u5e9c\u5a66\u5e7c\u5c40\u7684\u5408\u4f5c\uff0c\u8b93\u5bb6\u9577\u53ef\u5373\u6642\u67e5\u8a62\u5404\u91ab\u9662\u65e9\u7642\u806f\u8a55\u9580\u8a3a\u7684\u7b49\u5019\u4eba\u6578\uff0c\u4e26\u63d0\u4f9b\u91ab\u9662\u500b\u7ba1\u5e2b\u66f4\u65b0\u7b49\u5019\u4eba\u6578\u7684\u7ba1\u7406\u4ecb\u9762\u53ca\u5a66\u5e7c\u5c40\u5de5\u4f5c\u4eba\u54e1\u7684\u67e5\u8a62\u5f8c\u53f0\u3002\u672c\u6848\u70ba\u793a\u7bc4\u6848\u4f8b\u5c1a\u672a\u6b63\u5f0f\u4e0a\u7dda\u63d0\u4f9b\u670d\u52d9\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u7ba1\u7406\u529f\u80fd",
+   "\u6392\u968a\u4eba\u6578\u7ba1\u7406",
+   "Python"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u5152\u7ae5\u65e9\u7642\u806f\u5408\u8a55\u4f30\u9580\u8a3a\u5f85\u6392\u4eba\u6578\u7dda\u4e0a\u67e5\u8a62\u7cfb\u7d71(\u5f8c\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/shuanowenLiou/dowcd-ei-main"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u516c\u5171\u7a0b\u5f0f\u5e73\u81fa",
+  "repo": "https://github.com/moda-gov-tw/code-gov-tw",
+  "repo_key": "github.com/moda-gov-tw/code-gov-tw",
+  "landing": "https://code.gov.tw/",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Public Code Platform. Encourages agencies, industry and the public to use, review and fix the code behind government digital services, promoting exchange between agencies and improving the quality and transparency of public services.",
+  "desc_lang": "en",
+  "desc_src": "\u516c\u5171\u7a0b\u5f0f\u5e73\u81fa\u9f13\u52f5\u8de8\u6a5f\u95dc\u3001\u7522\u696d\u548c\u516c\u773e\u90fd\u53ef\u5171\u540c\u4f7f\u7528\u3001 \u6aa2\u8996\u3001\u4fee\u6b63\u653f\u5e9c\u6578\u4f4d\u670d\u52d9\u6216\u7cfb\u7d71\u7684\u7a0b\u5f0f\u78bc\uff0c\u5c07\u53ef\u4fc3\u9032\u6a5f\u95dc\u6578\u4f4d\u4ea4\u6d41\uff0c\u5171\u540c\u63d0\u5347\u653f\u5e9c\u516c\u5171\u670d\u52d9\u54c1\u8cea\u3001\u63d0\u5347\u653f\u5e9c\u516c\u958b\u900f\u660e\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "Vue.js",
+   "HTML/CSS",
+   "MySQL"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u516c\u5171\u7a0b\u5f0f\u5e73\u81fa",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/code-gov-tw"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u516c\u6258\u5831\u540d\u7ba1\u7406\u7cfb\u7d71\uff08\u524d\u7aef\uff09",
+  "repo": "https://github.com/moda-gov-tw/civic-tech-experimental-field-find-babycare-frontend",
+  "repo_key": "github.com/moda-gov-tw/civic-tech-experimental-field-find-babycare-frontend",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Public childcare application management system (front end). A 2023 moda Civic Technology Pilot Field demonstrator built by the \"Let's Go Together\" team with Taichung City's Social Affairs Bureau: an integrated platform for applying, querying, reviewing and administering public childcare places. A demonstrator, not yet in production.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c112\u5e74\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300c\u4e00\u8d77\u52a0\u6cb9\u9663\u7dda\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u516c\u6258\u7533\u8acb\u6578\u4f4d\u6d41\u7a0b\u512a\u5316\u300d\u900f\u904e\u8207\u81fa\u4e2d\u5e02\u653f\u5e9c\u793e\u6703\u5c40\u7684\u5408\u4f5c\uff0c\u63d0\u4f9b\u65e2\u6709\u516c\u6258\u7533\u8acb\u6d41\u7a0b\u89e3\u65b9\uff0c\u958b\u767c\u4e00\u7533\u8acb\u516c\u6258\u7684\u6574\u5408\u5e73\u81fa\uff0c\u63d0\u4f9b\u7533\u8acb\u3001\u67e5\u8a62\u3001\u5be9\u6838\u53ca\u7ba1\u7406\u7b49\u529f\u80fd\u3002\u672c\u6848\u70ba\u793a\u7bc4\u6848\u4f8b\u5c1a\u672a\u6b63\u5f0f\u4e0a\u7dda\u63d0\u4f9b\u670d\u52d9\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u500b\u6848\u7ba1\u7406",
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "Vue.js",
+   "HTML/CSS",
+   "Javascript",
+   "PHP",
+   "MySQL",
+   "Laravel"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u516c\u6258\u5831\u540d\u7ba1\u7406\u7cfb\u7d71\uff08\u524d\u7aef\uff09",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/civic-tech-experimental-field-find-babycare-frontend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u516c\u6258\u5831\u540d\u7ba1\u7406\u7cfb\u7d71\uff08\u5f8c\u7aef\uff09",
+  "repo": "https://github.com/moda-gov-tw/civic-tech-experimental-field-find-babycare-backend",
+  "repo_key": "github.com/moda-gov-tw/civic-tech-experimental-field-find-babycare-backend",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Public childcare application management system (front end). A 2023 moda Civic Technology Pilot Field demonstrator built by the \"Let's Go Together\" team with Taichung City's Social Affairs Bureau: an integrated platform for applying, querying, reviewing and administering public childcare places. A demonstrator, not yet in production.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c112\u5e74\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300c\u4e00\u8d77\u52a0\u6cb9\u9663\u7dda\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u516c\u6258\u7533\u8acb\u6578\u4f4d\u6d41\u7a0b\u512a\u5316\u300d\u900f\u904e\u8207\u81fa\u4e2d\u5e02\u653f\u5e9c\u793e\u6703\u5c40\u7684\u5408\u4f5c\uff0c\u63d0\u4f9b\u65e2\u6709\u516c\u6258\u7533\u8acb\u6d41\u7a0b\u89e3\u65b9\uff0c\u958b\u767c\u4e00\u7533\u8acb\u516c\u6258\u7684\u6574\u5408\u5e73\u81fa\uff0c\u63d0\u4f9b\u7533\u8acb\u3001\u67e5\u8a62\u3001\u5be9\u6838\u53ca\u7ba1\u7406\u7b49\u529f\u80fd\u3002\u672c\u6848\u70ba\u793a\u7bc4\u6848\u4f8b\u5c1a\u672a\u6b63\u5f0f\u4e0a\u7dda\u63d0\u4f9b\u670d\u52d9\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u500b\u6848\u7ba1\u7406",
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "Vue.js",
+   "HTML/CSS",
+   "Javascript",
+   "PHP",
+   "MySQL",
+   "Laravel"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u516c\u6258\u5831\u540d\u7ba1\u7406\u7cfb\u7d71\uff08\u5f8c\u7aef\uff09",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/civic-tech-experimental-field-find-babycare-backend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u5e73\u81fa(\u524d\u7aef)",
+  "repo": "https://github.com/tainancity/tainanthon2024-city-activitas",
+  "repo_key": "github.com/tainancity/tainanthon2024-city-activitas",
+  "license": "MIT License",
+  "repo_owner": "\u81fa\u5357\u5e02\u653f\u5e9c",
+  "short_desc": "Public asset management platform (front end). Built at the 2024 AI Tainan hackathon by Tainan's Finance and Tax Bureau with the City Activitas civic team: consolidates records and provides asset lookup, reporting, image upload and report generation.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u5c08\u6848\u70ba\u300c2024\u5e74AI\u81fa\u5357\u6578\u4f4d\u57ce\u5e02\u6cbb\u7406\u9ed1\u5ba2\u677e\u300d\u7531\u81fa\u5357\u5e02\u8ca1\u7a05\u5c40\u8207\u516c\u6c11\u5718\u968a\u300cCity Activitas\u300d\u5408\u4f5c\u958b\u767c\u7684\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u5e73\u81fa\uff0c\u5354\u52a9\u55ae\u4f4d\u5c07\u8cc7\u6599\u6574\u5408\uff0c\u4e26\u63d0\u4f9b\u516c\u7522\u67e5\u8a62\u3001\u516c\u7522\u586b\u5831\u3001\u4e0a\u50b3\u5716\u7247\u3001\u5831\u8868\u7522\u88fd\u7b49\u529f\u80fd\uff0c\u8f14\u52a9\u55ae\u4f4d\u9032\u884c\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "\u6578\u64da\u5448\u73fe",
+   "HTML/CSS",
+   "Javascript",
+   "TypeScript"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u5e73\u81fa(\u524d\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/tainancity/tainanthon2024-city-activitas"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u5e73\u81fa(\u5f8c\u7aef)",
+  "repo": "https://github.com/tainancity/tainanthon2024-city-activitas-backend",
+  "repo_key": "github.com/tainancity/tainanthon2024-city-activitas-backend",
+  "license": "MIT License",
+  "repo_owner": "\u81fa\u5357\u5e02\u653f\u5e9c",
+  "short_desc": "Public asset management platform (front end). Built at the 2024 AI Tainan hackathon by Tainan's Finance and Tax Bureau with the City Activitas civic team: consolidates records and provides asset lookup, reporting, image upload and report generation.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u5c08\u6848\u70ba\u300c2024\u5e74AI\u81fa\u5357\u6578\u4f4d\u57ce\u5e02\u6cbb\u7406\u9ed1\u5ba2\u677e\u300d\u7531\u81fa\u5357\u5e02\u8ca1\u7a05\u5c40\u8207\u516c\u6c11\u5718\u968a\u300cCity Activitas\u300d\u5408\u4f5c\u958b\u767c\u7684\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u5e73\u81fa\uff0c\u5354\u52a9\u55ae\u4f4d\u5c07\u8cc7\u6599\u6574\u5408\uff0c\u4e26\u63d0\u4f9b\u516c\u7522\u67e5\u8a62\u3001\u516c\u7522\u586b\u5831\u3001\u4e0a\u50b3\u5716\u7247\u3001\u5831\u8868\u7522\u88fd\u7b49\u529f\u80fd\uff0c\u8f14\u52a9\u55ae\u4f4d\u9032\u884c\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "\u6578\u64da\u5448\u73fe",
+   "Python"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u516c\u6709\u8cc7\u7522\u7ba1\u7406\u5e73\u81fa(\u5f8c\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/tainancity/tainanthon2024-city-activitas-backend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u516c\u90e8\u9580\u958b\u6e90\u8edf\u9ad4\u61c9\u7528\u53c3\u8003\u624b\u518a",
+  "repo": "https://github.com/moda-gov-tw/Sector_Open_Source_Software_Playbook",
+  "repo_key": "github.com/moda-gov-tw/sector_open_source_software_playbook",
+  "landing": "https://moda.gov.tw/digital-affairs/democracy-network/services/19352",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Reference handbook on open source software for the public sector. Part of moda's commitment to deepen cross-agency open data and public code, published in 2026 to spread open source knowledge across government bodies.",
+  "desc_lang": "en",
+  "desc_src": "\u70ba\u4e86\u5f37\u5316\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u591a\u5143\u53c3\u8207\u8207\u63d0\u5347\u8cc7\u6599\u54c1\u8cea\uff0c\u4fc3\u9032\u653f\u5e9c\u6578\u4f4d\u670d\u52d9\u8207\u76f8\u95dc\u5171\u7528\u6a5f\u5236\u4e4b\u767c\u5c55\uff0c\u4ee5\u843d\u5be6\u900f\u660e\u8207\u8ab2\u8cac\u4e4b\u6578\u4f4d\u6cbb\u7406\uff0c\u672c\u90e8\u63d0\u51fa\u300c\u6df1\u5316\u8de8\u90e8\u6703\u8cc7\u6599\u958b\u653e\u8207\u653f\u5e9c\u516c\u5171\u7a0b\u5f0f\u767c\u5c55\u300d\u627f\u8afe\u4e8b\u9805\uff0c\u65bc2026\u5e74\u898f\u5283\u516c\u5e03\u300c\u516c\u90e8\u9580\u958b\u6e90\u8edf\u9ad4\u61c9\u7528\u53c3\u8003\u624b\u518a\u300d\uff0c\u5411\u5168\u570b\u516c\u90e8\u9580\u50b3\u9054\u958b\u6e90\u6982\u5ff5\u671f\u80fd\u8b93\u958b\u6e90\u77e5\u8b58\u6df1\u690d\u4e26\u666e\u53ca\u65bc\u653f\u5e9c\u6a5f\u95dc\uff0c\u9032\u800c\u9748\u6d3b\u904b\u7528\u958b\u6e90\u8edf\u9ad4\u8fa6\u7406\u76f8\u95dc\u7cfb\u7d71\u898f\u5283\u8207\u958b\u767c\u5efa\u7f6e\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6a19\u6e96"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u516c\u90e8\u9580\u958b\u6e90\u8edf\u9ad4\u61c9\u7528\u53c3\u8003\u624b\u518a",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/Sector_Open_Source_Software_Playbook"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u524d\u7aef\u7db2\u7ad9\u8cc7\u6599\u5b89\u5168\u8655\u7406\u6846\u67b6",
+  "repo": "https://github.com/moda-gov-tw/fn-field-validation",
+  "repo_key": "github.com/moda-gov-tw/fn-field-validation",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Front-end data security framework for web forms. A Vue-based framework for building electronic form systems quickly, handling the tedious parts of form design and field validation.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u958b\u767c\u4eba\u54e1\u9700\u8981\u5feb\u901f\u958b\u767c\u96fb\u5b50\u8868\u55ae\u7db2\u7ad9\u7cfb\u7d71\u6642\uff0c\u63a1\u7528\u672c\u6846\u67b6\u4ee5\u524d\u7aef\u6280\u8853Vue\u5be6\u4f5c\u7684\u524d\u7aef\u8868\u55ae\u8cc7\u6599\u8655\u7406\u529f\u80fd\uff0c\u53ef\u89e3\u6c7a\u958b\u767c\u904e\u7a0b\u4e2d\u7e41\u7463\u7684\u8868\u55ae\u8a2d\u8a08\u8207\u6b04\u4f4d\u6aa2\u6838\u554f\u984c\u3002\r\n\r\n\u85c9\u7531\u4f7f\u7528\u6b64\u6846\u67b6\uff0c\u958b\u767c\u4eba\u54e1\u53ef\u4ee5\u8fc5\u901f\u5efa\u7acb\u5177\u5099\u6aa2\u6838\u529f\u80fd\u7684\u96fb\u5b50\u8868\u55ae\u7cfb\u7d71\uff0c\u9054\u5230\u52a0\u5feb\u958b\u767c\u901f\u5ea6\u8207\u63d0\u5347\u6548\u7387\u7684\u76ee\u7684\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u63d0\u4f9b\u4ee5Vue\u70ba\u57fa\u790e\u7684\u524d\u7aef\u7db2\u9801\u6846\u67b6\u3002\r\n2. \u63d0\u4f9b\u4e00\u9375\u4f48\u7f72\u4e4b\u61c9\u7528\u7a0b\u5f0f\u7bc4\u4f8b\u3002\r\n3. \u63d0\u4f9b\u5f48\u6027\u64f4\u5145\u9a57\u8b49\u898f\u5247\u4e4b\u8868\u55ae\u6b04\u4f4d\u3002\r\n4. \u63d0\u4f9b\u6b04\u4f4d\u9a57\u8b49\u7bc4\u4f8b\uff1a\u4e2d\u3001\u82f1\u6587\u59d3\u540d\u6aa2\u6838\u3001\u6a94\u6848\u5927\u5c0f\u3001\u9644\u6a94\u540d\u6aa2\u6838\u3001\u8b49\u4ef6\u865f\u78bc\u6aa2\u6838\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u5b89\u5168\u6846\u67b6",
+   "\u6aa2\u6838",
+   "Vue.js",
+   "Javascript",
+   "TypeScript",
+   "Nuxt",
+   "Nuxt UI"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u524d\u7aef\u7db2\u7ad9\u8cc7\u6599\u5b89\u5168\u8655\u7406\u6846\u67b6",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/fn-field-validation"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u52d5\u614b\u6a21\u7248Word\u6587\u4ef6\u751f\u6210\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/dynamic-template-doc-gen",
+  "repo_key": "github.com/moda-gov-tw/dynamic-template-doc-gen",
+  "license": "Apache License 2.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Dynamic template Word document generation. Uses the Poi-tl template engine to generate documents from Word templates, suitable for batch and high-concurrency use such as reports, contracts and invitations. Authors design templates in Word using simple placeholder syntax like {{name}} and {{table}}.",
+  "desc_lang": "en",
+  "desc_src": "\u4f7f\u7528 Poi-tl \u6a21\u677f\u5f15\u64ce\u4f5c\u70ba\u6838\u5fc3\u6280\u8853\uff0c\u900f\u904e Word \u6a21\u677f\u5be6\u73fe\u52d5\u614b\u6587\u6a94\u751f\u6210\u3002\u53ef\u9069\u7528\u65bc\u6279\u91cf\u8655\u7406\u8207\u9ad8\u4f75\u767c\u61c9\u7528\uff0c\u5982\u5831\u544a\u751f\u6210\u3001\u5408\u540c\u88fd\u4f5c\u548c\u9080\u8acb\u51fd\u5b9a\u5236\u7b49\u3002\r\n\r\n\u4f7f\u7528\u8005\u53ea\u9700\u5728 Word \u7de8\u8f2f\u5668\u4e2d\u8a2d\u8a08\u6a21\u677f\uff0c\u5229\u7528\u7c21\u55ae\u7684\u6a19\u8a18\u8a9e\u6cd5\uff08\u5982 {{name}}\u3001{{table}} \u7b49\uff09\u5b9a\u7fa9\u5360\u4f4d\u7b26\uff0c\u4fbf\u53ef\u8a2d\u5b9a\u6240\u9700\u7684\u6a23\u5f0f\u8207\u7d50\u69cb\u3002\u7a0b\u5f0f\u7aef\u8ca0\u8cac\u8655\u7406\u8cc7\u6599\u6e96\u5099\u8207\u683c\u5f0f\u8f49\u63db\uff0c\u5305\u62ec\u8cc7\u6599\u7d44\u5408\u3001\u65e5\u671f\u683c\u5f0f\u5316\u3001\u6578\u503c\u8655\u7406\u7b49\u3002\u540c\u6642\uff0c\u652f\u63f4\u8907\u96dc\u6578\u64da\u7d50\u69cb\u7684\u52d5\u614b\u7d81\u5b9a\uff0c\u5982\u5d4c\u5957\u8868\u683c\u8207\u591a\u5c64\u8cc7\u6599\uff0c\u6eff\u8db3\u4e0d\u540c\u7684\u9700\u6c42\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6a21\u677f\u5b9a\u7fa9",
+   "\u7522\u51fa\u6a94\u6848",
+   "Java",
+   "Spring Boot",
+   "Poi-tl"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u52d5\u614b\u6a21\u7248Word\u6587\u4ef6\u751f\u6210\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/dynamic-template-doc-gen"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u5730\u5740\u6a19\u6e96\u5beb\u6cd5API",
+  "repo": "https://github.com/moistat/adrid-moi-gov",
+  "repo_key": "github.com/moistat/adrid-moi-gov",
+  "landing": "https://adrid.moi.gov.tw/",
+  "license": "MPL License 2.0",
+  "repo_owner": "\u5167\u653f\u90e8",
+  "short_desc": "Address standardisation API. Converts addresses to a standard form and splits them into components (city, district, road, number and floor) to support matching and analysis. Part of the Ministry of the Interior's address identifier scheme - a 7-digit serial plus check digit acting as an address ID.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u7a0b\u5f0f\u63d0\u4f9b\u5730\u5740\u8f49\u63db\u70ba\u6a19\u6e96\u683c\u5f0f\uff0c\u4e26\u5207\u5272\u7d50\u69cb\u8981\u7d20\uff0c\u5982\u7e23\u5e02\u3001\u9109\u93ae\u5e02\u5340\u3001\u8def\u5730\u540d\u8207\u865f\u6a13\u7b49\uff0c\u4ee5\u5229\u5f8c\u7e8c\u6bd4\u5c0d\u8207\u5206\u6790\uff0c\u63d0\u5347\u5730\u5740\u7684\u53ef\u8b80\u6027\u8207\u61c9\u7528\u6548\u7387\u3002\n(\u5167\u653f\u90e8\u70ba\u63d0\u5347\u516c\u90e8\u9580\u8cc7\u6599\u6574\u5408\u6548\u7387\uff0c\u5efa\u7acb\u4ee5\u6578\u5b57\u53ca\u82f1\u6587\u5b57\u6bcd\u7d44\u6210\u7684\u5730\u5740\u8b58\u5225\u78bc(7\u78bc\u6d41\u6c34\u865f+1\u78bc\u6aa2\u6838\u78bc)\uff0c\u5982\u540c\u5730\u5740\u8eab\u5206\u8b49\u5b57\u865f\uff0c\u672c\u7a0b\u5f0f\u70ba\u6bd4\u5c0d\u5730\u5740\u8b58\u5225\u78bc\u7a0b\u5f0f\u4e4b\u5176\u4e2d\u4e00\u74b0\u3002)",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5730\u5740\u6b63\u898f\u5316\uff0c\u5c07\u5730\u5740\u8981\u4ef6\u8f49\u63db\u70ba\u6a19\u6e96\u5beb\u6cd5",
+   "\u5730\u5740\u6b04\u4f4d\u5207\u5272",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u5730\u5740\u6a19\u6e96\u5beb\u6cd5API",
+    "entry_url": null,
+    "repo_url": "https://github.com/moistat/adrid-moi-gov"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u57ce\u5e02\u901a\u670d\u52d9",
+  "repo": "https://github.com/taipei-doit/TownPass-Services",
+  "repo_key": "github.com/taipei-doit/townpass-services",
+  "landing": "https://townpass.taipei/",
+  "license": "AGPL-3",
+  "repo_owner": "\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40",
+  "short_desc": "City Pass services. Taipei City is open-sourcing the City Pass service modules so others can reuse them, simplifying development and improving administrative efficiency.",
+  "desc_lang": "en",
+  "desc_src": "\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40\u5e0c\u671b\u900f\u904e\u300c\u53f0\u5317\u901a\u300d\u7684\u7d93\u9a57\uff0c\u9010\u6b65\u5c07\u958b\u6e90\u6280\u8853\u878d\u5165\uff0c\u6253\u9020\u57ce\u5e02\u901a\u3002\n\u70ba\u512a\u5316\u66f4\u591a\u5e02\u653f\u670d\u52d9\uff0c\u5be6\u8e10\u66f4\u597d\u7684\u4f7f\u7528\u9ad4\u9a57\u3001\u63d0\u5347\u884c\u653f\u6548\u7387\uff0c\u53e6\u5c07\u57ce\u5e02\u901a\u670d\u52d9\u9805\u76ee\u958b\u6e90\uff0c\u4e26\u4f9b\u5404\u754c\u53d6\u7528\uff0c\u7c21\u5316\u958b\u767c\u6d41\u7a0b\uff0c\u5be6\u73fe\u5171\u5275\u5171\u76ca\u7cbe\u795e\uff01",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "\u5fae\u670d\u52d9",
+   "Vue.js",
+   "HTML/CSS",
+   "Javascript",
+   "TypeScript"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u57ce\u5e02\u901a\u670d\u52d9",
+    "entry_url": null,
+    "repo_url": "https://github.com/taipei-doit/TownPass-Services"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u57ce\u5e02\u901a\u67b6\u69cb",
+  "repo": "https://github.com/taipei-doit/TownPass",
+  "repo_key": "github.com/taipei-doit/townpass",
+  "landing": "https://townpass.taipei/",
+  "license": "AGPL-3.0",
+  "repo_owner": "\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40",
+  "short_desc": "City Pass architecture. Taipei City's Department of Information Technology is generalising its \"Taipei Pass\" experience into an open source City Pass: a baseline application architecture for government agencies, with interface design informed by policy and public feedback.",
+  "desc_lang": "en",
+  "desc_src": "\u70ba\u6301\u7e8c\u671d\u5411\u670d\u52d9\u578b\u653f\u5e9c\u76ee\u6a19\u9081\u9032\uff0c\u4e26\u63a8\u5ee3\u958b\u6e90\u53ca\u958b\u653e\u653f\u7b56\uff0c\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40\u5e0c\u671b\u900f\u904e\u300c\u53f0\u5317\u901a\u300d\u7684\u7d93\u9a57\uff0c\u9010\u6b65\u5c07\u958b\u6e90\u6280\u8853\u878d\u5165\uff0c\u6253\u9020\u57ce\u5e02\u901a\u3002\n\u57ce\u5e02\u901a\u67b6\u69cb\u70ba\u521d\u6b65\u5efa\u7acb\u884c\u653f\u6a5f\u95dc\u61c9\u7528\u7a0b\u5f0f\u898f\u5283\u7684\u57fa\u5e95\uff0c\u4f9d\u64da\u516c\u90e8\u9580\u653f\u7b56\u63a8\u5ee3\u8207\u6c11\u773e\u7d93\u9a57\u56de\u994b\u9032\u884c\u76f8\u95dc\u4ecb\u9762\u67b6\u69cb\u8a2d\u8a08\uff0c\u4ee5\u671f\u63d0\u4f9b\u826f\u597d\u7684\u4f7f\u7528\u9ad4\u9a57\u4e26\u589e\u9032\u884c\u653f\u6548\u7387\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5e02\u653f\u61c9\u7528\u7a0b\u5f0f\u6846\u67b6",
+   "Dart",
+   "Flutter"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u57ce\u5e02\u901a\u67b6\u69cb",
+    "entry_url": null,
+    "repo_url": "https://github.com/taipei-doit/TownPass"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u591a\u8a9e\u7cfb\u8cc7\u6599\u5b57\u5178\u8655\u7406\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/multilingual-data-dictionary-processing-system",
+  "repo_key": "github.com/moda-gov-tw/multilingual-data-dictionary-processing-system",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Multilingual data dictionary system. Provides locale-specific sorting and comparison so developers can process data by the rules of each region (Traditional Chinese, English, German and others), avoiding the errors that arise when collation rules differ between languages.",
+  "desc_lang": "en",
+  "desc_src": "\u5728\u5168\u7403\u5316\u61c9\u7528\u6216\u8cc7\u6599\u5eab\u4e2d\uff0c\u5e38\u9700\u8981\u8655\u7406\u4f86\u81ea\u4e0d\u540c\u8a9e\u8a00\u7684\u8cc7\u6599\uff0c\u9019\u500b\u7cfb\u7d71\u63d0\u4f9b\u7279\u5b9a\u8a9e\u7cfb\u7684\u6392\u5e8f\u8207\u6bd4\u8f03\u529f\u80fd\uff0c\u5141\u8a31\u958b\u767c\u4eba\u54e1\u6839\u64da\u4e0d\u540c\u5340\u57df\u8a2d\u7f6e\uff08\u5982\u7e41\u9ad4\u4e2d\u6587\u3001\u82f1\u6587\u3001\u5fb7\u6587\u7b49\uff09\u7684\u8a9e\u8a00\u898f\u5247\u4f86\u9032\u884c\u8cc7\u6599\u8655\u7406\uff0c\u89e3\u6c7a\u7531\u65bc\u5404\u570b\u8a9e\u7cfb\u6392\u5e8f\u548c\u6bd4\u8f03\u898f\u5247\u4e0d\u540c\u800c\u5c0e\u81f4\u7684\u6578\u64da\u932f\u8aa4\u6216\u4e0d\u4e00\u81f4\u554f\u984c\uff0c\u8b93\u5404\u570b\u8a9e\u8a00\u7684\u5b57\u4e32\u6392\u5e8f\u548c\u6bd4\u8f03\u76e1\u91cf\u4f9d\u7167\u672c\u5730\u8a9e\u8a00\u7684\u7fd2\u6163\u3002\u53ef\u4ee5\u61c9\u7528\u5728\u5ba2\u88fd\u5316\u529f\u80fd\u9078\u55ae\u3001\u7279\u5b9a\u8a9e\u7cfb\u7684\u516c\u544a\u641c\u5c0b\u8207\u6392\u5e8f\u3001\u591a\u8a9e\u8a00\u7684\u6587\u4ef6\u641c\u5c0b\u6392\u5e8f\u7b49\u3002\r\n\r\n\u672c\u7cfb\u7d71\u4ee5\u7e41\u9ad4\u529f\u80fd\u8655\u7406\u70ba\u7bc4\u4f8b\uff0c\u78ba\u4fdd\u7e41\u9ad4\u4e2d\u6587\u8cc7\u6599\u5728\u64cd\u4f5c\u4e2d\u80fd\u4f9d\u64da\u8a2d\u5b9a\u8981\u6c42\u4fdd\u6301\u6b63\u78ba\u6027\u8207\u4e00\u81f4\u6027\uff0c\u5f9e\u800c\u5404\u985e\u61c9\u7528\u7684\u53ef\u9760\u6027\uff0c\u4ea6\u80fd\u5ef6\u4f38\u61c9\u7528\u5728\u5168\u7403\u5316\u8207\u5340\u57df\u5316\u7cfb\u7d71\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n\u4f9d\u64da\u6307\u5b9a\u8a9e\u8a00\u7684\u898f\u5247\u4f86\u9032\u884c\u6bd4\u8f03\uff0c\u4f8b\u5982\uff0c\u5c0d\u65bc\u7e41\u9ad4\u4e2d\u6587\u6703\u4f9d\u7167\u62fc\u97f3\u6216\u7b46\u5283\u9806\u5e8f\uff0c\u800c\u4e0d\u662f\u5b57\u6bcd\u7684\u9806\u5e8f\u3002\r\n\u8a2d\u5b9a\u6bd4\u8f03\u5f37\u5ea6\uff0c\u4f8b\u5982\uff1a\u5340\u5206\u5927\u5c0f\u5beb\u3001\u5340\u5206\u91cd\u97f3\u6216\u7b46\u756b\u7b49\u3002\u4f8b\u5982\uff1a\u6bd4\u8f03\u5b57\u6bcd\uff0c\u53ef\u5ffd\u7565\u5927\u5c0f\u5beb\u3001\u91cd\u97f3\u7b26\u865f\u6216\u7b46\u756b\u6578\u91cf\uff1b\u6216\u5340\u5206\u91cd\u97f3\u7b26\u865f\uff0c\u4f46\u4e0d\u5340\u5206\u5927\u5c0f\u5beb\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u591a\u8a9e\u7cfb",
+   "\u641c\u5c0b\u8207\u6392\u5e8f",
+   "\u5b57\u5178",
+   "\u8cc7\u6599\u8655\u7406/\u906e\u7f69",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u591a\u8a9e\u7cfb\u8cc7\u6599\u5b57\u5178\u8655\u7406\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/multilingual-data-dictionary-processing-system"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u5e73\u81fa\u524d\u7aef",
+  "repo": "https://github.com/moda-gov-tw/opendata-frontend",
+  "repo_key": "github.com/moda-gov-tw/opendata-frontend",
+  "license": "MIT License",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Government open data platform front end. Open-sourced so government agencies and civic groups have a reference for building open data applications.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u5c08\u6848\u70ba\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u5e73\u81fa\u524d\u7aef\u958b\u6e90\uff0c\u900f\u904e\u958b\u6e90\u7a0b\u5f0f\u63d0\u4f9b\u653f\u5e9c\u6a5f\u95dc\u6216\u6c11\u9593\u5718\u9ad4\uff0c\u4f5c\u70ba\u767c\u5c55\u8cc7\u6599\u958b\u653e\u61c9\u7528\u7684\u53c3\u8003\uff0c\u5171\u540c\u70ba\u653f\u5e9c\u958b\u653e\u8cc7\u6599\u76e1\u4e00\u4efd\u5fc3\u529b\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "Vue.js",
+   "HTML/CSS",
+   "Javascript",
+   "TypeScript"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u5e73\u81fa\u524d\u7aef",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/opendata-frontend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6578\u4f4d\u540d\u7247",
+  "repo": "https://github.com/moda-gov-tw/DB-Card",
+  "repo_key": "github.com/moda-gov-tw/db-card",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Digital business card. An open source NFC card system built by moda in July 2025 on a privacy-first design: personal data is stored on the NFC card itself rather than a back-end server, with a pure front-end architecture and layered protections including DOMPurify.",
+  "desc_lang": "en",
+  "desc_src": "\u56e0\u61c9\u6578\u4f4d\u5316\u6642\u4ee3\u5c0d\u96b1\u79c1\u4fdd\u8b77\u7684\u91cd\u8996\uff0c\u6578\u4f4d\u767c\u5c55\u90e8\u65bc 2025 \u5e747\u6708\u958b\u767c\u6b64\u958b\u6e90 NFC\u6578\u4f4d\u540d\u7247\u7cfb\u7d71\u3002\u6709\u5225\u65bc\u50b3\u7d71\u9700\u8981\u5f8c\u7aef\u4f3a\u670d\u5668\u5132\u5b58\u500b\u8cc7\u7684\u6578\u4f4d\u540d\u7247\uff0c\u672c\u5c08\u6848\u63a1\u7528\u300c\u96b1\u79c1\u512a\u5148\u300d\u7406\u5ff5\uff0c\u5c07\u500b\u4eba\u8cc7\u6599\u76f4\u63a5\u5132\u5b58\u5728 NFC \u5361\u7247\u4e2d\uff0c\u900f\u904e\u7d14\u524d\u7aef\u67b6\u69cb\u5be6\u73fe\u4e00\u89f8\u5373\u7528\u7684\u6578\u4f4d\u540d\u7247\u529f\u80fd\u3002\u5167\u5efa\u591a\u5c64\u5b89\u5168\u9632\u8b77\u6a5f\u5236\uff0c\u5305\u542b DOMPurify 3.2.4 XSS \u9632\u8b77\u3001URL \u9a57\u8b49\u8207\u60e1\u610f\u8cc7\u6599\u904e\u6ffe\uff0c\u78ba\u4fdd\u4f7f\u7528\u8005\u8cc7\u6599\u5b89\u5168\u8207\u96b1\u79c1\u5b8c\u5168\u81ea\u4e3b\u638c\u63a7\u3002\n\n [DB-Card \u4e3b\u8981\u7a0b\u5f0f\u5eab]\u3000github\u9023\u7d50\u63cf\u8ff0\uff1a\n  \u5b8c\u6574\u7684 NFC \u6578\u4f4d\u540d\u7247\u7cfb\u7d71\u524d\u7aef\u7a0b\u5f0f\u78bc\uff0c\u5305\u542b\uff1a\n  - \u7d14\u524d\u7aef HTML/CSS/JavaScript \u5be6\u4f5c\n  - \u591a\u8a9e\u8a00\u6578\u4f4d\u540d\u7247\u4ecb\u9762\uff08\u4e2d\u82f1\u6587\u96d9\u8a9e\uff09\n  - NFC \u8cc7\u6599\u89e3\u6790\u8207\u52d5\u614b\u6e32\u67d3\u529f\u80fd\n  - SecurityUtils \u5b89\u5168\u9632\u8b77\u6a21\u7d44\n  - DOMPurify 3.2.4 XSS \u9632\u8b77\u6a5f\u5236\n  - QR Code \u751f\u6210\u8207 vCard \u532f\u51fa",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u591a\u8a9e\u7cfb",
+   "NFC \u4e00\u89f8\u5206\u4eab",
+   "\u96b1\u79c1\u512a\u5148\u8a2d\u8a08",
+   "\u52d5\u614b\u540d\u7247\u6e32\u67d3",
+   "\u667a\u6167 vCard \u532f\u51fa",
+   "\u5b89\u5168\u9632\u8b77\u6a5f\u5236",
+   "HTML/CSS",
+   "Javascript",
+   "Responsive Web Design",
+   "DOMPurify"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6578\u4f4d\u540d\u7247",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/DB-Card"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e \u767c\u884c\u7aef/\u9a57\u8b49\u7aef\u670d\u52d9\u6a21\u7d44",
+  "repo": "https://github.com/moda-gov-tw/TWDIW-official-app/tree/main/core-system",
+  "repo_key": "github.com/moda-gov-tw/twdiw-official-app",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Digital Credential Wallet - issuer and verifier service modules. Built around security and privacy, combining Decentralized Identity (DID) and Verifiable Credentials (VC) so users keep control of their digital documents across storage, authorisation and cross-agency use.",
+  "desc_lang": "en",
+  "desc_src": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e\u6280\u8853\u67b6\u69cb\u6982\u8ff0\n\u6578\u4f4d\u6191\u8b49\u76ae\u593e\u4ee5 \u5b89\u5168\u8207\u96b1\u79c1\u4fdd\u8b77 \u70ba\u6838\u5fc3\u8a2d\u8a08\u7406\u5ff5\uff0c\u7d50\u5408\u5206\u6563\u5f0f\u8b58\u5225\uff08Decentralized Identity, DID\uff09\u8207\u53ef\u9a57\u8b49\u6191\u8b49\uff08Verifiable Credential, VC\uff09\u6280\u8853\uff0c\u78ba\u4fdd\u4f7f\u7528\u8005\u7684\u6578\u4f4d\u8b49\u4ef6\u5728\u4efb\u4f55\u60c5\u6cc1\u4e0b\u90fd\u80fd\u5b89\u5168\u638c\u63a7\u3002\n \u7121\u8ad6\u662f\u8cc7\u6599\u5132\u5b58\u3001\u6388\u6b0a\u9a57\u8b49\u6216\u8de8\u6a5f\u95dc\u4e92\u4fe1\uff0c\u6574\u9ad4\u67b6\u69cb\u7686\u4ee5\u300c\u4f7f\u7528\u8005\u81ea\u4e3b\u3001\u5b89\u5168\u53ef\u4fe1\u300d\u70ba\u6700\u9ad8\u539f\u5247\u3002\n\u9a57\u8b49\u4e09\u89d2\u67b6\u69cb\n\u6574\u9ad4\u7cfb\u7d71\u7531\u4e09\u5927\u6838\u5fc3\u5143\u4ef6\u69cb\u6210\uff1a\n\u25cf\t\u6578\u4f4d\u6191\u8b49\u76ae\u593e App\uff1a\u5b89\u88dd\u65bc\u4f7f\u7528\u8005\u884c\u52d5\u88dd\u7f6e\uff0c\u4f5c\u70ba\u6578\u4f4d\u8b49\u4ef6\u8207\u6191\u8b49\u7684\u8f09\u9ad4\u3002\n\u25cf\t\u767c\u884c\u7aef\u6a21\u7d44\uff1a\u7531\u5404\u6a5f\u95dc\u6216\u7d44\u7e54\u90e8\u7f72\uff0c\u8ca0\u8cac\u7c3d\u767c\u6578\u4f4d\u6191\u8b49\u3002\n\u25cf\t\u9a57\u8b49\u7aef\u6a21\u7d44\uff1a\u7531\u53d7\u7406\u55ae\u4f4d\u90e8\u7f72\uff0c\u7528\u4ee5\u9a57\u8b49\u4f7f\u7528\u8005\u6240\u51fa\u793a\u7684\u6191\u8b49\u771f\u507d\u3002\n\u4e09\u8005\u5171\u540c\u69cb\u7bc9\u4e86\u5b89\u5168\u3001\u53ef\u4fe1\u3001\u5206\u6563\u5f0f\u7684\u300c\u9a57\u8b49\u4e09\u89d2\u300d\u67b6\u69cb\u3002\n\u6578\u4f4d\u6191\u8b49\u76ae\u593e App \u8207\u767c\u884c\u7aef\u3001\u9a57\u8b49\u7aef\u670d\u52d9\u9593\u7684\u6240\u6709\u4e92\u52d5\uff0c\u7686\u900f\u904e App SDK \u5be6\u73fe\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "OID4VC",
+   "OID4VP",
+   "\u5171\u7528\u5143\u4ef6",
+   "\u5171\u7528\u7a0b\u5f0f\u914d\u7f6e",
+   "Java",
+   "SD-JWT",
+   "P-256\u6a62\u5713\u66f2\u7dda\u52a0\u5bc6",
+   "W3C DID",
+   "Flutter"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e \u767c\u884c\u7aef/\u9a57\u8b49\u7aef\u670d\u52d9\u6a21\u7d44",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/TWDIW-official-app/tree/main/core-system"
+   }
+  ],
+  "catalogue_count": 1,
+  "sources": [
+   "TW/code.gov.tw"
+  ],
+  "countries": [
+   "TW"
+  ],
+  "merged_count": 2,
+  "also_known_as": [
+   "\u6578\u4f4d\u6191\u8b49\u76ae\u593e APP SDK"
+  ]
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6578\u4f4d\u7522\u696d\u81ea\u9858\u6027\u6eab\u5ba4\u6c23\u9ad4\u76e4\u67e5\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/moda-ghg-inventory-system-frontend",
+  "repo_key": "github.com/moda-gov-tw/moda-ghg-inventory-system-frontend",
+  "license": "\u7db2\u9801\u6587\u5b57\u5716\u7247\u63a1\u53d6 CC0 \u6388\u6b0a\u65b9\u5f0f\uff0c\u7a0b\u5f0f\u78bc\u63a1\u53d6 MIT \u7684\u6388\u6b0a\u65b9\u5f0f",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Voluntary greenhouse gas inventory system for the digital industry. Supports Taiwan's 2050 net-zero target through public code and public-private collaboration, led by moda, providing a carbon inventory system others can reuse and lowering the barrier to self-assessment.",
+  "desc_lang": "en",
+  "desc_src": "\u70ba\u843d\u5be6\u81fa\u70632050\u6de8\u96f6\u76ee\u6a19, \u57fa\u65bc\u516c\u5171\u7a0b\u5f0f\u78bc\u7684\u7406\u5ff5\uff0c\u4ee5\u516c\u79c1\u5354\u529b\u65b9\u5f0f\u767c\u5c55\u53ef\u884c\u4e4b\u6578\u4f4d\u5de5\u5177, \u4ee5\u6578\u4f4d\u90e8\u70ba\u9996\uff0c\u793a\u7bc4\u5c07\u516c\u5171\u7a0b\u5f0f\u78bc\u6a21\u5f0f\u5c0e\u5165\u516c\u90e8\u9580\u53ca\u6578\u4f4d\u7522\u696d\uff0c\u63a8\u52d5\u653f\u5e9c\u958b\u653e\u8cc7\u6599\u3001\u8207\u6c11\u5354\u4f5c\u7684\u5021\u8b70, \u5efa\u7acb\u78b3\u76e4\u67e5\u7cfb\u7d71\u516c\u5171\u7a0b\u5f0f\uff0c\u63d0\u4f9b\u5404\u754c\u904b\u7528\uff0c\u964d\u4f4e\u81ea\u4e3b\u78b3\u76e4\u67e5\u9580\u6abb\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u500b\u6848\u7ba1\u7406",
+   "\u6578\u64da\u5448\u73fe",
+   "MySQL",
+   "ASP.NET Core",
+   "C#"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6578\u4f4d\u7522\u696d\u81ea\u9858\u6027\u6eab\u5ba4\u6c23\u9ad4\u76e4\u67e5\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/moda-ghg-inventory-system-frontend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6578\u4f4d\u767c\u5c55\u90e8\u5168\u7403\u8cc7\u8a0a\u7db2",
+  "repo": "https://github.com/moda-gov-tw/moda-official-website-full",
+  "repo_key": "github.com/moda-gov-tw/moda-official-website-full",
+  "landing": "https://moda.gov.tw/",
+  "license": "MIT License",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "moda global website. The Ministry of Digital Affairs' website - a full content management system conveying digital development plans and outcomes to the public and to other agencies. Its source was planned as open from the outset so bodies with similar needs can fork it; user-centred by design.",
+  "desc_lang": "en",
+  "desc_src": "\u6578\u4f4d\u767c\u5c55\u90e8\u5168\u7403\u8cc7\u8a0a\u7db2\uff0c\u9ad4\u73fe\u653f\u5e9c\u8207\u6c11\u773e\u3001\u653f\u5e9c\u8207\u653f\u5e9c\u9593\u50b3\u905e\u6578\u4f4d\u767c\u5c55\u898f\u5283\u7406\u5ff5\u53ca\u65bd\u653f\u6210\u679c\u7684\u7db2\u7ad9\uff0c\u662f\u5b8c\u6574\u7684\u5167\u5bb9\u7ba1\u7406\u7cfb\u7d71\uff08Content Management System\uff09\uff1b\u767c\u5c55\u4e4b\u521d\u5373\u898f\u5283\u6574\u9ad4\u7a0b\u5f0f\u539f\u59cb\u78bc\u958b\u653e\u4e88\u5404\u754c\uff0c\u63d0\u4f9b\u4e00\u5957\u53ef\u4ee5\u53c3\u8003\u7684\u89e3\u6c7a\u65b9\u6848\uff0c\u65b9\u4fbf\u61c9\u7528\u60c5\u5883\u76f8\u4f3c\u7684\u6a5f\u95dc\u5718\u9ad4 Fork \u4f7f\u7528\uff1b\u7db2\u7ad9\u4ee5\u4f7f\u7528\u8005\u70ba\u4e2d\u5fc3\u8a2d\u8a08\u3001\u7b26\u5408\u7db2\u7ad9\u7121\u969c\u7919\u898f\u7bc4\u3001\u63d0\u4f9b\u591a\u570b\u8a9e\u7cfb\u67b6\u69cb\u3001\u652f\u63f4\u5168\u7ad9\u975c\u614b\u5316\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "HTML/CSS",
+   "Javascript",
+   "ASP.NET Core",
+   "C#",
+   "SQL Server"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6578\u4f4d\u767c\u5c55\u90e8\u5168\u7403\u8cc7\u8a0a\u7db2",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/moda-official-website-full"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6578\u64da\u5206\u6790\u5716\u793a\u5316\u7db2\u7ad9",
+  "repo": "https://github.com/moda-gov-tw/data-analysis-graph",
+  "repo_key": "github.com/moda-gov-tw/data-analysis-graph",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Data visualisation website. Example functionality for turning raw data into charts, making complex data easier to read. Includes a front/back-end web framework example and conversion of data into various graph types via Cytoscape.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u9700\u8981\u5c07\u539f\u59cb\u6578\u64da\u8f49\u70ba\u53ef\u8996\u5316\u5716\u8868\u6642\uff0c\u672c\u7db2\u7ad9\u63d0\u4f9b\u6578\u64da\u8f49\u63db\u70ba\u5404\u985e\u5716\u8868\u7684\u7bc4\u4f8b\u529f\u80fd\uff0c\u89e3\u6c7a\u4e86\u539f\u59cb\u6578\u64da\u96e3\u4ee5\u76f4\u89c0\u5448\u73fe\u7684\u554f\u984c\u3002\u900f\u904e\u6b64\u529f\u80fd\uff0c\u7528\u6236\u80fd\u5c07\u8907\u96dc\u7684\u6578\u64da\u8f49\u63db\u70ba\u6613\u65bc\u7406\u89e3\u7684\u5716\u5f62\uff0c\u9054\u5230\u63d0\u5347\u6578\u64da\u5206\u6790\u6548\u7387\u8207\u8996\u89ba\u5316\u5448\u73fe\u6548\u679c\u7684\u76ee\u7684\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u524d\u5f8c\u7aef\u7db2\u7ad9\u6846\u67b6\u7bc4\u4f8b\r\n2. \u8cc7\u6599\u900f\u904eCytoscape\u8f49\u63db\u6210\u5404\u985e\u5716\u5f62\u7bc4\u4f8b\r\n3. \u4f7f\u7528Vue3\u523b\u5283\u9801\u9762\u5c55\u793a\u8cc7\u6599\u5716\u8996\u5316\u6548\u679c",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8cc7\u6599/\u6a94\u6848\u8f49\u63db",
+   "\u5716\u8996\u5316",
+   "\u7db2\u7ad9\u6846\u67b6",
+   "\u6578\u64da\u5206\u6790",
+   "Vue.js",
+   "Javascript",
+   "Spring Boot",
+   "Cytoscape"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6578\u64da\u5206\u6790\u5716\u793a\u5316\u7db2\u7ad9",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/data-analysis-graph"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6a94\u6848\u50b3\u8f38\u6848\u4ef6\u7ba1\u7406\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/files-flow-tran-shub",
+  "repo_key": "github.com/moda-gov-tw/files-flow-tran-shub",
+  "license": "Apache 2.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "File transfer case management system. Centralises automated file transfers so transfer records can be audited and performance measured: it runs registered transfer services, obtains source and destination connection details, downloads from the source file server and uploads automatically to the destination.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u9700\u8981\u8cc7\u8a0a\u7cfb\u7d71\u81ea\u52d5\u5316\u6a94\u6848\u50b3\u8f38\u9032\u884c\u96c6\u4e2d\u7ba1\u7406\uff0c\u4ee5\u6709\u6548\u7a3d\u6838\u8ffd\u8e64\u6a94\u6848\u50b3\u8f38\u7d00\u9304\u53ca\u7d71\u8a08\u8cc7\u6599\u50b3\u8f38\u61c9\u7528\u7684\u7e3e\u6548\u6642\uff0c\u672c\u7cfb\u7d71\u63d0\u4f9b\u81ea\u52d5\u5316\u6a94\u6848\u50b3\u8f38\u8a18\u9304\u53ca\u7ba1\u7406\u529f\u80fd\uff0c\u89e3\u6c7a\u8de8\u7cfb\u7d71\u50b3\u8f38\u6a94\u6848\u7ba1\u7406\u6210\u672c\u9ad8\u6602\u4e14\u7d00\u9304\u5f59\u6574\u932f\u8aa4\u7e41\u7463\u7684\u554f\u984c\u3002\u672c\u7cfb\u7d71\u53ef\u81ea\u52d5\u5316\u57f7\u884c\u4f9d\u64da\u8a3b\u518a\u597d\u7684\u50b3\u8f38\u670d\u52d9\uff0c\u53d6\u5f97\u4f86\u6e90\u8207\u76ee\u7684\u7aef\u7684\u9023\u7dda\u8cc7\u8a0a\uff0c\u5f9e\u4f86\u6e90\u7aef\u6a94\u6848\u4f3a\u670d\u5668\u4e0b\u8f09\u6a94\u6848\uff0c\u4e26\u81ea\u52d5\u4e0a\u50b3\u81f3\u76ee\u7684\u7aef\u4f3a\u670d\u5668\u3002\r\n\r\n\u8de8\u8cc7\u8a0a\u7cfb\u7d71\u6574\u5408\u6642\uff0c\u4ea6\u53ef\u900f\u904e REST API \u767c\u52d5\u6a94\u6848\u50b3\u8f38\u4f5c\u696d\uff0c\u7cfb\u7d71\u5247\u6703\u5c07\u6240\u6709\u50b3\u8f38\u72c0\u614b\u8207\u4ea4\u63db\u6b77\u7a0b\u8a73\u7d30\u8a18\u9304\u81f3\u8cc7\u6599\u5eab\u3002\u900f\u904e\u7c21\u55ae\u7684\u7ba1\u7406\u4ecb\u9762\uff0c\u4f7f\u7528\u8005\u80fd\u65b9\u4fbf\u7ba1\u7406\u6a94\u6848\u50b3\u8f38\u8a2d\u5b9a\u8207\u67e5\u770b\u50b3\u8f38\u751f\u547d\u9031\u671f\u7684\u7d00\u9304\uff0c\u9054\u5230\u63d0\u5347\u6a94\u6848\u50b3\u8f38\u6548\u7387\u8207\u6709\u6548\u61c9\u7528\u7ba1\u7406\u50b3\u8f38\u7d00\u9304\u4e4b\u76ee\u7684\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u4f86\u6e90\u7aef\u8207\u76ee\u7684\u7aef\u8a2d\u5b9a\r\n2. \u6a94\u6848\u50b3\u8f38\r\n3. \u6a94\u6848\u50b3\u8f38\u8a18\u9304\r\n4. SFTP\u9023\u7dda\u6e2c\u8a66",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u81ea\u52d5\u5316",
+   "\u96c6\u4e2d\u7ba1\u7406",
+   "\u4ecb\u63a5/\u50b3\u8f38",
+   "Spring Boot",
+   "Spring Data JPA",
+   "Hibernate",
+   "H2 Database"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6a94\u6848\u50b3\u8f38\u6848\u4ef6\u7ba1\u7406\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/files-flow-tran-shub"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u6d88\u9632\u8a2d\u5099\u81ea\u884c\u7533\u5831\u81ea\u52d5\u6392\u7a0b\u7cfb\u7d71(\u524d\u7aef)",
+  "repo": "https://github.com/shuanowenLiou/tt-reservation-2026-main-v2",
+  "repo_key": "github.com/shuanowenliou/tt-reservation-2026-main-v2",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Online self-declaration system for fire safety equipment inspection (front end). The public can upload declarations quickly and track case progress; digital handling makes review more efficient.",
+  "desc_lang": "en",
+  "desc_src": "\u6d88\u9632\u5b89\u5168\u8a2d\u5099\u6aa2\u4fee\u7dda\u4e0a\u7533\u5831\u7cfb\u7d71\uff0c\u6c11\u773e\u53ef\u5feb\u901f\u4e0a\u50b3\u7533\u5831\u66f8\u4e26\u8ffd\u8e64\u6848\u4ef6\u9032\u5ea6\uff0c\u6578\u4f4d\u5316\u7ba1\u7406\u8b93\u5be9\u6838\u66f4\u6709\u6548\u7387\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u7c21\u6613\u6d88\u9632\u81ea\u4e3b\u7533\u5831",
+   "\u6578\u4f4d\u5316\u7ba1\u7406",
+   "Node.js",
+   "Javascript",
+   "MySQL",
+   "Python",
+   "React",
+   "Docker"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u6d88\u9632\u8a2d\u5099\u81ea\u884c\u7533\u5831\u81ea\u52d5\u6392\u7a0b\u7cfb\u7d71(\u524d\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/shuanowenLiou/tt-reservation-2026-main-v2"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u707d\u5bb3\u5f71\u97ff\u8a55\u4f30\u5e73\u81fa",
+  "repo": "https://github.com/tainancity/tainanthon2024-water-resource-map-application",
+  "repo_key": "github.com/tainancity/tainanthon2024-water-resource-map-application",
+  "license": "MIT License",
+  "repo_owner": "\u81fa\u5357\u5e02\u653f\u5e9c",
+  "short_desc": "Disaster impact assessment platform. Built at the 2024 AI Tainan hackathon by Tainan's Hydraulic Engineering Bureau with the \"Five More Minutes of Water\" civic team: mark polygons on a map (flood extent) and automatically compute area, household and population counts to assess post-disaster impact.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u5c08\u6848\u70ba\u300c2024\u5e74AI\u81fa\u5357\u6578\u4f4d\u57ce\u5e02\u6cbb\u7406\u9ed1\u5ba2\u677e\u300d\u7531\u81fa\u5357\u5e02\u6c34\u5229\u5c40\u8207\u516c\u6c11\u5718\u968a\u300c\u518d\u6c34\u4e94\u5206\u9418\u300d\u5408\u4f5c\u958b\u767c\u7684\u707d\u5bb3\u5f71\u97ff\u8a55\u4f30\u5e73\u81fa\uff0c\u4e3b\u8981\u529f\u80fd\u662f\u958b\u767c\u5730\u5716\u7bc4\u570d\u8cc7\u8a0a\u6a19\u8a18\u5de5\u5177\uff0c\u5354\u52a9\u4f7f\u7528\u8005\u53ef\u4ee5\u5728\u5730\u5716\u4e0a\u6a19\u8a18\u591a\u908a\u5f62\u7bc4\u570d\uff08\u6df9\u6c34\u5f71\u97ff\u7bc4\u570d\uff09\uff0c\u81ea\u52d5\u8a08\u7b97\u8a72\u7bc4\u570d\u7684\u9762\u7a4d\u3001\u6236\u6578\u8207\u4eba\u53e3\u6578\uff0c\u8f14\u52a9\u6a5f\u95dc\u4f9d\u6df9\u6c34\u7bc4\u570d\u8a55\u4f30\u707d\u5f8c\u5f71\u97ff\uff0c\u672a\u4f86\u66f4\u53ef\u64f4\u5c55\u70ba\u7d00\u9304\u5be6\u969b\u6df9\u6c34\u7bc4\u570d\u4f5c\u70ba\u958b\u653e\u8cc7\u6599\uff0c\u4ee5\u5229\u5916\u90e8\u5229\u7528\u8207\u5206\u6790\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "\u6578\u64da\u5448\u73fe",
+   "Python",
+   "Dockerfile"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u707d\u5bb3\u5f71\u97ff\u8a55\u4f30\u5e73\u81fa",
+    "entry_url": null,
+    "repo_url": "https://github.com/tainancity/tainanthon2024-water-resource-map-application"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u707d\u9632\u8cc7\u6599\u5f59\u6574\u7cfb\u7d71(\u5f8c\u7aef)",
+  "repo": "https://github.com/shuanowenLiou/tainan-ai-driven-data-hub-main-20251113T060529Z-1-001",
+  "repo_key": "github.com/shuanowenliou/tainan-ai-driven-data-hub-main-20251113t060529z-1-001",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Disaster-data consolidation system (back end), from moda's 2025 Civic Technology Pilot Field, built with Tainan City's Smart Development Centre. City departments upload preliminary disaster statistics as spreadsheets; AI converts them to a uniform JSON format and natural-language queries return summaries.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c114\u5e74\u6578\u767c\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u300d\u5c08\u6848\uff0c\u7531\u300c\u5168\u90e8\u650f \u00e0i \u4e88\u6211\u707d\u300d\u5718\u968a\u8207\u81fa\u5357\u5e02\u653f\u5e9c\u667a\u6167\u767c\u5c55\u4e2d\u5fc3\u5171\u540c\u5408\u4f5c\u958b\u767c\u4e4b\u300c\u707d\u9632\u8cc7\u6599\u5f59\u6574\u7cfb\u7d71\u300d\u3002\u672c\u7cfb\u7d71\u5354\u52a9\u5e02\u5e9c\u55ae\u4f4d\u5728\u707d\u5bb3\u767c\u751f\u6642\uff0c\u5404\u5c40\u8655\u53ef\u5c07\u521d\u6b65\u5f59\u6574\u4e4b\u707d\u5bb3\u7d71\u8a08\u8cc7\u6599\u4ee5 excel\u8868\u5f62\u5f0f\u4e0a\u50b3\uff0c\u8b93AI\u9032\u884c\u5224\u8b80\u8f49\u70ba\u70ba\u7d71\u4e00json\u683c\u5f0f\uff0c\u4e26\u4f7f\u7528\u81ea\u7136\u8a9e\u8a00\u5c0d\u8a71\u5feb\u901f\u53d6\u5f97\u8cc7\u6599\u5f59\u7e3d\u7d50\u679c\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u7ba1\u7406\u529f\u80fd",
+   "\u5168\u57df\u6b04\u4f4d\u8a2d\u5b9a",
+   "\u8cc7\u6599\u96c6\u8a2d\u5b9a",
+   "AI\u5c0d\u8a71",
+   "Vue.js",
+   "Javascript",
+   "Tailwind CSS"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u707d\u9632\u8cc7\u6599\u5f59\u6574\u7cfb\u7d71(\u5f8c\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/shuanowenLiou/tainan-ai-driven-data-hub-main-20251113T060529Z-1-001"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u7121\u4eba\u6a5f\u641c\u6551\u5f71\u50cf\u8fa8\u8b58",
+  "repo": "https://github.com/tainancity/tainanthon2024-drone-human-detection",
+  "repo_key": "github.com/tainancity/tainanthon2024-drone-human-detection",
+  "license": "MIT License",
+  "repo_owner": "\u81fa\u5357\u5e02\u653f\u5e9c",
+  "short_desc": "Drone search-and-rescue image recognition. Built at the 2024 AI Tainan hackathon with Tainan's Fire Bureau: an RT-DETR model processes aerial footage at the edge to locate targets in water, helping rescuers search faster.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u5c08\u6848\u70ba\u300c2024\u5e74AI\u81fa\u5357\u6578\u4f4d\u57ce\u5e02\u6cbb\u7406\u9ed1\u5ba2\u677e\u300d\u7531\u81fa\u5357\u5e02\u6d88\u9632\u5c40\u8207\u516c\u6c11\u5718\u968a\u5408\u4f5c\u958b\u767c\u7684\u81ea\u52d5\u5316AI\u8fa8\u8b58\u641c\u6551\u7cfb\u7d71\uff0c\u7cfb\u7d71\u4f7f\u7528RT-DETR\u6a21\u578b\u67b6\u69cb\u9032\u884c\u5f71\u50cf\u8fa8\u8b58\uff0c\u901a\u904e\u908a\u7de3\u904b\u7b97\u5373\u6642\u8655\u7406\u7a7a\u62cd\u756b\u9762\u4e26\u5b9a\u4f4d\u76ee\u6a19\uff0c\u8f14\u52a9\u641c\u6551\u4eba\u54e1\u5feb\u901f\u641c\u5c0b\u6c34\u4e2d\u76ee\u6a19\uff0c\u63d0\u5347\u641c\u6551\u6548\u7387\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6578\u64da\u5448\u73fe",
+   "Python"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u7121\u4eba\u6a5f\u641c\u6551\u5f71\u50cf\u8fa8\u8b58",
+    "entry_url": null,
+    "repo_url": "https://github.com/tainancity/tainanthon2024-drone-human-detection"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u7db2\u7ad9\u9632\u7ac4\u6539\u5075\u6e2c\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/website-tampering-detection-system",
+  "repo_key": "github.com/moda-gov-tw/website-tampering-detection-system",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Website tamper-detection system. Monitors file directories for unauthorised modification, notifies staff immediately when tampering is detected, and automatically restores the original directory contents.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u7279\u5b9a\u7db2\u7ad9\u6216\u7cfb\u7d71\u7684\u6a94\u6848\u76ee\u9304\u9700\u8981\u6642\u6642\u76e3\u63a7\u4ee5\u78ba\u4fdd\u672a\u7d93\u6388\u6b0a\u9032\u884c\u7ac4\u6539\u6642\uff0c\u672c\u7cfb\u7d71\u63d0\u4f9b\u6a94\u6848\u76ee\u9304\u5075\u6e2c\u53ca\u9084\u539f\u529f\u80fd\uff0c\u89e3\u6c7a\u7cfb\u7d71\u4e2d\u6a94\u6848\u906d\u53d7\u5165\u4fb5\u7ac4\u6539\u6642\u96e3\u4ee5\u53ca\u6642\u767c\u73fe\u8207\u6062\u5fa9\u7684\u554f\u984c\u3002\r\n\r\n\u672c\u7cfb\u7d71\u80fd\u5373\u6642\u5075\u6e2c\u5230\u76ee\u6a19\u7cfb\u7d71\u4e2d\u76ee\u9304\u4e2d\u7684\u8b8a\u66f4\u72c0\u614b\uff0c\u4e26\u5728\u767c\u73fe\u6a94\u6848\u88ab\u7ac4\u6539\u6642\uff0c\u7acb\u5373\u901a\u77e5\u76f8\u95dc\u4eba\u54e1\uff0c\u540c\u6642\u81ea\u52d5\u9084\u539f\u76ee\u9304\u6a94\u6848\u7684\u539f\u59cb\u5167\u5bb9\uff0c\u9054\u5230\u4fdd\u969c\u7cfb\u7d71\u5b89\u5168\u7dad\u904b\u8207\u8cc7\u6599\u5b8c\u6574\u6027\u7684\u76ee\u7684\u3002\r\n\r\n\u7c21\u5217\u8aaa\u660e\uff1a\r\n1. \u5075\u6e2c\u7d00\u9304\u67e5\u8a62\r\n2. \u5075\u6e2c\u7db2\u7ad9\u8a2d\u5b9a\r\n3. \u901a\u77e5\u8a2d\u5b9a\r\n4. \u53d7\u7ac4\u6539\u9084\u539f\u8a2d\u5b9a",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8a0a\u606f\u8655\u7406/\u901a\u77e5",
+   "\u7db2\u7ad9\u9632\u7ac4\u6539",
+   "\u6a94\u6848\u76ee\u9304\u5075\u6e2c",
+   "Spring Boot",
+   "Spring Data JPA",
+   "Hibernate",
+   "H2 Database"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u7db2\u7ad9\u9632\u7ac4\u6539\u5075\u6e2c\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/website-tampering-detection-system"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u81fa\u4e2d\u5e02\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u5e73\u81fa\u524d\u7aef",
+  "repo": "https://github.com/Tccod/tccod-opensource",
+  "repo_key": "github.com/tccod/tccod-opensource",
+  "landing": "https://opendata.taichung.gov.tw/",
+  "license": "\u7a0b\u5f0f\u78bc\u70baMIT License\u6388\u6b0a\uff0c\u5716\u50cf\u70baCC0\u6388\u6b0a",
+  "repo_owner": "\u81fa\u4e2d\u5e02\u653f\u5e9c\u6578\u4f4d\u767c\u5c55\u5c40",
+  "short_desc": "The Taichung City open data platform gathers open data and geospatial imagery from every city agency. Its front-end source code is published as public code, as a reference for industry, government and academia.",
+  "desc_lang": "en",
+  "desc_src": "\u81fa\u4e2d\u5e02\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u5e73\u81fa\u81f4\u529b\u65bc\u532f\u96c6\u5168\u5e02\u5404\u6a5f\u95dc\u4e4b\u958b\u653e\u8cc7\u6599\u8207\u5730\u7406\u5716\u8cc7\u3002\u70ba\u843d\u5be6\u516c\u5171\u7a0b\u5f0f\u7406\u5ff5\uff0c\u672c\u5e73\u81fa\u958b\u653e\u524d\u7aef\u539f\u59cb\u78bc\uff0c\u65e8\u5728\u63d0\u4f9b\u7522\u5b98\u5b78\u5404\u754c\u958b\u767c\u8207\u61c9\u7528\u4e4b\u53c3\u8003\u3002\u900f\u904e\u8cc7\u6e90\u5171\u4eab\u8207\u900f\u660e\u5316\uff0c\u63a8\u52d5\u516c\u79c1\u5354\u529b\u8207\u793e\u7fa4\u5171\u5275\uff0c\u5171\u540c\u5efa\u69cb\u66f4\u5177\u97cc\u6027\u7684\u653f\u5e9c\u8cc7\u6599\u751f\u614b\u7cfb\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u958b\u653e\u8cc7\u6599\u4e00\u89bd",
+   "\u6aa2\u7d22",
+   "\u4e0b\u8f09\u53ca\u958b\u653e\u5716\u8cc7\u5c08\u5340",
+   "Vue.js",
+   "TypeScript",
+   "Nuxt",
+   "element-plus"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u81fa\u4e2d\u5e02\u653f\u5e9c\u8cc7\u6599\u958b\u653e\u5e73\u81fa\u524d\u7aef",
+    "entry_url": null,
+    "repo_url": "https://github.com/Tccod/tccod-opensource"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u81fa\u5317\u57ce\u5e02\u5100\u8868\u677f",
+  "repo": "https://github.com/tpe-doit/Taipei-City-Dashboard",
+  "repo_key": "github.com/tpe-doit/taipei-city-dashboard",
+  "landing": "https://citydashboard.taipei/",
+  "license": "AGPL-3",
+  "repo_owner": "\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40",
+  "short_desc": "Taipei City Dashboard. Cross-references map layers and data charts, presenting trends across time, space and statistics, and letting users build custom themed pages to follow the city's pulse inside a virtual 3D map.",
+  "desc_lang": "en",
+  "desc_src": "\u81fa\u5317\u57ce\u5e02\u5100\u8868\u677f\u63d0\u4f9b\u4f7f\u7528\u8005\u9032\u884c\u5716\u8cc7\u53ca\u6578\u64da\u5716\u8868\u7684\u4ea4\u53c9\u67e5\u95b1\uff0c\u4ee5\u8cc7\u6599\u6642\u9593\u3001\u7a7a\u9593\u53ca\u7d71\u8a08\u7b49\u591a\u7dad\u5ea6\u8da8\u52e2\u5448\u73fe\uff0c\u4e26\u4f9b\u4f7f\u7528\u8005\u53ef\u91dd\u5c0d\u95dc\u6ce8\u7684\u91cd\u9ede\u8cc7\u6599\uff0c\u81ea\u884c\u5ba2\u88fd\u4e3b\u984c\u9801\u9762\uff0c\u8b93\u4f7f\u7528\u8005\u80fd\u5728\u865b\u64ec\u7684\u4e09\u7dad\u5716\u53f0\u5167\uff0c\u66f4\u5373\u6642\u7684\u638c\u63e1\u57ce\u5e02\u8108\u52d5\u8207\u5206\u6790\u76f8\u95dc\u6578\u64da\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "\u6578\u64da\u5448\u73fe",
+   "Vue.js",
+   "Python",
+   "SQL Server",
+   "Go",
+   "PostgreSQL",
+   "Redis"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u81fa\u5317\u57ce\u5e02\u5100\u8868\u677f",
+    "entry_url": null,
+    "repo_url": "https://github.com/tpe-doit/Taipei-City-Dashboard"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u81fa\u5317\u7a0b\u5f0f\u8a2d\u8a08\u7bc0\u6d3b\u52d5\u7db2\u7ad9",
+  "repo": "https://github.com/taipei-doit/codefest.taipei",
+  "repo_key": "github.com/taipei-doit/codefest.taipei",
+  "landing": "https://codefest.taipei/welcome/",
+  "repo_owner": "\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40",
+  "short_desc": "Taipei Coding Festival event website. Taipei City's Department of Information Technology has run this open source outreach event since 2023; this is the new event site for publishing information and taking registrations, deployed to the cloud and released as open source to sustain the public code effort.",
+  "desc_lang": "en",
+  "desc_src": "\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40\u81ea112\u5e74\u8d77\u6301\u7e8c\u8fa6\u7406\u300c\u81fa\u5317\u7a0b\u5f0f\u8a2d\u8a08\u7bc0\u300d\u4e4b\u958b\u6e90\u63a8\u5ee3\u6d3b\u52d5\uff0c\u672c\u6b21\u958b\u767c\u65b0\u7248\u6d3b\u52d5\u7db2\u7ad9\uff0c\u4f9b\u4e3b\u8fa6\u55ae\u4f4d\u767c\u5e03\u6d3b\u52d5\u8cc7\u8a0a\u53ca\u958b\u653e\u4f7f\u7528\u8005\u5831\u540d\u53c3\u52a0\uff0c\u5c07\u6d3b\u52d5\u7db2\u7ad9\u90e8\u7f72\u65bc\u96f2\u7aef\u74b0\u5883\u4ee5\u63d0\u9ad8\u9748\u6d3b\u6027\uff0c\u540c\u6642\u843d\u5be6\u81fa\u5317\u5e02\u653f\u5e9c\u8cc7\u8a0a\u5c40\u958b\u6e90\u7cbe\u795e\uff0c\u958b\u653e\u539f\u59cb\u78bc\u53ca\u7d93\u71df\u5c08\u6848\u793e\u7fa4\uff0c\u4ee5\u4fc3\u9032\u958b\u767c\u8005\u4ea4\u6d41\u56de\u994b\u53ca\u9054\u6210\u958b\u6e90\u516c\u5171\u7a0b\u5f0f\u7684\u5ef6\u7e8c\u6027\u3002\n\n\u672c\u7db2\u7ad9\u70ba\u6d3b\u52d5\u5831\u540d\u7db2\u7ad9\u6a21\u677f\uff0c\u5404\u6a5f\u95dc\u53ef\u53c3\u8003\u6b64\u7db2\u7ad9\u6a21\u677f\u9032\u884c\u5229\u7528\u958b\u767c\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u7af6\u8cfd\u898f\u5247",
+   "\u91cd\u8981\u6642\u7a0b",
+   "FAQ",
+   "Node.js",
+   "Nuxt",
+   "NPM"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u81fa\u5317\u7a0b\u5f0f\u8a2d\u8a08\u7bc0\u6d3b\u52d5\u7db2\u7ad9",
+    "entry_url": null,
+    "repo_url": "https://github.com/taipei-doit/codefest.taipei"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u81fa\u5357\u5e02\u767b\u9769\u71b1\u9632\u75ab\u73fe\u5834\u6578\u4f4d\u5de5\u5177 - \u524d\u81fa",
+  "repo": "https://github.com/moda-gov-tw/civic-tech-experimental-field-dengue-frontend",
+  "repo_key": "github.com/moda-gov-tw/civic-tech-experimental-field-dengue-frontend",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Tainan dengue-prevention field digital tool (front end). A 2023 moda Civic Technology Pilot Field demonstrator built with Tainan City's Health Bureau to simplify dengue control workflows, replacing cumbersome manual verification with more timely information.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c112\u5e74\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300c\u597d\u60f3\u6253\u6d41\u611f\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u81fa\u5357\u5e02\u767b\u9769\u71b1\u9632\u75ab\u73fe\u5834\u6578\u4f4d\u5de5\u5177\u300d\u900f\u904e\u8207\u81fa\u5357\u5e02\u653f\u5e9c\u885b\u751f\u5c40\u7684\u5408\u4f5c\uff0c\u5354\u52a9\u958b\u767c\u6578\u4f4d\u5de5\u5177\u4ee5\u7c21\u5316\u767b\u9769\u71b1\u9632\u6cbb\u5de5\u4f5c\u4e0a\u7684\u6d41\u7a0b\uff0c\u4e26\u6539\u5584\u76ee\u524d\u7e41\u7463\u7684\u4eba\u5de5\u78ba\u8a8d\u4f5c\u696d\u53ca\u638c\u63e1\u66f4\u5373\u6642\u7684\u8cc7\u8a0a\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u500b\u6848\u7ba1\u7406",
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "\u6578\u64da\u5448\u73fe",
+   "Node.js",
+   "Vue.js",
+   "HTML/CSS",
+   "Javascript",
+   "MongoDB"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u81fa\u5357\u5e02\u767b\u9769\u71b1\u9632\u75ab\u73fe\u5834\u6578\u4f4d\u5de5\u5177 - \u524d\u81fa",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/civic-tech-experimental-field-dengue-frontend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u81fa\u5357\u5e02\u767b\u9769\u71b1\u9632\u75ab\u73fe\u5834\u6578\u4f4d\u5de5\u5177 - \u5f8c\u7aef",
+  "repo": "https://github.com/moda-gov-tw/civic-tech-experimental-field-dengue-backend",
+  "repo_key": "github.com/moda-gov-tw/civic-tech-experimental-field-dengue-backend",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Tainan dengue-prevention field digital tool (front end). A 2023 moda Civic Technology Pilot Field demonstrator built with Tainan City's Health Bureau to simplify dengue control workflows, replacing cumbersome manual verification with more timely information.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c112\u5e74\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300c\u597d\u60f3\u6253\u6d41\u611f\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u81fa\u5357\u5e02\u767b\u9769\u71b1\u9632\u75ab\u73fe\u5834\u6578\u4f4d\u5de5\u5177\u300d\u900f\u904e\u8207\u81fa\u5357\u5e02\u653f\u5e9c\u885b\u751f\u5c40\u7684\u5408\u4f5c\uff0c\u5354\u52a9\u958b\u767c\u6578\u4f4d\u5de5\u5177\u4ee5\u7c21\u5316\u767b\u9769\u71b1\u9632\u6cbb\u5de5\u4f5c\u4e0a\u7684\u6d41\u7a0b\uff0c\u4e26\u6539\u5584\u76ee\u524d\u7e41\u7463\u7684\u4eba\u5de5\u78ba\u8a8d\u4f5c\u696d\u53ca\u638c\u63e1\u66f4\u5373\u6642\u7684\u8cc7\u8a0a\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u500b\u6848\u7ba1\u7406",
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "\u8cc7\u6599\u4e00\u89bd/\u6aa2\u7d22",
+   "\u6578\u64da\u5448\u73fe",
+   "Node.js",
+   "Firebase Realtime Database",
+   "Vue.js",
+   "HTML/CSS",
+   "Javascript"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u81fa\u5357\u5e02\u767b\u9769\u71b1\u9632\u75ab\u73fe\u5834\u6578\u4f4d\u5de5\u5177 - \u5f8c\u7aef",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/civic-tech-experimental-field-dengue-backend"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u81fa\u5357\u6df9\u6c34\u907f\u96e3\u9ede\u8b66\u793a\u53ca\u5f15\u5c0e",
+  "repo": "https://github.com/tainancity/tainanthon2024-floodguard",
+  "repo_key": "github.com/tainancity/tainanthon2024-floodguard",
+  "repo_owner": "\u81fa\u5357\u5e02\u653f\u5e9c",
+  "short_desc": "Tainan flood shelter alerts and routing. Built at the 2024 AI Tainan Digital City Governance Hackathon after Typhoon Gaemi's levee overflow blocked evacuation routes: combines shelter data with crowd-reported road conditions to find passable evacuation routes during a disaster.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u5c08\u6848\u70ba\u300c2024\u5e74AI\u53f0\u5357\u6578\u4f4d\u57ce\u5e02\u6cbb\u7406\u9ed1\u5ba2\u677e\u300d\u7531\u516c\u6c11\u5718\u968a\u57fa\u65bc\u51f1\u7c73\u98b1\u98a8\u6ea2\u5824\u4e8b\u4ef6\u6c11\u773e\u907f\u96e3\u8def\u7dda\u53d7\u963b\u554f\u984c\uff0c\u958b\u767c\u7d50\u5408\u907f\u96e3\u8def\u5f91\u898f\u5283\u529f\u80fd\u7684\u61c9\u7528\u7cfb\u7d71\uff0c\u6574\u5408\u81fa\u5357\u5e02\u907f\u96e3\u6536\u5bb9\u8655\u6240\u8cc7\u6599\uff0c\u4e26\u900f\u904e\u7fa4\u773e\u56de\u5831\u6a5f\u5236\u6536\u96c6\u5373\u6642\u8def\u6cc1\u8cc7\u8a0a\uff0c\u5354\u52a9\u5728\u707d\u6642\u627e\u5230\u53ef\u901a\u884c\u7684\u5b89\u5168\u907f\u96e3\u8def\u7dda\uff0c\u8f14\u52a9\u63d0\u5347\u707d\u5bb3\u61c9\u8b8a\u6548\u7387\u8207\u907f\u96e3\u5b89\u5168\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8868\u55ae\u586b\u5beb/\u8cc7\u6599\u4e0a\u50b3",
+   "\u5730\u5716\u8cc7\u8a0a\u5448\u73fe",
+   "HTML/CSS",
+   "Javascript",
+   "Python"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u81fa\u5357\u6df9\u6c34\u907f\u96e3\u9ede\u8b66\u793a\u53ca\u5f15\u5c0e",
+    "entry_url": null,
+    "repo_url": "https://github.com/tainancity/tainanthon2024-floodguard"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u884c\u653f\u9662\u516c\u5171\u6578\u4f4d\u5275\u65b0\u7a7a\u9593\uff08PDIS\uff09\u90e8\u843d\u683c",
+  "repo": "https://github.com/PDIS/web-jekyll",
+  "repo_key": "github.com/pdis/web-jekyll",
+  "landing": "https://pdis.nat.gov.tw/",
+  "license": "\u9664\u53e6\u6709\u6a19\u793a\u5916\uff0c\u5167\u5bb9\u4ee5\u5275\u7528 CC BY 4.0 \u6388\u6b0a\u689d\u6b3e\u91cb\u51fa\u3002",
+  "repo_owner": "\u884c\u653f\u9662\u516c\u5171\u6578\u4f4d\u5275\u65b0\u7a7a\u9593\uff08PDIS\uff09",
+  "short_desc": "Public Digital Innovation Space (PDIS) blog. A Jekyll static site generator setup producing static HTML from plain markdown, bilingual in Chinese and English.",
+  "desc_lang": "en",
+  "desc_src": "\u884c\u653f\u9662\u516c\u5171\u6578\u4f4d\u5275\u65b0\u7a7a\u9593\uff08PDIS\uff09\u90e8\u843d\u683c\u3002 \u4e00\u5957\u4f7f\u7528 Jekyll \u975c\u614b\u7db2\u7ad9\u751f\u6210\u5668\uff0c\u5f9e\u7d14\u6587\u5b57\u7684 markdown \u6587\u4ef6\u7522\u751f\u975c\u614b HTML \u7684\u7cfb\u7d71\u3002\u5177\u5099\u4e2d\u3001\u82f1\u6587\u96d9\u8a9e\u7cfb\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u975c\u614b\u7db2\u7ad9\u7522\u751f\u5668",
+   "\u81ea\u52d5\u7ffb\u8b6f",
+   "Jekyll",
+   "Cloud Translation API"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u884c\u653f\u9662\u516c\u5171\u6578\u4f4d\u5275\u65b0\u7a7a\u9593\uff08PDIS\uff09\u90e8\u843d\u683c",
+    "entry_url": null,
+    "repo_url": "https://github.com/PDIS/web-jekyll"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u8cc7\u6599\u52a0\u5bc6\u50b3\u8f38\u5132\u5b58\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/data-encrypt-system",
+  "repo_key": "github.com/moda-gov-tw/data-encrypt-system",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Encrypted data transfer and storage system. Configurable strong algorithms (for example SHA3-256 or HMAC) protect sensitive information in transit, for use in API request authentication, data signing and related purposes.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u8cc7\u8a0a\u7cfb\u7d71\u9700\u8981\u9032\u884c\u8a0a\u606f\u6216\u6a94\u6848\u50b3\u8f38\u6642\uff0c\u53ef\u900f\u904e\u672c\u7cfb\u7d71\u8a2d\u5b9a\u5b89\u5168\u9ad8\u6548\u7684\u6f14\u7b97\u6cd5(\u4f8b\u5982\uff1aSha3_256\u6216HMAC)\u4f5c\u70ba\u6838\u5fc3\u52a0\u5bc6\u6280\u8853\uff0c\u89e3\u6c7a\u8cc7\u8a0a\u7cfb\u7d71\u5728\u50b3\u8f38\u904e\u7a0b\u4e2d\u654f\u611f\u8cc7\u8a0a\u53ef\u80fd\u906d\u53d7\u5916\u6d29\u7684\u554f\u984c\uff0c\u4e26\u78ba\u4fdd\u4f9d\u7167\u56b4\u683c\u7684\u5b89\u5168\u6a19\u6e96\u9032\u884c\u9632\u8b77\u3002\r\n\r\n\u8cc7\u8a0a\u7cfb\u7d71\u53ef\u900f\u904e\u672c\u7cfb\u540c\u63d0\u4f9b\u7684\u52a0\u5bc6\u6280\u8853\uff0c\u61c9\u7528\u5728\u61c9\u7528\u7a0b\u5f0f\u4ecb\u9762(API)\u8acb\u6c42\u9a57\u8b49\u3001\u8cc7\u6599\u7c3d\u7ae0\u8207\u5bc6\u78bc\u6b0a\u6756\u7684\u5132\u5b58\uff0c\u9032\u800c\u6709\u6548\u9632\u7bc4\u66b4\u529b\u7834\u89e3\u3001\u5b57\u5178\u653b\u64ca\u53ca\u91cd\u8907\u6027\u653b\u64ca\uff0c\u9054\u5230\u4fdd\u969c\u8cc7\u6599\u5b89\u5168\u7684\u76ee\u7684\u3002\r\n\r\n\u529f\u80fd\u7c21\u5217\uff1a\r\n1. \u7cfb\u7d71\u4ee5\u7db2\u9801\u65b9\u5f0f\u63d0\u4f9b\u5c55\u793a\u529f\u80fd\u3002\r\n2. \u5ba2\u88fd\u5316\u7684\u52a0\u5bc6\u8655\u7406\u6d41\u7a0b\uff0c\u5305\u542b\u53c3\u6578\u5b57\u7bc0\u6d41\u8f49\u63db\u3001\u52a0\u9e7d(Salt)\u8655\u7406\u3001 Base64 \u7de8\u78bc\u548c\u52a0\u5bc6\u96dc\u6e4a\u7d50\u679c\u5408\u4f75\u3002\r\n3.  \u57fa\u65bc\u5bc6\u9470\u7684\u8a0a\u606f\u9a57\u8b49\u6d41\u7a0b\uff0c\u5141\u8a31\u4f7f\u7528\u56fa\u5b9a\u5bc6\u9470\u5c0d\u591a\u500b\u53c3\u6578\u9032\u884c\u52a0\u5bc6\u8655\u7406\u3002\u4e26\u4e14\u5177\u5099\u9ad8\u5ea6\u9748\u6d3b\u6027\uff0c\u80fd\u5920\u6839\u64da\u696d\u52d9\u9700\u6c42\u9032\u884c\u64f4\u5c55",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u52a0\u5bc6",
+   "\u4ecb\u63a5/\u50b3\u8f38",
+   "\u7c3d\u7ae0",
+   "Vue.js",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u8cc7\u6599\u52a0\u5bc6\u50b3\u8f38\u5132\u5b58\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/data-encrypt-system"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u8cc7\u6599\u52d5\u614b\u7de8\u78bc\u8f49\u63db\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/data-encoding-transform",
+  "repo_key": "github.com/moda-gov-tw/data-encoding-transform",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Dynamic data encoding conversion system. For integrating legacy systems whose fixed-length string output cannot be handled by modern standards such as XML or JSON: parses and converts positional fields, and resolves mismatches caused by differing character encodings and lengths.",
+  "desc_lang": "en",
+  "desc_src": "\u8cc7\u8a0a\u7cfb\u7d71\u5728\u63d0\u4f9b\u5275\u65b0\u670d\u52d9\u800c\u9700\u8981\u9032\u884c\u65b0\u820a\u7cfb\u7d71\u6574\u5408\u6642\uff0c\u7576\u50b3\u7d71\u8cc7\u8a0a\u7cfb\u7d71\u8f38\u51fa\u7684\u8a0a\u606f\u6216\u6a94\u6848\u7121\u6cd5\u4ee5\u73fe\u4ee3\u7684\u8cc7\u6599\u6a19\u6e96\u9032\u884c\u8655\u7406\uff0c\u4f8b\u5982\uff1a\u7121\u6cd5\u8655\u7406XML\u6216JSON\u683c\u5f0f\u8f49\u63db\u6642\uff0c\u900f\u904e\u672c\u7cfb\u7d71\u63d0\u4f9b\u50b3\u7d71\u56fa\u5b9a\u9577\u5ea6\u5b57\u4e32\u7684\u52d5\u614b\u8655\u7406\u529f\u80fd\uff0c\u5c07\u7b26\u5408\u7279\u5b9a\u4f4d\u5143\u4ee3\u8868\u7279\u5b9a\u6b04\u4f4d\u9032\u884c\u89e3\u6790\u8f49\u63db\uff0c\u4e5f\u89e3\u6c7a\u4e86\u56e0\u6587\u4ef6\u7de8\u78bc(encoding)\u9577\u5ea6\u4e0d\u540c\u800c\u7121\u6cd5\u7cbe\u6e96\u5339\u914d\u7684\u554f\u984c\u3002\r\n\r\n\u672c\u7cfb\u7d71\u4f9d\u64da\u4f7f\u7528\u8005\u5b9a\u7fa9\u7684\u7de8\u78bc\u9577\u5ea6\uff0c\u53ca\u6240\u9700\u7684\u4f4d\u5143\u7d44(bytes)\u9577\u5ea6\u9032\u884c\u52d5\u614b\u586b\u5145\u8207\u8f49\u63db\uff0c\u78ba\u4fdd\u5b57\u5143\u53ca\u4f4d\u5143\u7d44\u5167\u5bb9\u7b26\u5408\u9810\u8a2d\u5b9a\u7fa9\u3002\u9019\u4e00\u52d5\u614b\u586b\u5145\u529f\u80fd\u4f7f\u8a0a\u606f\u6216\u6a94\u6848\u80fd\u5920\u7cbe\u5bc6\u8f49\u63db\uff0c\u5f9e\u800c\u52a0\u901f\u65b0\u820a\u7cfb\u7d71\u7684\u8f49\u63db\u6574\u5408\uff0c\u9054\u5230\u5feb\u901f\u904b\u7528\u65b0\u6280\u8853\u63d0\u4f9b\u820a\u7cfb\u7d71\u8cc7\u6599\u670d\u52d9\u7684\u76ee\u7684\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u81ea\u8a02\u8cc7\u6599\u8655\u7406\u7de8\u78bc\u3002\r\n2. \u81ea\u8a02\u8cc7\u6599\u8655\u7406\u898f\u5247\u3002\r\n3. \u63d0\u4f9b\u5f85\u8655\u7406\u6a94\u6848/\u8a0a\u606f\u7684\u7ba1\u7406\u3002\r\n4. \u63d0\u4f9b\u8a0a\u606f\u53ca\u6a94\u6848\u8f49\u63db\u7bc4\u4f8b\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8a0a\u606f\u8655\u7406/\u901a\u77e5",
+   "\u89e3\u6790\u8f49\u63db",
+   "\u8cc7\u6599/\u6a94\u6848\u8f49\u63db",
+   "Vue.js",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u8cc7\u6599\u52d5\u614b\u7de8\u78bc\u8f49\u63db\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/data-encoding-transform"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u8cc7\u6599\u5b89\u5168\u50b3\u8f38\u9a57\u8b49\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/t-road-file-transfer-message-and-api-message-notify-test-module",
+  "repo_key": "github.com/moda-gov-tw/t-road-file-transfer-message-and-api-message-notify-test-module",
+  "license": "MIT",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Secure data transfer verification system. Where agencies exchange data through T-Road secure servers, physically isolated internal networks make it hard for engineers to obtain test messages for diagnosis. This service verifies that transfers conform to the interface message specification and API rules inside a closed network.",
+  "desc_lang": "en",
+  "desc_src": "\u6a5f\u95dc\u8cc7\u8a0a\u7cfb\u7d71\u9593\u7684\u8cc7\u6599\u50b3\u8f38\u4ee5T-Road\u7684\u5b89\u63a7\u4f3a\u670d\u5668(Secure Server\uff0c\u4ee5\u4e0b\u7c21\u7a31SS)\u9032\u884c\u50b3\u8f38\u6642\uff0c\u56e0\u5be6\u9ad4\u9694\u96e2\u7684\u5167\u90e8\u7db2\u8def\u74b0\u5883\uff0c\u6280\u8853\u4eba\u54e1\u4e0d\u5bb9\u6613\u53d6\u5f97\u6e2c\u8a66\u8a0a\u606f\u9032\u884c\u554f\u984c\u5206\u6790\u7684\u56f0\u5883\uff1b\u900f\u5920\u904e\u672c\u7cfb\u7d71\u63d0\u4f9b\u8de8\u6a5f\u95dc\u4ecb\u63a5SS\u4e4b\u9a57\u8b49\u670d\u52d9\uff0c\u53ef\u4ee5\u9a57\u8b49\u8cc7\u8a0a\u50b3\u8f38\u662f\u5426\u7b26\u5408\u4ecb\u63a5\u8a0a\u606f\u898f\u683c\u53ca\u61c9\u7528\u7a0b\u5f0f\u4ecb\u9762(API)\u898f\u7bc4\uff0c\u89e3\u6c7a\u5728\u5c01\u9589\u7db2\u8def\u74b0\u5883\u4e0b\u7121\u6cd5\u53d6\u5f97\u5b8c\u6574\u8cc7\u8a0a\u5206\u6790\u7684\u554f\u984c\uff0c\u9032\u800c\u52a0\u901f\u8de8\u6a5f\u95dc\u9593\u900f\u904eT-Road\u9032\u884c\u5b89\u5168\u8cc7\u6599\u50b3\u8f38\u7684\u8f49\u63db\u3002\r\n\r\n\u56e0\u6b64\uff0c\u900f\u904e\u672c\u7cfb\u7d71\u53ef\u5354\u52a9\u958b\u767c\u4eba\u54e1\u5728\u8655\u7406\u8de8\u6a5f\u95dc\u8cc7\u8a0a\u7cfb\u7d71\u4ecb\u63a5\u6642\uff0c\u65bc\u5be6\u9ad4\u9694\u96e2\u7684\u5c01\u9589\u7db2\u8def\u60c5\u5883\u4e0b\uff0c\u4ecd\u80fd\u914d\u5408\u4ee5\u5b89\u5168\u7684\u65b9\u5f0f\u9032\u884c\u6e2c\u8a66\u9664\u932f\uff0c\u9032\u800c\u52a0\u901f\u5404\u696d\u52d9\u7cfb\u7d71\u8f49\u63db\u4ecb\u63a5T-Road\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u6a21\u64ecT-Road\u5b89\u63a7\u4f3a\u670d\u5668(Secure Server)\u6a94\u6848\u50b3\u8f38\u53ca\u8a0a\u606f\u50b3\u8f38API\u3002\r\n2. \u6a21\u64ecT-Road SS\u50b3\u8f38\u8cc7\u6599base64\u8f49\u63db\u3002\r\n3. \u6a21\u64ecT-Road SS\u5fc5\u8981\u53c3\u6578\u4e4b\u6aa2\u6838\u3002\r\n4. \u8f38\u51faT-Road",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u5b89\u5168\u9a57\u8b49",
+   "\u8a0a\u606f\u8655\u7406/\u901a\u77e5",
+   "\u4ecb\u63a5/\u50b3\u8f38",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u8cc7\u6599\u5b89\u5168\u50b3\u8f38\u9a57\u8b49\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/t-road-file-transfer-message-and-api-message-notify-test-module"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u8cc7\u6599\u6aa2\u6838\u53ca\u5b89\u5168\u8655\u7406\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/data-validation-and-security-processing-system",
+  "repo_key": "github.com/moda-gov-tw/data-validation-and-security-processing-system",
+  "license": "MIT ",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Data validation and secure handling module. Provides back-end validation, masking and conversion for common data types - dates, national ID numbers, business numbers and numeric conversion - to improve accuracy, consistency and security.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u8cc7\u8a0a\u7cfb\u7d71\u9700\u8981\u9032\u884c\u5f8c\u7aef\u8cc7\u6599\u6aa2\u6838\u3001\u906e\u7f69\u6216\u8f49\u63db\u6642\uff0c\u672c\u6a21\u7d44\u63d0\u4f9b\u91dd\u5c0d\u5e38\u898b\u8cc7\u6599\u7684\u6aa2\u6838\u3001\u8f49\u63db\u8207\u89e3\u6790\u529f\u80fd\uff0c\u89e3\u6c7a\u4e86\u5f8c\u7aef\u8cc7\u6599\u8655\u7406\u4e2d\u7684\u6e96\u78ba\u6027\u8207\u5b89\u5168\u6027\u554f\u984c\u3002\u900f\u904e\u9019\u4e9b\u529f\u80fd\uff0c\u7cfb\u7d71\u80fd\u5920\u6709\u6548\u78ba\u4fdd\u8cc7\u6599\u7684\u6b63\u78ba\u6027\u8207\u4e00\u81f4\u6027\uff0c\u540c\u6642\u9054\u5230\u5f37\u5316\u8cc7\u6599\u5b89\u5168\u6027\u7684\u76ee\u7684\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. \u6aa2\u6838\u65e5\u671f\u3001\u8eab\u5206\u8b49\u5b57\u865f\u3001\u7d71\u7de8\u548c\u6578\u503c\u8f49\u63db\u5de5\u5177\r\n2. \u6578\u5b57\u8f49\u4e2d\u6587\r\n3. \u8cc7\u6599\u906e\u7f69",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u8cc7\u6599\u8655\u7406/\u906e\u7f69",
+   "\u8cc7\u6599\u89e3\u6790",
+   "\u6aa2\u6838",
+   "\u8cc7\u6599/\u6a94\u6848\u8f49\u63db",
+   "Java"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u8cc7\u6599\u6aa2\u6838\u53ca\u5b89\u5168\u8655\u7406\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/data-validation-and-security-processing-system"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u8dd1\u8005\u9a5b\u7ad9-\u53cb\u5584\u904b\u52d5\u5730\u5716(\u524d\u7aef)",
+  "repo": "https://github.com/shuanowenLiou/run-meetup-hub-main",
+  "repo_key": "github.com/shuanowenliou/run-meetup-hub-main",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "\"Runner's Station - friendly exercise map\", a demonstration project from moda's Civic Technology Pilot Field programme, built by MW RUN TEAM. Lets users create, browse and join running or group-training events, with map visualisation, event cards, detail pages and a creation interface. A demonstrator, not yet in production.",
+  "desc_lang": "en",
+  "desc_src": "\u672c\u6848\u70ba\u300c\u6578\u4f4d\u767c\u5c55\u90e8\u516c\u6c11\u79d1\u6280\u8a66\u9a57\u5834\u57df\u793a\u7bc4\u6848\u300d\u7531\u300cMW RUN TEAM\u300d\u5718\u968a\u958b\u767c\u7684\u300c\u8dd1\u8005\u9a5b\u7ad9-\u53cb\u5584\u904b\u52d5\u5730\u5716\u300d\uff0c\u70ba\u4e00\u500b\u5718\u7df4\uff0f\u6d3b\u52d5\u7ba1\u7406\u793a\u7bc4\u5c08\u6848\uff0c\u4e3b\u8981\u529f\u80fd\u662f\u8b93\u4f7f\u7528\u8005\u5efa\u7acb\u3001\u700f\u89bd\u4e26\u52a0\u5165\u8def\u8dd1\u6216\u5718\u9ad4\u7df4\u7fd2\u985e\u6d3b\u52d5\uff0c\u652f\u63f4\u5730\u5716\u8996\u89ba\u5316\u6d3b\u52d5\u4f4d\u7f6e\u3001\u6d3b\u52d5\u5361\u7247\u5217\u8868\u3001\u6d3b\u52d5\u8a73\u7d30\u9801\u9762\u8207\u6d3b\u52d5\u5efa\u7acb\u4ecb\u9762\u3002\u672c\u6848\u70ba\u793a\u7bc4\u6848\u4f8b\u5c1a\u672a\u6b63\u5f0f\u4e0a\u7dda\u63d0\u4f9b\u670d\u52d9\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u7ba1\u7406\u529f\u80fd",
+   "\u6d3b\u52d5\u5361\u7247\u8207\u5217\u8868",
+   "\u5730\u5716\u8996\u89ba\u5316",
+   "TypeScript",
+   "React"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u8dd1\u8005\u9a5b\u7ad9-\u53cb\u5584\u904b\u52d5\u5730\u5716(\u524d\u7aef)",
+    "entry_url": null,
+    "repo_url": "https://github.com/shuanowenLiou/run-meetup-hub-main"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u958b\u653e\u6587\u4ef6\u8f49\u63db\u7cfb\u7d71",
+  "repo": "https://github.com/moda-gov-tw/open-file-conversion-system",
+  "repo_key": "github.com/moda-gov-tw/open-file-conversion-system",
+  "license": "Apache License 2.0",
+  "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
+  "short_desc": "Open document conversion system. Wraps the open source LibreOffice conversion tools to convert traditional Word, Excel and PDF files into open document formats, and can be built into scheduled batch automation. Handles .docx, .xlsx, .xls and more.",
+  "desc_lang": "en",
+  "desc_src": "\u7576\u4f7f\u7528\u8005\u9700\u8981\u5c07\u50b3\u7d71Word\u3001Excel\u6216PDF\u9032\u884c\u958b\u653e\u6587\u4ef6\u683c\u5f0f\u8f49\u63db\u6642\uff0c\u53ef\u900f\u904e\u672c\u7cfb\u7d71\u6574\u5408\u958b\u653e\u539f\u59cb\u78bc\u7684 LibreOffice \u6587\u4ef6\u8f49\u63db\u5de5\u5177\u9032\u884c\u8655\u7406\uff0c\u89e3\u6c7a\u4e86\u5e38\u898b\u6587\u4ef6\u683c\u5f0f\u9593\u76f4\u63a5\u8f49\u63db\u7684\u554f\u984c\uff0c\u4e26\u53ef\u4ee5\u9032\u4e00\u6b65\u6574\u5408\u5230\u5b9a\u6642\u6574\u6279\u6392\u7a0b\u8655\u7406\u7684\u81ea\u52d5\u5316\u8655\u7406\u4f5c\u696d\u4e2d\u3002\r\n\r\n\u672c\u7cfb\u7d71\u80fd\u5920\u9ad8\u6548\u5730\u5c07 .docx\u3001.xlsx\u3001.xls\u3001.pdf \u7b49\u6587\u4ef6\u683c\u5f0f\u8f49\u63db\u70ba HTML\u3001PDF\u3001DOCX\u3001XLSX\u3001PPTX \u7b49\u591a\u7a2e\u958b\u653e\u6587\u4ef6\u76ee\u6a19\u683c\u5f0f\uff0c\u6709\u6548\u63d0\u5347\u6587\u4ef6\u8f49\u63db\u6548\u7387\u8207\u6587\u4ef6\u6709\u6548\u5229\u7528\u7684\u517c\u5bb9\u6027\u3002\r\n\r\n\u529f\u80fd\u6458\u8981\uff1a\r\n1. Office\u6587\u4ef6\u3001PDF\u6587\u4ef6\u53caODF\u6587\u4ef6\u8f49\u63db\u3002\r\n2. \u5404\u985e\u6587\u4ef6\u8f49\u63db\u7bc4\u4f8b\r\n3. \u6279\u6b21\u6392\u7a0b\u81ea\u52d5\u5316\u8655\u7406\u61c9\u7528",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u81ea\u52d5\u5316",
+   "\u6392\u7a0b",
+   "\u89e3\u6790\u8f49\u63db",
+   "Java",
+   "Spring Boot"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u958b\u653e\u6587\u4ef6\u8f49\u63db\u7cfb\u7d71",
+    "entry_url": null,
+    "repo_url": "https://github.com/moda-gov-tw/open-file-conversion-system"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "TW/code.gov.tw",
+  "country": "TW",
+  "tier": "index",
+  "name": "\u96fb\u5b50\u516c\u6587\u5c01\u88dd\u6a94\u9644\u4ef6\u540d\u7a31\u89e3\u6790",
+  "repo": "https://github.com/moenv-tw/docsi",
+  "repo_key": "github.com/moenv-tw/docsi",
+  "license": "MIT License",
+  "repo_owner": "\u74b0\u5883\u90e8",
+  "short_desc": "Electronic official-document package attachment name resolver. The Ministry of Environment returns signed document packages to its budget accounting system, but attachment names are hash strings; this reverses them to the original filenames so accounting staff can identify them.",
+  "desc_lang": "en",
+  "desc_src": "\u74b0\u5883\u90e8\u56e0\u61c9\u7d93\u8cbb\u6838\u92b7\u96fb\u5b50\u5316\u4f5c\u696d\u9700\u6c42\uff0c\u5c07\u7d93\u904e\u7c3d\u7ae0\u4e4b\u96fb\u5b50\u516c\u6587\u5c01\u88dd\u6a94\u56de\u50b3\u9810\u7b97\u6703\u8a08\u7cfb\u7d71\u4f9b\u6703\u8a08\u4eba\u54e1\u5be9\u6838\uff0c\u60df\u5c01\u88dd\u6a94\u4e4b\u9644\u4ef6\u540d\u7a31\u70ba\u96dc\u6e4a\u5b57\u4e32\u7d44\u6210\uff0c\u4e0d\u6613\u8fa8\u8b58\uff0c\u7230\u767c\u5c55\u672c\u7a0b\u5f0f\u5c07\u96dc\u6e4a\u5b57\u4e32\u53cd\u63a8\u56de\u539f\u59cb\u9644\u4ef6\u6a94\u540d\u7a31\uff0c\u4ee5\u5229\u6703\u8a08\u4eba\u54e1\u8fa8\u8b58\u9644\u4ef6\u8cc7\u8a0a\u3002",
+  "desc_src_lang": "zh",
+  "keywords": [
+   "\u6587\u66f8\u8655\u7406",
+   "\u8cc7\u6599\u89e3\u6790",
+   "C#",
+   ".NET"
+  ],
+  "note": "moda Public Code Platform",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "TW/code.gov.tw",
+    "name": "\u96fb\u5b50\u516c\u6587\u5c01\u88dd\u6a94\u9644\u4ef6\u540d\u7a31\u89e3\u6790",
+    "entry_url": null,
+    "repo_url": "https://github.com/moenv-tw/docsi"
    }
   ],
   "catalogue_count": 1

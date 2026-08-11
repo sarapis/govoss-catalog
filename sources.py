@@ -84,6 +84,18 @@ SOURCES = {
                 "government tier: federal, provincial, municipal and Indigenous. Every "
                 "text field is localised {en, fr}, including repositoryURL.",
     },
+    "TW/code.gov.tw": {
+        "label": "Public Code Platform (moda)", "country": "TW", "flag": "\U0001F1F9\U0001F1FC",
+        "site": "https://code.gov.tw/",
+        "api": "https://code.gov.tw/api/OpenDataSet/PublicProgramInfoData/json",
+        "route": "official open-data export", "claim": "published by Taiwanese agencies",
+        "note": "Ministry of Digital Affairs. Use the PUBLISHED dataset export (JSON/XML/CSV), "
+                "not the SPA's internal POST API - one GET, repo URLs included, officially "
+                "published rather than reverse-engineered. Programme names stay in Chinese "
+                "as published; descriptions are translated. No entry deep links: the site "
+                "is a SPA whose detail route takes no path parameter and every URL returns "
+                "the same shell, so a link cannot be verified.",
+    },
     "GLOBAL/dpg": {
         "label": "Digital Public Goods Registry", "country": "GLOBAL", "flag": "\U0001F310",
         "site": "https://www.digitalpublicgoods.net/registry",
@@ -125,22 +137,29 @@ SURVEY = [
                "would inject 1,502 entries with no repository URL, which is both the dedupe "
                "identity and the whole promise of the catalogue. Re-check periodically: if "
                "code lands, this becomes the largest single source here."},
-    {"country": "TW", "flag": "\U0001F1F9\U0001F1FC", "name": "Public Code Platform (moda)",
-     "url": "https://civictech.moda.gov.tw/", "status": "needs-research",
-     "detail": "Ministry of Digital Affairs runs a central government code repository. "
-               "The documented URL 404s; the actual platform host was not identified."},
-    {"country": "KR", "flag": "\U0001F1F0\U0001F1F7", "name": "oss.kr",
-     "url": "https://www.oss.kr/", "status": "needs-research",
-     "detail": "Live national open source portal. Machine-readable route not yet found; "
-               "content is Korean, so it would also add a translation language."},
+    {"country": "KR", "flag": "\U0001F1F0\U0001F1F7", "name": "oss.kr (Open Source Portal)",
+     "url": "https://www.oss.kr/", "status": "wrong-shape",
+     "detail": "Live and substantial, but it is a national OSS PROMOTION portal, not a "
+               "catalogue of government-produced software: developer contests, a "
+               "contribution academy, licence verification, Open Up centre, news. Its "
+               "/opensource/hub/<id> pages profile UPSTREAM projects (Node.js and the like) "
+               "rather than Korean public-sector code, with no adoption data. Closest "
+               "analogue here is SILL's recommendation axis, minus the government-use "
+               "signal that makes SILL worth having. Nothing to ingest without changing "
+               "what the catalogue means."},
     {"country": "BR", "flag": "\U0001F1E7\U0001F1F7", "name": "Portal do Software Publico",
      "url": "https://www.softwarepublico.gov.br/", "status": "broken",
      "detail": "TLS certificate expired; /social/ 404s. Historically the most ambitious "
                "public software portal outside Europe - worth re-checking."},
     {"country": "ES", "flag": "\U0001F1EA\U0001F1F8", "name": "CTT",
-     "url": "https://administracionelectronica.gob.es/ctt", "status": "needs-research",
-     "detail": "Centro de Transferencia de Tecnologia is live but the base URL redirect-loops; "
-               "a working entry point exists (verPestanaGeneral.htm). No API found yet."},
+     "url": "https://administracionelectronica.gob.es/ctt", "status": "bot-protected",
+     "detail": "Centro de Transferencia de Tecnologia holds a real solutions directory, but "
+               "every route is behind an F5/BIG-IP bot challenge (TSPD) that returns HTTP 200 "
+               "with a CAPTCHA page instead of data - the HTML, the RSS feed and every /api/ "
+               "path alike. Solving or bypassing a CAPTCHA is off the table, so this cannot "
+               "be harvested as it stands. The legitimate route would be Spain asking to "
+               "allowlist a harvester, or publishing the directory via datos.gob.es. "
+               "Re-check rather than retry: the block is deliberate."},
     {"country": "global", "flag": "\U0001F310", "name": "State of Public Code / Software Heritage",
      "url": "https://www.softwareheritage.org/2026/07/01/public_code_2026_launch/",
      "status": "different-shape",

@@ -293,8 +293,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Indonesian Phoneme Recognizer",
-  "repo": "https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id",
-  "repo_key": "huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id",
+  "repo": "https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id",
+  "repo_key": "huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id",
   "landing": "https://github.com/bookbot-hive/k2-indonesian-asr , https://bookbot-hive.github.io/k2-indonesian-asr/ , https://huggingface.co/bookbot/pruned-transducer-stateless7-streaming-id , https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id",
   "entry_url": "https://www.digitalpublicgoods.net/r/indonesian-phoneme-recognizer",
   "license": "Apache-2.0",
@@ -314,6 +314,9 @@
    "SDG4: Quality Education"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://huggingface.co/bookbot/sherpa-ncnn-pruned-transducer-stateless7-streaming-id"
+  ],
   "upstream_id": "GID0090764",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -439,8 +442,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Productive Forests",
-  "repo": "https://github.com/Bioverse-Labs/image-processing , https://github.com/Bioverse-Labs/deep-learning , https://github.com/Bioverse-Labs/forest-map-app",
-  "repo_key": "github.com/bioverse-labs/image-processing , https://github.com/bioverse-labs/deep-learning , https://github.com/bioverse-labs/forest-map-app",
+  "repo": "https://github.com/Bioverse-Labs/image-processing",
+  "repo_key": "github.com/bioverse-labs/image-processing",
   "landing": "https://www.bioverse.io/",
   "entry_url": "https://www.digitalpublicgoods.net/r/productive-forests",
   "license": "MIT",
@@ -462,6 +465,10 @@
    "SDG12: Responsible Consumption and Production"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Bioverse-Labs/deep-learning",
+   "https://github.com/Bioverse-Labs/forest-map-app"
+  ],
   "upstream_id": "GID0090088",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -470,8 +477,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "FarmStack",
-  "repo": "https://github.com/digitalgreenorg/farmstack-frontend , https://github.com/digitalgreenorg/farmstack-backend",
-  "repo_key": "github.com/digitalgreenorg/farmstack-frontend , https://github.com/digitalgreenorg/farmstack-backend",
+  "repo": "https://github.com/digitalgreenorg/farmstack-frontend",
+  "repo_key": "github.com/digitalgreenorg/farmstack-frontend",
   "landing": "https://www.farmstack.co/",
   "entry_url": "https://www.digitalpublicgoods.net/r/farmstack",
   "license": "Apache-2.0",
@@ -496,6 +503,9 @@
    "SDG10: Reduced Inequalities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/digitalgreenorg/farmstack-backend"
+  ],
   "upstream_id": "GID0090034",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -504,8 +514,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Data exchange agreement protocol suit for auditable, privacy-preserving data transactions in dataspaces",
-  "repo": "https://github.com/decentralised-dataexchange/data-exchange-agreements , https://github.com/decentralised-dataexchange/dexa-protocol , https://github.com/decentralised-dataexchange/dexa-sdk , https://github.com/decentralised-dataexchange/dexa-smartcontracts",
-  "repo_key": "github.com/decentralised-dataexchange/data-exchange-agreements , https://github.com/decentralised-dataexchange/dexa-protocol , https://github.com/decentralised-dataexchange/dexa-sdk , https://github.com/decentralised-dataexchange/dexa-smartcontracts",
+  "repo": "https://github.com/decentralised-dataexchange/data-exchange-agreements",
+  "repo_key": "github.com/decentralised-dataexchange/data-exchange-agreements",
   "landing": "https://ontochain.ngi.eu/content/ps-sda",
   "license": "Apache-2.0",
   "short_desc": "DEXA protocol is key for developing and deploying trustworthy, human-centric decentralised data applications (dApps) across domains using data intermediation services within dataspaces. ",
@@ -527,6 +537,11 @@
    "SDG11: Sustainable Cities and Communities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/decentralised-dataexchange/dexa-protocol",
+   "https://github.com/decentralised-dataexchange/dexa-sdk",
+   "https://github.com/decentralised-dataexchange/dexa-smartcontracts"
+  ],
   "upstream_id": "GID0090210",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -597,8 +612,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "CIEL terminology",
-  "repo": "www.CIELterminology.org",
-  "repo_key": "cielterminology.org",
+  "repo": null,
+  "repo_key": null,
   "landing": "https://www.CIELterminology.org, https://app.openconceptlab.org/#/orgs/CIEL/sources/CIEL/",
   "entry_url": "https://www.digitalpublicgoods.net/r/ciel-terminology",
   "license": "CC-BY-4.0",
@@ -718,8 +733,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Sunbird Lern",
-  "repo": "https://github.com/Sunbird-Lern,https://github.com/project-sunbird/sunbird-lms-service,https://github.com/project-sunbird/sunbird-course-service,https://github.com/project-sunbird/groups-service,https://github.com/project-sunbird/sunbird-notification-service,https://lern.sunbird.org/use/developer-installation",
-  "repo_key": "github.com/sunbird-lern,https://github.com/project-sunbird/sunbird-lms-service,https://github.com/project-sunbird/sunbird-course-service,https://github.com/project-sunbird/groups-service,https://github.com/project-sunbird/sunbird-notification-service,https://lern.sunbird.org/use/developer-installation",
+  "repo": "https://github.com/Sunbird-Lern",
+  "repo_key": "github.com/sunbird-lern",
   "landing": "https://lern.sunbird.org",
   "entry_url": "https://www.digitalpublicgoods.net/r/sunbird-lern",
   "license": "MIT",
@@ -745,6 +760,13 @@
    "SDG8: Decent Work and Economic Growth"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/project-sunbird/sunbird-lms-service",
+   "https://github.com/project-sunbird/sunbird-course-service",
+   "https://github.com/project-sunbird/groups-service",
+   "https://github.com/project-sunbird/sunbird-notification-service",
+   "https://lern.sunbird.org/use/developer-installation"
+  ],
   "upstream_id": "GID0090106",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -1242,8 +1264,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "if me",
-  "repo": "https://github.com/ifmeorg/ifme, https://github.com/ifmeorg/ifme-languagetools",
-  "repo_key": "github.com/ifmeorg/ifme, https://github.com/ifmeorg/ifme-languagetools",
+  "repo": "https://github.com/ifmeorg/ifme",
+  "repo_key": "github.com/ifmeorg/ifme",
   "landing": "https://www.if-me.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/if-me",
   "license": "AGPL-3.0",
@@ -1264,6 +1286,9 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/ifmeorg/ifme-languagetools"
+  ],
   "upstream_id": "GID0090047",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -2079,8 +2104,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "PrepTime Analytics",
-  "repo": "https://github.com/Scribble-Works/preptime-api - Backend https://github.com/Scribble-Works/preptime-analytics - Frontend",
-  "repo_key": "github.com/scribble-works/preptime-api - backend https://github.com/scribble-works/preptime-analytics - frontend",
+  "repo": "https://github.com/Scribble-Works/preptime-api",
+  "repo_key": "github.com/scribble-works/preptime-api",
   "landing": "https://preptimeanalytics.com/",
   "entry_url": "https://www.digitalpublicgoods.net/r/preptime-analytics",
   "license": "GPL-3.0",
@@ -2100,6 +2125,9 @@
    "SDG4: Quality Education"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Scribble-Works/preptime-analytics"
+  ],
   "upstream_id": "GID0090191",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -2266,8 +2294,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Synthea",
-  "repo": "https://github.com/synthetichealth/synthea,https://github.com/synthetichealth/synthea-international",
-  "repo_key": "github.com/synthetichealth/synthea,https://github.com/synthetichealth/synthea-international",
+  "repo": "https://github.com/synthetichealth/synthea",
+  "repo_key": "github.com/synthetichealth/synthea",
   "landing": "https://synthetichealth.github.io/synthea/",
   "entry_url": "https://www.digitalpublicgoods.net/r/synthea",
   "license": "Apache-2.0",
@@ -2290,6 +2318,9 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/synthetichealth/synthea-international"
+  ],
   "upstream_id": "GID0090111",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -2441,8 +2472,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "VaccineLedger",
-  "repo": "https://gitlab.com/statwig-public/theledger , https://gitlab.com/statwig-public/BlockchainEngine , https://gitlab.com/statwig-public/theledgermobileapp , https://gitlab.com/statwig-public/SupplyChainDemo , https://gitlab.com/statwig-public/UserInterface",
-  "repo_key": "gitlab.com/statwig-public/theledger , https://gitlab.com/statwig-public/blockchainengine , https://gitlab.com/statwig-public/theledgermobileapp , https://gitlab.com/statwig-public/supplychaindemo , https://gitlab.com/statwig-public/userinterface",
+  "repo": "https://gitlab.com/statwig-public/theledger",
+  "repo_key": "gitlab.com/statwig-public/theledger",
   "landing": "https://vaccineledger.com/",
   "entry_url": "https://www.digitalpublicgoods.net/r/vaccineledger",
   "license": "MIT",
@@ -2468,6 +2499,12 @@
    "SDG12: Responsible Consumption and Production"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://gitlab.com/statwig-public/BlockchainEngine",
+   "https://gitlab.com/statwig-public/theledgermobileapp",
+   "https://gitlab.com/statwig-public/SupplyChainDemo",
+   "https://gitlab.com/statwig-public/UserInterface"
+  ],
   "upstream_id": "GID0090120",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3082,8 +3119,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "The Ushahidi Platform",
-  "repo": "https://github.com/ushahidi/platform/ , https://github.com/ushahidi/platform-client-mzima",
-  "repo_key": "github.com/ushahidi/platform/ , https://github.com/ushahidi/platform-client-mzima",
+  "repo": "https://github.com/ushahidi/platform/",
+  "repo_key": "github.com/ushahidi/platform",
   "landing": "https://www.ushahidi.com/",
   "license": "AGPL-3.0",
   "short_desc": "The Ushahidi Platform is an integrated data crowdsourcing and mapping tool that allows people to rapidly collect, manage and analyze crowdsourced information from their communities. Empowering communities to thrive as a result of accessible data and technology.",
@@ -3167,6 +3204,9 @@
    "SDG16: Peace\u00b8 Justice and Strong Institutions"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/ushahidi/platform-client-mzima"
+  ],
   "upstream_id": "GID0090118",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3285,8 +3325,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Advocacy Training for Community Health Workers",
-  "repo": "https://show.pics.io/chw-advocacy/search?collectionIds=623b78588e4d9800135c4ca2 , https://www.youtube.com/playlist?list=PLuhZ6_ONjgIms5ui9UuzB5AhCWYPq13nw",
-  "repo_key": "show.pics.io/chw-advocacy/search?collectionids=623b78588e4d9800135c4ca2 , https://www.youtube.com/playlist?list=pluhz6_onjgims5ui9uuzb5ahcwypq13nw",
+  "repo": "https://show.pics.io/chw-advocacy/search?collectionIds=623b78588e4d9800135c4ca2",
+  "repo_key": "show.pics.io/chw-advocacy/search?collectionids=623b78588e4d9800135c4ca2",
   "landing": "https://digitalmedic.stanford.edu/advocacy-training-community-health-workers, https://joinchic.org/resources/chw-advocates/",
   "entry_url": "https://www.digitalpublicgoods.net/r/advocacy-training-for-community-health-workers",
   "license": "CC-BY-NC-SA-4.0",
@@ -3308,6 +3348,9 @@
    "SDG8: Decent Work and Economic Growth"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://www.youtube.com/playlist?list=PLuhZ6_ONjgIms5ui9UuzB5AhCWYPq13nw"
+  ],
   "upstream_id": "GID0090695",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3421,8 +3464,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Open Food Facts",
-  "repo": "https://github.com/openfoodfacts/, https://huggingface.co/openfoodfacts",
-  "repo_key": "github.com/openfoodfacts/, https://huggingface.co/openfoodfacts",
+  "repo": "https://github.com/openfoodfacts/",
+  "repo_key": "github.com/openfoodfacts",
   "landing": "https://openfoodfacts.org",
   "entry_url": "https://www.digitalpublicgoods.net/r/open-food-facts",
   "license": "CC-BY-SA-3.0",
@@ -3503,6 +3546,9 @@
    "SDG13: Climate Action"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://huggingface.co/openfoodfacts"
+  ],
   "upstream_id": "GID0091516",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3715,8 +3761,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Code Your Future",
-  "repo": "https://github.com/CodeYourFuture/curriculum , https://github.com/CodeYourFuture/immersive-go-course/",
-  "repo_key": "github.com/codeyourfuture/curriculum , https://github.com/codeyourfuture/immersive-go-course",
+  "repo": "https://github.com/CodeYourFuture/curriculum",
+  "repo_key": "github.com/codeyourfuture/curriculum",
   "landing": "https://curriculum.codeyourfuture.io/",
   "entry_url": "https://www.digitalpublicgoods.net/r/code-your-future",
   "license": "CC-BY-SA-4.0",
@@ -3744,6 +3790,9 @@
    "SDG10: Reduced Inequalities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/CodeYourFuture/immersive-go-course/"
+  ],
   "upstream_id": "GID0090192",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3752,8 +3801,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Sunbird SERVE",
-  "repo": "https://github.com/Sunbird-Serve/sunbird-serve-need , https://github.com/Sunbird-Serve/sunbird-serve-fulfill, https://github.com/Sunbird-Serve/sunbird-serve-volunteering,UI Service -  https://github.com/Sunbird-Serve/sunbird-serve-ui, Content Management system -  https://github.com/Sunbird-Serve/sunbird-serve-jCMS, Previous Version - https://github.com/Sunbird-Serve/serve-v0",
-  "repo_key": "github.com/sunbird-serve/sunbird-serve-need , https://github.com/sunbird-serve/sunbird-serve-fulfill, https://github.com/sunbird-serve/sunbird-serve-volunteering,ui service -  https://github.com/sunbird-serve/sunbird-serve-ui, content management system -  https://github.com/sunbird-serve/sunbird-serve-jcms, previous version - https://github.com/sunbird-serve/serve-v0",
+  "repo": "https://github.com/Sunbird-Serve/sunbird-serve-need",
+  "repo_key": "github.com/sunbird-serve/sunbird-serve-need",
   "landing": "https://serve.evean.net/",
   "entry_url": "https://www.digitalpublicgoods.net/r/sunbird-serve",
   "license": "MIT",
@@ -3775,6 +3824,13 @@
    "SDG10: Reduced Inequalities"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Sunbird-Serve/sunbird-serve-fulfill",
+   "https://github.com/Sunbird-Serve/sunbird-serve-volunteering",
+   "https://github.com/Sunbird-Serve/sunbird-serve-ui",
+   "https://github.com/Sunbird-Serve/sunbird-serve-jCMS",
+   "https://github.com/Sunbird-Serve/serve-v0"
+  ],
   "upstream_id": "GID0090589",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3961,8 +4017,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Grievance Redress  System (GRS)",
-  "repo": "Frontend Source Code: https://github.com/GRS-DPG/GRS-WEB and Backend Source Code: https://github.com/GRS-DPG/GRS-API ",
-  "repo_key": "frontend source code: https://github.com/grs-dpg/grs-web and backend source code: https://github.com/grs-dpg/grs-api",
+  "repo": "https://github.com/GRS-DPG/GRS-WEB",
+  "repo_key": "github.com/grs-dpg/grs-web",
   "landing": "https://dpg.grs.gov.bd",
   "entry_url": "https://www.digitalpublicgoods.net/r/grievance-redress-system-grs",
   "license": "Apache-2.0",
@@ -3986,6 +4042,9 @@
    "SDG16: Peace\u00b8 Justice and Strong Institutions"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/GRS-DPG/GRS-API"
+  ],
   "upstream_id": "GID0090502",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -3994,8 +4053,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenTeleRehab",
-  "repo": "https://github.com/OpenTeleRehab/therapist-web-app, https://github.com/OpenTeleRehab/patient-app, and https://github.com/OpenTeleRehab/patient-service.",
-  "repo_key": "github.com/opentelerehab/therapist-web-app, https://github.com/opentelerehab/patient-app, and https://github.com/opentelerehab/patient-service.",
+  "repo": "https://github.com/OpenTeleRehab/therapist-web-app",
+  "repo_key": "github.com/opentelerehab/therapist-web-app",
   "landing": "https://www.opentelerehab.com",
   "entry_url": "https://www.digitalpublicgoods.net/r/opentelerehab",
   "license": "Apache-2.0",
@@ -4020,6 +4079,10 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/OpenTeleRehab/patient-app",
+   "https://github.com/OpenTeleRehab/patient-service"
+  ],
   "upstream_id": "GID0090196",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -5116,7 +5179,7 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "HOT Tasking Manager",
-  "repo": " https://github.com/hotosm/tasking-manager/",
+  "repo": "https://github.com/hotosm/tasking-manager/",
   "repo_key": "github.com/hotosm/tasking-manager",
   "landing": "https://tasks.hotosm.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/hot-tasking-manager",
@@ -5269,8 +5332,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Health Claims Data Exchange",
-  "repo": "https://github.com/Swasth-Digital-Health-Foundation/hcx-platform, https://github.com/Swasth-Digital-Health-Foundation/hcx-apps",
-  "repo_key": "github.com/swasth-digital-health-foundation/hcx-platform, https://github.com/swasth-digital-health-foundation/hcx-apps",
+  "repo": "https://github.com/Swasth-Digital-Health-Foundation/hcx-platform",
+  "repo_key": "github.com/swasth-digital-health-foundation/hcx-platform",
   "landing": "https://swasthalliance.org/health-claims-exchange.html",
   "license": "MIT",
   "short_desc": "The HCX Platform by Swasth Alliance enables seamless health claims data exchange with tools like SDKs, management apps, and an exchange switch\u2014boosting collaboration and interoperability across the health ecosystem.",
@@ -5291,6 +5354,9 @@
    "SDG9: Industry\u00b8 Innovation and Infrastructure"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/Swasth-Digital-Health-Foundation/hcx-apps"
+  ],
   "upstream_id": "GID0091685",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -5333,8 +5399,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Bebbo Parenting App",
-  "repo": "https://github.com/UNICEFECAR/parenting-app-bebbo-mobile/ , https://github.com/UNICEFECAR/parenting-app-bebbo-CMS/",
-  "repo_key": "github.com/unicefecar/parenting-app-bebbo-mobile/ , https://github.com/unicefecar/parenting-app-bebbo-cms",
+  "repo": "https://github.com/UNICEFECAR/parenting-app-bebbo-mobile/",
+  "repo_key": "github.com/unicefecar/parenting-app-bebbo-mobile",
   "landing": "https://bebbo.app",
   "entry_url": "https://www.digitalpublicgoods.net/r/bebbo-parenting-app",
   "license": "GPL-3.0",
@@ -5373,6 +5439,9 @@
    "SDG5: Gender Equity"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/UNICEFECAR/parenting-app-bebbo-CMS/"
+  ],
   "upstream_id": "GID0090946",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -5821,8 +5890,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "African Storybook",
-  "repo": " https://github.com/global-asp/global-asp, https://storybookscanada.ca/downloads/",
-  "repo_key": "github.com/global-asp/global-asp, https://storybookscanada.ca/downloads",
+  "repo": "https://github.com/global-asp/global-asp",
+  "repo_key": "github.com/global-asp/global-asp",
   "landing": "https://www.africanstorybook.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/african-storybook",
   "license": "CC-BY-4.0",
@@ -5865,6 +5934,9 @@
    "SDG4: Quality Education"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://storybookscanada.ca/downloads/"
+  ],
   "upstream_id": "GID0090137",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -5873,8 +5945,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenHexa",
-  "repo": "https://github.com/BLSQ/openhexa, https://github.com/BLSQ/openhexa-app, https://github.com/BLSQ/openhexa-frontend,https://github.com/BLSQ/openhexa-notebooks, https://github.com/BLSQ/openhexa-sdk-python, https://github.com/BLSQ/openhexa-toolbox",
-  "repo_key": "github.com/blsq/openhexa, https://github.com/blsq/openhexa-app, https://github.com/blsq/openhexa-frontend,https://github.com/blsq/openhexa-notebooks, https://github.com/blsq/openhexa-sdk-python, https://github.com/blsq/openhexa-toolbox",
+  "repo": "https://github.com/BLSQ/openhexa",
+  "repo_key": "github.com/blsq/openhexa",
   "landing": "https://www.bluesquarehub.com/openhexa/",
   "entry_url": "https://www.digitalpublicgoods.net/r/openhexa",
   "license": "MIT",
@@ -5902,6 +5974,13 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/BLSQ/openhexa-app",
+   "https://github.com/BLSQ/openhexa-frontend",
+   "https://github.com/BLSQ/openhexa-notebooks",
+   "https://github.com/BLSQ/openhexa-sdk-python",
+   "https://github.com/BLSQ/openhexa-toolbox"
+  ],
   "upstream_id": "GID0090194",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -6004,8 +6083,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenMandriva Lx",
-  "repo": "https://github.com/OpenMandrivaSoftware, https://github.com/OpenMandrivaAssociation",
-  "repo_key": "github.com/openmandrivasoftware, https://github.com/openmandrivaassociation",
+  "repo": "https://github.com/OpenMandrivaSoftware",
+  "repo_key": "github.com/openmandrivasoftware",
   "landing": "https://openmandriva.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/openmandriva-lx",
   "license": "Apache-2.0",
@@ -6041,6 +6120,9 @@
    "SDG12: Responsible Consumption and Production"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/OpenMandrivaAssociation"
+  ],
   "upstream_id": "GID0090896",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -6091,7 +6173,7 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "OpenSPP",
-  "repo": "https://github.com/OpenSPP/OpenSPP2 ",
+  "repo": "https://github.com/OpenSPP/OpenSPP2",
   "repo_key": "github.com/openspp/openspp2",
   "landing": "http://openspp.org/",
   "entry_url": "https://www.digitalpublicgoods.net/r/openspp",
@@ -6275,8 +6357,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Open Health Stack",
-  "repo": "https://github.com/google/android-fhir, https://github.com/google/fhir-data-pipes, https://github.com/google/fhir-gateway",
-  "repo_key": "github.com/google/android-fhir, https://github.com/google/fhir-data-pipes, https://github.com/google/fhir-gateway",
+  "repo": "https://github.com/google/android-fhir",
+  "repo_key": "github.com/google/android-fhir",
   "landing": "https://developers.google.com/open-health-stack",
   "entry_url": "https://www.digitalpublicgoods.net/r/open-health-stack",
   "license": "Apache-2.0",
@@ -6303,6 +6385,10 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/google/fhir-data-pipes",
+   "https://github.com/google/fhir-gateway"
+  ],
   "upstream_id": "GID0090320",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -6974,8 +7060,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Global Healthsites Mapping Project",
-  "repo": "https://healthsites.io/map, https://data.humdata.org/organization/healthsites, https://github.com/healthsites/healthsites",
-  "repo_key": "healthsites.io/map, https://data.humdata.org/organization/healthsites, https://github.com/healthsites/healthsites",
+  "repo": "https://healthsites.io/map",
+  "repo_key": "healthsites.io/map",
   "landing": "https://healthsites.io/",
   "entry_url": "https://www.digitalpublicgoods.net/r/global-healthsites-mapping-project",
   "license": "OdbL-1.0",
@@ -7054,6 +7140,10 @@
    "SDG3: Good Health and Well-Being"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://data.humdata.org/organization/healthsites",
+   "https://github.com/healthsites/healthsites"
+  ],
   "upstream_id": "GID0090039",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -8708,8 +8798,8 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Creative Commons Legal Tools",
-  "repo": "https://github.com/creativecommons/cc-legal-tools-app/,  https://github.com/creativecommons/cc-legal-tools-data",
-  "repo_key": "github.com/creativecommons/cc-legal-tools-app/,  https://github.com/creativecommons/cc-legal-tools-data",
+  "repo": "https://github.com/creativecommons/cc-legal-tools-app/",
+  "repo_key": "github.com/creativecommons/cc-legal-tools-app",
   "landing": "https://creativecommons.org/share-your-work/cclicenses/",
   "entry_url": "https://www.digitalpublicgoods.net/r/creative-commons-legal-tools",
   "license": "CC-BY-4.0",
@@ -8734,6 +8824,9 @@
    "SDG17: Partnerships for the Goals"
   ],
   "dpg": true,
+  "extra_repos": [
+   "https://github.com/creativecommons/cc-legal-tools-data"
+  ],
   "upstream_id": "GID0091413",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published"
  },
@@ -8828,7 +8921,7 @@
   "country": "GLOBAL",
   "tier": "index",
   "name": "Govdirectory",
-  "repo": " https://govdirectory.org/countries/",
+  "repo": "https://govdirectory.org/countries/",
   "repo_key": "govdirectory.org/countries",
   "landing": "https://govdirectory.org",
   "entry_url": "https://www.digitalpublicgoods.net/r/govdirectory",

@@ -433,6 +433,46 @@ def nl_forgejo():
     return out
 
 
+def tw():
+    """Taiwan — moda Public Code Platform, official open-data export.
+
+    Use the PUBLISHED DATASET, not the site's internal API. The SPA calls
+    POST /api/PublicProgramInfo/queryList (list) and .../getPublicProgramData
+    (detail, where the repo URLs live), which works but is two requests per entry
+    and undocumented. The site also links a proper open-data export in JSON/XML/CSV
+    at /api/OpenDataSet/PublicProgramInfoData/json — one GET, repo URLs included,
+    and officially published rather than reverse-engineered.
+
+    entry_url is null on purpose: code.gov.tw is a SPA whose detail route
+    (/publicCodes/codeDetail) takes no path parameter, and every URL returns the
+    same shell, so a deep link cannot be verified. Checked in a browser —
+    ?programId=... renders "loading" and never resolves the entry.
+    """
+    rows = get("https://code.gov.tw/api/OpenDataSet/PublicProgramInfoData/json",
+               timeout=90)
+    rows = rows if isinstance(rows, list) else (rows.get("data") or [])
+    print(f"    {len(rows)} programmes (official open-data export)")
+    out = []
+    for r in rows:
+        # URL is a semicolon-separated list with a trailing separator
+        urls = [u.strip() for u in (r.get("URL") or "").split(";") if u.strip()]
+        types = [t.strip() for t in re.split(r"[;\u3001]", r.get("Types") or "") if t.strip()]
+        teches = [t.strip() for t in re.split(r"[;,]", r.get("Teches") or "") if t.strip()]
+        out.append(rec("TW/code.gov.tw", "TW", "index",
+                       r.get("ProgramName"), urls[0] if urls else None,
+                       landing=r.get("DemoURL") or None,
+                       license=(r.get("Authorization") or "").rstrip(",") or None,
+                       repo_owner=r.get("ProvideDeptName") or r.get("ContactAgency"),
+                       short_desc=(r.get("Description") or "")[:400] or None,
+                       desc_lang="zh" if r.get("Description") else None,
+                       desc_src=(r.get("Description") or "")[:400] or None,
+                       desc_src_lang="zh" if r.get("Description") else None,
+                       keywords=(types + teches)[:10],
+                       extra_repos=urls[1:] or None,
+                       note="moda Public Code Platform"))
+    return out
+
+
 def ca():
     """Canada — code.open.canada.ca/code.json.
 
@@ -570,8 +610,19 @@ def dpg():
     out = []
     for r in rows:
         name = r.get("name") or ""
-        repos = r.get("repositories") or []
-        repo = next((x.get("url") for x in repos if x.get("url")), None)
+        # DPG repository urls are free text: some pack SEVERAL urls plus prose into
+        # one string ("…/therapist-web-app, https://…/patient-app, and https://…",
+        # "…/preptime-api - backend https://…"). Taken verbatim those 404 and show up
+        # as newly-dead repos, so extract the actual URLs instead of trusting the field.
+        raw_urls = []
+        for x in (r.get("repositories") or []):
+            raw_urls += re.findall(r"https?://[^\s,;]+", str(x.get("url") or ""))
+        clean = []
+        for u in raw_urls:
+            u = u.rstrip(".,;)")
+            if u not in clean:
+                clean.append(u)
+        repo = clean[0] if clean else None
         lic = next((x.get("openLicense") for x in (r.get("openlicenses") or [])
                     if x.get("openLicense")), None)
         locs = r.get("locations") or {}
@@ -594,6 +645,7 @@ def dpg():
                        used_by=sorted(deployed)[:60],
                        sdgs=sdgs,
                        dpg=True,
+                       extra_repos=clean[1:] or None,
                        upstream_id=r.get("dpgid"),
                        note="Digital Public Good (DPG Standard); may be NGO- or "
                             "university-built rather than government-published"))
@@ -601,7 +653,8 @@ def dpg():
 
 
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
-           "se": se, "nl": nl_forgejo, "ca": ca, "dpg": dpg, "nlreg": nl_register}
+           "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "dpg": dpg,
+           "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as
 # source catalogues, and its own search is broken, so they can't be resolved

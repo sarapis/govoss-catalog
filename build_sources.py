@@ -9,7 +9,8 @@ S = importlib.util.module_from_spec(_s); _s.loader.exec_module(S)
 
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 STATUS_LABEL = {"ready": "ready to add", "retired": "retired", "broken": "broken",
-                "no-code": "no code published",
+                "no-code": "no code published", "wrong-shape": "not a code catalogue",
+                "bot-protected": "bot-protected",
                 "needs-research": "needs research", "unresolved": "unresolved",
                 "different-shape": "different shape"}
 
@@ -95,7 +96,8 @@ tr.note {{ }}
 .st-ready {{ color:var(--good); border:1px solid var(--good); }}
 .st-retired,.st-broken,.st-no-code {{ color:var(--bad); border:1px solid var(--bad); }}
 .st-needs-research,.st-unresolved {{ color:var(--warn); border:1px solid var(--warn); }}
-.st-different-shape {{ color:var(--slate); border:1px solid var(--hairline); }}
+.st-different-shape,.st-wrong-shape {{ color:var(--slate); border:1px solid var(--hairline); }}
+.st-bot-protected {{ color:var(--warn); border:1px solid var(--warn); }}
 .bar {{ background:var(--accent-dim); border-left:3px solid var(--accent); border-radius:2px;
   padding:.7rem 1rem; font-size:.9rem; }}
 footer {{ border-top:1px solid var(--hairline); padding-top:1rem; color:var(--slate); font-size:.82rem; }}

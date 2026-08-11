@@ -539,7 +539,160 @@
     "liveness_ok": 196,
     "liveness_unknown": 17
    }
+  },
+  {
+   "run_at": "2026-08-11T19:45:02Z",
+   "started_at": "2026-08-11T19:40:00Z",
+   "trigger": "manual",
+   "duration_s": 302,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "sources page",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 2480,
+    "filtered_out": 62,
+    "publiccode_tier": 988,
+    "merged_away": 145,
+    "multi_country": 30
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-11T18:38:39Z"
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-11T16:48:34Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-11T18:56:07Z"
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-11T19:40:15Z"
+    },
+    "eu": {
+     "records": 9,
+     "checkpoint_mtime": "2026-08-11T18:44:01Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-11T18:34:06Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-11T14:17:10Z"
+    },
+    "nl": {
+     "records": 134,
+     "checkpoint_mtime": "2026-08-11T18:38:32Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-11T19:32:10Z"
+    }
+   },
+   "translation": {
+    "described": 2234,
+    "source_english": 692,
+    "machine_translated": 1542,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 2122,
+    "inferred": 816,
+    "unclassified": 358
+   },
+   "liveness": {
+    "checked": "2026-08-11T19:40:24Z",
+    "total": 2426,
+    "ok": 2337,
+    "dead": 23,
+    "pending_dead": 3,
+    "unknown": 60,
+    "archived": 39,
+    "newly_dead": [
+     "github.com/moda-gov-tw/code-gov-tw"
+    ],
+    "revived": []
+   },
+   "filters": {
+    "locale-bundle": 5,
+    "deployment-recipe": 18,
+    "upstream-fork": 32,
+    "ci-plumbing": 4,
+    "org-meta": 3
+   },
+   "delta": {
+    "entries_active": 56,
+    "per_source": {
+     "tw": 58
+    },
+    "liveness_dead": 2,
+    "liveness_ok": 73,
+    "liveness_unknown": -5
+   }
   }
  ],
- "updated_at": "2026-08-11T18:57:06Z"
+ "updated_at": "2026-08-11T19:45:02Z"
 }

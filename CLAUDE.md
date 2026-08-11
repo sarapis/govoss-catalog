@@ -36,6 +36,7 @@ public infrastructure.
 | 🇳🇱 NL | code.overheid.nl | **Forgejo API** (open, no key) | 134 |
 | 🇨🇦 CA | Open Resource Exchange | `code.json` | 67 |
 
+| 🇹🇼 TW | Public Code Platform (moda) | **official open-data export** | 58 |
 | 🌐 GLOBAL | Digital Public Goods Registry | REST API | 249 |
 
 **`sources.py` is the single source of truth** for source labels, links, access routes and
@@ -68,6 +69,26 @@ project rather than a scraping project.
   flattens them. Its `tags` are free-text research topics ("SIR", "compartment model"), so they
   go to `keywords`, **not** `categories` — feeding them to the taxonomy produced ~100
   unmappable one-offs, and that warning is only useful while it stays near zero.
+- **Taiwan: use the PUBLISHED dataset, not the SPA's API.** code.gov.tw is a Vue SPA. Its
+  internal API works — `POST /api/PublicProgramInfo/queryList` lists 58 programmes and
+  `.../getPublicProgramData` returns repo URLs — but that is two undocumented POSTs per
+  entry. The site also links an official open-data export at
+  `/api/OpenDataSet/PublicProgramInfoData/json`: one GET, repo URLs included, officially
+  published. Note `PublicProgram` (submission side, requires My eGov agency verification)
+  is a different endpoint from `PublicProgramInfo` (public read). Programme names stay in
+  Chinese as published; descriptions are translated.
+- **DPG repository URLs are free text.** Some pack several URLs plus prose into one field
+  (`…/therapist-web-app, https://…/patient-app, and https://…`). Taken verbatim they 404 and
+  register as newly-dead repos — dead links jumped 21 → 39 before the regex extraction
+  landed. Extra URLs go to `extra_repos`.
+- **Spain's CTT is bot-protected and stays that way.** Every route — HTML, RSS, `/api/*` —
+  returns HTTP 200 with an F5/BIG-IP TSPD CAPTCHA page instead of data. Bypassing a CAPTCHA
+  is not on the table. The legitimate route is Spain allowlisting a harvester or publishing
+  via datos.gob.es. Re-check rather than retry; the block is deliberate.
+- **Korea's oss.kr is the wrong shape.** A national OSS *promotion* portal — contests,
+  contribution academy, licence verification, news — whose `/opensource/hub/<id>` pages
+  profile upstream projects (Node.js and the like), not Korean public-sector code, and carry
+  no adoption data. Nothing to ingest without changing what the catalogue means.
 - **code.gov is retired.** It 302s to a Digital.gov policy page and `api.code.gov` returns the
   same HTML. The US federal inventory that *defined* the `code.json` schema is gone — but the
   schema outlived it, and Canada still uses it. Recorded in `sources.py:SURVEY` so nobody
