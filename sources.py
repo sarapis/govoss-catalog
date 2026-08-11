@@ -74,6 +74,33 @@ SOURCES = {
         "note": "236 repos but only one publiccode.yml, so the rest are indexed from bare "
                 "GitHub metadata and 32 forks are filtered out.",
     },
+    "DK/os2": {
+        "label": "OS2 Denmark", "country": "DK", "flag": "\U0001F1E9\U0001F1F0",
+        "site": "https://os2.eu/",
+        "api": "https://api.github.com/orgs/OS2web/repos",
+        "route": "GitHub orgs (20)", "claim": "built by Danish municipalities",
+        "note": "Municipal open source association; each product lives in its own GitHub "
+                "org, so this is 20 verified orgs. The naming is a minefield - searching "
+                "\"OS2\" also returns OS2World (2,446 repos of IBM OS/2 Warp and ArcaOS), "
+                "os2edu (a Chinese OS project), OS2G (a US student club), os2sd (Android ROM "
+                "trees) and OS23Portfolios (MySQL coursework). Every org was verified against "
+                "os2.eu or a Danish location, so harvest.py carries an explicit allowlist "
+                "(OS2_ORGS) and records the exclusions (OS2_EXCLUDED). Descriptions are mixed "
+                "Danish/English; ~82 Danish strings are NOT yet translated.",
+    },
+    "BG/governmentbg": {
+        "label": "e-Government Ministry", "country": "BG", "flag": "\U0001F1E7\U0001F1EC",
+        "site": "https://github.com/governmentbg",
+        "api": "https://api.github.com/orgs/governmentbg/repos",
+        "route": "GitHub org", "claim": "built for the Bulgarian government",
+        "note": "Bulgaria legally requires custom software written for government to be open "
+                "source, and this is where it lands: 186 repos from the Ministry of "
+                "e-Government. Found via the OSOR list, which pointed at the agency's "
+                "developer portal (dev.egov.bg, a JSF app with no data route) - the GitHub org "
+                "is the actual code. Descriptions are Bulgarian; ~158 strings are NOT yet "
+                "translated, and many are long EU-funding project titles rather than software "
+                "summaries.",
+    },
     "SE/offentligkod": {
         "label": "Offentligkod", "country": "SE", "flag": "\U0001F1F8\U0001F1EA",
         "site": "https://offentligkod.se/",
@@ -225,6 +252,14 @@ SURVEY = [
                "now ingested. Still unidentified: hosting_platform:city_of_ghent (a Belgian "
                "municipality, likely a handful of repos) and hosting_platform:dmrid_dits "
                "(github.com/DMRID is an individual user with one repo, not a registry)."},
+    {"country": "DK/BG", "flag": "\u26A0", "name": "translation debt (OS2 + Bulgaria)",
+     "url": "https://govoss-catalog.vercel.app/status.html", "status": "needs-research",
+     "detail": "English coverage dropped from 100% to 91% when OS2 Denmark and Bulgaria were "
+               "added: 265 strings remain untranslated (171 Bulgarian, 82 Danish, 12 other). "
+               "Recorded rather than papered over - every entry still carries description_lang "
+               "so a consumer can tell, and meta.json reports the real figure. The Bulgarian "
+               "set is mostly long EU-funding project titles rather than software summaries, "
+               "so it needs judgement about what is worth translating at all."},
     {"country": "meta", "flag": "\U0001F4D6", "name": "OSOR \"OSS repositories\" list",
      "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/oss-repositories",
      "status": "discovery-source",

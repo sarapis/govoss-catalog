@@ -73,6 +73,46 @@ def rec(source, country, tier, name, repo, **kw):
     return r
 
 
+# Per-ORG language tagging was wrong three times running (iMio/OGCIO English,
+# ARTE Portuguese, OS2 Danish, governmentbg Bulgarian) because repo descriptions
+# MIX languages inside a single org: 109 of 226 "Danish" strings had no Danish
+# markers at all and were already English. Detect from the TEXT instead. Script
+# detection is decisive for Cyrillic/Greek/CJK; for Latin scripts fall back to
+# stopwords, and default to None (unknown) rather than asserting English.
+_SCRIPTS = [("bg", re.compile(r"[\u0400-\u04FF]")),      # Cyrillic
+            ("el", re.compile(r"[\u0370-\u03FF]")),      # Greek
+            ("zh", re.compile(r"[\u4E00-\u9FFF]"))]      # CJK
+_STOP = {
+    "da": r"\b(og|til|af|for|med|som|der|kan|ikke|bliver|skal|brug(es|er)?|løsning|kommun\w*)\b|[æøåÆØÅ]",
+    "de": r"\b(und|der|die|das|für|mit|nicht|eine[rn]?|von|zur|werden|wird)\b|[äöüßÄÖÜ]",
+    "nl": r"\b(en|van|het|een|voor|met|niet|wordt|deze|naar)\b",
+    "fr": r"\b(le|la|les|des|pour|avec|dans|est|une|du|aux)\b",
+    "it": r"\b(il|lo|la|dei|delle|per|con|che|sono|della|gli)\b",
+    "pt": r"\b(o|a|os|as|dos|das|para|com|que|uma|não|serviço)\b",
+    "es": r"\b(el|la|los|las|del|para|con|que|una|no)\b",
+    "sv": r"\b(och|att|för|med|som|inte|kan|av|till)\b",
+    "fi": r"\b(ja|on|se|ei|joka|sekä|palvelu\w*|tieto\w*)\b",
+}
+_STOP_RE = {k: re.compile(v, re.I) for k, v in _STOP.items()}
+
+
+def detect_lang(text, hint=None):
+    """Best-effort language of a short description. hint is used only to break
+    Latin-script ties, never to override script evidence."""
+    if not text or not text.strip():
+        return None
+    for code, rx in _SCRIPTS:
+        if rx.search(text):
+            return code
+    scores = {k: len(rx.findall(text)) for k, rx in _STOP_RE.items()}
+    best = max(scores, key=scores.get)
+    if scores[best] >= 2 or (scores[best] == 1 and len(text) < 60):
+        if hint and scores.get(hint, 0) == scores[best]:
+            return hint
+        return best
+    return "en"       # Latin script, no non-English markers
+
+
 def base_lang(code):
     """it-IT / IT / en-US -> it / it / en. publiccode.yml is inconsistent here."""
     return (code or "").split("-")[0].lower() or None
@@ -224,7 +264,10 @@ def github_org_scan(org, source, country, workers=12):
                    # iMio and OGCIO write English descriptions; ARTE Portugal writes
                    # Portuguese. Tag per-org rather than assuming, so language-gap
                    # detection neither skips these rows nor mislabels them.
-                   desc_lang=("pt" if org == "amagovpt" else "en"),
+                   desc_lang=detect_lang(
+                       r.get("description"),
+                       hint={"amagovpt": "pt", "governmentbg": "bg"}.get(
+                           org, "da" if org in OS2_ORGS else None)),
                    stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
                    is_fork=bool(r.get("fork")))
 
@@ -325,6 +368,60 @@ def eu():
 
 def be():
     out, _ = github_org_scan("IMIO", "BE/iMio", "BE")
+    return out
+
+
+# OS2 is a Danish municipal open source association whose products each live in
+# their own GitHub org. The naming is a MINEFIELD: searching "OS2" also returns
+# OS2World (2,446 repos of IBM OS/2 Warp and ArcaOS operating-system code),
+# os2edu (412 repos, os2edu.cn, a Chinese OS project), OS2G (a US university
+# student club), os2sd (49 Android ROM vendor trees) and OS23Portfolios (someone's
+# MySQL coursework). Every org below was verified individually against os2.eu or a
+# Danish location, so this is an explicit allowlist rather than a name pattern.
+OS2_ORGS = ["OS2web", "OS2WebCore", "OS2mo", "os2sofd", "OS2Forms", "os2display",
+            "OS2borgerPC", "os2ulf", "OS2sandbox", "OS2offdig", "OS2iot",
+            "OS2fleetoptimiser", "OS2Valghalla", "OS2faktor", "os2kitos",
+            "os2indberetning", "OS2rollekatalog", "OS2compliance", "Skadesokonomi",
+            "os2ai"]
+OS2_EXCLUDED = {"OS2World": "IBM OS/2 Warp / ArcaOS operating system, 2446 repos",
+                "os2edu": "os2edu.cn, Chinese OS project, 412 repos",
+                "OS2G": "student organisation at a US university",
+                "os2sd": "Android ROM vendor trees, 49 repos",
+                "OS23Portfolios": "MySQL/phpMyAdmin coursework"}
+
+
+def os2():
+    """Denmark — OS2, the municipal open source association (os2.eu).
+
+    Found via the OSOR "OSS repositories" list, which is a curated directory of
+    public-sector catalogues and renders fine — unlike the EU OSS Catalogue on the
+    same portal. This is the Denmark source that guessing hostnames never found.
+
+    Products live one-per-GitHub-org; see OS2_ORGS for the verified allowlist and
+    OS2_EXCLUDED for the name collisions deliberately kept out.
+    """
+    out = []
+    for org in OS2_ORGS:
+        try:
+            got, _ = github_org_scan(org, "DK/os2", "DK")
+            out += got
+        except Exception as e:
+            print(f"    {org}: FAILED {type(e).__name__}")
+    print(f"    -> {len(out)} repos across {len(OS2_ORGS)} verified OS2 orgs "
+          f"({len(OS2_EXCLUDED)} name collisions excluded)")
+    return out
+
+
+def bg():
+    """Bulgaria — e-Government Ministry (github.com/governmentbg).
+
+    Bulgaria legally requires custom software written for government to be open
+    source, and this is where it lands: 186 repos from the Ministry of
+    e-Government. Also found via the OSOR list, which pointed at the agency's
+    developer portal (dev.egov.bg, a JSF app with no data route); the GitHub org
+    is the actual code.
+    """
+    out, _ = github_org_scan("governmentbg", "BG/governmentbg", "BG")
     return out
 
 
@@ -764,7 +861,7 @@ def dpg():
 
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
            "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "pt": pt,
-           "muc": muc,
+           "muc": muc, "os2": os2, "bg": bg,
            "dpg": dpg,
            "nlreg": nl_register}
 
