@@ -39,8 +39,12 @@ rows = []
 for r in c:
     rows.append({
         "n": r.get("name") or "(unnamed)",
-        "c": r.get("country"),
+        "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
+        "cs": r.get("countries") or ([r["country"]] if r.get("country") else []),
+        "mc": r.get("merged_count", 1),
+        "aka": r.get("also_known_as") or [],
         "s": SRC_LABEL.get(r.get("source"), r.get("source")),
+        "ss": [SRC_LABEL.get(x, x) for x in (r.get("sources") or [r.get("source")]) if x],
         "t": r.get("tier"),
         "l": r.get("license") or "",
         "d": (r.get("short_desc") or "")[:230],
@@ -68,8 +72,8 @@ n_ex = sum(1 for r in rows if r["ex"])
 # facet counts describe the DEFAULT view (excluded hidden), or the chips would
 # advertise entries the list will not show
 _inc = [r for r in rows if not r["ex"]]
-countries = collections.Counter(r["c"] for r in _inc)
-sources = collections.Counter(r["s"] for r in _inc)
+countries = collections.Counter(cc for r in _inc for cc in (r["cs"] or [r["c"]]) if cc)
+sources = collections.Counter(x for r in _inc for x in (r["ss"] or [r["s"]]) if x)
 licenses = collections.Counter(r["l"] for r in _inc if r["l"])
 n_pc = sum(1 for r in _inc if r["t"] == "publiccode")
 n_repos = len({r["u"] for r in _inc if r["u"]})
@@ -164,9 +168,9 @@ select {{ cursor:pointer; }}
 
 ul.list {{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }}
 li.item {{ border-bottom:1px solid var(--hairline); padding:.9rem .2rem;
-           display:grid; grid-template-columns:2.6rem 1fr; gap:.1rem .8rem; }}
+           display:grid; grid-template-columns:3.4rem 1fr; gap:.1rem .8rem; }}
 li.item:hover {{ background:var(--raised); }}
-.cc {{ font-family:var(--mono); font-size:.7rem; font-weight:600; letter-spacing:.06em;
+.cc {{ font-family:var(--mono); font-size:.7rem; line-height:1.5; font-weight:600; letter-spacing:.06em;
        color:var(--accent); padding-top:.18rem; }}
 .body {{ min-width:0; display:flex; flex-direction:column; gap:.3rem; }}
 .title {{ display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem; }}
@@ -282,12 +286,12 @@ function current() {{
   const showex = el('showex').checked;
   let out = DATA.filter(r =>
     (showex || !r.ex) &&
-    (!activeC.size || activeC.has(r.c)) &&
-    (!activeS.size || activeS.has(r.s)) &&
+    (!activeC.size || (r.cs||[r.c]).some(x => activeC.has(x))) &&
+    (!activeS.size || (r.ss||[r.s]).some(x => activeS.has(x))) &&
     (!activeF.size || r.fx.some(f => activeF.has(f))) &&
     (!lic || r.l === lic) &&
     (!lvf || (lvf === 'ok' ? !r.lv : r.lv === lvf)) &&
-    (!q || (r.n+' '+r.d+' '+r.o+' '+r.g.join(' ')).toLowerCase().includes(q))
+    (!q || (r.n+' '+r.d+' '+r.o+' '+r.g.join(' ')+' '+(r.aka||[]).join(' ')).toLowerCase().includes(q))
   );
   const s = el('sort').value;
   if (s === 'adopters') out.sort((a,b) => b.ub - a.ub || a.n.localeCompare(b.n));
@@ -320,7 +324,9 @@ function render() {{
         </div>
         ${{r.d ? `<div class="desc">${{esc(r.d)}}</div>` : ''}}
         <div class="foot">
-          <span class="src">${{esc(r.s)}}</span>
+          <span class="src">${{esc((r.ss && r.ss.length ? r.ss : [r.s]).join(' + '))}}</span>
+          ${{r.mc > 1 ? `<span title="merged from ${{r.mc}} catalogue records for the same repository">merged \\u00d7${{r.mc}}</span>` : ''}}
+          ${{r.aka && r.aka.length ? `<span>aka ${{esc(r.aka.join(', '))}}</span>` : ''}}
           ${{r.o ? `<span>${{esc(r.o)}}</span>` : ''}}
           ${{r.ub ? `<span>${{r.ub}} adopter${{r.ub>1?'s':''}}</span>` : ''}}
           ${{r.fx.length ? `<span>${{esc(r.fx.map(k=>FLABEL[k]||k).join(' \\u00b7 '))}}</span>` : ''}}
