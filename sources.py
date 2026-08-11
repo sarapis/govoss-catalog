@@ -84,6 +84,19 @@ SOURCES = {
                 "government tier: federal, provincial, municipal and Indigenous. Every "
                 "text field is localised {en, fr}, including repositoryURL.",
     },
+    "PT/arte": {
+        "label": "ARTE Portugal", "country": "PT", "flag": "\U0001F1F5\U0001F1F9",
+        "site": "https://github.com/amagovpt",
+        "api": "https://api.github.com/orgs/amagovpt/repos",
+        "route": "GitHub org", "claim": "built by Portugal's state technology agency",
+        "note": "ARTE - Agencia para a Reforma Tecnologica do Estado (arte.gov.pt), formerly "
+                "AMA, hence the amagovpt org name. 88 non-archived repos, actively developed: "
+                "the dados.gov.pt open data portal, the Web Accessibility Observatory "
+                "ecosystem, Autenticacao.Gov and Citizen Card middleware, ePortugal. Resolved "
+                "from the Software Heritage domain registry's github-gov-orgs.csv, and it "
+                "also identifies the EU catalogue facet hosting_platform:arte - which had "
+                "been misread here as ARTE the Franco-German broadcaster.",
+    },
     "IE/ogcio": {
         "label": "OGCIO Ireland", "country": "IE", "flag": "\U0001F1EE\U0001F1EA",
         "site": "https://github.com/ogcio",
@@ -178,18 +191,26 @@ SURVEY = [
                "all 193 UN member states. A measurement dataset, not a curated catalogue - "
                "it answers 'who contributes' rather than 'what can we adopt'. Useful as "
                "discovery input for finding catalogues we have missed."},
-    {"country": "PT/CY", "flag": "\U0001F1EA\U0001F1FA", "name": "listed by the EU catalogue",
+    {"country": "CY", "flag": "\U0001F1E8\U0001F1FE", "name": "Cyprus - no code platform found",
+     "url": "https://www.cyprus.gov.cy/", "status": "none-found",
+     "detail": "Checked properly rather than left open. The Software Heritage domain registry "
+               "has collected 634 responding Cyprus government domains and NONE is a code "
+               "platform or forge; there is no Cyprus entry in its github-gov-orgs.csv; and "
+               "its candidate list names only parliament.cy. Keyword matches for git/code/repo "
+               "across the subdomain list are false positives (digitalcoalition, "
+               "reportdruginfo). Cyprus appears simply not to publish government source code "
+               "centrally. EGDI rank 38 of 193, so this is a genuine gap rather than a "
+               "discovery failure."},
+    {"country": "EU facets", "flag": "\U0001F1EA\U0001F1FA", "name": "remaining EU catalogue facets",
      "url": "https://interoperable-europe.ec.europa.eu/eu-oss-catalogue",
      "status": "unresolved",
-     "detail": "Portugal and Cyprus appear in EU-catalogue country filters but no upstream "
-               "could be identified. Ireland WAS on this list and is now resolved: the EU "
-               "catalogue's SOURCE FACET NAMES are readable in the page HTML even though its "
-               "search returns nothing, and hosting_platform:ogcio led to Ireland's OGCIO. "
-               "Three facets remain unidentified as catalogues: hosting_platform:arte (ARTE, "
-               "the Franco-German public broadcaster), hosting_platform:city_of_ghent (a "
-               "Belgian municipality) and hosting_platform:dmrid_dits (github.com/DMRID is an "
-               "individual user with one repo, not a registry). Reading the facet labels is a "
-               "better discovery route than guessing hostnames."},
+     "detail": "Reading the EU catalogue's SOURCE FACET NAMES from the page HTML resolved two "
+               "of the three unknowns: hosting_platform:ogcio is Ireland's OGCIO, and "
+               "hosting_platform:arte is Portugal's ARTE state technology agency - NOT the "
+               "Franco-German broadcaster, which is what it was first read as here. Both are "
+               "now ingested. Still unidentified: hosting_platform:city_of_ghent (a Belgian "
+               "municipality, likely a handful of repos) and hosting_platform:dmrid_dits "
+               "(github.com/DMRID is an individual user with one repo, not a registry)."},
     {"country": "n/a", "flag": "\u26A0", "name": "UNODC GlobE \"Directory of Open-Source Registries\"",
      "url": "https://globenetwork.unodc.org/globenetwork/en/directory-of-open-source-registries/index.html",
      "status": "false-lead",

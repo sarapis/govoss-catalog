@@ -221,9 +221,10 @@ def github_org_scan(org, source, country, workers=12):
                    repo_owner=org, license=(r.get("license") or {}).get("spdx_id"),
                    entry_url=r.get("html_url"),
                    short_desc=(r.get("description") or "")[:400],
-                   # GitHub repo descriptions in this org are written in English;
-                   # tag it so language-gap detection does not skip these rows.
-                   desc_lang="en",
+                   # iMio and OGCIO write English descriptions; ARTE Portugal writes
+                   # Portuguese. Tag per-org rather than assuming, so language-gap
+                   # detection neither skips these rows nor mislabels them.
+                   desc_lang=("pt" if org == "amagovpt" else "en"),
                    stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
                    is_fork=bool(r.get("fork")))
 
@@ -324,6 +325,21 @@ def eu():
 
 def be():
     out, _ = github_org_scan("IMIO", "BE/iMio", "BE")
+    return out
+
+
+def pt():
+    """Portugal — ARTE, Agencia para a Reforma Tecnologica do Estado (github.com/amagovpt).
+
+    Resolved from the Software Heritage domain registry's data/github-gov-orgs.csv
+    (`amagovpt,Portugal`). The org has since been renamed to ARTE and its blog is
+    arte.gov.pt — which also identifies the EU catalogue facet `hosting_platform:arte`
+    that had been misread here as ARTE the Franco-German broadcaster.
+
+    88 non-archived repos, actively developed: the dadosgov open data portal front end,
+    udata-pt, accessibility collections, MyMonitor, authentication service docs.
+    """
+    out, _ = github_org_scan("amagovpt", "PT/arte", "PT")
     return out
 
 
@@ -668,7 +684,8 @@ def dpg():
 
 
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
-           "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "dpg": dpg,
+           "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "pt": pt,
+           "dpg": dpg,
            "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as
