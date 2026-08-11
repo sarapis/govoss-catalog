@@ -1208,7 +1208,7 @@
   "fallback_repo": "https://gitlab.opencode.de/urbo-community/urbo.git",
   "upstream_id": 11309,
   "forge_path": "urbo-community/urbo",
-  "last_activity": "2026-08-10T21:38:14.452Z"
+  "last_activity": "2026-08-11T11:49:05.853Z"
  },
  {
   "source": "DE/openCode",
@@ -3546,7 +3546,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-external-downloader.git",
   "upstream_id": 10462,
   "forge_path": "fitko/pvog/bibliotheken/pv-external-downloader",
-  "last_activity": "2026-07-21T07:46:12.213Z"
+  "last_activity": "2026-08-11T07:41:46.959Z"
  },
  {
   "source": "DE/openCode",
@@ -3664,7 +3664,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-testdatengenerator.git",
   "upstream_id": 10459,
   "forge_path": "fitko/pvog/bibliotheken/pv-testdatengenerator",
-  "last_activity": "2026-07-21T09:07:27.354Z"
+  "last_activity": "2026-08-11T08:22:22.843Z"
  },
  {
   "source": "DE/openCode",
@@ -4199,7 +4199,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-cleanup.git",
   "upstream_id": 10259,
   "forge_path": "it.nrw/nrw.desk/conference-cleanup",
-  "last_activity": "2026-08-08T02:34:10.083Z"
+  "last_activity": "2026-08-11T02:34:35.915Z"
  },
  {
   "source": "DE/openCode",
@@ -4437,8 +4437,8 @@
   ],
   "software_type": "standalone/web",
   "dev_status": "beta",
-  "version": "0.2.1",
-  "released": "2026-07-15",
+  "version": "0.2.2",
+  "released": "2026-08-10",
   "maintenance": "internal",
   "contacts": [
    "Bundesministerium f\u00fcr Digitales und Staatsmodernisierung"
@@ -4462,7 +4462,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow.git",
   "upstream_id": 10117,
   "forge_path": "bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow",
-  "last_activity": "2026-08-10T20:39:20.453Z"
+  "last_activity": "2026-08-11T08:55:09.060Z"
  },
  {
   "source": "DE/openCode",
@@ -6227,7 +6227,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/bum-images.git",
   "upstream_id": 8561,
   "forge_path": "bwi/bundesmessenger/backend/bum-images",
-  "last_activity": "2026-08-07T08:23:59.910Z"
+  "last_activity": "2026-08-11T09:45:23.604Z"
  },
  {
   "source": "DE/openCode",
@@ -6842,7 +6842,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bpa/audiominer/audiominer.git",
   "upstream_id": 8221,
   "forge_path": "bpa/audiominer/audiominer",
-  "last_activity": "2026-08-10T12:26:38.275Z"
+  "last_activity": "2026-08-11T08:58:51.036Z"
  },
  {
   "source": "DE/openCode",
@@ -7897,7 +7897,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot.git",
   "upstream_id": 7690,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot",
-  "last_activity": "2026-08-10T14:39:27.023Z"
+  "last_activity": "2026-08-11T10:38:50.900Z"
  },
  {
   "source": "DE/openCode",
@@ -7932,7 +7932,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend.git",
   "upstream_id": 7681,
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend",
-  "last_activity": "2026-08-09T03:07:35.333Z"
+  "last_activity": "2026-08-11T03:06:29.829Z"
  },
  {
   "source": "DE/openCode",
@@ -8285,7 +8285,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_permissions.git",
   "upstream_id": 7516,
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_permissions",
-  "last_activity": "2026-08-10T03:24:41.947Z"
+  "last_activity": "2026-08-11T09:42:22.336Z"
  },
  {
   "source": "DE/openCode",
@@ -10300,7 +10300,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_public_frontend.git",
   "upstream_id": 5259,
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_public_frontend",
-  "last_activity": "2026-08-10T07:56:39.963Z"
+  "last_activity": "2026-08-11T09:48:06.455Z"
  },
  {
   "source": "DE/openCode",
@@ -10841,7 +10841,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/solution-architecture.git",
   "upstream_id": 5077,
   "forge_path": "fitko/matrix-g2x/solution-architecture",
-  "last_activity": "2026-08-10T10:17:38.276Z"
+  "last_activity": "2026-08-11T11:18:20.332Z"
  },
  {
   "source": "DE/openCode",
@@ -11343,7 +11343,7 @@
   "fallback_repo": "https://gitlab.opencode.de/urbandataspaceplatform/core-platform.git",
   "upstream_id": 4909,
   "forge_path": "urbandataspaceplatform/core-platform",
-  "last_activity": "2026-08-07T13:30:27.497Z"
+  "last_activity": "2026-08-11T08:55:58.005Z"
  },
  {
   "source": "DE/openCode",
@@ -11383,7 +11383,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-call.git",
   "upstream_id": 4876,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-call",
-  "last_activity": "2026-04-27T12:13:51.666Z"
+  "last_activity": "2026-08-11T08:48:15.955Z"
  },
  {
   "source": "DE/openCode",
@@ -11677,7 +11677,7 @@
   "fallback_repo": "https://gitlab.opencode.de/THM-Health/PILOS.git",
   "upstream_id": 4812,
   "forge_path": "THM-Health/PILOS",
-  "last_activity": "2026-08-06T04:05:04.830Z"
+  "last_activity": "2026-08-11T04:06:18.017Z"
  },
  {
   "source": "DE/openCode",
@@ -12174,7 +12174,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-backend.git",
   "upstream_id": 4576,
   "forge_path": "it.nrw/nrw.desk/conference-backend",
-  "last_activity": "2026-08-08T02:32:25.501Z"
+  "last_activity": "2026-08-11T02:33:04.834Z"
  },
  {
   "source": "DE/openCode",
@@ -12676,7 +12676,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-notifier.git",
   "upstream_id": 4309,
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-notifier",
-  "last_activity": "2026-08-04T02:42:40.487Z"
+  "last_activity": "2026-08-11T02:45:04.007Z"
  },
  {
   "source": "DE/openCode",
@@ -12715,7 +12715,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-creator.git",
   "upstream_id": 4306,
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-creator",
-  "last_activity": "2026-07-30T02:38:11.780Z"
+  "last_activity": "2026-08-11T02:41:56.026Z"
  },
  {
   "source": "DE/openCode",
@@ -12923,8 +12923,8 @@
   ],
   "software_type": "standalone/frontend",
   "dev_status": "beta",
-  "version": "0.10.2",
-  "released": "2026-07-07",
+  "version": "0.10.3",
+  "released": "2026-08-11",
   "maintenance": "contract",
   "contacts": [
    "Information und Technik Nordrhein-Westfalen"
@@ -12939,7 +12939,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/gateway-frontend.git",
   "upstream_id": 4280,
   "forge_path": "it.nrw/nrw.desk/gateway-frontend",
-  "last_activity": "2026-07-07T13:01:17.115Z"
+  "last_activity": "2026-08-11T08:12:52.099Z"
  },
  {
   "source": "DE/openCode",
@@ -13077,7 +13077,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wechange-eg/cosinnus.git",
   "upstream_id": 4268,
   "forge_path": "wechange-eg/cosinnus",
-  "last_activity": "2026-08-10T12:07:15.650Z"
+  "last_activity": "2026-08-11T08:46:11.368Z"
  },
  {
   "source": "DE/openCode",
@@ -13433,7 +13433,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/identity-curator.git",
   "upstream_id": 4150,
   "forge_path": "it.nrw/nrw.desk/identity-curator",
-  "last_activity": "2026-08-04T02:36:29.870Z"
+  "last_activity": "2026-08-11T02:39:18.683Z"
  },
  {
   "source": "DE/openCode",
@@ -13472,7 +13472,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/calendar-manager.git",
   "upstream_id": 4146,
   "forge_path": "it.nrw/nrw.desk/calendar-manager",
-  "last_activity": "2026-08-06T02:30:45.042Z"
+  "last_activity": "2026-08-11T02:27:16.029Z"
  },
  {
   "source": "DE/openCode",
@@ -14039,7 +14039,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/portal-backend.git",
   "upstream_id": 4021,
   "forge_path": "it.nrw/nrw.desk/portal-backend",
-  "last_activity": "2026-08-04T02:49:09.159Z"
+  "last_activity": "2026-08-11T02:48:44.946Z"
  },
  {
   "source": "DE/openCode",
@@ -14422,7 +14422,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/siteconfig_impexp.git",
   "upstream_id": 3683,
   "forge_path": "bmi/government-site-builder-11/extensions/siteconfig_impexp",
-  "last_activity": "2026-08-10T18:16:50.042Z"
+  "last_activity": "2026-08-11T09:47:17.343Z"
  },
  {
   "source": "DE/openCode",
@@ -14784,7 +14784,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kern-ux/kern-ux-plain.git",
   "upstream_id": 3543,
   "forge_path": "kern-ux/kern-ux-plain",
-  "last_activity": "2026-08-06T15:45:07.762Z"
+  "last_activity": "2026-08-11T09:33:17.094Z"
  },
  {
   "source": "DE/openCode",
@@ -14892,7 +14892,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000047244955/bovis.net.git",
   "upstream_id": 3487,
   "forge_path": "oc000047244955/bovis.net",
-  "last_activity": "2026-08-07T08:49:00.473Z"
+  "last_activity": "2026-08-11T11:47:05.106Z"
  },
  {
   "source": "DE/openCode",
@@ -15022,7 +15022,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openculturas/openculturas-distribution.git",
   "upstream_id": 3458,
   "forge_path": "openculturas/openculturas-distribution",
-  "last_activity": "2026-08-10T13:13:47.878Z"
+  "last_activity": "2026-08-11T07:56:05.334Z"
  },
  {
   "source": "DE/openCode",
@@ -15120,8 +15120,8 @@
   ],
   "software_type": "library",
   "dev_status": "stable",
-  "version": "1.16.4",
-  "released": "2026-07-21",
+  "version": "1.16.5",
+  "released": "2026-08-11",
   "maintenance": "internal",
   "contacts": [
    "Dataport A\u00f6R"
@@ -15138,7 +15138,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/xzufi-konverter.git",
   "upstream_id": 3404,
   "forge_path": "fitko/fim/xzufi-konverter",
-  "last_activity": "2026-07-21T08:08:44.955Z"
+  "last_activity": "2026-08-11T08:22:39.424Z"
  },
  {
   "source": "DE/openCode",
@@ -15353,7 +15353,7 @@
   "fallback_repo": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner.git",
   "upstream_id": 3175,
   "forge_path": "digitalservicebund/elterngeldrechner",
-  "last_activity": "2026-08-10T14:17:40.372Z"
+  "last_activity": "2026-08-11T12:22:50.409Z"
  },
  {
   "source": "DE/openCode",
@@ -15444,7 +15444,7 @@
   "fallback_repo": "https://gitlab.opencode.de/zammad/zammad.git",
   "upstream_id": 3166,
   "forge_path": "zammad/zammad",
-  "last_activity": "2026-08-10T12:21:30.791Z"
+  "last_activity": "2026-08-11T11:35:07.538Z"
  },
  {
   "source": "DE/openCode",
@@ -15895,7 +15895,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/data-stories.git",
   "upstream_id": 2874,
   "forge_path": "umwelt-info/data-stories",
-  "last_activity": "2026-08-10T15:06:11.507Z"
+  "last_activity": "2026-08-11T11:20:19.918Z"
  },
  {
   "source": "DE/openCode",
@@ -16818,7 +16818,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/document-writing-tools/markdown-webbook.git",
   "upstream_id": 2542,
   "forge_path": "open-code/document-writing-tools/markdown-webbook",
-  "last_activity": "2026-08-10T13:03:55.329Z"
+  "last_activity": "2026-08-11T12:36:09.744Z"
  },
  {
   "source": "DE/openCode",
@@ -17629,7 +17629,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/docs/portal.git",
   "upstream_id": 1875,
   "forge_path": "fitko/docs/portal",
-  "last_activity": "2026-08-07T10:42:06.537Z"
+  "last_activity": "2026-08-11T09:02:21.363Z"
  },
  {
   "source": "DE/openCode",
@@ -17846,7 +17846,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/opendesk/deployment/opendesk.git",
   "upstream_id": 1317,
   "forge_path": "bmi/opendesk/deployment/opendesk",
-  "last_activity": "2026-08-10T20:35:41.370Z"
+  "last_activity": "2026-08-11T11:38:01.191Z"
  },
  {
   "source": "DE/openCode",
@@ -18275,7 +18275,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/portal.git",
   "upstream_id": 1010,
   "forge_path": "fitko/fim/portal",
-  "last_activity": "2026-08-10T16:05:41.603Z"
+  "last_activity": "2026-08-11T10:34:53.398Z"
  },
  {
   "source": "DE/openCode",
@@ -18397,7 +18397,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opentalk/ot-setup.git",
   "upstream_id": 823,
   "forge_path": "opentalk/ot-setup",
-  "last_activity": "2026-08-07T09:07:29.426Z"
+  "last_activity": "2026-08-11T07:32:50.942Z"
  },
  {
   "source": "DE/openCode",
@@ -18628,7 +18628,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-config-and-assets.git",
   "upstream_id": 724,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-web-config-and-assets",
-  "last_activity": "2026-04-17T14:27:53.384Z"
+  "last_activity": "2026-08-11T11:46:06.510Z"
  },
  {
   "source": "DE/openCode",
@@ -18790,7 +18790,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/helm-chart.git",
   "upstream_id": 560,
   "forge_path": "bwi/bundesmessenger/backend/helm-chart",
-  "last_activity": "2026-08-10T13:19:54.417Z"
+  "last_activity": "2026-08-11T11:50:46.609Z"
  },
  {
   "source": "DE/openCode",
@@ -18910,7 +18910,7 @@
   "fallback_repo": "https://gitlab.opencode.de/deleonio/kolibri.git",
   "upstream_id": 438,
   "forge_path": "deleonio/kolibri",
-  "last_activity": "2026-08-10T07:45:22.791Z"
+  "last_activity": "2026-08-11T05:11:53.717Z"
  },
  {
   "source": "DE/openCode",
@@ -18950,7 +18950,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/metadaten.git",
   "upstream_id": 433,
   "forge_path": "umwelt-info/metadaten",
-  "last_activity": "2026-08-10T12:35:39.141Z"
+  "last_activity": "2026-08-11T12:02:10.370Z"
  },
  {
   "source": "DE/openCode",
@@ -19402,7 +19402,7 @@
   "fallback_repo": "https://gitlab.opencode.de/diplanung/ozgxplanung.git",
   "upstream_id": 159,
   "forge_path": "diplanung/ozgxplanung",
-  "last_activity": "2026-08-10T01:31:58.909Z"
+  "last_activity": "2026-08-11T05:00:49.753Z"
  },
  {
   "source": "DE/openCode",

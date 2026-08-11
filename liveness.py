@@ -201,6 +201,25 @@ def main():
         print(f"    HEAD: {rest} repos over {len(by_host)} hosts")
         results.update(check_head_per_host(by_host))
 
+    # ---- CONFIRM every "dead" verdict with a plain web HEAD before recording it.
+    # An API 404 is not the same as gone: gitlab.huma-num.fr restricts anonymous
+    # API access, so its projects returned 404 from /api/v4 while the web URL
+    # answered 200. Without this pass the monitor reported live repos as newly
+    # dead — inventing exactly the drift it exists to detect. ~85 extra requests.
+    suspect = [k for k, v in results.items() if v.get("status") in DEAD]
+    if suspect:
+        print(f"\n    confirming {len(suspect)} dead verdicts with a web HEAD...")
+        by_h = defaultdict(list)
+        for k in suspect:
+            by_h[k.split("/")[0]].append(k)
+        confirm = check_head_per_host(by_h)
+        rescued = 0
+        for k, v in confirm.items():
+            if v.get("status") == 200:
+                results[k] = {"status": 200, "api_404_but_web_ok": True}
+                rescued += 1
+        print(f"    rescued {rescued} that the API called 404 but the web serves fine")
+
     # ---- fold in history so "dead since" is meaningful
     repos, newly_dead, revived = {}, [], []
     for k, res in results.items():

@@ -8,6 +8,7 @@
   "repo_key": "github.com/imio/products.cputils",
   "repo_owner": "IMIO",
   "short_desc": "Some utility methods as external methods, monkey patches, ...",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-03-26T08:47:45Z"
  },
@@ -19,6 +20,7 @@
   "repo": "https://github.com/IMIO/imio.webservice.json",
   "repo_key": "github.com/imio/imio.webservice.json",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-22T06:50:10Z"
  },
@@ -31,6 +33,7 @@
   "repo_key": "github.com/imio/cpskin.policy",
   "repo_owner": "IMIO",
   "short_desc": "Policy package for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-04-01T07:01:44Z"
  },
@@ -43,6 +46,7 @@
   "repo_key": "github.com/imio/cpskin.theme",
   "repo_owner": "IMIO",
   "short_desc": "Theme package for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:28:43Z"
  },
@@ -55,6 +59,7 @@
   "repo_key": "github.com/imio/cpskin.locales",
   "repo_owner": "IMIO",
   "short_desc": "Locales package for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:36:02Z"
  },
@@ -67,6 +72,7 @@
   "repo_key": "github.com/imio/cpskin.core",
   "repo_owner": "IMIO",
   "short_desc": "Core package for cpskin",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-04-01T07:00:07Z"
  },
@@ -79,6 +85,7 @@
   "repo_key": "github.com/imio/cpskin.workflow",
   "repo_owner": "IMIO",
   "short_desc": "Workflow package for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2020-10-27T15:23:09Z"
  },
@@ -91,6 +98,7 @@
   "repo_key": "github.com/imio/cpskin.menu",
   "repo_owner": "IMIO",
   "short_desc": "Menu package for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T14:59:27Z"
  },
@@ -103,6 +111,7 @@
   "repo_key": "github.com/imio/cpskin.slider",
   "repo_owner": "IMIO",
   "short_desc": "FlexSlider integration into Plone",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:37:36Z"
  },
@@ -114,6 +123,7 @@
   "repo": "https://github.com/IMIO/imio.dataexchange.core",
   "repo_key": "github.com/imio/imio.dataexchange.core",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-06-17T08:43:53Z"
  },
@@ -125,6 +135,7 @@
   "repo": "https://github.com/IMIO/buildout.website",
   "repo_key": "github.com/imio/buildout.website",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 3,
   "last_activity": "2026-07-17T10:21:11Z"
  },
@@ -136,6 +147,7 @@
   "repo": "https://github.com/IMIO/cpskin.minisite",
   "repo_key": "github.com/imio/cpskin.minisite",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:37:49Z"
  },
@@ -148,6 +160,7 @@
   "repo_key": "github.com/imio/imio.pyutils",
   "repo_owner": "IMIO",
   "short_desc": "Python useful methods",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-26T08:44:08Z"
  },
@@ -159,6 +172,7 @@
   "repo": "https://github.com/IMIO/imio.media",
   "repo_key": "github.com/imio/imio.media",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:24:54Z"
  },
@@ -171,6 +185,7 @@
   "repo_key": "github.com/imio/imio.helpers",
   "repo_owner": "IMIO",
   "short_desc": "Various helper methods for plone development.",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2026-07-31T11:47:48Z"
  },
@@ -184,6 +199,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Schedule behaviors for Plone content types",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-05-08T14:28:30Z"
  },
@@ -196,6 +212,7 @@
   "repo_key": "github.com/imio/ric.core",
   "repo_owner": "IMIO",
   "short_desc": "Core package for RIC",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-09-12T11:56:38Z"
  },
@@ -208,6 +225,7 @@
   "repo_key": "github.com/imio/imio.migrator",
   "repo_owner": "IMIO",
   "short_desc": "Migration infrastructure",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-15T18:03:38Z"
  },
@@ -220,6 +238,7 @@
   "repo_key": "github.com/imio/imio.actionspanel",
   "repo_owner": "IMIO",
   "short_desc": "Provide a view to display avaialble actions on an object",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-04T14:21:29Z"
  },
@@ -232,6 +251,7 @@
   "repo_key": "github.com/imio/plonetheme.imioapps",
   "repo_owner": "IMIO",
   "short_desc": "Imio common skin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-18T13:25:20Z"
  },
@@ -243,6 +263,7 @@
   "repo": "https://github.com/IMIO/imio.dashboard",
   "repo_key": "github.com/imio/imio.dashboard",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-12-16T10:44:12Z"
  },
@@ -255,6 +276,7 @@
   "repo_key": "github.com/imio/imio_geonode",
   "repo_owner": "IMIO",
   "short_desc": "geonode project",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2021-10-14T14:53:14Z"
  },
@@ -268,6 +290,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Manage object history using a table and highlight history link when necessary",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-13T10:17:22Z"
  },
@@ -280,6 +303,7 @@
   "repo_key": "github.com/imio/imio.prettylink",
   "repo_owner": "IMIO",
   "short_desc": "Manage generation of a pretty link to an element including coloration, leading icons, ...",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-02T07:44:54Z"
  },
@@ -293,6 +317,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "A django port of MySociety's FixMyStreet, maintained by VisibleGovernment.ca",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2015-07-22T12:23:13Z"
  },
@@ -305,6 +330,7 @@
   "repo_key": "github.com/imio/collective.printrss",
   "repo_owner": "IMIO",
   "short_desc": "Products to print a rss feed from a given URL.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T14:59:28Z"
  },
@@ -317,6 +343,7 @@
   "repo_key": "github.com/imio/imio.schedule",
   "repo_owner": "IMIO",
   "short_desc": "Base content types and base views for urban schedule.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-22T13:17:19Z"
  },
@@ -328,6 +355,7 @@
   "repo": "https://github.com/IMIO/cpskin.demo",
   "repo_key": "github.com/imio/cpskin.demo",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2020-07-10T09:13:31Z"
  },
@@ -340,6 +368,7 @@
   "repo_key": "github.com/imio/imio.transmogrifier.ploneformgen",
   "repo_owner": "IMIO",
   "short_desc": "New blueprint to help Transmogrifier to migrate PloneFormGen objects.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2016-06-28T12:27:17Z"
  },
@@ -352,6 +381,7 @@
   "repo_key": "github.com/imio/cpskin.agenda",
   "repo_owner": "IMIO",
   "short_desc": "Agenda related developments for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2021-02-17T13:27:18Z"
  },
@@ -364,6 +394,7 @@
   "repo_key": "github.com/imio/cpskin.caching",
   "repo_owner": "IMIO",
   "short_desc": "Caching configuration for cpskin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T14:59:38Z"
  },
@@ -376,6 +407,7 @@
   "repo_key": "github.com/imio/imio.zamqp.core",
   "repo_owner": "IMIO",
   "short_desc": "Generic methods tu use amqp",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-16T10:54:50Z"
  },
@@ -387,6 +419,7 @@
   "repo": "https://github.com/IMIO/collective.faceted.task",
   "repo_key": "github.com/imio/collective.faceted.task",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-09-05T08:36:19Z"
  },
@@ -400,6 +433,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Docker container for Publik components",
+  "desc_lang": "en",
   "stars": 4,
   "last_activity": "2026-07-16T11:18:06Z"
  },
@@ -412,6 +446,7 @@
   "repo_key": "github.com/imio/imio.zamqp.pm",
   "repo_owner": "IMIO",
   "short_desc": "PloneMeeting specific methods tu use amqp",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-31T11:54:08Z"
  },
@@ -424,6 +459,7 @@
   "repo_key": "github.com/imio/imio.zamqp.dms",
   "repo_owner": "IMIO",
   "short_desc": "zamqp consumer for imio.dms.mail",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-28T09:58:35Z"
  },
@@ -435,6 +471,7 @@
   "repo": "https://github.com/IMIO/collective.faceted.taxonomywidget",
   "repo_key": "github.com/imio/collective.faceted.taxonomywidget",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2021-02-26T13:26:53Z"
  },
@@ -446,6 +483,7 @@
   "repo": "https://github.com/IMIO/imio.annex",
   "repo_key": "github.com/imio/imio.annex",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-04-24T14:05:59Z"
  },
@@ -457,6 +495,7 @@
   "repo": "https://github.com/IMIO/cpskin.citizen",
   "repo_key": "github.com/imio/cpskin.citizen",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-01-17T09:44:14Z"
  },
@@ -469,6 +508,7 @@
   "repo_key": "github.com/imio/cpskin.diazotheme.dreamrightportlet",
   "repo_owner": "IMIO",
   "short_desc": "Dream with right portlet for CPSKin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-03-07T10:31:40Z"
  },
@@ -481,6 +521,7 @@
   "repo_key": "github.com/imio/liege.urban.dataimport",
   "repo_owner": "IMIO",
   "short_desc": "Liege urban import",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-03-12T23:13:32Z"
  },
@@ -493,6 +534,7 @@
   "repo_key": "github.com/imio/collective.behavior.internalnumber",
   "repo_owner": "IMIO",
   "short_desc": "Configurable internal number plone behavior",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-11-25T14:49:53Z"
  },
@@ -504,6 +546,7 @@
   "repo": "https://github.com/IMIO/urban.vocabulary",
   "repo_key": "github.com/imio/urban.vocabulary",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-08-17T17:46:35Z"
  },
@@ -516,6 +559,7 @@
   "repo_key": "github.com/imio/imio.updates",
   "repo_owner": "IMIO",
   "short_desc": "Helpers to update plone instances",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-08T19:21:41Z"
  },
@@ -528,6 +572,7 @@
   "repo_key": "github.com/imio/collective.contact.importexport",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-03-28T10:33:55Z"
  },
@@ -540,6 +585,7 @@
   "repo_key": "github.com/imio/cpskin.diazotheme.dreamrightportletbasic",
   "repo_owner": "IMIO",
   "short_desc": "dreamRightPortletBasic theme for CPSkin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-03-07T11:52:57Z"
  },
@@ -553,6 +599,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Docker image for Authentic identity provider",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2025-05-26T07:16:08Z"
  },
@@ -566,6 +613,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "PAS plugin use to connect to imio apps",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-09-04T08:37:05Z"
  },
@@ -578,6 +626,7 @@
   "repo_key": "github.com/imio/cpskin.diazotheme.spirit",
   "repo_owner": "IMIO",
   "short_desc": "Spirit theme for CPSkin",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-02-20T14:09:29Z"
  },
@@ -591,6 +640,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "This package provides batch actions for eea.facetednavigation dashboard",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-04-20T06:56:31Z"
  },
@@ -603,6 +653,7 @@
   "repo_key": "github.com/imio/import_cadastre",
   "repo_owner": "IMIO",
   "short_desc": "Import cadastre script for urban",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-05T08:12:02Z"
  },
@@ -615,6 +666,7 @@
   "repo_key": "github.com/imio/plone.app.stagingbehavior",
   "repo_owner": "IMIO",
   "short_desc": "behavior used for enabling the plone.app.iterate functionality for Dexterity content",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2018-01-26T14:43:51Z"
  },
@@ -627,6 +679,7 @@
   "repo_key": "github.com/imio/ideabox.policy",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-12-11T08:42:53Z"
  },
@@ -638,6 +691,7 @@
   "repo": "https://github.com/IMIO/buildout.ideabox",
   "repo_key": "github.com/imio/buildout.ideabox",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-07-19T08:16:53Z"
  },
@@ -651,6 +705,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Custom date widgets for eea.facetednavigation",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-09-05T08:34:43Z"
  },
@@ -662,6 +717,7 @@
   "repo": "https://github.com/IMIO/imio.urban.dataimport",
   "repo_key": "github.com/imio/imio.urban.dataimport",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-03-12T22:32:23Z"
  },
@@ -673,6 +729,7 @@
   "repo": "https://github.com/IMIO/appy",
   "repo_key": "github.com/imio/appy",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-07T12:26:29Z"
  },
@@ -684,6 +741,7 @@
   "repo": "https://github.com/IMIO/Products.urban",
   "repo_key": "github.com/imio/products.urban",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-08-10T11:15:56Z"
  },
@@ -695,6 +753,7 @@
   "repo": "https://github.com/IMIO/imio.pm.locales",
   "repo_key": "github.com/imio/imio.pm.locales",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-31T12:33:54Z"
  },
@@ -707,6 +766,7 @@
   "repo_key": "github.com/imio/server.urban",
   "repo_owner": "IMIO",
   "short_desc": "Buildout installer for iA.Urban product",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-24T19:15:28Z"
  },
@@ -718,6 +778,7 @@
   "repo": "https://github.com/IMIO/liege.urban",
   "repo_key": "github.com/imio/liege.urban",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-11T09:17:21Z"
  },
@@ -730,6 +791,7 @@
   "repo_key": "github.com/imio/passerelle-imio-ia-aes",
   "repo_owner": "IMIO",
   "short_desc": "Passerelle (E-Guichet) plugin's to communicate with AES.",
+  "desc_lang": "en",
   "stars": 3,
   "last_activity": "2026-07-31T13:24:32Z"
  },
@@ -741,6 +803,7 @@
   "repo": "https://github.com/IMIO/urban.dataimport.core",
   "repo_key": "github.com/imio/urban.dataimport.core",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-06-16T12:49:33Z"
  },
@@ -753,6 +816,7 @@
   "repo_key": "github.com/imio/imio.gdpr",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-11-19T15:55:27Z"
  },
@@ -764,6 +828,7 @@
   "repo": "https://github.com/IMIO/buildout.bibliotheca",
   "repo_key": "github.com/imio/buildout.bibliotheca",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-30T08:47:49Z"
  },
@@ -775,6 +840,7 @@
   "repo": "https://github.com/IMIO/urban.restapi.client",
   "repo_key": "github.com/imio/urban.restapi.client",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-12-10T13:12:18Z"
  },
@@ -787,6 +853,7 @@
   "repo_key": "github.com/imio/bibliotheca.policy",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-24T07:14:24Z"
  },
@@ -800,6 +867,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Add a gallery of images to Folderish content types",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-14T09:08:51Z"
  },
@@ -813,6 +881,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Core package for buildout.library",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-24T13:26:53Z"
  },
@@ -825,6 +894,7 @@
   "repo_key": "github.com/imio/imio-ts-aes",
   "repo_owner": "IMIO",
   "short_desc": "E-Guichet extraschool : Deploy forms, workflows, wscalls and so on.",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2026-07-01T12:05:04Z"
  },
@@ -837,6 +907,7 @@
   "repo_key": "github.com/imio/passerelle-imio-ia-tech",
   "repo_owner": "IMIO",
   "short_desc": "Connecteur passerelle pour ATAL (iMio)",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:17:56Z"
  },
@@ -850,6 +921,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Extended endpoint for imio applications",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-02-05T08:07:50Z"
  },
@@ -861,6 +933,7 @@
   "repo": "https://github.com/IMIO/buildout.imioweb",
   "repo_key": "github.com/imio/buildout.imioweb",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2024-07-11T09:00:12Z"
  },
@@ -873,6 +946,7 @@
   "repo_key": "github.com/imio/imioweb.core",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-04-09T10:48:45Z"
  },
@@ -885,6 +959,7 @@
   "repo_key": "github.com/imio/imioweb.theme",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:33:48Z"
  },
@@ -897,6 +972,7 @@
   "repo_key": "github.com/imio/imioweb.policy",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2022-12-27T15:36:50Z"
  },
@@ -909,6 +985,7 @@
   "repo_key": "github.com/imio/urban.restapi",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-02-08T14:07:07Z"
  },
@@ -922,6 +999,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "CPSkin content types",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:37:27Z"
  },
@@ -934,6 +1012,7 @@
   "repo_key": "github.com/imio/imio.memory",
   "repo_owner": "IMIO",
   "short_desc": "This repo is used to create a restfull app which can render some saved informations",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2019-09-02T14:06:41Z"
  },
@@ -947,6 +1026,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "A package for mosa\u00efc",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:33:20Z"
  },
@@ -958,6 +1038,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingBEP",
   "repo_key": "github.com/imio/products.meetingbep",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-10-10T11:36:30Z"
  },
@@ -969,6 +1050,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingCPASLalouviere",
   "repo_key": "github.com/imio/products.meetingcpaslalouviere",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-10-23T12:35:19Z"
  },
@@ -980,6 +1062,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingCharleroi",
   "repo_key": "github.com/imio/products.meetingcharleroi",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-31T11:55:26Z"
  },
@@ -991,6 +1074,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingCommunes",
   "repo_key": "github.com/imio/products.meetingcommunes",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-06-24T13:32:51Z"
  },
@@ -1002,6 +1086,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingLalouviere",
   "repo_key": "github.com/imio/products.meetinglalouviere",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-06-23T13:13:49Z"
  },
@@ -1013,6 +1098,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingLiege",
   "repo_key": "github.com/imio/products.meetingliege",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-06-24T10:00:57Z"
  },
@@ -1024,6 +1110,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingMons",
   "repo_key": "github.com/imio/products.meetingmons",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-03T13:38:25Z"
  },
@@ -1035,6 +1122,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingNamur",
   "repo_key": "github.com/imio/products.meetingnamur",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-04-16T09:27:44Z"
  },
@@ -1046,6 +1134,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingPROVHainaut",
   "repo_key": "github.com/imio/products.meetingprovhainaut",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-04-16T12:37:18Z"
  },
@@ -1057,6 +1146,7 @@
   "repo": "https://github.com/IMIO/Products.MeetingSeraing",
   "repo_key": "github.com/imio/products.meetingseraing",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-05T13:57:28Z"
  },
@@ -1068,6 +1158,7 @@
   "repo": "https://github.com/IMIO/Products.PloneMeeting",
   "repo_key": "github.com/imio/products.plonemeeting",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2026-08-06T08:30:46Z"
  },
@@ -1079,6 +1170,7 @@
   "repo": "https://github.com/IMIO/communesplone.layout",
   "repo_key": "github.com/imio/communesplone.layout",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-06-10T10:34:36Z"
  },
@@ -1090,6 +1182,7 @@
   "repo": "https://github.com/IMIO/imio.pm.ws",
   "repo_key": "github.com/imio/imio.pm.ws",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-06-14T12:42:50Z"
  },
@@ -1101,6 +1194,7 @@
   "repo": "https://github.com/IMIO/imio.pm.wsclient",
   "repo_key": "github.com/imio/imio.pm.wsclient",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-04T09:45:40Z"
  },
@@ -1113,6 +1207,7 @@
   "repo_key": "github.com/imio/buildout.pm",
   "repo_owner": "IMIO",
   "short_desc": "Buildout installer for iA.Delib product",
+  "desc_lang": "en",
   "stars": 4,
   "last_activity": "2026-08-03T07:20:41Z"
  },
@@ -1126,6 +1221,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Add behavior to set target=\"_blank\" option onLink content type on Plone 4.3.x",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:35:50Z"
  },
@@ -1139,6 +1235,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Package to read emails and send them to DMS",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-05T14:46:31Z"
  },
@@ -1150,6 +1247,7 @@
   "repo": "https://github.com/IMIO/imio.email.parser",
   "repo_key": "github.com/imio/imio.email.parser",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-05T14:27:57Z"
  },
@@ -1161,6 +1259,7 @@
   "repo": "https://github.com/IMIO/buildout.renocopro",
   "repo_key": "github.com/imio/buildout.renocopro",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:34:32Z"
  },
@@ -1173,6 +1272,7 @@
   "repo_key": "github.com/imio/renocopro.policy",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2020-02-03T12:18:50Z"
  },
@@ -1185,6 +1285,7 @@
   "repo_key": "github.com/imio/renocopro.theme",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:33:45Z"
  },
@@ -1198,6 +1299,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "TS V2. : Project to add forms, workflow, combo site in tsv2 instances to have citizen reporting about incident on public highway",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-23T09:56:06Z"
  },
@@ -1211,6 +1313,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Theme for Ideabox based on plonecli and theme_barceloneta",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-07-26T14:08:24Z"
  },
@@ -1223,6 +1326,7 @@
   "repo_key": "github.com/imio/passerelle-imio-sso-agents",
   "repo_owner": "IMIO",
   "short_desc": "Transform imio.memory csv to json.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:00Z"
  },
@@ -1234,6 +1338,7 @@
   "repo": "https://github.com/IMIO/scripts-teleservices",
   "repo_key": "github.com/imio/scripts-teleservices",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-06T09:17:47Z"
  },
@@ -1245,6 +1350,7 @@
   "repo": "https://github.com/IMIO/wcs-scripts-teleservices",
   "repo_key": "github.com/imio/wcs-scripts-teleservices",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:48Z"
  },
@@ -1257,6 +1363,7 @@
   "repo_key": "github.com/imio/imio.config.vocabulary",
   "repo_owner": "IMIO",
   "short_desc": "Plone addon to configure simple vocabularies.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2019-10-29T14:40:10Z"
  },
@@ -1270,6 +1377,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Plonemeeting decisions publication portal for belgian citizens",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2026-07-09T12:01:38Z"
  },
@@ -1534,6 +1642,7 @@
   "repo_key": "github.com/imio/plonemeeting.restapi",
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2026-03-13T12:38:26Z"
  },
@@ -1545,8 +1654,9 @@
   "repo": "https://github.com/IMIO/imio.dms.mail",
   "repo_key": "github.com/imio/imio.dms.mail",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 1,
-  "last_activity": "2026-08-10T19:51:55Z"
+  "last_activity": "2026-08-11T12:42:11Z"
  },
  {
   "source": "BE/iMio",
@@ -1556,6 +1666,7 @@
   "repo": "https://github.com/IMIO/imio.dms.policy",
   "repo_key": "github.com/imio/imio.dms.policy",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-04T10:08:21Z"
  },
@@ -1567,6 +1678,7 @@
   "repo": "https://github.com/IMIO/imio.dms.soap2pm",
   "repo_key": "github.com/imio/imio.dms.soap2pm",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-05-26T06:32:28Z"
  },
@@ -1579,6 +1691,7 @@
   "repo_key": "github.com/imio/server.dmsmail",
   "repo_owner": "IMIO",
   "short_desc": "Buildout installer for iA.Docs product",
+  "desc_lang": "en",
   "stars": 3,
   "last_activity": "2026-08-03T14:42:14Z"
  },
@@ -1590,6 +1703,7 @@
   "repo": "https://github.com/IMIO/imio.dms.locales",
   "repo_key": "github.com/imio/imio.dms.locales",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2019-11-26T10:01:18Z"
  },
@@ -1603,6 +1717,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Plone behavior to get (and set) global E-Guichet/Teleservices configuration into a Plone Application. Expose E-Guichet procedures in a select field.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-12-11T08:46:21Z"
  },
@@ -1615,6 +1730,7 @@
   "repo_key": "github.com/imio/imio.patterns",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-10-24T13:12:23Z"
  },
@@ -1628,6 +1744,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Add some iMio informations on prometheus metrics view",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-06-24T10:41:55Z"
  },
@@ -1641,6 +1758,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "IdeaBox Statistics interface for administrators",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T14:59:39Z"
  },
@@ -1654,6 +1772,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Privacy rules for IMIO web projects",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-12-19T10:53:06Z"
  },
@@ -1665,6 +1784,7 @@
   "repo": "https://github.com/IMIO/odoo_report_pdf",
   "repo_key": "github.com/imio/odoo_report_pdf",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2020-05-26T08:18:20Z"
  },
@@ -1678,6 +1798,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "blueprints for collective.contact.importexport",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-09-20T06:39:00Z"
  },
@@ -1691,6 +1812,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "REST services for ideabox app",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-12-27T15:33:43Z"
  },
@@ -1704,6 +1826,7 @@
   "repo_owner": "IMIO",
   "license": "MIT",
   "short_desc": "Repo contents Dockerfile of all iMio base docker images",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-29T07:48:17Z"
  },
@@ -1717,6 +1840,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "A Puppet module to install the Letsencrypt client and request certificates.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-07-08T08:23:17Z"
  },
@@ -1729,6 +1853,7 @@
   "repo_key": "github.com/imio/imio.urban.core",
   "repo_owner": "IMIO",
   "short_desc": "Core of application managing urban and environment licences for townships.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-07T08:51:10Z"
  },
@@ -1741,6 +1866,7 @@
   "repo_key": "github.com/imio/plone.app.versioningbehavior",
   "repo_owner": "IMIO",
   "short_desc": "Behavior enabling CMFEditions versioning functionality for dexterity contents",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2020-07-21T11:44:53Z"
  },
@@ -1753,6 +1879,7 @@
   "repo_key": "github.com/imio/docker-plone-bases",
   "repo_owner": "IMIO",
   "license": "MIT",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-14T08:57:08Z"
  },
@@ -1766,6 +1893,7 @@
   "repo_owner": "IMIO",
   "license": "MIT",
   "short_desc": "A LibreOffice docker image with specific fonts included for our customers",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2026-03-03T15:21:46Z"
  },
@@ -1779,6 +1907,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Display CGT Pivot informations",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-12-11T08:44:29Z"
  },
@@ -1792,8 +1921,9 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Core product for iMio websites",
+  "desc_lang": "en",
   "stars": 5,
-  "last_activity": "2026-08-10T12:21:13Z"
+  "last_activity": "2026-08-11T12:09:09Z"
  },
  {
   "source": "BE/iMio",
@@ -1805,6 +1935,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Policies to setup imio.smartweb",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-08-10T11:49:39Z"
  },
@@ -1818,6 +1949,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Core product for iMio events website",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-03T13:39:02Z"
  },
@@ -1830,6 +1962,7 @@
   "repo_key": "github.com/imio/collective.solr",
   "repo_owner": "IMIO",
   "short_desc": "Solr search engine integration for Plone",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-02-17T12:18:04Z"
  },
@@ -1842,8 +1975,9 @@
   "repo_key": "github.com/imio/buildout.smartweb",
   "repo_owner": "IMIO",
   "short_desc": "Buildout installer for iA.Smartweb product",
+  "desc_lang": "en",
   "stars": 5,
-  "last_activity": "2026-08-10T13:07:56Z"
+  "last_activity": "2026-08-11T11:45:41Z"
  },
  {
   "source": "BE/iMio",
@@ -1855,6 +1989,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Locales for iMio smartweb packages",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-10T13:04:03Z"
  },
@@ -1867,6 +2002,7 @@
   "repo_key": "github.com/imio/collective.classification.folder",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-10T07:10:40Z"
  },
@@ -1879,6 +2015,7 @@
   "repo_key": "github.com/imio/collective.classification.tree",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-26T06:31:30Z"
  },
@@ -1892,6 +2029,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Bundle of iA.Teleservices procedures containing forms, workflows and all the linked  dependencies.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-30T09:07:13Z"
  },
@@ -1904,6 +2042,7 @@
   "repo_key": "github.com/imio/scripts-buildout",
   "repo_owner": "IMIO",
   "short_desc": "Various shell scripts used for managing buildout instances",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-19T13:40:08Z"
  },
@@ -1917,6 +2056,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Core product for iMio contacts Directory websites",
+  "desc_lang": "en",
   "stars": 3,
   "last_activity": "2026-07-08T02:42:05Z"
  },
@@ -1928,6 +2068,7 @@
   "repo": "https://github.com/IMIO/puppet-vault_agent",
   "repo_key": "github.com/imio/puppet-vault_agent",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-09-17T13:24:17Z"
  },
@@ -1940,6 +2081,7 @@
   "repo_key": "github.com/imio/buildout.directory",
   "repo_owner": "IMIO",
   "short_desc": "This is the iMio directory (for smartweb) buildout.",
+  "desc_lang": "en",
   "stars": 4,
   "last_activity": "2026-07-26T17:45:14Z"
  },
@@ -1953,6 +2095,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Policies to setup imio.directory for smartweb",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-07T15:07:04Z"
  },
@@ -1965,6 +2108,7 @@
   "repo_key": "github.com/imio/dircnt",
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2021-05-31T10:32:00Z"
  },
@@ -1977,6 +2121,7 @@
   "repo_key": "github.com/imio/buildout.events",
   "repo_owner": "IMIO",
   "short_desc": "This is the iMio events (for smartweb) buildout.",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-26T17:44:37Z"
  },
@@ -1990,6 +2135,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Core product for iMio news websites",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-07T15:14:36Z"
  },
@@ -2003,8 +2149,9 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Common utilities, vocabularies, taxonomies for imio.smartweb & co products",
+  "desc_lang": "en",
   "stars": 2,
-  "last_activity": "2026-08-07T13:30:39Z"
+  "last_activity": "2026-08-11T11:39:41Z"
  },
  {
   "source": "BE/iMio",
@@ -2015,6 +2162,7 @@
   "repo_key": "github.com/imio/buildout.news",
   "repo_owner": "IMIO",
   "short_desc": "This is the iMio news (for smartweb) buildout.",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-07T13:56:42Z"
  },
@@ -2028,6 +2176,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Policies to setup imio.events for smartweb",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-07T14:57:47Z"
  },
@@ -2041,6 +2190,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Policies to setup (iMio) buildout.news",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-07T14:59:27Z"
  },
@@ -2053,6 +2203,7 @@
   "repo_key": "github.com/imio/passerelle-imio-ia-delib",
   "repo_owner": "IMIO",
   "short_desc": "Passerelle connector with iA.Delib",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:17:52Z"
  },
@@ -2064,6 +2215,7 @@
   "repo": "https://github.com/IMIO/smartweb.theme",
   "repo_key": "github.com/imio/smartweb.theme",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-02-14T13:57:04Z"
  },
@@ -2076,6 +2228,7 @@
   "repo_key": "github.com/imio/imio.webspellchecker",
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-19T12:53:25Z"
  },
@@ -2087,6 +2240,7 @@
   "repo": "https://github.com/IMIO/passerelle-imio-apims-baec",
   "repo_key": "github.com/imio/passerelle-imio-apims-baec",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:17:36Z"
  },
@@ -2100,6 +2254,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "django.po files for German translations transcript.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-10-02T13:44:42Z"
  },
@@ -2112,6 +2267,7 @@
   "repo_key": "github.com/imio/teleservices-publikdevinst",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-06-16T14:16:12Z"
  },
@@ -2124,8 +2280,9 @@
   "repo_key": "github.com/imio/imio_smartweb_themes",
   "repo_owner": "IMIO",
   "short_desc": "iA.Smartweb themes monorepo",
+  "desc_lang": "en",
   "stars": 2,
-  "last_activity": "2026-08-10T14:31:26Z"
+  "last_activity": "2026-08-11T12:41:52Z"
  },
  {
   "source": "BE/iMio",
@@ -2137,6 +2294,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Bundle of iA.Teleservices compteurs d'eau.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:11Z"
  },
@@ -2150,6 +2308,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Light bundle of iA.Teleservices procedures",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:39Z"
  },
@@ -2163,6 +2322,7 @@
   "repo_owner": "IMIO",
   "license": "MIT",
   "short_desc": "Script to convert emails to PDF from the command-line, as well as detach recognized attachments. Helps to process incoming emails and assist automatically with a non-paper paperwork workflow. Designed to work in tandem with getmail to convert forwarded emails to PDF automatically.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-29T13:31:19Z"
  },
@@ -2176,6 +2336,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Deploy nix - the package manager - on existing Linux hosts using puppet",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-15T10:45:25Z"
  },
@@ -2189,6 +2350,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Connecteur iA.T\u00e9l\u00e9services et Abiware",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:17:32Z"
  },
@@ -2201,6 +2363,7 @@
   "repo_key": "github.com/imio/buildout.ricsite",
   "repo_owner": "IMIO",
   "short_desc": "buildout ric site",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-02-14T15:34:40Z"
  },
@@ -2212,6 +2375,7 @@
   "repo": "https://github.com/IMIO/Products.Ploneboard",
   "repo_key": "github.com/imio/products.ploneboard",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-08-30T12:00:54Z"
  },
@@ -2225,6 +2389,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Connecteur T\u00e9l\u00e9services WCA",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:04Z"
  },
@@ -2237,6 +2402,7 @@
   "repo_key": "github.com/imio/teleservices-location-room",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-11-15T13:48:45Z"
  },
@@ -2248,6 +2414,7 @@
   "repo": "https://github.com/IMIO/docker-urban",
   "repo_key": "github.com/imio/docker-urban",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2022-11-17T10:59:40Z"
  },
@@ -2261,6 +2428,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Transmogrifier data import to ia.docs",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-22T10:06:33Z"
  },
@@ -2273,6 +2441,7 @@
   "repo_key": "github.com/imio/imio-luigi",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-06T09:26:13Z"
  },
@@ -2286,6 +2455,7 @@
   "repo_owner": "IMIO",
   "license": "MPL-2.0",
   "short_desc": "Terraform Provider for Mikrotik RouterOS",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-04-12T13:20:13Z"
  },
@@ -2298,6 +2468,7 @@
   "repo_key": "github.com/imio/passerelle-imio-apims-casier-judiciaire",
   "repo_owner": "IMIO",
   "short_desc": "Connecteur Casier Judiciaire",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:17:40Z"
  },
@@ -2310,6 +2481,7 @@
   "repo_key": "github.com/imio/ia.aes",
   "repo_owner": "IMIO",
   "short_desc": "Modules Odoo de gestion extra-scolaire",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-05-02T12:40:59Z"
  },
@@ -2323,6 +2495,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "A transmogrifier blueprint for updating dexterity objects",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-05-30T10:07:55Z"
  },
@@ -2336,6 +2509,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "A cert-manager webhook for creating an ACME DNS01 solver webhook for Gandi DNS",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-06-28T13:08:06Z"
  },
@@ -2349,6 +2523,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Helm Chart for Plausible Analytics",
+  "desc_lang": "en",
   "stars": 31,
   "last_activity": "2025-08-26T14:36:10Z"
  },
@@ -2362,6 +2537,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Kubernetes Helm charts by @IMIO",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-17T12:38:39Z"
  },
@@ -2374,6 +2550,7 @@
   "repo_key": "github.com/imio/ftw.labels",
   "repo_owner": "IMIO",
   "short_desc": "A Plone addon for labels.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-06-13T14:36:41Z"
  },
@@ -2387,6 +2564,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Helpers to manage, create, export and rebuild relations in Plone 5.x. For Plone 6 this was merged into Plone core.  ",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2023-11-22T11:24:42Z"
  },
@@ -2400,6 +2578,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "iA.Citizen installator (german version)",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:19Z"
  },
@@ -2413,6 +2592,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Light bundle of iA.Teleservices procedures (german version)",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:44Z"
  },
@@ -2425,6 +2605,7 @@
   "repo_key": "github.com/imio/teleservices-iacitizen",
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-19T08:32:03Z"
  },
@@ -2437,6 +2618,7 @@
   "repo_key": "github.com/imio/urban.schedule",
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-22T14:24:08Z"
  },
@@ -2449,6 +2631,7 @@
   "repo_key": "github.com/imio/collective.plausible",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-03-08T19:13:49Z"
  },
@@ -2462,6 +2645,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Plone theme for deliberations.be (plonemeeting.portal.core)",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-16T09:54:27Z"
  },
@@ -2474,6 +2658,7 @@
   "repo_key": "github.com/imio/urban.events",
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-30T11:49:57Z"
  },
@@ -2487,6 +2672,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": " Connecteur certificats population",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:17:44Z"
  },
@@ -2500,6 +2686,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Zope sendmail support.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-11-27T16:45:08Z"
  },
@@ -2512,6 +2699,7 @@
   "repo_key": "github.com/imio/products.cmfeditions",
   "repo_owner": "IMIO",
   "short_desc": "Provides versioning in Plone",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-04-16T11:51:35Z"
  },
@@ -2525,6 +2713,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Bundle of iA.Teleservices procedures containing forms, workflows and all the linked dependencies for bookings room with atal.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:27Z"
  },
@@ -2538,6 +2727,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Repository hosting our GitHub actions ",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-16T08:24:10Z"
  },
@@ -2551,6 +2741,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Package contenant tous les \u00e9l\u00e9ments n\u00e9cessaires pour la MEP de la liaison avec le RN et la BAEC avec redirection Civadis",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:37Z"
  },
@@ -2564,6 +2755,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Various script files to handle local scan tool",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-02-20T10:42:18Z"
  },
@@ -2577,6 +2769,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "This action provides many checks for Plone backend code",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-16T11:16:50Z"
  },
@@ -2589,6 +2782,7 @@
   "repo_key": "github.com/imio/teleservices-location-materiel",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:18:23Z"
  },
@@ -2602,6 +2796,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Plone product to save log files or messages from scan clients",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-20T14:28:04Z"
  },
@@ -2613,6 +2808,7 @@
   "repo": "https://github.com/IMIO/imio_bibliotheca_themes",
   "repo_key": "github.com/imio/imio_bibliotheca_themes",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-08T14:05:44Z"
  },
@@ -2626,6 +2822,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "imio buildout for imio.scan_logger product",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-20T14:45:49Z"
  },
@@ -2638,6 +2835,7 @@
   "repo_key": "github.com/imio/passerelle-imio-membre",
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T14:32:09Z"
  },
@@ -2650,6 +2848,7 @@
   "repo_key": "github.com/imio/passerelle-imio-focus",
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-09-18T09:12:56Z"
  },
@@ -2662,6 +2861,7 @@
   "repo_key": "github.com/imio/teleservices-casier-judiciaire",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-09-18T10:34:02Z"
  },
@@ -2674,6 +2874,7 @@
   "repo_key": "github.com/imio/imio.fpaudit",
   "repo_owner": "IMIO",
   "short_desc": "Fingerpointing log audit helper",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-24T14:04:07Z"
  },
@@ -2686,6 +2887,7 @@
   "repo_key": "github.com/imio/teleservices-ideabox",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-19T12:59:48Z"
  },
@@ -2698,6 +2900,7 @@
   "repo_key": "github.com/imio/collective.fingerpointing",
   "repo_owner": "IMIO",
   "short_desc": "Keep track of different events and write them down to an audit log.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2024-10-15T12:46:58Z"
  },
@@ -2711,6 +2914,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Package EC POP traduit en allemand",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-11-14T08:26:03Z"
  },
@@ -2724,6 +2928,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Helm Chart for Odoo",
+  "desc_lang": "en",
   "stars": 13,
   "last_activity": "2026-07-17T12:38:22Z"
  },
@@ -2737,6 +2942,7 @@
   "repo_owner": "IMIO",
   "license": "AGPL-3.0",
   "short_desc": "Fork du repo Web de l'OCA dans le cadre de dev iA.Vision",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-08-19T13:26:03Z"
  },
@@ -2750,6 +2956,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "A hiera backend for access to secrets being stored in HashiCorp Vault",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-15T13:08:18Z"
  },
@@ -2763,6 +2970,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Puppet module for opendkim",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-01-22T14:37:36Z"
  },
@@ -2775,6 +2983,7 @@
   "repo_key": "github.com/imio/teleservices-doc-event",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-04-06T09:32:04Z"
  },
@@ -2788,6 +2997,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Plone PAS plugin authenticating iMio Keycloak (\"Wallonie Connect\") SSO users and assigning their roles. Extends pas.plugins.oidc.",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-13T12:41:09Z"
  },
@@ -2800,6 +3010,7 @@
   "repo_key": "github.com/imio/passerelle-imio-keycloak",
   "repo_owner": "IMIO",
   "short_desc": "Passerelle entre l'eGuichet et Keycloak",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-09T13:48:17Z"
  },
@@ -2811,6 +3022,7 @@
   "repo": "https://github.com/IMIO/.github",
   "repo_key": "github.com/imio/.github",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-06-23T12:22:09Z"
  },
@@ -2823,6 +3035,7 @@
   "repo_key": "github.com/imio/collective.eeafaceted.z3ctable",
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-09-17T19:16:39Z"
  },
@@ -2835,6 +3048,7 @@
   "repo_key": "github.com/imio/gha-workflows",
   "repo_owner": "IMIO",
   "short_desc": "Reusable github actions workflows",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-08T03:27:31Z"
  },
@@ -2847,6 +3061,7 @@
   "repo_key": "github.com/imio/appquiz",
   "repo_owner": "IMIO",
   "short_desc": "Quiz",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-08T12:45:06Z"
  },
@@ -2860,6 +3075,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Fork of One Chart: a generic Helm chart for your application deployments",
+  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-03-19T15:37:39Z"
  },
@@ -2872,8 +3088,9 @@
   "repo_key": "github.com/imio/imio.esign",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
-  "last_activity": "2026-08-10T13:44:36Z"
+  "last_activity": "2026-08-11T12:13:43Z"
  },
  {
   "source": "BE/iMio",
@@ -2884,6 +3101,7 @@
   "repo_key": "github.com/imio/imio_centralized_themes",
   "repo_owner": "IMIO",
   "short_desc": "Plone 6 Classic UI Themes for Walloon centralized sources",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-01T13:02:48Z"
  },
@@ -2896,6 +3114,7 @@
   "repo_key": "github.com/imio/ploneconf2025_from_jenkins_to_gha",
   "repo_owner": "IMIO",
   "license": "CC0-1.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-10-21T08:00:41Z"
  },
@@ -2909,6 +3128,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
   "short_desc": "Puppet module for Puppet client and server",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-09-17T08:04:06Z"
  },
@@ -2922,6 +3142,7 @@
   "repo_owner": "IMIO",
   "license": "CC0-1.0",
   "short_desc": "Open Source Policy Office and related work",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2025-09-24T07:37:15Z"
  },
@@ -2935,6 +3156,7 @@
   "repo_owner": "IMIO",
   "license": "Apache-2.0",
   "short_desc": "Kubernetes Helm chart for Plone",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-01T13:28:04Z"
  },
@@ -2948,6 +3170,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Python object-oriented database",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-15T11:46:04Z"
  },
@@ -2959,6 +3182,7 @@
   "repo": "https://github.com/IMIO/docker-publik-devinst",
   "repo_key": "github.com/imio/docker-publik-devinst",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-03T12:36:33Z"
  },
@@ -2971,6 +3195,7 @@
   "repo_key": "github.com/imio/vault-tenant-operator",
   "repo_owner": "IMIO",
   "license": "GPL-3.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-01-30T09:36:54Z"
  },
@@ -2982,6 +3207,7 @@
   "repo": "https://github.com/IMIO/passerelle-imio-liege-creances",
   "repo_key": "github.com/imio/passerelle-imio-liege-creances",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-04-07T13:34:04Z"
  },
@@ -2994,8 +3220,9 @@
   "repo_key": "github.com/imio/imio.omnia.core",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 1,
-  "last_activity": "2026-08-03T08:47:13Z"
+  "last_activity": "2026-08-11T07:57:12Z"
  },
  {
   "source": "BE/iMio",
@@ -3006,6 +3233,7 @@
   "repo_key": "github.com/imio/imio.omnia.tinymce",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-03T07:27:57Z"
  },
@@ -3018,6 +3246,7 @@
   "repo_key": "github.com/imio/imio.omnia.assistant",
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-03T07:28:22Z"
  },
@@ -3029,6 +3258,7 @@
   "repo": "https://github.com/IMIO/buildout.omnia",
   "repo_key": "github.com/imio/buildout.omnia",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-04-03T07:21:23Z"
  },
@@ -3040,6 +3270,7 @@
   "repo": "https://github.com/IMIO/security-scanning",
   "repo_key": "github.com/imio/security-scanning",
   "repo_owner": "IMIO",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-05-08T13:46:11Z"
  },
@@ -3053,6 +3284,7 @@
   "repo_owner": "IMIO",
   "license": "GPL-2.0",
   "short_desc": "Support for source control repositories",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-15T11:28:09Z"
  },
@@ -3066,6 +3298,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Two-step verification for Plone 4 using the Google Authenticator app.",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-07T13:38:04Z"
  },
@@ -3078,6 +3311,7 @@
   "repo_key": "github.com/imio/imio.reportproblem",
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-07-29T07:56:33Z"
  },
@@ -3091,6 +3325,7 @@
   "repo_owner": "IMIO",
   "license": "NOASSERTION",
   "short_desc": "Pretty emails for Plone 6 Classic",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-08-06T12:51:01Z"
  }

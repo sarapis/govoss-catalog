@@ -119,7 +119,18 @@ API; the ~240 repos across 176 other hosts via HEAD **serialised per host** with
 Runtime ~4.5 min, no throttling.
 
 `403/429/5xx` are recorded as **unknown, never dead** — the distinction matters, since
-treating rate-limiting as death would invent drift. Current: ~93% ok, ~4% dead, ~2.5% unknown.
+treating rate-limiting as death would invent drift. Current: **~96% ok, 1.5% dead, 2.6% unknown**.
+
+**Every dead verdict is confirmed with a plain web HEAD before being recorded.** This is not
+belt-and-braces, it is load-bearing: `gitlab.huma-num.fr` restricts anonymous API access, so
+its live projects returned 404 from `/api/v4` while the web URL answered 200. The first version
+without this pass called **53 of 82** "dead" repos dead when they were fine — including KiCad,
+Lazarus IDE and FreePascal — overstating the dead rate roughly 3x and reporting live projects
+as newly-dead drift. An API 404 is not evidence of absence.
+
+Dead and archived state is also shown **on the page** (stat tile, `repo gone` pill, and a
+repo-state filter), because a monitor whose output only lands in a JSON file nobody opens is
+the same failure as having no monitor.
 
 It always **exits 0**: a monitor that can fail the pipeline gets switched off the first time
 it is wrong.

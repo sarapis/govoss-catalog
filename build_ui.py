@@ -8,6 +8,12 @@ _spec = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
 _tax = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_tax)
 FUNCTIONS = _tax.FUNCTIONS
 
+# Liveness is surfaced ON THE PAGE, not just in liveness.json — a monitor whose
+# output lives only in a file nobody opens is the same failure as no monitor.
+LIVE = {}
+if os.path.exists(f"{OUT}/liveness.json"):
+    LIVE = json.load(open(f"{OUT}/liveness.json")).get("repos", {})
+
 SRC_LABEL = {
     "IT/developers-italia": "Developers Italia",
     "FR/sill": "SILL",
@@ -49,6 +55,9 @@ for r in c:
         "tr": 1 if r.get("translated") else 0,
         "sl": r.get("desc_src_lang") or "",
         "qid": r.get("wikidata") or "",
+        "lv": (lambda v: "dead" if v.get("status") in (404, 410)
+                    else ("archived" if v.get("archived") else ""))(
+                    LIVE.get(r.get("repo_key") or "", {})),
     })
 rows.sort(key=lambda x: (x["n"] or "").lower())
 
@@ -60,6 +69,7 @@ n_repos = len({r["u"] for r in rows if r["u"]})
 n_tr = sum(1 for r in rows if r["tr"])
 n_en = sum(1 for r in rows if r["d"] and not r["tr"])
 funcs = collections.Counter(f for r in rows for f in r["fx"])
+n_dead = sum(1 for r in rows if r["lv"] == "dead")
 FFACETS = json.dumps([[k, FUNCTIONS[k], n] for k, n in funcs.most_common()])
 
 DATA = json.dumps(rows, separators=(",", ":"))
@@ -159,6 +169,7 @@ li.item:hover {{ background:var(--raised); }}
 .pill.development{{color:var(--dev)}} .pill.obsolete{{color:var(--obsolete)}}
 .pill.concept{{color:var(--concept)}}
 .pill.rec {{ background:var(--accent-dim); color:var(--accent); }}
+.pill.dead {{ color:var(--obsolete); border:1px solid var(--obsolete); }}
 .desc {{ color:var(--slate); font-size:.88rem; max-width:82ch; }}
 .foot {{ display:flex; flex-wrap:wrap; gap:.35rem .9rem; font-family:var(--mono);
          font-size:.7rem; color:var(--slate); letter-spacing:.02em; }}
@@ -191,6 +202,7 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
     <div class="stat"><b>{n_pc}</b><span>with publiccode.yml</span></div>
     <div class="stat"><b>{n_en + n_tr}</b><span>in English</span></div>
     <div class="stat"><b>{len(funcs)}</b><span>functions</span></div>
+    <div class="stat"><b>{n_dead}</b><span>dead links</span></div>
   </div>
 
   <div class="controls">
@@ -204,6 +216,12 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
         <option value="name">A&ndash;Z</option>
         <option value="adopters">Most adopters</option>
         <option value="country">By country</option>
+      </select>
+      <select id="lv" aria-label="Filter by repository state">
+        <option value="">Any repo state</option>
+        <option value="ok">Live repos only</option>
+        <option value="dead">Dead links only</option>
+        <option value="archived">Archived only</option>
       </select>
     </div>
     <div class="chips" id="fc" role="group" aria-label="Filter by function"></div>
@@ -248,11 +266,13 @@ function chips(host, facets, active) {{
 function current() {{
   const q = el('q').value.trim().toLowerCase();
   const lic = el('lic').value;
+  const lvf = el('lv').value;
   let out = DATA.filter(r =>
     (!activeC.size || activeC.has(r.c)) &&
     (!activeS.size || activeS.has(r.s)) &&
     (!activeF.size || r.fx.some(f => activeF.has(f))) &&
     (!lic || r.l === lic) &&
+    (!lvf || (lvf === 'ok' ? !r.lv : r.lv === lvf)) &&
     (!q || (r.n+' '+r.d+' '+r.o+' '+r.g.join(' ')).toLowerCase().includes(q))
   );
   const s = el('sort').value;
@@ -278,6 +298,8 @@ function render() {{
           ${{r.rec ? `<span class="pill rec">recommended</span>` : ''}}
           ${{r.qid ? `<span class="pill">${{esc(r.qid)}}</span>` : ''}}
           ${{r.l ? `<span class="pill">${{esc(r.l)}}</span>` : ''}}
+          ${{r.lv === 'dead' ? `<span class="pill dead" title="repository URL returned 404/410 at last check">repo gone</span>` : ''}}
+          ${{r.lv === 'archived' ? `<span class="pill">archived</span>` : ''}}
         </div>
         ${{r.d ? `<div class="desc">${{esc(r.d)}}</div>` : ''}}
         <div class="foot">
@@ -300,6 +322,7 @@ chips(el('cc'), CF, activeC);
 chips(el('sc'), SF, activeS);
 el('q').oninput = () => {{ shown = PAGE; render(); }};
 el('lic').onchange = () => {{ shown = PAGE; render(); }};
+el('lv').onchange = () => {{ shown = PAGE; render(); }};
 el('sort').onchange = () => {{ shown = PAGE; render(); }};
 el('more').onclick = () => {{ shown += PAGE * 4; render(); }};
 render();
