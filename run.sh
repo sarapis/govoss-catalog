@@ -112,6 +112,7 @@ if lv["newly_dead"]:
 PY
 
 step "run log"      "$PY" -u runlog.py "$STARTED" "$TRIGGER"
+step "sources page" "$PY" -u build_sources.py
 step "status page"  "$PY" -u build_status.py
 
 echo ""

@@ -26,6 +26,8 @@ SITE = f"{OUT}/site"
 _spec = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
 _tax = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_tax)
 FUNCTIONS = _tax.FUNCTIONS
+_ss = importlib.util.spec_from_file_location("sources", f"{OUT}/sources.py")
+_S = importlib.util.module_from_spec(_ss); _ss.loader.exec_module(_S)
 
 GENERATED_AT = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 SCHEMA_VERSION = "1.0.0"
@@ -115,6 +117,9 @@ def build():
             "countries": r.get("countries") or ([r["country"]] if r.get("country") else []),
             "source": (r.get("sources") or [r.get("source")])[0],
             "sources": r.get("sources") or ([r["source"]] if r.get("source") else []),
+            "source_url": (_S.SOURCES.get((r.get("sources") or [r.get("source")])[0]) or {}).get("site"),
+            "source_urls": [ (_S.SOURCES.get(x) or {}).get("site")
+                             for x in (r.get("sources") or [r.get("source")]) if x ],
             "merged_from": r.get("merged_count", 1),
             "also_known_as": r.get("also_known_as") or [],
 
@@ -192,6 +197,10 @@ def build():
                        for k, v in FUNCTIONS.items()],
         "countries": [{"code": k, "count": v} for k, v in
                       collections.Counter(cc for e in entries for cc in e["countries"]).most_common()],
+        "source_catalogues": [
+            {"key": k, **{f: v[f] for f in ("label", "country", "site", "api", "route", "claim")}}
+            for k, v in _S.SOURCES.items()],
+        "surveyed_not_ingested": _S.SURVEY,
         "sources": [{"name": k, "count": v} for k, v in
                     collections.Counter(s for e in entries for s in e["sources"]).most_common()],
         "licences_spdx": [{"id": k, "count": v} for k, v in
@@ -205,6 +214,8 @@ def build():
             "meta": "/meta.json",
             "by_product": "/by-product.json",
             "by_category": "/by-category/<category-key>.json",
+            "sources": "/sources.json",
+            "status": "/status.json",
             "versioned": "/v1/entries.json",
         },
         "known_gaps": {

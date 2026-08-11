@@ -1,0 +1,151 @@
+#!/usr/bin/env python3
+"""Single source of truth for source identity: labels, links, access route.
+
+Imported by build_ui.py, export_json.py and build_sources.py so a URL is never
+written twice and can never disagree between the page, the JSON and the docs.
+
+`survey` records catalogues found while looking globally that are NOT ingested,
+with the reason. Recording a verified dead end is worth as much as recording a
+live source — it stops the next person re-probing code.gov and concluding the
+same thing three months later.
+"""
+
+# ---- ingested sources
+SOURCES = {
+    "IT/developers-italia": {
+        "label": "Developers Italia", "country": "IT", "flag": "\U0001F1EE\U0001F1F9",
+        "site": "https://developers.italia.it/en/software",
+        "api": "https://api.developers.italia.it/v1/software",
+        "route": "REST API", "claim": "built for public administration",
+        "note": "The best of the ten: documented REST API, cursor pagination, "
+                "publiccode.yml verbatim per entry.",
+    },
+    "FR/sill": {
+        "label": "SILL", "country": "FR", "flag": "\U0001F1EB\U0001F1F7",
+        "site": "https://code.gouv.fr/sill",
+        "api": "https://code.gouv.fr/sill/api/sill.json",
+        "route": "bulk JSON", "claim": "recommended to public agents",
+        "note": "Socle Interministeriel de Logiciels Libres. Use the /sill/api/ export, "
+                "NOT /data/sill.json - the latter has no url field at all and carries "
+                "Wikidata QIDs nowhere.",
+    },
+    "FR/awesome-codegouvfr": {
+        "label": "awesome-codegouvfr", "country": "FR", "flag": "\U0001F1EB\U0001F1F7",
+        "site": "https://code.gouv.fr/",
+        "api": "https://code.gouv.fr/data/awesome-codegouvfr.json",
+        "route": "bulk JSON", "claim": "curated French public-sector",
+    },
+    "DE/openCode": {
+        "label": "openCode", "country": "DE", "flag": "\U0001F1E9\U0001F1EA",
+        "site": "https://opencode.de/en/software",
+        "api": "https://gitlab.opencode.de/api/v4/projects",
+        "route": "GitLab API", "claim": "built for public administration",
+        "note": "No public API on the site, but its directory slugs embed the GitLab "
+                "project id and the listing is generated from publiccode.yml in that "
+                "GitLab - so the forge API reproduces the official directory exactly.",
+    },
+    "NL/code.overheid.nl": {
+        "label": "code.overheid.nl", "country": "NL", "flag": "\U0001F1F3\U0001F1F1",
+        "site": "https://code.overheid.nl/",
+        "api": "https://code.overheid.nl/api/v1/repos/search",
+        "route": "Forgejo API", "claim": "published by Dutch government bodies",
+        "note": "The government's own self-hosted Forgejo. Open api/v1, no auth - which "
+                "makes the separate OSS register's API key unnecessary for coverage.",
+    },
+    "BE/iMio": {
+        "label": "iMio", "country": "BE", "flag": "\U0001F1E7\U0001F1EA",
+        "site": "https://www.imio.be/",
+        "api": "https://api.github.com/orgs/IMIO/repos",
+        "route": "GitHub org", "claim": "built by Walloon municipalities",
+        "note": "236 repos but only one publiccode.yml, so the rest are indexed from bare "
+                "GitHub metadata and 32 forks are filtered out.",
+    },
+    "SE/offentligkod": {
+        "label": "Offentligkod", "country": "SE", "flag": "\U0001F1F8\U0001F1EA",
+        "site": "https://offentligkod.se/",
+        "api": "https://gitlab.com/open-data-knowledge-sharing/katalogen",
+        "route": "GNU recutils in git", "claim": "in use by Swedish public bodies",
+        "note": "Unusual format - a plain-text recutils database in git - and arguably the "
+                "most durable source here for exactly that reason.",
+    },
+    "FI/avoinkoodi": {
+        "label": "Avoinkoodi", "country": "FI", "flag": "\U0001F1EB\U0001F1EE",
+        "site": "https://avoinkoodi.fi/",
+        "api": "https://avoinkoodi.fi/projects.json",
+        "route": "static JSON", "claim": "Finnish public-sector project",
+        "note": "Three files: national, municipal and education projects.",
+    },
+    "CA/code.open.canada.ca": {
+        "label": "Open Resource Exchange", "country": "CA", "flag": "\U0001F1E8\U0001F1E6",
+        "site": "https://code.open.canada.ca/en/index.html",
+        "api": "https://code.open.canada.ca/code.json",
+        "route": "code.json", "claim": "published by Canadian administrations",
+        "note": "Uses the code.json schema the retired US code.gov defined, nested by "
+                "government tier: federal, provincial, municipal and Indigenous. Every "
+                "text field is localised {en, fr}, including repositoryURL.",
+    },
+    "EU/code.europa.eu": {
+        "label": "code.europa.eu", "country": "EU", "flag": "\U0001F1EA\U0001F1FA",
+        "site": "https://code.europa.eu/",
+        "api": "https://code.europa.eu/api/v4/projects",
+        "route": "GitLab API", "claim": "built by EU institutions",
+        "note": "1,229 projects but only ~10 carry publiccode.yml - the institutions "
+                "promoting the standard barely use it on their own forge.",
+    },
+}
+
+# ---- verified while surveying globally, NOT ingested. Reason recorded.
+SURVEY = [
+    {"country": "US", "flag": "\U0001F1FA\U0001F1F8", "name": "code.gov",
+     "url": "https://code.gov", "status": "retired",
+     "detail": "302s to a Digital.gov policy page; api.code.gov returns the same HTML. "
+               "The federal inventory that defined the code.json schema is gone. Its "
+               "schema outlived it - Canada still uses it."},
+    {"country": "IN", "flag": "\U0001F1EE\U0001F1F3", "name": "OpenForge",
+     "url": "https://openforge.gov.in/", "status": "ready",
+     "detail": "Tuleap Community Edition with a working REST API (/api/projects returns "
+               "public projects with git resources). Ingestable; not yet added."},
+    {"country": "TW", "flag": "\U0001F1F9\U0001F1FC", "name": "Public Code Platform (moda)",
+     "url": "https://civictech.moda.gov.tw/", "status": "needs-research",
+     "detail": "Ministry of Digital Affairs runs a central government code repository. "
+               "The documented URL 404s; the actual platform host was not identified."},
+    {"country": "KR", "flag": "\U0001F1F0\U0001F1F7", "name": "oss.kr",
+     "url": "https://www.oss.kr/", "status": "needs-research",
+     "detail": "Live national open source portal. Machine-readable route not yet found; "
+               "content is Korean, so it would also add a translation language."},
+    {"country": "BR", "flag": "\U0001F1E7\U0001F1F7", "name": "Portal do Software Publico",
+     "url": "https://www.softwarepublico.gov.br/", "status": "broken",
+     "detail": "TLS certificate expired; /social/ 404s. Historically the most ambitious "
+               "public software portal outside Europe - worth re-checking."},
+    {"country": "ES", "flag": "\U0001F1EA\U0001F1F8", "name": "CTT",
+     "url": "https://administracionelectronica.gob.es/ctt", "status": "needs-research",
+     "detail": "Centro de Transferencia de Tecnologia is live but the base URL redirect-loops; "
+               "a working entry point exists (verPestanaGeneral.htm). No API found yet."},
+    {"country": "global", "flag": "\U0001F310", "name": "Digital Public Goods Registry",
+     "url": "https://www.digitalpublicgoods.net/registry", "status": "ready",
+     "detail": "249 entries via an open API (app.digitalpublicgoods.net/api/dpgs), "
+               "UN-affiliated, with SDG and deployment-country metadata. In scope only if "
+               "the catalogue widens from 'government-published' to 'vetted for public use' "
+               "- many DPGs are NGO-built. A deliberate scope decision, not a technical one."},
+    {"country": "global", "flag": "\U0001F310", "name": "State of Public Code / Software Heritage",
+     "url": "https://www.softwareheritage.org/2026/07/01/public_code_2026_launch/",
+     "status": "different-shape",
+     "detail": "288,411 repositories with at least one government-email contribution across "
+               "all 193 UN member states. A measurement dataset, not a curated catalogue - "
+               "it answers 'who contributes' rather than 'what can we adopt'. Useful as "
+               "discovery input for finding catalogues we have missed."},
+    {"country": "IE/PT/CY", "flag": "\U0001F1EA\U0001F1FA", "name": "listed by the EU catalogue",
+     "url": "https://interoperable-europe.ec.europa.eu/eu-oss-catalogue",
+     "status": "unresolved",
+     "detail": "Ireland, Portugal and Cyprus appear as EU-catalogue source facets, but no "
+               "upstream could be identified - and the EU catalogue's own search is broken, "
+               "so it cannot be asked either."},
+]
+
+
+def label(source_key):
+    return (SOURCES.get(source_key) or {}).get("label", source_key)
+
+
+def site(source_key):
+    return (SOURCES.get(source_key) or {}).get("site")

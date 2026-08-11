@@ -32,7 +32,14 @@ public infrastructure.
 | 🇸🇪 SE | Offentligkod | **GNU recutils file in git** (GitLab) | 148 |
 | 🇫🇮 FI | Avoinkoodi | 3 static JSON files | 72 |
 | 🇫🇷 FR | awesome-codegouvfr | bulk JSON | 19 |
-| 🇪🇺 EU | code.europa.eu | GitLab API | ~12 |
+| 🇪🇺 EU | code.europa.eu | GitLab API | ~10 |
+| 🇳🇱 NL | code.overheid.nl | **Forgejo API** (open, no key) | 134 |
+| 🇨🇦 CA | Open Resource Exchange | `code.json` | 67 |
+
+**`sources.py` is the single source of truth** for source labels, links, access routes and
+the global survey. Imported by `build_ui.py`, `export_json.py` and `build_sources.py`, so a
+URL cannot disagree between the page, the JSON and the docs. `/sources.html` + `/sources.json`
+render it with live counts.
 
 **All eight converge on `publiccode.yml`** — that is what makes this an ingestion
 project rather than a scraping project.
@@ -47,10 +54,22 @@ project rather than a scraping project.
 - **openCode.de has no API**, but its directory slugs embed the GitLab project ID
   (`badge-api-4058` → project 4058) and the directory is auto-built from `publiccode.yml`
   in that GitLab. So the GitLab API *reproduces* the official listing. Never scrape the site.
-- **The Netherlands needs an API key.** `api.developer.overheid.nl/oss-register/v1` returns
-  `401 Missing credentials` on every read. Register at oss.developer.overheid.nl, then set
-  `NL_API_KEY` (add it to the plist's `EnvironmentVariables`). Spec:
-  `github.com/developer-overheid-nl/don-oss-register` → `api/openapi.json`.
+- **The Netherlands no longer needs an API key.** `code.overheid.nl` is the government's own
+  self-hosted **Forgejo/Gitea 1.22** with the standard open `api/v1` — 134 repos (MinBZK,
+  Rijkswaterstaat, Amsterdam, the Electoral Council's Abacus vote-counting software), no auth.
+  The separate OSS *register* (`api.developer.overheid.nl/oss-register/v1`) still 401s without a
+  key and is kept as `nlreg`, but it is no longer blocking: the code platform is arguably the
+  better source anyway — first-hand repos rather than a register of pointers.
+- **Canada localises everything.** `code.open.canada.ca/code.json` nests `tier → adminCode →
+  releases[]`, and `name`, `tags`, `licence`, `homepageURL` **and `repositoryURL`** are all
+  `{en, fr}` dicts. Passing them through crashed taxonomy, filters and dedupe in turn; `loc()`
+  flattens them. Its `tags` are free-text research topics ("SIR", "compartment model"), so they
+  go to `keywords`, **not** `categories` — feeding them to the taxonomy produced ~100
+  unmappable one-offs, and that warning is only useful while it stays near zero.
+- **code.gov is retired.** It 302s to a Digital.gov policy page and `api.code.gov` returns the
+  same HTML. The US federal inventory that *defined* the `code.json` schema is gone — but the
+  schema outlived it, and Canada still uses it. Recorded in `sources.py:SURVEY` so nobody
+  re-probes it.
 - **Ireland, Portugal and Cyprus** appear as EU-catalogue facets but no machine route was
   found. Listed in `harvest.py` as `UNRESOLVED` rather than silently dropped.
 

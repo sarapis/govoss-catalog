@@ -7,6 +7,9 @@ c = json.load(open(f"{OUT}/catalog.json"))
 _spec = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
 _tax = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_tax)
 FUNCTIONS = _tax.FUNCTIONS
+_ss = importlib.util.spec_from_file_location("sources", f"{OUT}/sources.py")
+_S = importlib.util.module_from_spec(_ss); _ss.loader.exec_module(_S)
+SRC_SITE = {k: v["site"] for k, v in _S.SOURCES.items()}
 
 # Liveness is surfaced ON THE PAGE, not just in liveness.json — a monitor whose
 # output lives only in a file nobody opens is the same failure as no monitor.
@@ -45,6 +48,7 @@ for r in c:
         "aka": r.get("also_known_as") or [],
         "s": SRC_LABEL.get(r.get("source"), r.get("source")),
         "ss": [SRC_LABEL.get(x, x) for x in (r.get("sources") or [r.get("source")]) if x],
+        "su": [SRC_SITE.get(x) for x in (r.get("sources") or [r.get("source")]) if x and SRC_SITE.get(x)],
         "t": r.get("tier"),
         "l": r.get("license") or "",
         "d": (r.get("short_desc") or "")[:230],
@@ -208,6 +212,8 @@ li.item:hover {{ background:var(--raised); }}
 .foot {{ display:flex; flex-wrap:wrap; gap:.35rem .9rem; font-family:var(--mono);
          font-size:.7rem; color:var(--slate); letter-spacing:.02em; }}
 .foot .src {{ color:var(--ink); }}
+.foot .src a {{ color:var(--ink); border-bottom:1px solid var(--hairline); }}
+.foot .src a:hover {{ color:var(--accent); border-bottom-color:var(--accent); }}
 .foot a {{ color:var(--slate); text-decoration:none; border-bottom:1px solid var(--hairline);
            word-break:break-all; }}
 .foot a:hover {{ color:var(--accent); border-bottom-color:var(--accent); }}
@@ -235,6 +241,7 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
     <a href="/meta.json"><code>/meta.json</code></a>
     <a href="/by-product.json"><code>/by-product.json</code></a>
     <a href="/llms.txt">how to use it</a>
+    &middot; <a href="/sources.html">sources</a>
     &middot; <a href="/status.html">status &amp; change log</a>
   </p>
 
@@ -352,7 +359,9 @@ function render() {{
         </div>
         ${{r.d ? `<div class="desc">${{esc(r.d)}}</div>` : ''}}
         <div class="foot">
-          <span class="src">${{esc((r.ss && r.ss.length ? r.ss : [r.s]).join(' + '))}}</span>
+          <span class="src">${{r.su && r.su.length
+              ? `<a href="${{esc(r.su[0])}}" target="_blank" rel="noopener">${{esc((r.ss||[r.s]).join(' + '))}}</a>`
+              : esc((r.ss||[r.s]).join(' + '))}}</span>
           ${{r.mc > 1 ? `<span title="merged from ${{r.mc}} catalogue records for the same repository">merged \\u00d7${{r.mc}}</span>` : ''}}
           ${{r.aka && r.aka.length ? `<span>aka ${{esc(r.aka.join(', '))}}</span>` : ''}}
           ${{r.o ? `<span>${{esc(r.o)}}</span>` : ''}}

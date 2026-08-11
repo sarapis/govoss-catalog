@@ -292,6 +292,70 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "Abacus",
+  "repo": "https://github.com/kiesraad/abacus",
+  "repo_key": "github.com/kiesraad/abacus",
+  "license": "EUPL-1.2",
+  "categories": [
+   "data-collection",
+   "data-analytics"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "maintenance": "internal",
+  "contacts": [
+   "Kiesraad"
+  ],
+  "desc_en": "Software for tallying election results and calculating seat allocation.",
+  "desc_src": "Software voor het optellen van verkiezingsuitslagen en berekenen van de zetelverdeling.",
+  "desc_src_lang": "nl",
+  "short_desc": "Software for tallying election results and calculating seat allocation.",
+  "desc_lang": "en",
+  "long_desc": "Abacus is the new software developed by the Dutch Electoral Council\n(Kiesraad) for calculating election results in the Netherlands. It tallies\npolling station results and computes the seat allocation.\n\nAbacus replaces the result-consolidation module of the current election\nsoftware OSV2020 and will be used for all Dutch elections. The first\nversion targets the 2026 municipal council elections (GR26).\n\nThe software runs as a standalone binary accessible via a web browser on a\nlocal network. The backend is written in Rust, the frontend in\nTypeScript/React.\n\nKey design principles are ease-of-use and simplicity. \nFrom the (dutch) report [Stemmen met vertrouwen](https://www.kiesraad.nl/documenten/2007/09/27/eindrapport-commissie-korthals-altes-stemmen-met-vertrouwen) the \nvalues integrity, transparency and verifiability are most important.\n",
+  "features": [
+   "Entry of polling station results using the four-eyes principle",
+   "Aggregation of all entered polling station results",
+   "Calculation of seat allocation",
+   "Generation of the official record (proces-verbaal) with results"
+  ],
+  "fallback_repo": "https://code.overheid.nl/Kiesraad/Abacus",
+  "forge_path": "Kiesraad/Abacus",
+  "is_fork": false,
+  "last_activity": "2026-08-11T15:49:10Z",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Abacus-Documentatie",
+  "repo": "https://code.overheid.nl/Kiesraad/Abacus-Documentatie",
+  "repo_key": "code.overheid.nl/kiesraad/abacus-documentatie",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Documentation for Abacus.",
+  "desc_lang": "en",
+  "desc_src": "Documentatie voor Abacus",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/Abacus-Documentatie",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T11:42:32Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -384,6 +448,23 @@
    "office"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "accessibility-map-frontend",
+  "repo": "https://code.overheid.nl/NDW/accessibility-map-frontend",
+  "repo_key": "code.overheid.nl/ndw/accessibility-map-frontend",
+  "repo_owner": "NDW",
+  "forge_path": "NDW/accessibility-map-frontend",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-21T19:44:36Z",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -1030,6 +1111,29 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "alexa-gc-recalls",
+  "repo": "https://github.com/tc-ca/alexa-gc-recalls",
+  "repo_key": "github.com/tc-ca/alexa-gc-recalls",
+  "repo_owner": "tc",
+  "short_desc": "Vehicle safety recalls Amazon Alexa Skill.",
+  "desc_lang": "en",
+  "desc_src": "Vehicle safety recalls Amazon Alexa Skill.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Safety",
+   "Recalls",
+   "Vehicules",
+   "Alexa"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tc)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -1139,6 +1243,30 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Algorithmic Impact Assessment",
+  "repo": "https://github.com/canada-ca/aia-eia-js",
+  "repo_key": "github.com/canada-ca/aia-eia-js",
+  "landing": "https://open.canada.ca/aia-eia-js/?lang=en",
+  "repo_owner": "tbs-sct",
+  "short_desc": "The users of this project will be Government of Canada employees assessing the impact of using an automated decision system, including Artificial Intelligence.",
+  "desc_lang": "en",
+  "desc_src": "The users of this project will be Government of Canada employees assessing the impact of using an automated decision system, including Artificial Intelligence.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "AI"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -1195,6 +1323,87 @@
   "note": "recommended to public agents; not necessarily gov-authored",
   "translated": true,
   "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "Amsterdam Design System",
+  "repo": "https://github.com/Amsterdam/design-system.git",
+  "repo_key": "github.com/amsterdam/design-system",
+  "landing": "https://designsystem.amsterdam",
+  "license": "EUPL-1.2",
+  "platforms": [
+   "web"
+  ],
+  "software_type": "library",
+  "dev_status": "stable",
+  "maintenance": "internal",
+  "contacts": [
+   "Design System Team",
+   "Vincent Smedinga"
+  ],
+  "desc_en": "An implementation of NL Design System for the City of Amsterdam: reusable components, patterns, and guidelines to build user interfaces.",
+  "desc_src": "Een implementatie van NL Design System voor gemeente Amsterdam: herbruikbare componenten, patronen en richtlijnen om gebruikersinterfaces te bouwen.",
+  "desc_src_lang": "nl",
+  "short_desc": "An implementation of NL Design System for the City of Amsterdam: reusable components, patterns, and guidelines to build user interfaces.",
+  "desc_lang": "en",
+  "long_desc": "Amsterdam Design System is an open-source toolkit of ready-made\ncomponents that are accessible (WCAG), adaptive, and user-friendly.\nTeams reuse them instead of starting from scratch on every project,\nsaving time and money.\n\nPublished as separate packages for CSS, React, and design tokens,\nthe system lets teams adopt just the parts they need. That makes it\nframework-agnostic and suitable for both tailor-made applications and\nSaaS applications.\n\nNL Design System\u2019s layered architecture lets other public organisations\nreuse these components and apply their own design tokens to tailor them\nto their own channels.\n\nThe team actively maintains the library, publishes regular releases,\nand welcomes contributions.\n",
+  "features": [
+   "Design tokens",
+   "CSS components",
+   "React components",
+   "Patterns and templates",
+   "Guidelines and examples"
+  ],
+  "fallback_repo": "https://code.overheid.nl/GemAmsterdam/design-system",
+  "forge_path": "GemAmsterdam/design-system",
+  "is_fork": false,
+  "last_activity": "2026-08-10T14:00:43Z",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "amt",
+  "repo": "https://github.com/MinBZK/amt",
+  "repo_key": "github.com/minbzk/amt",
+  "license": "EUPL-1.2",
+  "categories": [
+   "it-development"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "concept",
+  "released": "2024-04-25",
+  "maintenance": "community",
+  "contacts": [
+   "AI Validatie"
+  ],
+  "desc_en": "AMT is a toolkit for Managing Algorithmic systems",
+  "short_desc": "AMT is a toolkit for Managing Algorithmic systems",
+  "desc_lang": "en",
+  "long_desc": "AMT is the acronym for Algorithm Management Toolkit. The goal is to make algorithmic systems more transparent. It achieves this by generating standardized reports. These reports consist of both technical aspects as well as descriptive information about the system and regulatory assessments. For both the system and the model the lifecycle is important, so this is incorporated in both the tool as well as the reports. The definition for an algorithm is derived from the Algoritmeregister.\n\nlink: https://minbzk.github.io/ai-validation/Projects/AMT/\n",
+  "features": [
+   "AI",
+   "Validation",
+   "Transparency",
+   "Algorithm"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/amt",
+  "forge_path": "MinBZK/amt",
+  "is_fork": false,
+  "last_activity": "2026-08-10T19:46:27Z",
+  "functions": [
+   "dev-tools"
+  ],
   "functions_inferred": false
  },
  {
@@ -2129,6 +2338,110 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "API van het API register",
+  "repo": "https://github.com/developer-overheid-nl/don-api-register",
+  "repo_key": "github.com/developer-overheid-nl/don-api-register",
+  "landing": "https://apis.developer.overheid.nl",
+  "license": "EUPL-1.2",
+  "repo_owner": "Geonovum",
+  "categories": [
+   "it-management"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/backend",
+  "dev_status": "stable",
+  "maintenance": "internal",
+  "contacts": [
+   "developer.overheid.nl"
+  ],
+  "desc_src": "API van het API register (apis.developer.overheid.nl)",
+  "desc_src_lang": "nl",
+  "short_desc": "API of the API register (apis.developer.overheid.nl).",
+  "desc_lang": "en",
+  "long_desc": "Het API register biedt een centrale catalogus van APIs die worden aangeboden door de Nederlandse overheid.\nVia deze backend-API kunnen APIs worden geregistreerd, opgevraagd en beheerd. Nieuwe registraties worden\nautomatisch gevalideerd en ge\u00efndexeerd in Typesense zodat ze vindbaar zijn via de zoekfunctie op\napis.developer.overheid.nl. De service synchroniseert dagelijks de OpenAPI-specificaties van alle\ngeregistreerde APIs en genereert automatisch artifacts zoals Postman-collecties.\n",
+  "features": [
+   "Registratie en beheer van overheids-APIs",
+   "Validatie van OpenAPI-specificaties",
+   "Automatische dagelijkse refresh van OAS-bestanden",
+   "Integratie met Typesense voor zoekfunctionaliteit",
+   "Generatie van Postman-collecties"
+  ],
+  "fallback_repo": "https://code.overheid.nl/developer-overheid-nl/don-api-register",
+  "forge_path": "developer-overheid-nl/don-api-register",
+  "is_fork": false,
+  "last_activity": "2026-08-04T21:43:52Z",
+  "translated": true,
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "API van het OSS register",
+  "repo": "https://github.com/developer-overheid-nl/don-oss-register",
+  "repo_key": "github.com/developer-overheid-nl/don-oss-register",
+  "landing": "https://oss.developer.overheid.nl",
+  "license": "EUPL-1.2",
+  "categories": [
+   "collaboration"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "beta",
+  "maintenance": "internal",
+  "contacts": [
+   "developer.overheid.nl"
+  ],
+  "desc_src": "API van het OSS register (oss.developer.overheid.nl)",
+  "desc_src_lang": "nl",
+  "short_desc": "API of the OSS register (oss.developer.overheid.nl).",
+  "desc_lang": "en",
+  "long_desc": "De API van het OSS-register maakt open source software van de overheid beter\nvindbaar en herbruikbaar. Via deze API kunnen organisaties, ontwikkelaars en\ndienstverleners actuele metadata over repositories ophalen en verwerken in\neigen toepassingen.\n",
+  "features": [
+   "Doorzoekbare catalogus van open source repositories"
+  ],
+  "fallback_repo": "https://code.overheid.nl/developer-overheid-nl/don-oss-register",
+  "forge_path": "developer-overheid-nl/don-oss-register",
+  "is_fork": false,
+  "last_activity": "2026-08-10T13:24:26Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Apogy",
+  "repo": "https://git.eclipse.org/c/apogy/apogy.git",
+  "repo_key": "git.eclipse.org/c/apogy/apogy",
+  "repo_owner": "asc-csa",
+  "short_desc": "The one-stop-shop solution for operating robots, satellites and beyond",
+  "desc_lang": "en",
+  "desc_src": "The one-stop-shop solution for operating robots, satellites and beyond",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Robots",
+   "Space"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (asc-csa)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -2452,6 +2765,28 @@
    "geospatial"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "AppHub",
+  "repo": "https://github.com/esdc-devx/AppHub",
+  "repo_key": "github.com/esdc-devx/apphub",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "A dashboard to show expose metrics on software projects at ESDC",
+  "desc_lang": "en",
+  "desc_src": "A dashboard to show expose metrics on software projects at ESDC",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Dashboard"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "BE/iMio",
@@ -2778,6 +3113,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "argocd",
+  "repo": "https://code.overheid.nl/RWS/argocd",
+  "repo_key": "code.overheid.nl/rws/argocd",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW ArgoCD chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW ArgoCD chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/argocd",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T07:05:40Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -2965,6 +3320,29 @@
    "web-content"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Assemblyline",
+  "repo": "https://bitbucket.org/cse-assemblyline/assemblyline",
+  "repo_key": "bitbucket.org/cse-assemblyline/assemblyline",
+  "repo_owner": "cse-cst",
+  "short_desc": "Platform for the analysis of malicious files. It is designed to assist cyber defence teams to automate the analysis of files and to better use the time of security analysts",
+  "desc_lang": "en",
+  "desc_src": "Platform for the analysis of malicious files. It is designed to assist cyber defence teams to automate the analysis of files and to better use the time of security analysts",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Malware detection",
+   "File analysis"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (cse-cst)",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -4654,6 +5032,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "beleidsontwikkeling",
+  "repo": "https://code.overheid.nl/MinVWS/beleidsontwikkeling",
+  "repo_key": "code.overheid.nl/minvws/beleidsontwikkeling",
+  "repo_owner": "MinVWS",
+  "short_desc": "Open policy development.",
+  "desc_lang": "en",
+  "desc_src": "Openbare beleidsontwikkeling",
+  "desc_src_lang": "nl",
+  "forge_path": "MinVWS/beleidsontwikkeling",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-04-19T19:10:20Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -5482,6 +5880,26 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "bootstrap",
+  "repo": "https://code.overheid.nl/RWS/bootstrap",
+  "repo_key": "code.overheid.nl/rws/bootstrap",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW bootstrap chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW bootstrap chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/bootstrap",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T11:32:49Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -5657,6 +6075,28 @@
    "office"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "brp-amsterdam-api",
+  "repo": "https://code.overheid.nl/GemAmsterdam/brp-amsterdam-api",
+  "repo_key": "code.overheid.nl/gemamsterdam/brp-amsterdam-api",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "Authorisation proxy for connecting to the RvIG BRP (population register) API.",
+  "desc_lang": "en",
+  "desc_src": "Authorization proxy to connect to the RvIG BRP API.",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/brp-amsterdam-api",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T12:09:19Z",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -6649,6 +7089,21 @@
   "functions": [
    "case-workflow"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "bureaublad",
+  "repo": "https://code.overheid.nl/MinBZK/bureaublad",
+  "repo_key": "code.overheid.nl/minbzk/bureaublad",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/bureaublad",
+  "is_fork": false,
+  "stars": 1,
+  "last_activity": "2026-05-22T08:43:24Z",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -7913,6 +8368,52 @@
   "merged_count": 2
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "CDS Website",
+  "repo": "https://github.com/cds-snc/digital-canada-ca",
+  "repo_key": "github.com/cds-snc/digital-canada-ca",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Both digital.canada.ca and numerique.canada.ca are published from this repository.",
+  "desc_lang": "en",
+  "desc_src": "Both digital.canada.ca and numerique.canada.ca are published from this repository.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Website"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "CDTS",
+  "repo": "https://github.com/wet-boew/cdts-sgdc",
+  "repo_key": "github.com/wet-boew/cdts-sgdc",
+  "landing": "https://cenw-wscoe.github.io/sgdc-cdts/",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.",
+  "desc_lang": "en",
+  "desc_src": "The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "WET-BOEW"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -8719,6 +9220,100 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "CKAN-Extension-Territoire",
+  "repo": "https://github.com/VilledeMontreal/CKAN-Extension-Territoire",
+  "repo_key": "github.com/villedemontreal/ckan-extension-territoire",
+  "repo_owner": "city-of-montreal-qc",
+  "short_desc": "City of Montreal CKAN Extension",
+  "desc_lang": "en",
+  "desc_src": "City of Montreal CKAN Extension",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension",
+   "Data Catalogue"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-montreal-qc)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanapi",
+  "repo": "https://github.com/ckan/ckanapi",
+  "repo_key": "github.com/ckan/ckanapi",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Command line interface and Python module for accessing the CKAN Action API",
+  "desc_lang": "en",
+  "desc_src": "Command line interface and Python module for accessing the CKAN Action API",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Tool"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-ab_scheming",
+  "repo": "https://github.com/abgov/ckanext-ab_scheming",
+  "repo_key": "github.com/abgov/ckanext-ab_scheming",
+  "repo_owner": "ab",
+  "short_desc": "Dataset scheming extension used on open.alberta.ca",
+  "desc_lang": "en",
+  "desc_src": "Dataset scheming extension used on open.alberta.ca",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ab)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-bcgov",
+  "repo": "https://github.com/bcgov/ckanext-bcgov",
+  "repo_key": "github.com/bcgov/ckanext-bcgov",
+  "landing": "http://catalogue.data.gov.bc.ca",
+  "repo_owner": "bc",
+  "short_desc": "BC Data Catalogue source code.",
+  "desc_lang": "en",
+  "desc_src": "BC Data Catalogue source code.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Data Catalogue"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -8790,6 +9385,52 @@
    "learning-knowledge"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-canada",
+  "repo": "https://github.com/open-data/ckanext-canada",
+  "repo_key": "github.com/open-data/ckanext-canada",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Government of Canada CKAN Extension",
+  "desc_lang": "en",
+  "desc_src": "Government of Canada CKAN Extension",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-cloudstorage",
+  "repo": "https://github.com/open-data/ckanext-cloudstorage",
+  "repo_key": "github.com/open-data/ckanext-cloudstorage",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Store CKAN resources against multiple cloud providers.",
+  "desc_lang": "en",
+  "desc_src": "Store CKAN resources against multiple cloud providers.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -8867,6 +9508,71 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-fluent",
+  "repo": "https://github.com/ckan/ckanext-fluent",
+  "repo_key": "github.com/ckan/ckanext-fluent",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Multilingual metadata fields for CKAN",
+  "desc_lang": "en",
+  "desc_src": "Multilingual metadata fields for CKAN",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-geomapviewer",
+  "repo": "https://github.com/abgov/ckanext-geomapviewer",
+  "repo_key": "github.com/abgov/ckanext-geomapviewer",
+  "repo_owner": "ab",
+  "short_desc": "Ckan Geo Map Viewer Extension",
+  "desc_lang": "en",
+  "desc_src": "Ckan Geo Map Viewer Extension",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ab)",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-open_alberta",
+  "repo": "https://github.com/abgov/ckanext-open_alberta",
+  "repo_key": "github.com/abgov/ckanext-open_alberta",
+  "repo_owner": "ab",
+  "short_desc": "Ckan extension developed for use on open.alberta.ca",
+  "desc_lang": "en",
+  "desc_src": "Ckan extension developed for use on open.alberta.ca",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ab)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -8907,6 +9613,29 @@
    "web-content"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-scheming",
+  "repo": "https://github.com/open-data/ckanext-scheming",
+  "repo_key": "github.com/open-data/ckanext-scheming",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Easy, shareable custom CKAN schemas",
+  "desc_lang": "en",
+  "desc_src": "Easy, shareable custom CKAN schemas",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -8991,6 +9720,28 @@
    "identity-security"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "classification",
+  "repo": "https://code.overheid.nl/GemAmsterdam/classification",
+  "repo_key": "code.overheid.nl/gemamsterdam/classification",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "Machine learning tool for automated classification of nuisance reports.",
+  "desc_lang": "en",
+  "desc_src": "Machine learning tool for automated classification of nuisance reports.",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/classification",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-27T07:58:56Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -9475,6 +10226,26 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "code.overheid.nl-styling",
+  "repo": "https://code.overheid.nl/MinBZK/code.overheid.nl-styling",
+  "repo_key": "code.overheid.nl/minbzk/code.overheid.nl-styling",
+  "repo_owner": "MinBZK",
+  "short_desc": "Styling for code.overheid.nl.",
+  "desc_lang": "en",
+  "desc_src": "Styling voor code.overheid.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/code.overheid.nl-styling",
+  "is_fork": false,
+  "stars": 2,
+  "last_activity": "2026-07-14T14:49:08Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -9568,6 +10339,26 @@
   "functions": [
    "web-content"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Codeplatform",
+  "repo": "https://code.overheid.nl/MinBZK/Codeplatform",
+  "repo_key": "code.overheid.nl/minbzk/codeplatform",
+  "repo_owner": "MinBZK",
+  "short_desc": "Welcome to code.overheid.nl, where you will find the source code of the Dutch government. This repository is the meta-repository for the platform.",
+  "desc_lang": "en",
+  "desc_src": "Welkom op code.overheid.nl - hier vind je de broncode van de Nederlandse overheid. Deze repository is de meta-repository voor het codeplatform zelf. ",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/Codeplatform",
+  "is_fork": false,
+  "stars": 7,
+  "last_activity": "2026-08-06T12:10:07Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -11256,6 +12047,32 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "contract-expiration-tracker",
+  "repo": "https://github.com/cityssm/contract-expiration-tracker",
+  "repo_key": "github.com/cityssm/contract-expiration-tracker",
+  "landing": "https://cityssm.github.io/contract-expiration-tracker/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool to track the expiration of procurement projects and/or contracts to help prepare for and be proactive on upcoming sourcing requirements.",
+  "desc_lang": "en",
+  "desc_src": "A tool to track the expiration of procurement projects and/or contracts to help prepare for and be proactive on upcoming sourcing requirements.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "contract",
+   "expiration",
+   "procurement"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -11425,6 +12242,35 @@
   "translated": true,
   "functions": [],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "corporate-records-manager",
+  "repo": "https://github.com/cityssm/corporate-records-manager",
+  "repo_key": "github.com/cityssm/corporate-records-manager",
+  "landing": "https://cityssm.github.io/corporate-records-manager/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A system for tracking various corporate records administered by the City Clerks Department.",
+  "desc_lang": "en",
+  "desc_src": "A system for tracking various corporate records administered by the City Clerks Department.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "easement",
+   "deed",
+   "bylaw",
+   "agreement",
+   "records",
+   "legal"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -11639,6 +12485,57 @@
    "web-content"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "COVID-19 Office Entry App",
+  "repo": "https://github.com/justicecanada/ogd-office-entry-am-entree-au-bureau",
+  "repo_key": "github.com/justicecanada/ogd-office-entry-am-entree-au-bureau",
+  "repo_owner": "justice",
+  "short_desc": "The app allows employees to request access to workplace sites and managers to monitor, review and approve employee requests.",
+  "desc_lang": "en",
+  "desc_src": "The app allows employees to request access to workplace sites and managers to monitor, review and approve employee requests.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "app",
+   "office",
+   "building",
+   "safety"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (justice)",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "COVID-19-POMDP-Dashboard",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_COVID-19-POMDP-Dashboard",
+  "repo_key": "github.com/dnd-drdc-rddc/os_covid-19-pomdp-dashboard",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "The actions could be Post, Test or Isolate. The observations are either symptoms or COVID test results; then belief is if a COVID-19 infection exists",
+  "desc_lang": "en",
+  "desc_src": "The actions could be Post, Test or Isolate. The observations are either symptoms or COVID test results; then belief is if a COVID-19 infection exists",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19",
+   "Maritime Operational Research and Analysis",
+   "Partially Observable Markov Decision Processes"
+  ],
+  "dev_status": "Alpha",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -11941,6 +12838,34 @@
   "functions_inferred": true
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "crc-covlib",
+  "repo": "https://github.com/ic-crc/crc-covlib",
+  "repo_key": "github.com/ic-crc/crc-covlib",
+  "repo_owner": "ised-isde",
+  "short_desc": "crc-covlib is an application programming interface (API) that facilitates the use of a few different radio wave propagation models.",
+  "desc_lang": "en",
+  "desc_src": "crc-covlib is an application programming interface (API) that facilitates the use of a few different radio wave propagation models.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "API",
+   "propagation",
+   "radio waves",
+   "coverage",
+   "interference",
+   "prediction"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (ised-isde)",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -12020,6 +12945,88 @@
    "collaboration"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "crossplane-provider-functions",
+  "repo": "https://code.overheid.nl/RWS/crossplane-provider-functions",
+  "repo_key": "code.overheid.nl/rws/crossplane-provider-functions",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW Crossplane functions provider chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW Crossplane functions provider chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/crossplane-provider-functions",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-22T05:22:04Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "crossplane-provider-gitlab",
+  "repo": "https://code.overheid.nl/RWS/crossplane-provider-gitlab",
+  "repo_key": "code.overheid.nl/rws/crossplane-provider-gitlab",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW Crossplane GitLab provider chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW Crossplane gitlab provider chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/crossplane-provider-gitlab",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-16T09:13:55Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "crossplane-provider-keycloak",
+  "repo": "https://code.overheid.nl/RWS/crossplane-provider-keycloak",
+  "repo_key": "code.overheid.nl/rws/crossplane-provider-keycloak",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW Crossplane Keycloak provider chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW Crossplane keycloak provider chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/crossplane-provider-keycloak",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-26T07:18:03Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "crossplane-provider-kubernetes",
+  "repo": "https://code.overheid.nl/RWS/crossplane-provider-kubernetes",
+  "repo_key": "code.overheid.nl/rws/crossplane-provider-kubernetes",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW Crossplane Kubernetes provider chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW Crossplane kubernetes provider chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/crossplane-provider-kubernetes",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-26T07:16:37Z",
+  "translated": true,
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -12429,6 +13436,26 @@
    "case-workflow",
    "documents"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "custom-otel-collector",
+  "repo": "https://code.overheid.nl/RWS/custom-otel-collector",
+  "repo_key": "code.overheid.nl/rws/custom-otel-collector",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW custom OpenTelemetry collector chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW custom-otel-collector chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/custom-otel-collector",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-29T09:17:15Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -12920,6 +13947,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "data-analysis-api-examples",
+  "repo": "https://code.overheid.nl/NCSC/data-analysis-api-examples",
+  "repo_key": "code.overheid.nl/ncsc/data-analysis-api-examples",
+  "repo_owner": "NCSC",
+  "short_desc": "Data Analysis API examples.",
+  "desc_lang": "en",
+  "desc_src": "Data Analysis API Examples",
+  "desc_src_lang": "nl",
+  "forge_path": "NCSC/data-analysis-api-examples",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-16T11:54:49Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -12972,6 +14021,28 @@
   "used_by": [
    "arbetsformedlingen"
   ],
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "dataplatform",
+  "repo": "https://code.overheid.nl/RVO/dataplatform",
+  "repo_key": "code.overheid.nl/rvo/dataplatform",
+  "repo_owner": "RVO",
+  "short_desc": "A small proof of concept on code.overheid.",
+  "desc_lang": "en",
+  "desc_src": "Een kleine POC op code.overheid",
+  "desc_src_lang": "nl",
+  "forge_path": "RVO/dataplatform",
+  "is_fork": false,
+  "stars": 2,
+  "last_activity": "2026-05-29T13:27:08Z",
+  "translated": true,
   "functions": [
    "data-analytics"
   ],
@@ -13539,6 +14610,189 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO",
+  "repo_key": "code.overheid.nl/minbzk/dawo",
+  "repo_owner": "MinBZK",
+  "short_desc": "The Digitally Autonomous Government Workplace (DAWO) is an initiative of the Ministry of the Interior and Kingdom Relations.",
+  "desc_lang": "en",
+  "desc_src": "Digitaal Autonome Werkomgeving Overheid (DAWO) is een initiatief vanuit het ministerie van Binnenlandse Zaken en Koninkrijksrelaties met als streven een interoperabel en digitaal autonoom fundament voor overheidswerkplekken.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/DAWO",
+  "is_fork": false,
+  "stars": 2,
+  "last_activity": "2026-07-15T13:25:02Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-AI",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-AI",
+  "repo_key": "code.overheid.nl/minbzk/dawo-ai",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/DAWO-AI",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-08T22:39:35Z",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-Cloud",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-Cloud",
+  "repo_key": "code.overheid.nl/minbzk/dawo-cloud",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/DAWO-Cloud",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-23T18:45:16Z",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-DWR",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-DWR",
+  "repo_key": "code.overheid.nl/minbzk/dawo-dwr",
+  "repo_owner": "MinBZK",
+  "short_desc": "Digital Workplace Reloaded.",
+  "desc_lang": "en",
+  "desc_src": "Digitale Werkomgeving Reloaded",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/DAWO-DWR",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T05:33:51Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-DWR-Kinoite",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-DWR-Kinoite",
+  "repo_key": "code.overheid.nl/minbzk/dawo-dwr-kinoite",
+  "repo_owner": "MinBZK",
+  "short_desc": "Everything you need to deploy Fedora Kinoite on a DWR / DWR 2.0 device.",
+  "desc_lang": "en",
+  "desc_src": "Everything you need to deploy Fedora KINOITE on a DWR/DWR 2.0 device.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/DAWO-DWR-Kinoite",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T05:34:50Z",
+  "translated": true,
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-IAM",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-IAM",
+  "repo_key": "code.overheid.nl/minbzk/dawo-iam",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/DAWO-IAM",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-13T08:41:07Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-Mobile",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-Mobile",
+  "repo_key": "code.overheid.nl/minbzk/dawo-mobile",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/DAWO-Mobile",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-08T22:40:23Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-NixOS",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-NixOS",
+  "repo_key": "code.overheid.nl/minbzk/dawo-nixos",
+  "repo_owner": "MinBZK",
+  "short_desc": "The Digitally Autonomous Government Workplace (DAWO) aims to provide a digitally autonomous, interoperable foundation for government workstations.",
+  "desc_lang": "en",
+  "desc_src": "Digitaal Autonome Werkomgeving Overheid (DAWO) streeft naar een digitaal autonome en interoperabele basis voor overheidswerkplekken.\r\n\r\nDe repository MinBZK/DAWO-NixOS bevat de code om werkplekken automatisch en identiek op te bouwen via het Linux-besturingssysteem NixOS.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/DAWO-NixOS",
+  "is_fork": false,
+  "stars": 3,
+  "last_activity": "2026-08-08T20:32:50Z",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-NixOS-installatie",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-NixOS-installatie",
+  "repo_key": "code.overheid.nl/minbzk/dawo-nixos-installatie",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/DAWO-NixOS-installatie",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-09T05:12:03Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DAWO-Sextant",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-Sextant",
+  "repo_key": "code.overheid.nl/minbzk/dawo-sextant",
+  "repo_owner": "MinBZK",
+  "short_desc": "Declarative fleet control plane for NixOS. Proof of concept - contributors wanted.",
+  "desc_lang": "en",
+  "desc_src": "Declarative fleet control-plane for NixOS. Proof of concept - contributors wanted.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/DAWO-Sextant",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T16:39:26Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -13853,6 +15107,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "DbTaak_Scheduler",
+  "repo": "https://code.overheid.nl/GemVenlo/DbTaak_Scheduler",
+  "repo_key": "code.overheid.nl/gemvenlo/dbtaak_scheduler",
+  "repo_owner": "GemVenlo",
+  "short_desc": "DbTaak_Scheduler reads a SQL database for actions.",
+  "desc_lang": "en",
+  "desc_src": "DbTaak_Scheduler reads sql database for actions",
+  "desc_src_lang": "nl",
+  "forge_path": "GemVenlo/DbTaak_Scheduler",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-03-31T10:51:45Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -13966,6 +15242,21 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "ddOperApi",
+  "repo": "https://code.overheid.nl/RWS/ddOperApi",
+  "repo_key": "code.overheid.nl/rws/ddoperapi",
+  "repo_owner": "RWS",
+  "forge_path": "RWS/ddOperApi",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2025-01-12T12:11:27Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -14075,6 +15366,30 @@
   "translated": true,
   "functions": [],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "DECD Design System",
+  "repo": "https://github.com/DTS-STN/DECD-Design-System",
+  "repo_key": "github.com/dts-stn/decd-design-system",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "Build a relevant, usable and inclusive Design System that will enable DECD Product Teams to deliver a new Service Canada Digital Centre experience.",
+  "desc_lang": "en",
+  "desc_src": "Build a relevant, usable and inclusive Design System that will enable DECD Product Teams to deliver a new Service Canada Digital Centre experience.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "design system",
+   "react",
+   "component library"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -14926,6 +16241,143 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "Developer Overheid NL",
+  "repo": "https://github.com/developer-overheid-nl/don-site",
+  "repo_key": "github.com/developer-overheid-nl/don-site",
+  "landing": "https://developer.overheid.nl",
+  "license": "EUPL-1.2",
+  "categories": [
+   "collaboration",
+   "digital-asset-management",
+   "it-asset-management",
+   "it-development",
+   "it-management",
+   "it-security",
+   "it-service-management",
+   "knowledge-management"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "beta",
+  "maintenance": "internal",
+  "contacts": [
+   "developer.overheid.nl"
+  ],
+  "desc_src": "Ontwikkelaarsportaal van de Nederlandse overheid",
+  "desc_src_lang": "nl",
+  "short_desc": "Developer portal of the Dutch government.",
+  "desc_lang": "en",
+  "long_desc": "Developer Overheid NL is de wegwijzer voor developers die voor of bij de\noverheid ontwikkelen. Zij vervult deze rol door het aanbieden van\nstandaarden, best practices en tools.\n\nEen belangrijke feature van het platform is de API catalogus. Deze maakt\ninzichtelijk welke API's er beschikbaar zijn in het publieke landschap.\nTevens kan je hier per API de informatie vinden die je nodig hebt om met\nde API aan de slag te gaan.\n\nOok biedt het platform inzicht in welke open source software projecten er\nbeschikbaar zijn in het publieke landschap. Per project krijgt de\ngebruiker inzicht in de vitaliteit van de repository en andere waardevolle\ndatapunten.\n",
+  "features": [
+   "Kennisbank",
+   "API catalogus",
+   "Open Source catalogus"
+  ],
+  "fallback_repo": "https://code.overheid.nl/developer-overheid-nl/don-site",
+  "forge_path": "developer-overheid-nl/don-site",
+  "is_fork": false,
+  "last_activity": "2026-08-06T16:38:53Z",
+  "translated": true,
+  "functions": [
+   "collaboration",
+   "crm-service",
+   "dev-tools",
+   "documents",
+   "identity-security",
+   "infrastructure",
+   "learning-knowledge"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "developer.overheid.nl Register Sites",
+  "repo": "https://github.com/developer-overheid-nl/don-register-site",
+  "repo_key": "github.com/developer-overheid-nl/don-register-site",
+  "license": "EUPL-1.2",
+  "categories": [
+   "data-collection",
+   "data-visualization",
+   "it-development",
+   "project-management"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "maintenance": "internal",
+  "contacts": [
+   "Jaap-Hein Wester"
+  ],
+  "desc_en": "The websites and packages belonging to the OSS- and API-register from developer.overheid.nl and the register-site-template",
+  "desc_src": "De websites en packages van het OSS- en API-register van developer.overheid.nl en het register-site-template",
+  "desc_src_lang": "nl",
+  "short_desc": "The websites and packages belonging to the OSS- and API-register from developer.overheid.nl and the register-site-template",
+  "desc_lang": "en",
+  "fallback_repo": "https://code.overheid.nl/developer-overheid-nl/don-register-site",
+  "forge_path": "developer-overheid-nl/don-register-site",
+  "is_fork": false,
+  "last_activity": "2026-08-06T15:17:58Z",
+  "functions": [
+   "case-workflow",
+   "data-analytics",
+   "dev-tools"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Devex",
+  "repo": "https://github.com/BCDevExchange/devex",
+  "repo_key": "github.com/bcdevexchange/devex",
+  "repo_owner": "bc",
+  "short_desc": "B.C. Developer Exchange Application",
+  "desc_lang": "en",
+  "desc_src": "B.C. Developer Exchange Application",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Developer Exchange"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "devhub-app-web",
+  "repo": "https://github.com/bcgov/devhub-app-web",
+  "repo_key": "github.com/bcgov/devhub-app-web",
+  "landing": "https://developer.gov.bc.ca/",
+  "repo_owner": "bc",
+  "short_desc": "Web application for the DevHub.",
+  "desc_lang": "en",
+  "desc_src": "Web application for the DevHub.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "DevHub",
+   "Web Application"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -15306,6 +16758,28 @@
   "functions": [
    "case-workflow"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Digital Accessibility Toolkit",
+  "repo": "https://github.com/gc-da11yn/gc-da11yn.github.io",
+  "repo_key": "github.com/gc-da11yn/gc-da11yn.github.io",
+  "landing": "https://a11y.canada.ca/en/",
+  "repo_owner": "ssc-spc",
+  "short_desc": "A sharing space for resources created by employees of the Government of Canada (GC) to promote in the open. Following the Treasury Board of Canada Secretariat's Directive on Open Government.",
+  "desc_lang": "en",
+  "desc_src": "A sharing space for resources created by employees of the Government of Canada (GC) to promote in the open. Following the Treasury Board of Canada Secretariat's Directive on Open Government.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "NodeJS"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (ssc-spc)",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -17082,6 +18556,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Domeinregister-Schulddienstverlening",
+  "repo": "https://code.overheid.nl/GemeenteArnhem/Domeinregister-Schulddienstverlening",
+  "repo_key": "code.overheid.nl/gemeentearnhem/domeinregister-schulddienstverlening",
+  "repo_owner": "GemeenteArnhem",
+  "short_desc": "An open source domain register for debt assistance services, based on the GGM information model.",
+  "desc_lang": "en",
+  "desc_src": "Een open source domeinregister voor schulddienstverlening, gebaseerd op het GGM-informatiemodel.",
+  "desc_src_lang": "nl",
+  "forge_path": "GemeenteArnhem/Domeinregister-Schulddienstverlening",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-26T10:42:59Z",
+  "translated": true,
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -17485,6 +18981,30 @@
    "web-content"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Drupal WxT",
+  "repo": "https://github.com/drupalwxt/wxt",
+  "repo_key": "github.com/drupalwxt/wxt",
+  "landing": "https://drupalwxt.github.io/",
+  "repo_owner": "statcan",
+  "short_desc": "Drupal WxT leverages the WET-BOEW Framework and Drupal for building innovative websites that are accessible, usable, interoperable, mobile-friendly and multilingual.",
+  "desc_lang": "en",
+  "desc_src": "Drupal WxT leverages the WET-BOEW Framework and Drupal for building innovative websites that are accessible, usable, interoperable, mobile-friendly and multilingual.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Drupal"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -18255,6 +19775,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "e-KS",
+  "repo": "https://code.overheid.nl/Kiesraad/e-KS",
+  "repo_key": "code.overheid.nl/kiesraad/e-ks",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Electronic candidate nomination system.",
+  "desc_lang": "en",
+  "desc_src": "Elektronisch kandidaatstellingssysteem",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/e-KS",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T15:45:06Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -18549,6 +20089,29 @@
    "finance-procurement"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "EGSnrc",
+  "repo": "https://github.com/nrc-cnrc/EGSnrc",
+  "repo_key": "github.com/nrc-cnrc/egsnrc",
+  "repo_owner": "nrc-cnrc",
+  "short_desc": "Toolkit to perform Monte Carlo simulation of ionizing radiation transport through matter",
+  "desc_lang": "en",
+  "desc_src": "Toolkit to perform Monte Carlo simulation of ionizing radiation transport through matter",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Monte Carlo simulation",
+   "Ionizing radiation"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (nrc-cnrc)",
+  "functions": [
+   "environment-transport"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -18939,6 +20502,45 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "Element synapse archive module",
+  "repo": "https://github.com/MinBZK/matrix-archive-module",
+  "repo_key": "github.com/minbzk/matrix-archive-module",
+  "license": "EUPL-1.2",
+  "categories": [
+   "it-development"
+  ],
+  "platforms": [
+   "docs"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "concept",
+  "maintenance": "community",
+  "contacts": [
+   "Mijn Bureau"
+  ],
+  "desc_en": "Element synapse archive module for MijnBureau",
+  "short_desc": "Element synapse archive module for MijnBureau",
+  "desc_lang": "en",
+  "long_desc": "This is a system that hooks into element Synapse and archives messages in a datastore. It is used to archive messages in the MijnBureau digital workplace suite.\n\nMijnBureau is a open-source, cloud-native, digital workplace suite.\n",
+  "features": [
+   "Open Source",
+   "Government",
+   "digital workplace",
+   "open-source"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/matrix-archive-module",
+  "forge_path": "MinBZK/matrix-archive-module",
+  "is_fork": false,
+  "last_activity": "2026-07-01T10:54:22Z",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -19073,6 +20675,70 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "eml2csv",
+  "repo": "https://code.overheid.nl/Kiesraad/eml2csv",
+  "repo_key": "code.overheid.nl/kiesraad/eml2csv",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Converts EML_NL files to CSV files (osv4-3).",
+  "desc_lang": "en",
+  "desc_src": "Converts EML_NL files to csv files (osv4-3)",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/eml2csv",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-03-10T09:58:20Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "eml2sql",
+  "repo": "https://code.overheid.nl/Kiesraad/eml2sql",
+  "repo_key": "code.overheid.nl/kiesraad/eml2sql",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Converts Dutch election .EML files into a SQLite database with no loss of data.",
+  "desc_lang": "en",
+  "desc_src": "Convert Dutch election .EML files to a SQLite database with no loss of data",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/eml2sql",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-04-30T18:06:06Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "EML_NL",
+  "repo": "https://code.overheid.nl/Kiesraad/EML_NL",
+  "repo_key": "code.overheid.nl/kiesraad/eml_nl",
+  "repo_owner": "Kiesraad",
+  "short_desc": "XML Schema Definitions (XSDs) for the EML_NL standard.",
+  "desc_lang": "en",
+  "desc_src": "XML Schema Definitions (XSDs) for the EML_NL standard",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/EML_NL",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T14:39:56Z",
+  "translated": true,
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -19104,6 +20770,73 @@
   "translated": true,
   "functions": [
    "dev-tools"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Endurance Limited Lines of Approach",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_ELLA",
+  "repo_key": "github.com/dnd-drdc-rddc/os_ella",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "Calculates and produces figures for limiting lines of approach to a ship by a submarine, where that submarine may sprint with an impact on its endurance.",
+  "desc_lang": "en",
+  "desc_src": "Calculates and produces figures for limiting lines of approach to a ship by a submarine, where that submarine may sprint with an impact on its endurance.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Navy",
+   "convoy",
+   "submarine",
+   "endurance"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "EnergieCatalogus",
+  "repo": "https://code.overheid.nl/RVO/EnergieCatalogus",
+  "repo_key": "code.overheid.nl/rvo/energiecatalogus",
+  "repo_owner": "RVO",
+  "short_desc": "Catalogue of energy WFS and WMS services for the Netherlands.",
+  "desc_lang": "en",
+  "desc_src": "Catalogus met energie wfs en wms services voor Nederland",
+  "desc_src_lang": "nl",
+  "forge_path": "RVO/EnergieCatalogus",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-15T13:46:05Z",
+  "translated": true,
+  "functions": [
+   "environment-transport"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "EnergieWiki",
+  "repo": "https://code.overheid.nl/RVO/EnergieWiki",
+  "repo_key": "code.overheid.nl/rvo/energiewiki",
+  "repo_owner": "RVO",
+  "short_desc": "This EnergieWiki is the wiki accompanying the interactive Dutch Heat Map (WarmteAtlas).",
+  "desc_lang": "en",
+  "desc_src": "This EnergieWiki is used as Wiki belonging to the interactive 'HeatMap (WarmteAtlas)' of the Netherlands.",
+  "desc_src_lang": "nl",
+  "forge_path": "RVO/EnergieWiki",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-15T13:19:15Z",
+  "translated": true,
+  "functions": [
+   "geospatial"
   ],
   "functions_inferred": true
  },
@@ -19686,6 +21419,21 @@
   "functions": [
    "dev-tools"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "ESA-scenarioviewer",
+  "repo": "https://code.overheid.nl/RVO/ESA-scenarioviewer",
+  "repo_key": "code.overheid.nl/rvo/esa-scenarioviewer",
+  "repo_owner": "RVO",
+  "forge_path": "RVO/ESA-scenarioviewer",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-02T18:59:09Z",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -21959,6 +23707,43 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "FLOW",
+  "repo": "https://code.overheid.nl/RWS/FLOW",
+  "repo_key": "code.overheid.nl/rws/flow",
+  "repo_owner": "RWS",
+  "forge_path": "RWS/FLOW",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T10:39:18Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "flow-docs",
+  "repo": "https://code.overheid.nl/RWS/flow-docs",
+  "repo_key": "code.overheid.nl/rws/flow-docs",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW documentation.",
+  "desc_lang": "en",
+  "desc_src": "FLOW documentation",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/flow-docs",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T05:46:10Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -23076,6 +24861,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Functionaliteit-test",
+  "repo": "https://code.overheid.nl/VNG/Functionaliteit-test",
+  "repo_key": "code.overheid.nl/vng/functionaliteit-test",
+  "repo_owner": "VNG",
+  "short_desc": "This repo is used to test which functionality code.overheid.nl repositories have compared with GitHub and GitLab repositories.",
+  "desc_lang": "en",
+  "desc_src": "Met deze repo willen we testen welke functionaliteit code.overheid.nl repositories hebben t.o.v. GitHub en GitLab repositories.",
+  "desc_src_lang": "nl",
+  "forge_path": "VNG/Functionaliteit-test",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-17T13:48:50Z",
+  "translated": true,
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -23893,6 +25700,75 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GC Architecture",
+  "repo": "https://github.com/canada-ca/architecture",
+  "repo_key": "github.com/canada-ca/architecture",
+  "repo_owner": "ssc-spc",
+  "short_desc": "Enterprise architecture models",
+  "desc_lang": "en",
+  "desc_src": "Enterprise architecture models",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Architecture"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (ssc-spc)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GC InfoBase",
+  "repo": "https://github.com/TBS-EACPD/infobase",
+  "repo_key": "github.com/tbs-eacpd/infobase",
+  "landing": "https://canada.ca/gcinfobase",
+  "repo_owner": "tbs-sct",
+  "short_desc": "The GC InfoBase is an interactive data-visualization tool, transforming complex federal data into simple visual stories for Canadians.",
+  "desc_lang": "en",
+  "desc_src": "The GC InfoBase is an interactive data-visualization tool, transforming complex federal data into simple visual stories for Canadians.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Website",
+   "Data visualization"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GCconnex",
+  "repo": "https://github.com/gctools-outilsgc/gcconnex",
+  "repo_key": "github.com/gctools-outilsgc/gcconnex",
+  "repo_owner": "tbs-sct",
+  "short_desc": "GC digital collaboration platform (GCconnex and GCcollab)",
+  "desc_lang": "en",
+  "desc_src": "GC digital collaboration platform (GCconnex and GCcollab)",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Collaboration",
+   "Social"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -24091,6 +25967,28 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "gebruikersdocumentatie",
+  "repo": "https://code.overheid.nl/social.overheid.nl/gebruikersdocumentatie",
+  "repo_key": "code.overheid.nl/social.overheid.nl/gebruikersdocumentatie",
+  "repo_owner": "social.overheid.nl",
+  "short_desc": "Open documentation for users of social.overheid.nl (Mastodon).",
+  "desc_lang": "en",
+  "desc_src": "Open documentatie voor gebruikers van social.overheid.nl (Mastodon)",
+  "desc_src_lang": "nl",
+  "forge_path": "social.overheid.nl/gebruikersdocumentatie",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-03T11:16:39Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -24133,6 +26031,53 @@
    "crm-service"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "general-licence-manager",
+  "repo": "https://github.com/cityssm/general-licence-manager",
+  "repo_key": "github.com/cityssm/general-licence-manager",
+  "landing": "https://cityssm.github.io/general-licence-manager/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "An application built to manage the general licences issued by municipalities.",
+  "desc_lang": "en",
+  "desc_src": "An application built to manage the general licences issued by municipalities.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "licensing",
+   "taxi",
+   "vendor",
+   "food"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "generiekefuncties-docs-test",
+  "repo": "https://code.overheid.nl/MinVWS/generiekefuncties-docs-test",
+  "repo_key": "code.overheid.nl/minvws/generiekefuncties-docs-test",
+  "repo_owner": "MinVWS",
+  "short_desc": "Repository generiekefuncties-docs for the Ministry of Health, Welfare and Sport.",
+  "desc_lang": "en",
+  "desc_src": "Repo generiekefuncties-docs for minvws",
+  "desc_src_lang": "nl",
+  "forge_path": "MinVWS/generiekefuncties-docs-test",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-15T19:04:11Z",
+  "translated": true,
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -25161,6 +27106,28 @@
    "data-analytics"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "GeVal",
+  "repo": "https://code.overheid.nl/GemRotterdam/GeVal",
+  "repo_key": "code.overheid.nl/gemrotterdam/geval",
+  "repo_owner": "GemRotterdam",
+  "short_desc": "Service for running generic validations via a SOAP web service and a REST API web service.",
+  "desc_lang": "en",
+  "desc_src": "Service voor het uitvoeren van Generieke Validaties via SOAP web service en via REST API web-service.",
+  "desc_src_lang": "nl",
+  "forge_path": "GemRotterdam/GeVal",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2024-08-13T10:54:30Z",
+  "translated": true,
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -33146,6 +35113,28 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GO Pay Scraper",
+  "repo": "https://github.com/ToferC/payscraper",
+  "repo_key": "github.com/toferc/payscraper",
+  "repo_owner": "csps-efpc",
+  "short_desc": "An example GO Lang project for scraping Pay data from TBS Collective Agreements.",
+  "desc_lang": "en",
+  "desc_src": "An example GO Lang project for scraping Pay data from TBS Collective Agreements.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Scraper"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (csps-efpc)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -34201,6 +36190,21 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "grip",
+  "repo": "https://code.overheid.nl/robbertbos/grip",
+  "repo_key": "code.overheid.nl/robbertbos/grip",
+  "repo_owner": "robbertbos",
+  "forge_path": "robbertbos/grip",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-04T14:11:38Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -34500,6 +36504,31 @@
   "translated": true,
   "functions": [
    "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "gwells",
+  "repo": "https://github.com/bcgov/gwells",
+  "repo_key": "github.com/bcgov/gwells",
+  "landing": "https://apps.nrs.gov.bc.ca/gwells/",
+  "repo_owner": "bc",
+  "short_desc": "Groundwater Wells and Aquifers application for the Ministry of Environment.",
+  "desc_lang": "en",
+  "desc_src": "Groundwater Wells and Aquifers application for the Ministry of Environment.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Groundwater",
+   "Data"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)",
+  "functions": [
+   "data-analytics"
   ],
   "functions_inferred": true
  },
@@ -34825,6 +36854,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "HCP",
+  "repo": "https://code.overheid.nl/Kiesraad/HCP",
+  "repo_key": "code.overheid.nl/kiesraad/hcp",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Audit protocol tool. Scripts supporting part A of the Central Electoral Committee audit protocol.",
+  "desc_lang": "en",
+  "desc_src": "Hulpmiddel controle protocol. Scripts ter ondersteuning van onderdeel A van het Controleprotocol Centraal Stembureau.",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/HCP",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-02-11T13:49:30Z",
+  "translated": true,
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -35115,6 +37166,23 @@
    "FI"
   ],
   "merged_count": 3
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "herbruikbare-teksten",
+  "repo": "https://code.overheid.nl/social.overheid.nl/herbruikbare-teksten",
+  "repo_key": "code.overheid.nl/social.overheid.nl/herbruikbare-teksten",
+  "repo_owner": "social.overheid.nl",
+  "forge_path": "social.overheid.nl/herbruikbare-teksten",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-24T10:23:20Z",
+  "functions": [
+   "health-social"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -35757,6 +37825,21 @@
    "identity-security",
    "registers"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "idea-open-source",
+  "repo": "https://code.overheid.nl/NDW/idea-open-source",
+  "repo_key": "code.overheid.nl/ndw/idea-open-source",
+  "repo_owner": "NDW",
+  "forge_path": "NDW/idea-open-source",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-04-13T08:18:20Z",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -38738,6 +40821,30 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Integrated Rapid Infectious Disease Analysis (IRIDA)",
+  "repo": "https://github.com/phac-nml/irida",
+  "repo_key": "github.com/phac-nml/irida",
+  "landing": "https://www.irida.ca/",
+  "repo_owner": "phac-aspc",
+  "short_desc": "Public health, food safety, and clinical microbiology labs around the world are embracing whole genome sequencing and genomic epidemiological approaches to modernize their infectious disease research,",
+  "desc_lang": "en",
+  "desc_src": "Public health, food safety, and clinical microbiology labs around the world are embracing whole genome sequencing and genomic epidemiological approaches to modernize their infectious disease research,",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Health"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (phac-aspc)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -38961,6 +41068,138 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Internet.nl",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the Internet.nl project, a test tool for modern internet standards.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van het project Internet.nl, een testtool voor moderne internetstandaarden",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/Internet.nl",
+  "is_fork": false,
+  "stars": 1,
+  "last_activity": "2026-08-04T11:33:23Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Internet.nl-API-docs",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl-API-docs",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl-api-docs",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the Internet.nl API documentation.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van de API-documentatie van Internet.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/Internet.nl-API-docs",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2025-06-19T12:12:43Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Internet.nl-ct-log-subdomain-suggestions-api",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl-ct-log-subdomain-suggestions-api",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl-ct-log-subdomain-suggestions-api",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of Internet.nl's subdomain-discovery-from-CT-logs project.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van het uit CT-logs subdomeinontdekken-project van Internet.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/Internet.nl-ct-log-subdomain-suggestions-api",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-22T11:26:08Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Internet.nl-dashboard",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl-dashboard",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl-dashboard",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the Internet.nl dashboard project.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van het dashboard project van Internet.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/Internet.nl-dashboard",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-07T14:27:13Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Internet.nl-dashboard-frontend",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl-dashboard-frontend",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl-dashboard-frontend",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the front-end project of the Internet.nl dashboard.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van het frontend-project van het dashboard van Internet.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/Internet.nl-dashboard-frontend",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-09T14:31:50Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Internet.nl-dashboard-server",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl-dashboard-server",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl-dashboard-server",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the server project of the Internet.nl dashboard.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van het server-project van het dashboard van Internet.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/Internet.nl-dashboard-server",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-06T13:40:56Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -39048,6 +41287,28 @@
    "finance-procurement"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "invulhulpen",
+  "repo": "https://code.overheid.nl/MinBZK/invulhulpen",
+  "repo_key": "code.overheid.nl/minbzk/invulhulpen",
+  "repo_owner": "MinBZK",
+  "short_desc": "Completion aid for pre-scan, DPIA and IAMA assessments. Together online or entirely locally in your browser, without an account.",
+  "desc_lang": "en",
+  "desc_src": "Invulhulp voor pre-scan, DPIA en IAMA. Samen online of volledig lokaal in je browser, zonder account.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/invulhulpen",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T08:39:34Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -41798,6 +44059,67 @@
   ]
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "keycloak-saml-identiteitsaanbieders",
+  "repo": "https://code.overheid.nl/RWS/keycloak-saml-identiteitsaanbieders",
+  "repo_key": "code.overheid.nl/rws/keycloak-saml-identiteitsaanbieders",
+  "repo_owner": "RWS",
+  "short_desc": "Keycloak SAML identity providers (IdPs) for connecting to DigiD, eHerkenning and eIDAS.",
+  "desc_lang": "en",
+  "desc_src": "Keycloak SAML identiteitsaanbieders (IDPs) voor koppeling met DigiD / eHerkenning / eIDAS",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/keycloak-saml-identiteitsaanbieders",
+  "is_fork": false,
+  "stars": 2,
+  "last_activity": "2026-06-30T12:37:04Z",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "keycloak-theme",
+  "repo": "https://github.com/MinBZK/keycloak-theme",
+  "repo_key": "github.com/minbzk/keycloak-theme",
+  "license": "EUPL-1.2",
+  "categories": [
+   "it-development"
+  ],
+  "platforms": [
+   "docs"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "concept",
+  "released": "2025-01-01",
+  "maintenance": "community",
+  "contacts": [
+   "Mijn Bureau"
+  ],
+  "desc_en": "Keycloak theme customized  with NL Design System",
+  "short_desc": "Keycloak theme customized  with NL Design System",
+  "desc_lang": "en",
+  "long_desc": "Keycloak theme customized  with NL Design System\n",
+  "features": [
+   "Open Source",
+   "keycloak",
+   "Government"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/keycloak-theme",
+  "forge_path": "MinBZK/keycloak-theme",
+  "is_fork": false,
+  "last_activity": "2026-07-01T10:54:50Z",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -43358,6 +45680,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "kwest",
+  "repo": "https://code.overheid.nl/Logius/kwest",
+  "repo_key": "code.overheid.nl/logius/kwest",
+  "repo_owner": "Logius",
+  "short_desc": "Public knowledge base for the new Dutch Code of Criminal Procedure.",
+  "desc_lang": "en",
+  "desc_src": "Public knowledge base for the new Dutch Code of Criminal Procedure (Wetboek van Strafvordering)",
+  "desc_src_lang": "nl",
+  "forge_path": "Logius/kwest",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-23T11:15:53Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -44184,6 +46526,29 @@
   "merged_count": 2
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "libECBUFR",
+  "repo": "https://github.com/ECCC-MSC/libecbufr",
+  "repo_key": "github.com/eccc-msc/libecbufr",
+  "repo_owner": "eccc",
+  "short_desc": "libECBUFR was developed to provide a uniform BUFR API and library across the various meteorological and IT components of Environment Canada that encode or decode BUFR.",
+  "desc_lang": "en",
+  "desc_src": "libECBUFR was developed to provide a uniform BUFR API and library across the various meteorological and IT components of Environment Canada that encode or decode BUFR.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "BUFR"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -44643,6 +47008,29 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Linkable Open Data Environment (LODE)",
+  "repo": "https://github.com/CSBP-CPSE/LODE-ECDO",
+  "repo_key": "github.com/csbp-cpse/lode-ecdo",
+  "repo_owner": "statcan",
+  "short_desc": "The Linkable Open Data Environment (LODE) is an exploratory project of the Data Exploration and Integration Lab (DEIL), at the Centre for Special Business Projects (CSBP), Statistics Canada. The project is currently in development.",
+  "desc_lang": "en",
+  "desc_src": "The Linkable Open Data Environment (LODE) is an exploratory project of the Data Exploration and Integration Lab (DEIL), at the Centre for Special Business Projects (CSBP), Statistics Canada. The project is currently in development.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Dataset",
+   "BCP-PCA"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -45010,6 +47398,21 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "lmwsip",
+  "repo": "https://code.overheid.nl/RWS/lmwsip",
+  "repo_key": "code.overheid.nl/rws/lmwsip",
+  "repo_owner": "RWS",
+  "forge_path": "RWS/lmwsip",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2025-04-30T07:56:04Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -45103,6 +47506,50 @@
   "merged_count": 2
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "Logboek Dataverwerkingen",
+  "repo": "https://github.com/MinBZK/moza-logboekdataverwerking",
+  "repo_key": "github.com/minbzk/moza-logboekdataverwerking",
+  "license": "EUPL-1.2",
+  "categories": [
+   "it-security",
+   "data-analytics"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "library",
+  "dev_status": "development",
+  "maintenance": "internal",
+  "contacts": [
+   "MijnOverheid Zakelijk Team"
+  ],
+  "desc_en": "Kotlin library for logging data processing activities according to the Dutch government Logboek Dataverwerkingen (LDV) standard.",
+  "desc_src": "Kotlin-bibliotheek voor het loggen van dataverwerkingen volgens de LDV-standaard.",
+  "desc_src_lang": "nl",
+  "short_desc": "Kotlin library for logging data processing activities according to the Dutch government Logboek Dataverwerkingen (LDV) standard.",
+  "desc_lang": "en",
+  "long_desc": "Logboek Dataverwerkingen is a Kotlin library implementing the Dutch government Logboek Dataverwerkingen (LDV) standard for data processing logging. It integrates with Jakarta EE applications via CDI interceptors and exports tracing data to ClickHouse using OpenTelemetry.\n\nThe library provides annotation-based tracing via the @Logboek annotation, automatic extraction of W3C Trace Context from HTTP headers, and a request-scoped context for enriching spans with processing details.\n",
+  "features": [
+   "Annotation-based tracing via @Logboek",
+   "Automatic W3C Trace Context extraction",
+   "Export to ClickHouse via OpenTelemetry",
+   "Jakarta EE integration via CDI interceptors",
+   "Request-scoped context for processing details"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/moza-logboekdataverwerking",
+  "forge_path": "MinBZK/moza-logboekdataverwerking",
+  "is_fork": false,
+  "last_activity": "2026-08-10T12:43:43Z",
+  "functions": [
+   "data-analytics",
+   "identity-security"
+  ],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -45139,6 +47586,28 @@
    "environment-transport"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Logius_testrepo",
+  "repo": "https://code.overheid.nl/Logius/Logius_testrepo",
+  "repo_key": "code.overheid.nl/logius/logius_testrepo",
+  "repo_owner": "Logius",
+  "short_desc": "Test repository for Logius.",
+  "desc_lang": "en",
+  "desc_src": "Test repository voor Logius",
+  "desc_src_lang": "nl",
+  "forge_path": "Logius/Logius_testrepo",
+  "is_fork": false,
+  "stars": 1,
+  "last_activity": "2026-04-24T07:00:40Z",
+  "translated": true,
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -45255,6 +47724,58 @@
   "translated": true,
   "functions": [
    "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "lot-occupancy-system",
+  "repo": "https://github.com/cityssm/lot-occupancy-system",
+  "repo_key": "github.com/cityssm/lot-occupancy-system",
+  "landing": "https://cityssm.github.io/lot-occupancy-system/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A system for managing the occupancy of lots with a focus on cemetery management.",
+  "desc_lang": "en",
+  "desc_src": "A system for managing the occupancy of lots with a focus on cemetery management.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "cemeteries",
+   "marinas",
+   "campgrounds"
+  ],
+  "dev_status": "Deprecated",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "lottery-licence-manager",
+  "repo": "https://github.com/cityssm/lottery-licence-manager",
+  "repo_key": "github.com/cityssm/lottery-licence-manager",
+  "landing": "https://cityssm.github.io/lottery-licence-manager/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool for managing AGCO's municipal lottery licensing requirements in Ontario.",
+  "desc_lang": "en",
+  "desc_src": "A tool for managing AGCO's municipal lottery licensing requirements in Ontario.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "lottery",
+   "tickets",
+   "raffle",
+   "bingo",
+   "nevada"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "case-workflow"
   ],
   "functions_inferred": true
  },
@@ -47332,6 +49853,51 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "meldingen",
+  "repo": "https://code.overheid.nl/GemAmsterdam/meldingen",
+  "repo_key": "code.overheid.nl/gemamsterdam/meldingen",
+  "repo_owner": "GemAmsterdam",
+  "forge_path": "GemAmsterdam/meldingen",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T14:54:37Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "meldingen-core",
+  "repo": "https://code.overheid.nl/GemAmsterdam/meldingen-core",
+  "repo_key": "code.overheid.nl/gemamsterdam/meldingen-core",
+  "repo_owner": "GemAmsterdam",
+  "forge_path": "GemAmsterdam/meldingen-core",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T14:50:19Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "meldingen-frontend",
+  "repo": "https://code.overheid.nl/GemAmsterdam/meldingen-frontend",
+  "repo_key": "code.overheid.nl/gemamsterdam/meldingen-frontend",
+  "repo_owner": "GemAmsterdam",
+  "forge_path": "GemAmsterdam/meldingen-frontend",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T13:15:43Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -47528,6 +50094,26 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "MeshCore",
+  "repo": "https://code.overheid.nl/MinVWS/MeshCore",
+  "repo_key": "code.overheid.nl/minvws/meshcore",
+  "repo_owner": "MinVWS",
+  "short_desc": "Clone of the original repository at github.com/meshcore-dev/MeshCore.",
+  "desc_lang": "en",
+  "desc_src": "Clone of the original repo at https://github.com/meshcore-dev/MeshCore.git",
+  "desc_src_lang": "nl",
+  "forge_path": "MinVWS/MeshCore",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-09T21:56:43Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -47705,6 +50291,50 @@
   "merged_count": 4
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "MetPX-Sarracenia",
+  "repo": "https://github.com/MetPX/sarracenia",
+  "repo_key": "github.com/metpx/sarracenia",
+  "repo_owner": "ssc-spc",
+  "short_desc": "Subscribe And Recursively Re-advertise Ad nauseam to Communicate Everything Nearly Instantly and Always",
+  "desc_lang": "en",
+  "desc_src": "Subscribe And Recursively Re-advertise Ad nauseam to Communicate Everything Nearly Instantly and Always",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Environment",
+   "Temperature",
+   "Roads"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (ssc-spc)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "METRo",
+  "repo": "https://framagit.org/metroprojects/metro",
+  "repo_key": "framagit.org/metroprojects/metro",
+  "repo_owner": "eccc",
+  "short_desc": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
+  "desc_lang": "en",
+  "desc_src": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Environment",
+   "Temperature",
+   "Roads"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -47810,6 +50440,142 @@
    "learning-knowledge"
   ],
   "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "mijn-bureau-infra-old",
+  "repo": "https://code.overheid.nl/MinBZK/mijn-bureau-infra-old",
+  "repo_key": "code.overheid.nl/minbzk/mijn-bureau-infra-old",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/mijn-bureau-infra-old",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-22T08:42:19Z",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "MijnBureau deployment",
+  "repo": "https://github.com/MinBZK/mijn-bureau-infra",
+  "repo_key": "github.com/minbzk/mijn-bureau-infra",
+  "license": "EUPL-1.2",
+  "categories": [
+   "it-development"
+  ],
+  "platforms": [
+   "docs"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "concept",
+  "maintenance": "community",
+  "contacts": [
+   "Mijn Bureau"
+  ],
+  "desc_en": "MijnBureau deployment",
+  "short_desc": "MijnBureau deployment",
+  "desc_lang": "en",
+  "long_desc": "This is the MijnBureau repo that contain Infrastructure as Code in the form of Helmfile\n\nMijnBureau is a open-source, cloud-native, digital workplace suite.\n",
+  "features": [
+   "Open Source",
+   "Government",
+   "digital workplace",
+   "open-source"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/mijn-bureau-infra",
+  "forge_path": "MinBZK/mijn-bureau-infra",
+  "is_fork": false,
+  "last_activity": "2026-07-27T08:08:17Z",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "MijnBureau Load Test",
+  "repo": "https://github.com/MinBZK/mijn-bureau-loadtest",
+  "repo_key": "github.com/minbzk/mijn-bureau-loadtest",
+  "license": "EUPL-1.2",
+  "categories": [
+   "it-development"
+  ],
+  "platforms": [
+   "linux"
+  ],
+  "software_type": "standalone/other",
+  "dev_status": "concept",
+  "maintenance": "community",
+  "contacts": [
+   "Mijn Bureau"
+  ],
+  "desc_en": "MijnBureau load test",
+  "short_desc": "MijnBureau load test",
+  "desc_lang": "en",
+  "long_desc": "k6 load-test scenarios for the MijnBureau deployment, scheduled in-cluster\nby the k6-operator and exported via Prometheus remote-write.\n",
+  "features": [
+   "Open Source",
+   "Government",
+   "digital workplace"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/mijn-bureau-loadtest",
+  "forge_path": "MinBZK/mijn-bureau-loadtest",
+  "is_fork": false,
+  "last_activity": "2026-07-09T09:42:23Z",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "MijnOverheid Zakelijk",
+  "repo": "https://github.com/MinBZK/MijnOverheidZakelijk",
+  "repo_key": "github.com/minbzk/mijnoverheidzakelijk",
+  "landing": "https://mijnoverheidzakelijk.nl",
+  "license": "EUPL-1.2",
+  "categories": [
+   "digital-citizenship"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "development",
+  "maintenance": "internal",
+  "contacts": [
+   "MijnOverheid Zakelijk Team"
+  ],
+  "desc_en": "Documentation and central repository for \"MijnOverheid Zakelijk\" (MOZa), a portal for business users of the government.",
+  "desc_src": "Documentatie en centrale repository voor MijnOverheid Zakelijk (MOZa), een portaal voor zakelijke gebruikers van de overheid.",
+  "desc_src_lang": "nl",
+  "short_desc": "Documentation and central repository for \"MijnOverheid Zakelijk\" (MOZa), a portal for business users of the government.",
+  "desc_lang": "en",
+  "long_desc": "\"MijnOverheid Zakelijk\" (My Government Business) provides business users with a central portal where they can find all their data and interactions with the government in one place. The project is currently in prototype phase.\nThis repository contains the documentation for MOZa. The code developed for business services is spread across several other repositories within the MinBZK organisation, identifiable by the moza- prefix or the mijnoverheidzakelijk topic (https://github.com/topics/mijnoverheidzakelijk).\n",
+  "features": [
+   "Documentation for the \"MijnOverheid Zakelijk\" project",
+   "Easy business interactions with the government",
+   "Central overview of government-held data for business users",
+   "Government interactions in one place"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/moza-docs",
+  "forge_path": "MinBZK/moza-docs",
+  "is_fork": false,
+  "last_activity": "2026-08-05T14:04:09Z",
+  "functions": [
+   "citizen-services"
+  ],
+  "functions_inferred": false
  },
  {
   "source": "DE/openCode",
@@ -47977,6 +50743,26 @@
   "functions": [
    "infrastructure"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "minio",
+  "repo": "https://code.overheid.nl/RWS/minio",
+  "repo_key": "code.overheid.nl/rws/minio",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW MinIO chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW minio chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/minio",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-22T05:37:17Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -48628,6 +51414,86 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "MOZa Profiel Service",
+  "repo": "https://github.com/MinBZK/moza-profiel-service",
+  "repo_key": "github.com/minbzk/moza-profiel-service",
+  "landing": "https://mijnoverheidzakelijk.nl",
+  "license": "EUPL-1.2",
+  "categories": [
+   "digital-citizenship"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "development",
+  "maintenance": "internal",
+  "contacts": [
+   "MijnOverheid Zakelijk Team"
+  ],
+  "desc_en": "Profile service for \"MijnOverheid Zakelijk\" (MOZa), for profile data and preferences.",
+  "desc_src": "Profiel service voor MijnOverheid Zakelijk (MOZa), voor profiel gegevens en voorkeuren.",
+  "desc_src_lang": "nl",
+  "short_desc": "Profile service for \"MijnOverheid Zakelijk\" (MOZa), for profile data and preferences.",
+  "desc_lang": "en",
+  "long_desc": "The MOZa Profile Service manages profile data and preferences of business users within \"MijnOverheid Zakelijk\". This service is part of the MOZa platform and provides APIs for storing and retrieving user profiles.\n\nThis repository contains the source code of the profile service. The MOZa project consists of multiple repositories within the MinBZK organisation, identifiable by the moza- prefix or the mijnoverheidzakelijk topic.\n",
+  "features": [
+   "Management of profile data for business users",
+   "Storage and retrieval of user preferences"
+  ],
+  "fallback_repo": "https://code.overheid.nl/MinBZK/moza-profielservice",
+  "forge_path": "MinBZK/moza-profielservice",
+  "is_fork": false,
+  "last_activity": "2026-08-11T15:11:33Z",
+  "functions": [
+   "citizen-services"
+  ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "moza-poc",
+  "repo": "https://code.overheid.nl/MinBZK/moza-poc",
+  "repo_key": "code.overheid.nl/minbzk/moza-poc",
+  "repo_owner": "MinBZK",
+  "short_desc": "Proof of concept for MijnOverheid Zakelijk (government services for businesses).",
+  "desc_lang": "en",
+  "desc_src": "Proof of Concept voor MijnOverheid Zakelijk",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/moza-poc",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T14:50:08Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "moza-site",
+  "repo": "https://code.overheid.nl/MinBZK/moza-site",
+  "repo_key": "code.overheid.nl/minbzk/moza-site",
+  "repo_owner": "MinBZK",
+  "short_desc": "Programme site for MijnOverheid Zakelijk.",
+  "desc_lang": "en",
+  "desc_src": "Programmasite MijnOverheid Zakelijk",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/moza-site",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T12:59:53Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -48817,6 +51683,48 @@
    "collaboration"
   ],
   "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "mp-fsm",
+  "repo": "https://code.overheid.nl/GemAmsterdam/mp-fsm",
+  "repo_key": "code.overheid.nl/gemamsterdam/mp-fsm",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "Modern Python finite state machine.",
+  "desc_lang": "en",
+  "desc_src": "Modern Python Finite State Machine",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/mp-fsm",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-03T12:32:30Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "mpacParser",
+  "repo": "https://github.com/cityssm/mpacParser",
+  "repo_key": "github.com/cityssm/mpacparser",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "Parse the Municipal Property Assessment Corporation (MPAC) year end tax file.",
+  "desc_lang": "en",
+  "desc_src": "Parse the Municipal Property Assessment Corporation (MPAC) year end tax file.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "MPAC",
+   "Taxes"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [],
+  "functions_inferred": false
  },
  {
   "source": "FI/avoinkoodi",
@@ -50974,6 +53882,94 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "nl-design-system",
+  "repo": "https://code.overheid.nl/RVO/nl-design-system",
+  "repo_key": "code.overheid.nl/rvo/nl-design-system",
+  "repo_owner": "RVO",
+  "short_desc": "Work in progress: RVO design system based on the NL Design System architecture, for the Netherlands Enterprise Agency.",
+  "desc_lang": "en",
+  "desc_src": "Work in Progress: RVO Design System based on the NL Design System architecture. Rijksdienst voor Ondernemend Nederland / rvo.nl",
+  "desc_src_lang": "nl",
+  "forge_path": "RVO/nl-design-system",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T14:56:19Z",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "nls-accessibility-map",
+  "repo": "https://code.overheid.nl/NDW/nls-accessibility-map",
+  "repo_key": "code.overheid.nl/ndw/nls-accessibility-map",
+  "repo_owner": "NDW",
+  "short_desc": "NDW Location Services accessibility map API.",
+  "desc_lang": "en",
+  "desc_src": "NDW Location Services accessibility map API",
+  "desc_src_lang": "nl",
+  "forge_path": "NDW/nls-accessibility-map",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-06T06:45:37Z",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "nls-geometry",
+  "repo": "https://code.overheid.nl/NDW/nls-geometry",
+  "repo_key": "code.overheid.nl/ndw/nls-geometry",
+  "repo_owner": "NDW",
+  "short_desc": "NDW Location Services geometry library.",
+  "desc_lang": "en",
+  "desc_src": "NDW Location Services geometry library",
+  "desc_src_lang": "nl",
+  "forge_path": "NDW/nls-geometry",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-06T05:39:26Z",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "nls-routing-map-matcher",
+  "repo": "https://code.overheid.nl/NDW/nls-routing-map-matcher",
+  "repo_key": "code.overheid.nl/ndw/nls-routing-map-matcher",
+  "repo_owner": "NDW",
+  "short_desc": "NDW Location Services routing map matcher library.",
+  "desc_lang": "en",
+  "desc_src": "NDW Location Services routing map matcher library",
+  "desc_src_lang": "nl",
+  "forge_path": "NDW/nls-routing-map-matcher",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-05T22:06:15Z",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -51356,6 +54352,31 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Notify",
+  "repo": "https://github.com/cds-snc/notification-api",
+  "repo_key": "github.com/cds-snc/notification-api",
+  "landing": "https://notification.alpha.canada.ca/",
+  "repo_owner": "tbs-sct",
+  "short_desc": "An easy and efficient system that helps government departments send notifications, such as email, text messages or letters, to people who use government services.",
+  "desc_lang": "en",
+  "desc_src": "An easy and efficient system that helps government departments send notifications, such as email, text messages or letters, to people who use government services.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Notify",
+   "BCP-PCA"
+  ],
+  "dev_status": "Alpha",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -51494,6 +54515,28 @@
    "data-analytics",
    "documents"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Nova Scotia - When to call  811 about COVID-19",
+  "repo": "https://github.com/Nova-Scotia-Digital-Service/when-to-call-811",
+  "repo_key": "github.com/nova-scotia-digital-service/when-to-call-811",
+  "landing": "https://novascotia.ca/coronavirus/when-to-seek-help/",
+  "repo_owner": "ns",
+  "short_desc": "Self-assesment tool to find out if you should call 811 about COVID-19 for the citizens of Nova Scotia, Canada.",
+  "desc_lang": "en",
+  "desc_src": "Self-assesment tool to find out if you should call 811 about COVID-19 for the citizens of Nova Scotia, Canada.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ns)",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -51882,6 +54925,21 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "nwb-postgresql",
+  "repo": "https://code.overheid.nl/NDW/nwb-postgresql",
+  "repo_key": "code.overheid.nl/ndw/nwb-postgresql",
+  "repo_owner": "NDW",
+  "forge_path": "NDW/nwb-postgresql",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-02-13T13:26:43Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -51962,6 +55020,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "objecttypes",
+  "repo": "https://code.overheid.nl/Dimpact/objecttypes",
+  "repo_key": "code.overheid.nl/dimpact/objecttypes",
+  "repo_owner": "Dimpact",
+  "short_desc": "This is the Dimpact object-type repository for use with the objecttypes API in PodiumD.",
+  "desc_lang": "en",
+  "desc_src": "Dit is de Dimpact objecttype repository voor gebruik met de objecttypes-api in PodiumD",
+  "desc_src_lang": "nl",
+  "forge_path": "Dimpact/objecttypes",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-08T22:04:23Z",
+  "translated": true,
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -52019,6 +55099,26 @@
    "documents"
   ],
   "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "observability",
+  "repo": "https://code.overheid.nl/RWS/observability",
+  "repo_key": "code.overheid.nl/rws/observability",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW observability chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW observability chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/observability",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-11T07:15:54Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
  },
  {
   "source": "FR/sill",
@@ -52497,6 +55597,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "oidc-discovery",
+  "repo": "https://code.overheid.nl/GemAmsterdam/oidc-discovery",
+  "repo_key": "code.overheid.nl/gemamsterdam/oidc-discovery",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "Python OpenID Connect discovery client.",
+  "desc_lang": "en",
+  "desc_src": "Python OpenID Connect Discovery Client",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/oidc-discovery",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T13:19:24Z",
+  "translated": true,
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -52741,6 +55863,28 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "onderzoek-cloudstandaarden",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/onderzoek-cloudstandaarden",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/onderzoek-cloudstandaarden",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Archival mirror of the 2024 study into standards and standardisation activities for cloud.",
+  "desc_lang": "en",
+  "desc_src": "Mirror ter archief van het Onderzoek naar standaarden en standaardisatieactiviteiten voor Cloud uit 2024.",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/onderzoek-cloudstandaarden",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2024-06-19T08:54:51Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -52922,6 +56066,27 @@
    "documents"
   ],
   "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Ontario COVID-19 self-assessment",
+  "repo": "https://github.com/ongov/covid-19-self-assessment",
+  "repo_key": "github.com/ongov/covid-19-self-assessment",
+  "landing": "https://github.com/ongov/covid-19-self-assessment-v2.8",
+  "repo_owner": "on",
+  "short_desc": "The tool takes the public through a series of questions to inform those who are concerned they may have contracted COVID-19.",
+  "desc_lang": "en",
+  "desc_src": "The tool takes the public through a series of questions to inform those who are concerned they may have contracted COVID-19.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19"
+  ],
+  "gov_tier": "provincial",
+  "note": "provincial administration (on)",
+  "functions": [],
+  "functions_inferred": false
  },
  {
   "source": "FR/awesome-codegouvfr",
@@ -53393,6 +56558,29 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Open Resource Exchange",
+  "repo": "https://github.com/canada-ca/ore-ero",
+  "repo_key": "github.com/canada-ca/ore-ero",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Platform for sharing open source solutions developed or used by Canadian public administrations, as well as open project ideas of administrations looking for partners and investors.",
+  "desc_lang": "en",
+  "desc_src": "Platform for sharing open source solutions developed or used by Canadian public administrations, as well as open project ideas of administrations looking for partners and investors.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Website",
+   "Data"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -53508,6 +56696,50 @@
   "translated": true,
   "functions": [
    "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "open-publiceren",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/open-publiceren",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/open-publiceren",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the codebase behind the previous version of Open Publiceren, a collaboration between the Open State Foundation and Forum Standaardisatie.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van de codebase achter de vorige versie van Open Publiceren. Dit project is een samenwerking tussen de Open State Foundation en Forum Standaardisatie. Dit project is gearchiveerd.",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/open-publiceren",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-01-26T10:02:42Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "open-publiceren-v2",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/open-publiceren-v2",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/open-publiceren-v2",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the codebase behind Open Publiceren, a collaboration between the Open State Foundation and Forum Standaardisatie.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van de codebase achter Open Publiceren. Dit project is een samenwerking tussen de Open State Foundation en Forum Standaardisatie. ",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/open-publiceren-v2",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-06T11:56:16Z",
+  "translated": true,
+  "functions": [
+   "collaboration"
   ],
   "functions_inferred": true
  },
@@ -54956,6 +58188,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "OpenDataAnalyticsPlatform",
+  "repo": "https://code.overheid.nl/UWV/OpenDataAnalyticsPlatform",
+  "repo_key": "code.overheid.nl/uwv/opendataanalyticsplatform",
+  "repo_owner": "UWV",
+  "short_desc": "An open source data and analytics platform based on Stackable.",
+  "desc_lang": "en",
+  "desc_src": "An Open Source Data and Analytics Platform based on Stackable",
+  "desc_src_lang": "nl",
+  "forge_path": "UWV/OpenDataAnalyticsPlatform",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-02T09:50:50Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -56120,6 +59374,106 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "OpenStad headless",
+  "repo": "https://github.com/openstad/openstad-headless",
+  "repo_key": "github.com/openstad/openstad-headless",
+  "landing": "https://openstad.org",
+  "license": "MIT",
+  "categories": [
+   "digital-citizenship",
+   "survey",
+   "data-collection",
+   "data-visualization",
+   "content-management",
+   "online-community",
+   "feedback-and-reviews-management",
+   "collaboration",
+   "project-collaboration",
+   "web-collaboration",
+   "communications",
+   "geographic-information-systems"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "version": "2.0.44",
+  "released": "2025-11-11",
+  "maintenance": "contract",
+  "contacts": [
+   "Ian Rieken",
+   "Rudi van Hierden",
+   "Bauke Huijbers"
+  ],
+  "desc_en": "OpenStad offers an open-source platform that allows you to easily create interactive websites for your participation projects.\n",
+  "desc_src": "OpenStad biedt een open source platform waarmee je eenvoudig interactieve websites kunt maken voor jouw participatieprojecten.\n",
+  "desc_src_lang": "nl",
+  "short_desc": "OpenStad offers an open-source platform that allows you to easily create interactive websites for your participation projects.\n",
+  "desc_lang": "en",
+  "long_desc": "OpenStad offers an open-source platform that allows you to easily create interactive websites for your participation projects.\nThe platform contains widgets specifically developed to give residents more influence and control over what happens in their city or town in an interactive way. For example: an online voting tool, ways to submit plans, a tool that allows residents to allocate budgets to plans for the area, a selection guide for complex public space projects. And more.\nIn addition, participating municipalities have already gained a wealth of knowledge in designing and connecting offline and online participation processes, which we are happy to share with colleagues from other organisations.\n",
+  "features": [
+   "voting tools and likes",
+   "uploading proposals",
+   "participatory budgeting",
+   "choice guide",
+   "interactive map",
+   "authentication methods",
+   "arguments and comments",
+   "images and videos"
+  ],
+  "used_by": [
+   "Buro Regen&Water",
+   "Democracy Agency",
+   "Draad",
+   "Gemeente Amsterdam",
+   "Gemeente Den Haag",
+   "Gemeente Alphen aan den Rijn",
+   "Gemeente Apeldoorn",
+   "Gemeente Bloemendaal",
+   "Gemeente Deventer",
+   "Gemeente Duiven",
+   "Gemeente Enschede",
+   "Gemeente Groningen",
+   "Gemeente Haarlem",
+   "Gemeente Haarlemmermeer",
+   "Gemeente Hardenberg",
+   "Gemeente Heemstede",
+   "Gemeente Nijkerk",
+   "Gemeente Nijmegen",
+   "Gemeente Tilburg",
+   "Gemeente Veenendaal",
+   "Gemeente Velsen",
+   "Gemeente Westervoort",
+   "Gemeente Westland",
+   "Gemeente Zaanstad",
+   "Gemeente Zutphen",
+   "Gemeente Zwolle",
+   "Provincie Gelderland",
+   "Provincie Noord-Holland",
+   "Provincie Zuid-Holland",
+   "Stichting Stukken Beter",
+   "Werkorganisatie Druten-Wijchen",
+   "Woonstad Rotterdam"
+  ],
+  "fallback_repo": "https://code.overheid.nl/GemAmsterdam/openstad-headless",
+  "forge_path": "GemAmsterdam/openstad-headless",
+  "is_fork": false,
+  "last_activity": "2026-07-27T07:33:03Z",
+  "functions": [
+   "case-workflow",
+   "citizen-services",
+   "collaboration",
+   "data-analytics",
+   "geospatial",
+   "web-content"
+  ],
+  "functions_inferred": false
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -56201,6 +59555,28 @@
   "translated": true,
   "functions": [],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "OpenTabulate",
+  "repo": "https://github.com/CSBP-CPSE/OpenTabulate",
+  "repo_key": "github.com/csbp-cpse/opentabulate",
+  "repo_owner": "statcan",
+  "short_desc": "Centralize, process, and clean data",
+  "desc_lang": "en",
+  "desc_src": "Centralize, process, and clean data",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Data"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -56488,6 +59864,21 @@
   "functions": [
    "infrastructure"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "OperatieBRP",
+  "repo": "https://code.overheid.nl/MinBZK/OperatieBRP",
+  "repo_key": "code.overheid.nl/minbzk/operatiebrp",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/OperatieBRP",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2018-09-20T14:02:05Z",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -56785,6 +60176,26 @@
   "functions": [
    "web-content"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "osv2020-apportionment-wrapper",
+  "repo": "https://code.overheid.nl/Kiesraad/osv2020-apportionment-wrapper",
+  "repo_key": "code.overheid.nl/kiesraad/osv2020-apportionment-wrapper",
+  "repo_owner": "Kiesraad",
+  "short_desc": "OSV2020 apportionment wrapper.",
+  "desc_lang": "en",
+  "desc_src": "OSV2020 apportionment wrapper",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/osv2020-apportionment-wrapper",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-23T07:24:24Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -58168,6 +61579,30 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "parking-ticket-system",
+  "repo": "https://github.com/cityssm/parking-ticket-system",
+  "repo_key": "github.com/cityssm/parking-ticket-system",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool for managing parking tickets issued by an Ontario municipality.",
+  "desc_lang": "en",
+  "desc_src": "A tool for managing parking tickets issued by an Ontario municipality.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "parking",
+   "tickets"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -59208,6 +62643,52 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "pdfchecker",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/pdfchecker",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/pdfchecker",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the PDFChecker project. This repository holds the front end.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van het project PDFChecker. De repository betreft de front-end.",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/pdfchecker",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-05T01:36:05Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "pdfFlattener",
+  "repo": "https://github.com/cityssm/pdfFlattener",
+  "repo_key": "github.com/cityssm/pdfflattener",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "Secures PDF documents by making floating redactions and form entries permanent.",
+  "desc_lang": "en",
+  "desc_src": "Secures PDF documents by making floating redactions and form entries permanent.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "pdf",
+   "freedom of information"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -59693,6 +63174,23 @@
    "dev-tools"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "pdok-api-client",
+  "repo": "https://code.overheid.nl/GemAmsterdam/pdok-api-client",
+  "repo_key": "code.overheid.nl/gemamsterdam/pdok-api-client",
+  "repo_owner": "GemAmsterdam",
+  "forge_path": "GemAmsterdam/pdok-api-client",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-07T08:29:29Z",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -61428,6 +64926,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "pkioverheidfinale",
+  "repo": "https://code.overheid.nl/MinVWS/pkioverheidfinale",
+  "repo_key": "code.overheid.nl/minvws/pkioverheidfinale",
+  "repo_owner": "MinVWS",
+  "short_desc": "Scan tool used to observe the historical wind-down of PKIoverheid certificates. Results are stored in git commits.",
+  "desc_lang": "en",
+  "desc_src": "Scantool gebruikt om de historische stop van de PKI Overheid certificaten afbouw te zien. De resultaten zijn in git commits verwerkt, dus per push kan je zien hoe het liep zodat ieder een eigen oordeel kan vormen.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinVWS/pkioverheidfinale",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-04-29T21:32:20Z",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -61539,6 +65059,46 @@
   "functions": [
    "dev-tools"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "platform-css",
+  "repo": "https://code.overheid.nl/RWS/platform-css",
+  "repo_key": "code.overheid.nl/rws/platform-css",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW platform-css chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW platform-css chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/platform-css",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-07T12:48:26Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "platform-policies",
+  "repo": "https://code.overheid.nl/RWS/platform-policies",
+  "repo_key": "code.overheid.nl/rws/platform-policies",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW platform-policies chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW platform-policies chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/platform-policies",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-09T14:23:23Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -61657,6 +65217,21 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "plugfs",
+  "repo": "https://code.overheid.nl/GemAmsterdam/plugfs",
+  "repo_key": "code.overheid.nl/gemamsterdam/plugfs",
+  "repo_owner": "GemAmsterdam",
+  "forge_path": "GemAmsterdam/plugfs",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T11:57:31Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -61739,6 +65314,28 @@
    "geospatial"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "poc-tfds-edc",
+  "repo": "https://code.overheid.nl/NDW/poc-tfds-edc",
+  "repo_key": "code.overheid.nl/ndw/poc-tfds-edc",
+  "repo_owner": "NDW",
+  "short_desc": "Proof of concept testing the deployment and configuration of the EDC connector for making TFDS data available.",
+  "desc_lang": "en",
+  "desc_src": "Proof-of-concept to test the deployment and configuration of the EDC connector for making TFDS data available.",
+  "desc_src_lang": "nl",
+  "forge_path": "NDW/poc-tfds-edc",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-03-12T15:07:32Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -65271,6 +68868,72 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "PyCoMod",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_PyCoMod",
+  "repo_key": "github.com/dnd-drdc-rddc/os_pycomod",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "PyCoMod is a Python package for building and running Susceptible-Infectious-Recovered (SIR) and similar compartment models derived from systems of differential equations.",
+  "desc_lang": "en",
+  "desc_src": "PyCoMod is a Python package for building and running Susceptible-Infectious-Recovered (SIR) and similar compartment models derived from systems of differential equations.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19",
+   "SIR",
+   "compartment model",
+   "modelling",
+   "simulation",
+   "Monte Carlo"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "pydantic-media-type",
+  "repo": "https://code.overheid.nl/GemAmsterdam/pydantic-media-type",
+  "repo_key": "code.overheid.nl/gemamsterdam/pydantic-media-type",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "A pydantic type for media types.",
+  "desc_lang": "en",
+  "desc_src": "A pydantic type for media types",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/pydantic-media-type",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T11:57:09Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "pyeml_bindings",
+  "repo": "https://code.overheid.nl/Kiesraad/pyeml_bindings",
+  "repo_key": "code.overheid.nl/kiesraad/pyeml_bindings",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Python bindings for the EML_NL standard.",
+  "desc_lang": "en",
+  "desc_src": "Python bindings for the EML_NL standard",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/pyeml_bindings",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-03T07:05:58Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -65721,6 +69384,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "qgis-verkeersborden-style",
+  "repo": "https://code.overheid.nl/NDW/qgis-verkeersborden-style",
+  "repo_key": "code.overheid.nl/ndw/qgis-verkeersborden-style",
+  "repo_owner": "NDW",
+  "short_desc": "Download and visualise road traffic signs in minutes.",
+  "desc_lang": "en",
+  "desc_src": "Download en visualiseer verkeersborden in enkele minuten",
+  "desc_src_lang": "nl",
+  "forge_path": "NDW/qgis-verkeersborden-style",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2024-10-31T16:11:25Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -66126,6 +69811,34 @@
    "crm-service"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "RADARSAT Constellation Mission (RCM) C++ driver and Python metadata extraction code",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_DriverMetadataExtractionCodes_RCM_C-band_SARdata",
+  "repo_key": "github.com/dnd-drdc-rddc/os_drivermetadataextractioncodes_rcm_c-band_sardata",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "RADARSAT Constellation Mission (RCM) satellites collect both C-band Synthetic Aperture Radar (SAR) image data and ship-self-reporting Automatic Identification System (AIS) data from boats and ships.",
+  "desc_lang": "en",
+  "desc_src": "RADARSAT Constellation Mission (RCM) satellites collect both C-band Synthetic Aperture Radar (SAR) image data and ship-self-reporting Automatic Identification System (AIS) data from boats and ships.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "RCM",
+   "RADARSAT Constellation Mission",
+   "GDAL",
+   "Driver",
+   "C++",
+   "Python"
+  ],
+  "dev_status": "Alpha",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -66745,6 +70458,30 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "reference-center",
+  "repo": "https://github.com/tc-ca/Reference-Centre",
+  "repo_key": "github.com/tc-ca/reference-centre",
+  "repo_owner": "tc",
+  "short_desc": "The Reference Centre is .net WPF application that was designed for Transport Canada Inspectors to quickly retrieve documents stored on a network drive that was setup with Windows Sync (Always Available Offline).",
+  "desc_lang": "en",
+  "desc_src": "The Reference Centre is .net WPF application that was designed for Transport Canada Inspectors to quickly retrieve documents stored on a network drive that was setup with Windows Sync (Always Available Offline).",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Files",
+   "Sync",
+   "Network"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tc)",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -66835,6 +70572,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "regelrecht",
+  "repo": "https://code.overheid.nl/MinBZK/regelrecht",
+  "repo_key": "code.overheid.nl/minbzk/regelrecht",
+  "repo_owner": "MinBZK",
+  "short_desc": "RegelRecht.",
+  "desc_lang": "en",
+  "desc_src": "RegelRecht",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/regelrecht",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T19:47:04Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -66881,6 +70638,26 @@
    "collaboration",
    "learning-knowledge"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "regioviewer-nbnl",
+  "repo": "https://code.overheid.nl/RVO/regioviewer-nbnl",
+  "repo_key": "code.overheid.nl/rvo/regioviewer-nbnl",
+  "repo_owner": "RVO",
+  "short_desc": "NBNL scenarios region viewer.",
+  "desc_lang": "en",
+  "desc_src": "NBNL scenario's regioviewer",
+  "desc_src_lang": "nl",
+  "forge_path": "RVO/regioviewer-nbnl",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-07T11:20:43Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -66991,6 +70768,28 @@
    "office"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "repository-richtlijnen",
+  "repo": "https://code.overheid.nl/ICTU/repository-richtlijnen",
+  "repo_key": "code.overheid.nl/ictu/repository-richtlijnen",
+  "repo_owner": "ICTU",
+  "short_desc": "How ICTU uses code.overheid.nl. Guidelines for ICTU projects, departments and staff using the platform.",
+  "desc_lang": "en",
+  "desc_src": "Hoe ICTU code.overheid.nl gebruikt.\r\n\r\nRichtlijnen voor ICTU projecten, afdelingen, en medewerkers die gebruik maken van code.overheid.nl repositories.",
+  "desc_src_lang": "nl",
+  "forge_path": "ICTU/repository-richtlijnen",
+  "is_fork": false,
+  "stars": 1,
+  "last_activity": "2026-05-08T15:05:04Z",
+  "translated": true,
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "SE/offentligkod",
@@ -67426,6 +71225,76 @@
   "functions": [
    "identity-security"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Reusable Accessible Mapping Platform (RAMP)",
+  "repo": "https://github.com/ramp4-pcar4/ramp4-pcar4",
+  "repo_key": "github.com/ramp4-pcar4/ramp4-pcar4",
+  "landing": "https://ramp4-pcar4.github.io/ramp-pcar/#/?lang=en",
+  "repo_owner": "eccc",
+  "short_desc": "The Reusable Accessible Mapping Platform is a Vue3 JavaScript web mapping visualization solution that provides a customizable and rich WCAG 2.1 AA compliant GIS data viewer for the GoC.",
+  "desc_lang": "en",
+  "desc_src": "The Reusable Accessible Mapping Platform is a Vue3 JavaScript web mapping visualization solution that provides a customizable and rich WCAG 2.1 AA compliant GIS data viewer for the GoC.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "ramp",
+   "mapping",
+   "visualization",
+   "JavaScript",
+   "Vue3"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "REVA",
+  "repo": "https://code.overheid.nl/MinBZK/REVA",
+  "repo_key": "code.overheid.nl/minbzk/reva",
+  "repo_owner": "MinBZK",
+  "short_desc": "Published source code of the Registration of First Residential Address for Migrant Workers system, used for a pilot up to and including 2019.",
+  "desc_lang": "en",
+  "desc_src": "Publicatie broncode systeem voor Registratie Eerste Verblijfsadres Arbeidsmigranten dat tot en met 2019 voor een pilot gebruikt is.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/REVA",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2020-06-24T12:21:35Z",
+  "translated": true,
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "rfc9068-python-access-token-validator",
+  "repo": "https://code.overheid.nl/GemAmsterdam/rfc9068-python-access-token-validator",
+  "repo_key": "code.overheid.nl/gemamsterdam/rfc9068-python-access-token-validator",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "RFC 9068 style access token validator for Python.",
+  "desc_lang": "en",
+  "desc_src": "RFC9068 style access token validator for Python",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/rfc9068-python-access-token-validator",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T10:15:43Z",
+  "translated": true,
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -68504,6 +72373,26 @@
   "functions_inferred": true
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "rust-eml-nl",
+  "repo": "https://code.overheid.nl/Kiesraad/rust-eml-nl",
+  "repo_key": "code.overheid.nl/kiesraad/rust-eml-nl",
+  "repo_owner": "Kiesraad",
+  "short_desc": "Rust crate for the EML_NL standard.",
+  "desc_lang": "en",
+  "desc_src": "Rust crate for the EML_NL standard",
+  "desc_src_lang": "nl",
+  "forge_path": "Kiesraad/rust-eml-nl",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T10:27:12Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -68531,6 +72420,73 @@
   "recommended_for_gov": true,
   "note": "recommended to public agents; not necessarily gov-authored",
   "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "rws-pki-chain",
+  "repo": "https://code.overheid.nl/RWS/rws-pki-chain",
+  "repo_key": "code.overheid.nl/rws/rws-pki-chain",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW rws-pki-chain chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW rws-pki-chain chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/rws-pki-chain",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-07T12:52:19Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "rws-wm-iam-deployment",
+  "repo": "https://code.overheid.nl/RWS/rws-wm-iam-deployment",
+  "repo_key": "code.overheid.nl/rws/rws-wm-iam-deployment",
+  "repo_owner": "RWS",
+  "forge_path": "RWS/rws-wm-iam-deployment",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-21T10:10:40Z",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "rws-wm-iam-keycloak",
+  "repo": "https://code.overheid.nl/RWS/rws-wm-iam-keycloak",
+  "repo_key": "code.overheid.nl/rws/rws-wm-iam-keycloak",
+  "repo_owner": "RWS",
+  "forge_path": "RWS/rws-wm-iam-keycloak",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-21T09:23:57Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "rws-wm-iam-provisioning",
+  "repo": "https://code.overheid.nl/RWS/rws-wm-iam-provisioning",
+  "repo_key": "code.overheid.nl/rws/rws-wm-iam-provisioning",
+  "repo_owner": "RWS",
+  "forge_path": "RWS/rws-wm-iam-provisioning",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-21T09:22:53Z",
   "functions": [],
   "functions_inferred": false
  },
@@ -70269,6 +74225,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "secret-store",
+  "repo": "https://code.overheid.nl/RWS/secret-store",
+  "repo_key": "code.overheid.nl/rws/secret-store",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW secret-store chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW secret-store chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/secret-store",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-22T05:43:19Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -71676,6 +75652,27 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Signal Attenuation through Foliage Estimator (SAFE)",
+  "repo": "https://github.com/ic-crc/SAFE-Tool",
+  "repo_key": "github.com/ic-crc/safe-tool",
+  "repo_owner": "ised-isde",
+  "short_desc": "This source code provides predictions of radio frequency path loss in foliage dominant environments.",
+  "desc_lang": "en",
+  "desc_src": "This source code provides predictions of radio frequency path loss in foliage dominant environments.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Environment"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "federal",
+  "note": "federal administration (ised-isde)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -71725,7 +75722,38 @@
    "case-workflow",
    "collaboration"
   ],
-  "functions_inferred": false
+  "functions_inferred": false,
+  "sources": [
+   "IT/developers-italia",
+   "NL/code.overheid.nl"
+  ],
+  "countries": [
+   "IT",
+   "NL"
+  ],
+  "merged_count": 2
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "signals",
+  "repo": "https://code.overheid.nl/GemAmsterdam/signals",
+  "repo_key": "code.overheid.nl/gemamsterdam/signals",
+  "repo_owner": "GemAmsterdam",
+  "short_desc": "Reports system for the City of Amsterdam (Signalen / Signals).",
+  "desc_lang": "en",
+  "desc_src": "meldingen systeem amsterdam (signalen/signals)",
+  "desc_src_lang": "nl",
+  "forge_path": "GemAmsterdam/signals",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-09T20:59:40Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -74786,6 +78814,30 @@
   "merged_count": 6
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Spartacus",
+  "repo": "https://github.com/CommunicationsSecurityEstablishment/spartacus",
+  "repo_key": "github.com/communicationssecurityestablishment/spartacus",
+  "repo_owner": "cse-cst",
+  "short_desc": "Learning environment that aims in helping students learn the basis of assembly programming and operating system development",
+  "desc_lang": "en",
+  "desc_src": "Learning environment that aims in helping students learn the basis of assembly programming and operating system development",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Learning",
+   "Assembly programming",
+   "Operating system development"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (cse-cst)",
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -75837,6 +79889,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Startpunt_Webapps",
+  "repo": "https://code.overheid.nl/MinAZ_DPC/Startpunt_Webapps",
+  "repo_key": "code.overheid.nl/minaz_dpc/startpunt_webapps",
+  "repo_owner": "MinAZ_DPC",
+  "short_desc": "A web app is a piece of software reachable through a browser. Web apps make large or complex bodies of information visual and usable.",
+  "desc_lang": "en",
+  "desc_src": "Een webapp is een stukje software dat benaderd kan worden via een browser. Webapps maken veel en/of complexe informatie visueel en interactief. Met webapps kan functionaliteit toegevoegd worden aan een PRO-website die niet te realiseren is met de bestaande PRO-functionaliteiten. Deze repository bevat het startpunt voor de ontwikkeling van een webapp.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinAZ_DPC/Startpunt_Webapps",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-08-10T08:43:52Z",
+  "translated": true,
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -75950,6 +80024,34 @@
    "dev-tools"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Storylines",
+  "repo": "https://github.com/ramp4-pcar4/storylines",
+  "repo_key": "github.com/ramp4-pcar4/storylines",
+  "landing": "https://ramp4-pcar4.github.io/ramp-pcar/#/?lang=en",
+  "repo_owner": "eccc",
+  "short_desc": "Use interactive maps and multimedia to share your project\u2019s story in an engaging, customizable way that meets GoC and TBS web and accessibility standards.",
+  "desc_lang": "en",
+  "desc_src": "Use interactive maps and multimedia to share your project\u2019s story in an engaging, customizable way that meets GoC and TBS web and accessibility standards.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "ramp",
+   "storylines",
+   "mapping",
+   "JavaScript",
+   "web presentation"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "DE/openCode",
@@ -76575,6 +80677,30 @@
    "identity-security"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "sunrise-cms",
+  "repo": "https://github.com/cityssm/sunrise-cms",
+  "repo_key": "github.com/cityssm/sunrise-cms",
+  "landing": "https://cityssm.github.io/sunrise-cms/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A web-based application to assist cemetery managers with managing their cemetery records.",
+  "desc_lang": "en",
+  "desc_src": "A web-based application to assist cemetery managers with managing their cemetery records.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "cemetery"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FI/avoinkoodi",
@@ -77327,6 +81453,29 @@
    "dev-tools"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "TalentCloud",
+  "repo": "https://github.com/GCTC-NTGC/TalentCloud",
+  "repo_key": "github.com/gctc-ntgc/talentcloud",
+  "landing": "https://talent.canada.ca/en",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Talent Cloud aspires to be a cross-sectoral initiative testing new realities for talent in-and-out of government. This initiative is designed to test the viability of a new model for recruiting and mo",
+  "desc_lang": "en",
+  "desc_src": "Talent Cloud aspires to be a cross-sectoral initiative testing new realities for talent in-and-out of government. This initiative is designed to test the viability of a new model for recruiting and mo",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Talent"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -78227,6 +82376,32 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "The Impact of Age Demographics on Interpreting and Applying Population-Wide IFR for COVID-19",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_covid_IFR_Lombardy-MRM_DGH",
+  "repo_key": "github.com/dnd-drdc-rddc/os_covid_ifr_lombardy-mrm_dgh",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "Maps age-stratified infection fatality rates from Italy, France and the Diamond Princess Cruise Ship onto Canadian national and sub-national demographics to generate estimates for those populations.",
+  "desc_lang": "en",
+  "desc_src": "Maps age-stratified infection fatality rates from Italy, France and the Diamond Princess Cruise Ship onto Canadian national and sub-national demographics to generate estimates for those populations.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19",
+   "infection fatality rate",
+   "demographics",
+   "credible intervals"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -78358,6 +82533,23 @@
   "translated": true,
   "functions": [],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "thunderbird-sbd-mappen",
+  "repo": "https://code.overheid.nl/MinVWS/thunderbird-sbd-mappen",
+  "repo_key": "code.overheid.nl/minvws/thunderbird-sbd-mappen",
+  "repo_owner": "MinVWS",
+  "forge_path": "MinVWS/thunderbird-sbd-mappen",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-04-29T20:56:03Z",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FI/avoinkoodi",
@@ -78614,6 +82806,28 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "toolbox-wiki",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/toolbox-wiki",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/toolbox-wiki",
+  "repo_owner": "ForumStandaardisatie",
+  "short_desc": "Mirror of the Internet.nl toolbox wiki, with documentation and examples of how internet standards should be configured.",
+  "desc_lang": "en",
+  "desc_src": "Mirror van de toolbox wiki van Internet.nl, met documentatie en voorbeelden hoe internetstandaarden geconfigureerd moeten worden.",
+  "desc_src_lang": "nl",
+  "forge_path": "ForumStandaardisatie/toolbox-wiki",
+  "is_fork": false,
+  "stars": 1,
+  "last_activity": "2026-07-15T12:18:13Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -78803,6 +83017,28 @@
    "integration"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "traefik-forward-auth",
+  "repo": "https://code.overheid.nl/RWS/traefik-forward-auth",
+  "repo_key": "code.overheid.nl/rws/traefik-forward-auth",
+  "repo_owner": "RWS",
+  "short_desc": "FLOW traefik-forward-auth chart.",
+  "desc_lang": "en",
+  "desc_src": "FLOW traefik-forward-auth chart",
+  "desc_src_lang": "nl",
+  "forge_path": "RWS/traefik-forward-auth",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-05-22T05:44:18Z",
+  "translated": true,
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -80611,6 +84847,29 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "unleet",
+  "repo": "https://github.com/cityssm/unleet",
+  "repo_key": "github.com/cityssm/unleet",
+  "landing": "https://github.com/cityssm/unleet",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "Removes symbols and character combinations from a text string, and replaces them with the letters they commonly represent.",
+  "desc_lang": "en",
+  "desc_src": "Removes symbols and character combinations from a text string, and replaces them with the letters they commonly represent.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "leet",
+   "symbols"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -81968,6 +86227,26 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "vcg-basisset",
+  "repo": "https://code.overheid.nl/CommonGround/vcg-basisset",
+  "repo_key": "code.overheid.nl/commonground/vcg-basisset",
+  "repo_owner": "CommonGround",
+  "short_desc": "Common Ground provision - base set of software components.",
+  "desc_lang": "en",
+  "desc_src": "Voorziening Common Ground - Basisset software-componenten",
+  "desc_src_lang": "nl",
+  "forge_path": "CommonGround/vcg-basisset",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-07-07T19:45:39Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -82274,6 +86553,28 @@
    "finance-procurement"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Vergunning-Controle-Service",
+  "repo": "https://code.overheid.nl/GemRotterdam/Vergunning-Controle-Service",
+  "repo_key": "code.overheid.nl/gemrotterdam/vergunning-controle-service",
+  "repo_owner": "GemRotterdam",
+  "short_desc": "The Permit Check Service is a tool for automatically testing submitted BIM models against the applicable rules.",
+  "desc_lang": "en",
+  "desc_src": "Vergunning Controle Service is een tool om ingediende BIM-modellen geautomatiseerd te toetsen op de geldende regels (bijvoorbeeld bestemmingsplannen, constructie, veiligheid, geluid, etc).",
+  "desc_src_lang": "nl",
+  "forge_path": "GemRotterdam/Vergunning-Controle-Service",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2024-08-30T13:38:30Z",
+  "translated": true,
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "IT/developers-italia",
@@ -83528,6 +87829,29 @@
   "functions_inferred": false
  },
  {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Volume Cleaner",
+  "repo": "https://github.com/StatCan/volume-cleaner",
+  "repo_key": "github.com/statcan/volume-cleaner",
+  "repo_owner": "statcan",
+  "short_desc": "Looks for unused storage resources in the Zone clusters and automatically removes them; saves cloud resources. Read more: https://github.com/StatCan/volume-cleaner/blob/main/README.md",
+  "desc_lang": "en",
+  "desc_src": "Looks for unused storage resources in the Zone clusters and automatically removes them; saves cloud resources. Read more: https://github.com/StatCan/volume-cleaner/blob/main/README.md",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Microservice"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -83791,6 +88115,53 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "Waggle",
+  "repo": "https://code.overheid.nl/robbertbos/waggle",
+  "repo_key": "code.overheid.nl/robbertbos/waggle",
+  "license": "EUPL-1.2",
+  "categories": [
+   "collaboration",
+   "knowledge-management",
+   "task-management"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "concept",
+  "maintenance": "internal",
+  "contacts": [
+   "Robbert Bos"
+  ],
+  "desc_en": "Experimental personal command centre for saved Mattermost messages - individual research, not production ready.\n",
+  "desc_src": "Experimenteel persoonlijk command-centrum voor bewaarde Mattermost-berichten \u2014 individueel onderzoek, niet productieklaar.\n",
+  "desc_src_lang": "nl",
+  "short_desc": "Experimental personal command centre for saved Mattermost messages - individual research, not production ready.\n",
+  "desc_lang": "en",
+  "long_desc": "NOTE: Waggle is an individual experiment within the Dutch central government and is known not to meet the requirements and standards the Dutch government sets for production software (BIO/ISO 27001, DPIA/GDPR, WCAG 2.2, NeRDS, Forum Standaardisatie). No formal maintenance, no SLA, single-user single-tenant architecture.\nWaggle imports your flagged Mattermost posts into one kanban board with the columns backlog, in progress and done, plus a separate reading list. It has two-way sync with Mattermost (completing a card in Waggle unsaves the post in Mattermost automatically; posts unsaved externally move to done automatically), a rich preview of messages with markdown rendering, attachments, thread context and private notes. Bubble-up to defer cards, a blocked flag for waiting on others, and full keyboard navigation.\nThe user interface is in Dutch; the documentation is in English.\n",
+  "features": [
+   "Mattermost sync of flagged messages",
+   "Kanban board (backlog, in progress, done)",
+   "Reading list",
+   "Bubble-up / defer",
+   "Markdown rendering + emoji + thread context",
+   "Private notes per card",
+   "Dark/light theme, keyboard navigation"
+  ],
+  "forge_path": "robbertbos/waggle",
+  "is_fork": false,
+  "last_activity": "2026-08-11T15:56:00Z",
+  "functions": [
+   "case-workflow",
+   "collaboration",
+   "learning-knowledge"
+  ],
+  "functions_inferred": false
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -84022,6 +88393,29 @@
    "web-content"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Web Experience Toolkit (WET)",
+  "repo": "https://github.com/wet-boew/wet-boew",
+  "repo_key": "github.com/wet-boew/wet-boew",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Building websites that are accessible, usable, interoperable, mobile friendly and multilingual",
+  "desc_lang": "en",
+  "desc_src": "Building websites that are accessible, usable, interoperable, mobile friendly and multilingual",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Frontend",
+   "Website"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "FR/sill",
@@ -84762,6 +89156,55 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "publiccode",
+  "name": "WIM",
+  "repo": "https://github.com/ThaMitree/wim-bouwblokken",
+  "repo_key": "github.com/thamitree/wim-bouwblokken",
+  "license": "EUPL-1.2",
+  "repo_owner": "UWV",
+  "categories": [
+   "knowledge-management",
+   "communications"
+  ],
+  "platforms": [
+   "web",
+   "linux"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "beta",
+  "released": "2026-07-02",
+  "maintenance": "internal",
+  "contacts": [
+   "Dimitry Grootenboer"
+  ],
+  "desc_en": "Reusable microservice pipeline that acquires news from public sources, classifies it against advisor profiles (sector/region), and shows it in a dashboard.",
+  "desc_src": "Herbruikbare microservice-pijplijn die nieuws van publieke bronnen verzamelt, classificeert op adviseursprofiel (sector/regio) en toont in een dashboard.",
+  "desc_src_lang": "nl",
+  "short_desc": "Reusable microservice pipeline that acquires news from public sources, classifies it against advisor profiles (sector/region), and shows it in a dashboard.",
+  "desc_lang": "en",
+  "long_desc": "WIM (Werkgevers Informatie op Maat, \"employer information on demand\") is a pipeline of reusable microservice building blocks for profile-filtered news monitoring, built at UWV, the Dutch employee insurance agency. The pipeline discovers pages from configured public sources (sitemaps and RSS feeds), classifies them against advisor profiles (sector, region, specialisation), and shows the on-profile matches in a dashboard \u2014 so an advisor sees the handful of items that matter to their employers. Everything organisation-specific (sources, classification vocabulary including LLM prompts, profiles) is declarative content rather than code; ADAPTING.md walks another organisation through reusing the pipeline by editing four files. Born as a two-day hackathon build and deliberately published as a working starting point (\"open, unless\").",
+  "features": [
+   "Source discovery via sitemaps and RSS, declaratively configured",
+   "Sector/region classification, offline rules or optional LLM",
+   "Advisor profiles with a profile-filtered dashboard",
+   "Runs end-to-end with one docker compose up, no API keys required"
+  ],
+  "used_by": [
+   "UWV"
+  ],
+  "fallback_repo": "https://code.overheid.nl/UWV/wim-bouwblokken",
+  "forge_path": "UWV/wim-bouwblokken",
+  "is_fork": false,
+  "last_activity": "2026-07-02T14:12:47Z",
+  "functions": [
+   "collaboration",
+   "learning-knowledge"
+  ],
+  "functions_inferred": false
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -85094,6 +89537,78 @@
   "functions_inferred": false
  },
  {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "woo-besluit-broncode-digid",
+  "repo": "https://code.overheid.nl/MinBZK/woo-besluit-broncode-digid",
+  "repo_key": "code.overheid.nl/minbzk/woo-besluit-broncode-digid",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/woo-besluit-broncode-digid",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2024-05-02T06:11:07Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "woo-besluit-broncode-digid-app",
+  "repo": "https://code.overheid.nl/MinBZK/woo-besluit-broncode-digid-app",
+  "repo_key": "code.overheid.nl/minbzk/woo-besluit-broncode-digid-app",
+  "repo_owner": "MinBZK",
+  "forge_path": "MinBZK/woo-besluit-broncode-digid-app",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2023-01-12T16:20:13Z",
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "woo-besluit-broncode-PLOOI",
+  "repo": "https://code.overheid.nl/MinBZK/woo-besluit-broncode-PLOOI",
+  "repo_key": "code.overheid.nl/minbzk/woo-besluit-broncode-plooi",
+  "repo_owner": "MinBZK",
+  "short_desc": "Freedom of Information (Woo) decision: PLOOI source code.",
+  "desc_lang": "en",
+  "desc_src": "Woo besluit broncode PLOOI",
+  "desc_src_lang": "nl",
+  "forge_path": "MinBZK/woo-besluit-broncode-PLOOI",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2023-05-31T07:11:09Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "WOO-support",
+  "repo": "https://code.overheid.nl/MinVWS/WOO-support",
+  "repo_key": "code.overheid.nl/minvws/woo-support",
+  "repo_owner": "MinVWS",
+  "short_desc": "To support requests for information, after approvals, the procedure is to request a timeframe of email and receive a PST file.",
+  "desc_lang": "en",
+  "desc_src": "To support requests for information, after approvals, the procedure is to request for a timeframe of email and receive a PST file. In particular cases post-delivery and pre-processing filtering is required on the PST file to ensure that only the requested data is in the output.",
+  "desc_src_lang": "nl",
+  "forge_path": "MinVWS/WOO-support",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-04-29T21:06:07Z",
+  "translated": true,
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -85286,6 +89801,31 @@
   "functions": [
    "web-content"
   ],
+  "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "WorkIt",
+  "repo": "https://github.com/VilledeMontreal/workit",
+  "repo_key": "github.com/villedemontreal/workit",
+  "repo_owner": "city-of-montreal-qc",
+  "short_desc": "Extensible worker for Node.js that works with both AWS Step functions and Camunda BPM platforms powered by TypeScript",
+  "desc_lang": "en",
+  "desc_src": "Extensible worker for Node.js that works with both AWS Step functions and Camunda BPM platforms powered by TypeScript",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Camunda BPM",
+   "AWS Step functions",
+   "Worker",
+   "Microservice",
+   "NodeJS"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-montreal-qc)",
+  "functions": [],
   "functions_inferred": false
  },
  {
@@ -85549,6 +90089,31 @@
    "finance-procurement"
   ],
   "functions_inferred": false
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "wsib-clearance-check",
+  "repo": "https://github.com/cityssm/wsib-clearance-check.git",
+  "repo_key": "github.com/cityssm/wsib-clearance-check",
+  "landing": "https://github.com/cityssm/wsib-clearance-check",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool to programmatically scrape the clearance certificate status from the WSIB Online Services website.",
+  "desc_lang": "en",
+  "desc_src": "A tool to programmatically scrape the clearance certificate status from the WSIB Online Services website.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "wsib",
+   "clearance",
+   "certificate"
+  ],
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true
  },
  {
   "source": "SE/offentligkod",
@@ -86312,6 +90877,29 @@
   "translated": true,
   "functions": [
    "crm-service"
+  ],
+  "functions_inferred": true
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "YouCanBenefit",
+  "repo": "https://github.com/yeg-relief/youcanbenefit",
+  "repo_key": "github.com/yeg-relief/youcanbenefit",
+  "repo_owner": "city-of-edmonton-ab",
+  "short_desc": "YouCanBenefit is a web application that increases social benefit program discoverability for people of lesser means and their allies.",
+  "desc_lang": "en",
+  "desc_src": "YouCanBenefit is a web application that increases social benefit program discoverability for people of lesser means and their allies.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Social Benefits"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-edmonton-ab)",
+  "functions": [
+   "health-social"
   ],
   "functions_inferred": true
  },
@@ -87899,5 +92487,94 @@
   "functions_inferred": true,
   "excluded": true,
   "exclude_reason": "upstream-fork"
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": ".profile",
+  "repo": "https://code.overheid.nl/ForumStandaardisatie/.profile",
+  "repo_key": "code.overheid.nl/forumstandaardisatie/.profile",
+  "repo_owner": "ForumStandaardisatie",
+  "forge_path": "ForumStandaardisatie/.profile",
+  "is_fork": false,
+  "stars": 0,
+  "last_activity": "2026-06-29T09:25:22Z",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "excluded": true,
+  "exclude_reason": "org-meta"
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "Codeplatform",
+  "repo": "https://code.overheid.nl/johan.groenen/Codeplatform",
+  "repo_key": "code.overheid.nl/johan.groenen/codeplatform",
+  "repo_owner": "johan.groenen",
+  "short_desc": "Welcome to code.overheid.nl, where you will find the source code of the Dutch government. This repository is the meta-repository for the platform.",
+  "desc_lang": "en",
+  "desc_src": "Welkom op code.overheid.nl - hier vind je de broncode van de Nederlandse overheid. Deze repository is de meta-repository voor het codeplatform zelf. ",
+  "desc_src_lang": "nl",
+  "forge_path": "johan.groenen/Codeplatform",
+  "is_fork": true,
+  "stars": 0,
+  "last_activity": "2026-05-29T16:16:44Z",
+  "translated": true,
+  "functions": [],
+  "functions_inferred": false,
+  "excluded": true,
+  "exclude_reason": "upstream-fork"
+ },
+ {
+  "source": "NL/code.overheid.nl",
+  "country": "NL",
+  "tier": "index",
+  "name": "gebruikersdocumentatie",
+  "repo": "https://code.overheid.nl/johan.groenen/gebruikersdocumentatie",
+  "repo_key": "code.overheid.nl/johan.groenen/gebruikersdocumentatie",
+  "repo_owner": "johan.groenen",
+  "short_desc": "Open documentation for users of social.overheid.nl (Mastodon).",
+  "desc_lang": "en",
+  "desc_src": "Open documentatie voor gebruikers van social.overheid.nl (Mastodon)",
+  "desc_src_lang": "nl",
+  "forge_path": "johan.groenen/gebruikersdocumentatie",
+  "is_fork": true,
+  "stars": 0,
+  "last_activity": "2026-06-08T16:19:26Z",
+  "translated": true,
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "excluded": true,
+  "exclude_reason": "upstream-fork"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": ".Net Code Coverage Demo",
+  "repo": "https://github.com/esdc-devx/DotNetCCDemo",
+  "repo_key": "github.com/esdc-devx/dotnetccdemo",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "A .Net test app for the Code Coverage reporting dashboard",
+  "desc_lang": "en",
+  "desc_src": "A .Net test app for the Code Coverage reporting dashboard",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Demo"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "excluded": true,
+  "exclude_reason": "org-meta"
  }
 ]

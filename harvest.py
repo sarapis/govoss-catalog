@@ -370,8 +370,115 @@ def se():
     return out
 
 
-def nl():
-    """Netherlands — real API, but every read needs a key (401 without one).
+def nl_forgejo():
+    """Netherlands — code.overheid.nl, the government's own self-hosted Forgejo.
+
+    Found while surveying globally, and it makes the API-key problem moot: this is
+    Gitea/Forgejo 1.22 with the standard OPEN api/v1, no auth. The OSS *register*
+    (api.developer.overheid.nl) still needs a key and still 401s; this is the code
+    platform itself, which is arguably the better source anyway — first-hand repos
+    rather than a register of pointers.
+    """
+    api = "https://code.overheid.nl/api/v1"
+    repos, page = [], 1
+    while page <= 40:
+        d = get(f"{api}/repos/search?limit=50&page={page}")
+        batch = (d or {}).get("data") or []
+        if not batch:
+            break
+        repos += batch
+        page += 1
+    repos = [r for r in repos if not r.get("archived")]
+    print(f"    {len(repos)} non-archived repos on code.overheid.nl (Forgejo)")
+
+    def one(r):
+        br = r.get("default_branch") or "main"
+        try:
+            pc = parse_pc(get(f"{api}/repos/{r['full_name']}/raw/publiccode.yml?ref={br}",
+                              timeout=25, raw=True, tries=1))
+        except Exception:
+            pc = None
+        if pc:
+            return from_publiccode(pc, "NL/code.overheid.nl", "NL",
+                                   fallback_repo=r.get("html_url"),
+                                   forge_path=r.get("full_name"),
+                                   is_fork=bool(r.get("fork")),
+                                   last_activity=r.get("updated_at"))
+        return rec("NL/code.overheid.nl", "NL", "index", r.get("name"), r.get("html_url"),
+                   repo_owner=(r.get("owner") or {}).get("login"),
+                   short_desc=(r.get("description") or "")[:400],
+                   desc_lang="nl" if r.get("description") else None,
+                   desc_src=(r.get("description") or "")[:400] or None,
+                   desc_src_lang="nl" if r.get("description") else None,
+                   forge_path=r.get("full_name"),
+                   is_fork=bool(r.get("fork")),
+                   stars=r.get("stars_count"),
+                   last_activity=r.get("updated_at"))
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        out = [x for x in ex.map(one, repos) if x]
+    print(f"    -> {sum(1 for x in out if x['tier']=='publiccode')} with publiccode.yml")
+    return out
+
+
+def ca():
+    """Canada — code.open.canada.ca/code.json.
+
+    Uses the federal `code.json` schema (the format the retired US code.gov defined),
+    but nested by government tier: tier -> adminCode -> {releases: [...]}. Covers
+    federal, provincial, municipal and Indigenous administrations.
+    """
+    def loc(v, prefer="en"):
+        """Canada localises name and tags: {"en": .., "fr": ..}. Flatten to the
+        English value (then French), because every downstream step assumes a
+        string — taxonomy, filters and dedupe all crashed on the raw dict."""
+        if isinstance(v, dict):
+            return v.get(prefer) or v.get("fr") or next(iter(v.values()), None)
+        return v
+
+    d = get("https://code.open.canada.ca/code.json", timeout=90)
+    out = 0
+    recs = []
+    for tier, orgs in (d or {}).items():
+        if not isinstance(orgs, dict):
+            continue
+        for admin, body in orgs.items():
+            for rel in (body or {}).get("releases") or []:
+                desc = rel.get("description") or {}
+                wid = desc.get("whatItDoes") or {}
+                text = wid.get("en") or wid.get("fr") or ""
+                lang = "en" if wid.get("en") else ("fr" if wid.get("fr") else None)
+                perms = rel.get("permissions") or {}
+                lic = None
+                for l in (perms.get("licenses") or []):
+                    lic = l.get("name") or l.get("spdxID") or lic
+                tags = loc(rel.get("tags")) or []
+                if isinstance(tags, str):
+                    tags = [tags]
+                recs.append(rec("CA/code.open.canada.ca", "CA", "index",
+                                loc(rel.get("name")), loc(rel.get("repositoryURL")),
+                                landing=loc(rel.get("homepageURL")),
+                                repo_owner=loc(rel.get("organization")) or admin,
+                                license=loc(lic),
+                                short_desc=text[:400] or None,
+                                desc_lang=lang,
+                                desc_src=text[:400] or None,
+                                desc_src_lang=lang,
+                                keywords=[t for t in tags if isinstance(t, str)][:10],
+                                dev_status=rel.get("status"),
+                                gov_tier=tier,
+                                note=f"{tier} administration ({admin})"))
+                out += 1
+    print(f"    {out} releases across "
+          f"{sum(1 for t,o in (d or {}).items() if isinstance(o,dict) and o)} tiers")
+    return recs
+
+
+def nl_register():
+    """Netherlands OSS *register* — needs an API key (401 on every read).
+
+    Kept because it is a different dataset (a curated register, not a forge), but
+    nl_forgejo() covers NL without a key so this is no longer blocking.
 
     Request one via oss.developer.overheid.nl, then export NL_API_KEY.
     Spec: github.com/developer-overheid-nl/don-oss-register api/openapi.json
@@ -404,7 +511,8 @@ def nl():
     return out
 
 
-SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi, "se": se, "nl": nl}
+SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
+           "se": se, "nl": nl_forgejo, "ca": ca, "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as
 # source catalogues, and its own search is broken, so they can't be resolved

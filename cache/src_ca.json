@@ -1,0 +1,1361 @@
+[
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Apogy",
+  "repo": "https://git.eclipse.org/c/apogy/apogy.git",
+  "repo_key": "git.eclipse.org/c/apogy/apogy",
+  "repo_owner": "asc-csa",
+  "short_desc": "The one-stop-shop solution for operating robots, satellites and beyond",
+  "desc_lang": "en",
+  "desc_src": "The one-stop-shop solution for operating robots, satellites and beyond",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Robots",
+   "Space"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (asc-csa)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Spartacus",
+  "repo": "https://github.com/CommunicationsSecurityEstablishment/spartacus",
+  "repo_key": "github.com/communicationssecurityestablishment/spartacus",
+  "repo_owner": "cse-cst",
+  "short_desc": "Learning environment that aims in helping students learn the basis of assembly programming and operating system development",
+  "desc_lang": "en",
+  "desc_src": "Learning environment that aims in helping students learn the basis of assembly programming and operating system development",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Learning",
+   "Assembly programming",
+   "Operating system development"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (cse-cst)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Assemblyline",
+  "repo": "https://bitbucket.org/cse-assemblyline/assemblyline",
+  "repo_key": "bitbucket.org/cse-assemblyline/assemblyline",
+  "repo_owner": "cse-cst",
+  "short_desc": "Platform for the analysis of malicious files. It is designed to assist cyber defence teams to automate the analysis of files and to better use the time of security analysts",
+  "desc_lang": "en",
+  "desc_src": "Platform for the analysis of malicious files. It is designed to assist cyber defence teams to automate the analysis of files and to better use the time of security analysts",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Malware detection",
+   "File analysis"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (cse-cst)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GO Pay Scraper",
+  "repo": "https://github.com/ToferC/payscraper",
+  "repo_key": "github.com/toferc/payscraper",
+  "repo_owner": "csps-efpc",
+  "short_desc": "An example GO Lang project for scraping Pay data from TBS Collective Agreements.",
+  "desc_lang": "en",
+  "desc_src": "An example GO Lang project for scraping Pay data from TBS Collective Agreements.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Scraper"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (csps-efpc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "The Impact of Age Demographics on Interpreting and Applying Population-Wide IFR for COVID-19",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_covid_IFR_Lombardy-MRM_DGH",
+  "repo_key": "github.com/dnd-drdc-rddc/os_covid_ifr_lombardy-mrm_dgh",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "Maps age-stratified infection fatality rates from Italy, France and the Diamond Princess Cruise Ship onto Canadian national and sub-national demographics to generate estimates for those populations.",
+  "desc_lang": "en",
+  "desc_src": "Maps age-stratified infection fatality rates from Italy, France and the Diamond Princess Cruise Ship onto Canadian national and sub-national demographics to generate estimates for those populations.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19",
+   "infection fatality rate",
+   "demographics",
+   "credible intervals"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "COVID-19-POMDP-Dashboard",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_COVID-19-POMDP-Dashboard",
+  "repo_key": "github.com/dnd-drdc-rddc/os_covid-19-pomdp-dashboard",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "The actions could be Post, Test or Isolate. The observations are either symptoms or COVID test results; then belief is if a COVID-19 infection exists",
+  "desc_lang": "en",
+  "desc_src": "The actions could be Post, Test or Isolate. The observations are either symptoms or COVID test results; then belief is if a COVID-19 infection exists",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19",
+   "Maritime Operational Research and Analysis",
+   "Partially Observable Markov Decision Processes"
+  ],
+  "dev_status": "Alpha",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "PyCoMod",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_PyCoMod",
+  "repo_key": "github.com/dnd-drdc-rddc/os_pycomod",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "PyCoMod is a Python package for building and running Susceptible-Infectious-Recovered (SIR) and similar compartment models derived from systems of differential equations.",
+  "desc_lang": "en",
+  "desc_src": "PyCoMod is a Python package for building and running Susceptible-Infectious-Recovered (SIR) and similar compartment models derived from systems of differential equations.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19",
+   "SIR",
+   "compartment model",
+   "modelling",
+   "simulation",
+   "Monte Carlo"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Endurance Limited Lines of Approach",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_ELLA",
+  "repo_key": "github.com/dnd-drdc-rddc/os_ella",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "Calculates and produces figures for limiting lines of approach to a ship by a submarine, where that submarine may sprint with an impact on its endurance.",
+  "desc_lang": "en",
+  "desc_src": "Calculates and produces figures for limiting lines of approach to a ship by a submarine, where that submarine may sprint with an impact on its endurance.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Navy",
+   "convoy",
+   "submarine",
+   "endurance"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "RADARSAT Constellation Mission (RCM) C++ driver and Python metadata extraction code",
+  "repo": "https://github.com/DND-DRDC-RDDC/OS_DriverMetadataExtractionCodes_RCM_C-band_SARdata",
+  "repo_key": "github.com/dnd-drdc-rddc/os_drivermetadataextractioncodes_rcm_c-band_sardata",
+  "repo_owner": "dnd-mdn",
+  "short_desc": "RADARSAT Constellation Mission (RCM) satellites collect both C-band Synthetic Aperture Radar (SAR) image data and ship-self-reporting Automatic Identification System (AIS) data from boats and ships.",
+  "desc_lang": "en",
+  "desc_src": "RADARSAT Constellation Mission (RCM) satellites collect both C-band Synthetic Aperture Radar (SAR) image data and ship-self-reporting Automatic Identification System (AIS) data from boats and ships.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "RCM",
+   "RADARSAT Constellation Mission",
+   "GDAL",
+   "Driver",
+   "C++",
+   "Python"
+  ],
+  "dev_status": "Alpha",
+  "gov_tier": "federal",
+  "note": "federal administration (dnd-mdn)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "METRo",
+  "repo": "https://framagit.org/metroprojects/metro",
+  "repo_key": "framagit.org/metroprojects/metro",
+  "repo_owner": "eccc",
+  "short_desc": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
+  "desc_lang": "en",
+  "desc_src": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Environment",
+   "Temperature",
+   "Roads"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "libECBUFR",
+  "repo": "https://github.com/ECCC-MSC/libecbufr",
+  "repo_key": "github.com/eccc-msc/libecbufr",
+  "repo_owner": "eccc",
+  "short_desc": "libECBUFR was developed to provide a uniform BUFR API and library across the various meteorological and IT components of Environment Canada that encode or decode BUFR.",
+  "desc_lang": "en",
+  "desc_src": "libECBUFR was developed to provide a uniform BUFR API and library across the various meteorological and IT components of Environment Canada that encode or decode BUFR.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "BUFR"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Storylines",
+  "repo": "https://github.com/ramp4-pcar4/storylines",
+  "repo_key": "github.com/ramp4-pcar4/storylines",
+  "landing": "https://ramp4-pcar4.github.io/ramp-pcar/#/?lang=en",
+  "repo_owner": "eccc",
+  "short_desc": "Use interactive maps and multimedia to share your project\u2019s story in an engaging, customizable way that meets GoC and TBS web and accessibility standards.",
+  "desc_lang": "en",
+  "desc_src": "Use interactive maps and multimedia to share your project\u2019s story in an engaging, customizable way that meets GoC and TBS web and accessibility standards.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "ramp",
+   "storylines",
+   "mapping",
+   "JavaScript",
+   "web presentation"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Reusable Accessible Mapping Platform (RAMP)",
+  "repo": "https://github.com/ramp4-pcar4/ramp4-pcar4",
+  "repo_key": "github.com/ramp4-pcar4/ramp4-pcar4",
+  "landing": "https://ramp4-pcar4.github.io/ramp-pcar/#/?lang=en",
+  "repo_owner": "eccc",
+  "short_desc": "The Reusable Accessible Mapping Platform is a Vue3 JavaScript web mapping visualization solution that provides a customizable and rich WCAG 2.1 AA compliant GIS data viewer for the GoC.",
+  "desc_lang": "en",
+  "desc_src": "The Reusable Accessible Mapping Platform is a Vue3 JavaScript web mapping visualization solution that provides a customizable and rich WCAG 2.1 AA compliant GIS data viewer for the GoC.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "ramp",
+   "mapping",
+   "visualization",
+   "JavaScript",
+   "Vue3"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (eccc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "AppHub",
+  "repo": "https://github.com/esdc-devx/AppHub",
+  "repo_key": "github.com/esdc-devx/apphub",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "A dashboard to show expose metrics on software projects at ESDC",
+  "desc_lang": "en",
+  "desc_src": "A dashboard to show expose metrics on software projects at ESDC",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Dashboard"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": ".Net Code Coverage Demo",
+  "repo": "https://github.com/esdc-devx/DotNetCCDemo",
+  "repo_key": "github.com/esdc-devx/dotnetccdemo",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "A .Net test app for the Code Coverage reporting dashboard",
+  "desc_lang": "en",
+  "desc_src": "A .Net test app for the Code Coverage reporting dashboard",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Demo"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "CDTS",
+  "repo": "https://github.com/wet-boew/cdts-sgdc",
+  "repo_key": "github.com/wet-boew/cdts-sgdc",
+  "landing": "https://cenw-wscoe.github.io/sgdc-cdts/",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.",
+  "desc_lang": "en",
+  "desc_src": "The purpose of the CDTS is essentially to deliver the presentation layer of the Canada.ca theme or Intranet.canada.ca theme to web assets.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "WET-BOEW"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "DECD Design System",
+  "repo": "https://github.com/DTS-STN/DECD-Design-System",
+  "repo_key": "github.com/dts-stn/decd-design-system",
+  "repo_owner": "esdc-edsc",
+  "short_desc": "Build a relevant, usable and inclusive Design System that will enable DECD Product Teams to deliver a new Service Canada Digital Centre experience.",
+  "desc_lang": "en",
+  "desc_src": "Build a relevant, usable and inclusive Design System that will enable DECD Product Teams to deliver a new Service Canada Digital Centre experience.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "design system",
+   "react",
+   "component library"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (esdc-edsc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Signal Attenuation through Foliage Estimator (SAFE)",
+  "repo": "https://github.com/ic-crc/SAFE-Tool",
+  "repo_key": "github.com/ic-crc/safe-tool",
+  "repo_owner": "ised-isde",
+  "short_desc": "This source code provides predictions of radio frequency path loss in foliage dominant environments.",
+  "desc_lang": "en",
+  "desc_src": "This source code provides predictions of radio frequency path loss in foliage dominant environments.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Environment"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "federal",
+  "note": "federal administration (ised-isde)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "crc-covlib",
+  "repo": "https://github.com/ic-crc/crc-covlib",
+  "repo_key": "github.com/ic-crc/crc-covlib",
+  "repo_owner": "ised-isde",
+  "short_desc": "crc-covlib is an application programming interface (API) that facilitates the use of a few different radio wave propagation models.",
+  "desc_lang": "en",
+  "desc_src": "crc-covlib is an application programming interface (API) that facilitates the use of a few different radio wave propagation models.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "API",
+   "propagation",
+   "radio waves",
+   "coverage",
+   "interference",
+   "prediction"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (ised-isde)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "COVID-19 Office Entry App",
+  "repo": "https://github.com/justicecanada/ogd-office-entry-am-entree-au-bureau",
+  "repo_key": "github.com/justicecanada/ogd-office-entry-am-entree-au-bureau",
+  "repo_owner": "justice",
+  "short_desc": "The app allows employees to request access to workplace sites and managers to monitor, review and approve employee requests.",
+  "desc_lang": "en",
+  "desc_src": "The app allows employees to request access to workplace sites and managers to monitor, review and approve employee requests.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "app",
+   "office",
+   "building",
+   "safety"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (justice)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "EGSnrc",
+  "repo": "https://github.com/nrc-cnrc/EGSnrc",
+  "repo_key": "github.com/nrc-cnrc/egsnrc",
+  "repo_owner": "nrc-cnrc",
+  "short_desc": "Toolkit to perform Monte Carlo simulation of ionizing radiation transport through matter",
+  "desc_lang": "en",
+  "desc_src": "Toolkit to perform Monte Carlo simulation of ionizing radiation transport through matter",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Monte Carlo simulation",
+   "Ionizing radiation"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (nrc-cnrc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Integrated Rapid Infectious Disease Analysis (IRIDA)",
+  "repo": "https://github.com/phac-nml/irida",
+  "repo_key": "github.com/phac-nml/irida",
+  "landing": "https://www.irida.ca/",
+  "repo_owner": "phac-aspc",
+  "short_desc": "Public health, food safety, and clinical microbiology labs around the world are embracing whole genome sequencing and genomic epidemiological approaches to modernize their infectious disease research,",
+  "desc_lang": "en",
+  "desc_src": "Public health, food safety, and clinical microbiology labs around the world are embracing whole genome sequencing and genomic epidemiological approaches to modernize their infectious disease research,",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Health"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (phac-aspc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "MetPX-Sarracenia",
+  "repo": "https://github.com/MetPX/sarracenia",
+  "repo_key": "github.com/metpx/sarracenia",
+  "repo_owner": "ssc-spc",
+  "short_desc": "Subscribe And Recursively Re-advertise Ad nauseam to Communicate Everything Nearly Instantly and Always",
+  "desc_lang": "en",
+  "desc_src": "Subscribe And Recursively Re-advertise Ad nauseam to Communicate Everything Nearly Instantly and Always",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Environment",
+   "Temperature",
+   "Roads"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (ssc-spc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GC Architecture",
+  "repo": "https://github.com/canada-ca/architecture",
+  "repo_key": "github.com/canada-ca/architecture",
+  "repo_owner": "ssc-spc",
+  "short_desc": "Enterprise architecture models",
+  "desc_lang": "en",
+  "desc_src": "Enterprise architecture models",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Architecture"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (ssc-spc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Digital Accessibility Toolkit",
+  "repo": "https://github.com/gc-da11yn/gc-da11yn.github.io",
+  "repo_key": "github.com/gc-da11yn/gc-da11yn.github.io",
+  "landing": "https://a11y.canada.ca/en/",
+  "repo_owner": "ssc-spc",
+  "short_desc": "A sharing space for resources created by employees of the Government of Canada (GC) to promote in the open. Following the Treasury Board of Canada Secretariat's Directive on Open Government.",
+  "desc_lang": "en",
+  "desc_src": "A sharing space for resources created by employees of the Government of Canada (GC) to promote in the open. Following the Treasury Board of Canada Secretariat's Directive on Open Government.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "NodeJS"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (ssc-spc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "OpenTabulate",
+  "repo": "https://github.com/CSBP-CPSE/OpenTabulate",
+  "repo_key": "github.com/csbp-cpse/opentabulate",
+  "repo_owner": "statcan",
+  "short_desc": "Centralize, process, and clean data",
+  "desc_lang": "en",
+  "desc_src": "Centralize, process, and clean data",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Data"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Drupal WxT",
+  "repo": "https://github.com/drupalwxt/wxt",
+  "repo_key": "github.com/drupalwxt/wxt",
+  "landing": "https://drupalwxt.github.io/",
+  "repo_owner": "statcan",
+  "short_desc": "Drupal WxT leverages the WET-BOEW Framework and Drupal for building innovative websites that are accessible, usable, interoperable, mobile-friendly and multilingual.",
+  "desc_lang": "en",
+  "desc_src": "Drupal WxT leverages the WET-BOEW Framework and Drupal for building innovative websites that are accessible, usable, interoperable, mobile-friendly and multilingual.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Drupal"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Linkable Open Data Environment (LODE)",
+  "repo": "https://github.com/CSBP-CPSE/LODE-ECDO",
+  "repo_key": "github.com/csbp-cpse/lode-ecdo",
+  "repo_owner": "statcan",
+  "short_desc": "The Linkable Open Data Environment (LODE) is an exploratory project of the Data Exploration and Integration Lab (DEIL), at the Centre for Special Business Projects (CSBP), Statistics Canada. The project is currently in development.",
+  "desc_lang": "en",
+  "desc_src": "The Linkable Open Data Environment (LODE) is an exploratory project of the Data Exploration and Integration Lab (DEIL), at the Centre for Special Business Projects (CSBP), Statistics Canada. The project is currently in development.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Dataset",
+   "BCP-PCA"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Volume Cleaner",
+  "repo": "https://github.com/StatCan/volume-cleaner",
+  "repo_key": "github.com/statcan/volume-cleaner",
+  "repo_owner": "statcan",
+  "short_desc": "Looks for unused storage resources in the Zone clusters and automatically removes them; saves cloud resources. Read more: https://github.com/StatCan/volume-cleaner/blob/main/README.md",
+  "desc_lang": "en",
+  "desc_src": "Looks for unused storage resources in the Zone clusters and automatically removes them; saves cloud resources. Read more: https://github.com/StatCan/volume-cleaner/blob/main/README.md",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Microservice"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (statcan)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GCconnex",
+  "repo": "https://github.com/gctools-outilsgc/gcconnex",
+  "repo_key": "github.com/gctools-outilsgc/gcconnex",
+  "repo_owner": "tbs-sct",
+  "short_desc": "GC digital collaboration platform (GCconnex and GCcollab)",
+  "desc_lang": "en",
+  "desc_src": "GC digital collaboration platform (GCconnex and GCcollab)",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Collaboration",
+   "Social"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "CDS Website",
+  "repo": "https://github.com/cds-snc/digital-canada-ca",
+  "repo_key": "github.com/cds-snc/digital-canada-ca",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Both digital.canada.ca and numerique.canada.ca are published from this repository.",
+  "desc_lang": "en",
+  "desc_src": "Both digital.canada.ca and numerique.canada.ca are published from this repository.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Website"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Web Experience Toolkit (WET)",
+  "repo": "https://github.com/wet-boew/wet-boew",
+  "repo_key": "github.com/wet-boew/wet-boew",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Building websites that are accessible, usable, interoperable, mobile friendly and multilingual",
+  "desc_lang": "en",
+  "desc_src": "Building websites that are accessible, usable, interoperable, mobile friendly and multilingual",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Frontend",
+   "Website"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-canada",
+  "repo": "https://github.com/open-data/ckanext-canada",
+  "repo_key": "github.com/open-data/ckanext-canada",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Government of Canada CKAN Extension",
+  "desc_lang": "en",
+  "desc_src": "Government of Canada CKAN Extension",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-cloudstorage",
+  "repo": "https://github.com/open-data/ckanext-cloudstorage",
+  "repo_key": "github.com/open-data/ckanext-cloudstorage",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Store CKAN resources against multiple cloud providers.",
+  "desc_lang": "en",
+  "desc_src": "Store CKAN resources against multiple cloud providers.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-scheming",
+  "repo": "https://github.com/open-data/ckanext-scheming",
+  "repo_key": "github.com/open-data/ckanext-scheming",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Easy, shareable custom CKAN schemas",
+  "desc_lang": "en",
+  "desc_src": "Easy, shareable custom CKAN schemas",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanapi",
+  "repo": "https://github.com/ckan/ckanapi",
+  "repo_key": "github.com/ckan/ckanapi",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Command line interface and Python module for accessing the CKAN Action API",
+  "desc_lang": "en",
+  "desc_src": "Command line interface and Python module for accessing the CKAN Action API",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Tool"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-fluent",
+  "repo": "https://github.com/ckan/ckanext-fluent",
+  "repo_key": "github.com/ckan/ckanext-fluent",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Multilingual metadata fields for CKAN",
+  "desc_lang": "en",
+  "desc_src": "Multilingual metadata fields for CKAN",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Open Resource Exchange",
+  "repo": "https://github.com/canada-ca/ore-ero",
+  "repo_key": "github.com/canada-ca/ore-ero",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Platform for sharing open source solutions developed or used by Canadian public administrations, as well as open project ideas of administrations looking for partners and investors.",
+  "desc_lang": "en",
+  "desc_src": "Platform for sharing open source solutions developed or used by Canadian public administrations, as well as open project ideas of administrations looking for partners and investors.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Website",
+   "Data"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "GC InfoBase",
+  "repo": "https://github.com/TBS-EACPD/infobase",
+  "repo_key": "github.com/tbs-eacpd/infobase",
+  "landing": "https://canada.ca/gcinfobase",
+  "repo_owner": "tbs-sct",
+  "short_desc": "The GC InfoBase is an interactive data-visualization tool, transforming complex federal data into simple visual stories for Canadians.",
+  "desc_lang": "en",
+  "desc_src": "The GC InfoBase is an interactive data-visualization tool, transforming complex federal data into simple visual stories for Canadians.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Website",
+   "Data visualization"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Notify",
+  "repo": "https://github.com/cds-snc/notification-api",
+  "repo_key": "github.com/cds-snc/notification-api",
+  "landing": "https://notification.alpha.canada.ca/",
+  "repo_owner": "tbs-sct",
+  "short_desc": "An easy and efficient system that helps government departments send notifications, such as email, text messages or letters, to people who use government services.",
+  "desc_lang": "en",
+  "desc_src": "An easy and efficient system that helps government departments send notifications, such as email, text messages or letters, to people who use government services.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Notify",
+   "BCP-PCA"
+  ],
+  "dev_status": "Alpha",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "TalentCloud",
+  "repo": "https://github.com/GCTC-NTGC/TalentCloud",
+  "repo_key": "github.com/gctc-ntgc/talentcloud",
+  "landing": "https://talent.canada.ca/en",
+  "repo_owner": "tbs-sct",
+  "short_desc": "Talent Cloud aspires to be a cross-sectoral initiative testing new realities for talent in-and-out of government. This initiative is designed to test the viability of a new model for recruiting and mo",
+  "desc_lang": "en",
+  "desc_src": "Talent Cloud aspires to be a cross-sectoral initiative testing new realities for talent in-and-out of government. This initiative is designed to test the viability of a new model for recruiting and mo",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Talent"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Algorithmic Impact Assessment",
+  "repo": "https://github.com/canada-ca/aia-eia-js",
+  "repo_key": "github.com/canada-ca/aia-eia-js",
+  "landing": "https://open.canada.ca/aia-eia-js/?lang=en",
+  "repo_owner": "tbs-sct",
+  "short_desc": "The users of this project will be Government of Canada employees assessing the impact of using an automated decision system, including Artificial Intelligence.",
+  "desc_lang": "en",
+  "desc_src": "The users of this project will be Government of Canada employees assessing the impact of using an automated decision system, including Artificial Intelligence.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "AI"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "federal",
+  "note": "federal administration (tbs-sct)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "alexa-gc-recalls",
+  "repo": "https://github.com/tc-ca/alexa-gc-recalls",
+  "repo_key": "github.com/tc-ca/alexa-gc-recalls",
+  "repo_owner": "tc",
+  "short_desc": "Vehicle safety recalls Amazon Alexa Skill.",
+  "desc_lang": "en",
+  "desc_src": "Vehicle safety recalls Amazon Alexa Skill.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Safety",
+   "Recalls",
+   "Vehicules",
+   "Alexa"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "reference-center",
+  "repo": "https://github.com/tc-ca/Reference-Centre",
+  "repo_key": "github.com/tc-ca/reference-centre",
+  "repo_owner": "tc",
+  "short_desc": "The Reference Centre is .net WPF application that was designed for Transport Canada Inspectors to quickly retrieve documents stored on a network drive that was setup with Windows Sync (Always Available Offline).",
+  "desc_lang": "en",
+  "desc_src": "The Reference Centre is .net WPF application that was designed for Transport Canada Inspectors to quickly retrieve documents stored on a network drive that was setup with Windows Sync (Always Available Offline).",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Files",
+   "Sync",
+   "Network"
+  ],
+  "gov_tier": "federal",
+  "note": "federal administration (tc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "YouCanBenefit",
+  "repo": "https://github.com/yeg-relief/youcanbenefit",
+  "repo_key": "github.com/yeg-relief/youcanbenefit",
+  "repo_owner": "city-of-edmonton-ab",
+  "short_desc": "YouCanBenefit is a web application that increases social benefit program discoverability for people of lesser means and their allies.",
+  "desc_lang": "en",
+  "desc_src": "YouCanBenefit is a web application that increases social benefit program discoverability for people of lesser means and their allies.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Social Benefits"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-edmonton-ab)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "CKAN-Extension-Territoire",
+  "repo": "https://github.com/VilledeMontreal/CKAN-Extension-Territoire",
+  "repo_key": "github.com/villedemontreal/ckan-extension-territoire",
+  "repo_owner": "city-of-montreal-qc",
+  "short_desc": "City of Montreal CKAN Extension",
+  "desc_lang": "en",
+  "desc_src": "City of Montreal CKAN Extension",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension",
+   "Data Catalogue"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-montreal-qc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "WorkIt",
+  "repo": "https://github.com/VilledeMontreal/workit",
+  "repo_key": "github.com/villedemontreal/workit",
+  "repo_owner": "city-of-montreal-qc",
+  "short_desc": "Extensible worker for Node.js that works with both AWS Step functions and Camunda BPM platforms powered by TypeScript",
+  "desc_lang": "en",
+  "desc_src": "Extensible worker for Node.js that works with both AWS Step functions and Camunda BPM platforms powered by TypeScript",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Camunda BPM",
+   "AWS Step functions",
+   "Worker",
+   "Microservice",
+   "NodeJS"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-montreal-qc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "mpacParser",
+  "repo": "https://github.com/cityssm/mpacParser",
+  "repo_key": "github.com/cityssm/mpacparser",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "Parse the Municipal Property Assessment Corporation (MPAC) year end tax file.",
+  "desc_lang": "en",
+  "desc_src": "Parse the Municipal Property Assessment Corporation (MPAC) year end tax file.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "MPAC",
+   "Taxes"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "lottery-licence-manager",
+  "repo": "https://github.com/cityssm/lottery-licence-manager",
+  "repo_key": "github.com/cityssm/lottery-licence-manager",
+  "landing": "https://cityssm.github.io/lottery-licence-manager/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool for managing AGCO's municipal lottery licensing requirements in Ontario.",
+  "desc_lang": "en",
+  "desc_src": "A tool for managing AGCO's municipal lottery licensing requirements in Ontario.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "lottery",
+   "tickets",
+   "raffle",
+   "bingo",
+   "nevada"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "pdfFlattener",
+  "repo": "https://github.com/cityssm/pdfFlattener",
+  "repo_key": "github.com/cityssm/pdfflattener",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "Secures PDF documents by making floating redactions and form entries permanent.",
+  "desc_lang": "en",
+  "desc_src": "Secures PDF documents by making floating redactions and form entries permanent.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "pdf",
+   "freedom of information"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "parking-ticket-system",
+  "repo": "https://github.com/cityssm/parking-ticket-system",
+  "repo_key": "github.com/cityssm/parking-ticket-system",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool for managing parking tickets issued by an Ontario municipality.",
+  "desc_lang": "en",
+  "desc_src": "A tool for managing parking tickets issued by an Ontario municipality.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "parking",
+   "tickets"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "unleet",
+  "repo": "https://github.com/cityssm/unleet",
+  "repo_key": "github.com/cityssm/unleet",
+  "landing": "https://github.com/cityssm/unleet",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "Removes symbols and character combinations from a text string, and replaces them with the letters they commonly represent.",
+  "desc_lang": "en",
+  "desc_src": "Removes symbols and character combinations from a text string, and replaces them with the letters they commonly represent.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "leet",
+   "symbols"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "wsib-clearance-check",
+  "repo": "https://github.com/cityssm/wsib-clearance-check.git",
+  "repo_key": "github.com/cityssm/wsib-clearance-check",
+  "landing": "https://github.com/cityssm/wsib-clearance-check",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool to programmatically scrape the clearance certificate status from the WSIB Online Services website.",
+  "desc_lang": "en",
+  "desc_src": "A tool to programmatically scrape the clearance certificate status from the WSIB Online Services website.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "wsib",
+   "clearance",
+   "certificate"
+  ],
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "corporate-records-manager",
+  "repo": "https://github.com/cityssm/corporate-records-manager",
+  "repo_key": "github.com/cityssm/corporate-records-manager",
+  "landing": "https://cityssm.github.io/corporate-records-manager/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A system for tracking various corporate records administered by the City Clerks Department.",
+  "desc_lang": "en",
+  "desc_src": "A system for tracking various corporate records administered by the City Clerks Department.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "easement",
+   "deed",
+   "bylaw",
+   "agreement",
+   "records",
+   "legal"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "contract-expiration-tracker",
+  "repo": "https://github.com/cityssm/contract-expiration-tracker",
+  "repo_key": "github.com/cityssm/contract-expiration-tracker",
+  "landing": "https://cityssm.github.io/contract-expiration-tracker/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A tool to track the expiration of procurement projects and/or contracts to help prepare for and be proactive on upcoming sourcing requirements.",
+  "desc_lang": "en",
+  "desc_src": "A tool to track the expiration of procurement projects and/or contracts to help prepare for and be proactive on upcoming sourcing requirements.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "contract",
+   "expiration",
+   "procurement"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "general-licence-manager",
+  "repo": "https://github.com/cityssm/general-licence-manager",
+  "repo_key": "github.com/cityssm/general-licence-manager",
+  "landing": "https://cityssm.github.io/general-licence-manager/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "An application built to manage the general licences issued by municipalities.",
+  "desc_lang": "en",
+  "desc_src": "An application built to manage the general licences issued by municipalities.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "licensing",
+   "taxi",
+   "vendor",
+   "food"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "lot-occupancy-system",
+  "repo": "https://github.com/cityssm/lot-occupancy-system",
+  "repo_key": "github.com/cityssm/lot-occupancy-system",
+  "landing": "https://cityssm.github.io/lot-occupancy-system/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A system for managing the occupancy of lots with a focus on cemetery management.",
+  "desc_lang": "en",
+  "desc_src": "A system for managing the occupancy of lots with a focus on cemetery management.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "cemeteries",
+   "marinas",
+   "campgrounds"
+  ],
+  "dev_status": "Deprecated",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "sunrise-cms",
+  "repo": "https://github.com/cityssm/sunrise-cms",
+  "repo_key": "github.com/cityssm/sunrise-cms",
+  "landing": "https://cityssm.github.io/sunrise-cms/",
+  "repo_owner": "city-of-sault-ste-marie-on",
+  "short_desc": "A web-based application to assist cemetery managers with managing their cemetery records.",
+  "desc_lang": "en",
+  "desc_src": "A web-based application to assist cemetery managers with managing their cemetery records.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "cemetery"
+  ],
+  "dev_status": "Beta",
+  "gov_tier": "municipal",
+  "note": "municipal administration (city-of-sault-ste-marie-on)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-ab_scheming",
+  "repo": "https://github.com/abgov/ckanext-ab_scheming",
+  "repo_key": "github.com/abgov/ckanext-ab_scheming",
+  "repo_owner": "ab",
+  "short_desc": "Dataset scheming extension used on open.alberta.ca",
+  "desc_lang": "en",
+  "desc_src": "Dataset scheming extension used on open.alberta.ca",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ab)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-open_alberta",
+  "repo": "https://github.com/abgov/ckanext-open_alberta",
+  "repo_key": "github.com/abgov/ckanext-open_alberta",
+  "repo_owner": "ab",
+  "short_desc": "Ckan extension developed for use on open.alberta.ca",
+  "desc_lang": "en",
+  "desc_src": "Ckan extension developed for use on open.alberta.ca",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ab)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-geomapviewer",
+  "repo": "https://github.com/abgov/ckanext-geomapviewer",
+  "repo_key": "github.com/abgov/ckanext-geomapviewer",
+  "repo_owner": "ab",
+  "short_desc": "Ckan Geo Map Viewer Extension",
+  "desc_lang": "en",
+  "desc_src": "Ckan Geo Map Viewer Extension",
+  "desc_src_lang": "en",
+  "keywords": [
+   "CKAN Extension"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ab)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Devex",
+  "repo": "https://github.com/BCDevExchange/devex",
+  "repo_key": "github.com/bcdevexchange/devex",
+  "repo_owner": "bc",
+  "short_desc": "B.C. Developer Exchange Application",
+  "desc_lang": "en",
+  "desc_src": "B.C. Developer Exchange Application",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Developer Exchange"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "gwells",
+  "repo": "https://github.com/bcgov/gwells",
+  "repo_key": "github.com/bcgov/gwells",
+  "landing": "https://apps.nrs.gov.bc.ca/gwells/",
+  "repo_owner": "bc",
+  "short_desc": "Groundwater Wells and Aquifers application for the Ministry of Environment.",
+  "desc_lang": "en",
+  "desc_src": "Groundwater Wells and Aquifers application for the Ministry of Environment.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Groundwater",
+   "Data"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "devhub-app-web",
+  "repo": "https://github.com/bcgov/devhub-app-web",
+  "repo_key": "github.com/bcgov/devhub-app-web",
+  "landing": "https://developer.gov.bc.ca/",
+  "repo_owner": "bc",
+  "short_desc": "Web application for the DevHub.",
+  "desc_lang": "en",
+  "desc_src": "Web application for the DevHub.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "DevHub",
+   "Web Application"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "ckanext-bcgov",
+  "repo": "https://github.com/bcgov/ckanext-bcgov",
+  "repo_key": "github.com/bcgov/ckanext-bcgov",
+  "landing": "http://catalogue.data.gov.bc.ca",
+  "repo_owner": "bc",
+  "short_desc": "BC Data Catalogue source code.",
+  "desc_lang": "en",
+  "desc_src": "BC Data Catalogue source code.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "Data Catalogue"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (bc)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Nova Scotia - When to call  811 about COVID-19",
+  "repo": "https://github.com/Nova-Scotia-Digital-Service/when-to-call-811",
+  "repo_key": "github.com/nova-scotia-digital-service/when-to-call-811",
+  "landing": "https://novascotia.ca/coronavirus/when-to-seek-help/",
+  "repo_owner": "ns",
+  "short_desc": "Self-assesment tool to find out if you should call 811 about COVID-19 for the citizens of Nova Scotia, Canada.",
+  "desc_lang": "en",
+  "desc_src": "Self-assesment tool to find out if you should call 811 about COVID-19 for the citizens of Nova Scotia, Canada.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19"
+  ],
+  "dev_status": "Maintained",
+  "gov_tier": "provincial",
+  "note": "provincial administration (ns)"
+ },
+ {
+  "source": "CA/code.open.canada.ca",
+  "country": "CA",
+  "tier": "index",
+  "name": "Ontario COVID-19 self-assessment",
+  "repo": "https://github.com/ongov/covid-19-self-assessment",
+  "repo_key": "github.com/ongov/covid-19-self-assessment",
+  "landing": "https://github.com/ongov/covid-19-self-assessment-v2.8",
+  "repo_owner": "on",
+  "short_desc": "The tool takes the public through a series of questions to inform those who are concerned they may have contracted COVID-19.",
+  "desc_lang": "en",
+  "desc_src": "The tool takes the public through a series of questions to inform those who are concerned they may have contracted COVID-19.",
+  "desc_src_lang": "en",
+  "keywords": [
+   "COVID-19"
+  ],
+  "gov_tier": "provincial",
+  "note": "provincial administration (on)"
+ }
+]
