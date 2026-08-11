@@ -52,6 +52,72 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "389 Directory Server",
+  "repo": "https://github.com/389ds/389-ds-base/",
+  "repo_key": "github.com/389ds/389-ds-base",
+  "landing": "https://www.port389.org/",
+  "entry_url": "https://opensource.muenchen.de/software/389_directory_server.html",
+  "license": "GNU General Public License",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "389 Directory Server is a free LDAP server. The Lightweight Directory Access Protocol (LDAP) is a network protocol for querying and modifying information from distributed directory services.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "389 Directory Server",
+    "entry_url": "https://opensource.muenchen.de/software/389_directory_server.html",
+    "repo_url": "https://github.com/389ds/389-ds-base/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "7-Zip",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.7-zip.de/",
+  "entry_url": "https://opensource.muenchen.de/software/7-zip.html",
+  "license": "LGPL",
+  "short_desc": "7-Zip is a data compression program with a high compression ratio. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "7-Zip",
+    "entry_url": "https://opensource.muenchen.de/software/7-zip.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -1187,6 +1253,41 @@
     "name": "ACN_Modulo_SBOM",
     "entry_url": null,
     "repo_url": "https://github.com/ACN-IT/modulo_SBOM"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "ad2image",
+  "repo": "https://github.com/it-at-m/ad2image",
+  "repo_key": "github.com/it-at-m/ad2image",
+  "entry_url": "https://opensource.muenchen.de/software/ad2image.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "ad2image provides a simple HTTP API for retrieving user photos from an Active Directory / Microsoft Exchange environment.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "ad2image",
+    "entry_url": "https://opensource.muenchen.de/software/ad2image.html",
+    "repo_url": "https://github.com/it-at-m/ad2image"
    }
   ],
   "catalogue_count": 1
@@ -2415,6 +2516,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Alfresco",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.alfresco.com/de",
+  "entry_url": "https://opensource.muenchen.de/software/alfresco.html",
+  "license": "LGPL",
+  "repo_owner": "Alfresco Software Limited",
+  "short_desc": "The cooperation platform Alfresco offers the possibility of cooperation with external parties, e.g. in the context of committee work (district committees) or with engineering firms.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "featurefunding"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Alfresco",
+    "entry_url": "https://opensource.muenchen.de/software/alfresco.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "CA/code.open.canada.ca",
   "country": "CA",
   "tier": "index",
@@ -3089,6 +3222,38 @@
   "merged_count": 2
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Ansible",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.ansible.com",
+  "entry_url": "https://opensource.muenchen.de/software/ansible.html",
+  "license": "GPL-3.0",
+  "short_desc": "Ansible is a free automation tool for orchestration and configuration and administration of servers.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Ansible",
+    "entry_url": "https://opensource.muenchen.de/software/ansible.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -3129,6 +3294,38 @@
     "source": "FR/sill",
     "name": "Ant Renamer",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Ant%20Renamer",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache ActiveMQ",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://activemq.apache.org/",
+  "entry_url": "https://opensource.muenchen.de/software/active-mq.html",
+  "license": "Apache-Lizenz 2.0",
+  "short_desc": "Apache ActiveMQ is a free message broker that fully implements Java Message Service 1.1 (JMS).",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache ActiveMQ",
+    "entry_url": "https://opensource.muenchen.de/software/active-mq.html",
     "repo_url": null
    }
   ],
@@ -3176,6 +3373,38 @@
     "name": "Apache Airflow",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Airflow",
     "repo_url": "https://github.com/apache/airflow"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache ant",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://ant.apache.org/",
+  "entry_url": "https://opensource.muenchen.de/software/apache-ant.html",
+  "license": "Apache-2.0",
+  "short_desc": "Apache Ant is a Java library and command-line tool whose task is to control processes described in build files as interdependent targets and extension points. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache ant",
+    "entry_url": "https://opensource.muenchen.de/software/apache-ant.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -3291,6 +3520,36 @@
     "name": "Apache CouchDB",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20CouchDB",
     "repo_url": "https://github.com/apache/couchdb"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache Directory Studio",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://directory.apache.org/studio/",
+  "entry_url": "https://opensource.muenchen.de/software/apache-directory-studio.html",
+  "license": "Apache-2.0",
+  "short_desc": "Development environment for directory services (LDAP). ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache Directory Studio",
+    "entry_url": "https://opensource.muenchen.de/software/apache-directory-studio.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -3501,6 +3760,38 @@
   ]
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache HTTP Server",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://httpd.apache.org",
+  "entry_url": "https://opensource.muenchen.de/software/apache-http.html",
+  "license": "Apache-2.0",
+  "short_desc": "The Apache HTTP Server is one of the most widely used web servers on the Internet. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache HTTP Server",
+    "entry_url": "https://opensource.muenchen.de/software/apache-http.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -3545,6 +3836,74 @@
     "name": "Apache Jmeter",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Jmeter",
     "repo_url": "https://github.com/apache/jmeter"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache JMeter",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://jmeter.apache.org/",
+  "entry_url": "https://opensource.muenchen.de/software/apache-jmeter.html",
+  "license": "Apache-2.0",
+  "short_desc": "The Apache JMeter application is open source software designed to test functional behavior and measure performance. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache JMeter",
+    "entry_url": "https://opensource.muenchen.de/software/apache-jmeter.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache Kafka",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://kafka.apache.org/",
+  "entry_url": "https://opensource.muenchen.de/software/kafka.html",
+  "license": "GPL",
+  "repo_owner": "Apache Software Foundation",
+  "short_desc": "Apache Kafka is free software from the Apache Software Foundation that is used in particular for processing data streams.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "support",
+   "k8s",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache Kafka",
+    "entry_url": "https://opensource.muenchen.de/software/kafka.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -3596,6 +3955,36 @@
     "name": "Apache Maven",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Maven",
     "repo_url": "https://github.com/apache/maven"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Apache Maven",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://maven.apache.org/",
+  "entry_url": "https://opensource.muenchen.de/software/apache-maven.html",
+  "license": "Apache-2.0",
+  "short_desc": "Maven is a build management tool from the Apache Software Foundation and is based on Java.",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Apache Maven",
+    "entry_url": "https://opensource.muenchen.de/software/apache-maven.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -4560,6 +4949,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Appswitcher",
+  "repo": "https://github.com/it-at-m/appswitcher-server",
+  "repo_key": "github.com/it-at-m/appswitcher-server",
+  "entry_url": "https://opensource.muenchen.de/software/appswitcher.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Appswitcher allows users to easily switch between different web applications.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "infrastruktur",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Appswitcher",
+    "entry_url": "https://opensource.muenchen.de/software/appswitcher.html",
+    "repo_url": "https://github.com/it-at-m/appswitcher-server"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "BE/iMio",
   "country": "BE",
   "tier": "index",
@@ -5368,6 +5792,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "ATAF",
+  "repo": "https://github.com/it-at-m/agile-test-automation-framework/",
+  "repo_key": "github.com/it-at-m/agile-test-automation-framework",
+  "landing": "https://it-at-m.github.io/agile-test-automation-framework/",
+  "entry_url": "https://opensource.muenchen.de/software/ataf.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The Agile Test Automation Framework (ATAF) is a Java 21 framework for Cucumber-based Behavior Driven Development tests and traditional TestNG/JUnit test suites, with optional Jira/Xray integration.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "eigenentwicklung"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "ATAF",
+    "entry_url": "https://opensource.muenchen.de/software/ataf.html",
+    "repo_url": "https://github.com/it-at-m/agile-test-automation-framework/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -5630,7 +6088,9 @@
    "montage",
    "enregistrement",
    "editing",
-   "recording"
+   "recording",
+   "application",
+   "desktop"
   ],
   "short_desc": "Sound recording and editing.",
   "desc_lang": "en",
@@ -5646,7 +6106,8 @@
   "note": "recommended to public agents; not necessarily gov-authored",
   "translated": true,
   "functions": [
-   "dev-tools"
+   "dev-tools",
+   "documents"
   ],
   "functions_inferred": false,
   "catalogue_entries": [
@@ -5655,9 +6116,24 @@
     "name": "Audacity",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Audacity",
     "repo_url": "https://github.com/audacity"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Audacity",
+    "entry_url": "https://opensource.muenchen.de/software/audacity.html",
+    "repo_url": "https://github.com/audacity"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
+  "countries": [
+   "DE",
+   "FR"
+  ],
+  "merged_count": 2
  },
  {
   "source": "IT/developers-italia",
@@ -7318,6 +7794,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "BayernID - Plugin",
+  "repo": "https://github.com/it-at-m/BayernID-Plugin",
+  "repo_key": "github.com/it-at-m/bayernid-plugin",
+  "entry_url": "https://opensource.muenchen.de/software/bayernid-plugin.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "As part of the project, a plugin for the integration of the BayernID to the specialized applications of the City of Munich was implemented using Keycloak.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "eigenentwicklung",
+   "application",
+   "start2021"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "BayernID - Plugin",
+    "entry_url": "https://opensource.muenchen.de/software/bayernid-plugin.html",
+    "repo_url": "https://github.com/it-at-m/BayernID-Plugin"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -8500,6 +9011,39 @@
     "name": "BlueMind",
     "entry_url": "https://code.gouv.fr/sill/detail?name=BlueMind",
     "repo_url": "https://gitlab.bluemind.net/bluemind-public/bluemind"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "BlueSpice",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://bluespice.com",
+  "entry_url": "https://opensource.muenchen.de/software/bluespice.html",
+  "license": "GPL-3.0",
+  "repo_owner": "Hallo Welt! GmbH",
+  "short_desc": "BlueSpice MediaWiki is a free software, based on MediaWiki, and specifically developed for companies as an enterprise wiki distribution.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "BlueSpice",
+    "entry_url": "https://opensource.muenchen.de/software/bluespice.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -11496,6 +12040,42 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "CaptchaService",
+  "repo": "https://github.com/it-at-m/captchaservice/",
+  "repo_key": "github.com/it-at-m/captchaservice",
+  "landing": "https://it-at-m.github.io/captchaservice/",
+  "entry_url": "https://opensource.muenchen.de/software/captchaservice.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "CaptchaService is a self-hosted microservice that provides GDPR-compliant, proof-of-work CAPTCHA challenges using the European open-source ALTCHA library \u2014 the bot-protection layer in front of the City of Munich's public Zeitmanagementsystem / eAppointment APIs.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2024",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "CaptchaService",
+    "entry_url": "https://opensource.muenchen.de/software/captchaservice.html",
+    "repo_url": "https://github.com/it-at-m/captchaservice/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -12664,7 +13244,11 @@
   "license": "GPL",
   "keywords": [
    "supervision",
-   "monitoring"
+   "monitoring",
+   "infrastruktur",
+   "opencore",
+   "observability",
+   "featurefunding"
   ],
   "short_desc": "Supervision and monitoring software.",
   "desc_lang": "en",
@@ -12679,7 +13263,8 @@
   "note": "recommended to public agents; not necessarily gov-authored",
   "translated": true,
   "functions": [
-   "infrastructure"
+   "infrastructure",
+   "data-analytics"
   ],
   "functions_inferred": true,
   "catalogue_entries": [
@@ -12688,9 +13273,24 @@
     "name": "Checkmk",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Checkmk",
     "repo_url": "https://github.com/checkmk/checkmk"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Checkmk",
+    "entry_url": "https://opensource.muenchen.de/software/checkmk.html",
+    "repo_url": "https://github.com/Checkmk/checkmk"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
+  "countries": [
+   "DE",
+   "FR"
+  ],
+  "merged_count": 2
  },
  {
   "source": "FR/sill",
@@ -13484,6 +14084,41 @@
     "name": "CIVORA UI",
     "entry_url": "https://gitlab.opencode.de/civora/civora-ui",
     "repo_url": "https://gitlab.opencode.de/civora/civora-ui.git"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "ckan",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://ckan.org",
+  "entry_url": "https://opensource.muenchen.de/software/ckan.html",
+  "license": "AGPL",
+  "short_desc": "CKAN (Comprehensive Knowledge Archive Network) is a web-based data catalog software used especially by public institutions for sharing \"open data\", which is further developed by the OKFN.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "kooperation",
+   "support",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "ckan",
+    "entry_url": "https://opensource.muenchen.de/software/ckan.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -15954,6 +16589,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "CollectiveAccess",
+  "repo": "https://github.com/collectiveaccess/providence",
+  "repo_key": "github.com/collectiveaccess/providence",
+  "landing": "http://www.collectiveaccess.org/",
+  "entry_url": "https://opensource.muenchen.de/software/collectiveaccess.html",
+  "license": "GPL",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "CollectiveAccess is free, open-source software for cataloguing and publishing museum and archival collections.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "featurefunding"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "CollectiveAccess",
+    "entry_url": "https://opensource.muenchen.de/software/collectiveaccess.html",
+    "repo_url": "https://github.com/collectiveaccess/providence"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -17741,6 +18410,43 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Consul",
+  "repo": "https://github.com/it-at-m/consul-lhm-dev",
+  "repo_key": "github.com/it-at-m/consul-lhm-dev",
+  "landing": "https://demokratie.today",
+  "entry_url": "https://opensource.muenchen.de/software/consul.html",
+  "license": "AGPL",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Consul is a free software for citizen participation.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "start2021",
+   "support",
+   "sponsor",
+   "saas"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "citizen-services"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Consul",
+    "entry_url": "https://opensource.muenchen.de/software/consul.html",
+    "repo_url": "https://github.com/it-at-m/consul-lhm-dev"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "GLOBAL/dpg",
   "country": "GLOBAL",
   "tier": "index",
@@ -18431,6 +19137,42 @@
     "name": "Cosmo",
     "entry_url": null,
     "repo_url": "https://github.com/csipiemonte/cosmo"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "COVe - COVID-19 Verdachtsfall-Verwaltung",
+  "repo": "https://github.com/orgs/it-at-m/repositories?q=cove&type=archived",
+  "repo_key": "github.com/orgs/it-at-m/repositories?q=cove&type=archived",
+  "entry_url": "https://opensource.muenchen.de/software/cove.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "COVe enabled the management of suspected cases in the context of the Covid19 pandemic. The web application was developed in the IT unit itself.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2020",
+   "k8s",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "COVe - COVID-19 Verdachtsfall-Verwaltung",
+    "entry_url": "https://opensource.muenchen.de/software/cove.html",
+    "repo_url": "https://github.com/orgs/it-at-m/repositories?q=cove&type=archived"
    }
   ],
   "catalogue_count": 1
@@ -21703,6 +22445,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "DAVe",
+  "repo": "https://github.com/orgs/it-at-m/repositories?q=dave&type=source",
+  "repo_key": "github.com/orgs/it-at-m/repositories?q=dave&type=source",
+  "entry_url": "https://opensource.muenchen.de/software/dave.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "With DAVe, traffic counts can be commissioned, recorded and graphically evaluated using various diagrams.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2021",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "DAVe",
+    "entry_url": "https://opensource.muenchen.de/software/dave.html",
+    "repo_url": "https://github.com/orgs/it-at-m/repositories?q=dave&type=source"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "NL/code.overheid.nl",
   "country": "NL",
   "tier": "index",
@@ -22363,6 +23140,39 @@
     "name": "DBScheduler",
     "entry_url": null,
     "repo_url": "https://github.com/regione-marche/e-procurement-DBScheduler.git"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "dbt",
+  "repo": "https://github.com/dbt-labs/dbt-core",
+  "repo_key": "github.com/dbt-labs/dbt-core",
+  "landing": "https://www.getdbt.com/",
+  "entry_url": "https://opensource.muenchen.de/software/dbt.html",
+  "license": "Apache-2.0",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "dbt",
+    "entry_url": "https://opensource.muenchen.de/software/dbt.html",
+    "repo_url": "https://github.com/dbt-labs/dbt-core"
    }
   ],
   "catalogue_count": 1
@@ -24512,6 +25322,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "digiCamControl",
+  "repo": "https://github.com/dukus/digiCamControl",
+  "repo_key": "github.com/dukus/digicamcontrol",
+  "landing": "http://digicamcontrol.com",
+  "entry_url": "https://opensource.muenchen.de/software/digicamcontrol.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "With the open source tool \"digiCamControl\" you control your camera comfortably from the Windows desktop. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "digiCamControl",
+    "entry_url": "https://opensource.muenchen.de/software/digicamcontrol.html",
+    "repo_url": "https://github.com/dukus/digiCamControl"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FI/avoinkoodi",
   "country": "FI",
   "tier": "index",
@@ -24873,6 +25715,38 @@
     "name": "Digital Impact Exchange",
     "entry_url": "https://www.digitalpublicgoods.net/r/digital-impact-exchange",
     "repo_url": "https://gitlab.com/dial/digital-impact-exchange"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Digital Sovereignty Score (SDS) Calculator",
+  "repo": "https://github.com/it-at-m/sds-calculator",
+  "repo_key": "github.com/it-at-m/sds-calculator",
+  "entry_url": "https://opensource.muenchen.de/software/sds-calculator.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The SDS-Calculator is a small, static HTML/CSS/JS application that calculates the Digital Sovereignty Score (SDS) based on a short checklist.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "staticsite"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Digital Sovereignty Score (SDS) Calculator",
+    "entry_url": "https://opensource.muenchen.de/software/sds-calculator.html",
+    "repo_url": "https://github.com/it-at-m/sds-calculator"
    }
   ],
   "catalogue_count": 1
@@ -25343,6 +26217,43 @@
    "FI"
   ],
   "merged_count": 2
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "DigiWF",
+  "repo": "https://github.com/it-at-m/digiwf-core/",
+  "repo_key": "github.com/it-at-m/digiwf-core",
+  "landing": "https://digiwf.oss.muenchen.de/",
+  "entry_url": "https://opensource.muenchen.de/software/digiwf.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "DigiWF is a platform for process automation. Users can automate workflows themselves and access other systems.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2021",
+   "k8s",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "DigiWF",
+    "entry_url": "https://opensource.muenchen.de/software/digiwf.html",
+    "repo_url": "https://github.com/it-at-m/digiwf-core/"
+   }
+  ],
+  "catalogue_count": 1
  },
  {
   "source": "FR/sill",
@@ -27810,6 +28721,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "draw.io",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://drawio-app.com/product/",
+  "entry_url": "https://opensource.muenchen.de/software/drawio.html",
+  "license": "Apache-2.0",
+  "short_desc": "Edit and format charts with an intuitive interface that guides your process. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "draw.io",
+    "entry_url": "https://opensource.muenchen.de/software/drawio.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -28033,6 +28976,38 @@
     "name": "Drupal",
     "entry_url": null,
     "repo_url": "https://www.drupal.org"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Drupal",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.drupal.org",
+  "entry_url": "https://opensource.muenchen.de/software/drupal.html",
+  "license": "GPL",
+  "short_desc": "Drupal is a content management system (CMS) and framework.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Drupal",
+    "entry_url": "https://opensource.muenchen.de/software/drupal.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -29275,6 +30250,36 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Eclipse",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.eclipse.org/",
+  "entry_url": "https://opensource.muenchen.de/software/eclipse.html",
+  "license": "EPL-2.0",
+  "short_desc": "For application development frequently used core of a development environment based on [Java]. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Eclipse",
+    "entry_url": "https://opensource.muenchen.de/software/eclipse.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -29785,15 +30790,35 @@
    "hr-workforce"
   ],
   "functions_inferred": false,
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2024",
+   "k8s"
+  ],
   "catalogue_entries": [
    {
     "source": "DE/openCode",
     "name": "Ehrenamtjustiz",
     "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/ehrenamt-justiz",
     "repo_url": "https://github.com/it-at-m/ehrenamt-justiz"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Ehrenamtjustiz",
+    "entry_url": "https://opensource.muenchen.de/software/ehrenamtjustiz.html",
+    "repo_url": "https://github.com/it-at-m/ehrenamt-justiz"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/openCode",
+   "DE/opensource.muenchen.de"
+  ],
+  "countries": [
+   "DE"
+  ],
+  "merged_count": 2
  },
  {
   "source": "SE/offentligkod",
@@ -31167,6 +32192,41 @@
     "name": "epiCo",
     "entry_url": "https://www.digitalpublicgoods.net/r/epico",
     "repo_url": "https://github.com/epiverse-trace/epiCo"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Epitaph \u2013 Indoor Navigation",
+  "repo": "https://github.com/it-at-m/epitaph_ips",
+  "repo_key": "github.com/it-at-m/epitaph_ips",
+  "entry_url": "https://opensource.muenchen.de/software/epitaph.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Epitaph erm\u00f6glicht die lokale Positionsbestimmung auf mobilen Ger\u00e4ten. Die Open-Source-Bibliothek verwendet die Programmiersprache Dart und das Flutter-Framework.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2022",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Epitaph \u2013 Indoor Navigation",
+    "entry_url": "https://opensource.muenchen.de/software/epitaph.html",
+    "repo_url": "https://github.com/it-at-m/epitaph_ips"
    }
   ],
   "catalogue_count": 1
@@ -32959,6 +34019,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "FastAPI",
+  "repo": "https://github.com/fastapi/fastapi/",
+  "repo_key": "github.com/fastapi/fastapi",
+  "landing": "https://fastapi.tiangolo.com/",
+  "entry_url": "https://opensource.muenchen.de/software/fastapi.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "FastAPI is a modern, high-performance web framework for building APIs with Python, based on standard Python type hints. It supports asynchronous traffic by default and is designed to be easy to use and learn, while also being highly performant, scalable and with low code footprint. FastAPI uses Pydantic for data validation and parsing.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "FastAPI",
+    "entry_url": "https://opensource.muenchen.de/software/fastapi.html",
+    "repo_url": "https://github.com/fastapi/fastapi/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -33526,6 +34620,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Filezilla",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://filezilla-project.org/",
+  "entry_url": "https://opensource.muenchen.de/software/filezilla.html",
+  "license": "GPL",
+  "short_desc": "FTP client for file transfer. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Filezilla",
+    "entry_url": "https://opensource.muenchen.de/software/filezilla.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -33779,6 +34906,38 @@
     "name": "FireForm",
     "entry_url": "https://www.digitalpublicgoods.net/r/fireform",
     "repo_url": "https://github.com/fireform-core/FireForm"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Firefox",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.mozilla.org/de/firefox/new/",
+  "entry_url": "https://opensource.muenchen.de/software/firefox.html",
+  "license": "MPL-2.0",
+  "repo_owner": "Mozilla",
+  "short_desc": "Mozilla Firefox is a free web browser installed on all city devices. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Firefox",
+    "entry_url": "https://opensource.muenchen.de/software/firefox.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -35846,6 +37005,37 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "FreeFileSync",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://freefilesync.org",
+  "entry_url": "https://opensource.muenchen.de/software/freefilesync.html",
+  "license": "GPL",
+  "short_desc": "FreeFileSync is a free open source file synchronization program. It is available on Windows, Linux and OS X. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "FreeFileSync",
+    "entry_url": "https://opensource.muenchen.de/software/freefilesync.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -35876,6 +37066,39 @@
     "name": "FreeMind",
     "entry_url": "https://code.gouv.fr/sill/detail?name=FreeMind",
     "repo_url": "git://git.code.sf.net/p/freemind/code"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Freemind",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://freemind.sourceforge.net",
+  "entry_url": "https://opensource.muenchen.de/software/freemind.html",
+  "license": "GPL",
+  "short_desc": "Freemind is a tool for drawing mind maps. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Freemind",
+    "entry_url": "https://opensource.muenchen.de/software/freemind.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -36044,6 +37267,39 @@
     "name": "Freeplane",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Freeplane",
     "repo_url": "https://github.com/freeplane/freeplane"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Freeplane",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.freeplane.org",
+  "entry_url": "https://opensource.muenchen.de/software/freeplane.html",
+  "license": "GPL-2.0",
+  "short_desc": "Freeplane is a tool for drawing mind maps. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Freeplane",
+    "entry_url": "https://opensource.muenchen.de/software/freeplane.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -37830,6 +39086,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Geckodriver",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://github.com/mozilla/geckodriver/releases",
+  "entry_url": "https://opensource.muenchen.de/software/geckodriver.html",
+  "license": "MPL-2.0",
+  "short_desc": "Proxy for using W3C WebDriver-compatible clients to interact with Gecko-based browsers. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Geckodriver",
+    "entry_url": "https://opensource.muenchen.de/software/geckodriver.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "PT/arte",
   "country": "PT",
   "tier": "index",
@@ -38529,6 +39817,41 @@
     "name": "GeoNetwork opensource",
     "entry_url": "https://code.gouv.fr/sill/detail?name=GeoNetwork%20opensource",
     "repo_url": "https://github.com/geonetwork/core-geonetwork"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "GeoPortal",
+  "repo": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportal",
+  "repo_key": "gitlab.opencode.de/geowerkstatt-hamburg/masterportal",
+  "landing": "https://www.masterportal.org/",
+  "entry_url": "https://opensource.muenchen.de/software/geoportal.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The GeoPortal provides basic spatial information such as an official city map, addresses and aerial photographs, or the \"Potential of near-surface geothermal energy.\"",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "kooperation",
+   "sponsor"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "GeoPortal",
+    "entry_url": "https://opensource.muenchen.de/software/geoportal.html",
+    "repo_url": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportal"
    }
   ],
   "catalogue_count": 1
@@ -39710,6 +41033,37 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Gimp",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.gimp.org",
+  "entry_url": "https://opensource.muenchen.de/software/gimp.html",
+  "license": "GPL",
+  "short_desc": "Gimp is an image editing program for pixel graphics. Besides the version for GNU/Linux and Unix there are also ports to Microsoft Windows and OS X ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Gimp",
+    "entry_url": "https://opensource.muenchen.de/software/gimp.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -40333,6 +41687,41 @@
     "name": "Gitlab",
     "entry_url": null,
     "repo_url": "https://www.gitlab.com"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "GitLab",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://about.gitlab.com/",
+  "entry_url": "https://opensource.muenchen.de/software/gitlab.html",
+  "license": "MIT",
+  "short_desc": "GitLab is a devops and software development platform.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "opencore",
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "GitLab",
+    "entry_url": "https://opensource.muenchen.de/software/gitlab.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -48363,6 +49752,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "GOSA",
+  "repo": "https://github.com/gosa-project",
+  "repo_key": "github.com/gosa-project",
+  "entry_url": "https://opensource.muenchen.de/software/gosa.html",
+  "license": "GPL-2.0",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Software distribution for Limux. Provides a role-based administration interface for managing and controlling complex IT environments.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "GOSA",
+    "entry_url": "https://opensource.muenchen.de/software/gosa.html",
+    "repo_url": "https://github.com/gosa-project"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -49399,6 +50820,39 @@
   "merged_count": 2
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Grafana",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://grafana.com",
+  "entry_url": "https://opensource.muenchen.de/software/grafana.html",
+  "license": "AGPL-3.0",
+  "short_desc": "Grafana is a tool for visualizing performance data. Here, corresponding Netapp plugins are used to display performance data of the Netapp storage systems. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "observability"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Grafana",
+    "entry_url": "https://opensource.muenchen.de/software/grafana.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -49616,6 +51070,40 @@
     "name": "Gravitee Community Edition",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Gravitee%20Community%20Edition",
     "repo_url": "https://github.com/gravitee-io/gravitee-api-management"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Graylog",
+  "repo": "https://github.com/Graylog2/graylog2-server",
+  "repo_key": "github.com/graylog2/graylog2-server",
+  "landing": "https://graylog.org",
+  "entry_url": "https://opensource.muenchen.de/software/graylog.html",
+  "license": "SSPL",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Graylog is a platform for central log management, the collection, analysis and visualization of log data.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "observability"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Graylog",
+    "entry_url": "https://opensource.muenchen.de/software/graylog.html",
+    "repo_url": "https://github.com/Graylog2/graylog2-server"
    }
   ],
   "catalogue_count": 1
@@ -50965,6 +52453,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Hazelcast",
+  "repo": "https://github.com/hazelcast",
+  "repo_key": "github.com/hazelcast",
+  "landing": "https://hazelcast.com/",
+  "entry_url": "https://opensource.muenchen.de/software/hazelcast.html",
+  "license": "Apache-2.0",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Hazelcast is a unified real-time data platform combining stream processing with a fast data store, allowing customers to act instantly on data-in-motion for real-time insights.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Hazelcast",
+    "entry_url": "https://opensource.muenchen.de/software/hazelcast.html",
+    "repo_url": "https://github.com/hazelcast"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "NL/code.overheid.nl",
   "country": "NL",
   "tier": "index",
@@ -52236,6 +53758,36 @@
     "name": "Hugin",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Hugin",
     "repo_url": "http://hg.code.sf.net/p/hugin/hugin"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Hugin",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://hugin.sourceforge.net",
+  "entry_url": "https://opensource.muenchen.de/software/hugin.html",
+  "license": "GPL-2.0",
+  "short_desc": "Hugin is a free stitching software. It is a GUI for the Panorama Tools (also known as PanoTools) and other tools. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Hugin",
+    "entry_url": "https://opensource.muenchen.de/software/hugin.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -55327,6 +56879,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Inclus",
+  "repo": "https://github.com/it-at-m/inclus",
+  "repo_key": "github.com/it-at-m/inclus",
+  "entry_url": "https://opensource.muenchen.de/software/inclus.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Inclus offers an overview of all accessible, (semi) public toilets in Munich by means of a map.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2021",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Inclus",
+    "entry_url": "https://opensource.muenchen.de/software/inclus.html",
+    "repo_url": "https://github.com/it-at-m/inclus"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -55598,6 +57185,41 @@
     "name": "info-manager",
     "entry_url": null,
     "repo_url": "https://github.com/UniversitaDellaCalabria/info-manager"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Informationssystem f\u00fcr soziale Infrastrukturplanung",
+  "repo": "https://github.com/orgs/it-at-m/repositories?q=isi",
+  "repo_key": "github.com/orgs/it-at-m/repositories?q=isi",
+  "entry_url": "https://opensource.muenchen.de/software/isi.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The Information System for Social Infrastructure Planning (ISI) is an integrated solution for the Department of Urban Planning and Building Regulations of the City of Munich.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2022",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Informationssystem f\u00fcr soziale Infrastrukturplanung",
+    "entry_url": "https://opensource.muenchen.de/software/isi.html",
+    "repo_url": "https://github.com/orgs/it-at-m/repositories?q=isi"
    }
   ],
   "catalogue_count": 1
@@ -57002,6 +58624,42 @@
     "name": "integration_oidc",
     "entry_url": null,
     "repo_url": "https://github.com/SUNET/nextcloud-integration_oidc"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "integreat",
+  "repo": "https://github.com/digitalfabrik/integreat-app",
+  "repo_key": "github.com/digitalfabrik/integreat-app",
+  "landing": "https://integreat-app.de/ueber-uns/",
+  "entry_url": "https://opensource.muenchen.de/software/integreat.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Integreat is a local and multilingual integration platform for immigrants that can be used in any municipality without the involvement of the IT department.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "opencore",
+   "start2020",
+   "saas"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "integreat",
+    "entry_url": "https://opensource.muenchen.de/software/integreat.html",
+    "repo_url": "https://github.com/digitalfabrik/integreat-app"
    }
   ],
   "catalogue_count": 1
@@ -59215,6 +60873,68 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "JasperSoft Studio",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.jaspersoft.com/products/jaspersoft-community",
+  "entry_url": "https://opensource.muenchen.de/software/jaspersoft-studio.html",
+  "license": "LGPL-3.0",
+  "short_desc": "TIBCO Jaspersoft\u00ae Studio is an editing software from the manufacturer TIBCO JasperReports\u00ae.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "JasperSoft Studio",
+    "entry_url": "https://opensource.muenchen.de/software/jaspersoft-studio.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Java",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.java.com",
+  "entry_url": "https://opensource.muenchen.de/software/java.html",
+  "license": "GPLv2+CPE",
+  "short_desc": "Java is an object-oriented programming language and is the basis for numerous applications in the corporate environment. So also of all our own developments. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Java",
+    "entry_url": "https://opensource.muenchen.de/software/java.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -59292,6 +61012,101 @@
     "name": "Javamelody",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Javamelody",
     "repo_url": "https://github.com/javamelody/javamelody"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "JavaScript",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
+  "entry_url": "https://opensource.muenchen.de/software/javascript.html",
+  "short_desc": "JavaScript is a scripting language that can be used both in web browsers and on servers. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "JavaScript",
+    "entry_url": "https://opensource.muenchen.de/software/javascript.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "JDK",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://openjdk.org",
+  "entry_url": "https://opensource.muenchen.de/software/jdk.html",
+  "license": "GPLv2+CPE",
+  "short_desc": "OpenJDK is the official free implementation of the Java Platform, Standard Edition (Java SE).",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "JDK",
+    "entry_url": "https://opensource.muenchen.de/software/jdk.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "JEdit",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.jedit.org/",
+  "entry_url": "https://opensource.muenchen.de/software/jedit.html",
+  "license": "GPL-2.0",
+  "short_desc": "jEdit is a sophisticated text editor for programmers. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "office"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "JEdit",
+    "entry_url": "https://opensource.muenchen.de/software/jedit.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -60491,6 +62306,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Katello",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://theforeman.org",
+  "entry_url": "https://opensource.muenchen.de/software/katello.html",
+  "license": "GPL-3.0",
+  "short_desc": "Katello is a software stack of various components integrated together to provide a complete lifecycle and configuration management system for server systems.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Katello",
+    "entry_url": "https://opensource.muenchen.de/software/katello.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -60981,6 +62828,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "KeePass2",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://keepass.info",
+  "entry_url": "https://opensource.muenchen.de/software/keepass.html",
+  "license": "GPL-2.0",
+  "short_desc": "Keepass2 is a password management system for use on local and personal devices.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "hr-workforce"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "KeePass2",
+    "entry_url": "https://opensource.muenchen.de/software/keepass.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -61239,7 +63119,9 @@
    "authentification",
    "autorisation",
    "authentication",
-   "authorization"
+   "authorization",
+   "infrastruktur",
+   "devstack"
   ],
   "short_desc": "SSO authentication server.",
   "desc_lang": "en",
@@ -61266,9 +63148,24 @@
     "name": "Keycloak",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Keycloak",
     "repo_url": "https://github.com/keycloak/keycloak"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Keycloak",
+    "entry_url": "https://opensource.muenchen.de/software/keycloak.html",
+    "repo_url": "https://github.com/keycloak/keycloak"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
+  "countries": [
+   "DE",
+   "FR"
+  ],
+  "merged_count": 2
  },
  {
   "source": "DE/openCode",
@@ -61348,6 +63245,41 @@
   "also_known_as": [
    "openCode"
   ]
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Keycloak ELSTER Plugin",
+  "repo": "https://github.com/it-at-m/ELSTER_NEZO_Plugin",
+  "repo_key": "github.com/it-at-m/elster_nezo_plugin",
+  "entry_url": "https://opensource.muenchen.de/software/elster-nezo_plugin.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The Keycloak ELSTER Plugin is a plugin for Keycloak or RH-SSO for connecting the ELSTER company account / NEZO.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "infrastruktur",
+   "application",
+   "start2023"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Keycloak ELSTER Plugin",
+    "entry_url": "https://opensource.muenchen.de/software/elster-nezo_plugin.html",
+    "repo_url": "https://github.com/it-at-m/ELSTER_NEZO_Plugin"
+   }
+  ],
+  "catalogue_count": 1
  },
  {
   "source": "NL/code.overheid.nl",
@@ -61836,6 +63768,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Kinderzeit-Ferienplaner",
+  "repo": "https://github.com/it-at-m/Kinderzeit",
+  "repo_key": "github.com/it-at-m/kinderzeit",
+  "entry_url": "https://opensource.muenchen.de/software/kinderzeit.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Kinderzeit was a vacation planner for parents and event organizers, created in collaboration with the Digital Product School (DPS).",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2022",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Kinderzeit-Ferienplaner",
+    "entry_url": "https://opensource.muenchen.de/software/kinderzeit.html",
+    "repo_url": "https://github.com/it-at-m/Kinderzeit"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "GLOBAL/dpg",
   "country": "GLOBAL",
   "tier": "index",
@@ -62125,15 +64092,38 @@
    "office"
   ],
   "functions_inferred": false,
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "k8s",
+   "staticsite"
+  ],
   "catalogue_entries": [
    {
     "source": "DE/openCode",
     "name": "KIWI",
     "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/unicodeeingabekiwi2",
     "repo_url": "https://github.com/it-at-m/UnicodeEingabeKiwi2.git"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Kiwi - Unicode Tastatur",
+    "entry_url": "https://opensource.muenchen.de/software/kiwi.html",
+    "repo_url": "https://github.com/it-at-m/UnicodeEingabeKiwi2"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/openCode",
+   "DE/opensource.muenchen.de"
+  ],
+  "countries": [
+   "DE"
+  ],
+  "merged_count": 2,
+  "also_known_as": [
+   "Kiwi - Unicode Tastatur"
+  ]
  },
  {
   "source": "FR/sill",
@@ -62407,6 +64397,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "KNIME Analytics Platform",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.knime.com",
+  "entry_url": "https://opensource.muenchen.de/software/knime-analytics-platform.html",
+  "license": "GPL-3.0",
+  "short_desc": "KNIME is a free software for interactive data analysis. The program enables the integration of numerous machine learning and data mining methods through the modular pipelining concept. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "KNIME Analytics Platform",
+    "entry_url": "https://opensource.muenchen.de/software/knime-analytics-platform.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -62526,6 +64548,41 @@
     "name": "Knowage Server",
     "entry_url": null,
     "repo_url": "https://github.com/KnowageLabs/Knowage-Server.git"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "KoBIT",
+  "repo": "https://github.com/orgs/it-at-m/repositories?q=kobit&type=source",
+  "repo_key": "github.com/orgs/it-at-m/repositories?q=kobit&type=source",
+  "entry_url": "https://opensource.muenchen.de/software/kobit.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The Conflict Management App (KoBITApp) supports the employees of the IT department in resolving conflicts as low-threshold as possible.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "KoBIT",
+    "entry_url": "https://opensource.muenchen.de/software/kobit.html",
+    "repo_url": "https://github.com/orgs/it-at-m/repositories?q=kobit&type=source"
    }
   ],
   "catalogue_count": 1
@@ -64030,6 +66087,76 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "LangChain",
+  "repo": "https://github.com/langchain-ai/langchain/",
+  "repo_key": "github.com/langchain-ai/langchain",
+  "landing": "https://python.langchain.com/docs/introduction/",
+  "entry_url": "https://opensource.muenchen.de/software/langchain.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "LangChain is a framework for developing applications powered by large language models (LLMs).",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "LangChain",
+    "entry_url": "https://opensource.muenchen.de/software/langchain.html",
+    "repo_url": "https://github.com/langchain-ai/langchain/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Langfuse",
+  "repo": "https://github.com/langfuse/langfuse/",
+  "repo_key": "github.com/langfuse/langfuse",
+  "landing": "https://langfuse.com/",
+  "entry_url": "https://opensource.muenchen.de/software/langfuse.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Langfuse is an open-source LLM engineering platform that helps teams collaboratively debug, analyze, and iterate on their LLM applications.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "k8s",
+   "ai",
+   "contribute"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Langfuse",
+    "entry_url": "https://opensource.muenchen.de/software/langfuse.html",
+    "repo_url": "https://github.com/langfuse/langfuse/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -64165,6 +66292,39 @@
     "name": "LaTeX",
     "entry_url": "https://code.gouv.fr/sill/detail?name=LaTeX",
     "repo_url": "https://github.com/latex3/latex2e"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "LaTeX",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.latex-project.org",
+  "entry_url": "https://opensource.muenchen.de/software/latex.html",
+  "license": "LPPL",
+  "short_desc": "LaTeX is a high-quality typesetting system with features designed for creating technical and scientific documentation. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "LaTeX",
+    "entry_url": "https://opensource.muenchen.de/software/latex.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -64826,6 +66986,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "libexpat",
+  "repo": "https://github.com/libexpat/libexpat",
+  "repo_key": "github.com/libexpat/libexpat",
+  "landing": "https://libexpat.github.io/",
+  "entry_url": "https://opensource.muenchen.de/software/libexpat.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Expat is a stream-oriented XML 1.0 parser library written in C.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "libexpat",
+    "entry_url": "https://opensource.muenchen.de/software/libexpat.html",
+    "repo_url": "https://github.com/libexpat/libexpat"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -65093,6 +67286,40 @@
     "name": "LibreOffice",
     "entry_url": null,
     "repo_url": "https://www.libreoffice.org"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "LibreOffice",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://de.libreoffice.org",
+  "entry_url": "https://opensource.muenchen.de/software/libreoffice.html",
+  "license": "MPL-2.0",
+  "short_desc": "LibreOffice is a free set of office software (office suite). It includes programs for word processing, spreadsheets, presentation and creating drawings.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "LibreOffice",
+    "entry_url": "https://opensource.muenchen.de/software/libreoffice.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -65569,6 +67796,36 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "LimeSurvey",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.limesurvey.org/de/",
+  "entry_url": "https://opensource.muenchen.de/software/limesurvey.html",
+  "license": "GPL-2.0",
+  "short_desc": "The free platform LimeSurvey manages and publishes online surveys. With umfrage.muenchen.de and umfrage.musin.de for the RBS we even run two LimeSurvey instances. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "LimeSurvey",
+    "entry_url": "https://opensource.muenchen.de/software/limesurvey.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "GLOBAL/dpg",
   "country": "GLOBAL",
   "tier": "index",
@@ -65767,6 +68024,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Linux",
+  "repo": null,
+  "repo_key": null,
+  "entry_url": "https://opensource.muenchen.de/software/linux.html",
+  "license": "GPL-2.0",
+  "short_desc": "As Linux is a free unix-like multi-user operating system, which is based on the Linux kernel and substantially on GNU software. Especially on servers and embedded computing Linux has become the standard.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "support",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Linux",
+    "entry_url": "https://opensource.muenchen.de/software/linux.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -65916,6 +68206,41 @@
     "name": "LireCouleur",
     "entry_url": "https://code.gouv.fr/sill/detail?name=LireCouleur",
     "repo_url": "https://framagit.org/arkaline/lirecouleur"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "LiteLLM",
+  "repo": "https://github.com/BerriAI/litellm/",
+  "repo_key": "github.com/berriai/litellm",
+  "landing": "https://www.litellm.ai/",
+  "entry_url": "https://opensource.muenchen.de/software/litellm.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "LiteLLM provides a gateway to access multiple large language models (LLMs) and other AI models via an unified API. It allows usage tracking, caching and access control and provides a web based UI for administration, monitoring and testing of the models.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "k8s",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "LiteLLM",
+    "entry_url": "https://opensource.muenchen.de/software/litellm.html",
+    "repo_url": "https://github.com/BerriAI/litellm/"
    }
   ],
   "catalogue_count": 1
@@ -67366,6 +69691,36 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Mantis",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.mantisbt.org",
+  "entry_url": "https://opensource.muenchen.de/software/mantis.html",
+  "license": "GPL",
+  "short_desc": "Mantis (Mantis Bug Tracker, MantisBT) is free software used at LHM as a bug tracker to manage and track hints of program bugs and requests for additional features.",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Mantis",
+    "entry_url": "https://opensource.muenchen.de/software/mantis.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -67793,6 +70148,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Maria-DB",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://mariadb.com",
+  "entry_url": "https://opensource.muenchen.de/software/mariadb.html",
+  "license": "Apache",
+  "short_desc": "MariaDB is a free, relational open source database management system that was created by a fork from MySQL.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Maria-DB",
+    "entry_url": "https://opensource.muenchen.de/software/mariadb.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -67919,6 +70306,39 @@
     "name": "Marine Spatial Planning - SAHAV ",
     "entry_url": null,
     "repo_url": "https://github.com/nccrmoes/MSP-SAHAV"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Mark-a-spot",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://markaspot.de/de/",
+  "entry_url": "https://opensource.muenchen.de/software/mark-a-spot.html",
+  "license": "GPL-2.0",
+  "short_desc": "Mark-a-Spot is a platform for openly dealing with infrastructure problems (deficiency reporting) and participation procedures in public space.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "start2021"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Mark-a-spot",
+    "entry_url": "https://opensource.muenchen.de/software/mark-a-spot.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -68582,6 +71002,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Matomo",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://matomo.org",
+  "entry_url": "https://opensource.muenchen.de/software/matomo.html",
+  "license": "GPL-3.0",
+  "short_desc": "Matomo (formerly Piwik) web tracking is used to analyze user behavior of a web application.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "opencore"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Matomo",
+    "entry_url": "https://opensource.muenchen.de/software/matomo.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "TW/code.gov.tw",
   "country": "TW",
   "tier": "index",
@@ -69028,6 +71481,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "MCMP",
+  "repo": "https://github.com/it-at-m/mcmp/",
+  "repo_key": "github.com/it-at-m/mcmp",
+  "entry_url": "https://opensource.muenchen.de/software/mcmp.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "MCMP (Munich Cloud Management Platform) allows users to independently manage the virtual servers assigned to them.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "eigenentwicklung"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "MCMP",
+    "entry_url": "https://opensource.muenchen.de/software/mcmp.html",
+    "repo_url": "https://github.com/it-at-m/mcmp/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -69068,6 +71554,42 @@
     "name": "MCP API OAS Checker",
     "entry_url": null,
     "repo_url": "https://github.com/italia/api-oas-checker-mcp"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "MDAS",
+  "repo": "https://github.com/orgs/it-at-m/repositories?q=mobidam",
+  "repo_key": "github.com/orgs/it-at-m/repositories?q=mobidam",
+  "landing": "https://it-at-m.github.io/mobidam-sst-management/",
+  "entry_url": "https://opensource.muenchen.de/software/mdas.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "In the MDAS project, the EAI components for data import and export and the web application for controlling all incoming and outgoing interfaces for the central mobility data platform (MobidaM) are being developed.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "MDAS",
+    "entry_url": "https://opensource.muenchen.de/software/mdas.html",
+    "repo_url": "https://github.com/orgs/it-at-m/repositories?q=mobidam"
    }
   ],
   "catalogue_count": 1
@@ -69274,6 +71796,37 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "MediaInfo",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://mediaarea.net/en/MediaInfo",
+  "entry_url": "https://opensource.muenchen.de/software/mediainfo.html",
+  "license": "BSD",
+  "short_desc": "MediaInfo is a program that lets you find out all sorts of info about video and audio files. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "MediaInfo",
+    "entry_url": "https://opensource.muenchen.de/software/mediainfo.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -69349,6 +71902,38 @@
     "name": "MediaWiki",
     "entry_url": null,
     "repo_url": "https://www.mediawiki.org/wiki/MediaWiki"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "MediaWiki",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.mediawiki.org",
+  "entry_url": "https://opensource.muenchen.de/software/mediawiki.html",
+  "license": "GPL",
+  "short_desc": "MediaWiki is a free software package for running a wiki, originally written for Wikipedia.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "MediaWiki",
+    "entry_url": "https://opensource.muenchen.de/software/mediawiki.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -70337,7 +72922,8 @@
    "stats",
    "analytics",
    "dashboard",
-   "graphe"
+   "graphe",
+   "application"
   ],
   "short_desc": "Database analytics software.",
   "desc_lang": "en",
@@ -70364,9 +72950,24 @@
     "name": "Metabase",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Metabase",
     "repo_url": "https://github.com/metabase/metabase"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Metabase",
+    "entry_url": "https://opensource.muenchen.de/software/metabase.html",
+    "repo_url": "https://github.com/metabase/metabase"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
+  "countries": [
+   "DE",
+   "FR"
+  ],
+  "merged_count": 2
  },
  {
   "source": "DE/openCode",
@@ -71187,6 +73788,39 @@
     "name": "MiPiace",
     "entry_url": null,
     "repo_url": "https://github.com/vvfosprojects/mipiace"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "MISP",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.misp-project.org/",
+  "entry_url": "https://opensource.muenchen.de/software/misp.html",
+  "license": "AGPL-3.0",
+  "short_desc": "The Open Source Threat Intelligence Platform (''MISP'') is used as a platform for sharing Indicators of Compromise (IOCs) and other relevant information across all parts of the German Cybersecurity network including the City of Munich.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "security"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "MISP",
+    "entry_url": "https://opensource.muenchen.de/software/misp.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -72830,18 +75464,39 @@
   "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/mucgpt",
   "last_activity": "2026-07-21T21:53:50.063Z",
   "functions": [
-   "office"
+   "office",
+   "collaboration"
   ],
   "functions_inferred": false,
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2024",
+   "ai"
+  ],
   "catalogue_entries": [
    {
     "source": "DE/openCode",
     "name": "MUCGPT",
     "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/mucgpt",
     "repo_url": "https://github.com/it-at-m/mucgpt"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "MUCGPT",
+    "entry_url": "https://opensource.muenchen.de/software/mucgpt.html",
+    "repo_url": "https://github.com/it-at-m/mucgpt"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/openCode",
+   "DE/opensource.muenchen.de"
+  ],
+  "countries": [
+   "DE"
+  ],
+  "merged_count": 2
  },
  {
   "source": "IT/developers-italia",
@@ -75242,6 +77897,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "NGINX",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://nginx.org/",
+  "entry_url": "https://opensource.muenchen.de/software/nginx.html",
+  "license": "BSD",
+  "short_desc": "nginx a web server software, reverse proxy and email proxy (POP3/IMAP). ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "NGINX",
+    "entry_url": "https://opensource.muenchen.de/software/nginx.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -75859,6 +78546,38 @@
     "name": "Notepad++",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Notepad%2B%2B",
     "repo_url": "https://github.com/notepad-plus-plus/notepad-plus-plus"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Notepad++",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://notepad-plus-plus.org/",
+  "entry_url": "https://opensource.muenchen.de/software/notepad.html",
+  "license": "GPL",
+  "short_desc": "Notepad++ is a free text editor for Windows and compatible operating systems.",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "office"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Notepad++",
+    "entry_url": "https://opensource.muenchen.de/software/notepad.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -76628,6 +79347,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Nuclos",
+  "repo": "https://bitbucket.org/nuclos/workspace/repositories/",
+  "repo_key": "bitbucket.org/nuclos/workspace/repositories",
+  "landing": "https://www.nuclos.de",
+  "entry_url": "https://opensource.muenchen.de/software/nuclos.html",
+  "license": "AGPL",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Nuclos is a free enterprise resource planning software that we at it@M use to manage our entire internal IT portfolio and resource planning.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "support"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Nuclos",
+    "entry_url": "https://opensource.muenchen.de/software/nuclos.html",
+    "repo_url": "https://bitbucket.org/nuclos/workspace/repositories/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -76809,7 +79562,10 @@
    "lecteur d'\u00e9cran",
    "screen reader",
    "accessibilit\u00e9",
-   "accessibility"
+   "accessibility",
+   "application",
+   "desktop",
+   "sponsor"
   ],
   "short_desc": "Screen reader.",
   "desc_lang": "en",
@@ -76834,9 +79590,24 @@
     "name": "NVDA",
     "entry_url": "https://code.gouv.fr/sill/detail?name=NVDA",
     "repo_url": "https://github.com/nvaccess/nvda"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "NVDA",
+    "entry_url": "https://opensource.muenchen.de/software/nvda.html",
+    "repo_url": "https://github.com/nvaccess/nvda"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
+  "countries": [
+   "DE",
+   "FR"
+  ],
+  "merged_count": 2
  },
  {
   "source": "NL/code.overheid.nl",
@@ -77060,6 +79831,39 @@
     "name": "OBS Studio",
     "entry_url": "https://code.gouv.fr/sill/detail?name=OBS%20Studio",
     "repo_url": "https://github.com/obsproject/obs-studio"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "OBS Studio",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://obsproject.com",
+  "entry_url": "https://opensource.muenchen.de/software/obs-studio.html",
+  "license": "GPL-2.0",
+  "short_desc": "The Open Broadcaster software supports the user in transmitting screen content in real time over a network connection to the Internet.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "OBS Studio",
+    "entry_url": "https://opensource.muenchen.de/software/obs-studio.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -80282,6 +83086,40 @@
     "name": "OpenAPI Checker",
     "entry_url": null,
     "repo_url": "https://github.com/italia/api-oas-checker"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "OpenAPI Generator",
+  "repo": "https://github.com/OpenAPITools/openapi-generator",
+  "repo_key": "github.com/openapitools/openapi-generator",
+  "landing": "https://openapi-generator.tech/",
+  "entry_url": "https://opensource.muenchen.de/software/openapi-generator.html",
+  "license": "Apache-2.0",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "OpenAPI Generator enables the automatic generation of API client libraries (SDK generation), server stubs, documentation and configuration based on an OpenAPI specification. The OpenAPI specification is a standard for describing HTTP programming interfaces (APIs), which can also be used to define REST-compliant interfaces.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "sponsor"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "OpenAPI Generator",
+    "entry_url": "https://opensource.muenchen.de/software/openapi-generator.html",
+    "repo_url": "https://github.com/OpenAPITools/openapi-generator"
    }
   ],
   "catalogue_count": 1
@@ -83686,6 +86524,41 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Openshift",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://docs.openshift.com/",
+  "entry_url": "https://opensource.muenchen.de/software/openshift.html",
+  "license": "Apache-2.0",
+  "short_desc": "Internal and external services are operated on the Kubernetes platform Openshift.",
+  "desc_lang": "en",
+  "keywords": [
+   "support",
+   "infrastruktur",
+   "devstack",
+   "observability"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Openshift",
+    "entry_url": "https://opensource.muenchen.de/software/openshift.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -84126,6 +86999,38 @@
     "name": "OpenStreetMap",
     "entry_url": null,
     "repo_url": "https://wiki.openstreetmap.org/wiki/API"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "OpenStreetMap",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://openstreetmap.org",
+  "entry_url": "https://opensource.muenchen.de/software/openstreetmap.html",
+  "license": "ODbL",
+  "short_desc": "OpenStreetMap is a free project that collects and structures freely usable geodata, maintains it as open data and provides online maps.",
+  "desc_lang": "en",
+  "keywords": [
+   "kooperation"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "OpenStreetMap",
+    "entry_url": "https://opensource.muenchen.de/software/openstreetmap.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -85419,6 +88324,40 @@
     "name": "OWASP ZAP",
     "entry_url": "https://code.gouv.fr/sill/detail?name=OWASP%20ZAP",
     "repo_url": "https://github.com/zaproxy/zaproxy"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "OwnCloud",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://owncloud.com/de/",
+  "entry_url": "https://opensource.muenchen.de/software/owncloud.html",
+  "license": "AGPL-3.0",
+  "repo_owner": "ownCloud Community",
+  "short_desc": "ownCloud is a free software that organizes the storage and distribution of data. The data can be accessed both via a web interface and with client applications.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "opencore"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "OwnCloud",
+    "entry_url": "https://opensource.muenchen.de/software/owncloud.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -88481,6 +91420,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "pdfsam",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://pdfsam.org/de/pdfsam-basic/",
+  "entry_url": "https://opensource.muenchen.de/software/pdfsam.html",
+  "license": "GPL",
+  "short_desc": "PDF Split and Merge: splits PDFs or merges PDF files. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "pdfsam",
+    "entry_url": "https://opensource.muenchen.de/software/pdfsam.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -89425,6 +92397,37 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Pentaho",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.hitachivantara.com/en-us/products/pentaho-plus-platform/data-integration-analytics/pentaho-community-edition.html",
+  "entry_url": "https://opensource.muenchen.de/software/pentaho.html",
+  "license": "LGPL",
+  "repo_owner": "Hitachi Vantara",
+  "short_desc": "Pentaho is a collection of business intelligence software that is open source in a basic version.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Pentaho",
+    "entry_url": "https://opensource.muenchen.de/software/pentaho.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -89599,6 +92602,38 @@
     "name": "pfSense",
     "entry_url": "https://code.gouv.fr/sill/detail?name=pfSense",
     "repo_url": "https://github.com/pfsense/pfsense"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "pgAdmin",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.pgadmin.org",
+  "entry_url": "https://opensource.muenchen.de/software/pgadmin.html",
+  "license": "PostgreSQL",
+  "short_desc": "pgAdmin is a server-based web application for Postgres database administration. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "pgAdmin",
+    "entry_url": "https://opensource.muenchen.de/software/pgadmin.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -89945,6 +92980,36 @@
     "name": "phpIPAM",
     "entry_url": "https://code.gouv.fr/sill/detail?name=phpIPAM",
     "repo_url": "https://github.com/phpipam/phpipam"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "phpList",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.phplist.com",
+  "entry_url": "https://opensource.muenchen.de/software/phplist.html",
+  "license": "AGPL-3.0",
+  "short_desc": "The newsletter platform of the City of Munich uses the open source software phplist.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "phpList",
+    "entry_url": "https://opensource.muenchen.de/software/phplist.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -91832,6 +94897,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Podman",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://podman.io/",
+  "entry_url": "https://opensource.muenchen.de/software/podman.html",
+  "license": "Apache-2.0",
+  "short_desc": "Podman is a container management tool for managing containers, images, volumes and pods.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Podman",
+    "entry_url": "https://opensource.muenchen.de/software/podman.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "GLOBAL/dpg",
   "country": "GLOBAL",
   "tier": "index",
@@ -92783,6 +95881,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "PostgreSQL",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.postgresql.org/",
+  "entry_url": "https://opensource.muenchen.de/software/postgresql.html",
+  "license": "PostgreSQL",
+  "short_desc": "PostgreSQL is a free, object-relational database management system (ORDBMS) emphasizing extensibility and SQL compliance.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "support",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "PostgreSQL",
+    "entry_url": "https://opensource.muenchen.de/software/postgresql.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -93042,6 +96174,41 @@
     "name": "PP&C - Piattaforma di Programmazione e Controllo (N.V.B.L.A.)",
     "entry_url": null,
     "repo_url": "https://github.com/atsmilano/Controllo-di-gestione"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Praktikumsplaner",
+  "repo": "https://github.com/it-at-m/Praktikumsplaner",
+  "repo_key": "github.com/it-at-m/praktikumsplaner",
+  "entry_url": "https://opensource.muenchen.de/software/praktikumsplaner.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The Praktikumsplaner offers a way to organize junior staff and their internships during their vocational training.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Praktikumsplaner",
+    "entry_url": "https://opensource.muenchen.de/software/praktikumsplaner.html",
+    "repo_url": "https://github.com/it-at-m/Praktikumsplaner"
    }
   ],
   "catalogue_count": 1
@@ -94419,6 +97586,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "ProjectLibre",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.projectlibre.com",
+  "entry_url": "https://opensource.muenchen.de/software/projectlibre.html",
+  "license": "CPL",
+  "short_desc": "ProjectLibre is an open-source software for project planning and control. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "ProjectLibre",
+    "entry_url": "https://opensource.muenchen.de/software/projectlibre.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -95644,6 +98844,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Puppet",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://puppet.com",
+  "entry_url": "https://opensource.muenchen.de/software/puppet.html",
+  "license": "Apache-2.0",
+  "short_desc": "Puppet is a tool for configuration management of servers with operating systems such as Unix, Linux and FreeBSD.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Puppet",
+    "entry_url": "https://opensource.muenchen.de/software/puppet.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "BE/iMio",
   "country": "BE",
   "tier": "index",
@@ -95776,6 +99008,39 @@
     "name": "PuTTY",
     "entry_url": null,
     "repo_url": "https://www.putty.org/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Putty",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.chiark.greenend.org.uk/~sgtatham/putty/",
+  "entry_url": "https://opensource.muenchen.de/software/putty.html",
+  "license": "MIT",
+  "short_desc": "PuTTY is a free software for establishing connections via Secure Shell, Telnet, remote login or serial interfaces.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Putty",
+    "entry_url": "https://opensource.muenchen.de/software/putty.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -96692,7 +99957,8 @@
   "note": "recommended to public agents; not necessarily gov-authored",
   "translated": true,
   "functions": [
-   "dev-tools"
+   "dev-tools",
+   "integration"
   ],
   "functions_inferred": false,
   "catalogue_entries": [
@@ -96701,9 +99967,27 @@
     "name": "Pycharm Community Edition",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Pycharm%20Community%20Edition",
     "repo_url": "https://github.com/JetBrains/intellij-community/tree/master/python"
+   },
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "IntelliJ IDEA Community Edition",
+    "entry_url": "https://opensource.muenchen.de/software/intellij_idea.html",
+    "repo_url": "https://github.com/JetBrains/intellij-community"
    }
   ],
-  "catalogue_count": 1
+  "catalogue_count": 2,
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
+  "countries": [
+   "DE",
+   "FR"
+  ],
+  "merged_count": 2,
+  "also_known_as": [
+   "IntelliJ IDEA Community Edition"
+  ]
  },
  {
   "source": "CA/code.open.canada.ca",
@@ -96736,6 +100020,40 @@
     "name": "PyCoMod",
     "entry_url": null,
     "repo_url": "https://github.com/DND-DRDC-RDDC/OS_PyCoMod"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Pydantic",
+  "repo": "https://github.com/pydantic/pydantic/",
+  "repo_key": "github.com/pydantic/pydantic",
+  "landing": "https://fastapi.tiangolo.com/",
+  "entry_url": "https://opensource.muenchen.de/software/pydantic.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Pydantic is the de-facto standard data validation library for Python, with a focus on data integrity and type safety. It integrates with linters and IDEs, is fast and extensible, and uses standard Python type hints for defining data models.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Pydantic",
+    "entry_url": "https://opensource.muenchen.de/software/pydantic.html",
+    "repo_url": "https://github.com/pydantic/pydantic/"
    }
   ],
   "catalogue_count": 1
@@ -96929,6 +100247,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Python",
+  "repo": "https://github.com/python/cpython/",
+  "repo_key": "github.com/python/cpython",
+  "landing": "https://www.python.org/",
+  "entry_url": "https://opensource.muenchen.de/software/python.html",
+  "license": "PSF2",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Python is a high-level, general-purpose programming language, which is dynamically typed and garbage-collected. Python supports multiple programming paradigms (structured, object-oriented & functional) and includes a comprehensive standard library.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Python",
+    "entry_url": "https://opensource.muenchen.de/software/python.html",
+    "repo_url": "https://github.com/python/cpython/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -97053,6 +100405,41 @@
     "name": "pyWSTitulus",
     "entry_url": null,
     "repo_url": "https://github.com/UniversitaDellaCalabria/pyWSTitulus"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Qdrant",
+  "repo": "https://github.com/qdrant/qdrant/",
+  "repo_key": "github.com/qdrant/qdrant",
+  "landing": "https://qdrant.tech/",
+  "entry_url": "https://opensource.muenchen.de/software/qdrant.html",
+  "license": "Apache",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Qdrant (read: quadrant) is a container-based vector similarity search engine and vector database.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "k8s",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Qdrant",
+    "entry_url": "https://opensource.muenchen.de/software/qdrant.html",
+    "repo_url": "https://github.com/qdrant/qdrant/"
    }
   ],
   "catalogue_count": 1
@@ -97378,6 +100765,39 @@
     "name": "QGIS",
     "entry_url": null,
     "repo_url": "https://www.qgis.org"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "QGIS",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.qgis.org",
+  "entry_url": "https://opensource.muenchen.de/software/qgis.html",
+  "license": "GPL-2.0",
+  "short_desc": "Quantum GIS (QGIS) is a geographic information system (GIS) manages, analyzes and visualizes databases of geographic information.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "QGIS",
+    "entry_url": "https://opensource.muenchen.de/software/qgis.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -97967,6 +101387,38 @@
     "name": "R",
     "entry_url": "https://code.gouv.fr/sill/detail?name=R",
     "repo_url": "https://svn.r-project.org/R/trunk/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "R + R Studio",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://rstudio.com/",
+  "entry_url": "https://opensource.muenchen.de/software/r-r-studio.html",
+  "short_desc": "Application and programming language for statistics ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "R + R Studio",
+    "entry_url": "https://opensource.muenchen.de/software/r-r-studio.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -100907,6 +104359,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Robot Framework",
+  "repo": "https://github.com/robotframework/robotframework",
+  "repo_key": "github.com/robotframework/robotframework",
+  "landing": "https://robotframework.org",
+  "entry_url": "https://opensource.muenchen.de/software/robotframework.html",
+  "license": "Apache",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Robot Framework is a generic automation framework that can be used for both test automation and robotic process automation.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "sponsor"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Robot Framework",
+    "entry_url": "https://opensource.muenchen.de/software/robotframework.html",
+    "repo_url": "https://github.com/robotframework/robotframework"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "SE/offentligkod",
   "country": "SE",
   "tier": "index",
@@ -101493,6 +104979,40 @@
     "name": "Rudder",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Rudder",
     "repo_url": "https://github.com/Normation/rudder"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Ruff",
+  "repo": "https://github.com/astral-sh/ruff",
+  "repo_key": "github.com/astral-sh/ruff",
+  "landing": "https://astral.sh/ruff",
+  "entry_url": "https://opensource.muenchen.de/software/ruff.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Ruff is an extremely fast Python linter and code formatter, written in Rust. It provides essential features for ensuring code quality and consistency in Python projects, including linting, formatting, and automatic fixing of common issues.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Ruff",
+    "entry_url": "https://opensource.muenchen.de/software/ruff.html",
+    "repo_url": "https://github.com/astral-sh/ruff"
    }
   ],
   "catalogue_count": 1
@@ -102195,6 +105715,38 @@
     "name": "Samba",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Samba",
     "repo_url": "https://git.samba.org"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Samba",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.samba.org",
+  "entry_url": "https://opensource.muenchen.de/software/samba.html",
+  "license": "GPL",
+  "short_desc": "Software suite that makes the Server Message Block (SMB) protocol available for Unix systems. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Samba",
+    "entry_url": "https://opensource.muenchen.de/software/samba.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -102955,6 +106507,39 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "SciDAVis",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://scidavis.sourceforge.net/",
+  "entry_url": "https://opensource.muenchen.de/software/scidavis.html",
+  "license": "GPL-2.0",
+  "short_desc": "Free software for visualization and analysis of measured values. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "SciDAVis",
+    "entry_url": "https://opensource.muenchen.de/software/scidavis.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -103302,6 +106887,37 @@
     "name": "Scribus",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Scribus",
     "repo_url": "https://sourceforge.net/projects/scribus/"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Scribus",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.scribus.net",
+  "entry_url": "https://opensource.muenchen.de/software/scribus.html",
+  "license": "GPL-3.0",
+  "short_desc": "Scribus is a free desktop publishing program for Linux, Unix, Mac OS X, OS/2 and Windows systems, licensed under the GNU General Public License. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Scribus",
+    "entry_url": "https://opensource.muenchen.de/software/scribus.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -106033,6 +109649,40 @@
    "NL"
   ],
   "merged_count": 2
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Signalo",
+  "repo": "https://github.com/it-at-m/signalo",
+  "repo_key": "github.com/it-at-m/signalo",
+  "entry_url": "https://opensource.muenchen.de/software/signalo.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Signalo is a native Android application that enables users to monitor live network stats of their device.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "android"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Signalo",
+    "entry_url": "https://opensource.muenchen.de/software/signalo.html",
+    "repo_url": "https://github.com/it-at-m/signalo"
+   }
+  ],
+  "catalogue_count": 1
  },
  {
   "source": "NL/code.overheid.nl",
@@ -108968,6 +112618,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "SOAP UI",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.soapui.org/open-source/",
+  "entry_url": "https://opensource.muenchen.de/software/soap-ui.html",
+  "license": "EUPL",
+  "short_desc": "With its user-friendly graphical interface and enterprise-class features, SoapUI enables easy and fast creation and execution of automated functional, regression and load tests. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "SOAP UI",
+    "entry_url": "https://opensource.muenchen.de/software/soap-ui.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -109629,6 +113311,40 @@
   "merged_count": 2
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "SonarQube",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://docs.sonarqube.org",
+  "entry_url": "https://opensource.muenchen.de/software/sonarqube.html",
+  "license": "LGPL",
+  "repo_owner": "SonarSource",
+  "short_desc": "SonarQube is a platform for static analysis and evaluation of the technical quality of source code. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "SonarQube",
+    "entry_url": "https://opensource.muenchen.de/software/sonarqube.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -109880,6 +113596,39 @@
     "name": "SouvereignDeployKit",
     "entry_url": "https://gitlab.opencode.de/oc000150015413/SovereignDeployKit",
     "repo_url": "https://codeberg.org/digitalyapici/SovereignDeployKit"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Spacewalk",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://fedorahosted.org/spacewalk/",
+  "entry_url": "https://opensource.muenchen.de/software/spacewalk.html",
+  "license": "GPL-2.0",
+  "short_desc": "Software repositories (installation files) are managed in Spacewalk.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "archive"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Spacewalk",
+    "entry_url": "https://opensource.muenchen.de/software/spacewalk.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -110464,6 +114213,39 @@
     "name": "Sportello Unico delle Autorizzazioni Ambientali",
     "entry_url": null,
     "repo_url": "https://oros-git.regione.puglia.it/regione-puglia/aet/sportello-ambiente"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Spring",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://spring.io/projects/spring-framework",
+  "entry_url": "https://opensource.muenchen.de/software/spring.html",
+  "license": "Apache-2.0",
+  "short_desc": "Spring open source framework for the Java platform, which is often used for web applications. Spring is modular and offers features like dependency injection or aspect-oriented programming. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Spring",
+    "entry_url": "https://opensource.muenchen.de/software/spring.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -111142,6 +114924,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "squid",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://www.squid-cache.org",
+  "entry_url": "https://opensource.muenchen.de/software/squid.html",
+  "license": "GPL",
+  "short_desc": "squid is a free proxy server and web cache. It is used to provide network transitions of all municipal schools to the Internet as well as the external DMZ services required for this purpose. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "squid",
+    "entry_url": "https://opensource.muenchen.de/software/squid.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "PT/arte",
   "country": "PT",
   "tier": "index",
@@ -111441,6 +115255,39 @@
     "name": "Standard-Validierungsregeln",
     "entry_url": "https://gitlab.opencode.de/xleitstelle/xplanung/validierungsregeln/standard",
     "repo_url": "https://gitlab.opencode.de/xleitstelle/xplanung/validierungsregeln/standard"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Startercode",
+  "repo": "https://github.com/it-at-m/startercode-generator-munich",
+  "repo_key": "github.com/it-at-m/startercode-generator-munich",
+  "landing": "https://github.com/openZH/startercode-generator_openZH",
+  "entry_url": "https://opensource.muenchen.de/software/startercode.html",
+  "license": "GPL",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Startercode is a code generator that generates a Python and R script \"framework\" from each CSV dataset of the Open Data Portal of the City of Munich.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Startercode",
+    "entry_url": "https://opensource.muenchen.de/software/startercode.html",
+    "repo_url": "https://github.com/it-at-m/startercode-generator-munich"
    }
   ],
   "catalogue_count": 1
@@ -112309,6 +116156,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "sudo",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.sudo.ws/",
+  "entry_url": "https://opensource.muenchen.de/software/sudo.html",
+  "license": "ISC",
+  "short_desc": "sudo is a command in Unix and Unix-like operating systems such as Linux or macOS that is used to start processes with the rights of another user.",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur",
+   "security",
+   "sponsor"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "sudo",
+    "entry_url": "https://opensource.muenchen.de/software/sudo.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "IT/developers-italia",
   "country": "IT",
   "tier": "publiccode",
@@ -112452,6 +116333,39 @@
     "name": "SuiteCRM",
     "entry_url": "https://code.gouv.fr/sill/detail?name=SuiteCRM",
     "repo_url": "https://github.com/SuiteCRM/SuiteCRM-Core/releases"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "SuiteCRM",
+  "repo": "https://github.com/salesagility/SuiteCRM",
+  "repo_key": "github.com/salesagility/suitecrm",
+  "landing": "https://suitecrm.com",
+  "entry_url": "https://opensource.muenchen.de/software/suitecrm.html",
+  "license": "AGPL-3.0",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "SuiteCRM is a free customer relationship management application for servers written in PHP.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "SuiteCRM",
+    "entry_url": "https://opensource.muenchen.de/software/suitecrm.html",
+    "repo_url": "https://github.com/salesagility/SuiteCRM"
    }
   ],
   "catalogue_count": 1
@@ -113521,6 +117435,38 @@
     "name": "Sympa",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Sympa",
     "repo_url": "https://github.com/sympa-community"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Sympa",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.sympa.community/",
+  "entry_url": "https://opensource.muenchen.de/software/sympa.html",
+  "license": "GPL-2.0",
+  "short_desc": "Sympa is a software program for managing mailing lists.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Sympa",
+    "entry_url": "https://opensource.muenchen.de/software/sympa.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -115283,6 +119229,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Testcontainers",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://testcontainers.com",
+  "entry_url": "https://opensource.muenchen.de/software/testcontainers.html",
+  "license": "MIT",
+  "short_desc": "Testcontainers is an open source framework for providing throwaway, lightweight instances of databases, message brokers, web browsers, or just about anything that can run in a Docker container.",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Testcontainers",
+    "entry_url": "https://opensource.muenchen.de/software/testcontainers.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "DE/openCode",
   "country": "DE",
   "tier": "publiccode",
@@ -115391,6 +119369,38 @@
     "name": "Testlink",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Testlink",
     "repo_url": "https://github.com/TestLinkOpenSourceTRMS/testlink-code"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "TestLink",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://testlink.org/",
+  "entry_url": "https://opensource.muenchen.de/software/testlink.html",
+  "license": "GPL-2.0",
+  "short_desc": "Web-based free software test management tool. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "TestLink",
+    "entry_url": "https://opensource.muenchen.de/software/testlink.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -116392,6 +120402,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "TRAC",
+  "repo": null,
+  "repo_key": null,
+  "landing": "http://trac.edgewall.org/",
+  "entry_url": "https://opensource.muenchen.de/software/trac.html",
+  "license": "BSD",
+  "short_desc": "A free, web-based project management tool for software development / version management. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "TRAC",
+    "entry_url": "https://opensource.muenchen.de/software/trac.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -117356,6 +121398,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "TypeScript",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.typescriptlang.org/",
+  "entry_url": "https://opensource.muenchen.de/software/typescript.html",
+  "license": "Apache-2.0",
+  "repo_owner": "Microsoft",
+  "short_desc": "TypeScript is a scripting language with language constructs such as classes, inheritance, modules, and anonymous functions. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "TypeScript",
+    "entry_url": "https://opensource.muenchen.de/software/typescript.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -117401,6 +121477,38 @@
     "name": "TYPO3",
     "entry_url": "https://code.gouv.fr/sill/detail?name=TYPO3",
     "repo_url": "https://git.typo3.org/Packages/TYPO3.CMS.git"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "TYPO3",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://typo3.org",
+  "entry_url": "https://opensource.muenchen.de/software/typo3.html",
+  "license": "GPL-2.0",
+  "short_desc": "TYPO3 is a free content management system for websites.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "TYPO3",
+    "entry_url": "https://opensource.muenchen.de/software/typo3.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -118153,6 +122261,39 @@
     "name": "uMap",
     "entry_url": "https://code.gouv.fr/sill/detail?name=uMap",
     "repo_url": "https://github.com/umap-project/umap"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "UMLet",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.umlet.com",
+  "entry_url": "https://opensource.muenchen.de/software/umlet.html",
+  "license": "GPL-3.0",
+  "short_desc": "UMLet is an open-source UML tool with a simple user interface for drawing UML diagrams, creating sequence and activity diagrams from plain text, etc. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "UMLet",
+    "entry_url": "https://opensource.muenchen.de/software/umlet.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -120085,6 +124226,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "uv",
+  "repo": "https://github.com/astral-sh/uv",
+  "repo_key": "github.com/astral-sh/uv",
+  "landing": "https://docs.astral.sh/uv/",
+  "entry_url": "https://opensource.muenchen.de/software/uv.html",
+  "license": "MIT/Apache-2.0",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "uv is an extremely fast Python package and project manager, written in Rust. It provides essential features for Python development \u2014 from installing Python and hacking on simple scripts to working on large projects that support multiple Python versions and platforms.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "uv",
+    "entry_url": "https://opensource.muenchen.de/software/uv.html",
+    "repo_url": "https://github.com/astral-sh/uv"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "GLOBAL/dpg",
   "country": "GLOBAL",
   "tier": "index",
@@ -121400,6 +125575,39 @@
     "name": "VeraCrypt",
     "entry_url": "https://code.gouv.fr/sill/detail?name=VeraCrypt",
     "repo_url": "https://github.com/VeraCrypt"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Veracrypt",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.veracrypt.fr/en/Home.html",
+  "entry_url": "https://opensource.muenchen.de/software/veracrypt.html",
+  "license": "LGPL-3.0",
+  "short_desc": "VeraCrypt is an open source software for data encryption, especially for full or partial encryption of hard disks and removable media. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Veracrypt",
+    "entry_url": "https://opensource.muenchen.de/software/veracrypt.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -122820,6 +127028,38 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Visual Studio Code",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://code.visualstudio.com/",
+  "entry_url": "https://opensource.muenchen.de/software/vscode.html",
+  "repo_owner": "Microsoft",
+  "short_desc": "Visual Studio Code is an integrated development environment (IDE) and enables syntax highlighting, code folding, debugging, auto-completion and version management, among other features. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "development"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Visual Studio Code",
+    "entry_url": "https://opensource.muenchen.de/software/vscode.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/awesome-codegouvfr",
   "country": "FR",
   "tier": "publiccode",
@@ -123092,6 +127332,39 @@
     "name": "VLC",
     "entry_url": "https://code.gouv.fr/sill/detail?name=VLC",
     "repo_url": "https://code.videolan.org/videolan/vlc"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "VLC Media Player",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://www.videolan.org/vlc/index.de.html",
+  "entry_url": "https://opensource.muenchen.de/software/vlc-media-player.html",
+  "license": "GPL-2.0",
+  "short_desc": "Player for playing videos. Offers numerous codec supports. ---",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "VLC Media Player",
+    "entry_url": "https://opensource.muenchen.de/software/vlc-media-player.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -123408,6 +127681,74 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Vue.js",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://vuejs.org",
+  "entry_url": "https://opensource.muenchen.de/software/vuejs.html",
+  "license": "MIT",
+  "short_desc": "Vue.js is a client-side JavaScript web framework for building single-page web applications following the MVVM pattern, but it can also be used in multipage web pages for single sections.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "sponsor",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "crm-service"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Vue.js",
+    "entry_url": "https://opensource.muenchen.de/software/vuejs.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Vuetify",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://vuetifyjs.com",
+  "entry_url": "https://opensource.muenchen.de/software/vuetifyjs.html",
+  "license": "MIT",
+  "short_desc": "Vuetify is a UI library for Vue components in Material Design. In the reference architecture, Vuetify is used for almost all custom development.",
+  "desc_lang": "en",
+  "keywords": [
+   "development",
+   "sponsor",
+   "devstack"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Vuetify",
+    "entry_url": "https://opensource.muenchen.de/software/vuetifyjs.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -123687,6 +128028,42 @@
     "name": "wagtail-tinymce-table",
     "entry_url": "https://github.com/ogcio/wagtail-tinymce-table",
     "repo_url": "https://github.com/ogcio/wagtail-tinymce-table"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Wahllokalsystem",
+  "repo": "https://github.com/it-at-m/Wahllokalsystem/",
+  "repo_key": "github.com/it-at-m/wahllokalsystem",
+  "landing": "https://it-at-m.github.io/Wahllokalsystem/",
+  "entry_url": "https://opensource.muenchen.de/software/wahllokalsystem.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The Wahllokalsystem (polling station system) is an application for recording and transmitting election results from the polling stations to the electoral office.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Wahllokalsystem",
+    "entry_url": "https://opensource.muenchen.de/software/wahllokalsystem.html",
+    "repo_url": "https://github.com/it-at-m/Wahllokalsystem/"
    }
   ],
   "catalogue_count": 1
@@ -125443,6 +129820,40 @@
   "catalogue_count": 1
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Winscp",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://winscp.net",
+  "entry_url": "https://opensource.muenchen.de/software/winscp.html",
+  "license": "GPL",
+  "short_desc": "WinSCP is a program for transferring data securely.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "desktop",
+   "featurefunding"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Winscp",
+    "entry_url": "https://opensource.muenchen.de/software/winscp.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -125531,6 +129942,39 @@
     "name": "Wireshark",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Wireshark",
     "repo_url": "https://gitlab.com/wireshark/wireshark.git"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "WJH Orientierungsrechner",
+  "repo": "https://github.com/it-at-m/wjh-rechner",
+  "repo_key": "github.com/it-at-m/wjh-rechner",
+  "entry_url": "https://opensource.muenchen.de/software/wjh-rechner.html",
+  "license": "MIT",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The WJH-Orientierungsrechner allows for a preliminary calculation of possible funding through the Economic Youth Welfare (WJH) of the City of Munich.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "k8s",
+   "staticsite"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "WJH Orientierungsrechner",
+    "entry_url": "https://opensource.muenchen.de/software/wjh-rechner.html",
+    "repo_url": "https://github.com/it-at-m/wjh-rechner"
    }
   ],
   "catalogue_count": 1
@@ -126017,6 +130461,38 @@
     "name": "WordPress",
     "entry_url": null,
     "repo_url": "https://wordpress.org"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "WordPress",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://de.wordpress.com/",
+  "entry_url": "https://opensource.muenchen.de/software/wordpress.html",
+  "license": "GPL-2.0",
+  "short_desc": "WordPress is the most used free content management system (CMS) on the Internet.",
+  "desc_lang": "en",
+  "keywords": [
+   "application"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "WordPress",
+    "entry_url": "https://opensource.muenchen.de/software/wordpress.html",
+    "repo_url": null
    }
   ],
   "catalogue_count": 1
@@ -127944,6 +132420,41 @@
   "wikidata": "Q71389626"
  },
  {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Zammad",
+  "repo": null,
+  "repo_key": null,
+  "landing": "https://zammad.org",
+  "entry_url": "https://opensource.muenchen.de/software/zammad.html",
+  "license": "AGPL-3.0",
+  "short_desc": "Zammad is a free helpdesk and issue tracking system that enables the connection of various channels such as e-mail and telephone.",
+  "desc_lang": "en",
+  "keywords": [
+   "application",
+   "support",
+   "start2023",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": true,
+  "note": "in production use at the City of Munich",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Zammad",
+    "entry_url": "https://opensource.muenchen.de/software/zammad.html",
+    "repo_url": null
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
   "source": "FR/sill",
   "country": "FR",
   "tier": "index",
@@ -127976,6 +132487,41 @@
     "name": "Zed",
     "entry_url": "https://code.gouv.fr/sill/detail?name=Zed",
     "repo_url": "https://github.com/zed-industries/zed"
+   }
+  ],
+  "catalogue_count": 1
+ },
+ {
+  "source": "DE/opensource.muenchen.de",
+  "country": "DE",
+  "tier": "index",
+  "name": "Zeitmanagementsystem",
+  "repo": "https://github.com/it-at-m/eappointment/",
+  "repo_key": "github.com/it-at-m/eappointment",
+  "landing": "https://it-at-m.github.io/eappointment/",
+  "entry_url": "https://opensource.muenchen.de/software/zeitmanagementsystem.html",
+  "license": "EUPL",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The current appointment system of the city of Munich will be replaced by Zeitmanagementsystem (ZMS) provided by the state of Berlin.",
+  "desc_lang": "en",
+  "keywords": [
+   "eigenentwicklung",
+   "application",
+   "kooperation",
+   "start2021",
+   "k8s"
+  ],
+  "gov_tier": "municipal",
+  "recommended_for_gov": false,
+  "note": "in-house development by the City of Munich",
+  "functions": [],
+  "functions_inferred": false,
+  "catalogue_entries": [
+   {
+    "source": "DE/opensource.muenchen.de",
+    "name": "Zeitmanagementsystem",
+    "entry_url": "https://opensource.muenchen.de/software/zeitmanagementsystem.html",
+    "repo_url": "https://github.com/it-at-m/eappointment/"
    }
   ],
   "catalogue_count": 1

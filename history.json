@@ -1010,7 +1010,334 @@
     "liveness_ok": 88,
     "liveness_unknown": -1
    }
+  },
+  {
+   "run_at": "2026-08-11T21:43:23Z",
+   "started_at": "2026-08-11T22:10:00Z",
+   "trigger": "manual",
+   "duration_s": -1597,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "sources page",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 2698,
+    "filtered_out": 68,
+    "publiccode_tier": 991,
+    "merged_away": 155,
+    "multi_country": 37
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-11T18:38:39Z"
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-11T16:48:34Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-11T18:56:07Z"
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-11T19:40:15Z"
+    },
+    "eu": {
+     "records": 9,
+     "checkpoint_mtime": "2026-08-11T18:44:01Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-11T18:34:06Z"
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-08-11T21:06:35Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-11T14:17:10Z"
+    },
+    "muc": {
+     "records": 141,
+     "checkpoint_mtime": "2026-08-11T21:36:54Z"
+    },
+    "nl": {
+     "records": 134,
+     "checkpoint_mtime": "2026-08-11T18:38:32Z"
+    },
+    "pt": {
+     "records": 88,
+     "checkpoint_mtime": "2026-08-11T21:23:58Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-11T19:32:10Z"
+    }
+   },
+   "translation": {
+    "described": 2406,
+    "source_english": 827,
+    "machine_translated": 1579,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 2272,
+    "inferred": 963,
+    "unclassified": 426
+   },
+   "liveness": {
+    "checked": "2026-08-11T21:37:44Z",
+    "total": 2565,
+    "ok": 2380,
+    "dead": 23,
+    "pending_dead": 1,
+    "unknown": 158,
+    "archived": 35,
+    "newly_dead": [
+     "gitlab.com/henixdevelopment/open-source/squash-tm"
+    ],
+    "revived": []
+   },
+   "filters": {
+    "locale-bundle": 5,
+    "deployment-recipe": 18,
+    "upstream-fork": 38,
+    "ci-plumbing": 4,
+    "org-meta": 3
+   },
+   "delta": {
+    "entries_active": 132,
+    "per_source": {
+     "muc": 141
+    },
+    "liveness_dead": -1,
+    "liveness_ok": -51,
+    "liveness_unknown": 99
+   }
+  },
+  {
+   "run_at": "2026-08-11T21:51:30Z",
+   "started_at": "2026-08-11T22:30:00Z",
+   "trigger": "manual",
+   "duration_s": -2310,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "sources page",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 2698,
+    "filtered_out": 68,
+    "publiccode_tier": 991,
+    "merged_away": 155,
+    "multi_country": 37
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-11T18:38:39Z"
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-11T16:48:34Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-11T18:56:07Z"
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-11T19:40:15Z"
+    },
+    "eu": {
+     "records": 9,
+     "checkpoint_mtime": "2026-08-11T18:44:01Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-11T18:34:06Z"
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-08-11T21:06:35Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-11T14:17:10Z"
+    },
+    "muc": {
+     "records": 141,
+     "checkpoint_mtime": "2026-08-11T21:36:54Z"
+    },
+    "nl": {
+     "records": 134,
+     "checkpoint_mtime": "2026-08-11T18:38:32Z"
+    },
+    "pt": {
+     "records": 88,
+     "checkpoint_mtime": "2026-08-11T21:23:58Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-11T19:32:10Z"
+    }
+   },
+   "translation": {
+    "described": 2406,
+    "source_english": 827,
+    "machine_translated": 1579,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 2272,
+    "inferred": 963,
+    "unclassified": 426
+   },
+   "liveness": {
+    "checked": "2026-08-11T21:44:16Z",
+    "total": 2565,
+    "ok": 2475,
+    "dead": 24,
+    "pending_dead": 2,
+    "unknown": 61,
+    "archived": 43,
+    "newly_dead": [
+     "gitlab.com/opentestfactory"
+    ],
+    "revived": []
+   },
+   "filters": {
+    "locale-bundle": 5,
+    "deployment-recipe": 18,
+    "upstream-fork": 38,
+    "ci-plumbing": 4,
+    "org-meta": 3
+   },
+   "delta": {
+    "entries_active": 0,
+    "liveness_dead": 1,
+    "liveness_ok": 95,
+    "liveness_unknown": -97
+   }
   }
  ],
- "updated_at": "2026-08-11T21:31:22Z"
+ "updated_at": "2026-08-11T21:51:30Z"
 }

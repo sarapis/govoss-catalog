@@ -91,7 +91,8 @@ def check_github(keys, token):
                 break
             except Exception as e:
                 err = e
-                time.sleep(3 * (attempt + 1))   # secondary rate limits need real backoff
+                # GitHub secondary rate limits want real backoff, not a token pause
+                time.sleep(5 * (2 ** attempt))
         if err is not None:
             for k, _, _ in batch:
                 out[k] = {"status": f"error:{type(err).__name__}"}
@@ -107,7 +108,44 @@ def check_github(keys, token):
                 out[k] = {"status": 200, "archived": node.get("isArchived"),
                           "empty": node.get("isEmpty"), "last_push": node.get("pushedAt")}
         print(f"    github: {min(i+B, len(parsed))}/{len(parsed)}", flush=True)
-        time.sleep(0.4)
+        time.sleep(1.0)
+
+    # A whole batch failing marks 100 repos "unknown" in one go — it happened twice,
+    # and an unknown spike is indistinguishable from real coverage loss at a glance.
+    # Sweep the failures once more after a pause, in SMALL batches: if the cause was
+    # a secondary rate limit, smaller queries after a cool-down get through.
+    failed = [k for k, v in out.items() if isinstance(v.get("status"), str)
+              and v["status"].startswith("error:")]
+    if failed:
+        print(f"    github: re-sweeping {len(failed)} failures in batches of 20 "
+              f"after a 20s cool-down", flush=True)
+        time.sleep(20)
+        idx = {k: (k.split("/")[1], k.split("/")[2]) for k in failed
+               if len(k.split("/")) >= 3}
+        keys = list(idx)
+        for i in range(0, len(keys), 20):
+            chunk = keys[i:i + 20]
+            frags = "\n".join(
+                f'  r{n}: repository(owner: {json.dumps(idx[k][0])}, '
+                f'name: {json.dumps(idx[k][1])}) '
+                f'{{ nameWithOwner isArchived isEmpty pushedAt }}'
+                for n, k in enumerate(chunk))
+            try:
+                d2 = post_json("https://api.github.com/graphql",
+                               {"query": "{\n" + frags + "\n}"}, hdr)
+            except Exception:
+                time.sleep(5)
+                continue
+            data2 = (d2 or {}).get("data") or {}
+            for n, k in enumerate(chunk):
+                node = data2.get(f"r{n}")
+                out[k] = ({"status": 404} if node is None else
+                          {"status": 200, "archived": node.get("isArchived"),
+                           "empty": node.get("isEmpty"), "last_push": node.get("pushedAt")})
+            time.sleep(1.5)
+        still = sum(1 for k in failed if isinstance(out[k].get("status"), str)
+                    and out[k]["status"].startswith("error:"))
+        print(f"    github: {len(failed) - still} recovered, {still} still unknown")
     return out
 
 

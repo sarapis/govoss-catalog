@@ -328,6 +328,85 @@ def be():
     return out
 
 
+def muc():
+    """Munich — opensource.muenchen.de, the City of Munich's open source portal.
+
+    MUNICIPAL, not national. In scope on the same basis as iMio (Walloon
+    municipalities) and Canada's municipal tier: the criterion is fitness for
+    government use, not tier of government. Tagged gov_tier="municipal".
+
+    The site is VitePress and has no JSON API — its catalogue IS a directory of
+    one markdown file per package in it-at-m/opensource.muenchen.de, loaded at
+    build time by createContentLoader("software/*.md"). So the git repo is the
+    data source, like Sweden's recutils file. Frontmatter carries title, license,
+    tags and (for in-house work) a `code` repo URL; the body is the English
+    description, with German versions under de/software/.
+
+    Two classes, both kept and distinguishable:
+      tag `eigenentwicklung` + a `code:` url  -> software Munich BUILT
+      no `code:` url                          -> software Munich USES (Ansible,
+                                                 7-Zip): a recommendation signal,
+                                                 the same axis as France's SILL
+    Files are fetched from raw.githubusercontent (not rate-limited like the API),
+    so 142 entries cost 142 cheap requests rather than 142 API calls.
+    """
+    listing = get("https://api.github.com/repos/it-at-m/opensource.muenchen.de"
+                  "/contents/software", timeout=60,
+                  headers=({"Authorization": "Bearer " + os.environ["GITHUB_TOKEN"]}
+                           if os.environ.get("GITHUB_TOKEN") else None))
+    names = [f["name"] for f in listing if f.get("name", "").endswith(".md")]
+    print(f"    {len(names)} package files in it-at-m/opensource.muenchen.de")
+
+    RAW = "https://raw.githubusercontent.com/it-at-m/opensource.muenchen.de/HEAD/software/"
+
+    def one(fn):
+        try:
+            txt = get(RAW + urllib.parse.quote(fn), timeout=25, raw=True,
+                      tries=2).decode("utf-8", "replace")
+        except Exception:
+            return None
+        if not txt.startswith("---"):
+            return None
+        parts = txt.split("---", 2)
+        if len(parts) < 3:
+            return None
+        try:
+            fm = yaml.safe_load(parts[1]) or {}
+        except Exception:
+            return None
+        if not isinstance(fm, dict) or not fm.get("title"):
+            return None
+        body = parts[2].strip()
+        # first paragraph before the "---" separator is the summary
+        summary = re.split(r"\n\s*---\s*\n", body)[0].strip()
+        summary = re.sub(r"\*\*|__|\[([^\]]+)\]\([^)]+\)", r"\1", summary)
+        summary = re.sub(r"\s+", " ", summary)
+
+        tags = [t for t in (fm.get("tags") or []) if isinstance(t, str)]
+        code = fm.get("code")
+        built = bool(code) or "eigenentwicklung" in tags
+        return rec("DE/opensource.muenchen.de", "DE", "index",
+                   fm.get("title"), code or None,
+                   landing=fm.get("developerlink") or None,
+                   entry_url=f"https://opensource.muenchen.de/software/{fn[:-3]}.html",
+                   license=fm.get("license") or None,
+                   repo_owner="Landeshauptstadt Muenchen" if built else fm.get("developer"),
+                   short_desc=summary[:400] or None,
+                   desc_lang="en" if summary else None,
+                   keywords=tags[:10],
+                   gov_tier="municipal",
+                   recommended_for_gov=not built,
+                   note=("in-house development by the City of Munich" if built
+                         else "in production use at the City of Munich"))
+
+    with ThreadPoolExecutor(max_workers=10) as ex:
+        out = [r for r in ex.map(one, names) if r]
+    b = sum(1 for r in out if r.get("repo"))
+    print(f"    -> {len(out)} entries ({b} built in-house with a repo, "
+          f"{len(out)-b} third-party in production use)")
+    return out
+
+
 def pt():
     """Portugal — ARTE, Agencia para a Reforma Tecnologica do Estado (github.com/amagovpt).
 
@@ -685,6 +764,7 @@ def dpg():
 
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
            "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "pt": pt,
+           "muc": muc,
            "dpg": dpg,
            "nlreg": nl_register}
 

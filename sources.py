@@ -44,6 +44,20 @@ SOURCES = {
                 "project id and the listing is generated from publiccode.yml in that "
                 "GitLab - so the forge API reproduces the official directory exactly.",
     },
+    "DE/opensource.muenchen.de": {
+        "label": "Munich Open Source", "country": "DE", "flag": "\U0001F1E9\U0001F1EA",
+        "site": "https://opensource.muenchen.de/software/",
+        "api": "https://github.com/it-at-m/opensource.muenchen.de/tree/main/software",
+        "route": "markdown files in git", "claim": "built or used by the City of Munich",
+        "note": "MUNICIPAL, in scope on the same basis as iMio and Canada's municipal tier - "
+                "the criterion is fitness for government use, not tier of government. The site "
+                "is VitePress with no JSON API; its catalogue IS a directory of one markdown "
+                "file per package, loaded at build time by createContentLoader, so the git repo "
+                "is the source. 141 entries split two ways: 56 built in-house (tag "
+                "eigenentwicklung, with a code: repo url) and 85 third-party products in "
+                "production use - the same built-vs-recommended split as France's "
+                "awesome-codegouvfr and SILL.",
+    },
     "NL/code.overheid.nl": {
         "label": "code.overheid.nl", "country": "NL", "flag": "\U0001F1F3\U0001F1F1",
         "site": "https://code.overheid.nl/",
@@ -211,6 +225,34 @@ SURVEY = [
                "now ingested. Still unidentified: hosting_platform:city_of_ghent (a Belgian "
                "municipality, likely a handful of repos) and hosting_platform:dmrid_dits "
                "(github.com/DMRID is an individual user with one repo, not a registry)."},
+    {"country": "meta", "flag": "\U0001F4D6", "name": "OSOR \"OSS repositories\" list",
+     "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/oss-repositories",
+     "status": "discovery-source",
+     "detail": "The best discovery resource found so far, and it should have been checked "
+               "first: a hand-curated, server-rendered directory of ~29 public-sector OSS "
+               "catalogues with owner, language and geographic coverage. Unlike the EU OSS "
+               "Catalogue on the same portal, this page renders fine. It confirmed 6 sources "
+               "already ingested and surfaced these NOT yet evaluated in depth: OS2 (os2.eu, "
+               "Danish municipal community - the Denmark source never found by guessing), "
+               "dev.egov.bg (Bulgaria's e-government dev portal), ICT ReUse Belgium, "
+               "Helsingborg City (SE municipal), Adullact (FR, runs gitlab.adullact.net), "
+               "Forja redIRIS (ES academic) and OW2. publiccode.directory is a dead domain."},
+    {"country": "MD", "flag": "\U0001F1F2\U0001F1E9", "name": "OpenCode Moldova",
+     "url": "https://opencode.md/en/registry/", "status": "needs-research",
+     "detail": "\"Registry of Open Source Solutions\" - a real national portal covering DPGs, "
+               "open licences, approved git repositories and requirements for open source "
+               "solutions. But it is WordPress with only stock post types (no custom "
+               "solutions type in /wp-json/wp/v2/types) and the registry page contains zero "
+               "repository links, so what is published looks like policy and guidance rather "
+               "than a structured software list. Worth a closer read before writing off - it "
+               "would be a new country."},
+    {"country": "ES", "flag": "\U0001F1EA\U0001F1F8", "name": "Comptoir du Libre (crosswalk)",
+     "url": "https://comptoir-du-libre.org/api/v1/softwares.json", "status": "ready",
+     "detail": "Not a national catalogue but a CROSSWALK, and an open one: 780 entries in a "
+               "single JSON with url_repository, wikidata, sill, cnll, framalibre and "
+               "wikipedia ids on the same row. Would improve dedupe rather than add coverage - "
+               "it maps SILL ids to Wikidata QIDs to repo URLs, which is exactly the identity "
+               "resolution this catalogue does by hand."},
     {"country": "n/a", "flag": "\u26A0", "name": "UNODC GlobE \"Directory of Open-Source Registries\"",
      "url": "https://globenetwork.unodc.org/globenetwork/en/directory-of-open-source-registries/index.html",
      "status": "false-lead",
