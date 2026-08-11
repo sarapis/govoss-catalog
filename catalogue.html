@@ -1,4 +1,18 @@
+<!--
+  MACHINE-READABLE DATA AVAILABLE - do not scrape this page.
+    GET /entries.json        all 1995 entries, structured fields
+    GET /meta.json           category enum, sources, counts, generated_at
+    GET /by-product.json     proprietary product -> open source alternatives
+    GET /by-category/<key>.json
+    GET /v1/entries.json     versioned alias
+    GET /status.json         freshness, last run, changelog
+  CORS open. No auth. Full notes: /llms.txt
+-->
 <title>European public-sector open source &mdash; aggregated catalogue</title>
+<link rel="alternate" type="application/json" href="/entries.json" title="All entries as JSON">
+<link rel="alternate" type="application/json" href="/meta.json" title="Catalogue metadata">
+<link rel="alternate" type="application/json" href="/status.json" title="Build status">
+<meta name="description" content="1995 public-sector open source entries from eight European national catalogues. JSON API at /entries.json.">
 <style>
 :root {
   --paper:#F7F8F7; --raised:#EDEFEE; --sunk:#E4E7E5;
@@ -37,6 +51,11 @@ h1 { font-size:clamp(1.4rem,3.4vw,1.9rem); font-weight:640; letter-spacing:-.02e
       margin:0; text-wrap:balance; }
 .sub { color:var(--slate); margin:.5rem 0 0; max-width:70ch; font-size:.95rem; }
 
+.apibar { background:var(--accent-dim); border-left:3px solid var(--accent);
+  border-radius:2px; padding:.75rem 1rem; margin:1.2rem 0 0; font-size:.9rem;
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.35rem .7rem; }
+.apibar code { font-family:var(--mono); font-size:.82em; }
+.apibar a { color:var(--accent); }
 .stats { display:flex; flex-wrap:wrap; gap:.1rem 2.2rem; margin:1.4rem 0 0;
           padding:.9rem 0; border-top:1px solid var(--hairline);
           border-bottom:1px solid var(--hairline); }
@@ -117,6 +136,15 @@ footer { margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hairl
   <p class="sub">Eight national catalogues, harvested first-hand and joined on repository URL.
      Every entry asserts fitness for government use &mdash; either a government built it for
      government work, or a government recommends it.</p>
+
+  <p class="apibar">
+    <b>Building something?</b> Don't scrape this page &mdash; there is a JSON API.
+    <a href="/entries.json"><code>/entries.json</code></a>
+    <a href="/meta.json"><code>/meta.json</code></a>
+    <a href="/by-product.json"><code>/by-product.json</code></a>
+    <a href="/llms.txt">how to use it</a>
+    &middot; <a href="/status.html">status &amp; change log</a>
+  </p>
 
   <div class="stats">
     <div class="stat"><b>1995</b><span>entries</span></div>

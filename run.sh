@@ -53,14 +53,23 @@ echo "════════════════════════�
 # Keep the previous catalogue as a rollback point and to diff counts against.
 [ -f catalog.json ] && cp catalog.json out/catalog.prev.json
 
+mkdir -p out
+: > out/steps.tsv          # fresh per run; runlog.py reads it
+STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+TRIGGER="${GOVOSS_TRIGGER:-manual}"
+
 step () {
+  local label="$1"; shift
   echo ""
-  echo "── $1 ──────────────────────────────────────────"
-  shift
-  if ! "$@"; then
-    echo "!! step failed: $* (continuing — later steps still add value)"
-    return 1
+  echo "── $label ──────────────────────────────────────────"
+  if "$@"; then
+    printf '%s\t0\n' "$label" >> out/steps.tsv
+    return 0
   fi
+  local code=$?
+  printf '%s\t%s\n' "$label" "$code" >> out/steps.tsv
+  echo "!! step failed: $* (exit $code; continuing — later steps still add value)"
+  return $code
 }
 
 step "harvest"      "$PY" -u harvest.py
@@ -101,6 +110,9 @@ if lv["newly_dead"]:
     for k in lv["newly_dead"][:10]:
         print(f"     {k}")
 PY
+
+step "run log"      "$PY" -u runlog.py "$STARTED" "$TRIGGER"
+step "status page"  "$PY" -u build_status.py
 
 echo ""
 echo "done  $(date -u +%Y-%m-%dT%H:%M:%SZ)"

@@ -1,0 +1,249 @@
+{
+ "schema": 1,
+ "runs": [
+  {
+   "run_at": "2026-08-11T12:54:52Z",
+   "started_at": "2026-08-11T12:37:37Z",
+   "trigger": "launchd",
+   "duration_s": 1035,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 2179,
+    "filtered_out": 0,
+    "publiccode_tier": 1057,
+    "merged_away": 0,
+    "multi_country": 0
+   },
+   "sources": {
+    "fr": {
+     "records": 687
+    },
+    "it": {
+     "records": 550
+    },
+    "de": {
+     "records": 476
+    },
+    "be": {
+     "records": 236
+    },
+    "se": {
+     "records": 148
+    },
+    "fi": {
+     "records": 72
+    },
+    "eu": {
+     "records": 10
+    },
+    "nl": {
+     "records": 0
+    }
+   },
+   "translation": null,
+   "categorisation": null,
+   "liveness": {
+    "checked": "2026-08-11T12:54:00Z",
+    "total": 1937,
+    "ok": 1802,
+    "dead": 83,
+    "pending_dead": null,
+    "unknown": 50,
+    "archived": 15,
+    "newly_dead": [
+     "gitlab.huma-num.fr/datasphere/heimdall",
+     "gitlab.consiglio.puglia.it/root/didoc4"
+    ],
+    "revived": []
+   },
+   "filters": {},
+   "_note": "Seeded from ~/Library/Logs/govoss-harvest.log. Predates the dedupe, filter and JSON export steps, and predates the liveness dead-verdict confirmation pass - hence the higher dead count."
+  },
+  {
+   "run_at": "2026-08-11T14:51:27Z",
+   "started_at": "2026-08-11T14:20:00Z",
+   "trigger": "manual",
+   "duration_s": 1887,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 1995,
+    "filtered_out": 58,
+    "publiccode_tier": 971,
+    "merged_away": 127,
+    "multi_country": 15
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-11T13:50:47Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-11T14:23:23Z"
+    },
+    "eu": {
+     "records": 10,
+     "checkpoint_mtime": "2026-08-11T12:48:02Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-11T14:16:58Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-11T14:17:10Z"
+    },
+    "nl": {
+     "records": 0,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    }
+   },
+   "translation": {
+    "described": 1777,
+    "source_english": 379,
+    "machine_translated": 1398,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 1742,
+    "inferred": 453,
+    "unclassified": 253
+   },
+   "liveness": {
+    "checked": "2026-08-11T13:15:27Z",
+    "total": 1937,
+    "ok": 1865,
+    "dead": 22,
+    "pending_dead": 1,
+    "unknown": 48,
+    "archived": 15,
+    "newly_dead": [
+     "github.com/open-io/oio-sds",
+     "github.com/knime/knime-core",
+     "github.com/aziendazero/siavr",
+     "github.com/aziendazero/screening",
+     "github.com/ingv/hyp2000-ws",
+     "github.com/comunedirimini/gatewayfederaspid",
+     "github.com/comunedirimini/istanzeedichiarazioni",
+     "github.com/aziendazero/ecm",
+     "github.com/aziendazero/area",
+     "github.com/ministero-salute/sdk-lib-componnets",
+     "github.com/provincia-pescara/gte-abruzzo",
+     "github.com/openkfw/design-tokens",
+     "github.com/vrk-kpa/ptv-releases",
+     "github.com/yleisradio/yle-api-template",
+     "github.com/soikea/sitoumus2050-public",
+     "gitlab.com/henixdevelopment/open-source/squash-tm",
+     "gitlab.com/opentestfactory",
+     "gitlab.com/comunedicagliari/componenti_icare",
+     "git.centos.org/project/rpms",
+     "git.code.sf.net/p/opencamera/code",
+     "turku.fi/github",
+     "turku.fi/github-turkufi"
+    ],
+    "revived": []
+   },
+   "filters": {
+    "locale-bundle": 5,
+    "deployment-recipe": 18,
+    "upstream-fork": 30,
+    "ci-plumbing": 4,
+    "org-meta": 1
+   },
+   "delta": {
+    "entries_active": -184,
+    "per_source": {
+     "de": 1
+    },
+    "liveness_dead": -61,
+    "liveness_ok": 63,
+    "liveness_unknown": -2
+   }
+  }
+ ],
+ "updated_at": "2026-08-11T14:51:27Z"
+}

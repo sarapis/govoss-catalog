@@ -247,6 +247,8 @@ def build():
         subset = [e for e in entries if key in e["category_keys"]]
         sizes[f"by-category/{key}.json"] = w(f"by-category/{key}.json", subset)
 
+    write_agent_files(entries, meta, by_product)
+
     print(f"exported {len(entries)} entries  (schema {SCHEMA_VERSION}, {GENERATED_AT})")
     for k in ("entries.json", "meta.json", "by-product.json"):
         print(f"   {k:22} {sizes[k]/1024:8.0f} KB")
@@ -260,6 +262,101 @@ def build():
               f"(seed rot): {', '.join(orphans)}")
     else:
         print("\n   every replaces.json key matches a catalogue entry")
+
+
+def write_agent_files(entries, meta, by_product):
+    """llms.txt / robots.txt / sitemap.xml — generated, so the counts in them can
+    never drift from the data they describe."""
+    cats = "\n".join(f"  {c['key']:22} {c['label']:34} {c['count']}" for c in meta["categories"])
+    srcs = "\n".join(f"  {s['name']:22} {s['count']}" for s in meta["sources"])
+    gaps = meta["known_gaps"]
+    nl = chr(10)
+    txt = f"""# govoss-catalog
+
+> Aggregated catalogue of national government open source software, harvested first-hand
+> from eight European national catalogues. {len(entries)} entries. Generated {meta['generated_at']}.
+
+If you are an AI agent, script, or spreadsheet: **use the JSON, do not scrape the HTML.**
+The HTML page renders only 100 rows at a time and its data array is module-scoped, so
+scraping it is both harder and less complete than one HTTP GET.
+
+## Endpoints (static files, CORS open, no auth, no rate limit)
+
+  GET /entries.json              all {len(entries)} entries, one array, structured fields
+  GET /meta.json                 category enum, sources, licences, counts, known gaps
+  GET /by-product.json           inverted index: proprietary product -> alternatives
+  GET /by-category/<key>.json    one file per category, keys listed below
+  GET /v1/entries.json           versioned alias - pin this
+  GET /status.json               freshness, last run, per-source counts, change log
+  GET /                          the human page
+
+These also redirect to /entries.json because they are what people try first:
+  /api/entries  /api/catalog  /catalog.json  /data.json
+
+## Answering "what can we stop paying for?"
+
+/by-product.json is keyed by proprietary product name. {meta['counts']['with_replaces']} entries
+carry mappings covering {len(by_product)} products. Two GETs answer a whole licence inventory.
+
+Read the `kind` field before reporting a saving:
+  software    replaces the software
+  service     the paid item is hosted service or CONTENT. A CMS does not replace hosting;
+              an LMS does not produce training content.
+  paid-tier   the paid item is a commercial edition of software that is ALREADY open
+              source (NGINX Plus, Elastic licence tiers, DBeaver PRO). Often the cheapest
+              win: no migration, just a renewal you stop.
+
+`confidence` is strong | partial | adjacent. Do not treat adjacent as a saving.
+An empty array means NOT MAPPED, not "no European alternative exists".
+
+## Honesty flags you should carry into anything you publish
+
+  translated_from          ~74% of descriptions are MACHINE TRANSLATIONS from de/it/fr/fi/sv.
+                           description_original holds the source wording.
+  categories_inferred      true = category inferred by keyword rules, not declared upstream
+  link_dead                repository URL confirmed gone over 2+ consecutive checks
+  merged_from              how many catalogue records were merged into this entry
+  licence_spdx             null where the upstream string was not a real SPDX id
+                           ("GPLv3+", "MIT licence"). Use `licence` for the raw string.
+  generated_at             build time. Harvest runs weekly; REDEPLOY IS MANUAL, so trust
+                           generated_at over the deploy date.
+
+## Categories ({len(meta['categories'])})
+
+{cats}
+
+## Sources
+
+{srcs}
+
+## Known gaps
+
+Absence is a finding. Categories where the European commons appears to have nothing:
+{nl.join('  - ' + g for g in gaps['no_results_observed_for'])}
+
+Not replaceable by software at all:
+{nl.join('  - ' + g for g in gaps['not_replaceable_by_software'])}
+
+Unresolved national catalogues: {', '.join(gaps['unresolved_national_catalogues'])}
+Pending an API key: {', '.join(gaps['needs_api_key'])}
+
+The EU's own aggregate catalogue is deliberately NOT a source: its pager, facets and
+search all ignore query strings, so only 20 of its 1,084 solutions are reachable.
+"""
+    open(f"{SITE}/llms.txt", "w").write(txt)
+    open(f"{SITE}/robots.txt", "w").write(
+        "User-agent: *\nAllow: /\n\n"
+        "# Structured data - prefer these over parsing the HTML\n"
+        "# /entries.json  /meta.json  /by-product.json  /status.json  /llms.txt\n"
+        "Sitemap: https://govoss-catalog.vercel.app/sitemap.xml\n")
+    urls = ["/", "/status.html", "/entries.json", "/meta.json",
+            "/by-product.json", "/llms.txt"]
+    open(f"{SITE}/sitemap.xml", "w").write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f'<url><loc>https://govoss-catalog.vercel.app{u}</loc>'
+                  f'<lastmod>{meta["generated_at"][:10]}</lastmod></url>\n' for u in urls)
+        + "</urlset>\n")
 
 
 if __name__ == "__main__":
