@@ -114,9 +114,17 @@ SURVEY = [
                "The federal inventory that defined the code.json schema is gone. Its "
                "schema outlived it - Canada still uses it."},
     {"country": "IN", "flag": "\U0001F1EE\U0001F1F3", "name": "OpenForge",
-     "url": "https://openforge.gov.in/", "status": "ready",
-     "detail": "Tuleap Community Edition with a working REST API (/api/projects returns "
-               "public projects with git resources). Ingestable; not yet added."},
+     "url": "https://openforge.gov.in/", "status": "no-code",
+     "detail": "Operational as a SERVICE but empty as a catalogue. Tuleap Community "
+               "Edition 16.12 (current), CORS-open REST API, 1,502 active public projects "
+               "with real names (DigiLocker toolkits, eGov SmartCity, EPrabandhan) - but "
+               "ZERO accessible source code. /api/projects/<id>/git returns an empty "
+               "repositories array for 40 of 40 sampled projects; frs_packages is empty; "
+               "the file-release pages say \"empty\"; and 0 of 25 git plugin pages carry a "
+               "clonable URL. Not auth-gated - there is simply nothing published. Adding it "
+               "would inject 1,502 entries with no repository URL, which is both the dedupe "
+               "identity and the whole promise of the catalogue. Re-check periodically: if "
+               "code lands, this becomes the largest single source here."},
     {"country": "TW", "flag": "\U0001F1F9\U0001F1FC", "name": "Public Code Platform (moda)",
      "url": "https://civictech.moda.gov.tw/", "status": "needs-research",
      "detail": "Ministry of Digital Affairs runs a central government code repository. "

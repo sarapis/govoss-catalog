@@ -9,6 +9,7 @@ S = importlib.util.module_from_spec(_s); _s.loader.exec_module(S)
 
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 STATUS_LABEL = {"ready": "ready to add", "retired": "retired", "broken": "broken",
+                "no-code": "no code published",
                 "needs-research": "needs research", "unresolved": "unresolved",
                 "different-shape": "different shape"}
 
@@ -92,7 +93,7 @@ tr.note {{ }}
 .st {{ font-family:var(--mono); font-size:.65rem; letter-spacing:.07em; text-transform:uppercase;
   padding:.12rem .45rem; border-radius:3px; white-space:nowrap; }}
 .st-ready {{ color:var(--good); border:1px solid var(--good); }}
-.st-retired,.st-broken {{ color:var(--bad); border:1px solid var(--bad); }}
+.st-retired,.st-broken,.st-no-code {{ color:var(--bad); border:1px solid var(--bad); }}
 .st-needs-research,.st-unresolved {{ color:var(--warn); border:1px solid var(--warn); }}
 .st-different-shape {{ color:var(--slate); border:1px solid var(--hairline); }}
 .bar {{ background:var(--accent-dim); border-left:3px solid var(--accent); border-radius:2px;
