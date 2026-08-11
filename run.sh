@@ -10,8 +10,12 @@
 #   filters      flags non-software (forks, CI plumbing, deployment recipes) as
 #                excluded; runs AFTER taxonomy so hidden rows still carry
 #                functions for when the UI toggle reveals them
+#   dedupe       merges records for the same software (QID, then repo URL). Must
+#                run AFTER filters so forks are already gone, and BEFORE export
 #   liveness     diffs against the previous liveness.json to find newly-dead repos
 #   build_ui     regenerates catalogue.html from the finished catalog.json
+#   build_site   assembles site/ from tracked sources (html + vercel.json)
+#   json export  writes site/entries.json + meta.json + by-product + by-category
 #
 # Safe to re-run. Harvest checkpoints per source in cache/, so a network blip
 # costs one source, not the whole run.
@@ -63,8 +67,11 @@ step "harvest"      "$PY" -u harvest.py
 step "translations" "$PY" -u merge_translations.py
 step "taxonomy"     "$PY" -u taxonomy.py
 step "filters"      "$PY" -u filters.py
+step "dedupe"       "$PY" -u dedupe.py
 step "liveness"     "$PY" -u liveness.py
 step "build page"   "$PY" -u build_ui.py
+step "assemble site" bash build_site.sh
+step "json export"  "$PY" -u export_json.py
 
 # ---- did the catalogue shrink unexpectedly? A source silently returning
 # ---- nothing is the failure mode that looks like success.

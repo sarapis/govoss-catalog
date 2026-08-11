@@ -1,0 +1,261 @@
+{
+  "_README": {
+    "purpose": "Curated map: catalogue entry -> proprietary products it can replace. Inverts the lookup so a buyer can start from an invoice line rather than from a solution.",
+    "status": "CURATED AND PARTIAL. Hand-seeded, not exhaustive, not authoritative. Absence of a mapping is NOT evidence that no replacement exists.",
+    "keyed_by": "catalogue entry name, matched case-insensitively. `qid` is recorded where known so a rename upstream does not silently orphan the mapping. export_json.py WARNS on keys that match nothing, so this file cannot rot unnoticed.",
+    "confidence": {
+      "strong": "like-for-like functional substitute for the common use case",
+      "partial": "covers the main use case with real gaps",
+      "adjacent": "same domain, different shape - needs a workflow change"
+    },
+    "kind": {
+      "software": "replaces the software itself",
+      "service": "the paid item is a hosted SERVICE or CONTENT subscription; self-hosting this replaces the software but you still need hosting/content. Drupal does not replace hosting; Moodle does not produce training content.",
+      "paid-tier": "the paid item is a commercial edition of software that is ALREADY open source. Usually the cheapest win in a procurement review - often no migration at all, just a licence you stop renewing."
+    },
+    "how_to_extend": "Add entries here, or declare them upstream in publiccode.yml as a top-level `replaces:` list (non-standard extension; harvest.py picks it up if present so publishers can own their own claims)."
+  },
+
+  "LimeSurvey": [
+    {"product": "SurveyMonkey", "vendor": "Momentive", "confidence": "strong", "kind": "software"},
+    {"product": "SurveyGizmo", "vendor": "Alchemer", "confidence": "strong", "kind": "software"},
+    {"product": "Alchemer", "vendor": "Alchemer", "confidence": "strong", "kind": "software"},
+    {"product": "Qualtrics", "vendor": "Qualtrics", "confidence": "partial", "kind": "software"},
+    {"product": "Typeform", "vendor": "Typeform", "confidence": "partial", "kind": "software"}
+  ],
+  "Zammad": [
+    {"product": "Zendesk", "vendor": "Zendesk", "confidence": "strong", "kind": "software"},
+    {"product": "IssueTrak", "vendor": "Issuetrak", "confidence": "strong", "kind": "software"},
+    {"product": "Track-It!", "vendor": "BMC", "confidence": "strong", "kind": "software"},
+    {"product": "Freshdesk", "vendor": "Freshworks", "confidence": "strong", "kind": "software"}
+  ],
+  "iTop": [
+    {"product": "ServiceNow", "vendor": "ServiceNow", "confidence": "partial", "kind": "software"},
+    {"product": "Track-It!", "vendor": "BMC", "confidence": "strong", "kind": "software"},
+    {"product": "IssueTrak", "vendor": "Issuetrak", "confidence": "strong", "kind": "software"}
+  ],
+  "Apache Guacamole": [
+    {"product": "GoToMyPC", "vendor": "GoTo", "confidence": "strong", "kind": "software"},
+    {"product": "Citrix Virtual Apps", "vendor": "Citrix", "confidence": "partial", "kind": "software"},
+    {"product": "TeamViewer", "vendor": "TeamViewer", "confidence": "partial", "kind": "software"},
+    {"product": "LogMeIn", "vendor": "GoTo", "confidence": "strong", "kind": "software"}
+  ],
+  "Remmina": [
+    {"product": "GoToMyPC", "vendor": "GoTo", "confidence": "partial", "kind": "software"},
+    {"product": "TeamViewer", "vendor": "TeamViewer", "confidence": "partial", "kind": "software"}
+  ],
+  "RustDesk": [
+    {"product": "TeamViewer", "vendor": "TeamViewer", "confidence": "strong", "kind": "software"},
+    {"product": "GoToMyPC", "vendor": "GoTo", "confidence": "strong", "kind": "software"},
+    {"product": "AnyDesk", "vendor": "AnyDesk", "confidence": "strong", "kind": "software"}
+  ],
+
+  "LibreOffice": [
+    {"product": "Microsoft Office", "vendor": "Microsoft", "confidence": "strong", "kind": "software"},
+    {"product": "Microsoft 365", "vendor": "Microsoft", "confidence": "partial", "kind": "service"}
+  ],
+  "OnlyOffice": [
+    {"product": "Microsoft 365", "vendor": "Microsoft", "confidence": "partial", "kind": "service"},
+    {"product": "Google Workspace", "vendor": "Google", "confidence": "partial", "kind": "service"}
+  ],
+  "Collabora": [
+    {"product": "Microsoft 365", "vendor": "Microsoft", "confidence": "partial", "kind": "service"}
+  ],
+  "NextCloud Server": [
+    {"product": "Dropbox", "vendor": "Dropbox", "confidence": "strong", "kind": "software"},
+    {"product": "Box", "vendor": "Box", "confidence": "strong", "kind": "software"},
+    {"product": "SharePoint", "vendor": "Microsoft", "confidence": "partial", "kind": "software"},
+    {"product": "Google Drive", "vendor": "Google", "confidence": "strong", "kind": "service"}
+  ],
+
+  "Moodle": [
+    {"product": "Blackboard", "vendor": "Anthology", "confidence": "strong", "kind": "software"},
+    {"product": "Canvas", "vendor": "Instructure", "confidence": "strong", "kind": "software"},
+    {"product": "LinkedIn Learning", "vendor": "Microsoft", "confidence": "adjacent", "kind": "service"},
+    {"product": "Pluralsight", "vendor": "Pluralsight", "confidence": "adjacent", "kind": "service"},
+    {"product": "GO1", "vendor": "GO1", "confidence": "adjacent", "kind": "service"}
+  ],
+  "ILIAS": [
+    {"product": "Blackboard", "vendor": "Anthology", "confidence": "strong", "kind": "software"}
+  ],
+
+  "Matomo": [
+    {"product": "Google Analytics", "vendor": "Google", "confidence": "strong", "kind": "software"},
+    {"product": "Adobe Analytics", "vendor": "Adobe", "confidence": "partial", "kind": "software"}
+  ],
+  "Plausible": [
+    {"product": "Google Analytics", "vendor": "Google", "confidence": "strong", "kind": "software"}
+  ],
+
+  "Mattermost": [
+    {"product": "Slack", "vendor": "Salesforce", "confidence": "strong", "kind": "software"},
+    {"product": "Microsoft Teams", "vendor": "Microsoft", "confidence": "partial", "kind": "software"}
+  ],
+  "Element": [
+    {"product": "Slack", "vendor": "Salesforce", "confidence": "partial", "kind": "software"},
+    {"product": "Microsoft Teams", "vendor": "Microsoft", "confidence": "partial", "kind": "software"}
+  ],
+  "Jitsi": [
+    {"product": "Zoom", "vendor": "Zoom", "confidence": "strong", "kind": "software"},
+    {"product": "GoToMeeting", "vendor": "GoTo", "confidence": "strong", "kind": "software"},
+    {"product": "Webex", "vendor": "Cisco", "confidence": "strong", "kind": "software"}
+  ],
+  "BigBlueButton": [
+    {"product": "Zoom", "vendor": "Zoom", "confidence": "strong", "kind": "software"},
+    {"product": "Blackboard Collaborate", "vendor": "Anthology", "confidence": "strong", "kind": "software"}
+  ],
+
+  "GitLab": [
+    {"product": "GitHub Enterprise", "vendor": "Microsoft", "confidence": "strong", "kind": "software"},
+    {"product": "Bitbucket", "vendor": "Atlassian", "confidence": "strong", "kind": "software"},
+    {"product": "Azure DevOps", "vendor": "Microsoft", "confidence": "partial", "kind": "software"}
+  ],
+  "Redmine": [
+    {"product": "Jira", "vendor": "Atlassian", "confidence": "strong", "kind": "software"}
+  ],
+  "OpenProject": [
+    {"product": "Jira", "vendor": "Atlassian", "confidence": "strong", "kind": "software"},
+    {"product": "Microsoft Project", "vendor": "Microsoft", "confidence": "strong", "kind": "software"},
+    {"product": "Asana", "vendor": "Asana", "confidence": "partial", "kind": "software"},
+    {"product": "Smartsheet", "vendor": "Smartsheet", "confidence": "partial", "kind": "software"}
+  ],
+  "BookStack": [
+    {"product": "Confluence", "vendor": "Atlassian", "confidence": "strong", "kind": "software"},
+    {"product": "Notion", "vendor": "Notion", "confidence": "partial", "kind": "software"}
+  ],
+  "Wiki.js": [
+    {"product": "Confluence", "vendor": "Atlassian", "confidence": "strong", "kind": "software"}
+  ],
+  "Discourse": [
+    {"product": "Higher Logic", "vendor": "Higher Logic", "confidence": "partial", "kind": "software"}
+  ],
+
+  "Grafana": [
+    {"product": "Datadog", "vendor": "Datadog", "confidence": "partial", "kind": "software"},
+    {"product": "Splunk", "vendor": "Cisco", "confidence": "partial", "kind": "software"},
+    {"product": "Tableau", "vendor": "Salesforce", "confidence": "adjacent", "kind": "software"}
+  ],
+  "Metabase": [
+    {"product": "Tableau", "vendor": "Salesforce", "confidence": "strong", "kind": "software"},
+    {"product": "Power BI", "vendor": "Microsoft", "confidence": "strong", "kind": "software"},
+    {"product": "Looker", "vendor": "Google", "confidence": "strong", "kind": "software"}
+  ],
+  "Apache Superset": [
+    {"product": "Tableau", "vendor": "Salesforce", "confidence": "strong", "kind": "software"},
+    {"product": "Power BI", "vendor": "Microsoft", "confidence": "strong", "kind": "software"},
+    {"product": "Qlik Sense", "vendor": "Qlik", "confidence": "strong", "kind": "software"}
+  ],
+  "Zabbix": [
+    {"product": "SolarWinds", "vendor": "SolarWinds", "confidence": "strong", "kind": "software"},
+    {"product": "Datadog", "vendor": "Datadog", "confidence": "partial", "kind": "software"}
+  ],
+  "Icinga": [
+    {"product": "SolarWinds", "vendor": "SolarWinds", "confidence": "strong", "kind": "software"},
+    {"product": "Nagios XI", "vendor": "Nagios", "confidence": "paid-tier", "kind": "paid-tier"}
+  ],
+  "Uptime Kuma": [
+    {"product": "Pingdom", "vendor": "SolarWinds", "confidence": "strong", "kind": "software"},
+    {"product": "StatusPage", "vendor": "Atlassian", "confidence": "partial", "kind": "software"}
+  ],
+
+  "OpenSearch": [
+    {"product": "Elasticsearch", "vendor": "Elastic", "confidence": "strong", "kind": "paid-tier"},
+    {"product": "Elastic Cloud", "vendor": "Elastic", "confidence": "strong", "kind": "service"},
+    {"product": "Splunk", "vendor": "Cisco", "confidence": "partial", "kind": "software"}
+  ],
+  "Elasticsearch": [
+    {"product": "Elasticsearch (Elastic Licence tiers)", "vendor": "Elastic", "confidence": "strong", "kind": "paid-tier",
+     "note": "This entry itself is SSPL-1.0 + Elastic Licence 2.0, i.e. NOT OSI-approved. For a fully open successor use OpenSearch."}
+  ],
+  "NGINX": [
+    {"product": "NGINX Plus", "vendor": "F5", "confidence": "strong", "kind": "paid-tier"}
+  ],
+  "GeoServer": [
+    {"product": "GeoServer (commercial support tiers)", "vendor": "various", "confidence": "strong", "kind": "paid-tier"},
+    {"product": "ArcGIS Server", "vendor": "Esri", "confidence": "partial", "kind": "software"}
+  ],
+  "DBeaver": [
+    {"product": "DBeaver PRO", "vendor": "DBeaver Corp", "confidence": "strong", "kind": "paid-tier"},
+    {"product": "Toad", "vendor": "Quest", "confidence": "partial", "kind": "software"}
+  ],
+  "QGIS": [
+    {"product": "ArcGIS Desktop", "vendor": "Esri", "confidence": "strong", "kind": "software"},
+    {"product": "ArcGIS Pro", "vendor": "Esri", "confidence": "strong", "kind": "software"}
+  ],
+  "PostgreSQL": [
+    {"product": "Oracle Database", "vendor": "Oracle", "confidence": "partial", "kind": "software"},
+    {"product": "SQL Server", "vendor": "Microsoft", "confidence": "strong", "kind": "software"}
+  ],
+  "MariaDB": [
+    {"product": "MySQL Enterprise", "vendor": "Oracle", "confidence": "strong", "kind": "paid-tier"}
+  ],
+  "MinIO": [
+    {"product": "Amazon S3", "vendor": "AWS", "confidence": "partial", "kind": "service"}
+  ],
+  "Keycloak": [
+    {"product": "Okta", "vendor": "Okta", "confidence": "strong", "kind": "software"},
+    {"product": "Auth0", "vendor": "Okta", "confidence": "strong", "kind": "software"},
+    {"product": "Entra ID", "vendor": "Microsoft", "confidence": "partial", "kind": "service"}
+  ],
+  "Vault": [
+    {"product": "CyberArk", "vendor": "CyberArk", "confidence": "partial", "kind": "software"}
+  ],
+  "Vaultwarden": [
+    {"product": "1Password", "vendor": "AgileBits", "confidence": "strong", "kind": "software"},
+    {"product": "LastPass", "vendor": "LastPass", "confidence": "strong", "kind": "software"}
+  ],
+  "Bitwarden": [
+    {"product": "1Password", "vendor": "AgileBits", "confidence": "strong", "kind": "software"},
+    {"product": "LastPass", "vendor": "LastPass", "confidence": "strong", "kind": "software"}
+  ],
+  "KeePass": [
+    {"product": "LastPass", "vendor": "LastPass", "confidence": "partial", "kind": "software"}
+  ],
+
+  "Odoo": [
+    {"product": "SAP Business One", "vendor": "SAP", "confidence": "partial", "kind": "software"},
+    {"product": "NetSuite", "vendor": "Oracle", "confidence": "partial", "kind": "software"},
+    {"product": "Salesforce", "vendor": "Salesforce", "confidence": "partial", "kind": "software"}
+  ],
+  "Dolibarr": [
+    {"product": "Salesforce", "vendor": "Salesforce", "confidence": "partial", "kind": "software"},
+    {"product": "QuickBooks", "vendor": "Intuit", "confidence": "partial", "kind": "software"}
+  ],
+
+  "GIMP": [
+    {"product": "Adobe Photoshop", "vendor": "Adobe", "confidence": "partial", "kind": "software"}
+  ],
+  "Inkscape": [
+    {"product": "Adobe Illustrator", "vendor": "Adobe", "confidence": "partial", "kind": "software"}
+  ],
+  "Penpot": [
+    {"product": "Figma", "vendor": "Figma", "confidence": "strong", "kind": "software"},
+    {"product": "Adobe XD", "vendor": "Adobe", "confidence": "strong", "kind": "software"}
+  ],
+  "Audacity": [
+    {"product": "Adobe Audition", "vendor": "Adobe", "confidence": "partial", "kind": "software"}
+  ],
+  "PeerTube": [
+    {"product": "Vimeo", "vendor": "Vimeo", "confidence": "partial", "kind": "service"},
+    {"product": "Brightcove", "vendor": "Brightcove", "confidence": "partial", "kind": "service"}
+  ],
+  "Piwigo": [
+    {"product": "SmugMug", "vendor": "SmugMug", "confidence": "partial", "kind": "service"}
+  ],
+  "Zotero": [
+    {"product": "EndNote", "vendor": "Clarivate", "confidence": "strong", "kind": "software"},
+    {"product": "RefWorks", "vendor": "Clarivate", "confidence": "strong", "kind": "software"}
+  ],
+  "Joplin": [
+    {"product": "Evernote", "vendor": "Bending Spoons", "confidence": "strong", "kind": "software"},
+    {"product": "OneNote", "vendor": "Microsoft", "confidence": "partial", "kind": "software"}
+  ],
+  "Decidim": [
+    {"product": "Bang the Table / EngagementHQ", "vendor": "Granicus", "confidence": "strong", "kind": "software"},
+    {"product": "</>Neighborland", "vendor": "OpenGov", "confidence": "partial", "kind": "software"}
+  ],
+  "Ansible": [
+    {"product": "Red Hat Ansible Automation Platform", "vendor": "Red Hat", "confidence": "strong", "kind": "paid-tier"},
+    {"product": "Puppet Enterprise", "vendor": "Perforce", "confidence": "partial", "kind": "software"}
+  ]
+}

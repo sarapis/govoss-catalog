@@ -1,0 +1,266 @@
+#!/usr/bin/env python3
+"""Emit the machine-readable export alongside the human page.
+
+Everything here is a STATIC FILE written at build time — no server, no database,
+no framework change, and the existing zero-backend Vercel deploy keeps working.
+The human-facing catalogue.html is untouched; this adds a machine path beside it.
+
+Writes into site/ (the Vercel deploy dir):
+
+  entries.json            every active entry, structured fields, one array
+  meta.json               categories, sources, licences, counts, generated_at
+  v1/entries.json         versioned alias so consumers can pin
+  v1/meta.json
+  by-category/<slug>.json one file per functional category
+  replaces.json           the inverted index: proprietary product -> alternatives
+
+Deliberately NOT provided: POST /api/match. It cannot be a static file, and the
+stated constraint is to keep the deployment backend-free. entries.json carries
+`replaces` inline, so one fetch + a local lookup does the same job — see
+by-product.json, which is exactly that index precomputed.
+"""
+import json, os, re, time, collections, importlib.util
+
+OUT = os.path.dirname(os.path.abspath(__file__))
+SITE = f"{OUT}/site"
+_spec = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
+_tax = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_tax)
+FUNCTIONS = _tax.FUNCTIONS
+
+GENERATED_AT = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+SCHEMA_VERSION = "1.0.0"
+
+# Licence strings arrive in three dialects: real SPDX ids from publiccode.yml,
+# display strings from SILL ("MIT licence", "GPLv3+"), and free text. Only claim
+# `licence_spdx` when we are actually confident — an spdx-named field holding
+# "GPLv3+" is worse than a null, because a consumer will trust the name.
+SPDX_FIXUPS = {
+    "mit licence": "MIT", "mit license": "MIT", "mit": "MIT",
+    "gplv3+": "GPL-3.0-or-later", "gplv3": "GPL-3.0-only",
+    "gplv2+": "GPL-2.0-or-later", "gplv2": "GPL-2.0-only",
+    "agplv3+": "AGPL-3.0-or-later", "agplv3": "AGPL-3.0-only",
+    "lgplv3+": "LGPL-3.0-or-later", "lgplv2.1+": "LGPL-2.1-or-later",
+    "apache 2.0": "Apache-2.0", "apache licence 2.0": "Apache-2.0",
+    "apache-2.0": "Apache-2.0", "eupl-1.2": "EUPL-1.2",
+    "bsd-3-clause": "BSD-3-Clause", "bsd-2-clause": "BSD-2-Clause",
+    "mpl-2.0": "MPL-2.0", "cecill-2.1": "CECILL-2.1", "cecill-b": "CECILL-B",
+}
+SPDX_RE = re.compile(r"^[A-Za-z0-9.+-]+$")
+
+
+def spdx(raw):
+    if not raw:
+        return None
+    v = raw.strip()
+    low = v.lower()
+    if low in SPDX_FIXUPS:
+        return SPDX_FIXUPS[low]
+    # already looks like a single SPDX id (no spaces, no prose)
+    if SPDX_RE.match(v) and not v.lower().startswith("http"):
+        return v
+    return None            # honest null rather than a guess
+
+
+def slug(s):
+    return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")
+
+
+def entry_id(r):
+    """Stable-ish id: source slug + repo path, else source + name."""
+    src = slug((r.get("sources") or [r.get("source", "")])[0].split("/")[-1])
+    key = r.get("repo_key") or slug(r.get("name"))
+    return f"{src}-{slug(key.split('/')[-1] if '/' in key else key)}"
+
+
+def build():
+    catalog = json.load(open(f"{OUT}/catalog.json"))
+    live = {}
+    if os.path.exists(f"{OUT}/liveness.json"):
+        live = json.load(open(f"{OUT}/liveness.json")).get("repos", {})
+    replaces_raw = json.load(open(f"{OUT}/replaces.json"))
+    rmap = {k.lower(): v for k, v in replaces_raw.items() if not k.startswith("_")}
+
+    active = [r for r in catalog if not r.get("excluded")]
+    entries, used_keys = [], set()
+    id_counts = collections.Counter()
+
+    for r in active:
+        lv = live.get(r.get("repo_key") or "", {})
+        fns = r.get("functions") or []
+        name = r.get("name") or ""
+
+        rep = rmap.get(name.lower())
+        if rep:
+            used_keys.add(name.lower())
+        # a publisher may also declare it upstream in publiccode.yml
+        if r.get("replaces"):
+            rep = (rep or []) + [x for x in r["replaces"] if isinstance(x, dict)]
+
+        eid = entry_id(r)
+        id_counts[eid] += 1
+        if id_counts[eid] > 1:
+            eid = f"{eid}-{id_counts[eid]}"
+
+        e = {
+            "id": eid,
+            "name": name,
+            "description": r.get("short_desc") or None,
+            "description_lang": r.get("desc_lang") or None,
+            "translated_from": r.get("desc_src_lang") if r.get("translated") else None,
+            "description_original": r.get("desc_src") if r.get("translated") else None,
+
+            # singular = primary (first, for simple consumers); plural = full truth
+            # after dedupe, where one entry can be asserted by several countries
+            "country": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else None,
+            "countries": r.get("countries") or ([r["country"]] if r.get("country") else []),
+            "source": (r.get("sources") or [r.get("source")])[0],
+            "sources": r.get("sources") or ([r["source"]] if r.get("source") else []),
+            "merged_from": r.get("merged_count", 1),
+            "also_known_as": r.get("also_known_as") or [],
+
+            "repo_url": r.get("repo") or None,
+            "homepage": r.get("landing") or None,
+            "owner": r.get("repo_owner") or None,
+
+            "licence": r.get("license") or None,
+            "licence_spdx": spdx(r.get("license")),
+
+            "category": FUNCTIONS[fns[0]] if fns else None,
+            "categories": [FUNCTIONS[f] for f in fns],
+            "category_keys": fns,
+            "categories_inferred": bool(r.get("functions_inferred")),
+            "source_categories": r.get("categories") or [],
+
+            "development_status": r.get("dev_status") or None,
+            "recommended_for_government": bool(r.get("recommended_for_gov")),
+            "has_publiccode": r.get("tier") == "publiccode",
+            "software_type": r.get("software_type") or None,
+            "version": r.get("version") or None,
+            "wikidata": r.get("wikidata") or None,
+
+            "adopters": len(r.get("used_by") or []),
+            "adopter_names": r.get("used_by") or [],
+
+            "link_dead": bool(lv.get("dead_since")),
+            "repo_archived": bool(lv.get("archived")),
+            "last_checked": lv.get("checked"),
+            "last_push": lv.get("last_push"),
+
+            "replaces": rep or [],
+        }
+        entries.append(e)
+
+    entries.sort(key=lambda e: (e["name"] or "").lower())
+
+    # ---- warn on seed rot: a replaces key matching nothing is a silent bug
+    orphans = sorted(set(rmap) - used_keys)
+
+    # ---- inverted index: proprietary product -> catalogue alternatives.
+    # This is the /api/match use case, precomputed as a static file.
+    by_product = collections.defaultdict(list)
+    for e in entries:
+        for m in e["replaces"]:
+            by_product[m["product"]].append({
+                "name": e["name"], "id": e["id"],
+                "confidence": m.get("confidence"), "kind": m.get("kind"),
+                "country": e["country"], "countries": e["countries"],
+                "adopters": e["adopters"], "licence_spdx": e["licence_spdx"],
+                "repo_url": e["repo_url"], "category": e["category"],
+                "link_dead": e["link_dead"], "note": m.get("note"),
+            })
+    for v in by_product.values():
+        rank = {"strong": 0, "partial": 1, "adjacent": 2}
+        v.sort(key=lambda x: (rank.get(x["confidence"], 3), -x["adopters"]))
+
+    cats = collections.Counter(c for e in entries for c in e["categories"])
+    meta = {
+        "schema_version": SCHEMA_VERSION,
+        "generated_at": GENERATED_AT,
+        "human_page": "https://govoss-catalog.vercel.app/",
+        "counts": {
+            "entries": len(entries),
+            "with_publiccode": sum(1 for e in entries if e["has_publiccode"]),
+            "with_wikidata": sum(1 for e in entries if e["wikidata"]),
+            "with_replaces": sum(1 for e in entries if e["replaces"]),
+            "dead_links": sum(1 for e in entries if e["link_dead"]),
+            "archived_repos": sum(1 for e in entries if e["repo_archived"]),
+            "filtered_out": sum(1 for r in catalog if r.get("excluded")),
+            "distinct_products_mapped": len(by_product),
+        },
+        # the 19 categories are a stable documented enumeration
+        "categories": [{"key": k, "label": v, "count": cats.get(v, 0)}
+                       for k, v in FUNCTIONS.items()],
+        "countries": [{"code": k, "count": v} for k, v in
+                      collections.Counter(cc for e in entries for cc in e["countries"]).most_common()],
+        "sources": [{"name": k, "count": v} for k, v in
+                    collections.Counter(s for e in entries for s in e["sources"]).most_common()],
+        "licences_spdx": [{"id": k, "count": v} for k, v in
+                          collections.Counter(e["licence_spdx"] for e in entries
+                                              if e["licence_spdx"]).most_common()],
+        "replaces_disclaimer": replaces_raw["_README"]["status"],
+        "confidence_values": replaces_raw["_README"]["confidence"],
+        "kind_values": replaces_raw["_README"]["kind"],
+        "files": {
+            "entries": "/entries.json",
+            "meta": "/meta.json",
+            "by_product": "/by-product.json",
+            "by_category": "/by-category/<category-key>.json",
+            "versioned": "/v1/entries.json",
+        },
+        "known_gaps": {
+            "note": "Absence is a finding: a category with no entries tells a European "
+                    "public-sector audience where the gaps in their own commons are.",
+            "no_results_observed_for": [
+                "social media scheduling / management",
+                "SMS / mass notification platforms",
+                "mobile field data collection",
+                "digital signage",
+            ],
+            "not_replaceable_by_software": [
+                "managed hosting (Pantheon, WP Engine) — a CMS does not replace hosting",
+                "training content subscriptions (LinkedIn Learning, Pluralsight, GO1) — "
+                "an LMS does not produce course content",
+            ],
+            "unresolved_national_catalogues": ["IE", "PT", "CY"],
+            "needs_api_key": ["NL"],
+        },
+        "replaces_seed_orphans": orphans,
+    }
+
+    os.makedirs(f"{SITE}/v1", exist_ok=True)
+    os.makedirs(f"{SITE}/by-category", exist_ok=True)
+
+    def w(path, obj):
+        with open(f"{SITE}/{path}", "w") as f:
+            json.dump(obj, f, indent=1, default=str)
+        return os.path.getsize(f"{SITE}/{path}")
+
+    sizes = {
+        "entries.json": w("entries.json", entries),
+        "meta.json": w("meta.json", meta),
+        "by-product.json": w("by-product.json", dict(sorted(by_product.items()))),
+        "v1/entries.json": w("v1/entries.json", entries),
+        "v1/meta.json": w("v1/meta.json", meta),
+        "replaces.json": w("replaces.json", replaces_raw),
+    }
+    for key, label in FUNCTIONS.items():
+        subset = [e for e in entries if key in e["category_keys"]]
+        sizes[f"by-category/{key}.json"] = w(f"by-category/{key}.json", subset)
+
+    print(f"exported {len(entries)} entries  (schema {SCHEMA_VERSION}, {GENERATED_AT})")
+    for k in ("entries.json", "meta.json", "by-product.json"):
+        print(f"   {k:22} {sizes[k]/1024:8.0f} KB")
+    print(f"   by-category/           {len(FUNCTIONS)} files")
+    print(f"   v1/ aliases            2 files")
+    print(f"\n   with replaces mapping: {meta['counts']['with_replaces']} entries "
+          f"-> {meta['counts']['distinct_products_mapped']} proprietary products")
+    print(f"   dead links exposed per-entry: {meta['counts']['dead_links']}")
+    if orphans:
+        print(f"\n   !! {len(orphans)} replaces.json keys match NO catalogue entry "
+              f"(seed rot): {', '.join(orphans)}")
+    else:
+        print("\n   every replaces.json key matches a catalogue entry")
+
+
+if __name__ == "__main__":
+    build()

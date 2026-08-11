@@ -10,6 +10,7 @@ Output: `catalogue.html` (self-contained browsable page) and `catalog.json` (the
 
 ```
 bash run.sh                  # full pipeline, ~15 min
+python3 harvest.py --from-cache   # rebuild offline from checkpoints, no network
 python3 harvest.py fr it     # re-harvest named sources only
 python3 liveness.py          # monitor only (~4.5 min), diffs vs previous run
 python3 analyze.py           # counts, overlap, licence + liveness breakdown
@@ -183,6 +184,64 @@ beats deleting:
    software. Same error shape as treating an API 404 as a dead repo.
 2. A `-german$` locale rule caught `teleservices-iacitizen-german`, a German-language *build*
    of a real product. Do not re-add it.
+
+## Machine-readable export (`export_json.py`) + dedupe
+
+Static files in `site/`, no backend. `run.sh` emits them every run.
+
+| path | what |
+|---|---|
+| `/entries.json` | 1,995 entries, structured fields (2.9 MB) |
+| `/meta.json` | categories, sources, licences, counts, `generated_at`, known gaps |
+| `/by-product.json` | **inverted index**: proprietary product -> alternatives |
+| `/by-category/<key>.json` | one file per functional category |
+| `/v1/entries.json` | versioned alias so consumers can pin |
+
+`Access-Control-Allow-Origin: *` on all `*.json`. `/api/entries`, `/api/catalog`,
+`/catalog.json` and `/data.json` redirect to `/entries.json` — those are the paths the
+first agent to use this catalogue probed and got 404 from. Cheaper to answer where callers
+look than to expect them to read docs.
+
+**No `POST /api/match`.** It cannot be a static file and the deployment is deliberately
+backend-free. `/by-product.json` is that endpoint precomputed — 2 GETs answered a 17-line
+procurement inventory in 0.2s, versus the ~35 browser searches it replaced.
+
+### `replaces.json` — the field that changes what the catalogue is for
+
+Maps catalogue entry -> proprietary products it can replace, inverting the lookup so a
+buyer starts from an invoice line. Currently **73 entries -> 95 products**, hand-seeded.
+`export_json.py` **warns on keys matching no entry**, so the seed cannot rot unnoticed.
+
+`confidence`: `strong` | `partial` | `adjacent`. `kind` matters as much:
+- `software` — replaces the software
+- `service` — the paid item is hosted service or CONTENT. Drupal does not replace *hosting*;
+  Moodle does not produce *training content*. Without this the field generates confident
+  category errors.
+- `paid-tier` — the paid item is a commercial edition of software that is **already open
+  source** (NGINX Plus, Elastic licence tiers, DBeaver PRO, MySQL Enterprise). Usually the
+  cheapest win in a procurement review: often no migration, just a renewal you stop.
+
+Publishers can also declare `replaces:` in their own `publiccode.yml` (non-standard
+extension) and `harvest.py` picks it up, so claims can be owned upstream.
+
+### Dedupe (`dedupe.py`)
+
+Merges on **Wikidata QID, then normalised repo URL**, union-find so identities chain.
+**Never on name similarity** — Angular `Q28925578` and AngularJS `Q2849803` are different
+products and one name contains the other. 2,122 -> 1,995 (127 collapsed, 84 groups).
+Pre-merge rows kept in `out/dupes.json` for audit.
+
+Only 15 groups are cross-country (Matomo FR+IT, OpenProject DE+FR+IT — genuine, and the
+point of a union catalogue). The other 69 are **personal forks on gitlab.opencode.de**: 15
+projects (`tlrz/opendesk`, `dschmidt/opendesk`, …) each carry upstream's publiccode.yml
+declaring `url: .../bmi/opendesk`. GitLab exposes `forked_from_project` only on a
+single-project GET, but it is not needed — a project whose declared url is not itself is a
+fork or mirror, and the declared url is the identity.
+
+**Survivor selection uses namespace containment, not suffix matching.** openDesk declares
+`bmi/opendesk` while the canonical project lives at `bmi/opendesk/deployment/opendesk`, so an
+`endswith()` test failed for the real project *and* every fork, and richness alone handed the
+entry to `tlrz/opendesk` — a fork.
 
 ## Gotchas in this repo
 

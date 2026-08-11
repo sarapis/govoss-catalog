@@ -439,8 +439,13 @@ def liveness(catalog, workers=25, timeout=8):
 # -------------------------------------------------------------------- main
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    want = args or list(SOURCES)
+    # --from-cache rebuilds catalog.json from the per-source checkpoints without
+    # touching the network. Lets the downstream steps (translate/taxonomy/filter/
+    # dedupe) be re-run cheaply and politely while iterating on them.
+    want = [] if "--from-cache" in sys.argv else (args or list(SOURCES))
     t0, catalog, failed = time.time(), [], {}
+    if "--from-cache" in sys.argv:
+        print("[--from-cache] no network; assembling from existing checkpoints")
 
     # Per-source checkpointing. A source that succeeds is persisted immediately,
     # so a network blip late in the run can never destroy earlier good data —

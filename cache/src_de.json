@@ -350,7 +350,7 @@
   "fallback_repo": "https://gitlab.opencode.de/green-ecolution/green-ecolution.git",
   "upstream_id": 11929,
   "forge_path": "green-ecolution/green-ecolution",
-  "last_activity": "2026-08-04T13:25:24.643Z"
+  "last_activity": "2026-08-11T13:27:29.947Z"
  },
  {
   "source": "DE/openCode",
@@ -2589,6 +2589,92 @@
   "upstream_id": 10691,
   "forge_path": "informationgrid/ingrid-oss.eu",
   "last_activity": "2026-08-04T16:13:42.755Z"
+ },
+ {
+  "source": "DE/openCode",
+  "country": "DE",
+  "tier": "publiccode",
+  "name": "Kusel Gesundheitsplattform API",
+  "repo": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-api",
+  "repo_key": "gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-api",
+  "license": "EUPL-1.2",
+  "repo_owner": "Landkreis Kusel",
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/backend",
+  "dev_status": "stable",
+  "version": "1.0.0",
+  "released": "2026-06-14",
+  "maintenance": "internal",
+  "contacts": [
+   "Pocket Rocket GmbH"
+  ],
+  "desc_en": "Rails backend for the health platform of the Kusel district, providing a REST API for care facilities, citizen participation, a forum, and more.\n",
+  "desc_src": "Rails-Backend f\u00fcr die Gesundheitsplattform des Landkreises Kusel mit REST-API f\u00fcr Pflegeeinrichtungen, B\u00fcrgerbeteiligung, Forum und mehr.\n",
+  "desc_src_lang": "de",
+  "short_desc": "Rails backend for the health platform of the Kusel district, providing a REST API for care facilities, citizen participation, a forum, and more.\n",
+  "desc_lang": "en",
+  "long_desc": "The Kusel Gesundheitsplattform API is a Ruby on Rails 8 backend (Ruby 3.3) that provides the REST API for the health platform of the Kusel district. It delivers a searchable directory of care and health facilities with multi-level categories, tags, and locations, a citizen participation module with projects, voting, milestones, and comments, an idea pinboard with ratings, a forum, and a complaint reporter. Additional features include gamification with trophies and rewards, video conferencing via BigBlueButton, push notifications, a messaging system, FAQ management, and AI-assisted features. The API is built with Grape and organized by domain \"concepts\".\n",
+  "features": [
+   "REST API v1 for all platform features",
+   "Directory of care and health facilities with categories and tags",
+   {
+    "Citizen participation": "projects with voting, comments, and milestones"
+   },
+   "Idea pinboard with ratings",
+   "Forum and messaging system",
+   "Complaint reporter",
+   "Gamification with trophies and rewards",
+   "Video conferencing via BigBlueButton"
+  ],
+  "fallback_repo": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-api.git",
+  "upstream_id": 10653,
+  "forge_path": "land-lieben/gesundheitsplattform-kusel-api",
+  "last_activity": "2026-06-15T07:03:01.795Z"
+ },
+ {
+  "source": "DE/openCode",
+  "country": "DE",
+  "tier": "publiccode",
+  "name": "Kusel Gesundheitsplattform Frontend",
+  "repo": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-frontend",
+  "repo_key": "gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-frontend",
+  "license": "EUPL-1.2",
+  "repo_owner": "Landkreis Kusel",
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "version": "1.0.0",
+  "released": "2026-06-14",
+  "maintenance": "internal",
+  "contacts": [
+   "Pocket Rocket GmbH"
+  ],
+  "desc_en": "Nuxt 3 web frontend for the health platform of the Kusel district, with a facility directory, citizen participation, a forum, and more.\n",
+  "desc_src": "Nuxt-3-Web-Frontend f\u00fcr die Gesundheitsplattform des Landkreises Kusel mit Einrichtungsverzeichnis, B\u00fcrgerbeteiligung, Forum und mehr.\n",
+  "desc_src_lang": "de",
+  "short_desc": "Nuxt 3 web frontend for the health platform of the Kusel district, with a facility directory, citizen participation, a forum, and more.\n",
+  "desc_lang": "en",
+  "long_desc": "The Kusel Gesundheitsplattform Frontend is a web application built with Nuxt 3 and Vue 3 (Composition API, TypeScript) for the health platform of the Kusel district. It provides a searchable directory of care and health facilities, a citizen participation module with projects, voting, and comments, an idea pinboard, a forum, and a complaint reporter. Additional features include gamification, AI-assisted support, a cookie consent banner, and accessibility tooling. The frontend talks to the separate Kusel Gesundheitsplattform API.\n",
+  "features": [
+   "Directory of care and health facilities with search and filters",
+   {
+    "Citizen participation": "projects with voting and comments"
+   },
+   "Idea pinboard and forum",
+   "Complaint reporter",
+   "Gamification",
+   "AI-assisted support",
+   "Cookie consent banner",
+   "Accessibility tooling (Eye-Able)"
+  ],
+  "fallback_repo": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-frontend.git",
+  "upstream_id": 10652,
+  "forge_path": "land-lieben/gesundheitsplattform-kusel-frontend",
+  "last_activity": "2026-06-15T07:03:26.194Z"
  },
  {
   "source": "DE/openCode",
@@ -4852,7 +4938,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wuerzburg/smart-city-hub.git",
   "upstream_id": 9857,
   "forge_path": "wuerzburg/smart-city-hub",
-  "last_activity": "2026-08-10T15:06:36.277Z"
+  "last_activity": "2026-08-11T13:47:23.421Z"
  },
  {
   "source": "DE/openCode",
@@ -7477,7 +7563,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie/gitlab-profile.git",
   "upstream_id": 7927,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie/gitlab-profile",
-  "last_activity": "2026-08-04T13:02:23.158Z"
+  "last_activity": "2026-08-11T12:46:07.976Z"
  },
  {
   "source": "DE/openCode",
@@ -7897,7 +7983,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot.git",
   "upstream_id": 7690,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot",
-  "last_activity": "2026-08-11T10:38:50.900Z"
+  "last_activity": "2026-08-11T14:09:35.458Z"
  },
  {
   "source": "DE/openCode",
@@ -12423,11 +12509,11 @@
   "platforms": [
    "windows"
   ],
-  "software_type": "library, configurationFiles",
+  "software_type": "standalone/backend",
   "dev_status": "development",
   "version": "0.0.1",
   "released": "2025-09-01",
-  "maintenance": "internal",
+  "maintenance": "contract",
   "contacts": [
    "Malte Schwanebeck",
    "Hao Lyu",
@@ -12440,8 +12526,8 @@
   "desc_lang": "en",
   "long_desc": "The aim of the Open Source Urban Building Energy Model (OS UBEM) for the KielRegion area is to provide an open data service for building-specific, hourly simulation of heating and cooling demand and for analyzing possible demand scenarios for building stocks of entire municipalities in the KielRegion area via a regional data platform of KielRegion. This is intended to provide municipal employees with an additional, data-based decision-making basis for future updates to municipal heating planning and for energy-efficient district planning and renovation. see more: https://www.kielregion.de/zukunftsregion/smarterleben/quartiersentwicklung/#digitalestool\n",
   "features": [
-   "thermische Geb\u00e4udesimulation f\u00fcr ganze St\u00e4dte und Gemeinden",
-   "geb\u00e4udescharfe, st\u00fcndlich aufgel\u00f6ste Daten zum gegenw\u00e4rtigen und zuk\u00fcnftigen Heiz- und K\u00fchlbedarf von Geb\u00e4uden"
+   "thermal building simulation for entire cities and municipalities",
+   "building-specific, hourly resolved data on current and future heating and cooling demand of buildings"
   ],
   "used_by": [
    "Landeshauptstadt Kiel, Umweltschutzamt, Abteilung Klimaschutz"
@@ -12449,7 +12535,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kielregion-gmbh/quartiersentwicklung/os-ubem-kielregion.git",
   "upstream_id": 4485,
   "forge_path": "kielregion-gmbh/quartiersentwicklung/os-ubem-kielregion",
-  "last_activity": "2026-08-10T10:08:37.192Z"
+  "last_activity": "2026-08-11T14:09:45.933Z"
  },
  {
   "source": "DE/openCode",
@@ -12870,39 +12956,6 @@
   "upstream_id": 4291,
   "forge_path": "herrfeder/synapse-mls",
   "last_activity": "2025-02-07T07:39:12.858Z"
- },
- {
-  "source": "DE/openCode",
-  "country": "DE",
-  "tier": "publiccode",
-  "name": "OZGSec",
-  "repo": "https://gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner",
-  "repo_key": "gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner",
-  "landing": "https://gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec",
-  "license": "EUPL-1.2",
-  "repo_owner": "Bundesministerium des Innern und f\u00fcr Heimat, Abteilung Digitale Verwaltung, Referat DV II 2",
-  "categories": [
-   "it-security"
-  ],
-  "platforms": [
-   "linux"
-  ],
-  "software_type": "library",
-  "dev_status": "stable",
-  "released": "2024-12-11",
-  "maintenance": "community",
-  "contacts": [
-   "Gode Nehler"
-  ],
-  "desc_src": "OZGSec, ist ein Securitytest f\u00fcr Webseiten, ein so genannter Best Practice Scanner, der im Rahmen der OZG-Security-Challenge entwickelt wurde.",
-  "desc_src_lang": "de",
-  "short_desc": "OZGSec, ist ein Securitytest f\u00fcr Webseiten, ein so genannter Best Practice Scanner, der im Rahmen der OZG-Security-Challenge entwickelt wurde.",
-  "desc_lang": "de",
-  "long_desc": "B\u00fcrgerinnen, B\u00fcrger und Unternehmen erwarten, dass der Staat vertrauensvoll mit ihren pers\u00f6nlichen Daten umgeht und diese durch ein hohes Ma\u00df an IT-Sicherheit und Best Practices sch\u00fctzt. Das\u00a0BMI\u00a0m\u00f6chte daher die Steigerung der IT-Sicherheit bei der OZG-Umsetzung weiter vorantreiben und hat in Zusammenarbeit mit dem\u00a0BSI\u00a0die \u201eOZG-Security-Challenge 2023\u201c ins Leben gerufen. In diesem Rahmen wurde der \u201eOZG-Security-Schnelltest\u201c entwickelt. \n\n \n\n# OZG Security Challenge - Best Practice Scanner\n\nIn diesem Repository finden Sie den Best Practice Scanner, der im Rahmen der OZG-Security-Challenge entwickelt wurde. Der Best Practice Scanner ist ein Tool, das es erm\u00f6glicht, die IT-Sicherheit und die Umsetzung von Best Practices von Webseiten zu \u00fcberpr\u00fcfen.\n\n## Hintergrund\n\nMit der zunehmenden Digitalisierung der \u00f6ffentlichen Verwaltung steigt die Bedeutung der zugrundeliegenden Informationssicherheit. B\u00fcrgerinnen, B\u00fcrger und Unternehmen erwarten, dass der Staat vertrauensvoll mit ihren pers\u00f6nlichen Daten umgeht und diese durch ein hohes Ma\u00df an IT-Sicherheit sch\u00fctzt. Das [Bundesministerium des Innern und f\u00fcr Heimat (BMI)](https://www.bmi.bund.de/DE/startseite/startseite-node.html) m\u00f6chte daher",
-  "fallback_repo": "https://gitlab.opencode.de/l3montree/ozgsec-best-practice-scanner.git",
-  "upstream_id": 4282,
-  "forge_path": "l3montree/ozgsec-best-practice-scanner",
-  "last_activity": "2025-09-23T10:15:49.788Z"
  },
  {
   "source": "DE/openCode",
@@ -15022,7 +15075,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openculturas/openculturas-distribution.git",
   "upstream_id": 3458,
   "forge_path": "openculturas/openculturas-distribution",
-  "last_activity": "2026-08-11T07:56:05.334Z"
+  "last_activity": "2026-08-11T13:16:05.707Z"
  },
  {
   "source": "DE/openCode",
@@ -15353,7 +15406,7 @@
   "fallback_repo": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner.git",
   "upstream_id": 3175,
   "forge_path": "digitalservicebund/elterngeldrechner",
-  "last_activity": "2026-08-11T12:22:50.409Z"
+  "last_activity": "2026-08-11T13:24:21.612Z"
  },
  {
   "source": "DE/openCode",
@@ -15444,7 +15497,7 @@
   "fallback_repo": "https://gitlab.opencode.de/zammad/zammad.git",
   "upstream_id": 3166,
   "forge_path": "zammad/zammad",
-  "last_activity": "2026-08-11T11:35:07.538Z"
+  "last_activity": "2026-08-11T12:49:27.441Z"
  },
  {
   "source": "DE/openCode",
@@ -15895,7 +15948,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/data-stories.git",
   "upstream_id": 2874,
   "forge_path": "umwelt-info/data-stories",
-  "last_activity": "2026-08-11T11:20:19.918Z"
+  "last_activity": "2026-08-11T14:07:34.133Z"
  },
  {
   "source": "DE/openCode",
@@ -17846,7 +17899,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/opendesk/deployment/opendesk.git",
   "upstream_id": 1317,
   "forge_path": "bmi/opendesk/deployment/opendesk",
-  "last_activity": "2026-08-11T11:38:01.191Z"
+  "last_activity": "2026-08-11T14:11:45.480Z"
  },
  {
   "source": "DE/openCode",
@@ -18275,7 +18328,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/portal.git",
   "upstream_id": 1010,
   "forge_path": "fitko/fim/portal",
-  "last_activity": "2026-08-11T10:34:53.398Z"
+  "last_activity": "2026-08-11T13:03:45.972Z"
  },
  {
   "source": "DE/openCode",
@@ -18950,7 +19003,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/metadaten.git",
   "upstream_id": 433,
   "forge_path": "umwelt-info/metadaten",
-  "last_activity": "2026-08-11T12:02:10.370Z"
+  "last_activity": "2026-08-11T13:13:58.731Z"
  },
  {
   "source": "DE/openCode",
