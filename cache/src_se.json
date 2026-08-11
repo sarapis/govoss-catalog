@@ -1,0 +1,2526 @@
+[
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Alfresco",
+  "repo": "https://www.alfresco.com/ecm-software/alfresco-community-editions",
+  "repo_key": "alfresco.com/ecm-software/alfresco-community-editions",
+  "categories": [
+   "cms"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "vgr_r",
+   "havochvatten",
+   "svenska_kraftn",
+   "alingsas_k",
+   "lund_uh",
+   "smhi"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Anm\u00e4l hinder",
+  "repo": "https://github.com/GoteborgsStad/anmalhinder-android",
+  "repo_key": "github.com/goteborgsstad/anmalhinder-android",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "gbg_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Ansible",
+  "repo": "https://github.com/ansible/ansible",
+  "repo_key": "github.com/ansible/ansible",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "svedala_k",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Apache Camel",
+  "repo": "https://github.com/apache/camel",
+  "repo_key": "github.com/apache/camel",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Archivematica",
+  "repo": "https://www.archivematica.org/",
+  "repo_key": "archivematica.org",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sgu",
+   "kb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "ArgoCD",
+  "repo": "https://argoproj.github.io/cd/",
+  "repo_key": "argoproj.github.io/cd",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "AtoM",
+  "repo": "https://www.accesstomemory.org/",
+  "repo_key": "accesstomemory.org",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sgu",
+   "kb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "BasicUse",
+  "repo": "https://github.com/umea-kommun/BasicUse",
+  "repo_key": "github.com/umea-kommun/basicuse",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "umea_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "BigBlueButton",
+  "repo": "https://bigbluebutton.org",
+  "repo_key": "bigbluebutton.org",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lm",
+   "hs_uh"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Camunda",
+  "repo": "https://camunda.com/",
+  "repo_key": "camunda.com",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "CentOS",
+  "repo": "https://www.centos.org/",
+  "repo_key": "centos.org",
+  "categories": [
+   "operativsystem"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen",
+   "smhi",
+   "forsakringskassan",
+   "lfv"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Codeberg",
+  "repo": "https://codeberg.org",
+  "repo_key": "codeberg.org",
+  "categories": [
+   "utvecklingsplattform"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "nosad"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "DCAT-AP-SE-Processorn",
+  "repo": "https://github.com/DIGGSweden/DCAT-AP-SE-Processor",
+  "repo_key": "github.com/diggsweden/dcat-ap-se-processor",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "digg"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Decidim",
+  "repo": "https://decidim.org",
+  "repo_key": "decidim.org",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_k",
+   "gbg_k",
+   "botkyrka_k",
+   "helsingborg_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Diagrams.net",
+  "repo": "https://www.diagrams.net",
+  "repo_key": "diagrams.net",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "gotland_k",
+   "gotland_r",
+   "sundsvall_k",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Discourse",
+  "repo": "https://www.discourse.org",
+  "repo_key": "discourse.org",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Diwise",
+  "repo": "https://github.com/diwise",
+  "repo_key": "github.com/diwise",
+  "categories": [
+   "iot"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Django",
+  "repo": "https://www.djangoproject.com/",
+  "repo_key": "djangoproject.com",
+  "categories": [
+   "cms"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "kb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Docker",
+  "repo": "https://www.docker.com",
+  "repo_key": "docker.com",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "orebro_r",
+   "esv_datalabb",
+   "sundsvall_k",
+   "svedala_k",
+   "motala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Drupal",
+  "repo": "https://www.drupal.org",
+  "repo_key": "drupal.org",
+  "categories": [
+   "cms"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "alingsas_k",
+   "verksamt",
+   "gu_uh"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "EJBCA",
+  "repo": "https://www.ejbca.org",
+  "repo_key": "ejbca.org",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen",
+   "rps"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "ESSArch",
+  "repo": "https://www.essarch.org",
+  "repo_key": "essarch.org",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "riksarkivet",
+   "sydarkivera",
+   "kyrkan"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Element",
+  "repo": "https://element.io",
+  "repo_key": "element.io",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "EntryScape",
+  "repo": "https://bitbucket.org/metasolutions/entryscape/src/develop/",
+  "repo_key": "bitbucket.org/metasolutions/entryscape/src/develop",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "havochvatten",
+   "natur",
+   "skatteverket",
+   "vgr_r",
+   "blekinge_r",
+   "uppsala_k",
+   "digg",
+   "scb",
+   "lst"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "EntryScape Catalog",
+  "repo": "https://entryscape.com/catalog",
+  "repo_key": "entryscape.com/catalog",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "havochvatten",
+   "huddinge_k",
+   "gavle_k",
+   "helsingborg_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "FixMyStreet",
+  "repo": "https://github.com/mysociety/fixmystreet",
+  "repo_key": "github.com/mysociety/fixmystreet",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "gbg_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Geonetwork",
+  "repo": "https://geonetwork-opensource.org/",
+  "repo_key": "geonetwork-opensource.org",
+  "categories": [
+   "geodata"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "L\u00e4nsstyrelsernas geodatakaloger",
+   "Geodataportalen"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Geoserver",
+  "repo": "http://geoserver.org/",
+  "repo_key": "geoserver.org",
+  "categories": [
+   "geodata"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Gitlab",
+  "repo": "https://www.gitlab.com",
+  "repo_key": "gitlab.com",
+  "categories": [
+   "utvecklingsplattform"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "arbetsformedlingen",
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "svedala_k",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Grafana",
+  "repo": "https://github.com/grafana/grafana",
+  "repo_key": "github.com/grafana/grafana",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "smhi",
+   "orebro_r",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Gravitee",
+  "repo": "https://www.gravitee.io",
+  "repo_key": "gravitee.io",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "pension"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Hajk",
+  "repo": "https://github.com/hajkmap/Hajk",
+  "repo_key": "github.com/hajkmap/hajk",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "halmstad_k",
+   "uddevalla_k",
+   "varberg_k",
+   "gbg_k",
+   "orebro_k",
+   "kungsbacka_k",
+   "pts",
+   "sig",
+   "ale_k",
+   "askersund_k",
+   "gr",
+   "lekeberg_k",
+   "laxa_k",
+   "nacka_k",
+   "Varmdo_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "HashiCorp Vault",
+  "repo": "https://www.vaultproject.io",
+  "repo_key": "vaultproject.io",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "skatteverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Helm",
+  "repo": "https://helm.sh",
+  "repo_key": "helm.sh",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_bib",
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Jenkins",
+  "repo": "https://www.jenkins.io",
+  "repo_key": "jenkins.io",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_bib",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Jitsi",
+  "repo": "https://jitsi.org",
+  "repo_key": "jitsi.org",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen",
+   "kassan",
+   "lfv",
+   "boverket",
+   "elverket",
+   "havochvatten",
+   "sthlmbrand",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Kafka",
+  "repo": "https://kafka.apache.org/",
+  "repo_key": "kafka.apache.org",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_bib"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "KeePassXC",
+  "repo": "https://keepassxc.org/",
+  "repo_key": "keepassxc.org",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "adda",
+   "lfv",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Koha",
+  "repo": "https://koha-community.org",
+  "repo_key": "koha-community.org",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "[\"Svenska Koha-n\u00e4tverket\"]",
+   "gotland_k",
+   "gotland_r"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Kubernetes",
+  "repo": "https://kubernetes.io/",
+  "repo_key": "kubernetes.io",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_bib",
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "LibreOffice",
+  "repo": "https://www.libreoffice.org",
+  "repo_key": "libreoffice.org",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Linux",
+  "repo": "Linux",
+  "repo_key": "linux",
+  "categories": [
+   "operativsystem"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen",
+   "smhi",
+   "fk",
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Matomo",
+  "repo": "https://matomo.org",
+  "repo_key": "matomo.org",
+  "categories": [
+   "webbanalys"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "kb",
+   "skatteverket",
+   "trr",
+   "lararforbundet",
+   "fk",
+   "digg",
+   "sundsvall_k",
+   "arbetsmiljo",
+   "botkyrka_k",
+   "statenskultur",
+   "lakemedelsv",
+   "msb",
+   "natur",
+   "sgu",
+   "transports",
+   "konsumentverket",
+   "pension",
+   "fohm"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Mattermost",
+  "repo": "https://mattermost.com",
+  "repo_key": "mattermost.com",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen",
+   "smhi",
+   "sthlm_bib",
+   "pension",
+   "lm",
+   "trafikverket",
+   "lfv"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "MediaWiki",
+  "repo": "https://www.mediawiki.org/wiki/MediaWiki",
+  "repo_key": "mediawiki.org/wiki/mediawiki",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "gotland_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Moodle",
+  "repo": "https://moodle.org",
+  "repo_key": "moodle.org",
+  "categories": [
+   "e-learning"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "simrishamn_k",
+   "sodertalje_komvux",
+   "forsvaret",
+   "lnu_uh",
+   "tullverket",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "MuleSoft Anypoint Platform",
+  "repo": "https://www.mulesoft.com",
+  "repo_key": "mulesoft.com",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "jonkoping_r",
+   "uppsala_r",
+   "storsthlm",
+   "kau_uh",
+   "kau_uh",
+   "skatteverket",
+   "arbetsformedlingen",
+   "vgr_r",
+   "gotland_k",
+   "gotland_r"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "NetarchiveSuite",
+  "repo": "https://sbforge.org/display/NAS/NetarchiveSuite",
+  "repo_key": "sbforge.org/display/nas/netarchivesuite",
+  "short_desc": "Verktyg f\u00f6r insamling och arkivering av hemsidor.",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "kb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Nextcloud",
+  "repo": "https://github.com/nextcloud",
+  "repo_key": "github.com/nextcloud",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "sjov",
+   "fk",
+   "trafikverket",
+   "svt",
+   "digg",
+   "fk",
+   "transports",
+   "universitetskansler",
+   "kemikalieinspektionen",
+   "riksrevisionen",
+   "sthlmbrand",
+   "svedala_k",
+   "boverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "NodeBB",
+  "repo": "https://nodebb.org/",
+  "repo_key": "nodebb.org",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "digg"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Odoo",
+  "repo": "https://www.odoo.com",
+  "repo_key": "odoo.com",
+  "categories": [
+   "crm"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Open ePlatform",
+  "repo": "http://www.oeplatform.org",
+  "repo_key": "oeplatform.org",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sundsvall_k",
+   "finspang_k",
+   "mjolby_k",
+   "norrkoping_k",
+   "soderkoping_k",
+   "svedala_k",
+   "vadstena_k",
+   "vastervik_k",
+   "valdermarsvik_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "OpenStreetMap",
+  "repo": "https://wiki.openstreetmap.org/wiki/API",
+  "repo_key": "wiki.openstreetmap.org/wiki/api",
+  "categories": [
+   "geodata"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "gotland_k",
+   "gotland_r"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "OrigoMap",
+  "repo": "https://github.com/origo-map/origo",
+  "repo_key": "github.com/origo-map/origo",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sundsvall_k",
+   "enkoping_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "PostgreSQL - PostGIS",
+  "repo": "https://postgis.net/",
+  "repo_key": "postgis.net",
+  "categories": [
+   "geodata"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "PostgreSQL relationsdatabas",
+  "repo": "http://postgresql.org",
+  "repo_key": "postgresql.org",
+  "categories": [
+   "databas"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "lfv",
+   "sjv",
+   "vgr_r",
+   "migra",
+   "domstolsverket",
+   "ki_uh",
+   "sundsvall_k",
+   "raa",
+   "brottsforebyggande",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Prometheus",
+  "repo": "https://prometheus.io",
+  "repo_key": "prometheus.io",
+  "short_desc": "Verktyg f\u00f6r monitorering",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "sthlm_bib",
+   "orebro_r",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Puppet",
+  "repo": "https://puppetlabs.com",
+  "repo_key": "puppetlabs.com",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "skolverket",
+   "skatteverket",
+   "arbetsformedlingen",
+   "pension",
+   "smhi"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "PxWeb",
+  "repo": "https://www.scb.se/vara-tjanster/statistikprogram-for-px-filer/PxWeb/",
+  "repo_key": "scb.se/vara-tjanster/statistikprogram-for-px-filer/pxweb",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "scb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "QGIS",
+  "repo": "https://www.qgis.org",
+  "repo_key": "qgis.org",
+  "categories": [
+   "geodata"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "angelholm_k",
+   "avesta_k",
+   "boras_k",
+   "botkyrka_k",
+   "dalarna_r",
+   "enkoping_k",
+   "gbg_k",
+   "gu_uh",
+   "hallstahammar_k",
+   "halmstad_k",
+   "haninge_k",
+   "havochvatten",
+   "huddinge_k",
+   "hudiksvall_k",
+   "jarfalla_k",
+   "karlshamn_k",
+   "karlstad_k",
+   "kinda_k",
+   "kristianstad_k",
+   "kungalv_k",
+   "kungsbacka_k",
+   "landskrona_k",
+   "lilla_edet_k",
+   "lm",
+   "ludvika_k",
+   "lund_uh",
+   "malmo_k",
+   "mariestad_k",
+   "markaryd_k",
+   "molndal_k",
+   "munkfors_k",
+   "nacka_k",
+   "norrkoping_k",
+   "nykoping_k",
+   "orebro_k",
+   "ostergotland_r",
+   "ostersund_k",
+   "ostgotatrafiken",
+   "osthammar_k",
+   "oxelosund_k",
+   "pts",
+   "rattvik_k",
+   "ronneby_k",
+   "salem_k",
+   "scb",
+   "sigtuna_k",
+   "sj\u00f6bo_k",
+   "skane_r",
+   "smhi",
+   "sodertalje_k",
+   "solna_k",
+   "sthlm_k",
+   "strangnas_k",
+   "sundsvall_k",
+   "taby_k",
+   "tillvaxtverket",
+   "tomelilla_k",
+   "tranas_k",
+   "trollhattan_k",
+   "tyreso_k",
+   "uddevalla_k",
+   "umea_k",
+   "upplands_vasby_k",
+   "varberg_k",
+   "varmdo_k",
+   "vasterbotten_r",
+   "vetlanda_k",
+   "vgr_r",
+   "vtrafik"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Red Hat Enterprise Linux",
+  "repo": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+  "repo_key": "redhat.com/en/technologies/linux-platforms/enterprise-linux",
+  "short_desc": "Linuxdistribution",
+  "categories": [
+   "operativsystem"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "smhi",
+   "fk",
+   "arbetsformedlingen",
+   "orebro_r",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Red Hat Fuse",
+  "repo": "https://www.redhat.com/en/products/integration",
+  "repo_key": "redhat.com/en/products/integration",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "pension",
+   "fk",
+   "tullverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Redmine",
+  "repo": "https://www.redmine.org/",
+  "repo_key": "redmine.org",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Rocket Chat",
+  "repo": "https://www.rocket.chat/",
+  "repo_key": "rocket.chat",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "kb",
+   "boverket",
+   "elverket",
+   "havochvatten",
+   "sthlmbrand"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Roda",
+  "repo": "https://www.roda-community.org",
+  "repo_key": "roda-community.org",
+  "categories": [
+   "arkiv"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "tullverket",
+   "lfv",
+   "sjov",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Sambuh",
+  "repo": "https://github.com/GoteborgsStad/boendeprocessAPP",
+  "repo_key": "github.com/goteborgsstad/boendeprocessapp",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "gbg_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Smartakartan",
+  "repo": "https://github.com/GoteborgsStad/smartakartan3.0",
+  "repo_key": "github.com/goteborgsstad/smartakartan3.0",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "gbg_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Solr",
+  "repo": "https://solr.apache.org/",
+  "repo_key": "solr.apache.org",
+  "short_desc": "Search platform. S\u00f6kplattform",
+  "categories": [
+   "search"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sthlm_bib"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "SonarQube",
+  "repo": "https://github.com/SonarSource/sonarqube/",
+  "repo_key": "github.com/sonarsource/sonarqube",
+  "short_desc": "Granskar kodkvalitet och kods\u00e4kerhetsverktyg.",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lvf",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Spring Boot",
+  "repo": "https://spring.io/projects/spring-boot",
+  "repo_key": "spring.io/projects/spring-boot",
+  "short_desc": "Ett ramverk f\u00f6r att f\u00f6renkla applikationsutveckling.",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "lfv",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Strapi",
+  "repo": "https://strapi.io/",
+  "repo_key": "strapi.io",
+  "categories": [
+   "cms"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "digg",
+   "su_uh"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Ubuntu",
+  "repo": "https://ubuntu.com/",
+  "repo_key": "ubuntu.com",
+  "short_desc": "Linuxdistribution",
+  "categories": [
+   "operativsystem"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "smhi",
+   "fk",
+   "lfv",
+   "esv_datalabb",
+   "sundsvall_k",
+   "motala_k",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Varnish Cache",
+  "repo": "https://github.com/varnishcache/varnish-cache",
+  "repo_key": "github.com/varnishcache/varnish-cache",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen",
+   "smhi"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "WSO2 API Manager",
+  "repo": "https://wso2.com/api-management",
+  "repo_key": "wso2.com/api-management",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "vtrafik",
+   "lm",
+   "havochvatten",
+   "csn",
+   "bolagsverket",
+   "fk",
+   "sundsvall_k",
+   "lst",
+   "tillvaxtverket",
+   "natur",
+   "kronofogden"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "WordPress",
+  "repo": "https://wordpress.org",
+  "repo_key": "wordpress.org",
+  "categories": [
+   "cms"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "helsingborg_k",
+   "eslov_k",
+   "digg",
+   "sundsvall_k",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Collabora",
+  "repo": "https://www.collaboraoffice.com/",
+  "repo_key": "collaboraoffice.com",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "universitetskansler",
+   "kemikalieinspektionen",
+   "boverket",
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Alaveteli (Handlingar.se)",
+  "repo": "https://github.com/mysociety/alaveteli",
+  "repo_key": "github.com/mysociety/alaveteli",
+  "categories": [
+   "datadelning"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "openknowledgesweden"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Designsystem",
+  "repo": "https://gitlab.com/arbetsformedlingen/designsystem/digi",
+  "repo_key": "gitlab.com/arbetsformedlingen/designsystem/digi",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "arbetsformedlingen",
+   "skolverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "WeKan",
+  "repo": "https://wekan.github.io/",
+  "repo_key": "wekan.github.io",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "alingsas_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Caddy",
+  "repo": "https://caddyserver.com",
+  "repo_key": "caddyserver.com",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Pandas",
+  "repo": "https://pandas.pydata.org",
+  "repo_key": "pandas.pydata.org",
+  "categories": [
+   "dataanalys"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Polars",
+  "repo": "https://pola.rs",
+  "repo_key": "pola.rs",
+  "categories": [
+   "dataanalys"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Jupyter",
+  "repo": "https://jupyter.org",
+  "repo_key": "jupyter.org",
+  "categories": [
+   "utvecklarverktyg"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Visual Studio Code",
+  "repo": "https://code.visualstudio.com",
+  "repo_key": "code.visualstudio.com",
+  "categories": [
+   "utvecklarverktyg"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "R Studio",
+  "repo": "https://posit.co/products/open-source/rstudio/",
+  "repo_key": "posit.co/products/open-source/rstudio",
+  "categories": [
+   "utvecklarverktyg"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "React",
+  "repo": "https://react.dev",
+  "repo_key": "react.dev",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Angular",
+  "repo": "https://angular.io",
+  "repo_key": "angular.io",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Vite",
+  "repo": "https://vitejs.dev",
+  "repo_key": "vitejs.dev",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "NodeJS",
+  "repo": "https://nodejs.org/en",
+  "repo_key": "nodejs.org/en",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb",
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "FastAPI",
+  "repo": "https://fastapi.tiangolo.com",
+  "repo_key": "fastapi.tiangolo.com",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb",
+   "motala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Requests",
+  "repo": "https://requests.readthedocs.io/en/latest/",
+  "repo_key": "requests.readthedocs.io/en/latest",
+  "categories": [
+   "dataprocessering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Scrapy",
+  "repo": "https://scrapy.org",
+  "repo_key": "scrapy.org",
+  "categories": [
+   "dataprocessering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "BeautifulSoup",
+  "repo": "https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)",
+  "repo_key": "en.wikipedia.org/wiki/beautiful_soup_(html_parser)",
+  "categories": [
+   "dataprocessering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "PyMuPDF",
+  "repo": "https://pymupdf.readthedocs.io",
+  "repo_key": "pymupdf.readthedocs.io",
+  "categories": [
+   "dataprocessering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "OpenCV",
+  "repo": "https://opencv.org",
+  "repo_key": "opencv.org",
+  "categories": [
+   "dataprocessering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "OCRmyPDF",
+  "repo": "https://ocrmypdf.readthedocs.io",
+  "repo_key": "ocrmypdf.readthedocs.io",
+  "categories": [
+   "dataprocessering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Nerblackbox",
+  "repo": "https://github.com/flxst/nerblackbox",
+  "repo_key": "github.com/flxst/nerblackbox",
+  "categories": [
+   "ml"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Pytorch",
+  "repo": "https://pytorch.org",
+  "repo_key": "pytorch.org",
+  "categories": [
+   "ml"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Langchain",
+  "repo": "https://www.langchain.com",
+  "repo_key": "langchain.com",
+  "categories": [
+   "sprakmodeller"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "LlamaIndex",
+  "repo": "https://www.llamaindex.ai",
+  "repo_key": "llamaindex.ai",
+  "categories": [
+   "sprakmodeller"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Ollama",
+  "repo": "https://ollama.com",
+  "repo_key": "ollama.com",
+  "categories": [
+   "sprakmodeller"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "OpenWebui",
+  "repo": "https://openwebui.com",
+  "repo_key": "openwebui.com",
+  "categories": [
+   "sprakmodeller"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Continue.dev",
+  "repo": "https://continue.dev",
+  "repo_key": "continue.dev",
+  "categories": [
+   "utvecklarverktyg"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Municipo",
+  "repo": "https://github.com/municipio-se/municipio-deployment/tree/stage",
+  "repo_key": "github.com/municipio-se/municipio-deployment",
+  "categories": [
+   "cms"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "helsingborg_k",
+   "eslov_k",
+   "horby_k",
+   "rsnv"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Fyrvaktaren",
+  "repo": "https://codeberg.org/jordbruksverket",
+  "repo_key": "codeberg.org/jordbruksverket",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sjv"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Designsystem",
+  "repo": "https://github.com/Forsakringskassan/designsystem",
+  "repo_key": "github.com/forsakringskassan/designsystem",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "fk",
+   "bolagsverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Intric",
+  "repo": "https://github.com/inooLabs/intric-release/",
+  "repo_key": "github.com/inoolabs/intric-release",
+  "categories": [
+   "ml"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sundsvall_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "MLA",
+  "repo": "https://github.com/diggsweden/mla",
+  "repo_key": "github.com/diggsweden/mla",
+  "categories": [
+   "ml"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "skatteverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "HTRflow",
+  "repo": "https://github.com/AI-Riksarkivet/htrflow/",
+  "repo_key": "github.com/ai-riksarkivet/htrflow",
+  "categories": [
+   "ml"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "riksarkivet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "MariaDB",
+  "repo": "https://mariadb.org/",
+  "repo_key": "mariadb.org",
+  "categories": [
+   "database"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "sundsvall_k",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Eyevinn Open Intercom Manager",
+  "repo": "https://github.com/Eyevinn/intercom-manager/",
+  "repo_key": "github.com/eyevinn/intercom-manager",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "svt"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Apache HTTP Server Project",
+  "repo": "https://github.com/apache/httpd",
+  "repo_key": "github.com/apache/httpd",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Nginx Proxy Manager",
+  "repo": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+  "repo_key": "github.com/nginxproxymanager/nginx-proxy-manager",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "fk",
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Podman",
+  "repo": "https://github.com/containers/podman",
+  "repo_key": "github.com/containers/podman",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "integration_oidc",
+  "repo": "https://github.com/SUNET/nextcloud-integration_oidc",
+  "repo_key": "github.com/sunet/nextcloud-integration_oidc",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "stepupauth",
+  "repo": "https://github.com/SUNET/nextcloud-stepupauth",
+  "repo_key": "github.com/sunet/nextcloud-stepupauth",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "integration_jupyterhub",
+  "repo": "https://github.com/SUNET/nextcloud-integration_jupyterhub",
+  "repo_key": "github.com/sunet/nextcloud-integration_jupyterhub",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "mfazones",
+  "repo": "https://github.com/SUNET/nextcloud-mfazones",
+  "repo_key": "github.com/sunet/nextcloud-mfazones",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "imap_manager",
+  "repo": "https://github.com/SUNET/nextcloud-imap_manager",
+  "repo_key": "github.com/sunet/nextcloud-imap_manager",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "multiverse",
+  "repo": "https://github.com/SUNET/multiverse.git",
+  "repo_key": "github.com/sunet/multiverse",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "puppet-sunet",
+  "repo": "https://github.com/SUNET/puppet-sunet",
+  "repo_key": "github.com/sunet/puppet-sunet",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "invent",
+  "repo": "https://github.com/SUNET/invent",
+  "repo_key": "github.com/sunet/invent",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "tugpgp",
+  "repo": "https://github.com/SUNET/tugpgp",
+  "repo_key": "github.com/sunet/tugpgp",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "oidfed_metadata_policy",
+  "repo": "https://github.com/SUNET/oidfed_metadata_policy",
+  "repo_key": "github.com/sunet/oidfed_metadata_policy",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "hittade-server",
+  "repo": "https://github.com/SUNET/hittade-server",
+  "repo_key": "github.com/sunet/hittade-server",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "drive-tests",
+  "repo": "https://github.com/sunet/drive-tests",
+  "repo_key": "github.com/sunet/drive-tests",
+  "categories": [
+   "e-service"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "CNaaS-NMS",
+  "repo": "https://github.com/SUNET/cnaas-nms",
+  "repo_key": "github.com/sunet/cnaas-nms",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "edusign",
+  "repo": "https://github.com/SUNET/edusign-app",
+  "repo_key": "github.com/sunet/edusign-app",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "nglue",
+  "repo": "https://github.com/SUNET/nglue",
+  "repo_key": "github.com/sunet/nglue",
+  "categories": [
+   "devops"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "sunet-auth-server",
+  "repo": "https://github.com/SUNET/sunet-auth-server",
+  "repo_key": "github.com/sunet/sunet-auth-server",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "eduID Front",
+  "repo": "https://github.com/SUNET/eduid-front",
+  "repo_key": "github.com/sunet/eduid-front",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "eduID Backend",
+  "repo": "https://github.com/SUNET/eduid-backend",
+  "repo_key": "github.com/sunet/eduid-backend",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "cnaas-nac",
+  "repo": "https://github.com/sunet/cnaas-nac",
+  "repo_key": "github.com/sunet/cnaas-nac",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "clixon-pyapi",
+  "repo": "https://github.com/clicon/clixon-pyapi",
+  "repo_key": "github.com/clicon/clixon-pyapi",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "knotctl",
+  "repo": "https://platform.sunet.se/SUNET/knotctl",
+  "repo_key": "platform.sunet.se/sunet/knotctl",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "knot.nvim",
+  "repo": "https://platform.sunet.se/SUNET/knot.nvim",
+  "repo_key": "platform.sunet.se/sunet/knot.nvim",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "shib_auth",
+  "repo": "https://platform.sunet.se/Drive/shib_auth",
+  "repo_key": "platform.sunet.se/drive/shib_auth",
+  "categories": [
+   "integration"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Personal Data Gateway",
+  "repo": "https://gitlab.com/arbetsformedlingen/personal-data-gateway/api/impl",
+  "repo_key": "gitlab.com/arbetsformedlingen/personal-data-gateway/api/impl",
+  "categories": [
+   "security"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "arbetsformedlingen"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Postfix",
+  "repo": "https://www.postfix.org/start.html",
+  "repo_key": "postfix.org/start.html",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Jitsi Outlook-plugin",
+  "repo": "https://github.com/Forsakringskassan/jitsi-outlook",
+  "repo_key": "github.com/forsakringskassan/jitsi-outlook",
+  "categories": [
+   "kommunikation"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "fk"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "casual",
+  "repo": "https://github.com/casualcore/casual",
+  "repo_key": "github.com/casualcore/casual",
+  "categories": [
+   "middleware"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "fk",
+   "bolagsverket"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "reqstool",
+  "repo": "https://github.com/Luftfartsverket/reqstool-client",
+  "repo_key": "github.com/luftfartsverket/reqstool-client",
+  "categories": [
+   "krav"
+  ],
+  "has_publiccode": true,
+  "used_by": [
+   "lfv"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Datahike",
+  "repo": "https://github.com/replikativ/datahike",
+  "repo_key": "github.com/replikativ/datahike",
+  "has_publiccode": false,
+  "used_by": [
+   "arbetsformedlingen"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Gitea",
+  "repo": "https://about.gitea.com/",
+  "repo_key": "about.gitea.com",
+  "categories": [
+   "utvecklingsplattform"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "motala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Taiga",
+  "repo": "https://taiga.io/",
+  "repo_key": "taiga.io",
+  "categories": [
+   "projekthantering"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "motala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Wiki.js",
+  "repo": "https://js.wiki/",
+  "repo_key": "js.wiki",
+  "categories": [
+   "dokumentation"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "motala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "Laravel",
+  "repo": "https://laravel.com/",
+  "repo_key": "laravel.com",
+  "categories": [
+   "ramverk"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "svedala_k"
+  ]
+ },
+ {
+  "source": "SE/offentligkod",
+  "country": "SE",
+  "tier": "index",
+  "name": "PuTTY",
+  "repo": "https://www.putty.org/",
+  "repo_key": "putty.org",
+  "categories": [
+   "network"
+  ],
+  "has_publiccode": false,
+  "used_by": [
+   "svedala_k"
+  ]
+ }
+]
