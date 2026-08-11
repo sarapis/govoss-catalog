@@ -84,6 +84,18 @@ SOURCES = {
                 "government tier: federal, provincial, municipal and Indigenous. Every "
                 "text field is localised {en, fr}, including repositoryURL.",
     },
+    "GLOBAL/dpg": {
+        "label": "Digital Public Goods Registry", "country": "GLOBAL", "flag": "\U0001F310",
+        "site": "https://www.digitalpublicgoods.net/registry",
+        "api": "https://app.digitalpublicgoods.net/api/dpgs",
+        "route": "REST API", "claim": "vetted against the DPG Standard",
+        "note": "Global and UN-affiliated. WIDER CRITERION than the rest: DPGs are vetted "
+                "for relevance to the SDGs and many are NGO- or university-built rather "
+                "than government-published, so entries are tagged dpg:true and country "
+                "GLOBAL to be filterable. All 249 carry a repository and an OSI licence, "
+                "so they join cleanly on repo URL. Deployment countries are used as the "
+                "adopter signal.",
+    },
     "EU/code.europa.eu": {
         "label": "code.europa.eu", "country": "EU", "flag": "\U0001F1EA\U0001F1FA",
         "site": "https://code.europa.eu/",
@@ -121,12 +133,6 @@ SURVEY = [
      "url": "https://administracionelectronica.gob.es/ctt", "status": "needs-research",
      "detail": "Centro de Transferencia de Tecnologia is live but the base URL redirect-loops; "
                "a working entry point exists (verPestanaGeneral.htm). No API found yet."},
-    {"country": "global", "flag": "\U0001F310", "name": "Digital Public Goods Registry",
-     "url": "https://www.digitalpublicgoods.net/registry", "status": "ready",
-     "detail": "249 entries via an open API (app.digitalpublicgoods.net/api/dpgs), "
-               "UN-affiliated, with SDG and deployment-country metadata. In scope only if "
-               "the catalogue widens from 'government-published' to 'vetted for public use' "
-               "- many DPGs are NGO-built. A deliberate scope decision, not a technical one."},
     {"country": "global", "flag": "\U0001F310", "name": "State of Public Code / Software Heritage",
      "url": "https://www.softwareheritage.org/2026/07/01/public_code_2026_launch/",
      "status": "different-shape",

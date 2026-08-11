@@ -121,6 +121,17 @@ def build():
             "source_urls": [ (_S.SOURCES.get(x) or {}).get("site")
                              for x in (r.get("sources") or [r.get("source")]) if x ],
             "merged_from": r.get("merged_count", 1),
+            # how many DISTINCT catalogues list this software, and a deep link into
+            # each so the claim can be verified upstream rather than taken on trust
+            "catalogue_count": r.get("catalogue_count", 1),
+            "catalogues": [
+                {"source": ce.get("source"),
+                 "label": (_S.SOURCES.get(ce.get("source")) or {}).get("label", ce.get("source")),
+                 "country": (_S.SOURCES.get(ce.get("source")) or {}).get("country"),
+                 "catalogue_url": (_S.SOURCES.get(ce.get("source")) or {}).get("site"),
+                 "entry_url": ce.get("entry_url"),
+                 "name_there": ce.get("name")}
+                for ce in (r.get("catalogue_entries") or [])],
             "also_known_as": r.get("also_known_as") or [],
 
             "repo_url": r.get("repo") or None,
@@ -142,6 +153,9 @@ def build():
             "software_type": r.get("software_type") or None,
             "version": r.get("version") or None,
             "wikidata": r.get("wikidata") or None,
+            "dpg": bool(r.get("dpg")),
+            "dpg_type": r.get("dpg_type") or [],
+            "sdgs": r.get("sdgs") or [],
 
             "adopters": len(r.get("used_by") or []),
             "adopter_names": r.get("used_by") or [],
@@ -187,6 +201,10 @@ def build():
             "with_publiccode": sum(1 for e in entries if e["has_publiccode"]),
             "with_wikidata": sum(1 for e in entries if e["wikidata"]),
             "with_replaces": sum(1 for e in entries if e["replaces"]),
+            "in_multiple_catalogues": sum(1 for e in entries if e["catalogue_count"] > 1),
+            "with_entry_links": sum(1 for e in entries
+                                    if any(c["entry_url"] for c in e["catalogues"])),
+            "digital_public_goods": sum(1 for e in entries if e["dpg"]),
             "dead_links": sum(1 for e in entries if e["link_dead"]),
             "archived_repos": sum(1 for e in entries if e["repo_archived"]),
             "filtered_out": sum(1 for r in catalog if r.get("excluded")),

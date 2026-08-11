@@ -515,6 +515,7 @@
    "\u00e9ducation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=7zip",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -545,6 +546,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Acceleo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -572,6 +574,7 @@
   "desc_src": "Notifications suppl\u00e9mentaires \u00e0 celles incluses dans GLPI",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Additional%20Alerts",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -608,6 +611,7 @@
    "Universit\u00e9 de technologie de Compi\u00e8gne"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Agent%20OCS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -632,7 +636,7 @@
   "desc_lang": "fr",
   "desc_src": "Plateforme logicielle libre pour l'automatisation de la configuration et la gestion des ordinateurs.",
   "desc_src_lang": "fr",
-  "version": "2.21.2",
+  "version": "2.21.3",
   "used_by": [
    "AP-HP",
    "ARS",
@@ -663,6 +667,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ansible",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -706,6 +711,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20HTTP%20Server",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -740,6 +746,7 @@
    "Education Nationale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Jmeter",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -776,6 +783,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Maven",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -808,6 +816,7 @@
    "MC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Solr",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -843,6 +852,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Tomcat",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -874,6 +884,7 @@
    "URSSAF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ARX%20Data%20Anonymization%20Tool",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -907,6 +918,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Asqatasun",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -938,6 +950,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Assistant%20RGAA",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -971,6 +984,7 @@
    "MISC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Audacity",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1008,6 +1022,7 @@
    "Lyc\u00e9e les Lombards"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Avidemux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1039,6 +1054,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Bareos",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1068,6 +1084,7 @@
    "CNAF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Behaviors%20%28Comportements%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1099,6 +1116,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=BlueGriffon",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1135,6 +1153,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CentOS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1172,6 +1191,7 @@
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Centreon",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1207,6 +1227,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ceph",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1250,6 +1271,7 @@
    "Universit\u00e9 de Rennes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Chromium",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1289,6 +1311,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ClamAV",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1320,6 +1343,7 @@
    "MC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CodeceptJS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1351,6 +1375,7 @@
    "CDC des pays de L'Aigle"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Consul",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1383,6 +1408,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Corosync",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1421,6 +1447,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CUPS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1452,6 +1479,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Data%20Injection",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1482,6 +1510,7 @@
    "MEAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DBAN%20%28Darik%27s%20Boot%20and%20Nuke%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1512,6 +1541,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DbFit",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1581,6 +1611,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Debian",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1614,6 +1645,7 @@
    "Instituts Nationaux Polytechniques (INP)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Discourse",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1673,6 +1705,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Docker",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1739,6 +1772,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Draw.io%20Desktop",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1778,6 +1812,7 @@
    "inrae"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Drupal",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1810,6 +1845,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DVD%20Styler",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1845,6 +1881,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Eclipse%20IDE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1882,6 +1919,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Elasticsearch",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1912,6 +1950,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=EOLE%20AMON",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1941,6 +1980,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=EOLE%20%28Ubuntu%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -1968,6 +2008,7 @@
   "desc_src": "Escalade de tickets",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Escalation",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2016,6 +2057,7 @@
    "\u00e9ducation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Filezilla",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2046,6 +2088,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Fitnesse",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2092,6 +2135,7 @@
    "academie de Lyon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Framadate%20%28logiciel%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2120,6 +2164,7 @@
   "desc_src_lang": "fr",
   "version": "4.5.14",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Nagios",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2157,6 +2202,7 @@
    "\u00e9ducation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreeFileSync",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2211,6 +2257,7 @@
    "pr\u00e9fecture"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Freeplane",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2245,6 +2292,7 @@
    "Universit\u00e9 de Lille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FusionInventory",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2272,6 +2320,7 @@
   "desc_src": "Gestion des transferts de fichiers dans un contexte de production et s\u00e9curis\u00e9",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Waarp",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2353,6 +2402,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GIMP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2406,6 +2456,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Git",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2465,6 +2516,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GitLab%20Community%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2516,6 +2568,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GLPI",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2544,6 +2597,7 @@
    "MI/DGPN/STN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Survey%20%28questionnaire%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2591,6 +2645,7 @@
    "igpn"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Grammalecte",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2648,6 +2703,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GreenShot",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2677,6 +2733,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=H2",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2715,6 +2772,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=HAProxy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2779,6 +2837,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Inkscape",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2810,6 +2869,7 @@
    "MEN: Minist\u00e8re de l'\u00c9ducation nationale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=IS%20Designer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2839,6 +2899,7 @@
    "INRAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Jacoco",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2868,6 +2929,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Jailer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2897,6 +2959,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Javamelody",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -2921,13 +2984,14 @@
   "desc_lang": "fr",
   "desc_src": "Outil d'aide \u00e0 la livraison (d\u00e9p\u00f4t, int\u00e9gration continue...)",
   "desc_src_lang": "fr",
-  "version": "2.576",
+  "version": "2.577",
   "used_by": [
    "ASP",
    "MEN",
    "SG"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Jenkins",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3000,6 +3064,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Jitsi%20Meet",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3033,6 +3098,7 @@
    "POLICE NATIONALE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Roundcube",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3061,6 +3127,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=JUnit",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3094,6 +3161,7 @@
    "Universit\u00e9 de Lille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=K-9%20Mail",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3125,6 +3193,7 @@
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KeeFox",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3197,6 +3266,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KeePass",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3228,6 +3298,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Keycloak",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3261,6 +3332,7 @@
    "INSEE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kibana",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3308,6 +3380,7 @@
    "SG"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kubernetes",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3341,6 +3414,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KVM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3379,6 +3453,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LemonLDAP%3A%3ANG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3499,6 +3574,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LibreOffice",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3537,6 +3613,7 @@
    "Universit\u00e9 de Lille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LibreOffice%20%28Collabora%29%20online",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3587,6 +3664,7 @@
    "administration centrale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Limesurvey",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3621,6 +3699,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LireCouleur",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3654,6 +3733,7 @@
    "INSEE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Logstash",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3688,6 +3768,7 @@
    "MEAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mantis%20Bug%20Tracker",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3731,6 +3812,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MariaDB",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3766,6 +3848,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mastodon",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3802,6 +3885,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MediaWiki",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3827,6 +3911,7 @@
   "desc_src": "Affichage de GLPI pour terminaux mobiles et tablettes",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mobile",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3860,6 +3945,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MongoDB",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3963,6 +4049,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mozilla%20Firefox%20%28Extended%20Support%20Release%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -3993,6 +4080,7 @@
   "desc_src": "Diffusion multiformat",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MultiDiff",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4031,6 +4119,7 @@
    "Universit\u00e9 d'Angers"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MuPDF",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4063,6 +4152,7 @@
    "Mairie d'Arcueil"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NAPS2",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4140,6 +4230,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NextCloud",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4175,6 +4266,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Nexus",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4214,6 +4306,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Nginx",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4249,6 +4342,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NodeJS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4307,6 +4401,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Notepad%2B%2B",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4342,6 +4437,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Npm",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4376,6 +4472,7 @@
    "Universit\u00e9 Le Havre Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NVDA",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4430,6 +4527,7 @@
    "dgfip"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OBS%20Studio",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4464,6 +4562,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OCS%20Inventory",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4494,6 +4593,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OCS%20Inventory%20NG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4525,6 +4625,7 @@
    "D\u00e9veloppement durable"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenDocument%20Reader",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4556,6 +4657,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenJDK",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4593,6 +4695,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenLdap",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4621,6 +4724,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenNebula%20Community%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4658,6 +4762,7 @@
    "MJ/DSJ/Cour de cassation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenStack",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4689,6 +4794,7 @@
    "DGDDI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Pacemaker",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4717,6 +4823,7 @@
   "desc_src_lang": "fr",
   "version": "1.16.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Packer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4749,6 +4856,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PDF%20%28impression%20de%20pdf%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4821,6 +4929,7 @@
    "socia"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PDFSam%20Basic",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4849,6 +4958,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Pencil%20Project",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4874,6 +4984,7 @@
   "desc_src_lang": "fr",
   "version": "3.3.17",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4903,6 +5014,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PortraitOrLandscape",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4929,7 +5041,7 @@
   "desc_lang": "fr",
   "desc_src": "Serveur de courriel SMTP",
   "desc_src_lang": "fr",
-  "version": "3.11.5",
+  "version": "3.11.6",
   "used_by": [
    "CDC des pays de L'Aigle",
    "CNAM",
@@ -4940,6 +5052,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Postfix",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -4983,6 +5096,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PostGIS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5039,6 +5153,7 @@
    "vetagro sup"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PostgreSQL",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5077,6 +5192,7 @@
    "academie de Lyon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ProjectLibre",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5150,6 +5266,7 @@
    "sdjes dsden 54"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Qgis",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5184,6 +5301,7 @@
    "Mairie d'Arcueil"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Qwant%20%28extension%20de%20recherche%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5219,6 +5337,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Redmine",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5251,6 +5370,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Reports%20%28rapports%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5288,6 +5408,7 @@
    "academie de Lyon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rocketchat",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5322,6 +5443,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rundeck",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5356,6 +5478,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SaltStack",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5395,6 +5518,7 @@
    "MJ/DSJ/Cour de cassation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Samba",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5440,6 +5564,7 @@
    "Universit\u00e9 d'Angers"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Scribus",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5469,7 +5594,7 @@
   "desc_lang": "fr",
   "desc_src": "Automatisation des tests Web",
   "desc_src_lang": "fr",
-  "version": "4.46.0",
+  "version": "4.47.0",
   "used_by": [
    "CNRS",
    "DGAC/DTA/STAC/ASID/APGI",
@@ -5477,6 +5602,7 @@
    "D\u00e9partement de la Vend\u00e9e"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Selenium%20IDE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5510,6 +5636,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Selenium%20Server",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5543,6 +5670,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Shinken",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5580,6 +5708,7 @@
    "MI/SG/DTNUM/SDID"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SOAP%20UI%20Open%20Source",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5613,6 +5742,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SonarQube",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5644,6 +5774,7 @@
   "desc_src": "Tableau de bord d'indicateurs de qualit\u00e9",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SonarQube%20Plugins%20%3A%20FindBugs",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5678,6 +5809,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Spring%20Boot",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5710,6 +5842,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20TF",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5743,6 +5876,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20TM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5781,6 +5915,7 @@
    "eipi"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squid",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5831,6 +5966,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SumatraPDF",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5864,6 +6000,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Swarm",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5893,6 +6030,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Swift%20%28OpenStack%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5931,6 +6069,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Sympa",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5966,6 +6105,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Syslog-ng",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -5999,6 +6139,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Talend%20Open%20Studio%20for%20Data%20Integration%20%28BASIC%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6034,6 +6175,7 @@
    "SIU Unisciel - Universit\u00e9 de Lille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Tanaguru",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6066,6 +6208,7 @@
    "AC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Testlink",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6144,6 +6287,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mozilla%20Thunderbird",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6170,6 +6314,7 @@
   "desc_src": "Affichage graphique des d\u00e9lais de prise en compte des incidents + indicateurs sous forme de rapports",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TimeLineTicket",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6225,6 +6370,7 @@
    "dipn78/sdan"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=uBlock%20Origin",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6265,6 +6411,7 @@
    "Lyc\u00e9e des m\u00e9tiers entre Meurthe et Sanon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=uMap",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6294,6 +6441,7 @@
   "desc_src": "D\u00e9sinstallation d'objets inventori\u00e9s",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Uninstall",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6327,6 +6475,7 @@
    "DR67-SNSSI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Varnish",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6363,6 +6512,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Vault",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6401,6 +6551,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VeraCrypt",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6456,6 +6607,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VSCodium",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6518,6 +6670,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VLC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6545,6 +6698,7 @@
   "desc_src": "Galerie d'images",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VRT%20network%20equipment",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6582,6 +6736,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=WAPT%20Community",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6612,6 +6767,7 @@
    "P\u00f4le Emploi"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=WebAccess",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6640,6 +6796,7 @@
   "desc_src": "Serveur de services web permettant \u00e0 une application externe d'interroger et de piloter GLPI.",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=WebService",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6684,6 +6841,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wekan",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6729,6 +6887,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wordpress",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6762,6 +6921,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Yarn",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6795,6 +6955,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rudder",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6823,6 +6984,7 @@
   "desc_src": "Tableau de bord d'indicateurs de qualit\u00e9",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SonarQube%20Plugins%20%3A%20CheckStyle",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6851,6 +7013,7 @@
   "desc_src": "Tableau de bord d'indicateurs de qualit\u00e9",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SonarQube%20Plugins%20%3A%20Pmd",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6883,6 +7046,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20TF%20Java%20Junit%20Runner",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6915,6 +7079,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20TF%20Cucumber%20Java%20Runner",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6945,6 +7110,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20TF%20Execution%20Server",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -6976,6 +7142,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20KeywordFramework",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7015,6 +7182,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SOGo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7050,6 +7218,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zammad",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7082,6 +7251,7 @@
    "IGN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Jekyll",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7118,6 +7288,7 @@
    "Universit\u00e9 de Rouen"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Emacs",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7150,6 +7321,7 @@
    "Institut Laue Langevin (ILL)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cachet",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7190,6 +7362,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Matomo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7221,6 +7394,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=postfix.admin",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7271,6 +7445,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Proxmox%20Virtual%20Environment",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7308,6 +7483,7 @@
    "FPH GHT8"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Yunohost",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7338,6 +7514,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CodiMD",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7372,6 +7549,7 @@
    "AP-HP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=git-crypt",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7416,6 +7594,7 @@
    "Setra_5192"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=RStudio",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7445,6 +7624,7 @@
   "desc_src": "Outil d'entra\u00eenement \u00e0 la s\u00e9curit\u00e9 d'applications",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SecureFlag%20Community",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7479,6 +7659,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Redis",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7516,6 +7697,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Archifiltre",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7550,6 +7732,7 @@
    "dngcd"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Dia",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7585,6 +7768,7 @@
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Prometheus",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7628,6 +7812,7 @@
    "inrae"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Grafana",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7660,6 +7845,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenIO",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7691,6 +7877,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Correcteur%20terminologique%20fr%20%28FranceTerme%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7722,6 +7909,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Medulla",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7759,6 +7947,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ProjeQtOr",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7801,6 +7990,7 @@
    "centre de "
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenShot",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7832,6 +8022,7 @@
    "MC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VITAM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7882,6 +8073,7 @@
    "Universit\u00e9 d'Angers"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Opale",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7928,6 +8120,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=BigBlueButton",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7967,6 +8160,7 @@
    "Setra_5192"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Peertube",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -7999,6 +8193,7 @@
    "DGDDI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rancher",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8031,6 +8226,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=exodus-privacy%20%28standalone%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8061,6 +8257,7 @@
   "desc_src_lang": "fr",
   "version": "43.5.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenFisca",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8089,6 +8286,7 @@
   "desc_src": "[Affichage d'une carte dynamique avec les donn\u00e9es G\u00e9oportail](https://geoservices.ign.fr/documentation/utilisation_web/sdk.html)",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SDK%20G%C3%A9oportail",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8125,6 +8323,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zimbra%20Core",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8160,6 +8359,7 @@
    "Universcience"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TYPO3",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8192,6 +8392,7 @@
    "Minsit\u00e8re de la Justice"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Colour%20Contrast%20Analyser",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8226,6 +8427,7 @@
    "DNUM/PNM/PNM2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=D%C3%A9marches%20simplifi%C3%A9es",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8262,6 +8464,7 @@
    "Obervatoire de Paris"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FusionDirectory",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8294,6 +8497,7 @@
    "Commune de Vand\u0153uvre-l\u00e8s-Nancy"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=JOSM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8356,6 +8560,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Moodle",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8386,6 +8591,7 @@
   "desc_src": "Plateforme d'apprentissage \u00e0 distance",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Open%20EDX",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8427,6 +8633,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Esup-Pod",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8470,6 +8677,7 @@
    "Universit\u00e9 Le Havre Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SPIP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8505,6 +8713,7 @@
    "Rectorat de Versailles"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Pentaho%20Community%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8532,6 +8741,7 @@
   "desc_src": "Outil de gestion des connaissances",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Tracim",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8567,6 +8777,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=XWiki",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8605,6 +8816,7 @@
    "Universit\u00e9 Le Havre Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Pycharm%20Community%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8639,6 +8851,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Chamilo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8674,6 +8887,7 @@
    "Minist\u00e8re des arm\u00e9es"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Gravitee%20Community%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8703,6 +8917,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenSVC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8741,6 +8956,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Superset",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8773,6 +8989,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=uPortal",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8810,6 +9027,7 @@
    "DIE-1A"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Tuleap",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8844,6 +9062,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Dash",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8877,6 +9096,7 @@
    "Universit\u00e9 de Limoges"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Hedgedoc",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8909,6 +9129,7 @@
    "INRAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Lazarus%20IDE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8941,6 +9162,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreePascal",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -8974,6 +9196,7 @@
    "MC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MurExpo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9008,6 +9231,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Keycloakify",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9036,6 +9260,7 @@
   "desc_src": "Logiciel de gestion de produits chimiques",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=gochimitheque",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9071,6 +9296,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=fpart",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9103,6 +9329,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Publik",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9138,6 +9365,7 @@
    "R\u00e9seau Canop\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PrimTux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9174,6 +9402,7 @@
    "MISC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Samba%C3%89du",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9210,6 +9439,7 @@
    "MINEFI-SAFI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Onyxia",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9240,6 +9470,7 @@
   "desc_src_lang": "fr",
   "version": "0.32.1",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Decidim",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9270,6 +9501,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=XCP-ng",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9303,6 +9535,7 @@
    "Mairie d'Orl\u00e9ans"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Koha",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9342,6 +9575,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Element",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9391,6 +9625,7 @@
    "Ville de Paris"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Dokiel",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9424,6 +9659,7 @@
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Topaze",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9466,6 +9702,7 @@
    "Universit\u00e9 de Lille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FOG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9500,6 +9737,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Publicodes",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9544,6 +9782,7 @@
    "universit\u00e9 caen normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zotero",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9578,6 +9817,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Dovecot",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9611,6 +9851,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=udata",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9644,6 +9885,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=JabRef",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9680,6 +9922,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Symfony",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9717,6 +9960,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Composer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9750,6 +9994,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPUnit",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9780,6 +10025,7 @@
   "desc_src_lang": "fr",
   "version": "4.0.3",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Beekeeper%20Studio",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9814,6 +10060,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ILIAS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9848,6 +10095,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=opendcim",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9883,6 +10131,7 @@
    "Universit\u00e9 d'Angers"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=XSane",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9921,6 +10170,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MkDocs",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9955,6 +10205,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Data%20Language",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -9989,6 +10240,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=dokku",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10022,6 +10274,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SuiteCRM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10070,6 +10323,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Blender",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10108,6 +10362,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KiCad",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10167,6 +10422,7 @@
    "twb"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GanttProject",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10200,6 +10456,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=sdkman",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10233,6 +10490,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LSC-Project",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10268,6 +10526,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FileSender",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10301,6 +10560,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=iTop",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10334,6 +10594,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Vulture%20Project",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10369,6 +10630,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Atlas",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10406,6 +10668,7 @@
    "SGCD39"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Bonita",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10440,6 +10703,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=podman",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10471,6 +10735,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ART",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10506,6 +10771,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=G%27MIC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10544,6 +10810,7 @@
    "MI/SG/DTNUM/SDAIT/BS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Flask",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10577,6 +10844,7 @@
    "PREF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cherrytree",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10613,6 +10881,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=AngularJS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10650,6 +10919,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Minio",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10682,6 +10952,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=XiVO",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10720,6 +10991,7 @@
    "INRAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PlantUML",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10761,6 +11033,7 @@
    "Setra_5192"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=R",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10793,6 +11066,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KiTTY",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10826,6 +11100,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Deno",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10859,6 +11134,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TDP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10894,6 +11170,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Taiga",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10947,6 +11224,7 @@
    "universit\u00e9 caen normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Vim",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -10986,6 +11264,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Lizmap",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11020,6 +11299,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GitLanding",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11056,6 +11336,7 @@
    "Rennes M\u00e9tropole"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=geOrchestra",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11090,6 +11371,7 @@
    "R\u00e9gion bretagne"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=mviewer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11127,6 +11409,7 @@
    "DIRN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GeoNature",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11163,6 +11446,7 @@
    "DDPN 18"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Geotrek",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11197,6 +11481,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GCompris",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11238,6 +11523,7 @@
    "Universit\u00e9 de Bordeaux"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mattermost",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11274,6 +11560,7 @@
    "PREF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DigiRisk",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11308,6 +11595,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=AtoM%20-%20Access%20to%20Memory",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11366,6 +11654,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Python",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11400,6 +11689,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Clojure",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11451,6 +11741,7 @@
    "acad\u00e9mie de Grenoble"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OnlyOffice",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11480,12 +11771,13 @@
   "desc_lang": "fr",
   "desc_src": "Gestionnaire de paquets logiciels pour macOS et Linux.",
   "desc_src_lang": "fr",
-  "version": "6.0.15",
+  "version": "6.0.16",
   "used_by": [
    "CNRS",
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Homebrew",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11528,6 +11820,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Bitwarden",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11560,6 +11853,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VisiData",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11597,6 +11891,7 @@
    "Universit\u00e9 de Rennes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Raspberry%20Pi%20OS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11627,6 +11922,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=BrowserSelector",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11662,6 +11958,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Squash%20AUTOM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11697,6 +11994,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenTestFactory",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11735,6 +12033,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kate",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11774,6 +12073,7 @@
    "academie de Lyon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Okular",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11809,6 +12109,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kdenlive",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11843,6 +12144,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Spectacle",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11878,6 +12180,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KDE%20Plasma%205",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11911,6 +12214,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Groff",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11948,6 +12252,7 @@
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kleopatra",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -11980,6 +12285,7 @@
    "Universit\u00e9 de Guyane"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Chocolatey",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12030,6 +12336,7 @@
    "dzpn-nord"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Joplin",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12062,6 +12369,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ImageJ",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12115,6 +12423,7 @@
    "dgfip"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LaTeX",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12152,6 +12461,7 @@
    "Mairie de Saint-Joseph (La R\u00e9union)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=BlueMind",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12196,6 +12506,7 @@
    "administration centrale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Jupyter%20Notebook",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12234,6 +12545,7 @@
    "Universit\u00e9 de Limoges"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=JupyterLab",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12267,6 +12579,7 @@
    "DGAC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=INSECA",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12320,6 +12633,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DBeaver",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12358,6 +12672,7 @@
    "MJ"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Angular",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12396,6 +12711,7 @@
    "Universit\u00e9 Le Havre Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Octave",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12427,6 +12743,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20TeXmacs",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12460,6 +12777,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OCaml",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12494,6 +12812,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreeFem%2B%2B",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12524,6 +12843,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12559,6 +12879,7 @@
    "\u00e9ducation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Arduino%20IDE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12598,6 +12919,7 @@
    "SGCD 62"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ShredOS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12628,6 +12950,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SYGEFOR%20%28SYst%C3%A8me%20de%20GEstion%20des%20FORmations%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12661,6 +12984,7 @@
    "BRGM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Trivy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12700,6 +13024,7 @@
    "PREF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zim",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12734,6 +13059,7 @@
    "MENJ"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kanboard",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12769,6 +13095,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Sugarizer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12806,6 +13133,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Iparapheur",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12841,6 +13169,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=XMIND",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12874,6 +13203,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=cal.com",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12909,6 +13239,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Osuny",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12952,6 +13283,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreeCAD",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -12987,6 +13319,7 @@
    "PREF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Duplicati",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13019,6 +13352,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Madis",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13038,6 +13372,7 @@
   "desc_src": "Gestion Electronique du Courrier ",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Maarch%20Edissyum%20Master%20-%20MEM%20courrier%20",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13064,6 +13399,7 @@
   "desc_src": "Gestion Electronique du Courrier ",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Open-Capture",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13100,6 +13436,7 @@
    "PREF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Dolibarr",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13132,6 +13469,7 @@
    "prefecture 76"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Prodige",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13166,6 +13504,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DashLord",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13201,6 +13540,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PacketFence",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13234,6 +13574,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=eXo%20Platform",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13266,6 +13607,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LaBoite",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13302,6 +13644,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CodeIgniter",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13334,6 +13677,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=e-comBox",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13383,6 +13727,7 @@
    "universit\u00e9 caen normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Esup-Signature",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13420,6 +13765,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenProject",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13458,6 +13804,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=neovim",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13508,6 +13855,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zabbix",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13544,6 +13892,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Traefik%20Proxy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13576,6 +13925,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GeoRivi%C3%A8re",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13611,6 +13961,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Penpot",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13644,6 +13995,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Collabora%20Mobile",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13676,6 +14028,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Khartis",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13713,6 +14066,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=restic",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13748,6 +14102,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=StackStorm",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13787,6 +14142,7 @@
    "MJ/DSJ/Cour de cassation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Synfig",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13811,6 +14167,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mahara",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13843,6 +14200,7 @@
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Shotcut",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13860,6 +14218,7 @@
   "desc_src": "Outil d'organisation de conf\u00e9rence : Appel \u00e0 contributions, revue en double-aveugle, affichage du programme, communications avec les conf\u00e9renciers, collecte des diaporamas, collecte des enregistrements vid\u00e9os des conf\u00e9rences ...",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Pretalx",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13890,6 +14249,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Uptime%20Kuma",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13921,6 +14281,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Proxmox%20Backup%20Server",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13951,6 +14312,7 @@
    "ville de claix"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=BookStack",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -13977,6 +14339,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=AlmaLinux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14007,6 +14370,7 @@
    "Universit\u00e9 de Bordeaux"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Gitea",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14039,6 +14403,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ventoy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14067,6 +14432,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=RustDesk",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14098,6 +14464,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=React",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14128,6 +14495,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=tss-react",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14158,6 +14526,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=react-dsfr",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14183,6 +14552,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Passbolt%20Community%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14207,6 +14577,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=UpdatEngine-NG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14241,6 +14612,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MUI",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14274,6 +14646,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Next.js",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14305,6 +14678,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ViteJS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14337,6 +14711,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=create-react-app",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14370,6 +14745,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=trpc",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14400,6 +14776,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=emotion",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14426,6 +14803,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=phpIPAM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14451,6 +14829,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Icinga",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14480,6 +14859,7 @@
    "Universit\u00e9 de Tours"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rocky%20Linux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14505,6 +14885,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PMB",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14533,6 +14914,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rsyslog",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14561,6 +14943,7 @@
    "UMR 7357 : Laboratoire ICube"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Piwigo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14594,6 +14977,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Remmina",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14629,6 +15013,7 @@
    "Universit\u00e9 de Rennes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=BackupPC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14669,6 +15054,7 @@
    "Mairie de LOURDES"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=pfSense",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14699,6 +15085,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=WinSCP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14731,6 +15118,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNOME",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14761,6 +15149,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Nano",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14793,6 +15182,7 @@
    "DDT 77/STAC/PSIT/UACIG"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=nomacs",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14821,6 +15211,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LXC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14850,6 +15241,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=mRemoteNG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14876,6 +15268,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Vagrant",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14903,6 +15296,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=AWX",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14940,6 +15334,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PuTTY",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14966,6 +15361,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Seafile",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -14999,6 +15395,7 @@
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GParted",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15025,6 +15422,7 @@
    "Minist\u00e8re de la Sant\u00e9 et de la Pr\u00e9vention"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Goupile",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15051,6 +15449,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Proxmox%20Mail%20Gateway",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15078,6 +15477,7 @@
    "Universit\u00e9 de Limoges"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=JupyterHub",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15107,6 +15507,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DokuWiki",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15134,6 +15535,7 @@
    "Mairie de LOURDES"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Nginx%20Proxy%20Manager",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15160,6 +15562,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Scribe%20-%20CEMEA",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15184,6 +15587,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=transfer.sh",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15217,6 +15621,7 @@
    "DGDDI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TrueNAS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15250,6 +15655,7 @@
    "Universit\u00e9 de Limoges"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Portainer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15275,6 +15681,7 @@
    "MD"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cockpit",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15307,6 +15714,7 @@
    "IMT Mines Albi"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=vi",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15330,6 +15738,7 @@
    "Institut Laue Langevin (ILL)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wazuh",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15364,6 +15773,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Loki%20%28Grafana%20Loki%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15393,6 +15803,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Guacamole",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15415,6 +15826,7 @@
    "MJ/DSJ/Cour de cassation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NEDI",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15450,6 +15862,7 @@
    "MJ/DSJ/Cour de cassation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Kali%20Linux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15483,6 +15896,7 @@
    "MJ/DSJ/Cour de cassation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wireshark",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15507,6 +15921,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Hop",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15539,6 +15954,7 @@
    "Universit\u00e9 d'Angers"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Xournal%2B%2B",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15573,6 +15989,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CrystalDiskInfo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15608,6 +16025,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ma%20carte",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15637,6 +16055,7 @@
    "MI/SG/DTNUM/SDAIT/BS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Gunicorn",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15669,6 +16088,7 @@
    "MINISTERE INTERIEUR/SG/SHFD/C2MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=django",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15695,6 +16115,7 @@
    "SIDSIC"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Minetest",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15723,6 +16144,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Grep",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15749,6 +16171,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ripgrep",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15771,6 +16194,7 @@
   "desc_src_lang": "fr",
   "version": "7.8.4",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ugrep",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15797,6 +16221,7 @@
    "Universit\u00e9 Paris-Cit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Gal%C3%A8ne",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15819,6 +16244,7 @@
   "desc_src_lang": "fr",
   "version": "9.44.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Drools",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15844,6 +16270,7 @@
   "desc_src_lang": "fr",
   "version": "1.18.7",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KeeWeb",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15869,6 +16296,7 @@
    "Campus Num\u00e9rique 47"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=bunkerweb",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15903,6 +16331,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=joomla%21",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15929,6 +16358,7 @@
    "\u00e9ducation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Studio4Education",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15958,6 +16388,7 @@
    "ANCT"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mes%20Adresses",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -15983,6 +16414,7 @@
    "OSU Pytheas CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ERDDAP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16012,6 +16444,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=istSOS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16046,6 +16479,7 @@
    "administration centrale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DocFetcher",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16073,6 +16507,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=htmx",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16102,6 +16537,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DuckDB",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16127,6 +16563,7 @@
    "ville de claix"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Open-Xchange",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16152,6 +16589,7 @@
    "DGITM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LinShare",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16181,6 +16619,7 @@
    "Universit\u00e9 Le Havre Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wiki.js",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16210,6 +16649,7 @@
    "INRAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GeoServer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16246,6 +16686,7 @@
    "Universit\u00e9 Rennes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ScenariChain",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16273,6 +16714,7 @@
    "MESR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SCENARIchain-server",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16299,6 +16741,7 @@
    "Acad\u00e9mie de La R\u00e9union"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Toucan",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16327,6 +16770,7 @@
    "dsden"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Captura",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16356,6 +16800,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Screentogif",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16381,6 +16826,7 @@
   "desc_src_lang": "fr",
   "version": "3.3",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Olvid",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16410,6 +16856,7 @@
    "ASP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CNIL%20PIA%20%28Privacy%20Impact%20Assessment%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16442,6 +16889,7 @@
    "Universit\u00e9 Rennes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OptimOffice",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16471,6 +16919,7 @@
    "Minist\u00e8re des arm\u00e9es et des anciens combattants"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Process",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16502,6 +16951,7 @@
    "CentraleSup\u00e9lec"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Guix",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16533,6 +16983,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Metabase",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16558,6 +17009,7 @@
   "desc_src": "Cr\u00e9ation de d\u00e9p\u00f4ts miroir pour Proxmox/Debian, en ligne ou hors ligne.",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Proxmox%20Offline%20Mirror",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16582,6 +17034,7 @@
   "desc_src_lang": "fr",
   "version": "3.2.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GnuCOBOL",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16608,6 +17061,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ITSM-NG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16636,6 +17090,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Insomnium",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16665,6 +17120,7 @@
    "MS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CloudNativePG",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16692,6 +17148,7 @@
    "Setra_5192"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Shiny",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16742,6 +17199,7 @@
    "\u00cele-de-France Mobilit\u00e9s"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Grist",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16771,6 +17229,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GeoNetwork%20opensource",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16798,6 +17257,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openSUSE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16820,6 +17280,7 @@
   "desc_src_lang": "fr",
   "version": "8.0.47",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MySQL%20Workbench",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16856,6 +17317,7 @@
    "Universit\u00e9 Toulouse Capitole"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Logseq",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16885,6 +17347,7 @@
    "SGAMI SUD OUEST"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Maarch%20Courrier",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16907,6 +17370,7 @@
   "desc_src_lang": "fr",
   "version": "3.5.2",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20CouchDB",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16929,6 +17393,7 @@
   "desc_src_lang": "fr",
   "version": "1.15.8",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Terraform",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16949,6 +17414,7 @@
   "desc_src": "Syst\u00e8me d'exploitation de pare-feu et de routage bas\u00e9 sur FreeBSD",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Opnsense",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16972,6 +17438,7 @@
    "CDC des pays de L'Aigle"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DynFi",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -16999,6 +17466,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Alpine%20Linux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17031,6 +17499,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenSearch",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17053,6 +17522,7 @@
    "Arm\u00e9e de l'Air"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=X-PIPE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17092,6 +17562,7 @@
    "ac-bordeaux.fr"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ubuntu",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17120,6 +17591,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Obsidian%20%28logiciel%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17148,6 +17620,7 @@
    "Acad\u00e9mie d'Orl\u00e9ans-Tours"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KNIME%20Analytics%20Platform",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17179,6 +17652,7 @@
    "\u00e9ducation nationale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Canoprof",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17210,6 +17684,7 @@
    "MI/SG/DTNUM/SDID"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Airflow",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17230,11 +17705,12 @@
   "desc_lang": "fr",
   "desc_src": "JavaScript testing framework",
   "desc_src_lang": "fr",
-  "version": "15.20.0",
+  "version": "15.20.1",
   "used_by": [
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cypress",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17265,6 +17741,7 @@
    "rectorat acad\u00e9mie orl\u00e9ans tours"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Notesnook",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17293,6 +17770,7 @@
    "prefecture 53"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GPOZaurr",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17325,6 +17803,7 @@
    "Conseil D\u00e9partemental de l'Is\u00e8re"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Linphone",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17356,6 +17835,7 @@
    "Universit\u00e9 de Lorraine"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ant%20Renamer",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17387,6 +17867,7 @@
    "Obervatoire de Paris"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FusionDirectory%20Orchestrator",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17416,6 +17897,7 @@
    "DGDDI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Laravel",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17448,6 +17930,7 @@
    "Universit\u00e9 de Strasbourg"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenRefine",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17472,6 +17955,7 @@
    "Institut Laue Langevin (ILL)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=AgentJ",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17498,6 +17982,7 @@
    "Institut Laue Langevin (ILL)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Checkmk",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17525,6 +18010,7 @@
    "Institut Laue Langevin (ILL)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LibreNMS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17554,6 +18040,7 @@
    "Nantes M\u00e9tropole"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Netbox",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17574,6 +18061,7 @@
   "desc_src": "Logiciel libre de CAPTCHA",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=mCaptcha",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17603,6 +18091,7 @@
    "cour descomptes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Scilab",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17636,6 +18125,7 @@
    "Vall\u00e9e Sud - Grand Paris "
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TerraVisu",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17669,6 +18159,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CollectiveAccess",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17699,6 +18190,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TemaTres",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17727,6 +18219,7 @@
   "desc_src_lang": "fr",
   "version": "0.41.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=mpv",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17753,6 +18246,7 @@
    "Commune de Vand\u0153uvre-l\u00e8s-Nancy"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Grav",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17783,6 +18277,7 @@
    "Universit\u00e9 Le Havre Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Vue.js",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17816,6 +18311,7 @@
    "Education Nationale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Typst",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17846,6 +18342,7 @@
    "MTE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FFmpeg",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17870,6 +18367,7 @@
    "SG/DNUM/UNI/GAI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=foreman_fog_proxmox",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17898,6 +18396,7 @@
    "ird"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Constellation%20%28logiciel%29",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17923,6 +18422,7 @@
    "CNFPT"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=YesWiki",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17958,6 +18458,7 @@
    "MINISTERE INTERIEUR/PP/DSPAP/PT/RF/BCO"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Caddy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -17985,6 +18486,7 @@
    "DGDDI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=HeidiSQL",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18016,6 +18518,7 @@
    "MJ"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OWASP%20ZAP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18046,6 +18549,7 @@
    "CEA"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Phobos%20object%20store",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18071,6 +18575,7 @@
    "SG/DNUM/UNI/DSP/GASTA/PSTITM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Subtitle%20Edit",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18096,6 +18601,7 @@
    "SG/DNUM/UNI/DSP/GASTA/PSTITM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wink",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18122,6 +18628,7 @@
    "SGCD 01"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Balabolka",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18143,6 +18650,7 @@
   "desc_src_lang": "fr",
   "version": "1.5.2",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=RobinHood%20Policy%20Engine",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18176,6 +18684,7 @@
    "PREF"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Pandoc",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18203,6 +18712,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SNClient%2B",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18237,6 +18747,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PostgREST",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18269,6 +18780,7 @@
    "Mairie d'Arcueil"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Microsoft%20Powertoys",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18295,6 +18807,7 @@
    "D\u00e9partement de la Vend\u00e9e"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Postman",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18318,11 +18831,12 @@
   "desc_lang": "fr",
   "desc_src": "Magrit est un logiciel de cartographie th\u00e9matique ou statistique en ligne.",
   "desc_src_lang": "fr",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "used_by": [
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Magrit",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18347,6 +18861,7 @@
    "R\u00e9seau Canop\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreeTube",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18373,6 +18888,7 @@
    "dgfip"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=vaultwarden",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18392,6 +18908,7 @@
   "desc_src": "Prometheus est un logiciel libre utilis\u00e9 pour la surveillance informatique et cr\u00e9ation d'alertes. Il enregistre des mesures en temps r\u00e9el dans une base de donn\u00e9es temporelle (TSDB). Ces m\u00e9triques peuvent ensuite \u00eatre interrog\u00e9 \u00e0 l'aide d'un langage de requ\u00eate simple (PromQL) et peuvent \u00e9galement servir \u00e0 g\u00e9n\u00e9rer des alertes.",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Promotheus",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18417,6 +18934,7 @@
    "06"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rclone",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18436,6 +18954,7 @@
   "desc_src": "identifier et localiser postes utilisateurs",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=updatengine",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18459,6 +18978,7 @@
   "desc_src_lang": "fr",
   "version": "11.30.1",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PDF24%20Creator",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18493,6 +19013,7 @@
    "null"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=APSOLU",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18519,6 +19040,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Omeka",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18549,6 +19071,7 @@
    "ac-bordeaux.fr"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenBoard",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18580,6 +19103,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apereo%20CAS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18606,6 +19130,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=scikit-learn",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18637,6 +19162,7 @@
    "CEA"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Environment%20Modules",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18664,6 +19190,7 @@
    "IUT GMP Amiens"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ScoDoc",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18689,6 +19216,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Syncthing",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18714,6 +19242,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Veeam%20Backup%20%26%20Replication",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18749,6 +19278,7 @@
    "ac-bordeaux.fr"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CodEx",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18783,6 +19313,7 @@
    "Minist\u00e8re \u00e9ducation nationale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cybers%C3%A9curit%C3%A9",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18820,6 +19351,7 @@
    "academie d'Aix marseille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Hardensysvol",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18845,6 +19377,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Obsidian",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18872,6 +19405,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Siril",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18897,6 +19431,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=SPVIEW",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18932,6 +19467,7 @@
    "SGCD 53"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=do%E2%80%A2doc",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -18962,6 +19498,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LabPlot",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19003,6 +19540,7 @@
    "null"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MathAL%C3%89A",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19035,6 +19573,7 @@
    "Universit\u00e9 de Lille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ShareX",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19059,6 +19598,7 @@
   "desc_src_lang": "fr",
   "version": "2.0.26",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=AutoHotkey",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19084,6 +19624,7 @@
    "CEA"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Maxima",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19111,6 +19652,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Rufus",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19138,6 +19680,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cassandra",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19172,6 +19715,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Delta%20Chat",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19198,6 +19742,7 @@
    "Inria"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ePoc%20Editor",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19226,6 +19771,7 @@
    "Inria"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ePoc%20Mobile",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19251,6 +19797,7 @@
   "desc_src_lang": "fr",
   "version": "2.18.7",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=n8n",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19284,6 +19831,7 @@
    "Inria"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Manifest",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19314,6 +19862,7 @@
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Planno",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19342,6 +19891,7 @@
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mercator",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19364,6 +19914,7 @@
   "desc_src": "Deming est un outil puissant et intuitif con\u00e7u pour la gestion, la planification, le suivi et le reporting de l\u2019efficacit\u00e9 des mesures de s\u00e9curit\u00e9. Conform\u00e9ment \u00e0 la norme ISO/IEC 27001:2013, chapitre 9, Deming vous aide \u00e0 garantir une s\u00e9curit\u00e9 adapt\u00e9e et proportionn\u00e9e, tout en respectant les standards les plus exigeants.",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Deming",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19390,6 +19941,7 @@
    "Universit\u00e9 de Lorraine"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CloudCompare",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19421,6 +19973,7 @@
   "desc_src_lang": "fr",
   "version": "6.11",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CiviCRM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19446,6 +19999,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CorTexT",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19468,6 +20022,7 @@
   "desc_src": "logiciel informatique",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=HEC-RAS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19493,6 +20048,7 @@
    "Universit\u00e9 de Bordeaux"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ubuntu%20Server%20Edition",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19515,6 +20071,7 @@
   "desc_src_lang": "fr",
   "version": "1.25.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20NiFi",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19553,6 +20110,7 @@
    "Universit\u00e9 de Tours"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NumaHOP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19580,6 +20138,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OAR",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19606,6 +20165,7 @@
    "DINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Gephi",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19633,6 +20193,7 @@
    "SPE UMR CNRS 6134"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=DEVSimPy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19662,6 +20223,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBoost",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19689,6 +20251,7 @@
    "VIGINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenCTI",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19716,6 +20279,7 @@
    "VIGINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreshRSS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19736,12 +20300,13 @@
   "desc_lang": "fr",
   "desc_src": "Utilisation de LLMs h\u00e9berg\u00e9s",
   "desc_src_lang": "fr",
-  "version": "0.32.7",
+  "version": "0.32.8",
   "used_by": [
    "MI",
    "VIGINUM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ollama",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19770,6 +20335,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Cryptomator",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19797,6 +20363,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ChatMD",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19819,6 +20386,7 @@
    "SGAMI SUD OUEST"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Fortify",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19848,6 +20416,7 @@
    "R\u00e9seau Canop\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Docs",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19879,6 +20448,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=qooxdoo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19912,6 +20482,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Helix",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19937,6 +20508,7 @@
    "Universit\u00e9 de Rouen Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ESUP-SGC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19966,6 +20538,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Celluloid",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -19996,6 +20569,7 @@
    "academie d'Aix marseille"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Thonny",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20022,6 +20596,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Bulk%20Crap%20Uninstaller",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20056,6 +20631,7 @@
    "\u00e9cole sup\u00e9rieure d'art et design Le Havre Rouen"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Processing",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20087,6 +20663,7 @@
   "desc_src_lang": "fr",
   "version": "2.3.2",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=P5.js",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20112,6 +20689,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Archi",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20137,6 +20715,7 @@
    "ENSAN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Forgejo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20156,6 +20735,7 @@
   "desc_src": "Traitement des documents PDF ",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PDFgear",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20179,6 +20759,7 @@
    "SMMAR"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=D%C3%A9bi%27Clic",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20214,6 +20795,7 @@
    "MJ"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Dax%20Studio",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20239,6 +20821,7 @@
    "SGCD 29"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=IrfanView",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20258,6 +20841,7 @@
   "desc_src": "Zipline sert de CDN (Content Delivery Network), qui peut servir \u00e0 upload des images et \u00e0 envoyer ces images sous forme de lien cliquable, pour pouvoir voir les images en embeds par exemple.",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zipline",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20287,6 +20871,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PDF%20Arranger",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20318,6 +20903,7 @@
    "other"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=CISO-Assistant%20CE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20350,6 +20936,7 @@
    "MEN"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Openmodelica",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20380,6 +20967,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=HEIMDALL",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20402,6 +20990,7 @@
   "desc_src_lang": "fr",
   "version": "7.4.2",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Wagtail",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20429,6 +21018,7 @@
    "DREAL Occitanie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Hugin",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20458,6 +21048,7 @@
    "Minsit\u00e8re de la Justice"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=La%20Suite%20Meet",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20482,6 +21073,7 @@
   "desc_src_lang": "fr",
   "version": "0.20.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=La%20Suite%20Drive",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20517,6 +21109,7 @@
    "Universit\u00e9 de Rouen Normandie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=ESUP-OTP",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20545,6 +21138,7 @@
    "INRAE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Chirpstack",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20574,6 +21168,7 @@
    "Mairie d'Orl\u00e9ans"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Omeka%20S",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20603,6 +21198,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Hoppscotch",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20637,6 +21233,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Anaconda",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20666,6 +21263,7 @@
    "MI/SG/DTNUM/SDAIT/BS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Svelte",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20694,6 +21292,7 @@
    "Education Nationale"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Geany",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20729,6 +21328,7 @@
    "drasi"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=clawPDF",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20755,6 +21355,7 @@
    "Beta.gouv"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Stylo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20777,6 +21378,7 @@
   "desc_src_lang": "fr",
   "version": "4.11.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Veyon",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20799,6 +21401,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MuseScore%20Studio",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20825,6 +21428,7 @@
    "Eurom\u00e9tropole de Strasbourg"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NixOS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20860,6 +21464,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Perl",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20893,6 +21498,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenBSD",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20924,6 +21530,7 @@
    "CentraleSup\u00e9lec"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreeBSD",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20954,6 +21561,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NetBSD",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -20985,6 +21593,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=C",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21007,6 +21616,7 @@
   "desc_src": "Outil NO-Code",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NOCOBASE",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21029,6 +21639,7 @@
   "desc_src_lang": "fr",
   "version": "1.0.1",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=FreeMind",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21048,6 +21659,7 @@
   "desc_src": "calcul carte scolaire Implatation/Retrait selon bar\u00eames et effectifs",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=cartesco-class",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21079,6 +21691,7 @@
    "CIVIS EPCI La R\u00e9union"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Clonezilla%20Live",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21109,6 +21722,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=tmux",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21135,11 +21749,12 @@
   "desc_lang": "fr",
   "desc_src": "suite logicielle fourissant des sessions chiffr\u00e9es",
   "desc_src_lang": "fr",
-  "version": "10.4",
+  "version": "10.5",
   "used_by": [
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenSSH",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21167,6 +21782,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenRsync",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21197,6 +21813,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=WireGuard",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21228,6 +21845,7 @@
    "Acad\u00e9mie de Nantes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GNU%20Privacy%20Guard",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21260,6 +21878,7 @@
    "dreets pays de la loire"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KeePassXC",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21285,6 +21904,7 @@
    "CentraleSup\u00e9lec"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=KeePassDX",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21308,6 +21928,7 @@
   "desc_src": "Gestionnaire de th\u00e9saurus multilingue et polyhi\u00e9rachique",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Opentheso",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21340,6 +21961,7 @@
    "Commune Elancourt"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Datarchipel",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21362,6 +21984,7 @@
   "desc_src": "Batcher is a batch image processing plug-in for GIMP 3",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Batcher",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21393,6 +22016,7 @@
   "desc_src_lang": "fr",
   "version": "1.5.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OneGeo%20Suite",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21426,6 +22050,7 @@
    "MOSELLE FIBRE"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Corteza",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21451,6 +22076,7 @@
    "Mairie d'Arcueil"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=MEM%20Courrier",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21485,6 +22111,7 @@
    "CentraleSup\u00e9lec"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Julia",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21518,6 +22145,7 @@
    "CentraleSup\u00e9lec"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Visual%20Studio%20Code",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21543,6 +22171,7 @@
    "minist\u00e8re de l'int\u00e9rieur"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Authenticator",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21570,6 +22199,7 @@
   "desc_src": "Gestion des dossiers d\u2019urbanisme",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openADS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21592,6 +22222,7 @@
   "desc_src": "Gestion des demandes d\u2019avis",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openADS%20Services%20Consult%C3%A9s",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21618,6 +22249,7 @@
   "desc_src": "Gestion des \u00c9tablissements Recevant du Public (ERP)",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openARIA",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21646,6 +22278,7 @@
   "desc_src": "Gestion des cimeti\u00e8res",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openCimeti%C3%A8re",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21676,6 +22309,7 @@
    "Minsit\u00e8re de la Justice"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openD%C3%A9bitDeBoissons",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21702,6 +22336,7 @@
   "desc_src": "Gestion des listes \u00e9lectorales",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openElec",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21727,6 +22362,7 @@
   "desc_src": "Gestion et animation des journ\u00e9es \u00e9lectorales",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=openR%C3%A9sultat",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21757,6 +22393,7 @@
    "Mairie de Saint-Joseph (La R\u00e9union)"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Sync-in",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21776,6 +22413,7 @@
   "desc_src": "test",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=test",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21798,6 +22436,7 @@
   "desc_src": "peinture r\u00e9alis\u00e9e par un trait trac\u00e9 autour de l'ombre projet\u00e9e du sujet",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=silhouette",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21818,11 +22457,12 @@
   "desc_lang": "fr",
   "desc_src": "JavaScript library for rich text editors",
   "desc_src_lang": "fr",
-  "version": "3.29.2",
+  "version": "3.30.0",
   "used_by": [
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Tiptap",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21855,6 +22495,7 @@
    "ENS de Lyon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=TXM",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21882,6 +22523,7 @@
    "Minsit\u00e8re de la Justice"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=NATINFo",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21914,6 +22556,7 @@
    "Acad\u00e9mie de Limoges"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Spyder",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21939,6 +22582,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Netdisco",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21965,6 +22609,7 @@
    "MINARM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=UniGetUi",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -21988,6 +22633,7 @@
    "CNRS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Handy",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22014,6 +22660,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Bitwarden%20Mobile",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22039,6 +22686,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Bitwarden%20Browser%20Extensions",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22066,6 +22714,7 @@
    "Universit\u00e9 Grenoble Alpes"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=LyX",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22090,6 +22739,7 @@
    "DREAL Occitanie"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Mistral%20Vibe%20CLI",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22118,6 +22768,7 @@
    "Arcep"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VictoriaMetrics",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22146,6 +22797,7 @@
    "MEN - DNE - ETNA - \u00c9quipe nationale Nuage"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=VirtualBox",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22176,6 +22828,7 @@
    "MI"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=digiKam",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22200,6 +22853,7 @@
    "DGFIP"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=xan",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22234,6 +22888,7 @@
    "MINARM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Open%20Camera",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22260,6 +22915,7 @@
    "MINARM"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=GrapheneOS",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22282,6 +22938,7 @@
   "desc_src_lang": "fr",
   "version": "1.14.2",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Zed",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22313,6 +22970,7 @@
    "Universit\u00e9 de Bordeaux"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Canaille",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22336,6 +22994,7 @@
    "Acad\u00e9mie d'Orl\u00e9ans-Tours"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Colorpicker",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22359,6 +23018,7 @@
   "desc_src_lang": "fr",
   "version": "3.1.0",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Immich",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22382,6 +23042,7 @@
    "Sorbonne Universit\u00e9"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=word-sys-pdf-editor",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22409,6 +23070,7 @@
    "Acad\u00e9mie de Limoges"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Auto%20Multiple%20Choice",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22431,6 +23093,7 @@
    "CentraleSup\u00e9lec"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Quarto",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22457,6 +23120,7 @@
    "academie de Lyon"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Linux%20Mint",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22481,6 +23145,7 @@
   "desc_src": "Logiciel de retouche graphique, de cr\u00e9ation et d'animation",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Krita",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22501,6 +23166,7 @@
    "MINISTERE INTERIEUR/PP/PJ/SI/SGO/SIPJ/CITS-GM/CITS"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=scribus1.7.3",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22526,6 +23192,7 @@
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Heurist",
   "note": "recommended to public agents; not necessarily gov-authored"
  },
  {
@@ -22546,6 +23213,7 @@
   "desc_src": "Ekdosis est un paquet LuaLaTeX open source permettant de produire des \u00e9ditions critiques savantes \u00e0 partir d\u2019un encodage unique. Il structure textes, variantes et apparats critiques pour g\u00e9n\u00e9rer \u00e0 la fois des \u00e9ditions imprim\u00e9es (PDF) et des formats num\u00e9riques (XML/TEI), en conciliant rigueur philologique et exigences des \u00e9ditions num\u00e9riques",
   "desc_src_lang": "fr",
   "recommended_for_gov": true,
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Ekdosis",
   "note": "recommended to public agents; not necessarily gov-authored"
  }
 ]

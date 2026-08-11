@@ -36,6 +36,7 @@
   "fallback_repo": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim.git",
   "upstream_id": 1306,
   "forge_path": "bharat-vecto/bharat-vecto-sim",
+  "entry_url": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim",
   "last_activity": "2026-08-05T11:01:29.193Z"
  },
  {
@@ -79,6 +80,7 @@
   "fallback_repo": "https://code.europa.eu/leos/project-mode/leos-spain/leos-core-spain.git",
   "upstream_id": 1019,
   "forge_path": "leos/project-mode/leos-spain/leos-core-spain",
+  "entry_url": "https://code.europa.eu/leos/project-mode/leos-spain/leos-core-spain",
   "last_activity": "2025-12-16T15:21:59.419Z"
  },
  {
@@ -116,6 +118,7 @@
   "fallback_repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin.git",
   "upstream_id": 1006,
   "forge_path": "btsf/moodle-etranslation-filter-plugin",
+  "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
   "last_activity": "2026-08-04T08:48:04.149Z"
  },
  {
@@ -155,6 +158,7 @@
   "fallback_repo": "https://code.europa.eu/anagnko/vecto-deletion_scheduled-596.git",
   "upstream_id": 596,
   "forge_path": "anagnko/vecto-deletion_scheduled-596",
+  "entry_url": "https://code.europa.eu/anagnko/vecto-deletion_scheduled-596",
   "last_activity": "2026-08-07T08:33:25.530Z"
  },
  {
@@ -194,6 +198,7 @@
   "fallback_repo": "https://code.europa.eu/amogoda/vecto.git",
   "upstream_id": 451,
   "forge_path": "amogoda/vecto",
+  "entry_url": "https://code.europa.eu/amogoda/vecto",
   "last_activity": "2026-08-05T15:18:03.273Z"
  },
  {
@@ -233,6 +238,7 @@
   "fallback_repo": "https://code.europa.eu/anagnko/sandbox.git",
   "upstream_id": 449,
   "forge_path": "anagnko/sandbox",
+  "entry_url": "https://code.europa.eu/anagnko/sandbox",
   "last_activity": "2025-12-16T15:09:55.346Z"
  },
  {
@@ -272,6 +278,7 @@
   "fallback_repo": "https://code.europa.eu/vecto/tug-itna/hm_vecto-sim.git",
   "upstream_id": 423,
   "forge_path": "vecto/tug-itna/hm_vecto-sim",
+  "entry_url": "https://code.europa.eu/vecto/tug-itna/hm_vecto-sim",
   "last_activity": "2026-08-05T12:23:34.462Z"
  },
  {
@@ -311,6 +318,7 @@
   "fallback_repo": "https://code.europa.eu/vecto/tug-itna/mq_vecto-sim.git",
   "upstream_id": 422,
   "forge_path": "vecto/tug-itna/mq_vecto-sim",
+  "entry_url": "https://code.europa.eu/vecto/tug-itna/mq_vecto-sim",
   "last_activity": "2026-08-06T06:07:07.325Z"
  },
  {
@@ -347,52 +355,10 @@
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "fallback_repo": "https://code.europa.eu/vecto/vecto.git",
-  "upstream_id": 89,
-  "forge_path": "vecto/vecto",
-  "last_activity": "2026-08-11T11:33:59.845Z"
- },
- {
-  "source": "EU/code.europa.eu",
-  "country": "EU",
-  "tier": "publiccode",
-  "name": "LEOS core",
-  "repo": "https://code.europa.eu/leos/core/-/tree/development",
-  "repo_key": "code.europa.eu/leos/core",
-  "license": "EUPL-1.2",
-  "repo_owner": "European Commission",
-  "categories": [
-   "productivity-suite"
-  ],
-  "platforms": [
-   "web"
-  ],
-  "software_type": "standalone/web",
-  "dev_status": "stable",
-  "version": "5.0.*",
-  "released": "2023-12-07",
-  "maintenance": "internal",
-  "contacts": [
-   "DIGIT LEOS team"
-  ],
-  "desc_en": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
-  "short_desc": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
-  "desc_lang": "en",
-  "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
-  "features": [
-   "Legal document structure",
-   "Collaboration",
-   "Import legal text",
-   "Versioning",
-   "Annotations",
-   "Rich text"
-  ],
-  "used_by": [
-   "European Commission"
-  ],
-  "fallback_repo": "https://code.europa.eu/leos/core.git",
-  "upstream_id": 85,
-  "forge_path": "leos/core",
-  "last_activity": "2026-08-11T11:48:13.845Z"
+  "fallback_repo": "https://code.europa.eu/vecto/guests/vecto-sim-iker.git",
+  "upstream_id": 415,
+  "forge_path": "vecto/guests/vecto-sim-iker",
+  "entry_url": "https://code.europa.eu/vecto/guests/vecto-sim-iker",
+  "last_activity": "2025-12-17T10:06:24.281Z"
  }
 ]

@@ -101,7 +101,23 @@ def merge(group):
         if merged:
             out[f] = merged
 
-    # provenance: which catalogues and countries asserted this, and what each called it
+    # provenance: which catalogues and countries asserted this, and what each called it.
+    # catalogue_entries keeps a DEEP LINK per catalogue so a reader can verify the
+    # claim upstream rather than taking the merge on trust. entry_url is null for
+    # sources with no per-entry page (Developers Italia is a JS app whose sitemap has
+    # no software pages; Offentligkod and Canada have no per-entry route) — a guessed
+    # deep link would be worse than none.
+    seen_src, cat_entries = set(), []
+    for r in group:
+        src = r.get("source")
+        if src and src not in seen_src:
+            seen_src.add(src)
+            cat_entries.append({"source": src,
+                                "name": r.get("name"),
+                                "entry_url": r.get("entry_url"),
+                                "repo_url": r.get("repo")})
+    out["catalogue_entries"] = cat_entries
+    out["catalogue_count"] = len(cat_entries)
     out["sources"] = sorted({r["source"] for r in group})
     out["countries"] = sorted({r["country"] for r in group if r.get("country")})
     out["merged_count"] = len(group)
@@ -145,7 +161,12 @@ if __name__ == "__main__":
     merged, dupes = [], []
     for g in groups.values():
         if len(g) == 1:
-            merged.append(g[0])
+            r = dict(g[0])
+            r["catalogue_entries"] = [{"source": r.get("source"), "name": r.get("name"),
+                                       "entry_url": r.get("entry_url"),
+                                       "repo_url": r.get("repo")}]
+            r["catalogue_count"] = 1
+            merged.append(r)
         else:
             merged.append(merge(g))
             dupes.append(g)
@@ -157,10 +178,15 @@ if __name__ == "__main__":
 
     collapsed = sum(len(g) - 1 for g in dupes)
     multi = [r for r in merged if len(r.get("countries") or []) > 1]
+    multi_cat = [r for r in merged if r.get("catalogue_count", 1) > 1]
     print(f"{len(active)} active entries -> {len(merged)} after merge "
           f"({collapsed} collapsed across {len(dupes)} groups)")
     print(f"  {len(excluded)} filtered entries left untouched")
     print(f"  {len(multi)} entries now assert more than one country")
+    print(f"  {len(multi_cat)} entries appear in more than one CATALOGUE")
+    import collections as _c
+    print("  catalogue-count distribution:",
+          dict(sorted(_c.Counter(r.get("catalogue_count", 1) for r in merged).items())))
     print(f"\n  largest merges:")
     for g in sorted(dupes, key=len, reverse=True)[:8]:
         srcs = "+".join(sorted({r["country"] for r in g if r.get("country")}))

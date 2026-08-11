@@ -45,6 +45,10 @@ for r in c:
         "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
         "cs": r.get("countries") or ([r["country"]] if r.get("country") else []),
         "mc": r.get("merged_count", 1),
+        "cc2": r.get("catalogue_count", 1),
+        "ce": [{"l": (_S.SOURCES.get(x.get("source")) or {}).get("label", x.get("source")),
+                "u": x.get("entry_url") or (_S.SOURCES.get(x.get("source")) or {}).get("site")}
+               for x in (r.get("catalogue_entries") or [])],
         "aka": r.get("also_known_as") or [],
         "s": SRC_LABEL.get(r.get("source"), r.get("source")),
         "ss": [SRC_LABEL.get(x, x) for x in (r.get("sources") or [r.get("source")]) if x],
@@ -85,6 +89,7 @@ n_tr = sum(1 for r in _inc if r["tr"])
 n_en = sum(1 for r in _inc if r["d"] and not r["tr"])
 funcs = collections.Counter(f for r in _inc for f in r["fx"])
 n_dead = sum(1 for r in _inc if r["lv"] == "dead")
+n_multi_cat = sum(1 for r in _inc if (r.get("cc2") or 1) > 1)
 FFACETS = json.dumps([[k, FUNCTIONS[k], n] for k, n in funcs.most_common()])
 
 DATA = json.dumps(rows, separators=(",", ":"))
@@ -208,6 +213,7 @@ li.item:hover {{ background:var(--raised); }}
 .pill.concept{{color:var(--concept)}}
 .pill.rec {{ background:var(--accent-dim); color:var(--accent); }}
 .pill.dead {{ color:var(--obsolete); border:1px solid var(--obsolete); }}
+.pill.multi {{ background:var(--accent); color:var(--paper); }}
 .desc {{ color:var(--slate); font-size:.88rem; max-width:82ch; }}
 .foot {{ display:flex; flex-wrap:wrap; gap:.35rem .9rem; font-family:var(--mono);
          font-size:.7rem; color:var(--slate); letter-spacing:.02em; }}
@@ -253,6 +259,7 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
     <div class="stat"><b>{n_en + n_tr}</b><span>in English</span></div>
     <div class="stat"><b>{len(funcs)}</b><span>functions</span></div>
     <div class="stat"><b>{n_dead}</b><span>dead links</span></div>
+    <div class="stat"><b>{n_multi_cat}</b><span>in 2+ catalogues</span></div>
   </div>
 
   <div class="controls">
@@ -265,6 +272,7 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
       <select id="sort" aria-label="Sort">
         <option value="name">A&ndash;Z</option>
         <option value="adopters">Most adopters</option>
+        <option value="catalogues">In most catalogues</option>
         <option value="country">By country</option>
       </select>
       <label class="tog"><input type="checkbox" id="showex"> show {n_ex} filtered</label>
@@ -330,6 +338,7 @@ function current() {{
   );
   const s = el('sort').value;
   if (s === 'adopters') out.sort((a,b) => b.ub - a.ub || a.n.localeCompare(b.n));
+  else if (s === 'catalogues') out.sort((a,b) => (b.cc2||1) - (a.cc2||1) || b.ub - a.ub);
   else if (s === 'country') out.sort((a,b) => a.c.localeCompare(b.c) || a.n.localeCompare(b.n));
   else out.sort((a,b) => a.n.toLowerCase().localeCompare(b.n.toLowerCase()));
   return out;
@@ -359,9 +368,10 @@ function render() {{
         </div>
         ${{r.d ? `<div class="desc">${{esc(r.d)}}</div>` : ''}}
         <div class="foot">
-          <span class="src">${{r.su && r.su.length
-              ? `<a href="${{esc(r.su[0])}}" target="_blank" rel="noopener">${{esc((r.ss||[r.s]).join(' + '))}}</a>`
-              : esc((r.ss||[r.s]).join(' + '))}}</span>
+          <span class="src">${{(r.ce && r.ce.length ? r.ce : []).map(c =>
+              c.u ? `<a href="${{esc(c.u)}}" target="_blank" rel="noopener">${{esc(c.l)}}</a>`
+                  : esc(c.l)).join(' + ') || esc((r.ss||[r.s]).join(' + '))}}</span>
+          ${{r.cc2 > 1 ? `<span class="pill multi" title="listed by ${{r.cc2}} separate national catalogues">in ${{r.cc2}} catalogues</span>` : ''}}
           ${{r.mc > 1 ? `<span title="merged from ${{r.mc}} catalogue records for the same repository">merged \\u00d7${{r.mc}}</span>` : ''}}
           ${{r.aka && r.aka.length ? `<span>aka ${{esc(r.aka.join(', '))}}</span>` : ''}}
           ${{r.o ? `<span>${{esc(r.o)}}</span>` : ''}}

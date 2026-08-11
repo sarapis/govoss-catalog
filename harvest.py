@@ -163,10 +163,16 @@ def gitlab_scan(base, source, country, cap_pages=60, workers=12):
             return None
         if not pc:
             return None
+        # Do NOT construct an opencode.de/en/software/<slug>-<id> URL: the public
+        # directory lists only ~270 of the 477 projects carrying a publiccode.yml,
+        # so a constructed link 404s for ~40% of them. The GitLab project page
+        # always exists and is what the directory is generated from.
+        entry = p.get("web_url")
         return from_publiccode(pc, source, country,
                                fallback_repo=p.get("http_url_to_repo"),
                                upstream_id=p["id"],
                                forge_path=p.get("path_with_namespace"),
+                               entry_url=entry,
                                last_activity=p.get("last_activity_at"))
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -205,6 +211,7 @@ def github_org_scan(org, source, country, workers=12):
         if pc:
             return from_publiccode(pc, source, country,
                                    fallback_repo=r.get("html_url"),
+                                   entry_url=r.get("html_url"),
                                    stars=r.get("stargazers_count"),
                                    last_activity=r.get("pushed_at"),
                                    is_fork=bool(r.get("fork")))
@@ -212,6 +219,7 @@ def github_org_scan(org, source, country, workers=12):
         # genuine public-sector OSS — index them rather than drop them.
         return rec(source, country, "index", r.get("name"), r.get("html_url"),
                    repo_owner=org, license=(r.get("license") or {}).get("spdx_id"),
+                   entry_url=r.get("html_url"),
                    short_desc=(r.get("description") or "")[:400],
                    # GitHub repo descriptions in this org are written in English;
                    # tag it so language-gap detection does not skip these rows.
@@ -276,6 +284,8 @@ def fr():
                        version=lv.get("semVer"),
                        used_by=sorted((s.get("userAndReferentCountByOrganization") or {}).keys()),
                        recommended_for_gov=True,
+                       entry_url="https://code.gouv.fr/sill/detail?name="
+                                 + urllib.parse.quote(s.get("name") or ""),
                        note="recommended to public agents; not necessarily gov-authored"))
     print(f"      with Wikidata QID: {n_qid}/{len(sill)}")
     return out
@@ -401,10 +411,12 @@ def nl_forgejo():
         if pc:
             return from_publiccode(pc, "NL/code.overheid.nl", "NL",
                                    fallback_repo=r.get("html_url"),
+                                   entry_url=r.get("html_url"),
                                    forge_path=r.get("full_name"),
                                    is_fork=bool(r.get("fork")),
                                    last_activity=r.get("updated_at"))
         return rec("NL/code.overheid.nl", "NL", "index", r.get("name"), r.get("html_url"),
+                   entry_url=r.get("html_url"),
                    repo_owner=(r.get("owner") or {}).get("login"),
                    short_desc=(r.get("description") or "")[:400],
                    desc_lang="nl" if r.get("description") else None,
@@ -511,8 +523,85 @@ def nl_register():
     return out
 
 
+def dpg():
+    """Digital Public Goods Registry — global, UN-affiliated (digitalpublicgoods.net).
+
+    Widens the catalogue's criterion: DPGs are vetted against the DPG Standard for
+    relevance to the SDGs, and many are NGO- or university-built rather than
+    government-published. Included as a deliberate scope decision, and tagged
+    `dpg: True` plus country "GLOBAL" so it can be filtered back out.
+
+    All 249 entries carry a repository and an OSI licence, which makes them join
+    cleanly against the national catalogues on repo URL.
+    """
+    d = get("https://app.digitalpublicgoods.net/api/dpgs", timeout=120)
+    rows = d if isinstance(d, list) else (d.get("data") or [])
+
+    # The registry slug is NOT derivable from the API name (the API says
+    # "NextCloud Server", the registry serves /r/nextcloud), and the index page is
+    # JS-paginated so scraping it yielded only 20 of 249 slugs. So HEAD-check each
+    # candidate: 249 cheap requests buys a guarantee of zero broken deep links,
+    # which is the same standard the liveness monitor holds itself to.
+    def slugify(n):
+        return re.sub(r"[^a-z0-9]+", "-", (n or "").lower()).strip("-")
+
+    def verify(name):
+        parts = slugify(name).split("-")
+        for i in range(len(parts), 0, -1):
+            cand = "-".join(parts[:i])
+            if not cand:
+                continue
+            u = f"https://www.digitalpublicgoods.net/r/{cand}"
+            try:
+                req = urllib.request.Request(u, method="HEAD",
+                                             headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req, timeout=15, context=CTX) as r:
+                    if r.status == 200:
+                        return u
+            except Exception:
+                pass
+        return None
+
+    names = [r.get("name") or "" for r in rows]
+    with ThreadPoolExecutor(max_workers=10) as ex:
+        verified = dict(zip(names, ex.map(verify, names)))
+    print(f"    {sum(1 for v in verified.values() if v)}/{len(names)} registry deep links verified")
+    print(f"    {len(rows)} DPGs")
+    out = []
+    for r in rows:
+        name = r.get("name") or ""
+        repos = r.get("repositories") or []
+        repo = next((x.get("url") for x in repos if x.get("url")), None)
+        lic = next((x.get("openLicense") for x in (r.get("openlicenses") or [])
+                    if x.get("openLicense")), None)
+        locs = r.get("locations") or {}
+        deployed = locs.get("deploymentCountries") or []
+        sdgs = (r.get("sdgs") or {}).get("sdg") or []
+        orgs = [o.get("name") for o in (r.get("organizations") or []) if o.get("name")]
+        # verified pattern: /r/<name lowercased, non-alphanumerics -> hyphen>
+        entry = verified.get(name)
+        out.append(rec("GLOBAL/dpg", "GLOBAL", "index", name, repo,
+                       landing=r.get("website"),
+                       entry_url=entry,
+                       license=lic,
+                       short_desc=(r.get("description") or "")[:400] or None,
+                       desc_lang="en",
+                       dpg_type=[c for c in (r.get("categories") or []) if isinstance(c, str)],
+                       keywords=[x.split(":")[0] for x in sdgs if isinstance(x, str)][:10],
+                       repo_owner=orgs[0] if orgs else None,
+                       # deployment countries are the closest thing to adopters here,
+                       # and for a government buyer that is the trust signal
+                       used_by=sorted(deployed)[:60],
+                       sdgs=sdgs,
+                       dpg=True,
+                       upstream_id=r.get("dpgid"),
+                       note="Digital Public Good (DPG Standard); may be NGO- or "
+                            "university-built rather than government-published"))
+    return out
+
+
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
-           "se": se, "nl": nl_forgejo, "ca": ca, "nlreg": nl_register}
+           "se": se, "nl": nl_forgejo, "ca": ca, "dpg": dpg, "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as
 # source catalogues, and its own search is broken, so they can't be resolved

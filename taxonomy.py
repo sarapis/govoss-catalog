@@ -173,6 +173,13 @@ M = {
  "organisationen":"registers","registermodernisierung":"registers",
  # explicit non-signal
  "seo":"web-content","api":"integration",
+ # DPG registry "categories" are the five DPG ARTEFACT TYPES (Open Software, Open
+ # Data, Open Content, Open AI Model, Open Standard), not functional categories.
+ # They say what kind of thing it is, not what it does, so they carry no functional
+ # signal — mapped to None so the taxonomy falls through to text inference. The type
+ # itself is preserved on the record as dpg_type.
+ "Open Software":None,"Open Data":None,"Open Content":None,
+ "Open AI Model":None,"Open Standard":None,
  "Miscellaneous":None,"other":None,"Other":None,"as":None,
 }
 

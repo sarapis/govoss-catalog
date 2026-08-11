@@ -36,6 +36,8 @@ public infrastructure.
 | 🇳🇱 NL | code.overheid.nl | **Forgejo API** (open, no key) | 134 |
 | 🇨🇦 CA | Open Resource Exchange | `code.json` | 67 |
 
+| 🌐 GLOBAL | Digital Public Goods Registry | REST API | 249 |
+
 **`sources.py` is the single source of truth** for source labels, links, access routes and
 the global survey. Imported by `build_ui.py`, `export_json.py` and `build_sources.py`, so a
 URL cannot disagree between the page, the JSON and the docs. `/sources.html` + `/sources.json`
@@ -83,6 +85,30 @@ pages are also absent from `sitemap.xml`. Full writeup with reproduction: `PAGIN
 
 Beyond the bug, it is the wrong layer: it ingests France's **19-entry** curated list rather
 than the real French sources, so syndicating it inherits that hole permanently.
+
+## Cross-catalogue presence
+
+`catalogue_count` + `catalogues[]` per entry: how many DISTINCT catalogues list this
+software, with a **deep link into each** so a reader can verify the claim upstream instead
+of taking the merge on trust. **37 entries appear in 2+ catalogues** (34 in two, 3 in three
+— NextCloud Server, QGIS and OpenProject each in Developers Italia + SILL + DPG). Sortable
+in the UI via "In most catalogues", and a stat tile.
+
+**Every emitted deep link is verified.** 1,611 links, full sweep, zero broken. Two rules
+had to be thrown away to get there:
+
+- **openCode**: do NOT construct `opencode.de/en/software/<slug>-<id>`. The public directory
+  lists only ~270 of the 477 projects carrying a publiccode.yml, so a constructed link 404s
+  for ~40% of them (POLAR, App Config…). Use the GitLab `web_url`, which always exists and
+  is the record the directory is generated from.
+- **DPG**: the registry slug is not derivable from the API name — the API says
+  "NextCloud Server", the registry serves `/r/nextcloud`. Scraping the index yields only 20
+  of 249 slugs (JS-paginated). So each candidate is HEAD-checked at harvest time: 221/249
+  verified, the other 28 get `null`.
+
+`entry_url` is deliberately null for Developers Italia (JS app, no software pages in its
+sitemap), Offentligkod and Canada (no per-entry route). A guessed deep link is worse than
+none — the same rule as `licence_spdx`.
 
 ## Identity and dedup
 

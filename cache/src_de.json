@@ -38,6 +38,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt_treuchtlingen/stack-overview.freedesktop.org.git",
   "upstream_id": 12374,
   "forge_path": "stadt_treuchtlingen/stack-overview.freedesktop.org",
+  "entry_url": "https://gitlab.opencode.de/stadt_treuchtlingen/stack-overview.freedesktop.org",
   "last_activity": "2026-08-06T14:57:35.600Z"
  },
  {
@@ -85,6 +86,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000137042671/suchdienst.git",
   "upstream_id": 12363,
   "forge_path": "oc000137042671/suchdienst",
+  "entry_url": "https://gitlab.opencode.de/oc000137042671/suchdienst",
   "last_activity": "2026-08-06T09:45:20.311Z"
  },
  {
@@ -126,6 +128,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/bum-base-images.git",
   "upstream_id": 12159,
   "forge_path": "bwi/bundesmessenger/backend/bum-base-images",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/bum-base-images",
   "last_activity": "2026-07-30T13:26:20.302Z"
  },
  {
@@ -178,6 +181,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/ecodetect/ecodetect.git",
   "upstream_id": 12062,
   "forge_path": "unbox-cologne/ecodetect/ecodetect",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/ecodetect/ecodetect",
   "last_activity": "2026-07-31T14:04:54.131Z"
  },
  {
@@ -214,6 +218,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/raumklimaampeln-menden.git",
   "upstream_id": 12045,
   "forge_path": "stadt-menden/sensorik/raumklimaampeln-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/raumklimaampeln-menden",
   "last_activity": "2026-07-22T06:40:49.341Z"
  },
  {
@@ -267,6 +272,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bva/IDA/xta-crypto-lib.git",
   "upstream_id": 12035,
   "forge_path": "bva/IDA/xta-crypto-lib",
+  "entry_url": "https://gitlab.opencode.de/bva/IDA/xta-crypto-lib",
   "last_activity": "2026-07-24T14:49:40.025Z"
  },
  {
@@ -303,6 +309,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/parksensorik.git",
   "upstream_id": 12033,
   "forge_path": "stadt-menden/sensorik/parksensorik",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/parksensorik",
   "last_activity": "2026-07-22T06:43:47.915Z"
  },
  {
@@ -350,6 +357,7 @@
   "fallback_repo": "https://gitlab.opencode.de/green-ecolution/green-ecolution.git",
   "upstream_id": 11929,
   "forge_path": "green-ecolution/green-ecolution",
+  "entry_url": "https://gitlab.opencode.de/green-ecolution/green-ecolution",
   "last_activity": "2026-08-11T13:27:29.947Z"
  },
  {
@@ -394,6 +402,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openadvo/kiwo.git",
   "upstream_id": 11916,
   "forge_path": "openadvo/kiwo",
+  "entry_url": "https://gitlab.opencode.de/openadvo/kiwo",
   "last_activity": "2026-07-14T22:37:19.064Z"
  },
  {
@@ -437,6 +446,7 @@
   "fallback_repo": "https://gitlab.opencode.de/Felix-Tr/spark-workflow.git",
   "upstream_id": 11907,
   "forge_path": "Felix-Tr/spark-workflow",
+  "entry_url": "https://gitlab.opencode.de/Felix-Tr/spark-workflow",
   "last_activity": "2026-07-14T14:27:35.443Z"
  },
  {
@@ -483,6 +493,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000135514075/basti.git",
   "upstream_id": 11888,
   "forge_path": "oc000135514075/basti",
+  "entry_url": "https://gitlab.opencode.de/oc000135514075/basti",
   "last_activity": "2026-07-17T09:00:19.073Z"
  },
  {
@@ -536,6 +547,7 @@
   "fallback_repo": "https://gitlab.opencode.de/tlrz/opendesk.git",
   "upstream_id": 11819,
   "forge_path": "tlrz/opendesk",
+  "entry_url": "https://gitlab.opencode.de/tlrz/opendesk",
   "last_activity": "2026-07-13T11:51:01.640Z"
  },
  {
@@ -582,6 +594,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000074924853/badge-api.git",
   "upstream_id": 11801,
   "forge_path": "OC000074924853/badge-api",
+  "entry_url": "https://gitlab.opencode.de/OC000074924853/badge-api",
   "last_activity": "2026-07-24T09:13:35.332Z"
  },
  {
@@ -621,6 +634,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/neo-web-sdk.git",
   "upstream_id": 11767,
   "forge_path": "fitko/matrix-g2x/neo-web-sdk",
+  "entry_url": "https://gitlab.opencode.de/fitko/matrix-g2x/neo-web-sdk",
   "last_activity": "2026-07-08T16:31:51.709Z"
  },
  {
@@ -674,6 +688,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000158135140/opendesk.git",
   "upstream_id": 11613,
   "forge_path": "oc000158135140/opendesk",
+  "entry_url": "https://gitlab.opencode.de/oc000158135140/opendesk",
   "last_activity": "2026-07-02T10:26:26.395Z"
  },
  {
@@ -722,6 +737,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000158033033/sv-hub.git",
   "upstream_id": 11599,
   "forge_path": "oc000158033033/sv-hub",
+  "entry_url": "https://gitlab.opencode.de/oc000158033033/sv-hub",
   "last_activity": "2026-07-02T14:54:07.490Z"
  },
  {
@@ -767,6 +783,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kodi/suite-mobile.git",
   "upstream_id": 11594,
   "forge_path": "kodi/suite-mobile",
+  "entry_url": "https://gitlab.opencode.de/kodi/suite-mobile",
   "last_activity": "2026-08-10T14:07:57.662Z"
  },
  {
@@ -810,6 +827,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000135644311/spark-workflow.git",
   "upstream_id": 11569,
   "forge_path": "oc000135644311/spark-workflow",
+  "entry_url": "https://gitlab.opencode.de/oc000135644311/spark-workflow",
   "last_activity": "2026-07-02T10:03:34.729Z"
  },
  {
@@ -857,6 +875,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/moodle-qtype_accounting.git",
   "upstream_id": 11513,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/moodle-qtype_accounting",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/moodle-qtype_accounting",
   "last_activity": "2026-06-30T00:43:39.459Z"
  },
  {
@@ -906,6 +925,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000144987350/Urban-Stack-V1.git",
   "upstream_id": 11497,
   "forge_path": "oc000144987350/Urban-Stack-V1",
+  "entry_url": "https://gitlab.opencode.de/oc000144987350/Urban-Stack-V1",
   "last_activity": "2026-07-01T11:58:57.539Z"
  },
  {
@@ -951,6 +971,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-kaiserslautern1/indexdataexplorer.git",
   "upstream_id": 11490,
   "forge_path": "stadt-kaiserslautern1/indexdataexplorer",
+  "entry_url": "https://gitlab.opencode.de/stadt-kaiserslautern1/indexdataexplorer",
   "last_activity": "2026-06-27T06:17:22.366Z"
  },
  {
@@ -1004,6 +1025,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ddc/opendesk.git",
   "upstream_id": 11486,
   "forge_path": "ddc/opendesk",
+  "entry_url": "https://gitlab.opencode.de/ddc/opendesk",
   "last_activity": "2026-06-30T15:36:49.215Z"
  },
  {
@@ -1045,6 +1067,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp-seas.git",
   "upstream_id": 11446,
   "forge_path": "berlin/vhp-smart-space-hardenbergplatz/vhp-seas",
+  "entry_url": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp-seas",
   "last_activity": "2026-06-26T12:56:55.281Z"
  },
  {
@@ -1088,6 +1111,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lawful/spark-workflow.git",
   "upstream_id": 11372,
   "forge_path": "lawful/spark-workflow",
+  "entry_url": "https://gitlab.opencode.de/lawful/spark-workflow",
   "last_activity": "2026-07-10T16:38:14.800Z"
  },
  {
@@ -1133,6 +1157,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-api.git",
   "upstream_id": 11326,
   "forge_path": "bmds/planungs-und-genehmigungsbeschleunigung/spark-api",
+  "entry_url": "https://gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-api",
   "last_activity": "2026-08-06T17:35:20.021Z"
  },
  {
@@ -1175,6 +1200,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/co-learning-spaces/display-server-test.git",
   "upstream_id": 11315,
   "forge_path": "smart-city-ulm/co-learning-spaces/display-server-test",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/co-learning-spaces/display-server-test",
   "last_activity": "2026-08-04T11:44:33.629Z"
  },
  {
@@ -1208,6 +1234,7 @@
   "fallback_repo": "https://gitlab.opencode.de/urbo-community/urbo.git",
   "upstream_id": 11309,
   "forge_path": "urbo-community/urbo",
+  "entry_url": "https://gitlab.opencode.de/urbo-community/urbo",
   "last_activity": "2026-08-11T11:49:05.853Z"
  },
  {
@@ -1245,6 +1272,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp-flutter-2.git",
   "upstream_id": 11265,
   "forge_path": "berlin/vhp-smart-space-hardenbergplatz/vhp-flutter-2",
+  "entry_url": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp-flutter-2",
   "last_activity": "2026-06-26T12:56:38.446Z"
  },
  {
@@ -1286,6 +1314,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp2api.git",
   "upstream_id": 11264,
   "forge_path": "berlin/vhp-smart-space-hardenbergplatz/vhp2api",
+  "entry_url": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp2api",
   "last_activity": "2026-06-26T12:55:18.465Z"
  },
  {
@@ -1324,6 +1353,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp2react.git",
   "upstream_id": 11263,
   "forge_path": "berlin/vhp-smart-space-hardenbergplatz/vhp2react",
+  "entry_url": "https://gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp2react",
   "last_activity": "2026-06-26T12:55:01.438Z"
  },
  {
@@ -1367,6 +1397,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000004273942/spark-workflow.git",
   "upstream_id": 11262,
   "forge_path": "OC000004273942/spark-workflow",
+  "entry_url": "https://gitlab.opencode.de/OC000004273942/spark-workflow",
   "last_activity": "2026-06-15T14:26:55.413Z"
  },
  {
@@ -1416,6 +1447,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-government-community-builder/OGCB.git",
   "upstream_id": 11244,
   "forge_path": "open-government-community-builder/OGCB",
+  "entry_url": "https://gitlab.opencode.de/open-government-community-builder/OGCB",
   "last_activity": "2026-06-30T15:02:46.334Z"
  },
  {
@@ -1462,6 +1494,7 @@
   "fallback_repo": "https://gitlab.opencode.de/cern/indico.git",
   "upstream_id": 11231,
   "forge_path": "cern/indico",
+  "entry_url": "https://gitlab.opencode.de/cern/indico",
   "last_activity": "2026-08-11T01:39:44.557Z"
  },
  {
@@ -1531,6 +1564,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DarkoP/kern-plain-css-html.git",
   "upstream_id": 11230,
   "forge_path": "DarkoP/kern-plain-css-html",
+  "entry_url": "https://gitlab.opencode.de/DarkoP/kern-plain-css-html",
   "last_activity": "2026-06-12T08:51:12.326Z"
  },
  {
@@ -1574,6 +1608,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000054426426/masterportal.git",
   "upstream_id": 11223,
   "forge_path": "oc000054426426/masterportal",
+  "entry_url": "https://gitlab.opencode.de/oc000054426426/masterportal",
   "last_activity": "2026-06-15T16:00:22.092Z"
  },
  {
@@ -1643,6 +1678,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000153263840/kern-ux-plain.git",
   "upstream_id": 11222,
   "forge_path": "oc000153263840/kern-ux-plain",
+  "entry_url": "https://gitlab.opencode.de/oc000153263840/kern-ux-plain",
   "last_activity": "2026-06-11T13:46:23.057Z"
  },
  {
@@ -1699,6 +1735,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/nrw.desk.git",
   "upstream_id": 11210,
   "forge_path": "it.nrw/nrw.desk/nrw.desk",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/nrw.desk",
   "last_activity": "2026-06-10T16:48:39.104Z"
  },
  {
@@ -1744,6 +1781,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000070474995/oam-keycloak-plugin-opencode.git",
   "upstream_id": 11177,
   "forge_path": "OC000070474995/oam-keycloak-plugin-opencode",
+  "entry_url": "https://gitlab.opencode.de/OC000070474995/oam-keycloak-plugin-opencode",
   "last_activity": "2026-06-09T04:55:44.829Z"
  },
  {
@@ -1787,6 +1825,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000152886382/evb-it-digital.git",
   "upstream_id": 11167,
   "forge_path": "oc000152886382/evb-it-digital",
+  "entry_url": "https://gitlab.opencode.de/oc000152886382/evb-it-digital",
   "last_activity": "2026-06-07T04:24:05.813Z"
  },
  {
@@ -1834,6 +1873,7 @@
   "fallback_repo": "https://gitlab.opencode.de/progeek/document-writing-ci-components.git",
   "upstream_id": 11039,
   "forge_path": "progeek/document-writing-ci-components",
+  "entry_url": "https://gitlab.opencode.de/progeek/document-writing-ci-components",
   "last_activity": "2026-05-28T15:48:23.959Z"
  },
  {
@@ -1882,6 +1922,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/engagiert-in-ulm/frontend.git",
   "upstream_id": 10985,
   "forge_path": "smart-city-ulm/engagiert-in-ulm/frontend",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/engagiert-in-ulm/frontend",
   "last_activity": "2026-06-25T05:01:12.674Z"
  },
  {
@@ -1935,6 +1976,7 @@
   "fallback_repo": "https://gitlab.opencode.de/dschmidt/opendesk.git",
   "upstream_id": 10974,
   "forge_path": "dschmidt/opendesk",
+  "entry_url": "https://gitlab.opencode.de/dschmidt/opendesk",
   "last_activity": "2026-06-16T19:16:17.094Z"
  },
  {
@@ -1971,6 +2013,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000002816070/richtlinien-umsetzung-kyverno.git",
   "upstream_id": 10972,
   "forge_path": "oc000002816070/richtlinien-umsetzung-kyverno",
+  "entry_url": "https://gitlab.opencode.de/oc000002816070/richtlinien-umsetzung-kyverno",
   "last_activity": "2026-05-26T08:38:24.429Z"
  },
  {
@@ -2015,6 +2058,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/engagiert-in-ulm/backend.git",
   "upstream_id": 10970,
   "forge_path": "smart-city-ulm/engagiert-in-ulm/backend",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/engagiert-in-ulm/backend",
   "last_activity": "2026-06-25T09:02:19.166Z"
  },
  {
@@ -2059,6 +2103,7 @@
   "fallback_repo": "https://gitlab.opencode.de/aleksander-sadowski-group/FreeCAD.git",
   "upstream_id": 10968,
   "forge_path": "aleksander-sadowski-group/FreeCAD",
+  "entry_url": "https://gitlab.opencode.de/aleksander-sadowski-group/FreeCAD",
   "last_activity": "2026-05-27T17:38:47.282Z"
  },
  {
@@ -2105,6 +2150,7 @@
   "fallback_repo": "https://gitlab.opencode.de/aleksander-sadowski-group/OpenPartsLibrary.git",
   "upstream_id": 10967,
   "forge_path": "aleksander-sadowski-group/OpenPartsLibrary",
+  "entry_url": "https://gitlab.opencode.de/aleksander-sadowski-group/OpenPartsLibrary",
   "last_activity": "2026-06-09T16:36:28.894Z"
  },
  {
@@ -2151,6 +2197,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000150015413/SovereignDeployKit.git",
   "upstream_id": 10966,
   "forge_path": "oc000150015413/SovereignDeployKit",
+  "entry_url": "https://gitlab.opencode.de/oc000150015413/SovereignDeployKit",
   "last_activity": "2026-05-29T19:22:04.566Z"
  },
  {
@@ -2194,6 +2241,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000149767119/masterportal-wn-fork.git",
   "upstream_id": 10962,
   "forge_path": "oc000149767119/masterportal-wn-fork",
+  "entry_url": "https://gitlab.opencode.de/oc000149767119/masterportal-wn-fork",
   "last_activity": "2026-05-22T11:13:27.512Z"
  },
  {
@@ -2238,6 +2286,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kayna-funkt/thingsboard-ce-klimadaten-mandanten-wasserkarte.git",
   "upstream_id": 10960,
   "forge_path": "kayna-funkt/thingsboard-ce-klimadaten-mandanten-wasserkarte",
+  "entry_url": "https://gitlab.opencode.de/kayna-funkt/thingsboard-ce-klimadaten-mandanten-wasserkarte",
   "last_activity": "2026-05-22T09:29:49.917Z"
  },
  {
@@ -2273,6 +2322,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kayna-funkt/wasserkarte-burgenlandkreis.git",
   "upstream_id": 10958,
   "forge_path": "kayna-funkt/wasserkarte-burgenlandkreis",
+  "entry_url": "https://gitlab.opencode.de/kayna-funkt/wasserkarte-burgenlandkreis",
   "last_activity": "2026-05-22T09:27:27.649Z"
  },
  {
@@ -2325,6 +2375,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000143603860/x-road-sh.git",
   "upstream_id": 10926,
   "forge_path": "oc000143603860/x-road-sh",
+  "entry_url": "https://gitlab.opencode.de/oc000143603860/x-road-sh",
   "last_activity": "2026-05-20T09:21:31.674Z"
  },
  {
@@ -2397,6 +2448,7 @@
   "fallback_repo": "https://gitlab.opencode.de/mgm-tp/a12/a12overview.git",
   "upstream_id": 10919,
   "forge_path": "mgm-tp/a12/a12overview",
+  "entry_url": "https://gitlab.opencode.de/mgm-tp/a12/a12overview",
   "last_activity": "2026-07-22T00:00:08.062Z"
  },
  {
@@ -2436,6 +2488,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-utils.git",
   "upstream_id": 10879,
   "forge_path": "fitko/pvog/bibliotheken/pv-utils",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-utils",
   "last_activity": "2026-07-31T09:53:51.773Z"
  },
  {
@@ -2479,6 +2532,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/llm-questionnaire-benchmarking-framework.git",
   "upstream_id": 10787,
   "forge_path": "uba-ki-lab/llm-questionnaire-benchmarking-framework",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/llm-questionnaire-benchmarking-framework",
   "last_activity": "2026-07-13T00:00:12.759Z"
  },
  {
@@ -2517,7 +2571,8 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/sva-studio/sva-studio.git",
   "upstream_id": 10719,
   "forge_path": "bad-belzig/sva-studio/sva-studio",
-  "last_activity": "2026-08-10T16:48:13.103Z"
+  "entry_url": "https://gitlab.opencode.de/bad-belzig/sva-studio/sva-studio",
+  "last_activity": "2026-08-11T15:51:45.841Z"
  },
  {
   "source": "DE/openCode",
@@ -2588,6 +2643,7 @@
   "fallback_repo": "https://gitlab.opencode.de/informationgrid/ingrid-oss.eu.git",
   "upstream_id": 10691,
   "forge_path": "informationgrid/ingrid-oss.eu",
+  "entry_url": "https://gitlab.opencode.de/informationgrid/ingrid-oss.eu",
   "last_activity": "2026-08-04T16:13:42.755Z"
  },
  {
@@ -2631,6 +2687,7 @@
   "fallback_repo": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-api.git",
   "upstream_id": 10653,
   "forge_path": "land-lieben/gesundheitsplattform-kusel-api",
+  "entry_url": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-api",
   "last_activity": "2026-06-15T07:03:01.795Z"
  },
  {
@@ -2674,6 +2731,7 @@
   "fallback_repo": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-frontend.git",
   "upstream_id": 10652,
   "forge_path": "land-lieben/gesundheitsplattform-kusel-frontend",
+  "entry_url": "https://gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-frontend",
   "last_activity": "2026-06-15T07:03:26.194Z"
  },
  {
@@ -2718,6 +2776,7 @@
   "fallback_repo": "https://gitlab.opencode.de/datenadler-brandenburg/piveau-hub-ui.git",
   "upstream_id": 10650,
   "forge_path": "datenadler-brandenburg/piveau-hub-ui",
+  "entry_url": "https://gitlab.opencode.de/datenadler-brandenburg/piveau-hub-ui",
   "last_activity": "2026-05-05T12:44:09.383Z"
  },
  {
@@ -2763,6 +2822,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-kaiserslautern1/navi4all.git",
   "upstream_id": 10646,
   "forge_path": "stadt-kaiserslautern1/navi4all",
+  "entry_url": "https://gitlab.opencode.de/stadt-kaiserslautern1/navi4all",
   "last_activity": "2026-05-13T10:50:22.780Z"
  },
  {
@@ -2819,6 +2879,7 @@
   "fallback_repo": "https://gitlab.opencode.de/informationgrid/ingrid-editor.git",
   "upstream_id": 10602,
   "forge_path": "informationgrid/ingrid-editor",
+  "entry_url": "https://gitlab.opencode.de/informationgrid/ingrid-editor",
   "last_activity": "2026-08-06T03:44:03.179Z"
  },
  {
@@ -2869,6 +2930,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/colognecultivators/cologne-cultivators.git",
   "upstream_id": 10586,
   "forge_path": "unbox-cologne/colognecultivators/cologne-cultivators",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/colognecultivators/cologne-cultivators",
   "last_activity": "2026-08-08T11:00:42.511Z"
  },
  {
@@ -2919,6 +2981,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/colognecultivators/cologne-cultivators-backend.git",
   "upstream_id": 10585,
   "forge_path": "unbox-cologne/colognecultivators/cologne-cultivators-backend",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/colognecultivators/cologne-cultivators-backend",
   "last_activity": "2026-07-22T12:39:17.247Z"
  },
  {
@@ -2965,6 +3028,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mila-mitgliederverwaltung.git",
   "upstream_id": 10566,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/mila-mitgliederverwaltung",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mila-mitgliederverwaltung",
   "last_activity": "2026-08-06T02:53:39.223Z"
  },
  {
@@ -3013,6 +3077,7 @@
   "fallback_repo": "https://gitlab.opencode.de/nebu/nebu-server.git",
   "upstream_id": 10560,
   "forge_path": "nebu/nebu-server",
+  "entry_url": "https://gitlab.opencode.de/nebu/nebu-server",
   "last_activity": "2026-07-12T18:53:22.598Z"
  },
  {
@@ -3052,6 +3117,7 @@
   "fallback_repo": "https://gitlab.opencode.de/robson90/ELSTER_NEZO_Plugin.git",
   "upstream_id": 10546,
   "forge_path": "robson90/ELSTER_NEZO_Plugin",
+  "entry_url": "https://gitlab.opencode.de/robson90/ELSTER_NEZO_Plugin",
   "last_activity": "2026-04-28T08:45:47.371Z"
  },
  {
@@ -3092,6 +3158,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bielefeld/bielefeld-geodashboard.git",
   "upstream_id": 10534,
   "forge_path": "bielefeld/bielefeld-geodashboard",
+  "entry_url": "https://gitlab.opencode.de/bielefeld/bielefeld-geodashboard",
   "last_activity": "2026-04-27T08:40:39.533Z"
  },
  {
@@ -3137,6 +3204,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/element-web-ff.git",
   "upstream_id": 10509,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/element-web-ff",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/element-web-ff",
   "last_activity": "2026-05-09T15:48:44.476Z"
  },
  {
@@ -3181,6 +3249,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-frontend.git",
   "upstream_id": 10508,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-frontend",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-frontend",
   "last_activity": "2026-05-08T12:08:17.127Z"
  },
  {
@@ -3225,6 +3294,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-keycloak.git",
   "upstream_id": 10507,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-keycloak",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-keycloak",
   "last_activity": "2026-05-08T12:06:57.106Z"
  },
  {
@@ -3270,6 +3340,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-backend.git",
   "upstream_id": 10506,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-backend",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-backend",
   "last_activity": "2026-05-08T12:07:58.098Z"
  },
  {
@@ -3314,6 +3385,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-blackout.git",
   "upstream_id": 10505,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-blackout",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-blackout",
   "last_activity": "2026-05-08T12:08:09.163Z"
  },
  {
@@ -3358,6 +3430,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-connect.git",
   "upstream_id": 10504,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-connect",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-connect",
   "last_activity": "2026-05-08T12:08:27.478Z"
  },
  {
@@ -3404,6 +3477,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-deployment.git",
   "upstream_id": 10503,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-deployment",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-deployment",
   "last_activity": "2026-07-01T11:15:48.067Z"
  },
  {
@@ -3443,6 +3517,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-schema-annotation.git",
   "upstream_id": 10466,
   "forge_path": "fitko/pvog/bibliotheken/pv-schema-annotation",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-schema-annotation",
   "last_activity": "2026-08-10T09:37:44.839Z"
  },
  {
@@ -3485,6 +3560,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-schema.git",
   "upstream_id": 10465,
   "forge_path": "fitko/pvog/bibliotheken/pv-schema",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-schema",
   "last_activity": "2026-08-10T09:49:05.894Z"
  },
  {
@@ -3554,6 +3630,7 @@
   "fallback_repo": "https://gitlab.opencode.de/df-bonn/kern-ux-plain.git",
   "upstream_id": 10464,
   "forge_path": "df-bonn/kern-ux-plain",
+  "entry_url": "https://gitlab.opencode.de/df-bonn/kern-ux-plain",
   "last_activity": "2026-06-02T14:28:12.725Z"
  },
  {
@@ -3596,6 +3673,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-warteschlange.git",
   "upstream_id": 10463,
   "forge_path": "fitko/pvog/bibliotheken/pv-warteschlange",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-warteschlange",
   "last_activity": "2026-08-10T08:54:29.046Z"
  },
  {
@@ -3632,6 +3710,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-external-downloader.git",
   "upstream_id": 10462,
   "forge_path": "fitko/pvog/bibliotheken/pv-external-downloader",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-external-downloader",
   "last_activity": "2026-08-11T07:41:46.959Z"
  },
  {
@@ -3670,6 +3749,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-frontend-configs.git",
   "upstream_id": 10461,
   "forge_path": "fitko/pvog/bibliotheken/pv-frontend-configs",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-frontend-configs",
   "last_activity": "2026-07-30T06:44:15.103Z"
  },
  {
@@ -3709,6 +3789,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-antivirus.git",
   "upstream_id": 10460,
   "forge_path": "fitko/pvog/bibliotheken/pv-antivirus",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-antivirus",
   "last_activity": "2026-08-10T08:18:26.674Z"
  },
  {
@@ -3750,6 +3831,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-testdatengenerator.git",
   "upstream_id": 10459,
   "forge_path": "fitko/pvog/bibliotheken/pv-testdatengenerator",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bibliotheken/pv-testdatengenerator",
   "last_activity": "2026-08-11T08:22:22.843Z"
  },
  {
@@ -3795,6 +3877,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc00013173229/odf-kit.git",
   "upstream_id": 10450,
   "forge_path": "oc00013173229/odf-kit",
+  "entry_url": "https://gitlab.opencode.de/oc00013173229/odf-kit",
   "last_activity": "2026-08-10T15:24:03.607Z"
  },
  {
@@ -3833,6 +3916,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000143008449/spark-workflow.git",
   "upstream_id": 10410,
   "forge_path": "oc000143008449/spark-workflow",
+  "entry_url": "https://gitlab.opencode.de/oc000143008449/spark-workflow",
   "last_activity": "2026-04-20T06:19:40.946Z"
  },
  {
@@ -3879,6 +3963,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000142426528/vivodepot.git",
   "upstream_id": 10391,
   "forge_path": "oc000142426528/vivodepot",
+  "entry_url": "https://gitlab.opencode.de/oc000142426528/vivodepot",
   "last_activity": "2026-07-13T05:31:20.694Z"
  },
  {
@@ -3913,6 +3998,7 @@
   ],
   "upstream_id": 10382,
   "forge_path": "stadt-kaiserslautern1/sci-sensdata",
+  "entry_url": "https://gitlab.opencode.de/stadt-kaiserslautern1/sci-sensdata",
   "last_activity": "2026-04-16T11:49:37.140Z"
  },
  {
@@ -3950,6 +4036,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-kaiserslautern1/lautrerwissen/lautrerwissen-frontend.git",
   "upstream_id": 10381,
   "forge_path": "stadt-kaiserslautern1/lautrerwissen/lautrerwissen-frontend",
+  "entry_url": "https://gitlab.opencode.de/stadt-kaiserslautern1/lautrerwissen/lautrerwissen-frontend",
   "last_activity": "2026-04-16T11:30:00.185Z"
  },
  {
@@ -3987,6 +4074,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-kaiserslautern1/lautrerwissen/lautrerwissen-backend.git",
   "upstream_id": 10375,
   "forge_path": "stadt-kaiserslautern1/lautrerwissen/lautrerwissen-backend",
+  "entry_url": "https://gitlab.opencode.de/stadt-kaiserslautern1/lautrerwissen/lautrerwissen-backend",
   "last_activity": "2026-04-16T10:02:28.598Z"
  },
  {
@@ -4027,6 +4115,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000141693197/ui-metadaten.git",
   "upstream_id": 10366,
   "forge_path": "oc000141693197/ui-metadaten",
+  "entry_url": "https://gitlab.opencode.de/oc000141693197/ui-metadaten",
   "last_activity": "2026-04-23T08:32:14.645Z"
  },
  {
@@ -4082,6 +4171,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000141509810/ga-lotse-code.git",
   "upstream_id": 10364,
   "forge_path": "oc000141509810/ga-lotse-code",
+  "entry_url": "https://gitlab.opencode.de/oc000141509810/ga-lotse-code",
   "last_activity": "2026-04-17T08:32:37.285Z"
  },
  {
@@ -4125,6 +4215,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-arnsberg/datenplattform-stadt-arnsberg.git",
   "upstream_id": 10312,
   "forge_path": "smart-city-arnsberg/datenplattform-stadt-arnsberg",
+  "entry_url": "https://gitlab.opencode.de/smart-city-arnsberg/datenplattform-stadt-arnsberg",
   "last_activity": "2026-05-18T11:36:07.553Z"
  },
  {
@@ -4165,6 +4256,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000140584870/klimadashboard-muenster-bo.git",
   "upstream_id": 10302,
   "forge_path": "oc000140584870/klimadashboard-muenster-bo",
+  "entry_url": "https://gitlab.opencode.de/oc000140584870/klimadashboard-muenster-bo",
   "last_activity": "2026-04-09T16:03:05.414Z"
  },
  {
@@ -4199,6 +4291,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-arnsberg/waldmonitor-arnsberg.git",
   "upstream_id": 10285,
   "forge_path": "smart-city-arnsberg/waldmonitor-arnsberg",
+  "entry_url": "https://gitlab.opencode.de/smart-city-arnsberg/waldmonitor-arnsberg",
   "last_activity": "2026-04-10T04:27:31.756Z"
  },
  {
@@ -4246,6 +4339,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wuerzburg/mitmachportal/mitmachportal.git",
   "upstream_id": 10273,
   "forge_path": "wuerzburg/mitmachportal/mitmachportal",
+  "entry_url": "https://gitlab.opencode.de/wuerzburg/mitmachportal/mitmachportal",
   "last_activity": "2026-08-06T06:04:17.658Z"
  },
  {
@@ -4285,6 +4379,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-cleanup.git",
   "upstream_id": 10259,
   "forge_path": "it.nrw/nrw.desk/conference-cleanup",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-cleanup",
   "last_activity": "2026-08-11T02:34:35.915Z"
  },
  {
@@ -4326,6 +4421,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/neo-rust-sdk.git",
   "upstream_id": 10258,
   "forge_path": "fitko/matrix-g2x/neo-rust-sdk",
+  "entry_url": "https://gitlab.opencode.de/fitko/matrix-g2x/neo-rust-sdk",
   "last_activity": "2026-08-10T05:03:14.378Z"
  },
  {
@@ -4372,6 +4468,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bfabio/badge-api.git",
   "upstream_id": 10245,
   "forge_path": "bfabio/badge-api",
+  "entry_url": "https://gitlab.opencode.de/bfabio/badge-api",
   "last_activity": "2026-07-22T06:45:01.856Z"
  },
  {
@@ -4420,6 +4517,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/ki-bauleitplaene/smartplanai-anwendung.git",
   "upstream_id": 10162,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/ki-bauleitplaene/smartplanai-anwendung",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/ki-bauleitplaene/smartplanai-anwendung",
   "last_activity": "2026-05-05T08:21:41.798Z"
  },
  {
@@ -4452,6 +4550,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000063111458/waldmonitor-arnsberg.git",
   "upstream_id": 10156,
   "forge_path": "oc000063111458/waldmonitor-arnsberg",
+  "entry_url": "https://gitlab.opencode.de/oc000063111458/waldmonitor-arnsberg",
   "last_activity": "2026-03-29T19:34:22.605Z"
  },
  {
@@ -4505,6 +4604,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wolfgangihloff/opendesk.git",
   "upstream_id": 10127,
   "forge_path": "wolfgangihloff/opendesk",
+  "entry_url": "https://gitlab.opencode.de/wolfgangihloff/opendesk",
   "last_activity": "2026-03-28T22:02:15.106Z"
  },
  {
@@ -4548,6 +4648,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow.git",
   "upstream_id": 10117,
   "forge_path": "bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow",
+  "entry_url": "https://gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow",
   "last_activity": "2026-08-11T08:55:09.060Z"
  },
  {
@@ -4591,6 +4692,7 @@
   "fallback_repo": "https://gitlab.opencode.de/regensburg_next/regensburger-ki-fuehrerschein.git",
   "upstream_id": 10064,
   "forge_path": "regensburg_next/regensburger-ki-fuehrerschein",
+  "entry_url": "https://gitlab.opencode.de/regensburg_next/regensburger-ki-fuehrerschein",
   "last_activity": "2026-07-13T19:26:55.138Z"
  },
  {
@@ -4632,6 +4734,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wuerzburg/heimatforum/mitmachgarten.git",
   "upstream_id": 10037,
   "forge_path": "wuerzburg/heimatforum/mitmachgarten",
+  "entry_url": "https://gitlab.opencode.de/wuerzburg/heimatforum/mitmachgarten",
   "last_activity": "2026-06-30T08:44:02.961Z"
  },
  {
@@ -4679,6 +4782,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mrija-manager.git",
   "upstream_id": 10006,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/mrija-manager",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mrija-manager",
   "last_activity": "2026-03-20T14:07:31.597Z"
  },
  {
@@ -4724,6 +4828,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/density-maps.git",
   "upstream_id": 9998,
   "forge_path": "uba-ki-lab/density-maps",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/density-maps",
   "last_activity": "2026-03-20T12:17:58.583Z"
  },
  {
@@ -4762,6 +4867,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/neo-matrix-java-sdk.git",
   "upstream_id": 9947,
   "forge_path": "fitko/matrix-g2x/neo-matrix-java-sdk",
+  "entry_url": "https://gitlab.opencode.de/fitko/matrix-g2x/neo-matrix-java-sdk",
   "last_activity": "2026-05-21T12:34:50.967Z"
  },
  {
@@ -4800,6 +4906,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wuerzburg/hilfekompass/hilfekompass-api.git",
   "upstream_id": 9937,
   "forge_path": "wuerzburg/hilfekompass/hilfekompass-api",
+  "entry_url": "https://gitlab.opencode.de/wuerzburg/hilfekompass/hilfekompass-api",
   "last_activity": "2026-04-09T07:33:58.159Z"
  },
  {
@@ -4838,6 +4945,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wuerzburg/hilfekompass/hilfekompass-frontend.git",
   "upstream_id": 9936,
   "forge_path": "wuerzburg/hilfekompass/hilfekompass-frontend",
+  "entry_url": "https://gitlab.opencode.de/wuerzburg/hilfekompass/hilfekompass-frontend",
   "last_activity": "2026-04-21T05:44:38.455Z"
  },
  {
@@ -4891,6 +4999,7 @@
   "fallback_repo": "https://gitlab.opencode.de/vincent.cui/opendesk-deployment.git",
   "upstream_id": 9886,
   "forge_path": "vincent.cui/opendesk-deployment",
+  "entry_url": "https://gitlab.opencode.de/vincent.cui/opendesk-deployment",
   "last_activity": "2026-03-16T13:57:06.774Z"
  },
  {
@@ -4938,6 +5047,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wuerzburg/smart-city-hub.git",
   "upstream_id": 9857,
   "forge_path": "wuerzburg/smart-city-hub",
+  "entry_url": "https://gitlab.opencode.de/wuerzburg/smart-city-hub",
   "last_activity": "2026-08-11T13:47:23.421Z"
  },
  {
@@ -4983,6 +5093,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-freiburg/datenraum-freiburg/vermarktungsplattform/vermarktungsplattform.git",
   "upstream_id": 9786,
   "forge_path": "stadt-freiburg/datenraum-freiburg/vermarktungsplattform/vermarktungsplattform",
+  "entry_url": "https://gitlab.opencode.de/stadt-freiburg/datenraum-freiburg/vermarktungsplattform/vermarktungsplattform",
   "last_activity": "2026-05-21T10:46:07.608Z"
  },
  {
@@ -5036,6 +5147,7 @@
   "fallback_repo": "https://gitlab.opencode.de/itzbundfabianhardt/opendesk.git",
   "upstream_id": 9784,
   "forge_path": "itzbundfabianhardt/opendesk",
+  "entry_url": "https://gitlab.opencode.de/itzbundfabianhardt/opendesk",
   "last_activity": "2026-05-11T06:44:44.992Z"
  },
  {
@@ -5076,6 +5188,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/unicodeeingabekiwi2.git",
   "upstream_id": 9766,
   "forge_path": "landeshauptstadt-muenchen/unicodeeingabekiwi2",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/unicodeeingabekiwi2",
   "last_activity": "2026-03-20T10:48:29.406Z"
  },
  {
@@ -5124,6 +5237,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000131359197/sv-hub.git",
   "upstream_id": 9751,
   "forge_path": "oc000131359197/sv-hub",
+  "entry_url": "https://gitlab.opencode.de/oc000131359197/sv-hub",
   "last_activity": "2026-03-28T12:33:39.924Z"
  },
  {
@@ -5172,6 +5286,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000097948268/formulardesigner.git",
   "upstream_id": 9727,
   "forge_path": "OC000097948268/formulardesigner",
+  "entry_url": "https://gitlab.opencode.de/OC000097948268/formulardesigner",
   "last_activity": "2026-08-07T08:45:44.951Z"
  },
  {
@@ -5216,6 +5331,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000097948268/formularschema.git",
   "upstream_id": 9726,
   "forge_path": "OC000097948268/formularschema",
+  "entry_url": "https://gitlab.opencode.de/OC000097948268/formularschema",
   "last_activity": "2026-06-25T08:18:53.844Z"
  },
  {
@@ -5262,6 +5378,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lgvhh/udp/machbarkeitsstudie-integration-von-apache-superset-in-das-masterportal.git",
   "upstream_id": 9723,
   "forge_path": "lgvhh/udp/machbarkeitsstudie-integration-von-apache-superset-in-das-masterportal",
+  "entry_url": "https://gitlab.opencode.de/lgvhh/udp/machbarkeitsstudie-integration-von-apache-superset-in-das-masterportal",
   "last_activity": "2026-03-19T12:29:54.896Z"
  },
  {
@@ -5304,6 +5421,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bayerisches-staatsministerium-f-r-digitales/bayernapp/ausweisapp2sdk-flutter-plugin.git",
   "upstream_id": 9706,
   "forge_path": "bayerisches-staatsministerium-f-r-digitales/bayernapp/ausweisapp2sdk-flutter-plugin",
+  "entry_url": "https://gitlab.opencode.de/bayerisches-staatsministerium-f-r-digitales/bayernapp/ausweisapp2sdk-flutter-plugin",
   "last_activity": "2026-03-06T08:10:02.057Z"
  },
  {
@@ -5351,6 +5469,7 @@
   "fallback_repo": "https://gitlab.opencode.de/simonwaldherr/InvoiceInspector.git",
   "upstream_id": 9678,
   "forge_path": "simonwaldherr/InvoiceInspector",
+  "entry_url": "https://gitlab.opencode.de/simonwaldherr/InvoiceInspector",
   "last_activity": "2026-05-03T20:47:28.028Z"
  },
  {
@@ -5388,6 +5507,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/adaptiontechnologyhub/adapt-map-koeln.git",
   "upstream_id": 9668,
   "forge_path": "unbox-cologne/adaptiontechnologyhub/adapt-map-koeln",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/adaptiontechnologyhub/adapt-map-koeln",
   "last_activity": "2026-05-19T19:27:16.865Z"
  },
  {
@@ -5427,6 +5547,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/sammlerdienst.git",
   "upstream_id": 9650,
   "forge_path": "fitko/pvog/sammlerdienst",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/sammlerdienst",
   "last_activity": "2026-07-22T14:49:50.365Z"
  },
  {
@@ -5471,6 +5592,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/thingsboard-ce-klimadaten-mandanten-wasserkarte.git",
   "upstream_id": 9582,
   "forge_path": "bad-belzig/thingsboard-ce-klimadaten-mandanten-wasserkarte",
+  "entry_url": "https://gitlab.opencode.de/bad-belzig/thingsboard-ce-klimadaten-mandanten-wasserkarte",
   "last_activity": "2026-03-09T15:32:50.499Z"
  },
  {
@@ -5513,6 +5635,7 @@
   "fallback_repo": "https://gitlab.opencode.de/egovlab/eam-portal.git",
   "upstream_id": 9575,
   "forge_path": "egovlab/eam-portal",
+  "entry_url": "https://gitlab.opencode.de/egovlab/eam-portal",
   "last_activity": "2026-06-13T15:36:19.852Z"
  },
  {
@@ -5553,6 +5676,7 @@
   "fallback_repo": "https://gitlab.opencode.de/mein-wnd/mein-wnd-app.git",
   "upstream_id": 9565,
   "forge_path": "mein-wnd/mein-wnd-app",
+  "entry_url": "https://gitlab.opencode.de/mein-wnd/mein-wnd-app",
   "last_activity": "2026-06-11T13:35:45.090Z"
  },
  {
@@ -5593,6 +5717,7 @@
   "fallback_repo": "https://gitlab.opencode.de/mein-wnd/mein-wnd-api.git",
   "upstream_id": 9564,
   "forge_path": "mein-wnd/mein-wnd-api",
+  "entry_url": "https://gitlab.opencode.de/mein-wnd/mein-wnd-api",
   "last_activity": "2026-06-12T10:38:35.626Z"
  },
  {
@@ -5635,6 +5760,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/ehrenamt-justiz.git",
   "upstream_id": 9560,
   "forge_path": "landeshauptstadt-muenchen/ehrenamt-justiz",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/ehrenamt-justiz",
   "last_activity": "2026-03-24T14:29:28.229Z"
  },
  {
@@ -5678,6 +5804,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bim-portal-hh/bim-portal-hh-addons.git",
   "upstream_id": 9554,
   "forge_path": "bim-portal-hh/bim-portal-hh-addons",
+  "entry_url": "https://gitlab.opencode.de/bim-portal-hh/bim-portal-hh-addons",
   "last_activity": "2026-03-02T09:54:35.438Z"
  },
  {
@@ -5721,6 +5848,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bim-portal-hh/bim-portal-hh.git",
   "upstream_id": 9552,
   "forge_path": "bim-portal-hh/bim-portal-hh",
+  "entry_url": "https://gitlab.opencode.de/bim-portal-hh/bim-portal-hh",
   "last_activity": "2026-03-03T08:22:56.751Z"
  },
  {
@@ -5768,6 +5896,7 @@
   "fallback_repo": "https://gitlab.opencode.de/dataport/polar.git",
   "upstream_id": 9549,
   "forge_path": "dataport/polar",
+  "entry_url": "https://gitlab.opencode.de/dataport/polar",
   "last_activity": "2026-06-16T05:36:57.107Z"
  },
  {
@@ -5813,6 +5942,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000113282468/dokumentation.git",
   "upstream_id": 9416,
   "forge_path": "OC000113282468/dokumentation",
+  "entry_url": "https://gitlab.opencode.de/OC000113282468/dokumentation",
   "last_activity": "2026-02-11T11:41:39.191Z"
  },
  {
@@ -5853,6 +5983,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/bereitstelldienst.git",
   "upstream_id": 9355,
   "forge_path": "fitko/pvog/bereitstelldienst",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/bereitstelldienst",
   "last_activity": "2026-07-22T14:33:29.008Z"
  },
  {
@@ -5889,6 +6020,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/baumkataster.git",
   "upstream_id": 9338,
   "forge_path": "stadt-menden/sensorik/baumkataster",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/baumkataster",
   "last_activity": "2026-07-22T06:42:43.423Z"
  },
  {
@@ -5936,6 +6068,7 @@
   "fallback_repo": "https://gitlab.opencode.de/gdi-rp/xplanung_light.git",
   "upstream_id": 8797,
   "forge_path": "gdi-rp/xplanung_light",
+  "entry_url": "https://gitlab.opencode.de/gdi-rp/xplanung_light",
   "last_activity": "2026-07-29T06:41:59.160Z"
  },
  {
@@ -5975,6 +6108,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/digeko/digeko-app.git",
   "upstream_id": 8784,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/digeko/digeko-app",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/digeko/digeko-app",
   "last_activity": "2026-08-05T13:19:47.177Z"
  },
  {
@@ -6028,6 +6162,7 @@
   "fallback_repo": "https://gitlab.opencode.de/frederikmoellers/opendesk.git",
   "upstream_id": 8754,
   "forge_path": "frederikmoellers/opendesk",
+  "entry_url": "https://gitlab.opencode.de/frederikmoellers/opendesk",
   "last_activity": "2026-02-09T12:53:49.611Z"
  },
  {
@@ -6063,6 +6198,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_demonstrators.git",
   "upstream_id": 8674,
   "forge_path": "stadtosnabrueck/smart_city_demonstrators",
+  "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_demonstrators",
   "last_activity": "2026-04-30T12:53:17.241Z"
  },
  {
@@ -6095,6 +6231,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000075481431/ha-py-app.git",
   "upstream_id": 8672,
   "forge_path": "OC000075481431/ha-py-app",
+  "entry_url": "https://gitlab.opencode.de/OC000075481431/ha-py-app",
   "last_activity": "2026-01-19T07:47:49.283Z"
  },
  {
@@ -6148,6 +6285,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000059239089/opendesk.git",
   "upstream_id": 8668,
   "forge_path": "oc000059239089/opendesk",
+  "entry_url": "https://gitlab.opencode.de/oc000059239089/opendesk",
   "last_activity": "2026-01-15T17:50:56.548Z"
  },
  {
@@ -6190,6 +6328,7 @@
   "fallback_repo": "https://gitlab.opencode.de/digitalisierung-eines-sekundaerwaermenetzes/digitalisierung-sekundaerwaermenetz-data.git",
   "upstream_id": 8635,
   "forge_path": "digitalisierung-eines-sekundaerwaermenetzes/digitalisierung-sekundaerwaermenetz-data",
+  "entry_url": "https://gitlab.opencode.de/digitalisierung-eines-sekundaerwaermenetzes/digitalisierung-sekundaerwaermenetz-data",
   "last_activity": "2026-03-27T13:36:55.355Z"
  },
  {
@@ -6223,6 +6362,7 @@
   "fallback_repo": "https://gitlab.opencode.de/tilman.brock-hesse/bovis.net.git",
   "upstream_id": 8573,
   "forge_path": "tilman.brock-hesse/bovis.net",
+  "entry_url": "https://gitlab.opencode.de/tilman.brock-hesse/bovis.net",
   "last_activity": "2026-02-27T14:44:17.486Z"
  },
  {
@@ -6272,6 +6412,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000117583753/vdstools.git",
   "upstream_id": 8564,
   "forge_path": "OC000117583753/vdstools",
+  "entry_url": "https://gitlab.opencode.de/OC000117583753/vdstools",
   "last_activity": "2026-07-01T15:48:37.980Z"
  },
  {
@@ -6313,6 +6454,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/bum-images.git",
   "upstream_id": 8561,
   "forge_path": "bwi/bundesmessenger/backend/bum-images",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/bum-images",
   "last_activity": "2026-08-11T09:45:23.604Z"
  },
  {
@@ -6353,6 +6495,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000112535353/klimadashboard-muenster.git",
   "upstream_id": 8542,
   "forge_path": "OC000112535353/klimadashboard-muenster",
+  "entry_url": "https://gitlab.opencode.de/OC000112535353/klimadashboard-muenster",
   "last_activity": "2026-01-07T10:20:26.693Z"
  },
  {
@@ -6398,6 +6541,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kifoe-foerderrichtlinien.git",
   "upstream_id": 8520,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/kifoe-foerderrichtlinien",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kifoe-foerderrichtlinien",
   "last_activity": "2026-04-20T07:34:47.481Z"
  },
  {
@@ -6423,6 +6567,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000116968177/ki-buddy.git",
   "upstream_id": 8519,
   "forge_path": "OC000116968177/ki-buddy",
+  "entry_url": "https://gitlab.opencode.de/OC000116968177/ki-buddy",
   "last_activity": "2026-05-31T14:53:10.756Z"
  },
  {
@@ -6510,6 +6655,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadtosnabrueck/os-app.git",
   "upstream_id": 8442,
   "forge_path": "stadtosnabrueck/os-app",
+  "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/os-app",
   "last_activity": "2026-05-04T09:18:55.100Z"
  },
  {
@@ -6545,6 +6691,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/gesundheitsplattform/gesundimflaeming-wp-theme.git",
   "upstream_id": 8392,
   "forge_path": "bad-belzig/gesundheitsplattform/gesundimflaeming-wp-theme",
+  "entry_url": "https://gitlab.opencode.de/bad-belzig/gesundheitsplattform/gesundimflaeming-wp-theme",
   "last_activity": "2025-12-18T10:02:28.003Z"
  },
  {
@@ -6600,6 +6747,7 @@
   "fallback_repo": "https://gitlab.opencode.de/regierung-von-oberbayern/cibseven.git",
   "upstream_id": 8387,
   "forge_path": "regierung-von-oberbayern/cibseven",
+  "entry_url": "https://gitlab.opencode.de/regierung-von-oberbayern/cibseven",
   "last_activity": "2026-08-11T00:34:47.777Z"
  },
  {
@@ -6647,6 +6795,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/suchdienst.git",
   "upstream_id": 8368,
   "forge_path": "fitko/pvog/suchdienst",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/suchdienst",
   "last_activity": "2026-07-01T15:08:43.862Z"
  },
  {
@@ -6695,6 +6844,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lecos-gmbh/leipzigerstrassennamen.git",
   "upstream_id": 8356,
   "forge_path": "lecos-gmbh/leipzigerstrassennamen",
+  "entry_url": "https://gitlab.opencode.de/lecos-gmbh/leipzigerstrassennamen",
   "last_activity": "2026-06-02T06:07:31.889Z"
  },
  {
@@ -6746,6 +6896,7 @@
   "fallback_repo": "https://gitlab.opencode.de/connected-urban-twins/ogc-sensorthings-api-qs-tool.git",
   "upstream_id": 8344,
   "forge_path": "connected-urban-twins/ogc-sensorthings-api-qs-tool",
+  "entry_url": "https://gitlab.opencode.de/connected-urban-twins/ogc-sensorthings-api-qs-tool",
   "last_activity": "2026-01-19T14:29:27.858Z"
  },
  {
@@ -6792,6 +6943,7 @@
   "fallback_repo": "https://gitlab.opencode.de/governikus/ausweisapp.git",
   "upstream_id": 8306,
   "forge_path": "governikus/ausweisapp",
+  "entry_url": "https://gitlab.opencode.de/governikus/ausweisapp",
   "last_activity": "2026-07-15T06:33:03.732Z"
  },
  {
@@ -6837,6 +6989,7 @@
   "fallback_repo": "https://gitlab.opencode.de/behoerden-klartext/dokumentation.git",
   "upstream_id": 8289,
   "forge_path": "behoerden-klartext/dokumentation",
+  "entry_url": "https://gitlab.opencode.de/behoerden-klartext/dokumentation",
   "last_activity": "2026-04-30T12:47:00.483Z"
  },
  {
@@ -6890,6 +7043,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc00005667950/opendesk.git",
   "upstream_id": 8239,
   "forge_path": "oc00005667950/opendesk",
+  "entry_url": "https://gitlab.opencode.de/oc00005667950/opendesk",
   "last_activity": "2025-11-29T15:12:38.460Z"
  },
  {
@@ -6928,6 +7082,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bpa/audiominer/audiominer.git",
   "upstream_id": 8221,
   "forge_path": "bpa/audiominer/audiominer",
+  "entry_url": "https://gitlab.opencode.de/bpa/audiominer/audiominer",
   "last_activity": "2026-08-11T08:58:51.036Z"
  },
  {
@@ -6997,6 +7152,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000111881938/kern-ux-plain.git",
   "upstream_id": 8218,
   "forge_path": "OC000111881938/kern-ux-plain",
+  "entry_url": "https://gitlab.opencode.de/OC000111881938/kern-ux-plain",
   "last_activity": "2025-12-05T14:13:35.756Z"
  },
  {
@@ -7030,6 +7186,7 @@
   "fallback_repo": "https://gitlab.opencode.de/thlv/tmuenf/kommunaler-nachhaltigkeits-check.git",
   "upstream_id": 8150,
   "forge_path": "thlv/tmuenf/kommunaler-nachhaltigkeits-check",
+  "entry_url": "https://gitlab.opencode.de/thlv/tmuenf/kommunaler-nachhaltigkeits-check",
   "last_activity": "2026-05-29T21:47:13.530Z"
  },
  {
@@ -7079,6 +7236,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-paths-ui.git",
   "upstream_id": 8129,
   "forge_path": "smart-city-potsdam/klimamonitor-kausal/kausal-paths-ui",
+  "entry_url": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-paths-ui",
   "last_activity": "2025-11-20T12:35:22.637Z"
  },
  {
@@ -7130,6 +7288,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-paths.git",
   "upstream_id": 8128,
   "forge_path": "smart-city-potsdam/klimamonitor-kausal/kausal-paths",
+  "entry_url": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-paths",
   "last_activity": "2025-11-20T12:34:53.113Z"
  },
  {
@@ -7173,6 +7332,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-watch-ui.git",
   "upstream_id": 8127,
   "forge_path": "smart-city-potsdam/klimamonitor-kausal/kausal-watch-ui",
+  "entry_url": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-watch-ui",
   "last_activity": "2025-11-20T12:32:46.378Z"
  },
  {
@@ -7226,6 +7386,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-watch.git",
   "upstream_id": 8126,
   "forge_path": "smart-city-potsdam/klimamonitor-kausal/kausal-watch",
+  "entry_url": "https://gitlab.opencode.de/smart-city-potsdam/klimamonitor-kausal/kausal-watch",
   "last_activity": "2025-11-20T12:32:15.507Z"
  },
  {
@@ -7269,6 +7430,7 @@
   "fallback_repo": "https://gitlab.opencode.de/connected-urban-twins/cut-l-frost-docker.git",
   "upstream_id": 8119,
   "forge_path": "connected-urban-twins/cut-l-frost-docker",
+  "entry_url": "https://gitlab.opencode.de/connected-urban-twins/cut-l-frost-docker",
   "last_activity": "2025-12-02T07:38:07.499Z"
  },
  {
@@ -7302,6 +7464,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmbf/datenlabor/a11yshiny.git",
   "upstream_id": 8103,
   "forge_path": "bmbf/datenlabor/a11yshiny",
+  "entry_url": "https://gitlab.opencode.de/bmbf/datenlabor/a11yshiny",
   "last_activity": "2026-06-26T08:49:38.721Z"
  },
  {
@@ -7360,6 +7523,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/opendesk/component-code/crossfunctional/univention/nubus.git",
   "upstream_id": 8053,
   "forge_path": "bmi/opendesk/component-code/crossfunctional/univention/nubus",
+  "entry_url": "https://gitlab.opencode.de/bmi/opendesk/component-code/crossfunctional/univention/nubus",
   "last_activity": "2026-08-01T04:13:57.258Z"
  },
  {
@@ -7430,6 +7594,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/opendesk/component-code/project-management/openproject/openproject.git",
   "upstream_id": 8047,
   "forge_path": "bmi/opendesk/component-code/project-management/openproject/openproject",
+  "entry_url": "https://gitlab.opencode.de/bmi/opendesk/component-code/project-management/openproject/openproject",
   "last_activity": "2026-08-01T04:08:45.115Z"
  },
  {
@@ -7468,6 +7633,7 @@
   "fallback_repo": "https://gitlab.opencode.de/regionhannover/hidd.git",
   "upstream_id": 7986,
   "forge_path": "regionhannover/hidd",
+  "entry_url": "https://gitlab.opencode.de/regionhannover/hidd",
   "last_activity": "2025-12-03T15:40:42.709Z"
  },
  {
@@ -7516,6 +7682,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/LVermGeo/qgis-plugin/flurstuecksfinder-sh.git",
   "upstream_id": 7930,
   "forge_path": "sh/LVermGeo/qgis-plugin/flurstuecksfinder-sh",
+  "entry_url": "https://gitlab.opencode.de/sh/LVermGeo/qgis-plugin/flurstuecksfinder-sh",
   "last_activity": "2026-04-13T20:13:55.102Z"
  },
  {
@@ -7563,6 +7730,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie/gitlab-profile.git",
   "upstream_id": 7927,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie/gitlab-profile",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie/gitlab-profile",
   "last_activity": "2026-08-11T12:46:07.976Z"
  },
  {
@@ -7608,6 +7776,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin/kiezbox/kiezbox.git",
   "upstream_id": 7915,
   "forge_path": "berlin/kiezbox/kiezbox",
+  "entry_url": "https://gitlab.opencode.de/berlin/kiezbox/kiezbox",
   "last_activity": "2026-07-22T19:19:44.004Z"
  },
  {
@@ -7655,6 +7824,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-freiburg/datenraum-freiburg/smartcityplattform/smartcity-plattform-meta.git",
   "upstream_id": 7880,
   "forge_path": "stadt-freiburg/datenraum-freiburg/smartcityplattform/smartcity-plattform-meta",
+  "entry_url": "https://gitlab.opencode.de/stadt-freiburg/datenraum-freiburg/smartcityplattform/smartcity-plattform-meta",
   "last_activity": "2025-11-26T10:25:53.682Z"
  },
  {
@@ -7708,6 +7878,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000052166394/opendesk.git",
   "upstream_id": 7820,
   "forge_path": "oc000052166394/opendesk",
+  "entry_url": "https://gitlab.opencode.de/oc000052166394/opendesk",
   "last_activity": "2025-12-08T09:22:56.482Z"
  },
  {
@@ -7743,6 +7914,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/wasserkarte.git",
   "upstream_id": 7818,
   "forge_path": "bad-belzig/wasserkarte",
+  "entry_url": "https://gitlab.opencode.de/bad-belzig/wasserkarte",
   "last_activity": "2026-07-25T17:46:15.398Z"
  },
  {
@@ -7793,6 +7965,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/datenhub/datenhub.git",
   "upstream_id": 7817,
   "forge_path": "smart-city-ulm/datenhub/datenhub",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/datenhub/datenhub",
   "last_activity": "2025-12-09T13:42:21.937Z"
  },
  {
@@ -7833,6 +8006,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/datenhub/smartcity-dashboard.git",
   "upstream_id": 7810,
   "forge_path": "smart-city-ulm/datenhub/smartcity-dashboard",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/datenhub/smartcity-dashboard",
   "last_activity": "2025-11-13T10:03:36.532Z"
  },
  {
@@ -7881,6 +8055,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/qonnectra.git",
   "upstream_id": 7791,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/qonnectra",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/qonnectra",
   "last_activity": "2026-07-17T04:13:45.757Z"
  },
  {
@@ -7929,6 +8104,7 @@
   "fallback_repo": "https://gitlab.opencode.de/xleitstelle/xmas-plugin.git",
   "upstream_id": 7779,
   "forge_path": "xleitstelle/xmas-plugin",
+  "entry_url": "https://gitlab.opencode.de/xleitstelle/xmas-plugin",
   "last_activity": "2026-08-04T08:44:43.938Z"
  },
  {
@@ -7983,7 +8159,8 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot.git",
   "upstream_id": 7690,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot",
-  "last_activity": "2026-08-11T14:09:35.458Z"
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot",
+  "last_activity": "2026-08-11T15:19:11.532Z"
  },
  {
   "source": "DE/openCode",
@@ -8018,6 +8195,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend.git",
   "upstream_id": 7681,
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend",
   "last_activity": "2026-08-11T03:06:29.829Z"
  },
  {
@@ -8053,6 +8231,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms.git",
   "upstream_id": 7680,
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms",
   "last_activity": "2026-08-10T21:27:36.016Z"
  },
  {
@@ -8110,6 +8289,7 @@
   "fallback_repo": "https://gitlab.opencode.de/samarbeid/samarbeid.git",
   "upstream_id": 7647,
   "forge_path": "samarbeid/samarbeid",
+  "entry_url": "https://gitlab.opencode.de/samarbeid/samarbeid",
   "last_activity": "2026-08-10T08:29:33.808Z"
  },
  {
@@ -8162,6 +8342,7 @@
   "fallback_repo": "https://gitlab.opencode.de/govstack/kitsoft/liquio.git",
   "upstream_id": 7613,
   "forge_path": "govstack/kitsoft/liquio",
+  "entry_url": "https://gitlab.opencode.de/govstack/kitsoft/liquio",
   "last_activity": "2026-08-05T15:58:36.961Z"
  },
  {
@@ -8206,6 +8387,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lgvhh/udp/udp-data-automation.git",
   "upstream_id": 7583,
   "forge_path": "lgvhh/udp/udp-data-automation",
+  "entry_url": "https://gitlab.opencode.de/lgvhh/udp/udp-data-automation",
   "last_activity": "2026-07-10T06:27:36.530Z"
  },
  {
@@ -8249,6 +8431,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/smarter-gemeinschaftskalender.git",
   "upstream_id": 7581,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/smarter-gemeinschaftskalender",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/smarter-gemeinschaftskalender",
   "last_activity": "2026-01-08T12:07:17.123Z"
  },
  {
@@ -8292,6 +8475,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadtspielraum/lets-play-klimaanpassung.git",
   "upstream_id": 7579,
   "forge_path": "stadtspielraum/lets-play-klimaanpassung",
+  "entry_url": "https://gitlab.opencode.de/stadtspielraum/lets-play-klimaanpassung",
   "last_activity": "2025-12-05T07:48:59.361Z"
  },
  {
@@ -8335,6 +8519,7 @@
   "fallback_repo": "https://gitlab.opencode.de/connected-urban-twins/cut-masterportal-generic-iot-gfi.git",
   "upstream_id": 7518,
   "forge_path": "connected-urban-twins/cut-masterportal-generic-iot-gfi",
+  "entry_url": "https://gitlab.opencode.de/connected-urban-twins/cut-masterportal-generic-iot-gfi",
   "last_activity": "2026-06-29T08:57:26.548Z"
  },
  {
@@ -8371,7 +8556,8 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_permissions.git",
   "upstream_id": 7516,
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_permissions",
-  "last_activity": "2026-08-11T09:42:22.336Z"
+  "entry_url": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_permissions",
+  "last_activity": "2026-08-11T18:27:36.139Z"
  },
  {
   "source": "DE/openCode",
@@ -8420,6 +8606,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openvisavid/openvisavid.git",
   "upstream_id": 7492,
   "forge_path": "openvisavid/openvisavid",
+  "entry_url": "https://gitlab.opencode.de/openvisavid/openvisavid",
   "last_activity": "2026-02-20T17:21:00.295Z"
  },
  {
@@ -8456,6 +8643,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/smart-city-beteiligungsplattform/eyeable-integration.git",
   "upstream_id": 7422,
   "forge_path": "smart-city-ulm/smart-city-beteiligungsplattform/eyeable-integration",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/smart-city-beteiligungsplattform/eyeable-integration",
   "last_activity": "2026-05-23T09:08:46.309Z"
  },
  {
@@ -8485,6 +8673,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/bessereradwege/bessere-radwege-server.git",
   "upstream_id": 7379,
   "forge_path": "unbox-cologne/bessereradwege/bessere-radwege-server",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/bessereradwege/bessere-radwege-server",
   "last_activity": "2025-12-10T22:40:55.796Z"
  },
  {
@@ -8514,6 +8703,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/bessereradwege/bessere-radwege-app.git",
   "upstream_id": 7378,
   "forge_path": "unbox-cologne/bessereradwege/bessere-radwege-app",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/bessereradwege/bessere-radwege-app",
   "last_activity": "2025-12-10T22:40:25.040Z"
  },
  {
@@ -8543,6 +8733,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/accessiblecity/accessible-city-server.git",
   "upstream_id": 7377,
   "forge_path": "unbox-cologne/accessiblecity/accessible-city-server",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/accessiblecity/accessible-city-server",
   "last_activity": "2025-12-10T22:40:49.209Z"
  },
  {
@@ -8572,6 +8763,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/accessiblecity/accessible-city-app.git",
   "upstream_id": 7376,
   "forge_path": "unbox-cologne/accessiblecity/accessible-city-app",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/accessiblecity/accessible-city-app",
   "last_activity": "2025-12-10T22:39:44.222Z"
  },
  {
@@ -8622,6 +8814,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-konstanz/konstanz-in-zahlen.git",
   "upstream_id": 7363,
   "forge_path": "stadt-konstanz/konstanz-in-zahlen",
+  "entry_url": "https://gitlab.opencode.de/stadt-konstanz/konstanz-in-zahlen",
   "last_activity": "2025-11-04T04:39:50.966Z"
  },
  {
@@ -8669,6 +8862,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-konstanz/platform.git",
   "upstream_id": 7361,
   "forge_path": "stadt-konstanz/platform",
+  "entry_url": "https://gitlab.opencode.de/stadt-konstanz/platform",
   "last_activity": "2026-04-09T14:27:17.681Z"
  },
  {
@@ -8702,6 +8896,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/digitaler-begleiter/mobile_app.git",
   "upstream_id": 7311,
   "forge_path": "smart-city-ulm/digitaler-begleiter/mobile_app",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/digitaler-begleiter/mobile_app",
   "last_activity": "2025-11-25T15:34:07.333Z"
  },
  {
@@ -8751,6 +8946,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-wolfsburg/was-kehrt-smart.git",
   "upstream_id": 7306,
   "forge_path": "stadt-wolfsburg/was-kehrt-smart",
+  "entry_url": "https://gitlab.opencode.de/stadt-wolfsburg/was-kehrt-smart",
   "last_activity": "2025-09-29T08:43:40.317Z"
  },
  {
@@ -8785,6 +8981,7 @@
   "fallback_repo": "https://gitlab.opencode.de/de-gv6-maintainer/de.gv6-ipv6-specification.git",
   "upstream_id": 7296,
   "forge_path": "de-gv6-maintainer/de.gv6-ipv6-specification",
+  "entry_url": "https://gitlab.opencode.de/de-gv6-maintainer/de.gv6-ipv6-specification",
   "last_activity": "2026-07-13T11:40:28.137Z"
  },
  {
@@ -8818,6 +9015,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/cocotechlab/virtuelles-gewaechshaus/daten.git",
   "upstream_id": 7282,
   "forge_path": "unbox-cologne/cocotechlab/virtuelles-gewaechshaus/daten",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/cocotechlab/virtuelles-gewaechshaus/daten",
   "last_activity": "2026-02-11T12:40:40.515Z"
  },
  {
@@ -8840,6 +9038,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/backend/testdaten/referenzprojekt-component-1.git",
   "upstream_id": 7281,
   "forge_path": "open-code/backend/testdaten/referenzprojekt-component-1",
+  "entry_url": "https://gitlab.opencode.de/open-code/backend/testdaten/referenzprojekt-component-1",
   "last_activity": "2025-09-24T16:23:32.227Z"
  },
  {
@@ -8862,6 +9061,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/backend/testdaten/referenzprojekt-suite.git",
   "upstream_id": 7279,
   "forge_path": "open-code/backend/testdaten/referenzprojekt-suite",
+  "entry_url": "https://gitlab.opencode.de/open-code/backend/testdaten/referenzprojekt-suite",
   "last_activity": "2025-09-22T19:02:23.637Z"
  },
  {
@@ -8914,6 +9114,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-konstanz/dashboards.git",
   "upstream_id": 7275,
   "forge_path": "stadt-konstanz/dashboards",
+  "entry_url": "https://gitlab.opencode.de/stadt-konstanz/dashboards",
   "last_activity": "2026-04-09T14:18:37.463Z"
  },
  {
@@ -8959,6 +9160,7 @@
   "fallback_repo": "https://gitlab.opencode.de/solveig_peter/dokumentation.git",
   "upstream_id": 7226,
   "forge_path": "solveig_peter/dokumentation",
+  "entry_url": "https://gitlab.opencode.de/solveig_peter/dokumentation",
   "last_activity": "2025-09-16T12:15:26.576Z"
  },
  {
@@ -9004,6 +9206,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/document-writing-tools/pa11y-server.git",
   "upstream_id": 7212,
   "forge_path": "open-code/document-writing-tools/pa11y-server",
+  "entry_url": "https://gitlab.opencode.de/open-code/document-writing-tools/pa11y-server",
   "last_activity": "2026-06-18T20:11:47.165Z"
  },
  {
@@ -9048,6 +9251,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/mucgpt.git",
   "upstream_id": 7202,
   "forge_path": "landeshauptstadt-muenchen/mucgpt",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/mucgpt",
   "last_activity": "2026-07-21T21:53:50.063Z"
  },
  {
@@ -9088,6 +9292,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC00001179881/digitaler-abfahrtsmonitor.git",
   "upstream_id": 7182,
   "forge_path": "OC00001179881/digitaler-abfahrtsmonitor",
+  "entry_url": "https://gitlab.opencode.de/OC00001179881/digitaler-abfahrtsmonitor",
   "last_activity": "2026-07-24T08:32:32.550Z"
  },
  {
@@ -9123,6 +9328,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/datenplattform-stadt-olpe.git",
   "upstream_id": 7168,
   "forge_path": "smart-city-olpe/datenplattform-stadt-olpe",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/datenplattform-stadt-olpe",
   "last_activity": "2025-10-13T13:23:56.509Z"
  },
  {
@@ -9158,6 +9364,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_data_game.git",
   "upstream_id": 6990,
   "forge_path": "stadtosnabrueck/smart_city_data_game",
+  "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_data_game",
   "last_activity": "2026-04-30T12:53:00.584Z"
  },
  {
@@ -9189,6 +9396,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/fit-neo-web.git",
   "upstream_id": 6910,
   "forge_path": "fitko/matrix-g2x/fit-neo-web",
+  "entry_url": "https://gitlab.opencode.de/fitko/matrix-g2x/fit-neo-web",
   "last_activity": "2026-08-10T04:58:43.517Z"
  },
  {
@@ -9233,6 +9441,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l1/kommunale-raeume-app.git",
   "upstream_id": 6901,
   "forge_path": "DEUTSCHLAND.DIGITAL/l1/kommunale-raeume-app",
+  "entry_url": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l1/kommunale-raeume-app",
   "last_activity": "2025-09-02T12:12:06.853Z"
  },
  {
@@ -9285,6 +9494,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/zit/x-road-sh/x-road-sh.git",
   "upstream_id": 6888,
   "forge_path": "sh/zit/x-road-sh/x-road-sh",
+  "entry_url": "https://gitlab.opencode.de/sh/zit/x-road-sh/x-road-sh",
   "last_activity": "2026-06-11T08:44:18.265Z"
  },
  {
@@ -9320,6 +9530,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/govdata/govdata.git",
   "upstream_id": 6860,
   "forge_path": "fitko/govdata/govdata",
+  "entry_url": "https://gitlab.opencode.de/fitko/govdata/govdata",
   "last_activity": "2025-08-28T09:37:32.749Z"
  },
  {
@@ -9350,6 +9561,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/m-llmonitoring/dashboard.git",
   "upstream_id": 6853,
   "forge_path": "unbox-cologne/m-llmonitoring/dashboard",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/m-llmonitoring/dashboard",
   "last_activity": "2025-12-08T18:23:46.891Z"
  },
  {
@@ -9381,6 +9593,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openkfw/design-tokens.git",
   "upstream_id": 6848,
   "forge_path": "openkfw/design-tokens",
+  "entry_url": "https://gitlab.opencode.de/openkfw/design-tokens",
   "last_activity": "2025-08-20T12:33:43.821Z"
  },
  {
@@ -9421,6 +9634,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openkfw/truspace.git",
   "upstream_id": 6819,
   "forge_path": "openkfw/truspace",
+  "entry_url": "https://gitlab.opencode.de/openkfw/truspace",
   "last_activity": "2026-07-29T14:06:15.274Z"
  },
  {
@@ -9464,6 +9678,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/startuphafen-sh.git",
   "upstream_id": 6811,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/startuphafen-sh",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/startuphafen-sh",
   "last_activity": "2026-05-27T19:43:49.514Z"
  },
  {
@@ -9501,6 +9716,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/daten-lanuk-hochwasserportal.nrw.git",
   "upstream_id": 6781,
   "forge_path": "stadt-menden/sensorik/daten-lanuk-hochwasserportal.nrw",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/daten-lanuk-hochwasserportal.nrw",
   "last_activity": "2026-07-22T06:43:24.425Z"
  },
  {
@@ -9554,6 +9770,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000064732562/opendesk.git",
   "upstream_id": 6778,
   "forge_path": "oc000064732562/opendesk",
+  "entry_url": "https://gitlab.opencode.de/oc000064732562/opendesk",
   "last_activity": "2025-08-12T06:17:50.132Z"
  },
  {
@@ -9596,6 +9813,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-bamberg/mobilitaetsplattform.git",
   "upstream_id": 6381,
   "forge_path": "smart-city-bamberg/mobilitaetsplattform",
+  "entry_url": "https://gitlab.opencode.de/smart-city-bamberg/mobilitaetsplattform",
   "last_activity": "2026-03-06T11:48:56.746Z"
  },
  {
@@ -9645,6 +9863,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/p2d2/p2d2-mirror.git",
   "upstream_id": 6205,
   "forge_path": "unbox-cologne/p2d2/p2d2-mirror",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/p2d2/p2d2-mirror",
   "last_activity": "2026-08-10T13:22:30.039Z"
  },
  {
@@ -9690,6 +9909,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/vereinfacht-buchhaltung-fuer-vereine.git",
   "upstream_id": 6203,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/vereinfacht-buchhaltung-fuer-vereine",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/vereinfacht-buchhaltung-fuer-vereine",
   "last_activity": "2026-07-10T12:53:33.936Z"
  },
  {
@@ -9726,6 +9946,7 @@
   "fallback_repo": "https://gitlab.opencode.de/networkException/caddy-jwt.git",
   "upstream_id": 6196,
   "forge_path": "networkException/caddy-jwt",
+  "entry_url": "https://gitlab.opencode.de/networkException/caddy-jwt",
   "last_activity": "2025-08-06T08:50:22.008Z"
  },
  {
@@ -9777,6 +9998,7 @@
   "fallback_repo": "https://gitlab.opencode.de/connected-urban-twins/cut-superset-wfs-dialect.git",
   "upstream_id": 6179,
   "forge_path": "connected-urban-twins/cut-superset-wfs-dialect",
+  "entry_url": "https://gitlab.opencode.de/connected-urban-twins/cut-superset-wfs-dialect",
   "last_activity": "2026-05-21T08:43:35.951Z"
  },
  {
@@ -9824,6 +10046,7 @@
   "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/zyai/zy.git",
   "upstream_id": 6156,
   "forge_path": "unbox-cologne/zyai/zy",
+  "entry_url": "https://gitlab.opencode.de/unbox-cologne/zyai/zy",
   "last_activity": "2025-12-15T09:20:59.958Z"
  },
  {
@@ -9866,6 +10089,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/daten-deutscher-wetterdienst-dwd-menden.git",
   "upstream_id": 6136,
   "forge_path": "stadt-menden/sensorik/daten-deutscher-wetterdienst-dwd-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/daten-deutscher-wetterdienst-dwd-menden",
   "last_activity": "2026-07-22T06:43:06.509Z"
  },
  {
@@ -9902,6 +10126,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/pegelsensorik-menden.git",
   "upstream_id": 5999,
   "forge_path": "stadt-menden/sensorik/pegelsensorik-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/pegelsensorik-menden",
   "last_activity": "2026-07-22T06:44:14.644Z"
  },
  {
@@ -9939,6 +10164,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/sensorik/wettersensorik-menden.git",
   "upstream_id": 5994,
   "forge_path": "stadt-menden/sensorik/wettersensorik-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/sensorik/wettersensorik-menden",
   "last_activity": "2026-07-22T06:44:40.089Z"
  },
  {
@@ -9977,6 +10203,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/git-project-template.git",
   "upstream_id": 5849,
   "forge_path": "fitko/matrix-g2x/git-project-template",
+  "entry_url": "https://gitlab.opencode.de/fitko/matrix-g2x/git-project-template",
   "last_activity": "2026-08-04T15:29:09.142Z"
  },
  {
@@ -10016,6 +10243,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/bamboard.git",
   "upstream_id": 5759,
   "forge_path": "smart-city-olpe/bamboard",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/bamboard",
   "last_activity": "2025-07-23T11:01:33.614Z"
  },
  {
@@ -10058,6 +10286,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/software-fuer-sportturniere-und-rennen.git",
   "upstream_id": 5741,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/software-fuer-sportturniere-und-rennen",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/software-fuer-sportturniere-und-rennen",
   "last_activity": "2026-08-10T00:00:15.068Z"
  },
  {
@@ -10088,7 +10317,7 @@
   ],
   "software_type": "standalone/web",
   "dev_status": "stable",
-  "version": "1.26.0",
+  "version": "1.26.1",
   "released": "2025-07-04",
   "maintenance": "internal",
   "contacts": [
@@ -10121,7 +10350,8 @@
   "fallback_repo": "https://gitlab.opencode.de/civora/civora-ui.git",
   "upstream_id": 5560,
   "forge_path": "civora/civora-ui",
-  "last_activity": "2026-08-07T12:45:17.198Z"
+  "entry_url": "https://gitlab.opencode.de/civora/civora-ui",
+  "last_activity": "2026-08-11T14:36:55.681Z"
  },
  {
   "source": "DE/openCode",
@@ -10165,6 +10395,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opentalk/opentalk-outlook-add-in.git",
   "upstream_id": 5510,
   "forge_path": "opentalk/opentalk-outlook-add-in",
+  "entry_url": "https://gitlab.opencode.de/opentalk/opentalk-outlook-add-in",
   "last_activity": "2026-07-09T12:13:03.676Z"
  },
  {
@@ -10217,6 +10448,7 @@
   "fallback_repo": "https://gitlab.opencode.de/tobias-mueller/opendesk.git",
   "upstream_id": 5502,
   "forge_path": "tobias-mueller/opendesk",
+  "entry_url": "https://gitlab.opencode.de/tobias-mueller/opendesk",
   "last_activity": "2026-02-09T15:16:54.426Z"
  },
  {
@@ -10259,6 +10491,7 @@
   "fallback_repo": "https://gitlab.opencode.de/connected-urban-twins/frequenzdaten-dashboard.git",
   "upstream_id": 5355,
   "forge_path": "connected-urban-twins/frequenzdaten-dashboard",
+  "entry_url": "https://gitlab.opencode.de/connected-urban-twins/frequenzdaten-dashboard",
   "last_activity": "2025-07-29T06:25:59.233Z"
  },
  {
@@ -10306,6 +10539,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-playground-manager/ocm-open-playground-manager.git",
   "upstream_id": 5276,
   "forge_path": "open-playground-manager/ocm-open-playground-manager",
+  "entry_url": "https://gitlab.opencode.de/open-playground-manager/ocm-open-playground-manager",
   "last_activity": "2026-06-17T07:33:59.946Z"
  },
  {
@@ -10350,6 +10584,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kielregion-gmbh/kielregion-gmbh-digitale-mobilit-t/mobil.live.git",
   "upstream_id": 5262,
   "forge_path": "kielregion-gmbh/kielregion-gmbh-digitale-mobilit-t/mobil.live",
+  "entry_url": "https://gitlab.opencode.de/kielregion-gmbh/kielregion-gmbh-digitale-mobilit-t/mobil.live",
   "last_activity": "2026-06-04T13:19:39.185Z"
  },
  {
@@ -10386,6 +10621,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_public_frontend.git",
   "upstream_id": 5259,
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_public_frontend",
+  "entry_url": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_public_frontend",
   "last_activity": "2026-08-11T09:48:06.455Z"
  },
  {
@@ -10431,6 +10667,7 @@
   "fallback_repo": "https://gitlab.opencode.de/f13/dokumentation.git",
   "upstream_id": 5250,
   "forge_path": "f13/dokumentation",
+  "entry_url": "https://gitlab.opencode.de/f13/dokumentation",
   "last_activity": "2026-08-06T08:12:59.885Z"
  },
  {
@@ -10478,6 +10715,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mach-e-verwaltung/mach-everwaltung.git",
   "upstream_id": 5206,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/mach-e-verwaltung/mach-everwaltung",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mach-e-verwaltung/mach-everwaltung",
   "last_activity": "2026-06-09T11:28:21.747Z"
  },
  {
@@ -10517,6 +10755,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/xzufi-validator-backend.git",
   "upstream_id": 5186,
   "forge_path": "fitko/fim/xzufi-validator-backend",
+  "entry_url": "https://gitlab.opencode.de/fitko/fim/xzufi-validator-backend",
   "last_activity": "2026-07-22T14:58:46.709Z"
  },
  {
@@ -10556,6 +10795,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/xzufi-konverter-backend.git",
   "upstream_id": 5185,
   "forge_path": "fitko/fim/xzufi-konverter-backend",
+  "entry_url": "https://gitlab.opencode.de/fitko/fim/xzufi-konverter-backend",
   "last_activity": "2026-07-22T14:17:26.756Z"
  },
  {
@@ -10590,6 +10830,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/vima.git",
   "upstream_id": 5152,
   "forge_path": "smart-city-ulm/vima",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/vima",
   "last_activity": "2025-07-01T18:25:09.819Z"
  },
  {
@@ -10627,6 +10868,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/strahlenexposition.git",
   "upstream_id": 5142,
   "forge_path": "uba-ki-lab/strahlenexposition",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/strahlenexposition",
   "last_activity": "2025-05-19T12:18:40.157Z"
  },
  {
@@ -10676,6 +10918,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000028072444/p2d2.git",
   "upstream_id": 5141,
   "forge_path": "OC000028072444/p2d2",
+  "entry_url": "https://gitlab.opencode.de/OC000028072444/p2d2",
   "last_activity": "2026-08-10T13:22:34.434Z"
  },
  {
@@ -10716,6 +10959,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/fish_monitoring.git",
   "upstream_id": 5137,
   "forge_path": "uba-ki-lab/fish_monitoring",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/fish_monitoring",
   "last_activity": "2025-06-23T00:00:07.541Z"
  },
  {
@@ -10758,6 +11002,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fis-wasser-und-boden/fis-wasser-und-boden-enda.git",
   "upstream_id": 5136,
   "forge_path": "fis-wasser-und-boden/fis-wasser-und-boden-enda",
+  "entry_url": "https://gitlab.opencode.de/fis-wasser-und-boden/fis-wasser-und-boden-enda",
   "last_activity": "2026-05-27T15:57:24.973Z"
  },
  {
@@ -10799,6 +11044,7 @@
   "fallback_repo": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportalapi.git",
   "upstream_id": 5135,
   "forge_path": "geowerkstatt-hamburg/masterportalapi",
+  "entry_url": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportalapi",
   "last_activity": "2026-07-17T06:40:05.105Z"
  },
  {
@@ -10848,6 +11094,7 @@
   "fallback_repo": "https://gitlab.opencode.de/govstack/govstack.git",
   "upstream_id": 5112,
   "forge_path": "govstack/govstack",
+  "entry_url": "https://gitlab.opencode.de/govstack/govstack",
   "last_activity": "2025-09-11T09:22:24.875Z"
  },
  {
@@ -10891,6 +11138,7 @@
   "fallback_repo": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportal-addons.git",
   "upstream_id": 5097,
   "forge_path": "geowerkstatt-hamburg/masterportal-addons",
+  "entry_url": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportal-addons",
   "last_activity": "2026-08-05T07:23:20.716Z"
  },
  {
@@ -10927,6 +11175,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/matrix-g2x/solution-architecture.git",
   "upstream_id": 5077,
   "forge_path": "fitko/matrix-g2x/solution-architecture",
+  "entry_url": "https://gitlab.opencode.de/fitko/matrix-g2x/solution-architecture",
   "last_activity": "2026-08-11T11:18:20.332Z"
  },
  {
@@ -10964,6 +11213,7 @@
   "fallback_repo": "https://gitlab.opencode.de/friedrich-loeffler-institut/fdm/ckanext-partialview.git",
   "upstream_id": 5067,
   "forge_path": "friedrich-loeffler-institut/fdm/ckanext-partialview",
+  "entry_url": "https://gitlab.opencode.de/friedrich-loeffler-institut/fdm/ckanext-partialview",
   "last_activity": "2025-06-04T09:51:45.539Z"
  },
  {
@@ -11000,6 +11250,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/smart-pedestrian-crosswalk.git",
   "upstream_id": 5024,
   "forge_path": "smart-city-olpe/smart-pedestrian-crosswalk",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/smart-pedestrian-crosswalk",
   "last_activity": "2025-10-13T12:35:40.828Z"
  },
  {
@@ -11036,6 +11287,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/pest-control.git",
   "upstream_id": 5023,
   "forge_path": "smart-city-olpe/pest-control",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/pest-control",
   "last_activity": "2025-10-13T12:25:44.432Z"
  },
  {
@@ -11072,6 +11324,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/waste-container.git",
   "upstream_id": 5022,
   "forge_path": "smart-city-olpe/waste-container",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/waste-container",
   "last_activity": "2025-10-13T12:42:08.244Z"
  },
  {
@@ -11108,6 +11361,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/llm-testframework.git",
   "upstream_id": 5012,
   "forge_path": "uba-ki-lab/llm-testframework",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/llm-testframework",
   "last_activity": "2026-05-13T07:48:58.631Z"
  },
  {
@@ -11150,6 +11404,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fraunhoferiosb/frost-server.git",
   "upstream_id": 5002,
   "forge_path": "fraunhoferiosb/frost-server",
+  "entry_url": "https://gitlab.opencode.de/fraunhoferiosb/frost-server",
   "last_activity": "2026-06-05T00:00:11.961Z"
  },
  {
@@ -11186,6 +11441,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/stadtsafari.git",
   "upstream_id": 4998,
   "forge_path": "smart-city-olpe/stadtsafari",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/stadtsafari",
   "last_activity": "2025-10-13T12:38:29.934Z"
  },
  {
@@ -11223,6 +11479,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-ulm/smart-city-beteiligungsplattform/conword-integration.git",
   "upstream_id": 4991,
   "forge_path": "smart-city-ulm/smart-city-beteiligungsplattform/conword-integration",
+  "entry_url": "https://gitlab.opencode.de/smart-city-ulm/smart-city-beteiligungsplattform/conword-integration",
   "last_activity": "2026-02-11T11:26:00.084Z"
  },
  {
@@ -11260,6 +11517,7 @@
   "fallback_repo": "https://gitlab.opencode.de/digitale-behoerdensprechstunde/digitale-behoerdensprechstunde.git",
   "upstream_id": 4954,
   "forge_path": "digitale-behoerdensprechstunde/digitale-behoerdensprechstunde",
+  "entry_url": "https://gitlab.opencode.de/digitale-behoerdensprechstunde/digitale-behoerdensprechstunde",
   "last_activity": "2026-06-18T07:45:07.862Z"
  },
  {
@@ -11302,6 +11560,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/foodsoft.git",
   "upstream_id": 4943,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/foodsoft",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/foodsoft",
   "last_activity": "2026-08-10T04:14:10.370Z"
  },
  {
@@ -11350,6 +11609,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kiquip.git",
   "upstream_id": 4938,
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/kiquip",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kiquip",
   "last_activity": "2026-04-15T00:10:05.865Z"
  },
  {
@@ -11429,6 +11689,7 @@
   "fallback_repo": "https://gitlab.opencode.de/urbandataspaceplatform/core-platform.git",
   "upstream_id": 4909,
   "forge_path": "urbandataspaceplatform/core-platform",
+  "entry_url": "https://gitlab.opencode.de/urbandataspaceplatform/core-platform",
   "last_activity": "2026-08-11T08:55:58.005Z"
  },
  {
@@ -11469,6 +11730,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-call.git",
   "upstream_id": 4876,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-call",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-call",
   "last_activity": "2026-08-11T08:48:15.955Z"
  },
  {
@@ -11507,6 +11769,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/gitlab-profile.git",
   "upstream_id": 4847,
   "forge_path": "open-code/gitlab-profile",
+  "entry_url": "https://gitlab.opencode.de/open-code/gitlab-profile",
   "last_activity": "2026-03-23T12:04:17.612Z"
  },
  {
@@ -11543,6 +11806,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000043381765/policy-entwicklung.git",
   "upstream_id": 4834,
   "forge_path": "oc000043381765/policy-entwicklung",
+  "entry_url": "https://gitlab.opencode.de/oc000043381765/policy-entwicklung",
   "last_activity": "2025-09-25T08:25:54.353Z"
  },
  {
@@ -11583,6 +11847,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000056455339/metadaten.git",
   "upstream_id": 4831,
   "forge_path": "oc000056455339/metadaten",
+  "entry_url": "https://gitlab.opencode.de/oc000056455339/metadaten",
   "last_activity": "2025-09-23T04:54:33.560Z"
  },
  {
@@ -11619,6 +11884,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000043381765/richtlinien-umsetzung-kyverno.git",
   "upstream_id": 4825,
   "forge_path": "oc000043381765/richtlinien-umsetzung-kyverno",
+  "entry_url": "https://gitlab.opencode.de/oc000043381765/richtlinien-umsetzung-kyverno",
   "last_activity": "2025-05-21T13:13:12.598Z"
  },
  {
@@ -11656,6 +11922,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bfn/open-access/qgis-ms.git",
   "upstream_id": 4819,
   "forge_path": "bfn/open-access/qgis-ms",
+  "entry_url": "https://gitlab.opencode.de/bfn/open-access/qgis-ms",
   "last_activity": "2026-01-29T12:22:37.346Z"
  },
  {
@@ -11710,6 +11977,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bigbluebutton/bigbluebutton.git",
   "upstream_id": 4817,
   "forge_path": "bigbluebutton/bigbluebutton",
+  "entry_url": "https://gitlab.opencode.de/bigbluebutton/bigbluebutton",
   "last_activity": "2026-07-11T00:00:12.515Z"
  },
  {
@@ -11763,6 +12031,7 @@
   "fallback_repo": "https://gitlab.opencode.de/THM-Health/PILOS.git",
   "upstream_id": 4812,
   "forge_path": "THM-Health/PILOS",
+  "entry_url": "https://gitlab.opencode.de/THM-Health/PILOS",
   "last_activity": "2026-08-11T04:06:18.017Z"
  },
  {
@@ -11818,6 +12087,7 @@
   "fallback_repo": "https://gitlab.opencode.de/klml/ga-lotse-code.git",
   "upstream_id": 4781,
   "forge_path": "klml/ga-lotse-code",
+  "entry_url": "https://gitlab.opencode.de/klml/ga-lotse-code",
   "last_activity": "2025-03-31T15:51:17.397Z"
  },
  {
@@ -11862,6 +12132,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fraunhofer-iese/digitale-doerfer/dorffunk.git",
   "upstream_id": 4774,
   "forge_path": "fraunhofer-iese/digitale-doerfer/dorffunk",
+  "entry_url": "https://gitlab.opencode.de/fraunhofer-iese/digitale-doerfer/dorffunk",
   "last_activity": "2025-03-31T13:50:09.752Z"
  },
  {
@@ -11903,6 +12174,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-dos/open-smart-city-app.git",
   "upstream_id": 4747,
   "forge_path": "smart-city-dos/open-smart-city-app",
+  "entry_url": "https://gitlab.opencode.de/smart-city-dos/open-smart-city-app",
   "last_activity": "2025-08-07T21:30:36.308Z"
  },
  {
@@ -11943,6 +12215,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000073187576/keycloak-adapter-mhkbd-nrw.git",
   "upstream_id": 4737,
   "forge_path": "OC000073187576/keycloak-adapter-mhkbd-nrw",
+  "entry_url": "https://gitlab.opencode.de/OC000073187576/keycloak-adapter-mhkbd-nrw",
   "last_activity": "2025-07-03T08:03:20.400Z"
  },
  {
@@ -11976,6 +12249,7 @@
   "fallback_repo": "https://gitlab.opencode.de/thomas-vogt/sitzungsgeld2csv.git",
   "upstream_id": 4689,
   "forge_path": "thomas-vogt/sitzungsgeld2csv",
+  "entry_url": "https://gitlab.opencode.de/thomas-vogt/sitzungsgeld2csv",
   "last_activity": "2025-04-24T05:25:50.833Z"
  },
  {
@@ -12025,6 +12299,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wolfsburg-app/documentation.git",
   "upstream_id": 4621,
   "forge_path": "wolfsburg-app/documentation",
+  "entry_url": "https://gitlab.opencode.de/wolfsburg-app/documentation",
   "last_activity": "2026-04-14T08:43:36.968Z"
  },
  {
@@ -12073,6 +12348,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000024389631/GeospatialAnalyzer.git",
   "upstream_id": 4619,
   "forge_path": "OC000024389631/GeospatialAnalyzer",
+  "entry_url": "https://gitlab.opencode.de/OC000024389631/GeospatialAnalyzer",
   "last_activity": "2026-08-11T01:08:21.008Z"
  },
  {
@@ -12108,6 +12384,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_sicherheitskonzept.git",
   "upstream_id": 4610,
   "forge_path": "stadtosnabrueck/smart_city_sicherheitskonzept",
+  "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_sicherheitskonzept",
   "last_activity": "2026-05-29T14:07:55.796Z"
  },
  {
@@ -12138,6 +12415,7 @@
   "fallback_repo": "https://gitlab.opencode.de/jke-group/authservice.git",
   "upstream_id": 4599,
   "forge_path": "jke-group/authservice",
+  "entry_url": "https://gitlab.opencode.de/jke-group/authservice",
   "last_activity": "2025-09-08T13:26:04.086Z"
  },
  {
@@ -12177,6 +12455,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/nrwdesk-helm.git",
   "upstream_id": 4590,
   "forge_path": "it.nrw/nrw.desk/nrwdesk-helm",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/nrwdesk-helm",
   "last_activity": "2025-03-19T12:30:53.254Z"
  },
  {
@@ -12217,6 +12496,7 @@
   "fallback_repo": "https://gitlab.opencode.de/awv-ostthueringen/AppFramework.git",
   "upstream_id": 4588,
   "forge_path": "awv-ostthueringen/AppFramework",
+  "entry_url": "https://gitlab.opencode.de/awv-ostthueringen/AppFramework",
   "last_activity": "2025-05-22T10:42:15.746Z"
  },
  {
@@ -12260,6 +12540,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-backend.git",
   "upstream_id": 4576,
   "forge_path": "it.nrw/nrw.desk/conference-backend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-backend",
   "last_activity": "2026-08-11T02:33:04.834Z"
  },
  {
@@ -12313,6 +12594,7 @@
   "fallback_repo": "https://gitlab.opencode.de/materna-se/tremonia-dxp.git",
   "upstream_id": 4565,
   "forge_path": "materna-se/tremonia-dxp",
+  "entry_url": "https://gitlab.opencode.de/materna-se/tremonia-dxp",
   "last_activity": "2026-03-12T14:08:10.329Z"
  },
  {
@@ -12362,6 +12644,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/igbvc-info.git",
   "upstream_id": 4549,
   "forge_path": "ig-bvc/igbvc-info",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/igbvc-info",
   "last_activity": "2026-04-16T12:45:46.304Z"
  },
  {
@@ -12411,6 +12694,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-hannover/smart.light-dashboard.git",
   "upstream_id": 4546,
   "forge_path": "landeshauptstadt-hannover/smart.light-dashboard",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-hannover/smart.light-dashboard",
   "last_activity": "2026-08-06T09:17:31.843Z"
  },
  {
@@ -12447,6 +12731,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/caddy-jwt.git",
   "upstream_id": 4534,
   "forge_path": "it.nrw/nrw.desk/caddy-jwt",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/caddy-jwt",
   "last_activity": "2026-07-08T02:16:56.843Z"
  },
  {
@@ -12490,6 +12775,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000063014285/netlock-rmm.git",
   "upstream_id": 4506,
   "forge_path": "oc000063014285/netlock-rmm",
+  "entry_url": "https://gitlab.opencode.de/oc000063014285/netlock-rmm",
   "last_activity": "2025-02-24T18:57:53.572Z"
  },
  {
@@ -12535,6 +12821,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kielregion-gmbh/quartiersentwicklung/os-ubem-kielregion.git",
   "upstream_id": 4485,
   "forge_path": "kielregion-gmbh/quartiersentwicklung/os-ubem-kielregion",
+  "entry_url": "https://gitlab.opencode.de/kielregion-gmbh/quartiersentwicklung/os-ubem-kielregion",
   "last_activity": "2026-08-11T14:09:45.933Z"
  },
  {
@@ -12569,6 +12856,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/config-check.git",
   "upstream_id": 4467,
   "forge_path": "it.nrw/nrw.desk/config-check",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/config-check",
   "last_activity": "2026-08-04T02:33:39.061Z"
  },
  {
@@ -12604,6 +12892,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-phone-codes.git",
   "upstream_id": 4429,
   "forge_path": "it.nrw/nrw.desk/conference-phone-codes",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-phone-codes",
   "last_activity": "2026-08-08T02:36:10.239Z"
  },
  {
@@ -12641,6 +12930,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/gateway-backend.git",
   "upstream_id": 4422,
   "forge_path": "it.nrw/nrw.desk/gateway-backend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/gateway-backend",
   "last_activity": "2026-08-08T02:38:24.957Z"
  },
  {
@@ -12680,6 +12970,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/notification-service.git",
   "upstream_id": 4395,
   "forge_path": "it.nrw/nrw.desk/notification-service",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/notification-service",
   "last_activity": "2026-08-10T02:56:39.429Z"
  },
  {
@@ -12723,6 +13014,7 @@
   "fallback_repo": "https://gitlab.opencode.de/eifelkreis-verbindet/digitale-hochwassermelder.git",
   "upstream_id": 4348,
   "forge_path": "eifelkreis-verbindet/digitale-hochwassermelder",
+  "entry_url": "https://gitlab.opencode.de/eifelkreis-verbindet/digitale-hochwassermelder",
   "last_activity": "2025-03-12T10:04:05.830Z"
  },
  {
@@ -12762,6 +13054,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-notifier.git",
   "upstream_id": 4309,
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-notifier",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-notifier",
   "last_activity": "2026-08-11T02:45:04.007Z"
  },
  {
@@ -12801,6 +13094,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-creator.git",
   "upstream_id": 4306,
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-creator",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-creator",
   "last_activity": "2026-08-11T02:41:56.026Z"
  },
  {
@@ -12847,6 +13141,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-frontend.git",
   "upstream_id": 4295,
   "forge_path": "it.nrw/nrw.desk/conference-frontend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-frontend",
   "last_activity": "2026-07-23T09:20:44.453Z"
  },
  {
@@ -12883,6 +13178,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/portal-frontend.git",
   "upstream_id": 4293,
   "forge_path": "it.nrw/nrw.desk/portal-frontend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/portal-frontend",
   "last_activity": "2025-04-23T11:30:29.322Z"
  },
  {
@@ -12918,6 +13214,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/frontend-shared.git",
   "upstream_id": 4292,
   "forge_path": "it.nrw/nrw.desk/frontend-shared",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/frontend-shared",
   "last_activity": "2026-07-23T07:21:13.706Z"
  },
  {
@@ -12955,6 +13252,7 @@
   "fallback_repo": "https://gitlab.opencode.de/herrfeder/synapse-mls.git",
   "upstream_id": 4291,
   "forge_path": "herrfeder/synapse-mls",
+  "entry_url": "https://gitlab.opencode.de/herrfeder/synapse-mls",
   "last_activity": "2025-02-07T07:39:12.858Z"
  },
  {
@@ -12992,6 +13290,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/gateway-frontend.git",
   "upstream_id": 4280,
   "forge_path": "it.nrw/nrw.desk/gateway-frontend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/gateway-frontend",
   "last_activity": "2026-08-11T08:12:52.099Z"
  },
  {
@@ -13023,6 +13322,7 @@
   "fallback_repo": "https://gitlab.opencode.de/julius-kuehn-institut/PhenoApp.git",
   "upstream_id": 4276,
   "forge_path": "julius-kuehn-institut/PhenoApp",
+  "entry_url": "https://gitlab.opencode.de/julius-kuehn-institut/PhenoApp",
   "last_activity": "2025-03-11T13:02:24.300Z"
  },
  {
@@ -13080,6 +13380,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umweltnavi/app.git",
   "upstream_id": 4272,
   "forge_path": "umweltnavi/app",
+  "entry_url": "https://gitlab.opencode.de/umweltnavi/app",
   "last_activity": "2026-07-09T12:20:35.679Z"
  },
  {
@@ -13130,6 +13431,7 @@
   "fallback_repo": "https://gitlab.opencode.de/wechange-eg/cosinnus.git",
   "upstream_id": 4268,
   "forge_path": "wechange-eg/cosinnus",
+  "entry_url": "https://gitlab.opencode.de/wechange-eg/cosinnus",
   "last_activity": "2026-08-11T08:46:11.368Z"
  },
  {
@@ -13183,6 +13485,7 @@
   "fallback_repo": "https://gitlab.opencode.de/cfi2017/opendesk.git",
   "upstream_id": 4231,
   "forge_path": "cfi2017/opendesk",
+  "entry_url": "https://gitlab.opencode.de/cfi2017/opendesk",
   "last_activity": "2026-08-06T10:51:52.958Z"
  },
  {
@@ -13217,6 +13520,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_digital_twin_visualisation.git",
   "upstream_id": 4206,
   "forge_path": "stadtosnabrueck/smart_city_digital_twin_visualisation",
+  "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/smart_city_digital_twin_visualisation",
   "last_activity": "2026-04-30T12:53:32.046Z"
  },
  {
@@ -13254,6 +13558,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/mls/synapse-mls.git",
   "upstream_id": 4201,
   "forge_path": "bwi/bundesmessenger/mls/synapse-mls",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/mls/synapse-mls",
   "last_activity": "2025-02-07T07:38:58.799Z"
  },
  {
@@ -13291,6 +13596,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/mls/mls-test-client.git",
   "upstream_id": 4200,
   "forge_path": "bwi/bundesmessenger/mls/mls-test-client",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/mls/mls-test-client",
   "last_activity": "2025-02-13T16:44:22.523Z"
  },
  {
@@ -13328,6 +13634,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/feedback-backend.git",
   "upstream_id": 4193,
   "forge_path": "it.nrw/nrw.desk/feedback-backend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/feedback-backend",
   "last_activity": "2026-08-08T02:37:35.716Z"
  },
  {
@@ -13371,6 +13678,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/datenplattform-stadt-menden.git",
   "upstream_id": 4164,
   "forge_path": "stadt-menden/datenplattform-stadt-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/datenplattform-stadt-menden",
   "last_activity": "2026-07-22T06:45:18.378Z"
  },
  {
@@ -13405,6 +13713,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/app-config.git",
   "upstream_id": 4163,
   "forge_path": "bwi/bundesmessenger/backend/app-config",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/app-config",
   "last_activity": "2026-05-28T13:41:07.641Z"
  },
  {
@@ -13448,6 +13757,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/ubair.git",
   "upstream_id": 4152,
   "forge_path": "uba-ki-lab/ubair",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/ubair",
   "last_activity": "2025-03-10T12:00:13.980Z"
  },
  {
@@ -13486,6 +13796,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/identity-curator.git",
   "upstream_id": 4150,
   "forge_path": "it.nrw/nrw.desk/identity-curator",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/identity-curator",
   "last_activity": "2026-08-11T02:39:18.683Z"
  },
  {
@@ -13525,6 +13836,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/calendar-manager.git",
   "upstream_id": 4146,
   "forge_path": "it.nrw/nrw.desk/calendar-manager",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/calendar-manager",
   "last_activity": "2026-08-11T02:27:16.029Z"
  },
  {
@@ -13569,6 +13881,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/zit/opendata/dcat-catalog-check.git",
   "upstream_id": 4123,
   "forge_path": "sh/zit/opendata/dcat-catalog-check",
+  "entry_url": "https://gitlab.opencode.de/sh/zit/opendata/dcat-catalog-check",
   "last_activity": "2026-07-28T13:02:39.635Z"
  },
  {
@@ -13613,6 +13926,7 @@
   "fallback_repo": "https://gitlab.opencode.de/sh/zit/opendata/csw2dcat.git",
   "upstream_id": 4122,
   "forge_path": "sh/zit/opendata/csw2dcat",
+  "entry_url": "https://gitlab.opencode.de/sh/zit/opendata/csw2dcat",
   "last_activity": "2026-07-01T05:45:53.956Z"
  },
  {
@@ -13656,6 +13970,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/objection-management.git",
   "upstream_id": 4112,
   "forge_path": "uba-ki-lab/objection-management",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/objection-management",
   "last_activity": "2025-01-13T11:14:51.399Z"
  },
  {
@@ -13703,6 +14018,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it-architekturrichtlinien/gitlab-profile.git",
   "upstream_id": 4104,
   "forge_path": "it-architekturrichtlinien/gitlab-profile",
+  "entry_url": "https://gitlab.opencode.de/it-architekturrichtlinien/gitlab-profile",
   "last_activity": "2026-02-26T17:38:44.111Z"
  },
  {
@@ -13748,6 +14064,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/gamma_flow.git",
   "upstream_id": 4084,
   "forge_path": "uba-ki-lab/gamma_flow",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/gamma_flow",
   "last_activity": "2025-12-20T00:10:06.767Z"
  },
  {
@@ -13794,6 +14111,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmbf/teamdigital/hdp.git",
   "upstream_id": 4078,
   "forge_path": "bmbf/teamdigital/hdp",
+  "entry_url": "https://gitlab.opencode.de/bmbf/teamdigital/hdp",
   "last_activity": "2026-01-07T13:08:31.960Z"
  },
  {
@@ -13825,6 +14143,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin-online/ckanext-datasetsnippets.git",
   "upstream_id": 4073,
   "forge_path": "berlin-online/ckanext-datasetsnippets",
+  "entry_url": "https://gitlab.opencode.de/berlin-online/ckanext-datasetsnippets",
   "last_activity": "2024-12-17T14:56:55.508Z"
  },
  {
@@ -13855,6 +14174,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin-online/ckanext-berlintheme.git",
   "upstream_id": 4071,
   "forge_path": "berlin-online/ckanext-berlintheme",
+  "entry_url": "https://gitlab.opencode.de/berlin-online/ckanext-berlintheme",
   "last_activity": "2024-12-17T12:27:08.463Z"
  },
  {
@@ -13888,6 +14208,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin-online/ckanext-berlinauth.git",
   "upstream_id": 4070,
   "forge_path": "berlin-online/ckanext-berlinauth",
+  "entry_url": "https://gitlab.opencode.de/berlin-online/ckanext-berlinauth",
   "last_activity": "2024-12-17T12:08:06.656Z"
  },
  {
@@ -13921,6 +14242,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin-online/ckanext-dcatde_berlin.git",
   "upstream_id": 4068,
   "forge_path": "berlin-online/ckanext-dcatde_berlin",
+  "entry_url": "https://gitlab.opencode.de/berlin-online/ckanext-dcatde_berlin",
   "last_activity": "2024-12-17T11:11:36.679Z"
  },
  {
@@ -13955,6 +14277,7 @@
   "fallback_repo": "https://gitlab.opencode.de/berlin-online/ckanext-validationapi.git",
   "upstream_id": 4067,
   "forge_path": "berlin-online/ckanext-validationapi",
+  "entry_url": "https://gitlab.opencode.de/berlin-online/ckanext-validationapi",
   "last_activity": "2024-12-17T10:48:23.891Z"
  },
  {
@@ -14001,6 +14324,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bva/softwaretest/qs-baukasten.git",
   "upstream_id": 4064,
   "forge_path": "bva/softwaretest/qs-baukasten",
+  "entry_url": "https://gitlab.opencode.de/bva/softwaretest/qs-baukasten",
   "last_activity": "2026-07-08T09:45:18.260Z"
  },
  {
@@ -14047,6 +14371,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/badgebackend/badge-api.git",
   "upstream_id": 4058,
   "forge_path": "open-code/badgebackend/badge-api",
+  "entry_url": "https://gitlab.opencode.de/open-code/badgebackend/badge-api",
   "last_activity": "2026-08-07T09:34:39.402Z"
  },
  {
@@ -14092,6 +14417,7 @@
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/portal-backend.git",
   "upstream_id": 4021,
   "forge_path": "it.nrw/nrw.desk/portal-backend",
+  "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/portal-backend",
   "last_activity": "2026-08-11T02:48:44.946Z"
  },
  {
@@ -14132,6 +14458,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-x-android.git",
   "upstream_id": 4015,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-x-android",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-x-android",
   "last_activity": "2026-08-10T09:54:14.806Z"
  },
  {
@@ -14166,6 +14493,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-android.git",
   "upstream_id": 4014,
   "forge_path": "bwi/bundesmessenger/ui-components/compound-android",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-android",
   "last_activity": "2026-02-16T10:17:42.982Z"
  },
  {
@@ -14201,6 +14529,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-matrix-rust-sdk.git",
   "upstream_id": 4009,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-matrix-rust-sdk",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-matrix-rust-sdk",
   "last_activity": "2026-08-10T08:52:03.594Z"
  },
  {
@@ -14241,6 +14570,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-x-ios.git",
   "upstream_id": 4008,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-x-ios",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-x-ios",
   "last_activity": "2026-07-28T08:55:23.643Z"
  },
  {
@@ -14275,6 +14605,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-ios.git",
   "upstream_id": 4007,
   "forge_path": "bwi/bundesmessenger/ui-components/compound-ios",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-ios",
   "last_activity": "2026-03-03T08:42:49.116Z"
  },
  {
@@ -14308,6 +14639,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000061838485/GeoLoadReplay.git",
   "upstream_id": 3908,
   "forge_path": "oc000061838485/GeoLoadReplay",
+  "entry_url": "https://gitlab.opencode.de/oc000061838485/GeoLoadReplay",
   "last_activity": "2025-01-16T18:17:48.883Z"
  },
  {
@@ -14355,6 +14687,7 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/document-writing-tools/document-writing-ci-components.git",
   "upstream_id": 3907,
   "forge_path": "open-code/document-writing-tools/document-writing-ci-components",
+  "entry_url": "https://gitlab.opencode.de/open-code/document-writing-tools/document-writing-ci-components",
   "last_activity": "2026-08-07T07:54:55.777Z"
  },
  {
@@ -14402,6 +14735,7 @@
   "fallback_repo": "https://gitlab.opencode.de/gemeinde-kalletal/hochwasserinfosystem.git",
   "upstream_id": 3850,
   "forge_path": "gemeinde-kalletal/hochwasserinfosystem",
+  "entry_url": "https://gitlab.opencode.de/gemeinde-kalletal/hochwasserinfosystem",
   "last_activity": "2025-06-16T09:45:15.072Z"
  },
  {
@@ -14438,6 +14772,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/moodbutton.git",
   "upstream_id": 3702,
   "forge_path": "smart-city-olpe/moodbutton",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/moodbutton",
   "last_activity": "2025-10-13T12:20:15.057Z"
  },
  {
@@ -14475,7 +14810,8 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/siteconfig_impexp.git",
   "upstream_id": 3683,
   "forge_path": "bmi/government-site-builder-11/extensions/siteconfig_impexp",
-  "last_activity": "2026-08-11T09:47:17.343Z"
+  "entry_url": "https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/siteconfig_impexp",
+  "last_activity": "2026-08-11T18:27:35.728Z"
  },
  {
   "source": "DE/openCode",
@@ -14511,6 +14847,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/kastanienbaeume-kartenuebersicht.git",
   "upstream_id": 3627,
   "forge_path": "smart-city-olpe/kastanienbaeume-kartenuebersicht",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/kastanienbaeume-kartenuebersicht",
   "last_activity": "2025-10-13T13:12:14.558Z"
  },
  {
@@ -14551,6 +14888,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/erlebnis.stadt.git",
   "upstream_id": 3604,
   "forge_path": "stadt-menden/erlebnis.stadt",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/erlebnis.stadt",
   "last_activity": "2026-07-22T06:47:15.313Z"
  },
  {
@@ -14587,6 +14925,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/iot-heatmap.git",
   "upstream_id": 3602,
   "forge_path": "smart-city-olpe/iot-heatmap",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/iot-heatmap",
   "last_activity": "2025-10-13T13:27:50.514Z"
  },
  {
@@ -14623,6 +14962,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/bodenfeuchte.git",
   "upstream_id": 3600,
   "forge_path": "smart-city-olpe/bodenfeuchte",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/bodenfeuchte",
   "last_activity": "2025-10-13T13:10:46.783Z"
  },
  {
@@ -14659,6 +14999,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/besucherzaehler.git",
   "upstream_id": 3599,
   "forge_path": "smart-city-olpe/besucherzaehler",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/besucherzaehler",
   "last_activity": "2025-10-13T13:24:29.365Z"
  },
  {
@@ -14696,6 +15037,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opencode-analyzer/pod-manager.git",
   "upstream_id": 3588,
   "forge_path": "opencode-analyzer/pod-manager",
+  "entry_url": "https://gitlab.opencode.de/opencode-analyzer/pod-manager",
   "last_activity": "2024-12-20T00:10:03.599Z"
  },
  {
@@ -14732,6 +15074,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opencode-analyzer/tool-service.git",
   "upstream_id": 3576,
   "forge_path": "opencode-analyzer/tool-service",
+  "entry_url": "https://gitlab.opencode.de/opencode-analyzer/tool-service",
   "last_activity": "2024-12-16T14:14:21.271Z"
  },
  {
@@ -14768,6 +15111,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/vorschauwebseite-menden.git",
   "upstream_id": 3574,
   "forge_path": "stadt-menden/vorschauwebseite-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/vorschauwebseite-menden",
   "last_activity": "2026-07-22T06:47:54.155Z"
  },
  {
@@ -14837,6 +15181,7 @@
   "fallback_repo": "https://gitlab.opencode.de/kern-ux/kern-ux-plain.git",
   "upstream_id": 3543,
   "forge_path": "kern-ux/kern-ux-plain",
+  "entry_url": "https://gitlab.opencode.de/kern-ux/kern-ux-plain",
   "last_activity": "2026-08-11T09:33:17.094Z"
  },
  {
@@ -14872,6 +15217,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/schema.git",
   "upstream_id": 3529,
   "forge_path": "bwi/bundesmessenger/backend/schema",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/schema",
   "last_activity": "2026-07-29T14:02:19.261Z"
  },
  {
@@ -14912,6 +15258,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/suchclient.git",
   "upstream_id": 3510,
   "forge_path": "fitko/pvog/suchclient",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/suchclient",
   "last_activity": "2026-07-22T17:48:00.952Z"
  },
  {
@@ -14945,6 +15292,7 @@
   "fallback_repo": "https://gitlab.opencode.de/oc000047244955/bovis.net.git",
   "upstream_id": 3487,
   "forge_path": "oc000047244955/bovis.net",
+  "entry_url": "https://gitlab.opencode.de/oc000047244955/bovis.net",
   "last_activity": "2026-08-11T11:47:05.106Z"
  },
  {
@@ -14982,6 +15330,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/dashboard-menden.git",
   "upstream_id": 3477,
   "forge_path": "stadt-menden/dashboard-menden",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/dashboard-menden",
   "last_activity": "2026-07-22T06:47:34.961Z"
  },
  {
@@ -15019,6 +15368,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-menden/around-menden-virtuelle-stadtfuehrung.git",
   "upstream_id": 3475,
   "forge_path": "stadt-menden/around-menden-virtuelle-stadtfuehrung",
+  "entry_url": "https://gitlab.opencode.de/stadt-menden/around-menden-virtuelle-stadtfuehrung",
   "last_activity": "2026-07-22T06:44:59.470Z"
  },
  {
@@ -15075,6 +15425,7 @@
   "fallback_repo": "https://gitlab.opencode.de/openculturas/openculturas-distribution.git",
   "upstream_id": 3458,
   "forge_path": "openculturas/openculturas-distribution",
+  "entry_url": "https://gitlab.opencode.de/openculturas/openculturas-distribution",
   "last_activity": "2026-08-11T13:16:05.707Z"
  },
  {
@@ -15109,6 +15460,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000042668810/OpenSource4Impact.git",
   "upstream_id": 3450,
   "forge_path": "OC000042668810/OpenSource4Impact",
+  "entry_url": "https://gitlab.opencode.de/OC000042668810/OpenSource4Impact",
   "last_activity": "2024-09-17T12:12:51.613Z"
  },
  {
@@ -15153,6 +15505,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/pvog/produktportal.git",
   "upstream_id": 3405,
   "forge_path": "fitko/pvog/produktportal",
+  "entry_url": "https://gitlab.opencode.de/fitko/pvog/produktportal",
   "last_activity": "2026-08-07T06:54:25.203Z"
  },
  {
@@ -15191,6 +15544,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/xzufi-konverter.git",
   "upstream_id": 3404,
   "forge_path": "fitko/fim/xzufi-konverter",
+  "entry_url": "https://gitlab.opencode.de/fitko/fim/xzufi-konverter",
   "last_activity": "2026-08-11T08:22:39.424Z"
  },
  {
@@ -15238,6 +15592,7 @@
   "fallback_repo": "https://gitlab.opencode.de/teutonet/data-hub.git",
   "upstream_id": 3396,
   "forge_path": "teutonet/data-hub",
+  "entry_url": "https://gitlab.opencode.de/teutonet/data-hub",
   "last_activity": "2024-09-10T10:07:55.609Z"
  },
  {
@@ -15293,6 +15648,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ga-lotse/ga-lotse-code.git",
   "upstream_id": 3352,
   "forge_path": "ga-lotse/ga-lotse-code",
+  "entry_url": "https://gitlab.opencode.de/ga-lotse/ga-lotse-code",
   "last_activity": "2026-05-07T10:50:02.274Z"
  },
  {
@@ -15331,6 +15687,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-wendeler-land/meinwnd-app.git",
   "upstream_id": 3342,
   "forge_path": "smart-wendeler-land/meinwnd-app",
+  "entry_url": "https://gitlab.opencode.de/smart-wendeler-land/meinwnd-app",
   "last_activity": "2026-02-20T10:38:52.584Z"
  },
  {
@@ -15371,6 +15728,7 @@
   "fallback_repo": "https://gitlab.opencode.de/alte-hansestadt-lemgo/smarte-einsatzkraefteortung.git",
   "upstream_id": 3248,
   "forge_path": "alte-hansestadt-lemgo/smarte-einsatzkraefteortung",
+  "entry_url": "https://gitlab.opencode.de/alte-hansestadt-lemgo/smarte-einsatzkraefteortung",
   "last_activity": "2026-05-21T10:57:20.656Z"
  },
  {
@@ -15406,7 +15764,8 @@
   "fallback_repo": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner.git",
   "upstream_id": 3175,
   "forge_path": "digitalservicebund/elterngeldrechner",
-  "last_activity": "2026-08-11T13:24:21.612Z"
+  "entry_url": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner",
+  "last_activity": "2026-08-11T15:44:14.358Z"
  },
  {
   "source": "DE/openCode",
@@ -15447,6 +15806,7 @@
   "fallback_repo": "https://gitlab.opencode.de/governikus/id-panstar-sdk.git",
   "upstream_id": 3169,
   "forge_path": "governikus/id-panstar-sdk",
+  "entry_url": "https://gitlab.opencode.de/governikus/id-panstar-sdk",
   "last_activity": "2026-03-26T09:52:53.298Z"
  },
  {
@@ -15497,6 +15857,7 @@
   "fallback_repo": "https://gitlab.opencode.de/zammad/zammad.git",
   "upstream_id": 3166,
   "forge_path": "zammad/zammad",
+  "entry_url": "https://gitlab.opencode.de/zammad/zammad",
   "last_activity": "2026-08-11T12:49:27.441Z"
  },
  {
@@ -15536,6 +15897,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core.git",
   "upstream_id": 3101,
   "forge_path": "bwi/bundesmessenger/admin-portal/bumap-core",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core",
   "last_activity": "2026-05-28T13:40:30.828Z"
  },
  {
@@ -15573,6 +15935,7 @@
   "fallback_repo": "https://gitlab.opencode.de/curry-solutions/landratsamt-roth/badeampel.git",
   "upstream_id": 3098,
   "forge_path": "curry-solutions/landratsamt-roth/badeampel",
+  "entry_url": "https://gitlab.opencode.de/curry-solutions/landratsamt-roth/badeampel",
   "last_activity": "2024-09-27T09:27:46.756Z"
  },
  {
@@ -15609,6 +15972,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000014987132/journal-web-ui.git",
   "upstream_id": 3080,
   "forge_path": "OC000014987132/journal-web-ui",
+  "entry_url": "https://gitlab.opencode.de/OC000014987132/journal-web-ui",
   "last_activity": "2025-07-07T14:08:48.602Z"
  },
  {
@@ -15641,6 +16005,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l4/planbar-fahrbar-frontend.git",
   "upstream_id": 3074,
   "forge_path": "DEUTSCHLAND.DIGITAL/l4/planbar-fahrbar-frontend",
+  "entry_url": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l4/planbar-fahrbar-frontend",
   "last_activity": "2024-09-04T11:13:12.649Z"
  },
  {
@@ -15677,6 +16042,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/comby/comby-frontend.git",
   "upstream_id": 3070,
   "forge_path": "DEUTSCHLAND.DIGITAL/comby/comby-frontend",
+  "entry_url": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/comby/comby-frontend",
   "last_activity": "2025-03-03T11:19:49.887Z"
  },
  {
@@ -15722,6 +16088,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l2/landwohl.git",
   "upstream_id": 3067,
   "forge_path": "DEUTSCHLAND.DIGITAL/l2/landwohl",
+  "entry_url": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l2/landwohl",
   "last_activity": "2025-07-09T09:53:50.505Z"
  },
  {
@@ -15764,6 +16131,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l2/frontend.git",
   "upstream_id": 3066,
   "forge_path": "DEUTSCHLAND.DIGITAL/l2/frontend",
+  "entry_url": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/l2/frontend",
   "last_activity": "2024-12-17T14:36:09.896Z"
  },
  {
@@ -15806,6 +16174,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/dave.git",
   "upstream_id": 3029,
   "forge_path": "landeshauptstadt-muenchen/dave",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/dave",
   "last_activity": "2026-04-17T08:04:01.492Z"
  },
  {
@@ -15840,6 +16209,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000039916151/OpenSource4Impact.git",
   "upstream_id": 2910,
   "forge_path": "OC000039916151/OpenSource4Impact",
+  "entry_url": "https://gitlab.opencode.de/OC000039916151/OpenSource4Impact",
   "last_activity": "2024-09-18T11:04:30.092Z"
  },
  {
@@ -15875,6 +16245,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000040228294/aurea-ar-modul-android.git",
   "upstream_id": 2906,
   "forge_path": "OC000040228294/aurea-ar-modul-android",
+  "entry_url": "https://gitlab.opencode.de/OC000040228294/aurea-ar-modul-android",
   "last_activity": "2024-11-12T11:48:09.710Z"
  },
  {
@@ -15910,6 +16281,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000040228294/aurea-ar-modul-ios.git",
   "upstream_id": 2905,
   "forge_path": "OC000040228294/aurea-ar-modul-ios",
+  "entry_url": "https://gitlab.opencode.de/OC000040228294/aurea-ar-modul-ios",
   "last_activity": "2024-11-12T11:47:41.325Z"
  },
  {
@@ -15948,7 +16320,8 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/data-stories.git",
   "upstream_id": 2874,
   "forge_path": "umwelt-info/data-stories",
-  "last_activity": "2026-08-11T14:07:34.133Z"
+  "entry_url": "https://gitlab.opencode.de/umwelt-info/data-stories",
+  "last_activity": "2026-08-11T16:55:48.162Z"
  },
  {
   "source": "DE/openCode",
@@ -15991,6 +16364,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smarte-region-myk10/digitaler-bewegungstrainer.git",
   "upstream_id": 2872,
   "forge_path": "smarte-region-myk10/digitaler-bewegungstrainer",
+  "entry_url": "https://gitlab.opencode.de/smarte-region-myk10/digitaler-bewegungstrainer",
   "last_activity": "2024-10-28T07:06:30.257Z"
  },
  {
@@ -16037,6 +16411,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmbf/ism/elastic-siem-mip-connector.git",
   "upstream_id": 2854,
   "forge_path": "bmbf/ism/elastic-siem-mip-connector",
+  "entry_url": "https://gitlab.opencode.de/bmbf/ism/elastic-siem-mip-connector",
   "last_activity": "2024-05-02T15:50:12.184Z"
  },
  {
@@ -16075,6 +16450,7 @@
   "fallback_repo": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/plattform/plattform.git",
   "upstream_id": 2850,
   "forge_path": "DEUTSCHLAND.DIGITAL/plattform/plattform",
+  "entry_url": "https://gitlab.opencode.de/DEUTSCHLAND.DIGITAL/plattform/plattform",
   "last_activity": "2025-10-08T12:55:47.398Z"
  },
  {
@@ -16119,6 +16495,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fraunhofer-iese/digitale-doerfer/digitale-doerfer-plattform.git",
   "upstream_id": 2835,
   "forge_path": "fraunhofer-iese/digitale-doerfer/digitale-doerfer-plattform",
+  "entry_url": "https://gitlab.opencode.de/fraunhofer-iese/digitale-doerfer/digitale-doerfer-plattform",
   "last_activity": "2024-04-26T13:30:11.381Z"
  },
  {
@@ -16187,6 +16564,7 @@
   "fallback_repo": "https://gitlab.opencode.de/civitas-connect/civitas-core.git",
   "upstream_id": 2834,
   "forge_path": "civitas-connect/civitas-core",
+  "entry_url": "https://gitlab.opencode.de/civitas-connect/civitas-core",
   "last_activity": "2026-07-23T14:10:53.458Z"
  },
  {
@@ -16218,6 +16596,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner.git",
   "upstream_id": 2823,
   "forge_path": "bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner",
+  "entry_url": "https://gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner",
   "last_activity": "2025-04-03T15:44:12.899Z"
  },
  {
@@ -16260,6 +16639,7 @@
   "fallback_repo": "https://gitlab.opencode.de/uba-ki-lab/evaluation-bundesbot.git",
   "upstream_id": 2786,
   "forge_path": "uba-ki-lab/evaluation-bundesbot",
+  "entry_url": "https://gitlab.opencode.de/uba-ki-lab/evaluation-bundesbot",
   "last_activity": "2025-01-09T12:29:38.091Z"
  },
  {
@@ -16296,6 +16676,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/usage-stats-api.git",
   "upstream_id": 2781,
   "forge_path": "umwelt-info/usage-stats-api",
+  "entry_url": "https://gitlab.opencode.de/umwelt-info/usage-stats-api",
   "last_activity": "2026-08-07T06:42:28.058Z"
  },
  {
@@ -16383,6 +16764,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/smart-village-app.git",
   "upstream_id": 2777,
   "forge_path": "bad-belzig/smart-village-app",
+  "entry_url": "https://gitlab.opencode.de/bad-belzig/smart-village-app",
   "last_activity": "2026-08-03T15:19:23.920Z"
  },
  {
@@ -16419,6 +16801,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lenz/policy-entwicklung.git",
   "upstream_id": 2653,
   "forge_path": "lenz/policy-entwicklung",
+  "entry_url": "https://gitlab.opencode.de/lenz/policy-entwicklung",
   "last_activity": "2024-07-12T08:14:57.081Z"
  },
  {
@@ -16455,6 +16838,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-web.git",
   "upstream_id": 2628,
   "forge_path": "bwi/bundesmessenger/ui-components/compound-web",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-web",
   "last_activity": "2025-03-12T13:50:29.677Z"
  },
  {
@@ -16491,6 +16875,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-design-tokens.git",
   "upstream_id": 2627,
   "forge_path": "bwi/bundesmessenger/ui-components/compound-design-tokens",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-design-tokens",
   "last_activity": "2026-07-15T08:46:09.773Z"
  },
  {
@@ -16527,6 +16912,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lenz/richtlinien-umsetzung-kyverno.git",
   "upstream_id": 2592,
   "forge_path": "lenz/richtlinien-umsetzung-kyverno",
+  "entry_url": "https://gitlab.opencode.de/lenz/richtlinien-umsetzung-kyverno",
   "last_activity": "2024-10-10T11:29:26.477Z"
  },
  {
@@ -16561,6 +16947,7 @@
   "fallback_repo": "https://gitlab.opencode.de/5fswf/co2-ampeln/node-red-flow.git",
   "upstream_id": 2591,
   "forge_path": "5fswf/co2-ampeln/node-red-flow",
+  "entry_url": "https://gitlab.opencode.de/5fswf/co2-ampeln/node-red-flow",
   "last_activity": "2024-03-01T06:19:45.147Z"
  },
  {
@@ -16595,6 +16982,7 @@
   "fallback_repo": "https://gitlab.opencode.de/5fswf/co2-ampeln/deployment.git",
   "upstream_id": 2590,
   "forge_path": "5fswf/co2-ampeln/deployment",
+  "entry_url": "https://gitlab.opencode.de/5fswf/co2-ampeln/deployment",
   "last_activity": "2024-03-01T06:18:56.936Z"
  },
  {
@@ -16631,6 +17019,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-neuvector.git",
   "upstream_id": 2584,
   "forge_path": "ig-bvc/policy-entwicklung/richtlinien-umsetzung-neuvector",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-neuvector",
   "last_activity": "2025-09-26T13:49:05.386Z"
  },
  {
@@ -16670,6 +17059,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox.git",
   "upstream_id": 2583,
   "forge_path": "ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox",
   "last_activity": "2026-08-05T07:36:29.109Z"
  },
  {
@@ -16706,6 +17096,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno.git",
   "upstream_id": 2582,
   "forge_path": "ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
   "last_activity": "2026-08-05T08:38:54.635Z"
  },
  {
@@ -16742,6 +17133,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-olpe/co2-ampeln.git",
   "upstream_id": 2565,
   "forge_path": "smart-city-olpe/co2-ampeln",
+  "entry_url": "https://gitlab.opencode.de/smart-city-olpe/co2-ampeln",
   "last_activity": "2025-10-13T13:11:18.005Z"
  },
  {
@@ -16778,6 +17170,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/policy-entwicklung.git",
   "upstream_id": 2559,
   "forge_path": "ig-bvc/policy-entwicklung/policy-entwicklung",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/policy-entwicklung",
   "last_activity": "2026-07-22T13:39:43.200Z"
  },
  {
@@ -16824,6 +17217,7 @@
   "fallback_repo": "https://gitlab.opencode.de/thlv/tlrz/it-fachplanung.git",
   "upstream_id": 2546,
   "forge_path": "thlv/tlrz/it-fachplanung",
+  "entry_url": "https://gitlab.opencode.de/thlv/tlrz/it-fachplanung",
   "last_activity": "2026-07-27T10:49:07.160Z"
  },
  {
@@ -16871,7 +17265,8 @@
   "fallback_repo": "https://gitlab.opencode.de/open-code/document-writing-tools/markdown-webbook.git",
   "upstream_id": 2542,
   "forge_path": "open-code/document-writing-tools/markdown-webbook",
-  "last_activity": "2026-08-11T12:36:09.744Z"
+  "entry_url": "https://gitlab.opencode.de/open-code/document-writing-tools/markdown-webbook",
+  "last_activity": "2026-08-11T17:47:32.115Z"
  },
  {
   "source": "DE/openCode",
@@ -16917,6 +17312,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000019962026/ilias-lernplattform.git",
   "upstream_id": 2498,
   "forge_path": "OC000019962026/ilias-lernplattform",
+  "entry_url": "https://gitlab.opencode.de/OC000019962026/ilias-lernplattform",
   "last_activity": "2026-07-01T23:35:12.024Z"
  },
  {
@@ -16955,6 +17351,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-wendeler-land/smartwendeler-land-api.git",
   "upstream_id": 2491,
   "forge_path": "smart-wendeler-land/smartwendeler-land-api",
+  "entry_url": "https://gitlab.opencode.de/smart-wendeler-land/smartwendeler-land-api",
   "last_activity": "2026-02-19T09:30:31.850Z"
  },
  {
@@ -16992,6 +17389,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC00001179881/thermosensorik-heidenheim.git",
   "upstream_id": 2480,
   "forge_path": "OC00001179881/thermosensorik-heidenheim",
+  "entry_url": "https://gitlab.opencode.de/OC00001179881/thermosensorik-heidenheim",
   "last_activity": "2024-02-08T08:52:56.502Z"
  },
  {
@@ -17033,6 +17431,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000032075636/buergerdashboard-muehlhausen.git",
   "upstream_id": 2473,
   "forge_path": "OC000032075636/buergerdashboard-muehlhausen",
+  "entry_url": "https://gitlab.opencode.de/OC000032075636/buergerdashboard-muehlhausen",
   "last_activity": "2024-02-09T12:14:48.366Z"
  },
  {
@@ -17072,6 +17471,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-wendeler-land/gesundheits-und-pflegeplattform.git",
   "upstream_id": 2464,
   "forge_path": "smart-wendeler-land/gesundheits-und-pflegeplattform",
+  "entry_url": "https://gitlab.opencode.de/smart-wendeler-land/gesundheits-und-pflegeplattform",
   "last_activity": "2026-02-23T08:17:32.838Z"
  },
  {
@@ -17111,6 +17511,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-wendeler-land/meinwnd.git",
   "upstream_id": 2463,
   "forge_path": "smart-wendeler-land/meinwnd",
+  "entry_url": "https://gitlab.opencode.de/smart-wendeler-land/meinwnd",
   "last_activity": "2026-02-19T09:27:33.507Z"
  },
  {
@@ -17159,6 +17560,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/government-site-builder-11/gsb11.git",
   "upstream_id": 2460,
   "forge_path": "bmi/government-site-builder-11/gsb11",
+  "entry_url": "https://gitlab.opencode.de/bmi/government-site-builder-11/gsb11",
   "last_activity": "2026-07-24T10:57:34.137Z"
  },
  {
@@ -17198,7 +17600,8 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-bamberg/ferienabenteuer.git",
   "upstream_id": 2428,
   "forge_path": "smart-city-bamberg/ferienabenteuer",
-  "last_activity": "2026-03-06T11:56:54.921Z"
+  "entry_url": "https://gitlab.opencode.de/smart-city-bamberg/ferienabenteuer",
+  "last_activity": "2026-08-11T14:31:02.835Z"
  },
  {
   "source": "DE/openCode",
@@ -17236,6 +17639,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-wolfsburg/klimacube-wolfsburg.git",
   "upstream_id": 2427,
   "forge_path": "stadt-wolfsburg/klimacube-wolfsburg",
+  "entry_url": "https://gitlab.opencode.de/stadt-wolfsburg/klimacube-wolfsburg",
   "last_activity": "2025-10-10T06:30:21.107Z"
  },
  {
@@ -17281,6 +17685,7 @@
   "fallback_repo": "https://gitlab.opencode.de/volkert.ewald/bayernid-plugin.git",
   "upstream_id": 2425,
   "forge_path": "volkert.ewald/bayernid-plugin",
+  "entry_url": "https://gitlab.opencode.de/volkert.ewald/bayernid-plugin",
   "last_activity": "2025-01-07T00:10:07.146Z"
  },
  {
@@ -17311,6 +17716,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OpenBfS/rn/rn1/bfs_saveecobot_loader.git",
   "upstream_id": 2310,
   "forge_path": "OpenBfS/rn/rn1/bfs_saveecobot_loader",
+  "entry_url": "https://gitlab.opencode.de/OpenBfS/rn/rn1/bfs_saveecobot_loader",
   "last_activity": "2026-08-04T12:52:09.402Z"
  },
  {
@@ -17354,6 +17760,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/e-gesetzgebung/documentation.git",
   "upstream_id": 2246,
   "forge_path": "bmi/e-gesetzgebung/documentation",
+  "entry_url": "https://gitlab.opencode.de/bmi/e-gesetzgebung/documentation",
   "last_activity": "2025-10-06T16:52:04.962Z"
  },
  {
@@ -17394,6 +17801,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-muenster/leezenflow/leezenflow-code.git",
   "upstream_id": 2169,
   "forge_path": "smart-city-muenster/leezenflow/leezenflow-code",
+  "entry_url": "https://gitlab.opencode.de/smart-city-muenster/leezenflow/leezenflow-code",
   "last_activity": "2025-12-01T00:10:14.956Z"
  },
  {
@@ -17430,6 +17838,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lenz/rl-kyverno.git",
   "upstream_id": 2161,
   "forge_path": "lenz/rl-kyverno",
+  "entry_url": "https://gitlab.opencode.de/lenz/rl-kyverno",
   "last_activity": "2023-12-04T10:48:23.669Z"
  },
  {
@@ -17472,6 +17881,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-ui.git",
   "upstream_id": 2138,
   "forge_path": "bwi/bundesmessenger/admin-portal/bumap-ui",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-ui",
   "last_activity": "2026-05-22T12:52:11.052Z"
  },
  {
@@ -17521,6 +17931,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-wolfsburg/testfeld-smart-parking-wolfsburg.git",
   "upstream_id": 2125,
   "forge_path": "stadt-wolfsburg/testfeld-smart-parking-wolfsburg",
+  "entry_url": "https://gitlab.opencode.de/stadt-wolfsburg/testfeld-smart-parking-wolfsburg",
   "last_activity": "2025-09-03T16:12:45.141Z"
  },
  {
@@ -17556,6 +17967,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opencode-analyzer/occmd-public-deployment.git",
   "upstream_id": 2094,
   "forge_path": "opencode-analyzer/occmd-public-deployment",
+  "entry_url": "https://gitlab.opencode.de/opencode-analyzer/occmd-public-deployment",
   "last_activity": "2023-11-23T08:41:01.847Z"
  },
  {
@@ -17600,6 +18012,7 @@
   "fallback_repo": "https://gitlab.opencode.de/metropoleruhr/radwegweiser_lokal.git",
   "upstream_id": 2092,
   "forge_path": "metropoleruhr/radwegweiser_lokal",
+  "entry_url": "https://gitlab.opencode.de/metropoleruhr/radwegweiser_lokal",
   "last_activity": "2024-04-12T13:46:10.062Z"
  },
  {
@@ -17640,7 +18053,8 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000014987132/metadaten.git",
   "upstream_id": 1938,
   "forge_path": "OC000014987132/metadaten",
-  "last_activity": "2026-08-07T14:02:50.229Z"
+  "entry_url": "https://gitlab.opencode.de/OC000014987132/metadaten",
+  "last_activity": "2026-08-11T18:27:45.256Z"
  },
  {
   "source": "DE/openCode",
@@ -17682,6 +18096,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/docs/portal.git",
   "upstream_id": 1875,
   "forge_path": "fitko/docs/portal",
+  "entry_url": "https://gitlab.opencode.de/fitko/docs/portal",
   "last_activity": "2026-08-11T09:02:21.363Z"
  },
  {
@@ -17716,6 +18131,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/learning-portal-group/learning-portal-backend.git",
   "upstream_id": 1577,
   "forge_path": "bwi/bundesmessenger/learning-portal-group/learning-portal-backend",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/learning-portal-group/learning-portal-backend",
   "last_activity": "2026-04-24T09:40:03.190Z"
  },
  {
@@ -17749,6 +18165,7 @@
   "fallback_repo": "https://gitlab.opencode.de/thlv/agoss.git",
   "upstream_id": 1566,
   "forge_path": "thlv/agoss",
+  "entry_url": "https://gitlab.opencode.de/thlv/agoss",
   "last_activity": "2026-07-23T12:02:12.286Z"
  },
  {
@@ -17811,6 +18228,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bhinkeldey/ozgxplanung.git",
   "upstream_id": 1502,
   "forge_path": "bhinkeldey/ozgxplanung",
+  "entry_url": "https://gitlab.opencode.de/bhinkeldey/ozgxplanung",
   "last_activity": "2023-08-19T05:31:36.477Z"
  },
  {
@@ -17846,6 +18264,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opencode-analyzer/occmd-public.git",
   "upstream_id": 1448,
   "forge_path": "opencode-analyzer/occmd-public",
+  "entry_url": "https://gitlab.opencode.de/opencode-analyzer/occmd-public",
   "last_activity": "2024-09-05T08:54:28.692Z"
  },
  {
@@ -17899,7 +18318,8 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/opendesk/deployment/opendesk.git",
   "upstream_id": 1317,
   "forge_path": "bmi/opendesk/deployment/opendesk",
-  "last_activity": "2026-08-11T14:11:45.480Z"
+  "entry_url": "https://gitlab.opencode.de/bmi/opendesk/deployment/opendesk",
+  "last_activity": "2026-08-11T16:01:52.355Z"
  },
  {
   "source": "DE/openCode",
@@ -17937,6 +18357,7 @@
   "fallback_repo": "https://gitlab.opencode.de/itdz-berlin/dsgvo-konforme-bildverarbeitung-mit-ki.git",
   "upstream_id": 1197,
   "forge_path": "itdz-berlin/dsgvo-konforme-bildverarbeitung-mit-ki",
+  "entry_url": "https://gitlab.opencode.de/itdz-berlin/dsgvo-konforme-bildverarbeitung-mit-ki",
   "last_activity": "2024-11-27T12:52:38.811Z"
  },
  {
@@ -17982,6 +18403,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000006036600/bayernid-plugin.git",
   "upstream_id": 1193,
   "forge_path": "OC000006036600/bayernid-plugin",
+  "entry_url": "https://gitlab.opencode.de/OC000006036600/bayernid-plugin",
   "last_activity": "2023-06-27T07:13:56.662Z"
  },
  {
@@ -18024,6 +18446,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmuv/bmu/xml-schema.git",
   "upstream_id": 1171,
   "forge_path": "bmuv/bmu/xml-schema",
+  "entry_url": "https://gitlab.opencode.de/bmuv/bmu/xml-schema",
   "last_activity": "2026-02-09T10:48:22.696Z"
  },
  {
@@ -18053,6 +18476,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/docs/efa-parametrisierung.git",
   "upstream_id": 1167,
   "forge_path": "fitko/docs/efa-parametrisierung",
+  "entry_url": "https://gitlab.opencode.de/fitko/docs/efa-parametrisierung",
   "last_activity": "2026-07-22T03:38:55.835Z"
  },
  {
@@ -18092,6 +18516,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-bamberg/bamboard-interaktiver-stadtteilbildschirm.git",
   "upstream_id": 1156,
   "forge_path": "smart-city-bamberg/bamboard-interaktiver-stadtteilbildschirm",
+  "entry_url": "https://gitlab.opencode.de/smart-city-bamberg/bamboard-interaktiver-stadtteilbildschirm",
   "last_activity": "2026-03-06T11:59:59.147Z"
  },
  {
@@ -18136,6 +18561,7 @@
   "fallback_repo": "https://gitlab.opencode.de/connected-urban-twins/cut-csl-data-narrator.git",
   "upstream_id": 1106,
   "forge_path": "connected-urban-twins/cut-csl-data-narrator",
+  "entry_url": "https://gitlab.opencode.de/connected-urban-twins/cut-csl-data-narrator",
   "last_activity": "2025-04-11T08:26:26.858Z"
  },
  {
@@ -18170,6 +18596,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/learning-portal-group/learning-portal.git",
   "upstream_id": 1073,
   "forge_path": "bwi/bundesmessenger/learning-portal-group/learning-portal",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/learning-portal-group/learning-portal",
   "last_activity": "2026-06-30T13:52:23.695Z"
  },
  {
@@ -18213,6 +18640,7 @@
   "fallback_repo": "https://gitlab.opencode.de/evb-it/digital/evb-it-digital.git",
   "upstream_id": 1052,
   "forge_path": "evb-it/digital/evb-it-digital",
+  "entry_url": "https://gitlab.opencode.de/evb-it/digital/evb-it-digital",
   "last_activity": "2026-07-30T17:52:59.578Z"
  },
  {
@@ -18253,6 +18681,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-bamberg/innovativer-katastrophenschutz.git",
   "upstream_id": 1032,
   "forge_path": "smart-city-bamberg/innovativer-katastrophenschutz",
+  "entry_url": "https://gitlab.opencode.de/smart-city-bamberg/innovativer-katastrophenschutz",
   "last_activity": "2026-03-06T11:46:31.921Z"
  },
  {
@@ -18303,6 +18732,7 @@
   "fallback_repo": "https://gitlab.opencode.de/piveau/publiccode-piveau.git",
   "upstream_id": 1030,
   "forge_path": "piveau/publiccode-piveau",
+  "entry_url": "https://gitlab.opencode.de/piveau/publiccode-piveau",
   "last_activity": "2025-05-12T09:25:54.821Z"
  },
  {
@@ -18328,6 +18758,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/portal.git",
   "upstream_id": 1010,
   "forge_path": "fitko/fim/portal",
+  "entry_url": "https://gitlab.opencode.de/fitko/fim/portal",
   "last_activity": "2026-08-11T13:03:45.972Z"
  },
  {
@@ -18364,6 +18795,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000015165920/rumba-1.6.14-wechselarbeitsplatzverwaltung.git",
   "upstream_id": 970,
   "forge_path": "OC000015165920/rumba-1.6.14-wechselarbeitsplatzverwaltung",
+  "entry_url": "https://gitlab.opencode.de/OC000015165920/rumba-1.6.14-wechselarbeitsplatzverwaltung",
   "last_activity": "2024-08-14T13:08:05.491Z"
  },
  {
@@ -18400,6 +18832,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opencode-analyzer/data-provider.git",
   "upstream_id": 918,
   "forge_path": "opencode-analyzer/data-provider",
+  "entry_url": "https://gitlab.opencode.de/opencode-analyzer/data-provider",
   "last_activity": "2025-10-01T00:10:07.769Z"
  },
  {
@@ -18450,6 +18883,7 @@
   "fallback_repo": "https://gitlab.opencode.de/opentalk/ot-setup.git",
   "upstream_id": 823,
   "forge_path": "opentalk/ot-setup",
+  "entry_url": "https://gitlab.opencode.de/opentalk/ot-setup",
   "last_activity": "2026-08-11T07:32:50.942Z"
  },
  {
@@ -18483,6 +18917,7 @@
   "fallback_repo": "https://gitlab.opencode.de/stadt-soest/city-app/soest-city-app.git",
   "upstream_id": 817,
   "forge_path": "stadt-soest/city-app/soest-city-app",
+  "entry_url": "https://gitlab.opencode.de/stadt-soest/city-app/soest-city-app",
   "last_activity": "2026-06-25T16:11:27.745Z"
  },
  {
@@ -18522,6 +18957,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/ELSTER_NEZO_Plugin.git",
   "upstream_id": 753,
   "forge_path": "landeshauptstadt-muenchen/ELSTER_NEZO_Plugin",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/ELSTER_NEZO_Plugin",
   "last_activity": "2024-12-20T06:00:02.201Z"
  },
  {
@@ -18563,6 +18999,7 @@
   "fallback_repo": "https://gitlab.opencode.de/dataport/terminfinder/terminfinder-backend.git",
   "upstream_id": 729,
   "forge_path": "dataport/terminfinder/terminfinder-backend",
+  "entry_url": "https://gitlab.opencode.de/dataport/terminfinder/terminfinder-backend",
   "last_activity": "2025-11-12T10:05:42.247Z"
  },
  {
@@ -18604,6 +19041,7 @@
   "fallback_repo": "https://gitlab.opencode.de/dataport/terminfinder/terminfinder-frontend.git",
   "upstream_id": 728,
   "forge_path": "dataport/terminfinder/terminfinder-frontend",
+  "entry_url": "https://gitlab.opencode.de/dataport/terminfinder/terminfinder-frontend",
   "last_activity": "2026-05-07T07:13:13.123Z"
  },
  {
@@ -18645,6 +19083,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/container-factory.git",
   "upstream_id": 726,
   "forge_path": "bwi/bundesmessenger/backend/container-factory",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/container-factory",
   "last_activity": "2026-07-29T12:06:11.306Z"
  },
  {
@@ -18681,6 +19120,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-config-and-assets.git",
   "upstream_id": 724,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-web-config-and-assets",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-config-and-assets",
   "last_activity": "2026-08-11T11:46:06.510Z"
  },
  {
@@ -18721,6 +19161,7 @@
   "fallback_repo": "https://gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster.git",
   "upstream_id": 629,
   "forge_path": "smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster",
+  "entry_url": "https://gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster",
   "last_activity": "2026-08-10T14:13:47.344Z"
  },
  {
@@ -18757,6 +19198,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/journal-web-ui.git",
   "upstream_id": 628,
   "forge_path": "umwelt-info/journal-web-ui",
+  "entry_url": "https://gitlab.opencode.de/umwelt-info/journal-web-ui",
   "last_activity": "2026-07-24T12:07:55.763Z"
  },
  {
@@ -18800,6 +19242,7 @@
   "fallback_repo": "https://gitlab.opencode.de/lgvhh/udp/hh-udp-iot.git",
   "upstream_id": 579,
   "forge_path": "lgvhh/udp/hh-udp-iot",
+  "entry_url": "https://gitlab.opencode.de/lgvhh/udp/hh-udp-iot",
   "last_activity": "2025-04-30T13:07:59.012Z"
  },
  {
@@ -18843,6 +19286,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/helm-chart.git",
   "upstream_id": 560,
   "forge_path": "bwi/bundesmessenger/backend/helm-chart",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/helm-chart",
   "last_activity": "2026-08-11T11:50:46.609Z"
  },
  {
@@ -18879,6 +19323,7 @@
   "fallback_repo": "https://gitlab.opencode.de/OC000008837300/ar-gestuetzte-schnitzeljagd.git",
   "upstream_id": 514,
   "forge_path": "OC000008837300/ar-gestuetzte-schnitzeljagd",
+  "entry_url": "https://gitlab.opencode.de/OC000008837300/ar-gestuetzte-schnitzeljagd",
   "last_activity": "2022-11-25T12:57:22.442Z"
  },
  {
@@ -18914,6 +19359,7 @@
   "fallback_repo": "https://gitlab.opencode.de/iqsh/collaboration-online-board/index.git",
   "upstream_id": 442,
   "forge_path": "iqsh/collaboration-online-board/index",
+  "entry_url": "https://gitlab.opencode.de/iqsh/collaboration-online-board/index",
   "last_activity": "2026-04-29T07:38:59.649Z"
  },
  {
@@ -18963,6 +19409,7 @@
   "fallback_repo": "https://gitlab.opencode.de/deleonio/kolibri.git",
   "upstream_id": 438,
   "forge_path": "deleonio/kolibri",
+  "entry_url": "https://gitlab.opencode.de/deleonio/kolibri",
   "last_activity": "2026-08-11T05:11:53.717Z"
  },
  {
@@ -19003,7 +19450,8 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/metadaten.git",
   "upstream_id": 433,
   "forge_path": "umwelt-info/metadaten",
-  "last_activity": "2026-08-11T13:13:58.731Z"
+  "entry_url": "https://gitlab.opencode.de/umwelt-info/metadaten",
+  "last_activity": "2026-08-11T18:45:46.159Z"
  },
  {
   "source": "DE/openCode",
@@ -19046,6 +19494,7 @@
   "fallback_repo": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportal.git",
   "upstream_id": 413,
   "forge_path": "geowerkstatt-hamburg/masterportal",
+  "entry_url": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportal",
   "last_activity": "2026-08-05T07:29:54.782Z"
  },
  {
@@ -19081,6 +19530,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/container-images.git",
   "upstream_id": 411,
   "forge_path": "bwi/bundesmessenger/backend/container-images",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/container-images",
   "last_activity": "2026-06-30T07:07:29.060Z"
  },
  {
@@ -19116,6 +19566,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-matrix-sdk.git",
   "upstream_id": 404,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-web-matrix-sdk",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-matrix-sdk",
   "last_activity": "2026-08-10T07:00:32.885Z"
  },
  {
@@ -19158,6 +19609,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web.git",
   "upstream_id": 402,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-web",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web",
   "last_activity": "2026-08-10T10:33:24.820Z"
  },
  {
@@ -19198,6 +19650,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-ios-matrix-sdk.git",
   "upstream_id": 401,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-ios-matrix-sdk",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-ios-matrix-sdk",
   "last_activity": "2025-10-06T02:35:46.447Z"
  },
  {
@@ -19238,6 +19691,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-ios.git",
   "upstream_id": 400,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-ios",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-ios",
   "last_activity": "2026-03-31T19:22:11.950Z"
  },
  {
@@ -19261,6 +19715,7 @@
   "fallback_repo": "https://gitlab.opencode.de/xleitstelle/xplanung/validierungsregeln/standard.git",
   "upstream_id": 398,
   "forge_path": "xleitstelle/xplanung/validierungsregeln/standard",
+  "entry_url": "https://gitlab.opencode.de/xleitstelle/xplanung/validierungsregeln/standard",
   "last_activity": "2026-08-04T16:58:45.209Z"
  },
  {
@@ -19302,6 +19757,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-android.git",
   "upstream_id": 390,
   "forge_path": "bwi/bundesmessenger/clients/bundesmessenger-android",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-android",
   "last_activity": "2026-03-30T11:42:09.733Z"
  },
  {
@@ -19338,6 +19794,7 @@
   "fallback_repo": "https://gitlab.opencode.de/chris/richtlinien.git",
   "upstream_id": 198,
   "forge_path": "chris/richtlinien",
+  "entry_url": "https://gitlab.opencode.de/chris/richtlinien",
   "last_activity": "2022-06-08T13:01:41.246Z"
  },
  {
@@ -19364,6 +19821,7 @@
   "fallback_repo": "https://gitlab.opencode.de/fitko/discussion.git",
   "upstream_id": 193,
   "forge_path": "fitko/discussion",
+  "entry_url": "https://gitlab.opencode.de/fitko/discussion",
   "last_activity": "2026-06-05T06:31:46.165Z"
  },
  {
@@ -19405,6 +19863,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bpol-verb/verb-app.git",
   "upstream_id": 186,
   "forge_path": "bpol-verb/verb-app",
+  "entry_url": "https://gitlab.opencode.de/bpol-verb/verb-app",
   "last_activity": "2023-06-02T12:15:33.731Z"
  },
  {
@@ -19455,6 +19914,7 @@
   "fallback_repo": "https://gitlab.opencode.de/diplanung/ozgxplanung.git",
   "upstream_id": 159,
   "forge_path": "diplanung/ozgxplanung",
+  "entry_url": "https://gitlab.opencode.de/diplanung/ozgxplanung",
   "last_activity": "2026-08-11T05:00:49.753Z"
  },
  {
@@ -19501,6 +19961,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bwi/bundesmessenger/info.git",
   "upstream_id": 142,
   "forge_path": "bwi/bundesmessenger/info",
+  "entry_url": "https://gitlab.opencode.de/bwi/bundesmessenger/info",
   "last_activity": "2026-05-27T12:34:05.171Z"
  },
  {
@@ -19543,6 +20004,7 @@
   "fallback_repo": "https://gitlab.opencode.de/riedel/elektronische-clearingstelle.git",
   "upstream_id": 107,
   "forge_path": "riedel/elektronische-clearingstelle",
+  "entry_url": "https://gitlab.opencode.de/riedel/elektronische-clearingstelle",
   "last_activity": "2022-04-11T13:02:59.377Z"
  },
  {
@@ -19576,6 +20038,7 @@
   "fallback_repo": "https://gitlab.opencode.de/marx/mappingtool.git",
   "upstream_id": 101,
   "forge_path": "marx/mappingtool",
+  "entry_url": "https://gitlab.opencode.de/marx/mappingtool",
   "last_activity": "2023-06-20T16:55:02.852Z"
  },
  {
@@ -19612,6 +20075,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/ag-sig/cosign-admissioncontroller-tests.git",
   "upstream_id": 97,
   "forge_path": "ig-bvc/ag-sig/cosign-admissioncontroller-tests",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/ag-sig/cosign-admissioncontroller-tests",
   "last_activity": "2025-09-02T12:43:38.669Z"
  },
  {
@@ -19652,6 +20116,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ovgrlp/ressourcenplanung.git",
   "upstream_id": 80,
   "forge_path": "ovgrlp/ressourcenplanung",
+  "entry_url": "https://gitlab.opencode.de/ovgrlp/ressourcenplanung",
   "last_activity": "2022-07-28T13:20:03.122Z"
  },
  {
@@ -19692,6 +20157,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ovgrlp/Egvp-AddressBook.git",
   "upstream_id": 79,
   "forge_path": "ovgrlp/Egvp-AddressBook",
+  "entry_url": "https://gitlab.opencode.de/ovgrlp/Egvp-AddressBook",
   "last_activity": "2022-07-28T13:42:21.307Z"
  },
  {
@@ -19731,6 +20197,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ovgrlp/EGVP-Enterprise-Receiver.git",
   "upstream_id": 77,
   "forge_path": "ovgrlp/EGVP-Enterprise-Receiver",
+  "entry_url": "https://gitlab.opencode.de/ovgrlp/EGVP-Enterprise-Receiver",
   "last_activity": "2022-07-28T13:45:57.645Z"
  },
  {
@@ -19767,6 +20234,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/demo-apps/kube-prometheus.git",
   "upstream_id": 76,
   "forge_path": "ig-bvc/demo-apps/kube-prometheus",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/demo-apps/kube-prometheus",
   "last_activity": "2022-04-06T10:03:49.155Z"
  },
  {
@@ -19803,6 +20271,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/demo-apps/prometheus.git",
   "upstream_id": 75,
   "forge_path": "ig-bvc/demo-apps/prometheus",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/demo-apps/prometheus",
   "last_activity": "2022-04-06T12:19:28.612Z"
  },
  {
@@ -19839,6 +20308,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/demo-apps/grafana.git",
   "upstream_id": 74,
   "forge_path": "ig-bvc/demo-apps/grafana",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/demo-apps/grafana",
   "last_activity": "2022-04-11T07:27:59.368Z"
  },
  {
@@ -19875,6 +20345,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/standard-images/grund-images/alpine.git",
   "upstream_id": 66,
   "forge_path": "ig-bvc/standard-images/grund-images/alpine",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/standard-images/grund-images/alpine",
   "last_activity": "2022-07-29T13:16:38.006Z"
  },
  {
@@ -19911,6 +20382,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/demo-apps/nextcloud.git",
   "upstream_id": 63,
   "forge_path": "ig-bvc/demo-apps/nextcloud",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/demo-apps/nextcloud",
   "last_activity": "2022-06-28T16:07:43.042Z"
  },
  {
@@ -19947,6 +20419,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/standard-images/grund-images/centos.git",
   "upstream_id": 57,
   "forge_path": "ig-bvc/standard-images/grund-images/centos",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/standard-images/grund-images/centos",
   "last_activity": "2025-02-21T09:42:07.554Z"
  },
  {
@@ -19983,6 +20456,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/standard-images/grund-images/debian.git",
   "upstream_id": 56,
   "forge_path": "ig-bvc/standard-images/grund-images/debian",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/standard-images/grund-images/debian",
   "last_activity": "2025-03-07T00:00:03.665Z"
  },
  {
@@ -20019,6 +20493,7 @@
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/ag-sig/cicd-signed-commit-tests.git",
   "upstream_id": 45,
   "forge_path": "ig-bvc/ag-sig/cicd-signed-commit-tests",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/ag-sig/cicd-signed-commit-tests",
   "last_activity": "2025-03-09T22:30:20.987Z"
  },
  {
@@ -20063,6 +20538,7 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/bayernid-plugin.git",
   "upstream_id": 27,
   "forge_path": "landeshauptstadt-muenchen/bayernid-plugin",
+  "entry_url": "https://gitlab.opencode.de/landeshauptstadt-muenchen/bayernid-plugin",
   "last_activity": "2026-02-23T10:21:51.137Z"
  },
  {
@@ -20100,6 +20576,7 @@
   "fallback_repo": "https://gitlab.opencode.de/heinrich/code-osr.git",
   "upstream_id": 5,
   "forge_path": "heinrich/code-osr",
+  "entry_url": "https://gitlab.opencode.de/heinrich/code-osr",
   "last_activity": "2022-11-17T21:55:27.256Z"
  }
 ]
