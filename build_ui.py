@@ -55,6 +55,7 @@ for r in c:
         "tr": 1 if r.get("translated") else 0,
         "sl": r.get("desc_src_lang") or "",
         "qid": r.get("wikidata") or "",
+        "ex": r.get("exclude_reason") or "",
         # dead_since is only set after 2 consecutive dead observations, so the
         # page never shows a one-off 404 as "repo gone"
         "lv": (lambda v: "dead" if v.get("dead_since")
@@ -62,16 +63,20 @@ for r in c:
                     LIVE.get(r.get("repo_key") or "", {})),
     })
 rows.sort(key=lambda x: (x["n"] or "").lower())
+n_ex = sum(1 for r in rows if r["ex"])
 
-countries = collections.Counter(r["c"] for r in rows)
-sources = collections.Counter(r["s"] for r in rows)
-licenses = collections.Counter(r["l"] for r in rows if r["l"])
-n_pc = sum(1 for r in rows if r["t"] == "publiccode")
-n_repos = len({r["u"] for r in rows if r["u"]})
-n_tr = sum(1 for r in rows if r["tr"])
-n_en = sum(1 for r in rows if r["d"] and not r["tr"])
-funcs = collections.Counter(f for r in rows for f in r["fx"])
-n_dead = sum(1 for r in rows if r["lv"] == "dead")
+# facet counts describe the DEFAULT view (excluded hidden), or the chips would
+# advertise entries the list will not show
+_inc = [r for r in rows if not r["ex"]]
+countries = collections.Counter(r["c"] for r in _inc)
+sources = collections.Counter(r["s"] for r in _inc)
+licenses = collections.Counter(r["l"] for r in _inc if r["l"])
+n_pc = sum(1 for r in _inc if r["t"] == "publiccode")
+n_repos = len({r["u"] for r in _inc if r["u"]})
+n_tr = sum(1 for r in _inc if r["tr"])
+n_en = sum(1 for r in _inc if r["d"] and not r["tr"])
+funcs = collections.Counter(f for r in _inc for f in r["fx"])
+n_dead = sum(1 for r in _inc if r["lv"] == "dead")
 FFACETS = json.dumps([[k, FUNCTIONS[k], n] for k, n in funcs.most_common()])
 
 DATA = json.dumps(rows, separators=(",", ":"))
@@ -141,6 +146,10 @@ input[type=search]::placeholder {{ color:var(--slate); }}
 select {{ cursor:pointer; }}
 
 .chips {{ display:flex; flex-wrap:wrap; gap:.35rem; }}
+.tog {{ display:flex; align-items:center; gap:.4rem; font-family:var(--mono);
+  font-size:.72rem; color:var(--slate); letter-spacing:.03em; white-space:nowrap;
+  cursor:pointer; }}
+.pill.ex {{ color:var(--concept); border:1px dashed var(--concept); }}
 .chip {{ font-family:var(--mono); font-size:.74rem; letter-spacing:.03em;
   background:var(--raised); color:var(--slate); border:1px solid var(--hairline);
   border-radius:20px; padding:.24rem .62rem; cursor:pointer; }}
@@ -198,7 +207,7 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
      government work, or a government recommends it.</p>
 
   <div class="stats">
-    <div class="stat"><b>{len(rows)}</b><span>entries</span></div>
+    <div class="stat"><b>{len(_inc)}</b><span>entries</span></div>
     <div class="stat"><b>{n_repos}</b><span>distinct repos</span></div>
     <div class="stat"><b>{len(countries)}</b><span>countries</span></div>
     <div class="stat"><b>{n_pc}</b><span>with publiccode.yml</span></div>
@@ -219,6 +228,7 @@ footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hair
         <option value="adopters">Most adopters</option>
         <option value="country">By country</option>
       </select>
+      <label class="tog"><input type="checkbox" id="showex"> show {n_ex} filtered</label>
       <select id="lv" aria-label="Filter by repository state">
         <option value="">Any repo state</option>
         <option value="ok">Live repos only</option>
@@ -269,7 +279,9 @@ function current() {{
   const q = el('q').value.trim().toLowerCase();
   const lic = el('lic').value;
   const lvf = el('lv').value;
+  const showex = el('showex').checked;
   let out = DATA.filter(r =>
+    (showex || !r.ex) &&
     (!activeC.size || activeC.has(r.c)) &&
     (!activeS.size || activeS.has(r.s)) &&
     (!activeF.size || r.fx.some(f => activeF.has(f))) &&
@@ -286,7 +298,9 @@ function current() {{
 
 function render() {{
   const rs = current();
-  el('count').innerHTML = `<b>${{rs.length}}</b> of ${{DATA.length}} entries`;
+  const showingEx = el('showex').checked;   // never rely on the id-global
+  const universe = showingEx ? DATA.length : DATA.filter(r => !r.ex).length;
+  el('count').innerHTML = `<b>${{rs.length}}</b> of ${{universe}} entries`;
   el('list').innerHTML = rs.slice(0, shown).map(r => {{
     const link = r.u || r.h;
     const host = link ? link.replace(/^https?:\\/\\//,'').replace(/\\/$/,'') : '';
@@ -302,6 +316,7 @@ function render() {{
           ${{r.l ? `<span class="pill">${{esc(r.l)}}</span>` : ''}}
           ${{r.lv === 'dead' ? `<span class="pill dead" title="repository URL returned 404/410 at last check">repo gone</span>` : ''}}
           ${{r.lv === 'archived' ? `<span class="pill">archived</span>` : ''}}
+          ${{r.ex ? `<span class="pill ex" title="filtered out of the default view">${{esc(r.ex)}}</span>` : ''}}
         </div>
         ${{r.d ? `<div class="desc">${{esc(r.d)}}</div>` : ''}}
         <div class="foot">
@@ -325,6 +340,7 @@ chips(el('sc'), SF, activeS);
 el('q').oninput = () => {{ shown = PAGE; render(); }};
 el('lic').onchange = () => {{ shown = PAGE; render(); }};
 el('lv').onchange = () => {{ shown = PAGE; render(); }};
+el('showex').onchange = () => {{ shown = PAGE; render(); }};
 el('sort').onchange = () => {{ shown = PAGE; render(); }};
 el('more').onclick = () => {{ shown += PAGE * 4; render(); }};
 render();

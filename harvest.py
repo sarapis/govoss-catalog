@@ -189,6 +189,10 @@ def github_org_scan(org, source, country, workers=12):
         repos += d
         page += 1
     repos = [r for r in repos if not r.get("archived")]
+    # fork status is the reliable signal for "this is an upstream project this
+    # org mirrors, not software this org produced" — 30 of iMio's 236 are forks
+    # (ZODB, zope.sendmail, Products.CMFEditions, puppetlabs-vcsrepo...).
+    # Recorded, not dropped here; filters.py decides.
     print(f"    {len(repos)} non-archived repos in github.com/{org}")
 
     def one(r):
@@ -202,7 +206,8 @@ def github_org_scan(org, source, country, workers=12):
             return from_publiccode(pc, source, country,
                                    fallback_repo=r.get("html_url"),
                                    stars=r.get("stargazers_count"),
-                                   last_activity=r.get("pushed_at"))
+                                   last_activity=r.get("pushed_at"),
+                                   is_fork=bool(r.get("fork")))
         # iMio publishes almost no publiccode.yml, but the repos are still
         # genuine public-sector OSS — index them rather than drop them.
         return rec(source, country, "index", r.get("name"), r.get("html_url"),
@@ -211,7 +216,8 @@ def github_org_scan(org, source, country, workers=12):
                    # GitHub repo descriptions in this org are written in English;
                    # tag it so language-gap detection does not skip these rows.
                    desc_lang="en",
-                   stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"))
+                   stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
+                   is_fork=bool(r.get("fork")))
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
         out = [x for x in ex.map(one, repos) if x]

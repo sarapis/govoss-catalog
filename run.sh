@@ -7,6 +7,9 @@
 #                so they survive a re-harvest as long as upstream wording is)
 #   taxonomy     re-derives functions; must run AFTER merge because the keyword
 #                inference reads the English description
+#   filters      flags non-software (forks, CI plumbing, deployment recipes) as
+#                excluded; runs AFTER taxonomy so hidden rows still carry
+#                functions for when the UI toggle reveals them
 #   liveness     diffs against the previous liveness.json to find newly-dead repos
 #   build_ui     regenerates catalogue.html from the finished catalog.json
 #
@@ -59,6 +62,7 @@ step () {
 step "harvest"      "$PY" -u harvest.py
 step "translations" "$PY" -u merge_translations.py
 step "taxonomy"     "$PY" -u taxonomy.py
+step "filters"      "$PY" -u filters.py
 step "liveness"     "$PY" -u liveness.py
 step "build page"   "$PY" -u build_ui.py
 

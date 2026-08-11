@@ -151,6 +151,39 @@ the same failure as having no monitor.
 It always **exits 0**: a monitor that can fail the pipeline gets switched off the first time
 it is wrong.
 
+## Filtering non-software (`filters.py`)
+
+iMio publishes 236 repos but only **one** has a `publiccode.yml`, so the rest are indexed
+from bare GitHub metadata. That is real coverage, but it sweeps in things no government can
+adopt. `filters.py` flags **58** entries; the page hides them by default behind a
+`show 58 filtered` toggle, and each carries a reason pill.
+
+| reason | n | rule |
+|---|---|---|
+| `upstream-fork` | 30 | GitHub `fork: true` — evidence, not a name guess |
+| `deployment-recipe` | 18 | `buildout.*`, `server.*`, `scripts-*` — install other software, aren't it |
+| `locale-bundle` | 5 | `*.locales` — translation resources, no functionality |
+| `ci-plumbing` | 4 | `gha`, `security-scanning`, `*-action` |
+| `org-meta` | 1 | `.github` |
+
+**It FLAGS, never deletes** (`excluded` + `exclude_reason` stay on the record), and anything
+with a `publiccode.yml` is never filtered — the publisher explicitly declared that reusable,
+which beats any heuristic here.
+
+`fork: true` is the load-bearing rule: it catches `ZODB`, `zope.sendmail`,
+`Products.CMFEditions`, `puppetlabs-vcsrepo` and `oca-web`. "ZODB, Belgian public-sector
+software" was simply wrong.
+
+**Two rules were removed after reviewing what they actually caught** — the reason flagging
+beats deleting:
+1. A `no-usable-metadata` rule (missing description) hit **61** entries including
+   **`Products.PloneMeeting`** — iMio's flagship deliberations product — plus `Products.urban`
+   and the ten municipality `Products.Meeting*` profiles Walloon councils actually run. A
+   missing GitHub description is an upstream metadata gap, **not** evidence something is not
+   software. Same error shape as treating an API 404 as a dead repo.
+2. A `-german$` locale rule caught `teleservices-iacitizen-german`, a German-language *build*
+   of a real product. Do not re-add it.
+
 ## Gotchas in this repo
 
 - **`run.sh` resolves its own interpreter.** Do not add bare `python3` calls. Under launchd,
@@ -166,9 +199,10 @@ it is wrong.
   prose uses HTML entities, and the one non-ASCII char in the JS is a `·` escape since
   entities are *not* decoded inside `<script>`. Artifacts cannot set `<meta charset>`, so
   depending on the host to declare UTF-8 rendered "open source â€” aggregated".
-- **iMio contributes 236 repos but only 1 `publiccode.yml`**, so the rest are indexed at the
-  thinner `index` tier. Meta-repos like `.github` still appear; a name-pattern filter is a
-  reasonable next step.
+- **Never name a JS variable after an element `id`.** `showex` was declared inside `current()`
+  but read in `render()`; it did not throw, because browsers expose ids as globals — so the
+  name silently resolved to the checkbox *element* (always truthy) and the count denominator
+  was permanently wrong. Read `el('showex').checked` explicitly.
 - **France's 24,440-repo inventory (`repositories/json/all.json`) is deliberately excluded.**
   It answers "who published this", not "is this useful to a government": 45% no description,
   80% no licence, dominated by research code, only 18 entries with a `publiccode.yml`. See the
