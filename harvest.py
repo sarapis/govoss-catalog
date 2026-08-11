@@ -327,6 +327,21 @@ def be():
     return out
 
 
+def ie():
+    """Ireland — Office of the Government Chief Information Officer (github.com/ogcio).
+
+    Found via the EU catalogue's SOURCE FACET NAMES: its search is broken, but the
+    facet labels are readable in the HTML, and `hosting_platform:ogcio` pointed here.
+    Small (6 repos) but a genuine national government org — govie-ds is the GOV.IE
+    design system, actively developed. Resolves IE, previously "unresolved".
+
+    Two of the six are forks of upstream tools (unleash, logto); the fork filter
+    handles them.
+    """
+    out, _ = github_org_scan("ogcio", "IE/ogcio", "IE")
+    return out
+
+
 def fi():
     """Finland — three static JSON files behind avoinkoodi.fi. Not publiccode."""
     out = []
@@ -653,7 +668,7 @@ def dpg():
 
 
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
-           "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "dpg": dpg,
+           "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "dpg": dpg,
            "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as

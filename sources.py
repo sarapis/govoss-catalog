@@ -84,6 +84,17 @@ SOURCES = {
                 "government tier: federal, provincial, municipal and Indigenous. Every "
                 "text field is localised {en, fr}, including repositoryURL.",
     },
+    "IE/ogcio": {
+        "label": "OGCIO Ireland", "country": "IE", "flag": "\U0001F1EE\U0001F1EA",
+        "site": "https://github.com/ogcio",
+        "api": "https://api.github.com/orgs/ogcio/repos",
+        "route": "GitHub org", "claim": "built by the Irish government CIO office",
+        "note": "Office of the Government Chief Information Officer (ogcio.gov.ie). Small - "
+                "5 non-archived repos - but genuine: govie-ds is the GOV.IE design system, "
+                "actively developed, and two repos ship a publiccode.yml. Found via the EU "
+                "catalogue's SOURCE FACET NAMES, which are readable in the HTML even though "
+                "its search is broken.",
+    },
     "TW/code.gov.tw": {
         "label": "Public Code Platform (moda)", "country": "TW", "flag": "\U0001F1F9\U0001F1FC",
         "site": "https://code.gov.tw/",
@@ -167,12 +178,30 @@ SURVEY = [
                "all 193 UN member states. A measurement dataset, not a curated catalogue - "
                "it answers 'who contributes' rather than 'what can we adopt'. Useful as "
                "discovery input for finding catalogues we have missed."},
-    {"country": "IE/PT/CY", "flag": "\U0001F1EA\U0001F1FA", "name": "listed by the EU catalogue",
+    {"country": "PT/CY", "flag": "\U0001F1EA\U0001F1FA", "name": "listed by the EU catalogue",
      "url": "https://interoperable-europe.ec.europa.eu/eu-oss-catalogue",
      "status": "unresolved",
-     "detail": "Ireland, Portugal and Cyprus appear as EU-catalogue source facets, but no "
-               "upstream could be identified - and the EU catalogue's own search is broken, "
-               "so it cannot be asked either."},
+     "detail": "Portugal and Cyprus appear in EU-catalogue country filters but no upstream "
+               "could be identified. Ireland WAS on this list and is now resolved: the EU "
+               "catalogue's SOURCE FACET NAMES are readable in the page HTML even though its "
+               "search returns nothing, and hosting_platform:ogcio led to Ireland's OGCIO. "
+               "Three facets remain unidentified as catalogues: hosting_platform:arte (ARTE, "
+               "the Franco-German public broadcaster), hosting_platform:city_of_ghent (a "
+               "Belgian municipality) and hosting_platform:dmrid_dits (github.com/DMRID is an "
+               "individual user with one repo, not a registry). Reading the facet labels is a "
+               "better discovery route than guessing hostnames."},
+    {"country": "n/a", "flag": "\u26A0", "name": "UNODC GlobE \"Directory of Open-Source Registries\"",
+     "url": "https://globenetwork.unodc.org/globenetwork/en/directory-of-open-source-registries/index.html",
+     "status": "false-lead",
+     "detail": "NOT about open-source software. GlobE is UNODC's Global Operational Network of "
+               "Anti-Corruption Law Enforcement Authorities, and \"open-source registries\" "
+               "here means open-source INTELLIGENCE - publicly available official records such "
+               "as company and beneficial-ownership registries. Its stated purpose: "
+               "\"Information from open-source registries is useful for anti-corruption law "
+               "enforcement authorities... collected by investigators and prosecutors without "
+               "the need of a formal mutual legal assistance request.\" Recorded because it "
+               "surfaced in a software-catalogue search and reads plausibly relevant from the "
+               "title alone."},
 ]
 
 

@@ -37,6 +37,7 @@ public infrastructure.
 | 🇨🇦 CA | Open Resource Exchange | `code.json` | 67 |
 
 | 🇹🇼 TW | Public Code Platform (moda) | **official open-data export** | 58 |
+| 🇮🇪 IE | OGCIO Ireland | GitHub org | 5 |
 | 🌐 GLOBAL | Digital Public Goods Registry | REST API | 249 |
 
 **`sources.py` is the single source of truth** for source labels, links, access routes and
@@ -69,6 +70,17 @@ project rather than a scraping project.
   flattens them. Its `tags` are free-text research topics ("SIR", "compartment model"), so they
   go to `keywords`, **not** `categories` — feeding them to the taxonomy produced ~100
   unmappable one-offs, and that warning is only useful while it stays near zero.
+- **Read the EU catalogue's FACET NAMES — they work even though its search does not.**
+  The source facets are plain text in the page HTML: `hosting_platform:ogcio` resolved
+  Ireland (Office of the Government CIO, `github.com/ogcio`), previously listed as
+  unresolved. Three remain unidentified as catalogues: `arte` (Franco-German broadcaster),
+  `city_of_ghent` (a municipality) and `dmrid_dits` (`github.com/DMRID` is an individual
+  with one repo). Reading facet labels beats guessing hostnames.
+- **The UNODC "Directory of Open-Source Registries" is a FALSE LEAD — do not chase it.**
+  GlobE is UNODC's anti-corruption law-enforcement network, and "open-source registries"
+  there means open-source *intelligence*: company and beneficial-ownership registries for
+  investigators. It surfaced in a software-catalogue search and reads plausibly relevant
+  from the title alone, which is exactly why it is recorded.
 - **Taiwan: use the PUBLISHED dataset, not the SPA's API.** code.gov.tw is a Vue SPA. Its
   internal API works — `POST /api/PublicProgramInfo/queryList` lists 58 programmes and
   `.../getPublicProgramData` returns repo URLs — but that is two undocumented POSTs per
