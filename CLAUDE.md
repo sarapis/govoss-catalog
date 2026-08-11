@@ -119,7 +119,7 @@ API; the ~240 repos across 176 other hosts via HEAD **serialised per host** with
 Runtime ~4.5 min, no throttling.
 
 `403/429/5xx` are recorded as **unknown, never dead** — the distinction matters, since
-treating rate-limiting as death would invent drift. Current: **~96% ok, 1.5% dead, 2.6% unknown**.
+treating rate-limiting as death would invent drift. Current: **96.3% ok, 22 confirmed dead (1.1%), 48 unknown (2.5%), 15 archived**.
 
 **Every dead verdict is confirmed with a plain web HEAD before being recorded.** This is not
 belt-and-braces, it is load-bearing: `gitlab.huma-num.fr` restricts anonymous API access, so
@@ -127,6 +127,22 @@ its live projects returned 404 from `/api/v4` while the web URL answered 200. Th
 without this pass called **53 of 82** "dead" repos dead when they were fine — including KiCad,
 Lazarus IDE and FreePascal — overstating the dead rate roughly 3x and reporting live projects
 as newly-dead drift. An API 404 is not evidence of absence.
+
+**A dead verdict requires TWO consecutive dead observations** (`dead_count` persists in
+liveness.json). Single observations oscillate: `gitlab.com/opentestfactory` is a *group* URL,
+not a project URL, so the projects API 404s it and HEAD answers inconsistently — one run
+"rescued" it, the next declared it dead. An unstable signal is worse than a steady wrong one
+because it trains you to ignore the report. One-off 404s are reported as **pending**, never as
+dead, and never shown on the page.
+
+**HEAD always fetches the ORIGINAL url, never `repo_key`.** repo_key is lowercased for joining;
+fetching it 404s case-sensitive paths — which is how a Wikipedia page SILL uses as BeautifulSoup's
+"repository" got reported dead. GitHub and GitLab are case-insensitive, which is why this hid.
+
+Roughly a third of raw 404s are not dead software at all but **upstream data quality**: SILL
+points at gitweb CGI (`git.postgresql.org/gitweb/?p=postgresql`), an SVN trunk, a download page,
+and in one case a Wikipedia article. Those resolve via the confirmation HEAD; the residue that
+genuinely is gone is dominated by removed GitHub repos (15 of 22).
 
 Dead and archived state is also shown **on the page** (stat tile, `repo gone` pill, and a
 repo-state filter), because a monitor whose output only lands in a JSON file nobody opens is

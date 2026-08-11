@@ -29,6 +29,7 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 UA = {"User-Agent": "govoss-catalog-liveness/1.0"}
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
+URLS = {}                  # join-key -> original (non-lowercased) URL
 DEAD = {404, 410}          # gone for good
 UNKNOWN = {403, 429, 500, 502, 503, 504}   # tells us nothing; never treat as dead
 
@@ -72,7 +73,7 @@ def check_github(keys, token):
             owner_only.append(k)     # e.g. github.com/audacity -> an org, not a repo
     if owner_only:
         print(f"    github: {len(owner_only)} org-level URLs -> HEAD")
-        out.update(check_head_per_host({"github.com": owner_only}))
+        out.update(check_head_per_host({"github.com": owner_only}, URLS))
     hdr = {"Authorization": f"bearer {token}"}
     B = 100
     for i in range(0, len(parsed), B):
@@ -132,8 +133,13 @@ def check_gitlab(host, keys):
 
 
 # ------------------------------------------------------- everything else
-def check_head_per_host(by_host):
-    """One worker per host, serial within a host, with 429 backoff."""
+def check_head_per_host(by_host, urls=None):
+    """One worker per host, serial within a host, with 429 backoff.
+
+    urls maps join-key -> ORIGINAL url. Always fetch the original: repo_key is
+    lowercased for joining and that alone 404s case-sensitive paths.
+    """
+    urls = urls or {}
     out = {}
 
     def do_host(item):
@@ -142,7 +148,8 @@ def check_head_per_host(by_host):
         for k in keys:
             for attempt in range(3):
                 try:
-                    req = urllib.request.Request("https://" + k, method="HEAD",
+                    target = urls.get(k) or ("https://" + k)
+                    req = urllib.request.Request(target, method="HEAD",
                                                  headers={"User-Agent": "Mozilla/5.0"})
                     with urllib.request.urlopen(req, timeout=12, context=CTX) as r:
                         res[k] = {"status": r.status}
@@ -178,6 +185,8 @@ def main():
         k = r.get("repo_key")
         if k and k not in names:
             names[k] = r.get("name") or k
+            if r.get("repo"):
+                URLS[k] = r["repo"]
             by_host[k.split("/")[0]].append(k)
 
     print(f"[liveness] {len(names)} distinct repos across {len(by_host)} hosts")
@@ -199,7 +208,7 @@ def main():
     if by_host:
         rest = sum(len(v) for v in by_host.values())
         print(f"    HEAD: {rest} repos over {len(by_host)} hosts")
-        results.update(check_head_per_host(by_host))
+        results.update(check_head_per_host(by_host, URLS))
 
     # ---- CONFIRM every "dead" verdict with a plain web HEAD before recording it.
     # An API 404 is not the same as gone: gitlab.huma-num.fr restricts anonymous
@@ -212,7 +221,7 @@ def main():
         by_h = defaultdict(list)
         for k in suspect:
             by_h[k.split("/")[0]].append(k)
-        confirm = check_head_per_host(by_h)
+        confirm = check_head_per_host(by_h, URLS)
         rescued = 0
         for k, v in confirm.items():
             if v.get("status") == 200:
@@ -229,29 +238,44 @@ def main():
         for f in ("archived", "empty", "last_push"):
             if res.get(f) is not None:
                 rec[f] = res[f]
+        # Require TWO consecutive dead observations before calling it dead.
+        # Single observations oscillate: gitlab.com GROUP urls (as opposed to
+        # project urls) 404 from the projects API and answer inconsistently to
+        # HEAD, so run N "rescued" them and run N+1 declared them dead. An
+        # unstable signal is worse than a steady wrong one — it trains you to
+        # ignore the report. dead_count survives across runs in liveness.json.
         if st in DEAD:
-            rec["dead_since"] = p.get("dead_since") or NOW
-            if not p.get("dead_since") and p:
-                newly_dead.append(k)
-        elif st == 200 and p.get("dead_since"):
-            revived.append(k)
+            rec["dead_count"] = p.get("dead_count", 0) + 1
+            if rec["dead_count"] >= 2:
+                rec["dead_since"] = p.get("dead_since") or NOW
+                if not p.get("dead_since") and p:
+                    newly_dead.append(k)
+            else:
+                rec["unconfirmed_dead"] = True   # not counted as dead yet
+        elif st == 200:
+            if p.get("dead_since"):
+                revived.append(k)
+            rec["dead_count"] = 0
         repos[k] = rec
 
     ok = sum(1 for v in repos.values() if v["status"] == 200)
-    dead = [k for k, v in repos.items() if v["status"] in DEAD]
+    dead = [k for k, v in repos.items() if v["status"] in DEAD and v.get("dead_since")]
+    pending = [k for k, v in repos.items() if v.get("unconfirmed_dead")]
     unknown = [k for k, v in repos.items()
                if v["status"] in UNKNOWN or isinstance(v["status"], str)]
     archived = [k for k, v in repos.items() if v.get("archived")]
 
     summary = {"checked": NOW, "total": len(repos), "ok": ok,
-               "dead": len(dead), "unknown": len(unknown), "archived": len(archived),
+               "dead": len(dead), "pending_dead": len(pending),
+               "unknown": len(unknown), "archived": len(archived),
                "newly_dead": newly_dead, "revived": revived}
     json.dump({"summary": summary, "repos": repos},
               open(f"{OUT}/liveness.json", "w"), indent=1)
 
     pct = lambda n: f"{100*n/max(1,len(repos)):.1f}%"
     print(f"\n  OK       {ok:>5} ({pct(ok)})")
-    print(f"  DEAD     {len(dead):>5} ({pct(len(dead))})")
+    print(f"  DEAD     {len(dead):>5} ({pct(len(dead))})  <- confirmed over 2+ consecutive runs")
+    print(f"  pending  {len(pending):>5} ({pct(len(pending))})  <- 404 once; not called dead until it repeats")
     print(f"  archived {len(archived):>5} ({pct(len(archived))})  <- alive but frozen upstream")
     print(f"  unknown  {len(unknown):>5} ({pct(len(unknown))})  <- rate-limited/private/unreachable, NOT dead")
     if prev:

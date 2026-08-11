@@ -55,7 +55,9 @@ for r in c:
         "tr": 1 if r.get("translated") else 0,
         "sl": r.get("desc_src_lang") or "",
         "qid": r.get("wikidata") or "",
-        "lv": (lambda v: "dead" if v.get("status") in (404, 410)
+        # dead_since is only set after 2 consecutive dead observations, so the
+        # page never shows a one-off 404 as "repo gone"
+        "lv": (lambda v: "dead" if v.get("dead_since")
                     else ("archived" if v.get("archived") else ""))(
                     LIVE.get(r.get("repo_key") or "", {})),
     })
