@@ -1235,7 +1235,7 @@
   "upstream_id": 11309,
   "forge_path": "urbo-community/urbo",
   "entry_url": "https://gitlab.opencode.de/urbo-community/urbo",
-  "last_activity": "2026-08-11T11:49:05.853Z"
+  "last_activity": "2026-08-11T21:41:09.398Z"
  },
  {
   "source": "DE/openCode",
@@ -1495,7 +1495,7 @@
   "upstream_id": 11231,
   "forge_path": "cern/indico",
   "entry_url": "https://gitlab.opencode.de/cern/indico",
-  "last_activity": "2026-08-11T01:39:44.557Z"
+  "last_activity": "2026-08-12T00:00:13.772Z"
  },
  {
   "source": "DE/openCode",
@@ -2572,7 +2572,7 @@
   "upstream_id": 10719,
   "forge_path": "bad-belzig/sva-studio/sva-studio",
   "entry_url": "https://gitlab.opencode.de/bad-belzig/sva-studio/sva-studio",
-  "last_activity": "2026-08-11T15:51:45.841Z"
+  "last_activity": "2026-08-11T21:48:50.274Z"
  },
  {
   "source": "DE/openCode",
@@ -3854,8 +3854,8 @@
   ],
   "software_type": "library",
   "dev_status": "stable",
-  "version": "0.14.0",
-  "released": "2026-08-10",
+  "version": "0.14.1",
+  "released": "2026-08-11",
   "maintenance": "community",
   "contacts": [
    "Scott Wirth"
@@ -3878,7 +3878,7 @@
   "upstream_id": 10450,
   "forge_path": "oc00013173229/odf-kit",
   "entry_url": "https://gitlab.opencode.de/oc00013173229/odf-kit",
-  "last_activity": "2026-08-10T15:24:03.607Z"
+  "last_activity": "2026-08-12T00:05:21.386Z"
  },
  {
   "source": "DE/openCode",
@@ -6748,7 +6748,7 @@
   "upstream_id": 8387,
   "forge_path": "regierung-von-oberbayern/cibseven",
   "entry_url": "https://gitlab.opencode.de/regierung-von-oberbayern/cibseven",
-  "last_activity": "2026-08-11T00:34:47.777Z"
+  "last_activity": "2026-08-12T00:34:55.469Z"
  },
  {
   "source": "DE/openCode",
@@ -8232,7 +8232,7 @@
   "upstream_id": 7680,
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms",
   "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms",
-  "last_activity": "2026-08-10T21:27:36.016Z"
+  "last_activity": "2026-08-11T21:27:28.424Z"
  },
  {
   "source": "DE/openCode",
@@ -12349,7 +12349,7 @@
   "upstream_id": 4619,
   "forge_path": "OC000024389631/GeospatialAnalyzer",
   "entry_url": "https://gitlab.opencode.de/OC000024389631/GeospatialAnalyzer",
-  "last_activity": "2026-08-11T01:08:21.008Z"
+  "last_activity": "2026-08-12T01:08:19.578Z"
  },
  {
   "source": "DE/openCode",
@@ -15426,7 +15426,7 @@
   "upstream_id": 3458,
   "forge_path": "openculturas/openculturas-distribution",
   "entry_url": "https://gitlab.opencode.de/openculturas/openculturas-distribution",
-  "last_activity": "2026-08-11T13:16:05.707Z"
+  "last_activity": "2026-08-11T21:08:50.696Z"
  },
  {
   "source": "DE/openCode",
@@ -18319,7 +18319,7 @@
   "upstream_id": 1317,
   "forge_path": "bmi/opendesk/deployment/opendesk",
   "entry_url": "https://gitlab.opencode.de/bmi/opendesk/deployment/opendesk",
-  "last_activity": "2026-08-11T16:01:52.355Z"
+  "last_activity": "2026-08-11T21:39:47.490Z"
  },
  {
   "source": "DE/openCode",

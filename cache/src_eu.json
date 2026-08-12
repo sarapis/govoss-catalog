@@ -3,6 +3,110 @@
   "source": "EU/code.europa.eu",
   "country": "EU",
   "tier": "publiccode",
+  "name": "AI4DRPM",
+  "repo": "https://code.europa.eu/leos/ai4drpm",
+  "repo_key": "code.europa.eu/leos/ai4drpm",
+  "landing": "https://leos.pages.code.europa.eu/ai4drpm",
+  "license": "EUPL-1.2",
+  "software_type": "standalone/backend",
+  "dev_status": "development",
+  "maintenance": "internal",
+  "contacts": [
+   "Alessio NARDIN"
+  ],
+  "desc_en": "AI-based legal analysis engine",
+  "short_desc": "AI-based legal analysis engine",
+  "desc_lang": "en",
+  "long_desc": "AI4DRPM (Artificial Intelligence for Digital-Ready Policymaking) is a\nPython microservice designed to facilitate the collection, annotation,\ntransformation, and compilation of legal documents and data.\n\nIt is part of the AI4DRPM project, which aims to enhance\ndigital-ready policymaking by leveraging artificial intelligence and\nadvanced data processing techniques.\n",
+  "features": [
+   "Legal document collection and annotation",
+   "Text transformation and compilation",
+   "AI-powered legal analysis",
+   "REST API for integration",
+   "Database seeding with reference legal data"
+  ],
+  "fallback_repo": "https://code.europa.eu/leos/ai4drpm.git",
+  "upstream_id": 1469,
+  "forge_path": "leos/ai4drpm",
+  "entry_url": "https://code.europa.eu/leos/ai4drpm",
+  "last_activity": "2026-08-11T10:52:54.863Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "EUSurvery",
+  "repo": "https://github.com/EUSurvey/EUSURVEY",
+  "repo_key": "github.com/eusurvey/eusurvey",
+  "landing": "https://ec.europa.eu/eusurvey/",
+  "license": "EUPL-1.2",
+  "repo_owner": "European Commission",
+  "categories": [
+   "survey"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "version": "1.5.3",
+  "released": "2023-06-01",
+  "maintenance": "none",
+  "desc_en": "EUSurvey is the official online survey management tool of the European\nCommission",
+  "short_desc": "EUSurvey is the official online survey management tool of the European\nCommission",
+  "desc_lang": "en",
+  "long_desc": "EUSurvey is the official online survey management tool of the European\nCommission. Its development was started in 2013 under the supervision of\n[DIGIT](https://ec.europa.eu/dgs/informatics/index\\_en.htm) and is\npublished as open source software under the terms of the EUPL public\nlicense on GitHUB at [this\nlink](https://github.com/EUSurvey/EUSURVEY). \n\n\nEUSurvey is a servlet based application and can be installed on any system\nthat runs a JAVA servlet-container. The system\u2019s development and reference\ninstallation runs Apache Tomcat as the servlet container and uses a MySQL\ndatabase to store its information. The build process is assisted by Maven\nfor resolving external dependencies. This document describes the steps\nthat are necessary to compile and install the open source version of\nEUSurvey. \n\n\nPlease notice that EUSurvey can be configured to run on a large number of\ndifferent environments. \n\n\n[Here](https://github.com/EUSurvey/EUSURVEY)\nyou can find the README guide related to this software. The aim of such\ndocument is to guide the interested user through the process of\ninstalling a development environment and to deploy a working instance of\nthe EUSurvey system, with as less effor",
+  "features": [
+   "Create survey, quiz, electronic votes"
+  ],
+  "fallback_repo": "https://code.europa.eu/eusurvey/EUSURVEY.git",
+  "upstream_id": 1463,
+  "forge_path": "eusurvey/EUSURVEY",
+  "entry_url": "https://code.europa.eu/eusurvey/EUSURVEY",
+  "last_activity": "2026-08-07T06:33:09.273Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "KPI Webtool",
+  "repo": "https://code.europa.eu/cbe/kpi-webtool",
+  "repo_key": "code.europa.eu/cbe/kpi-webtool",
+  "license": "EUPL-1.2",
+  "categories": [
+   "business-process-management",
+   "data-collection",
+   "grant-management"
+  ],
+  "platforms": [
+   "web"
+  ],
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "maintenance": "internal",
+  "contacts": [
+   "Carlo Gubitosa",
+   "CBE JU"
+  ],
+  "desc_en": "Web application for the online submission of KPI data for projects funded by European Union.",
+  "short_desc": "Web application for the online submission of KPI data for projects funded by European Union.",
+  "desc_lang": "en",
+  "long_desc": "Web tool to collect KPI from beneficiaries of EU funds. Customized for CBE Joint Undertaking, but open to customizable for other EU entities. The state of submissions is managed with a \"Metroline\" workflow similar to the one used in the COMPASS platform for EU grants management.",
+  "features": [
+   "Metroline workflow",
+   "CORDA integration",
+   "Web forms"
+  ],
+  "fallback_repo": "https://code.europa.eu/cbe/kpi-webtool.git",
+  "upstream_id": 1454,
+  "forge_path": "cbe/kpi-webtool",
+  "entry_url": "https://code.europa.eu/cbe/kpi-webtool",
+  "last_activity": "2026-01-22T18:12:56.062Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
   "name": "vecto-sim",
   "repo": "https://code.europa.eu/vecto/vecto.git",
   "repo_key": "code.europa.eu/vecto/vecto",
@@ -33,93 +137,91 @@
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "fallback_repo": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim.git",
-  "upstream_id": 1306,
-  "forge_path": "bharat-vecto/bharat-vecto-sim",
-  "entry_url": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim",
-  "last_activity": "2026-08-05T11:01:29.193Z"
+  "fallback_repo": "https://code.europa.eu/vecto/guests/vecto-sim-harry.git",
+  "upstream_id": 1129,
+  "forge_path": "vecto/guests/vecto-sim-harry",
+  "entry_url": "https://code.europa.eu/vecto/guests/vecto-sim-harry",
+  "last_activity": "2026-08-05T09:27:02.824Z"
  },
  {
   "source": "EU/code.europa.eu",
   "country": "EU",
   "tier": "publiccode",
-  "name": "LEOS core",
-  "repo": "https://code.europa.eu/leos/core/-/tree/development",
-  "repo_key": "code.europa.eu/leos/core",
+  "name": "vecto-sim",
+  "repo": "https://code.europa.eu/vecto/vecto.git",
+  "repo_key": "code.europa.eu/vecto/vecto",
+  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
   "license": "EUPL-1.2",
   "repo_owner": "European Commission",
   "categories": [
-   "productivity-suite"
+   "compliance-management"
   ],
   "platforms": [
-   "web"
+   "windows",
+   "linux"
   ],
-  "software_type": "standalone/web",
-  "dev_status": "stable",
-  "version": "5.0.*",
-  "released": "2023-12-07",
+  "software_type": "standalone/desktop",
+  "dev_status": "beta",
+  "version": "4.0.1.3217",
+  "released": "2023-10-23",
   "maintenance": "internal",
   "contacts": [
-   "DIGIT LEOS team"
+   "JRC-VECTO"
   ],
-  "desc_en": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
-  "short_desc": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
+  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
+  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
-  "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
+  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "features": [
-   "Legal document structure",
-   "Collaboration",
-   "Import legal text",
-   "Versioning",
-   "Annotations",
-   "Rich text"
+   "fuel, co2 and energy calculator",
+   "heavy duty vehicle simulator",
+   "heavy duty vechicle certification"
   ],
-  "used_by": [
-   "European Commission"
-  ],
-  "fallback_repo": "https://code.europa.eu/leos/project-mode/leos-spain/leos-core-spain.git",
-  "upstream_id": 1019,
-  "forge_path": "leos/project-mode/leos-spain/leos-core-spain",
-  "entry_url": "https://code.europa.eu/leos/project-mode/leos-spain/leos-core-spain",
-  "last_activity": "2025-12-16T15:21:59.419Z"
+  "fallback_repo": "https://code.europa.eu/anagnko/vecto-trailer.git",
+  "upstream_id": 822,
+  "forge_path": "anagnko/vecto-trailer",
+  "entry_url": "https://code.europa.eu/anagnko/vecto-trailer",
+  "last_activity": "2025-12-16T15:17:52.014Z"
  },
  {
   "source": "EU/code.europa.eu",
   "country": "EU",
   "tier": "publiccode",
-  "name": "Moodle eTranslation filter plugin ",
-  "repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
-  "repo_key": "code.europa.eu/btsf/moodle-etranslation-filter-plugin",
-  "license": "GPL-3.0-or-later",
-  "repo_owner": "BTSF ACADEMY Team",
+  "name": "vecto-sim",
+  "repo": "https://code.europa.eu/vecto/vecto.git",
+  "repo_key": "code.europa.eu/vecto/vecto",
+  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
+  "license": "EUPL-1.2",
+  "repo_owner": "European Commission",
   "categories": [
-   "learning-management-system"
+   "compliance-management"
   ],
   "platforms": [
-   "web"
+   "windows",
+   "linux"
   ],
-  "software_type": "library",
+  "software_type": "standalone/desktop",
   "dev_status": "beta",
-  "released": "2023-09-26",
+  "version": "4.0.1.3217",
+  "released": "2023-10-23",
   "maintenance": "internal",
   "contacts": [
-   "BTSF ACADEMY Team"
+   "JRC-VECTO"
   ],
-  "desc_en": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
-  "short_desc": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
+  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
+  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
-  "long_desc": "The eTranslation filter provides an automatic translation of the content\nof Moodle courses into different languages. It uses the European\nCommission's neural machine translation service\n([eTranslation](https://commission.europa.eu/resources-partners/etranslation_en)).\n\n\nThe filter parses and processes every piece of content including HTML\ntexts, [File resource](https://docs.moodle.org/405/en/File_resource)s,\n[Folder resource](https://docs.moodle.org/405/en/Folder_resource)s and\nheadings.\n\n\nFor each content item:\n\n\n- If the current language is the configured base language, then the\noriginal text is returned untouched.\n\n- Else, hash the full original text as the HASHKEY to look into the\ntranslation repository.\n\n- If the HASHKEY is found, then look for a translation in the selected\nlanguage.\n    - If the translation exists, then return the translated content\n- Else the HASHKEY is not found, request a translation from the\neTranslation API and wait for the translation in the background. Once it\nis ready, the translated content will be stored in the repository with the\nHASHKEY.\n\n\nThe translation availability is configurable through [Moodle\ncapabilities](https://docs.moodle.org/405/en/Cat",
+  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "features": [
-   "Automatic Moodle content translation"
+   "fuel, co2 and energy calculator",
+   "heavy duty vehicle simulator",
+   "heavy duty vechicle certification"
   ],
-  "used_by": [
-   "BTSF ACADEMY Team"
-  ],
-  "fallback_repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin.git",
-  "upstream_id": 1006,
-  "forge_path": "btsf/moodle-etranslation-filter-plugin",
-  "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
-  "last_activity": "2026-08-04T08:48:04.149Z"
+  "fallback_repo": "https://code.europa.eu/alixgui/vecto.git",
+  "upstream_id": 716,
+  "forge_path": "alixgui/vecto",
+  "entry_url": "https://code.europa.eu/alixgui/vecto",
+  "last_activity": "2026-08-05T08:48:33.001Z"
  },
  {
   "source": "EU/code.europa.eu",
@@ -195,11 +297,303 @@
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "fallback_repo": "https://code.europa.eu/amogoda/vecto.git",
-  "upstream_id": 451,
-  "forge_path": "amogoda/vecto",
-  "entry_url": "https://code.europa.eu/amogoda/vecto",
-  "last_activity": "2026-08-05T15:18:03.273Z"
+  "fallback_repo": "https://code.europa.eu/doumpst/vecto.git",
+  "upstream_id": 304,
+  "forge_path": "doumpst/vecto",
+  "entry_url": "https://code.europa.eu/doumpst/vecto",
+  "last_activity": "2026-08-04T17:27:00.497Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "Dynamic Discovery Client (DDC)",
+  "repo": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
+  "repo_key": "code.europa.eu/edelivery/dynamic-discovery-client",
+  "landing": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
+  "license": "EUPL-1.2-or-later",
+  "repo_owner": "DIGIT",
+  "categories": [
+   "communications"
+  ],
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "software_type": "standalone/backend",
+  "dev_status": "stable",
+  "version": 3.2,
+  "released": "2026-02-18",
+  "maintenance": "internal",
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "desc_en": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
+  "short_desc": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
+  "desc_lang": "en",
+  "long_desc": "[DDC](https://code.europa.eu/edelivery/dynamic-discovery-client/) is the sample Java library provided by the European Commission to implement an eDelivery dynamic discovery lookup for an eDelivery party to discover the URLs and metadata of other eDelivery Access Point counterparties. It is based on the [eDelivery BDXL specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), the [eDelivery SMP specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications) and the dynamic sender and receiver enhancements of the [eDelivery AS4 specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specifications for locating Access Points within a network.\n",
+  "features": [
+   "Automatic participant lookup using SML to locate the SMP service where a network participant published its service capabilities metadata.",
+   "SMP metadata retrieval to obtain service metadata such as document types, transport profiles, and endpoint details.",
+   "Support for multiple transport profiles (e.g., AS4, AS2, etc.) to enable interoperability with different Access Points.",
+   "Support for multiple document types and processes to facilitate diverse message exchange scenarios.",
+   "Support for various party identifier schemes (e.g., eDelivery identifiers, PEPPOL identifiers) to accommodate different identification standards.",
+   "Certificate and trust validation to ensure secure and trusted metadata retrieval.",
+   "Compliance with eDelivery Dynamic Discovery specifications (SML/SMP standards, DNS-based addressing)."
+  ],
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "fallback_repo": "https://code.europa.eu/edelivery/dynamic-discovery-client.git",
+  "upstream_id": 214,
+  "forge_path": "edelivery/dynamic-discovery-client",
+  "entry_url": "https://code.europa.eu/edelivery/dynamic-discovery-client",
+  "last_activity": "2026-08-11T06:19:03.552Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "DomiSML",
+  "repo": "https://code.europa.eu/edelivery/bdmsl",
+  "repo_key": "code.europa.eu/edelivery/bdmsl",
+  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSML",
+  "license": "EUPL-1.2-or-later",
+  "repo_owner": "DIGIT",
+  "categories": [
+   "communications"
+  ],
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "software_type": "standalone/backend",
+  "dev_status": "stable",
+  "version": 5.1,
+  "released": "2026-06-22",
+  "maintenance": "internal",
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "desc_en": "DomiSML implements an eDelivery Service Metadata Locator for publishing the location of metadata necessary for message exchange.",
+  "short_desc": "DomiSML implements an eDelivery Service Metadata Locator for publishing the location of metadata necessary for message exchange.",
+  "desc_lang": "en",
+  "long_desc": "[DomiSML](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118040/DomiSML) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Locator for an eDelivery party  to discover the URLs of other counterparties using eDelivery Access Points and their corresponding metadata. It is based on  the [eDelivery BDXL profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), an open technical specification for locating Access Points within a network, and on the [PEPPOL SML Specification](https://docs.peppol.eu/edelivery/), a technical specification defining a BDXL administration API.\n",
+  "features": [
+   "Maintains a trusted registry of authorised Service Metadata Publishers (SMPs) and their registered network participants.",
+   "Ensures secure and reliable discovery of the location where participant service metadata is published, using a standards\u2011based lookup mechanism.",
+   "Adheres to EU eDelivery specifications, ensuring full interoperability across European digital systems.",
+   "Scales to support national or multi\u2011country ecosystems with millions of participants.",
+   "Provides clear administrative controls and comprehensive audit trails to support transparency, accountability, and good governance."
+  ],
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "fallback_repo": "https://code.europa.eu/edelivery/domisml.git",
+  "upstream_id": 212,
+  "forge_path": "edelivery/domisml",
+  "entry_url": "https://code.europa.eu/edelivery/domisml",
+  "last_activity": "2026-08-11T13:47:06.313Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "Domibus",
+  "repo": "https://code.europa.eu/edelivery/domibus",
+  "repo_key": "code.europa.eu/edelivery/domibus",
+  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus",
+  "license": "EUPL-1.2-or-later",
+  "repo_owner": "DIGIT",
+  "categories": [
+   "communications"
+  ],
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "software_type": "standalone/backend",
+  "dev_status": "stable",
+  "version": "5.2.1",
+  "released": "2026-06-26",
+  "maintenance": "internal",
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "desc_en": "Domibus implements an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange.",
+  "short_desc": "Domibus implements an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange.",
+  "desc_lang": "en",
+  "long_desc": "[Domibus](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110244/Domibus) is the sample software provided by the European Commission to implement an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange. It is based on the [eDelivery AS4 profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specification for the secure, web-based, payload-agnostic exchange of data or documents.\n",
+  "features": [
+   "Secure and reliable message exchange \u2013 Implements the AS4 protocol for payload agnostic, encrypted, and signed messages with acknowledgements and retries, ensuring end-to-end confidentiality, integrity, and reliability.",
+   "Sample eDelivery AS4 Access Point \u2013 Conformant EC open-source implementation of the eDelivery AS4 profile that can be used to set up Access Points in distributed eDelivery secure exchange networks, ensuring interoperability between organisations.",
+   "Open-source, vendor-neutral, and extensible architecture \u2013 Maintained under the European Union Public Licence, with plugins/connectors (e.g., JMS, WS, File System) for integration with backend systems, allowing organisations to adapt and extend the code.",
+   "Management of participants and P-Modes \u2013 Handles metadata, communication parameters, and protocol configuration for multiple parties, including multi-tenancy support. Supports both static configuration and dynamic lookup using the BDXL/SMP standards.",
+   "Administration and monitoring tools \u2013 Web console and configuration tools for managing certificates, message filtering, monitoring, and logging.",
+   "Audit logging and traceability \u2013 Complete logging of message exchanges for compliance, dispute resolution, and auditing.",
+   "Compliance with EU legal standards \u2013 Aligned with ETSI standards defined for eIDAS (Q)ERDS and with EU security regulations for digital signatures, encryption, and secure exchange.",
+   "Web Services APIs (SOAP/REST) \u2013 Standard interfaces for sending, receiving, and managing messages, enabling integration with external systems."
+  ],
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "fallback_repo": "https://code.europa.eu/edelivery/domibus.git",
+  "upstream_id": 211,
+  "forge_path": "edelivery/domibus",
+  "entry_url": "https://code.europa.eu/edelivery/domibus",
+  "last_activity": "2026-08-11T13:16:13.216Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "DomiSMP",
+  "repo": "https://code.europa.eu/edelivery/smp",
+  "repo_key": "code.europa.eu/edelivery/smp",
+  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSMP",
+  "license": "EUPL-1.2-or-later",
+  "repo_owner": "DIGIT",
+  "categories": [
+   "communications"
+  ],
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "software_type": "standalone/backend",
+  "dev_status": "stable",
+  "version": 5.2,
+  "released": "2025-10-12",
+  "maintenance": "internal",
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "desc_en": "DomiSMP implements an eDelivery Service Metadata Publisher for publishing and retrieving metadata necessary for message exchange.",
+  "short_desc": "DomiSMP implements an eDelivery Service Metadata Publisher for publishing and retrieving metadata necessary for message exchange.",
+  "desc_lang": "en",
+  "long_desc": "[DomiSMP](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117783/DomiSMP) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Publisher for publishing and retrieving data necessary for an eDelivery party to dynamically configure its system for message exchange with other parties using eDelivery. It is based on the [eDelivery SMP profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications), an open technical specification for publishing service metadata within a 4-corner network.\n",
+  "features": [
+   "Trusted participant registry and its service capabilities metadata (service descriptions) publication and retrieval.",
+   "Standards\u2011compliant metadata service aligned with EU eDelivery specifications to enable interoperability across EU systems.",
+   "Automatic endpoint discovery enabling seamless cross\u2011border and inter\u2011agency digital communication.",
+   "High availability and scalability to support large public\u2011sector networks.",
+   "Strong security and governance controls ensuring only verified organisations can register and exchange data.",
+   "User interface for managing participant registrations and service metadata, with support for bulk operations and API access.",
+   "Support for multiple document types, processes, and transport profiles to facilitate diverse message exchange scenarios.",
+   "Certificate and trust validation to ensure secure and trusted metadata publication and retrieval."
+  ],
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "fallback_repo": "https://code.europa.eu/edelivery/domismp.git",
+  "upstream_id": 162,
+  "forge_path": "edelivery/domismp",
+  "entry_url": "https://code.europa.eu/edelivery/domismp",
+  "last_activity": "2026-08-11T14:23:03.645Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "DSS Demonstrations",
+  "repo": "https://code.europa.eu/dit/dss-demonstrations.git",
+  "repo_key": "code.europa.eu/dit/dss-demonstrations",
+  "license": "LGPL-2.1",
+  "categories": [
+   "e-signature"
+  ],
+  "platforms": [
+   "windows",
+   "linux"
+  ],
+  "software_type": "standalone/other",
+  "dev_status": "stable",
+  "version": "6.3",
+  "released": "2025-08-05",
+  "maintenance": "internal",
+  "contacts": [
+   "David Naramski",
+   "Pierrick Vandenbroucke",
+   "Aleksandr Beliakov"
+  ],
+  "desc_en": "DSS Demonstrations is the demonstration repository for project DSS.",
+  "short_desc": "DSS Demonstrations is the demonstration repository for project DSS.",
+  "desc_lang": "en",
+  "long_desc": "With the framework, the following demonstrations are provided: \n- DSS online demo web application; \n- Ready to use demo web application build;\n- JavaFX Standalone Application;\n- eSignature validation test cases.\n",
+  "features": [
+   "Web application;",
+   "Standalone application;",
+   "REST samples generation;",
+   "eSig Validation Test Cases."
+  ],
+  "fallback_repo": "https://code.europa.eu/dit/dss-demonstrations.git",
+  "upstream_id": 112,
+  "forge_path": "dit/dss-demonstrations",
+  "entry_url": "https://code.europa.eu/dit/dss-demonstrations",
+  "last_activity": "2026-01-22T18:39:04.165Z"
+ },
+ {
+  "source": "EU/code.europa.eu",
+  "country": "EU",
+  "tier": "publiccode",
+  "name": "DSS",
+  "repo": "https://code.europa.eu/dit/dss.git",
+  "repo_key": "code.europa.eu/dit/dss",
+  "license": "LGPL-2.1",
+  "categories": [
+   "e-signature"
+  ],
+  "platforms": [
+   "windows",
+   "linux",
+   "mac"
+  ],
+  "software_type": "library",
+  "dev_status": "stable",
+  "version": "6.3",
+  "released": "2025-08-05",
+  "maintenance": "internal",
+  "contacts": [
+   "David Naramski",
+   "Pierrick Vandenbroucke",
+   "Aleksandr Beliakov"
+  ],
+  "desc_en": "DSS is an open-source software library for electronic signature creation, augmentation and validation.",
+  "short_desc": "DSS is an open-source software library for electronic signature creation, augmentation and validation.",
+  "desc_lang": "en",
+  "long_desc": "DSS (Digital Signature Services) is an open-source software library for electronic signature creation and validation.  DSS supports the creation and verification of interoperable and secure electronic signatures in line with European  legislation. In particular, DSS aims to follow the eIDAS Regulation and related standards closely. \nDSS can be re-used in an IT solution for electronic signatures to ensure that signatures are created and verified in line with European legislation and standards. DSS allows re-use in a variety of different ways: in an applet, in a standalone application or in a server application. DSS can also be used as a reference implementation for IT solutions which do not directly re-use it. Demos are also available to assist the use of DSS as a reference implementation.\nThe project is written in Java and issued under LGPL 2.1, a non-viral open source license.\n",
+  "features": [
+   "Electronic signatures (XAdES, CAdES, PAdES, JAdES and ASiC)",
+   "Timestamps",
+   "Revocation data (CRL and OCSP)",
+   "Evidence Records (XMLERS and ERS)",
+   "REST and SOAP webServices"
+  ],
+  "fallback_repo": "https://code.europa.eu/dit/dss.git",
+  "upstream_id": 111,
+  "forge_path": "dit/dss",
+  "entry_url": "https://code.europa.eu/dit/dss",
+  "last_activity": "2026-01-16T09:42:05.738Z"
  },
  {
   "source": "EU/code.europa.eu",
@@ -235,130 +629,54 @@
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "fallback_repo": "https://code.europa.eu/anagnko/sandbox.git",
-  "upstream_id": 449,
-  "forge_path": "anagnko/sandbox",
-  "entry_url": "https://code.europa.eu/anagnko/sandbox",
-  "last_activity": "2025-12-16T15:09:55.346Z"
+  "fallback_repo": "https://code.europa.eu/vecto/vecto.git",
+  "upstream_id": 89,
+  "forge_path": "vecto/vecto",
+  "entry_url": "https://code.europa.eu/vecto/vecto",
+  "last_activity": "2026-08-11T11:33:59.845Z"
  },
  {
   "source": "EU/code.europa.eu",
   "country": "EU",
   "tier": "publiccode",
-  "name": "vecto-sim",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
+  "name": "LEOS core",
+  "repo": "https://code.europa.eu/leos/core/-/tree/development",
+  "repo_key": "code.europa.eu/leos/core",
   "license": "EUPL-1.2",
   "repo_owner": "European Commission",
   "categories": [
-   "compliance-management"
+   "productivity-suite"
   ],
   "platforms": [
-   "windows",
-   "linux"
+   "web"
   ],
-  "software_type": "standalone/desktop",
-  "dev_status": "beta",
-  "version": "4.0.1.3217",
-  "released": "2023-10-23",
+  "software_type": "standalone/web",
+  "dev_status": "stable",
+  "version": "5.0.*",
+  "released": "2023-12-07",
   "maintenance": "internal",
   "contacts": [
-   "JRC-VECTO"
+   "DIGIT LEOS team"
   ],
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
+  "desc_en": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
+  "short_desc": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
   "desc_lang": "en",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
+  "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
   "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
+   "Legal document structure",
+   "Collaboration",
+   "Import legal text",
+   "Versioning",
+   "Annotations",
+   "Rich text"
   ],
-  "fallback_repo": "https://code.europa.eu/vecto/tug-itna/hm_vecto-sim.git",
-  "upstream_id": 423,
-  "forge_path": "vecto/tug-itna/hm_vecto-sim",
-  "entry_url": "https://code.europa.eu/vecto/tug-itna/hm_vecto-sim",
-  "last_activity": "2026-08-05T12:23:34.462Z"
- },
- {
-  "source": "EU/code.europa.eu",
-  "country": "EU",
-  "tier": "publiccode",
-  "name": "vecto-sim",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "license": "EUPL-1.2",
-  "repo_owner": "European Commission",
-  "categories": [
-   "compliance-management"
+  "used_by": [
+   "European Commission"
   ],
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "software_type": "standalone/desktop",
-  "dev_status": "beta",
-  "version": "4.0.1.3217",
-  "released": "2023-10-23",
-  "maintenance": "internal",
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "fallback_repo": "https://code.europa.eu/vecto/tug-itna/mq_vecto-sim.git",
-  "upstream_id": 422,
-  "forge_path": "vecto/tug-itna/mq_vecto-sim",
-  "entry_url": "https://code.europa.eu/vecto/tug-itna/mq_vecto-sim",
-  "last_activity": "2026-08-06T06:07:07.325Z"
- },
- {
-  "source": "EU/code.europa.eu",
-  "country": "EU",
-  "tier": "publiccode",
-  "name": "vecto-sim",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "license": "EUPL-1.2",
-  "repo_owner": "European Commission",
-  "categories": [
-   "compliance-management"
-  ],
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "software_type": "standalone/desktop",
-  "dev_status": "beta",
-  "version": "4.0.1.3217",
-  "released": "2023-10-23",
-  "maintenance": "internal",
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "fallback_repo": "https://code.europa.eu/vecto/guests/vecto-sim-iker.git",
-  "upstream_id": 415,
-  "forge_path": "vecto/guests/vecto-sim-iker",
-  "entry_url": "https://code.europa.eu/vecto/guests/vecto-sim-iker",
-  "last_activity": "2025-12-17T10:06:24.281Z"
+  "fallback_repo": "https://code.europa.eu/leos/core.git",
+  "upstream_id": 85,
+  "forge_path": "leos/core",
+  "entry_url": "https://code.europa.eu/leos/core",
+  "last_activity": "2026-08-11T22:20:05.009Z"
  }
 ]

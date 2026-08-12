@@ -72,7 +72,6 @@
   "repo_owner": "ogcio",
   "license": "NOASSERTION",
   "entry_url": "https://github.com/ogcio/wagtail-sitemap-seo",
-  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2026-03-24T09:26:46Z",
   "is_fork": false
@@ -86,7 +85,6 @@
   "repo_key": "github.com/ogcio/wagtail-tinymce-table",
   "repo_owner": "ogcio",
   "entry_url": "https://github.com/ogcio/wagtail-tinymce-table",
-  "desc_lang": "en",
   "stars": 1,
   "last_activity": "2026-07-09T12:16:35Z",
   "is_fork": false

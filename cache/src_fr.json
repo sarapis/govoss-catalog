@@ -3973,7 +3973,7 @@
   "desc_lang": "fr",
   "desc_src": "Navigateur web avec support longue dur\u00e9e.",
   "desc_src_lang": "fr",
-  "version": "154.0b8",
+  "version": "153.0.4",
   "used_by": [
    "13002608100013",
    "ACADEMIE DE PARIS",
@@ -22140,7 +22140,7 @@
   "desc_lang": "fr",
   "desc_src": "\u00e9diteur de code multiplateforme gratuit d\u00e9velopp\u00e9 par Microsoft",
   "desc_src_lang": "fr",
-  "version": "1.131.0",
+  "version": "1.133.0-insiders",
   "used_by": [
    "CentraleSup\u00e9lec"
   ],

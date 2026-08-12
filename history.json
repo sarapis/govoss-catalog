@@ -1858,7 +1858,182 @@
    "delta": {
     "entries_active": -343
    }
+  },
+  {
+   "run_at": "2026-08-12T01:31:04Z",
+   "started_at": "2026-08-12T01:13:45Z",
+   "trigger": "manual",
+   "duration_s": 1039,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "crosswalk",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 3070,
+    "filtered_out": 102,
+    "publiccode_tier": 999,
+    "merged_away": 241,
+    "multi_country": 95
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-12T01:23:12Z"
+    },
+    "bg": {
+     "records": 186,
+     "checkpoint_mtime": "2026-08-12T01:23:59Z"
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-12T01:23:25Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-12T01:18:09Z"
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-12T01:24:13Z"
+    },
+    "eu": {
+     "records": 16,
+     "checkpoint_mtime": "2026-08-12T01:23:04Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-12T01:23:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-12T01:13:49Z"
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-08-12T01:23:30Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-12T01:14:09Z"
+    },
+    "muc": {
+     "records": 141,
+     "checkpoint_mtime": "2026-08-12T01:23:35Z"
+    },
+    "nl": {
+     "records": 134,
+     "checkpoint_mtime": "2026-08-12T01:23:25Z"
+    },
+    "nlreg": {
+     "records": 0,
+     "checkpoint_mtime": "2026-08-12T01:24:13Z"
+    },
+    "os2": {
+     "records": 299,
+     "checkpoint_mtime": "2026-08-12T01:23:55Z"
+    },
+    "pt": {
+     "records": 88,
+     "checkpoint_mtime": "2026-08-12T01:23:33Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-12T01:23:13Z"
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-12T01:23:29Z"
+    }
+   },
+   "translation": {
+    "described": 2752,
+    "source_english": 1177,
+    "machine_translated": 1575,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 2390,
+    "inferred": 1103,
+    "unclassified": 680
+   },
+   "liveness": {
+    "checked": "2026-08-12T01:24:15Z",
+    "total": 3013,
+    "ok": 2930,
+    "dead": 24,
+    "pending_dead": 2,
+    "unknown": 54,
+    "archived": 41,
+    "newly_dead": [],
+    "revived": []
+   },
+   "filters": {
+    "locale-bundle": 5,
+    "deployment-recipe": 18,
+    "upstream-fork": 67,
+    "ci-plumbing": 4,
+    "org-meta": 8
+   },
+   "delta": {
+    "entries_active": 7,
+    "per_source": {
+     "eu": 7,
+     "nlreg": 0
+    },
+    "liveness_ok": -32,
+    "liveness_unknown": -6
+   }
   }
  ],
- "updated_at": "2026-08-12T00:56:44Z"
+ "updated_at": "2026-08-12T01:31:04Z"
 }
