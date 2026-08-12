@@ -496,11 +496,27 @@ anything else:
 1. **A responding endpoint is not a working source.** `code.gov` returns 200 and is retired.
    India's OpenForge has a live API, 1,502 projects and zero code. A green pipeline log once
    hid a dead harvest. *Verify content, not status codes.*
-2. **Language was tagged per-source instead of detected.** Broke four times: Finnish/Swedish
-   skipped entirely, 12 entries declaring `description.en` while being German, all 88
-   Portuguese strings mislabelled English, 45 English strings called Danish because English
-   *for* is also a Danish stopword. Now `detect_lang()` reads the TEXT and requires two
-   markers. *Never reintroduce a per-source language assumption.*
+2. **Language tagging.** Broke **five** times: Finnish/Swedish skipped entirely, 12 entries
+   declaring `description.en` while being German, all 88 Portuguese strings mislabelled
+   English, 45 English strings called Danish because English *for* is also a Danish stopword
+   — and then, after that was "fixed" by requiring two markers, English text that simply
+   repeats the homograph: *"used **for** enabling … **for** Dexterity content"* scored two
+   Danish markers, *"print **a** rss feed from **a** given URL"* two Portuguese ones. Five
+   iMio repos were tagged `da`/`pt`.
+   Now: two markers **of which at least one is not also an English word** (`_EN_HOMOGRAPH`).
+   **`test_detect_lang.py` locks all five recurrences in with real catalogue strings** —
+   run it after touching `_STOP`, `_EN_HOMOGRAPH` or `detect_lang`.
+   Two traps found while fixing it, both worth knowing:
+   - **Over-correcting is the worse failure.** A first attempt also listed `la`, `le`, `per`,
+     `van`, `die` as English homographs — true in a dictionary, but they are the *core*
+     stopwords of Italian, French and Dutch, and that version called *"Applicazione vocale su
+     Alexa per la richiesta"* English. Mislabelling foreign text as English silently drops it
+     **out** of the translation queue; the original bug only put the wrong text **in**. Keep
+     `_EN_HOMOGRAPH` to high-frequency English function words.
+   - **Diacritics are evidence, not decoration.** Transcribing a Danish test case as
+     `gor … Faelleskommunal` instead of `gør … Fælleskommunal` made it fail, because `ø`/`æ`
+     were the entire signal. Test strings must be byte-exact from the catalogue.
+   *Never reintroduce a per-source language assumption.*
 3. **Absence of evidence treated as evidence of absence.** An API 404 meant "dead repo" until
    `gitlab.huma-num.fr` turned out to restrict anonymous API access — 53 of 82 "dead" repos
    were alive, including KiCad. A missing GitHub description meant "not software" until it

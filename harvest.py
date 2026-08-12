@@ -110,6 +110,30 @@ _STOP = {
 }
 _STOP_RE = {k: re.compile(v, re.I) for k, v in _STOP.items()}
 
+# Stopwords that are ALSO ordinary English words. Requiring TWO markers was not
+# enough on its own, because these repeat freely in English prose: "used FOR
+# enabling ... FOR Dexterity content" scored 2 Danish markers, and "print A rss
+# feed from A given URL" scored 2 Portuguese ones. Both are English.
+#
+# They are not removed from the lists — `for` really is Danish and `a` really is
+# Portuguese, and dropping them would lose real signal. Instead they still count
+# toward the two-marker total but cannot be the ONLY evidence: genuine Danish
+# carries `og`/`ikke`/`æøå` alongside its `for`. Same principle as the existing
+# note that diacritics are their own evidence because English cannot produce them.
+#
+# `on` (fi) had not misfired yet but is the same trap: "based ON X, ON Y" is
+# English, and the rule should not wait for someone to write that sentence.
+#
+# Keep this set SMALL — only high-frequency English FUNCTION words. A first pass
+# also listed la/le/per/van/die/con/lo, which are English words in the dictionary
+# sense but are the CORE stopwords of Italian, French, Dutch and German. That
+# version called "Applicazione vocale su Alexa per la richiesta" English, and
+# "Mirror van de API-documentatie van Internet.nl" too. Over-correcting here
+# breaks detection for the languages the catalogue actually contains, which is a
+# worse failure than the one being fixed: it silently drops text out of the
+# translation queue instead of putting the wrong text in it.
+_EN_HOMOGRAPH = {"a", "as", "for", "no", "on"}
+
 
 def detect_lang(text, hint=None):
     """Best-effort language of a short description. hint is used only to break
@@ -119,14 +143,22 @@ def detect_lang(text, hint=None):
     for code, rx in _SCRIPTS:
         if rx.search(text):
             return code
-    scores = {k: len(rx.findall(text)) for k, rx in _STOP_RE.items()}
+    hits = {k: [m.group(0).lower() for m in rx.finditer(text)] for k, rx in _STOP_RE.items()}
+    scores = {k: len(v) for k, v in hits.items()}
     best = max(scores, key=scores.get)
-    # Require TWO markers. One is not evidence: "Admin for OS2Display version 2" is
-    # English, but `for` is also a Danish stopword, and a single-hit rule tagged 30+
-    # plainly English strings as Danish. Diacritics (aeoe/umlauts) count as their own
-    # evidence because they cannot occur in English.
-    if scores[best] >= 2:
-        if hint and scores.get(hint, 0) == scores[best]:
+
+    # Require TWO markers, AND at least one that is not also an English word.
+    # Two markers alone was not enough: "Admin for OS2Display version 2" is English
+    # but `for` is Danish, and a single-hit rule tagged 30+ plainly English strings
+    # as Danish. Raising it to two only moved the problem to English text that
+    # repeats the homograph — `for` twice, `a` twice — which tagged 5 iMio repos
+    # Danish and Portuguese. Diacritics count as their own evidence because English
+    # cannot produce them.
+    def solid(code):
+        return scores[code] >= 2 and any(hh not in _EN_HOMOGRAPH for hh in hits[code])
+
+    if solid(best):
+        if hint and scores.get(hint, 0) == scores[best] and solid(hint):
             return hint
         return best
     return "en"       # Latin script, no convincing non-English markers

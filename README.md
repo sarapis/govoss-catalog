@@ -50,6 +50,7 @@ python3 harvest.py --from-cache # rebuild offline from checkpoints, no network
 python3 harvest.py fr it        # re-harvest named sources only
 python3 liveness.py             # monitor only, diffs against the previous run
 python3 analyze.py              # counts, overlap, licence + liveness breakdown
+python3 test_detect_lang.py     # regression test for language detection
 ```
 
 ```bash

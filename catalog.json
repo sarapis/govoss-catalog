@@ -17356,7 +17356,7 @@
    }
   ],
   "country": "BE",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/collective.printrss",
   "functions": [
    "office"
@@ -58749,7 +58749,7 @@
    }
   ],
   "country": "BE",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/imio.behavior.teleservices",
   "functions": [],
   "functions_inferred": false,
@@ -146110,7 +146110,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/cert-manager-webhook-gandi",
   "exclude_reason": "upstream-fork",
   "excluded": true,
@@ -146423,7 +146423,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/email2pdf2",
   "exclude_reason": "upstream-fork",
   "excluded": true,
@@ -147149,7 +147149,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/plone.app.stagingbehavior",
   "exclude_reason": "upstream-fork",
   "excluded": true,

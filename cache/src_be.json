@@ -240,7 +240,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/cert-manager-webhook-gandi",
   "is_fork": true,
   "last_activity": "2023-06-28T13:08:06Z",
@@ -478,7 +478,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/collective.printrss",
   "is_fork": false,
   "last_activity": "2022-12-27T14:59:28Z",
@@ -1176,7 +1176,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/email2pdf2",
   "is_fork": true,
   "last_activity": "2026-05-29T13:31:19Z",
@@ -1500,7 +1500,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/imio.behavior.teleservices",
   "is_fork": false,
   "last_activity": "2024-12-11T08:46:21Z",
@@ -2755,7 +2755,7 @@
  },
  {
   "country": "BE",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/plone.app.stagingbehavior",
   "is_fork": true,
   "last_activity": "2018-01-26T14:43:51Z",
