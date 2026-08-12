@@ -30,16 +30,45 @@ const SERVER_INFO = { name: "govoss-catalog", version: "1.0.0" };
 
 // ---------------------------------------------------------------- data access
 
+// NEVER cache a non-200. A flat `cacheTtl: 3600` caches errors too, and that
+// bit immediately: mcp-index.json was fetched once before it existed, the 404
+// was cached for an hour, and the tool kept reporting the file missing for an
+// hour after it was published. A stale success is merely old; a cached failure
+// is a lie that outlives its cause.
+const CACHE = {
+  cacheTtlByStatus: { "200-299": 3600, "300-399": 0, "400-499": 0, "500-599": 0 },
+  cacheEverything: true,
+};
+
 let MEMO = null; // { generatedAt, entries }
+
+// Fetch through the edge cache, but if the cached answer is a failure, retry
+// ONCE with the cache bypassed. cacheTtlByStatus above stops new errors being
+// cached; this is what heals an error already sitting in the cache from before
+// the fix - which is not hypothetical: a 404 for mcp-index.json was cached
+// while the file did not exist, and kept the tool broken for an hour after it
+// was published. Without this the server's recovery depends on a TTL expiring.
+async function fetchFresh(url) {
+  let res = await fetch(url, { cf: CACHE });
+  if (res.ok) return res;
+  // The retry must change the CACHE KEY, not just the TTL. `cacheTtl: 0`
+  // controls how long a response is STORED; it does not force a cache MISS, so
+  // a retry on the same URL is served the same cached failure - which is
+  // exactly what happened here and why this comment is long. Cloudflare keys on
+  // the full URL including the query string, so a throwaway param guarantees a
+  // fresh trip to the origin.
+  return fetch(url + (url.includes("?") ? "&" : "?") + "cb=" + Date.now(),
+               { cf: { cacheTtl: 0 } });
+}
 
 async function loadIndex(env) {
   const origin = env.CATALOG_ORIGIN;
-  // cacheTtl lets Cloudflare's edge hold the upstream file, so a cold isolate
-  // usually pays a cache hit rather than a trip to Vercel.
-  const res = await fetch(`${origin}/mcp-index.json`, {
-    cf: { cacheTtl: 3600, cacheEverything: true },
-  });
-  if (!res.ok) throw new Error(`catalogue index unavailable (${res.status})`);
+  const url = `${origin}/mcp-index.json`;
+  const res = await fetchFresh(url);
+  // Report the URL and status, not just "failed": this error is read by a model
+  // deciding what to do next, and "404 on <url>" is actionable where "failed"
+  // is not.
+  if (!res.ok) throw new Error(`catalogue index unavailable: GET ${url} -> ${res.status}`);
   const data = await res.json();
   if (MEMO && MEMO.generatedAt === data.generated_at) return MEMO;
   MEMO = { generatedAt: data.generated_at, entries: data.entries };
@@ -47,9 +76,7 @@ async function loadIndex(env) {
 }
 
 async function loadJson(env, path) {
-  const res = await fetch(`${env.CATALOG_ORIGIN}${path}`, {
-    cf: { cacheTtl: 3600, cacheEverything: true },
-  });
+  const res = await fetchFresh(`${env.CATALOG_ORIGIN}${path}`);
   if (!res.ok) throw new Error(`${path} unavailable (${res.status})`);
   return res.json();
 }
