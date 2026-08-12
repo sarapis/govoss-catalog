@@ -7,12 +7,12 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 **Live:** https://govoss-catalog.vercel.app
 · [JSON API](https://govoss-catalog.vercel.app/entries.json)
 · [sources](https://govoss-catalog.vercel.app/sources.html)
-· [status](https://govoss-catalog.vercel.app/status.html)
+· [sources & status](https://govoss-catalog.vercel.app/sources.html)
 · [llms.txt](https://govoss-catalog.vercel.app/llms.txt)
 
 | | |
 |---|---|
-| Entries | **3,070** |
+| Entries | **3,080** |
 | Catalogues | **17**, across 14 countries + the EU + a global registry |
 | English descriptions | 100% of described entries (excl. 171 deliberately-untranslated Bulgarian) |
 | Functional categories | 19, all 233 source category values explicitly mapped |
@@ -66,7 +66,7 @@ from the one actually running.
 and pushes the run's data output — both gated on every earlier step succeeding, so a run with
 a failed step publishes nothing, commits nothing, and leaves the last good copy up. What is
 committed here is what is live. `generated_at` in `/meta.json` is the freshness signal, and
-`/status.html` flips to **Stale** on its own if it has not been republished in over 8 days.
+`/sources.html` reports the run on its own if it has not been republished in over 8 days.
 
 ## Pipeline
 
@@ -82,7 +82,7 @@ committed here is what is live. `generated_at` in `/meta.json` is the freshness 
 | `dedupe.py` | merges on QID then repo URL; never on name similarity |
 | `liveness.py` | GitHub GraphQL + GitLab APIs + per-host HEAD; diffs vs last run |
 | `build_ui.py` → `build_site.sh` → `export_json.py` | the page, the deploy dir, the JSON |
-| `runlog.py` → `build_sources.py` → `build_status.py` | run history, sources page, status page |
+| `runlog.py` → `build_sources.py` → `build_api.py` | run history; sources page (which absorbed the status page); API page |
 | `deploy` → `record` | publish `site/` to Vercel, then commit + push the data — both gated on every earlier step passing |
 
 ## Data model
@@ -146,6 +146,8 @@ rejected, and the four bug shapes that came back repeatedly.
 - `DESIGN-BRIEF.md` — paste-ready brief for restyling the pages (they are generated from
   Python f-strings, not editable HTML — read this before touching the UI)
 - `PAGINATION-BUG.md` — bug report for the EU OSS Catalogue, ready to send
+- `CTFG-CONTRAST-REPORT.md` — design-system contrast report for the Civic Tech Field
+  Guide, ready to send
 - `sources.py` · `replaces.json` · `translations/` — the curated inputs
 - `catalog.json` · `liveness.json` · `history.json` — the data products
 
