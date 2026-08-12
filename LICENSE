@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This licence covers the CODE in this repository: the harvest adapters, the
-normalisation, translation, categorisation, dedupe, liveness and build scripts,
-and the generated pages.
-
-It does NOT cover the catalogued DATA. See LICENSE-DATA.

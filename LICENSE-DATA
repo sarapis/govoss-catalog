@@ -2,7 +2,16 @@ Data licence — Creative Commons Attribution 4.0 International (CC BY 4.0)
 =========================================================================
 
 There are two different things in this repository and they are not under the
-same terms. The code is MIT (see LICENSE). This file covers the data.
+same terms.
+
+LICENSE (MIT) covers the CODE: the harvest adapters, the normalisation,
+translation, categorisation, crosswalk, dedupe, liveness and build scripts, and
+the pages they generate. It is the bare MIT text with nothing appended, because
+GitHub's licence detector matches on the canonical wording and reports
+"NOASSERTION" for a file with an explanatory addendum — a repository that shows
+no licence has, for most readers, no licence.
+
+This file covers the DATA.
 
 
 What is licensed here
