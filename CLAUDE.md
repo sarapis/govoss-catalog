@@ -414,6 +414,36 @@ its own status page still said "Operational", and every update needed a hand-run
   stored login. The file is preferred over the plist because LaunchAgent plists are
   world-readable and end up in backups, and rotating a file needs no `launchctl` reload.
 
+### `record` — the run commits and pushes its own data
+
+The step after `deploy`, sharing its gate, so **what is committed is what is published**. It
+commits `catalog.json`, `history.json`, `liveness.json` and `cache/` and pushes to
+`origin/main`. Before it existed the repo showed whatever was last committed by hand while
+the site moved on weekly — the same drift as the manual deploy, one layer over.
+
+It is deliberately narrow, because this is a public repo and it runs unattended:
+
+- **Explicit path list, never `git add -A`.** An automated `add -A` is how a stray token,
+  scratch file or half-finished edit gets published. `.gitignore` is a backstop, not the plan.
+- **Refuses any branch but `main`**, and refuses mid-rebase/merge/bisect, so it cannot commit
+  onto work in progress.
+- **`git commit -- <paths>`** scopes the commit to the data even if a human had something else
+  staged; their staged edits survive untouched. Verified, along with every guard above.
+- **Never force-pushes.** If origin moved ahead the commit stays local and says so — a data
+  file auto-rebased through a conflict is worse than a stale repo.
+- **`GIT_TERMINAL_PROMPT=0`.** A credential prompt under launchd would hang the job forever
+  with no terminal to answer it.
+
+Git auth is macOS keychain (`credential.helper osxkeychain`, from Xcode's gitconfig) and it
+*does* resolve from a launchd job — checked with `git credential fill` under `env -i`, not
+inferred. Note `git ls-remote` and a no-op `git push --dry-run` both succeed on a public repo
+**without authenticating**, so neither is evidence the credential works; that is the same
+absence-of-evidence shape as bug 3 below.
+
+**The repo grows ~100–250 MB/year** from this: the JSON files are rewritten almost entirely
+each run (one run was +13,188/−12,900 lines). Well inside GitHub's limits, but it is the
+reason to think twice before adding another large generated file to `DATA_PATHS`.
+
 **"Deploy doesn't work under launchd" was a misdiagnosis, and it is the same bug as the
 python3 with no pyyaml — third instance in this repo.** The `vercel` shim's shebang is
 `#!/usr/bin/env node`, `node` was not on the launchd PATH, and the job died with

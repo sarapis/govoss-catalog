@@ -18,9 +18,11 @@
 #   build_ui     regenerates catalogue.html from the finished catalog.json
 #   build_site   assembles site/ from tracked sources (html + vercel.json)
 #   json export  writes site/entries.json + meta.json + by-product + by-category
-#   deploy       publishes site/ to Vercel. LAST, after the status and sources
-#                pages, so the published copy describes the run that published
-#                it — and gated on every earlier step succeeding.
+#   deploy       publishes site/ to Vercel. After the status and sources pages,
+#                so the published copy describes the run that published it —
+#                and gated on every earlier step succeeding.
+#   record       commits and pushes the run's data output. LAST, sharing the
+#                deploy's gate, so what is committed is what is published.
 #
 # Safe to re-run. Harvest checkpoints per source in cache/, so a network blip
 # costs one source, not the whole run.
@@ -206,6 +208,97 @@ publish () {
   fi
 }
 step "deploy" publish
+
+# ---- record --------------------------------------------------------------
+# Commit and push the run's data output, so github.com/sarapis/govoss-catalog
+# reflects what is live instead of whatever was last committed by hand.
+#
+# Runs AFTER deploy and shares its gate, which gives the invariant worth having:
+# what is committed is what is published. A run that failed a step publishes
+# nothing and records nothing, so the repo never claims a state the site is not in.
+#
+# Deliberately narrow, because this is a PUBLIC repo and this runs unattended:
+#   - stages an EXPLICIT path list, never `git add -A`. An automated `add -A` is
+#     how a stray token, scratch file or half-finished edit gets published; the
+#     .gitignore rules are a backstop, not the plan.
+#   - refuses to run anywhere but `main`, and refuses mid-rebase/merge/bisect, so
+#     it cannot commit onto work in progress.
+#   - `git commit -- <paths>` scopes the commit to those paths even if something
+#     else was already staged, so a human's staged edits are left alone.
+#   - NEVER force-pushes. If origin moved ahead the commit stays local and says
+#     so; a data file auto-rebased through a conflict is worse than a stale repo.
+#   - GIT_TERMINAL_PROMPT=0: a credential prompt under launchd would hang the job
+#     forever with no terminal to answer it.
+DATA_PATHS=(catalog.json history.json liveness.json cache/)
+
+record () {
+  local failed
+  failed=$(awk -F'\t' '$2 != "0" { printf "%s ", $1 }' out/steps.tsv)
+  if [ -n "$failed" ]; then
+    echo "NOT RECORDING — failed step(s): $failed"
+    echo "  nothing was published, so there is nothing to record."
+    return 1
+  fi
+
+  export GIT_TERMINAL_PROMPT=0
+
+  git rev-parse --git-dir >/dev/null 2>&1 || { echo "not a git repo; skipping."; return 0; }
+
+  local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "?")
+  if [ "$branch" != "main" ]; then
+    echo "SKIPPING — on branch '$branch', not main. Not committing onto someone's work."
+    return 0
+  fi
+
+  local gd; gd=$(git rev-parse --git-dir)
+  if [ -d "$gd/rebase-merge" ] || [ -d "$gd/rebase-apply" ] \
+     || [ -f "$gd/MERGE_HEAD" ] || [ -f "$gd/BISECT_LOG" ]; then
+    echo "SKIPPING — a rebase/merge/bisect is in progress."
+    return 0
+  fi
+
+  git add -- "${DATA_PATHS[@]}"
+  if git diff --cached --quiet -- "${DATA_PATHS[@]}"; then
+    echo "no data changes to record."
+    return 0
+  fi
+
+  local msg
+  msg=$("$PY" - <<'PY'
+import json
+h = json.load(open("history.json"))["runs"][-1]
+d = h.get("delta") or {}
+lv = h.get("liveness") or {}
+n = h["entries"]["active"]
+head = f"Data: {h['run_at'][:10]} run - {n:,} entries"
+if d.get("entries_active"):
+    head += f" ({d['entries_active']:+d})"
+out = [head, "",
+       f"Automatic record of the {h.get('trigger') or 'manual'} run that published at "
+       f"{h['run_at']}. Every pipeline step exited 0 and the deploy succeeded, so what is "
+       f"committed here is what is live.", ""]
+for k, v in (d.get("per_source") or {}).items():
+    out.append(f"  {k}: {v:+d}")
+if lv.get("newly_dead"):
+    out.append(f"  newly dead: {', '.join(lv['newly_dead'][:5])}")
+if lv.get("revived"):
+    out.append(f"  revived: {', '.join(lv['revived'][:5])}")
+print("\n".join(out))
+PY
+)
+  git commit -q -m "$msg" -- "${DATA_PATHS[@]}" || { echo "commit failed" >&2; return 1; }
+  echo "committed $(git rev-parse --short HEAD)"
+
+  if git push -q origin main 2>&1; then
+    echo "pushed to origin/main"
+  else
+    echo "!! COMMITTED LOCALLY BUT PUSH FAILED — origin has probably moved ahead." >&2
+    echo "   Not force-pushing. Resolve by hand:" >&2
+    echo "     git pull --rebase origin main && git push origin main" >&2
+    return 1
+  fi
+}
+step "record" record
 
 echo ""
 echo "done  $(date -u +%Y-%m-%dT%H:%M:%SZ)"

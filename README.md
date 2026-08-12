@@ -61,10 +61,11 @@ rendered from `schedule/*.plist.template` rather than checked in verbatim, becau
 does not expand `~` inside a plist and a checked-in copy of somebody's home directory drifts
 from the one actually running.
 
-**The run publishes itself.** `run.sh`'s last step deploys `site/` to Vercel, gated on every
-earlier step succeeding — a run with a failed step publishes nothing and leaves the last good
-copy up. `generated_at` in `/meta.json` is the freshness signal, and `/status.html` flips to
-**Stale** on its own if it has not been republished in over 8 days.
+**The run publishes and records itself.** `run.sh` deploys `site/` to Vercel and then commits
+and pushes the run's data output — both gated on every earlier step succeeding, so a run with
+a failed step publishes nothing, commits nothing, and leaves the last good copy up. What is
+committed here is what is live. `generated_at` in `/meta.json` is the freshness signal, and
+`/status.html` flips to **Stale** on its own if it has not been republished in over 8 days.
 
 ## Pipeline
 
@@ -81,6 +82,7 @@ copy up. `generated_at` in `/meta.json` is the freshness signal, and `/status.ht
 | `liveness.py` | GitHub GraphQL + GitLab APIs + per-host HEAD; diffs vs last run |
 | `build_ui.py` → `build_site.sh` → `export_json.py` | the page, the deploy dir, the JSON |
 | `runlog.py` → `build_sources.py` → `build_status.py` | run history, sources page, status page |
+| `deploy` → `record` | publish `site/` to Vercel, then commit + push the data — both gated on every earlier step passing |
 
 ## Data model
 

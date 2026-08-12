@@ -28,6 +28,12 @@ login can be revoked; it just was never the blocker.
 The status page now also re-checks its own age against the reader's clock and flips the badge
 to **Stale**, so a copy that stops being republished stops claiming to be Operational.
 
+A `record` step follows the deploy and shares its gate: it commits `catalog.json`,
+`history.json`, `liveness.json` and `cache/` and pushes to `origin/main`, so the repo matches
+what is live rather than whatever was last committed by hand. It stages an explicit path list
+(never `git add -A`), refuses any branch but `main`, and never force-pushes. Expect ~100–250 MB
+of repo growth a year from the weekly full-rewrite diffs.
+
 ## In rough priority order
 
 1. **Expand `replaces.json`.** 108 of 3,070 entries map to 165 proprietary products. This is
