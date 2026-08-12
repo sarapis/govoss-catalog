@@ -246,6 +246,33 @@ steps exiting 0. Merge to `main` and Monday publishes it.
 
 ---
 
+## Where govoss diverges from the CTFG design system
+
+**Three of the accessibility fixes are patches to the design system, applied here.** They are
+recorded because a future regeneration from the DS bundle would silently revert them, and
+because every other CTFG property inherits the same defects.
+
+| # | DS says | Measured | govoss does instead |
+|---|---|---|---|
+| 1 | `tokens/colors.css:41` &mdash; `--ink-faint: var(--ink-400)` | **2.44:1** on `--paper-50`, 2.53:1 on white | `--ink-faint: var(--ink-500)` &mdash; 5.17:1 |
+| 2 | `--verified: var(--green-500)`, spec'd with white text | **2.65:1** | `--ink-900` on the same green &mdash; 6.62:1 |
+| 3 | icon set ships with **no `aria-hidden`** (0 occurrences in `_ds_bundle.js`) | n/a | every decorative icon gets `aria-hidden="true"` |
+
+Number 1 is the important one: **the design system's own semantic alias for faint TEXT points
+at a colour that cannot legally carry text.** It is a one-line fix upstream, and until it is
+made, any CTFG property using `--ink-faint` on words is failing WCAG 1.4.3.
+
+A fourth is arguable: the utility bar sets `--mint-300` on `--violet-500` (**4.37:1**, just
+under). That pairing comes from the restyle spec rather than the DS's own CSS, so it may be
+local &mdash; but if CTFG's real utility bar uses it, it is upstream too.
+
+**These should go back through Claude Design rather than living here forever.** Until they do,
+do not "resync" govoss with the DS bundle without re-checking contrast: the sync would look
+like a tidy-up and would reintroduce three WCAG failures.
+
+The other seven fixes are correctly local &mdash; `lang`, `<main>`, the skip link and heading
+order are page structure, and the 320px reflow bug was our own markup, not a DS value.
+
 ## Open, and deliberately not done
 
 - **Accessibility: WCAG 2.1 AA audited 2026-08-12. 10 issues found, all fixed.** Contrast now
