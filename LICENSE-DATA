@@ -1,0 +1,61 @@
+Data licence — Creative Commons Attribution 4.0 International (CC BY 4.0)
+=========================================================================
+
+There are two different things in this repository and they are not under the
+same terms. The code is MIT (see LICENSE). This file covers the data.
+
+
+What is licensed here
+---------------------
+
+The COMPILATION — the selection, normalisation, translation, categorisation,
+de-duplication, identity crosswalk, liveness state and procurement mappings
+that turn 17 unrelated catalogues into one schema — is licensed under
+Creative Commons Attribution 4.0 International.
+
+    https://creativecommons.org/licenses/by/4.0/
+    Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The canonical legal code at that URL governs; it is not reproduced here.
+
+In short: use it for anything, including commercially, modify it, redistribute
+it — provided you give attribution and indicate whether you changed anything.
+
+Suggested attribution:
+
+    govoss-catalog by Sarapis (https://github.com/sarapis/govoss-catalog),
+    CC BY 4.0. Compiled from 17 public-sector open source catalogues.
+
+Files this covers: catalog.json, liveness.json, history.json, replaces.json,
+translations/, and the generated exports under site/ (entries.json, meta.json,
+by-product.json, by-category/, sources.json, status.json).
+
+
+What is NOT licensed here
+-------------------------
+
+The underlying ENTRIES are not ours to relicense. Each record describes software
+published by a national, municipal or international catalogue under that
+catalogue's own terms, and those terms differ — some are explicitly open, some
+are unstated, some are public-sector-information regimes specific to one country.
+
+Every entry carries `source` and, where one exists, `entry_url` — a deep link
+back to the record upstream. `sources.py` (published as /sources.json) lists all
+17 catalogues with their access routes. Check the upstream terms before
+redistributing entry content at scale; do not assume this file grants them.
+
+Cached raw checkpoints under `cache/` are verbatim upstream responses, retained
+so the pipeline can be replayed offline without hitting other people's
+infrastructure. They are upstream's data in upstream's shape, not ours.
+
+Nothing here licenses the CATALOGUED SOFTWARE itself. Each project's own licence
+governs its use; `licence_spdx` records it where the upstream string is real SPDX
+and is null rather than guessed where it is not.
+
+
+Corrections
+-----------
+
+If you maintain one of the catalogued projects or one of the source catalogues
+and something here is wrong, misattributed, or should not be included, open an
+issue. Removal requests from publishers are honoured.

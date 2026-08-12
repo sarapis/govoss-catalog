@@ -1,20 +1,16 @@
-# Continuation prompt
+# Open items
 
-Paste this into a fresh session to pick up where 2026-08-11 left off.
+Where the work stands as of 2026-08-11, and what is worth doing next. Doubles as a
+continuation brief: it is written to be handed to whoever — or whatever — picks this up cold.
 
----
-
-I'm continuing work on **`~/Antigravity/govoss-catalog`** — a union catalogue of government
-open source software, live at https://govoss-catalog.vercel.app
-
-**Read `CLAUDE.md` first.** It's the operating manual: every source's access route, why each
+**Read `CLAUDE.md` first.** It is the operating manual: every source's access route, why each
 design decision was made, and a section called *"Four bugs that recurred"* listing failure
-shapes that came back repeatedly. `README.md` has the public overview. Don't re-litigate
-decisions recorded there — particularly the deliberate exclusions.
+shapes that came back repeatedly. `README.md` has the overview. Don't re-litigate decisions
+recorded there — particularly the deliberate exclusions.
 
-Current state: **3,063 entries, 17 catalogues, 14 countries + EU + a global registry.**
-Pipeline is `bash run.sh` (~25 min, order matters — it's documented at the top of the file).
-Scheduled weekly via `org.antigravity.govoss-harvest` (Mondays 07:00).
+State: **3,063 entries, 17 catalogues, 14 countries + EU + a global registry.** Pipeline is
+`bash run.sh` (~25 min; the order matters and is documented at the top of the file). Scheduled
+weekly, Mondays 07:00 — `bash schedule/install.sh` sets that up.
 
 ## Publishing is now automatic (done 2026-08-11)
 

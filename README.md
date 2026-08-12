@@ -38,6 +38,12 @@ require two consecutive observations, because single observations oscillate.
 
 ## Quick start
 
+Python 3.10+, two dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
 ```bash
 bash run.sh                     # full pipeline, ~25 min
 python3 harvest.py --from-cache # rebuild offline from checkpoints, no network
@@ -46,8 +52,14 @@ python3 liveness.py             # monitor only, diffs against the previous run
 python3 analyze.py              # counts, overlap, licence + liveness breakdown
 ```
 
-Runs weekly via `~/Library/LaunchAgents/org.antigravity.govoss-harvest.plist`
-(Mondays 07:00, log at `~/Library/Logs/govoss-harvest.log`).
+```bash
+bash schedule/install.sh        # macOS: install + load the weekly LaunchAgent
+```
+
+Runs Mondays 07:00 local, logging to `~/Library/Logs/govoss-harvest.log`. The LaunchAgent is
+rendered from `schedule/*.plist.template` rather than checked in verbatim, because launchd
+does not expand `~` inside a plist and a checked-in copy of somebody's home directory drifts
+from the one actually running.
 
 **The run publishes itself.** `run.sh`'s last step deploys `site/` to Vercel, gated on every
 earlier step succeeding — a run with a failed step publishes nothing and leaves the last good
@@ -100,6 +112,28 @@ solutions are reachable — see `PAGINATION-BUG.md`.
 Source definitions, access routes and the rejected survey live in `sources.py`, which is the
 single source of truth shared by the page, the JSON and the docs.
 
+## Contributing
+
+Two contributions are worth more than the rest:
+
+**A source we've missed.** The pattern that generalises is *find the machine route the
+catalogue's own site is built from, and read that* — an API, a bulk export, a file in git —
+never a scraped rendered page. Every one of the 17 was found that way. Check
+[`/sources.json`](https://govoss-catalog.vercel.app/sources.json) first: it publishes 13
+catalogues already checked and **rejected**, with the reason, precisely so nobody spends the
+same twenty minutes twice. A live endpoint is not a working source — `code.gov` returns HTTP
+200 and is retired; India's OpenForge has an API, 1,502 projects and zero code.
+
+**A `replaces.json` mapping.** This is the field that makes the catalogue answer *"what can
+we stop paying for?"* rather than *"what exists"*, and it is hand-seeded, so it is the
+thinnest part. Read the `_README` block in that file before adding: `kind`
+(`software` / `service` / `paid-tier`) and `confidence` both matter, and getting them wrong
+produces confident category errors — Drupal does not replace *hosting*, Moodle does not
+produce *training content*.
+
+Read `CLAUDE.md` before changing anything. It records what has already been tried and
+rejected, and the four bug shapes that came back repeatedly.
+
 ## Files
 
 - `CLAUDE.md` — the operating manual: every gotcha, why each decision was made, what not to
@@ -112,5 +146,16 @@ single source of truth shared by the page, the JSON and the docs.
 
 ## Licence
 
-Code in this repository is available for reuse. The catalogued *data* belongs to the
-upstream national catalogues under their own terms; `sources.json` links each one.
+Two different things, two different terms:
+
+- **Code** — MIT. See [`LICENSE`](LICENSE).
+- **The compilation** (normalisation, translation, categorisation, dedupe, liveness,
+  procurement mappings) — CC BY 4.0. See [`LICENSE-DATA`](LICENSE-DATA).
+- **The entries themselves** are *not* ours to relicense. Each describes software published
+  by an upstream catalogue under that catalogue's own terms, which differ by country. Every
+  entry carries `source` and, where one exists, `entry_url` linking back to the upstream
+  record. Check those terms before redistributing entry content at scale.
+
+If you maintain a catalogued project or a source catalogue and something here is wrong,
+misattributed, or should not be included — open an issue. Removal requests from publishers
+are honoured.

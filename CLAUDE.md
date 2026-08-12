@@ -21,8 +21,11 @@ python3 liveness.py          # monitor only (~4.5 min), diffs vs previous run
 python3 analyze.py           # counts, overlap, licence + liveness breakdown
 ```
 
-Schedule: **Mondays 07:00 local** via `~/Library/LaunchAgents/org.antigravity.govoss-harvest.plist`
-(log: `~/Library/Logs/govoss-harvest.log`). Weekly is deliberate — these
+Schedule: **Mondays 07:00 local**, installed with `bash schedule/install.sh` (log:
+`~/Library/Logs/govoss-harvest.log`). **The template under `schedule/` is the source of
+truth** — the copy in `~/Library/LaunchAgents` is derived, so never edit it in place or the
+tracked version and the running one drift, and the tracked one is what you will read when
+something breaks. `bash schedule/install.sh --diff` shows whether they have. Weekly is deliberate — these
 catalogues move slowly and a run costs ~15 min of I/O against other people's
 public infrastructure.
 

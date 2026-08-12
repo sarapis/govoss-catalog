@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  TEMPLATE. Do not install this file directly — run schedule/install.sh, which
+  substitutes __HOME__ and __REPO__ and loads the result. launchd does not expand
+  ~ or $HOME inside a plist, so every path here has to be absolute, which is why
+  a template plus a renderer beats a checked-in copy of somebody's home dir.
+
+  Weekly harvest of the public-sector open source catalogues, followed by the
+  liveness monitor, a regenerated page, and the publish step.
+  (run.sh documents the step ordering and why it is what it is.)
+
+  WEEKLY, not daily, deliberately. These catalogues move slowly — one observed
+  change in a day was code.europa.eu going 9 -> 12 entries. A full run costs
+  ~25 min of network I/O against other people's public infrastructure, so daily
+  would be rude for no added signal. The liveness delta is the part worth
+  watching, and dead repos do not appear faster than weekly either.
+
+  PATH is set explicitly because launchd jobs get a minimal environment:
+    /opt/homebrew/bin              -> gh, used by liveness.py for a GitHub token
+                                      (5000 req/hr GraphQL instead of anonymous
+                                      HEAD, which is what caused a 27% 429 rate)
+    .../Python.framework/3.12/bin  -> a python3 that actually has pyyaml+certifi
+    __HOME__/.npm-global/bin       -> vercel, for the final publish step
+    /usr/local/bin                 -> node. The vercel CLI's shebang is
+                                      `#!/usr/bin/env node`, so without this the
+                                      publish step dies with "env: node: No such
+                                      file or directory" — which looks like an
+                                      auth failure and is not. Prefer a versionless
+                                      node path: an nvm one carries a version
+                                      number and moves on every upgrade.
+  If `gh` is missing, liveness degrades to HEAD rather than failing.
+  run.sh probes for its own python3 regardless, so a wrong Framework path here
+  costs nothing — it is listed for speed, not correctness.
+
+  PUBLISHING: with node on PATH, the Vercel CLI's stored login works from a
+  launchd job (verify with `env -i PATH=<this PATH> HOME=$HOME vercel whoami`).
+  A token is still preferable, since a stored login can be revoked and would then
+  fail every week: run.sh reads VERCEL_TOKEN, then ~/.config/govoss/vercel-token
+  (chmod 600), then falls back to the stored login. The FILE is the preferred
+  route, which is why no token appears below — LaunchAgent plists are
+  world-readable and get swept into backups, and rotating a token in a file needs
+  no launchctl reload. Create tokens at https://vercel.com/account/tokens.
+
+  NL_API_KEY is intentionally absent — the Dutch OSS register needs a key that
+  has not been requested, so harvest.py skips that source and says so. Add it as
+  an EnvironmentVariables entry once you have one. (The Dutch *code platform* at
+  code.overheid.nl needs no key and is harvested; only the register is gated.)
+
+  Run now: launchctl kickstart -k gui/$UID/org.antigravity.govoss-harvest
+  Status:  launchctl print gui/$UID/org.antigravity.govoss-harvest | head -20
+  Unload:  launchctl bootout gui/$UID/org.antigravity.govoss-harvest
+  Log:     __HOME__/Library/Logs/govoss-harvest.log  (stdout AND stderr, appended)
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>org.antigravity.govoss-harvest</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__REPO__/run.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__REPO__</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:__HOME__/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>__HOME__</string>
+  </dict>
+
+  <!-- Mondays at 07:00 local -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>7</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <!--
+    If the Mac is asleep or off at 07:00, launchd runs the job once soon after
+    wake rather than skipping the week — that is StartCalendarInterval's own
+    behaviour for missed occurrences, so no extra key is needed. (An earlier
+    revision of this file claimed StartOnMount did that; it does not — that key
+    is about filesystem mounts and was removed.)
+  -->
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/govoss-harvest.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/govoss-harvest.log</string>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>LowPriorityIO</key>
+  <true/>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

@@ -1,8 +1,25 @@
+# generated per run
 out/
+site/
+catalogue.html
 *.pyc
 __pycache__/
-site/
+
+# scratch gap files from translation triage
 gaps2.json
 new_gaps.json
 translate_gaps.json
-catalogue.html
+
+# ---- credentials. This repo is PUBLIC.
+# run.sh reads a Vercel token from $VERCEL_TOKEN or ~/.config/govoss/vercel-token,
+# and harvest/liveness read $GITHUB_TOKEN and $NL_API_KEY. None of them belong in
+# the tree, and a token that lands here is public the moment it is pushed —
+# GitHub push protection is a backstop, not the plan.
+.env
+.env.*
+*.pem
+*.key
+vercel-token
+.vercel/
+.netrc
+secrets.json

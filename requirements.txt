@@ -1,0 +1,14 @@
+# Two dependencies, deliberately.
+#
+# Everything else — HTTP, HTML, JSON, hashing, the Lexical/Markdown handling, the
+# GraphQL calls — uses the standard library. A harvester that runs unattended once
+# a week is easier to keep alive with fewer moving parts than with nicer ones, and
+# `requests` would not have made any of the hard parts easier: the hard parts were
+# other people's pagination, rate limits and encodings.
+#
+# run.sh probes for an interpreter that can import BOTH of these and refuses to
+# run if none can, because a python3 without pyyaml killed harvest under launchd
+# while every later step "succeeded" on stale data.
+
+PyYAML>=6.0      # publiccode.yml, the richest of the source formats
+certifi>=2024.2  # explicit CA bundle; some source hosts fail on the system store
