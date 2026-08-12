@@ -25,6 +25,9 @@ _th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
 theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
+_cn = importlib.util.spec_from_file_location("ctfg_nav", f"{OUT}/ctfg_nav.py")
+ctfg_nav = importlib.util.module_from_spec(_cn); _cn.loader.exec_module(ctfg_nav)
+NAV = ctfg_nav.load()
 
 STATUS_LABEL = {
     "ready": "Ready to add", "retired": "Retired upstream", "broken": "Broken",
@@ -253,7 +256,7 @@ def build():
         "went, and the %d catalogues that were surveyed and rejected, with reasons."
         % (len(S.SOURCES), len(S.SURVEY)))
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.UTILITY_BAR + theme.topbar("sources") + BODY + theme.FOOTER)
+        + theme.utility_bar(NAV) + theme.topbar("sources") + BODY + theme.footer(NAV))
 
     for k, v in subs.items():
         page = page.replace(k, v)

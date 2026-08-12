@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="372" height="56" viewBox="0 0 372 56" role="img" aria-label="govoss — Civic Tech Field Guide">
+  <text x="0" y="29" fill="#574FD9" font-family="&#39;Space Grotesk&#39;, sans-serif" font-weight="700" font-size="40" letter-spacing="-1.2" dominant-baseline="central">govoss</text>
+  <g transform="translate(175,5) scale(0.9040)">
+    <path fill="#19191E" d="M 16.384 0 L 23.23 0 L 23.23 15.439 C 23.23 19.9 19.648 23.528 15.243 23.528 L 0 23.528 L 0 16.594 L 11.543 16.594 L 3.311 8.257 L 8.152 3.353 L 16.384 11.691 L 16.384 0 Z M 0 26.781 L 0 33.714 L 11.543 33.714 L 3.352 42.012 L 8.193 46.915 L 16.384 38.617 L 16.384 50.309 L 23.23 50.309 L 23.23 34.87 C 23.23 30.409 19.648 26.781 15.243 26.781 L 0 26.781 Z M 49.673 23.528 L 49.673 16.594 L 38.13 16.594 L 46.321 8.296 L 41.48 3.393 L 33.289 11.691 L 33.289 0 L 26.443 0 L 26.443 15.439 C 26.443 19.9 30.026 23.528 34.43 23.528 L 49.673 23.528 Z"></path>
+  </g>
+  <text x="236" fill="#19191E" font-family="&#39;Space Grotesk&#39;, sans-serif" font-weight="700" font-size="23" letter-spacing="-0.25">
+    <tspan x="236" y="24">Civic Tech</tspan>
+    <tspan x="236" y="45">Field Guide</tspan>
+  </text>
+</svg>

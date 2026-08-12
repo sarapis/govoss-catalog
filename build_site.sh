@@ -27,4 +27,6 @@ mkdir -p site site/fonts
 cp catalogue.html site/index.html
 cp deploy-vercel.json site/vercel.json
 cp fonts/*.woff2 fonts/OFL-*.txt site/fonts/
+# the real Sarapis mark, pulled from next.sarapis.org - not redrawn
+cp assets/sarapis-mark.png site/
 echo "site/ assembled: index.html + vercel.json + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"

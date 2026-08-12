@@ -23,6 +23,9 @@ _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_templat
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 _mt = importlib.util.spec_from_file_location("mcp_tools", f"{OUT}/mcp_tools.py")
 M = importlib.util.module_from_spec(_mt); _mt.loader.exec_module(M)
+_cn = importlib.util.spec_from_file_location("ctfg_nav", f"{OUT}/ctfg_nav.py")
+ctfg_nav = importlib.util.module_from_spec(_cn); _cn.loader.exec_module(ctfg_nav)
+NAV = ctfg_nav.load()
 
 
 def esc(s):
@@ -151,7 +154,7 @@ def build():
         "JSON - no key, no rate limit, no pagination - plus an MCP server."
         % "{:,}".format(len(entries)))
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.UTILITY_BAR + theme.topbar("api") + BODY + theme.FOOTER)
+        + theme.utility_bar(NAV) + theme.topbar("api") + BODY + theme.footer(NAV))
 
     for k, v in subs.items():
         page = page.replace(k, v)

@@ -81,14 +81,25 @@ _FACES = [
      "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116"),
     ("Inter", "inter-cyrillic-ext.woff2",
      "U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F"),
+    # Marcellus sets exactly one word - the Sarapis wordmark in the footer -
+    # so it is latin-only on purpose. Taken from next.sarapis.org, whose
+    # --sds-font-logo is "Marcellus", Georgia, "Times New Roman", serif.
+    ("Marcellus", "marcellus-latin.woff2",
+     "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,"
+     "U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,"
+     "U+2215,U+FEFF,U+FFFD"),
 ]
 
-FONT_FACE_CSS = "\n".join(
-    "@font-face{font-family:'%s';font-style:normal;font-weight:400 700;"
-    "font-display:swap;src:url('/fonts/%s') format('woff2');"
-    "unicode-range:%s;}" % (fam, f, rng)
-    for fam, f, rng in _FACES
-)
+def _face(fam, f, rng):
+    # Marcellus is a single-weight family. Declaring "400 700" on it would let
+    # the browser synthesise a fake bold; the others are genuine variable fonts.
+    w = "400" if fam == "Marcellus" else "400 700"
+    return ("@font-face{font-family:'%s';font-style:normal;font-weight:%s;"
+            "font-display:swap;src:url('/fonts/%s') format('woff2');"
+            "unicode-range:%s;}" % (fam, w, f, rng))
+
+
+FONT_FACE_CSS = "\n".join(_face(*x) for x in _FACES)
 
 
 # --------------------------------------------------------------------------
@@ -126,6 +137,8 @@ TOKENS_CSS = """
   --font-ui:'Archivo',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-body:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  /* the Sarapis wordmark face, matching next.sarapis.org's --sds-font-logo */
+  --font-logo:'Marcellus',Georgia,'Times New Roman',serif;
 
   /* radius */
   --r-chip:5px; --r-med:10px; --r-card:14px; --r-table:20px; --r-pill:999px;
@@ -223,6 +236,9 @@ p{margin:0;}
   letter-spacing:-0.03em;color:var(--primary);}
 .brand .bsub{font-family:var(--font-ui);font-size:9px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--ink-600);line-height:1.15;max-width:9em;}
+.brand .bsep{width:1px;height:26px;background:var(--border);margin:0 4px;}
+.brand .bctfg{display:inline-flex;align-items:center;color:var(--ink);}
+.brand .ctfg-mark{height:28px;width:auto;display:block;}
 .nav{display:flex;align-items:center;gap:26px;}
 .nav a{font-family:var(--font-ui);font-weight:600;font-size:15px;color:var(--ink);
   text-decoration:none;}
@@ -238,15 +254,23 @@ p{margin:0;}
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink-600);margin:0;}
 .foot .col a{font-size:12px;color:var(--ink);text-decoration:none;}
 .foot .col a:hover{color:var(--primary);text-decoration:underline;}
-.foot .legal{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;
-  font-size:12px;color:var(--ink-600);}
-.foot .pub{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-.foot .pub .mark{font-family:var(--font-display);font-weight:700;font-size:20px;
-  letter-spacing:-0.02em;color:var(--ink);text-decoration:none;}
+/* A SENTENCE, not a chip row. This was display:flex with a gap, which made
+   every text node and link its own flex item - so the punctuation detached and
+   "MIT" wrapped onto a line by itself. Prose gets prose layout. */
+.foot .legal{font-size:12px;line-height:1.6;color:var(--ink-600);max-width:62ch;}
+.foot .pub{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.sds-logo{align-items:center;gap:.625rem;display:inline-flex;text-decoration:none;
+  color:var(--ink);}
+.sds-logo__mark{width:36px;height:36px;}
+.sds-logo__word{font-family:var(--font-logo);letter-spacing:.05em;text-transform:uppercase;
+  color:currentColor;font-size:1.5rem;font-weight:400;line-height:1;}
 .foot .hair{width:1px;align-self:stretch;background:var(--border);min-height:34px;}
 
 @media (max-width:720px){
   .wrap{padding:0 20px;}
+  /* the publisher/legal divider is only meaningful side by side; once they
+     stack it is a line dangling off the end of the wordmark */
+  .foot .hair{display:none;}
   h1{font-size:34px;} h2{font-size:26px;}
   .topbar{min-height:0;padding:14px 0;}
   .topbar .wrap{flex-wrap:wrap;row-gap:12px;}
@@ -263,22 +287,41 @@ CSS = TOKENS_CSS + BASE_CSS
 # Chrome fragments.
 # --------------------------------------------------------------------------
 
-# The utility bar link set in the handoff is flagged there as a reconstruction
-# of the global CTFG products, to be confirmed against nyc.civictech.guide.
-# Until it is confirmed, we ship ONE link to civictech.guide rather than five
-# guessed deep links: a wrong nav item is a broken promise to the reader, and
-# this page has no way to know it broke.
-UTILITY_BAR = """
+# The utility bar is built from the Civic Tech Field Guide's own CMS, not from a
+# hand-copied list. ctfg_nav.py pulls Payload's `Main Menu` at build time, so
+# when CTFG edits its menu this bar follows on the next weekly run and nobody has
+# to remember this repo exists. The handoff shipped a guessed five-link set with
+# a note to confirm it; this is the confirmation.
+def utility_bar(nav):
+    items = (nav or {}).get("Main Menu") or []
+    links = "".join('<a href="%s">%s</a>' % (i["url"], _esc(i["label"])) for i in items)
+    return """
 <div class="ubar"><div class="wrap">
   <div class="u-l"><span class="u-pre">Part of the</span>
     <a class="u-ctfg" href="https://civictech.guide">Civic Tech Field Guide</a></div>
-  <div class="u-r"><a href="https://civictech.guide">The guide</a></div>
+  <div class="u-r">__LINKS__</div>
 </div></div>
-"""
+""".replace("__LINKS__", links)
+
+
+def _esc(t):
+    return (str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+
+# The CTFG mark, inlined rather than <img>-referenced so it inherits currentColor
+# and needs no extra request. Extracted from the handoff's govoss lockup, which
+# built it from the mark path CTFG uses to brand a chapter site.
+CTFG_MARK = """<svg class="ctfg-mark" viewBox="0 0 50 51" role="img" aria-label="Civic Tech Field Guide" fill="currentColor"><path  d="M 16.384 0 L 23.23 0 L 23.23 15.439 C 23.23 19.9 19.648 23.528 15.243 23.528 L 0 23.528 L 0 16.594 L 11.543 16.594 L 3.311 8.257 L 8.152 3.353 L 16.384 11.691 L 16.384 0 Z M 0 26.781 L 0 33.714 L 11.543 33.714 L 3.352 42.012 L 8.193 46.915 L 16.384 38.617 L 16.384 50.309 L 23.23 50.309 L 23.23 34.87 C 23.23 30.409 19.648 26.781 15.243 26.781 L 0 26.781 Z M 49.673 23.528 L 49.673 16.594 L 38.13 16.594 L 46.321 8.296 L 41.48 3.393 L 33.289 11.691 L 33.289 0 L 26.443 0 L 26.443 15.439 C 26.443 19.9 30.026 23.528 34.43 23.528 L 49.673 23.528 Z"></path></svg>"""
 
 
 def topbar(active=""):
-    """Site header. `active` is one of catalog | sources | api."""
+    """Site header. `active` is one of catalog | sources | api.
+
+    Brand order is govoss wordmark + title, THEN the CTFG mark - govoss to the
+    left of the mark, as the approved lockup has it. The govoss word is set in
+    live type rather than baked into the SVG so it matches the page's own
+    Space Grotesk and stays selectable and searchable.
+    """
     def item(href, label, key):
         cur = ' aria-current="page"' if key == active else ""
         return '<a href="%s"%s>%s</a>' % (href, cur, label)
@@ -287,59 +330,63 @@ def topbar(active=""):
   <a class="brand" href="/">
     <span class="bmark">govoss</span>
     <span class="bsub">Government<br>open source</span>
+    <span class="bsep"></span>
+    <span class="bctfg" title="Part of the Civic Tech Field Guide">__MARK__</span>
   </a>
   <nav class="nav">%s %s %s</nav>
   <div class="t-r">
     <a class="btn btn-primary" href="/#submit">Submit a catalog</a>
   </div>
 </div></header>
-""" % (item("/", "Catalog", "catalog"),
+""".replace("__MARK__", CTFG_MARK) % (
+       item("/", "Catalog", "catalog"),
        item("/sources.html", "Sources", "sources"),
        item("/api.html", "API", "api"))
 
 
-# Published by Sarapis, affiliated with CTFG — not a CTFG property.
+# Published by Sarapis, affiliated with CTFG - not a CTFG property.
 #
-# The Sarapis mark is NOT in the handoff bundle and the brief says to use the
-# real one rather than redraw it, so the publisher slot is a text wordmark
-# until the asset arrives. It is deliberately not a placeholder box: a missing
-# logo should read as a considered wordmark, not as a broken image.
+# The Sarapis lockup is the REAL one, pulled from next.sarapis.org rather than
+# redrawn: /sarapis-mark.png at 36px beside the word in Marcellus, uppercase,
+# .05em tracking, weight 400 - which is exactly what that site's `.sds-logo`
+# and `--sds-font-logo` specify. The design brief said to use the real mark and
+# not redraw it; this is that.
 #
 # LICENCE BADGES: the handoff pairs a CC BY-NC-SA badge with "data CC BY 4.0".
-# Shipping that image would tell a scanning reader the data is NonCommercial —
-# the opposite of what the repo grants, and a direct deterrent to the reuse
-# this catalogue exists to enable. The terms are stated in words instead, each
-# scoped to what it actually covers.
-FOOTER = """
+# Shipping that image would tell a scanning reader the data is NonCommercial -
+# the opposite of what the repo grants, and a direct deterrent to the reuse this
+# catalogue exists to enable. The terms are stated in words instead, each scoped
+# to what it actually covers.
+#
+# The link columns come from the SAME CTFG CMS as the utility bar, so the four
+# "Footer - <group>" menus stay in step with the rest of the network.
+def footer(nav):
+    cols = ""
+    for name, items in _footer_groups(nav):
+        links = "".join('<a href="%s">%s</a>' % (i["url"], _esc(i["label"])) for i in items)
+        cols += '<div class="col"><h4>%s</h4>%s</div>' % (_esc(name), links)
+    # govoss's own links stay first: this is a govoss page, and a reader looking
+    # for the data should not have to scan four CTFG columns to find it.
+    own = ('<div class="col"><h4>This catalogue</h4>'
+           '<a href="/">Browse entries</a>'
+           '<a href="/sources.html">Sources &amp; harvest status</a>'
+           '<a href="/api.html">API for agents</a>'
+           '<a href="/entries.json">entries.json</a>'
+           '<a href="https://github.com/sarapis/govoss-catalog">Source on GitHub</a>'
+           '</div>')
+    return """
 <footer class="foot tex"><div class="wrap">
-  <div class="cols">
-    <div class="col">
-      <h4>Catalog</h4>
-      <a href="/">Browse entries</a>
-      <a href="/sources.html">Sources &amp; harvest status</a>
-      <a href="/api.html">API for agents</a>
-      <a href="/#submit">Submit a catalog</a>
-    </div>
-    <div class="col">
-      <h4>Data</h4>
-      <a href="/entries.json">entries.json</a>
-      <a href="/sources.json">sources.json</a>
-      <a href="/by-product.json">by-product.json</a>
-      <a href="/llms.txt">llms.txt</a>
-    </div>
-    <div class="col">
-      <h4>Project</h4>
-      <a href="https://github.com/sarapis/govoss-catalog">Source on GitHub</a>
-      <a href="https://github.com/sarapis/govoss-catalog/issues/new">Report a correction</a>
-      <a href="https://civictech.guide">Civic Tech Field Guide</a>
-    </div>
-  </div>
+  <div class="cols">__OWN____COLS__</div>
   <hr class="dashed" style="margin:28px 0 20px">
   <div class="pub">
-    <a class="mark" href="https://sarapis.org">Sarapis</a>
+    <a class="sds-logo" href="https://sarapis.org">
+      <img class="sds-logo__mark" src="/sarapis-mark.png" alt="" width="36" height="36">
+      <span class="sds-logo__word">Sarapis</span>
+    </a>
     <span class="hair"></span>
-    <span class="legal" style="max-width:52em">
-      Published by Sarapis, in affiliation with the Civic Tech Field Guide.
+    <span class="legal">
+      Published by Sarapis, in affiliation with the
+      <a href="https://civictech.guide">Civic Tech Field Guide</a>.
       Catalogue data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>;
       code <a href="https://github.com/sarapis/govoss-catalog/blob/main/LICENSE">MIT</a>.
       Individual entries remain under the terms of the government catalogue that
@@ -347,7 +394,17 @@ FOOTER = """
     </span>
   </div>
 </div></footer>
-"""
+""".replace("__OWN__", own).replace("__COLS__", cols)
+
+
+def _footer_groups(nav):
+    out = []
+    for loc, items in (nav or {}).items():
+        if not loc.lower().startswith("footer"):
+            continue
+        name = loc.replace("\u2014", "-").split("-")[-1].strip() or loc
+        out.append((name, items))
+    return out
 
 
 def head(title, description, canonical=""):

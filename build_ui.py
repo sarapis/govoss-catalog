@@ -140,6 +140,9 @@ _th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
 theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
+_cn = importlib.util.spec_from_file_location("ctfg_nav", f"{OUT}/ctfg_nav.py")
+ctfg_nav = importlib.util.module_from_spec(_cn); _cn.loader.exec_module(ctfg_nav)
+NAV = ctfg_nav.load()
 
 n_entries = len(_inc)
 n_srcs = len(sources)
@@ -171,8 +174,8 @@ PAGE = (
         "catalogues worldwide, normalised onto one schema. Free JSON API at /entries.json "
         "- no key, no pagination.")
     + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
-    + theme.UTILITY_BAR + theme.topbar("catalog")
-    + T.BODY + theme.FOOTER + T.SCRIPT
+    + theme.utility_bar(NAV) + theme.topbar("catalog")
+    + T.BODY + theme.footer(NAV) + T.SCRIPT
 )
 
 for k, v in SUBS.items():

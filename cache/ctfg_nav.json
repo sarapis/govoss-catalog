@@ -1,0 +1,128 @@
+{
+ "Footer \u2014 About": [
+  {
+   "label": "About us",
+   "url": "https://civictech.guide/about"
+  },
+  {
+   "label": "Hire us",
+   "url": "https://civictech.guide/hire-us"
+  },
+  {
+   "label": "Contact",
+   "url": "https://app.civictech.guide/contact"
+  },
+  {
+   "label": "FAQ",
+   "url": "https://civictech.guide/what-can-i-do-with-the-civic-tech-field-guide"
+  },
+  {
+   "label": "Guiding principles",
+   "url": "https://civictech.guide/guiding-principles"
+  },
+  {
+   "label": "Changelog",
+   "url": "https://app.civictech.guide/changelog"
+  }
+ ],
+ "Footer \u2014 Directory": [
+  {
+   "label": "The Tech",
+   "url": "https://app.civictech.guide/categories#by-tech"
+  },
+  {
+   "label": "The People",
+   "url": "https://app.civictech.guide/categories#by-people"
+  },
+  {
+   "label": "Adjacent Fields",
+   "url": "https://app.civictech.guide/categories#adjacent"
+  },
+  {
+   "label": "By Issue",
+   "url": "https://app.civictech.guide/issues"
+  }
+ ],
+ "Footer \u2014 Get Involved": [
+  {
+   "label": "Add listing",
+   "url": "https://app.civictech.guide/add"
+  },
+  {
+   "label": "Claim your listing",
+   "url": "https://civictech.guide/how-to-claim-your-page-on-the-civic-tech-field-guide"
+  },
+  {
+   "label": "Volunteer",
+   "url": "https://app.civictech.guide/volunteer"
+  },
+  {
+   "label": "Become a curator",
+   "url": "https://app.civictech.guide/volunteer"
+  },
+  {
+   "label": "Spread the word",
+   "url": "https://civictech.guide/contribute"
+  }
+ ],
+ "Footer \u2014 Resources": [
+  {
+   "label": "Jobs",
+   "url": "https://app.civictech.guide/jobs"
+  },
+  {
+   "label": "Calendar",
+   "url": "https://app.civictech.guide/calendar"
+  },
+  {
+   "label": "Civic AI",
+   "url": "https://civictech.guide/ai"
+  },
+  {
+   "label": "Impact Explorer",
+   "url": "https://app.civictech.guide/impact"
+  },
+  {
+   "label": "Funding Explorer",
+   "url": "https://app.civictech.guide/funding"
+  },
+  {
+   "label": "World Map",
+   "url": "https://civictech.guide/directory?view=map"
+  },
+  {
+   "label": "Blog",
+   "url": "https://civictech.guide/blog"
+  },
+  {
+   "label": "Research",
+   "url": "https://civictech.guide/research"
+  },
+  {
+   "label": "Timeline",
+   "url": "https://civictech.guide/timeline"
+  },
+  {
+   "label": "Decade-Plus Club",
+   "url": "https://app.civictech.guide/decade-club"
+  }
+ ],
+ "Main Menu": [
+  {
+   "label": "Directory",
+   "url": "https://app.civictech.guide/"
+  },
+  {
+   "label": "Calendar",
+   "url": "https://app.civictech.guide/calendar"
+  },
+  {
+   "label": "Map",
+   "url": "https://civictech.guide/map"
+  },
+  {
+   "label": "Build",
+   "url": "https://civictech.guide/build"
+  }
+ ]
+}
