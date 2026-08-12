@@ -5223,7 +5223,7 @@
    "MS",
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
-  "version": "9.5.0",
+  "version": "9.5.1",
   "wikidata": "Q3050461"
  },
  {
@@ -8303,8 +8303,8 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "2.0.2",
-  "wikidata": "Q131897282"
+  "version": "1.7.5",
+  "wikidata": "Q131622251"
  },
  {
   "country": "FR",
@@ -8515,7 +8515,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "6.0.16",
+  "version": "6.0.17",
   "wikidata": "Q11223506"
  },
  {
@@ -8662,7 +8662,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "11.2",
+  "version": "11.3",
   "wikidata": "Q1623223"
  },
  {
@@ -9524,7 +9524,7 @@
    "Universit\u00e9 de Limoges",
    "administration centrale"
   ],
-  "version": "7.6.1",
+  "version": "7.6.2",
   "wikidata": "Q105099901"
  },
  {
@@ -10913,6 +10913,7 @@
    "DREAL Pays Loire/SCTE/CSD",
    "Lyc\u00e9e des m\u00e9tiers entre Meurthe et Sanon",
    "MA",
+   "MEAE",
    "MEN",
    "MESR",
    "MI",
@@ -12796,7 +12797,8 @@
   "used_by": [
    "MI",
    "MJ",
-   "Mairie d'Arcueil"
+   "Mairie d'Arcueil",
+   "Prefecture 06"
   ],
   "version": "8.3.2",
   "wikidata": "Q98731937"
@@ -12918,7 +12920,7 @@
    "MD",
    "Nantes M\u00e9tropole"
   ],
-  "version": "4.6.7",
+  "version": "4.6.8",
   "wikidata": "Q132952391"
  },
  {
@@ -19203,7 +19205,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.18",
+  "version": "4.4.19",
   "wikidata": "Q1536426"
  },
  {
