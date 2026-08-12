@@ -961,11 +961,13 @@ if __name__ == "__main__":
     # so a network blip late in the run can never destroy earlier good data —
     # and catalog.json is always assembled from every checkpoint on disk, not
     # just the sources requested this time.
+    timings = {}
     for k in want:
         if k not in SOURCES:
             print(f"unknown source {k!r}; known: {', '.join(SOURCES)}")
             sys.exit(2)
         print(f"[{k.upper()}]")
+        _t0 = time.time()
         try:
             got = SOURCES[k]()
             # Checkpoints are committed weekly. Adapters emit in whatever order
@@ -978,6 +980,13 @@ if __name__ == "__main__":
         except Exception as e:
             failed[k] = f"{type(e).__name__}: {e}"
             print(f"    !! FAILED {failed[k]}")
+        # Per-source wall time. Recorded because the status page reports how long
+        # each catalogue takes, and because a source that suddenly slows is the
+        # earliest sign it has started throttling us - visible long before it
+        # starts failing outright. Written every run, success or failure.
+        timings[k] = round(time.time() - _t0, 1)
+
+    json.dump(timings, open(f"{CACHE}/_timing.json", "w"), indent=1, sort_keys=True)
 
     for k in SOURCES:
         f = f"{CACHE}/src_{k}.json"

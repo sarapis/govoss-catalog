@@ -18,7 +18,8 @@
 #   build_ui     regenerates catalogue.html from the finished catalog.json
 #   build_site   assembles site/ from tracked sources (html + vercel.json)
 #   json export  writes site/entries.json + meta.json + by-product + by-category
-#   deploy       publishes site/ to Vercel. After the status and sources pages,
+#   deploy       publishes site/ to Vercel. After the sources page (which now
+#                also writes status.json),
 #                so the published copy describes the run that published it —
 #                and gated on every earlier step succeeding.
 #   record       commits and pushes the run's data output. LAST, sharing the
@@ -65,16 +66,21 @@ mkdir -p out
 STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 TRIGGER="${GOVOSS_TRIGGER:-manual}"
 
+# steps.tsv is name<TAB>exit<TAB>seconds. The third column is new: the status
+# page shows each step's share of the run, and nothing recorded how long a step
+# took — only whether it exited 0. Duration is also the cheapest early warning
+# that a source has started rate-limiting us.
 step () {
   local label="$1"; shift
+  local t0=$SECONDS
   echo ""
   echo "── $label ──────────────────────────────────────────"
   if "$@"; then
-    printf '%s\t0\n' "$label" >> out/steps.tsv
+    printf '%s\t0\t%s\n' "$label" "$((SECONDS - t0))" >> out/steps.tsv
     return 0
   fi
   local code=$?
-  printf '%s\t%s\n' "$label" "$code" >> out/steps.tsv
+  printf '%s\t%s\t%s\n' "$label" "$code" "$((SECONDS - t0))" >> out/steps.tsv
   echo "!! step failed: $* (exit $code; continuing — later steps still add value)"
   return $code
 }
@@ -120,8 +126,7 @@ if lv["newly_dead"]:
 PY
 
 step "run log"      "$PY" -u runlog.py "$STARTED" "$TRIGGER"
-step "sources page" "$PY" -u build_sources.py
-step "status page"  "$PY" -u build_status.py
+step "sources page" "$PY" -u build_sources.py   # also writes status.json
 
 # ---- publish -------------------------------------------------------------
 # Without this the weekly run regenerated everything and published none of it:

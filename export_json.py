@@ -413,7 +413,7 @@ search all ignore query strings, so only 20 of its 1,084 solutions are reachable
         "# Structured data - prefer these over parsing the HTML\n"
         "# /entries.json  /meta.json  /by-product.json  /status.json  /llms.txt\n"
         "Sitemap: https://govoss-catalog.vercel.app/sitemap.xml\n")
-    urls = ["/", "/status.html", "/entries.json", "/meta.json",
+    urls = ["/", "/sources.html", "/api.html", "/entries.json", "/meta.json",
             "/by-product.json", "/llms.txt"]
     open(f"{SITE}/sitemap.xml", "w").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

@@ -44,6 +44,8 @@ def main():
     # run shows its stale count rather than silently reading as zero
     sources = {}
     cache = f"{OUT}/cache"
+    # written by harvest.py; absent on older runs and on a --from-cache rebuild
+    timing = load(f"{cache}/_timing.json", {}) or {}
     if os.path.isdir(cache):
         for f in sorted(os.listdir(cache)):
             if f.startswith("src_") and f.endswith(".json"):
@@ -53,6 +55,7 @@ def main():
                     "records": len(rows),
                     "checkpoint_mtime": time.strftime(
                         "%Y-%m-%dT%H:%M:%SZ", time.gmtime(os.path.getmtime(f"{cache}/{f}"))),
+                    "seconds": timing.get(key),
                 }
 
     steps, failures = [], {}
@@ -63,9 +66,18 @@ def main():
             if len(parts) >= 2:
                 name, code = parts[0], parts[1]
                 ok = code == "0"
-                steps.append({"step": name, "ok": ok, "exit": int(code) if code.isdigit() else code})
+                # third column is seconds, added when the status page started
+                # reporting each step's share of the run. Older rows have two
+                # columns, so this stays optional rather than assuming.
+                secs = int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else None
+                steps.append({"step": name, "ok": ok,
+                              "exit": int(code) if code.isdigit() else code,
+                              "duration_s": secs})
                 if not ok:
                     failures[name] = f"exit {code}"
+
+    catalogues = collections.Counter(
+        s for r in active for s in (r.get("sources") or [r.get("source")]) if s)
 
     translated = sum(1 for r in active if r.get("translated"))
     described = sum(1 for r in active if r.get("short_desc"))
@@ -87,6 +99,7 @@ def main():
             "multi_country": sum(1 for r in active if len(r.get("countries") or []) > 1),
         },
         "sources": sources,
+        "catalogues": dict(catalogues),
         "translation": {
             "described": described,
             "source_english": src_en,

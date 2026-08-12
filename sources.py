@@ -13,6 +13,7 @@ same thing three months later.
 # ---- ingested sources
 SOURCES = {
     "IT/developers-italia": {
+        "checkpoint": "it",
         "label": "Developers Italia", "country": "IT", "flag": "\U0001F1EE\U0001F1F9",
         "site": "https://developers.italia.it/en/software",
         "api": "https://api.developers.italia.it/v1/software",
@@ -21,6 +22,7 @@ SOURCES = {
                 "publiccode.yml verbatim per entry.",
     },
     "FR/sill": {
+        "checkpoint": "fr",
         "label": "SILL", "country": "FR", "flag": "\U0001F1EB\U0001F1F7",
         "site": "https://code.gouv.fr/sill",
         "api": "https://code.gouv.fr/sill/api/sill.json",
@@ -30,12 +32,14 @@ SOURCES = {
                 "Wikidata QIDs nowhere.",
     },
     "FR/awesome-codegouvfr": {
+        "checkpoint": "fr",
         "label": "awesome-codegouvfr", "country": "FR", "flag": "\U0001F1EB\U0001F1F7",
         "site": "https://code.gouv.fr/",
         "api": "https://code.gouv.fr/data/awesome-codegouvfr.json",
         "route": "bulk JSON", "claim": "curated French public-sector",
     },
     "DE/openCode": {
+        "checkpoint": "de",
         "label": "openCode", "country": "DE", "flag": "\U0001F1E9\U0001F1EA",
         "site": "https://opencode.de/en/software",
         "api": "https://gitlab.opencode.de/api/v4/projects",
@@ -45,6 +49,7 @@ SOURCES = {
                 "GitLab - so the forge API reproduces the official directory exactly.",
     },
     "DE/opensource.muenchen.de": {
+        "checkpoint": "muc",
         "label": "Munich Open Source", "country": "DE", "flag": "\U0001F1E9\U0001F1EA",
         "site": "https://opensource.muenchen.de/software/",
         "api": "https://github.com/it-at-m/opensource.muenchen.de/tree/main/software",
@@ -59,6 +64,7 @@ SOURCES = {
                 "awesome-codegouvfr and SILL.",
     },
     "NL/code.overheid.nl": {
+        "checkpoint": "nl",
         "label": "code.overheid.nl", "country": "NL", "flag": "\U0001F1F3\U0001F1F1",
         "site": "https://code.overheid.nl/",
         "api": "https://code.overheid.nl/api/v1/repos/search",
@@ -67,6 +73,7 @@ SOURCES = {
                 "makes the separate OSS register's API key unnecessary for coverage.",
     },
     "BE/iMio": {
+        "checkpoint": "be",
         "label": "iMio", "country": "BE", "flag": "\U0001F1E7\U0001F1EA",
         "site": "https://www.imio.be/",
         "api": "https://api.github.com/orgs/IMIO/repos",
@@ -75,6 +82,7 @@ SOURCES = {
                 "GitHub metadata and 32 forks are filtered out.",
     },
     "DK/os2": {
+        "checkpoint": "os2",
         "label": "OS2 Denmark", "country": "DK", "flag": "\U0001F1E9\U0001F1F0",
         "site": "https://os2.eu/",
         "api": "https://api.github.com/orgs/OS2web/repos",
@@ -89,6 +97,7 @@ SOURCES = {
                 "Danish/English; ~82 Danish strings are NOT yet translated.",
     },
     "BG/governmentbg": {
+        "checkpoint": "bg",
         "label": "e-Government Ministry", "country": "BG", "flag": "\U0001F1E7\U0001F1EC",
         "site": "https://github.com/governmentbg",
         "api": "https://api.github.com/orgs/governmentbg/repos",
@@ -102,6 +111,7 @@ SOURCES = {
                 "summaries.",
     },
     "SE/offentligkod": {
+        "checkpoint": "se",
         "label": "Offentligkod", "country": "SE", "flag": "\U0001F1F8\U0001F1EA",
         "site": "https://offentligkod.se/",
         "api": "https://gitlab.com/open-data-knowledge-sharing/katalogen",
@@ -110,6 +120,7 @@ SOURCES = {
                 "most durable source here for exactly that reason.",
     },
     "FI/avoinkoodi": {
+        "checkpoint": "fi",
         "label": "Avoinkoodi", "country": "FI", "flag": "\U0001F1EB\U0001F1EE",
         "site": "https://avoinkoodi.fi/",
         "api": "https://avoinkoodi.fi/projects.json",
@@ -117,6 +128,7 @@ SOURCES = {
         "note": "Three files: national, municipal and education projects.",
     },
     "CA/code.open.canada.ca": {
+        "checkpoint": "ca",
         "label": "Open Resource Exchange", "country": "CA", "flag": "\U0001F1E8\U0001F1E6",
         "site": "https://code.open.canada.ca/en/index.html",
         "api": "https://code.open.canada.ca/code.json",
@@ -126,6 +138,7 @@ SOURCES = {
                 "text field is localised {en, fr}, including repositoryURL.",
     },
     "PT/arte": {
+        "checkpoint": "pt",
         "label": "ARTE Portugal", "country": "PT", "flag": "\U0001F1F5\U0001F1F9",
         "site": "https://github.com/amagovpt",
         "api": "https://api.github.com/orgs/amagovpt/repos",
@@ -139,6 +152,7 @@ SOURCES = {
                 "been misread here as ARTE the Franco-German broadcaster.",
     },
     "IE/ogcio": {
+        "checkpoint": "ie",
         "label": "OGCIO Ireland", "country": "IE", "flag": "\U0001F1EE\U0001F1EA",
         "site": "https://github.com/ogcio",
         "api": "https://api.github.com/orgs/ogcio/repos",
@@ -150,6 +164,7 @@ SOURCES = {
                 "its search is broken.",
     },
     "TW/code.gov.tw": {
+        "checkpoint": "tw",
         "label": "Public Code Platform (moda)", "country": "TW", "flag": "\U0001F1F9\U0001F1FC",
         "site": "https://code.gov.tw/",
         "api": "https://code.gov.tw/api/OpenDataSet/PublicProgramInfoData/json",
@@ -162,6 +177,7 @@ SOURCES = {
                 "the same shell, so a link cannot be verified.",
     },
     "GLOBAL/dpg": {
+        "checkpoint": "dpg",
         "label": "Digital Public Goods Registry", "country": "GLOBAL", "flag": "\U0001F310",
         "site": "https://www.digitalpublicgoods.net/registry",
         "api": "https://app.digitalpublicgoods.net/api/dpgs",
@@ -174,6 +190,7 @@ SOURCES = {
                 "adopter signal.",
     },
     "EU/code.europa.eu": {
+        "checkpoint": "eu",
         "label": "code.europa.eu", "country": "EU", "flag": "\U0001F1EA\U0001F1FA",
         "site": "https://code.europa.eu/",
         "api": "https://code.europa.eu/api/v4/projects",
@@ -300,6 +317,18 @@ SURVEY = [
                "the need of a formal mutual legal assistance request.\" Recorded because it "
                "surfaced in a software-catalogue search and reads plausibly relevant from the "
                "title alone."},
+    {"country": "NL", "flag": "\U0001F1F3\U0001F1F1",
+     "name": "Dutch OSS register (api.developer.overheid.nl)",
+     "url": "https://api.developer.overheid.nl/oss-register/v1",
+     "status": "ready",
+     "detail": "A real register, and the one source here that is blocked only by paperwork: "
+               "every read returns 401 without an x-api-key, and a key has not been requested. "
+               "Not urgent - the Dutch CODE PLATFORM at code.overheid.nl is harvested and needs "
+               "no key, and is arguably the better source anyway (first-hand repositories rather "
+               "than a register of pointers). Recorded here because it was previously visible "
+               "only as a '0 records' warning on the status page; when that page merged into "
+               "this one the warning had nowhere to live, and a known gap with no home is a gap "
+               "that gets forgotten."},
 ]
 
 

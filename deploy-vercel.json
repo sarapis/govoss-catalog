@@ -30,6 +30,7 @@
     { "source": "/api/catalog", "destination": "/entries.json", "permanent": false },
     { "source": "/api/meta", "destination": "/meta.json", "permanent": false },
     { "source": "/catalog.json", "destination": "/entries.json", "permanent": false },
-    { "source": "/data.json", "destination": "/entries.json", "permanent": false }
+    { "source": "/data.json", "destination": "/entries.json", "permanent": false },
+    { "source": "/status.html", "destination": "/sources.html", "permanent": true }
   ]
 }
