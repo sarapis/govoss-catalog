@@ -1,8 +1,13 @@
 # govoss-catalog
 
-> Aggregated catalogue of **national government open source software**, harvested
-> first-hand from eight European national catalogues, normalised onto one schema,
-> translated to English, categorised by function, and liveness-monitored.
+> Union catalogue of **government open source software**, harvested first-hand from 17
+> national, municipal and international catalogues, normalised onto one schema, translated to
+> English, categorised by function, de-duplicated and liveness-monitored.
+>
+> **3,063 entries · 17 catalogues · 14 countries + EU + global.** Live at
+> https://govoss-catalog.vercel.app — see `README.md` for the public overview and
+> `CONTINUE.md` for open items. This file is the operating manual: it records why each
+> decision was made and what not to re-litigate.
 
 Output: `catalogue.html` (self-contained browsable page) and `catalog.json` (the data).
 
@@ -21,7 +26,7 @@ Schedule: **Mondays 07:00 local** via `~/Library/LaunchAgents/org.antigravity.go
 catalogues move slowly and a run costs ~15 min of I/O against other people's
 public infrastructure.
 
-## The eight sources, and how each is reached
+## The 17 sources, and how each is reached
 
 | Country | Source | Route | ~Count |
 |---|---|---|---|
@@ -45,8 +50,13 @@ the global survey. Imported by `build_ui.py`, `export_json.py` and `build_source
 URL cannot disagree between the page, the JSON and the docs. `/sources.html` + `/sources.json`
 render it with live counts.
 
-**All eight converge on `publiccode.yml`** — that is what makes this an ingestion
-project rather than a scraping project.
+Not all of them use `publiccode.yml` any more — that was true of the original eight and is
+still the richest tier (1,080 entries), but the catalogue now also ingests `code.json`
+(Canada), recutils in git (Sweden), markdown frontmatter (Munich), an official open-data
+export (Taiwan), plain GitHub/GitLab/Forgejo org scans (Belgium, Ireland, Portugal, Denmark,
+Bulgaria, Netherlands) and a REST API (DPG). **The pattern that generalises is: find the
+machine route the catalogue's own site is built from, and read that.** Every source here was
+found that way, never by scraping a rendered page.
 
 ### Things that will bite you
 
@@ -379,6 +389,27 @@ good figure rather than silently reading as zero.
 dedupe, filter and export steps and the liveness confirmation pass — which is why its dead
 count is 83 against today's 22. Nothing else is back-filled; with one run the page says so
 rather than drawing a trend line it cannot support.
+
+## Four bugs that recurred — check for these first
+
+The same shapes came back repeatedly. If something looks wrong, suspect these before
+anything else:
+
+1. **A responding endpoint is not a working source.** `code.gov` returns 200 and is retired.
+   India's OpenForge has a live API, 1,502 projects and zero code. A green pipeline log once
+   hid a dead harvest. *Verify content, not status codes.*
+2. **Language was tagged per-source instead of detected.** Broke four times: Finnish/Swedish
+   skipped entirely, 12 entries declaring `description.en` while being German, all 88
+   Portuguese strings mislabelled English, 45 English strings called Danish because English
+   *for* is also a Danish stopword. Now `detect_lang()` reads the TEXT and requires two
+   markers. *Never reintroduce a per-source language assumption.*
+3. **Absence of evidence treated as evidence of absence.** An API 404 meant "dead repo" until
+   `gitlab.huma-num.fr` turned out to restrict anonymous API access — 53 of 82 "dead" repos
+   were alive, including KiCad. A missing GitHub description meant "not software" until it
+   excluded `Products.PloneMeeting`. *Confirm through a second channel before asserting.*
+4. **String-replace patching fails silently.** A visible UI banner "landed" against markup
+   from a different file and simply did not appear. `showex` resolved to an id-global DOM
+   element instead of the variable. *Verify the built output, not the patch report.*
 
 ## Gotchas in this repo
 

@@ -2,3 +2,7 @@ out/
 *.pyc
 __pycache__/
 site/
+gaps2.json
+new_gaps.json
+translate_gaps.json
+catalogue.html
