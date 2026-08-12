@@ -248,9 +248,14 @@ steps exiting 0. Merge to `main` and Monday publishes it.
 
 ## Open, and deliberately not done
 
-- **Accessibility has still never been audited.** Focus rings, `aria-pressed` and `aria-label`
-  are in place and mobile hit targets are ≥44px, but no audit has run. `--ink-400` on
-  `--paper-50` at 12px carries the entry meta line and is the most likely contrast failure.
+- **Accessibility: WCAG 2.1 AA audited 2026-08-12. 10 issues found, all fixed.** Contrast now
+  clears 4.5:1 on all three pages — **lowest measured anywhere is 5.17:1**. `lang="en"`, a
+  `<main>` landmark and a skip link are in place, heading order is unbroken, icons are
+  `aria-hidden`, and reflow passes at 320px. The suspicion previously recorded here was
+  correct: `--ink-400` measured 2.44:1 and failed everywhere it carried words.
+  **Not done: testing with a real screen reader.** This was automated checks plus keyboard
+  navigation, which catches most issues but not all of them — VoiceOver/NVDA would be the next
+  step, and no claim of full conformance should be made until it has run.
 - **The utility bar shows one CTFG link**, not the full Main Menu set, if the CMS is
   unreachable at build time. Check `cache/ctfg_nav.json` is current if it looks thin.
 - **The sparklines fill in over time.** Runs before 2026-08-12 have no per-catalogue record, so
