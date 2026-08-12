@@ -83,7 +83,10 @@ PAGE_CSS = """
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
 .sel,.tog{background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-pill);padding:8px 14px;font:inherit;font-size:13px;
-  color:var(--ink);cursor:pointer;transition:background-color 120ms,color 120ms;}
+  color:var(--ink);cursor:pointer;transition:background-color 120ms,color 120ms;
+  /* a <select> sizes to its WIDEST OPTION by default - the licence list made it
+     472px and scrolled the whole page sideways on a phone */
+  max-width:100%;}
 .sel{padding-right:10px;}
 .tog[aria-pressed="true"]{background:var(--primary-tint);color:var(--primary);
   border-color:var(--primary);font-weight:600;}
@@ -143,7 +146,10 @@ PAGE_CSS = """
 @media (max-width:720px){
   .hero{padding:36px 0 28px;}
   .colhead{display:none;}
-  .btn,.fopt,.tog,.sel{min-height:44px;}
+  /* every hit target, not just the obvious ones - .fmore ("Show all N") and the
+     Clear all button were 28px and 18px */
+  .btn,.fopt,.tog,.sel,.fmore,.facets .fhead button{min-height:44px;}
+  .facets .fhead button,.fmore{display:inline-flex;align-items:center;}
 }
 """
 

@@ -219,8 +219,14 @@ p{margin:0;}
 .ubar .u-pre{opacity:.75;}
 .ubar .u-ctfg{color:var(--white);text-decoration:underline;
   text-decoration-color:var(--mint-300);text-decoration-thickness:2px;}
-.ubar .u-r{overflow-x:auto;scrollbar-width:none;}
+/* min-width:0 is load-bearing: a flex item defaults to min-width:auto, which
+   refuses to shrink below its content, so the links pushed the PAGE wider than
+   the viewport instead of scrolling inside their own strip. overflow-x alone
+   does not fix that - the item has to be allowed to shrink first. */
+.ubar .u-r{overflow-x:auto;scrollbar-width:none;min-width:0;}
 .ubar .u-r::-webkit-scrollbar{display:none;}
+.ubar .u-l{min-width:0;}
+.ubar .wrap{min-width:0;}
 
 /* topbar */
 /* min-height + flex centring, NOT height:88px with a height:100% child.
@@ -271,6 +277,12 @@ p{margin:0;}
   /* the publisher/legal divider is only meaningful side by side; once they
      stack it is a line dangling off the end of the wordmark */
   .foot .hair{display:none;}
+  /* The utility bar is a fixed 36px strip, so its text must never wrap - on a
+     375px screen "Part of the" wrapped to three lines and was clipped by the
+     bar's own height. Drop the prefix and keep the link, which carries the same
+     meaning in less room, and stop every item wrapping. */
+  .ubar .u-pre{display:none;}
+  .ubar a,.ubar span{white-space:nowrap;}
   h1{font-size:34px;} h2{font-size:26px;}
   .topbar{min-height:0;padding:14px 0;}
   .topbar .wrap{flex-wrap:wrap;row-gap:12px;}

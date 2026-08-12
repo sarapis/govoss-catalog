@@ -409,12 +409,18 @@ BODY = """
         <div style="margin-top:14px">__DROWS__</div>
       </div>
       <div class="col-steps">
-        <div class="sechead"><h3>Steps of the last run</h3></div>
+        <div class="sechead"><h3>Steps of the last run</h3><span class="r">through the run log</span></div>
         <hr class="dashed">
         <div style="margin-top:8px">__SROWS__</div>
         <p class="note">A run publishes only if every step exits 0, so a failed step means
           the public copy stays on the last good run rather than being overwritten with a
           partial harvest.</p>
+        <p class="note">This list stops at the step that wrote it: the run log is recorded
+          before this page is built, so the steps that follow &mdash; building this page and
+          the API page, deploying, and committing the data &mdash; cannot appear on it. They
+          are not hidden. <b>That you are reading this page at all is the evidence the deploy
+          step succeeded</b>, since a failed run publishes nothing and you would be looking at
+          the previous week's copy.</p>
       </div>
     </div>
   </section>
