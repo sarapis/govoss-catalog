@@ -143,6 +143,8 @@ rejected, and the four bug shapes that came back repeatedly.
   re-litigate. **Read this before changing anything.**
 - `CONTINUE.md` — open items and where to pick up
 - `HANDOFF-PROMPT.md` — paste-ready brief for a downstream data consumer
+- `DESIGN-BRIEF.md` — paste-ready brief for restyling the pages (they are generated from
+  Python f-strings, not editable HTML — read this before touching the UI)
 - `PAGINATION-BUG.md` — bug report for the EU OSS Catalogue, ready to send
 - `sources.py` · `replaces.json` · `translations/` — the curated inputs
 - `catalog.json` · `liveness.json` · `history.json` — the data products
