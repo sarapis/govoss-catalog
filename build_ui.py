@@ -17,6 +17,34 @@ LIVE = {}
 if os.path.exists(f"{OUT}/liveness.json"):
     LIVE = json.load(open(f"{OUT}/liveness.json")).get("repos", {})
 
+# replaces.json -> "what can we stop paying for?". Matching UNIONS every key
+# that matches the survivor name or any also_known_as, exactly as export_json.py
+# does: dedupe can pick a different survivor name than a mapping was keyed on,
+# and first-match-wins silently dropped what the other keys mapped. Keep these
+# two in step - if this rule changes, change it in both.
+_RAW = json.load(open(f"{OUT}/replaces.json"))
+RMAP = {k.lower(): v for k, v in _RAW.items() if not k.startswith("_")}
+
+
+def _replaces(r):
+    out, seen = [], set()
+    for cand in [r.get("name")] + list(r.get("also_known_as") or []):
+        k = (cand or "").strip().lower()
+        if not k or k not in RMAP:
+            continue
+        for m in RMAP[k]:
+            pk = (m.get("product") or "").lower()
+            if pk and pk not in seen:
+                seen.add(pk)
+                out.append(m)
+    for m in (r.get("replaces") or []):
+        if isinstance(m, dict):
+            pk = (m.get("product") or "").lower()
+            if pk and pk not in seen:
+                seen.add(pk)
+                out.append(m)
+    return out
+
 SRC_LABEL = {
     "IT/developers-italia": "Developers Italia",
     "FR/sill": "SILL",
@@ -68,6 +96,7 @@ for r in c:
         "sl": r.get("desc_src_lang") or "",
         "qid": r.get("wikidata") or "",
         "ex": r.get("exclude_reason") or "",
+        "rp": [m.get("product") for m in _replaces(r) if m.get("product")],
         # dead_since is only set after 2 consecutive dead observations, so the
         # page never shows a one-off 404 as "repo gone"
         "lv": (lambda v: "dead" if v.get("dead_since")
@@ -99,307 +128,66 @@ LOPTS = "".join(f'<option value="{html.escape(k)}">{html.escape(k)} ({v})</optio
                 for k, v in licenses.most_common()
                 ).encode("ascii", "xmlcharrefreplace").decode()
 
-PAGE = f"""<!--
-  MACHINE-READABLE DATA AVAILABLE - do not scrape this page.
-    GET /entries.json        all {len(_inc)} entries, structured fields
-    GET /meta.json           category enum, sources, counts, generated_at
-    GET /by-product.json     proprietary product -> open source alternatives
-    GET /by-category/<key>.json
-    GET /v1/entries.json     versioned alias
-    GET /status.json         freshness, last run, changelog
-  CORS open. No auth. Full notes: /llms.txt
--->
-<title>European public-sector open source &mdash; aggregated catalogue</title>
-<link rel="alternate" type="application/json" href="/entries.json" title="All entries as JSON">
-<link rel="alternate" type="application/json" href="/meta.json" title="Catalogue metadata">
-<link rel="alternate" type="application/json" href="/status.json" title="Build status">
-<meta name="description" content="{len(_inc)} public-sector open source entries from eight European national catalogues. JSON API at /entries.json.">
-<style>
-:root {{
-  --paper:#F7F8F7; --raised:#EDEFEE; --sunk:#E4E7E5;
-  --ink:#171A19; --slate:#626B67; --hairline:#DBDFDC;
-  --accent:#0F6B5C; --accent-dim:#E0EEEA;
-  --stable:#0F6B5C; --beta:#8A5A00; --dev:#1F4E8C; --obsolete:#A32A22; --concept:#5A5F7A;
-  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
-  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-}}
-@media (prefers-color-scheme:dark) {{
-  :root {{
-    --paper:#0E110F; --raised:#171B18; --sunk:#1F2521;
-    --ink:#E3E8E4; --slate:#939C97; --hairline:#262C28;
-    --accent:#56C0AB; --accent-dim:#152420;
-    --stable:#56C0AB; --beta:#D9A43F; --dev:#7FA9E0; --obsolete:#EF7A70; --concept:#9AA1BC;
-  }}
-}}
-:root[data-theme="dark"] {{
-  --paper:#0E110F; --raised:#171B18; --sunk:#1F2521;
-  --ink:#E3E8E4; --slate:#939C97; --hairline:#262C28;
-  --accent:#56C0AB; --accent-dim:#152420;
-  --stable:#56C0AB; --beta:#D9A43F; --dev:#7FA9E0; --obsolete:#EF7A70; --concept:#9AA1BC;
-}}
-:root[data-theme="light"] {{
-  --paper:#F7F8F7; --raised:#EDEFEE; --sunk:#E4E7E5;
-  --ink:#171A19; --slate:#626B67; --hairline:#DBDFDC;
-  --accent:#0F6B5C; --accent-dim:#E0EEEA;
-  --stable:#0F6B5C; --beta:#8A5A00; --dev:#1F4E8C; --obsolete:#A32A22; --concept:#5A5F7A;
-}}
 
-body {{ background:var(--paper); color:var(--ink); font-family:var(--sans);
-       font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased; }}
-.wrap {{ max-width:1120px; margin:0 auto; padding:2rem 1.1rem 5rem; }}
+# --------------------------------------------------------------------------
+# Presentation. The markup, CSS and JS live in _ui_template.py and theme.py as
+# PLAIN strings with __PLACEHOLDER__ tokens, not f-strings, so no literal CSS or
+# JS brace ever needs doubling. That was the single most common way this file
+# broke. Substitution is explicit below and asserted after, so a typo'd token
+# fails loudly instead of shipping "__N_ENTRIES__" to production.
+# --------------------------------------------------------------------------
+_th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
+theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
+_tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
+T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 
-h1 {{ font-size:clamp(1.4rem,3.4vw,1.9rem); font-weight:640; letter-spacing:-.02em;
-      margin:0; text-wrap:balance; }}
-.sub {{ color:var(--slate); margin:.5rem 0 0; max-width:70ch; font-size:.95rem; }}
+n_entries = len(_inc)
+n_srcs = len(sources)
+n_funcs = len(funcs)
 
-.apibar {{ background:var(--accent-dim); border-left:3px solid var(--accent);
-  border-radius:2px; padding:.75rem 1rem; margin:1.2rem 0 0; font-size:.9rem;
-  display:flex; flex-wrap:wrap; align-items:baseline; gap:.35rem .7rem; }}
-.apibar code {{ font-family:var(--mono); font-size:.82em; }}
-.apibar a {{ color:var(--accent); }}
-.stats {{ display:flex; flex-wrap:wrap; gap:.1rem 2.2rem; margin:1.4rem 0 0;
-          padding:.9rem 0; border-top:1px solid var(--hairline);
-          border-bottom:1px solid var(--hairline); }}
-.stat {{ display:flex; flex-direction:column; gap:.1rem; padding:.2rem 0; }}
-.stat b {{ font-family:var(--mono); font-size:1.32rem; font-weight:600;
-           font-variant-numeric:tabular-nums; letter-spacing:-.02em; }}
-.stat span {{ font-family:var(--mono); font-size:.63rem; letter-spacing:.11em;
-              text-transform:uppercase; color:var(--slate); }}
+SUBS = {
+    "__DATA__": DATA,
+    "__FFACETS__": FFACETS,
+    "__CFACETS__": CFACETS,
+    "__SFACETS__": SFACETS,
+    "__LOPTS__": LOPTS,
+    "__NENTRIES__": f"{n_entries:,}",
+    "__N_ENTRIES__": f"{n_entries:,}",
+    "__N_SOURCES__": str(n_srcs),
+    "__N_PC__": f"{n_pc:,}",
+    "__N_EN__": f"{n_en + n_tr:,}",
+    "__N_FUNCS__": str(n_funcs),
+    "__N_MULTI__": str(n_multi_cat),
+    "__N_EX__": str(n_ex),
+    "__ICON_CODE__": T.ICONS["code"],
+    "__ICON_SEAL__": T.ICONS["seal"],
+    "__ICON_ALERT__": T.ICONS["alert"],
+}
 
-.controls {{ position:sticky; top:0; z-index:20; background:var(--paper);
-             padding:1rem 0 .8rem; border-bottom:1px solid var(--hairline);
-             margin-bottom:.2rem; display:flex; flex-direction:column; gap:.75rem; }}
-.row1 {{ display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }}
-input[type=search], select {{ font-family:inherit; font-size:.9rem; color:var(--ink);
-  background:var(--raised); border:1px solid var(--hairline); border-radius:5px;
-  padding:.5rem .7rem; }}
-input[type=search] {{ flex:1 1 15rem; min-width:0; }}
-input[type=search]::placeholder {{ color:var(--slate); }}
-select {{ cursor:pointer; }}
+PAGE = (
+    theme.head(
+        "Government open source software catalog | govoss",
+        f"{n_entries:,} open source entries harvested first-hand from {n_srcs} government "
+        "catalogues worldwide, normalised onto one schema. Free JSON API at /entries.json "
+        "- no key, no pagination.")
+    + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
+    + theme.UTILITY_BAR + theme.topbar("catalog")
+    + T.BODY + theme.FOOTER + T.SCRIPT
+)
 
-.chips {{ display:flex; flex-wrap:wrap; gap:.35rem; }}
-.tog {{ display:flex; align-items:center; gap:.4rem; font-family:var(--mono);
-  font-size:.72rem; color:var(--slate); letter-spacing:.03em; white-space:nowrap;
-  cursor:pointer; }}
-.pill.ex {{ color:var(--concept); border:1px dashed var(--concept); }}
-.chip {{ font-family:var(--mono); font-size:.74rem; letter-spacing:.03em;
-  background:var(--raised); color:var(--slate); border:1px solid var(--hairline);
-  border-radius:20px; padding:.24rem .62rem; cursor:pointer; }}
-.chip .k {{ color:var(--ink); font-weight:600; }}
-.chip[aria-pressed="true"] {{ background:var(--accent); border-color:var(--accent);
-  color:var(--paper); }}
-.chip[aria-pressed="true"] .k {{ color:var(--paper); }}
+for k, v in SUBS.items():
+    PAGE = PAGE.replace(k, v)
 
-.count {{ font-family:var(--mono); font-size:.75rem; color:var(--slate);
-          letter-spacing:.04em; padding:.5rem 0 .3rem; }}
-.count b {{ color:var(--ink); font-variant-numeric:tabular-nums; }}
+# A missed placeholder is a silent visual bug - the page would render the raw
+# token. Fail the build instead.
+import re as _re
+_left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", PAGE)))
+if _left:
+    raise SystemExit(f"build_ui: unsubstituted placeholders {_left}")
 
-ul.list {{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }}
-li.item {{ border-bottom:1px solid var(--hairline); padding:.9rem .2rem;
-           display:grid; grid-template-columns:3.4rem 1fr; gap:.1rem .8rem; }}
-li.item:hover {{ background:var(--raised); }}
-.cc {{ font-family:var(--mono); font-size:.7rem; line-height:1.5; font-weight:600; letter-spacing:.06em;
-       color:var(--accent); padding-top:.18rem; }}
-.body {{ min-width:0; display:flex; flex-direction:column; gap:.3rem; }}
-.title {{ display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem; }}
-.title a {{ color:var(--ink); font-weight:600; font-size:1rem; text-decoration:none;
-            border-bottom:1px solid transparent; }}
-.title a:hover {{ border-bottom-color:var(--accent); color:var(--accent); }}
-.pill {{ font-family:var(--mono); font-size:.63rem; letter-spacing:.07em;
-         text-transform:uppercase; padding:.12rem .42rem; border-radius:3px;
-         background:var(--sunk); color:var(--slate); white-space:nowrap; }}
-.pill.stable{{color:var(--stable)}} .pill.beta{{color:var(--beta)}}
-.pill.development{{color:var(--dev)}} .pill.obsolete{{color:var(--obsolete)}}
-.pill.concept{{color:var(--concept)}}
-.pill.rec {{ background:var(--accent-dim); color:var(--accent); }}
-.pill.dead {{ color:var(--obsolete); border:1px solid var(--obsolete); }}
-.pill.multi {{ background:var(--accent); color:var(--paper); }}
-.desc {{ color:var(--slate); font-size:.88rem; max-width:82ch; }}
-.foot {{ display:flex; flex-wrap:wrap; gap:.35rem .9rem; font-family:var(--mono);
-         font-size:.7rem; color:var(--slate); letter-spacing:.02em; }}
-.foot .src {{ color:var(--ink); }}
-.foot .src a {{ color:var(--ink); border-bottom:1px solid var(--hairline); }}
-.foot .src a:hover {{ color:var(--accent); border-bottom-color:var(--accent); }}
-.foot a {{ color:var(--slate); text-decoration:none; border-bottom:1px solid var(--hairline);
-           word-break:break-all; }}
-.foot a:hover {{ color:var(--accent); border-bottom-color:var(--accent); }}
-
-.more {{ margin:1.4rem auto 0; display:block; font-family:var(--mono); font-size:.78rem;
-  letter-spacing:.06em; text-transform:uppercase; background:none; color:var(--accent);
-  border:1px solid var(--hairline); border-radius:5px; padding:.6rem 1.3rem; cursor:pointer; }}
-.more:hover {{ background:var(--accent-dim); border-color:var(--accent); }}
-.empty {{ padding:3rem 0; color:var(--slate); text-align:center; }}
-footer {{ margin-top:2.5rem; padding-top:1.1rem; border-top:1px solid var(--hairline);
-          color:var(--slate); font-size:.8rem; max-width:78ch; }}
-:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
-@media (max-width:620px) {{ li.item {{ grid-template-columns:1fr; }} .cc {{ padding:0; }} }}
-</style>
-
-<div class="wrap">
-  <h1>European public-sector open source</h1>
-  <p class="sub">Eight national catalogues, harvested first-hand and joined on repository URL.
-     Every entry asserts fitness for government use &mdash; either a government built it for
-     government work, or a government recommends it.</p>
-
-  <p class="apibar">
-    <b>Building something?</b> Don't scrape this page &mdash; there is a JSON API.
-    <a href="/entries.json"><code>/entries.json</code></a>
-    <a href="/meta.json"><code>/meta.json</code></a>
-    <a href="/by-product.json"><code>/by-product.json</code></a>
-    <a href="/llms.txt">how to use it</a>
-    &middot; <a href="/sources.html">sources</a>
-    &middot; <a href="/status.html">status &amp; change log</a>
-  </p>
-
-  <div class="stats">
-    <div class="stat"><b>{len(_inc)}</b><span>entries</span></div>
-    <div class="stat"><b>{n_repos}</b><span>distinct repos</span></div>
-    <div class="stat"><b>{len(countries)}</b><span>countries</span></div>
-    <div class="stat"><b>{n_pc}</b><span>with publiccode.yml</span></div>
-    <div class="stat"><b>{n_en + n_tr}</b><span>in English</span></div>
-    <div class="stat"><b>{len(funcs)}</b><span>functions</span></div>
-    <div class="stat"><b>{n_dead}</b><span>dead links</span></div>
-    <div class="stat"><b>{n_multi_cat}</b><span>in 2+ catalogues</span></div>
-  </div>
-
-  <div class="controls">
-    <div class="row1">
-      <input type="search" id="q" placeholder="Search name, description, owner, category&hellip;"
-             autocomplete="off" aria-label="Search catalogue">
-      <select id="lic" aria-label="Filter by licence">
-        <option value="">All licences</option>{LOPTS}
-      </select>
-      <select id="sort" aria-label="Sort">
-        <option value="name">A&ndash;Z</option>
-        <option value="adopters">Most adopters</option>
-        <option value="catalogues">In most catalogues</option>
-        <option value="country">By country</option>
-      </select>
-      <label class="tog"><input type="checkbox" id="showex"> show {n_ex} filtered</label>
-      <select id="lv" aria-label="Filter by repository state">
-        <option value="">Any repo state</option>
-        <option value="ok">Live repos only</option>
-        <option value="dead">Dead links only</option>
-        <option value="archived">Archived only</option>
-      </select>
-    </div>
-    <div class="chips" id="fc" role="group" aria-label="Filter by function"></div>
-    <div class="chips" id="cc" role="group" aria-label="Filter by country"></div>
-    <div class="chips" id="sc" role="group" aria-label="Filter by source catalogue"></div>
-  </div>
-
-  <div class="count" id="count"></div>
-  <ul class="list" id="list"></ul>
-  <button class="more" id="more" hidden>Show more</button>
-
-  <footer>Harvested {len(rows)} entries from Developers Italia (REST API), SILL and
-    awesome-codegouvfr (bulk JSON), openCode and code.europa.eu (GitLab API), iMio (GitHub),
-    Offentligkod (recutils in git) and Avoinkoodi (static JSON). The Netherlands register needs
-    an API key; Ireland, Portugal and Cyprus have no machine route found yet. The EU aggregate
-    catalogue is deliberately not syndicated &mdash; its paging and search are broken.</footer>
-</div>
-
-<script>
-const DATA = {DATA};
-const CF = {CFACETS}, SF = {SFACETS}, FF = {FFACETS};
-const PAGE = 100;
-let shown = PAGE, activeC = new Set(), activeS = new Set(), activeF = new Set();
-
-const el = id => document.getElementById(id);
-const esc = s => (s??'').replace(/[&<>"]/g, m => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[m]));
-
-function chips(host, facets, active) {{
-  host.innerHTML = facets.map(f => {{
-    const [k,label,n] = f.length === 3 ? f : [f[0], f[0], f[1]];
-    return `<button class="chip" data-k="${{esc(k)}}" aria-pressed="false"><span class="k">${{esc(label)}}</span> ${{n}}</button>`;
-  }}).join('');
-  host.onclick = e => {{
-    const b = e.target.closest('.chip'); if (!b) return;
-    const k = b.dataset.k;
-    active.has(k) ? active.delete(k) : active.add(k);
-    b.setAttribute('aria-pressed', active.has(k));
-    shown = PAGE; render();
-  }};
-}}
-
-function current() {{
-  const q = el('q').value.trim().toLowerCase();
-  const lic = el('lic').value;
-  const lvf = el('lv').value;
-  const showex = el('showex').checked;
-  let out = DATA.filter(r =>
-    (showex || !r.ex) &&
-    (!activeC.size || (r.cs||[r.c]).some(x => activeC.has(x))) &&
-    (!activeS.size || (r.ss||[r.s]).some(x => activeS.has(x))) &&
-    (!activeF.size || r.fx.some(f => activeF.has(f))) &&
-    (!lic || r.l === lic) &&
-    (!lvf || (lvf === 'ok' ? !r.lv : r.lv === lvf)) &&
-    (!q || (r.n+' '+r.d+' '+r.o+' '+r.g.join(' ')+' '+(r.aka||[]).join(' ')).toLowerCase().includes(q))
-  );
-  const s = el('sort').value;
-  if (s === 'adopters') out.sort((a,b) => b.ub - a.ub || a.n.localeCompare(b.n));
-  else if (s === 'catalogues') out.sort((a,b) => (b.cc2||1) - (a.cc2||1) || b.ub - a.ub);
-  else if (s === 'country') out.sort((a,b) => a.c.localeCompare(b.c) || a.n.localeCompare(b.n));
-  else out.sort((a,b) => a.n.toLowerCase().localeCompare(b.n.toLowerCase()));
-  return out;
-}}
-
-function render() {{
-  const rs = current();
-  const showingEx = el('showex').checked;   // never rely on the id-global
-  const universe = showingEx ? DATA.length : DATA.filter(r => !r.ex).length;
-  el('count').innerHTML = `<b>${{rs.length}}</b> of ${{universe}} entries`;
-  el('list').innerHTML = rs.slice(0, shown).map(r => {{
-    const link = r.u || r.h;
-    const host = link ? link.replace(/^https?:\\/\\//,'').replace(/\\/$/,'') : '';
-    return `<li class="item">
-      <div class="cc">${{esc(r.c)}}</div>
-      <div class="body">
-        <div class="title">
-          ${{link ? `<a href="${{esc(link)}}" target="_blank" rel="noopener">${{esc(r.n)}}</a>`
-                 : `<span>${{esc(r.n)}}</span>`}}
-          ${{r.st ? `<span class="pill ${{esc(r.st)}}">${{esc(r.st)}}</span>` : ''}}
-          ${{r.rec ? `<span class="pill rec">recommended</span>` : ''}}
-          ${{r.qid ? `<span class="pill">${{esc(r.qid)}}</span>` : ''}}
-          ${{r.l ? `<span class="pill">${{esc(r.l)}}</span>` : ''}}
-          ${{r.lv === 'dead' ? `<span class="pill dead" title="repository URL returned 404/410 at last check">repo gone</span>` : ''}}
-          ${{r.lv === 'archived' ? `<span class="pill">archived</span>` : ''}}
-          ${{r.ex ? `<span class="pill ex" title="filtered out of the default view">${{esc(r.ex)}}</span>` : ''}}
-        </div>
-        ${{r.d ? `<div class="desc">${{esc(r.d)}}</div>` : ''}}
-        <div class="foot">
-          <span class="src">${{(r.ce && r.ce.length ? r.ce : []).map(c =>
-              c.u ? `<a href="${{esc(c.u)}}" target="_blank" rel="noopener">${{esc(c.l)}}</a>`
-                  : esc(c.l)).join(' + ') || esc((r.ss||[r.s]).join(' + '))}}</span>
-          ${{r.cc2 > 1 ? `<span class="pill multi" title="listed by ${{r.cc2}} separate national catalogues">in ${{r.cc2}} catalogues</span>` : ''}}
-          ${{r.mc > 1 ? `<span title="merged from ${{r.mc}} catalogue records for the same repository">merged \\u00d7${{r.mc}}</span>` : ''}}
-          ${{r.aka && r.aka.length ? `<span>aka ${{esc(r.aka.join(', '))}}</span>` : ''}}
-          ${{r.o ? `<span>${{esc(r.o)}}</span>` : ''}}
-          ${{r.ub ? `<span>${{r.ub}} adopter${{r.ub>1?'s':''}}</span>` : ''}}
-          ${{r.fx.length ? `<span>${{esc(r.fx.map(k=>FLABEL[k]||k).join(' \\u00b7 '))}}</span>` : ''}}
-          ${{r.tr ? `<span title="machine-translated from ${{esc(r.sl)}}">translated from ${{esc(r.sl)}}</span>` : ''}}
-          ${{link ? `<a href="${{esc(link)}}" target="_blank" rel="noopener">${{esc(host)}}</a>` : ''}}
-        </div>
-      </div></li>`;
-  }}).join('') || `<div class="empty">Nothing matches those filters.</div>`;
-  el('more').hidden = rs.length <= shown;
-  el('more').textContent = `Show more (${{rs.length - shown}} remaining)`;
-}}
-
-const FLABEL = Object.fromEntries(FF.map(([k,l,n]) => [k,l]));
-chips(el('fc'), FF, activeF);
-chips(el('cc'), CF, activeC);
-chips(el('sc'), SF, activeS);
-el('q').oninput = () => {{ shown = PAGE; render(); }};
-el('lic').onchange = () => {{ shown = PAGE; render(); }};
-el('lv').onchange = () => {{ shown = PAGE; render(); }};
-el('showex').onchange = () => {{ shown = PAGE; render(); }};
-el('sort').onchange = () => {{ shown = PAGE; render(); }};
-el('more').onclick = () => {{ shown += PAGE * 4; render(); }};
-render();
-</script>
-"""
+PAGE = PAGE.encode("ascii", "xmlcharrefreplace").decode()
 
 path = f"{OUT}/catalogue.html"
 open(path, "w").write(PAGE)
-print(f"wrote {path}  ({len(PAGE)/1024:.0f} KB, {len(rows)} rows)")
+print(f"wrote {path}  ({len(PAGE)/1024:.0f} KB, {len(rows)} rows, "
+      f"{sum(1 for r in rows if r['rp'])} with replaces)")

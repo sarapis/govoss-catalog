@@ -23,3 +23,6 @@ vercel-token
 .vercel/
 .netrc
 secrets.json
+
+# local scratch — design handoffs, working files. Never committed.
+_scratch/
