@@ -156,15 +156,23 @@ def build():
     srows = ""
     for i, st in enumerate(steps, 1):
         d = st.get("duration_s")
-        pct = int(100 * (d or 0) / longest)
+        # Share of the longest step, FLOORED at 3% when the duration is known.
+        # Eight of ten steps finish in under a second against a twelve-minute
+        # harvest, so a truthfully-proportional bar renders them at 0px - and a
+        # bar of zero width reads as "missing", not "fast". A step with no
+        # recorded duration gets no bar at all, so "quick" and "not measured"
+        # stay distinguishable rather than both being blank.
+        pct = None if d is None else max(3, int(round(100 * d / longest)))
         badge = ('<span class="stamp rec">pass</span>' if st["ok"]
                  else '<span class="stamp warn">fail</span>')
+        bar = ('<span class="s-bar s-unknown" title="duration not recorded"></span>'
+               if pct is None else
+               '<span class="s-bar"><i style="width:%d%%"></i></span>' % pct)
         srows += (
             '<div class="srow"><span class="s-i num">%02d</span>'
-            '<span class="s-n">%s</span>'
-            '<span class="s-bar"><i style="width:%d%%"></i></span>'
+            '<span class="s-n">%s</span>%s'
             '<span class="s-d num">%s</span>%s</div>'
-        ) % (i, esc(st["step"]), pct, dur(d), badge)
+        ) % (i, esc(st["step"]), bar, dur(d), badge)
 
     # ---- weekly diff, newest first
     drows = ""
@@ -331,7 +339,9 @@ PAGE_CSS = """
 .s-i{flex:0 0 22px;color:var(--ink-400);font-size:11px;}
 .s-n{flex:1 1 110px;min-width:0;}
 .s-bar{flex:0 0 90px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden;}
-.s-bar i{display:block;height:100%;background:var(--primary);}
+.s-bar i{display:block;height:100%;background:var(--primary);border-radius:3px;}
+/* no duration recorded - a dashed track, visibly different from a short bar */
+.s-bar.s-unknown{background:transparent;border:1px dashed var(--border);}
 .s-d{flex:0 0 54px;text-align:right;color:var(--ink-600);font-size:12px;}
 
 /* surveyed */
