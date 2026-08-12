@@ -126,7 +126,16 @@ TOKENS_CSS = """
 
   /* semantic aliases - components read THESE, never the base values */
   --bg:var(--paper-50); --bg-alt:var(--paper-100); --surface:var(--white);
-  --ink:var(--ink-900); --ink-soft:var(--ink-500); --ink-faint:var(--ink-400);
+  --ink:var(--ink-900); --ink-soft:var(--ink-500);
+  /* --ink-faint is TEXT and must clear 4.5:1. ink-400 measured 2.44:1 on paper
+     and 2.53:1 on white - it failed WCAG 1.4.3 everywhere it carried words:
+     entry metadata, facet counts, column headers, per-source timings. ink-500
+     is 5.17/5.35:1 and already in the palette, so nothing is invented.
+     --ink-400 itself is kept for NON-text use (borders, sparkline states),
+     where 4.5:1 does not apply. Every rule that sets TEXT colour now reads
+     --ink-faint; if you find yourself typing var(--ink-400) on something with
+     words in it, that is the bug this comment exists to prevent. */
+  --ink-faint:var(--ink-500);
   --border:var(--line-300); --border-soft:var(--line-200);
   --primary:var(--violet-500); --primary-deep:var(--violet-700);
   --primary-tint:var(--violet-100);
@@ -181,6 +190,13 @@ p{margin:0;}
 .num{font-variant-numeric:tabular-nums;}
 .dashed{border:0;border-top:var(--divider);width:100%;margin:0;}
 :focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:3px;}
+/* WCAG 2.4.1 Bypass Blocks. There are 45 tab stops before the first result on
+   the catalog page - the facet sidebar alone is ~30 buttons - so a keyboard
+   user had no way past them. Visually hidden until focused. */
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--surface);
+  color:var(--ink);border:1px solid var(--ink);border-radius:0 0 var(--r-chip) 0;
+  padding:12px 18px;font-family:var(--font-ui);font-size:13px;font-weight:600;}
+.skip:focus{left:0;}
 
 /* buttons */
 .btn{font-family:var(--font-ui);font-size:13px;font-weight:600;letter-spacing:.05em;
@@ -211,8 +227,8 @@ p{margin:0;}
 /* utility bar */
 .ubar{background:var(--primary);color:var(--white);height:36px;display:flex;align-items:center;}
 .ubar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;}
-.ubar a{color:var(--mint-300);text-decoration:none;}
-.ubar a:hover{color:var(--white);text-decoration:underline;}
+.ubar a{color:var(--white);text-decoration:none;}
+.ubar a:hover{text-decoration:underline;}
 .ubar .u-l,.ubar .u-r{display:flex;align-items:center;gap:20px;
   font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;}
@@ -308,6 +324,7 @@ def utility_bar(nav):
     items = (nav or {}).get("Main Menu") or []
     links = "".join('<a href="%s">%s</a>' % (i["url"], _esc(i["label"])) for i in items)
     return """
+<a class="skip" href="#main">Skip to content</a>
 <div class="ubar"><div class="wrap">
   <div class="u-l"><span class="u-pre">Part of the</span>
     <a class="u-ctfg" href="https://civictech.guide">Civic Tech Field Guide</a></div>
@@ -443,6 +460,7 @@ def head(title, description, canonical=""):
     GET /status.json         freshness, last run, changelog
   CORS is open. Full notes for agents: /llms.txt and /api.html
 -->
+<html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s</title>

@@ -285,7 +285,7 @@ PAGE_CSS = """
 .sec{margin-top:44px;}
 .sechead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
   gap:8px 20px;padding-bottom:10px;}
-.sechead .r{font-size:12px;color:var(--ink-400);}
+.sechead .r{font-size:12px;color:var(--ink-faint);}
 .stamp.ok{background:var(--green);color:var(--white);box-shadow:var(--shadow-green);}
 
 /* catalogue rows */
@@ -304,10 +304,10 @@ PAGE_CSS = """
 .c-n{flex:0 0 88px;text-align:right;}
 .c-n b{display:block;font-family:var(--font-display);font-size:20px;color:var(--ink);}
 .c-n span{font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-400);}
+  text-transform:uppercase;color:var(--ink-faint);}
 .c-m{flex:0 0 150px;display:flex;flex-direction:column;gap:2px;font-size:12px;
   color:var(--ink-600);}
-.c-m .c-sec{color:var(--ink-400);font-variant-numeric:tabular-nums;}
+.c-m .c-sec{color:var(--ink-faint);font-variant-numeric:tabular-nums;}
 .c-s{flex:0 0 auto;display:flex;gap:2px;align-items:flex-end;}
 .sb{width:7px;height:20px;border-radius:2px;background:var(--border-soft);}
 .sb.s-ok{background:var(--green);}
@@ -326,7 +326,7 @@ PAGE_CSS = """
 .d-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
   font-size:13px;}
 .d-h b{font-family:var(--font-display);font-size:15px;}
-.d-h span{color:var(--ink-400);font-size:12px;}
+.d-h span{color:var(--ink-faint);font-size:12px;}
 .d-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
 .chip{font-size:11px;padding:3px 8px;border-radius:var(--r-chip);
   background:var(--bg-alt);color:var(--ink-600);}
@@ -336,7 +336,7 @@ PAGE_CSS = """
 .srow{display:flex;align-items:center;gap:10px;padding:9px 0;
   border-bottom:1px solid var(--border-soft);font-size:13px;}
 .srow:last-child{border-bottom:0;}
-.s-i{flex:0 0 22px;color:var(--ink-400);font-size:11px;}
+.s-i{flex:0 0 22px;color:var(--ink-faint);font-size:11px;}
 .s-n{flex:1 1 110px;min-width:0;}
 .s-bar{flex:0 0 90px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden;}
 .s-bar i{display:block;height:100%;background:var(--primary);border-radius:3px;}
@@ -383,6 +383,7 @@ BODY = """
 </div>
 
 <div class="wrap">
+  <main id="main">
   <div class="stats">
     <div class="stat"><b>__N_CAT__</b><span>catalogues harvested</span></div>
     <div class="stat"><b>__N_COUNTRIES__</b><span>countries and bodies</span></div>
@@ -401,7 +402,7 @@ BODY = """
       <span><i style="background:var(--green)"></i>harvested</span>
       <span><i style="background:var(--ink-900)"></i>contributed nothing</span>
       <span><i style="background:var(--border-soft)"></i>not a source yet, or not recorded</span>
-      <span style="color:var(--ink-400)">last __SPARK_N__ runs, oldest first</span>
+      <span style="color:var(--ink-faint)">last __SPARK_N__ runs, oldest first</span>
     </div>
   </section>
 
@@ -441,6 +442,8 @@ BODY = """
     <hr class="dashed">
     <div class="vgrid" style="margin-top:14px">__VROWS__</div>
   </section>
+
+  </main>
 
   <div class="submit" id="submit">
     <p class="overline">Get involved</p>

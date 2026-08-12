@@ -21,7 +21,7 @@ PAGE_CSS = """
   box-shadow:var(--shadow-bar);padding:6px 6px 6px 20px;margin-top:6px;}
 .searchbar input{flex:1;border:0;outline:0;background:transparent;font:inherit;
   font-size:16px;color:var(--ink);min-width:0;padding:10px 0;}
-.searchbar input::placeholder{color:var(--ink-400);}
+.searchbar input::placeholder{color:var(--ink-faint);}
 
 /* ---- agent banner: must sit directly above the tiles, early in the DOM ---- */
 .apibar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;
@@ -32,7 +32,10 @@ PAGE_CSS = """
   white-space:nowrap;}
 .apibar .msg{font-size:15px;color:var(--ink-600);flex:1 1 320px;min-width:0;}
 .apibar .msg a{font-family:var(--font-mono);font-size:13px;}
-.apibar .msg a + a{margin-left:10px;}
+/* a flex row with a gap, NOT margin between inline anchors: written adjacent
+   with margin-left there was no whitespace to wrap at, so the three endpoints
+   were one unbreakable run and pushed the page 17px wide at 320px. */
+.apibar .links{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:4px;}
 
 /* ---- stat tiles ---- */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
@@ -56,16 +59,16 @@ PAGE_CSS = """
 .facets .fhead{display:flex;align-items:center;justify-content:space-between;
   margin-bottom:12px;}
 .facets .fhead .t{font-family:var(--font-ui);font-size:11px;font-weight:600;
-  letter-spacing:.14em;text-transform:uppercase;}
+  letter-spacing:.14em;text-transform:uppercase;margin:0;}
 .facets .fhead button{background:none;border:0;padding:0;cursor:pointer;
   font:inherit;font-size:12px;color:var(--primary);text-decoration:underline;}
 .fq{width:100%;background:var(--bg-alt);border:1px solid var(--border);
   border-radius:var(--r-chip);padding:8px 10px;font:inherit;font-size:13px;
   color:var(--ink);outline:0;}
-.fq::placeholder{color:var(--ink-400);}
+.fq::placeholder{color:var(--ink-faint);}
 .fgroup{padding-top:14px;margin-top:14px;border-top:var(--divider);}
 .fgroup:first-of-type{border-top:0;margin-top:10px;}
-.fgroup h4{font-family:var(--font-ui);font-size:11px;font-weight:600;
+.fgroup h3{font-family:var(--font-ui);font-size:11px;font-weight:600;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink-600);margin:0 0 8px;}
 .fopt{display:flex;align-items:center;justify-content:space-between;gap:8px;
   width:100%;background:none;border:0;cursor:pointer;font:inherit;font-size:13px;
@@ -74,7 +77,7 @@ PAGE_CSS = """
 .fopt:hover{background:var(--bg-alt);}
 .fopt[aria-pressed="true"]{background:var(--primary-tint);color:var(--primary);
   font-weight:600;}
-.fopt .n{font-variant-numeric:tabular-nums;color:var(--ink-400);font-size:12px;}
+.fopt .n{font-variant-numeric:tabular-nums;color:var(--ink-faint);font-size:12px;}
 .fopt[aria-pressed="true"] .n{color:var(--primary);}
 .fmore{background:none;border:0;padding:5px 8px;cursor:pointer;font:inherit;
   font-size:12px;color:var(--primary);text-decoration:underline;}
@@ -115,7 +118,7 @@ PAGE_CSS = """
 .countline b{font-family:var(--font-display);font-size:16px;color:var(--ink);
   font-variant-numeric:tabular-nums;}
 .colhead{display:flex;gap:12px;font-family:var(--font-ui);font-size:10px;
-  font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-400);
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
   padding:10px 20px 8px;}
 .colhead .c1{flex:0 0 40px;} .colhead .c2{flex:1 1 380px;} .colhead .c3{flex:0 1 290px;}
 
@@ -137,7 +140,7 @@ PAGE_CSS = """
 .item .title a:hover{color:var(--primary);text-decoration:underline;}
 .item .desc{font-size:14px;line-height:1.5;color:var(--ink-600);text-wrap:pretty;}
 .item .rp{font-size:12px;color:var(--primary);}
-.item .meta{font-size:12px;color:var(--ink-400);}
+.item .meta{font-size:12px;color:var(--ink-faint);}
 .item .why{font-size:12px;color:var(--ink-600);border-left:2px solid var(--ink);
   padding-left:8px;}
 
@@ -148,13 +151,16 @@ PAGE_CSS = """
 .stamp{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.05em;
   text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);
   display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
-.stamp.rec{background:var(--green);color:var(--white);box-shadow:var(--shadow-green);}
+/* ink on green, not white on green: white measured 2.65:1 against #01B583 and
+   failed 1.4.3. ink-900 is 6.62:1 on the same fill, so the green and its hard
+   shadow - which is what makes this read as an endorsement - both survive. */
+.stamp.rec{background:var(--green);color:var(--ink-900);box-shadow:var(--shadow-green);}
 .stamp.multi{background:var(--mint);color:var(--green-700);box-shadow:var(--shadow-green);}
 .stamp.warn{background:var(--ink-900);color:var(--paper-50);}
 .stamp svg{width:12px;height:12px;}
 
 .more{display:block;width:100%;margin-top:16px;}
-.note{font-size:12px;color:var(--ink-400);line-height:1.6;margin-top:14px;max-width:70ch;}
+.note{font-size:12px;color:var(--ink-faint);line-height:1.6;margin-top:14px;max-width:70ch;}
 .empty{padding:40px 20px;text-align:center;color:var(--ink-600);}
 
 /* ---- submit block ---- */
@@ -175,19 +181,19 @@ PAGE_CSS = """
 
 # ---------------------------------------------------------------- icons
 ICONS = {
-    "code": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+    "code": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
             'stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6">'
             '</polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
-    "alert": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+    "alert": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
              'stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 '
              '1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>'
              '<line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17">'
              '</line></svg>',
-    "seal": '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 2.1 3.3-.3.9 3.2 '
+    "seal": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 2.1 3.3-.3.9 3.2 '
             '2.8 1.8-1.4 3 1.4 3-2.8 1.8-.9 3.2-3.3-.3L12 22.5l-2.6-2.1-3.3.3-.9-3.2L2.4 15.7l'
             '1.4-3-1.4-3 2.8-1.8.9-3.2 3.3.3z" opacity=".95"/><path d="M10.6 15.4L7.8 12.6l1.2-1.2 '
             '1.6 1.6 4-4 1.2 1.2z" fill="#fff"/></svg>',
-    "search": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+    "search": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
               'stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle>'
               '<line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
 }
@@ -217,7 +223,9 @@ BODY = """
   <div class="apibar">
     <span class="lbl">__ICON_CODE__ Building something?</span>
     <span class="msg">Don't scrape this page. The whole catalog is one request:
-      <a href="/entries.json">/entries.json</a><a href="/sources.json">/sources.json</a><a href="/meta.json">/meta.json</a></span>
+      <span class="links"><a href="/entries.json">/entries.json</a>
+      <a href="/sources.json">/sources.json</a>
+      <a href="/meta.json">/meta.json</a></span></span>
     <a class="btn btn-ghost" href="/api.html">API and MCP</a>
   </div>
 
@@ -230,10 +238,10 @@ BODY = """
     <div class="stat"><b>__N_MULTI__</b><span>in 2+ catalogs</span></div>
   </div>
 
-  <div class="body">
+  <main id="main" class="body">
     <aside class="side">
       <div class="facets">
-        <div class="fhead"><span class="t">Filters</span>
+        <div class="fhead"><h2 class="t">Filters</h2>
           <button type="button" id="clearall">Clear all</button></div>
         <input class="fq" id="fq" type="search" autocomplete="off"
                placeholder="Narrow the filters&hellip;" aria-label="Filter the filter options">
@@ -276,7 +284,7 @@ BODY = """
       deployment recipes, locale bundles); they keep their reason, stay in the data, and come
       back with the toggle above.</p>
     </div>
-  </div>
+  </main>
 
   <div class="submit" id="submit">
     <p class="overline">Get involved</p>
@@ -334,7 +342,7 @@ function renderFacets() {
       ? '<button type="button" class="fmore" data-g="' + esc(g.key) + '">' +
         (open ? 'Show fewer' : 'Show all ' + rows.length + ' \\u2192') + '</button>' : '';
     if (!rows.length) opts = '<p class="meta" style="padding:4px 8px">No match</p>';
-    return '<div class="fgroup"><h4>' + esc(g.title) + '</h4>' + opts + more + '</div>';
+    return '<div class="fgroup"><h3>' + esc(g.title) + '</h3>' + opts + more + '</div>';
   }).join('');
 }
 

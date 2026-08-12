@@ -206,6 +206,14 @@ Every one of these shipped, was found on the rendered page, and is now a rule.
    unrecorded one gets a dashed track, so "fast" and "not measured" stay distinguishable.
 7. **Fixed-height strips must not wrap.** "Part of the" wrapped to three lines inside the 36px
    utility bar and was clipped.
+8. **A palette token is not automatically a TEXT token.** `--ink-400` is a legitimate CTFG
+   value and reads fine as a border, but at 2.44:1 it failed WCAG on every label, count and
+   caption it was used for. Text colours now go through `--ink-faint` (ink-500, 5.17:1);
+   `--ink-400` survives for non-text only. If you type `var(--ink-400)` on something with words
+   in it, that is the bug.
+9. **White on a mid-green is not accessible.** `#FFFFFF` on `--green-500` is 2.65:1 — it looked
+   confident and failed badly. `--ink-900` on the same green is 6.62:1, so the fill and its
+   hard shadow both survive.
 
 ---
 

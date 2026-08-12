@@ -209,9 +209,9 @@ PAGE_CSS = """
 .trow:last-child{border-bottom:0;}
 .t-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;}
 .t-n{font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--ink);}
-.t-a{font-family:var(--font-mono);font-size:12px;color:var(--ink-400);}
+.t-a{font-family:var(--font-mono);font-size:12px;color:var(--ink-faint);}
 .t-d{font-size:13px;color:var(--ink-600);line-height:1.5;margin-top:5px;text-wrap:pretty;}
-.t-r{font-size:12px;color:var(--ink-400);margin-top:3px;}
+.t-r{font-size:12px;color:var(--ink-faint);margin-top:3px;}
 .notyet{background:var(--bg-alt);border:1px dashed var(--ink);border-radius:var(--r-med);
   padding:16px 18px;font-size:14px;color:var(--ink-600);line-height:1.55;}
 .notyet b{color:var(--ink);}
@@ -221,7 +221,9 @@ PAGE_CSS = """
   border-radius:var(--r-card);padding:16px;display:flex;flex-direction:column;gap:6px;}
 .qtag{align-self:flex-start;font-family:var(--font-ui);font-size:10px;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
-.qcard.do .qtag{background:var(--green);color:var(--white);}
+/* ink on green, not white on green - white is 2.65:1 against #01B583. Same
+   pairing and same fix as the "Recommended" stamp. */
+.qcard.do .qtag{background:var(--green);color:var(--ink-900);}
 .qcard.dont .qtag{background:var(--ink-900);color:var(--paper-50);}
 .qcard h4{font-family:var(--font-display);font-size:15px;margin:0;}
 .qcard p{font-size:13px;color:var(--ink-600);line-height:1.5;text-wrap:pretty;}
@@ -247,9 +249,10 @@ BODY = """
 </div>
 
 <div class="wrap">
+  <main id="main">
   <section class="sec" style="margin-top:36px">
     <div class="sechead"><h3>Endpoints</h3>
-      <span class="r" style="font-size:12px;color:var(--ink-400)">Sizes measured at build
+      <span class="r" style="font-size:12px;color:var(--ink-faint)">Sizes measured at build
         time, so they cannot drift from what is served.</span></div>
     <hr class="dashed">
     <div class="egrid" style="margin-top:14px">__EROWS__</div>
@@ -260,7 +263,7 @@ BODY = """
     <hr class="dashed">
     <div class="two" style="margin-top:14px">
       <div class="col-code">
-        <p style="font-size:12px;color:var(--ink-400);margin-bottom:8px">A real record
+        <p style="font-size:12px;color:var(--ink-faint);margin-bottom:8px">A real record
           &mdash; __EXAMPLE_NAME__ &mdash; trimmed to the fields worth explaining.</p>
         <div class="code"><pre>__EXAMPLE__</pre></div>
       </div>
@@ -277,7 +280,7 @@ BODY = """
 
   <section class="sec" id="mcp">
     <div class="sechead"><h3>MCP server</h3>
-      <span class="r" style="font-size:12px;color:var(--ink-400)">__N_TOOLS__ tools over the
+      <span class="r" style="font-size:12px;color:var(--ink-faint)">__N_TOOLS__ tools over the
         same public data.</span></div>
     <hr class="dashed">
     <div class="two" style="margin-top:14px">
@@ -310,6 +313,7 @@ BODY = """
       <div class="cite">__CITE__</div>
     </div>
   </section>
+  </main>
 </div>
 """
 
