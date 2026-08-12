@@ -76,9 +76,11 @@ def entry_id(r):
 
 def build():
     catalog = json.load(open(f"{OUT}/catalog.json"))
-    live = {}
+    live, LIVE_CHECKED = {}, None
     if os.path.exists(f"{OUT}/liveness.json"):
-        live = json.load(open(f"{OUT}/liveness.json")).get("repos", {})
+        _lv = json.load(open(f"{OUT}/liveness.json"))
+        live = _lv.get("repos", {})
+        LIVE_CHECKED = (_lv.get("summary") or {}).get("checked")
     replaces_raw = json.load(open(f"{OUT}/replaces.json"))
     rmap = {k.lower(): v for k, v in replaces_raw.items() if not k.startswith("_")}
 
@@ -179,7 +181,12 @@ def build():
 
             "link_dead": bool(lv.get("dead_since")),
             "repo_archived": bool(lv.get("archived")),
-            "last_checked": lv.get("checked"),
+            # liveness.json no longer stores a timestamp per record — every record
+            # is checked in the same sweep, so the run's timestamp IS this entry's
+            # last_checked. `if lv` matters: an entry with no liveness record was
+            # not checked at all, and must stay null rather than inherit the run's
+            # time. The lv.get() first keeps an older liveness.json working.
+            "last_checked": lv.get("checked") or (LIVE_CHECKED if lv else None),
             "last_push": lv.get("last_push"),
 
             "replaces": rep or [],

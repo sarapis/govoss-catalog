@@ -57,6 +57,13 @@ class UF:
             self.p[rb] = ra
 
 
+def stable_order(r):
+    """Total ordering for the committed catalog.json. Kept in sync with the copy
+    in harvest.py, which explains why it is duplicated rather than imported."""
+    return (str(r.get("name") or "").lower(), str(r.get("repo") or ""),
+            str(r.get("source") or ""), str(r.get("entry_url") or ""))
+
+
 def richness(r):
     """How much do we actually know about this record?"""
     return sum(1 for k, v in r.items() if v not in (None, "", [], {}, False))
@@ -171,8 +178,14 @@ if __name__ == "__main__":
             merged.append(merge(g))
             dupes.append(g)
 
-    merged.sort(key=lambda r: (r.get("name") or "").lower())
-    json.dump(merged + excluded, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
+    # Sorting by name alone left ties free to swap between runs, and `excluded`
+    # was not sorted at all. catalog.json is committed weekly, so both matter.
+    # `merged + excluded` order is kept — the split is meaningful, and consumers
+    # filter on the `excluded` flag rather than on position.
+    merged.sort(key=stable_order)
+    excluded.sort(key=stable_order)
+    json.dump(merged + excluded, open(f"{OUT}/catalog.json", "w"),
+              indent=1, default=str, sort_keys=True)
     os.makedirs(f"{OUT}/out", exist_ok=True)
     json.dump(dupes, open(f"{OUT}/out/dupes.json", "w"), indent=1, default=str)
 

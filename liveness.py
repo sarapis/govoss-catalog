@@ -272,7 +272,13 @@ def main():
     for k, res in results.items():
         st = res.get("status")
         p = prev.get(k, {})
-        rec = {"status": st, "checked": NOW, "name": names[k]}
+        # NO per-record "checked". Every record in a file is checked in the same
+        # ~4.5 min sweep, so storing the timestamp 3,000 times recorded one fact
+        # 3,000 times — and made all 3,000 records differ every run. It was 3,005
+        # of 3,005 "changed" records against ~90 real ones, and it alone took the
+        # weekly diff from 470 lines to 47,563. The run timestamp lives in
+        # summary["checked"], which is where consumers already read it.
+        rec = {"status": st, "name": names[k]}
         for f in ("archived", "empty", "last_push"):
             if res.get(f) is not None:
                 rec[f] = res[f]
@@ -307,8 +313,12 @@ def main():
                "dead": len(dead), "pending_dead": len(pending),
                "unknown": len(unknown), "archived": len(archived),
                "newly_dead": newly_dead, "revived": revived}
+    # sort_keys: this file is committed every week, and dict insertion order here
+    # follows whatever order the hosts answered in, so byte-identical records
+    # shuffled position and diffed as changes. Stable ordering is what makes
+    # `git log -p liveness.json` answer "what changed this week".
     json.dump({"summary": summary, "repos": repos},
-              open(f"{OUT}/liveness.json", "w"), indent=1)
+              open(f"{OUT}/liveness.json", "w"), indent=1, sort_keys=True)
 
     pct = lambda n: f"{100*n/max(1,len(repos)):.1f}%"
     print(f"\n  OK       {ok:>5} ({pct(ok)})")

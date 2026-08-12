@@ -53,9 +53,12 @@ back to the record upstream. `sources.py` (published as /sources.json) lists all
 17 catalogues with their access routes. Check the upstream terms before
 redistributing entry content at scale; do not assume this file grants them.
 
-Cached raw checkpoints under `cache/` are verbatim upstream responses, retained
-so the pipeline can be replayed offline without hitting other people's
-infrastructure. They are upstream's data in upstream's shape, not ours.
+Checkpoints under `cache/` are this project's NORMALISED records, one file per
+source, written the moment a source succeeds so the pipeline can be replayed
+offline without hitting other people's infrastructure. They are not verbatim
+upstream responses — the field names (`repo`, `entry_url`, `upstream_id`) are
+ours, and the records are sorted for stable diffs. The content they carry is
+upstream's; the shape is not.
 
 Nothing here licenses the CATALOGUED SOFTWARE itself. Each project's own licence
 governs its use; `licence_spdx` records it where the upstream string is real SPDX

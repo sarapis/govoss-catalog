@@ -440,9 +440,38 @@ inferred. Note `git ls-remote` and a no-op `git push --dry-run` both succeed on 
 **without authenticating**, so neither is evidence the credential works; that is the same
 absence-of-evidence shape as bug 3 below.
 
-**The repo grows ~100–250 MB/year** from this: the JSON files are rewritten almost entirely
-each run (one run was +13,188/−12,900 lines). Well inside GitHub's limits, but it is the
-reason to think twice before adding another large generated file to `DATA_PATHS`.
+### Committed JSON must be deterministic
+
+**Every file in `DATA_PATHS` is written sorted, and stores no per-record timestamp.** This is
+not tidiness — before it, week-over-week churn was **50,199 diff lines; it is now 2,365**, a
+95% cut, and the repo went from ~100–250 MB/year of growth to single digits.
+
+Two causes, both measured rather than guessed:
+
+1. **Unstable record order.** Adapters emit in whatever order upstream answered, so
+   byte-identical records changed position. `cache/src_tw.json` churned **458 lines with 0 of
+   its 58 records changed** — the cleanest possible demonstration. Sorting took it to 0.
+2. **A per-run timestamp stored per record.** `liveness.json` gave every repo a `checked`
+   field set to the same `NOW`, so all 3,005 records differed every run against ~90 real
+   changes. That one field was 47,563 of the 47,563-line diff; without it, 487.
+
+Rules for anything added to `DATA_PATHS`:
+
+- Write with `sort_keys=True` **and** sort the records with `stable_order()`. That key is
+  deliberately **total** — name alone ties constantly (localised builds, forks, the same
+  product in two catalogues) and a tie lets rows swap between runs, which is the churn you
+  were removing. It is duplicated in `harvest.py` and `dedupe.py` on purpose; importing
+  `harvest` would execute its module body.
+- **Never store a per-run value per record.** It belongs in a summary. `export_json.py` reads
+  `summary.checked` for every entry's `last_checked`, guarded by `if lv` so an entry with no
+  liveness record stays `null` instead of inheriting a time it was never checked at.
+
+The real payoff is not the megabytes: `git log -p liveness.json` now answers "what changed
+this week", which it could not before. History you cannot read is history you are storing for
+nothing — the same objection this repo already makes about a monitor nobody opens.
+
+`catalog.json` is the one file that did not shrink (998 → 1,072 lines). Its churn was already
+mostly genuine, so there was nothing artificial to remove.
 
 **"Deploy doesn't work under launchd" was a misdiagnosis, and it is the same bug as the
 python3 with no pyyaml — third instance in this repo.** The `vercel` shim's shebang is

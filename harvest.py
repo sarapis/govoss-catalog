@@ -33,6 +33,21 @@ os.makedirs(CACHE, exist_ok=True)
 UA = {"User-Agent": "govoss-catalog/0.2 (public-sector OSS catalogue harvester)"}
 
 
+def stable_order(r):
+    """Total ordering for any record list that gets committed.
+
+    Must be TOTAL, not just "sorted by name": localised builds, forks and
+    same-named products across catalogues tie on name constantly, and a tie
+    means the two rows can still swap places between runs — which is the churn
+    this exists to remove. Falls through to identity fields until it cannot tie.
+
+    dedupe.py carries a copy rather than importing this: importing harvest would
+    execute its module body, and a sort key is not worth that coupling.
+    """
+    return (str(r.get("name") or "").lower(), str(r.get("repo") or ""),
+            str(r.get("source") or ""), str(r.get("entry_url") or ""))
+
+
 # ------------------------------------------------------------------ plumbing
 def get(url, timeout=60, raw=False, headers=None, tries=3):
     h = dict(UA)
@@ -921,7 +936,12 @@ if __name__ == "__main__":
         print(f"[{k.upper()}]")
         try:
             got = SOURCES[k]()
-            json.dump(got, open(f"{CACHE}/src_{k}.json", "w"), indent=1, default=str)
+            # Checkpoints are committed weekly. Adapters emit in whatever order
+            # the upstream API answered in, so records shuffled position between
+            # runs and diffed as changes: src_tw.json once churned 458 lines with
+            # 0 of its 58 records actually changed. Sort before writing.
+            json.dump(sorted(got, key=stable_order), open(f"{CACHE}/src_{k}.json", "w"),
+                      indent=1, default=str, sort_keys=True)
             print(f"    -> {len(got)} records (checkpointed)")
         except Exception as e:
             failed[k] = f"{type(e).__name__}: {e}"
@@ -941,7 +961,8 @@ if __name__ == "__main__":
         for r in catalog:
             r["http_status"] = live.get(r["repo_key"])
 
-    json.dump(catalog, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
+    json.dump(sorted(catalog, key=stable_order), open(f"{OUT}/catalog.json", "w"),
+              indent=1, default=str, sort_keys=True)
 
     pc = [r for r in catalog if r["tier"] == "publiccode"]
     print(f"\n{'='*64}\n{len(catalog)} records in {round(time.time()-t0)}s "

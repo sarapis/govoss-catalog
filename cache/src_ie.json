@@ -1,31 +1,19 @@
 [
  {
-  "source": "IE/ogcio",
-  "country": "IE",
-  "tier": "publiccode",
-  "name": "Government of Ireland Design System",
-  "repo": "https://github.com/ogcio/govie-ds",
-  "repo_key": "github.com/ogcio/govie-ds",
-  "landing": "https://ds.services.gov.ie/",
-  "license": "MIT",
   "categories": [
    "design-system",
    "it-development",
    "web-collaboration"
   ],
-  "platforms": [
-   "web"
-  ],
-  "software_type": "library",
-  "dev_status": "stable",
-  "maintenance": "internal",
   "contacts": [
    "Applications and Architecture Team"
   ],
+  "country": "IE",
   "desc_en": "An open-source design system providing tools and guidelines to create consistent, accessible, and user-centred government digital services.",
-  "short_desc": "An open-source design system providing tools and guidelines to create consistent, accessible, and user-centred government digital services.",
   "desc_lang": "en",
-  "long_desc": "The Government of Ireland Design System is an open-source design system developed by the Office of the Government Chief Information Officer (OGCIO). It provides tools for design and development, along with resources and guidelines to help teams create consistent, accessible, and user-centred digital services across government.",
+  "dev_status": "stable",
+  "entry_url": "https://github.com/ogcio/govie-ds",
+  "fallback_repo": "https://github.com/ogcio/govie-ds",
   "features": [
    "React component library",
    "HTML component library",
@@ -36,99 +24,111 @@
    "Figma design resources",
    "WCAG 2.1 AA accessible components"
   ],
+  "is_fork": false,
+  "landing": "https://ds.services.gov.ie/",
+  "last_activity": "2026-08-11T16:25:05Z",
+  "license": "MIT",
+  "long_desc": "The Government of Ireland Design System is an open-source design system developed by the Office of the Government Chief Information Officer (OGCIO). It provides tools for design and development, along with resources and guidelines to help teams create consistent, accessible, and user-centred digital services across government.",
+  "maintenance": "internal",
+  "name": "Government of Ireland Design System",
+  "platforms": [
+   "web"
+  ],
+  "repo": "https://github.com/ogcio/govie-ds",
+  "repo_key": "github.com/ogcio/govie-ds",
+  "short_desc": "An open-source design system providing tools and guidelines to create consistent, accessible, and user-centred government digital services.",
+  "software_type": "library",
+  "source": "IE/ogcio",
+  "stars": 6,
+  "tier": "publiccode",
   "used_by": [
    "Office of Government's Chief Information Officer, Ireland",
    "Department of Education, Ireland"
-  ],
-  "fallback_repo": "https://github.com/ogcio/govie-ds",
-  "entry_url": "https://github.com/ogcio/govie-ds",
-  "stars": 6,
-  "last_activity": "2026-08-11T16:25:05Z",
-  "is_fork": false
+  ]
  },
  {
-  "source": "IE/ogcio",
-  "country": "IE",
-  "tier": "index",
-  "name": "unleash",
-  "repo": "https://github.com/ogcio/unleash",
-  "repo_key": "github.com/ogcio/unleash",
-  "repo_owner": "ogcio",
-  "license": "Apache-2.0",
-  "entry_url": "https://github.com/ogcio/unleash",
-  "short_desc": "Open-source feature management solution built for developers.",
-  "desc_lang": "en",
-  "stars": 1,
-  "last_activity": "2026-06-17T16:59:29Z",
-  "is_fork": true
- },
- {
-  "source": "IE/ogcio",
-  "country": "IE",
-  "tier": "index",
-  "name": "wagtail-sitemap-seo",
-  "repo": "https://github.com/ogcio/wagtail-sitemap-seo",
-  "repo_key": "github.com/ogcio/wagtail-sitemap-seo",
-  "repo_owner": "ogcio",
-  "license": "NOASSERTION",
-  "entry_url": "https://github.com/ogcio/wagtail-sitemap-seo",
-  "stars": 0,
-  "last_activity": "2026-03-24T09:26:46Z",
-  "is_fork": false
- },
- {
-  "source": "IE/ogcio",
-  "country": "IE",
-  "tier": "index",
-  "name": "wagtail-tinymce-table",
-  "repo": "https://github.com/ogcio/wagtail-tinymce-table",
-  "repo_key": "github.com/ogcio/wagtail-tinymce-table",
-  "repo_owner": "ogcio",
-  "entry_url": "https://github.com/ogcio/wagtail-tinymce-table",
-  "stars": 1,
-  "last_activity": "2026-07-09T12:16:35Z",
-  "is_fork": false
- },
- {
-  "source": "IE/ogcio",
-  "country": "IE",
-  "tier": "publiccode",
-  "name": "Government of Ireland MessagingIE",
-  "repo": "https://github.com/ogcio/govie-messagingie",
-  "repo_key": "github.com/ogcio/govie-messagingie",
-  "landing": "https://messaging.services.gov.ie/",
-  "license": "MIT",
   "categories": [
    "communications",
    "instant-messaging"
   ],
-  "platforms": [
-   "web"
-  ],
-  "software_type": "standalone/web",
-  "dev_status": "stable",
-  "maintenance": "internal",
   "contacts": [
    "Applications and Architecture Team"
   ],
+  "country": "IE",
   "desc_en": "A secure, multi-channel government messaging platform enabling public service bodies to communicate with citizens across email and SMS.",
-  "short_desc": "A secure, multi-channel government messaging platform enabling public service bodies to communicate with citizens across email and SMS.",
   "desc_lang": "en",
-  "long_desc": "MessagingIE is an open-source Building Block of the Irish Government's Digital Government platform, designed to give Public Service Bodies (PSBs) a unified, secure, and standards-compliant way to communicate with citizens.\nIt supports delivery via email, with support for reusable message templates, scheduled notifications, and reminders. PSBs can integrate with MessagingIE through a well-defined API, allowing them to trigger communications programmatically as part of broader service journeys without managing their own notification infrastructure.\nMessagingIE is live in production and serves as the successor to the Digital Postbox, consolidating government citizen messaging under a single platform. It is a component of the wider Building Blocks programme, which includes FormsIE, Journey Builder, and a shared User Profile and Dashboard, enabling joined-up digital public services for citizens.",
+  "dev_status": "stable",
+  "entry_url": "https://github.com/ogcio/govie-messagingie",
+  "fallback_repo": "https://github.com/ogcio/govie-messagingie",
   "features": [
    "Sending secure messages to citizens",
    "MyGovID integration for login and signup",
    "Digital-Postbox replacement"
   ],
+  "is_fork": false,
+  "landing": "https://messaging.services.gov.ie/",
+  "last_activity": "2026-07-22T10:25:38Z",
+  "license": "MIT",
+  "long_desc": "MessagingIE is an open-source Building Block of the Irish Government's Digital Government platform, designed to give Public Service Bodies (PSBs) a unified, secure, and standards-compliant way to communicate with citizens.\nIt supports delivery via email, with support for reusable message templates, scheduled notifications, and reminders. PSBs can integrate with MessagingIE through a well-defined API, allowing them to trigger communications programmatically as part of broader service journeys without managing their own notification infrastructure.\nMessagingIE is live in production and serves as the successor to the Digital Postbox, consolidating government citizen messaging under a single platform. It is a component of the wider Building Blocks programme, which includes FormsIE, Journey Builder, and a shared User Profile and Dashboard, enabling joined-up digital public services for citizens.",
+  "maintenance": "internal",
+  "name": "Government of Ireland MessagingIE",
+  "platforms": [
+   "web"
+  ],
+  "repo": "https://github.com/ogcio/govie-messagingie",
+  "repo_key": "github.com/ogcio/govie-messagingie",
+  "short_desc": "A secure, multi-channel government messaging platform enabling public service bodies to communicate with citizens across email and SMS.",
+  "software_type": "standalone/web",
+  "source": "IE/ogcio",
+  "stars": 0,
+  "tier": "publiccode",
   "used_by": [
    "Office of Government's Chief Information Officer, Ireland",
    "Department of Education and Youth, Ireland",
    "Department of Social Protection, Ireland"
-  ],
-  "fallback_repo": "https://github.com/ogcio/govie-messagingie",
-  "entry_url": "https://github.com/ogcio/govie-messagingie",
+  ]
+ },
+ {
+  "country": "IE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/ogcio/unleash",
+  "is_fork": true,
+  "last_activity": "2026-06-17T16:59:29Z",
+  "license": "Apache-2.0",
+  "name": "unleash",
+  "repo": "https://github.com/ogcio/unleash",
+  "repo_key": "github.com/ogcio/unleash",
+  "repo_owner": "ogcio",
+  "short_desc": "Open-source feature management solution built for developers.",
+  "source": "IE/ogcio",
+  "stars": 1,
+  "tier": "index"
+ },
+ {
+  "country": "IE",
+  "entry_url": "https://github.com/ogcio/wagtail-sitemap-seo",
+  "is_fork": false,
+  "last_activity": "2026-03-24T09:26:46Z",
+  "license": "NOASSERTION",
+  "name": "wagtail-sitemap-seo",
+  "repo": "https://github.com/ogcio/wagtail-sitemap-seo",
+  "repo_key": "github.com/ogcio/wagtail-sitemap-seo",
+  "repo_owner": "ogcio",
+  "source": "IE/ogcio",
   "stars": 0,
-  "last_activity": "2026-07-22T10:25:38Z",
-  "is_fork": false
+  "tier": "index"
+ },
+ {
+  "country": "IE",
+  "entry_url": "https://github.com/ogcio/wagtail-tinymce-table",
+  "is_fork": false,
+  "last_activity": "2026-07-09T12:16:35Z",
+  "name": "wagtail-tinymce-table",
+  "repo": "https://github.com/ogcio/wagtail-tinymce-table",
+  "repo_key": "github.com/ogcio/wagtail-tinymce-table",
+  "repo_owner": "ogcio",
+  "source": "IE/ogcio",
+  "stars": 1,
+  "tier": "index"
  }
 ]
