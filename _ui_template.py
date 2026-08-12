@@ -87,7 +87,27 @@ PAGE_CSS = """
   /* a <select> sizes to its WIDEST OPTION by default - the licence list made it
      472px and scrolled the whole page sideways on a phone */
   max-width:100%;}
-.sel{padding-right:10px;}
+/* A native <select> ignores border-radius, padding and background on most
+   platforms until its appearance is removed - which is why these three rendered
+   as OS controls beside pill-shaped buttons. Removing the appearance also
+   removes the dropdown arrow, so the chevron is drawn back in as a background
+   image (a data URI, so it stays self-contained and costs no request).
+   The colour is baked because a data URI cannot read a CSS variable; it is
+   --ink-600. Width is capped because a select sizes to its WIDEST OPTION, and
+   the licence list ran to several hundred pixels. */
+.sel{
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%234D4D4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  padding-right:34px;
+  max-width:100%;
+  width:auto;
+  text-overflow:ellipsis;
+}
+.sel:hover{background-color:var(--bg-alt);}
+/* the licence list is the long one; the others are short by nature */
+#lic{max-width:220px;}
 .tog[aria-pressed="true"]{background:var(--primary-tint);color:var(--primary);
   border-color:var(--primary);font-weight:600;}
 .countline{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
