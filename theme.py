@@ -25,6 +25,7 @@ Values come from the Civic Tech Field Guide design system supplied in the
 restyle handoff. Do not invent colours, type or shadows outside these tokens.
 Light-only by decision — see LIGHT-ONLY below.
 """
+import os
 
 # --------------------------------------------------------------------------
 # Fonts. Self-hosted, NOT a CDN.
@@ -112,53 +113,75 @@ FONT_FACE_CSS = "\n".join(_face(*x) for x in _FACES)
 # paints, which on a dark-mode browser renders dark text on dark.
 # --------------------------------------------------------------------------
 
-TOKENS_CSS = """
+# --------------------------------------------------------------------------
+# Tokens. VENDORED from the Civic Tech Field Guide design system, not
+# transcribed.
+#
+# theme.py used to re-declare every hex by hand. That put a copy of somebody
+# else's values in our repo with no link back to them - the exact drift this
+# module exists to prevent between our three builders, reintroduced one level up
+# at the boundary we do not control. The token files now live in vendor/ctfg/
+# and are inlined at build time, so an upstream fix arrives as a file drop
+# instead of another round of retyping.
+#
+# Vendored: colors, typography, spacing, effects. NOT vendored: styles.css (its
+# only non-@import line loads Google Fonts), tokens/fonts.css (@font-face from a
+# CDN) and tokens/interactions.css (rules for .ctfg-* classes we never stamp).
+# See vendor/ctfg/README.md.
+#
+# LIGHT-ONLY, by decision. The DS tokens are light-only already. Because of that
+# `body` MUST paint its own background explicitly - a page with a transparent
+# body borrows whatever ground the host paints.
+# --------------------------------------------------------------------------
+
+_VENDOR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor", "ctfg")
+_DS_FILES = ("colors.css", "typography.css", "spacing.css", "effects.css")
+
+
+def _vendored_tokens():
+    parts = []
+    for name in _DS_FILES:
+        with open(os.path.join(_VENDOR, name)) as fh:
+            parts.append("/* ---- vendored from ctfg design system: %s ---- */\n%s"
+                         % (name, fh.read()))
+    return "\n".join(parts)
+
+
+# Everything below is OURS, applied after the vendored tokens so it wins.
+# Two kinds, and the distinction matters when taking an upstream update:
+#
+#   PATCH      - fixes a defect upstream still has. DELETE when they ship the
+#                fix; tracked in CTFG-CONTRAST-REPORT.md.
+#   DIVERGENCE - a deliberate difference that should survive any update.
+OVERRIDES_CSS = """
 :root{
-  /* neutrals */
-  --white:#FFFFFF; --ink-900:#19191E; --ink-600:#4D4D4A; --ink-500:#6B6B68;
-  --ink-400:#9FA4A3; --line-300:#CDCDCB; --line-200:#ECECEC;
-  --paper-100:#F1F1F1; --paper-50:#FBFBFB;
-  /* violet (primary) */
-  --violet-700:#1F1A73; --violet-500:#574FD9; --violet-300:#877DFF; --violet-100:#F1F0FF;
-  /* green / mint */
-  --green-700:#006348; --green-500:#01B583; --mint-300:#67F5C2; --mint-100:#EAFFF9;
-  --shadow-ink:#181818;
-
-  /* semantic aliases - components read THESE, never the base values */
-  --bg:var(--paper-50); --bg-alt:var(--paper-100); --surface:var(--white);
-  --ink:var(--ink-900); --ink-soft:var(--ink-500);
-  /* --ink-faint is TEXT and must clear 4.5:1. ink-400 measured 2.44:1 on paper
-     and 2.53:1 on white - it failed WCAG 1.4.3 everywhere it carried words:
-     entry metadata, facet counts, column headers, per-source timings. ink-500
-     is 5.17/5.35:1 and already in the palette, so nothing is invented.
-     --ink-400 itself is kept for NON-text use (borders, sparkline states),
-     where 4.5:1 does not apply. Every rule that sets TEXT colour now reads
-     --ink-faint; if you find yourself typing var(--ink-400) on something with
-     words in it, that is the bug this comment exists to prevent. */
+  /* PATCH - accessibility. The DS declares --ink-faint: var(--ink-400), and
+     #9FA4A3 measures 2.44:1 on its own --paper-50 where 4.5:1 is required. It
+     failed on every label, count and caption it coloured. --ink-500 is 5.17:1
+     and already in the palette. Delete this line once upstream fixes it. */
   --ink-faint:var(--ink-500);
-  --border:var(--line-300); --border-soft:var(--line-200);
-  --primary:var(--violet-500); --primary-deep:var(--violet-700);
-  --primary-tint:var(--violet-100);
-  --green:var(--green-500); --mint:var(--mint-300);
 
-  /* type */
+  /* DIVERGENCE - fonts. The DS families are correct but its stacks are thin
+     ('Space Grotesk', sans-serif) and its mono reaches for Cascadia Code, which
+     the DS loads from a CDN. We self-host woff2 and serve same-origin, so these
+     carry full fallbacks and no CDN face. Keep across updates. */
   --font-display:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-ui:'Archivo',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-body:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-  /* the Sarapis wordmark face, matching next.sarapis.org's --sds-font-logo */
+
+  /* OURS - not a DS token. The Sarapis wordmark face, matching
+     next.sarapis.org's --sds-font-logo. */
   --font-logo:'Marcellus',Georgia,'Times New Roman',serif;
 
-  /* radius */
-  --r-chip:5px; --r-med:10px; --r-card:14px; --r-table:20px; --r-pill:999px;
-
-  /* hard offset shadows, zero blur - the CTFG signature */
-  --shadow-bar:2px 2px 0 0 var(--shadow-ink);
-  --shadow-pill:2px 2px 0 0 var(--primary-deep);
-  --shadow-green:2px 2px 0 0 var(--green-700);
-  --divider:1px dashed var(--ink);
+  /* OURS - shorter aliases onto the DS radius scale. Aliases, not values, so a
+     radius change upstream still propagates. */
+  --r-chip:var(--radius-sm); --r-med:var(--radius-md); --r-card:var(--radius-lg);
+  --r-table:var(--radius-2xl); --r-pill:var(--radius-pill);
 }
 """
+
+TOKENS_CSS = _vendored_tokens() + OVERRIDES_CSS
 
 # --------------------------------------------------------------------------
 # Base + chrome CSS shared by all three pages.

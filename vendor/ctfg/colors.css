@@ -1,0 +1,61 @@
+/* ============================================================
+   COLORS — reconciled against the Figma's Colours page +
+   METADATA color-usage counts. Base values + semantic aliases.
+   ============================================================ */
+:root {
+  /* ---- Base: neutrals ---- */
+  --white:        #FFFFFF;
+  --ink-900:      #19191E;  /* primary text, logo (rgb 25,25,30) */
+  --ink-800:      #1A1A1A;
+  --ink-600:      #4D4D4A;  /* rgb 77,77,74 */
+  --ink-500:      #6B6B68;  /* secondary text (rgb 107,107,104) */
+  --ink-400:      #9FA4A3;  /* tertiary / placeholder (rgb 159,164,163) */
+  --line-300:     #CDCDCB;  /* default border (rgb 205,205,203) */
+  --line-200:     #ECECEC;  /* faint divider (rgb 236,236,236) */
+  --paper-100:    #F1F1F1;  /* tinted block (rgb 241,241,241) */
+  --paper-50:     #FBFBFB;  /* page background (rgb 251,251,251) */
+
+  /* ---- Base: violet (primary) ---- */
+  --violet-700:   #1F1A73;  /* deep — hard shadows, hover (rgb 31,26,115) */
+  --violet-500:   #574FD9;  /* primary (rgb 87,79,217) */
+  --violet-450:   #6155E2;  /* rgb 97,85,226 */
+  --violet-300:   #877DFF;  /* light accent */
+  --violet-250:   #B1ACFF;  /* lighter accent / states (rgb 177,172,255) */
+  --violet-100:   #F1F0FF;  /* lightest wash (rgb 241,240,255) */
+
+  /* ---- Base: green / mint ---- */
+  --green-700:    #006348;  /* deep green shadow (rgb 0,99,72) */
+  --green-500:    #01B583;  /* verified / active (rgb 1,181,131) */
+  --green-450:    #01B391;  /* rgb 1,179,145 */
+  --mint-400:     #12CAAB;  /* rgb 18,202,171 */
+  --mint-300:     #67F5C2;  /* bright mint accent (rgb 103,245,194) */
+  --mint-100:     #EAFFF9;  /* pale mint wash (rgb 234,255,249) */
+
+  /* ---- Semantic aliases (use these in components) ---- */
+  --bg:            var(--paper-50);
+  --bg-alt:        var(--paper-100);
+  --surface:       var(--white);
+
+  --ink:           var(--ink-900);
+  --ink-soft:      var(--ink-500);
+  --ink-faint:     var(--ink-400);
+
+  --primary:       var(--violet-500);
+  --primary-deep:  var(--violet-700);
+  --primary-lt:    var(--violet-300);
+  --primary-lter:  var(--violet-250);
+  --primary-tint:  var(--violet-100);
+
+  --mint:          var(--mint-300);
+  --green:         var(--green-500);
+  --mint-tint:     var(--mint-100);
+
+  --border:        var(--line-300);
+  --border-soft:   var(--line-200);
+  --shadow-ink:    #181818;
+
+  /* status */
+  --verified:      var(--green-500);
+  --link:          var(--violet-500);
+  --link-hover:    var(--violet-700);
+}

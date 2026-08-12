@@ -1,0 +1,41 @@
+/* ============================================================
+   TYPOGRAPHY — Space Grotesk (display/body/UI), Archivo (buttons,
+   footer headings), Inter (fine print). Sizes per Figma METADATA.
+   ============================================================ */
+:root {
+  /* families */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-ui:      'Archivo', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'SF Mono', ui-monospace, 'Cascadia Code', Menlo, monospace;
+
+  /* weights */
+  --w-regular: 400; /* @kind other */
+  --w-medium:  500; /* @kind other */
+  --w-semibold:600; /* @kind other */
+  --w-bold:    700; /* @kind other */
+
+  /* type scale (px tokens observed in the Figma) */
+  --text-hero:     56px;  /* page/hero titles */
+  --text-h1:       48px;
+  --text-h2:       34px;  /* section titles */
+  --text-h3:       24px;  /* category titles */
+  --text-lg:       20px;
+  --text-md:       18px;  /* lede */
+  --text-base:     16px;  /* UI / nav */
+  --text-sm:       15px;
+  --text-body:     14px;  /* descriptions */
+  --text-xs:       13px;  /* overline, fine labels */
+  --text-2xs:      12px;
+
+  /* line-heights */
+  --lh-tight:   1.1; /* @kind other */
+  --lh-snug:    1.25; /* @kind other */
+  --lh-normal:  1.5; /* @kind other */
+
+  /* tracking */
+  --tracking-tight:   -0.02em; /* @kind other */
+  --tracking-snug:    -0.01em; /* @kind other */
+  --tracking-wide:     0.05em; /* @kind other */
+  --tracking-overline: 0.14em; /* @kind other */
+}

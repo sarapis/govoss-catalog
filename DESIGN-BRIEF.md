@@ -54,8 +54,20 @@ rendering `__N_ENTRIES__` to a reader. Keep it that way: if you need a value int
 
 ## The design system
 
-Civic Tech Field Guide tokens. `theme.py` holds every colour, font, radius and shadow **once**
-— three builders read it, so they cannot drift. Do not invent values outside these.
+Civic Tech Field Guide tokens, **vendored, not transcribed**. The DS token files live in
+`vendor/ctfg/` and `theme.py` inlines them at build time, so an upstream fix arrives as a file
+drop instead of a round of retyping. Three builders read `theme.py`, so they cannot drift from
+each other, and `theme.py` cannot drift from the design system.
+
+Vendored: `colors` · `typography` · `spacing` · `effects`. **Not** vendored: `styles.css` (its
+only non-`@import` line loads Google Fonts), `tokens/fonts.css` (`@font-face` from a CDN) and
+`tokens/interactions.css` (rules for `.ctfg-*` classes we never stamp). See
+`vendor/ctfg/README.md`.
+
+Our overrides sit **after** the vendored tokens in `theme.py`, each labelled either **PATCH**
+(fixes a defect upstream still has — delete when they ship it) or **DIVERGENCE** (deliberate,
+should survive any update). Today: one patch (`--ink-faint`) and one divergence (font stacks).
+Do not invent values outside these.
 
 ```
 --paper-50  #FBFBFB  page ground        --violet-500 #574FD9  primary, links, stat numbers
