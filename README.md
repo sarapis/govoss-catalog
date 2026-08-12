@@ -12,7 +12,7 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 
 | | |
 |---|---|
-| Entries | **3,063** |
+| Entries | **3,070** |
 | Catalogues | **17**, across 14 countries + the EU + a global registry |
 | English descriptions | 100% of described entries (excl. 171 deliberately-untranslated Bulgarian) |
 | Functional categories | 19, all 233 source category values explicitly mapped |

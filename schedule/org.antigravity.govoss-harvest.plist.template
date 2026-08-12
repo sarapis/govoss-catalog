@@ -72,6 +72,11 @@
     <string>/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:__HOME__/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     <key>HOME</key>
     <string>__HOME__</string>
+    <!-- run.sh records this in history.json, and the status page shows it. Without
+         it every scheduled run reports trigger "manual", which is the default for
+         a hand-run and therefore indistinguishable from one. -->
+    <key>GOVOSS_TRIGGER</key>
+    <string>schedule</string>
   </dict>
 
   <!-- Mondays at 07:00 local -->

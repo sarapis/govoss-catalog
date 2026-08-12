@@ -8,7 +8,7 @@ design decision was made, and a section called *"Four bugs that recurred"* listi
 shapes that came back repeatedly. `README.md` has the overview. Don't re-litigate decisions
 recorded there — particularly the deliberate exclusions.
 
-State: **3,063 entries, 17 catalogues, 14 countries + EU + a global registry.** Pipeline is
+State: **3,070 entries, 17 catalogues, 14 countries + EU + a global registry.** Pipeline is
 `bash run.sh` (~25 min; the order matters and is documented at the top of the file). Scheduled
 weekly, Mondays 07:00 — `bash schedule/install.sh` sets that up.
 
@@ -30,7 +30,7 @@ to **Stale**, so a copy that stops being republished stops claiming to be Operat
 
 ## In rough priority order
 
-1. **Expand `replaces.json`.** 108 of 3,063 entries map to 165 proprietary products. This is
+1. **Expand `replaces.json`.** 108 of 3,070 entries map to 165 proprietary products. This is
    the field that makes the catalogue answer *"what can we stop paying for?"* rather than
    *"what exists"*. Read the `_README` block in that file first — `kind` (`software` /
    `service` / `paid-tier`) and `confidence` both matter, and getting them wrong produces

@@ -21,7 +21,13 @@ SOURCE_LABEL = {"fr": "France (SILL + awesome)", "it": "Italy (Developers Italia
                 "de": "Germany (openCode)", "be": "Belgium (iMio)",
                 "se": "Sweden (Offentligkod)", "fi": "Finland (Avoinkoodi)",
                 "eu": "EU institutions (code.europa.eu)", "nl": "Netherlands (OSS register)"}
-NOTES = {"nl": "needs NL_API_KEY — every read returns 401 without one"}
+# Keyed by CHECKPOINT name (cache/src_<key>.json), which is a different namespace
+# from sources.py's SOURCES keys ("FR/sill"). Note the key is `nlreg`, the OSS
+# *register*, not `nl` — `nl` is code.overheid.nl, which needs no key and returns
+# 134 repos. Getting that wrong renders the warn with no explanation at all, which
+# is how a status page trains you to ignore it.
+NOTES = {"nlreg": "the OSS register needs NL_API_KEY — every read returns 401 without one. "
+                  "The Dutch code platform (nl) is unaffected and harvests fine."}
 
 
 def ago(iso):

@@ -4,7 +4,7 @@
 > national, municipal and international catalogues, normalised onto one schema, translated to
 > English, categorised by function, de-duplicated and liveness-monitored.
 >
-> **3,063 entries · 17 catalogues · 14 countries + EU + global.** Live at
+> **3,070 entries · 17 catalogues · 14 countries + EU + global.** Live at
 > https://govoss-catalog.vercel.app — see `README.md` for the public overview and
 > `CONTINUE.md` for open items. This file is the operating manual: it records why each
 > decision was made and what not to re-litigate.
