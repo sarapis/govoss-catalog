@@ -49,9 +49,10 @@ python3 analyze.py              # counts, overlap, licence + liveness breakdown
 Runs weekly via `~/Library/LaunchAgents/org.antigravity.govoss-harvest.plist`
 (Mondays 07:00, log at `~/Library/Logs/govoss-harvest.log`).
 
-⚠ **Redeployment is still manual.** The scheduled run regenerates everything and publishes
-none of it — `generated_at` in `/meta.json` is the honest freshness signal, not the deploy
-date. See `CONTINUE.md`.
+**The run publishes itself.** `run.sh`'s last step deploys `site/` to Vercel, gated on every
+earlier step succeeding — a run with a failed step publishes nothing and leaves the last good
+copy up. `generated_at` in `/meta.json` is the freshness signal, and `/status.html` flips to
+**Stale** on its own if it has not been republished in over 8 days.
 
 ## Pipeline
 

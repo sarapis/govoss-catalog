@@ -91,7 +91,8 @@ def build():
         "schedule": {"cron": "Mondays 07:00 local",
                      "agent": "org.antigravity.govoss-harvest",
                      "log": "~/Library/Logs/govoss-harvest.log",
-                     "redeploy": "manual — generated_at is the freshness signal"},
+                     "redeploy": "automatic — run.sh publishes site/ to Vercel as its "
+                                 "last step, gated on every earlier step succeeding"},
     }
 
     # ---------------- changelog rows, newest first
@@ -266,8 +267,10 @@ footer {{ border-top:1px solid var(--hairline); padding-top:1rem; color:var(--sl
     <h1>govoss-catalog &mdash; status</h1>
     <p class="dim">Data last rebuilt <b class="mono">{esc(latest['run_at'])}</b>
        ({esc(ago(latest['run_at']))}), trigger <span class="mono">{esc(latest.get('trigger'))}</span>.
-       Harvest runs Mondays 07:00 local. Redeploy is manual, so
-       <span class="mono">generated_at</span> is the freshness signal &mdash; not the deploy date.</p>
+       Harvest runs Mondays 07:00 local and publishes itself, so this page is redeployed by
+       the run it describes &mdash; unless a step failed, in which case nothing is published
+       and the copy you are reading is the last good run.</p>
+    <p class="dim note" id="stale" hidden></p>
     <p class="dim note">Machine-readable: <a href="/status.json">/status.json</a> &middot;
        catalogue data <a href="/entries.json">/entries.json</a> &middot;
        <a href="/">back to the catalogue</a></p>
@@ -317,6 +320,30 @@ footer {{ border-top:1px solid var(--hairline); padding-top:1rem; color:var(--sl
       Page generated {esc(NOW)}.</span>
   </footer>
 </div>
+<script>
+/* The badge above is baked at build time. A page that stopped being republished
+   would therefore keep reading "Operational" no matter how old it got - which is
+   the same failure the deploy step exists to prevent, one layer up: a green
+   signal that is green because nothing updated it. So re-judge freshness against
+   the READER's clock, using the same 8-day trigger build_status.py uses.
+   Pure ASCII on purpose: HTML entities are not decoded inside a script tag. */
+(function () {{
+  var runAt = "{esc(latest['run_at'])}";
+  var d = (Date.now() - Date.parse(runAt)) / 864e5;
+  if (!(d > 8)) return;
+  var badge = document.querySelector('.badge');
+  if (badge) {{ badge.className = 'badge bad';
+                badge.innerHTML = '<span class="dot"></span>Stale'; }}
+  var el = document.getElementById('stale');
+  if (el) {{
+    el.hidden = false;
+    el.innerHTML = 'This page was published ' + Math.floor(d) + ' days ago and the '
+      + 'schedule is weekly, so the run that should have replaced it did not publish. '
+      + 'Every figure below describes that older run. Check '
+      + '<span class="mono">~/Library/Logs/govoss-harvest.log</span>.';
+  }}
+}})();
+</script>
 """
     page = page.encode("ascii", "xmlcharrefreplace").decode()
     open(f"{SITE}/status.html", "w").write(page)

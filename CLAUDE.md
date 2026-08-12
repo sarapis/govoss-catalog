@@ -26,6 +26,9 @@ Schedule: **Mondays 07:00 local** via `~/Library/LaunchAgents/org.antigravity.go
 catalogues move slowly and a run costs ~15 min of I/O against other people's
 public infrastructure.
 
+**The run publishes itself** — `run.sh` ends with a `deploy` step that pushes `site/` to
+Vercel, so there is no manual `vercel deploy --prod` any more. See *Publishing* below.
+
 ## The 17 sources, and how each is reached
 
 | Country | Source | Route | ~Count |
@@ -384,6 +387,39 @@ Health is three states with defined triggers: any failed step or >8 days since a
 Per-source counts are read from the **checkpoints**, so a source that failed shows its last
 good figure rather than silently reading as zero.
 
+The page also **re-judges its own freshness in the browser**. The badge is baked at build
+time, so a copy that stopped being republished would keep reading "Operational" no matter
+how old it got — a green signal that is green because nothing updated it, which is the same
+failure shape as the silent partial run. A few lines of JS compare `run_at` against the
+reader's clock using the same 8-day trigger and flip the badge to **Stale**.
+
+## Publishing
+
+`run.sh`'s last step is `deploy`, which pushes `site/` to Vercel. Before it existed the
+weekly run regenerated everything and published none of it: the live copy went stale while
+its own status page still said "Operational", and every update needed a hand-run
+`vercel deploy --prod`.
+
+- **Gated on `out/steps.tsv`.** Any non-zero step and nothing is published — a partially
+  harvested catalogue overwriting a good public copy is worse than a stale one.
+- **Runs last**, after the run log, sources and status pages, so the published copy
+  describes the run that published it.
+- **Aborts if `site/.vercel/project.json` is missing.** `site/` is gitignored, so a fresh
+  checkout has no project link, and `vercel deploy --yes` would silently create a *new*
+  project rather than fail. Relink with `cd site && vercel link --yes --project govoss-catalog`.
+- **Auth**: `VERCEL_TOKEN`, else `~/.config/govoss/vercel-token` (chmod 600), else the CLI's
+  stored login. The file is preferred over the plist because LaunchAgent plists are
+  world-readable and end up in backups, and rotating a file needs no `launchctl` reload.
+
+**"Deploy doesn't work under launchd" was a misdiagnosis, and it is the same bug as the
+python3 with no pyyaml — third instance in this repo.** The `vercel` shim's shebang is
+`#!/usr/bin/env node`, `node` was not on the launchd PATH, and the job died with
+`env: node: No such file or directory` — which reads as an auth failure if all you observe
+is that nothing deployed. Stored auth is fine; check with
+`env -i PATH=<plist PATH> HOME=$HOME vercel whoami`. Both the plist PATH and `publish()`
+now resolve **`/usr/local/bin/node`**, not the nvm one — that path carries a version number
+and moves on every upgrade.
+
 `history.json` begins 2026-08-11 and is seeded with the one genuine launchd run from
 `~/Library/Logs/govoss-harvest.log`. That record carries a `_note` saying it predates the
 dedupe, filter and export steps and the liveness confirmation pass — which is why its dead
@@ -416,7 +452,9 @@ anything else:
 - **`run.sh` resolves its own interpreter.** Do not add bare `python3` calls. Under launchd,
   PATH resolved to Homebrew's python3, which has no pyyaml — harvest died while every later
   step "succeeded" on stale data. `run.sh` now probes for an interpreter with `yaml`+`certifi`
-  and exits 1 with instructions if none has them.
+  and exits 1 with instructions if none has them. **The publish step hit the identical bug
+  from the other direction** — `vercel` was on PATH but its `#!/usr/bin/env node` was not.
+  Treat "works in my shell, not under launchd" as a PATH question first, every time.
 - **Harvest checkpoints per source** to `cache/src_<key>.json` the moment a source succeeds,
   and `catalog.json` is assembled from *every* checkpoint on disk. This exists because a DNS
   blip once killed four sources and overwrote a complete catalogue with a partial one.

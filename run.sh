@@ -18,6 +18,9 @@
 #   build_ui     regenerates catalogue.html from the finished catalog.json
 #   build_site   assembles site/ from tracked sources (html + vercel.json)
 #   json export  writes site/entries.json + meta.json + by-product + by-category
+#   deploy       publishes site/ to Vercel. LAST, after the status and sources
+#                pages, so the published copy describes the run that published
+#                it — and gated on every earlier step succeeding.
 #
 # Safe to re-run. Harvest checkpoints per source in cache/, so a network blip
 # costs one source, not the whole run.
@@ -117,6 +120,92 @@ PY
 step "run log"      "$PY" -u runlog.py "$STARTED" "$TRIGGER"
 step "sources page" "$PY" -u build_sources.py
 step "status page"  "$PY" -u build_status.py
+
+# ---- publish -------------------------------------------------------------
+# Without this the weekly run regenerated everything and published none of it:
+# the live copy silently went stale while its own status page, baked at build
+# time, still read "Operational".
+#
+# Three things this has to get right:
+#
+#  1. GATED on out/steps.tsv. A partial run overwriting a good public copy is
+#     worse than a stale one — the whole point of steps.tsv is that reading the
+#     end state cannot tell a failed harvest from a successful one.
+#  2. The CLI *and its interpreter* are resolved, never assumed. This is the
+#     third instance of the same bug in this repo, after the python3 with no
+#     pyyaml: `vercel` lives in ~/.npm-global/bin and its shebang is
+#     `#!/usr/bin/env node`, so under launchd's minimal PATH it failed with
+#     "env: node: No such file or directory" — which reads as an auth problem
+#     if you only look at the deploy not happening. It is not: with node on
+#     PATH, the CLI's stored login authenticates fine from a launchd job
+#     (verified with `env -i PATH=<plist PATH> vercel whoami`). Prefer
+#     /usr/local/bin/node — the nvm one lives under a version-numbered path
+#     that moves on every upgrade.
+#  3. A TOKEN is still preferred, because a stored login can be revoked or
+#     expire and would then fail silently-ish every Monday. Set VERCEL_TOKEN in
+#     the plist's EnvironmentVariables, or put the token alone in
+#     ~/.config/govoss/vercel-token (chmod 600) — the file keeps the secret out
+#     of a world-readable LaunchAgent plist and needs no launchctl reload to
+#     rotate. Without either, this falls back to the stored login and says so.
+#
+# site/ is gitignored, and so is the site/.vercel/project.json that binds it to
+# the right Vercel project. If that file is missing, `vercel deploy --yes`
+# would cheerfully create a NEW project instead of failing, so check for it.
+publish () {
+  local failed
+  failed=$(awk -F'\t' '$2 != "0" { printf "%s ", $1 }' out/steps.tsv)
+  if [ -n "$failed" ]; then
+    echo "NOT PUBLISHING — failed step(s): $failed"
+    echo "  the public copy stays on the last good run; fix and re-run."
+    return 1
+  fi
+
+  local VERCEL=""
+  for cand in "$HOME/.npm-global/bin/vercel" /opt/homebrew/bin/vercel \
+              /usr/local/bin/vercel "$(command -v vercel || true)"
+  do
+    [ -x "$cand" ] && { VERCEL="$cand"; break; }
+  done
+  if [ -z "$VERCEL" ]; then
+    echo "NOT PUBLISHING — vercel CLI not found (npm i -g vercel)." >&2
+    return 1
+  fi
+
+  # the CLI is a node script; make sure `env node` can find one.
+  local NODE=""
+  for cand in /usr/local/bin/node /opt/homebrew/bin/node "$(command -v node || true)" \
+              "$HOME"/.nvm/versions/node/*/bin/node
+  do
+    [ -x "$cand" ] && { NODE="$cand"; break; }
+  done
+  if [ -z "$NODE" ]; then
+    echo "NOT PUBLISHING — no node found; the vercel CLI cannot run without one." >&2
+    return 1
+  fi
+  export PATH="$(dirname "$NODE"):$PATH"
+
+  local token="${VERCEL_TOKEN:-}"
+  local tokfile="${VERCEL_TOKEN_FILE:-$HOME/.config/govoss/vercel-token}"
+  if [ -z "$token" ] && [ -r "$tokfile" ]; then
+    token=$(tr -d ' \t\r\n' < "$tokfile")
+  fi
+
+  if [ ! -f site/.vercel/project.json ]; then
+    echo "NOT PUBLISHING — site/.vercel/project.json is missing." >&2
+    echo "  site/ is gitignored, so a fresh checkout has no project link." >&2
+    echo "  relink with: cd site && vercel link --yes --project govoss-catalog" >&2
+    return 1
+  fi
+
+  echo "vercel: $VERCEL  (node $("$NODE" --version))"
+  if [ -n "$token" ]; then
+    ( cd site && "$VERCEL" deploy --prod --yes --token "$token" )
+  else
+    echo "no VERCEL_TOKEN and no $tokfile — using the CLI's stored login."
+    ( cd site && "$VERCEL" deploy --prod --yes )
+  fi
+}
+step "deploy" publish
 
 echo ""
 echo "done  $(date -u +%Y-%m-%dT%H:%M:%SZ)"

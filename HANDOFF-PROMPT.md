@@ -95,8 +95,10 @@ your question is strictly "what do governments publish".
 - **102 entries are filtered out** of `entries.json` as not-adoptable software: forks of
   upstream projects, CI plumbing, deployment recipes, locale bundles.
 - `link_dead` is true for 24 entries, confirmed over two consecutive checks.
-- `generated_at` in `/meta.json` is the build time. **Redeployment is still manual**, so
-  trust `generated_at` over the deploy date.
+- `generated_at` in `/meta.json` is the build time, and the weekly run now publishes itself,
+  so build time and deploy time track each other. A run with any failed step publishes
+  nothing, so a `generated_at` that has stopped moving means the pipeline broke, not that
+  someone forgot to deploy — `/status.json` says which step.
 
 ## Still worth knowing
 

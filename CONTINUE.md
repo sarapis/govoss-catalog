@@ -16,19 +16,23 @@ Current state: **3,063 entries, 17 catalogues, 14 countries + EU + a global regi
 Pipeline is `bash run.sh` (~25 min, order matters — it's documented at the top of the file).
 Scheduled weekly via `org.antigravity.govoss-harvest` (Mondays 07:00).
 
-## The one thing that actually needs doing
+## Publishing is now automatic (done 2026-08-11)
 
-**The weekly harvest regenerates everything and publishes none of it.** `run.sh` has no
-deploy step, so I've been running `vercel deploy --prod` by hand after every change. Next
-Monday the public copy silently goes stale while the status page still says "Operational".
+`run.sh` ends with a `deploy` step that pushes `site/` to Vercel, gated on `out/steps.tsv`
+showing no failed step. No more hand-run `vercel deploy --prod`. See *Publishing* in
+`CLAUDE.md`.
 
-The fix: put a `VERCEL_TOKEN` in the plist's `EnvironmentVariables` (the CLI's stored auth
-does not work from a launchd job — verified), add a deploy step to `run.sh` gated on
-`out/steps.tsv` showing no failures, and confirm by kickstarting the job and checking
-`generated_at` moves on the live `/meta.json`. Maybe 15 minutes. **Do this first** — it's the
-difference between a durable catalogue and one that needs nursing.
+Worth knowing, because the diagnosis in the previous version of this file was wrong: the CLI's
+stored auth **does** work from a launchd job. What failed was `#!/usr/bin/env node` — node was
+not on the launchd PATH, so the job died with `env: node: No such file or directory`, which
+looks like an auth failure if all you see is that nothing deployed. A token is still supported
+and preferred (`VERCEL_TOKEN`, or `~/.config/govoss/vercel-token` chmod 600) since a stored
+login can be revoked; it just was never the blocker.
 
-## Then, in rough priority order
+The status page now also re-checks its own age against the reader's clock and flips the badge
+to **Stale**, so a copy that stops being republished stops claiming to be Operational.
+
+## In rough priority order
 
 1. **Expand `replaces.json`.** 108 of 3,063 entries map to 165 proprietary products. This is
    the field that makes the catalogue answer *"what can we stop paying for?"* rather than
