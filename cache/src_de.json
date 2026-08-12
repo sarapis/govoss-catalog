@@ -9023,7 +9023,7 @@
   ],
   "forge_path": "cern/indico",
   "landing": "https://getindico.io",
-  "last_activity": "2026-08-12T00:00:13.772Z",
+  "last_activity": "2026-08-12T01:16:37.342Z",
   "license": "MIT",
   "long_desc": "Indico is a general-purpose, fully web-based event management system originally developed at CERN, the European Organization for Nuclear Research. It supports the full lifecycle of conferences, meetings and lectures, from the initial call for abstracts through registration, scheduling, paper reviewing and archival of materials.\n\nKey capabilities include a hierarchical content management system for organizing events of any size, from single meetings to multi-week international conferences; a call for abstracts and abstract reviewing workflow; flexible, configurable registration forms with integration for external payment systems; a paper reviewing workflow for peer-reviewed contributions; a drag-and-drop timetable management interface for scheduling sessions and contributions; a badge and ticket editor for printing participant badges; a powerful room booking system for managing shared meeting spaces; and integration with common video conferencing solutions.\n\nIndico is released under the MIT license and is developed as a community project, with contributions from more than 100 developers, translators and usability specialists worldwide. It is extensible through a plugin system, allow",
   "maintenance": "community",
@@ -11849,7 +11849,7 @@
    "TODO"
   ],
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend",
-  "last_activity": "2026-08-11T03:06:29.829Z",
+  "last_activity": "2026-08-12T03:07:16.457Z",
   "license": "EUPL-1.2",
   "long_desc": "This is the backend CMS based on Strapi for the DigitalHub project.\n",
   "maintenance": "internal",

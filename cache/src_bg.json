@@ -456,7 +456,7 @@
  },
  {
   "country": "BG",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/governmentbg/ckanext-extrafields",
   "is_fork": true,
   "last_activity": "2016-02-25T16:09:13Z",

@@ -16319,7 +16319,7 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://gitlab.opencode.de/5fswf/co2-ampeln/node-red-flow",
+    "entry_url": "https://gitlab.opencode.de/5fswf/co2-ampeln/deployment",
     "name": "CO2-Flow f\u00fcr NodeRed u. Grafana",
     "repo_url": "https://gitlab.opencode.de/5fswf/co2-ampeln",
     "source": "DE/openCode"
@@ -16338,18 +16338,18 @@
   "desc_src": "CO2-Ampeln",
   "desc_src_lang": "it",
   "dev_status": "stable",
-  "entry_url": "https://gitlab.opencode.de/5fswf/co2-ampeln/node-red-flow",
-  "fallback_repo": "https://gitlab.opencode.de/5fswf/co2-ampeln/node-red-flow.git",
+  "entry_url": "https://gitlab.opencode.de/5fswf/co2-ampeln/deployment",
+  "fallback_repo": "https://gitlab.opencode.de/5fswf/co2-ampeln/deployment.git",
   "features": [
    "co2",
    "CO2-Monitoring"
   ],
-  "forge_path": "5fswf/co2-ampeln/node-red-flow",
+  "forge_path": "5fswf/co2-ampeln/deployment",
   "functions": [
    "data-analytics"
   ],
   "functions_inferred": false,
-  "last_activity": "2024-03-01T06:19:45.147Z",
+  "last_activity": "2024-03-01T06:18:56.936Z",
   "license": "EUPL-1.2",
   "long_desc": " In verschiedenen Innenr\u00e4umen wurden CO2-Ampeln zur \u00dcberwachung des CO2-Gehalts, der Temperatur und der Luftfeuchtigkeit installiert. Diese Ger\u00e4te zeigen hohe CO2-Werte an und helfen, die Raumtemperatur zu regulieren, um \u00dcberhitzung zu vermeiden.\n\nDie CO2-Ampeln senden ihre Messungen 2-min\u00fctlich \u00fcber LoRaWAN-Gateways an\nein TTI-Netzwerk. Die Daten werden in die urbane Datenplattform (UDSP)\nintegriert und k\u00f6nnen \u00fcber Dashboards visualisiert werden. Dabei werden\nNGSI-konforme Schnittstellen und Datenmodelle verwendet.\n\n\nDie \u00dcberwachung des CO2-Gehalts und der Luftfeuchtigkeit in Innenr\u00e4umen\nist aus mehreren Gr\u00fcnden wichtig. Erh\u00f6hte CO2-Werte k\u00f6nnen zu einer\nschlechten Luftqualit\u00e4t f\u00fchren, die Schl\u00e4frigkeit, Kopfschmerzen und eine\nAbnahme der kognitiven Funktionen verursachen kann. Richtige Bel\u00fcftung und\ndie \u00dcberwachung des CO2-Gehalts tragen dazu bei, eine gesunde und\nproduktive Umgebung f\u00fcr Menschen zu schaffen. Au\u00dferdem ist die\nAufrechterhaltung einer optimalen Luftfeuchtigkeit wichtig f\u00fcr Komfort und\nGesundheit. Eine hohe Luftfeuchtigkeit kann Schimmelbildung und Unbehagen\nf\u00f6rdern, w\u00e4hrend eine niedrige Luftfeuchtigkeit zu trockener Haut,\ngereizten Atemwegen und einem erh\u00f6hten Inf",
   "maintenance": "community",
@@ -16369,7 +16369,7 @@
   ],
   "tier": "publiccode",
   "translated": true,
-  "upstream_id": 2591
+  "upstream_id": 2590
  },
  {
   "catalogue_count": 1,
@@ -19108,8 +19108,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "Sandbox for collaboration on a modern data workflow architecture for data integrations",
-  "desc_src_lang": "da",
   "entry_url": "https://github.com/OS2sandbox/connector-poc",
   "functions": [
    "collaboration"
@@ -19122,11 +19120,10 @@
   "repo": "https://github.com/OS2sandbox/connector-poc",
   "repo_key": "github.com/os2sandbox/connector-poc",
   "repo_owner": "OS2sandbox",
-  "short_desc": "Sandbox for collaboration on a modern data workflow architecture for data integrations.",
+  "short_desc": "Sandbox for collaboration on a modern data workflow architecture for data integrations",
   "source": "DK/os2",
   "stars": 2,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "active": true,
@@ -60697,7 +60694,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://getindico.io",
-  "last_activity": "2026-08-12T00:00:13.772Z",
+  "last_activity": "2026-08-12T01:16:37.342Z",
   "license": "MIT",
   "long_desc": "Indico is a general-purpose, fully web-based event management system originally developed at CERN, the European Organization for Nuclear Research. It supports the full lifecycle of conferences, meetings and lectures, from the initial call for abstracts through registration, scheduling, paper reviewing and archival of materials.\n\nKey capabilities include a hierarchical content management system for organizing events of any size, from single meetings to multi-week international conferences; a call for abstracts and abstract reviewing workflow; flexible, configurable registration forms with integration for external payment systems; a paper reviewing workflow for peer-reviewed contributions; a drag-and-drop timetable management interface for scheduling sessions and contributions; a badge and ticket editor for printing participant badges; a powerful room booking system for managing shared meeting spaces; and integration with common video conferencing solutions.\n\nIndico is released under the MIT license and is developed as a community project, with contributions from more than 100 developers, translators and usability specialists worldwide. It is extensible through a plugin system, allow",
   "maintenance": "community",
@@ -74831,7 +74828,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T03:06:29.829Z",
+  "last_activity": "2026-08-12T03:07:16.457Z",
   "license": "EUPL-1.2",
   "long_desc": "This is the backend CMS based on Strapi for the DigitalHub project.\n",
   "maintenance": "internal",
@@ -92996,8 +92993,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "Repo for cooperation and maturing Issue templates and PR templates for our os2 projects and products",
-  "desc_src_lang": "da",
   "entry_url": "https://github.com/OS2sandbox/os2-issue-and-pr-templates",
   "functions": [
    "web-content"
@@ -93010,11 +93005,10 @@
   "repo": "https://github.com/OS2sandbox/os2-issue-and-pr-templates",
   "repo_key": "github.com/os2sandbox/os2-issue-and-pr-templates",
   "repo_owner": "OS2sandbox",
-  "short_desc": "Repository for developing and maturing issue and pull-request templates for OS2 projects and products.",
+  "short_desc": "Repo for cooperation and maturing Issue templates and PR templates for our os2 projects and products",
   "source": "DK/os2",
   "stars": 1,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -94277,8 +94271,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "A repository for deployment templates for use wiith traditional-, Docker- or Kubernetes- deployment",
-  "desc_src_lang": "da",
   "entry_url": "https://github.com/OS2Forms/os2forms_deployment_templates",
   "functions": [
    "web-content"
@@ -94290,11 +94282,10 @@
   "repo": "https://github.com/OS2Forms/os2forms_deployment_templates",
   "repo_key": "github.com/os2forms/os2forms_deployment_templates",
   "repo_owner": "OS2Forms",
-  "short_desc": "Deployment templates for traditional, Docker and Kubernetes deployments.",
+  "short_desc": "A repository for deployment templates for use wiith traditional-, Docker- or Kubernetes- deployment",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -94800,7 +94791,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://github.com/OS2mo/os2mo",
-  "last_activity": "2026-08-12T00:23:00Z",
+  "last_activity": "2026-08-12T01:36:05Z",
   "license": "MPL-2.0",
   "long_desc": "GIR is an IT system for organisational and identity management.\nIt enables your organisation to maintain information about the organisation and its employees, volunteers, external consultants, robot users, and so on, from a single user interface.\nYou get a complete overview of all departments, employees' (multiple) employments, their IT access, their affiliations, and roles throughout the organisation. You also get a complete picture of management hierarchies, and you can see your union representative organisation, your payroll organisation, your safety organisation, your line organisation, etc.\nThe vision for GIR is that it should be *the* source system for the entire organisation and its employees: this is where organisational changes are made, this is where employees are created and removed, and this information will automatically - and immediately - be sent to other systems. The information can also come from other systems - or be enriched from them - but it is GIR that contains the complete picture of the organisation.\nBecause GIR contains all the information about the organisation, and it is always up-to-date and correct, it is important to connect GIR to other systems that n",
   "maintenance": "contract",
@@ -96853,8 +96844,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "OS2Web Drupal feature for importing jobs from Emply to a content type in Drupal. It also includes a list of jobs with category filter.",
-  "desc_src_lang": "pt",
   "entry_url": "https://github.com/OS2web/os2web_emply_job",
   "functions": [],
   "functions_inferred": false,
@@ -96865,11 +96854,10 @@
   "repo": "https://github.com/OS2web/os2web_emply_job",
   "repo_key": "github.com/os2web/os2web_emply_job",
   "repo_owner": "OS2web",
-  "short_desc": "OS2web Drupal feature for importing jobs from Emply into a Drupal content type. Also includes a job listing with category filters.",
+  "short_desc": "OS2Web Drupal feature for importing jobs from Emply to a content type in Drupal. It also includes a list of jobs with category filter.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -97102,8 +97090,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "OS2web Drupal feature for importing jobs from HR-Manager to a content type in Drupal. It also includes a list of jobs with filters.",
-  "desc_src_lang": "pt",
   "entry_url": "https://github.com/OS2web/os2web_hrmanager_job",
   "functions": [
    "hr-workforce"
@@ -97116,11 +97102,10 @@
   "repo": "https://github.com/OS2web/os2web_hrmanager_job",
   "repo_key": "github.com/os2web/os2web_hrmanager_job",
   "repo_owner": "OS2web",
-  "short_desc": "OS2web Drupal feature for importing jobs from HR-Manager into a Drupal content type. Also includes a filterable job listing.",
+  "short_desc": "OS2web Drupal feature for importing jobs from HR-Manager to a content type in Drupal. It also includes a list of jobs with filters.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -98730,7 +98715,7 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://gitlab.opencode.de/unbox-cologne/p2d2/p2d2-mirror",
+    "entry_url": "https://gitlab.opencode.de/OC000028072444/p2d2",
     "name": "p2d2",
     "repo_url": "https://github.com/Peter-Koenig/p2d2-hub.git",
     "source": "DE/openCode"
@@ -98753,8 +98738,8 @@
   "desc_src": "Moderne Geodateninfrastruktur zur Verzahnung von Verwaltungsdaten mit B\u00fcrgerdaten",
   "desc_src_lang": "de",
   "dev_status": "beta",
-  "entry_url": "https://gitlab.opencode.de/unbox-cologne/p2d2/p2d2-mirror",
-  "fallback_repo": "https://gitlab.opencode.de/unbox-cologne/p2d2/p2d2-mirror.git",
+  "entry_url": "https://gitlab.opencode.de/OC000028072444/p2d2",
+  "fallback_repo": "https://gitlab.opencode.de/OC000028072444/p2d2.git",
   "features": [
    "Integration of administrative data with OpenStreetMap and WikiData",
    "Geodata collection by citizens",
@@ -98763,14 +98748,14 @@
    "Integration with established spatial data infrastructures",
    "API for data exchange"
   ],
-  "forge_path": "unbox-cologne/p2d2/p2d2-mirror",
+  "forge_path": "OC000028072444/p2d2",
   "functions": [
    "data-analytics",
    "geospatial"
   ],
   "functions_inferred": false,
   "landing": "https://www.data-dna.eu",
-  "last_activity": "2026-08-10T13:22:30.039Z",
+  "last_activity": "2026-08-10T13:22:34.434Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "**p2d2** (Public-Public Data-DNA) is a modern spatial data infrastructure (SDI) \nthat connects open administrative data with citizen-contributed data. The project \naims to synchronize open government data with OpenStreetMap, WikiData, and other \npublic data platforms.\n\nThe application is built on AstroJS and integrates OpenLayers for map visualization \nand PostGIS for geodata management. It enables the collection, quality assurance, \nand provision of geodata by the public in collaboration with government agencies.\n\nTechnical foundation:\n- Frontend: AstroJS, TypeScript, OpenLayers\n- Backend: PostgreSQL/PostGIS\n- SDI components: Mapserver, Mapproxy, Mapnik\n- Deployment: Proxmox-based infrastructure\n",
   "maintenance": "internal",
@@ -98791,7 +98776,7 @@
    "DE/openCode"
   ],
   "tier": "publiccode",
-  "upstream_id": 6205,
+  "upstream_id": 5141,
   "used_by": [
    "\u00d6ffentliche Verwaltungen (geplant)"
   ],
@@ -109098,8 +109083,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "Helm charts for deploying a public-genai-platform on a k8s cluster",
-  "desc_src_lang": "pt",
   "entry_url": "https://github.com/OS2sandbox/public-genai-platform-charts",
   "functions": [
    "infrastructure"
@@ -109112,11 +109095,10 @@
   "repo": "https://github.com/OS2sandbox/public-genai-platform-charts",
   "repo_key": "github.com/os2sandbox/public-genai-platform-charts",
   "repo_owner": "OS2sandbox",
-  "short_desc": "Helm charts for deploying a public GenAI platform on a Kubernetes cluster.",
+  "short_desc": "Helm charts for deploying a public-genai-platform on a k8s cluster",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -114431,7 +114413,7 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://gitlab.opencode.de/oc000002816070/richtlinien-umsetzung-kyverno",
+    "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
     "name": "Richtlinien-Umsetzung Kyverno",
     "repo_url": "https://gitlab.opencode.de/-/ide/project/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
     "source": "DE/openCode"
@@ -114451,14 +114433,14 @@
   "desc_src": "Richtlinien-Umsetzung Kyverno",
   "desc_src_lang": "it",
   "dev_status": "development",
-  "entry_url": "https://gitlab.opencode.de/oc000002816070/richtlinien-umsetzung-kyverno",
-  "fallback_repo": "https://gitlab.opencode.de/oc000002816070/richtlinien-umsetzung-kyverno.git",
-  "forge_path": "oc000002816070/richtlinien-umsetzung-kyverno",
+  "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
+  "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno.git",
+  "forge_path": "ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
   "functions": [
    "dev-tools"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-05-26T08:38:24.429Z",
+  "last_activity": "2026-08-05T08:38:54.635Z",
   "license": "Apache-2.0",
   "long_desc": "Beschreibung......................................................................................................................................................................\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung.............................................................................................................",
   "maintenance": "contract",
@@ -114479,7 +114461,7 @@
   ],
   "tier": "publiccode",
   "translated": true,
-  "upstream_id": 10972,
+  "upstream_id": 2582,
   "used_by": [
    "IG BvC"
   ],
@@ -116686,8 +116668,6 @@
   ],
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "100% Open Source Platform for knowledge sharing suitable for collaboration between danish authorities and organisations",
-  "desc_src_lang": "da",
   "entry_url": "https://github.com/OS2sandbox/sandbox-samtale",
   "functions": [
    "identity-security"
@@ -116700,11 +116680,10 @@
   "repo": "https://github.com/OS2sandbox/sandbox-samtale",
   "repo_key": "github.com/os2sandbox/sandbox-samtale",
   "repo_owner": "OS2sandbox",
-  "short_desc": "A fully open source knowledge-sharing platform suited to collaboration between Danish authorities and organisations.",
+  "short_desc": "100% Open Source Platform for knowledge sharing suitable for collaboration between danish authorities and organisations",
   "source": "DK/os2",
   "stars": 2,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -120521,16 +120500,16 @@
   "catalogue_count": 3,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.overheid.nl/GemAmsterdam/signals-frontend",
-    "name": "Signalen frontend",
-    "repo_url": "https://github.com/Amsterdam/signals-frontend",
-    "source": "NL/code.overheid.nl"
-   },
-   {
     "entry_url": "https://github.com/OS2sandbox/signals-frontend",
     "name": "Signalen frontend",
     "repo_url": "https://github.com/Amsterdam/signals-frontend",
     "source": "DK/os2"
+   },
+   {
+    "entry_url": "https://code.overheid.nl/GemAmsterdam/signals-frontend",
+    "name": "Signalen frontend",
+    "repo_url": "https://github.com/Amsterdam/signals-frontend",
+    "source": "NL/code.overheid.nl"
    },
    {
     "entry_url": null,
@@ -120553,29 +120532,28 @@
    "IT",
    "NL"
   ],
-  "country": "NL",
+  "country": "DK",
   "desc_en": "Signalen is an open source process and task system for governments, that categorizes and routes reports about public space.",
   "desc_lang": "en",
   "desc_src": "Signalen is een open source proces- en taaksysteem voor overheden, dat meldingen over de openbare ruimte automatisch categoriseert en routeert.",
   "desc_src_lang": "nl",
   "dev_status": "stable",
-  "entry_url": "https://code.overheid.nl/GemAmsterdam/signals-frontend",
-  "fallback_repo": "https://code.overheid.nl/GemAmsterdam/signals-frontend",
+  "entry_url": "https://github.com/OS2sandbox/signals-frontend",
+  "fallback_repo": "https://github.com/OS2sandbox/signals-frontend",
   "features": [
    "Notification classification",
    "Notification routing",
    "Notification handling",
    "Reports"
   ],
-  "forge_path": "GemAmsterdam/signals-frontend",
   "functions": [
    "case-workflow",
    "collaboration"
   ],
   "functions_inferred": false,
-  "is_fork": false,
+  "is_fork": true,
   "landing": "https://signalen.org/",
-  "last_activity": "2026-08-10T13:04:21Z",
+  "last_activity": "2025-04-24T09:30:01Z",
   "license": "MPL-2.0",
   "long_desc": "Signalen is an open source process and task system for governments, which automatically categorizes and routes reports about public space for processing by the appropriate handler.\nThe City of Amsterdam receives about 300000 reports about public space every year. From furniture in the garbage to abandoned boats in the canals. More than 1400 civil servants work 24/7 to handle reports in Signalen.\nSince the introduction of Signalen, customer satisfaction with the handling of reports in Amsterdam has increased by more than 30 percent.\nSignalen software is open source and can be used freely by other governments and municipalities.\n",
   "maintenance": "community",
@@ -120590,12 +120568,13 @@
   "repo_owner": "Gemeente Amsterdam",
   "short_desc": "Signalen is an open source process and task system for governments, that categorizes and routes reports about public space.",
   "software_type": "standalone/web",
-  "source": "NL/code.overheid.nl",
+  "source": "DK/os2",
   "sources": [
    "DK/os2",
    "IT/developers-italia",
    "NL/code.overheid.nl"
   ],
+  "stars": 0,
   "tier": "publiccode",
   "used_by": [
    "Gemeente Amsterdam",
@@ -123048,7 +123027,7 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/os-app",
+    "entry_url": "https://gitlab.opencode.de/bad-belzig/smart-village-app",
     "name": "Smart Village App",
     "repo_url": "https://github.com/ikuseiGmbH/smart-village-app-app",
     "source": "DE/openCode"
@@ -123074,8 +123053,8 @@
   "desc_src": "Die Smart Village App ist ein open-source App-Baukasten f\u00fcr Kommunen, St\u00e4dte und Landkreise.",
   "desc_src_lang": "de",
   "dev_status": "stable",
-  "entry_url": "https://gitlab.opencode.de/stadtosnabrueck/os-app",
-  "fallback_repo": "https://gitlab.opencode.de/stadtosnabrueck/os-app.git",
+  "entry_url": "https://gitlab.opencode.de/bad-belzig/smart-village-app",
+  "fallback_repo": "https://gitlab.opencode.de/bad-belzig/smart-village-app.git",
   "features": [
    "News",
    "Events",
@@ -123086,7 +123065,7 @@
    "Surveys",
    "many more"
   ],
-  "forge_path": "stadtosnabrueck/os-app",
+  "forge_path": "bad-belzig/smart-village-app",
   "functions": [
    "case-workflow",
    "citizen-services",
@@ -123096,7 +123075,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://smart-village.app",
-  "last_activity": "2026-05-04T09:18:55.100Z",
+  "last_activity": "2026-08-03T15:19:23.920Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "The Smart Village App is an information and service app. In addition to administrative services, which are made available in bundled form via the app, locals and tourists can obtain information on and from the respective municipality. For example, hiking routes are provided via the app, local news and events are published, and basic public services are offered. Citizens can use the Smart Village App to report current issues or learn about administrative services, among other things. The Smart Village App thus contributes to improving the exchange of information between administrations and citizens. It was developed by municipalities for municipalities and is adaptable to the individual needs of each city or town. Counties and municipal associations also use the Smart Village App for their areas. All participating municipalities are in constant exchange with one another. The goal of this network is to facilitate work sharing: the joint creation and utilization of synergies from the ideas and experiences of the participants reduces costs and helps launch new apps more successfully. The Smart Village App is a nationwide offering that has already been implemented in numerous municipali",
   "maintenance": "contract",
@@ -123117,7 +123096,7 @@
    "DE/openCode"
   ],
   "tier": "publiccode",
-  "upstream_id": 8442,
+  "upstream_id": 2777,
   "used_by": [
    "Landkreis Havelland",
    "Landkreis Mayen-Koblenz",
@@ -128185,7 +128164,7 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://gitlab.opencode.de/oc000158033033/sv-hub",
+    "entry_url": "https://gitlab.opencode.de/oc000131359197/sv-hub",
     "name": "SV-Hub - Digitale Plattform f\u00fcr Sch\u00fcler*innenvertretungsarbeit",
     "repo_url": "https://sv-hub.de",
     "source": "DE/openCode"
@@ -128205,8 +128184,8 @@
   "desc_src": "Eine digitale Plattform f\u00fcr Sch\u00fcler*innenvertretungsarbeit mit diversen Tools f\u00fcr die administrative und inhaltliche Arbeit.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
-  "entry_url": "https://gitlab.opencode.de/oc000158033033/sv-hub",
-  "fallback_repo": "https://gitlab.opencode.de/oc000158033033/sv-hub.git",
+  "entry_url": "https://gitlab.opencode.de/oc000131359197/sv-hub",
+  "fallback_repo": "https://gitlab.opencode.de/oc000131359197/sv-hub.git",
   "features": [
    "Kalender",
    "\u00f6ffentliches SV-Profil",
@@ -128217,13 +128196,13 @@
    "Kontaktdatenbanken",
    "Veranstaltungsmanagement"
   ],
-  "forge_path": "oc000158033033/sv-hub",
+  "forge_path": "oc000131359197/sv-hub",
   "functions": [
    "collaboration"
   ],
   "functions_inferred": false,
   "landing": "https://sv-hub.de",
-  "last_activity": "2026-07-02T14:54:07.490Z",
+  "last_activity": "2026-03-28T12:33:39.924Z",
   "license": "APACHE-2.0",
   "long_desc": "Der SV-Hub ist eine webbasierte Plattform f\u00fcr die Sch\u00fcler_innenvertretungsarbeit, die unterschiedliche Tools (wie Umfragen, Wikis, Kontaktdatenbanken, Projektmanagement, Finanzmanagement, etc.) zur Verf\u00fcgung stellt, um die inhaltliche und verwalterische Arbeit in der Schule und in den Kreis- und Stadtsch\u00fcler_innenr\u00e4ten zu vereinfachen. Die Arbeit erfolgt hier in Gruppen, die kollaborativ auf diese Tools zugreifen k\u00f6nnen, um gemeinsam an Projekten und Themen in der Sch\u00fcler\\*innenvertretung zu arbeiten.\n",
   "maintenance": "contract",
@@ -128245,7 +128224,7 @@
   ],
   "tier": "publiccode",
   "translated": true,
-  "upstream_id": 11599,
+  "upstream_id": 9751,
   "used_by": [
    "Stadt Frankfurt am Main"
   ],
@@ -136682,7 +136661,7 @@
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
-  "merged_count": 6,
+  "merged_count": 4,
   "name": "vecto-sim",
   "platforms": [
    "windows",
@@ -144838,14 +144817,14 @@
  },
  {
   "also_known_as": [
-   "\u6578\u4f4d\u6191\u8b49\u76ae\u593e APP SDK"
+   "\u6578\u4f4d\u6191\u8b49\u76ae\u593e \u767c\u884c\u7aef/\u9a57\u8b49\u7aef\u670d\u52d9\u6a21\u7d44"
   ],
   "catalogue_count": 1,
   "catalogue_entries": [
    {
     "entry_url": null,
-    "name": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e \u767c\u884c\u7aef/\u9a57\u8b49\u7aef\u670d\u52d9\u6a21\u7d44",
-    "repo_url": "https://github.com/moda-gov-tw/TWDIW-official-app/tree/main/core-system",
+    "name": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e APP SDK",
+    "repo_url": "https://github.com/moda-gov-tw/TWDIW-official-app/tree/main/APP/APPSDK",
     "source": "TW/code.gov.tw"
    }
   ],
@@ -144854,30 +144833,30 @@
   ],
   "country": "TW",
   "desc_lang": "en",
-  "desc_src": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e\u6280\u8853\u67b6\u69cb\u6982\u8ff0\n\u6578\u4f4d\u6191\u8b49\u76ae\u593e\u4ee5 \u5b89\u5168\u8207\u96b1\u79c1\u4fdd\u8b77 \u70ba\u6838\u5fc3\u8a2d\u8a08\u7406\u5ff5\uff0c\u7d50\u5408\u5206\u6563\u5f0f\u8b58\u5225\uff08Decentralized Identity, DID\uff09\u8207\u53ef\u9a57\u8b49\u6191\u8b49\uff08Verifiable Credential, VC\uff09\u6280\u8853\uff0c\u78ba\u4fdd\u4f7f\u7528\u8005\u7684\u6578\u4f4d\u8b49\u4ef6\u5728\u4efb\u4f55\u60c5\u6cc1\u4e0b\u90fd\u80fd\u5b89\u5168\u638c\u63a7\u3002\n \u7121\u8ad6\u662f\u8cc7\u6599\u5132\u5b58\u3001\u6388\u6b0a\u9a57\u8b49\u6216\u8de8\u6a5f\u95dc\u4e92\u4fe1\uff0c\u6574\u9ad4\u67b6\u69cb\u7686\u4ee5\u300c\u4f7f\u7528\u8005\u81ea\u4e3b\u3001\u5b89\u5168\u53ef\u4fe1\u300d\u70ba\u6700\u9ad8\u539f\u5247\u3002\n\u9a57\u8b49\u4e09\u89d2\u67b6\u69cb\n\u6574\u9ad4\u7cfb\u7d71\u7531\u4e09\u5927\u6838\u5fc3\u5143\u4ef6\u69cb\u6210\uff1a\n\u25cf\t\u6578\u4f4d\u6191\u8b49\u76ae\u593e App\uff1a\u5b89\u88dd\u65bc\u4f7f\u7528\u8005\u884c\u52d5\u88dd\u7f6e\uff0c\u4f5c\u70ba\u6578\u4f4d\u8b49\u4ef6\u8207\u6191\u8b49\u7684\u8f09\u9ad4\u3002\n\u25cf\t\u767c\u884c\u7aef\u6a21\u7d44\uff1a\u7531\u5404\u6a5f\u95dc\u6216\u7d44\u7e54\u90e8\u7f72\uff0c\u8ca0\u8cac\u7c3d\u767c\u6578\u4f4d\u6191\u8b49\u3002\n\u25cf\t\u9a57\u8b49\u7aef\u6a21\u7d44\uff1a\u7531\u53d7\u7406\u55ae\u4f4d\u90e8\u7f72\uff0c\u7528\u4ee5\u9a57\u8b49\u4f7f\u7528\u8005\u6240\u51fa\u793a\u7684\u6191\u8b49\u771f\u507d\u3002\n\u4e09\u8005\u5171\u540c\u69cb\u7bc9\u4e86\u5b89\u5168\u3001\u53ef\u4fe1\u3001\u5206\u6563\u5f0f\u7684\u300c\u9a57\u8b49\u4e09\u89d2\u300d\u67b6\u69cb\u3002\n\u6578\u4f4d\u6191\u8b49\u76ae\u593e App \u8207\u767c\u884c\u7aef\u3001\u9a57\u8b49\u7aef\u670d\u52d9\u9593\u7684\u6240\u6709\u4e92\u52d5\uff0c\u7686\u900f\u904e App SDK \u5be6\u73fe\u3002",
+  "desc_src": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e\u6280\u8853\u67b6\u69cb\u6982\u8ff0\n\u6578\u4f4d\u6191\u8b49\u76ae\u593e\u4ee5 \u5b89\u5168\u8207\u96b1\u79c1\u4fdd\u8b77 \u70ba\u6838\u5fc3\u8a2d\u8a08\u7406\u5ff5\uff0c\u7d50\u5408\u5206\u6563\u5f0f\u8b58\u5225\uff08Decentralized Identity, DID\uff09\u8207\u53ef\u9a57\u8b49\u6191\u8b49\uff08Verifiable Credential, VC\uff09\u6280\u8853\uff0c\u78ba\u4fdd\u4f7f\u7528\u8005\u7684\u6578\u4f4d\u8b49\u4ef6\u5728\u4efb\u4f55\u60c5\u6cc1\u4e0b\u90fd\u80fd\u5b89\u5168\u638c\u63a7\u3002\n \u7121\u8ad6\u662f\u8cc7\u6599\u5132\u5b58\u3001\u6388\u6b0a\u9a57\u8b49\u6216\u8de8\u6a5f\u95dc\u4e92\u4fe1\uff0c\u6574\u9ad4\u67b6\u69cb\u7686\u4ee5\u300c\u4f7f\u7528\u8005\u81ea\u4e3b\u3001\u5b89\u5168\u53ef\u4fe1\u300d\u70ba\u6700\u9ad8\u539f\u5247\u3002\n\u9a57\u8b49\u4e09\u89d2\u67b6\u69cb\n\u6574\u9ad4\u7cfb\u7d71\u7531\u4e09\u5927\u6838\u5fc3\u5143\u4ef6\u69cb\u6210\uff1a\n\u25cf\t\u6578\u4f4d\u6191\u8b49\u76ae\u593e App\uff1a\u5b89\u88dd\u65bc\u4f7f\u7528\u8005\u884c\u52d5\u88dd\u7f6e\uff0c\u4f5c\u70ba\u6578\u4f4d\u8b49\u4ef6\u8207\u6191\u8b49\u7684\u8f09\u9ad4\u3002\n\u25cf\t\u767c\u884c\u7aef\u6a21\u7d44\uff1a\u7531\u5404\u6a5f\u95dc\u6216\u7d44\u7e54\u90e8\u7f72\uff0c\u8ca0\u8cac\u7c3d\u767c\u6578\u4f4d\u6191\u8b49\u3002\n\u25cf\t\u9a57\u8b49\u7aef\u6a21\u7d44\uff1a\u7531\u53d7\u7406\u55ae\u4f4d\u90e8\u7f72\uff0c\u7528\u4ee5\u9a57\u8b49\u4f7f\u7528\u8005\u6240\u51fa\u793a\u7684\u6191\u8b49\u771f\u507d\u3002\n\u4e09\u8005\u5171\u540c\u69cb\u7bc9\u4e86\u5b89\u5168\u3001\u53ef\u4fe1\u3001\u5206\u6563\u5f0f\u7684\u300c\u9a57\u8b49\u4e09\u89d2\u300d\u67b6\u69cb\u3002\n\u6578\u4f4d\u6191\u8b49\u76ae\u593e App\u8207\u767c\u884c\u7aef\u3001\u9a57\u8b49\u7aef\u670d\u52d9\u9593\u7684\u6240\u6709\u4e92\u52d5\uff0c\u7686\u900f\u904e App SDK \u5be6\u73fe\u3002",
   "desc_src_lang": "zh",
   "functions": [
    "identity-security"
   ],
   "functions_inferred": true,
   "keywords": [
-   "OID4VC",
-   "OID4VP",
-   "\u5171\u7528\u5143\u4ef6",
-   "\u5171\u7528\u7a0b\u5f0f\u914d\u7f6e",
-   "Java",
    "SD-JWT",
    "P-256\u6a62\u5713\u66f2\u7dda\u52a0\u5bc6",
    "W3C DID",
-   "Flutter"
+   "OID4VC",
+   "OID4VP",
+   "Flutter",
+   "\u5171\u7528\u5143\u4ef6",
+   "\u5171\u7528\u7a0b\u5f0f\u914d\u7f6e",
+   "Java"
   ],
   "merged_count": 2,
-  "name": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e \u767c\u884c\u7aef/\u9a57\u8b49\u7aef\u670d\u52d9\u6a21\u7d44",
+  "name": "\u6578\u4f4d\u6191\u8b49\u76ae\u593e APP SDK",
   "note": "moda Public Code Platform",
-  "repo": "https://github.com/moda-gov-tw/TWDIW-official-app/tree/main/core-system",
+  "repo": "https://github.com/moda-gov-tw/TWDIW-official-app/tree/main/APP/APPSDK",
   "repo_key": "github.com/moda-gov-tw/twdiw-official-app",
   "repo_owner": "\u6578\u4f4d\u767c\u5c55\u90e8",
-  "short_desc": "Digital Credential Wallet - issuer and verifier service modules. Built around security and privacy, combining Decentralized Identity (DID) and Verifiable Credentials (VC) so users keep control of their digital documents across storage, authorisation and cross-agency use.",
+  "short_desc": "Digital Credential Wallet app SDK. Built around security and privacy, combining Decentralized Identity (DID) and Verifiable Credentials (VC) so users keep control of their digital documents.",
   "source": "TW/code.gov.tw",
   "sources": [
    "TW/code.gov.tw"
@@ -146175,8 +146154,6 @@
  {
   "country": "BG",
   "desc_lang": "en",
-  "desc_src": "Temp repository to hold a CKAN extension for adding extra metadata fields for a dataset",
-  "desc_src_lang": "da",
   "entry_url": "https://github.com/governmentbg/ckanext-extrafields",
   "exclude_reason": "upstream-fork",
   "excluded": true,
@@ -146191,11 +146168,10 @@
   "repo": "https://github.com/governmentbg/ckanext-extrafields",
   "repo_key": "github.com/governmentbg/ckanext-extrafields",
   "repo_owner": "governmentbg",
-  "short_desc": "Temporary repository holding a CKAN extension that adds extra metadata fields to a dataset.",
+  "short_desc": "Temp repository to hold a CKAN extension for adding extra metadata fields for a dataset",
   "source": "BG/governmentbg",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "country": "BE",
@@ -146446,8 +146422,6 @@
  {
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "This project contains a containerized service that acts as a bridge between digitaliseringskataloget.dk/integration/sf1500 and a modern REST API.",
-  "desc_src_lang": "pt",
   "entry_url": "https://github.com/OS2sandbox/faellekommunal_organisation_rest_api",
   "exclude_reason": "upstream-fork",
   "excluded": true,
@@ -146461,11 +146435,10 @@
   "repo": "https://github.com/OS2sandbox/faellekommunal_organisation_rest_api",
   "repo_key": "github.com/os2sandbox/faellekommunal_organisation_rest_api",
   "repo_owner": "OS2sandbox",
-  "short_desc": "A containerised service acting as a bridge between digitaliseringskataloget.dk/integration/sf1500 and a modern interface.",
+  "short_desc": "This project contains a containerized service that acts as a bridge between digitaliseringskataloget.dk/integration/sf1500 and a modern REST API.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "country": "DK",
@@ -146860,8 +146833,6 @@
  {
   "country": "DK",
   "desc_lang": "en",
-  "desc_src": "OS2web Drupal feature creating content types for cases and documents, and a custom pane to render file links on a node from referenced cases and documents.",
-  "desc_src_lang": "pt",
   "entry_url": "https://github.com/OS2web/os2web_case_publishing",
   "exclude_reason": "upstream-fork",
   "excluded": true,
@@ -146875,11 +146846,10 @@
   "repo": "https://github.com/OS2web/os2web_case_publishing",
   "repo_key": "github.com/os2web/os2web_case_publishing",
   "repo_owner": "OS2web",
-  "short_desc": "OS2web Drupal feature creating content types for cases and documents, plus a custom pane rendering file links on a node from referenced cases.",
+  "short_desc": "OS2web Drupal feature creating content types for cases and documents, and a custom pane to render file links on a node from referenced cases and documents.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index",
-  "translated": true
+  "tier": "index"
  },
  {
   "country": "DK",

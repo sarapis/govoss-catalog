@@ -209,7 +209,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2sandbox/connector-poc",
   "is_fork": false,
   "last_activity": "2025-10-21T06:55:17Z",
@@ -482,7 +482,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2sandbox/faellekommunal_organisation_rest_api",
   "is_fork": true,
   "last_activity": "2023-11-14T15:43:34Z",
@@ -947,7 +947,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2sandbox/os2-issue-and-pr-templates",
   "is_fork": false,
   "last_activity": "2026-01-19T15:11:21Z",
@@ -1672,7 +1672,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2Forms/os2forms_deployment_templates",
   "is_fork": false,
   "last_activity": "2023-12-22T09:14:03Z",
@@ -1963,7 +1963,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/OS2mo/os2mo",
-  "last_activity": "2026-08-12T00:23:00Z",
+  "last_activity": "2026-08-12T01:36:05Z",
   "license": "MPL-2.0",
   "long_desc": "GIR is an IT system for organisational and identity management.\nIt enables your organisation to maintain information about the organisation and its employees, volunteers, external consultants, robot users, and so on, from a single user interface.\nYou get a complete overview of all departments, employees' (multiple) employments, their IT access, their affiliations, and roles throughout the organisation. You also get a complete picture of management hierarchies, and you can see your union representative organisation, your payroll organisation, your safety organisation, your line organisation, etc.\nThe vision for GIR is that it should be *the* source system for the entire organisation and its employees: this is where organisational changes are made, this is where employees are created and removed, and this information will automatically - and immediately - be sent to other systems. The information can also come from other systems - or be enriched from them - but it is GIR that contains the complete picture of the organisation.\nBecause GIR contains all the information about the organisation, and it is always up-to-date and correct, it is important to connect GIR to other systems that n",
   "maintenance": "contract",
@@ -3012,7 +3012,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2web/os2web_case_publishing",
   "is_fork": true,
   "last_activity": "2014-11-10T10:14:25Z",
@@ -3210,7 +3210,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2web/os2web_emply_job",
   "is_fork": false,
   "last_activity": "2015-10-16T08:14:04Z",
@@ -3429,7 +3429,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2web/os2web_hrmanager_job",
   "is_fork": false,
   "last_activity": "2015-10-16T08:26:13Z",
@@ -4153,7 +4153,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2sandbox/public-genai-platform-charts",
   "is_fork": false,
   "last_activity": "2025-11-03T10:15:26Z",
@@ -4273,7 +4273,7 @@
  },
  {
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2sandbox/sandbox-samtale",
   "is_fork": false,
   "last_activity": "2024-11-27T11:48:29Z",
