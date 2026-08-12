@@ -119,6 +119,23 @@ pages are also absent from `sitemap.xml`. Full writeup with reproduction: `PAGIN
 Beyond the bug, it is the wrong layer: it ingests France's **19-entry** curated list rather
 than the real French sources, so syndicating it inherits that hole permanently.
 
+## Identity crosswalk (`crosswalk.py`)
+
+Runs AFTER harvest and BEFORE dedupe, and adds no coverage — it only fills in Wikidata QIDs
+entries were missing, because dedupe unions on QID first and repo URL second. An entry with
+no QID can only merge with something sharing its exact repo URL, which is why the same tool
+listed by two catalogues with slightly different URLs stayed split.
+
+Comptoir du Libre (ADULLACT) is the one open source carrying several identifiers on the SAME
+row: 780 entries, all with a repo URL and website, 270 with a QID, 349 with a SILL id. It
+stamped **121 QIDs**, which lifted dedupe from 156 to **241 merges** and multi-catalogue
+entries from 46 to **105**.
+
+Match order is repo URL → SILL id → website → **exact** full name. Never fuzzy: Angular
+`Q28925578` and AngularJS `Q2849803` are different products and one name is a substring of
+the other. Every stamped QID records `wikidata_via: comptoir:<how>` so an inferred identity
+is never mistaken for a publisher-asserted one.
+
 ## Cross-catalogue presence
 
 `catalogue_count` + `catalogues[]` per entry: how many DISTINCT catalogues list this
@@ -285,6 +302,13 @@ backend-free. `/by-product.json` is that endpoint precomputed — 2 GETs answere
 procurement inventory in 0.2s, versus the ~35 browser searches it replaced.
 
 ### `replaces.json` — the field that changes what the catalogue is for
+
+**Matching UNIONS every key that matches the survivor name or any `also_known_as`.**
+First-match-wins was wrong: dedupe can pick a different survivor name than a mapping was
+keyed on — merging "GitLab Community Edition" into "GitLab" flagged three keys as rot when
+they were merely redundant, *and* silently dropped what those keys mapped that the survivor's
+did not (GitLab lost its `GitLab Premium` paid-tier row). The orphan warning is what caught
+it, which is the whole reason that warning exists.
 
 Maps catalogue entry -> proprietary products it can replace, inverting the lookup so a
 buyer starts from an invoice line. Currently **73 entries -> 95 products**, hand-seeded.

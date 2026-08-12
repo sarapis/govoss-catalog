@@ -1512,7 +1512,353 @@
     "liveness_ok": 460,
     "liveness_unknown": -2
    }
+  },
+  {
+   "run_at": "2026-08-12T00:56:12Z",
+   "started_at": "2026-08-11T23:30:00Z",
+   "trigger": "manual",
+   "duration_s": 5172,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "crosswalk",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "sources page",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 3406,
+    "filtered_out": 0,
+    "publiccode_tier": 1080,
+    "merged_away": 0,
+    "multi_country": 0
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-11T18:38:39Z"
+    },
+    "bg": {
+     "records": 186,
+     "checkpoint_mtime": "2026-08-12T00:46:54Z"
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-11T16:48:34Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-11T18:56:07Z"
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-11T19:40:15Z"
+    },
+    "eu": {
+     "records": 9,
+     "checkpoint_mtime": "2026-08-11T18:44:01Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-11T18:34:06Z"
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-08-11T21:06:35Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-11T14:17:10Z"
+    },
+    "muc": {
+     "records": 141,
+     "checkpoint_mtime": "2026-08-11T21:36:54Z"
+    },
+    "nl": {
+     "records": 134,
+     "checkpoint_mtime": "2026-08-11T18:38:32Z"
+    },
+    "os2": {
+     "records": 299,
+     "checkpoint_mtime": "2026-08-12T00:46:50Z"
+    },
+    "pt": {
+     "records": 88,
+     "checkpoint_mtime": "2026-08-11T21:23:58Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-11T19:32:10Z"
+    }
+   },
+   "translation": {
+    "described": 3031,
+    "source_english": 1329,
+    "machine_translated": 1702,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 0,
+    "inferred": 0,
+    "unclassified": 3406
+   },
+   "liveness": {
+    "checked": "2026-08-12T00:50:31Z",
+    "total": 3049,
+    "ok": 2962,
+    "dead": 24,
+    "pending_dead": 0,
+    "unknown": 60,
+    "archived": 43,
+    "newly_dead": [],
+    "revived": [
+     "gitlab.com/henixdevelopment/open-source/squash-tm",
+     "gitlab.com/opentestfactory"
+    ]
+   },
+   "filters": {},
+   "delta": {
+    "entries_active": 284,
+    "per_source": {
+     "os2": 26
+    },
+    "liveness_dead": -2,
+    "liveness_ok": 27,
+    "liveness_unknown": 1
+   }
+  },
+  {
+   "run_at": "2026-08-12T00:56:44Z",
+   "started_at": "2026-08-12T01:00:00Z",
+   "trigger": "manual",
+   "duration_s": -196,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "crosswalk",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0
+    },
+    {
+     "step": "sources page",
+     "ok": true,
+     "exit": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 3063,
+    "filtered_out": 102,
+    "publiccode_tier": 992,
+    "merged_away": 241,
+    "multi_country": 94
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-11T18:38:39Z"
+    },
+    "bg": {
+     "records": 186,
+     "checkpoint_mtime": "2026-08-12T00:46:54Z"
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-11T16:48:34Z"
+    },
+    "de": {
+     "records": 477,
+     "checkpoint_mtime": "2026-08-11T18:56:07Z"
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-11T19:40:15Z"
+    },
+    "eu": {
+     "records": 9,
+     "checkpoint_mtime": "2026-08-11T18:44:01Z"
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-11T18:34:06Z"
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-08-11T21:06:35Z"
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-11T14:17:10Z"
+    },
+    "muc": {
+     "records": 141,
+     "checkpoint_mtime": "2026-08-11T21:36:54Z"
+    },
+    "nl": {
+     "records": 134,
+     "checkpoint_mtime": "2026-08-11T18:38:32Z"
+    },
+    "os2": {
+     "records": 299,
+     "checkpoint_mtime": "2026-08-12T00:46:50Z"
+    },
+    "pt": {
+     "records": 88,
+     "checkpoint_mtime": "2026-08-11T21:23:58Z"
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-11T12:48:13Z"
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-11T19:32:10Z"
+    }
+   },
+   "translation": {
+    "described": 2745,
+    "source_english": 1137,
+    "machine_translated": 1608,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 2384,
+    "inferred": 1103,
+    "unclassified": 679
+   },
+   "liveness": {
+    "checked": "2026-08-12T00:50:31Z",
+    "total": 3049,
+    "ok": 2962,
+    "dead": 24,
+    "pending_dead": 0,
+    "unknown": 60,
+    "archived": 43,
+    "newly_dead": [],
+    "revived": [
+     "gitlab.com/henixdevelopment/open-source/squash-tm",
+     "gitlab.com/opentestfactory"
+    ]
+   },
+   "filters": {
+    "locale-bundle": 5,
+    "deployment-recipe": 18,
+    "upstream-fork": 67,
+    "ci-plumbing": 4,
+    "org-meta": 8
+   },
+   "delta": {
+    "entries_active": -343
+   }
   }
  ],
- "updated_at": "2026-08-11T22:07:11Z"
+ "updated_at": "2026-08-12T00:56:44Z"
 }

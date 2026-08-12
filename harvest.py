@@ -106,11 +106,15 @@ def detect_lang(text, hint=None):
             return code
     scores = {k: len(rx.findall(text)) for k, rx in _STOP_RE.items()}
     best = max(scores, key=scores.get)
-    if scores[best] >= 2 or (scores[best] == 1 and len(text) < 60):
+    # Require TWO markers. One is not evidence: "Admin for OS2Display version 2" is
+    # English, but `for` is also a Danish stopword, and a single-hit rule tagged 30+
+    # plainly English strings as Danish. Diacritics (aeoe/umlauts) count as their own
+    # evidence because they cannot occur in English.
+    if scores[best] >= 2:
         if hint and scores.get(hint, 0) == scores[best]:
             return hint
         return best
-    return "en"       # Latin script, no non-English markers
+    return "en"       # Latin script, no convincing non-English markers
 
 
 def base_lang(code):

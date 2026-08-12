@@ -25,7 +25,7 @@
   "repo_owner": "governmentbg",
   "entry_url": "https://github.com/governmentbg/ckan-bulgarian-theme",
   "short_desc": "CKAN theme used for the Bulgarian opendata portal",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "stars": 0,
   "last_activity": "2016-12-05T08:34:07Z",
   "is_fork": false
@@ -56,7 +56,7 @@
   "repo_owner": "governmentbg",
   "entry_url": "https://github.com/governmentbg/ckan-install",
   "short_desc": "A (semi)automated way to install CKAN",
-  "desc_lang": "pt",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2016-12-04T22:02:57Z",
   "is_fork": false
@@ -164,7 +164,7 @@
   "license": "GPL-3.0",
   "entry_url": "https://github.com/governmentbg/regix-client-java",
   "short_desc": "A Java client for Regix",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "stars": 2,
   "last_activity": "2019-09-02T05:51:31Z",
   "is_fork": false

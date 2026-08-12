@@ -91,9 +91,26 @@ def build():
         fns = r.get("functions") or []
         name = r.get("name") or ""
 
-        rep = rmap.get(name.lower())
-        if rep:
-            used_keys.add(name.lower())
+        # Match on the surviving name OR any also_known_as. dedupe can pick a
+        # different survivor name than the one a mapping was keyed on — merging
+        # "GitLab Community Edition" into "GitLab" orphaned three keys — and the
+        # mapping should follow the software, not the label that happened to win.
+        # UNION every matching key — the surviving name and every also_known_as.
+        # First-match-wins left "GitLab Community Edition" and "NextCloud" flagged as
+        # rot when they were simply redundant with the survivor's own key, and it
+        # silently dropped whatever those keys mapped that the survivor's did not.
+        rep, seen_prod = [], set()
+        for cand in [name] + list(r.get("also_known_as") or []):
+            k = (cand or "").strip().lower()
+            if not k or k not in rmap:
+                continue
+            used_keys.add(k)
+            for m in rmap[k]:
+                pk = (m.get("product") or "").lower()
+                if pk and pk not in seen_prod:
+                    seen_prod.add(pk)
+                    rep.append(m)
+        rep = rep or None
         # a publisher may also declare it upstream in publiccode.yml
         if r.get("replaces"):
             rep = (rep or []) + [x for x in r["replaces"] if isinstance(x, dict)]
@@ -187,9 +204,20 @@ def build():
                 "repo_url": e["repo_url"], "category": e["category"],
                 "link_dead": e["link_dead"], "note": m.get("note"),
             })
-    for v in by_product.values():
+    # Collapse rows that name the same software: two catalogue entries can share a
+    # name without dedupe merging them (different repo urls, no shared QID), which
+    # showed up as "Docker Desktop -> Docker, Docker" in the product index.
+    for prod, v in by_product.items():
+        seen, uniq = set(), []
+        for x in sorted(v, key=lambda x: -x["adopters"]):
+            k = (x["name"] or "").lower()
+            if k in seen:
+                continue
+            seen.add(k)
+            uniq.append(x)
         rank = {"strong": 0, "partial": 1, "adjacent": 2}
-        v.sort(key=lambda x: (rank.get(x["confidence"], 3), -x["adopters"]))
+        uniq.sort(key=lambda x: (rank.get(x["confidence"], 3), -x["adopters"]))
+        by_product[prod] = uniq
 
     cats = collections.Counter(c for e in entries for c in e["categories"])
     meta = {
