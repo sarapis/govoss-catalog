@@ -194,3 +194,4 @@ path = f"{OUT}/catalogue.html"
 open(path, "w").write(PAGE)
 print(f"wrote {path}  ({len(PAGE)/1024:.0f} KB, {len(rows)} rows, "
       f"{sum(1 for r in rows if r['rp'])} with replaces)")
+print(f"   ctfg tokens: v{theme.TOKENS_VERSION} (vendor/ctfg)")

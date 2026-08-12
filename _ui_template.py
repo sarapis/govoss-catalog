@@ -154,8 +154,8 @@ PAGE_CSS = """
 /* ink on green, not white on green: white measured 2.65:1 against #01B583 and
    failed 1.4.3. ink-900 is 6.62:1 on the same fill, so the green and its hard
    shadow - which is what makes this read as an endorsement - both survive. */
-.stamp.rec{background:var(--green);color:var(--ink-900);box-shadow:var(--shadow-green);}
-.stamp.multi{background:var(--mint);color:var(--green-700);box-shadow:var(--shadow-green);}
+.stamp.rec{background:var(--green);color:var(--on-green);box-shadow:var(--shadow-green);}
+.stamp.multi{background:var(--mint);color:var(--green-text);box-shadow:var(--shadow-green);}
 .stamp.warn{background:var(--ink-900);color:var(--paper-50);}
 .stamp svg{width:12px;height:12px;}
 

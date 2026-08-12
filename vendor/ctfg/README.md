@@ -1,7 +1,12 @@
 # Vendored: Civic Tech Field Guide design tokens
 
-**Source bundle:** `ctfg-design-system-8262bf6d-6a64-4698-80f1-8ba62eb3db88`
-(supplied in the govoss restyle handoff, 2026-08-12)
+**Version: 2.0.0 &middot; 2026-08-12.** Read it at runtime from any built page:
+`getComputedStyle(document.documentElement).getPropertyValue('--ctfg-tokens-version')`.
+
+The version is **system-wide**, so all four files carry the same string; `theme.py`
+asserts they agree and fails the build if they do not, because a set whose files
+disagree is a bad copy rather than a valid mix. The bundle folder UUID is a build
+identifier with no ordering and is not a version.
 
 `theme.py` inlines these files at build time. **Do not hand-edit them** — that is
 the transcription problem this directory exists to remove. To take an upstream
@@ -24,7 +29,16 @@ change, replace the files and bump the version above.
 
 Applied in `theme.py` **after** these files, each one labelled. Two kinds:
 
-- **Accessibility patches** — `--ink-faint` points at `--ink-500`, not `--ink-400`.
-  Delete this when the upstream fix lands; see `CTFG-CONTRAST-REPORT.md`.
+- **Accessibility patches — none.** The `--ink-faint` patch was deleted on adopting
+  2.0.0, which fixes it upstream. A patch that merely restates upstream reads as a
+  divergence to the next person.
 - **Deliberate divergence** — the font stacks carry full fallbacks and no
-  Cascadia Code, because we self-host and do not load any font CDN.
+  Cascadia Code, because we self-host and load no font CDN. 2.0.0 records this
+  under *Sanctioned divergences* in `VERSION`, so it is agreed rather than tolerated.
+
+## On taking the next update
+
+`VERSION` says a MAJOR means a rendered value moved or an alias was repointed —
+**check the override layer on a major.** 2.0.0 also moved `--ink-soft` to ink-600 and
+flags it as required-but-visually-unreviewed. That one is a no-op here: nothing in
+this project colours anything with `--ink-soft`. Verified by grep, not assumed.

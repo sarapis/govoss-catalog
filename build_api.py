@@ -223,7 +223,7 @@ PAGE_CSS = """
   letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
 /* ink on green, not white on green - white is 2.65:1 against #01B583. Same
    pairing and same fix as the "Recommended" stamp. */
-.qcard.do .qtag{background:var(--green);color:var(--ink-900);}
+.qcard.do .qtag{background:var(--green);color:var(--on-green);}
 .qcard.dont .qtag{background:var(--ink-900);color:var(--paper-50);}
 .qcard h4{font-family:var(--font-display);font-size:15px;margin:0;}
 .qcard p{font-size:13px;color:var(--ink-600);line-height:1.5;text-wrap:pretty;}

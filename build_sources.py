@@ -330,7 +330,7 @@ PAGE_CSS = """
 .d-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
 .chip{font-size:11px;padding:3px 8px;border-radius:var(--r-chip);
   background:var(--bg-alt);color:var(--ink-600);}
-.chip.mint{background:var(--mint-100);color:var(--green-700);}
+.chip.mint{background:var(--mint-100);color:var(--green-text);}
 .chip.ink{background:var(--ink-900);color:var(--paper-50);}
 
 .srow{display:flex;align-items:center;gap:10px;padding:9px 0;
@@ -366,7 +366,7 @@ PAGE_CSS = """
   text-transform:uppercase;margin-right:8px;}
 .probs .p-critical{border-left-color:var(--ink-900);}
 .probs .p-warn{border-left-color:var(--primary);}
-.probs .p-ok{border-left-color:var(--green);}
+.probs .p-ok{border-left-color:var(--green-line);}
 """
 
 BODY = """

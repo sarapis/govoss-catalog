@@ -1,15 +1,25 @@
 /* ============================================================
+   CTFG DESIGN TOKENS — v2.0.0 · 2026-08-12
+   Version is system-wide: every file in tokens/ carries the same
+   v-string in a release. Root VERSION file holds the changelog.
+   ------------------------------------------------------------
    COLORS — reconciled against the Figma's Colours page +
    METADATA color-usage counts. Base values + semantic aliases.
    ============================================================ */
 :root {
+  /* Release marker — readable at runtime: getComputedStyle(document
+     .documentElement).getPropertyValue('--ctfg-tokens-version') */
+  --ctfg-tokens-version: "2.0.0";      /* @kind other */
+  --ctfg-tokens-date:    "2026-08-12"; /* @kind other */
+
   /* ---- Base: neutrals ---- */
   --white:        #FFFFFF;
   --ink-900:      #19191E;  /* primary text, logo (rgb 25,25,30) */
   --ink-800:      #1A1A1A;
-  --ink-600:      #4D4D4A;  /* rgb 77,77,74 */
-  --ink-500:      #6B6B68;  /* secondary text (rgb 107,107,104) */
-  --ink-400:      #9FA4A3;  /* tertiary / placeholder (rgb 159,164,163) */
+  --ink-600:      #4D4D4A;  /* secondary text — 8.48:1 on white (rgb 77,77,74) */
+  --ink-500:      #6B6B68;  /* tertiary text — 5.35:1 on white, 5.17:1 on paper (rgb 107,107,104) */
+  --ink-400:      #9FA4A3;  /* NON-TEXT ONLY: borders, dividers, disabled marks.
+                               2.53:1 on white — never use for text (WCAG 1.4.3). */
   --line-300:     #CDCDCB;  /* default border (rgb 205,205,203) */
   --line-200:     #ECECEC;  /* faint divider (rgb 236,236,236) */
   --paper-100:    #F1F1F1;  /* tinted block (rgb 241,241,241) */
@@ -36,9 +46,12 @@
   --bg-alt:        var(--paper-100);
   --surface:       var(--white);
 
-  --ink:           var(--ink-900);
-  --ink-soft:      var(--ink-500);
-  --ink-faint:     var(--ink-400);
+  /* Text tiers — all three pass AA on --surface and --bg.
+     Tertiary moved off --ink-400 (2.53:1) and secondary down to --ink-600
+     to keep three legible, visibly distinct steps. */
+  --ink:           var(--ink-900);  /* primary   — 17.4:1 */
+  --ink-soft:      var(--ink-600);  /* secondary —  8.48:1 */
+  --ink-faint:     var(--ink-500);  /* tertiary  —  5.35:1 */
 
   --primary:       var(--violet-500);
   --primary-deep:  var(--violet-700);
@@ -47,7 +60,11 @@
   --primary-tint:  var(--violet-100);
 
   --mint:          var(--mint-300);
-  --green:         var(--green-500);
+  --green:         var(--green-500);  /* FILL ONLY — 2.65:1 against white */
+  --green-text:    var(--green-700);  /* green as text/meaningful glyph — 7.30:1 on white */
+  --green-line:    var(--green-700);  /* green as a UI boundary (border, outline) — WCAG 1.4.11 needs 3:1;
+                                         green-500 is 2.65:1 against white, so borders take green-700 */
+  --on-green:      var(--ink-900);    /* text/icons sitting on a --green fill — 6.62:1 */
   --mint-tint:     var(--mint-100);
 
   --border:        var(--line-300);
@@ -55,7 +72,7 @@
   --shadow-ink:    #181818;
 
   /* status */
-  --verified:      var(--green-500);
+  --verified:      var(--green-500);  /* seal FILL \u2014 for verified *text*, use --green-text */
   --link:          var(--violet-500);
   --link-hover:    var(--violet-700);
 }

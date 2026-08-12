@@ -26,6 +26,7 @@ restyle handoff. Do not invent colours, type or shadows outside these tokens.
 Light-only by decision — see LIGHT-ONLY below.
 """
 import os
+import re
 
 # --------------------------------------------------------------------------
 # Fonts. Self-hosted, NOT a CDN.
@@ -155,16 +156,22 @@ def _vendored_tokens():
 #   DIVERGENCE - a deliberate difference that should survive any update.
 OVERRIDES_CSS = """
 :root{
-  /* PATCH - accessibility. The DS declares --ink-faint: var(--ink-400), and
-     #9FA4A3 measures 2.44:1 on its own --paper-50 where 4.5:1 is required. It
-     failed on every label, count and caption it coloured. --ink-500 is 5.17:1
-     and already in the palette. Delete this line once upstream fixes it. */
-  --ink-faint:var(--ink-500);
+  /* The --ink-faint PATCH that used to sit here is GONE, deleted on adopting
+     tokens v2.0.0: colors.css now points --ink-faint at --ink-500 itself. A
+     patch that merely restates upstream is not harmless - it reads as a
+     divergence to the next person and outlives the reason for it.
+
+     v2.0.0 also moved --ink-soft from ink-500 to ink-600, which its release
+     notes flag as required-but-visually-unreviewed because it darkens every
+     secondary string. It is a NO-OP here: we never colour anything with
+     --ink-soft. Checked, not assumed. */
 
   /* DIVERGENCE - fonts. The DS families are correct but its stacks are thin
      ('Space Grotesk', sans-serif) and its mono reaches for Cascadia Code, which
      the DS loads from a CDN. We self-host woff2 and serve same-origin, so these
-     carry full fallbacks and no CDN face. Keep across updates. */
+     carry full fallbacks and no CDN face. Keep across updates - v2.0.0's VERSION
+     file now records this under "Sanctioned divergences", so it is agreed
+     upstream rather than merely tolerated here. */
   --font-display:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-ui:'Archivo',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-body:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -181,6 +188,26 @@ OVERRIDES_CSS = """
 }
 """
 
+def tokens_version():
+    """The vendored token release, read from the files themselves.
+
+    v2.0.0 stamps every file in the set with the same v-string, and the version
+    is system-wide rather than per-file - so all four agreeing is the check that
+    the vendored set is a clean copy rather than a mix of two releases. It also
+    exposes --ctfg-tokens-version as a custom property, so the same value is
+    readable at runtime on any built page.
+    """
+    seen = set()
+    for name in _DS_FILES:
+        with open(os.path.join(_VENDOR, name)) as fh:
+            m = re.search(r"(\d+\.\d+\.\d+)", fh.read()[:600])
+            seen.add(m.group(1) if m else "unversioned")
+    if len(seen) != 1:
+        raise SystemExit("vendor/ctfg: mixed token versions %s - the set is a bad copy" % sorted(seen))
+    return seen.pop()
+
+
+TOKENS_VERSION = tokens_version()
 TOKENS_CSS = _vendored_tokens() + OVERRIDES_CSS
 
 # --------------------------------------------------------------------------
