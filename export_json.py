@@ -299,7 +299,36 @@ def build():
             json.dump(obj, f, indent=1, default=str)
         return os.path.getsize(f"{SITE}/{path}")
 
+    # A COMPACT index for the MCP server, and only for it.
+    #
+    # entries.json is 5.6 MB. A Cloudflare Worker gets 10ms of CPU per request,
+    # and JSON.parse runs at a few hundred MB/s, so parsing the full export does
+    # not fit in the budget - the server would time out on a cold isolate. This
+    # index carries only what search and lookup need (851 KB raw, 188 KB gzip,
+    # ~3ms to parse) and is written HERE rather than assembled in the Worker, so
+    # it cannot drift from what the site publishes: same build, same run.
+    #
+    # Keys are short because 3,070 of them repeat; this file is read by one
+    # machine consumer, never by a human, and entries.json remains the readable
+    # long-form export for everyone else.
+    def compact(r):
+        return {"id": r.get("id"), "n": r.get("name"),
+                "d": (r.get("description") or "")[:180],
+                "c": r.get("country"), "cs": r.get("countries") or [],
+                "s": r.get("sources") or [], "f": r.get("functions") or [],
+                "l": r.get("licence"), "u": r.get("repo_url"),
+                "cc": r.get("catalogue_count", 1),
+                "rp": [m.get("product") for m in (r.get("replaces") or [])
+                       if m.get("product")],
+                "x": 1 if r.get("link_dead") else 0}
+
+    with open(f"{SITE}/mcp-index.json", "w") as f:
+        json.dump({"generated_at": GENERATED_AT,
+                   "entries": [compact(r) for r in entries]},
+                  f, separators=(",", ":"), ensure_ascii=False)
+
     sizes = {
+        "mcp-index.json": os.path.getsize(f"{SITE}/mcp-index.json"),
         "entries.json": w("entries.json", entries),
         "meta.json": w("meta.json", meta),
         "by-product.json": w("by-product.json", dict(sorted(by_product.items()))),
@@ -314,7 +343,7 @@ def build():
     write_agent_files(entries, meta, by_product)
 
     print(f"exported {len(entries)} entries  (schema {SCHEMA_VERSION}, {GENERATED_AT})")
-    for k in ("entries.json", "meta.json", "by-product.json"):
+    for k in ("entries.json", "meta.json", "by-product.json", "mcp-index.json"):
         print(f"   {k:22} {sizes[k]/1024:8.0f} KB")
     print(f"   by-category/           {len(FUNCTIONS)} files")
     print(f"   v1/ aliases            2 files")

@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "govoss-mcp",
+  "main": "src/index.js",
+  "compatibility_date": "2025-07-01",
+
+  // NO Durable Objects, NO KV, NO OAuth, unlike the tasks-mcp worker next door.
+  // This server is public, keyless and stateless: it answers from static JSON
+  // that anyone can already fetch, so there is no session to keep and no secret
+  // to hold. Every binding omitted here is one that cannot misconfigure.
+  "vars": {
+    // Read from the published site, not from a private copy. The server
+    // therefore has no privileged access and cannot serve anything the public
+    // data does not contain.
+    "CATALOG_ORIGIN": "https://govoss-catalog.vercel.app"
+  },
+
+  "observability": { "enabled": true }
+}

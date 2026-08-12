@@ -14,9 +14,15 @@ the names survived because they turned out to describe what the data really
 supports, but the URL is not invented here - it stays empty until it exists.
 """
 
-# Set this to the deployed Worker URL. Nothing else needs changing: the page and
-# the server both derive from it.
-ENDPOINT = None
+# The deployed Worker. Set once the server actually answered - the page derives
+# its "live" state from this being non-None, so an endpoint here is a promise
+# that something responds at it.
+#
+# Note search_entries additionally needs /mcp-index.json on the catalogue
+# origin, which ships with the site. Until the restyled site reaches production
+# that one tool returns a clean "catalogue index unavailable (404)" rather than
+# a crash; the other four answer from files production already serves.
+ENDPOINT = "https://govoss-mcp.devin-31f.workers.dev"
 
 # Why a separate Worker rather than a Vercel function: the catalogue deployment
 # is deliberately backend-free - it is a directory of static files behind a CDN,
