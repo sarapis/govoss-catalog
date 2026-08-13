@@ -233,9 +233,12 @@ marks machine translation so it is never confused with publisher-supplied Englis
 
 Entries whose publisher wrote NO description are **set aside** (`exclude_reason:
 no-description`, 351 of them) rather than shown: not saying what the software does is a
-failure to share it. They keep their reason, stay in the data and the JSON export, and return
-with the set-aside toggle — and if a publisher adds a description, the next run brings the
-entry back on its own.
+failure to share it. They keep their reason, stay in `catalog.json` and on the page behind the
+set-aside toggle, and return on their own if a publisher adds a description.
+
+**They do NOT stay in `/entries.json`.** `export_json.py` exports only non-excluded rows, so
+this rule removed **316 entries from the public API**, PloneMeeting among them. That is a
+deliberate consequence of the standard, not an oversight — but it is an API-visible break.
 
 **Read this before touching that rule.** A near-identical rule existed and was removed for
 cause: `no-usable-metadata` hid Products.PloneMeeting, iMio's flagship deliberations product,

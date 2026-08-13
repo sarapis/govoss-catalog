@@ -89,9 +89,16 @@ def classify(rec):
     # What changed is the CLAIM, not the evidence. This is not an assertion that
     # the entry is not software; it is an editorial standard about publisher
     # effort. It therefore FLAGS rather than deletes, exactly like every rule
-    # here: the entry keeps its reason, stays in the data and in the JSON export,
-    # and comes back with the "set-aside entries" toggle. If a publisher adds a
-    # description, the next run picks it up and the entry returns on its own.
+    # here: the entry keeps its reason, stays in catalog.json and on the catalog
+    # page behind the "set-aside entries" toggle, and if a publisher adds a
+    # description the next run returns it on its own.
+    #
+    # BUT NOTE WHAT IT DOES COST. export_json.py exports only non-excluded rows,
+    # so a set-aside entry disappears from /entries.json and every derived file.
+    # This rule therefore removed 316 entries from the public API, PloneMeeting
+    # among them. That is a deliberate consequence of the editorial standard, not
+    # an oversight — but it is an API-visible break, so if the standard is ever
+    # softened, soften it here rather than by special-casing the export.
     if not (rec.get("short_desc") or "").strip():
         return True, "no-description"
 
