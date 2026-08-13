@@ -95,7 +95,7 @@ Static files, no backend. `site/` is assembled from tracked sources and deployed
     /entries.json              all entries, structured fields
     /meta.json                 category enum, sources, counts, known gaps
     /by-product.json           proprietary product -> open source alternatives
-    /products.json             the same, plus products we CANNOT answer
+    /products.json             372 proprietary products, with/without an alternative
     /by-category/<key>.json    one file per functional category
     /sources.json              the 17 catalogues + 13 surveyed and rejected
     /status.json               freshness, per-source counts, change log

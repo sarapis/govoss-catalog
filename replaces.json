@@ -601,7 +601,7 @@
    "kind": "software"
   },
   {
-   "product": "SQL Server",
+   "product": "Microsoft SQL Server",
    "vendor": "Microsoft",
    "confidence": "strong",
    "kind": "software"
@@ -803,7 +803,7 @@
    "kind": "software"
   },
   {
-   "product": "OneNote",
+   "product": "Microsoft OneNote",
    "vendor": "Microsoft",
    "confidence": "partial",
    "kind": "software"
@@ -811,7 +811,7 @@
  ],
  "Decidim": [
   {
-   "product": "Bang the Table / EngagementHQ",
+   "product": "EngagementHQ",
    "vendor": "Granicus",
    "confidence": "strong",
    "kind": "software"
@@ -849,13 +849,6 @@
    "vendor": "Everbridge",
    "confidence": "partial",
    "kind": "software"
-  },
-  {
-   "product": "SMS / mass notification platform",
-   "vendor": "various",
-   "confidence": "partial",
-   "kind": "software",
-   "note": "Closes a gap reported as empty: RapidPro is a flow-based SMS/IVR platform used by governments at national scale."
   }
  ],
  "GOV.UK Notify": [
@@ -870,13 +863,6 @@
    "vendor": "Granicus",
    "confidence": "strong",
    "kind": "software"
-  },
-  {
-   "product": "SMS / mass notification platform",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "Email, SMS and letters for public bodies; the service the UK runs at national scale."
   }
  ],
  "KoboToolbox": [
@@ -891,13 +877,6 @@
    "vendor": "Spatial Networks",
    "confidence": "strong",
    "kind": "software"
-  },
-  {
-   "product": "mobile field data collection",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "Closes a gap reported as empty."
   }
  ],
  "ODK": [
@@ -912,21 +891,9 @@
    "vendor": "Spatial Networks",
    "confidence": "strong",
    "kind": "software"
-  },
-  {
-   "product": "mobile field data collection",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software"
   }
  ],
  "CommCare": [
-  {
-   "product": "mobile field data collection",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software"
-  },
   {
    "product": "Survey123",
    "vendor": "Esri",
@@ -946,13 +913,6 @@
    "vendor": "Poppulo",
    "confidence": "partial",
    "kind": "software"
-  },
-  {
-   "product": "digital signage",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "OS2Display, Danish municipal digital signage. Closes a gap reported as empty."
   }
  ],
  "Mautic": [
@@ -1341,12 +1301,6 @@
    "vendor": "Granicus",
    "confidence": "adjacent",
    "kind": "software"
-  },
-  {
-   "product": "crowdsourced incident reporting",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software"
   }
  ],
  "Signals": [
@@ -1407,14 +1361,7 @@
    "kind": "software"
   }
  ],
- "DHIS2": [
-  {
-   "product": "health management information system",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software"
-  }
- ],
+ "DHIS2": [],
  "Uwazi": [
   {
    "product": "Relativity",
@@ -1436,12 +1383,6 @@
    "vendor": "OneTrust",
    "confidence": "partial",
    "kind": "software"
-  },
-  {
-   "product": "whistleblowing hotline",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software"
   }
  ],
  "OpenStreetMap": [
@@ -1458,14 +1399,7 @@
    "kind": "service"
   }
  ],
- "OS2mo": [
-  {
-   "product": "organisation and identity master data management",
-   "vendor": "various",
-   "confidence": "partial",
-   "kind": "software"
-  }
- ],
+ "OS2mo": [],
  "OS2Forms": [
   {
    "product": "Formstack",

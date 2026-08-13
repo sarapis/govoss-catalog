@@ -1,6 +1,6 @@
 {
  "_README": {
-  "purpose": "Proprietary software known to be bought by government for which this catalogue currently offers NO open source alternative. Published so a gap reads as a gap rather than as an oversight.",
+  "purpose": "The proprietary software this catalogue names: every product mapped in replaces.json, plus products governments are known to buy for which there is NO open source alternative here. Whether a product has one is derived from by-product.json at build time, never stored, so the two cannot disagree.",
   "status": "SEEDED AND PARTIAL. Absence from this list is not evidence a product is unused; presence is not evidence no alternative exists anywhere - only that none is mapped in replaces.json.",
   "provenance": "Seeded 2026-08-13 from NYC's software licence export (https://api.databook.nyc/oce/licenses/export), selecting products with no replaces.json mapping. One jurisdiction, so the list is NYC-shaped: US municipal and public-safety verticals are over-represented relative to what other governments buy.",
   "why_no_amounts": "Selection used NYC contract value as a significance filter (>= $1M) but the figures are deliberately NOT stored or published. Databook owns that data and publishes it better; this catalogue is not a procurement-spend publisher.",
@@ -9,36 +9,239 @@
    "data-service": "the paid item is primarily CONTENT or a data feed. Open source cannot substitute a legal-research corpus or a traffic dataset, so 'no alternative' here is a category fact, not a gap"
   },
   "excluded": "Support contracts, advisory retainers and payment processing are left out entirely - they are not software licences. See NOT_SOFTWARE in scratchpad/gen_proprietary.py.",
-  "how_to_extend": "Add products here by hand, or re-seed from a newer export and review the diff. A product that gains a replaces.json mapping must be REMOVED from here - build_products.py fails if one appears in both."
+  "how_to_extend": "Add products here by hand, or re-seed from a newer export and review the diff. A product that gains a replaces.json mapping must be REMOVED from here - build_products.py fails if one appears in both.",
+  "fields": {
+   "description": "what the product does",
+   "desc_src": "nyc = NYC's own purpose string from its licence export; curated = hand-written for this catalogue, unverified",
+   "function": "one of the 19 govoss functions. HAND-ASSIGNED. Deriving it from the alternatives' categories was tried and is too noisy - it filed Bitbucket under Case & Workflow Management because that is where the catalogue files GitLab.",
+   "kind": "software | data-service",
+   "seen_in": "jurisdictions whose procurement data lists it"
+  }
  },
  "products": [
   {
    "name": "18B Case Tracking and Voucher System",
-   "purpose": "Case tracking and voucher management for legal defense",
+   "description": "Case tracking and voucher management for legal defense",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "1Password",
+   "description": "Password management for teams",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "3CX Phone System",
+   "description": "IP telephony and PBX",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "3ds Max",
+   "description": "3D modelling, animation and rendering",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Accela Citizen Relationship Management",
+   "description": "Citizen request tracking and permitting",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Accellion Kiteworks",
-   "purpose": "Secure file transfer",
+   "description": "Secure file transfer",
+   "desc_src": "nyc",
+   "function": "collaboration",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Acronis Cyber Protect",
+   "description": "Backup with integrated endpoint security",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Acronis Snap Deploy",
+   "description": "Disk imaging and mass workstation deployment",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Active Directory Domain Services",
+   "description": "Directory, authentication and Windows domain management",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Admins Software",
-   "purpose": "Administrative management",
+   "description": "Administrative management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Adobe Acrobat Pro",
+   "description": "PDF authoring, editing and pre-press",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Acrobat Reader",
+   "description": "PDF viewing and annotation",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Acrobat Sign",
+   "description": "Electronic signature and approval workflows",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Analytics",
+   "description": "Enterprise web and marketing analytics",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Audition",
+   "description": "Audio editing and post-production",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Experience Manager",
+   "description": "Enterprise web content management and digital asset management",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe FrameMaker",
+   "description": "Structured technical documentation authoring",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Illustrator",
+   "description": "Vector illustration and design",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe InDesign",
+   "description": "Page layout and desktop publishing",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Photoshop",
+   "description": "Raster image editing and retouching",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Premiere Elements",
+   "description": "Consumer video editing",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe Premiere Pro",
+   "description": "Professional video editing",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Adobe XD",
+   "description": "Interface design and prototyping",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "AgileAssets",
-   "purpose": "Manage bridge and tunnel inspections",
+   "description": "Manage bridge and tunnel inspections",
+   "desc_src": "nyc",
+   "function": "environment-transport",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Airtable",
+   "description": "Hosted relational spreadsheet and lightweight database",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Akamai",
+   "description": "Content delivery network and web security",
+   "desc_src": "nyc",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Alchemer",
+   "description": "Survey and data collection",
+   "desc_src": "nyc",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -46,31 +249,155 @@
   },
   {
    "name": "AlertMedia",
-   "purpose": "Safety and emergency communication",
+   "description": "Safety and emergency communication",
+   "desc_src": "nyc",
+   "function": "citizen-services",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Alfresco Content Services Enterprise",
+   "description": "Enterprise content management",
+   "desc_src": "nyc",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Algolia",
+   "description": "Hosted search API and indexing",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ALM Quality Center",
+   "description": "Test and requirements management",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Amazon S3",
+   "description": "Cloud object storage",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Amazon Web Services",
-   "purpose": "Cloud infrastructure and hosting",
+   "description": "Cloud infrastructure and hosting",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Anomali ThreatStream",
+   "description": "Threat intelligence aggregation and sharing",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "AnyDesk",
+   "description": "Remote desktop access and support",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Aqua Security Platform",
+   "description": "Container and cloud-native security",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ArcGIS Desktop",
+   "description": "Geographic information systems maintenance",
+   "desc_src": "nyc",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "ArcGIS Enterprise",
+   "description": "Server GIS, hosting and geospatial services",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ArcGIS Field Maps",
+   "description": "Mobile field data capture for GIS",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ArcGIS Hub",
+   "description": "Open data and community engagement portal for GIS",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ArcGIS Pro",
+   "description": "Desktop GIS analysis and cartography",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ArcGIS Server",
+   "description": "Map and geospatial service publishing",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Archibus",
-   "purpose": "Computerized Maintenance Management System",
+   "description": "Computerized Maintenance Management System",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Asana",
+   "description": "Work and project management",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "AssetWorks",
-   "purpose": "Fuel management system",
+   "description": "Fuel management system",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -78,23 +405,87 @@
   },
   {
    "name": "AT&T Vehicle Tracking",
-   "purpose": "Fleet management and tracking",
+   "description": "Fleet management and tracking",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Auth0",
+   "description": "Developer identity and authentication platform",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "AutoCAD",
+   "description": "Computer-aided design (CAD) software",
+   "desc_src": "nyc",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Autodesk Maya",
+   "description": "3D modelling, animation and rendering",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Avaya Aura",
+   "description": "Enterprise unified communications platform",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Axon",
-   "purpose": "Data storage and licensing for tasers and body-worn cameras",
+   "description": "Data storage and licensing for tasers and body-worn cameras",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Azure DevOps",
+   "description": "Repositories, boards, pipelines and artefacts",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Bamboo",
+   "description": "Continuous integration and deployment server",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Beyond Compare",
+   "description": "File and folder comparison and sync",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Binti",
-   "purpose": "Foster parent certification and management",
+   "description": "Foster parent certification and management",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -102,23 +493,135 @@
   },
   {
    "name": "BioVault/AFIS",
-   "purpose": "Biometric identification and fingerprint processing",
+   "description": "Biometric identification and fingerprint processing",
+   "desc_src": "nyc",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Bitbucket",
+   "description": "Git hosting, code review and CI",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "BitLocker",
+   "description": "Full-disk encryption for Windows",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Blackboard",
+   "description": "Virtual learning environment and courseware",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Blackboard Collaborate",
+   "description": "Virtual classroom and web conferencing",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "BlazeMeter",
+   "description": "Hosted load and performance testing",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Box",
+   "description": "Cloud content management and file sharing",
+   "desc_src": "nyc",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Boxcryptor",
+   "description": "Client-side encryption for cloud storage",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Brevo",
+   "description": "Email marketing and transactional messaging",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Bria",
+   "description": "SIP softphone client",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Brightcove",
+   "description": "Enterprise video hosting and streaming",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Broadcom (CA)",
-   "purpose": "Mainframe systems management and support",
+   "description": "Mainframe systems management and support",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Calendly",
+   "description": "Hosted meeting scheduling",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Camtasia",
+   "description": "Screen recording and video editing for training",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Canvas",
+   "description": "Virtual learning environment and courseware",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Care4",
-   "purpose": "Case management for Fair Futures initiative",
+   "description": "Case management for Fair Futures initiative",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -126,7 +629,9 @@
   },
   {
    "name": "Casebuilder",
-   "purpose": "Investigative case management",
+   "description": "Investigative case management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -134,31 +639,119 @@
   },
   {
    "name": "Caseload Explorer",
-   "purpose": "Probation case management",
+   "description": "Probation case management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "CentOS",
+   "description": "Community rebuild of Red Hat Enterprise Linux",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Cerner Millennium",
+   "description": "Electronic health records for hospitals",
+   "desc_src": "curated",
+   "function": "health-social",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Check Point",
-   "purpose": "Network security and firewall management",
+   "description": "Network security and firewall management",
+   "desc_src": "nyc",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Checkmarx One",
+   "description": "Application security testing platform",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Checkmk Enterprise",
+   "description": "Commercial edition of Checkmk monitoring",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Cinema 4D",
+   "description": "3D modelling, animation and rendering",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "CircleCI",
+   "description": "Hosted continuous integration",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Cisco Jabber",
+   "description": "Desktop softphone and instant messaging client",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Cisco Unified Communications Manager",
+   "description": "Enterprise IP telephony and call control",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Citrix",
-   "purpose": "Network traffic management and application delivery",
+   "description": "Network traffic management and application delivery",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Citrix Virtual Apps",
+   "description": "Application and desktop virtualisation",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "CivicPlus municipal app",
+   "description": "Municipal resident app and communications",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "ClaimsVISION",
-   "purpose": "Workers' compensation claims management",
+   "description": "Workers' compensation claims management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -166,7 +759,19 @@
   },
   {
    "name": "CoherentRx",
-   "purpose": "Clinic appointment and shift scheduling",
+   "description": "Clinic appointment and shift scheduling",
+   "desc_src": "nyc",
+   "function": "health-social",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Commvault",
+   "description": "Virtual machine and file backup and recovery",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -174,7 +779,9 @@
   },
   {
    "name": "Compliance Wage Monitoring",
-   "purpose": "Wage compliance tracking and monitoring",
+   "description": "Wage compliance tracking and monitoring",
+   "desc_src": "nyc",
+   "function": "hr-workforce",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -182,7 +789,9 @@
   },
   {
    "name": "Conduent Public Health Solutions",
-   "purpose": "Public health data management",
+   "description": "Public health data management",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -190,55 +799,243 @@
   },
   {
    "name": "Conduent StrataWare",
-   "purpose": "Workers' compensation case management",
+   "description": "Workers' compensation case management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Confluence",
+   "description": "Project management and collaboration software",
+   "desc_src": "nyc",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Confluent Platform",
+   "description": "Commercial Kafka distribution and stream platform",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Contentful",
+   "description": "Headless content management delivered as a hosted service",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Control-M",
+   "description": "Enterprise workload and job scheduling",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Convercent",
+   "description": "Ethics and compliance case management",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "ConvergeOne Call Center Solution",
-   "purpose": "Call center telephony and routing",
+   "description": "Call center telephony and routing",
+   "desc_src": "nyc",
+   "function": "crm-service",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Corel Painter",
+   "description": "Digital painting and illustration",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Coveo",
+   "description": "On-site search for NYC.gov",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Coverity",
+   "description": "Static application security testing",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "CrashPlan",
+   "description": "Hosted endpoint backup",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "CuteFTP",
+   "description": "Secure file transfer client",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "CyberArk",
+   "description": "Privileged access and secrets management",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Cyclomedia",
-   "purpose": "Citywide streetscape imagery and data services",
+   "description": "Citywide streetscape imagery and data services",
+   "desc_src": "nyc",
+   "function": "geospatial",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Datadog",
+   "description": "Hosted infrastructure and application monitoring",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Dataminr",
-   "purpose": "Real-time AI platform for event detection and threat intelligence",
+   "description": "Real-time AI platform for event detection and threat intelligence",
+   "desc_src": "nyc",
+   "function": "data-analytics",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
-   "name": "Domino Data Lab",
-   "purpose": "Data science and machine learning orchestration platform",
+   "name": "DBeaver PRO",
+   "description": "Commercial tier of the DBeaver database client",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "dbt Cloud",
+   "description": "Hosted analytics transformation and orchestration",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Dell PowerScale (Isilon)",
+   "description": "Scale-out network-attached storage",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Docker Desktop",
+   "description": "Local container development environment",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "DocuSign",
+   "description": "Electronic signatures and document workflows",
+   "desc_src": "nyc",
+   "function": "documents",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Dolphin ScreenReader",
+   "description": "Screen reader for blind and partially sighted users",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Domino Data Lab",
+   "description": "Data science and machine learning orchestration platform",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Doodle",
+   "description": "Group meeting poll and scheduling",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Dropbox",
+   "description": "Cloud file sync and sharing",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Dun & Bradstreet",
-   "purpose": "Business data validation and identity resolution",
+   "description": "Business data validation and identity resolution",
+   "desc_src": "nyc",
+   "function": "registers",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Dynamics 365 Sales",
+   "description": "Sales CRM and customer engagement",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Dynatrace",
-   "purpose": "Application performance monitoring",
+   "description": "Application performance monitoring",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -246,7 +1043,9 @@
   },
   {
    "name": "e-Builder",
-   "purpose": "Construction program management",
+   "description": "Construction program management",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -254,47 +1053,457 @@
   },
   {
    "name": "Eccovia HMIS",
-   "purpose": "Homeless management information system and data warehouse",
+   "description": "Homeless management information system and data warehouse",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Elastic Cloud",
+   "description": "Hosted Elasticsearch and observability",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Elasticsearch",
+   "description": "Enterprise search and analytics",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Elasticsearch (Elastic Licence tiers)",
+   "description": "Elastic-licensed tiers of Elasticsearch",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "EndNote",
+   "description": "Reference management and citation",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "EngagementHQ",
+   "description": "Online community consultation and civic engagement",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Entra ID",
+   "description": "Cloud identity, single sign-on and conditional access",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Epic",
+   "description": "Electronic health records for hospitals",
+   "desc_src": "curated",
+   "function": "health-social",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Everbridge",
+   "description": "Emergency notification and critical event management",
+   "desc_src": "nyc",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Evernote",
+   "description": "Note taking and personal knowledge capture",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Ex Libris Alma",
+   "description": "Library services platform and resource management",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "eXFORMA / MobiTask",
-   "purpose": "Inspection form management",
+   "description": "Inspection form management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Figma",
+   "description": "Collaborative interface design and prototyping",
+   "desc_src": "nyc",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Final Cut Pro",
+   "description": "Professional video editing",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Forcepoint",
-   "purpose": "Network security and data protection",
+   "description": "Network security and data protection",
+   "desc_src": "nyc",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Formstack",
+   "description": "Online forms and workflow automation",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Fortify Static Code Analyzer",
+   "description": "Static application security testing",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "FortiGate",
+   "description": "Next-generation firewall and network security",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Four Winds Interactive",
+   "description": "Digital signage content and screen management",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Freshdesk",
+   "description": "Customer support ticketing and help desk",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Fulcrum",
+   "description": "Field data collection and management",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Fusion 360",
+   "description": "Cloud CAD, CAM and engineering design",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "GeoServer (commercial support tiers)",
+   "description": "Commercial support tiers for GeoServer",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Geotab",
-   "purpose": "Fleet telematics and vehicle management",
+   "description": "Fleet telematics and vehicle management",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "GitHub Actions",
+   "description": "Hosted CI and workflow automation",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "GitHub Enterprise",
+   "description": "Self-hosted Git, code review and CI",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "GitLab Premium",
+   "description": "Commercial tier of GitLab",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "GlobalLink",
-   "purpose": "Translation and localization management",
+   "description": "Translation and localization management",
+   "desc_src": "nyc",
+   "function": "office",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "GO1",
+   "description": "Learning management system content",
+   "desc_src": "nyc",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "GoodSync",
+   "description": "File synchronisation and backup",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Google Analytics",
+   "description": "Hosted web analytics",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Google Docs",
+   "description": "Hosted collaborative document editing",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Google Drive",
+   "description": "Cloud file storage, sync and sharing",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Google Maps Platform",
+   "description": "Hosted mapping, geocoding and routing APIs",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Google Workspace",
+   "description": "Hosted office productivity, email and collaboration suite",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "GoToMeeting",
+   "description": "Video conferencing",
+   "desc_src": "nyc",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "GoToMyPC",
+   "description": "Remote desktop access",
+   "desc_src": "nyc",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Grammarly",
+   "description": "Writing assistance and grammar checking",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Granicus Forms",
+   "description": "Government online forms and digital services",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Granicus GovDelivery",
+   "description": "Public sector communications and email outreach",
+   "desc_src": "nyc",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Graylog Enterprise",
+   "description": "Commercial edition of Graylog log management",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "HackMD",
+   "description": "Hosted collaborative markdown editing",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "HCP Terraform",
+   "description": "Hosted Terraform state, runs and policy",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "HERE Maps",
+   "description": "Mapping, geocoding and traffic data services",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Higher Logic",
+   "description": "Online community and member engagement platform",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Hootsuite",
+   "description": "Social media management and scheduling",
+   "desc_src": "nyc",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "HubSpot Marketing Hub",
+   "description": "CRM and marketing automation",
+   "desc_src": "nyc",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Hyper-V",
+   "description": "Server virtualisation on Windows",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "IBM MQ",
+   "description": "Enterprise message queuing",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "IBM QRadar",
+   "description": "Security information and event management",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "IBM SPSS Statistics",
+   "description": "Statistical analysis and modelling",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Infor",
-   "purpose": "Enterprise resource planning and asset management",
+   "description": "Enterprise resource planning and asset management",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Informatica PowerCenter",
+   "description": "data integration and ETL processing",
+   "desc_src": "nyc",
+   "function": "integration",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -302,7 +1511,9 @@
   },
   {
    "name": "Information Builders (WebFOCUS)",
-   "purpose": "Business intelligence and reporting",
+   "description": "Business intelligence and reporting",
+   "desc_src": "nyc",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -310,7 +1521,9 @@
   },
   {
    "name": "Innovee CJ Data Research Platform",
-   "purpose": "Criminal justice data research and program support",
+   "description": "Criminal justice data research and program support",
+   "desc_src": "nyc",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -318,7 +1531,9 @@
   },
   {
    "name": "INRIX",
-   "purpose": "Traffic and transportation data analytics",
+   "description": "Traffic and transportation data analytics",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
@@ -326,7 +1541,9 @@
   },
   {
    "name": "Integrated Health Resources (BHL)",
-   "purpose": "Behavioral health data and resource management",
+   "description": "Behavioral health data and resource management",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -334,15 +1551,45 @@
   },
   {
    "name": "Intellidact AI",
-   "purpose": "Optical Character Recognition (OCR)",
+   "description": "Optical Character Recognition (OCR)",
+   "desc_src": "nyc",
+   "function": "documents",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "IntelliJ IDEA Ultimate",
+   "description": "Commercial Java and polyglot IDE",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Intergraph CAD",
-   "purpose": "911 emergency dispatch",
+   "description": "911 emergency dispatch",
+   "desc_src": "nyc",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Internet Information Services (IIS)",
+   "description": "Windows web server",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "IssueTrak",
+   "description": "Issue tracking and help desk ticketing",
+   "desc_src": "nyc",
+   "function": "crm-service",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -350,7 +1597,9 @@
   },
   {
    "name": "Itineris UMAX",
-   "purpose": "Customer Information System (CIS) for billing and revenue management",
+   "description": "Customer Information System (CIS) for billing and revenue management",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -358,7 +1607,19 @@
   },
   {
    "name": "Ivalua",
-   "purpose": "Procurement and contract management",
+   "description": "Procurement and contract management",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Ivanti Neurons",
+   "description": "Patch management and system security",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -366,15 +1627,47 @@
   },
   {
    "name": "iWise",
-   "purpose": "Proprietary telecom portal support",
+   "description": "Proprietary telecom portal support",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "JAWS",
+   "description": "Screen reading software for accessibility",
+   "desc_src": "nyc",
+   "function": "office",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Jira",
+   "description": "Project management and issue tracking",
+   "desc_src": "nyc",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Kaltura",
+   "description": "Video platform for education and enterprise",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Keefe Group Commissary Software",
-   "purpose": "Commissary order management",
+   "description": "Commissary order management",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -382,7 +1675,9 @@
   },
   {
    "name": "Kiteworks",
-   "purpose": "Secure file sharing and compliance",
+   "description": "Secure file sharing and compliance",
+   "desc_src": "nyc",
+   "function": "collaboration",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -390,15 +1685,37 @@
   },
   {
    "name": "LabVantage LIMS",
-   "purpose": "Laboratory Information Management System for forensic biology",
+   "description": "Laboratory Information Management System for forensic biology",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Lansweeper",
+   "description": "IT asset management",
+   "desc_src": "nyc",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LastPass",
+   "description": "Password management for teams",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "LeadsOnline",
-   "purpose": "Criminal investigation database of secondhand transactions",
+   "description": "Criminal investigation database of secondhand transactions",
+   "desc_src": "nyc",
+   "function": "registers",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
@@ -406,7 +1723,9 @@
   },
   {
    "name": "LegalStratus",
-   "purpose": "legal matter management and case tracking",
+   "description": "legal matter management and case tracking",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -414,7 +1733,9 @@
   },
   {
    "name": "LexisNexis",
-   "purpose": "Legal research and data verification",
+   "description": "Legal research and data verification",
+   "desc_src": "nyc",
+   "function": "registers",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
@@ -422,7 +1743,9 @@
   },
   {
    "name": "Liferay",
-   "purpose": "Enterprise portal and content management",
+   "description": "Enterprise portal and content management",
+   "desc_src": "nyc",
+   "function": "web-content",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -430,47 +1753,361 @@
   },
   {
    "name": "LIMS BEAST",
-   "purpose": "Forensic laboratory information management",
+   "description": "Forensic laboratory information management",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "LinkedIn Learning",
+   "description": "Employee training and professional development",
+   "desc_src": "nyc",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LISTSERV",
+   "description": "Mailing list management",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "LoadRunner",
+   "description": "Performance testing",
+   "desc_src": "nyc",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LogMeIn",
+   "description": "Remote desktop access and support",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "LRS",
-   "purpose": "Mainframe network printing and output management",
+   "description": "Mainframe network printing and output management",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Lucidchart",
+   "description": "Hosted diagramming and flowcharting",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "M-Files",
+   "description": "Metadata-driven document and content management",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Mailchimp",
+   "description": "Email marketing and bulk mailing",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Mapbox GL JS",
+   "description": "Interactive web mapping library and tile service",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Marketo",
+   "description": "Marketing automation and campaign management",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "MATLAB",
+   "description": "Numerical computing and engineering analysis",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Meridian Learning Management System",
-   "purpose": "Agency-wide staff training and compliance",
+   "description": "Agency-wide staff training and compliance",
+   "desc_src": "nyc",
+   "function": "learning-knowledge",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Metabase Pro",
+   "description": "Commercial tier of Metabase analytics",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft 365",
+   "description": "Hosted office productivity, email and collaboration suite",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft Configuration Manager",
+   "description": "Endpoint deployment, patching and configuration",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft Exchange Server",
+   "description": "Enterprise mail, calendaring and mailbox hosting",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft Office",
+   "description": "Office productivity",
+   "desc_src": "nyc",
+   "function": "office",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Microsoft OneDrive for Business",
+   "description": "Cloud file storage and sync for organisations",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft OneNote",
+   "description": "Freeform note taking and notebooks",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft Project",
+   "description": "Project portfolio management",
+   "desc_src": "nyc",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Microsoft Sentinel",
+   "description": "Cloud security information and event management",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft SQL Server",
+   "description": "Enterprise relational database",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Microsoft SQL Server Integration Services",
+   "description": "ETL and data integration for SQL Server",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft Teams",
+   "description": "Team chat, meetings and calling",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft Word",
+   "description": "Word processing and document authoring",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Mindbreeze",
-   "purpose": "Legal search and document discovery",
+   "description": "Legal search and document discovery",
+   "desc_src": "nyc",
+   "function": "documents",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "MindManager",
+   "description": "Mind mapping and visual planning",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Monday.com",
+   "description": "Project management and workflow tracking",
+   "desc_src": "nyc",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "MongoDB Atlas",
+   "description": "Hosted document database",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "MRI Software",
-   "purpose": "Housing asset management",
+   "description": "Housing asset management",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "MySQL Enterprise",
+   "description": "Commercial edition of MySQL",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Nagios XI",
+   "description": "Commercial edition of Nagios monitoring",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "NAVEX EthicsPoint",
+   "description": "Whistleblowing hotline and case management",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Navicat",
+   "description": "Database administration and development client",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Neighborland",
+   "description": "Community engagement and public idea gathering",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "NeoLoad",
+   "description": "Load and performance testing",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Nerdio",
-   "purpose": "Azure virtual desktop management",
+   "description": "Azure virtual desktop management",
+   "desc_src": "nyc",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "NetApp ONTAP",
+   "description": "Enterprise storage operating system",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "NetSuite",
+   "description": "Cloud ERP, financials and business management",
+   "desc_src": "curated",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "New Relic",
+   "description": "Hosted application performance monitoring",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "NGINX Plus",
+   "description": "Web server and load balancing",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -478,31 +2115,211 @@
   },
   {
    "name": "NICE",
-   "purpose": "Digital evidence management for criminal justice",
+   "description": "Digital evidence management for criminal justice",
+   "desc_src": "nyc",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Notion",
+   "description": "Team wiki, notes and lightweight project tracking",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "OCLC WorldShare Management Services",
+   "description": "Hosted library management and cataloguing",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Office Space Software",
-   "purpose": "Managing office space and floor plans",
+   "description": "Managing office space and floor plans",
+   "desc_src": "nyc",
+   "function": "environment-transport",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Okta",
+   "description": "Identity, single sign-on and access management",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "OpenDataSoft",
+   "description": "Open data portal and dataset publishing",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "OpenText Documentum",
+   "description": "Enterprise content and document management",
+   "desc_src": "nyc",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "OPNsense Business Edition",
+   "description": "Commercial edition of the OPNsense firewall",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Optimizely CMS",
+   "description": "Enterprise web content management and experimentation",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Oracle Database",
+   "description": "Enterprise relational database",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Oracle Directory Server Enterprise Edition",
+   "description": "Enterprise LDAP directory server",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Oracle iPlanet Web Server",
+   "description": "Enterprise web server",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Outlook",
+   "description": "Desktop email and calendar client",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ownCloud Enterprise",
+   "description": "Commercial edition of ownCloud file sync",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "PagerDuty Runbook Automation",
+   "description": "Operational runbook and job automation",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Panopto",
+   "description": "Lecture capture and video management",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "PDFsam Enhanced",
+   "description": "PDF splitting, merging and editing",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "PeerPlace",
-   "purpose": "Case management for senior services",
+   "description": "Case management for senior services",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Pentaho Enterprise",
+   "description": "Commercial edition of Pentaho data integration and BI",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "pfSense Plus",
+   "description": "Commercial edition of the pfSense firewall",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Pingdom",
+   "description": "Hosted uptime and performance checks",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Pluralsight",
+   "description": "IT skills training",
+   "desc_src": "nyc",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Posit Workbench",
+   "description": "Commercial hosted R and Python analysis environment",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Power BI",
+   "description": "Business intelligence dashboards and reporting",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "PowerSchool TIENET",
-   "purpose": "Special education case management",
+   "description": "Special education case management",
+   "desc_src": "nyc",
+   "function": "learning-knowledge",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -510,15 +2327,153 @@
   },
   {
    "name": "Precisely",
-   "purpose": "Data management and location intelligence",
+   "description": "Data management and location intelligence",
+   "desc_src": "nyc",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "PRTG Network Monitor",
+   "description": "Network and infrastructure monitoring",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Puppet Enterprise",
+   "description": "IT infrastructure automation and configuration management",
+   "desc_src": "nyc",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "PyCharm Professional",
+   "description": "Commercial Python IDE",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Qlik Sense",
+   "description": "Business intelligence and data discovery",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Qualtrics",
+   "description": "Survey and experience management",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Qualys Container Security",
+   "description": "Container vulnerability and compliance scanning",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "QuarkXPress",
+   "description": "Page layout and desktop publishing",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "QuickBooks",
+   "description": "Accounting and bookkeeping",
+   "desc_src": "curated",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Recorded Future",
+   "description": "Threat intelligence subscription and analysis",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Red Hat Ansible Automation Platform",
+   "description": "Commercial Ansible automation with support and control plane",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Red Hat Enterprise Linux",
+   "description": "Operating system and infrastructure support",
+   "desc_src": "nyc",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Red Hat OpenShift Container Platform",
+   "description": "Commercial Kubernetes platform with build and deploy tooling",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Red Hat Satellite",
+   "description": "Content, patch and lifecycle management for Red Hat estates",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Redis Enterprise",
+   "description": "Commercial edition of Redis",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "RefWorks",
+   "description": "Reference management and citation",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Relativity",
+   "description": "E-discovery and legal document review",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Rocket Software",
-   "purpose": "Mainframe modernization and enterprise infrastructure management",
+   "description": "Mainframe modernization and enterprise infrastructure management",
+   "desc_src": "nyc",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -526,15 +2481,37 @@
   },
   {
    "name": "SafeMeasures",
-   "purpose": "Reporting and analytics for child welfare services",
+   "description": "Reporting and analytics for child welfare services",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Salesforce",
+   "description": "Customer relationship management for housing assistance",
+   "desc_src": "nyc",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Salesforce Sales Cloud",
+   "description": "Sales CRM and pipeline management",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Sanborn Maps",
-   "purpose": "Access to historical and current property/mapping data",
+   "description": "Access to historical and current property/mapping data",
+   "desc_src": "nyc",
+   "function": "geospatial",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
@@ -542,7 +2519,9 @@
   },
   {
    "name": "SANSIO EPCR",
-   "purpose": "Electronic Patient Care Reporting for EMS",
+   "description": "Electronic Patient Care Reporting for EMS",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -550,39 +2529,347 @@
   },
   {
    "name": "SAP",
-   "purpose": "Enterprise resource planning and database maintenance support",
+   "description": "Enterprise resource planning and database maintenance support",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "SAP Business One",
+   "description": "ERP for small and mid-sized organisations",
+   "desc_src": "curated",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SAS",
+   "description": "Mainframe data analytics and statistical analysis",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "ScreenCloud",
+   "description": "Digital signage content and screen management",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Seafile Professional",
+   "description": "Commercial edition of Seafile file sync",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SecureCRT",
+   "description": "SSH and terminal emulation client",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SeeClickFix",
+   "description": "Citizen issue reporting and municipal work orders",
+   "desc_src": "curated",
+   "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ServiceNow",
+   "description": "IT service management and enterprise workflow",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SharePoint",
+   "description": "Intranet, document libraries and team sites",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SirsiDynix Symphony",
+   "description": "Integrated library management system",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Sitecore",
+   "description": "Enterprise web content management and personalisation",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Slack",
+   "description": "Internal team communication",
+   "desc_src": "nyc",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Smartsheet",
+   "description": "Project management and workflow automation",
+   "desc_src": "nyc",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SmugMug",
+   "description": "Hosted photo gallery and image sharing",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Snagit",
+   "description": "Screen capture and annotation",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Snyk Container",
+   "description": "Container image vulnerability scanning",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Socrata Open Data",
+   "description": "Open data portal hosting and management",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SolarWinds",
+   "description": "Network and systems monitoring and management",
+   "desc_src": "nyc",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SolidWorks",
+   "description": "3D mechanical CAD and engineering design",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SonarQube Server (Developer and Enterprise editions)",
+   "description": "Commercial tiers of SonarQube code quality analysis",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SonicWall",
+   "description": "Next-generation firewall and network security",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Sophos Endpoint Protection",
+   "description": "Endpoint antivirus and threat protection",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "SoundThinking (ShotSpotter)",
-   "purpose": "acoustic gunshot detection and location tracking",
+   "description": "acoustic gunshot detection and location tracking",
+   "desc_src": "nyc",
+   "function": "citizen-services",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Splunk",
+   "description": "Cybersecurity monitoring and data analytics",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Splunk Enterprise Security",
+   "description": "Security analytics built on Splunk",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Squarespace",
+   "description": "Hosted website builder and publishing platform",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "STARLIMS",
-   "purpose": "Laboratory information management system",
+   "description": "Laboratory information management system",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Stata",
+   "description": "Statistical analysis and econometrics",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "StatusPage",
+   "description": "Hosted status page and incident communication",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Streetscape",
-   "purpose": "Property data management",
+   "description": "Property data management",
+   "desc_src": "nyc",
+   "function": "registers",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Sublime Text",
+   "description": "Programmer's text editor",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SugarCRM",
+   "description": "Customer relationship management",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Summer",
-   "purpose": "Public Service Loan Forgiveness assistance",
+   "description": "Public Service Loan Forgiveness assistance",
+   "desc_src": "nyc",
+   "function": "hr-workforce",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Survey123",
+   "description": "Field survey and form data collection for GIS",
+   "desc_src": "curated",
+   "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "SurveyGizmo",
+   "description": "Survey and data collection",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SurveyMonkey",
+   "description": "Online surveys and data collection",
+   "desc_src": "nyc",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Symantec Endpoint Encryption",
+   "description": "Full-disk and removable media encryption",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Symantec Endpoint Protection",
+   "description": "Endpoint antivirus and threat protection",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Symantec ProxySG",
+   "description": "Secure web gateway and proxy appliance",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Tableau",
+   "description": "Data visualization and business intelligence",
+   "desc_src": "nyc",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -590,31 +2877,265 @@
   },
   {
    "name": "Talkspace",
-   "purpose": "Virtual mental health support platform",
+   "description": "Virtual mental health support platform",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "TeamCity",
+   "description": "Continuous integration and deployment server",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "TeamViewer",
+   "description": "Remote desktop support",
+   "desc_src": "nyc",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "TestRail",
+   "description": "Test case management and reporting",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "TextPad",
+   "description": "Programmer's text editor",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "TIBCO Messaging",
+   "description": "Enterprise messaging and integration",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Toad",
+   "description": "Database management",
+   "desc_src": "nyc",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Track-It!",
+   "description": "IT ticketing and help desk automation",
+   "desc_src": "nyc",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Trello",
+   "description": "Kanban boards and lightweight task tracking",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Tuleap Enterprise",
+   "description": "Commercial edition of Tuleap ALM",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Twilio",
+   "description": "Cloud communications and SMS/voice messaging API",
+   "desc_src": "nyc",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Twilio Studio",
+   "description": "Visual builder for messaging and voice workflows",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Tyler Technologies Property Tax System",
-   "purpose": "Property tax administration and management",
+   "description": "Property tax administration and management",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Typeform",
+   "description": "Online forms and surveys",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "UltraEdit",
+   "description": "Programmer's text editor",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Unite Us",
-   "purpose": "Social services coordination and referral platform",
+   "description": "Social services coordination and referral platform",
+   "desc_src": "nyc",
+   "function": "health-social",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Varnish Enterprise",
+   "description": "Commercial edition of the Varnish HTTP cache",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Veeam Backup & Replication",
+   "description": "Backup and recovery for virtual and physical estates",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Vimeo",
+   "description": "Video hosting and streaming",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Visio",
+   "description": "Diagramming and flowcharting",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Vision CAMA",
-   "purpose": "Property assessment and valuation",
+   "description": "Property assessment and valuation",
+   "desc_src": "nyc",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Visual Studio Professional",
+   "description": "Commercial IDE for .NET and C++",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "vMix",
+   "description": "Live video production and streaming",
+   "desc_src": "curated",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware Aria Automation",
+   "description": "Cloud infrastructure automation and provisioning",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware Cloud Foundation",
+   "description": "Integrated private-cloud virtualisation stack",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware ESXi",
+   "description": "Bare-metal hypervisor",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware Tanzu",
+   "description": "Commercial Kubernetes platform and application runtime",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware vSAN",
+   "description": "Software-defined storage for virtualised clusters",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware vSphere",
+   "description": "Server virtualisation and cluster management",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "VMware Workstation Pro",
+   "description": "Desktop virtualisation",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Webex",
+   "description": "Video conferencing",
+   "desc_src": "nyc",
+   "function": "collaboration",
    "kind": "software",
    "seen_in": [
     "us-nyc"
@@ -622,27 +3143,123 @@
   },
   {
    "name": "Westlaw",
-   "purpose": "Legal research and information access",
+   "description": "Legal research and information access",
+   "desc_src": "nyc",
+   "function": "registers",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Windows Server",
+   "description": "Server operating system",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Windows Server file services",
+   "description": "Windows file and print sharing role",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "WinRAR",
+   "description": "File compression and archiving",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "WinZip",
+   "description": "File compression and archiving",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Wix",
+   "description": "Hosted website builder and publishing platform",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "WS_FTP Professional",
+   "description": "Secure file transfer client",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "XMind",
+   "description": "Mind mapping and visual planning",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Xshell",
+   "description": "SSH and terminal emulation client",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Zencity",
-   "purpose": "Community sentiment analysis",
+   "description": "Community sentiment analysis",
+   "desc_src": "nyc",
+   "function": "citizen-services",
    "kind": "data-service",
    "seen_in": [
     "us-nyc"
    ]
   },
   {
+   "name": "Zendesk",
+   "description": "Customer support ticketing and help desk",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Zimperium",
-   "purpose": "Mobile threat protection",
+   "description": "Mobile threat protection",
+   "desc_src": "nyc",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Zoom",
+   "description": "Video conferencing and collaboration",
+   "desc_src": "nyc",
+   "function": "collaboration",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Zscaler Internet Access",
+   "description": "Cloud secure web gateway",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
   }
  ]
 }

@@ -308,7 +308,7 @@ BODY = """
 SCRIPT = """
 <script>
 var DATA = __DATA__;
-var FFACETS = __FFACETS__, CFACETS = __CFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
+var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var PAGE_SIZE = 100;
 
 /* State. NOTHING here is named after an element id: browsers expose ids as
@@ -336,8 +336,7 @@ var GROUPS = [
   { key: 'fn', title: 'Function', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
   { key: 'rp', title: 'Replaces', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
     link: 'products.html', linkLabel: 'Proprietary software catalog' },
-  { key: 'cc', title: 'Country', rows: CFACETS.map(function (f) { return [f[0], f[0], f[1]]; }) },
-  { key: 'src', title: 'Source catalog', rows: SFACETS.map(function (f) { return [f[0], f[0], f[1]]; }) }
+  { key: 'src', title: 'Source catalog', rows: SFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) }
 ];
 
 function renderFacets() {
@@ -378,18 +377,16 @@ function renderFacets() {
 function current() {
   var q = (el('q').value || '').trim().toLowerCase();
   var lic = el('lic').value, lvf = el('lv').value, sort = el('sort').value;
-  var fns = [], ccs = [], srcs = [], rps = [];
+  var fns = [], srcs = [], rps = [];
   activeFacets.forEach(function (id) {
     var i = id.indexOf(':'), k = id.slice(0, i), v = id.slice(i + 1);
     if (k === 'fn') fns.push(v);
-    else if (k === 'cc') ccs.push(v);
     else if (k === 'rp') rps.push(v);
     else srcs.push(v);
   });
   var out = DATA.filter(function (r) {
     if (!showSetAside && r.ex) return false;
     if (fns.length && !r.fx.some(function (f) { return fns.indexOf(f) >= 0; })) return false;
-    if (ccs.length && !(r.cs || [r.c]).some(function (x) { return ccs.indexOf(x) >= 0; })) return false;
     if (srcs.length && !(r.ss || [r.s]).some(function (x) { return srcs.indexOf(x) >= 0; })) return false;
     if (rps.length && !(r.rp || []).some(function (x) { return rps.indexOf(x) >= 0; })) return false;
     if (lic && r.l !== lic) return false;

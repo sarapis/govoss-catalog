@@ -64,16 +64,11 @@ def _rp_qual(m):
         q.append(conf)
     return ", ".join(q)
 
-SRC_LABEL = {
-    "IT/developers-italia": "Developers Italia",
-    "FR/sill": "SILL",
-    "FR/awesome-codegouvfr": "awesome-codegouvfr",
-    "DE/openCode": "openCode",
-    "BE/iMio": "iMio",
-    "SE/offentligkod": "Offentligkod",
-    "FI/avoinkoodi": "Avoinkoodi",
-    "EU/code.europa.eu": "code.europa.eu",
-}
+# Labels come from sources.py, which CLAUDE.md makes the single source of truth
+# for them. The hand-written dict this replaces held 8 entries byte-identical to
+# sources.py and covered none of the other 9, so those rendered in the sidebar
+# and on entry cards as raw keys - "DK/os2" rather than "OS2 Denmark".
+SRC_LABEL = {k: v["label"] for k, v in _S.SOURCES.items()}
 CLAIM = {
     "IT/developers-italia": "built for public administration",
     "DE/openCode": "built for public administration",
@@ -155,8 +150,22 @@ PFACETS = json.dumps([[k, k, n] for k, n in
                       sorted(prods.items(), key=lambda kv: (-kv[1], kv[0].lower()))])
 
 DATA = json.dumps(rows, separators=(",", ":"))
-CFACETS = json.dumps(sorted(countries.items(), key=lambda x: -x[1]))
-SFACETS = json.dumps(sorted(sources.items(), key=lambda x: -x[1]))
+
+# The Country facet is GONE — it was largely redundant with Source catalog (a
+# catalogue belongs to one country) and the sidebar had grown taller than the
+# viewport, which stopped it pinning. The country now rides on the source label
+# instead, so nothing is lost from view.
+#
+# The facet VALUE stays the bare label because it is matched against r.ss; only
+# the display label carries the country. Entry cards keep the plain label.
+#
+# What this does cost: an entry listed by catalogues in two countries can no
+# longer be found by country alone, and "everything from Germany" now means
+# selecting openCode and Munich separately. GLOBAL/EU are shown as-is.
+_SRC_CC = {lbl: (_S.SOURCES.get(k) or {}).get("country")
+           for k, lbl in SRC_LABEL.items() if (_S.SOURCES.get(k) or {}).get("country")}
+SFACETS = json.dumps([[k, ("%s (%s)" % (k, _SRC_CC[k])) if k in _SRC_CC else k, v]
+                      for k, v in sorted(sources.items(), key=lambda x: -x[1])])
 LOPTS = "".join(f'<option value="{html.escape(k)}">{html.escape(k)} ({v})</option>'
                 for k, v in licenses.most_common()
                 ).encode("ascii", "xmlcharrefreplace").decode()
@@ -184,7 +193,6 @@ n_funcs = len(funcs)
 SUBS = {
     "__DATA__": DATA,
     "__FFACETS__": FFACETS,
-    "__CFACETS__": CFACETS,
     "__SFACETS__": SFACETS,
     "__PFACETS__": PFACETS,
     "__LOPTS__": LOPTS,

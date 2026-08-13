@@ -355,6 +355,18 @@ and the genuine paid-tier exit from Nagios XI is **Nagios Core**, which is separ
 the catalogue. Check that the paid-tier row is keyed on the software the commercial edition
 is actually built from.
 
+**`/products.html` is the proprietary side made browsable** — ONE dense table of 372
+products with description, function, alternatives and a link into the filtered catalogue.
+Products with and without an alternative are the same kind of object, so they share a table
+and *has a govoss alternative* is a filter over it, on by default. Two tables made the gap
+list read as a separate artefact rather than the other end of the same shelf.
+
+Metadata lives in `proprietary.json`: descriptions are NYC's own `purpose` string where the
+product appears in its licence export (`desc_src: nyc`, 132) and hand-written otherwise
+(`desc_src: curated`, 240). **Functions are hand-assigned throughout.** Deriving them from the
+alternatives' categories was tried and is too noisy — it filed Bitbucket under *Case & Workflow
+Management*, because that is where the catalogue files GitLab.
+
 **The page qualifies anything that is not `strong` + `software`.** 62% of mappings are not
 like-for-like swaps (21% paid tier or hosted service, 53% partial or adjacent), and the
 catalog page used to print all of them as a flat `Replaces X, Y, Z` — asserting exactly the
@@ -523,7 +535,7 @@ Three surfaces, all generated, all on the Civic Tech Field Guide design system:
 | `/` catalog | `build_ui.py` + `_ui_template.py` |
 | `/sources.html` sources **and build status** | `build_sources.py` |
 | `/api.html` API + MCP | `build_api.py` |
-| `/products.html` proprietary software + alternatives | `build_products.py` |
+| `/products.html` proprietary software catalogue | `build_products.py` |
 | shared chrome | `theme.py` |
 
 `build_status.py` is **retired** — its page merged into `/sources.html`, which 308s from

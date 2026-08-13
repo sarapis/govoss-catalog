@@ -5,13 +5,18 @@ The catalogue answers "what open source exists". This page answers the question 
 buyer actually starts from: "we pay for X - what could replace it?". It is the
 browsable form of by-product.json, which existed as a file nobody could read.
 
+ONE table, not two. Products with and without an alternative are the same kind of
+object and belong in the same list; "has a govoss alternative" is a filter over
+it, on by default. Splitting them into two tables made the gap list look like a
+separate artefact rather than the other end of the same shelf.
+
 Deliberately NOT in the top nav. Proprietary software is a way INTO the open
 source, not a peer of it, so the entry point is a facet in the catalog sidebar
 whose "Show all" lands here. See DEMAND-SIDE-CATALOGUE.md.
 
-Cards are rendered as STATIC HTML, not client-side like catalogue.html. 391
-products is small enough, and it means deep links (#p-dropbox) work natively and
-an agent reading raw HTML gets the content without running the filter script.
+Rows are STATIC HTML, not client-side like catalogue.html. 372 products is small
+enough, and it means deep links (#p-dropbox) work natively and an agent reading
+raw HTML gets the content without running the filter script.
 
 Runs AFTER export_json.py - it reads by-product.json.
 
@@ -28,6 +33,8 @@ _th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
 theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
+_tx = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
+TAX = importlib.util.module_from_spec(_tx); _tx.loader.exec_module(TAX)
 _cn = importlib.util.spec_from_file_location("ctfg_nav", f"{OUT}/ctfg_nav.py")
 ctfg_nav = importlib.util.module_from_spec(_cn); _cn.loader.exec_module(ctfg_nav)
 NAV = ctfg_nav.load()
@@ -66,36 +73,41 @@ def build():
     prop = json.load(open(f"{OUT}/proprietary.json"))
     aliases = json.load(open(f"{OUT}/product_aliases.json"))["aliases"]
 
-    gaps = [p for p in prop["products"] if p.get("name")]
+    pmeta = {p["name"]: p for p in prop["products"] if p.get("name")}
 
-    # A product cannot both have an alternative and be an unfilled gap. This is
-    # the same class of check as export_json.py's orphan warning: the two files
-    # are hand-maintained and drift silently otherwise.
-    both = sorted({p["name"] for p in gaps} & set(bp))
-    if both:
-        raise SystemExit("build_products: in BOTH by-product.json and proprietary.json "
-                         "(remove from proprietary.json): " + ", ".join(both))
+    # Every product in the index needs metadata, or its row renders with empty
+    # cells and drops out of the function filter. Same class of check as
+    # export_json.py's orphan warning: both files are hand-maintained.
+    missing = sorted(set(bp) - set(pmeta))
+    if missing:
+        raise SystemExit("build_products: %d products in by-product.json have no "
+                         "entry in proprietary.json (add name/description/function): %s"
+                         % (len(missing), ", ".join(missing[:12])))
+    bad = [p for p in pmeta.values() if p.get("function") not in TAX.FUNCTIONS]
+    if bad:
+        raise SystemExit("build_products: bad function key: %s"
+                         % [(p["name"], p.get("function")) for p in bad[:8]])
 
-    # Most replaceable first - the count of alternatives IS the facet count on
-    # the catalog page, so the two orderings agree. Name breaks ties so the
-    # output is deterministic (242 products have exactly one alternative).
-    products = sorted(bp.items(), key=lambda kv: (-len(kv[1]), kv[0].lower()))
+    # Most replaceable first, then products with no alternative, name breaking
+    # ties so the output is deterministic (most products have one alternative).
+    def order(name):
+        return (-len(bp.get(name, [])), name.lower())
+
+    names = sorted(pmeta, key=order)
 
     slugs = {}
-    for name, _ in products:
-        slugs.setdefault(pslug(name), []).append(name)
-    for p in gaps:
-        slugs.setdefault(pslug(p["name"]), []).append(p["name"])
+    for n in names:
+        slugs.setdefault(pslug(n), []).append(n)
     clash = {k: v for k, v in slugs.items() if len(v) > 1}
     if clash:
         raise SystemExit("build_products: anchor id collision %s" % clash)
 
-    # ---- rows for products WITH alternatives.
-    # A dense table, not cards: the question is "is our product here, and what
-    # replaces it", which is a scan down one column. Inter is the design system's
-    # face for dense data.
-    cards = []
-    for name, alts in products:
+    rows, n_alt = [], 0
+    for name in names:
+        p = pmeta[name]
+        alts = bp.get(name) or []
+        if alts:
+            n_alt += 1
         links = []
         for a in alts:
             q = qual(a)
@@ -103,46 +115,47 @@ def build():
             nm = ('<a href="%s">%s</a>' % (esc(url), esc(a["name"]))) if url \
                 else '<span class="a-x">' + esc(a["name"]) + '</span>'
             links.append(nm + (' <span class="a-q">(' + esc(q) + ')</span>' if q else ""))
-        cards.append(
-            '<tr id="p-' + pslug(name) + '" data-n="' + esc(name.lower()) + '">'
+        cell = ", ".join(links) if links else (
+            '<span class="a-none">' + ("content or data subscription"
+                                       if p.get("kind") == "data-service"
+                                       else "none mapped") + '</span>')
+        act = ('<a href="/?rp=' + quote(name, safe="") + '">See alternatives &rarr;</a>'
+               if alts else "")
+        rows.append(
+            '<tr id="p-' + pslug(name) + '" data-n="'
+            + esc((name + " " + (p.get("description") or "")).lower())
+            + '" data-f="' + esc(p["function"]) + '" data-a="' + ("1" if alts else "0") + '">'
             + '<th scope="row">' + esc(name) + '</th>'
-            + '<td class="c-alt">' + ", ".join(links) + '</td>'
-            # quote(), not a space-swap: "Veeam Backup & Replication" would put a
-            # bare & in the query string and the catalog would receive
-            # rp="Veeam Backup " plus a stray parameter.
-            + '<td class="c-act"><a href="/?rp=' + quote(name, safe="")
-            + '">See alternatives &rarr;</a></td></tr>')
+            + '<td class="c-desc">' + esc(p.get("description") or "") + '</td>'
+            + '<td class="c-fn">' + esc(TAX.FUNCTIONS[p["function"]]) + '</td>'
+            + '<td class="c-alt">' + cell + '</td>'
+            + '<td class="c-act">' + act + '</td></tr>')
 
-    # ---- rows for products with NO alternative
-    gcards = []
-    for p in sorted(gaps, key=lambda x: x["name"].lower()):
-        tag = ("content or data" if p.get("kind") == "data-service" else "software")
-        gcards.append(
-            '<tr id="p-' + pslug(p["name"]) + '" data-n="' + esc(p["name"].lower()) + '">'
-            + '<th scope="row">' + esc(p["name"]) + '</th>'
-            + '<td class="c-alt">' + esc(p.get("purpose") or "") + '</td>'
-            + '<td class="c-act"><span class="g-t">' + tag + '</span></td></tr>')
+    fopts = "".join(
+        '<option value="%s">%s</option>' % (esc(k), esc(v))
+        for k, v in sorted(TAX.FUNCTIONS.items(), key=lambda kv: kv[1])
+        if any(p["function"] == k for p in pmeta.values()))
 
-    n_alts = sum(len(v) for v in bp.values())
-    n_data = sum(1 for p in gaps if p.get("kind") == "data-service")
+    n_links = sum(len(v) for v in bp.values())
+    n_gap = len(names) - n_alt
+    n_data = sum(1 for p in pmeta.values() if p.get("kind") == "data-service")
 
     subs = {
-        "__NPROD__": "{:,}".format(len(products)),
-        "__NALTS__": "{:,}".format(n_alts),
-        "__NGAP__": str(len(gaps)),
-        "__NGAPSW__": str(len(gaps) - n_data),
+        "__NPROD__": "{:,}".format(len(names)),
+        "__NALT__": "{:,}".format(n_alt),
+        "__NLINKS__": "{:,}".format(n_links),
+        "__NGAP__": str(n_gap),
         "__NDATA__": str(n_data),
-        "__NALIAS__": str(len(aliases)),
-        "__CARDS__": "".join(cards),
-        "__GAPS__": "".join(gcards),
+        "__NCURATED__": str(sum(1 for p in pmeta.values() if p.get("desc_src") == "curated")),
+        "__FOPTS__": fopts,
+        "__ROWS__": "".join(rows),
         "__GEN__": esc(meta.get("generated_at") or NOW),
     }
 
     page = (theme.head(
         "Proprietary software and open source alternatives | govoss",
-        "%s proprietary products mapped to government open source alternatives, plus %s "
-        "products governments buy for which this catalogue has no answer."
-        % (len(products), len(gaps)))
+        "%s proprietary products governments buy, %s of them with a government "
+        "open source alternative, filterable by function." % (len(names), n_alt))
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
         + theme.utility_bar(NAV) + theme.topbar("") + BODY + theme.footer(NAV))
 
@@ -159,26 +172,31 @@ def build():
         "generated_at": meta.get("generated_at") or NOW,
         "human_page": "https://govoss-catalog.vercel.app/products.html",
         "disclaimer": prop["_README"]["status"],
-        "counts": {"with_alternatives": len(products), "alternatives": n_alts,
-                   "no_alternative": len(gaps), "aliases": len(aliases)},
-        "with_alternatives": [
-            {"product": k, "slug": pslug(k),
+        "counts": {"products": len(names), "with_alternatives": n_alt,
+                   "no_alternative": n_gap, "alternatives": n_links,
+                   "aliases": len(aliases)},
+        "functions": {k: v for k, v in TAX.FUNCTIONS.items()},
+        "products": [
+            {"product": n, "slug": pslug(n),
+             "description": pmeta[n].get("description"),
+             "description_source": pmeta[n].get("desc_src"),
+             "function": pmeta[n]["function"],
+             "function_label": TAX.FUNCTIONS[pmeta[n]["function"]],
+             "kind": pmeta[n].get("kind"),
+             "seen_in": pmeta[n].get("seen_in") or [],
+             "has_alternative": bool(bp.get(n)),
              "alternatives": [{"name": a["name"], "id": a["id"],
                                "confidence": a["confidence"], "kind": a["kind"],
                                "country": a["country"], "adopters": a["adopters"],
                                "licence_spdx": a["licence_spdx"],
-                               "repo_url": a["repo_url"]} for a in v]}
-            for k, v in products],
-        "no_alternative": [
-            {"product": p["name"], "slug": pslug(p["name"]), "kind": p.get("kind"),
-             "purpose": p.get("purpose"), "seen_in": p.get("seen_in") or []}
-            for p in sorted(gaps, key=lambda x: x["name"].lower())],
+                               "repo_url": a["repo_url"]} for a in (bp.get(n) or [])]}
+            for n in names],
         "aliases": aliases,
     }, open(f"{SITE}/products.json", "w"), indent=1, sort_keys=True)
 
-    print("products page: %d products -> %d alternatives, %d with none "
-          "(%d software, %d data) (%.0f KB) + products.json"
-          % (len(products), n_alts, len(gaps), len(gaps) - n_data, n_data, len(page) / 1024))
+    print("products page: %d products, %d with an alternative (%d links), %d without "
+          "(%d data) (%.0f KB) + products.json"
+          % (len(names), n_alt, n_links, n_gap, n_data, len(page) / 1024))
 
 
 PAGE_CSS = """
@@ -187,12 +205,16 @@ PAGE_CSS = """
   gap:8px 20px;padding-bottom:10px;}
 .lede{font-size:15px;line-height:1.6;color:var(--ink-600);max-width:72ch;}
 .note{font-size:13px;line-height:1.6;color:var(--ink-faint);max-width:72ch;margin-top:10px;}
-#pq{width:100%;max-width:420px;margin-top:18px;}
+.pctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px;}
+#pq{flex:1 1 260px;max-width:360px;}
+.pcount{font-size:13px;color:var(--ink-600);margin-top:12px;}
+.pcount b{font-family:var(--font-display);font-size:16px;color:var(--ink);
+  font-variant-numeric:tabular-nums;}
 
 /* Dense table. A flex/grid child defaults to min-width:auto, which defeats
    overflow-x on a wide table - the wrapper needs min-width:0 explicitly. That
    trap is already documented in DESIGN-BRIEF.md; it applies here too. */
-.twrap{margin-top:16px;min-width:0;overflow-x:auto;border:1px solid var(--border);
+.twrap{margin-top:12px;min-width:0;overflow-x:auto;border:1px solid var(--border);
   border-radius:var(--r-table);background:var(--surface);}
 table.ptab{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5;}
 table.ptab thead th{font-family:var(--font-ui);font-size:10px;font-weight:600;
@@ -209,15 +231,17 @@ table.ptab tbody tr[hidden]{display:none;}
 table.ptab th[scope=row]{font-weight:600;color:var(--ink);text-align:left;
   padding:9px 14px;vertical-align:top;white-space:nowrap;}
 table.ptab td{padding:9px 14px;vertical-align:top;color:var(--ink-600);}
+.c-desc{min-width:200px;}
+.c-fn{white-space:nowrap;color:var(--ink-faint);font-size:12px;}
+.c-alt{min-width:220px;}
 .c-alt a{color:var(--primary);text-decoration:none;}
 .c-alt a:hover{text-decoration:underline;}
 .a-x{color:var(--ink-600);}          /* no repo url upstream - nothing to link to */
 .a-q{color:var(--ink-faint);font-size:12px;}
+.a-none{color:var(--ink-faint);font-style:italic;}
 .c-act{white-space:nowrap;text-align:right;}
 .c-act a{color:var(--primary);text-decoration:none;font-size:12px;}
 .c-act a:hover{text-decoration:underline;}
-.g-t{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--ink-faint);}
 .nores{font-size:14px;color:var(--ink-faint);margin-top:16px;}
 /* An empty <th> leaves a screen reader announcing an unnamed column. The label
    is hidden rather than dropped. */
@@ -233,86 +257,91 @@ BODY = """
   <section class="sec" style="margin-top:28px">
     <h1 style="font-size:30px;margin:0 0 12px">Proprietary software, and what could replace it</h1>
     <p class="lede">The catalogue lists government open source. This is the other side of it:
-      <b>__NPROD__ proprietary products</b> mapped to <b>__NALTS__</b> open source
-      alternatives that a government somewhere already publishes &mdash; plus
-      <b>__NGAP__ products governments buy for which this catalogue has no answer</b>,
-      listed so a gap reads as a gap rather than as an oversight.</p>
-    <p class="note">These mappings are <b>hand-curated and unverified</b>. Absence of a
-      mapping is not evidence that no alternative exists. Anything that is not a
-      like-for-like swap is qualified &mdash; a <i>paid tier</i> is usually a licence you
-      stop renewing, a <i>hosted service</i> means you still need somewhere to run it, and
-      <i>partial</i> or <i>adjacent</i> means real gaps or a changed workflow. Machine
-      readable at <a href="/products.json">/products.json</a>; the raw index is
-      <a href="/by-product.json">/by-product.json</a>.</p>
-    <input id="pq" type="search" placeholder="Filter products, e.g. Dropbox"
-      aria-label="Filter products">
-  </section>
+      <b>__NPROD__ proprietary products</b> governments buy, of which <b>__NALT__</b> have an
+      open source alternative a government somewhere already publishes &mdash; <b>__NLINKS__</b>
+      alternatives in all. The other <b>__NGAP__</b> are listed too, so a gap reads as a gap
+      rather than as an oversight.</p>
+    <p class="note">These mappings are <b>hand-curated and unverified</b>, and __NCURATED__ of
+      the descriptions are written for this catalogue rather than taken from a source. Absence
+      of a mapping is not evidence that no alternative exists. Anything that is not a
+      like-for-like swap is qualified &mdash; a <i>paid tier</i> is usually a licence you stop
+      renewing, a <i>hosted service</i> means you still need somewhere to run it, and
+      <i>partial</i> or <i>adjacent</i> means real gaps or a changed workflow. __NDATA__ entries
+      are content or data subscriptions, where open source cannot substitute the content at all.
+      Machine readable at <a href="/products.json">/products.json</a>.</p>
 
-  <section class="sec" id="mapped">
-    <div class="sechead"><h3>Has an open source alternative</h3>
-      <span class="r" style="font-size:12px;color:var(--ink-faint)">__NPROD__ products,
-        most replaceable first</span></div>
-    <hr class="dashed">
-    <div class="twrap">
+    <div class="pctl">
+      <input id="pq" class="fq" type="search" placeholder="Filter products, e.g. Dropbox"
+        aria-label="Filter products">
+      <select id="pf" class="sel" aria-label="Filter by function">
+        <option value="">Any function</option>__FOPTS__
+      </select>
+      <button type="button" id="pa" class="tog" aria-pressed="true">Has a govoss alternative</button>
+    </div>
+    <p class="pcount"><b id="pn">__NALT__</b> of __NPROD__ products</p>
+
+    <div class="twrap" id="twrap">
       <table class="ptab">
-        <thead><tr><th scope="col">Proprietary product</th>
+        <thead><tr>
+          <th scope="col">Proprietary product</th>
+          <th scope="col">Description</th>
+          <th scope="col">Function</th>
           <th scope="col">Open source alternatives</th>
-          <th scope="col"><span class="vh">See them in the catalog</span></th></tr></thead>
-        <tbody id="g-mapped">__CARDS__</tbody>
+          <th scope="col"><span class="vh">See them in the catalog</span></th>
+        </tr></thead>
+        <tbody id="prows">__ROWS__</tbody>
       </table>
     </div>
-    <p class="nores" id="none-mapped" hidden>No product matches that filter.</p>
-  </section>
-
-  <section class="sec" id="gaps">
-    <div class="sechead"><h3>No alternative in this catalogue</h3>
-      <span class="r" style="font-size:12px;color:var(--ink-faint)">__NGAPSW__ software,
-        __NDATA__ content or data</span></div>
-    <hr class="dashed">
-    <p class="note" style="margin-top:12px">Seeded from one jurisdiction's licence data
-      (New York City), so this list is NYC-shaped &mdash; US municipal and public-safety
-      software is over-represented relative to what other governments buy. The
-      <i>content or data</i> entries are a different case: open source cannot substitute a
-      legal-research corpus or a traffic feed, so the absence is a category fact rather
-      than a gap to fill.</p>
-    <div class="twrap">
-      <table class="ptab">
-        <thead><tr><th scope="col">Proprietary product</th>
-          <th scope="col">What it is used for</th><th scope="col">Type</th></tr></thead>
-        <tbody id="g-gaps">__GAPS__</tbody>
-      </table>
-    </div>
-    <p class="nores" id="none-gaps" hidden>No product matches that filter.</p>
+    <p class="nores" id="nores" hidden>No product matches those filters.</p>
   </section>
 
   </main>
 </div>
 <script>
 (function () {
-  var q = document.getElementById('pq');
-  var groups = [['g-mapped', 'none-mapped'], ['g-gaps', 'none-gaps']];
+  var q = document.getElementById('pq'), f = document.getElementById('pf'),
+      a = document.getElementById('pa'), rows = document.getElementById('prows').children,
+      wrap = document.getElementById('twrap'), none = document.getElementById('nores'),
+      out = document.getElementById('pn');
+  var onlyAlt = true;
   function apply() {
-    var v = (q.value || '').trim().toLowerCase();
-    groups.forEach(function (g) {
-      var n = 0;
-      var body = document.getElementById(g[0]);
-      var rows = body.children;
-      for (var i = 0; i < rows.length; i++) {
-        var hit = !v || rows[i].getAttribute('data-n').indexOf(v) >= 0;
-        rows[i].hidden = !hit;
-        if (hit) n++;
-      }
-      // Hide the whole table when nothing matches - a bare header row over an
-      // empty body reads as a broken table rather than as an empty result.
-      var wrap = body.parentNode.parentNode;
-      wrap.hidden = n === 0;
-      document.getElementById(g[1]).hidden = n > 0;
-    });
+    var v = (q.value || '').trim().toLowerCase(), fn = f.value, n = 0;
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      var hit = (!v || r.getAttribute('data-n').indexOf(v) >= 0)
+             && (!fn || r.getAttribute('data-f') === fn)
+             && (!onlyAlt || r.getAttribute('data-a') === '1');
+      r.hidden = !hit;
+      if (hit) n++;
+    }
+    out.textContent = n.toLocaleString();
+    // Hide the whole table when nothing matches - a bare header row over an
+    // empty body reads as a broken table rather than as an empty result.
+    wrap.hidden = n === 0;
+    none.hidden = n > 0;
   }
   q.addEventListener('input', apply);
-  // A deep link must win over a stale filter value the browser restored on reload.
-  if (location.hash) { q.value = ''; }
+  f.addEventListener('change', apply);
+  a.addEventListener('click', function () {
+    onlyAlt = !onlyAlt;
+    this.setAttribute('aria-pressed', onlyAlt ? 'true' : 'false');
+    apply();
+  });
+  // A deep link must win over the default filters, or following #p-axon from
+  // elsewhere lands on a row the "has an alternative" filter has just hidden.
+  if (location.hash) {
+    var t = document.getElementById(location.hash.slice(1));
+    if (t && t.getAttribute('data-a') === '0') {
+      onlyAlt = false;
+      a.setAttribute('aria-pressed', 'false');
+    }
+    q.value = '';
+  }
   apply();
+  if (location.hash) {
+    var el = document.getElementById(location.hash.slice(1));
+    if (el) el.scrollIntoView();
+  }
 })();
 </script>
 """
