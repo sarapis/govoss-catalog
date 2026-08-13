@@ -327,7 +327,7 @@ did not (GitLab lost its `GitLab Premium` paid-tier row). The orphan warning is 
 it, which is the whole reason that warning exists.
 
 Maps catalogue entry -> proprietary products it can replace, inverting the lookup so a
-buyer starts from an invoice line. Currently **73 entries -> 95 products**, hand-seeded.
+buyer starts from an invoice line. Currently **211 entries -> 312 products**, hand-seeded.
 `export_json.py` **warns on keys matching no entry**, so the seed cannot rot unnoticed.
 
 `confidence`: `strong` | `partial` | `adjacent`. `kind` matters as much:
@@ -338,6 +338,31 @@ buyer starts from an invoice line. Currently **73 entries -> 95 products**, hand
 - `paid-tier` — the paid item is a commercial edition of software that is **already open
   source** (NGINX Plus, Elastic licence tiers, DBeaver PRO, MySQL Enterprise). Usually the
   cheapest win in a procurement review: often no migration, just a renewal you stop.
+
+**`export_json.py` validates both vocabularies against the file's own `_README` and FAILS
+the step on a bad value.** It used to pass silently: the by-product sort does
+`rank.get(confidence, 3)`, so an invalid confidence just sorted last. That is how
+`Icinga -> Nagios XI` sat with `confidence: "paid-tier"` — a `kind` value in the confidence
+field. Same rule as `taxonomy.py`: an unmapped value is a **bug**, not something to bucket.
+Failing is right here because this file is hand-edited and the check is deterministic — it
+cannot be wrong the way a network measurement can, and failing at export means a bad edit
+never reaches the deploy.
+
+That entry was also mis-*kinded*. `paid-tier` promises "no migration, just a renewal you
+stop", and Icinga2 is a **fork** of Nagios, not a rebuild — so it is `software`/`partial`,
+and the genuine paid-tier exit from Nagios XI is **Nagios Core**, which is separately in
+the catalogue. Check that the paid-tier row is keyed on the software the commercial edition
+is actually built from.
+
+**The page qualifies anything that is not `strong` + `software`.** 62% of mappings are not
+like-for-like swaps (21% paid tier or hosted service, 53% partial or adjacent), and the
+catalog page used to print all of them as a flat `Replaces X, Y, Z` — asserting exactly the
+category error the `_README` exists to prevent. It now renders `Contentful (hosted service,
+adjacent)`. The qualifier is **display only**: `rp` stays the clean product names so the
+search haystack and the "Replaces a paid product" filter are unchanged, and `rpq` carries
+the qualifier in a parallel array built in the same pass so the two cannot fall out of
+alignment. `note` is export-only — it reaches `entries.json` and `by-product.json`, never
+the page.
 
 Publishers can also declare `replaces:` in their own `publiccode.yml` (non-standard
 extension) and `harvest.py` picks it up, so claims can be owned upstream.

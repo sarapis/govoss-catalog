@@ -84,6 +84,20 @@ def build():
     replaces_raw = json.load(open(f"{OUT}/replaces.json"))
     rmap = {k.lower(): v for k, v in replaces_raw.items() if not k.startswith("_")}
 
+    # Validate the seed against the vocabularies its own _README declares. An
+    # invalid value used to pass silently: the by-product sort does
+    # rank.get(confidence, 3), so a bad confidence just sorted last instead of
+    # being reported — which is how `Icinga -> Nagios XI` sat with
+    # confidence:"paid-tier" (a `kind` value) in the confidence field. Same rule
+    # as taxonomy.py: an unmapped value is a BUG, not something to bucket.
+    _vc, _vk = set(replaces_raw["_README"]["confidence"]), set(replaces_raw["_README"]["kind"])
+    bad_vals = [f"{k} -> {m.get('product')}: {f}={m.get(f)!r}"
+                for k, v in rmap.items() for m in v
+                for f, ok in (("confidence", _vc), ("kind", _vk))
+                if m.get(f) not in ok]
+    if bad_vals:
+        raise SystemExit("replaces.json: invalid values\n   " + "\n   ".join(bad_vals))
+
     active = [r for r in catalog if not r.get("excluded")]
     entries, used_keys = [], set()
     id_counts = collections.Counter()

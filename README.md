@@ -19,7 +19,7 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 | English descriptions | 100% of described entries (excl. 171 deliberately-untranslated Bulgarian) |
 | Functional categories | 19, all 233 source category values explicitly mapped |
 | Repos reachable | 24 confirmed dead · 39 archived |
-| Procurement mappings | 108 entries → 165 proprietary products |
+| Procurement mappings | 211 entries → 312 proprietary products |
 | Accessibility | WCAG 2.1 AA audited 2026-08-12; lowest contrast ratio 5.17:1 |
 
 ## What makes it different

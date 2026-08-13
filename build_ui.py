@@ -45,6 +45,25 @@ def _replaces(r):
                 out.append(m)
     return out
 
+
+# 62% of mappings are NOT a like-for-like software swap - 21% are a paid tier or a
+# hosted service, 53% are partial or adjacent. The page used to print all of them
+# as a flat "Replaces X, Y, Z", which asserts exactly the category error the
+# _README in replaces.json exists to prevent: Drupal does not replace Contentful's
+# hosting, and ClamAV is not an endpoint-protection suite. Qualify anything that
+# is not strong+software. The qualifier is display only - `rp` stays the clean
+# product names so the search haystack and the "has replaces" filter are unchanged.
+def _rp_qual(m):
+    q = []
+    k, conf = m.get("kind"), m.get("confidence")
+    if k == "paid-tier":
+        q.append("paid tier")
+    elif k == "service":
+        q.append("hosted service")
+    if conf in ("partial", "adjacent"):
+        q.append(conf)
+    return ", ".join(q)
+
 SRC_LABEL = {
     "IT/developers-italia": "Developers Italia",
     "FR/sill": "SILL",
@@ -68,6 +87,7 @@ CLAIM = {
 
 rows = []
 for r in c:
+    _rp = _replaces(r)
     rows.append({
         "n": r.get("name") or "(unnamed)",
         "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
@@ -96,7 +116,9 @@ for r in c:
         "sl": r.get("desc_src_lang") or "",
         "qid": r.get("wikidata") or "",
         "ex": r.get("exclude_reason") or "",
-        "rp": [m.get("product") for m in _replaces(r) if m.get("product")],
+        # rp and rpq are built from one pass so they cannot fall out of alignment
+        "rp": [m.get("product") for m in _rp if m.get("product")],
+        "rpq": [_rp_qual(m) for m in _rp if m.get("product")],
         # dead_since is only set after 2 consecutive dead observations, so the
         # page never shows a one-off 404 as "repo gone"
         "lv": (lambda v: "dead" if v.get("dead_since")

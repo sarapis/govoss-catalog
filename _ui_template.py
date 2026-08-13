@@ -140,6 +140,10 @@ PAGE_CSS = """
 .item .title a:hover{color:var(--primary);text-decoration:underline;}
 .item .desc{font-size:14px;line-height:1.5;color:var(--ink-600);text-wrap:pretty;}
 .item .rp{font-size:12px;color:var(--primary);}
+/* Qualifier on a replaces target that is not a like-for-like software swap.
+   --ink-faint is the documented tertiary tier (5.17:1 on paper), so this sits
+   at the audited floor rather than below it. */
+.item .rp .rpq{color:var(--ink-faint);}
 .item .meta{font-size:12px;color:var(--ink-faint);}
 .item .why{font-size:12px;color:var(--ink-600);border-left:2px solid var(--ink);
   padding-left:8px;}
@@ -417,7 +421,10 @@ function render() {
                 : '<span class="nm">' + esc(r.n) + '</span>') + stamps(r) +
         '</div>' +
         (r.d ? '<div class="desc">' + esc(r.d) + '</div>' : '') +
-        (r.rp && r.rp.length ? '<div class="rp">Replaces ' + esc(r.rp.join(', ')) + '</div>' : '') +
+        (r.rp && r.rp.length ? '<div class="rp">Replaces ' + r.rp.map(function(p, i){
+            var q = (r.rpq || [])[i];
+            return esc(p) + (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
+        }).join(', ') + '</div>' : '') +
         '<div class="meta">' + meta.join(' &middot; ') + '</div>' +
         (r.ex ? '<div class="why">Set aside: ' + esc(r.ex) + '</div>' : '') +
       '</div>' +

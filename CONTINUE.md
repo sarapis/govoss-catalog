@@ -28,7 +28,8 @@ State: **3,080 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh`
 
 ## In rough priority order
 
-1. **Expand `replaces.json`.** 108 of 3,080 entries map to 165 proprietary products. This is
+1. **Expand `replaces.json` further.** Now 211 of 3,080 entries map to 312 proprietary
+   products (was 108 -> 165). This is
    the field that makes the catalogue answer *"what can we stop paying for?"* rather than
    *"what exists"*. Read the `_README` block in that file first — `kind` (`software` /
    `service` / `paid-tier`) and `confidence` both matter, and getting them wrong produces

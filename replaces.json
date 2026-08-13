@@ -495,8 +495,9 @@
   {
    "product": "Nagios XI",
    "vendor": "Nagios",
-   "confidence": "paid-tier",
-   "kind": "paid-tier"
+   "confidence": "partial",
+   "kind": "software",
+   "note": "Icinga2 is a fork of Nagios and runs Nagios plugins, but XI's bundled web UI, reporting and config wizards are a real gap. For a no-migration exit from XI see the Nagios (Core) entry."
   }
  ],
  "Uptime Kuma": [
@@ -1504,6 +1505,1432 @@
    "vendor": "Typeform",
    "confidence": "partial",
    "kind": "software"
+  }
+ ],
+ "Alfresco": [
+  {
+   "product": "Alfresco Content Services Enterprise",
+   "vendor": "Hyland",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "OpenText Documentum",
+   "vendor": "OpenText",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "M-Files",
+   "vendor": "M-Files",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache Airflow": [
+  {
+   "product": "Control-M",
+   "vendor": "BMC Software",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft SQL Server Integration Services",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Informatica PowerCenter",
+   "vendor": "Informatica",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache HTTP Server": [
+  {
+   "product": "Internet Information Services (IIS)",
+   "vendor": "Microsoft",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "IIS ships with Windows Server, so the saving is the Windows Server licence only if the host moves too."
+  },
+  {
+   "product": "Oracle iPlanet Web Server",
+   "vendor": "Oracle",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Apache Jmeter": [
+  {
+   "product": "LoadRunner",
+   "vendor": "OpenText",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "NeoLoad",
+   "vendor": "Tricentis",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "BlazeMeter",
+   "vendor": "Perforce",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Apache Kafka": [
+  {
+   "product": "Confluent Platform",
+   "vendor": "Confluent",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "IBM MQ",
+   "vendor": "IBM",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "TIBCO Messaging",
+   "vendor": "TIBCO",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache Solr": [
+  {
+   "product": "Coveo",
+   "vendor": "Coveo",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Algolia",
+   "vendor": "Algolia",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Blender": [
+  {
+   "product": "Autodesk Maya",
+   "vendor": "Autodesk",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "3ds Max",
+   "vendor": "Autodesk",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Cinema 4D",
+   "vendor": "Maxon",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "BlueSpice": [
+  {
+   "product": "Confluence",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "CentOS": [
+  {
+   "product": "Red Hat Enterprise Linux",
+   "vendor": "Red Hat",
+   "confidence": "adjacent",
+   "kind": "paid-tier",
+   "note": "CentOS Stream is now UPSTREAM of RHEL, not a rebuild of it, so this is no longer the like-for-like swap CentOS Linux used to be. For a RHEL-compatible rebuild see Rocky Linux."
+  }
+ ],
+ "Ceph": [
+  {
+   "product": "Dell PowerScale (Isilon)",
+   "vendor": "Dell Technologies",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "NetApp ONTAP",
+   "vendor": "NetApp",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "VMware vSAN",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Checkmk": [
+  {
+   "product": "Checkmk Enterprise",
+   "vendor": "Checkmk",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "PRTG Network Monitor",
+   "vendor": "Paessler",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "SolarWinds",
+   "vendor": "SolarWinds",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "ckan": [
+  {
+   "product": "Socrata Open Data",
+   "vendor": "Tyler Technologies",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "OpenDataSoft",
+   "vendor": "OpenDataSoft",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "ArcGIS Hub",
+   "vendor": "Esri",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "ClamAV": [
+  {
+   "product": "Symantec Endpoint Protection",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "ClamAV covers mail and file scanning, NOT endpoint protection: no EDR, behavioural detection or central policy. Do not scope it as an EPP swap."
+  },
+  {
+   "product": "Sophos Endpoint Protection",
+   "vendor": "Sophos",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Cryptomator": [
+  {
+   "product": "Boxcryptor",
+   "vendor": "Dropbox",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "dbt": [
+  {
+   "product": "dbt Cloud",
+   "vendor": "dbt Labs",
+   "confidence": "strong",
+   "kind": "service"
+  }
+ ],
+ "DokuWiki": [
+  {
+   "product": "Confluence",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "SharePoint",
+   "vendor": "Microsoft",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Dovecot": [
+  {
+   "product": "Microsoft Exchange Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Drupal": [
+  {
+   "product": "Adobe Experience Manager",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Sitecore Experience Platform",
+   "vendor": "Sitecore",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Optimizely CMS",
+   "vendor": "Optimizely",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Contentful",
+   "vendor": "Contentful",
+   "confidence": "adjacent",
+   "kind": "service",
+   "note": "Headless SaaS CMS. Drupal replaces the authoring software, not the hosting."
+  }
+ ],
+ "Duplicati": [
+  {
+   "product": "Acronis Cyber Protect",
+   "vendor": "Acronis",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "CrashPlan",
+   "vendor": "CrashPlan",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Eclipse IDE": [
+  {
+   "product": "IntelliJ IDEA Ultimate",
+   "vendor": "JetBrains",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Visual Studio Professional",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Filezilla": [
+  {
+   "product": "WS_FTP Professional",
+   "vendor": "Progress Software",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "CuteFTP",
+   "vendor": "Globalscape",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "FOG": [
+  {
+   "product": "Acronis Snap Deploy",
+   "vendor": "Acronis",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft Configuration Manager",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Forgejo": [
+  {
+   "product": "GitHub Enterprise Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Bitbucket Data Center",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "FreeCAD": [
+  {
+   "product": "AutoCAD",
+   "vendor": "Autodesk",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "SolidWorks",
+   "vendor": "Dassault Systemes",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Fusion 360",
+   "vendor": "Autodesk",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "FreeFileSync": [
+  {
+   "product": "GoodSync",
+   "vendor": "Siber Systems",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Beyond Compare",
+   "vendor": "Scooter Software",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "FreePBX": [
+  {
+   "product": "3CX Phone System",
+   "vendor": "3CX",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Cisco Unified Communications Manager",
+   "vendor": "Cisco",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Avaya Aura",
+   "vendor": "Avaya",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Geonetwork": [
+  {
+   "product": "ArcGIS Enterprise",
+   "vendor": "Esri",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "GeoNetwork covers the metadata catalogue and discovery portal, not the wider ArcGIS server stack. For the map server see GeoServer."
+  }
+ ],
+ "Gitea": [
+  {
+   "product": "GitHub Enterprise Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Bitbucket Data Center",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "GNU Octave": [
+  {
+   "product": "MATLAB",
+   "vendor": "MathWorks",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Graylog": [
+  {
+   "product": "Graylog Enterprise",
+   "vendor": "Graylog",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Splunk",
+   "vendor": "Cisco",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Hedgedoc": [
+  {
+   "product": "HackMD",
+   "vendor": "HackMD",
+   "confidence": "strong",
+   "kind": "service",
+   "note": "HedgeDoc is the community fork of HackMD; the paid item is the hosted service."
+  },
+  {
+   "product": "Google Docs",
+   "vendor": "Google",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Jenkins": [
+  {
+   "product": "Bamboo",
+   "vendor": "Atlassian",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "TeamCity",
+   "vendor": "JetBrains",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "GitHub Actions",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "CircleCI",
+   "vendor": "CircleCI",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "joomla!": [
+  {
+   "product": "Sitecore Experience Platform",
+   "vendor": "Sitecore",
+   "confidence": "adjacent",
+   "kind": "software"
+  },
+  {
+   "product": "Squarespace",
+   "vendor": "Squarespace",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "JupyterLab": [
+  {
+   "product": "MATLAB",
+   "vendor": "MathWorks",
+   "confidence": "adjacent",
+   "kind": "software"
+  },
+  {
+   "product": "Posit Workbench",
+   "vendor": "Posit",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Kanboard": [
+  {
+   "product": "Trello",
+   "vendor": "Atlassian",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Jira",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Katello": [
+  {
+   "product": "Red Hat Satellite",
+   "vendor": "Red Hat",
+   "confidence": "strong",
+   "kind": "paid-tier",
+   "note": "Satellite IS Foreman plus Katello, productised and supported."
+  }
+ ],
+ "Kdenlive": [
+  {
+   "product": "Adobe Premiere Pro",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Final Cut Pro",
+   "vendor": "Apple",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Koha": [
+  {
+   "product": "Ex Libris Alma",
+   "vendor": "Clarivate",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "SirsiDynix Symphony",
+   "vendor": "SirsiDynix",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "OCLC WorldShare Management Services",
+   "vendor": "OCLC",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Krita": [
+  {
+   "product": "Corel Painter",
+   "vendor": "Corel",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Adobe Photoshop",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "Krita targets digital painting; Photoshop's photo-retouching and prepress features are the gap. For those see GIMP."
+  }
+ ],
+ "Kubernetes": [
+  {
+   "product": "Red Hat OpenShift Container Platform",
+   "vendor": "Red Hat",
+   "confidence": "partial",
+   "kind": "paid-tier",
+   "note": "OpenShift is built on Kubernetes but adds an opinionated platform layer (build pipelines, routes, RBAC defaults, support). Dropping to upstream Kubernetes means rebuilding that layer, so this is not a free swap."
+  },
+  {
+   "product": "VMware Tanzu",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "LaTeX": [
+  {
+   "product": "Adobe FrameMaker",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft Word",
+   "vendor": "Microsoft",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Leaflet": [
+  {
+   "product": "Google Maps Platform",
+   "vendor": "Google",
+   "confidence": "strong",
+   "kind": "service"
+  },
+  {
+   "product": "Mapbox GL JS",
+   "vendor": "Mapbox",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "LibreNMS": [
+  {
+   "product": "SolarWinds Network Performance Monitor",
+   "vendor": "SolarWinds",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "PRTG Network Monitor",
+   "vendor": "Paessler",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Linphone": [
+  {
+   "product": "Cisco Jabber",
+   "vendor": "Cisco",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Bria",
+   "vendor": "CounterPath",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Mantis Bug Tracker": [
+  {
+   "product": "Jira",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "MediaWiki": [
+  {
+   "product": "Confluence",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Notion",
+   "vendor": "Notion Labs",
+   "confidence": "adjacent",
+   "kind": "service"
+  }
+ ],
+ "MISP": [
+  {
+   "product": "Anomali ThreatStream",
+   "vendor": "Anomali",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Recorded Future",
+   "vendor": "Recorded Future",
+   "confidence": "partial",
+   "kind": "service",
+   "note": "MISP is the sharing platform, not the intelligence feed. The subscription buys content; MISP does not produce it."
+  }
+ ],
+ "MongoDB": [
+  {
+   "product": "MongoDB Atlas",
+   "vendor": "MongoDB",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Nagios": [
+  {
+   "product": "Nagios XI",
+   "vendor": "Nagios",
+   "confidence": "strong",
+   "kind": "paid-tier",
+   "note": "Nagios XI is the commercial edition built on Nagios Core, so this is a licence you stop renewing rather than a migration - at the cost of XI's web UI, reporting and config wizards."
+  },
+  {
+   "product": "PRTG Network Monitor",
+   "vendor": "Paessler",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Notepad++": [
+  {
+   "product": "UltraEdit",
+   "vendor": "IDM Computer Solutions",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Sublime Text",
+   "vendor": "Sublime HQ",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "TextPad",
+   "vendor": "Helios Software",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "NVDA": [
+  {
+   "product": "JAWS",
+   "vendor": "Freedom Scientific",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Dolphin ScreenReader",
+   "vendor": "Dolphin Computer Access",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "OpenLdap": [
+  {
+   "product": "Oracle Directory Server Enterprise Edition",
+   "vendor": "Oracle",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Active Directory Domain Services",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "AD is directory plus Kerberos, Group Policy and Windows domain join. For the domain-controller role see Samba."
+  }
+ ],
+ "OpenShot": [
+  {
+   "product": "Adobe Premiere Elements",
+   "vendor": "Adobe",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Camtasia",
+   "vendor": "TechSmith",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenStack": [
+  {
+   "product": "VMware vSphere",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "VMware Cloud Foundation",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Opnsense": [
+  {
+   "product": "OPNsense Business Edition",
+   "vendor": "Deciso",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "FortiGate",
+   "vendor": "Fortinet",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "SonicWall",
+   "vendor": "SonicWall",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OwnCloud": [
+  {
+   "product": "ownCloud Enterprise",
+   "vendor": "Kiteworks",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Dropbox Business",
+   "vendor": "Dropbox",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Microsoft OneDrive for Business",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Pentaho Community Edition": [
+  {
+   "product": "Pentaho Enterprise",
+   "vendor": "Hitachi Vantara",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Informatica PowerCenter",
+   "vendor": "Informatica",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft SQL Server Integration Services",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "pfSense": [
+  {
+   "product": "pfSense Plus",
+   "vendor": "Netgate",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "FortiGate",
+   "vendor": "Fortinet",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "SonicWall",
+   "vendor": "SonicWall",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "pgAdmin": [
+  {
+   "product": "Navicat",
+   "vendor": "PremiumSoft",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Toad for Oracle",
+   "vendor": "Quest Software",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "phpList": [
+  {
+   "product": "Mailchimp",
+   "vendor": "Intuit",
+   "confidence": "strong",
+   "kind": "service"
+  },
+  {
+   "product": "Brevo",
+   "vendor": "Brevo",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "podman": [
+  {
+   "product": "Docker Desktop",
+   "vendor": "Docker",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "Docker Desktop requires a paid subscription for larger organisations; Podman Desktop is a drop-in for the common build/run workflow."
+  }
+ ],
+ "Postfix": [
+  {
+   "product": "Microsoft Exchange Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "Postfix is the SMTP layer only. Exchange also provides mailboxes, calendaring and Outlook integration - see Dovecot for IMAP and a groupware suite for the rest."
+  }
+ ],
+ "ProjectLibre": [
+  {
+   "product": "Microsoft Project",
+   "vendor": "Microsoft",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Prometheus": [
+  {
+   "product": "Datadog",
+   "vendor": "Datadog",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "New Relic",
+   "vendor": "New Relic",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Puppet": [
+  {
+   "product": "Puppet Enterprise",
+   "vendor": "Perforce",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "PuTTY": [
+  {
+   "product": "SecureCRT",
+   "vendor": "VanDyke Software",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Xshell",
+   "vendor": "NetSarang",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Pycharm Community Edition": [
+  {
+   "product": "PyCharm Professional",
+   "vendor": "JetBrains",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "QField": [
+  {
+   "product": "ArcGIS Field Maps",
+   "vendor": "Esri",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "R": [
+  {
+   "product": "SAS",
+   "vendor": "SAS Institute",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "IBM SPSS Statistics",
+   "vendor": "IBM",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Stata",
+   "vendor": "StataCorp",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Redis": [
+  {
+   "product": "Redis Enterprise",
+   "vendor": "Redis",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "restic": [
+  {
+   "product": "Veeam Backup & Replication",
+   "vendor": "Veeam",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Commvault",
+   "vendor": "Commvault",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Roundcube": [
+  {
+   "product": "Outlook on the web",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "RStudio": [
+  {
+   "product": "Posit Workbench",
+   "vendor": "Posit",
+   "confidence": "strong",
+   "kind": "paid-tier",
+   "note": "Formerly RStudio Server Pro. The desktop IDE is already open source."
+  }
+ ],
+ "Rudder": [
+  {
+   "product": "Microsoft Configuration Manager",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Rundeck": [
+  {
+   "product": "PagerDuty Runbook Automation",
+   "vendor": "PagerDuty",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "Samba": [
+  {
+   "product": "Windows Server file services",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Active Directory Domain Services",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Scribus": [
+  {
+   "product": "Adobe InDesign",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "QuarkXPress",
+   "vendor": "Quark",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Seafile": [
+  {
+   "product": "Seafile Professional",
+   "vendor": "Seafile",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Dropbox Business",
+   "vendor": "Dropbox",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Box",
+   "vendor": "Box",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Shotcut": [
+  {
+   "product": "Adobe Premiere Elements",
+   "vendor": "Adobe",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Camtasia",
+   "vendor": "TechSmith",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "SonarQube": [
+  {
+   "product": "SonarQube Server (Developer and Enterprise editions)",
+   "vendor": "Sonar",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Coverity",
+   "vendor": "Black Duck",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Checkmarx One",
+   "vendor": "Checkmarx",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Fortify Static Code Analyzer",
+   "vendor": "OpenText",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Squid": [
+  {
+   "product": "Symantec ProxySG",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Zscaler Internet Access",
+   "vendor": "Zscaler",
+   "confidence": "adjacent",
+   "kind": "service"
+  }
+ ],
+ "SuiteCRM": [
+  {
+   "product": "SugarCRM",
+   "vendor": "SugarCRM",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "SuiteCRM forked SugarCRM Community Edition when Sugar closed it."
+  },
+  {
+   "product": "Salesforce Sales Cloud",
+   "vendor": "Salesforce",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Dynamics 365 Sales",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Sympa": [
+  {
+   "product": "LISTSERV",
+   "vendor": "L-Soft",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Mailchimp",
+   "vendor": "Intuit",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Taiga": [
+  {
+   "product": "Jira",
+   "vendor": "Atlassian",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Asana",
+   "vendor": "Asana",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Monday.com",
+   "vendor": "monday.com",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Terraform": [
+  {
+   "product": "HCP Terraform",
+   "vendor": "HashiCorp",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "VMware Aria Automation",
+   "vendor": "Broadcom",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Testlink": [
+  {
+   "product": "TestRail",
+   "vendor": "Idera",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "ALM Quality Center",
+   "vendor": "OpenText",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Trivy": [
+  {
+   "product": "Aqua Security Platform",
+   "vendor": "Aqua Security",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Snyk Container",
+   "vendor": "Snyk",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Qualys Container Security",
+   "vendor": "Qualys",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Tuleap": [
+  {
+   "product": "Tuleap Enterprise",
+   "vendor": "Enalean",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Jira",
+   "vendor": "Atlassian",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "udata": [
+  {
+   "product": "Socrata Open Data",
+   "vendor": "Tyler Technologies",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "OpenDataSoft",
+   "vendor": "OpenDataSoft",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Vagrant": [
+  {
+   "product": "VMware Workstation Pro",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Varnish": [
+  {
+   "product": "Varnish Enterprise",
+   "vendor": "Varnish Software",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Akamai",
+   "vendor": "Akamai",
+   "confidence": "adjacent",
+   "kind": "service"
+  }
+ ],
+ "VeraCrypt": [
+  {
+   "product": "Symantec Endpoint Encryption",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "BitLocker",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "BitLocker ships with Windows, so the saving is usually the management tooling rather than a licence line."
+  }
+ ],
+ "Wazuh": [
+  {
+   "product": "Splunk Enterprise Security",
+   "vendor": "Cisco",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "IBM QRadar",
+   "vendor": "IBM",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft Sentinel",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Wekan": [
+  {
+   "product": "Trello",
+   "vendor": "Atlassian",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "WinSCP": [
+  {
+   "product": "WS_FTP Professional",
+   "vendor": "Progress Software",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "CuteFTP",
+   "vendor": "Globalscape",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Wordpress": [
+  {
+   "product": "Squarespace",
+   "vendor": "Squarespace",
+   "confidence": "partial",
+   "kind": "service",
+   "note": "Replaces the site-building software; hosting still has to come from somewhere."
+  },
+  {
+   "product": "Wix",
+   "vendor": "Wix",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Adobe Experience Manager",
+   "vendor": "Adobe",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "XWiki": [
+  {
+   "product": "Confluence",
+   "vendor": "Atlassian",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Notion",
+   "vendor": "Notion Labs",
+   "confidence": "adjacent",
+   "kind": "service"
+  }
+ ],
+ "Zim": [
+  {
+   "product": "Microsoft OneNote",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Evernote",
+   "vendor": "Bending Spoons",
+   "confidence": "partial",
+   "kind": "service"
   }
  ]
 }
