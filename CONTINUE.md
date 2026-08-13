@@ -7,7 +7,7 @@ continuation brief: written to be handed to whoever — or whatever — picks th
 `DESIGN-BRIEF.md` the design system as built, `UPSTREAM-CTFG.md` the design-system exchange.
 Don't re-litigate decisions recorded there — particularly the deliberate exclusions.
 
-State: **3,080 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
+State: **3,069 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
 15 steps; the order matters and is documented at the top of the file). Scheduled Mondays 07:00
 — `bash schedule/install.sh`.
 
@@ -36,7 +36,7 @@ State: **3,080 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh`
    $13.5M that QGIS answers. Read it before doing (1) — it may reorder the work. There is a
    cheap go/no-go in it that has **not** been run.
 
-1. **Expand `replaces.json` further.** Now 210 of 3,080 entries map to 302 proprietary
+1. **Expand `replaces.json` further.** Now 205 of 3,069 entries map to 302 proprietary
    products (was 108 -> 165), browsable at `/products.html`. This is
    the field that makes the catalogue answer *"what can we stop paying for?"* rather than
    *"what exists"*. Read the `_README` block in that file first — `kind` (`software` /

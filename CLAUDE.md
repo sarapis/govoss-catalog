@@ -4,7 +4,7 @@
 > national, municipal and international catalogues, normalised onto one schema, translated to
 > English, categorised by function, de-duplicated and liveness-monitored.
 >
-> **3,080 entries · 17 catalogues · 15 countries incl. EU + global.** Live at
+> **3,069 entries · 17 catalogues · 15 countries incl. EU + global.** Live at
 > https://govoss-catalog.vercel.app — see `README.md` for the public overview and
 > `CONTINUE.md` for open items. This file is the operating manual: it records why each
 > decision was made and what not to re-litigate.
@@ -142,6 +142,24 @@ entries were missing, because dedupe unions on QID first and repo URL second. An
 no QID can only merge with something sharing its exact repo URL, which is why the same tool
 listed by two catalogues with slightly different URLs stayed split.
 
+**Wikidata is the second source, reached BY URL ONLY** — `P1324` source code repository and
+`P856` official website. 554 -> 645 entries carrying a QID.
+
+*Never by name.* `Q936` (OpenStreetMap) has **no English label at all**, `Audacity` resolves to
+three QIDs and `Caddy` to two, and `about` matches a real software item called `about` — and
+generic repo names are everywhere here. Two guards, both added after watching them fail:
+**the matched item must BE software** (17 of 92 homepage matches were not — `Q1199` is the
+German state of Hesse, reached because an entry's landing is `hessen.de`, plus a Taiwanese
+ministry and an elementary school), and **a homepage shared by entries with different names is
+an organisation site**, not an identity (four unrelated German repos share `umwelt.info`).
+Wikidata stores URL properties as **IRIs, not strings**, so `VALUES ?s { "https://…" }` matches
+nothing silently; and the queries POST, because the VALUES blocks 414 on a GET.
+
+Measured limit, so the yield is not overestimated: the repo route stamped 51 QIDs but produced
+**one** merge — entries sharing a repo URL already merge on repo URL, so a QID derived from
+that same URL tells dedupe nothing. It is worth running for identity coverage, not as the fix
+for duplicates. It is best-effort: a slow SPARQL endpoint must never fail a gated step.
+
 Comptoir du Libre (ADULLACT) is the one open source carrying several identifiers on the SAME
 row: 780 entries, all with a repo URL and website, 270 with a QID, 349 with a SILL id. It
 stamped **121 QIDs**, which lifted dedupe from 156 to **241 merges** and multi-catalogue
@@ -156,7 +174,8 @@ is never mistaken for a publisher-asserted one.
 
 `catalogue_count` + `catalogues[]` per entry: how many DISTINCT catalogues list this
 software, with a **deep link into each** so a reader can verify the claim upstream instead
-of taking the merge on trust. **37 entries appear in 2+ catalogues** (34 in two, 3 in three
+of taking the merge on trust. **114 entries appear in 2+ catalogues**, up from 37 as identity
+coverage improved (see the crosswalk and dedupe sections)
 — NextCloud Server, QGIS and OpenProject each in Developers Italia + SILL + DPG). Sortable
 in the UI via "In most catalogues", and a stat tile.
 
@@ -185,6 +204,18 @@ union is additive.
 For **upstream general-purpose software** (Angular, 7-Zip) repo URLs do *not* join: SILL
 says `angular.dev`, Sweden says `angular.io`. Use the **Wikidata QID** instead. Precedence:
 QID → normalised repo URL → homepage.
+
+**Never name alone — but exact name AND exact homepage together is the third identity.**
+Rules 1 and 2 cannot reach the commonest split: the same upstream tool listed by two
+catalogues that recorded different repo URLs and carry no QID. OpenStreetMap was three
+entries — Munich, Sweden, DPG — one with no repo at all and two pointing at different *wiki
+pages*. It is a **conjunction of two independent identifiers**, which is what makes it safe:
+Angular and AngularJS have different homepages, so that case is still prevented (verified —
+they remain separate, `Q28925578` and `Q2849803`). And the homepage is what stops generic
+names merging: `docs`, `about` and `api` never qualify because they have no landing page,
+while four unrelated German repos sharing `umwelt.info` stay split because their names differ.
+It collapsed Audacity, Masterportal and OpenStreetMap (3 -> 2; Sweden's record has neither a
+homepage nor a real repo, so nothing can reach it without a hand-stamped QID).
 
 **Never fuzzy-match names.** Angular (`Q28925578`) and AngularJS (`Q2849803`) are different
 products and one name contains the other. `comptoir-du-libre.org/api/v1/softwares.json` is a
@@ -384,7 +415,7 @@ extension) and `harvest.py` picks it up, so claims can be owned upstream.
 
 Merges on **Wikidata QID, then normalised repo URL**, union-find so identities chain.
 **Never on name similarity** — Angular `Q28925578` and AngularJS `Q2849803` are different
-products and one name contains the other. 2,122 -> 1,995 (127 collapsed, 84 groups).
+products and one name contains the other. 3,426 raw -> 3,069 active, 178 merge groups.
 Pre-merge rows kept in `out/dupes.json` for audit.
 
 Only 15 groups are cross-country (Matomo FR+IT, OpenProject DE+FR+IT — genuine, and the

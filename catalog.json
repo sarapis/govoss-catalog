@@ -6563,8 +6563,15 @@
   ]
  },
  {
-  "catalogue_count": 2,
+  "active": true,
+  "catalogue_count": 3,
   "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "Audacity",
+    "repo_url": "https://github.com/audacity/audacity",
+    "source": "IT/developers-italia"
+   },
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Audacity",
     "name": "Audacity",
@@ -6579,20 +6586,29 @@
    }
   ],
   "categories": [
+   "digital-asset-management",
    "Desktop Applications"
+  ],
+  "contacts": [
+   "Audacity team"
   ],
   "countries": [
    "DE",
-   "FR"
+   "FR",
+   "IT"
   ],
-  "country": "FR",
+  "country": "IT",
   "desc_lang": "en",
-  "desc_src": "Enregistrement et \u00e9dition de sons",
-  "desc_src_lang": "fr",
-  "entry_url": "https://code.gouv.fr/sill/detail?name=Audacity",
+  "desc_src": "Free, open source, cross-platform audio software",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia-software/Audacity.git",
+  "features": [
+   "audio editing"
+  ],
   "functions": [
-   "dev-tools",
-   "documents"
+   "documents",
+   "dev-tools"
   ],
   "functions_inferred": false,
   "keywords": [
@@ -6605,63 +6621,10 @@
    "desktop"
   ],
   "landing": "https://www.audacityteam.org/",
-  "license": "GPL-2.0-only",
-  "merged_count": 2,
-  "name": "Audacity",
-  "note": "recommended to public agents; not necessarily gov-authored",
-  "recommended_for_gov": true,
-  "repo": "https://github.com/audacity",
-  "repo_key": "github.com/audacity",
-  "short_desc": "Sound recording and editing.",
-  "sill_id": 14,
-  "source": "FR/sill",
-  "sources": [
-   "DE/opensource.muenchen.de",
-   "FR/sill"
-  ],
-  "tier": "index",
-  "translated": true,
-  "used_by": [
-   "MEN",
-   "MISC"
-  ],
-  "version": "3.7.8",
-  "wikidata": "Q191782"
- },
- {
-  "active": true,
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": null,
-    "name": "Audacity",
-    "repo_url": "https://github.com/audacity/audacity",
-    "source": "IT/developers-italia"
-   }
-  ],
-  "categories": [
-   "digital-asset-management"
-  ],
-  "contacts": [
-   "Audacity team"
-  ],
-  "country": "IT",
-  "desc_lang": "en",
-  "desc_src": "Free, open source, cross-platform audio software",
-  "desc_src_lang": "it",
-  "dev_status": "stable",
-  "fallback_repo": "https://github.com/italia-software/Audacity.git",
-  "features": [
-   "audio editing"
-  ],
-  "functions": [
-   "documents"
-  ],
-  "functions_inferred": false,
-  "landing": "https://www.audacityteam.org/",
   "license": "GPL-3.0-only",
   "long_desc": "Audacity is an easy-to-use, multi-track audio editor and recorder for\nWindows, macOS, GNU/Linux and other operating systems. Audacity is free,\nopen source software.\n\n\n## Supported platforms\n\n\nAudacity is a fast multi-track audio editor and recorder for: \n\n\n- Windows 7 and later\n\n- Macintosh OS X 10.6 and later\n\n- Linux/Unix and other \\*.nix-based systems \n\n\nFor older versions of Audacity that support older operating systems, see\n[https://audacityteam.org/download/#legacy](https://audacityteam.org/download/#legacy). \n\n\n## Features\n\n\nFor a fuller list of Audacity's features please see the\n[Features](https://www.audacityteam.org/about/features/) page of our\nAudacity website.  \n\n\n### Supported file formats\n\n\nAudacity supports several digital audio file formats with support for\n24-bit and 32-bit [sample\nformats](https://wiki.audacityteam.org/wiki/Bit_Depth \"Bit Depth\") as well\nas 16-bit. Supported formats include:  \n\n\n- [WAV](https://wiki.audacityteam.org/wiki/WAV \"WAV\") \n\n- [AIFF](https://wiki.audacityteam.org/wiki/AIFF \"AIFF\") \n\n- [OGG](https://wiki.audacityteam.org/wiki/OGG \"OGG\")\n\n- **MP3**\n\n\n### Sound manipulation and analysis\n\n\nFor sound analysis you may use the spectrogram mode o",
   "maintenance": "community",
+  "merged_count": 3,
   "name": "Audacity",
   "platforms": [
    "windows",
@@ -6674,10 +6637,20 @@
   "short_desc": "Free, open source, cross-platform audio software.",
   "software_type": "standalone/desktop",
   "source": "IT/developers-italia",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill",
+   "IT/developers-italia"
+  ],
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "7994cb5e-5a73-45b8-a6fd-6053143c0e49",
-  "version": "3.1.3"
+  "used_by": [
+   "MEN",
+   "MISC"
+  ],
+  "version": "3.1.3",
+  "wikidata": "Q191782"
  },
  {
   "catalogue_count": 1,
@@ -74686,7 +74659,8 @@
    }
   ],
   "categories": [
-   "geographic-information-systems"
+   "geographic-information-systems",
+   "geographic-information-systems, api"
   ],
   "contacts": [
    "Betrieb Webanwendungen"
@@ -74712,7 +74686,8 @@
   ],
   "forge_path": "geowerkstatt-hamburg/masterportal",
   "functions": [
-   "geospatial"
+   "geospatial",
+   "integration"
   ],
   "functions_inferred": false,
   "landing": "https://www.masterportal.org",
@@ -74720,7 +74695,7 @@
   "license": "MIT",
   "long_desc": " ## Masterportal\n\n # Konfigurierbares Geoportal mit starker Community\n Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web. In Hamburg kommt das Masterportal immer dann zum Einsatz,\n wenn webbasierte Kartenanwendungen ben\u00f6tigt werden \u2013 als eigenst\u00e4ndige Anwendung oder als Teil einer E-Government-L\u00f6sung.\n Auch in anderen St\u00e4dten und Kreisen wird das Masterportal eingesetzt und in einer Kooperation in Form einer [++Implementierungspartnerschaft++](https://www.masterportal.org/)\n von mehr als 50 Partnern aus der Verwaltung weiterentwickelt.\n\n # Open Source und offene Standards\n Das Masterportal ist Open-Source-Software und setzt auf offene Standards. Es ist unter der [++MIT-Lizenz++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/License.txt) ver\u00f6ffentlicht.\n\n # Issues melden\n Der offizielle Issue Tracker ist auf Bitbucket zu finden: [++Issue Tracker++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/issues?status=new&status=open&status=submitted&is_spam=!spam)\n\n # Diskussionsforum des Masterportals\n Das Diskussionsforum findet man auf openCode: [++Diskussionsforum++](https://discourse.opencode.de/t/ueber-die-kategorie-masterportal-projekt-413/1",
   "maintenance": "community",
-  "merged_count": 3,
+  "merged_count": 4,
   "name": "Masterportal",
   "platforms": [
    "web"
@@ -74739,63 +74714,6 @@
   "translated": true,
   "upstream_id": 413,
   "version": "3.15.3 (LTS)"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportalapi",
-    "name": "Masterportal",
-    "repo_url": "https://bitbucket.org/geowerkstatt-hamburg/masterportalapi.git",
-    "source": "DE/openCode"
-   }
-  ],
-  "categories": [
-   "geographic-information-systems, api"
-  ],
-  "contacts": [
-   "Betrieb Webanwendungen"
-  ],
-  "country": "DE",
-  "desc_lang": "en",
-  "desc_src": "Die MasterportalAPI ist eine auf OpenLayers basierende API zum Einbinden und Anzeigen von Karteninhalten auf Ihrer Webseite",
-  "desc_src_lang": "de",
-  "dev_status": "stable",
-  "entry_url": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportalapi",
-  "fallback_repo": "https://gitlab.opencode.de/geowerkstatt-hamburg/masterportalapi.git",
-  "features": [
-   "OGC-konform",
-   "Konfigurierbar",
-   "OpenSource",
-   "Adminfreundlich",
-   "Modular"
-  ],
-  "forge_path": "geowerkstatt-hamburg/masterportalapi",
-  "functions": [
-   "geospatial",
-   "integration"
-  ],
-  "functions_inferred": false,
-  "landing": "https://www.masterportal.org",
-  "last_activity": "2026-07-17T06:40:05.105Z",
-  "license": "MIT",
-  "long_desc": " Die MasterportalAPI ist eine API zum Einbinden und Anzeigen von Karteninhalten auf Ihrer Webseite. Sie basiert auf OpenLayers und wurde um Funktionen erweitert, die die einfache Nutzung von Konfigurations- und Infrastrukturdateien des Masterportals, einer funktionsreichen Mapping-App der Geowerkstatt Hamburg, erm\u00f6glichen. Sie erm\u00f6glicht au\u00dferdem die Erstellung einer 3D-Karte mithilfe von OLCS und C\u00e4sium. Weitere Informationen finden Sie auf masterportal.org. Die MasterportalAPI ist Open-Source-Software. Es ist unter der [++MIT-Lizenz++](https://bitbucket.org/geowerkstatt-hamburg/masterportalapi/src/master/License.txt) ver\u00f6ffentlicht.\n",
-  "maintenance": "community",
-  "name": "Masterportal",
-  "platforms": [
-   "web"
-  ],
-  "released": "2026-06-11",
-  "repo": "https://bitbucket.org/geowerkstatt-hamburg/masterportalapi.git",
-  "repo_key": "bitbucket.org/geowerkstatt-hamburg/masterportalapi",
-  "repo_owner": "Freie und Hansestadt Hamburg, Landesbetrieb Geoinformation und Vermessung",
-  "short_desc": "The MasterportalAPI is an OpenLayers-based API for embedding and displaying map content on your website.",
-  "software_type": "api",
-  "source": "DE/openCode",
-  "tier": "publiccode",
-  "translated": true,
-  "upstream_id": 5135,
-  "version": "2.62.0"
  },
  {
   "catalogue_count": 1,
@@ -92136,14 +92054,24 @@
   "version": "2.0.44"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://opensource.muenchen.de/software/openstreetmap.html",
     "name": "OpenStreetMap",
     "repo_url": null,
     "source": "DE/opensource.muenchen.de"
+   },
+   {
+    "entry_url": "https://www.digitalpublicgoods.net/r/openstreetmap",
+    "name": "OpenStreetMap",
+    "repo_url": "https://wiki.osmfoundation.org/wiki/How_To_Get_OpenStreetMap_Data",
+    "source": "GLOBAL/dpg"
    }
+  ],
+  "countries": [
+   "DE",
+   "GLOBAL"
   ],
   "country": "DE",
   "desc_lang": "en",
@@ -92154,71 +92082,7 @@
   "functions_inferred": true,
   "gov_tier": "municipal",
   "keywords": [
-   "kooperation"
-  ],
-  "landing": "https://openstreetmap.org",
-  "license": "ODbL",
-  "name": "OpenStreetMap",
-  "note": "in production use at the City of Munich",
-  "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
-  "short_desc": "OpenStreetMap is a free project that collects and structures freely usable geodata, maintains it as open data and provides online maps.",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": null,
-    "name": "OpenStreetMap",
-    "repo_url": "https://wiki.openstreetmap.org/wiki/API",
-    "source": "SE/offentligkod"
-   }
-  ],
-  "categories": [
-   "geodata"
-  ],
-  "country": "SE",
-  "functions": [
-   "geospatial"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "OpenStreetMap",
-  "repo": "https://wiki.openstreetmap.org/wiki/API",
-  "repo_key": "wiki.openstreetmap.org/wiki/api",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "smhi",
-   "gotland_k",
-   "gotland_r"
-  ]
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://www.digitalpublicgoods.net/r/openstreetmap",
-    "name": "OpenStreetMap",
-    "repo_url": "https://wiki.osmfoundation.org/wiki/How_To_Get_OpenStreetMap_Data",
-    "source": "GLOBAL/dpg"
-   }
-  ],
-  "country": "GLOBAL",
-  "desc_lang": "en",
-  "dpg": true,
-  "dpg_type": [
-   "Open Data"
-  ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/openstreetmap",
-  "functions": [
-   "geospatial"
-  ],
-  "functions_inferred": true,
-  "keywords": [
+   "kooperation",
    "SDG3",
    "SDG6",
    "SDG9",
@@ -92227,26 +92091,21 @@
    "SDG13",
    "SDG15"
   ],
-  "landing": "https://www.openstreetmap.org",
-  "license": "OdbL-1.0",
+  "landing": "https://openstreetmap.org",
+  "license": "ODbL",
+  "merged_count": 2,
   "name": "OpenStreetMap",
-  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "repo": "https://wiki.osmfoundation.org/wiki/How_To_Get_OpenStreetMap_Data",
-  "repo_key": "wiki.osmfoundation.org/wiki/how_to_get_openstreetmap_data",
-  "repo_owner": "OpenStreetMap",
-  "sdgs": [
-   "SDG3: Good Health and Well-Being",
-   "SDG6: Clean Water and Sanitation",
-   "SDG9: Industry\u00b8 Innovation and Infrastructure",
-   "SDG10: Reduced Inequalities",
-   "SDG11: Sustainable Cities and Communities",
-   "SDG13: Climate Action",
-   "SDG15: Life on Land"
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "OpenStreetMap is a free project that collects and structures freely usable geodata, maintains it as open data and provides online maps.",
+  "source": "DE/opensource.muenchen.de",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "GLOBAL/dpg"
   ],
-  "short_desc": "OpenStreetMap is an initiative to create and provide free geographic data, such as street maps, to anyone. The OpenStreetMap Foundation (OSMF) is dedicated to encouraging the growth, development, and distribution of free geospatial data and to providing geospatial data for anyone to use and share.",
-  "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090526",
   "used_by": [
    "\"Eswatini (fmr. \"\"Swaziland\"\")\"",
    "Afghanistan",
@@ -92308,6 +92167,36 @@
    "Fiji",
    "Finland",
    "France"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "OpenStreetMap",
+    "repo_url": "https://wiki.openstreetmap.org/wiki/API",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "geodata"
+  ],
+  "country": "SE",
+  "functions": [
+   "geospatial"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "OpenStreetMap",
+  "repo": "https://wiki.openstreetmap.org/wiki/API",
+  "repo_key": "wiki.openstreetmap.org/wiki/api",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "smhi",
+   "gotland_k",
+   "gotland_r"
   ]
  },
  {
