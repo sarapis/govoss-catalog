@@ -236,9 +236,12 @@ no-description`, 351 of them) rather than shown: not saying what the software do
 failure to share it. They keep their reason, stay in `catalog.json` and on the page behind the
 set-aside toggle, and return on their own if a publisher adds a description.
 
-**They do NOT stay in `/entries.json`.** `export_json.py` exports only non-excluded rows, so
-this rule removed **316 entries from the public API**, PloneMeeting among them. That is a
-deliberate consequence of the standard, not an oversight — but it is an API-visible break.
+**`/entries.json` carries them, flagged.** It exports EVERY row with `excluded` and
+`exclude_reason`, so a consumer can filter rather than silently lose 316 records. The first cut
+of this rule exported active rows only and PloneMeeting simply vanished from the API.
+The **derived** indexes stay curated (active only): `by-product.json` must never offer a
+set-aside entry as a replacement, and `by-category/` and `mcp-index.json` are browse surfaces.
+One complete source of truth, curated views over it.
 
 **Read this before touching that rule.** A near-identical rule existed and was removed for
 cause: `no-usable-metadata` hid Products.PloneMeeting, iMio's flagship deliberations product,
@@ -371,7 +374,7 @@ Static files in `site/`, no backend. `run.sh` emits them every run.
 
 | path | what |
 |---|---|
-| `/entries.json` | 1,995 entries, structured fields (2.9 MB) |
+| `/entries.json` | every row incl. set-aside, flagged `excluded` |
 | `/meta.json` | categories, sources, licences, counts, `generated_at`, known gaps |
 | `/by-product.json` | **inverted index**: proprietary product -> alternatives |
 | `/by-category/<key>.json` | one file per functional category |

@@ -7,7 +7,7 @@ The human-facing catalogue.html is untouched; this adds a machine path beside it
 
 Writes into site/ (the Vercel deploy dir):
 
-  entries.json            every active entry, structured fields, one array
+  entries.json            EVERY entry incl. set-aside ones, flagged, one array
   meta.json               categories, sources, licences, counts, generated_at
   v1/entries.json         versioned alias so consumers can pin
   v1/meta.json
@@ -98,11 +98,19 @@ def build():
     if bad_vals:
         raise SystemExit("replaces.json: invalid values\n   " + "\n   ".join(bad_vals))
 
-    active = [r for r in catalog if not r.get("excluded")]
+    # entries.json carries EVERY row, set-aside ones included and flagged. The
+    # no-description rule alone set aside 316, and exporting only active rows
+    # made them vanish from the public API with no way for a consumer to see
+    # they existed or why. A complete dataset plus a flag lets the caller decide;
+    # a truncated one decides for them, silently.
+    #
+    # The DERIVED indexes below stay curated (active only): by-product must not
+    # offer a set-aside entry as a replacement, and by-category/mcp-index are
+    # browse surfaces. One complete source of truth, curated views over it.
     entries, used_keys = [], set()
     id_counts = collections.Counter()
 
-    for r in active:
+    for r in catalog:
         lv = live.get(r.get("repo_key") or "", {})
         fns = r.get("functions") or []
         name = r.get("name") or ""
@@ -204,10 +212,16 @@ def build():
             "last_push": lv.get("last_push"),
 
             "replaces": rep or [],
+
+            # why a row is held out of the default view, and of every derived
+            # index here. null when the entry is in the catalogue proper.
+            "excluded": bool(r.get("excluded")),
+            "exclude_reason": r.get("exclude_reason"),
         }
         entries.append(e)
 
     entries.sort(key=lambda e: (e["name"] or "").lower())
+    active = [e for e in entries if not e["excluded"]]
 
     # ---- warn on seed rot: a replaces key matching nothing is a silent bug
     orphans = sorted(set(rmap) - used_keys)
@@ -215,7 +229,7 @@ def build():
     # ---- inverted index: proprietary product -> catalogue alternatives.
     # This is the /api/match use case, precomputed as a static file.
     by_product = collections.defaultdict(list)
-    for e in entries:
+    for e in active:
         for m in e["replaces"]:
             by_product[m["product"]].append({
                 "name": e["name"], "id": e["id"],
@@ -240,30 +254,31 @@ def build():
         uniq.sort(key=lambda x: (rank.get(x["confidence"], 3), -x["adopters"]))
         by_product[prod] = uniq
 
-    cats = collections.Counter(c for e in entries for c in e["categories"])
+    cats = collections.Counter(c for e in active for c in e["categories"])
     meta = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": GENERATED_AT,
         "human_page": "https://govoss-catalog.vercel.app/",
         "counts": {
-            "entries": len(entries),
-            "with_publiccode": sum(1 for e in entries if e["has_publiccode"]),
-            "with_wikidata": sum(1 for e in entries if e["wikidata"]),
-            "with_replaces": sum(1 for e in entries if e["replaces"]),
-            "in_multiple_catalogues": sum(1 for e in entries if e["catalogue_count"] > 1),
-            "with_entry_links": sum(1 for e in entries
+            "entries": len(active),
+            "with_publiccode": sum(1 for e in active if e["has_publiccode"]),
+            "with_wikidata": sum(1 for e in active if e["wikidata"]),
+            "with_replaces": sum(1 for e in active if e["replaces"]),
+            "in_multiple_catalogues": sum(1 for e in active if e["catalogue_count"] > 1),
+            "with_entry_links": sum(1 for e in active
                                     if any(c["entry_url"] for c in e["catalogues"])),
-            "digital_public_goods": sum(1 for e in entries if e["dpg"]),
-            "dead_links": sum(1 for e in entries if e["link_dead"]),
-            "archived_repos": sum(1 for e in entries if e["repo_archived"]),
-            "filtered_out": sum(1 for r in catalog if r.get("excluded")),
+            "digital_public_goods": sum(1 for e in active if e["dpg"]),
+            "dead_links": sum(1 for e in active if e["link_dead"]),
+            "archived_repos": sum(1 for e in active if e["repo_archived"]),
+            "filtered_out": len(entries) - len(active),
+            "total_including_set_aside": len(entries),
             "distinct_products_mapped": len(by_product),
         },
         # the 19 categories are a stable documented enumeration
         "categories": [{"key": k, "label": v, "count": cats.get(v, 0)}
                        for k, v in FUNCTIONS.items()],
         "countries": [{"code": k, "count": v} for k, v in
-                      collections.Counter(cc for e in entries for cc in e["countries"]).most_common()],
+                      collections.Counter(cc for e in active for cc in e["countries"]).most_common()],
         "source_catalogues": [
             {"key": k, **{f: v[f] for f in ("label", "country", "site", "api", "route", "claim")}}
             for k, v in _S.SOURCES.items()],
@@ -338,7 +353,7 @@ def build():
 
     with open(f"{SITE}/mcp-index.json", "w") as f:
         json.dump({"generated_at": GENERATED_AT,
-                   "entries": [compact(r) for r in entries]},
+                   "entries": [compact(r) for r in active]},
                   f, separators=(",", ":"), ensure_ascii=False)
 
     sizes = {
@@ -351,7 +366,7 @@ def build():
         "replaces.json": w("replaces.json", replaces_raw),
     }
     for key, label in FUNCTIONS.items():
-        subset = [e for e in entries if key in e["category_keys"]]
+        subset = [e for e in active if key in e["category_keys"]]
         sizes[f"by-category/{key}.json"] = w(f"by-category/{key}.json", subset)
 
     write_agent_files(entries, meta, by_product)
@@ -372,6 +387,7 @@ def build():
 
 
 def write_agent_files(entries, meta, by_product):
+    n_active = sum(1 for e in entries if not e.get('excluded'))
     """llms.txt / robots.txt / sitemap.xml — generated, so the counts in them can
     never drift from the data they describe."""
     cats = "\n".join(f"  {c['key']:22} {c['label']:34} {c['count']}" for c in meta["categories"])
@@ -389,7 +405,10 @@ scraping it is both harder and less complete than one HTTP GET.
 
 ## Endpoints (static files, CORS open, no auth, no rate limit)
 
-  GET /entries.json              all {len(entries)} entries, one array, structured fields
+  GET /entries.json              all {len(entries)} rows, one array, structured fields
+                                 {len(entries)-n_active} carry excluded:true with an
+                                 exclude_reason (fork, CI plumbing, no description...).
+                                 Filter on `excluded` for the {n_active}-entry catalogue.
   GET /meta.json                 category enum, sources, licences, counts, known gaps
   GET /by-product.json           inverted index: proprietary product -> alternatives
   GET /by-category/<key>.json    one file per category, keys listed below

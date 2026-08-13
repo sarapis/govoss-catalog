@@ -92,7 +92,7 @@ committed here is what is live. `generated_at` in `/meta.json` is the freshness 
 
 Static files, no backend. `site/` is assembled from tracked sources and deployed to Vercel.
 
-    /entries.json              all entries, structured fields
+    /entries.json              ALL rows incl. set-aside, flagged `excluded`
     /meta.json                 category enum, sources, counts, known gaps
     /by-product.json           proprietary product -> open source alternatives
     /products.json             372 proprietary products, with/without an alternative
