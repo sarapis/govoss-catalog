@@ -228,24 +228,43 @@ translations **survive a re-harvest** as long as upstream wording is unchanged.
 `merge_translations.py` applies them; `desc_src` keeps the original and `translated: true`
 marks machine translation so it is never confused with publisher-supplied English (`desc_en`).
 
-Of 3,069 active entries: **2,576 display English**, **175 display Bulgarian**, and **318 have
-no description at all** — the upstream catalogue published none, and one is not invented here.
-Those three numbers add up to the entry count, which is the check worth running after any
-change to this step.
+**2,751 of 2,753 active entries display English.** The two exceptions shipped a
+`publiccode.yml`, which `filters.py` never overrides.
 
-The Bulgarian 175 are a deliberate call: mostly EU-funding grant references
-(`РД-02-29-19/09.07.2025 - Изграждане на…`) rather than software summaries.
+Entries whose publisher wrote NO description are **set aside** (`exclude_reason:
+no-description`, 351 of them) rather than shown: not saying what the software does is a
+failure to share it. They keep their reason, stay in the data and the JSON export, and return
+with the set-aside toggle — and if a publisher adds a description, the next run brings the
+entry back on its own.
+
+**Read this before touching that rule.** A near-identical rule existed and was removed for
+cause: `no-usable-metadata` hid Products.PloneMeeting, iMio's flagship deliberations product,
+plus the ten municipality `Meeting*` profiles Walloon councils run. Those are set aside again
+now. What changed is the CLAIM, not the evidence — this is an editorial standard about
+publisher effort, not an assertion that the entry is not software, and it flags rather than
+deletes. `enrich_desc.py` runs first, so it only fires when GitHub had nothing either.
+
+**The Bulgarian 175 are now translated.** The earlier call to skip them was half right: they
+are procurement records, but the contract reference is a PREFIX and a real project title
+follows it — `Договор № 98-00-101/15.03.2023 Сайт на град Благоевград` is "Website of the city
+of Blagoevgrad". `translations/tr_bg.json` drops the reference and translates the title. Eight
+whose whole description was a contract number map to an EMPTY string, which
+`merge_translations.py` treats as no description rather than as English — otherwise the
+coverage arithmetic counts them twice.
+
+**Translation keys hash the RAW `short_desc`, not a stripped one.** 12 Bulgarian descriptions
+carry surrounding whitespace, and keys built from `.strip()`ed text silently matched nothing.
+Do not "fix" this by stripping in `merge_translations.py`: that would invalidate every key in
+every `tr_*.json` at once.
 
 **The stat tile used to overstate this**, and the shape is worth remembering. It computed
 `n_en + n_tr` where `n_en` was "has a description and is not machine-translated" — which
-counts HAVING A DESCRIPTION and calls it English. Every Bulgarian description was counted as
-English, inflating the claim by 176.
+counts HAVING A DESCRIPTION and calls it English, so every Bulgarian row counted as English.
 
 **Read `desc_lang`, not `desc_src_lang`.** `desc_src_lang` is the language of the ORIGINAL:
 openCode and code.overheid.nl entries carry a German or Dutch original in `desc_src` alongside
 publisher-supplied English, so counting by it reports 358 "untranslated" entries that are
-already in English. That is bug #2 in the other direction — the first pass at this analysis
-made exactly that mistake before checking a full record.
+already in English. That is bug #2 in the other direction.
 
 **Two traps that produced false "done" claims:**
 1. Gap detection keyed off `desc_lang`, which the index-tier adapters never set — so 72

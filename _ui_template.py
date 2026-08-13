@@ -289,11 +289,12 @@ BODY = """
       consecutive failed checks, so a single 404 never shows here. Set-aside entries were
       harvested but held out of the default view (forks of upstream projects, CI plumbing,
       deployment recipes, locale bundles); they keep their reason, stay in the data, and come
-      back with the toggle above. <b>__N_NODESC__ entries have no description at all</b> &mdash;
-      the upstream catalogue published none, and one is not invented here; that is most of the
-      gap between the entry count and the English count. The rest is __N_BG__ Bulgarian
-      descriptions left untranslated on purpose: they are mostly EU-funding grant references
-      rather than software summaries.</p>
+      back with the toggle above. Entries whose publisher wrote <b>no description at all</b>
+      are among them: the upstream catalogue published none, GitHub had none either, and one is
+      not invented here &mdash; not saying what the software does is a failure to share it.
+      __N_NODESC__ stay in the default view despite having none, because they shipped a
+      <code>publiccode.yml</code>, and a publisher's own declaration that something is reusable
+      is never overridden by a rule of ours.</p>
     </div>
   </main>
 

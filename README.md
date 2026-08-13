@@ -14,9 +14,9 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 
 | | |
 |---|---|
-| Entries | **3,069** |
+| Entries | **2,753** |
 | Catalogues | **17**, across 15 countries incl. the EU + a global registry |
-| English descriptions | 2,576 of 3,069 · 318 have none upstream · 175 Bulgarian left untranslated |
+| English descriptions | **2,751 of 2,753** — entries with no description at all are set aside |
 | Functional categories | 19, all 233 source category values explicitly mapped |
 | Repos reachable | 24 confirmed dead · 39 archived |
 | Procurement mappings | 210 entries → 302 proprietary products |

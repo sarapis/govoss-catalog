@@ -74,7 +74,27 @@ def classify(rec):
         if pat.search(name):
             return True, reason
 
-    # Deliberately NO rule on "missing description". See the note above.
+    # A publisher who cannot write one line saying what the software does has not
+    # done the minimum needed to share it, so it is held out of the default view.
+    # This runs AFTER enrich_desc.py, so it only fires when GitHub had nothing
+    # either — the description is genuinely absent upstream, not merely unharvested.
+    #
+    # READ THIS BEFORE CHANGING IT. A near-identical rule existed once and was
+    # removed for cause: `no-usable-metadata` hid 61 entries including
+    # Products.PloneMeeting — iMio's flagship deliberations product — plus
+    # Products.urban and the ten municipality Meeting* profiles Walloon councils
+    # actually run. The reasoning then was "a missing description is not evidence
+    # something is not software", and that reasoning still holds.
+    #
+    # What changed is the CLAIM, not the evidence. This is not an assertion that
+    # the entry is not software; it is an editorial standard about publisher
+    # effort. It therefore FLAGS rather than deletes, exactly like every rule
+    # here: the entry keeps its reason, stays in the data and in the JSON export,
+    # and comes back with the "set-aside entries" toggle. If a publisher adds a
+    # description, the next run picks it up and the entry returns on its own.
+    if not (rec.get("short_desc") or "").strip():
+        return True, "no-description"
+
     return False, None
 
 

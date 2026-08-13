@@ -7,7 +7,7 @@ continuation brief: written to be handed to whoever — or whatever — picks th
 `DESIGN-BRIEF.md` the design system as built, `UPSTREAM-CTFG.md` the design-system exchange.
 Don't re-litigate decisions recorded there — particularly the deliberate exclusions.
 
-State: **3,069 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
+State: **2,753 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
 15 steps; the order matters and is documented at the top of the file). Scheduled Mondays 07:00
 — `bash schedule/install.sh`.
 

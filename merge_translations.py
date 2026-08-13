@@ -39,6 +39,16 @@ for r in c:
         r["desc_src"] = r.get("desc_src") or d
         r["desc_src_lang"] = r.get("desc_src_lang") or r.get("desc_lang")
         r["short_desc"] = tr[k]
+        # An EMPTY translation means the source text carries no describable
+        # content — 8 Bulgarian entries whose whole "description" is a
+        # procurement reference like "СОА25-ДГ55-472/04.08.2025 г." The original
+        # is kept in desc_src; the entry is treated as having no description
+        # rather than counted as English, or the coverage arithmetic
+        # double-counts it as both English and undescribed.
+        if not tr[k].strip():
+            r["desc_lang"] = None
+            n["no_description"] += 1
+            continue
         r["desc_lang"] = "en"
         r["translated"] = True
         n["translated"] += 1

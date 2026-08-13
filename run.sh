@@ -7,6 +7,9 @@
 #                so they survive a re-harvest as long as upstream wording is)
 #   taxonomy     re-derives functions; must run AFTER merge because the keyword
 #                inference reads the English description
+#   enrich desc  fills missing descriptions from the GitHub API where upstream has
+#                one; must run BEFORE translations, since recovered text is often
+#                not English
 #   crosswalk    stamps Wikidata QIDs from Comptoir du Libre so dedupe can merge
 #                more; must run BEFORE dedupe and AFTER harvest
 #   filters      flags non-software (forks, CI plumbing, deployment recipes) as
@@ -90,6 +93,7 @@ step () {
 }
 
 step "harvest"      "$PY" -u harvest.py
+step "enrich desc"  "$PY" -u enrich_desc.py    # fills gaps from GitHub; BEFORE translations
 step "translations" "$PY" -u merge_translations.py
 step "taxonomy"     "$PY" -u taxonomy.py
 step "crosswalk"    "$PY" -u crosswalk.py
