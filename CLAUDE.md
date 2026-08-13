@@ -327,7 +327,8 @@ did not (GitLab lost its `GitLab Premium` paid-tier row). The orphan warning is 
 it, which is the whole reason that warning exists.
 
 Maps catalogue entry -> proprietary products it can replace, inverting the lookup so a
-buyer starts from an invoice line. Currently **211 entries -> 312 products**, hand-seeded.
+buyer starts from an invoice line. Currently **210 entries -> 302 products**, hand-seeded,
+and browsable at `/products.html` (see below).
 `export_json.py` **warns on keys matching no entry**, so the seed cannot rot unnoticed.
 
 `confidence`: `strong` | `partial` | `adjacent`. `kind` matters as much:
@@ -522,6 +523,7 @@ Three surfaces, all generated, all on the Civic Tech Field Guide design system:
 | `/` catalog | `build_ui.py` + `_ui_template.py` |
 | `/sources.html` sources **and build status** | `build_sources.py` |
 | `/api.html` API + MCP | `build_api.py` |
+| `/products.html` proprietary software + alternatives | `build_products.py` |
 | shared chrome | `theme.py` |
 
 `build_status.py` is **retired** — its page merged into `/sources.html`, which 308s from

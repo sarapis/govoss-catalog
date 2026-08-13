@@ -817,7 +817,7 @@
    "kind": "software"
   },
   {
-   "product": "</>Neighborland",
+   "product": "Neighborland",
    "vendor": "OpenGov",
    "confidence": "partial",
    "kind": "software"
@@ -1421,22 +1421,9 @@
    "vendor": "Relativity",
    "confidence": "adjacent",
    "kind": "software"
-  },
-  {
-   "product": "case / evidence management",
-   "vendor": "various",
-   "confidence": "partial",
-   "kind": "software"
   }
  ],
- "Primero": [
-  {
-   "product": "case management (child protection)",
-   "vendor": "various",
-   "confidence": "strong",
-   "kind": "software"
-  }
- ],
+ "Primero": [],
  "GlobaLeaks": [
   {
    "product": "NAVEX EthicsPoint",
@@ -1774,7 +1761,7 @@
    "kind": "software"
   },
   {
-   "product": "Sitecore Experience Platform",
+   "product": "Sitecore",
    "vendor": "Sitecore",
    "confidence": "partial",
    "kind": "software"
@@ -1851,13 +1838,13 @@
  ],
  "Forgejo": [
   {
-   "product": "GitHub Enterprise Server",
+   "product": "GitHub Enterprise",
    "vendor": "Microsoft",
    "confidence": "partial",
    "kind": "software"
   },
   {
-   "product": "Bitbucket Data Center",
+   "product": "Bitbucket",
    "vendor": "Atlassian",
    "confidence": "partial",
    "kind": "software"
@@ -1928,13 +1915,13 @@
  ],
  "Gitea": [
   {
-   "product": "GitHub Enterprise Server",
+   "product": "GitHub Enterprise",
    "vendor": "Microsoft",
    "confidence": "partial",
    "kind": "software"
   },
   {
-   "product": "Bitbucket Data Center",
+   "product": "Bitbucket",
    "vendor": "Atlassian",
    "confidence": "partial",
    "kind": "software"
@@ -2005,7 +1992,7 @@
  ],
  "joomla!": [
   {
-   "product": "Sitecore Experience Platform",
+   "product": "Sitecore",
    "vendor": "Sitecore",
    "confidence": "adjacent",
    "kind": "software"
@@ -2148,7 +2135,7 @@
  ],
  "LibreNMS": [
   {
-   "product": "SolarWinds Network Performance Monitor",
+   "product": "SolarWinds",
    "vendor": "SolarWinds",
    "confidence": "strong",
    "kind": "software"
@@ -2339,7 +2326,7 @@
    "kind": "paid-tier"
   },
   {
-   "product": "Dropbox Business",
+   "product": "Dropbox",
    "vendor": "Dropbox",
    "confidence": "partial",
    "kind": "service"
@@ -2399,7 +2386,7 @@
    "kind": "software"
   },
   {
-   "product": "Toad for Oracle",
+   "product": "Toad",
    "vendor": "Quest Software",
    "confidence": "partial",
    "kind": "software"
@@ -2541,7 +2528,7 @@
  ],
  "Roundcube": [
   {
-   "product": "Outlook on the web",
+   "product": "Outlook",
    "vendor": "Microsoft",
    "confidence": "partial",
    "kind": "software"
@@ -2608,7 +2595,7 @@
    "kind": "paid-tier"
   },
   {
-   "product": "Dropbox Business",
+   "product": "Dropbox",
    "vendor": "Dropbox",
    "confidence": "partial",
    "kind": "service"

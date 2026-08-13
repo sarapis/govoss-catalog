@@ -1,0 +1,648 @@
+{
+ "_README": {
+  "purpose": "Proprietary software known to be bought by government for which this catalogue currently offers NO open source alternative. Published so a gap reads as a gap rather than as an oversight.",
+  "status": "SEEDED AND PARTIAL. Absence from this list is not evidence a product is unused; presence is not evidence no alternative exists anywhere - only that none is mapped in replaces.json.",
+  "provenance": "Seeded 2026-08-13 from NYC's software licence export (https://api.databook.nyc/oce/licenses/export), selecting products with no replaces.json mapping. One jurisdiction, so the list is NYC-shaped: US municipal and public-safety verticals are over-represented relative to what other governments buy.",
+  "why_no_amounts": "Selection used NYC contract value as a significance filter (>= $1M) but the figures are deliberately NOT stored or published. Databook owns that data and publishes it better; this catalogue is not a procurement-spend publisher.",
+  "kind": {
+   "software": "a software product with no alternative mapped - a genuine catalogue gap, and a candidate for replaces.json",
+   "data-service": "the paid item is primarily CONTENT or a data feed. Open source cannot substitute a legal-research corpus or a traffic dataset, so 'no alternative' here is a category fact, not a gap"
+  },
+  "excluded": "Support contracts, advisory retainers and payment processing are left out entirely - they are not software licences. See NOT_SOFTWARE in scratchpad/gen_proprietary.py.",
+  "how_to_extend": "Add products here by hand, or re-seed from a newer export and review the diff. A product that gains a replaces.json mapping must be REMOVED from here - build_products.py fails if one appears in both."
+ },
+ "products": [
+  {
+   "name": "18B Case Tracking and Voucher System",
+   "purpose": "Case tracking and voucher management for legal defense",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Accellion Kiteworks",
+   "purpose": "Secure file transfer",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Admins Software",
+   "purpose": "Administrative management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "AgileAssets",
+   "purpose": "Manage bridge and tunnel inspections",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "AlertMedia",
+   "purpose": "Safety and emergency communication",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Amazon Web Services",
+   "purpose": "Cloud infrastructure and hosting",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Archibus",
+   "purpose": "Computerized Maintenance Management System",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "AssetWorks",
+   "purpose": "Fuel management system",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "AT&T Vehicle Tracking",
+   "purpose": "Fleet management and tracking",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Axon",
+   "purpose": "Data storage and licensing for tasers and body-worn cameras",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Binti",
+   "purpose": "Foster parent certification and management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "BioVault/AFIS",
+   "purpose": "Biometric identification and fingerprint processing",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Broadcom (CA)",
+   "purpose": "Mainframe systems management and support",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Care4",
+   "purpose": "Case management for Fair Futures initiative",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Casebuilder",
+   "purpose": "Investigative case management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Caseload Explorer",
+   "purpose": "Probation case management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Check Point",
+   "purpose": "Network security and firewall management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Citrix",
+   "purpose": "Network traffic management and application delivery",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "ClaimsVISION",
+   "purpose": "Workers' compensation claims management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "CoherentRx",
+   "purpose": "Clinic appointment and shift scheduling",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Compliance Wage Monitoring",
+   "purpose": "Wage compliance tracking and monitoring",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Conduent Public Health Solutions",
+   "purpose": "Public health data management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Conduent StrataWare",
+   "purpose": "Workers' compensation case management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "ConvergeOne Call Center Solution",
+   "purpose": "Call center telephony and routing",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Cyclomedia",
+   "purpose": "Citywide streetscape imagery and data services",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Dataminr",
+   "purpose": "Real-time AI platform for event detection and threat intelligence",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Domino Data Lab",
+   "purpose": "Data science and machine learning orchestration platform",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Dun & Bradstreet",
+   "purpose": "Business data validation and identity resolution",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Dynatrace",
+   "purpose": "Application performance monitoring",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "e-Builder",
+   "purpose": "Construction program management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Eccovia HMIS",
+   "purpose": "Homeless management information system and data warehouse",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "eXFORMA / MobiTask",
+   "purpose": "Inspection form management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Forcepoint",
+   "purpose": "Network security and data protection",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Geotab",
+   "purpose": "Fleet telematics and vehicle management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "GlobalLink",
+   "purpose": "Translation and localization management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Infor",
+   "purpose": "Enterprise resource planning and asset management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Information Builders (WebFOCUS)",
+   "purpose": "Business intelligence and reporting",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Innovee CJ Data Research Platform",
+   "purpose": "Criminal justice data research and program support",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "INRIX",
+   "purpose": "Traffic and transportation data analytics",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Integrated Health Resources (BHL)",
+   "purpose": "Behavioral health data and resource management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Intellidact AI",
+   "purpose": "Optical Character Recognition (OCR)",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Intergraph CAD",
+   "purpose": "911 emergency dispatch",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Itineris UMAX",
+   "purpose": "Customer Information System (CIS) for billing and revenue management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Ivalua",
+   "purpose": "Procurement and contract management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "iWise",
+   "purpose": "Proprietary telecom portal support",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Keefe Group Commissary Software",
+   "purpose": "Commissary order management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Kiteworks",
+   "purpose": "Secure file sharing and compliance",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LabVantage LIMS",
+   "purpose": "Laboratory Information Management System for forensic biology",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LeadsOnline",
+   "purpose": "Criminal investigation database of secondhand transactions",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LegalStratus",
+   "purpose": "legal matter management and case tracking",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LexisNexis",
+   "purpose": "Legal research and data verification",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Liferay",
+   "purpose": "Enterprise portal and content management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LIMS BEAST",
+   "purpose": "Forensic laboratory information management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "LRS",
+   "purpose": "Mainframe network printing and output management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Meridian Learning Management System",
+   "purpose": "Agency-wide staff training and compliance",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Mindbreeze",
+   "purpose": "Legal search and document discovery",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "MRI Software",
+   "purpose": "Housing asset management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Nerdio",
+   "purpose": "Azure virtual desktop management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "NICE",
+   "purpose": "Digital evidence management for criminal justice",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Office Space Software",
+   "purpose": "Managing office space and floor plans",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "PeerPlace",
+   "purpose": "Case management for senior services",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "PowerSchool TIENET",
+   "purpose": "Special education case management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Precisely",
+   "purpose": "Data management and location intelligence",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Rocket Software",
+   "purpose": "Mainframe modernization and enterprise infrastructure management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SafeMeasures",
+   "purpose": "Reporting and analytics for child welfare services",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Sanborn Maps",
+   "purpose": "Access to historical and current property/mapping data",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SANSIO EPCR",
+   "purpose": "Electronic Patient Care Reporting for EMS",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SAP",
+   "purpose": "Enterprise resource planning and database maintenance support",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "SoundThinking (ShotSpotter)",
+   "purpose": "acoustic gunshot detection and location tracking",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "STARLIMS",
+   "purpose": "Laboratory information management system",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Streetscape",
+   "purpose": "Property data management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Summer",
+   "purpose": "Public Service Loan Forgiveness assistance",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Talkspace",
+   "purpose": "Virtual mental health support platform",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Tyler Technologies Property Tax System",
+   "purpose": "Property tax administration and management",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Unite Us",
+   "purpose": "Social services coordination and referral platform",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Vision CAMA",
+   "purpose": "Property assessment and valuation",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Westlaw",
+   "purpose": "Legal research and information access",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Zencity",
+   "purpose": "Community sentiment analysis",
+   "kind": "data-service",
+   "seen_in": [
+    "us-nyc"
+   ]
+  },
+  {
+   "name": "Zimperium",
+   "purpose": "Mobile threat protection",
+   "kind": "software",
+   "seen_in": [
+    "us-nyc"
+   ]
+  }
+ ]
+}

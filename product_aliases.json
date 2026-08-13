@@ -1,0 +1,37 @@
+{
+ "_README": {
+  "purpose": "Alternate spellings and vendor-family names seen in procurement records, mapped to the product name by-product.json uses.",
+  "why": "Matching is limited by NAMING, not by what the catalogue holds. Four spellings of Esri hid $13.5M of NYC spend that QGIS answers, and a first pass reported 'nothing replaces Atlassian'. These are synonyms, verified to resolve - not judgement calls, and never fuzzy-matched.",
+  "shape": "alias (lowercased) -> list of canonical product names in by-product.json"
+ },
+ "aliases": {
+  "alfresco": [
+   "Alfresco Content Services Enterprise"
+  ],
+  "arcgis": [
+   "ArcGIS Desktop"
+  ],
+  "atlassian": [
+   "Jira",
+   "Confluence"
+  ],
+  "elastic search": [
+   "Elasticsearch"
+  ],
+  "esri": [
+   "ArcGIS Desktop"
+  ],
+  "esri arcgis": [
+   "ArcGIS Desktop"
+  ],
+  "informatica": [
+   "Informatica PowerCenter"
+  ],
+  "opentext": [
+   "OpenText Documentum"
+  ],
+  "socrata": [
+   "Socrata Open Data"
+  ]
+ }
+}

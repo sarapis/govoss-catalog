@@ -143,6 +143,17 @@ n_dead = sum(1 for r in _inc if r["lv"] == "dead")
 n_multi_cat = sum(1 for r in _inc if (r.get("cc2") or 1) > 1)
 FFACETS = json.dumps([[k, FUNCTIONS[k], n] for k, n in funcs.most_common()])
 
+# Proprietary products as a FACET, not a nav item: they are a way into the open
+# source, not a peer of it. Clicking one filters the catalogue to the entries
+# that replace it, which is the whole "what could replace Dropbox?" question
+# answered in place. "Show all" leaves for /products.html, which is also the
+# only place products with NO alternative can live - a facet yielding zero rows
+# would just be broken. Ordered most-replaceable first, name breaking ties so
+# the list is deterministic (most products have exactly one alternative).
+prods = collections.Counter(p for r in _inc for p in (r["rp"] or []))
+PFACETS = json.dumps([[k, k, n] for k, n in
+                      sorted(prods.items(), key=lambda kv: (-kv[1], kv[0].lower()))])
+
 DATA = json.dumps(rows, separators=(",", ":"))
 CFACETS = json.dumps(sorted(countries.items(), key=lambda x: -x[1]))
 SFACETS = json.dumps(sorted(sources.items(), key=lambda x: -x[1]))
@@ -175,6 +186,7 @@ SUBS = {
     "__FFACETS__": FFACETS,
     "__CFACETS__": CFACETS,
     "__SFACETS__": SFACETS,
+    "__PFACETS__": PFACETS,
     "__LOPTS__": LOPTS,
     "__NENTRIES__": f"{n_entries:,}",
     "__N_ENTRIES__": f"{n_entries:,}",

@@ -19,6 +19,9 @@
 #   build_site   assembles site/ from tracked sources (html + vercel.json)
 #   json export  writes site/entries.json + meta.json + by-product + by-category
 #   api page     documents those files; measures them, so must run AFTER export
+#   products page  the proprietary side: by-product.json made browsable, plus the
+#                products governments buy that this catalogue cannot answer.
+#                Reads by-product.json, so also AFTER export
 #   deploy       publishes site/ to Vercel. After the sources page (which now
 #                also writes status.json),
 #                so the published copy describes the run that published it —
@@ -129,6 +132,7 @@ PY
 step "run log"      "$PY" -u runlog.py "$STARTED" "$TRIGGER"
 step "sources page" "$PY" -u build_sources.py   # also writes status.json
 step "api page"     "$PY" -u build_api.py       # measures site/*.json, so runs after export
+step "products page" "$PY" -u build_products.py # reads by-product.json, so runs after export
 
 # ---- publish -------------------------------------------------------------
 # Without this the weekly run regenerated everything and published none of it:

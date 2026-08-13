@@ -79,8 +79,11 @@ PAGE_CSS = """
   font-weight:600;}
 .fopt .n{font-variant-numeric:tabular-nums;color:var(--ink-faint);font-size:12px;}
 .fopt[aria-pressed="true"] .n{color:var(--primary);}
-.fmore{background:none;border:0;padding:5px 8px;cursor:pointer;font:inherit;
-  font-size:12px;color:var(--primary);text-decoration:underline;}
+/* display:block matters for the anchor variant ("Show all" on a group with a
+   `link`): an inline <a> would ignore the 44px min-height touch target below. */
+.fmore{display:block;text-align:left;background:none;border:0;padding:5px 8px;
+  cursor:pointer;font:inherit;font-size:12px;color:var(--primary);
+  text-decoration:underline;}
 
 /* ---- results toolbar ---- */
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
@@ -305,7 +308,7 @@ BODY = """
 SCRIPT = """
 <script>
 var DATA = __DATA__;
-var FFACETS = __FFACETS__, CFACETS = __CFACETS__, SFACETS = __SFACETS__;
+var FFACETS = __FFACETS__, CFACETS = __CFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var PAGE_SIZE = 100;
 
 /* State. NOTHING here is named after an element id: browsers expose ids as
@@ -323,8 +326,16 @@ function esc(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// Anchor id for a product on products.html. MUST match pslug() in
+// build_products.py, which owns the ids this links to.
+function pslug(s) {
+  return String(s == null ? '' : s).toLowerCase().replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
 var GROUPS = [
   { key: 'fn', title: 'Function', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
+  { key: 'rp', title: 'Replaces', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
+    link: 'products.html', linkLabel: 'Proprietary software catalog' },
   { key: 'cc', title: 'Country', rows: CFACETS.map(function (f) { return [f[0], f[0], f[1]]; }) },
   { key: 'src', title: 'Source catalog', rows: SFACETS.map(function (f) { return [f[0], f[0], f[1]]; }) }
 ];
@@ -335,6 +346,15 @@ function renderFacets() {
     var rows = g.rows.filter(function (r) { return !q || r[1].toLowerCase().indexOf(q) >= 0; });
     var open = expanded.has(g.key) || q;
     var show = open ? rows : rows.slice(0, 6);
+    // An ACTIVE facet outside the top 6 would otherwise be invisible while still
+    // filtering — the toolbar says "1 filter applied" and nothing shows which.
+    // Arrives that way via ?rp=<product> from products.html, where the product
+    // is rarely one of the six most-replaceable.
+    if (!open) {
+      rows.forEach(function (r) {
+        if (activeFacets.has(g.key + ':' + r[0]) && show.indexOf(r) < 0) show = show.concat([r]);
+      });
+    }
     var opts = show.map(function (r) {
       var id = g.key + ':' + r[0];
       var on = activeFacets.has(id);
@@ -342,9 +362,14 @@ function renderFacets() {
         (on ? 'true' : 'false') + '"><span>' + esc(r[1]) + '</span><span class="n">' + r[2] +
         '</span></button>';
     }).join('');
-    var more = (!q && rows.length > 6)
-      ? '<button type="button" class="fmore" data-g="' + esc(g.key) + '">' +
-        (open ? 'Show fewer' : 'Show all ' + rows.length + ' \\u2192') + '</button>' : '';
+    // A group with `link` sends "Show all" to its own page rather than expanding
+    // in place. For Replaces that is the point: the page also carries the
+    // products with NO alternative, which can never appear as a facet.
+    var more = g.link
+      ? '<a class="fmore" href="' + esc(g.link) + '">' + esc(g.linkLabel) + ' \\u2192</a>'
+      : ((!q && rows.length > 6)
+        ? '<button type="button" class="fmore" data-g="' + esc(g.key) + '">' +
+          (open ? 'Show fewer' : 'Show all ' + rows.length + ' \\u2192') + '</button>' : '');
     if (!rows.length) opts = '<p class="meta" style="padding:4px 8px">No match</p>';
     return '<div class="fgroup"><h3>' + esc(g.title) + '</h3>' + opts + more + '</div>';
   }).join('');
@@ -353,16 +378,20 @@ function renderFacets() {
 function current() {
   var q = (el('q').value || '').trim().toLowerCase();
   var lic = el('lic').value, lvf = el('lv').value, sort = el('sort').value;
-  var fns = [], ccs = [], srcs = [];
+  var fns = [], ccs = [], srcs = [], rps = [];
   activeFacets.forEach(function (id) {
     var i = id.indexOf(':'), k = id.slice(0, i), v = id.slice(i + 1);
-    if (k === 'fn') fns.push(v); else if (k === 'cc') ccs.push(v); else srcs.push(v);
+    if (k === 'fn') fns.push(v);
+    else if (k === 'cc') ccs.push(v);
+    else if (k === 'rp') rps.push(v);
+    else srcs.push(v);
   });
   var out = DATA.filter(function (r) {
     if (!showSetAside && r.ex) return false;
     if (fns.length && !r.fx.some(function (f) { return fns.indexOf(f) >= 0; })) return false;
     if (ccs.length && !(r.cs || [r.c]).some(function (x) { return ccs.indexOf(x) >= 0; })) return false;
     if (srcs.length && !(r.ss || [r.s]).some(function (x) { return srcs.indexOf(x) >= 0; })) return false;
+    if (rps.length && !(r.rp || []).some(function (x) { return rps.indexOf(x) >= 0; })) return false;
     if (lic && r.l !== lic) return false;
     if (lvf && (lvf === 'ok' ? !!r.lv : r.lv !== lvf)) return false;
     if (onlyReplaces && !(r.rp && r.rp.length)) return false;
@@ -423,7 +452,8 @@ function render() {
         (r.d ? '<div class="desc">' + esc(r.d) + '</div>' : '') +
         (r.rp && r.rp.length ? '<div class="rp">Replaces ' + r.rp.map(function(p, i){
             var q = (r.rpq || [])[i];
-            return esc(p) + (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
+            return '<a href="products.html#p-' + esc(pslug(p)) + '">' + esc(p) + '</a>' +
+              (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
         }).join(', ') + '</div>' : '') +
         '<div class="meta">' + meta.join(' &middot; ') + '</div>' +
         (r.ex ? '<div class="why">Set aside: ' + esc(r.ex) + '</div>' : '') +
@@ -473,6 +503,17 @@ el('setaside').onclick = function () {
   reset();
 };
 el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
+
+// ?rp=<product> arrives from products.html ("See in catalog"). Activated only
+// if the product is a real facet value - an unknown one would silently filter
+// the catalogue to nothing, which reads as "no alternatives exist".
+(function () {
+  var m = /[?&]rp=([^&]*)/.exec(location.search);
+  if (!m) return;
+  var want = decodeURIComponent(m[1].replace(/\\+/g, ' '));
+  var known = PFACETS.some(function (f) { return f[0] === want; });
+  if (known) activeFacets.add('rp:' + want);
+})();
 
 renderFacets();
 render();

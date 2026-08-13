@@ -404,6 +404,8 @@ These also redirect to /entries.json because they are what people try first:
 
 /by-product.json is keyed by proprietary product name. {meta['counts']['with_replaces']} entries
 carry mappings covering {len(by_product)} products. Two GETs answer a whole licence inventory.
+/products.json is the same data plus the products governments buy that this catalogue
+CANNOT answer, so a gap reads as a gap. /products.html is the human view of both.
 
 Read the `kind` field before reporting a saving:
   software    replaces the software
@@ -456,8 +458,12 @@ search all ignore query strings, so only 20 of its 1,084 solutions are reachable
         "# Structured data - prefer these over parsing the HTML\n"
         "# /entries.json  /meta.json  /by-product.json  /status.json  /llms.txt\n"
         "Sitemap: https://govoss-catalog.vercel.app/sitemap.xml\n")
-    urls = ["/", "/sources.html", "/api.html", "/entries.json", "/meta.json",
-            "/by-product.json", "/llms.txt"]
+    # products.html/.json are written later by build_products.py, but they are
+    # listed here because this is where the sitemap is generated. They are static
+    # paths, so no ordering problem — only a missing-file one if that step fails,
+    # and a failed step blocks the deploy anyway.
+    urls = ["/", "/sources.html", "/api.html", "/products.html", "/entries.json",
+            "/meta.json", "/by-product.json", "/products.json", "/llms.txt"]
     open(f"{SITE}/sitemap.xml", "w").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

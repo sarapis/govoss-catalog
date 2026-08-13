@@ -28,8 +28,16 @@ State: **3,080 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh`
 
 ## In rough priority order
 
-1. **Expand `replaces.json` further.** Now 211 of 3,080 entries map to 312 proprietary
-   products (was 108 -> 165). This is
+0. **Open design question: a demand-side catalogue.** `DEMAND-SIDE-CATALOGUE.md` proposes
+   harvesting the proprietary software governments actually buy — from procurement data —
+   and using that to power matching instead of the hand-seeded seed file. NYC's licence
+   export (1,601 contracts, $1.77B, 927 products) joins to the catalogue at **3.6% of spend**,
+   and the note argues the limit is *naming, not coverage*: four spellings of Esri hid
+   $13.5M that QGIS answers. Read it before doing (1) — it may reorder the work. There is a
+   cheap go/no-go in it that has **not** been run.
+
+1. **Expand `replaces.json` further.** Now 210 of 3,080 entries map to 302 proprietary
+   products (was 108 -> 165), browsable at `/products.html`. This is
    the field that makes the catalogue answer *"what can we stop paying for?"* rather than
    *"what exists"*. Read the `_README` block in that file first — `kind` (`software` /
    `service` / `paid-tier`) and `confidence` both matter, and getting them wrong produces

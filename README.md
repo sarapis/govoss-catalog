@@ -19,7 +19,7 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 | English descriptions | 100% of described entries (excl. 171 deliberately-untranslated Bulgarian) |
 | Functional categories | 19, all 233 source category values explicitly mapped |
 | Repos reachable | 24 confirmed dead · 39 archived |
-| Procurement mappings | 211 entries → 312 proprietary products |
+| Procurement mappings | 210 entries → 302 proprietary products |
 | Accessibility | WCAG 2.1 AA audited 2026-08-12; lowest contrast ratio 5.17:1 |
 
 ## What makes it different
@@ -85,7 +85,7 @@ committed here is what is live. `generated_at` in `/meta.json` is the freshness 
 | `dedupe.py` | merges on QID then repo URL; never on name similarity |
 | `liveness.py` | GitHub GraphQL + GitLab APIs + per-host HEAD; diffs vs last run |
 | `build_ui.py` → `build_site.sh` → `export_json.py` | the page, the deploy dir, the JSON |
-| `runlog.py` → `build_sources.py` → `build_api.py` | run history; sources page (which absorbed the status page); API page |
+| `runlog.py` → `build_sources.py` → `build_api.py` → `build_products.py` | run history; sources page (which absorbed the status page); API page; the proprietary-software page |
 | `deploy` → `record` | publish `site/` to Vercel, then commit + push the data — both gated on every earlier step passing |
 
 ## Data model
@@ -95,6 +95,7 @@ Static files, no backend. `site/` is assembled from tracked sources and deployed
     /entries.json              all entries, structured fields
     /meta.json                 category enum, sources, counts, known gaps
     /by-product.json           proprietary product -> open source alternatives
+    /products.json             the same, plus products we CANNOT answer
     /by-category/<key>.json    one file per functional category
     /sources.json              the 17 catalogues + 13 surveyed and rejected
     /status.json               freshness, per-source counts, change log
