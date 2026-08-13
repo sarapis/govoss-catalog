@@ -144424,7 +144424,7 @@
    "smart-city"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Digitale Beteiligungsplattform der Stadt Regensburg f\u00fcr B\u00fcrgerhaushalt, Vorschl\u00e4ge und weitere Beteiligungsformate.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -144458,10 +144458,11 @@
   "repo": "https://gitlab.opencode.de/regensburg_next/mein.regensburg",
   "repo_key": "gitlab.opencode.de/regensburg_next/mein.regensburg",
   "repo_owner": "Stadt Regensburg",
-  "short_desc": "Digitale Beteiligungsplattform der Stadt Regensburg f\u00fcr B\u00fcrgerhaushalt, Vorschl\u00e4ge und weitere Beteiligungsformate.",
+  "short_desc": "Digital participation platform of the City of Regensburg for participatory budgeting, proposals and other engagement formats.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
+  "translated": true,
   "upstream_id": 12178,
   "used_by": [
    "Stadt Regensburg"

@@ -132,7 +132,24 @@ licenses = collections.Counter(r["l"] for r in _inc if r["l"])
 n_pc = sum(1 for r in _inc if r["t"] == "publiccode")
 n_repos = len({r["u"] for r in _inc if r["u"]})
 n_tr = sum(1 for r in _inc if r["tr"])
-n_en = sum(1 for r in _inc if r["d"] and not r["tr"])
+
+# The "in English or translated" tile counts entries whose DISPLAYED description
+# is English — publisher-supplied or machine-translated, both count.
+#
+# It used to be `n_en + n_tr` where n_en was "has a description and is not
+# translated", i.e. it counted HAVING A DESCRIPTION and called that English. That
+# overstated by 176: 175 Bulgarian descriptions (a deliberate call - they are
+# mostly EU-funding grant references, not software summaries) and one German
+# stray were all counted as English.
+#
+# Read desc_lang, NOT desc_src_lang: desc_src_lang is the language of the
+# ORIGINAL, and openCode/NL entries carry a German or Dutch original alongside
+# publisher-supplied English. Counting those as un-English is the same
+# read-the-wrong-language-field mistake in the other direction.
+_src = [r for r in c if not r.get("excluded")]          # 1:1 with _inc, same order
+n_en = sum(1 for r in _src if (r.get("desc_lang") or "") == "en")
+n_nodesc = sum(1 for r in _src if not (r.get("short_desc") or "").strip())
+n_bg = sum(1 for r in _src if (r.get("desc_lang") or "") == "bg")
 funcs = collections.Counter(f for r in _inc for f in r["fx"])
 n_dead = sum(1 for r in _inc if r["lv"] == "dead")
 n_multi_cat = sum(1 for r in _inc if (r.get("cc2") or 1) > 1)
@@ -200,7 +217,9 @@ SUBS = {
     "__N_ENTRIES__": f"{n_entries:,}",
     "__N_SOURCES__": str(n_srcs),
     "__N_PC__": f"{n_pc:,}",
-    "__N_EN__": f"{n_en + n_tr:,}",
+    "__N_EN__": f"{n_en:,}",
+    "__N_NODESC__": f"{n_nodesc:,}",
+    "__N_BG__": f"{n_bg:,}",
     "__N_FUNCS__": str(n_funcs),
     "__N_MULTI__": str(n_multi_cat),
     "__N_EX__": str(n_ex),

@@ -289,7 +289,11 @@ BODY = """
       consecutive failed checks, so a single 404 never shows here. Set-aside entries were
       harvested but held out of the default view (forks of upstream projects, CI plumbing,
       deployment recipes, locale bundles); they keep their reason, stay in the data, and come
-      back with the toggle above.</p>
+      back with the toggle above. <b>__N_NODESC__ entries have no description at all</b> &mdash;
+      the upstream catalogue published none, and one is not invented here; that is most of the
+      gap between the entry count and the English count. The rest is __N_BG__ Bulgarian
+      descriptions left untranslated on purpose: they are mostly EU-funding grant references
+      rather than software summaries.</p>
     </div>
   </main>
 

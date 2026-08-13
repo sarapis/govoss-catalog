@@ -228,8 +228,24 @@ translations **survive a re-harvest** as long as upstream wording is unchanged.
 `merge_translations.py` applies them; `desc_src` keeps the original and `translated: true`
 marks machine translation so it is never confused with publisher-supplied English (`desc_en`).
 
-Coverage is 100% of described entries (452 source English + 1,486 translated). 239 entries
-have no description upstream and are left empty rather than invented.
+Of 3,069 active entries: **2,576 display English**, **175 display Bulgarian**, and **318 have
+no description at all** — the upstream catalogue published none, and one is not invented here.
+Those three numbers add up to the entry count, which is the check worth running after any
+change to this step.
+
+The Bulgarian 175 are a deliberate call: mostly EU-funding grant references
+(`РД-02-29-19/09.07.2025 - Изграждане на…`) rather than software summaries.
+
+**The stat tile used to overstate this**, and the shape is worth remembering. It computed
+`n_en + n_tr` where `n_en` was "has a description and is not machine-translated" — which
+counts HAVING A DESCRIPTION and calls it English. Every Bulgarian description was counted as
+English, inflating the claim by 176.
+
+**Read `desc_lang`, not `desc_src_lang`.** `desc_src_lang` is the language of the ORIGINAL:
+openCode and code.overheid.nl entries carry a German or Dutch original in `desc_src` alongside
+publisher-supplied English, so counting by it reports 358 "untranslated" entries that are
+already in English. That is bug #2 in the other direction — the first pass at this analysis
+made exactly that mistake before checking a full record.
 
 **Two traps that produced false "done" claims:**
 1. Gap detection keyed off `desc_lang`, which the index-tier adapters never set — so 72
