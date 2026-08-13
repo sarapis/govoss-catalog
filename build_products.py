@@ -18,6 +18,7 @@ Runs AFTER export_json.py - it reads by-product.json.
 No f-strings for markup: plain strings with __PLACEHOLDER__ tokens.
 """
 import json, os, re, importlib.util, time
+from urllib.parse import quote
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = f"{OUT}/site"
@@ -89,45 +90,38 @@ def build():
     if clash:
         raise SystemExit("build_products: anchor id collision %s" % clash)
 
-    # ---- cards for products WITH alternatives
+    # ---- rows for products WITH alternatives.
+    # A dense table, not cards: the question is "is our product here, and what
+    # replaces it", which is a scan down one column. Inter is the design system's
+    # face for dense data.
     cards = []
     for name, alts in products:
-        rows = []
+        links = []
         for a in alts:
             q = qual(a)
-            bits = []
-            if a.get("country"):
-                bits.append(esc(a["country"]))
-            if a.get("adopters"):
-                bits.append("%s adopters" % a["adopters"])
-            if a.get("licence_spdx"):
-                bits.append(esc(a["licence_spdx"]))
-            link = a.get("repo_url") or ""
-            nm = ('<a href="%s">%s</a>' % (esc(link), esc(a["name"]))) if link \
-                else esc(a["name"])
-            rows.append(
-                '<li><span class="a-n">' + nm + '</span>'
-                + ('<span class="a-q">' + esc(q) + '</span>' if q else "")
-                + '<span class="a-m">' + " &middot; ".join(bits) + '</span></li>')
+            url = a.get("repo_url") or ""
+            nm = ('<a href="%s">%s</a>' % (esc(url), esc(a["name"]))) if url \
+                else '<span class="a-x">' + esc(a["name"]) + '</span>'
+            links.append(nm + (' <span class="a-q">(' + esc(q) + ')</span>' if q else ""))
         cards.append(
-            '<article class="pcard" id="p-' + pslug(name) + '" data-n="'
-            + esc(name.lower()) + '">'
-            + '<div class="p-h"><h3>' + esc(name) + '</h3>'
-            + '<a class="p-see" href="/?rp=' + esc(name) + '">See in catalog &rarr;</a></div>'
-            + '<ul class="palts">' + "".join(rows) + '</ul></article>')
+            '<tr id="p-' + pslug(name) + '" data-n="' + esc(name.lower()) + '">'
+            + '<th scope="row">' + esc(name) + '</th>'
+            + '<td class="c-alt">' + ", ".join(links) + '</td>'
+            # quote(), not a space-swap: "Veeam Backup & Replication" would put a
+            # bare & in the query string and the catalog would receive
+            # rp="Veeam Backup " plus a stray parameter.
+            + '<td class="c-act"><a href="/?rp=' + quote(name, safe="")
+            + '">See alternatives &rarr;</a></td></tr>')
 
-    # ---- cards for products with NO alternative
+    # ---- rows for products with NO alternative
     gcards = []
     for p in sorted(gaps, key=lambda x: x["name"].lower()):
-        tag = ("content or data subscription" if p.get("kind") == "data-service"
-               else "no alternative mapped")
+        tag = ("content or data" if p.get("kind") == "data-service" else "software")
         gcards.append(
-            '<article class="pcard gap" id="p-' + pslug(p["name"]) + '" data-n="'
-            + esc(p["name"].lower()) + '">'
-            + '<div class="p-h"><h3>' + esc(p["name"]) + '</h3>'
-            + '<span class="g-t">' + tag + '</span></div>'
-            + ('<p class="g-p">' + esc(p["purpose"]) + '</p>' if p.get("purpose") else "")
-            + '</article>')
+            '<tr id="p-' + pslug(p["name"]) + '" data-n="' + esc(p["name"].lower()) + '">'
+            + '<th scope="row">' + esc(p["name"]) + '</th>'
+            + '<td class="c-alt">' + esc(p.get("purpose") or "") + '</td>'
+            + '<td class="c-act"><span class="g-t">' + tag + '</span></td></tr>')
 
     n_alts = sum(len(v) for v in bp.values())
     n_data = sum(1 for p in gaps if p.get("kind") == "data-service")
@@ -194,26 +188,41 @@ PAGE_CSS = """
 .lede{font-size:15px;line-height:1.6;color:var(--ink-600);max-width:72ch;}
 .note{font-size:13px;line-height:1.6;color:var(--ink-faint);max-width:72ch;margin-top:10px;}
 #pq{width:100%;max-width:420px;margin-top:18px;}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;
-  margin-top:16px;align-items:start;}
-.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
-  padding:14px 16px;scroll-margin-top:90px;}
-.pcard:target{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-tint);}
-.p-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
-.p-h h3{font-family:var(--font-ui);font-size:15px;font-weight:600;margin:0;color:var(--ink);}
-.p-see{font-size:11px;color:var(--primary);text-decoration:none;white-space:nowrap;}
-.p-see:hover{text-decoration:underline;}
-.palts{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
-.palts li{display:flex;flex-direction:column;gap:1px;}
-.a-n a{font-size:13px;font-weight:600;color:var(--primary);text-decoration:none;}
-.a-n a:hover{text-decoration:underline;}
-.a-q{font-size:11px;color:var(--ink-faint);}
-.a-m{font-size:11px;color:var(--ink-faint);}
-.pcard.gap{background:transparent;}
+
+/* Dense table. A flex/grid child defaults to min-width:auto, which defeats
+   overflow-x on a wide table - the wrapper needs min-width:0 explicitly. That
+   trap is already documented in DESIGN-BRIEF.md; it applies here too. */
+.twrap{margin-top:16px;min-width:0;overflow-x:auto;border:1px solid var(--border);
+  border-radius:var(--r-table);background:var(--surface);}
+table.ptab{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5;}
+table.ptab thead th{font-family:var(--font-ui);font-size:10px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);text-align:left;
+  padding:10px 14px;border-bottom:1px solid var(--border);white-space:nowrap;}
+/* --border-soft is the semantic alias for the faint-divider ramp step; use the
+   purpose token, not --line-200 directly. */
+table.ptab tbody tr{border-top:1px solid var(--border-soft);scroll-margin-top:90px;}
+table.ptab tbody tr:first-child{border-top:0;}
+table.ptab tbody tr:target{background:var(--primary-tint);}
+/* [hidden] is display:none in the UA sheet, but any `tr{display:table-row}` in a
+   reset would outrank it and the filter would silently do nothing. */
+table.ptab tbody tr[hidden]{display:none;}
+table.ptab th[scope=row]{font-weight:600;color:var(--ink);text-align:left;
+  padding:9px 14px;vertical-align:top;white-space:nowrap;}
+table.ptab td{padding:9px 14px;vertical-align:top;color:var(--ink-600);}
+.c-alt a{color:var(--primary);text-decoration:none;}
+.c-alt a:hover{text-decoration:underline;}
+.a-x{color:var(--ink-600);}          /* no repo url upstream - nothing to link to */
+.a-q{color:var(--ink-faint);font-size:12px;}
+.c-act{white-space:nowrap;text-align:right;}
+.c-act a{color:var(--primary);text-decoration:none;font-size:12px;}
+.c-act a:hover{text-decoration:underline;}
 .g-t{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.06em;
-  color:var(--ink-faint);white-space:nowrap;}
-.g-p{font-size:12px;color:var(--ink-600);margin:8px 0 0;line-height:1.5;}
+  text-transform:uppercase;color:var(--ink-faint);}
 .nores{font-size:14px;color:var(--ink-faint);margin-top:16px;}
+/* An empty <th> leaves a screen reader announcing an unnamed column. The label
+   is hidden rather than dropped. */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);
+  white-space:nowrap;}
 """
 
 BODY = """
@@ -244,7 +253,14 @@ BODY = """
       <span class="r" style="font-size:12px;color:var(--ink-faint)">__NPROD__ products,
         most replaceable first</span></div>
     <hr class="dashed">
-    <div class="pgrid" id="g-mapped">__CARDS__</div>
+    <div class="twrap">
+      <table class="ptab">
+        <thead><tr><th scope="col">Proprietary product</th>
+          <th scope="col">Open source alternatives</th>
+          <th scope="col"><span class="vh">See them in the catalog</span></th></tr></thead>
+        <tbody id="g-mapped">__CARDS__</tbody>
+      </table>
+    </div>
     <p class="nores" id="none-mapped" hidden>No product matches that filter.</p>
   </section>
 
@@ -259,7 +275,13 @@ BODY = """
       <i>content or data</i> entries are a different case: open source cannot substitute a
       legal-research corpus or a traffic feed, so the absence is a category fact rather
       than a gap to fill.</p>
-    <div class="pgrid" id="g-gaps">__GAPS__</div>
+    <div class="twrap">
+      <table class="ptab">
+        <thead><tr><th scope="col">Proprietary product</th>
+          <th scope="col">What it is used for</th><th scope="col">Type</th></tr></thead>
+        <tbody id="g-gaps">__GAPS__</tbody>
+      </table>
+    </div>
     <p class="nores" id="none-gaps" hidden>No product matches that filter.</p>
   </section>
 
@@ -273,12 +295,17 @@ BODY = """
     var v = (q.value || '').trim().toLowerCase();
     groups.forEach(function (g) {
       var n = 0;
-      var cards = document.getElementById(g[0]).children;
-      for (var i = 0; i < cards.length; i++) {
-        var hit = !v || cards[i].getAttribute('data-n').indexOf(v) >= 0;
-        cards[i].hidden = !hit;
+      var body = document.getElementById(g[0]);
+      var rows = body.children;
+      for (var i = 0; i < rows.length; i++) {
+        var hit = !v || rows[i].getAttribute('data-n').indexOf(v) >= 0;
+        rows[i].hidden = !hit;
         if (hit) n++;
       }
+      // Hide the whole table when nothing matches - a bare header row over an
+      // empty body reads as a broken table rather than as an empty result.
+      var wrap = body.parentNode.parentNode;
+      wrap.hidden = n === 0;
       document.getElementById(g[1]).hidden = n > 0;
     });
   }
