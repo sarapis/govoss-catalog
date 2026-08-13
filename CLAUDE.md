@@ -4,7 +4,7 @@
 > national, municipal and international catalogues, normalised onto one schema, translated to
 > English, categorised by function, de-duplicated and liveness-monitored.
 >
-> **3,070 entries · 17 catalogues · 14 countries + EU + global.** Live at
+> **3,080 entries · 17 catalogues · 15 countries incl. EU + global.** Live at
 > https://govoss-catalog.vercel.app — see `README.md` for the public overview and
 > `CONTINUE.md` for open items. This file is the operating manual: it records why each
 > decision was made and what not to re-litigate.
@@ -487,6 +487,60 @@ and moves on every upgrade.
 dedupe, filter and export steps and the liveness confirmation pass — which is why its dead
 count is 83 against today's 22. Nothing else is back-filled; with one run the page says so
 rather than drawing a trend line it cannot support.
+
+## The pages (restyled 2026-08-12)
+
+Three surfaces, all generated, all on the Civic Tech Field Guide design system:
+
+| page | built by |
+|---|---|
+| `/` catalog | `build_ui.py` + `_ui_template.py` |
+| `/sources.html` sources **and build status** | `build_sources.py` |
+| `/api.html` API + MCP | `build_api.py` |
+| shared chrome | `theme.py` |
+
+`build_status.py` is **retired** — its page merged into `/sources.html`, which 308s from
+`/status.html`. **`/status.json` is still written**: retiring the page was a design decision,
+retiring the endpoint would break agents.
+
+**No f-strings for markup.** `theme.py` and `_ui_template.py` hold CSS/HTML/JS as PLAIN strings
+with `__PLACEHOLDER__` tokens substituted at the end, and the substitution asserts none
+survived. This removed the brace-doubling trap that was the most common way these files broke.
+
+**Tokens are VENDORED, not transcribed** — `vendor/ctfg/` holds the CTFG token files at a
+pinned version and `theme.py` inlines them at build time, asserting all four agree. Overrides
+are labelled **PATCH** (delete when upstream fixes it) or **DIVERGENCE** (keep). See
+`DESIGN-BRIEF.md` and `UPSTREAM-CTFG.md`.
+
+**Fonts are self-hosted** (`fonts/`, 9 woff2, 344 KB, ~103 KB typically fetched). The design
+system loads them from a CDN; we do not, because the readership is European public-sector staff
+and a Google Fonts request is a live GDPR objection. Upstream now records this as a sanctioned
+divergence.
+
+## The MCP server
+
+`mcp-server/` — a Cloudflare Worker at `https://govoss-mcp.devin-31f.workers.dev`. Public,
+keyless, stateless, no Durable Object. Five tools; the contract lives once in `mcp_tools.py`,
+read by both the Worker and `/api.html`.
+
+It reads **`mcp-index.json`**, not `entries.json`: a Worker gets 10ms CPU and parsing the 5.6 MB
+export blows that on a cold isolate. `export_json.py` writes the 852 KB index in the same run,
+so they cannot drift. **Not part of `run.sh`** — it holds no data, so a weekly rebuild reaches
+it with no redeploy.
+
+**Two Cloudflare traps it cost us.** `cf: {cacheTtl}` caches EVERY status, so a 404 fetched
+before the file existed was cached for an hour and the tool reported it missing long after it
+was published. And `cacheTtl: 0` does **not** force a cache miss — it controls how long a
+response is stored — so the retry must change the cache KEY (a throwaway query param) to escape
+a cached failure.
+
+## Accessibility
+
+WCAG 2.1 AA audited 2026-08-12: 10 issues found and fixed, lowest contrast ratio now 5.17:1 on
+all three pages. **No screen-reader testing has been done** — do not read the audit as a
+conformance claim. `DESIGN-BRIEF.md` has the seven UI rules this produced, including that a
+native `<select>` ignores your CSS until `appearance:none`, and that a flex item's default
+`min-width:auto` defeats `overflow-x`.
 
 ## Four bugs that recurred — check for these first
 

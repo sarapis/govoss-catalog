@@ -4,20 +4,23 @@ A union catalogue of **government open source software**, harvested first-hand f
 national, municipal and international catalogues, normalised onto one schema, translated to
 English, categorised by function, de-duplicated, and liveness-monitored.
 
-**Live:** https://govoss-catalog.vercel.app
-· [JSON API](https://govoss-catalog.vercel.app/entries.json)
-· [sources](https://govoss-catalog.vercel.app/sources.html)
-· [sources & status](https://govoss-catalog.vercel.app/sources.html)
+**Live:** [catalog](https://govoss-catalog.vercel.app/)
+· [sources & build status](https://govoss-catalog.vercel.app/sources.html)
+· [API & MCP](https://govoss-catalog.vercel.app/api.html)
+· [entries.json](https://govoss-catalog.vercel.app/entries.json)
 · [llms.txt](https://govoss-catalog.vercel.app/llms.txt)
+
+**MCP server:** `https://govoss-mcp.devin-31f.workers.dev` — public, keyless, five tools.
 
 | | |
 |---|---|
 | Entries | **3,080** |
-| Catalogues | **17**, across 14 countries + the EU + a global registry |
+| Catalogues | **17**, across 15 countries incl. the EU + a global registry |
 | English descriptions | 100% of described entries (excl. 171 deliberately-untranslated Bulgarian) |
 | Functional categories | 19, all 233 source category values explicitly mapped |
-| Repos reachable | 97.1% · 24 confirmed dead · 43 archived |
+| Repos reachable | 24 confirmed dead · 39 archived |
 | Procurement mappings | 108 entries → 165 proprietary products |
+| Accessibility | WCAG 2.1 AA audited 2026-08-12; lowest contrast ratio 5.17:1 |
 
 ## What makes it different
 
@@ -135,7 +138,7 @@ produces confident category errors — Drupal does not replace *hosting*, Moodle
 produce *training content*.
 
 Read `CLAUDE.md` before changing anything. It records what has already been tried and
-rejected, and the four bug shapes that came back repeatedly.
+rejected, and the bug shapes that came back repeatedly.
 
 ## Files
 
@@ -146,6 +149,8 @@ rejected, and the four bug shapes that came back repeatedly.
 - `DESIGN-BRIEF.md` — paste-ready brief for restyling the pages (they are generated from
   Python f-strings, not editable HTML — read this before touching the UI)
 - `PAGINATION-BUG.md` — bug report for the EU OSS Catalogue, ready to send
+- `UPSTREAM-CTFG.md` — how three design-system defects were reported upstream and the fix
+  taken back; the rule about labelling patches so they get deleted
 - `CTFG-CONTRAST-REPORT.md` — design-system contrast report for the Civic Tech Field
   Guide, ready to send
 - `sources.py` · `replaces.json` · `translations/` — the curated inputs

@@ -1,42 +1,34 @@
 # Open items
 
-Where the work stands as of 2026-08-11, and what is worth doing next. Doubles as a
-continuation brief: it is written to be handed to whoever — or whatever — picks this up cold.
+Where the work stands as of 2026-08-12, and what is worth doing next. Doubles as a
+continuation brief: written to be handed to whoever — or whatever — picks this up cold.
 
-**Read `CLAUDE.md` first.** It is the operating manual: every source's access route, why each
-design decision was made, and a section called *"Four bugs that recurred"* listing failure
-shapes that came back repeatedly. `README.md` has the overview. Don't re-litigate decisions
-recorded there — particularly the deliberate exclusions.
+**Read `CLAUDE.md` first.** It is the operating manual. `README.md` has the overview,
+`DESIGN-BRIEF.md` the design system as built, `UPSTREAM-CTFG.md` the design-system exchange.
+Don't re-litigate decisions recorded there — particularly the deliberate exclusions.
 
-State: **3,070 entries, 17 catalogues, 14 countries + EU + a global registry.** Pipeline is
-`bash run.sh` (~25 min; the order matters and is documented at the top of the file). Scheduled
-weekly, Mondays 07:00 — `bash schedule/install.sh` sets that up.
+State: **3,080 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
+15 steps; the order matters and is documented at the top of the file). Scheduled Mondays 07:00
+— `bash schedule/install.sh`.
 
-## Publishing is now automatic (done 2026-08-11)
+## Shipped 2026-08-12 (one long session)
 
-`run.sh` ends with a `deploy` step that pushes `site/` to Vercel, gated on `out/steps.tsv`
-showing no failed step. No more hand-run `vercel deploy --prod`. See *Publishing* in
-`CLAUDE.md`.
-
-Worth knowing, because the diagnosis in the previous version of this file was wrong: the CLI's
-stored auth **does** work from a launchd job. What failed was `#!/usr/bin/env node` — node was
-not on the launchd PATH, so the job died with `env: node: No such file or directory`, which
-looks like an auth failure if all you see is that nothing deployed. A token is still supported
-and preferred (`VERCEL_TOKEN`, or `~/.config/govoss/vercel-token` chmod 600) since a stored
-login can be revoked; it just was never the blocker.
-
-The status page now also re-checks its own age against the reader's clock and flips the badge
-to **Stale**, so a copy that stops being republished stops claiming to be Operational.
-
-A `record` step follows the deploy and shares its gate: it commits `catalog.json`,
-`history.json`, `liveness.json` and `cache/` and pushes to `origin/main`, so the repo matches
-what is live rather than whatever was last committed by hand. It stages an explicit path list
-(never `git add -A`), refuses any branch but `main`, and never force-pushes. Expect ~100–250 MB
-of repo growth a year from the weekly full-rewrite diffs.
+- **Publishing is automatic.** `run.sh` ends with `deploy` then `record`, both gated on every
+  earlier step exiting 0, so what is committed is what is published. No hand-deploys.
+- **The repo is public:** github.com/sarapis/govoss-catalog, MIT code / CC BY 4.0 data.
+  History audited clean before publishing; secret scanning and push protection on.
+- **Committed JSON is deterministic** — sorted records, no per-record timestamps. Weekly churn
+  fell from 50,199 diff lines to 2,365 (95%).
+- **Three pages restyled** on the CTFG design system: catalog, sources+status merged, and a new
+  `/api.html`. `build_status.py` retired; `/status.json` still written.
+- **An MCP server** at `govoss-mcp.devin-31f.workers.dev` — public, keyless, five tools.
+- **WCAG 2.1 AA audited**: 10 issues found and fixed, lowest ratio now 5.17:1.
+- **Design tokens vendored** at `vendor/ctfg/` v2.0.0 rather than transcribed. Three defects
+  reported upstream were fixed there, so our local patch is deleted.
 
 ## In rough priority order
 
-1. **Expand `replaces.json`.** 108 of 3,070 entries map to 165 proprietary products. This is
+1. **Expand `replaces.json`.** 108 of 3,080 entries map to 165 proprietary products. This is
    the field that makes the catalogue answer *"what can we stop paying for?"* rather than
    *"what exists"*. Read the `_README` block in that file first — `kind` (`software` /
    `service` / `paid-tier`) and `confidence` both matter, and getting them wrong produces
@@ -51,9 +43,18 @@ of repo growth a year from the weekly full-rewrite diffs.
    mostly long EU-funding project titles (`BG05SFOP001-…`) rather than software summaries. If
    you do them, triage first — translating a grant reference adds nothing.
 
-4. **`HANDOFF-PROMPT.md`** is current as of this state. If the catalogue changes materially,
-   it needs updating again — a downstream agent working from stale counts is worse than one
-   with none.
+4. **Screen-reader testing has never been done.** The WCAG audit was automated checks plus
+   keyboard only. VoiceOver/NVDA against the catalog page is the honest next step, and until
+   it runs, nothing should claim conformance.
+
+5. **`HANDOFF-PROMPT.md` is stale** — it still quotes pre-restyle counts and does not know the
+   MCP server exists. Refresh it before handing it to a downstream data consumer.
+
+6. **Sparklines fill in over coming weeks.** Runs before 2026-08-12 have no per-catalogue
+   record, so they render as grey "not recorded" bars rather than invented history.
+
+7. **`get_stats` on the MCP server can be up to an hour stale** (1-hour edge cache on
+   meta.json). Fine for weekly data, but the tool an agent polls to detect a rebuild lags.
 
 ## Things that are done and should be left alone
 
