@@ -300,7 +300,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "389 Directory Server is a free LDAP server. The Lightweight Directory Access Protocol (LDAP) is a network protocol for querying and modifying information from distributed directory services.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q228600",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "also_known_as": [
@@ -1886,7 +1888,9 @@
    "United States of America",
    "Zambia",
    "Zimbabwe"
-  ]
+  ],
+  "wikidata": "Q24569417",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -3181,7 +3185,9 @@
   "upstream_id": "GID0090005",
   "used_by": [
    "Norway"
-  ]
+  ],
+  "wikidata": "Q11957606",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -3776,7 +3782,9 @@
   "repo_key": null,
   "short_desc": "Apache ActiveMQ is a free message broker that fully implements Java Message Service 1.1 (JMS).",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q773135",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -3854,7 +3862,9 @@
   "repo_key": null,
   "short_desc": "Apache Ant is a Java library and command-line tool whose task is to control processes described in build files as interdependent targets and extension points. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q385970",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -3999,7 +4009,9 @@
   "repo_key": null,
   "short_desc": "Development environment for directory services (LDAP). ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q28916293",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -4040,7 +4052,9 @@
   "short_desc": "Fineract provides a reliable, robust, and affordable solution for entrepreneurs, financial institutions, and service providers to offer financial services to the world\u2019s 3 billion underbanked and unbanked.  Fineract is the backend to the branded Mifos solution.  ",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090006"
+  "upstream_id": "GID0090006",
+  "wikidata": "Q28915157",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -4084,7 +4098,9 @@
    "DGAC",
    "MI",
    "Sorbonne Universit\u00e9"
-  ]
+  ],
+  "wikidata": "Q28915196",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -4317,7 +4333,9 @@
   "repo_owner": "Apache Software Foundation",
   "short_desc": "Apache Kafka is free software from the Apache Software Foundation that is used in particular for processing data streams.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q16235208",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 2,
@@ -6875,7 +6893,9 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "translated": true,
-  "upstream_id": 8306
+  "upstream_id": 8306,
+  "wikidata": "Q20828705",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -9635,7 +9655,9 @@
   "repo_owner": "Hallo Welt! GmbH",
   "short_desc": "BlueSpice MediaWiki is a free software, based on MediaWiki, and specifically developed for companies as an enterprise wiki distribution.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q885586",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -12844,7 +12866,9 @@
   "used_by": [
    "MEN: Minist\u00e8re de l'\u00c9ducation nationale",
    "\u00e9ducation nationale"
-  ]
+  ],
+  "wikidata": "Q104417774",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -14909,43 +14933,17 @@
   "version": "1.26.1"
  },
  {
-  "catalogue_count": 1,
+  "also_known_as": [
+   "CKAN"
+  ],
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://opensource.muenchen.de/software/ckan.html",
     "name": "ckan",
     "repo_url": null,
     "source": "DE/opensource.muenchen.de"
-   }
-  ],
-  "country": "DE",
-  "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/ckan.html",
-  "functions": [
-   "documents"
-  ],
-  "functions_inferred": true,
-  "gov_tier": "municipal",
-  "keywords": [
-   "application",
-   "kooperation",
-   "support",
-   "k8s"
-  ],
-  "landing": "https://ckan.org",
-  "license": "AGPL",
-  "name": "ckan",
-  "note": "in production use at the City of Munich",
-  "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
-  "short_desc": "CKAN (Comprehensive Knowledge Archive Network) is a web-based data catalog software used especially by public institutions for sharing \"open data\", which is further developed by the OKFN.",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
+   },
    {
     "entry_url": "https://www.digitalpublicgoods.net/r/ckan",
     "name": "CKAN",
@@ -14953,18 +14951,24 @@
     "source": "GLOBAL/dpg"
    }
   ],
-  "country": "GLOBAL",
-  "desc_lang": "en",
-  "dpg": true,
-  "dpg_type": [
-   "Open Software"
+  "countries": [
+   "DE",
+   "GLOBAL"
   ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/ckan",
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/ckan.html",
   "functions": [
+   "documents",
    "web-content"
   ],
   "functions_inferred": true,
+  "gov_tier": "municipal",
   "keywords": [
+   "application",
+   "kooperation",
+   "support",
+   "k8s",
    "SDG1",
    "SDG4",
    "SDG7",
@@ -14976,27 +14980,22 @@
    "SDG16"
   ],
   "landing": "https://ckan.org",
-  "license": "AGPL-3.0",
-  "name": "CKAN",
-  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "repo": "https://github.com/ckan/ckan",
-  "repo_key": "github.com/ckan/ckan",
-  "repo_owner": "CKAN",
-  "sdgs": [
-   "SDG1: End Poverty in all its forms everywhere",
-   "SDG4: Quality Education",
-   "SDG7: Affordable and Clean Energy",
-   "SDG8: Decent Work and Economic Growth",
-   "SDG9: Industry\u00b8 Innovation and Infrastructure",
-   "SDG10: Reduced Inequalities",
-   "SDG11: Sustainable Cities and Communities",
-   "SDG13: Climate Action",
-   "SDG16: Peace\u00b8 Justice and Strong Institutions"
+  "license": "AGPL",
+  "merged_count": 2,
+  "name": "ckan",
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "CKAN (Comprehensive Knowledge Archive Network) is a web-based data catalog software used especially by public institutions for sharing \"open data\", which is further developed by the OKFN.",
+  "source": "DE/opensource.muenchen.de",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "GLOBAL/dpg"
   ],
-  "short_desc": "CKAN is an Open Source Data Management System to build Data Portals. Trusted by hundreds of portals across the world and supported by an active community, it focuses on extensibility and integration with other tools.",
-  "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090527"
+  "wikidata": "Q977484",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -16609,7 +16608,9 @@
   "short_desc": "At CodeCarbon, we believe, as Niels Bohr said, that \"Nothing exists until it is measured\". So we found a way to estimate how much carbon  we produce while running our code.\r\nWe did this by creating a Python package that estimates your hardware electricity power consumption.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092888"
+  "upstream_id": "GID0092888",
+  "wikidata": "Q107382202",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -17428,14 +17429,24 @@
   "tier": "index"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=CollectiveAccess",
     "name": "CollectiveAccess",
     "repo_url": "https://github.com/collectiveaccess",
     "source": "FR/sill"
+   },
+   {
+    "entry_url": "https://opensource.muenchen.de/software/collectiveaccess.html",
+    "name": "CollectiveAccess",
+    "repo_url": "https://github.com/collectiveaccess/providence",
+    "source": "DE/opensource.muenchen.de"
    }
+  ],
+  "countries": [
+   "DE",
+   "FR"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -17455,10 +17466,13 @@
    "parcours",
    "vitrine virtuelle",
    "inventaire",
-   "catalogue"
+   "catalogue",
+   "application",
+   "featurefunding"
   ],
   "landing": "https://collectiveaccess.org",
   "license": "GNU GPLv3",
+  "merged_count": 2,
   "name": "CollectiveAccess",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -17467,6 +17481,10 @@
   "short_desc": "Software for managing and publishing museum and archive collections.",
   "sill_id": 498,
   "source": "FR/sill",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -17474,40 +17492,6 @@
   ],
   "version": "1.7.16",
   "wikidata": "Q2982932"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://opensource.muenchen.de/software/collectiveaccess.html",
-    "name": "CollectiveAccess",
-    "repo_url": "https://github.com/collectiveaccess/providence",
-    "source": "DE/opensource.muenchen.de"
-   }
-  ],
-  "country": "DE",
-  "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/collectiveaccess.html",
-  "functions": [
-   "documents"
-  ],
-  "functions_inferred": true,
-  "gov_tier": "municipal",
-  "keywords": [
-   "application",
-   "featurefunding"
-  ],
-  "landing": "http://www.collectiveaccess.org/",
-  "license": "GPL",
-  "name": "CollectiveAccess",
-  "note": "in-house development by the City of Munich",
-  "recommended_for_gov": false,
-  "repo": "https://github.com/collectiveaccess/providence",
-  "repo_key": "github.com/collectiveaccess/providence",
-  "repo_owner": "Landeshauptstadt Muenchen",
-  "short_desc": "CollectiveAccess is free, open-source software for cataloguing and publishing museum and archival collections.",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -22620,7 +22604,9 @@
   "short_desc": "Data.norge.no provides a comprehensive overview of datasets, concepts, APIs, information models, services, and events in the public sector, including protected data. It helps you discover, assess, and make use of data. ",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0091996"
+  "upstream_id": "GID0091996",
+  "wikidata": "Q97013549",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -26550,7 +26536,9 @@
   "upstream_id": "GID0090023",
   "used_by": [
    "India"
-  ]
+  ],
+  "wikidata": "Q115688435",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -27594,7 +27582,9 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q104772330",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -32652,7 +32642,9 @@
   "upstream_id": "GID0090027",
   "used_by": [
    "New Zealand"
-  ]
+  ],
+  "wikidata": "Q115688412",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -33921,7 +33913,9 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "cf2a4912-a8fd-4dd5-a1a3-43b05c47eb19",
-  "version": "v5.1.4"
+  "version": "v5.1.4",
+  "wikidata": "Q107381202",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -36633,7 +36627,9 @@
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
   "upstream_id": 1463,
-  "version": "1.5.3"
+  "version": "1.5.3",
+  "wikidata": "Q106382292",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -37111,7 +37107,9 @@
    "Ministerien und Beh\u00f6rden Baden-W\u00fcrttembergs",
    "Lehrkr\u00e4fte in Baden-W\u00fcrttemberg \u00fcber baden-w\u00fcrttembergische Bildungsplattform"
   ],
-  "version": "1.0"
+  "version": "1.0",
+  "wikidata": "Q138566672",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -37349,7 +37347,9 @@
   "short_desc": "farmOS is a web-based application for farm management, planning, and record keeping.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090033"
+  "upstream_id": "GID0090033",
+  "wikidata": "Q97644687",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -37531,7 +37531,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "FastAPI is a modern, high-performance web framework for building APIs with Python, based on standard Python type hints. It supports asynchronous traffic by default and is designed to be easy to use and learn, while also being highly performant, scalable and with low code footprint. FastAPI uses Pydantic for data validation and parsing.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q101119404",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -38391,7 +38393,9 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q18760310",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -39419,7 +39423,9 @@
   "tier": "index",
   "used_by": [
    "gbg_k"
-  ]
+  ],
+  "wikidata": "Q5456301",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -40713,7 +40719,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "b6ecf45e-ceb6-4060-91af-65d77fdab33d",
-  "version": "16"
+  "version": "16",
+  "wikidata": "Q5499659",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 2,
@@ -41409,7 +41417,9 @@
   "upstream_id": "GID0090514",
   "used_by": [
    "Italy"
-  ]
+  ],
+  "wikidata": "Q3737390",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -44425,7 +44435,9 @@
   "short_desc": "A free, modern, open platform for independent publishing and journalism.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092823"
+  "upstream_id": "GID0092823",
+  "wikidata": "Q16251204",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "also_known_as": [
@@ -45649,13 +45661,22 @@
  },
  {
   "active": true,
-  "catalogue_count": 1,
+  "also_known_as": [
+   "GLOBALEAKS"
+  ],
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": null,
     "name": "GlobaLeaks",
     "repo_url": "https://github.com/globaleaks/GlobaLeaks",
     "source": "IT/developers-italia"
+   },
+   {
+    "entry_url": "https://www.digitalpublicgoods.net/r/globaleaks",
+    "name": "GLOBALEAKS",
+    "repo_url": "https://github.com/globaleaks/globaleaks-whistleblowing-software",
+    "source": "GLOBAL/dpg"
    }
   ],
   "categories": [
@@ -45666,6 +45687,10 @@
   ],
   "contacts": [
    "Giovanni Pellerano"
+  ],
+  "countries": [
+   "GLOBAL",
+   "IT"
   ],
   "country": "IT",
   "desc_en": "GlobaLeaks is free, open source software enabling anyone to easily set up and maintain a secure whistleblowing platform",
@@ -45691,10 +45716,14 @@
    "web-content"
   ],
   "functions_inferred": false,
+  "keywords": [
+   "SDG16"
+  ],
   "landing": "https://www.globaleaks.org/",
   "license": "AGPL-3.0",
   "long_desc": "[GlobaLeaks](https://www.globaleaks.org/) is free, open souce software enabling anyone to easily set up and maintain a secure whistleblowing platform. Thanks to GlobaLeaks even non-technical people are be able to setup their own anonymous whistleblowing project. Designed to be user-friendly the software is customizable up to own needs and protects the whistleblower's privacy and submissions. GlobaLeaks targets [many use cases](https://www.globaleaks.org/usecases/) and therefore it has been designed as a framework. Designed with flexibility in mind and translated in [more than 90 languages](https://www.transifex.com/otf/globaleaks) GlobaLeaks is nowadays adopted worldwide by more than 4000 projects. The vast range of adopters includes independent media, activists, public agencies, corporations and more.",
   "maintenance": "community",
+  "merged_count": 3,
   "name": "GlobaLeaks",
   "platforms": [
    "web",
@@ -45711,6 +45740,10 @@
   "short_desc": "GlobaLeaks is free, open source software enabling anyone to easily set up and maintain a secure whistleblowing platform",
   "software_type": "standalone/web",
   "source": "IT/developers-italia",
+  "sources": [
+   "GLOBAL/dpg",
+   "IT/developers-italia"
+  ],
   "tier": "publiccode",
   "upstream_id": "cf06d05f-63d9-486c-9e03-6e2972060202",
   "used_by": [
@@ -47115,92 +47148,7 @@
    "Veneto Film Commission",
    "Venezia Spiagge S.p.a.",
    "Vi.abilit\u00e0",
-   "Villaservice Spa"
-  ],
-  "version": "4.9.5"
- },
- {
-  "active": true,
-  "also_known_as": [
-   "GLOBALEAKS"
-  ],
-  "catalogue_count": 2,
-  "catalogue_entries": [
-   {
-    "entry_url": null,
-    "name": "GlobaLeaks",
-    "repo_url": "https://github.com/globaleaks/globaleaks-whistleblowing-software",
-    "source": "IT/developers-italia"
-   },
-   {
-    "entry_url": "https://www.digitalpublicgoods.net/r/globaleaks",
-    "name": "GLOBALEAKS",
-    "repo_url": "https://github.com/globaleaks/globaleaks-whistleblowing-software",
-    "source": "GLOBAL/dpg"
-   }
-  ],
-  "categories": [
-   "whistleblowing"
-  ],
-  "contacts": [
-   "Giovanni Pellerano"
-  ],
-  "countries": [
-   "GLOBAL",
-   "IT"
-  ],
-  "country": "IT",
-  "desc_en": "GlobaLeaks is a free and open-source whistleblowing software enabling anyone to easily set up and maintain a secure reporting platform",
-  "desc_lang": "en",
-  "desc_src": "GlobaLeaks \u00e8 software di whistleblowing libero e open-source che permette a tutti di creare e mantenere una piattaforma di segnalazione sicura",
-  "desc_src_lang": "it",
-  "dev_status": "stable",
-  "fallback_repo": "https://github.com/globaleaks/globaleaks-whistleblowing-software.git",
-  "features": [
-   "PNRR",
-   "PNRR/Beneficiari/Altri enti",
-   "PNRR/Beneficiari/ASL",
-   "PNRR/Beneficiari/Comuni",
-   "PNRR/Beneficiari/Enti Regionali",
-   "PNRR/Beneficiari/Istituti di ricerca e AFAM",
-   "PNRR/Beneficiari/PA Centrali",
-   "PNRR/Beneficiari/Province"
-  ],
-  "functions": [
-   "case-workflow",
-   "data-analytics"
-  ],
-  "functions_inferred": false,
-  "keywords": [
-   "SDG16"
-  ],
-  "landing": "https://globaleaks.org/",
-  "license": "AGPL-3.0",
-  "long_desc": "[GlobaLeaks](https://globaleaks.org/) is a free and open-source whistleblowing software enabling anyone to easily set up and maintain a secure reporting platform. Thanks to GlobaLeaks even non-technical people are be able to setup their own anonymous whistleblowing project. Designed to be user-friendly the software is customizable up to own needs and protects the whistleblower's privacy and submissions. GlobaLeaks targets [many use cases](https://globaleaks.org/usecases/) and therefore it has been designed as a framework. Designed with flexibility in mind and translated in [more than 70 languages](https://www.transifex.com/otf/globaleaks) GlobaLeaks is nowadays adopted worldwide by more than 30000 projects. The vast range of adopters includes independent media, activists, public agencies, corporations and more. The software is recognized by the [Digital Public Good Alliance](https://digitalpublicgoods.net) as a [Digital Public Good](https://digitalpublicgoods.net/r/globaleaks).",
-  "maintenance": "community",
-  "merged_count": 2,
-  "name": "GlobaLeaks",
-  "platforms": [
-   "web",
-   "windows",
-   "mac",
-   "linux",
-   "ios",
-   "android"
-  ],
-  "released": "2026-07-24",
-  "repo": "https://github.com/globaleaks/globaleaks-whistleblowing-software",
-  "repo_key": "github.com/globaleaks/globaleaks-whistleblowing-software",
-  "short_desc": "GlobaLeaks is a free and open-source whistleblowing software enabling anyone to easily set up and maintain a secure reporting platform",
-  "software_type": "standalone/web",
-  "source": "IT/developers-italia",
-  "sources": [
-   "GLOBAL/dpg",
-   "IT/developers-italia"
-  ],
-  "tier": "publiccode",
-  "upstream_id": "f276675f-a1ee-441f-8e0b-d4572ef4c566",
-  "used_by": [
+   "Villaservice Spa",
    "Agenzia per l'Italia Digitale (AgID)",
    "Agenzia per la cybersicurezza nazionale (ACN)",
    "Autorit\u00e0 Nazionale Anticorruzione (ANAC)",
@@ -47573,7 +47521,6 @@
    "Azienda Mobilit\u00e0 e Trasporti SPA Genova",
    "Azienda Pedemontana Sociale",
    "Azienda per il Diritto agli Studi Universitari Chieti",
-   "Azienda Pisana Edilizia Sociale",
    "Azienda Pubblica di Servizi alla Persona del Distretto di Cesena Valle Savio",
    "Azienda Pubblica di Servizi alla Persona \"Dott. Antonio Bontempelli\" di Pellizzano",
    "Azienda Pubblica di Servizi alla Persona San Giovanni - Mezzolombardo",
@@ -47584,7 +47531,6 @@
    "Azienda Sanitaria Territoriale di Macerata",
    "Azienda Sanitaria Zero",
    "Azienda Servizi Sociali Bolzano",
-   "Azienda Sociale Castano",
    "Azienda Sociale Comasca e Lariana",
    "Azienda sociale del cremonese",
    "Azienda Socio Sanitaria Territoriale di Crema",
@@ -47610,7 +47556,6 @@
    "Azienda Speciale Farmaceutica di Pogliano Milanese",
    "Azienda Speciale Farmacie Comunali di Brugherio",
    "Azienda Speciale Farmacie Comunali di Sedriano",
-   "Azienda Speciale Farmacie Comunali Peschiera",
    "Azienda Speciale Farmacie Comunali Rho",
    "Azienda Speciale Farmacie Comunali Riunite",
    "Azienda Speciale Fodom Servizi",
@@ -47621,14 +47566,12 @@
    "Azienda Speciale RSA di Concesio",
    "Azienda Speciale Servizi Agrate Brianza",
    "Azienda Speciale Servizi alla Persona Cortina",
-   "Azienda Speciale Servizi Sanitari Vergiate",
    "Azienda Speciale Terme di Giunone",
    "Azienda Speciale Tignale Servizio Manlio Bonincontri",
    "Azienda specializzata settore Multiservizi SPA",
    "Azienda Territoriale Energia e Servizi",
    "Azienda Territoriale per i Servizi alla Persona - Ambito 9",
    "Azienda Trasporti Messina SPA",
-   "Azienda Trasporti Pubblici Nuoro",
    "Azienda USL della Valle d'Aosta",
    "Azienda Zero",
    "Bari Multiservizi SPA",
@@ -47703,15 +47646,12 @@
    "Casin\u00f2 di Sanremo SPA",
    "Cassa del Trentino SPA",
    "Cassano Magnago Servizi",
-   "Castiglione 2014 Azienda Speciale",
-   "Castiglione Olona Servizi",
    "CBL Distribuzione Srl",
    "CEIPiemonte",
    "Cemambiente SPA",
    "Centro Agro Alimentare di Napoli SCPA",
    "Centro di Formazione Professionale Como",
    "Centro di istruzione e formazione professionale del Piambello",
-   "Centro Formativo Provinciale Giuseppe Zanardelli",
    "Centro Marche Acqua SRL",
    "Centro Moda Canossa",
    "Centro Residenziale Anziani S. Scalabrin",
@@ -47807,7 +47747,6 @@
    "Collegio Nazionale dei Maestri di Sci Italiani",
    "Collegio Nazionale dei Periti Agrari",
    "Collegio Nazionale delle Guide Alpine Italiane",
-   "Commissario Ricostruzione Genova",
    "Commissario Straordinario per gli interventi urgenti di bonifica, ambientalizzazione e riqualificazione dell\u2019area di Taranto",
    "Commissario Straordinario Unico per la Depurazione",
    "Comue di Maissana",
@@ -51000,7 +50939,6 @@
    "Comunit\u00e0 montana Vallo di Diano",
    "Comunit\u00e0 montana Valtellina di Sondrio",
    "Comunit\u00e0 Montana Valtellina di Tirano",
-   "Comunit\u00e0 Riviera Friulana",
    "Comunit\u00e0 Sociale Cremasca",
    "CONISA",
    "Conservatorio di Como",
@@ -51035,7 +50973,6 @@
    "Consiglio Notarile di Cremona",
    "Consiglio Notarile di Torino e Pinerolo",
    "Consiglio Provinciale Consulenti del Lavoro di Sondrio",
-   "Consiglio Regionale Abruzzo",
    "Consiglio Regionale della Toscana",
    "Consiglio Regionale del Lazio",
    "Consiglio Regionale Friuli Venezia Giulia",
@@ -51099,7 +51036,6 @@
    "Consorzio Giardino Alpinia",
    "Consorzio I Castelli della Sapienza",
    "Consorzio Impegno Sociale",
-   "Consorzio Industriale Provinciale Sassari",
    "Consorzio in Rete",
    "Consorzio Intercomunale di Rio Marsiglia",
    "Consorzio Intercomunale per i Servizi di Assistenza Sociale",
@@ -51108,12 +51044,10 @@
    "Consorzio Interuniversitario Nazionale per la Scienza e Tecnologia dei Materiali",
    "Consorzio Interuniversitario per lo sviluppo dei Sistemi a Grande Interfase",
    "Consorzio Isontino Servizi Integrati",
-   "Consorzio Italbiotec",
    "Consorzio Le Valli",
    "Consorzio Nazionale Interuniversitario per le Telecomunicazioni (CNIT)",
    "Consorzio Obbligatorio Comuni del Vercellese e della Valsesia per la gestione dei rifiuti urbani -C.O.VE.VA.R.",
    "Consorzio Parco Agricolo Nord Est",
-   "Consorzio Parco Alto Milanese",
    "Consorzio Parco del Lura",
    "Consorzio per il nucleo di industrializzazione della provincia di Pordenone",
    "Consorzio per i Servizi Territoriali del Noce",
@@ -51128,7 +51062,6 @@
    "Consorzio Servizi Ecologia ed Ambiente CSEA - Saluzzo",
    "Consorzio Servizi Val Cavallina",
    "Consorzio Socio Assistenziale Alba Langhe Roero",
-   "Consorzio Universitario Piceno",
    "Consorzio Valle del Tevere",
    "Consorzio Zai",
    "Consorzio Zona Industriale Apuana",
@@ -51186,10 +51119,8 @@
    "Ente Gestione Aree Protette Appennino Piemontese",
    "Ente Idrico Campano",
    "Ente Nazionale RISI",
-   "Ente Ospedaliero Ospedali Galliera",
    "Ente Parco Migliarino San Rosso Massaciuccoli",
    "Ente Parco Naturale Regionale Sirente Velino",
-   "Ente Parco Nazionale Arcipelago Toscano",
    "Ente Parco Nazionale Foreste Casentinesi",
    "Ente Parco Regionale Campo dei Fiori",
    "Ente Parco Regionale della Maremma",
@@ -51231,7 +51162,6 @@
    "Fermo a.s.i.t.e. SRL unipersonale",
    "Fidi Toscana SPA",
    "FIL Formazione Innovazione Lavoro SRL",
-   "Film Commission Torino Piemonte",
    "FILSE SPA",
    "Finanziaria Bologna Metropolitana F.B.M. S.p.a. in liquidazione",
    "Finlombarda SPA",
@@ -51269,7 +51199,6 @@
    "Fondazione Esperienze di Cultura Metropolitana",
    "Fondazione Eulo-Universit\u00e0 di Brescia",
    "Fondazione Ferrario",
-   "Fondazione Festival Pucciniano",
    "Fondazione Film Commission Regione Campania",
    "Fondazione Film Commission Valle d'Aosta",
    "Fondazione Guido d'Arezzo",
@@ -51319,7 +51248,6 @@
    "Fondazione Welfare Ambrosiano",
    "Forcoop Cora Venezia",
    "Forma Futuro",
-   "Formaper",
    "Formodena",
    "Friuli Venezia Giulia Strade SPA",
    "Fulgis",
@@ -51402,7 +51330,6 @@
    "Istituto Autonomo Case Popolari di Caltanissetta",
    "Istituto Autonomo Case Popolari Enna",
    "Istituto Autonomo delle Case Popolari della Provincia di Palermo",
-   "Istituto Bon Bozzolla",
    "Istituto Cimbro",
    "Istituto Comprensivo Forno Canavese",
    "Istituto Comprensivo Malnate Iqbal Masih",
@@ -51419,7 +51346,6 @@
    "Istituto Zooprofilattico Sperimentale delle Venezie",
    "Istituto Zooprofilattico Sperimentale del Mezzogiorno",
    "Istituto Zooprofilattico Sperimentale Sardegna",
-   "Istituto Zooprofilattico Sperimentale Sicilia",
    "Istituzione Casa di Riposo A. Penasa",
    "Istituzione Comunale Marsala Schola",
    "Istituzione Veneziana",
@@ -51485,9 +51411,7 @@
    "Museo Tattile Statale Omero",
    "Naturalis Societ\u00e0 Agricola Srl",
    "Neutalia Srl",
-   "Nord Milano Ambiente",
    "Nuova Carabinia Srl",
-   "Nuove Acque",
    "Nuovo Circondario Imolese",
    "Oasi Maria SS. srl a Socio Unico",
    "Office Regional Du Tourisme",
@@ -51963,7 +51887,6 @@
    "Organismo di Composizione della Crisi da Sovraindebitamento",
    "Oristano Servizi Comunali Srl",
    "Osimo Servizi Spa",
-   "Ospedale Policlinico San Martino",
    "Otacl",
    "Padova Attiva",
    "Palermo Energia SpA",
@@ -51987,7 +51910,6 @@
    "Patrimonio del Trentino SpA",
    "Patrimonio Messina SPA",
    "Patrimonio Pisa Srl",
-   "Pavia Acque",
    "Pegaso 03 Srl Unipersonale",
    "Pensionato e Centro di degenza San Paolo",
    "Piacenza Expo SpA",
@@ -52005,9 +51927,7 @@
    "Polis Lombardia",
    "Politecnico di Bari",
    "Ponte Servizi SRL",
-   "Porto Conte Ricerche",
    "Progetto Formazione SCRL",
-   "Progetto Santa Margherita",
    "Promocamera",
    "Promofirenze",
    "Promos Italia SCRL",
@@ -52072,10 +51992,8 @@
    "PTP Science Park SCARL",
    "Publicasa SPA",
    "Reggio Parma Festival",
-   "Regione Friuli Venezia Giulia",
    "Regione Lazio",
    "Regione Liguria",
-   "Regione Sardegna",
    "Residenza per Anziani Beata Gaetana Sterni",
    "Residenza per Anziani di Oderzo",
    "Residenza per Anziani Parcines Johann Nepomuk Sch\u00f6pf  A.P.S.P.",
@@ -52104,7 +52022,6 @@
    "SAP Alpignano",
    "Sardegna Foreste (FORESTAS)",
    "Sardegna IT",
-   "Sardegna Ricerche",
    "SASA SPA",
    "Sasom s.r.l.",
    "SAT scarl",
@@ -52115,7 +52032,6 @@
    "Scuola Angelo Pescarini Arti e Mestieri",
    "Scuola Interregionale di Polizia Locale",
    "Scuola Materna G. Zanella",
-   "Scuola Normale Superiore",
    "SDS Fiorentina Sud Est",
    "SEA-S Srl Servizi ecologici ambientali di Savona",
    "SECIF SRL",
@@ -52149,7 +52065,6 @@
    "Societ\u00e0 della Salute Senese",
    "Societ\u00e0 di Servizi Valle d'Aosta SPA",
    "Societ\u00e0 Energetica Lucana",
-   "Societ\u00e0 Informatica Territoriale Belluno",
    "Societ\u00e0 Intercomunale Gas S.p.A",
    "Societ\u00e0 Italiana Servizi SPA",
    "Societ\u00e0 Italiana Traforo del Gran San Bernardo SPA",
@@ -52161,7 +52076,6 @@
    "Societ\u00e0 Vicentina Trasporti",
    "Societe Infrastructure Valdotaines SRL",
    "Soelia SPA",
-   "Sogesid",
    "SOLE - Azienda Sociale del Legnanese",
    "SorgeAqua",
    "Sorgea Srl",
@@ -52175,7 +52089,6 @@
    "Sportivamente Belluno Srlssd",
    "SRM - Reti e Mobilit\u00e0 SRL",
    "SRR Enna Provincia ATO 6",
-   "Stazione Zoologica Anton Dohrn",
    "Stella Polare Spa",
    "Stiftung Martinsheim Kastelruth \u00d6BPB",
    "Stretto di Messina S.p.A.",
@@ -52186,7 +52099,6 @@
    "Sviluppo Toscana SPA",
    "TE.AM. TERAMO AMBIENTE SPA",
    "Teatro Nazionale di Genova",
-   "Teatro Pubblico Pugliese",
    "Tecne - Azienda Speciale della Camera di Commercio delle Marche",
    "Tecnoacque Cusio Spa",
    "Tecnopolis Parco Scientifico e Tecnologico",
@@ -52228,7 +52140,6 @@
    "Unioncamere Piemonte",
    "Unione Bassa Est Parmense",
    "Unione Camere di Commercio Sicilia",
-   "Unione Collinare Canavesana",
    "Unione Colline Matildiche",
    "Unione Comune del Sarrabus",
    "Unione Comune del Villanova",
@@ -52307,7 +52218,6 @@
    "Unione Lombarda dei Comuni Oglio - Ciria",
    "Unione Lombarda tra i Comuni di Pontevico (Bs) e Robecco d'Oglio (Cr)",
    "Unione Micropolis",
-   "Unione Montana Alpago",
    "Unione Montana Alpi del Mare",
    "Unione Montana Alpi Graie",
    "Unione Montana Alta Val di Cecina",
@@ -52316,7 +52226,6 @@
    "Unione Montana Alta Val Nure",
    "Unione Montana Alta Val Tanaro",
    "Unione Montana Appennino Parma Est",
-   "Unione Montana Cadore Longaronese Zoldo",
    "Unione Montana Comuni Olimpici Via Lattea",
    "Unione Montana dei Comuni del Monviso",
    "Unione Montana dei due laghi",
@@ -52327,11 +52236,9 @@
    "Unione Montana del Montefeltro",
    "Unione Montana del Pinerolese",
    "Unione Montana di Comuni delle Valli di Lanzo, Ceronda e Casternone",
-   "Unione Montana Marosticense",
    "Unione Montana Mombarone",
    "Unione Montana Mondol\u00e8",
    "Unione Montana Spettabile Reggenza dei Sette Comuni",
-   "Unione Montana Val Belluna",
    "Unione Montana Valgrande e del lago di Mergozzo",
    "Unione Montana Valle Grana",
    "Unione Montana Valle Maira",
@@ -52341,13 +52248,10 @@
    "Unione Montana Valli Chisone e Germanasca",
    "Unione Municipia",
    "Unione Pedemontana Parmense",
-   "Unione Reno Galliera",
    "Unione Rubicone e Mare",
    "Unione Terra di Mezzo",
    "Unione Terre del Tartufo",
-   "Unione Tresinaro Secchia",
    "Unione Valle Savio",
-   "Uniontrasporti",
    "Unit\u00e9 des communes valdotaines Evan\u00e7on",
    "Unit\u00e9 des Communes Vald\u00f4taines Grand-Paradis",
    "Unit\u00e9 des Communes vald\u00f4taines Mont-Rose",
@@ -52384,16 +52288,13 @@
    "Valcavallina Servizi Srl",
    "Valisannio - Azienda Speciale della Camera di Commercio di Benevento",
    "VALLE IMAGNA VILLA D'ALME' Azienda territoriale per i servizi alla persona",
-   "Valle Sabbia Solidale",
    "ValliFlor SRL",
    "Valore Citt\u00e0 Amcps SRL",
    "Valpe Ambiente s.r.l.",
    "Velletri Servizi Spa",
    "Veneto Acque SPA",
-   "Veneto Film Commission",
    "Vereinshaus SRL",
    "Veronamercato SPA",
-   "Vi.abilit\u00e0",
    "Vigevano Distribuzione Gas SRL a socio unico",
    "Villa Serena Lonigo",
    "Villaservice SPA",
@@ -52402,7 +52303,9 @@
    "World Trade Center Genoa",
    "Zeroc SpA"
   ],
-  "version": "5.0.99"
+  "version": "4.9.5",
+  "wikidata": "Q5570030",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -52825,7 +52728,9 @@
    "Philippines",
    "Tanzania",
    "Venezuela"
-  ]
+  ],
+  "wikidata": "Q2703769",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -54659,7 +54564,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Graylog is a platform for central log management, the collection, analysis and visualization of log data.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q104417945",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -57312,7 +57219,9 @@
    "Laos",
    "Lesotho",
    "Liberia"
-  ]
+  ],
+  "wikidata": "Q100511474",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -57385,8 +57294,14 @@
   ]
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
+   {
+    "entry_url": "https://code.gouv.fr/sill/detail?name=Hugin",
+    "name": "Hugin",
+    "repo_url": "http://hg.code.sf.net/p/hugin/hugin",
+    "source": "FR/sill"
+   },
    {
     "entry_url": "https://opensource.muenchen.de/software/hugin.html",
     "name": "Hugin",
@@ -57394,35 +57309,9 @@
     "source": "DE/opensource.muenchen.de"
    }
   ],
-  "country": "DE",
-  "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/hugin.html",
-  "functions": [],
-  "functions_inferred": false,
-  "gov_tier": "municipal",
-  "keywords": [
-   "application"
-  ],
-  "landing": "http://hugin.sourceforge.net",
-  "license": "GPL-2.0",
-  "name": "Hugin",
-  "note": "in production use at the City of Munich",
-  "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
-  "short_desc": "Hugin is a free stitching software. It is a GUI for the Panorama Tools (also known as PanoTools) and other tools. ---",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=Hugin",
-    "name": "Hugin",
-    "repo_url": "http://hg.code.sf.net/p/hugin/hugin",
-    "source": "FR/sill"
-   }
+  "countries": [
+   "DE",
+   "FR"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -57432,10 +57321,12 @@
   "functions": [],
   "functions_inferred": false,
   "keywords": [
-   "assemblage panoramiques photo"
+   "assemblage panoramiques photo",
+   "application"
   ],
   "landing": "http://hugin.sourceforge.net/",
   "license": "GNU GPLv2",
+  "merged_count": 2,
   "name": "Hugin",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -57444,6 +57335,10 @@
   "short_desc": "Software for stitching panoramas and HDRI images.",
   "sill_id": 599,
   "source": "FR/sill",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -60767,7 +60662,9 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 11231,
-  "version": "3.3.12"
+  "version": "3.3.12",
+  "wikidata": "Q126084894",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -63349,7 +63246,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "af6056fc-b2b2-4d31-9961-c9bd94e32bd4",
-  "version": "3.34.0-rc.3"
+  "version": "3.34.0-rc.3",
+  "wikidata": "Q96475297",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -65367,7 +65266,9 @@
   "repo_key": null,
   "short_desc": "jEdit is a sophisticated text editor for programmers. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q292976",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -66659,7 +66560,9 @@
   "repo_key": null,
   "short_desc": "Katello is a software stack of various components integrated together to provide a complete lifecycle and configuration management system for server systems.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q16972131",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -66795,7 +66698,9 @@
   "used_by": [
    "Kausal"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "wikidata": "Q82540532",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -69170,7 +69075,9 @@
    "Finland",
    "France",
    "Gabon"
-  ]
+  ],
+  "wikidata": "Q134127261",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -71078,7 +70985,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "2e3c6892-995a-4b24-8fd6-d378e5ea2f45",
-  "version": "v1.8.0"
+  "version": "v1.8.0",
+  "wikidata": "Q13685322",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -71536,7 +71445,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Expat is a stream-oriented XML 1.0 parser library written in C.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q2074084",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -72663,7 +72574,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "LiteLLM provides a gateway to access multiple large language models (LLMs) and other AI models via an unified API. It allows usage tracking, caching and access control and provides a web based UI for administration, monitoring and testing of the models.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q136763444",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -73960,7 +73873,9 @@
   "translated": true,
   "used_by": [
    "other"
-  ]
+  ],
+  "wikidata": "Q136412223",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -75775,7 +75690,9 @@
    "Portugal",
    "Qatar",
    "Romania"
-  ]
+  ],
+  "wikidata": "Q99374512",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -76161,7 +76078,9 @@
   "used_by": [
    "South Africa",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q6805470",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -77514,7 +77433,9 @@
   "repo_owner": "eccc",
   "short_desc": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
   "source": "CA/code.open.canada.ca",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q3272898",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -77849,7 +77770,9 @@
   "short_desc": "MijnBureau deployment",
   "software_type": "standalone/web",
   "source": "NL/code.overheid.nl",
-  "tier": "publiccode"
+  "tier": "publiccode",
+  "wikidata": "Q140627738",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -78262,7 +78185,9 @@
   "repo_key": null,
   "short_desc": "The Open Source Threat Intelligence Platform (''MISP'') is used as a platform for sharing Indicators of Compromise (IOCs) and other relevant information across all parts of the German Cybersecurity network including the City of Munich.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q63017823",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -79770,7 +79695,9 @@
    "Conseil D\u00e9partemental du Val d'Oise",
    "MD",
    "MTE"
-  ]
+  ],
+  "wikidata": "Q130280113",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -84445,7 +84372,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Nuclos is a free enterprise resource planning software that we at it@M use to manage our entire internal IT portfolio and resource planning.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q1265414",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -85641,7 +85570,9 @@
    "Fiji",
    "Finland",
    "France"
-  ]
+  ],
+  "wikidata": "Q56291130",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -87254,7 +87185,9 @@
    "Gabon",
    "Gambia",
    "Georgia"
-  ]
+  ],
+  "wikidata": "Q3353146",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -87660,7 +87593,9 @@
   "short_desc": "A directory and analysis of the open source ecosystem in the areas of climate change, sustainable energy, biodiversity and natural resources.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0091581"
+  "upstream_id": "GID0091581",
+  "wikidata": "Q137335189",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -89973,7 +89908,9 @@
    "F\u00f6derale IT-Kooperation (FITKO)",
    "ZenDiS"
   ],
-  "version": "1.17.2"
+  "version": "1.17.2",
+  "wikidata": "Q136905151",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -90705,7 +90642,9 @@
    "Nepal",
    "Niger",
    "Tanzania"
-  ]
+  ],
+  "wikidata": "Q60785832",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -91057,7 +90996,9 @@
    "North Korea",
    "Pakistan",
    "Palestine State"
-  ]
+  ],
+  "wikidata": "Q7095826",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -91340,7 +91281,9 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 10967,
-  "version": "0.1.15"
+  "version": "0.1.15",
+  "wikidata": "Q137188777",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 3,
@@ -92995,7 +92938,9 @@
   "sill_id": 473,
   "source": "FR/sill",
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q19348696",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -93176,7 +93121,9 @@
    "Spain",
    "Thailand",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q7104382",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -102891,17 +102838,27 @@
   "wikidata": "Q3374635"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Penpot",
     "name": "Penpot",
     "repo_url": "https://github.com/penpot",
     "source": "FR/sill"
+   },
+   {
+    "entry_url": "https://www.digitalpublicgoods.net/r/penpot",
+    "name": "Penpot",
+    "repo_url": "https://github.com/penpot/penpot",
+    "source": "GLOBAL/dpg"
    }
   ],
   "categories": [
    "Web Applications"
+  ],
+  "countries": [
+   "FR",
+   "GLOBAL"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -102909,7 +102866,8 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Penpot",
   "functions": [
-   "web-content"
+   "web-content",
+   "collaboration"
   ],
   "functions_inferred": false,
   "keywords": [
@@ -102920,10 +102878,13 @@
    "UI",
    "UX",
    "prototypage",
-   "prototyping"
+   "prototyping",
+   "SDG9",
+   "SDG10"
   ],
   "landing": "https://penpot.app",
   "license": "MPL-2.0",
+  "merged_count": 2,
   "name": "Penpot",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -102932,6 +102893,10 @@
   "short_desc": "UX/UI design and prototyping platform.",
   "sill_id": 356,
   "source": "FR/sill",
+  "sources": [
+   "FR/sill",
+   "GLOBAL/dpg"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -102939,47 +102904,6 @@
   ],
   "version": "2.17.0",
   "wikidata": "Q111586053"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://www.digitalpublicgoods.net/r/penpot",
-    "name": "Penpot",
-    "repo_url": "https://github.com/penpot/penpot",
-    "source": "GLOBAL/dpg"
-   }
-  ],
-  "country": "GLOBAL",
-  "desc_lang": "en",
-  "dpg": true,
-  "dpg_type": [
-   "Open Software"
-  ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/penpot",
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": true,
-  "keywords": [
-   "SDG9",
-   "SDG10"
-  ],
-  "landing": "https://penpot.app",
-  "license": "MPL-2.0",
-  "name": "Penpot",
-  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "repo": "https://github.com/penpot/penpot",
-  "repo_key": "github.com/penpot/penpot",
-  "repo_owner": "Penpot",
-  "sdgs": [
-   "SDG9: Industry\u00b8 Innovation and Infrastructure",
-   "SDG10: Reduced Inequalities"
-  ],
-  "short_desc": "Penpot is the first open-source design and prototyping platform that enables true collaboration between designers and developers. Built on web standards (SVG, CSS, HTML), it provides professional design tools without vendor lock-in, available as cloud service or self-hosted.",
-  "source": "GLOBAL/dpg",
-  "tier": "index",
-  "upstream_id": "GID0092885"
  },
  {
   "also_known_as": [
@@ -103263,7 +103187,9 @@
   "repo_key": null,
   "short_desc": "pgAdmin is a server-based web application for Postgres database administration. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q310572",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -103470,13 +103396,13 @@
  },
  {
   "also_known_as": [
-   "PHPBB3"
+   "PHPBB"
   ],
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
-    "name": "PHPBB",
+    "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
+    "name": "PHPBB3",
     "repo_url": "https://github.com/phpbb/phpbb",
     "source": "FR/sill"
    }
@@ -103486,33 +103412,33 @@
   ],
   "country": "FR",
   "desc_lang": "en",
-  "desc_src": "Outil de forum",
+  "desc_src": "Forum de discussions en PHP",
   "desc_src_lang": "fr",
-  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
   "functions": [
    "collaboration"
   ],
   "functions_inferred": true,
   "keywords": [
    "forum",
-   "bulletin board",
    "discussion",
    "communaut\u00e9",
    "community",
    "logiciel",
    "software",
-   "web"
+   "web",
+   "bulletin board"
   ],
   "landing": "https://www.phpbb.com/",
-  "license": "GPL-2.0-only",
+  "license": "GNU",
   "merged_count": 2,
-  "name": "PHPBB",
+  "name": "PHPBB3",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
   "repo": "https://github.com/phpbb/phpbb",
   "repo_key": "github.com/phpbb/phpbb",
-  "short_desc": "Forum tool.",
-  "sill_id": 114,
+  "short_desc": "Discussion forum in PHP.",
+  "sill_id": 325,
   "source": "FR/sill",
   "sources": [
    "FR/sill"
@@ -103523,8 +103449,8 @@
    "MI",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "3.3.17",
-  "wikidata": "Q14270"
+  "wikidata": "Q14270",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -105144,7 +105070,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "842688b2-cfcc-4137-ab22-31cb001e63bb",
-  "version": "1.4.4"
+  "version": "1.4.4",
+  "wikidata": "Q105731934",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -105349,7 +105277,9 @@
   "translated": true,
   "used_by": [
    "MD"
-  ]
+  ],
+  "wikidata": "Q3359740",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -105619,7 +105549,9 @@
   "short_desc": "Polis is a real-time system for gathering, analyzing, and understanding what large groups of people think in their own words, enabled by advanced statistics and machine learning. Polis has been used all over the world by governments, academics, independent media, and citizens.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092151"
+  "upstream_id": "GID0092151",
+  "wikidata": "Q125803048",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -107272,7 +107204,9 @@
   "sill_id": 364,
   "source": "FR/sill",
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q121223640",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -110941,7 +110875,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Pydantic is the de-facto standard data validation library for Python, with a focus on data integrity and type safety. It integrates with linters and IDEs, is fast and extensible, and uses standard Python type hints for defining data models.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q107381687",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -111310,7 +111246,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Qdrant (read: quadrant) is a container-based vector similarity search engine and vector database.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q137839573",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -111394,7 +111332,9 @@
   ],
   "tier": "publiccode",
   "upstream_id": "5cc14825-0d07-408f-a691-2ea68a298d13",
-  "version": "v2.0.0"
+  "version": "v2.0.0",
+  "wikidata": "Q135493504",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -112112,7 +112052,9 @@
   "upstream_id": "GID0090594",
   "used_by": [
    "Brazil"
-  ]
+  ],
+  "wikidata": "Q114647507",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -115471,7 +115413,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Robot Framework is a generic automation framework that can be used for both test automation and robotic process automation.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q2160022",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -116171,7 +116115,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Ruff is an extremely fast Python linter and code formatter, written in Rust. It provides essential features for ensuring code quality and consistency in Python projects, including linting, formatting, and automatic fixing of common issues.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q115911873",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -116434,7 +116380,9 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE",
    "other"
-  ]
+  ],
+  "wikidata": "Q113976362",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -117790,7 +117738,9 @@
   "repo_key": null,
   "short_desc": "Free software for visualization and analysis of measured values. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q1124889",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -118910,7 +118860,9 @@
   "used_by": [
    "Acad\u00e9mie de Dijon",
    "other"
-  ]
+  ],
+  "wikidata": "Q97351209",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -120215,7 +120167,9 @@
    "MI",
    "MINISTERE INTERIEUR/DGPN/DCSP/DZSP SUD/DDSP34 MONTPELLIER/EMD/SEM",
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne"
-  ]
+  ],
+  "wikidata": "Q21977736",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -123073,7 +123027,9 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q130281770",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -125807,7 +125763,9 @@
   "repo_key": null,
   "short_desc": "Spring open source framework for the Java platform, which is often used for web applications. Spring is modular and offers features like dependency injection or aspect-oriented programming. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q720314",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -127784,7 +127742,9 @@
   "repo_key": null,
   "short_desc": "sudo is a command in Unix and Unix-like operating systems such as Linux or macOS that is used to start processes with the rights of another user.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q300883",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -128458,7 +128418,9 @@
    "Nepal",
    "Nigeria",
    "Tunisia"
-  ]
+  ],
+  "wikidata": "Q104533795",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -128581,7 +128543,9 @@
    "United Kingdom",
    "United States of America",
    "Venezuela"
-  ]
+  ],
+  "wikidata": "Q1759786",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -131966,7 +131930,9 @@
    "Argentina",
    "Bahamas",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q202044",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -132081,7 +132047,9 @@
   "repo_key": null,
   "short_desc": "A free, web-based project management tool for software development / version management. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q765385",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -132623,14 +132591,24 @@
   ]
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=TrueNAS",
     "name": "TrueNAS",
     "repo_url": "https://github.com/truenas/",
     "source": "FR/sill"
+   },
+   {
+    "entry_url": "https://www.digitalpublicgoods.net/r/truenas",
+    "name": "TrueNAS",
+    "repo_url": "https://github.com/truenas/linux",
+    "source": "GLOBAL/dpg"
    }
+  ],
+  "countries": [
+   "FR",
+   "GLOBAL"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -132638,7 +132616,8 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=TrueNAS",
   "functions": [
-   "infrastructure"
+   "infrastructure",
+   "data-analytics"
   ],
   "functions_inferred": true,
   "keywords": [
@@ -132649,10 +132628,14 @@
    "samba",
    "partages",
    "FreeNAS",
-   "TrueNAS"
+   "TrueNAS",
+   "SDG9",
+   "SDG12",
+   "SDG17"
   ],
   "landing": "https://www.truenas.com",
   "license": "BSD",
+  "merged_count": 2,
   "name": "TrueNAS",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -132661,6 +132644,10 @@
   "short_desc": "Operating system for NAS network storage servers.",
   "sill_id": 410,
   "source": "FR/sill",
+  "sources": [
+   "FR/sill",
+   "GLOBAL/dpg"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -132669,49 +132656,6 @@
   ],
   "version": "25.10.4",
   "wikidata": "Q1328132"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://www.digitalpublicgoods.net/r/truenas",
-    "name": "TrueNAS",
-    "repo_url": "https://github.com/truenas/linux",
-    "source": "GLOBAL/dpg"
-   }
-  ],
-  "country": "GLOBAL",
-  "desc_lang": "en",
-  "dpg": true,
-  "dpg_type": [
-   "Open Software"
-  ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/truenas",
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": true,
-  "keywords": [
-   "SDG9",
-   "SDG12",
-   "SDG17"
-  ],
-  "landing": "https://www.truenas.com",
-  "license": "BSD-3-Clause",
-  "name": "TrueNAS",
-  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "repo": "https://github.com/truenas/linux",
-  "repo_key": "github.com/truenas/linux",
-  "repo_owner": "TrueNAS",
-  "sdgs": [
-   "SDG9: Industry\u00b8 Innovation and Infrastructure",
-   "SDG12: Responsible Consumption and Production",
-   "SDG17: Partnerships for the Goals"
-  ],
-  "short_desc": "TrueNAS is the world's most deployed storage software with millions of users, including the majority of F500 companies, delivering resilient and fully-capable unified storage for even the most mission-critical data.",
-  "source": "GLOBAL/dpg",
-  "tier": "index",
-  "upstream_id": "GID0090259"
  },
  {
   "catalogue_count": 1,
@@ -133918,7 +133862,9 @@
   "repo_key": null,
   "short_desc": "UMLet is an open-source UML tool with a simple user interface for drawing UML diagrams, creating sequence and activity diagrams from plain text, etc. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q956141",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -135900,7 +135846,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "uv is an extremely fast Python package and project manager, written in Rust. It provides essential features for Python development \u2014 from installing Python and hacking on simple scripts to working on large projects that support multiple Python versions and platforms.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q131743502",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -135975,7 +135923,9 @@
    "Vietnam",
    "Yemen",
    "Zimbabwe"
-  ]
+  ],
+  "wikidata": "Q136891178",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -138660,38 +138610,6 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://opensource.muenchen.de/software/vscode.html",
-    "name": "Visual Studio Code",
-    "repo_url": null,
-    "source": "DE/opensource.muenchen.de"
-   }
-  ],
-  "country": "DE",
-  "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/vscode.html",
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": true,
-  "gov_tier": "municipal",
-  "keywords": [
-   "development"
-  ],
-  "landing": "https://code.visualstudio.com/",
-  "name": "Visual Studio Code",
-  "note": "in production use at the City of Munich",
-  "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
-  "repo_owner": "Microsoft",
-  "short_desc": "Visual Studio Code is an integrated development environment (IDE) and enables syntax highlighting, code folding, debugging, auto-completion and version management, among other features. ---",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
     "entry_url": null,
     "name": "Visual Studio Code",
     "repo_url": "https://code.visualstudio.com",
@@ -138717,14 +138635,24 @@
   ]
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Visual%20Studio%20Code",
     "name": "Visual Studio Code",
     "repo_url": "https://github.com/microsoft/vscode",
     "source": "FR/sill"
+   },
+   {
+    "entry_url": "https://opensource.muenchen.de/software/vscode.html",
+    "name": "Visual Studio Code",
+    "repo_url": null,
+    "source": "DE/opensource.muenchen.de"
    }
+  ],
+  "countries": [
+   "DE",
+   "FR"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -138744,10 +138672,12 @@
    "EDI",
    "integrated development environment",
    "IDE",
-   ""
+   "",
+   "development"
   ],
   "landing": "https://code.visualstudio.com",
   "license": "MIT licence",
+  "merged_count": 2,
   "name": "Visual Studio Code",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -138756,6 +138686,10 @@
   "short_desc": "Free cross-platform code editor developed by Microsoft.",
   "sill_id": 637,
   "source": "FR/sill",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -139120,7 +139054,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "515826f2-7418-4ad8-81aa-ccc5cd278b98",
-  "version": "15.1.1"
+  "version": "15.1.1",
+  "wikidata": "Q140431709",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -139453,8 +139389,14 @@
   "version": "20.04"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
+   {
+    "entry_url": "https://code.gouv.fr/sill/detail?name=Vue.js",
+    "name": "Vue.js",
+    "repo_url": "https://github.com/vuejs",
+    "source": "FR/sill"
+   },
    {
     "entry_url": "https://opensource.muenchen.de/software/vuejs.html",
     "name": "Vue.js",
@@ -139462,39 +139404,9 @@
     "source": "DE/opensource.muenchen.de"
    }
   ],
-  "country": "DE",
-  "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/vuejs.html",
-  "functions": [
-   "crm-service"
-  ],
-  "functions_inferred": true,
-  "gov_tier": "municipal",
-  "keywords": [
-   "development",
-   "sponsor",
-   "devstack"
-  ],
-  "landing": "https://vuejs.org",
-  "license": "MIT",
-  "name": "Vue.js",
-  "note": "in production use at the City of Munich",
-  "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
-  "short_desc": "Vue.js is a client-side JavaScript web framework for building single-page web applications following the MVVM pattern, but it can also be used in multipage web pages for single sections.",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=Vue.js",
-    "name": "Vue.js",
-    "repo_url": "https://github.com/vuejs",
-    "source": "FR/sill"
-   }
+  "countries": [
+   "DE",
+   "FR"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -139502,17 +139414,22 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Vue.js",
   "functions": [
-   "dev-tools"
+   "dev-tools",
+   "crm-service"
   ],
   "functions_inferred": true,
   "keywords": [
    "js",
    "frontend",
    "webapp",
-   "laravel"
+   "laravel",
+   "development",
+   "sponsor",
+   "devstack"
   ],
   "landing": "https://vuejs.org/",
   "license": "MIT licence",
+  "merged_count": 2,
   "name": "Vue.js",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -139521,6 +139438,10 @@
   "short_desc": "JavaScript framework.",
   "sill_id": 502,
   "source": "FR/sill",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -139563,7 +139484,9 @@
   "repo_key": null,
   "short_desc": "Vuetify is a UI library for Vue components in Material Design. In the reference architecture, Vuetify is used for almost all custom development.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q112943923",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -141193,7 +141116,9 @@
   "short_desc": "Wikidata is Wikimedia's open community-curated knowledge graph. It acts as central storage for the structured data of its Wikimedia sister projects, including Wikipedia, Wikivoyage, Wiktionary, Wikisource, and others.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092714"
+  "upstream_id": "GID0092714",
+  "wikidata": "Q2013",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -141345,7 +141270,9 @@
   "upstream_id": "GID0091415",
   "used_by": [
    "Germany"
-  ]
+  ],
+  "wikidata": "Q115910233",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -142957,7 +142884,9 @@
    "GLOBAL/dpg"
   ],
   "tier": "index",
-  "upstream_id": "GID0090125"
+  "upstream_id": "GID0090125",
+  "wikidata": "Q12379285",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -143365,7 +143294,9 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e43559c5-f7db-4123-bd3a-31294d9461dd",
-  "version": "v4.3.2"
+  "version": "v4.3.2",
+  "wikidata": "Q107381204",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -144113,7 +144044,9 @@
    "Germany",
    "United Kingdom",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q115688411",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 3,
@@ -145719,7 +145652,9 @@
   "short_desc": "The Taichung City open data platform gathers open data and geospatial imagery from every city agency. Its front-end source code is published as public code, as a reference for industry, government and academia.",
   "source": "TW/code.gov.tw",
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q97097415",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
