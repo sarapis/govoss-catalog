@@ -35,8 +35,37 @@ UNKNOWN = {403, 429, 500, 502, 503, 504}   # tells us nothing; never treat as de
 
 
 def gh_token():
+    """GITHUB_TOKEN, then a chmod-600 file, then `gh auth token`.
+
+    Shared: enrich_desc.py imports this rather than carrying a second copy. It
+    read GITHUB_TOKEN alone until 2026-08-14, which is never set under launchd,
+    so every scheduled run got 60 requests/hour against 251 candidates — about
+    31 weeks to converge, while this module had been resolving a token via `gh`
+    the whole time. Verified under a launchd-like environment rather than
+    assumed (`env -i PATH=<plist PATH> HOME=$HOME gh auth token`): exit 0, and
+    the core limit goes 60 -> 5000/hour. The plist already puts /opt/homebrew/bin
+    first so that this works.
+
+    The FILE tier mirrors run.sh's Vercel token precedence, for anyone who would
+    rather not hand these jobs a token carrying `repo` and `workflow` scopes: an
+    unscoped PAT in ~/.config/govoss/github-token still gets 5,000/hour for
+    public data. NOT the plist — LaunchAgent plists are world-readable
+    (-rw-r--r--) and get swept into backups, which is exactly why run.sh reads
+    the Vercel token from a file instead.
+
+    Best effort: any failure returns None and the caller degrades rather than
+    failing a gated run.
+    """
     if os.environ.get("GITHUB_TOKEN"):
         return os.environ["GITHUB_TOKEN"]
+    path = os.environ.get("GITHUB_TOKEN_FILE") or os.path.expanduser(
+        "~/.config/govoss/github-token")
+    try:
+        with open(path) as fh:
+            if (t := fh.read().strip()):
+                return t
+    except OSError:
+        pass
     try:
         t = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, timeout=15)
         return t.stdout.strip() or None

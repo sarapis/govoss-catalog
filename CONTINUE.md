@@ -66,11 +66,19 @@ Expect, and do NOT treat as faults:
    visual change, Phase 2 adds a `databook` variant to the token package. Give it to a
    Databook-focused session; it is written to be executed cold.
 
-3. **`enrich_desc.py` is rate-limited to ~8 entries per run.** No `GITHUB_TOKEN` in the
-   LaunchAgent, so it gets 60 unauthenticated requests/hour against 251 candidates — ~31
-   weeks. It caches and resumes, so it converges, but a PAT **with no scopes at all** added to
-   `schedule/*.plist.template` would finish it in one run. Not done because it needs a
-   credential decision.
+3. ~~**`enrich_desc.py` is rate-limited to ~8 entries per run.**~~ **Fixed 2026-08-14, and it
+   needed no credential at all.** The step read `GITHUB_TOKEN` alone — never set under
+   launchd — while `liveness.py` had been resolving one via `gh auth token` the whole time.
+   `enrich_desc` now imports `liveness.gh_token()`; verified under a launchd-like environment
+   (`env -i PATH=<plist PATH> HOME=$HOME`), the core limit goes **60 → 5,000/hour**, so the
+   251-entry backlog should clear in the first run rather than ~31 weeks.
+   ⚠ **The earlier advice here was wrong twice.** It is not blocked on a credential, and the
+   plist is the wrong home for one regardless: LaunchAgent plists are world-readable
+   (`-rw-r--r--`) and get swept into backups, which is precisely why `run.sh` reads the Vercel
+   token from a chmod-600 file. `gh_token()` now takes `GITHUB_TOKEN`, then
+   `~/.config/govoss/github-token`, then `gh` — so an unscoped PAT is available as a
+   least-privilege option (the `gh` token carries `repo` and `workflow`), but it is optional.
+   **Confirm on the first run** that `enrich desc` reports filling hundreds, not ~8.
 
 4. **Screen-reader testing has never been done.** The audits are automated contrast sweeps
    plus keyboard. VoiceOver/NVDA against the catalog page is the honest next step, and until

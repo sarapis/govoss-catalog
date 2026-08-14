@@ -36,6 +36,23 @@ CTX = ssl.create_default_context(cafile=certifi.where())
 _h = importlib.util.spec_from_file_location("harvest", f"{OUT}/harvest.py")
 
 
+def _gh_token():
+    """liveness.gh_token(): GITHUB_TOKEN, then a chmod-600 file, then `gh`.
+
+    Imported, not copied. This step read GITHUB_TOKEN alone until 2026-08-14 —
+    never set under launchd — so every scheduled run got 60 requests/hour
+    against 251 candidates, about 31 weeks to converge, while liveness.py had
+    been resolving a token via `gh` the whole time. Two copies of a rule are two
+    rules; that is why sources.py and theme.py exist.
+
+    Safe to import: liveness.py guards its entry point with __name__, so nothing
+    runs. (harvest.py does NOT, which is why detect_lang below is loaded through
+    importlib instead — the two are not interchangeable.)
+    """
+    import liveness
+    return liveness.gh_token()
+
+
 def _detect_lang(text):
     """harvest.detect_lang, loaded lazily: importing harvest executes its module
     body, so only pay that if there is something to detect."""
@@ -73,11 +90,12 @@ def main():
           f"{len(want)} not yet cached")
 
     hdr = {"User-Agent": "govoss-catalog/0.2", "Accept": "application/vnd.github+json"}
-    tok = os.environ.get("GITHUB_TOKEN")
+    tok = _gh_token()
     if tok:
         hdr["Authorization"] = "Bearer " + tok
     else:
-        print("   no GITHUB_TOKEN — capped at 60 requests/hour, will fill what it can")
+        print("   no GitHub token (GITHUB_TOKEN / ~/.config/govoss/github-token / "
+              "gh auth token) — capped at 60 requests/hour, will fill what it can")
 
     asked = stopped = 0
     for s in want:
