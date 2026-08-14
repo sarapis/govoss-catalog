@@ -306,7 +306,7 @@ BODY = """
     <div class="sechead"><h3>Licence and citation</h3></div>
     <hr class="dashed">
     <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
-      <p style="font-size:14px;color:var(--ink-600);line-height:1.6;max-width:70ch">
+      <p style="font-size:14px;color:var(--ink-600);line-height:1.6">
         The compilation is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
         4.0</a> and the pipeline code is <a
         href="https://github.com/sarapis/govoss-catalog/blob/main/LICENSE">MIT</a>. The

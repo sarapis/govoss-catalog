@@ -175,7 +175,11 @@ PAGE_CSS = """
 .stamp svg{width:12px;height:12px;}
 
 .more{display:block;width:100%;margin-top:16px;}
-.note{font-size:12px;color:var(--ink-faint);line-height:1.6;margin-top:14px;max-width:70ch;}
+/* Prose here is FULL WIDTH by decision (2026-08-14). The 65-75ch measure rule is
+   real, but these blocks sit directly beneath full-width tables and card lists,
+   and a 530px column under a 1345px list reads as a layout mistake rather than as
+   a considered line length. Owner call; revert by restoring a max-width in ch. */
+.note{font-size:12px;color:var(--ink-faint);line-height:1.6;margin-top:14px;}
 .empty{padding:40px 20px;text-align:center;color:var(--ink-600);}
 
 /* ---- submit block ---- */
@@ -309,7 +313,7 @@ BODY = """
   <div class="submit" id="submit">
     <p class="overline">Get involved</p>
     <h3>Are we missing a catalog?</h3>
-    <p style="color:var(--ink-600);max-width:60ch">If your government publishes an open source
+    <p style="color:var(--ink-600)">If your government publishes an open source
       register, or you know one that is not listed, open an issue and it will be assessed
       against the same first-hand rule as the __N_SOURCES__ already here.</p>
     <a class="btn btn-primary" href="https://github.com/sarapis/govoss-catalog/issues/new">Submit a catalog</a>

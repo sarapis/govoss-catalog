@@ -440,7 +440,8 @@ p{margin:0;}
 /* A SENTENCE, not a chip row. This was display:flex with a gap, which made
    every text node and link its own flex item - so the punctuation detached and
    "MIT" wrapped onto a line by itself. Prose gets prose layout. */
-.foot .legal{font-size:12px;line-height:1.6;color:var(--ink-600);max-width:62ch;}
+/* Full width by decision (2026-08-14) — see the note in _ui_template.py. */
+.foot .legal{font-size:12px;line-height:1.6;color:var(--ink-600);}
 .foot .pub{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
 .sds-logo{align-items:center;gap:.625rem;display:inline-flex;text-decoration:none;
   color:var(--ink);}

@@ -202,8 +202,8 @@ PAGE_CSS = """
 .sec{margin-top:40px;}
 .sechead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
   gap:8px 20px;padding-bottom:10px;}
-.lede{font-size:15px;line-height:1.6;color:var(--ink-600);max-width:72ch;}
-.note{font-size:13px;line-height:1.6;color:var(--ink-faint);max-width:72ch;margin-top:10px;}
+.lede{font-size:15px;line-height:1.6;color:var(--ink-600);}
+.note{font-size:13px;line-height:1.6;color:var(--ink-faint);margin-top:10px;}
 .pctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px;}
 #pq{flex:1 1 260px;max-width:360px;}
 .pcount{font-size:13px;color:var(--ink-600);margin-top:12px;}
