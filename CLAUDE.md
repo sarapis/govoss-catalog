@@ -670,9 +670,11 @@ the property that rule protects. What it buys is not touching ~250 `var()` call 
 Python template strings, where a missed one fails silently.
 
 ⚠ **The alias map is by ROLE and MEASURED CONTRAST, never by name.** Two family semantics
-cannot be used where their names suggest: `--wg-text-muted` is **3.00:1** and `--wg-accent`
-**3.26:1**, and govoss uses those roles 24 and 26 times as text. Mapping them naively would
-have broken the floor in 50 places. Both are fine as fills; they are not text colours here.
+cannot be used where their names suggest: `--wg-text-muted` is **2.90:1** and `--wg-accent`
+**3.15:1** on the page ground, and govoss uses those roles 24 and 26 times as text. Mapping
+them naively would have broken the floor in 50 places. Both are fine as fills; they are not
+text colours here. (Recomputed 2026-08-14 — these read 3.00 and 3.26 until then. The real
+values are worse, so the conclusion held, but recompute rather than copy.)
 
 **The brand variant must be APPLIED, not merely present.** `theme.assert_variant_live()` runs
 on every build and checks the ROOT TAG. This system has already shipped a dead variant once

@@ -169,8 +169,13 @@ def _vendored_tokens():
 # Two family semantics CANNOT be used where their names suggest, because govoss
 # holds a 5.17:1 floor from its WCAG 2.1 AA audit and they fail it as text:
 #
-#     --wg-text-muted   3.00:1  <- govoss's tertiary tier is used 24x as TEXT
-#     --wg-accent       3.26:1  <- govoss's --primary is used 26x, incl. links
+#     --wg-text-muted   2.90:1  <- govoss's tertiary tier is used 24x as TEXT
+#     --wg-accent       3.15:1  <- govoss's --primary is used 26x, incl. links
+#
+# (Recomputed 2026-08-14 from the vendored CSS against the page ground #FBFBFB.
+# These read 3.00 and 3.26 before; the real values are worse, not better, so the
+# conclusion stood - but recompute rather than copy. The 5.13/13.15/8.69/5.31
+# figures below all verified exact.)
 #
 # Mapping those naively would have broken the floor in 50 places. Both are fine
 # for fills and non-text marks; they are simply not text colours here.
