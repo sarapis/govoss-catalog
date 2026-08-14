@@ -23,9 +23,6 @@ _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_templat
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 _mt = importlib.util.spec_from_file_location("mcp_tools", f"{OUT}/mcp_tools.py")
 M = importlib.util.module_from_spec(_mt); _mt.loader.exec_module(M)
-_cn = importlib.util.spec_from_file_location("ctfg_nav", f"{OUT}/ctfg_nav.py")
-ctfg_nav = importlib.util.module_from_spec(_cn); _cn.loader.exec_module(ctfg_nav)
-NAV = ctfg_nav.load()
 
 
 def esc(s):
@@ -154,7 +151,7 @@ def build():
         "JSON - no key, no rate limit, no pagination - plus an MCP server."
         % "{:,}".format(len(entries)))
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar(NAV) + theme.topbar("api") + BODY + theme.footer(NAV))
+        + theme.utility_bar() + theme.topbar("api") + BODY + theme.footer())
 
     for k, v in subs.items():
         page = page.replace(k, v)
@@ -162,6 +159,8 @@ def build():
     left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", page)))
     if left:
         raise SystemExit("build_api: unsubstituted placeholders %s" % left)
+
+    theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
     open(f"{SITE}/api.html", "w").write(page)
@@ -181,7 +180,9 @@ PAGE_CSS = """
   border-radius:var(--r-card);padding:16px;display:flex;flex-direction:column;gap:8px;}
 .e-h{display:flex;align-items:center;gap:8px;}
 .get{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.1em;
-  background:var(--primary-tint);color:var(--primary);padding:3px 7px;
+  /* --primary-deep (navy), not --primary: accent-on-tint is 4.9:1 at 10px.
+     Navy on the same ground is 12.55:1 and the tint still reads as a chip. */
+  background:var(--primary-tint);color:var(--primary-deep);padding:3px 7px;
   border-radius:var(--r-chip);}
 .e-p{font-size:14px;font-weight:600;color:var(--primary);text-decoration:none;}
 .e-p:hover{text-decoration:underline;}
@@ -223,7 +224,10 @@ PAGE_CSS = """
   letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
 /* ink on green, not white on green - white is 2.65:1 against #01B583. Same
    pairing and same fix as the "Recommended" stamp. */
-.qcard.do .qtag{background:var(--green);color:var(--on-green);}
+/* --green-text, not --green: white on the mid green is 4.62:1, legal at AA but
+   under the 5.17:1 floor this project holds. On the dark tone it is 9.33:1.
+   Same fix as .stamp.rec in _ui_template.py. */
+.qcard.do .qtag{background:var(--green-text);color:var(--white);}
 .qcard.dont .qtag{background:var(--ink-900);color:var(--paper-50);}
 .qcard h4{font-family:var(--font-display);font-size:15px;margin:0;}
 .qcard p{font-size:13px;color:var(--ink-600);line-height:1.5;text-wrap:pretty;}

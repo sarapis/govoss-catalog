@@ -35,9 +35,6 @@ _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_templat
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 _tx = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
 TAX = importlib.util.module_from_spec(_tx); _tx.loader.exec_module(TAX)
-_cn = importlib.util.spec_from_file_location("ctfg_nav", f"{OUT}/ctfg_nav.py")
-ctfg_nav = importlib.util.module_from_spec(_cn); _cn.loader.exec_module(ctfg_nav)
-NAV = ctfg_nav.load()
 
 
 def esc(s):
@@ -157,13 +154,15 @@ def build():
         "%s proprietary products governments buy, %s of them with a government "
         "open source alternative, filterable by function." % (len(names), n_alt))
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar(NAV) + theme.topbar("") + BODY + theme.footer(NAV))
+        + theme.utility_bar() + theme.topbar("") + BODY + theme.footer())
 
     for k, v in subs.items():
         page = page.replace(k, v)
     left = sorted(set(re.findall(r"__[A-Z_]{3,}__", page)))
     if left:
         raise SystemExit("build_products: unsubstituted placeholders %s" % left)
+
+    theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
     open(f"{SITE}/products.html", "w").write(page)

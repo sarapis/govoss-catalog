@@ -4,7 +4,9 @@ Where the work stands as of 2026-08-12, and what is worth doing next. Doubles as
 continuation brief: written to be handed to whoever — or whatever — picks this up cold.
 
 **Read `CLAUDE.md` first.** It is the operating manual. `README.md` has the overview,
-`DESIGN-BRIEF.md` the design system as built, `UPSTREAM-CTFG.md` the design-system exchange.
+`DESIGN-BRIEF.md` the design system as built. **govoss moved off the CTFG design system
+onto `@wegovnyc/design-tokens` (`govoss` variant) on 2026-08-13** — `UPSTREAM-CTFG.md` and
+`CTFG-CONTRAST-REPORT.md` are now historical record, not live guidance.
 Don't re-litigate decisions recorded there — particularly the deliberate exclusions.
 
 State: **2,753 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
@@ -22,7 +24,8 @@ State: **2,753 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh`
 - **Three pages restyled** on the CTFG design system: catalog, sources+status merged, and a new
   `/api.html`. `build_status.py` retired; `/status.json` still written.
 - **An MCP server** at `govoss-mcp.devin-31f.workers.dev` — public, keyless, five tools.
-- **WCAG 2.1 AA audited**: 10 issues found and fixed, lowest ratio now 5.17:1.
+- **WCAG 2.1 AA audited**: 10 issues found and fixed; re-audited 2026-08-13 after the
+  design-system move — zero failures, lowest ratio 4.9:1.
 - **Design tokens vendored** at `vendor/ctfg/` v2.0.0 rather than transcribed. Three defects
   reported upstream were fixed there, so our local patch is deleted.
 

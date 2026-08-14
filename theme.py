@@ -21,9 +21,16 @@ does not re-scan the contents for braces.
 
 DESIGN AUTHORITY
 ----------------
-Values come from the Civic Tech Field Guide design system supplied in the
-restyle handoff. Do not invent colours, type or shadows outside these tokens.
-Light-only by decision — see LIGHT-ONLY below.
+Values come from `@wegovnyc/design-tokens`, vendored in vendor/wegovnyc/ and
+applied through the `govoss` brand variant. Do not invent colours, type or
+shadows outside these tokens. Light-only by decision — see LIGHT-ONLY below.
+
+govoss ran on the Civic Tech Field Guide design system until 2026-08-13, when it
+moved onto the shared Sarapis system by owner decision. CTFG remains a consumer
+of this catalogue's data; it is no longer the brand, so its utility bar, mark
+and CMS-fed footer columns are gone. DESIGN-BRIEF.md and UPSTREAM-CTFG.md are
+kept as the historical record of that relationship — including three defects we
+reported that CTFG fixed in its v2.0.0.
 """
 import os
 import re
@@ -115,100 +122,206 @@ FONT_FACE_CSS = "\n".join(_face(*x) for x in _FACES)
 # --------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------
-# Tokens. VENDORED from the Civic Tech Field Guide design system, not
-# transcribed.
+# Tokens. VENDORED from @wegovnyc/design-tokens, not transcribed.
 #
 # theme.py used to re-declare every hex by hand. That put a copy of somebody
 # else's values in our repo with no link back to them - the exact drift this
 # module exists to prevent between our three builders, reintroduced one level up
-# at the boundary we do not control. The token files now live in vendor/ctfg/
-# and are inlined at build time, so an upstream fix arrives as a file drop
-# instead of another round of retyping.
+# at the boundary we do not control. The token files now live in
+# vendor/wegovnyc/ and are inlined at build time, so an upstream fix arrives as
+# a file drop instead of another round of retyping.
 #
-# Vendored: colors, typography, spacing, effects. NOT vendored: styles.css (its
-# only non-@import line loads Google Fonts), tokens/fonts.css (@font-face from a
-# CDN) and tokens/interactions.css (rules for .ctfg-* classes we never stamp).
-# See vendor/ctfg/README.md.
+# Vendored: core.css (reference palette + ~90 --wg-* semantics) and
+# variant-govoss.css (govoss's remap). NOT vendored: the other products'
+# variants, index.css (loads every variant; govoss renders one), and the Node
+# lint. See vendor/wegovnyc/README.md.
 #
 # LIGHT-ONLY, by decision. The DS tokens are light-only already. Because of that
 # `body` MUST paint its own background explicitly - a page with a transparent
 # body borrows whatever ground the host paints.
 # --------------------------------------------------------------------------
 
-_VENDOR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor", "ctfg")
-_DS_FILES = ("colors.css", "typography.css", "spacing.css", "effects.css")
+_VENDOR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor", "wegovnyc")
+_DS_FILES = ("core.css", "variant-govoss.css")
 
 
 def _vendored_tokens():
     parts = []
     for name in _DS_FILES:
         with open(os.path.join(_VENDOR, name)) as fh:
-            parts.append("/* ---- vendored from ctfg design system: %s ---- */\n%s"
+            parts.append("/* ---- vendored from @wegovnyc/design-tokens: %s ---- */\n%s"
                          % (name, fh.read()))
     return "\n".join(parts)
 
 
 # Everything below is OURS, applied after the vendored tokens so it wins.
-# Two kinds, and the distinction matters when taking an upstream update:
 #
-#   PATCH      - fixes a defect upstream still has. DELETE when they ship the
-#                fix; tracked in CTFG-CONTRAST-REPORT.md.
-#   DIVERGENCE - a deliberate difference that should survive any update.
+# THIS IS AN ALIAS LAYER, and that is a deliberate divergence from how wegov.nyc
+# and UNNYC consume the package. They migrated every rule to read `--wg-*`
+# directly and deleted their alias layers (see KI wegovnyc-design-system), for a
+# good reason: an alias that carries its own VALUE is unreachable by the variant
+# system. These aliases carry no values - every one resolves to a `--wg-*`
+# semantic - so a variant remap still propagates, which is the property that
+# rule protects. What it buys is not touching ~250 `var(--x)` call sites spread
+# across Python template strings, where a missed one fails silently.
+#
+# ⚠ THE MAPPING IS BY ROLE AND BY MEASURED CONTRAST, NOT BY NAME OR BY EYE.
+# Two family semantics CANNOT be used where their names suggest, because govoss
+# holds a 5.17:1 floor from its WCAG 2.1 AA audit and they fail it as text:
+#
+#     --wg-text-muted   3.00:1  <- govoss's tertiary tier is used 24x as TEXT
+#     --wg-accent       3.26:1  <- govoss's --primary is used 26x, incl. links
+#
+# Mapping those naively would have broken the floor in 50 places. Both are fine
+# for fills and non-text marks; they are simply not text colours here.
 OVERRIDES_CSS = """
 :root{
-  /* The --ink-faint PATCH that used to sit here is GONE, deleted on adopting
-     tokens v2.0.0: colors.css now points --ink-faint at --ink-500 itself. A
-     patch that merely restates upstream is not harmless - it reads as a
-     divergence to the next person and outlives the reason for it.
+  /* ---- text tiers. Measured on the govoss page ground (#FBFBFB) ------------
+     govoss carries THREE passing tiers; the family ships two plus a muted tier
+     that fails. The mid tier borrows --wg-brand-light, which lands within
+     0.2 of the value it replaces. Outgoing -> incoming:
+       primary    17.4 -> 13.15   (--wg-text, navy rather than near-black)
+       secondary   8.20 ->  8.69  (--wg-brand-light)
+       tertiary    5.17 ->  5.31  (--wg-text-secondary) - slightly BETTER */
+  --ink:        var(--wg-text);
+  --ink-900:    var(--wg-text);
+  --ink-800:    var(--wg-text);
+  --ink-600:    var(--wg-brand-light);
+  --ink-soft:   var(--wg-brand-light);
+  --ink-500:    var(--wg-text-secondary);
+  --ink-faint:  var(--wg-text-secondary);
+  --ink-400:    var(--wg-border);        /* NON-TEXT ONLY, as upstream had it */
 
-     v2.0.0 also moved --ink-soft from ink-500 to ink-600, which its release
-     notes flag as required-but-visually-unreviewed because it darkens every
-     secondary string. It is a NO-OP here: we never colour anything with
-     --ink-soft. Checked, not assumed. */
+  /* ---- surfaces ---------------------------------------------------------- */
+  --white:      var(--wg-text-inverse);
+  --surface:    var(--wg-surface);
+  --bg:         var(--wg-surface-warm);  /* the variant makes this cool #FBFBFB */
+  --paper-50:   var(--wg-surface-warm);
+  --bg-alt:     var(--wg-surface-band);
+  --paper-100:  var(--wg-surface-band);
+  --border:     var(--wg-border);
+  --border-soft:var(--wg-border);
+  --line-300:   var(--wg-border);
+  --line-200:   var(--wg-border);
 
-  /* DIVERGENCE - fonts. The DS families are correct but its stacks are thin
-     ('Space Grotesk', sans-serif) and its mono reaches for Cascadia Code, which
-     the DS loads from a CDN. We self-host woff2 and serve same-origin, so these
-     carry full fallbacks and no CDN face. Keep across updates - v2.0.0's VERSION
-     file now records this under "Sanctioned divergences", so it is agreed
-     upstream rather than merely tolerated here. */
-  --font-display:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  /* ---- accent. --primary is govoss's link and emphasis colour and IS used as
+     text, so it takes --wg-accent-strong (5.13:1), not --wg-accent (3.15:1).
+     The brights stay reachable for fills via --primary-tint / --primary-lt. */
+  --primary:      var(--wg-accent-strong);
+  --primary-deep: var(--wg-brand);
+  --primary-lt:   var(--wg-accent);
+  --primary-lter: var(--wg-accent-soft);
+  /* NOT --wg-accent-soft: that is un-blue-LIGHT (#7BB4E8), a mid blue, where
+     govoss uses this token as a PALE ground behind accent text. Measured
+     2.41:1 on the products toggle - a hard AA failure the audit caught. The
+     pale navy band is the family's actual "tinted ground" token. */
+  --primary-tint: var(--wg-surface-band);
+  --link:         var(--wg-accent-strong);
+  --link-hover:   var(--wg-brand);
+
+  /* ---- the "verified"/recommended seal. --green is a FILL, --green-text is
+     the text form; upstream drew that distinction and it survives here. */
+  --green:      var(--wg-success);
+  --green-text: var(--wg-success-text);
+  --green-line: var(--wg-success-text);
+  --on-green:   var(--wg-text-inverse);
+  --verified:   var(--wg-success);
+  --mint:       var(--wg-success-surface);
+  --mint-100:   var(--wg-success-surface);
+  --mint-300:   var(--wg-success-surface);
+
+  /* ---- elevation. The hard-offset shadow (2px 2px 0) was the CTFG signature
+     and goes with it; the family's is a soft ramp. This is the single most
+     visible change on the page and it is intended, not incidental. */
+  --shadow-ink:  var(--wg-brand-deep);
+  --shadow-bar:  var(--wg-shadow-sm);
+  --shadow-pill: var(--wg-shadow-sm);
+  --shadow-green:var(--wg-shadow-sm);
+  --shadow-soft: var(--wg-shadow-md);
+  --divider:     1px dashed var(--wg-border);
+
+  /* ---- radii: aliases onto the family scale, so a change upstream lands. */
+  --r-chip:var(--wg-radius-sm); --r-med:var(--wg-radius-md);
+  --r-card:var(--wg-radius-lg); --r-table:var(--wg-radius-xl);
+  --r-pill:var(--wg-radius-pill);
+
+  /* ---- type. The package names families but ships no @font-face; govoss
+     self-hosts nine woff2 same-origin because a Google Fonts request is a live
+     GDPR objection for European public-sector readers. --wg-font-display is
+     remapped to Space Grotesk in variant-govoss.css for the same reason. */
+  --font-display:var(--wg-font-display);
+  --font-body:var(--wg-font-body);
   --font-ui:'Archivo',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --font-body:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
 
-  /* OURS - not a DS token. The Sarapis wordmark face, matching
+  /* OURS - not a package token. The Sarapis wordmark face, matching
      next.sarapis.org's --sds-font-logo. */
   --font-logo:'Marcellus',Georgia,'Times New Roman',serif;
-
-  /* OURS - shorter aliases onto the DS radius scale. Aliases, not values, so a
-     radius change upstream still propagates. */
-  --r-chip:var(--radius-sm); --r-med:var(--radius-md); --r-card:var(--radius-lg);
-  --r-table:var(--radius-2xl); --r-pill:var(--radius-pill);
 }
 """
 
 def tokens_version():
-    """The vendored token release, read from the files themselves.
+    """The vendored package release, read from vendor/wegovnyc/README.md.
 
-    v2.0.0 stamps every file in the set with the same v-string, and the version
-    is system-wide rather than per-file - so all four agreeing is the check that
-    the vendored set is a clean copy rather than a mix of two releases. It also
-    exposes --ctfg-tokens-version as a custom property, so the same value is
-    readable at runtime on any built page.
+    The package's CSS files carry no version string of their own - unlike the
+    CTFG set this replaced, where every file stamped the same v-string and all
+    four agreeing WAS the check. So the README carries it, written by whoever
+    copies the files, and the commit is recorded beside it. That is weaker: it
+    is an assertion by the copier rather than a property of the copy. It is
+    still worth having, because it makes "which release is this?" answerable
+    without diffing against the package repo.
+
+    --wg-brand-id is the runtime check that survives regardless: it resolves to
+    "govoss" only if the variant file is present and applied.
     """
-    seen = set()
-    for name in _DS_FILES:
-        with open(os.path.join(_VENDOR, name)) as fh:
-            m = re.search(r"(\d+\.\d+\.\d+)", fh.read()[:600])
-            seen.add(m.group(1) if m else "unversioned")
-    if len(seen) != 1:
-        raise SystemExit("vendor/ctfg: mixed token versions %s - the set is a bad copy" % sorted(seen))
-    return seen.pop()
+    readme = os.path.join(_VENDOR, "README.md")
+    with open(readme) as fh:
+        m = re.search(r"v(\d+\.\d+\.\d+)", fh.read()[:400])
+    if not m:
+        raise SystemExit("vendor/wegovnyc/README.md: no version stamp - "
+                         "record the release that was copied")
+    return m.group(1)
 
 
 TOKENS_VERSION = tokens_version()
 TOKENS_CSS = _vendored_tokens() + OVERRIDES_CSS
+
+
+def assert_variant_live(html):
+    """The brand variant must actually be APPLIED, not merely present.
+
+    This is the one failure mode the design system has already had once, on
+    wegov.nyc: `wegov-theme-civic.css` and `wegov-theme-tool.css` existed, were
+    never imported and never applied to any subtree, so every semantic silently
+    resolved to the wrong brand's values for months (KI wegovnyc-design-system,
+    "the variant mechanism was dead code").
+
+    govoss would fail differently and more visibly: variant-govoss.css is what
+    remaps --wg-font-display to the self-hosted Space Grotesk, so an unapplied
+    variant falls back to the family's 'DM Serif Display' - a face this repo
+    deliberately does not ship, because a Google Fonts request is a GDPR
+    objection for its readers. The page would silently render in Georgia.
+
+    Cheap, deterministic, and it runs on every build.
+
+    ⚠ MUST match the ROOT TAG, not a substring of the page. The first version of
+    this check did `'data-brand="govoss"' not in html` and passed even with the
+    attribute deleted - because the vendored variant file's own comment contains
+    the literal text `[data-brand="govoss"]`, and that comment is inlined into
+    every page. A guard that can only pass is not a guard. Caught by deleting the
+    attribute and watching the build succeed; test guards adversarially.
+    """
+    m = re.search(r"<html\b[^>]*>", html)
+    if not m:
+        raise SystemExit("theme: no root element in the built page")
+    tag = m.group(0)
+    if "wg-govoss" not in tag and "govoss" not in tag:
+        raise SystemExit(
+            "theme: the govoss variant is not applied to the root element - "
+            "every --wg-* semantic is resolving to the family default, and the "
+            "display font falls back to a face this repo does not vendor.\n"
+            "   root tag was: " + tag)
+    return html
 
 # --------------------------------------------------------------------------
 # Base + chrome CSS shared by all three pages.
@@ -261,7 +374,7 @@ p{margin:0;}
 
 /* texture - SVG data URIs, no external images, so they port cleanly */
 .tex{position:relative;overflow:hidden;
-  background-image:radial-gradient(120% 90% at 15% 0%,var(--violet-100) 0%,transparent 55%),
+  background-image:radial-gradient(120% 90% at 15% 0%,var(--wg-accent-soft) 0%,transparent 55%),
                    radial-gradient(110% 80% at 92% 100%,var(--mint-100) 0%,transparent 60%);}
 .tex::before{content:"";position:absolute;inset:-40px;opacity:.16;pointer-events:none;
   background-image:
@@ -309,8 +422,6 @@ p{margin:0;}
 .brand .bsub{font-family:var(--font-ui);font-size:9px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--ink-600);line-height:1.15;max-width:9em;}
 .brand .bsep{width:1px;height:26px;background:var(--border);margin:0 4px;}
-.brand .bctfg{display:inline-flex;align-items:center;color:var(--ink);}
-.brand .ctfg-mark{height:28px;width:auto;display:block;}
 .nav{display:flex;align-items:center;gap:26px;}
 .nav a{font-family:var(--font-ui);font-weight:600;font-size:15px;color:var(--ink);
   text-decoration:none;}
@@ -365,41 +476,37 @@ CSS = TOKENS_CSS + BASE_CSS
 # Chrome fragments.
 # --------------------------------------------------------------------------
 
-# The utility bar is built from the Civic Tech Field Guide's own CMS, not from a
+# (The utility bar this once described is gone; see utility_bar() below.) Not from a
 # hand-copied list. ctfg_nav.py pulls Payload's `Main Menu` at build time, so
 # when CTFG edits its menu this bar follows on the next weekly run and nobody has
 # to remember this repo exists. The handoff shipped a guessed five-link set with
 # a note to confirm it; this is the confirmation.
-def utility_bar(nav):
-    items = (nav or {}).get("Main Menu") or []
-    links = "".join('<a href="%s">%s</a>' % (i["url"], _esc(i["label"])) for i in items)
-    return """
-<a class="skip" href="#main">Skip to content</a>
-<div class="ubar"><div class="wrap">
-  <div class="u-l"><span class="u-pre">Part of the</span>
-    <a class="u-ctfg" href="https://civictech.guide">Civic Tech Field Guide</a></div>
-  <div class="u-r">__LINKS__</div>
-</div></div>
-""".replace("__LINKS__", links)
+def utility_bar(nav=None):
+    """The CTFG utility strip is GONE (2026-08-13, owner decision).
+
+    govoss no longer presents as part of the Civic Tech Field Guide network, so
+    the "Part of the Civic Tech Field Guide" bar and its CMS-fed link row are
+    removed. CTFG remains a data consumer and a friend; it is simply not the
+    brand. The skip link it used to carry is kept - it is an accessibility
+    affordance, not chrome, and it must stay the first focusable element.
+
+    `nav` is accepted and ignored so the four page builders keep one call shape
+    while ctfg_nav.py is retired.
+    """
+    return '<a class="skip" href="#main">Skip to content</a>\n'
 
 
 def _esc(t):
     return (str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
-# The CTFG mark, inlined rather than <img>-referenced so it inherits currentColor
-# and needs no extra request. Extracted from the handoff's govoss lockup, which
-# built it from the mark path CTFG uses to brand a chapter site.
-CTFG_MARK = """<svg class="ctfg-mark" viewBox="0 0 50 51" role="img" aria-label="Civic Tech Field Guide" fill="currentColor"><path  d="M 16.384 0 L 23.23 0 L 23.23 15.439 C 23.23 19.9 19.648 23.528 15.243 23.528 L 0 23.528 L 0 16.594 L 11.543 16.594 L 3.311 8.257 L 8.152 3.353 L 16.384 11.691 L 16.384 0 Z M 0 26.781 L 0 33.714 L 11.543 33.714 L 3.352 42.012 L 8.193 46.915 L 16.384 38.617 L 16.384 50.309 L 23.23 50.309 L 23.23 34.87 C 23.23 30.409 19.648 26.781 15.243 26.781 L 0 26.781 Z M 49.673 23.528 L 49.673 16.594 L 38.13 16.594 L 46.321 8.296 L 41.48 3.393 L 33.289 11.691 L 33.289 0 L 26.443 0 L 26.443 15.439 C 26.443 19.9 30.026 23.528 34.43 23.528 L 49.673 23.528 Z"></path></svg>"""
-
-
 def topbar(active=""):
     """Site header. `active` is one of catalog | sources | api.
 
-    Brand order is govoss wordmark + title, THEN the CTFG mark - govoss to the
-    left of the mark, as the approved lockup has it. The govoss word is set in
-    live type rather than baked into the SVG so it matches the page's own
-    Space Grotesk and stays selectable and searchable.
+    The CTFG mark that used to sit right of the wordmark is GONE (2026-08-13):
+    govoss is not presented as a CTFG chapter any more. The lockup is now just
+    the govoss wordmark and its subtitle, set in live type so it matches the
+    page's own Space Grotesk and stays selectable and searchable.
     """
     def item(href, label, key):
         cur = ' aria-current="page"' if key == active else ""
@@ -409,15 +516,13 @@ def topbar(active=""):
   <a class="brand" href="/">
     <span class="bmark">govoss</span>
     <span class="bsub">Government<br>open source</span>
-    <span class="bsep"></span>
-    <span class="bctfg" title="Part of the Civic Tech Field Guide">__MARK__</span>
   </a>
   <nav class="nav">%s %s %s</nav>
   <div class="t-r">
     <a class="btn btn-primary" href="/#submit">Submit a catalog</a>
   </div>
 </div></header>
-""".replace("__MARK__", CTFG_MARK) % (
+""" % (
        item("/", "Catalog", "catalog"),
        item("/sources.html", "Sources", "sources"),
        item("/api.html", "API", "api"))
@@ -437,25 +542,38 @@ def topbar(active=""):
 # catalogue exists to enable. The terms are stated in words instead, each scoped
 # to what it actually covers.
 #
-# The link columns come from the SAME CTFG CMS as the utility bar, so the four
-# "Footer - <group>" menus stay in step with the rest of the network.
-def footer(nav):
-    cols = ""
-    for name, items in _footer_groups(nav):
-        links = "".join('<a href="%s">%s</a>' % (i["url"], _esc(i["label"])) for i in items)
-        cols += '<div class="col"><h4>%s</h4>%s</div>' % (_esc(name), links)
-    # govoss's own links stay first: this is a govoss page, and a reader looking
-    # for the data should not have to scan four CTFG columns to find it.
-    own = ('<div class="col"><h4>This catalogue</h4>'
-           '<a href="/">Browse entries</a>'
-           '<a href="/sources.html">Sources &amp; harvest status</a>'
-           '<a href="/api.html">API for agents</a>'
-           '<a href="/entries.json">entries.json</a>'
-           '<a href="https://github.com/sarapis/govoss-catalog">Source on GitHub</a>'
-           '</div>')
+# The four CMS-fed "Footer - <group>" columns are GONE (2026-08-13). They were
+# CTFG's network links, kept in step by fetching cms.civictech.guide at build
+# time; govoss is not part of that network any more. What replaces them is
+# govoss's own material, which is what a reader of THIS page wants anyway.
+#
+# Side effect worth having: with ctfg_nav.py retired, the build makes no network
+# request at all. A weekly unattended run can no longer be affected by a third
+# party's CMS being slow or down.
+def footer(nav=None):
+    """`nav` is accepted and ignored, so the four builders keep one call shape."""
+    cols = (
+        '<div class="col"><h4>This catalogue</h4>'
+        '<a href="/">Browse entries</a>'
+        '<a href="/products.html">Proprietary software</a>'
+        '<a href="/sources.html">Sources &amp; harvest status</a>'
+        '<a href="/api.html">API for agents</a>'
+        '</div>'
+        '<div class="col"><h4>Data</h4>'
+        '<a href="/entries.json">entries.json</a>'
+        '<a href="/by-product.json">by-product.json</a>'
+        '<a href="/meta.json">meta.json</a>'
+        '<a href="/llms.txt">llms.txt</a>'
+        '</div>'
+        '<div class="col"><h4>Project</h4>'
+        '<a href="https://github.com/sarapis/govoss-catalog">Source on GitHub</a>'
+        '<a href="https://github.com/sarapis/govoss-catalog/issues">Report a problem</a>'
+        '<a href="/sources.html#surveyed">Catalogues we rejected, and why</a>'
+        '</div>'
+    )
     return """
 <footer class="foot tex"><div class="wrap">
-  <div class="cols">__OWN____COLS__</div>
+  <div class="cols">__COLS__</div>
   <hr class="dashed" style="margin:28px 0 20px">
   <div class="pub">
     <a class="sds-logo" href="https://sarapis.org">
@@ -464,8 +582,7 @@ def footer(nav):
     </a>
     <span class="hair"></span>
     <span class="legal">
-      Published by Sarapis, in affiliation with the
-      <a href="https://civictech.guide">Civic Tech Field Guide</a>.
+      Published by Sarapis.
       Catalogue data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>;
       code <a href="https://github.com/sarapis/govoss-catalog/blob/main/LICENSE">MIT</a>.
       Individual entries remain under the terms of the government catalogue that
@@ -473,17 +590,7 @@ def footer(nav):
     </span>
   </div>
 </div></footer>
-""".replace("__OWN__", own).replace("__COLS__", cols)
-
-
-def _footer_groups(nav):
-    out = []
-    for loc, items in (nav or {}).items():
-        if not loc.lower().startswith("footer"):
-            continue
-        name = loc.replace("\u2014", "-").split("-")[-1].strip() or loc
-        out.append((name, items))
-    return out
+""".replace("__COLS__", cols)
 
 
 def head(title, description, canonical=""):
@@ -510,7 +617,7 @@ def head(title, description, canonical=""):
     GET /status.json         freshness, last run, changelog
   CORS is open. Full notes for agents: /llms.txt and /api.html
 -->
-<html lang="en">
+<html lang="en" class="wg-govoss" data-brand="govoss">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s</title>

@@ -1,5 +1,11 @@
 # Upstream exchange with the CTFG design system
 
+> ⚠ **HISTORICAL RECORD, not live guidance.** govoss moved off the Civic Tech Field Guide
+> design system on 2026-08-13 and now runs on `@wegovnyc/design-tokens` under the `govoss`
+> brand variant (`vendor/wegovnyc/`). CTFG remains a consumer of this catalogue's data — the
+> change is branding, not the relationship. This file is kept because the exchange it records
+> was real and useful: three defects reported, three fixed in CTFG's v2.0.0.
+
 The record of reporting three accessibility defects upstream and taking the fix back. Kept
 because the outcome — **we deleted our local patch instead of carrying it forever** — is the
 thing worth repeating, and because the reasoning is not recoverable from the diffs.

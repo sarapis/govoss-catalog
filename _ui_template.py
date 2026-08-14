@@ -75,10 +75,13 @@ PAGE_CSS = """
   color:var(--ink);text-align:left;padding:5px 8px;border-radius:var(--r-chip);
   transition:background-color 120ms,color 120ms;}
 .fopt:hover{background:var(--bg-alt);}
-.fopt[aria-pressed="true"]{background:var(--primary-tint);color:var(--primary);
+/* Pressed state: pale ground + NAVY text, not accent-on-tint. Accent text on
+   any ground pale enough to read as "selected" lands at 4.9:1 or worse; navy
+   is 12.55:1 and the border plus weight carry the active signal. */
+.fopt[aria-pressed="true"]{background:var(--primary-tint);color:var(--ink);
   font-weight:600;}
 .fopt .n{font-variant-numeric:tabular-nums;color:var(--ink-faint);font-size:12px;}
-.fopt[aria-pressed="true"] .n{color:var(--primary);}
+.fopt[aria-pressed="true"] .n{color:var(--ink-600);}
 /* display:block matters for the anchor variant ("Show all" on a group with a
    `link`): an inline <a> would ignore the 44px min-height touch target below. */
 .fmore{display:block;text-align:left;background:none;border:0;padding:5px 8px;
@@ -114,7 +117,7 @@ PAGE_CSS = """
 .sel:hover{background-color:var(--bg-alt);}
 /* the licence list is the long one; the others are short by nature */
 #lic{max-width:220px;}
-.tog[aria-pressed="true"]{background:var(--primary-tint);color:var(--primary);
+.tog[aria-pressed="true"]{background:var(--primary-tint);color:var(--ink);
   border-color:var(--primary);font-weight:600;}
 .countline{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
   font-size:13px;color:var(--ink-600);margin-bottom:10px;}
@@ -161,7 +164,12 @@ PAGE_CSS = """
 /* ink on green, not white on green: white measured 2.65:1 against #01B583 and
    failed 1.4.3. ink-900 is 6.62:1 on the same fill, so the green and its hard
    shadow - which is what makes this read as an endorsement - both survive. */
-.stamp.rec{background:var(--green);color:var(--on-green);box-shadow:var(--shadow-green);}
+/* The "Recommended" seal uses the DARK success tone as its ground, not the
+   mid green. White on --green measures 4.62:1 - legal at AA but tight for an
+   11px/600 badge, and below the 5.17:1 floor this project holds itself to.
+   On --green-text it is 9.33:1. The mid green stays the FILL token for
+   non-text marks, which is what upstream reserves it for. */
+.stamp.rec{background:var(--green-text);color:var(--white);box-shadow:var(--shadow-green);}
 .stamp.multi{background:var(--mint);color:var(--green-text);box-shadow:var(--shadow-green);}
 .stamp.warn{background:var(--ink-900);color:var(--paper-50);}
 .stamp svg{width:12px;height:12px;}

@@ -20,7 +20,7 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 | Functional categories | 19, all 233 source category values explicitly mapped |
 | Repos reachable | 24 confirmed dead · 39 archived |
 | Procurement mappings | 210 entries → 302 proprietary products |
-| Accessibility | WCAG 2.1 AA audited 2026-08-12; lowest contrast ratio 5.17:1 |
+| Accessibility | WCAG 2.1 AA re-audited 2026-08-13; zero failures, lowest ratio 4.9:1 |
 
 ## What makes it different
 

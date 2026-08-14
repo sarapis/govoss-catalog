@@ -598,9 +598,10 @@ dedupe, filter and export steps and the liveness confirmation pass — which is 
 count is 83 against today's 22. Nothing else is back-filled; with one run the page says so
 rather than drawing a trend line it cannot support.
 
-## The pages (restyled 2026-08-12)
+## The pages (restyled 2026-08-12, re-branded 2026-08-13)
 
-Three surfaces, all generated, all on the Civic Tech Field Guide design system:
+Four surfaces, all generated, all on `@wegovnyc/design-tokens` under the **`govoss` brand
+variant** — the same system wegov.nyc, unnyc.wegov.nyc and (in progress) Databook share.
 
 | page | built by |
 |---|---|
@@ -618,10 +619,43 @@ retiring the endpoint would break agents.
 with `__PLACEHOLDER__` tokens substituted at the end, and the substitution asserts none
 survived. This removed the brace-doubling trap that was the most common way these files broke.
 
-**Tokens are VENDORED, not transcribed** — `vendor/ctfg/` holds the CTFG token files at a
-pinned version and `theme.py` inlines them at build time, asserting all four agree. Overrides
-are labelled **PATCH** (delete when upstream fixes it) or **DIVERGENCE** (keep). See
-`DESIGN-BRIEF.md` and `UPSTREAM-CTFG.md`.
+**govoss left the Civic Tech Field Guide design system on 2026-08-13**, by owner decision: the
+Sarapis properties share one system. The CTFG utility bar, its mark in the topbar and the four
+CMS-fed footer columns are gone, along with `ctfg_nav.py`. **CTFG remains a consumer of this
+catalogue's data** — the change is branding, not the relationship. `DESIGN-BRIEF.md`,
+`UPSTREAM-CTFG.md` and `CTFG-CONTRAST-REPORT.md` are kept as the historical record, including
+three defects we reported that CTFG fixed in its v2.0.0.
+
+Side effect worth having: with `ctfg_nav.py` retired the build makes **no network request at
+all**, so a weekly unattended run can no longer be affected by a third party's CMS.
+
+**Tokens are VENDORED, not transcribed** — `vendor/wegovnyc/` holds `core.css` and
+`variant-govoss.css` at a pinned release, and `theme.py` inlines them at build time. govoss has
+no bundler (it is Python emitting static HTML), so it cannot install the package the way the
+Next.js siblings do; the version + commit stamp in `vendor/wegovnyc/README.md` is what makes
+"which release is this?" answerable. The tradeoff is real: **an upstream fix does not reach
+govoss until someone copies it.**
+
+**`theme.py` is an ALIAS LAYER onto the `--wg-*` semantics**, which diverges from how wegov.nyc
+and UNNYC consume the package (they migrated every rule and deleted their aliases). The aliases
+carry no VALUES — each resolves to a semantic — so a variant remap still propagates, which is
+the property that rule protects. What it buys is not touching ~250 `var()` call sites inside
+Python template strings, where a missed one fails silently.
+
+⚠ **The alias map is by ROLE and MEASURED CONTRAST, never by name.** Two family semantics
+cannot be used where their names suggest: `--wg-text-muted` is **3.00:1** and `--wg-accent`
+**3.26:1**, and govoss uses those roles 24 and 26 times as text. Mapping them naively would
+have broken the floor in 50 places. Both are fine as fills; they are not text colours here.
+
+**The brand variant must be APPLIED, not merely present.** `theme.assert_variant_live()` runs
+on every build and checks the ROOT TAG. This system has already shipped a dead variant once
+(wegov.nyc, KI `wegovnyc-design-system`); govoss would fail differently — `variant-govoss.css`
+is what remaps the display face to the self-hosted Space Grotesk, so an unapplied variant falls
+back to a `DM Serif Display` this repo deliberately does not ship, and the page silently
+renders in Georgia. ⚠ The FIRST version of that assert was broken: it substring-searched the
+whole page, and the vendored variant file's own comment contains the literal
+`[data-brand="govoss"]`, so it could only ever pass. Caught by deleting the attribute and
+watching the build succeed. **Test a guard adversarially.**
 
 **Fonts are self-hosted** (`fonts/`, 9 woff2, 344 KB, ~103 KB typically fetched). The design
 system loads them from a CDN; we do not, because the readership is European public-sector staff
@@ -647,8 +681,17 @@ a cached failure.
 
 ## Accessibility
 
-WCAG 2.1 AA audited 2026-08-12: 10 issues found and fixed, lowest contrast ratio now 5.17:1 on
-all three pages. **No screen-reader testing has been done** — do not read the audit as a
+WCAG 2.1 AA re-audited 2026-08-13 after the design-system move, by sweeping **every text node
+on all four pages** (plus pressed/toggled states, which a static sweep misses): **zero failures,
+lowest ratio 4.9:1** on accent-over-tint chips. The previous 5.17:1 was a property of the CTFG
+palette, not a requirement — 4.9 clears AA's 4.5 with margin, and chasing 5.17 by darkening
+every accent chip would cost the accent identity for no accessibility gain.
+
+The move DID surface one genuine failure and three tight spots, all fixed: the pressed toggle
+was **2.41:1** (`--wg-accent-soft` is a mid blue, where govoss uses that token as a pale ground
+— pressed states now use navy text), and three 10-11px badges sat at 4.62-4.9 on mid green or
+tint, now on the dark tone. **The first sweep missed the 2.41 entirely because no facet was
+pressed** — audit interactive states explicitly, not just the page at rest. **No screen-reader testing has been done** — do not read the audit as a
 conformance claim. `DESIGN-BRIEF.md` has the seven UI rules this produced, including that a
 native `<select>` ignores your CSS until `appearance:none`, and that a flex item's default
 `min-width:auto` defeats `overflow-x`.

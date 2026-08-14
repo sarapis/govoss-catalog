@@ -1,0 +1,68 @@
+/* ============================================================================
+   WeGovNYC Design System — VARIANT: govoss
+   ----------------------------------------------------------------------------
+   The govoss catalogue (govoss-catalog.vercel.app) — a union catalogue of
+   government open source software, harvested from 17 national, municipal and
+   international catalogues.
+
+   Apply with class `wg-govoss` or `[data-brand="govoss"]`. govoss stamps it on
+   the root element, so the variant is present at first paint.
+
+   (Deliberately written with no angle-bracket tag anywhere in this file:
+   govoss inlines it into an inline stylesheet, and its pages are meant to be
+   readable as raw HTML by agents — a tag in a comment shows up as a real one
+   to anything grepping the built page.)
+
+   WHY THIS VARIANT EXISTS, AND WHAT IT IS NOT
+   govoss previously ran on the Civic Tech Field Guide design system, vendored
+   at v2.0.0. It moved onto this package on 2026-08-13 by owner decision: the
+   Sarapis properties share one system. CTFG remains a data consumer and a
+   friend — it is simply no longer the brand.
+
+   ⚠ govoss is NOT an NYC product. Its readers are European public-sector staff
+   and its credibility rests on reading as a neutral union catalogue, so nothing
+   here may introduce NYC identity: no "NYC" in chrome, no city iconography. The
+   shared TOKENS are welcome — a reader sees a competent civic design and does
+   not need to know, or care, that three products share it.
+
+   DIVERGENCES, both deliberate, both using the sanctioned knobs:
+
+   1. VOICE — display face stays 'Space Grotesk', not the family's
+      'DM Serif Display'. Not a preference: govoss self-hosts every font as
+      woff2 and serves same-origin, because its readership makes a Google Fonts
+      request a live GDPR objection. DM Serif Display is not among the nine
+      faces it ships, and adding a face is an asset decision, not a token one.
+      Reversible in one line here once the woff2 is vendored.
+
+   2. NEUTRALS — govoss keeps a cool near-white page ground rather than the
+      family's warm editorial wash (#F8F6F0). A dense 3,000-row data table on a
+      warm ground reads as aged paper; the catalogue is a working tool, not an
+      editorial surface. The warm surfaces remain available for prose blocks.
+
+   Everything else — brand navy, accents, borders, radii, shadows, spacing,
+   type scale, motion — is the family's, unmodified.
+
+   Override the SEMANTIC tier only. Reference values are shared with wegov.nyc
+   and UNNYC; editing them changes every brand at once.
+   ========================================================================== */
+
+.wg-govoss,
+[data-brand='govoss'] {
+  /* Identifies the active variant. Consumed by nothing visual; exists so the
+     variant is assertable at runtime and so this file has an observable
+     effect. govoss asserts it in build_ui.py. */
+  --wg-brand-id: govoss;
+
+  /* ---- DIVERGENCE 1: voice ------------------------------------------------
+     Self-hosted stacks with full fallbacks, no CDN face. The family's serif
+     stays defined in core and simply goes unused here. */
+  --wg-font-display: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system,
+                     'Segoe UI', Roboto, sans-serif;
+  --wg-display-weight: 700;   /* a sans display needs weight the serif does not */
+
+  /* ---- DIVERGENCE 2: neutrals --------------------------------------------
+     Cool near-white for a dense data surface. --wg-surface-alt keeps the
+     family's warm wash for prose blocks, so the editorial voice is still
+     reachable where it belongs. */
+  --wg-surface-warm: #FBFBFB;
+}

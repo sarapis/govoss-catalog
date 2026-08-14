@@ -1,5 +1,11 @@
 # Colour contrast in the CTFG design system
 
+> ⚠ **HISTORICAL RECORD, not live guidance.** govoss moved off the Civic Tech Field Guide
+> design system on 2026-08-13 and now runs on `@wegovnyc/design-tokens` under the `govoss`
+> brand variant (`vendor/wegovnyc/`). CTFG remains a consumer of this catalogue's data — the
+> change is branding, not the relationship. This file is kept because the exchange it records
+> was real and useful: three defects reported, three fixed in CTFG's v2.0.0.
+
 **A design-system report, ready to send.** Three token-level issues found while building
 govoss-catalog on the Civic Tech Field Guide design system, verified against the live
 `civictech.guide` homepage. All three are one-line fixes upstream, and fixing them there fixes
