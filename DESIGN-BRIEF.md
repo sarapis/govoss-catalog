@@ -165,10 +165,21 @@ one weight, so a licence and "this repository no longer exists" read identically
 
 | tier | items | treatment |
 |---|---|---|
-| Loud endorsement | Recommended | green fill, white text, hard green shadow, seal icon |
 | Loud endorsement | In N catalogs | mint fill, deep-green text, hard green shadow |
 | Loud warning | Repo gone · Archived upstream | ink fill, paper text, alert icon |
 | Quiet metadata | licence · Wikidata QID | **no pill at all** — the grey meta line |
+
+**A "Recommended" seal was the fourth stamp. It was retired 2026-08-14** — not for
+visual reasons but because it could not state a single honest claim. `recommended_for_gov`
+was set by two sources on different grounds: SILL asserts it (that catalogue *is* France's
+recommended-software list, 668 rows), while Munich's 85 came from `recommended_for_gov =
+not built` — Munich's own claim is *"in production use at the City of Munich"*, which is
+**adoption**, and the flag inverted it so software Munich actually built got no seal.
+
+The field is untouched in the data and still exported as `recommended_for_government`;
+only the pill is gone. Rationale sits with the code in `build_ui.py`. **If you reinstate
+any endorsement stamp, split the two sources first** — this is the case
+`wikidata_via: comptoir:<how>` exists to prevent, and there is no `recommended_via`.
 
 **Toolbar** — three pill selects plus two toggles: "Replaces a paid product" (108 entries) and
 "Include 102 set-aside entries".

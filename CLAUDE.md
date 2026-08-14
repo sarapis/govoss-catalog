@@ -195,6 +195,32 @@ had to be thrown away to get there:
 sitemap), Offentligkod and Canada (no per-entry route). A guessed deep link is worse than
 none — the same rule as `licence_spdx`.
 
+### The "Recommended" stamp is retired (2026-08-14)
+
+`In N catalogues` is now the only endorsement pill. The **Recommended** seal was removed
+because it rendered one badge over two different claims:
+
+- **`FR/sill` — 668 rows, a genuine publisher assertion.** SILL *is* the Socle
+  Interministériel de Logiciels Libres, France's list of software recommended to public
+  agents, so `harvest.py` sets the flag on every row and records
+  `note: "recommended to public agents; not necessarily gov-authored"`.
+- **`DE/opensource.muenchen.de` — 85 rows, OUR inference.** `recommended_for_gov = not
+  built`. Munich's actual claim is *"in production use at the City of Munich"* — that is
+  **adoption, not endorsement** — and the rule inverted it: software Munich *built*
+  in-house got no seal, third-party software it merely runs did.
+
+This is precisely the failure `wikidata_via: comptoir:<how>` exists to prevent, and there
+is no `recommended_via` to separate an inferred claim from an asserted one. The pill was
+also **inconsistent**: `recommended_for_gov` rides the merge survivor and is not in
+`dedupe.py:UNION_LIST`, while a publiccode-tier row scores +40 against the flag's +5 — so
+**70 of 753 flags are dropped on merge**, 24 of them on entries that still list `FR/sill`
+as a source. AngularJS showed `Recommended` and `Archived upstream` side by side.
+
+**The data is unchanged.** `catalog.json` keeps `recommended_for_gov` and `export_json.py`
+still emits `recommended_for_government` — this was a display decision, not a deletion, the
+same posture as flagging rather than dropping a filtered entry. **Do not reinstate an
+endorsement stamp without first splitting the two provenances.**
+
 ## Identity and dedup
 
 Join key is the **normalised repo URL** (`norm_repo()`: no scheme/www/.git, deep links

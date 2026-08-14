@@ -105,7 +105,23 @@ for r in c:
         "o": r.get("repo_owner") or "",
         "g": (r.get("categories") or [])[:4],
         "ub": len(r.get("used_by") or []),
-        "rec": 1 if r.get("recommended_for_gov") else 0,
+        # No "rec" key: the Recommended stamp is retired (2026-08-14). It read
+        # as one claim but was fed by two sources making DIFFERENT ones:
+        #   FR/sill (668) - a real publisher assertion. SILL *is* France's
+        #     interministerial list of software recommended to public agents,
+        #     so harvest.py sets the flag on every row and says so in `note`.
+        #   DE/opensource.muenchen.de (85) - OUR inference, not Munich's claim:
+        #     `recommended_for_gov = not built`. Munich asserts "in production
+        #     use at the City of Munich", which is ADOPTION; the stamp turned
+        #     that into an ENDORSEMENT, and inverted it on the way, since
+        #     software Munich actually BUILT got no stamp at all.
+        # This is the case `wikidata_via` exists to prevent - an inferred claim
+        # indistinguishable from a publisher-asserted one - and there is no
+        # `recommended_via` to separate them. Dedupe also dropped 70 of the 753
+        # flags, because recommended_for_gov rides the survivor and is not in
+        # UNION_LIST, so the pill was inconsistent as well as ambiguous.
+        # The data is untouched: catalog.json keeps recommended_for_gov and
+        # export_json.py still emits recommended_for_government.
         "fx": r.get("functions") or [],
         "tr": 1 if r.get("translated") else 0,
         "sl": r.get("desc_src_lang") or "",
@@ -219,7 +235,8 @@ SUBS = {
     "__N_MULTI__": str(n_multi_cat),
     "__N_EX__": str(n_ex),
     "__ICON_CODE__": T.ICONS["code"],
-    "__ICON_SEAL__": T.ICONS["seal"],
+    # no __ICON_SEAL__: its only use on this page was the retired Recommended
+    # stamp. T.ICONS["seal"] stays - build_sources.py still stamps it.
     "__ICON_ALERT__": T.ICONS["alert"],
 }
 

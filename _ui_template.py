@@ -161,15 +161,12 @@ PAGE_CSS = """
 .stamp{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.05em;
   text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);
   display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
-/* ink on green, not white on green: white measured 2.65:1 against #01B583 and
-   failed 1.4.3. ink-900 is 6.62:1 on the same fill, so the green and its hard
-   shadow - which is what makes this read as an endorsement - both survive. */
-/* The "Recommended" seal uses the DARK success tone as its ground, not the
-   mid green. White on --green measures 4.62:1 - legal at AA but tight for an
-   11px/600 badge, and below the 5.17:1 floor this project holds itself to.
-   On --green-text it is 9.33:1. The mid green stays the FILL token for
-   non-text marks, which is what upstream reserves it for. */
-.stamp.rec{background:var(--green-text);color:var(--white);box-shadow:var(--shadow-green);}
+/* The green pairing, measured - keep these numbers, the .stamp.rec rule they
+   were written for is gone but they govern every green mark on the site.
+   White on the mid green (#01B583) is 2.65:1 and fails 1.4.3; ink-900 on it is
+   6.62:1; white on --green-text is 9.33:1. So --green is the FILL token for
+   non-text marks and --green-text carries any words, which is the split
+   upstream draws too. */
 .stamp.multi{background:var(--mint);color:var(--green-text);box-shadow:var(--shadow-green);}
 .stamp.warn{background:var(--ink-900);color:var(--paper-50);}
 .stamp svg{width:12px;height:12px;}
@@ -424,7 +421,9 @@ function current() {
 
 function stamps(r) {
   var s = '';
-  if (r.rec) s += '<span class="stamp rec">__ICON_SEAL__ Recommended</span>';
+  // No "Recommended" stamp (retired 2026-08-14): one pill could not carry both
+  // SILL's real assertion and Munich's inferred one. The field is still in
+  // /entries.json as recommended_for_government. See build_ui.py for why.
   if (r.cc2 > 1) s += '<span class="stamp multi">In ' + r.cc2 + ' catalogs</span>';
   if (r.lv === 'dead') s += '<span class="stamp warn">__ICON_ALERT__ Repo gone</span>';
   else if (r.lv === 'archived') s += '<span class="stamp warn">__ICON_ALERT__ Archived upstream</span>';

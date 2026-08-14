@@ -219,8 +219,10 @@ OVERRIDES_CSS = """
   --link:         var(--wg-accent-strong);
   --link-hover:   var(--wg-brand);
 
-  /* ---- the "verified"/recommended seal. --green is a FILL, --green-text is
-     the text form; upstream drew that distinction and it survives here. */
+  /* ---- success tones. --green is a FILL, --green-text is the text form;
+     upstream drew that distinction and it survives here. These once dressed a
+     "Recommended" seal, retired 2026-08-14; they now carry the multi-catalogue
+     stamp, the sources page state marks and the API do/don't tags. */
   --green:      var(--wg-success);
   --green-text: var(--wg-success-text);
   --green-line: var(--wg-success-text);

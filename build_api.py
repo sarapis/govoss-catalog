@@ -222,11 +222,10 @@ PAGE_CSS = """
   border-radius:var(--r-card);padding:16px;display:flex;flex-direction:column;gap:6px;}
 .qtag{align-self:flex-start;font-family:var(--font-ui);font-size:10px;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
-/* ink on green, not white on green - white is 2.65:1 against #01B583. Same
-   pairing and same fix as the "Recommended" stamp. */
 /* --green-text, not --green: white on the mid green is 4.62:1, legal at AA but
-   under the 5.17:1 floor this project holds. On the dark tone it is 9.33:1.
-   Same fix as .stamp.rec in _ui_template.py. */
+   under the floor this project holds, and 2.65:1 against #01B583. On the dark
+   tone it is 9.33:1. Same pairing as .stamp.multi in _ui_template.py, whose
+   comment carries the full measurements. */
 .qcard.do .qtag{background:var(--green-text);color:var(--white);}
 .qcard.dont .qtag{background:var(--ink-900);color:var(--paper-50);}
 .qcard h4{font-family:var(--font-display);font-size:15px;margin:0;}
