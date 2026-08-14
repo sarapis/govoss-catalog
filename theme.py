@@ -394,25 +394,26 @@ p{margin:0;}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");}
 .tex > *{position:relative;z-index:1;}
 
-/* utility bar */
-.ubar{background:var(--primary);color:var(--white);height:36px;display:flex;align-items:center;}
-.ubar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;}
-.ubar a{color:var(--white);text-decoration:none;}
-.ubar a:hover{text-decoration:underline;}
-.ubar .u-l,.ubar .u-r{display:flex;align-items:center;gap:20px;
-  font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;}
-.ubar .u-pre{opacity:.75;}
-.ubar .u-ctfg{color:var(--white);text-decoration:underline;
-  text-decoration-color:var(--mint-300);text-decoration-thickness:2px;}
-/* min-width:0 is load-bearing: a flex item defaults to min-width:auto, which
-   refuses to shrink below its content, so the links pushed the PAGE wider than
-   the viewport instead of scrolling inside their own strip. overflow-x alone
-   does not fix that - the item has to be allowed to shrink first. */
-.ubar .u-r{overflow-x:auto;scrollbar-width:none;min-width:0;}
-.ubar .u-r::-webkit-scrollbar{display:none;}
-.ubar .u-l{min-width:0;}
-.ubar .wrap{min-width:0;}
+/* The utility bar's CSS lived here. It was deleted 2026-08-14: the bar itself
+   went on 2026-08-13 with the CTFG chrome, utility_bar() has returned only the
+   skip link ever since, and no built page contains `class="ubar"` - so 13 rules
+   were shipping to every reader for markup that does not exist.
+
+   TWO LESSONS SURVIVE THE MARKUP. They are rules 3 and 7 in DESIGN-BRIEF.md,
+   and this strip is the evidence they cite, so they are kept here rather than
+   deleted with the code that earned them. Build any fixed-height strip this way:
+
+     .strip .wrap,
+     .strip .side  {min-width:0;}                      <- see below
+     .strip .side  {overflow-x:auto;scrollbar-width:none;}
+     @media (max-width:720px){ .strip a,.strip span{white-space:nowrap;} }
+
+   1. min-width:0 is load-bearing. A flex item defaults to min-width:auto and
+      refuses to shrink below its content, so the links pushed the PAGE wider
+      than the viewport instead of scrolling inside their own strip. overflow-x
+      alone does not fix it - the item has to be allowed to shrink first.
+   2. A fixed-height strip must never wrap. At 375px "Part of the" wrapped to
+      three lines inside a 36px bar and was clipped by the bar's own height. */
 
 /* topbar */
 /* min-height + flex centring, NOT height:88px with a height:100% child.
@@ -462,12 +463,8 @@ p{margin:0;}
   /* the publisher/legal divider is only meaningful side by side; once they
      stack it is a line dangling off the end of the wordmark */
   .foot .hair{display:none;}
-  /* The utility bar is a fixed 36px strip, so its text must never wrap - on a
-     375px screen "Part of the" wrapped to three lines and was clipped by the
-     bar's own height. Drop the prefix and keep the link, which carries the same
-     meaning in less room, and stop every item wrapping. */
-  .ubar .u-pre{display:none;}
-  .ubar a,.ubar span{white-space:nowrap;}
+  /* (The two .ubar rules that were here went with the bar on 2026-08-14. The
+     no-wrap lesson is recorded with the rest of that strip's CSS above.) */
   h1{font-size:34px;} h2{font-size:26px;}
   .topbar{min-height:0;padding:14px 0;}
   .topbar .wrap{flex-wrap:wrap;row-gap:12px;}

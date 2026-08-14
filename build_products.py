@@ -249,7 +249,12 @@ table.ptab td{padding:9px 14px;vertical-align:top;color:var(--ink-600);}
 """
 
 BODY = """
-<a class="skip" href="#main">Skip to content</a>
+<!-- No skip link here: theme.utility_bar() emits it, and it is prepended ahead
+     of the topbar so it stays the FIRST focusable element. This page carried
+     its own as well, which put two identical "Skip to content" links in the tab
+     order and read the target out twice to a screen reader. Left over from the
+     2026-08-13 chrome removal, when utility_bar() shrank to just the skip link
+     and this page's copy stopped being the only one. -->
 <div class="wrap">
   <main id="main">
 

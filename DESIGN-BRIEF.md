@@ -334,6 +334,13 @@ Also in place: `lang="en"`, a `<main>` landmark, a skip link (there are ~45 tab 
 the first result — the facet sidebar alone is ~30 buttons), unbroken heading order,
 `aria-hidden` on decorative icons, and reflow passing at 320px.
 
+**One skip link per page, and it is the first focusable element — verified on all four.**
+`/products.html` carried **two** until 2026-08-14: `theme.utility_bar()` emits one, and that
+page also had its own hardcoded copy, so the tab order held two identical *Skip to content*
+links and a screen reader announced the target twice. Left over from the 08-13 chrome removal,
+when `utility_bar()` shrank to just the skip link and this page's copy stopped being the only
+one. Emit it from `utility_bar()` only.
+
 **No screen-reader testing has been done.** Do not read the audit as a conformance claim.
 VoiceOver/NVDA is the honest next step, and `/products.html` — a large table — is the surface
 most likely to expose problems.
@@ -392,10 +399,6 @@ value would reintroduce contrast failures in ~50 places and would look like a ti
 ## Open, and deliberately not done
 
 - **Screen-reader testing has never run.** See *Accessibility*. Highest-value open item here.
-- **13 dead `.ubar` CSS rules** still ship in every page from `theme.py` (~lines 393–410, 464),
-  for a utility bar with **zero** markup occurrences in any built page. Harmless but untrue.
-  Note lines 407–410 are rule 3's `min-width: 0` fix, so deleting them removes the evidence
-  along with the code.
 - **`vendor/wegovnyc/README.md` claims govoss's guard is "the contrast assert in `theme.py`".**
   There isn't one — `assert_variant_live()` is the only build-time guard, and contrast is swept
   manually. Either write the assert or correct the README.
