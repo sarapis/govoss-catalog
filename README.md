@@ -19,7 +19,8 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 | English descriptions | **2,751 of 2,753** — entries with no description at all are set aside |
 | Functional categories | 19, all 233 source category values explicitly mapped |
 | Repos reachable | 24 confirmed dead · 39 archived |
-| Procurement mappings | 210 entries → 302 proprietary products |
+| Set aside | 453 flagged, exported with `excluded` — 351 have no description upstream |
+| Procurement mappings | 194 entries → 290 proprietary products · [browsable](https://govoss-catalog.vercel.app/products.html) |
 | Accessibility | WCAG 2.1 AA re-audited 2026-08-13; zero failures, lowest ratio 4.9:1 |
 
 ## What makes it different
@@ -78,11 +79,12 @@ committed here is what is live. `generated_at` in `/meta.json` is the freshness 
 | step | what |
 |---|---|
 | `harvest.py` | 17 source adapters; checkpoints per source to `cache/` |
+| `enrich_desc.py` | fills missing descriptions from the GitHub API; BEFORE translations, since recovered text is often not English |
 | `merge_translations.py` | applies `translations/tr_*.json`, keyed on `sha1(source text)` |
 | `taxonomy.py` | 233 source category values → 19 functions; unmapped values are reported as bugs |
-| `crosswalk.py` | stamps Wikidata QIDs from Comptoir du Libre so dedupe can merge more |
-| `filters.py` | flags forks, CI plumbing, deployment recipes as not-adoptable |
-| `dedupe.py` | merges on QID then repo URL; never on name similarity |
+| `crosswalk.py` | stamps Wikidata QIDs from Comptoir du Libre **and Wikidata itself** (by URL, never by name) |
+| `filters.py` | flags forks, CI plumbing, deployment recipes, and entries with no description at all |
+| `dedupe.py` | merges on QID, then repo URL, then exact name **and** exact homepage; never on name alone |
 | `liveness.py` | GitHub GraphQL + GitLab APIs + per-host HEAD; diffs vs last run |
 | `build_ui.py` → `build_site.sh` → `export_json.py` | the page, the deploy dir, the JSON |
 | `runlog.py` → `build_sources.py` → `build_api.py` → `build_products.py` | run history; sources page (which absorbed the status page); API page; the proprietary-software page |
@@ -146,15 +148,20 @@ rejected, and the bug shapes that came back repeatedly.
 - `CLAUDE.md` — the operating manual: every gotcha, why each decision was made, what not to
   re-litigate. **Read this before changing anything.**
 - `CONTINUE.md` — open items and where to pick up
-- `HANDOFF-PROMPT.md` — paste-ready brief for a downstream data consumer
+- `HANDOFF-PROMPT.md` — paste-ready continuation prompt for a fresh session
 - `DESIGN-BRIEF.md` — paste-ready brief for restyling the pages (they are generated from
   Python f-strings, not editable HTML — read this before touching the UI)
+- `DEMAND-SIDE-CATALOGUE.md` — the proposal to harvest the proprietary software governments
+  actually buy, from procurement data, and use it to power matching. Measured against NYC's
+  licence export; carries a go/no-go that has not been run
 - `PAGINATION-BUG.md` — bug report for the EU OSS Catalogue, ready to send
-- `UPSTREAM-CTFG.md` — how three design-system defects were reported upstream and the fix
-  taken back; the rule about labelling patches so they get deleted
-- `CTFG-CONTRAST-REPORT.md` — design-system contrast report for the Civic Tech Field
-  Guide, ready to send
-- `sources.py` · `replaces.json` · `translations/` — the curated inputs
+- `UPSTREAM-CTFG.md` · `CTFG-CONTRAST-REPORT.md` — **historical record.** govoss ran on the
+  Civic Tech Field Guide design system until 2026-08-13; these document that exchange,
+  including three defects reported and fixed upstream. CTFG is still a data consumer
+- `vendor/wegovnyc/` — the design tokens, vendored at a pinned release with its own README
+- `sources.py` · `replaces.json` · `proprietary.json` · `product_aliases.json` ·
+  `translations/` — the curated inputs
+- `scripts/` — one-off seed generators, NOT part of `run.sh`
 - `catalog.json` · `liveness.json` · `history.json` — the data products
 
 ## Licence

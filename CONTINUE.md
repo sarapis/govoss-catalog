@@ -1,91 +1,119 @@
 # Open items
 
-Where the work stands as of 2026-08-12, and what is worth doing next. Doubles as a
+Where the work stands as of **2026-08-14**, and what is worth doing next. Doubles as a
 continuation brief: written to be handed to whoever — or whatever — picks this up cold.
 
-**Read `CLAUDE.md` first.** It is the operating manual. `README.md` has the overview,
-`DESIGN-BRIEF.md` the design system as built. **govoss moved off the CTFG design system
-onto `@wegovnyc/design-tokens` (`govoss` variant) on 2026-08-13** — `UPSTREAM-CTFG.md` and
-`CTFG-CONTRAST-REPORT.md` are now historical record, not live guidance.
-Don't re-litigate decisions recorded there — particularly the deliberate exclusions.
+**Read `CLAUDE.md` first.** It is the operating manual and it records *why* each decision was
+made. `README.md` is the public overview. `DESIGN-BRIEF.md` is the design system as built.
+`DEMAND-SIDE-CATALOGUE.md` is a live proposal with a decision still open.
 
-State: **2,753 entries, 17 catalogues, 15 countries.** Pipeline is `bash run.sh` (~20 min,
-15 steps; the order matters and is documented at the top of the file). Scheduled Mondays 07:00
-— `bash schedule/install.sh`.
+⚠ **`UPSTREAM-CTFG.md` and `CTFG-CONTRAST-REPORT.md` are HISTORICAL RECORD, not guidance.**
+govoss left the Civic Tech Field Guide design system on 2026-08-13.
 
-## Shipped 2026-08-12 (one long session)
+State: **2,753 entries · 453 set aside · 17 catalogues · 15 countries.** Pipeline is
+`bash run.sh` (16 steps, ~20 min; the order is load-bearing and documented at the top of the
+file). Scheduled Mondays 07:00 — `bash schedule/install.sh`.
 
-- **Publishing is automatic.** `run.sh` ends with `deploy` then `record`, both gated on every
-  earlier step exiting 0, so what is committed is what is published. No hand-deploys.
-- **The repo is public:** github.com/sarapis/govoss-catalog, MIT code / CC BY 4.0 data.
-  History audited clean before publishing; secret scanning and push protection on.
-- **Committed JSON is deterministic** — sorted records, no per-record timestamps. Weekly churn
-  fell from 50,199 diff lines to 2,365 (95%).
-- **Three pages restyled** on the CTFG design system: catalog, sources+status merged, and a new
-  `/api.html`. `build_status.py` retired; `/status.json` still written.
-- **An MCP server** at `govoss-mcp.devin-31f.workers.dev` — public, keyless, five tools.
-- **WCAG 2.1 AA audited**: 10 issues found and fixed; re-audited 2026-08-13 after the
-  design-system move — zero failures, lowest ratio 4.9:1.
-- **Design tokens vendored** at `vendor/ctfg/` v2.0.0 rather than transcribed. Three defects
-  reported upstream were fixed there, so our local patch is deleted.
+## ⚠ First thing to check
+
+**Monday 2026-08-17 07:00 is the first unattended run to exercise everything below.** Nothing
+in this session has been through a real scheduled run. Look at `/sources.html` — it reports
+its own build status — and confirm `generated_at` in `/meta.json` moved.
+
+Expect, and do NOT treat as faults:
+- **The >10% shrink warning fires once.** 3,069 → 2,753 is the intended effect of setting
+  aside entries with no description. `run.sh` prints it by design.
+- **`enrich_desc` fills only ~8 entries** and reports being rate limited. See item 3.
+
+## Shipped 2026-08-13/14
+
+- **govoss left the CTFG design system** for `@wegovnyc/design-tokens` v0.7.0 under a `govoss`
+  brand variant — the system wegov.nyc and unnyc.wegov.nyc share. No CTFG chrome, no NYC
+  identity. `ctfg_nav.py` retired, so **the build now makes no network request at all**.
+- **`/products.html`** — the proprietary side made browsable: one dense table of 372 products
+  with description, function, alternatives and a link into the filtered catalogue.
+- **`replaces.json` 108 → 194 entries**, 290 products. Entry point is a `Replaces` facet in
+  the catalog sidebar, not a nav item.
+- **Bulgarian translated** (175), **descriptions enriched from GitHub**, and entries with **no
+  description at all set aside** (351). Entry and English counts now agree: 2,753 / 2,751.
+- **Identity**: Wikidata added as a second QID source (by URL, never by name) and a third
+  dedupe key (exact name **and** exact homepage). 554 → 644 QIDs.
+- **`/entries.json` carries set-aside rows**, flagged `excluded` — the derived indexes stay
+  curated.
+- **WCAG re-audited** after the design move: zero failures, lowest 4.9:1.
 
 ## In rough priority order
 
-0. **Open design question: a demand-side catalogue.** `DEMAND-SIDE-CATALOGUE.md` proposes
-   harvesting the proprietary software governments actually buy — from procurement data —
-   and using that to power matching instead of the hand-seeded seed file. NYC's licence
-   export (1,601 contracts, $1.77B, 927 products) joins to the catalogue at **3.6% of spend**,
-   and the note argues the limit is *naming, not coverage*: four spellings of Esri hid
-   $13.5M that QGIS answers. Read it before doing (1) — it may reorder the work. There is a
-   cheap go/no-go in it that has **not** been run.
+0. **Decide the demand-side catalogue.** `DEMAND-SIDE-CATALOGUE.md` proposes harvesting the
+   proprietary software governments actually buy, from procurement data, rather than
+   hand-seeding it. NYC's licence export (1,601 contracts, $1.77B, 927 products) joins the
+   catalogue at **3.6% of spend**, and the note argues the limit is *naming, not coverage*:
+   four spellings of Esri hid $13.5M that QGIS answers. **Stage 1 — the go/no-go — has NOT
+   been run:** get one more jurisdiction with product-level licence data and check whether
+   product names normalise across two. A day's work, and it decides everything after it.
+   Read this before doing (1) — it may reorder the work.
 
-1. **Expand `replaces.json` further.** Now 205 of 3,069 entries map to 302 proprietary
-   products (was 108 -> 165), browsable at `/products.html`. This is
-   the field that makes the catalogue answer *"what can we stop paying for?"* rather than
-   *"what exists"*. Read the `_README` block in that file first — `kind` (`software` /
-   `service` / `paid-tier`) and `confidence` both matter, and getting them wrong produces
-   confident category errors. `export_json.py` warns on keys that match nothing, so the file
-   cannot rot unnoticed.
+1. **Expand `replaces.json`.** 194 of 2,753 entries → 290 products. Read the `_README` block
+   first: `kind` (`software` / `service` / `paid-tier`) and `confidence` both matter, and
+   getting them wrong produces confident category errors. `export_json.py` **fails the build**
+   on an invalid value and warns on keys matching nothing.
+   ⚠ **Check existing product names before adding.** Yesterday's additions used more specific
+   names than the seed already had (`Dropbox Business` beside `Dropbox`), splitting one
+   product across two index keys.
 
-2. **Two OSOR leads left, both small:** ICT ReUse Belgium and Helsingborg City. Adullact and
-   Forja redIRIS are academic/association rather than government. Diminishing returns — check
-   `sources.py:SURVEY` for what's already been rejected and why before chasing anything.
+2. **Databook design harmonisation is handed off**, not done. See
+   `~/Antigravity/Databook2/docs/LANDING-HARMONISATION-PLAN.md` — Phase 1 is the approved
+   visual change, Phase 2 adds a `databook` variant to the token package. Give it to a
+   Databook-focused session; it is written to be executed cold.
 
-3. **171 Bulgarian descriptions are untranslated** and that was a deliberate call: they're
-   mostly long EU-funding project titles (`BG05SFOP001-…`) rather than software summaries. If
-   you do them, triage first — translating a grant reference adds nothing.
+3. **`enrich_desc.py` is rate-limited to ~8 entries per run.** No `GITHUB_TOKEN` in the
+   LaunchAgent, so it gets 60 unauthenticated requests/hour against 251 candidates — ~31
+   weeks. It caches and resumes, so it converges, but a PAT **with no scopes at all** added to
+   `schedule/*.plist.template` would finish it in one run. Not done because it needs a
+   credential decision.
 
-4. **Screen-reader testing has never been done.** The WCAG audit was automated checks plus
-   keyboard only. VoiceOver/NVDA against the catalog page is the honest next step, and until
-   it runs, nothing should claim conformance.
+4. **Screen-reader testing has never been done.** The audits are automated contrast sweeps
+   plus keyboard. VoiceOver/NVDA against the catalog page is the honest next step, and until
+   it runs nothing should claim conformance. Note `/products.html` is a large table — the
+   surface most likely to expose problems.
 
-5. **`HANDOFF-PROMPT.md` is stale** — it still quotes pre-restyle counts and does not know the
-   MCP server exists. Refresh it before handing it to a downstream data consumer.
+5. **The get-involved block is duplicated** in `_ui_template.py` and `build_sources.py`. It
+   already caused one bug: a fix applied to one left the other stale. Same shape as the
+   `SRC_LABEL` duplication removed this session.
 
-6. **Sparklines fill in over coming weeks.** Runs before 2026-08-12 have no per-catalogue
-   record, so they render as grey "not recorded" bars rather than invented history.
+6. **Two OSOR leads left, both small:** ICT ReUse Belgium and Helsingborg City. Check
+   `sources.py:SURVEY` for what has already been rejected and why before chasing anything.
 
-7. **`get_stats` on the MCP server can be up to an hour stale** (1-hour edge cache on
-   meta.json). Fine for weekly data, but the tool an agent polls to detect a rebuild lags.
+7. **8 Bulgarian entries show no description** — their entire upstream text was a contract
+   number, so `tr_bg.json` maps them to an empty string, which `merge_translations.py` treats
+   as no description. They are set aside, correctly.
 
 ## Things that are done and should be left alone
 
 - **Do not syndicate the EU OSS Catalogue.** Its pager, facets and search all ignore query
   strings; only 20 of 1,084 solutions are reachable. `PAGINATION-BUG.md` is a finished report
-  ready to send to the EC — that's still worth doing if you want a use for it.
-- **Do not chase the UNODC "Directory of Open-Source Registries".** It's open-source
+  ready to send to the EC — still worth doing if you want a use for it.
+- **Do not chase the UNODC "Directory of Open-Source Registries".** It is open-source
   *intelligence* (company registries for corruption investigators), not software.
-- **Do not add `OS2World`, `os2edu`, `os2sd`, `OS2G` or `OS23Portfolios`** if you touch the
-  Denmark adapter — they're name collisions (IBM OS/2, a Chinese OS project, Android ROM
-  trees, a US student club, someone's coursework). `harvest.py:OS2_EXCLUDED` records why.
-- **France's 24,440-repo inventory stays excluded.** It answers "who published this", not "is
-  this useful to a government": 45% no description, 80% no licence, dominated by research
-  code. Re-add it as an enrichment join if ever, never as catalogue entries.
+- **Do not add `OS2World`, `os2edu`, `os2sd`, `OS2G` or `OS23Portfolios`** to the Denmark
+  adapter — name collisions. `harvest.py:OS2_EXCLUDED` records why.
+- **France's 24,440-repo inventory stays excluded.** Re-add as an enrichment join if ever,
+  never as catalogue entries.
+- **Do not re-add a naive "missing description = not software" rule.** The current
+  `no-description` rule is an editorial standard about publisher effort, it runs AFTER
+  `enrich_desc.py`, and it flags rather than deletes. The comment in `filters.py` explains
+  what makes it different from the rule that was removed for hiding `Products.PloneMeeting`.
 
 ## Verification habits this project earned the hard way
 
 - Check the **built output**, not that a patch reported success.
-- Confirm a **dead** verdict through a second channel before recording it.
-- **Detect** description language from text; never assume it from the source.
-- Run `bash run.sh` rather than the steps from memory — the ordering is load-bearing and I
-  once rebuilt the whole site from un-deduped data by improvising it.
+- **Test a guard adversarially.** Two guards written this session could only ever pass until
+  they were tested by breaking the thing they check.
+- Confirm a **dead** verdict through a second channel before asserting it.
+- **Detect** description language from text, and read `desc_lang` (what is displayed), never
+  `desc_src_lang` (the original).
+- **Audit interactive states**, not just the page at rest — a 2.41:1 failure hid behind an
+  unpressed toggle.
+- Run `bash run.sh` rather than the steps from memory — the ordering is load-bearing.
+- **The browser pane returns stale and blank frames.** Measure the DOM; treat screenshots as
+  a secondary signal, and rebuild `site/` before testing it.

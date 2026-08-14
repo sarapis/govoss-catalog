@@ -4,7 +4,7 @@
 > national, municipal and international catalogues, normalised onto one schema, translated to
 > English, categorised by function, de-duplicated and liveness-monitored.
 >
-> **3,069 entries · 17 catalogues · 15 countries incl. EU + global.** Live at
+> **2,753 entries · 17 catalogues · 15 countries incl. EU + global.** Live at
 > https://govoss-catalog.vercel.app — see `README.md` for the public overview and
 > `CONTINUE.md` for open items. This file is the operating manual: it records why each
 > decision was made and what not to re-litigate.
@@ -174,7 +174,7 @@ is never mistaken for a publisher-asserted one.
 
 `catalogue_count` + `catalogues[]` per entry: how many DISTINCT catalogues list this
 software, with a **deep link into each** so a reader can verify the claim upstream instead
-of taking the merge on trust. **114 entries appear in 2+ catalogues**, up from 37 as identity
+of taking the merge on trust. **95 entries appear in 2+ catalogues**, up from 37 as identity
 coverage improved (see the crosswalk and dedupe sections)
 — NextCloud Server, QGIS and OpenProject each in Developers Italia + SILL + DPG). Sortable
 in the UI via "In most catalogues", and a stat tile.
@@ -399,7 +399,7 @@ did not (GitLab lost its `GitLab Premium` paid-tier row). The orphan warning is 
 it, which is the whole reason that warning exists.
 
 Maps catalogue entry -> proprietary products it can replace, inverting the lookup so a
-buyer starts from an invoice line. Currently **210 entries -> 302 products**, hand-seeded,
+buyer starts from an invoice line. Currently **194 entries -> 290 products**, hand-seeded,
 and browsable at `/products.html` (see below).
 `export_json.py` **warns on keys matching no entry**, so the seed cannot rot unnoticed.
 
@@ -456,7 +456,8 @@ extension) and `harvest.py` picks it up, so claims can be owned upstream.
 
 Merges on **Wikidata QID, then normalised repo URL**, union-find so identities chain.
 **Never on name similarity** — Angular `Q28925578` and AngularJS `Q2849803` are different
-products and one name contains the other. 3,426 raw -> 3,069 active, 178 merge groups.
+products and one name contains the other. 3,206 rows -> 2,753 active + 453 set aside,
+178 merge groups.
 Pre-merge rows kept in `out/dupes.json` for audit.
 
 Only 15 groups are cross-country (Matomo FR+IT, OpenProject DE+FR+IT — genuine, and the

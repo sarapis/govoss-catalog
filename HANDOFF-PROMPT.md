@@ -1,112 +1,84 @@
-The European public-sector open source catalogue has grown substantially since you last
-used it, and several numbers you may have published from it are now wrong. Everything
-below is live at https://govoss-catalog.vercel.app — static JSON, CORS-open, no auth.
+# Continuation prompt
 
-**If you kept anything from the previous handoff: it said 1,995 entries from 8 catalogues.
-It is now 3,063 entries from 17 catalogues across 14 countries plus a global registry.**
+Paste the block below into a fresh session in `~/Antigravity/govoss-catalog`.
+Written 2026-08-14, after the session that added the proprietary catalogue, the
+curation rule and the design-system move.
 
-## What changed that affects your conclusions
+---
 
-1. **`replaces` coverage nearly doubled and now answers three questions you got zero
-   results for.** 108 entries map to **165 proprietary products** (was 87 → 95). Critically:
+I'm continuing work on ~/Antigravity/govoss-catalog — a union catalogue of government open
+source software. Live at https://govoss-catalog.vercel.app, public at
+github.com/sarapis/govoss-catalog, MCP server at govoss-mcp.devin-31f.workers.dev.
 
-   | you reported empty | now resolves to |
-   |---|---|
-   | SMS / mass notification ($900K) | **GOV.UK Notify** (strong), **RapidPro** (partial) |
-   | mobile field data collection ($278K) | **CommCare, KoboToolbox, ODK** (all strong) |
-   | digital signage ($86K) | **OS2Display** (strong, Danish municipal) |
-   | social media scheduling ($902K, Hootsuite) | **still effectively empty** — Mautic is mapped `adjacent` only |
+READ FIRST, in this order:
+  CLAUDE.md                  the operating manual — every gotcha and why each decision was made
+  CONTINUE.md                what's open, in priority order, and what to check first
+  DEMAND-SIDE-CATALOGUE.md   a live proposal with a decision still open
+  DESIGN-BRIEF.md            the design system as built, incl. seven UI rules paid for in bugs
 
-   The first three were empty because the catalogue lacked the *sources*, not because no
-   European alternative existed. Adding the Digital Public Goods registry and OS2 Denmark
-   filled them. Hootsuite remains a genuine gap — Mautic does campaigns and automation, it
-   does **not** schedule social posts, and it is deliberately marked `adjacent` with a note
-   so it is not mistaken for closing that gap.
+⚠ UPSTREAM-CTFG.md and CTFG-CONTRAST-REPORT.md are HISTORICAL RECORD. govoss left the Civic
+Tech Field Guide design system on 2026-08-13 and now runs on @wegovnyc/design-tokens v0.7.0
+under a `govoss` brand variant (vendored at vendor/wegovnyc/). CTFG is still a data consumer —
+the change was branding, not the relationship. Don't re-litigate it, and don't reintroduce NYC
+identity either: readers are European public-sector staff and the catalogue's credibility rests
+on reading as neutral.
 
-2. **New high-value mappings worth re-running your inventory against:** VMware vSphere →
-   Proxmox, DocuSign → Esup-Signature, Lansweeper/Track-It! → GLPI, Visio → Draw.io,
-   Microsoft Project → GanttProject/OpenProject, Panopto/Kaltura → Esup-Pod, Doodle →
-   Framadate, MindManager → Freeplane, Snagit → Greenshot, Airtable → Grist,
-   NAVEX EthicsPoint → GlobaLeaks, Formstack → OS2Forms/GOV.UK Forms.
+STATE: 2,753 active entries · 453 set aside and flagged · 17 catalogues · 15 countries.
+`bash run.sh` is 16 steps, ~20 min, and ends by deploying to Vercel AND committing+pushing the
+data — both gated on every earlier step exiting 0. Scheduled Mondays 07:00 via launchd.
+Do NOT hand-deploy or run run.sh just to preview: it's a 20-minute harvest against fourteen
+governments' infrastructure. Use `python3 build_ui.py && bash build_site.sh`, or
+`cd site && vercel deploy --yes` for a preview URL.
 
-3. **More `paid-tier` finds — your ~$385K category.** Docker Desktop → Docker,
-   Red Hat Enterprise Linux → Rocky Linux, MySQL Enterprise → MariaDB, GitLab Premium →
-   GitLab CE, Metabase Pro → Metabase, Nagios XI → Icinga. These are usually the cheapest
-   wins: often no migration, just a renewal you stop.
+FIRST THING TO CHECK: Monday 2026-08-17 07:00 is the first unattended run to exercise the new
+enrich_desc step, the Wikidata crosswalk routes, the reworked dedupe, the no-description
+curation rule and a build that makes no network request at all. Look at /sources.html (it
+reports its own build status) and confirm generated_at in /meta.json moved. Two things are
+EXPECTED, not faults: the >10% shrink warning fires once (3,069 → 2,753 is the intended effect
+of the curation rule), and enrich_desc fills only ~8 entries before hitting GitHub's
+unauthenticated rate limit.
 
-4. **Entry counts changed again — dedupe got much better.** A Comptoir du Libre crosswalk
-   now stamps Wikidata QIDs onto entries that lacked them, which lifted merges from 156 to
-   **241** and multi-catalogue entries from 46 to **105**. If you counted "how many options
-   exist", recount.
+OPEN, in rough priority order — CONTINUE.md has the full list with detail:
 
-## New field you will want: `catalogue_count` + `catalogues[]`
+1. Decide the demand-side catalogue. DEMAND-SIDE-CATALOGUE.md proposes harvesting the
+   proprietary software governments actually buy, from procurement data, rather than
+   hand-seeding it. NYC's licence export joins the catalogue at 3.6% of spend and the note
+   argues the limit is naming, not coverage. Stage 1 — the go/no-go — has NOT been run: get one
+   more jurisdiction with product-level licence data and see whether product names normalise
+   across two. A day's work, and it decides everything after it.
 
-How many **distinct national catalogues** list this software, with a deep link into each
-one's own record. This is the strongest independent-adoption signal in the dataset — far
-better than stars.
+2. Expand replaces.json (194 entries → 290 products). Read its _README first: `kind` and
+   `confidence` both matter and getting them wrong produces confident category errors.
+   export_json.py FAILS the build on an invalid value. Check existing product names before
+   adding — last session's additions split Dropbox across two keys by using a more specific
+   name than the seed already had.
 
-```python
-import json, urllib.request
-E = json.load(urllib.request.urlopen("https://govoss-catalog.vercel.app/entries.json"))
-strong = [e for e in E if e["catalogue_count"] >= 3]     # 23 entries
-```
+3. Databook design harmonisation is handed off, not done:
+   ~/Antigravity/Databook2/docs/LANDING-HARMONISATION-PLAN.md. Give it to a Databook session.
 
-LibreOffice and QGIS are listed by **5** catalogues each; Drupal, GitLab, Matomo and
-NextCloud Server by 4. Three or more governments independently cataloguing the same tool is
-a much better procurement signal than any single listing.
+4. enrich_desc.py needs a GITHUB_TOKEN in schedule/*.plist.template to finish its 251-entry
+   backlog in one run instead of ~31 weeks. A PAT with no scopes at all is enough. Needs a
+   credential decision, which is why it wasn't done.
 
-## Endpoints (unchanged, plus two)
+5. Screen-reader testing has never been done. Contrast is swept automatically (zero AA
+   failures, lowest 4.9:1) but VoiceOver/NVDA has never run. /products.html is a large table —
+   the surface most likely to expose problems.
 
-    GET /entries.json              3,063 entries, structured fields
-    GET /meta.json                 category enum, sources, counts, known gaps
-    GET /by-product.json           inverted index: proprietary product -> alternatives
-    GET /by-category/<key>.json    one file per functional category
-    GET /sources.json              NEW — the 17 catalogues, plus 13 surveyed and rejected
-    GET /status.json               NEW — freshness, per-source counts, change log
-    GET /v1/entries.json           versioned alias
-    GET /llms.txt                  how to use all of it
+THINGS THAT WILL BITE YOU, beyond CLAUDE.md's list:
 
-`/api/entries`, `/api/catalog`, `/catalog.json` and `/data.json` still redirect to
-`/entries.json`.
-
-## The 17 catalogues now
-
-France (SILL + awesome-codegouvfr), Italy (Developers Italia), Germany (openCode + **Munich**),
-**Denmark (OS2)**, **Bulgaria (e-Government Ministry)**, Belgium (iMio), Sweden (Offentligkod),
-Netherlands (code.overheid.nl), **Portugal (ARTE)**, Canada (Open Resource Exchange),
-**Taiwan (moda)**, Finland (Avoinkoodi), **Ireland (OGCIO)**, EU institutions, and the
-**global Digital Public Goods registry**.
-
-Bold = new since your last handoff. Note the DPG registry uses a **wider criterion**: DPGs
-are vetted for SDG relevance and many are NGO- or university-built rather than
-government-published. They carry `dpg: true` and country `GLOBAL`, so filter them out if
-your question is strictly "what do governments publish".
-
-## Provenance to carry into anything you publish
-
-- **1,608 of 2,745 descriptions (59%) are machine translations** from German, Italian,
-  French, Dutch, Danish, Portuguese, Finnish, Swedish and Chinese. Each carries
-  `translated_from` and `description_original`. Do not present them as publisher wording.
-- **171 Bulgarian descriptions are NOT translated** and remain in Cyrillic. Deliberate: they
-  are mostly long EU-funding project titles rather than software summaries. `description_lang`
-  will say `bg`.
-- `categories_inferred: true` means the category came from keyword rules, not the publisher.
-- `wikidata_via: comptoir:*` means the QID was inferred from a crosswalk, not asserted upstream.
-- **102 entries are filtered out** of `entries.json` as not-adoptable software: forks of
-  upstream projects, CI plumbing, deployment recipes, locale bundles.
-- `link_dead` is true for 24 entries, confirmed over two consecutive checks.
-- `generated_at` in `/meta.json` is the build time, and the weekly run now publishes itself,
-  so build time and deploy time track each other. A run with any failed step publishes
-  nothing, so a `generated_at` that has stopped moving means the pipeline broke, not that
-  someone forgot to deploy — `/status.json` says which step.
-
-## Still worth knowing
-
-`/sources.json` now carries a `survey` array of **13 catalogues checked and rejected**, with
-the reason — US code.gov is retired, India's OpenForge publishes no code, Korea's oss.kr is a
-promotion portal, Spain's CTT is behind a CAPTCHA, Cyprus has no code platform at all. If you
-are asked "why isn't country X in here", that array is the answer.
-
-Highest-value thing you could contribute back is still **more `replaces` mappings**. You have
-the invoice side, which is the half this catalogue cannot see — and the three gaps closed
-above only got closed because you reported them as empty.
+- Test guards adversarially. Two guards written last session could only ever pass until they
+  were tested by breaking the thing they check — one substring-matched text that appears in a
+  vendored CSS comment.
+- Audit interactive states, not just the page at rest. A 2.41:1 contrast failure hid behind an
+  unpressed toggle and the first full sweep reported zero failures.
+- Read desc_lang (what is displayed), never desc_src_lang (the language of the original).
+  Reading the wrong one produced a confident report of 358 untranslated entries that were
+  already in English.
+- Translation keys hash the RAW short_desc. Twelve Bulgarian descriptions carry surrounding
+  whitespace, and keys built from .strip()ed text matched nothing, silently.
+- The browser pane returns stale and blank frames. Measure the DOM; rebuild site/ before
+  testing it — one "failure" last session was just build_site.sh not having been re-run.
+- No f-strings for markup. theme.py, _ui_template.py and the build_*.py page templates use
+  plain strings with __PLACEHOLDER__ tokens; the substitution asserts none survived.
+- The get-involved block is DUPLICATED in _ui_template.py and build_sources.py. It has already
+  caused one bug where a fix to one left the other stale.
