@@ -2429,7 +2429,238 @@
     "liveness_ok": -3,
     "liveness_unknown": 8
    }
+  },
+  {
+   "run_at": "2026-08-17T11:21:16Z",
+   "started_at": "2026-08-17T11:00:04Z",
+   "trigger": "schedule",
+   "duration_s": 1272,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 731
+    },
+    {
+     "step": "enrich desc",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 105
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "crosswalk",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 25
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 1
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 408
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 2
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 2772,
+    "filtered_out": 424,
+    "publiccode_tier": 996,
+    "merged_away": 224,
+    "multi_country": 86
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-08-17T11:11:11Z",
+     "seconds": 8.2
+    },
+    "bg": {
+     "records": 191,
+     "checkpoint_mtime": "2026-08-17T11:11:58Z",
+     "seconds": 4.8
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-08-17T11:11:20Z",
+     "seconds": 0.3
+    },
+    "de": {
+     "records": 482,
+     "checkpoint_mtime": "2026-08-17T11:05:40Z",
+     "seconds": 311.4
+    },
+    "dpg": {
+     "records": 249,
+     "checkpoint_mtime": "2026-08-17T11:12:14Z",
+     "seconds": 16.4
+    },
+    "eu": {
+     "records": 11,
+     "checkpoint_mtime": "2026-08-17T11:11:03Z",
+     "seconds": 322.4
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-08-17T11:11:11Z",
+     "seconds": 0.5
+    },
+    "fr": {
+     "records": 687,
+     "checkpoint_mtime": "2026-08-17T11:00:09Z",
+     "seconds": 4.0
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-08-17T11:11:25Z",
+     "seconds": 0.9
+    },
+    "it": {
+     "records": 550,
+     "checkpoint_mtime": "2026-08-17T11:00:29Z",
+     "seconds": 20.0
+    },
+    "muc": {
+     "records": 141,
+     "checkpoint_mtime": "2026-08-17T11:11:30Z",
+     "seconds": 2.2
+    },
+    "nl": {
+     "records": 135,
+     "checkpoint_mtime": "2026-08-17T11:11:20Z",
+     "seconds": 7.9
+    },
+    "nlreg": {
+     "records": 0,
+     "checkpoint_mtime": "2026-08-17T11:12:14Z",
+     "seconds": 0.0
+    },
+    "os2": {
+     "records": 299,
+     "checkpoint_mtime": "2026-08-17T11:11:53Z",
+     "seconds": 23.0
+    },
+    "pt": {
+     "records": 89,
+     "checkpoint_mtime": "2026-08-17T11:11:28Z",
+     "seconds": 2.9
+    },
+    "se": {
+     "records": 148,
+     "checkpoint_mtime": "2026-08-17T11:11:12Z",
+     "seconds": 0.6
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-08-17T11:11:24Z",
+     "seconds": 4.0
+    }
+   },
+   "catalogues": {
+    "BG/governmentbg": 177,
+    "IT/developers-italia": 537,
+    "DK/os2": 214,
+    "DE/opensource.muenchen.de": 141,
+    "FR/sill": 667,
+    "PT/arte": 39,
+    "DE/openCode": 412,
+    "GLOBAL/dpg": 248,
+    "NL/code.overheid.nl": 103,
+    "EU/code.europa.eu": 8,
+    "FI/avoinkoodi": 54,
+    "SE/offentligkod": 44,
+    "CA/code.open.canada.ca": 66,
+    "BE/iMio": 101,
+    "FR/awesome-codegouvfr": 19,
+    "TW/code.gov.tw": 57,
+    "IE/ogcio": 2
+   },
+   "translation": {
+    "described": 2771,
+    "source_english": 1034,
+    "machine_translated": 1737,
+    "coverage_pct": 100.0
+   },
+   "categorisation": {
+    "classified": 2367,
+    "inferred": 1161,
+    "unclassified": 405
+   },
+   "liveness": {
+    "checked": "2026-08-17T11:14:26Z",
+    "total": 3040,
+    "ok": 2960,
+    "dead": 24,
+    "pending_dead": 0,
+    "unknown": 53,
+    "archived": 39,
+    "newly_dead": [],
+    "revived": []
+   },
+   "filters": {
+    "no-description": 321,
+    "org-meta": 8,
+    "upstream-fork": 68,
+    "deployment-recipe": 18,
+    "locale-bundle": 5,
+    "ci-plumbing": 4
+   },
+   "delta": {
+    "entries_active": -308,
+    "per_source": {
+     "bg": 1,
+     "de": 4,
+     "eu": -13,
+     "nl": 1,
+     "pt": 1
+    },
+    "liveness_ok": 30,
+    "liveness_unknown": -8
+   }
   }
  ],
- "updated_at": "2026-08-12T19:06:32Z"
+ "updated_at": "2026-08-17T11:21:16Z"
 }

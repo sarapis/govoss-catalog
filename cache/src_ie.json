@@ -26,7 +26,7 @@
   ],
   "is_fork": false,
   "landing": "https://ds.services.gov.ie/",
-  "last_activity": "2026-08-12T11:16:16Z",
+  "last_activity": "2026-08-17T10:33:25Z",
   "license": "MIT",
   "long_desc": "The Government of Ireland Design System is an open-source design system developed by the Office of the Government Chief Information Officer (OGCIO). It provides tools for design and development, along with resources and guidelines to help teams create consistent, accessible, and user-centred digital services across government.",
   "maintenance": "internal",
@@ -39,7 +39,7 @@
   "short_desc": "An open-source design system providing tools and guidelines to create consistent, accessible, and user-centred government digital services.",
   "software_type": "library",
   "source": "IE/ogcio",
-  "stars": 6,
+  "stars": 7,
   "tier": "publiccode",
   "used_by": [
    "Office of Government's Chief Information Officer, Ireland",

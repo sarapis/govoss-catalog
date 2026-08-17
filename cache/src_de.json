@@ -205,7 +205,7 @@
   ],
   "forge_path": "unbox-cologne/adaptiontechnologyhub/adapt-map-koeln",
   "landing": "https://adaptmap.de/",
-  "last_activity": "2026-05-19T19:27:16.865Z",
+  "last_activity": "2026-08-13T11:04:03.649Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "**AdaptMap** is a German-language, mobile\u2011first web application that helps cities understand and respond to heat stress at neighborhood level. It combines an easy\u2011to\u2011use citizen questionnaire, an anonymized public heatmap, and optional AI\u2011generated advice for residents. The app is designed to work well as a \u201cstreet\u2011ready\u201d tool: people scan a QR code or open a short link, complete a focused set of questions about their heat situation, and immediately see a simple result and further options.\n\n\u200b\n\n### **Primary Goals**\n\n- **Lower the threshold to reporting heat problems**: People should be able to report their situation in under a few minutes, on a smartphone, without creating an account.\n- **Create a privacy\u2011respecting evidence base**: Collected information is aggregated and geospatially generalized so that individual households cannot be identified, while still giving planners and policymakers a clear picture of where heat stress is concentrated.\n- **Offer immediate, practical value to respondents**: After filling out the questionnaire, users receive a simple \u201cheat problem index\u201d plus the option to generate AI\u2011based recommendations tailored to their answers and neighborhood.\n- **Empo",
   "maintenance": "contract",
@@ -516,7 +516,7 @@
    "Web UI"
   ],
   "forge_path": "bpa/audiominer/audiominer",
-  "last_activity": "2026-08-12T14:47:59.797Z",
+  "last_activity": "2026-08-17T08:31:50.139Z",
   "license": "MIT",
   "long_desc": "Die Anwendung besteht aus mehreren lose gekoppelten Diensten, die gemeinsam eine skalierbare und flexible Transkriptionsl\u00f6sung f\u00fcr Audio- und Videodateien bereitstellen. Der ASR Service \u00fcbernimmt die automatische Spracherkennung. Er nimmt Transkriptionsanfragen entgegen, erkennt selbstst\u00e4ndig die verwendete Sprache und transkribiert die Inhalte mithilfe des Whisper-Modells. Zus\u00e4tzlich wird eine Sprecherdiarisierung durchgef\u00fchrt, sodass unterschiedliche Sprecher im Transkript eindeutig getrennt werden k\u00f6nnen. F\u00fcr eine performante Verarbeitung, insbesondere bei gr\u00f6\u00dferen Dateien oder hoher Auslastung, wird der Einsatz von GPU-beschleunigter Hardware empfohlen.\n\nDer FS Watcher dient der Anbindung an bestehende Dateisysteme. Er \u00fcberwacht ein konfigurierbares, geteiltes Verzeichnis und erkennt neu hinzugef\u00fcgte Audio- oder Videodateien automatisch. Sobald eine neue Datei erkannt wird, st\u00f6\u00dft der Dienst die Verarbeitung an und stellt sicher, dass das fertige Transkript nach Abschluss wieder am urspr\u00fcnglichen Speicherort abgelegt wird. Dadurch ist eine nahtlose Integration in bestehende Arbeitsabl\u00e4ufe ohne manuelle Uploads m\u00f6glich.\n\nDer Web Service stellt die zentrale Benutzeroberfl\u00e4che bere",
   "maintenance": "internal",
@@ -635,7 +635,7 @@
    "Open-Source-Entwicklung"
   ],
   "forge_path": "governikus/ausweisapp",
-  "last_activity": "2026-07-15T06:33:03.732Z",
+  "last_activity": "2026-08-14T06:26:49.476Z",
   "license": "EUPL-1.2",
   "long_desc": "Die AusweisApp ist eine Open-Source-Anwendung zur Nutzung der Online-Ausweisfunktion (eID) des deutschen Personalausweises, des elektronischen Aufenthaltstitels sowie der eID-Karte f\u00fcr EU-/EWR-B\u00fcrgerinnen und -B\u00fcrger.\nSie erm\u00f6glicht eine sichere Authentisierung gegen\u00fcber Online-Diensten von Beh\u00f6rden und Unternehmen. Die Kommunikation erfolgt verschl\u00fcsselt nach den Vorgaben des Bundesamts f\u00fcr Sicherheit in der Informationstechnik (BSI).\nDie Anwendung unterst\u00fctzt NFC-f\u00e4hige Smartphones sowie Kartenleseger\u00e4te am Desktop und steht f\u00fcr Windows, macOS, iOS, Android und inoffiziell f\u00fcr Linux zur Verf\u00fcgung.\n",
   "maintenance": "contract",
@@ -647,7 +647,7 @@
    "ios",
    "android"
   ],
-  "released": "2026-07-15",
+  "released": "2026-08-14",
   "repo": "https://github.com/Governikus/AusweisApp",
   "repo_key": "github.com/governikus/ausweisapp",
   "repo_owner": "Governikus",
@@ -857,7 +857,7 @@
   ],
   "forge_path": "open-code/badgebackend/badge-api",
   "landing": "https://badges.opencode.de/de/",
-  "last_activity": "2026-08-07T09:34:39.402Z",
+  "last_activity": "2026-08-14T13:45:05.648Z",
   "license": "MIT",
   "long_desc": "Das Badge Programm pr\u00fcft openCode Repositories und vergibt Badges, die im [openCode Softwareverzeichnis](https://opencode.de/de/software) angezeigt werden und den Status der Repositories in Bezug auf **Wartung**, **Wiederverwendung** und **Sicherheit** anzeigen.\n\nMit der Badge-API k\u00f6nnen Sie interagieren, indem Sie eine Repository-URL \u00fcbermitteln. Basierend auf den erf\u00fcllten Kriterien des Repositorys erhalten Sie entsprechende Badges. Zudem stellt die API eine detaillierte Erkl\u00e4rung des Ergebnisses bereit. In der [Dokumentation](https://badges.opencode.de/de/?repositoryUrl=https%3A%2F%2Fgitlab.opencode.de%2Fopen-code%2Fbadgebackend%2Fbadge-api) k\u00f6nnen Sie es sofort ausprobieren.\n",
   "maintenance": "contract",
@@ -1639,7 +1639,7 @@
    "Rollen- und Rechtesteuerung auf Basis angebundener IAM-Provider"
   ],
   "forge_path": "bwi/bundesmessenger/admin-portal/bumap-core",
-  "last_activity": "2026-08-12T15:08:59.069Z",
+  "last_activity": "2026-08-17T07:32:07.817Z",
   "license": "Apache-2.0",
   "long_desc": "Das BuMAP-Core-Projekt ist das Backend-Modul des BundesMessenger-Admin-Portals (BuMAP), das die zentrale Konfiguration des gesamten BundesMessenger-Backends erm\u00f6glicht.\nEs aggregiert Daten aus verschiedenen Backend-Diensten und stellt diese \u00fcber eine REST-API der Benutzeroberfl\u00e4che zur Verf\u00fcgung.\n\n**Einfach konfigurierbar und 100% anpassbar.**\n\nDas BuMAP-Core ist f\u00fcr die \u00f6ffentliche Verwaltung optimiert und erm\u00f6glicht eine flexible und sichere Konfiguration des BundesMessenger-Systems.\nEs wird kontinuierlich weiterentwickelt, um den Anforderungen der Beh\u00f6rden in Deutschland gerecht zu werden.\n",
   "maintenance": "internal",
@@ -1647,7 +1647,7 @@
   "platforms": [
    "linux"
   ],
-  "released": "2026-01-19",
+  "released": "2026-08-14",
   "repo": "https://gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core",
   "repo_key": "gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core",
   "short_desc": "Backend for Frontend f\u00fcr die zentrale Konfiguration des BundesMessenger-Backends.",
@@ -1655,7 +1655,7 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 3101,
-  "version": "3.2.2"
+  "version": "5.0.0"
  },
  {
   "categories": [
@@ -1674,17 +1674,17 @@
   "features": [
    "UI zur zentralen Konfiguration des BundesMessenger-Backends",
    "Benutzerverwaltung (\u00dcbersicht, User-Daten, Sitzungen, ...)",
-   "Raumverwaltung (Mitgliedschaften, Medien, Zustandereignisse, ...)",
+   "Gruppenverwaltung (Mitgliedschaften, Medien, Zustandereignisse, ...)",
    "Einsicht von KPIs",
    "Rollen- und Rechtesteuerung auf Basis angebundener IAM-Provider",
    "Pflege von 1st-Level Support Information",
    "Benutzer kann die Version der Anwendung und die zugeh\u00f6rigen Abh\u00e4ngigkeiten \u00fcberpr\u00fcfen",
-   "Pflege der Datenschutz URL, wenn App Konfig unterst\u00fctzt wird"
+   "Pflege der Datenschutz URL, wenn App Config unterst\u00fctzt wird"
   ],
   "forge_path": "bwi/bundesmessenger/admin-portal/bumap-ui",
-  "last_activity": "2026-05-22T12:52:11.052Z",
+  "last_activity": "2026-08-13T14:23:30.988Z",
   "license": "Apache-2.0",
-  "long_desc": "Das BundesMessenger Admin-Portal (BuMAP) ist der zentrale Einstiegspunkt f\u00fcr die \nKonfiguration des gesamten BundesMessenger-Backends. Es bietet ein Web-Frontend, um Benutzer- \nund Raumverwaltung, KPIs sowie App-Anpassungen und Rollen-/Rechteverwaltung \nf\u00fcr den BundesMessenger bereitzustellen.\n",
+  "long_desc": "Das BundesMessenger Admin-Portal (BuMAP) ist der zentrale Einstiegspunkt f\u00fcr die \nKonfiguration des gesamten BundesMessenger-Backends. Es bietet ein Web-Frontend, um Benutzer- \nund Gruppenverwaltung, KPIs sowie App-Anpassungen und Rollen-/Rechteverwaltung \nf\u00fcr den BundesMessenger bereitzustellen.\n",
   "maintenance": "internal",
   "name": "BuMAP UI",
   "platforms": [
@@ -2055,7 +2055,7 @@
    "Sprachnachrichten"
   ],
   "forge_path": "bwi/bundesmessenger/backend/helm-chart",
-  "last_activity": "2026-08-12T08:04:18.580Z",
+  "last_activity": "2026-08-17T08:02:58.463Z",
   "license": "Apache-2.0",
   "long_desc": "Das BundesMessenger Backend ist Bestandteil einer Sammlung von\nRepositories zum BundesMessenger. Allgemeine Informationen zum Projekt\nbefinden sich im \u00fcbergeordneten [BundesMessenger\nRepository](https://gitlab.opencode.de/bwi/bundesmessenger/info).\n\n\nDieses Repository stellt ein [Helm Chart](https://helm.sh/) zur\nautomatisierten Bereitstellung eines Backends bzw. Infrastruktur f\u00fcr die\nNutzung mit dem BundesMessenger Client zur Verf\u00fcgung. Hauptbestandteil ist\nder [Synapse Server](https://github.com/element-hq/synapse), Dieser ist\neine Matrix homeserver Implementierung in Python auf Basis des [Matrix\nProtokolls](https://matrix.org/).\n",
   "maintenance": "internal",
@@ -2854,7 +2854,7 @@
    "JWT-signature validation"
   ],
   "forge_path": "it.nrw/nrw.desk/caddy-jwt",
-  "last_activity": "2026-07-08T02:16:56.843Z",
+  "last_activity": "2026-08-14T02:27:07.371Z",
   "license": "BSD-3-Clause",
   "long_desc": "This repository contains the recipe for a custom build of the Caddy web server including the ggicci/caddy-jwt plugin. It can be used to implement JWT authentication for backend services via reverse proxying.\n",
   "maintenance": "community",
@@ -2931,7 +2931,7 @@
    "CardDAV"
   ],
   "forge_path": "it.nrw/nrw.desk/calendar-manager",
-  "last_activity": "2026-08-11T02:27:16.029Z",
+  "last_activity": "2026-08-16T02:37:04.001Z",
   "license": "BSD-3-Clause",
   "long_desc": "The calendar-manager service serves as a proxy for a third-party CalDAV and CardDAV server and enables various backend components of the NRW.desk system to create calendar entries and retrieve a user's contacts.\n",
   "maintenance": "community",
@@ -2984,7 +2984,7 @@
   ],
   "forge_path": "regierung-von-oberbayern/cibseven",
   "landing": "https://github.com/cibseven/cibseven",
-  "last_activity": "2026-08-12T00:34:55.469Z",
+  "last_activity": "2026-08-15T00:34:36.927Z",
   "license": "Apache-2.0",
   "long_desc": " \n\n**CIB seven** is a powerful process engine developed in Java that enables companies and public authorities to model, execute, and monitor business processes. It was created as a fork of the globally widespread **Camunda Platform 7** and positions itself as its long-term open-source alternative.\n\nSince manufacturer support for the Camunda 7 Community Edition has been discontinued, CIB seven fills a critical gap for public administration: It offers **guaranteed further development** and maintenance of the proven architecture beyond 2025. This makes it the ideal solution for institutions that rely on the stability of Camunda 7 technology but want to avoid migration efforts to proprietary cloud solutions or complete architecture changes (e.g., Camunda 8).\n\nThe platform includes not only the core engine for **BPMN** (Business Process Model and Notation), **DMN** (Decision Model and Notation), and **CMMN** (Case Management Model and Notation), but also modernized web applications for administration, task management (Tasklist), and operational monitoring (Cockpit).\n\n### **Why CIB seven for Public Administration?**\n\n- **Investment Protection:** Existing Camunda 7 applications can contin",
   "maintenance": "internal",
@@ -3794,7 +3794,7 @@
   ],
   "forge_path": "it.nrw/nrw.desk/conference-backend",
   "landing": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-backend",
-  "last_activity": "2026-08-11T02:33:04.834Z",
+  "last_activity": "2026-08-16T02:39:11.596Z",
   "license": "BSD-3-Clause",
   "long_desc": "The main backend service for conference management. This service manages the database and general requests for creating, editing, and deleting conferences and rooms. It also defines the database models necessary for managing calendar entries using the calendar-manager.\nFor an overview of the project as a whole, please refer to https://gitlab.opencode.de/it.nrw/nrw.desk/nrwdesk-helm\nconference-backend is the backend service for conference-frontend and exposes a HTTP-REST API protected through bearer token authentication. It connects itself to calendar-manager and/or identity-curator via their respective APIs to interact with calendars with CalDAV support and identity cards either via CardDAV or direct communication with the upstream identity provider/broker.\nAlternative clients that want to interact with the conference management system of NRW.Desk must learn how to obtain a valid OAuth2 token for their user from the token provider (e.g. Keycloak) and use the API defined in this project. Note: conference-backend does not validate the access token signature. It only uses the contained fields to identify the authorization scope of a user. Token validation should be handled by an appro",
   "maintenance": "contract",
@@ -3834,7 +3834,7 @@
    "external-conference-cleanup"
   ],
   "forge_path": "it.nrw/nrw.desk/conference-cleanup",
-  "last_activity": "2026-08-11T02:34:35.915Z",
+  "last_activity": "2026-08-16T02:41:04.363Z",
   "license": "BSD-3-Clause",
   "long_desc": "Django-based synchronization service that keeps the external gateway database (`gateway-backend`)\nin sync with the internal conference database (`conference-backend`). It is designed to resolve\ndata drift caused by service outages or other failures.\n\nThe service connects to the internal database directly via its native protocol\n(e.g., PostgreSQL) and communicates with the gateway through its HTTP CRUD API. The internal\ndatabase is treated as **read-only**. No writes, migrations, or other modifications are\nperformed against it.\n\nDuring synchronization, the service compares internal conferences with those stored on the\ngateway. The following actions might be queued and are executed in batches once all\ncomparisons are complete:\n- **Delete** from the gateway if the conference no longer exists internally,\nis marked as deleted, or has both guest and phone access deactivated.\n- **Update** in the gateway if the conference exists on both sides but data has diverged.\n- **Create** in the gateway if the conference exists internally with access enabled\nbut is missing from the gateway.\n\nThe service has no HTTP endpoints and operates purely as a background process. It supports\ntwo operation modes",
   "maintenance": "contract",
@@ -3917,7 +3917,7 @@
    "jitsi-phone-access"
   ],
   "forge_path": "it.nrw/nrw.desk/conference-phone-codes",
-  "last_activity": "2026-08-08T02:36:10.239Z",
+  "last_activity": "2026-08-13T02:37:38.756Z",
   "license": "BSD-3-Clause",
   "long_desc": "This project implements the conference-phone-access-api to seamlessly integrate Jitsi Meet and Jigasi with the conference-management. It helps users to join conferences that are protected with an access code. When a correct phone code is given the conference UUID is returned.\n",
   "maintenance": "contract",
@@ -3952,7 +3952,7 @@
   "entry_url": "https://gitlab.opencode.de/it.nrw/nrw.desk/config-check",
   "fallback_repo": "https://gitlab.opencode.de/it.nrw/nrw.desk/config-check.git",
   "forge_path": "it.nrw/nrw.desk/config-check",
-  "last_activity": "2026-08-04T02:33:39.061Z",
+  "last_activity": "2026-08-15T02:42:38.833Z",
   "license": "BSD-3-Clause",
   "long_desc": "config-check is a lightweight, statically-linked Go CLI tool that validates environment variable configurations for frontend services within the NRW.desk collaboration platform. It ensures all required environment variables are present, have correct types, and conform to the expected format. The tool operates in three modes: conference-frontend, portal-frontend, and gateway-frontend, each defining its configuration requirements through structured Go types. Validation covers base URLs, OIDC authentication settings, dashboard tile configurations, header menu items, feedback forms, browser restrictions, and feature flags. Custom validation types enforce type safety: URLs must be valid absolute URIs or paths, booleans (FEBool) strictly accept \"true\" or \"false\". Validation includes conditional logic for context-dependent requirements and triggers migration warnings for deprecated variables like legacy Keycloak settings. Designed for containerized deployments, it runs as an inline validation step or Kubernetes init container. Compiled with CGO_ENABLED=0, the static binary is easily embedded into other container images. Part of the NRW.desk project by IT.NRW, built by GONICUS GmbH.\n",
   "maintenance": "contract",
@@ -4031,7 +4031,7 @@
    "Communication"
   ],
   "forge_path": "wechange-eg/cosinnus",
-  "last_activity": "2026-08-12T15:49:14.685Z",
+  "last_activity": "2026-08-13T14:36:14.025Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Main codebase for the WECHANGE suite. Contains the core functionality and models: user account management, groups/projects, ideas, user-dashboard, map, search, and all base templates, forms, and stylesheets. Cosinnus is the heart of the collaboration software to implement many of the best Free and Open Source Software to work together. It include chat, file sharing, project management, video conferencing and much more with focus real privacy. There a no cookies or something else thats connect to Google or etc. All services can be self hosted.",
   "maintenance": "contract",
@@ -4289,7 +4289,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/data-stories.git",
   "forge_path": "umwelt-info/data-stories",
   "landing": "https://umwelt.info",
-  "last_activity": "2026-08-12T12:02:29.929Z",
+  "last_activity": "2026-08-17T10:18:56.637Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "Data-stories originally created for the umwelt.info portal provides Python- and R-based scripts to collect, analyze and visualize metadata found in umwelt.info. The main focus is on environmental and nature protection data and information and their related metadata. The metadata catalogue on umwelt.info is accessed via the public API documented at https://md.umwelt.info/swagger-ui/. \n",
   "maintenance": "internal",
@@ -4771,7 +4771,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot",
   "landing": "https://daz-pilot.de",
-  "last_activity": "2026-08-12T16:10:24.367Z",
+  "last_activity": "2026-08-17T09:31:19.623Z",
   "license": "EUPL-1.2",
   "long_desc": "In vocational school classes with German as a second or foreign language (DaZ/DaF), technical-language barriers regularly disrupt the flow of teaching. At levels A2\u2013B1 there is a lack of low-threshold, subject-specific learning offerings that are integrated directly into everyday school life.\n\nDaZ-Pilot is a digital language copilot for inclusive vocational education. Students point their device camera at a tool or classroom object and instantly receive an image, the technical term, its article, and its singular and plural forms. The pronunciation is played back through the device's own text-to-speech engine \u2013 offline and without any external services.\n\nAssignments from Moodle are automatically scanned for technical terms; a QR code in the document links the assignment directly to the matching vocabulary training, with no additional effort for teachers. A review mode with quizzes, points and badges motivates learners to practise regularly.\n\nThrough a web dashboard, teachers manage assignments and the central technical vocabulary database and review class overviews as well as difficulty analyses. Login uses existing school accounts via OpenID Connect \u2013 without any separate registrat",
   "maintenance": "contract",
@@ -5728,7 +5728,7 @@
    "Feedback submitted directly as repository issues"
   ],
   "forge_path": "open-code/document-writing-tools/markdown-webbook",
-  "last_activity": "2026-08-12T16:54:23.650Z",
+  "last_activity": "2026-08-14T16:09:53.120Z",
   "license": "MIT",
   "long_desc": "## Convert Markdown files into static websites and interactive WebBooks\n\neasyWebsite \u2013 Markdown WebBook is part of the Document Writing Tools on openCode. It allows you to transform Markdown files into a static website.\n\nSupported themes: KERN-UX, Bund, openCode, openDesk \u2014 for federal, state, municipal and other public organisations.\n\nBuilt on Next.js, React, and TypeScript. Contributions are welcome.\n",
   "maintenance": "community",
@@ -6103,6 +6103,42 @@
   "desc_src": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs.",
   "desc_src_lang": "de",
   "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "fallback_repo": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner.git",
+  "features": [
+   "Berechnung des voraussichtlichen Elterngelds",
+   "Planung des Bezugszeitraums",
+   "\u00dcbertragung von Daten in den digitalen Elterngeldantrag"
+  ],
+  "forge_path": "digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "landing": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "last_activity": "2026-08-17T07:33:01.403Z",
+  "license": "EUPL-1.2",
+  "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
+  "maintenance": "contract",
+  "name": "Elterngeldrechner und Planer",
+  "platforms": [
+   "web"
+  ],
+  "repo": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner.git",
+  "repo_key": "gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "repo_owner": "DigitalService GmbH des Bundes",
+  "short_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs.",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 12493
+ },
+ {
+  "categories": [
+   "digital-citizenship",
+   "educational-content"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs.",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
   "entry_url": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner",
   "fallback_repo": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner.git",
   "features": [
@@ -6112,7 +6148,7 @@
   ],
   "forge_path": "digitalservicebund/elterngeldrechner",
   "landing": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner",
-  "last_activity": "2026-08-12T14:06:21.374Z",
+  "last_activity": "2026-08-17T04:09:34.100Z",
   "license": "EUPL-1.2",
   "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
   "maintenance": "contract",
@@ -6502,7 +6538,7 @@
   ],
   "forge_path": "f13/dokumentation",
   "landing": "https://f13-os.de/",
-  "last_activity": "2026-08-06T08:12:59.885Z",
+  "last_activity": "2026-08-14T14:22:23.621Z",
   "license": "MPL-2.0",
   "long_desc": "F13 stellt eine Vielzahl modularer, flexibel einsetzbarer KI-Funktionen bereit \u2013 zum Verarbeiten von Informationen, Erstellen von Texten, oder zum Recherchieren. Nutzende k\u00f6nnen mit F13 gezielt, wirksam und sicher Generative K\u00fcnstliche Intelligenz bei t\u00e4glichen B\u00fcroarbeiten einsetzen. Mit dem \u00dcbergang in eine Open-Source-Weiterentwicklung wird F13 seit Juli 2025 als gemeinschaftliches Vorhaben ge\u00f6ffnet: Der Quellcode steht frei zur Verf\u00fcgung, die Nutzung ist offen. Interessierte Verwaltungen, Organisationen sowie Entwicklerinnen und Entwickler sind eingeladen, das System f\u00fcr eigene Bedarfe anzupassen, weiterzuentwickeln und diese Entwicklungen wiederum Open Source bereitzustellen. F13 versteht sich als Beitrag zu einer modernen, transparenten und kooperativen Verwaltungsdigitalisierung \u2013 praxisnah erprobt, offen zug\u00e4nglich und auf das Gemeinwohl ausgerichtet. F13 ist Work-in-Progress und es gibt somit allen, die KI-Basisl\u00f6sungen in die deutsche Verwaltung tragen wollen, die M\u00f6glichkeit zur Mitwirkung.\n",
   "maintenance": "community",
@@ -6589,7 +6625,7 @@
    "Endpoint for Grafana Infinity Datasource"
   ],
   "forge_path": "it.nrw/nrw.desk/feedback-backend",
-  "last_activity": "2026-08-08T02:37:35.716Z",
+  "last_activity": "2026-08-13T02:39:43.115Z",
   "license": "BSD-3-Clause",
   "long_desc": "Backend service for managing and storing feedback data from NRW.desk applications. Collected data can be retrieved and analyzed using the Infinity Datasource plugin for Grafana.\n",
   "maintenance": "contract",
@@ -6660,7 +6696,7 @@
   "entry_url": "https://gitlab.opencode.de/fitko/fim/portal",
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/portal.git",
   "forge_path": "fitko/fim/portal",
-  "last_activity": "2026-08-12T15:26:42.020Z",
+  "last_activity": "2026-08-15T06:50:02.131Z",
   "license": "EUPL-v1.2",
   "maintenance": "internal",
   "name": "FIM Datenfelder-Sammelrepository",
@@ -7125,7 +7161,7 @@
    "Architecture Decisions"
   ],
   "forge_path": "fitko/matrix-g2x/solution-architecture",
-  "last_activity": "2026-08-12T07:11:46.064Z",
+  "last_activity": "2026-08-17T04:59:35.705Z",
   "license": "EUPL-1.2",
   "long_desc": "This repository provides comprehensive documentation on the solution architecture of the Matrix-based G2X communication infrastructure pilot (https://gitlab.opencode.de/fitko/g2x-matrix-pilot).\n",
   "maintenance": "internal",
@@ -7166,7 +7202,7 @@
    "Semantic Release"
   ],
   "forge_path": "fitko/matrix-g2x/neo-rust-sdk",
-  "last_activity": "2026-08-10T05:03:14.378Z",
+  "last_activity": "2026-08-17T05:02:33.489Z",
   "license": "EUPL-1.2",
   "long_desc": "A template for software artifacts repositories that are part of the FITKO Matrix G2C Pilot Project.\nIt includes platform agnostic tooling, CI/CD workflows and documentation for managing software assets and deliverable artifacts.\n",
   "maintenance": "internal",
@@ -7328,7 +7364,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/foodsoft",
   "landing": "https://foodcoops.net",
-  "last_activity": "2026-08-10T04:14:10.370Z",
+  "last_activity": "2026-08-15T04:14:22.000Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Foodsoft is a web-based software designed to help food cooperatives manage their operations more effectively. It provides tools for small regional producers to distribute their products directly to consumers. With Foodsoft, cooperatives can handle orders, keep track of inventory, and communicate with their members easily. The platform allows producers to list their products, making it simple for consumers to find and purchase fresh, local food. By connecting producers and consumers, Foodsoft supports local businesses and encourages the use of locally sourced ingredients.\n",
   "maintenance": "community",
@@ -7675,7 +7711,7 @@
   ],
   "forge_path": "fitko/docs/portal",
   "landing": "https://docs.fitko.de",
-  "last_activity": "2026-08-11T09:02:21.363Z",
+  "last_activity": "2026-08-13T12:02:20.132Z",
   "license": "EUPL-1.2",
   "long_desc": "The Federal Development Portal (FEP) consolidates technical information for the development and integration of digital administrative services in Germany. It provides documentation, standards, API descriptions, help texts, background information, and additional development resources inin a single web portal. The target audience of the development portal includes:\n- Software developers\n- IT architects\n- Project and program managers\n- Product teams\n- Open-source enthusiasts\n\nThe development portal facilitates access to relevant materials, reduces search effort and supports more consistent use of federal IT buildin blocks. Content can be maintained in a structured way, published in multiple languages, and organised for different subject areas such as FIT standards, resource directories, and project-specific documentation. The software therefore acts as a central knowledge and publishing platform for development-facing information in the public sector.\n\nThe Federal Development Portal is a product of the German IT Planning Council and is managed by the FITKO product management team.\n",
   "maintenance": "internal",
@@ -7927,7 +7963,7 @@
    "conference-access management"
   ],
   "forge_path": "it.nrw/nrw.desk/gateway-backend",
-  "last_activity": "2026-08-08T02:38:24.957Z",
+  "last_activity": "2026-08-15T02:44:28.162Z",
   "license": "BSD-3-Clause",
   "long_desc": "An additional backend service for conference management. This service is used for access for users of external networks. If a conference that is created by the conference-backend saved with settings for guest access (including among other things phone access) the conference will be saved in the database of the gateway-backend, too. The gateway-crud-api handles all requests of conference-backend instances, that are used to create, update or read conferences. The gateway-api on the other hand handles requests of the gateway-frontend that are made for external users, to redirect and set guest permissions for the jitsi instance.\n",
   "maintenance": "contract",
@@ -8046,7 +8082,7 @@
    "Modular codedesign"
   ],
   "forge_path": "OC000024389631/GeospatialAnalyzer",
-  "last_activity": "2026-08-12T01:08:19.578Z",
+  "last_activity": "2026-08-17T01:08:23.612Z",
   "license": "GPL-3.0-only",
   "long_desc": "This is an Open-Source-Project from Landesamt f\u00fcr Geobasisinformation Sachsen (GeoSN) with development support from con terra GmbH.\n\nGeospatialAnalyzer is a Node.js based HTTP-API using NestJS, TypeORM, fastify, OpenAPI, Swagger and more.\n\nThe API can be integrated into different data processing and information systems, such as applications and specialised procedures.\n\nIt enables the transfer of geo-objects in the form of coordinates to check them against certain data topics using spatial tests. The response contains attributes of the objects found and optionally their geometry. In this way its possible to automatically determine, for example, in which district or on which parcel a transferred object is located.\n\nFor more information have a look in the documentation.\n",
   "maintenance": "community",
@@ -8290,7 +8326,7 @@
    "automatic import of the standard user groups and permissions"
   ],
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_permissions",
-  "last_activity": "2026-08-12T03:25:16.126Z",
+  "last_activity": "2026-08-16T18:19:39.517Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n**To obtain the current approved release version of the GSB11, which will be subject to quarterly acceptance tests in the future, please contact gsb11-entwicklung@itzbund.de.**\n\n## Government Site Builder 11 - Extension: gsb-permission\nThe extension gsb-permission provides the gsb11 standard permissions.\n",
   "maintenance": "contract",
@@ -8328,7 +8364,7 @@
    "Import Site-Configuration"
   ],
   "forge_path": "bmi/government-site-builder-11/extensions/siteconfig_impexp",
-  "last_activity": "2026-08-12T04:16:37.685Z",
+  "last_activity": "2026-08-17T03:23:46.504Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n**To obtain the current approved release version of the GSB11, which will be subject to quarterly acceptance tests in the future, please contact gsb11-entwicklung@itzbund.de.**\n\n## Government Site Builder 11 - Extension: siteconfig\\_impexp\nThe extension siteconfig\\_impexp provides a backend module to import and export your site configuration.\n",
   "maintenance": "contract",
@@ -8463,7 +8499,7 @@
    "Frontend Styles"
   ],
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_public_frontend",
-  "last_activity": "2026-08-12T03:20:25.253Z",
+  "last_activity": "2026-08-16T18:20:50.157Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n\n## Extension: gsb\\_public\\_frontend\nThe extension gsb\\_public\\_frontend contains the standard frontend of the GSB 11, without the federal style guide.\n",
   "maintenance": "contract",
@@ -8796,7 +8832,7 @@
    "Keycloak admin API"
   ],
   "forge_path": "it.nrw/nrw.desk/identity-curator",
-  "last_activity": "2026-08-11T02:39:18.683Z",
+  "last_activity": "2026-08-17T02:40:57.743Z",
   "license": "BSD-3-Clause",
   "long_desc": "The identity-curator service acts as a proxy layer in front of Keycloak to enable other services with access to its API to trade unique user identifier for exhaustive user information. If custom mappings between application-level user-IDs and Keycloak-user properties have been configured, this service needs to be extended in order to provide a correct translation.\n",
   "maintenance": "none OR contract",
@@ -9023,7 +9059,7 @@
   ],
   "forge_path": "cern/indico",
   "landing": "https://getindico.io",
-  "last_activity": "2026-08-12T01:16:37.342Z",
+  "last_activity": "2026-08-17T01:15:33.657Z",
   "license": "MIT",
   "long_desc": "Indico is a general-purpose, fully web-based event management system originally developed at CERN, the European Organization for Nuclear Research. It supports the full lifecycle of conferences, meetings and lectures, from the initial call for abstracts through registration, scheduling, paper reviewing and archival of materials.\n\nKey capabilities include a hierarchical content management system for organizing events of any size, from single meetings to multi-week international conferences; a call for abstracts and abstract reviewing workflow; flexible, configurable registration forms with integration for external payment systems; a paper reviewing workflow for peer-reviewed contributions; a drag-and-drop timetable management interface for scheduling sessions and contributions; a badge and ticket editor for printing participant badges; a powerful room booking system for managing shared meeting spaces; and integration with common video conferencing solutions.\n\nIndico is released under the MIT license and is developed as a community project, with contributions from more than 100 developers, translators and usability specialists worldwide. It is extensible through a plugin system, allow",
   "maintenance": "community",
@@ -9950,7 +9986,7 @@
   ],
   "forge_path": "kern-ux/kern-ux-plain",
   "landing": "https://www.kern-ux.de/",
-  "last_activity": "2026-08-11T09:33:17.094Z",
+  "last_activity": "2026-08-14T09:23:09.019Z",
   "license": "EUPL-1.2",
   "long_desc": "# What is KERN?\nWith **KERN** we provide an open UX standard for Germany's public administration that enables delivery teams to build accessible digital services efficiently and with a user-centred approach.\n# Open Source\n**KERN** is an open source project initiated by the federal states of Hamburg and Schleswig-Holstein. Everyone interested in the digital transformation of public administration is invited to join the national, interdisciplinary community.\n# Community\nAdoption is driven by collaborations within a cross-state specialist community (bottom up) and by partnerships on the decision-making level (top down). As a toolkit for digital government solutions, **KERN** strengthens the unified 'public administration' brand and builds trust in services from the municipal to the federal level.\n# Awards and further information\n\n  - **KERN** received the 2024 Prize for Good Administration.\n  - **KERN** is part of the digital umbrella brand initiative.\n  - The [service standard](https://servicestandard.gov.de/) builds on and\n    with **KERN**.\n  - Find our [roadmap](https://www.kern-ux.de/ueber-kern/roadmap) on\n    kern-ux.de.\n\n# What does KERN include?\n\n  - **KERN** provides an exten",
   "maintenance": "community",
@@ -10516,6 +10552,47 @@
   "desc_src": "Das Klimadasboard M\u00fcnster visualisiert Echtzeit-Informationen \u00fcber die Klimabilanz der Stadt M\u00fcnster. Das Dashboard zeigt Daten mit verschiedenen  Grafiken in einem kachelbasierten Layout mit einzelnen Seiten f\u00fcr jede der vier Kategorieren. Die Daten stammen von vielen verschiedenen Datenanbieteren, u.a. das Open-Data-Portal der Stadt M\u00fcnster, der Deutsche Wetterdienst (DWD), BrightSky.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/oc000166165910/klimadashboard-muenster",
+  "fallback_repo": "https://gitlab.opencode.de/oc000166165910/klimadashboard-muenster.git",
+  "features": [
+   "visualization of climate data",
+   "visualisation of mobility data",
+   "visualisation of energy data",
+   "visualisation of building data"
+  ],
+  "forge_path": "oc000166165910/klimadashboard-muenster",
+  "landing": "https://klimadashboard.ms/",
+  "last_activity": "2026-08-14T05:40:22.644Z",
+  "license": "AGPL-3.0-or-later",
+  "long_desc": "The climate dashboard is a software solution that provides real-time information about the\nclimate balance of the city of M\u00fcnster. It allows users to visualize the current climate data using various diagrams and a tile-based layout. Each category of the climate footprint is presented on a separate page to provide a clear overview.\nThe data presented in this dashboard comes from a variety of providers, including the City of M\u00fcnster's Open Data Portal, the German Weather Service (DWD), BrightSky, and other data providers. By integrating these different data sources, the climate dashboard provides a comprehensive and up-to-date representation of the climate situation in M\u00fcnster.\nThe climate dashboard serves not only as a source of information, but also as a tool for evaluating and monitoring measures to combat climate change. It supports the city of M\u00fcnster and its partners in analyzing the impact of climate protection measures and evaluating the effectiveness of their efforts with regard to sustainable urban development.\nThe dashboard's interactive user interface allows users to visualize climate data on a map and access detailed information on individual measurement points. In addit",
+  "maintenance": "none",
+  "name": "Klimadashboard M\u00fcnster",
+  "platforms": [
+   "web"
+  ],
+  "released": "2023-06-21",
+  "repo": "https://gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster",
+  "repo_key": "gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster",
+  "short_desc": "The Klimadashboard provides real time information about the climate footprint for the city of M\u00fcnster. The application displays the data using different charts and a tile-based layout with separate pages for each category. The data is sourced from various providers, including the Open Data Portal of the City of M\u00fcnster, the German Weather Service (DWD), BrightSky, and other data providers.\n",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 12488,
+  "used_by": [
+   "Stadt M\u00fcnster"
+  ],
+  "version": "1.0.0"
+ },
+ {
+  "categories": [
+   "data-visualization"
+  ],
+  "country": "DE",
+  "desc_en": "The Klimadashboard provides real time information about the climate footprint for the city of M\u00fcnster. The application displays the data using different charts and a tile-based layout with separate pages for each category. The data is sourced from various providers, including the Open Data Portal of the City of M\u00fcnster, the German Weather Service (DWD), BrightSky, and other data providers.\n",
+  "desc_lang": "en",
+  "desc_src": "Das Klimadasboard M\u00fcnster visualisiert Echtzeit-Informationen \u00fcber die Klimabilanz der Stadt M\u00fcnster. Das Dashboard zeigt Daten mit verschiedenen  Grafiken in einem kachelbasierten Layout mit einzelnen Seiten f\u00fcr jede der vier Kategorieren. Die Daten stammen von vielen verschiedenen Datenanbieteren, u.a. das Open-Data-Portal der Stadt M\u00fcnster, der Deutsche Wetterdienst (DWD), BrightSky.\n",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
   "entry_url": "https://gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster",
   "fallback_repo": "https://gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster.git",
   "features": [
@@ -10526,7 +10603,7 @@
   ],
   "forge_path": "smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster",
   "landing": "https://klimadashboard.ms/",
-  "last_activity": "2026-08-12T12:51:43.527Z",
+  "last_activity": "2026-08-14T05:41:34.886Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "The climate dashboard is a software solution that provides real-time information about the\nclimate balance of the city of M\u00fcnster. It allows users to visualize the current climate data using various diagrams and a tile-based layout. Each category of the climate footprint is presented on a separate page to provide a clear overview.\nThe data presented in this dashboard comes from a variety of providers, including the City of M\u00fcnster's Open Data Portal, the German Weather Service (DWD), BrightSky, and other data providers. By integrating these different data sources, the climate dashboard provides a comprehensive and up-to-date representation of the climate situation in M\u00fcnster.\nThe climate dashboard serves not only as a source of information, but also as a tool for evaluating and monitoring measures to combat climate change. It supports the city of M\u00fcnster and its partners in analyzing the impact of climate protection measures and evaluating the effectiveness of their efforts with regard to sustainable urban development.\nThe dashboard's interactive user interface allows users to visualize climate data on a map and access detailed information on individual measurement points. In addit",
   "maintenance": "none",
@@ -10665,7 +10742,7 @@
   "fallback_repo": "https://gitlab.opencode.de/deleonio/kolibri.git",
   "forge_path": "deleonio/kolibri",
   "landing": "https://github.com/public-ui",
-  "last_activity": "2026-08-12T15:00:46.866Z",
+  "last_activity": "2026-08-17T08:01:59.672Z",
   "license": "EUPL-1.2",
   "long_desc": "\nThe HTML web standard is in itself very \"open\" specified to be as durable and robust as possible. Therefore, it often happens that HTML compositions are not easily accessible, semantic and valid. KoliBri builds directly on the web standards of the W3C (framework- agnostic), is thereby a generic reference implementation of the WCAG standard and the BITV for accessibility and implemented as a multi-theme capable presentation layer. There no technical reference and no data transfer functionalities. Thus KoliBri is for the realization of static websites as well as dynamic web applications of different corporate designs and style guides and therefore very interesting for open source.\n",
   "maintenance": "community with internal coordination",
@@ -10678,7 +10755,7 @@
    "web",
    "windows"
   ],
-  "released": "2026-08-04",
+  "released": "2026-08-14",
   "repo": "https://github.com/public-ui/kolibri",
   "repo_key": "github.com/public-ui/kolibri",
   "short_desc": "KoliBri \u2013 The accessible WebComponent library",
@@ -10689,7 +10766,7 @@
   "used_by": [
    "Informationstechnikzentrum Bund"
   ],
-  "version": "4.3.0"
+  "version": "4.3.1-rc.1"
  },
  {
   "categories": [
@@ -10762,7 +10839,7 @@
    "Export of statutory annual reports"
   ],
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie/gitlab-profile",
-  "last_activity": "2026-08-11T12:46:07.976Z",
+  "last_activity": "2026-08-13T12:05:14.407Z",
   "license": "MIT",
   "long_desc": "KommunalEnergie is a web-based application designed to support municipalities\nand public institutions in collecting, managing and analysing energy\nconsumption data of public properties.\n\nThe application integrates existing Home Assistant installations via a\ndefined interface to automatically collect metering data. For properties\nwithout automated data sources, manual data entry is supported.\n\nCollected data can be monitored over time and exported in order to fulfil\nstatutory reporting obligations, including annual energy consumption reports.\n",
   "maintenance": "community",
@@ -11558,7 +11635,7 @@
   ],
   "forge_path": "geowerkstatt-hamburg/masterportal",
   "landing": "https://www.masterportal.org",
-  "last_activity": "2026-08-12T16:44:42.950Z",
+  "last_activity": "2026-08-13T09:09:13.835Z",
   "license": "MIT",
   "long_desc": " ## Masterportal\n\n # Konfigurierbares Geoportal mit starker Community\n Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web. In Hamburg kommt das Masterportal immer dann zum Einsatz,\n wenn webbasierte Kartenanwendungen ben\u00f6tigt werden \u2013 als eigenst\u00e4ndige Anwendung oder als Teil einer E-Government-L\u00f6sung.\n Auch in anderen St\u00e4dten und Kreisen wird das Masterportal eingesetzt und in einer Kooperation in Form einer [++Implementierungspartnerschaft++](https://www.masterportal.org/)\n von mehr als 50 Partnern aus der Verwaltung weiterentwickelt.\n\n # Open Source und offene Standards\n Das Masterportal ist Open-Source-Software und setzt auf offene Standards. Es ist unter der [++MIT-Lizenz++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/License.txt) ver\u00f6ffentlicht.\n\n # Issues melden\n Der offizielle Issue Tracker ist auf Bitbucket zu finden: [++Issue Tracker++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/issues?status=new&status=open&status=submitted&is_spam=!spam)\n\n # Diskussionsforum des Masterportals\n Das Diskussionsforum findet man auf openCode: [++Diskussionsforum++](https://discourse.opencode.de/t/ueber-die-kategorie-masterportal-projekt-413/1",
   "maintenance": "community",
@@ -11576,6 +11653,50 @@
   "tier": "publiccode",
   "upstream_id": 413,
   "version": "3.15.3 (LTS)"
+ },
+ {
+  "categories": [
+   "geographic-information-systems"
+  ],
+  "contacts": [
+   "Betrieb Webanwendungen"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": " Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web.",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/lgvhh/urban-data-solutions/masterportal",
+  "fallback_repo": "https://gitlab.opencode.de/lgvhh/urban-data-solutions/masterportal.git",
+  "features": [
+   "OGC-konform",
+   "Konfigurierbar",
+   "Responsiv",
+   "OpenSource",
+   "Adminfreundlich",
+   "Modular",
+   "Metadatenintegration"
+  ],
+  "forge_path": "lgvhh/urban-data-solutions/masterportal",
+  "landing": "https://www.masterportal.org",
+  "last_activity": "2026-08-17T09:42:25.728Z",
+  "license": "MIT",
+  "long_desc": " ## Masterportal\n\n # Konfigurierbares Geoportal mit starker Community\n Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web. In Hamburg kommt das Masterportal immer dann zum Einsatz,\n wenn webbasierte Kartenanwendungen ben\u00f6tigt werden \u2013 als eigenst\u00e4ndige Anwendung oder als Teil einer E-Government-L\u00f6sung.\n Auch in anderen St\u00e4dten und Kreisen wird das Masterportal eingesetzt und in einer Kooperation in Form einer [++Implementierungspartnerschaft++](https://www.masterportal.org/)\n von mehr als 50 Partnern aus der Verwaltung weiterentwickelt.\n\n # Open Source und offene Standards\n Das Masterportal ist Open-Source-Software und setzt auf offene Standards. Es ist unter der [++MIT-Lizenz++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/License.txt) ver\u00f6ffentlicht.\n\n # Issues melden\n Der offizielle Issue Tracker ist auf Bitbucket zu finden: [++Issue Tracker++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/issues?status=new&status=open&status=submitted&is_spam=!spam)\n\n # Diskussionsforum des Masterportals\n Das Diskussionsforum findet man auf openCode: [++Diskussionsforum++](https://discourse.opencode.de/t/ueber-die-kategorie-masterportal-projekt-413/1",
+  "maintenance": "community",
+  "name": "Masterportal",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-08-05",
+  "repo": "https://bitbucket.org/geowerkstatt-hamburg/masterportal.git",
+  "repo_key": "bitbucket.org/geowerkstatt-hamburg/masterportal",
+  "repo_owner": "Freie und Hansestadt Hamburg, Landesbetrieb Geoinformation und Vermessung",
+  "short_desc": " Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web.",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 12471,
+  "version": "3.25.0"
  },
  {
   "categories": [
@@ -11813,7 +11934,7 @@
    "TODO"
   ],
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms",
-  "last_activity": "2026-08-11T21:27:28.424Z",
+  "last_activity": "2026-08-14T21:26:34.894Z",
   "license": "EUPL-1.2",
   "long_desc": "This is the backend CMS based on Strapi for the DigitalHub project.\n",
   "maintenance": "internal",
@@ -11849,7 +11970,7 @@
    "TODO"
   ],
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend",
-  "last_activity": "2026-08-12T03:07:16.457Z",
+  "last_activity": "2026-08-15T03:06:35.420Z",
   "license": "EUPL-1.2",
   "long_desc": "This is the backend CMS based on Strapi for the DigitalHub project.\n",
   "maintenance": "internal",
@@ -11888,7 +12009,7 @@
    "Matrix client"
   ],
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-creator",
-  "last_activity": "2026-08-11T02:41:56.026Z",
+  "last_activity": "2026-08-17T02:44:06.128Z",
   "license": "BSD-3-Clause",
   "long_desc": "The purpose of this bot is to listen to commands issued in any rooms it has been invited to and set up conference rooms on demand by interacting with the backend-api of the conference management. Upon success, the bot responds with the klickable link to the freshly created conference room.\n",
   "maintenance": "community",
@@ -11928,7 +12049,7 @@
    "Matrix client"
   ],
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-notifier",
-  "last_activity": "2026-08-11T02:45:04.007Z",
+  "last_activity": "2026-08-17T02:46:51.505Z",
   "license": "BSD-3-Clause",
   "long_desc": "This chat bot may be fed with information about a conference and its participants to schedule automatic reminder messages via Matrix chat prior to the meeting. Access links and conference information details are advertised for convenience. The bot acts deliberately without the need to invite it to a specific room while treating all messages as confidential and refusing to risk any data leak to third parties by managing its own rooms.\n",
   "maintenance": "community",
@@ -12280,7 +12401,7 @@
   ],
   "forge_path": "OC000014987132/metadaten",
   "landing": "https://umwelt.info",
-  "last_activity": "2026-08-11T18:27:45.256Z",
+  "last_activity": "2026-08-15T16:33:00.181Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "The metadata index developed for the umwelt.info project.\nIt collects information on datasets from diverse sources stored in different formats using various systems. This information is then harmonized and indexed so that it can be searched using the provided HTTP/JSON API.\nIt does not aim to be generic, configurable or programmable and is intended to work only as a component of the umwelt.info project.\n",
   "maintenance": "internal",
@@ -12403,7 +12524,7 @@
   ],
   "forge_path": "umwelt-info/metadaten",
   "landing": "https://umwelt.info",
-  "last_activity": "2026-08-12T14:31:30.168Z",
+  "last_activity": "2026-08-15T16:52:31.743Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "The metadata index developed for the umwelt.info project.\nIt collects information on datasets from diverse sources stored in different formats using various systems. This information is then harmonized and indexed so that it can be searched using the provided HTTP/JSON API.\nIt does not aim to be generic, configurable or programmable and is intended to work only as a component of the umwelt.info project.\n",
   "maintenance": "internal",
@@ -13046,7 +13167,7 @@
    "S/MIME email signatures"
   ],
   "forge_path": "it.nrw/nrw.desk/notification-service",
-  "last_activity": "2026-08-10T02:56:39.429Z",
+  "last_activity": "2026-08-15T02:55:36.166Z",
   "license": "BSD-3-Clause",
   "long_desc": "The notification-service serves as a proxy for a third-party SMTP server and enables different backend components of the NRW.desk system to send email notifications to administrators and users.\n",
   "maintenance": "contract",
@@ -13412,7 +13533,7 @@
   ],
   "forge_path": "oc00013173229/odf-kit",
   "landing": "https://githubnewbie0.github.io/odf-kit",
-  "last_activity": "2026-08-12T00:05:21.386Z",
+  "last_activity": "2026-08-14T23:05:21.258Z",
   "license": "Apache-2.0",
   "long_desc": "odf-kit is an open-source TypeScript library for working with OpenDocument Format (ODF) documents programmatically. It provides thirteen distinct document modes in a single package: build ODT documents from scratch, fill existing .odt templates with data, convert DOCX to ODT, HTML to ODT, Markdown to ODT, TipTap JSON to ODT, Lexical editor state to ODT, build ODS spreadsheets, read ODT and ODS files, convert XLSX to ODS, convert ODT to Markdown, and export ODT to Typst for PDF generation. All modes work in Node.js 22+ and modern browsers \u2014 documents can be generated entirely client-side with no server required.\nThe template engine fills existing .odt files created in LibreOffice with data using {placeholders}, loops for repeating content, conditionals for optional sections, and dot notation for nested data. It automatically handles LibreOffice's XML fragmentation of placeholder text.\nThe ODT builder produces documents with rich text formatting, tables with cell merging and formatting, bullet and numbered lists with up to 6 levels of nesting, embedded images, hyperlinks, internal bookmarks, headers and footers with page numbers, and full page layout control. Generated files open in ",
   "maintenance": "community",
@@ -13685,8 +13806,8 @@
    "Accessibility"
   ],
   "forge_path": "openculturas/openculturas-distribution",
-  "last_activity": "2026-08-12T16:04:17.424Z",
-  "license": "GPL-2",
+  "last_activity": "2026-08-17T07:55:45.956Z",
+  "license": "GPL-2.0-or-later",
   "long_desc": "## Cultural event platform with event calendar, profiles, magazine\n\nWeb-based content management platform software, ready for editorial and/or user-generated content such as: personal/group profiles, event locations, points of interest, reusable event descriptions, event dates (repeating dates possible), FAQ, magazine articles.\n\nTagging in many dimensions: common focus tags, per-type categorization, magazine columns, accessibility, trigger warnings etc. Content creation components like reusable media assets (images, video, audio, embeddable remote media, downloadable documents), galleries, press quotes, custom teaser sections, automatic teaser placement for interlinked content.\n\nMultilingual, with publication workflows, WCAG compliant, cookie consent management, search engine optimized. Logged in users can manage personal bookmarks, publish recommendations and write comments to commentable content.\n\nGovernance: Site owners and proven agencies decide jointly on further development as members of OpenCulturas e. V. (non-profit association), open for everyone interested! Budgets for new features and sustainable mainenance are welcome. Full-service offers including hosting and individua",
   "maintenance": "community",
   "name": "OpenCulturas",
@@ -13739,7 +13860,7 @@
    "communication"
   ],
   "forge_path": "bmi/opendesk/deployment/opendesk",
-  "last_activity": "2026-08-12T18:28:15.902Z",
+  "last_activity": "2026-08-17T10:48:23.139Z",
   "license": "Apache-2.0",
   "long_desc": "openDesk is the adaptable office and collaboration suite specifically developed to meet the needs of the public administration.\n\nFocusing on data sovereignty, security, and seamless collaboration, openDesk provides all the familiar tools required for day-to-day administrative work. It brings together all essential office applications under a single, user-friendly interface.\n\nopenDesk is the evolution of the \u201cSovereign Workplace,\u201d an initiative by the Federal Ministry of the Interior. With openDesk, the public administration gains greater control over its digital tools and can respond more flexibly to changing requirements. Federal, state, and local authorities receive a comprehensive office solution that works independently of specific providers, in any browser, and on all devices.\n",
   "maintenance": "contract",
@@ -13747,7 +13868,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-06",
+  "released": "2026-08-14",
   "repo": "https://gitlab.opencode.de/bmi/opendesk/",
   "repo_key": "gitlab.opencode.de/bmi/opendesk",
   "short_desc": "The adaptable office and collaboration suite for the public administration.\n",
@@ -13761,7 +13882,7 @@
    "F\u00f6derale IT-Kooperation (FITKO)",
    "ZenDiS"
   ],
-  "version": "1.17.2"
+  "version": "1.17.3"
  },
  {
   "categories": [
@@ -14486,6 +14607,60 @@
   "desc_src": "Die anpassungsf\u00e4hige Office- und Kollaborations-Suite f\u00fcr die \u00d6ffentliche Verwaltung.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/walnuss0815/opendesk",
+  "fallback_repo": "https://gitlab.opencode.de/walnuss0815/opendesk.git",
+  "features": [
+   "productivity",
+   "collaboration",
+   "communication"
+  ],
+  "forge_path": "walnuss0815/opendesk",
+  "last_activity": "2026-08-14T13:23:09.540Z",
+  "license": "Apache-2.0",
+  "long_desc": "openDesk is the adaptable office and collaboration suite specifically developed to meet the needs of the public administration.\n\nFocusing on data sovereignty, security, and seamless collaboration, openDesk provides all the familiar tools required for day-to-day administrative work. It brings together all essential office applications under a single, user-friendly interface.\n\nopenDesk is the evolution of the \u201cSovereign Workplace,\u201d an initiative by the Federal Ministry of the Interior. With openDesk, the public administration gains greater control over its digital tools and can respond more flexibly to changing requirements. Federal, state, and local authorities receive a comprehensive office solution that works independently of specific providers, in any browser, and on all devices.\n",
+  "maintenance": "contract",
+  "name": "openDesk",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-08-06",
+  "repo": "https://gitlab.opencode.de/bmi/opendesk/",
+  "repo_key": "gitlab.opencode.de/bmi/opendesk",
+  "short_desc": "The adaptable office and collaboration suite for the public administration.\n",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 12502,
+  "used_by": [
+   "Robert Koch-Institut",
+   "Bundesamt f\u00fcr Seeschifffahrt und Hydrographie",
+   "F\u00f6derale IT-Kooperation (FITKO)",
+   "ZenDiS"
+  ],
+  "version": "1.17.2"
+ },
+ {
+  "categories": [
+   "email-management",
+   "contact-management",
+   "document-management",
+   "instant-messaging",
+   "knowledge-management",
+   "office",
+   "project-management",
+   "task-management",
+   "time-management",
+   "video-conferencing"
+  ],
+  "contacts": [
+   "Ren\u00e9 Fischer"
+  ],
+  "country": "DE",
+  "desc_en": "The adaptable office and collaboration suite for the public administration.\n",
+  "desc_lang": "en",
+  "desc_src": "Die anpassungsf\u00e4hige Office- und Kollaborations-Suite f\u00fcr die \u00d6ffentliche Verwaltung.\n",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
   "entry_url": "https://gitlab.opencode.de/wolfgangihloff/opendesk",
   "fallback_repo": "https://gitlab.opencode.de/wolfgangihloff/opendesk.git",
   "features": [
@@ -14779,7 +14954,7 @@
   ],
   "forge_path": "opentalk/ot-setup",
   "landing": "https://gitlab.opencode.de/opentalk",
-  "last_activity": "2026-08-11T07:32:50.942Z",
+  "last_activity": "2026-08-14T08:39:14.250Z",
   "license": "EUPL-1.2",
   "long_desc": "OpenTalk is the video conferencing solution for anyone who values digital\nsovereignty and data protection. OpenTalk can be operated both in your \ncustom data center (on-premises) and on our servers in Germany (SaaS). \nOpenTalk consistently implements the requirements of the GDPR and is \naimed at public authorities, educational institutions, providers, and \ncompanies. Behind OpenTalk is the Heinlein Group with around 30 years \nof experience in secure communication.\n\nFind out more at [https://opentalk.eu](https://opentalk.eu).\n",
   "maintenance": "contract",
@@ -15406,7 +15581,7 @@
    "Record and stream video conferences"
   ],
   "forge_path": "THM-Health/PILOS",
-  "last_activity": "2026-08-11T04:06:18.017Z",
+  "last_activity": "2026-08-14T04:05:32.894Z",
   "license": "LGPL-2.1-only",
   "long_desc": "All in one video conferencing platform powered by BigBlueButton\u2122.\nDesigned with education at its core, PILOS offers a seamless, interactive, and secure solution for online learning, teaching, and all kinds of virtual meetings. Adaptable to your needs, PILOS delivers high-quality video, robust collaboration tools, and an intuitive user experience.\n\n**All you need for a great video conference experience:**\n- **Video and Audio**\n  High quality video and audio to foster a more personal and engaging experience.\n- **Collaboration**\n  Share your screen, use the interactive multi-user whiteboard, and work together in breakout rooms.\n- **Engagement**\n  Engage your audience with interactive tools like chat, emojis, surveys and much more.\n- **Recording**\n  Record your videoconferences and make them available using fine grained permission control.\n- **Live Streaming**\n  Reach a wider audience by streaming video conferences to an RTMP endpoint.\n- **Security**\n  All communication data is securely encrypted during transmission using the WebRTC protocol.\n- **Statistics**\n  Get detailed reports on the attendance and usage of your videoconferences.",
   "maintenance": "internal",
@@ -15633,7 +15808,7 @@
    "Swagger API documentation"
   ],
   "forge_path": "it.nrw/nrw.desk/portal-backend",
-  "last_activity": "2026-08-11T02:48:44.946Z",
+  "last_activity": "2026-08-17T03:13:28.572Z",
   "license": "BSD-3-Clause",
   "long_desc": "portal-backend is the main backend microservice for NRW.Desk, a collaboration portal developed by Information und Technik Nordrhein-Westfalen (IT.NRW) for the German state of North Rhine-Westphalia. It serves as the persistence and API layer that manages user personalization data for the portal's frontend dashboard.\nThe service provides a RESTful HTTP API (OpenAPI 3.0.3) that enables users to manage their personalized dashboard, including widget layout, visibility, and display order. Upon first authenticated request, each user is automatically provisioned with default settings and a set of pre-configured widgets arranged on a grid layout.\nSupported widget types include email, videoconference, chat, calendar, documents, files, diagrams, web shortcuts, upcoming conferences, and news. Each widget can be individually positioned (x, y coordinates), sized (width, height), reordered, and toggled visible or hidden. Users can also manage accordion states for the sidebar.\nAdministrators can create, update, and delete system-wide announcements that are displayed to all portal users. These notifications are time-bounded (with a start and end datetime) and come in three types: info, warn, and f",
   "maintenance": "contract",
@@ -16607,7 +16782,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/software-fuer-sportturniere-und-rennen",
   "landing": "https://ready2race.info",
-  "last_activity": "2026-08-12T09:03:56.346Z",
+  "last_activity": "2026-08-16T09:04:14.030Z",
   "license": "GPL-3.0-only",
   "long_desc": "**Ready2Race** is a web-based pop-up solution for clubs to manage competitions. Events with competitions can be created and published, and competition teams can be registered by clubs. Ready2Race also supports the execution of competitions using predefined competition modes. During the different phases, documents can be generated and exported automatically, for example registration summaries, entry fee invoices, or start lists for individual matches. Tasks can also be assigned to volunteers. Ready2Race is designed to advance digitalization in clubs and to simplify the organization of such events while reducing time and administrative effort.\n",
   "maintenance": "contract",
@@ -16881,7 +17056,7 @@
   "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno.git",
   "forge_path": "ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno",
-  "last_activity": "2026-08-12T16:25:25.505Z",
+  "last_activity": "2026-08-14T11:29:18.932Z",
   "license": "Apache-2.0",
   "long_desc": "Beschreibung......................................................................................................................................................................\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung.............................................................................................................",
   "maintenance": "contract",
@@ -17067,7 +17242,7 @@
   "entry_url": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox",
   "fallback_repo": "https://gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox.git",
   "forge_path": "ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox",
-  "last_activity": "2026-08-05T07:36:29.109Z",
+  "last_activity": "2026-08-17T03:14:16.005Z",
   "license": "Apache-2.0",
   "long_desc": "Dieses Projekt stellt Policies f\u00fcr StackRox bereit, die auf den durch die Interessensgemeinschaft Betrieb von Containern (IG BvC) erarbeiteten Richtlinien basieren.\nDiese wiederum stellen eine mit Teilnehmern mehrerer Bundesbeh\u00f6rden und IT Dienstleistern von L\u00e4ndern und Bund Interpretation von technisch Pr\u00fcfbaren Ma\u00dfnahmen der Bausteine SYS.1.6 und APP.4.4 des BSI (Bundesamt f\u00fcr Sicherheit in der Informationstechnik) bereit.\nDas Projekt soll es erm\u00f6glichen, dass Firmen, Beh\u00f6rden oder auch Privatpersonen, die StackRox einsetzen, ein leicht zu importierendes, und anzupassendes Set an Policies haben, die sie wiederverwenden und anpassen k\u00f6nnen.\n",
   "maintenance": "community",
@@ -17590,7 +17765,7 @@
   ],
   "forge_path": "bad-belzig/smart-village-app",
   "landing": "https://smart-village.app",
-  "last_activity": "2026-08-03T15:19:23.920Z",
+  "last_activity": "2026-08-14T12:41:02.453Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "The Smart Village App is an information and service app. In addition to administrative services, which are made available in bundled form via the app, locals and tourists can obtain information on and from the respective municipality. For example, hiking routes are provided via the app, local news and events are published, and basic public services are offered. Citizens can use the Smart Village App to report current issues or learn about administrative services, among other things. The Smart Village App thus contributes to improving the exchange of information between administrations and citizens. It was developed by municipalities for municipalities and is adaptable to the individual needs of each city or town. Counties and municipal associations also use the Smart Village App for their areas. All participating municipalities are in constant exchange with one another. The goal of this network is to facilitate work sharing: the joint creation and utilization of synergies from the ideas and experiences of the participants reduces costs and helps launch new apps more successfully. The Smart Village App is a nationwide offering that has already been implemented in numerous municipali",
   "maintenance": "contract",
@@ -17999,7 +18174,7 @@
    "News, Events, Citizen services, Feedback/Support, Parking, POIs, Waste calendar"
   ],
   "forge_path": "urbo-community/urbo",
-  "last_activity": "2026-08-12T05:39:52.243Z",
+  "last_activity": "2026-08-17T09:11:47.433Z",
   "license": "EUPL-1.2",
   "long_desc": " \n\nThe SoestApp is an open source city app that retrieves services by and information about the city of Soest from various sources and makes them available on a single platform for citizens.\n\nThe app accesses information from the Soest data platform and bundles the content available there into thematic-functional modules.\n\nThe current modules (still under development - as of Jul. 2024) are\n\n\u200b\n\n- News\n- Events\n- Citizen services\n- Feedback/Support\n- Parking\n- POIs\n- Waste calendar\n\nThe app is being developed by the city of Soest together with the company SWCode. The development is supported by the federal funding programme \"Modellprojekte Smart Cities (MPSC)\" of the Kreditanstalt f\u00fcr Wiederaufbau (KfW) and the Bundesministerium des Innern und f\u00fcr Heimat (BMI).\n",
   "maintenance": "contract",
@@ -18498,7 +18673,7 @@
   "fallback_repo": "https://gitlab.opencode.de/xleitstelle/xplanung/validierungsregeln/standard.git",
   "forge_path": "xleitstelle/xplanung/validierungsregeln/standard",
   "landing": "https://xleitstelle.de/",
-  "last_activity": "2026-08-04T16:58:45.209Z",
+  "last_activity": "2026-08-13T09:45:45.383Z",
   "license": "LGPL-2.1-only",
   "long_desc": "Diese Repository beinhaltet XPlanung-Validierungsregeln des [XPlanung-Standards](https://xleitstelle.de/xplanung/releases-xplanung) als XQuery-Anweisungen. Weitere Informationen zum Standard XPlanung finden Sie bei der [Leitstelle XPlanung/XBau](http://xleitstelle.de/). Der \u00f6ffentlich verf\u00fcgbare XPlanGML Validator der Leitstelle ist unter der Adresse [https://www.xplanungsplattform.de/xplan-validator/](https://www.xplanungsplattform.de/xplan-validator/) erreichbar.\nDie Implementierung der Konformit\u00e4tsregeln sind nach Version getrennt unterhalb des Ordners `rules` abgelegt.\nAktuell sind die geometrischen Konformit\u00e4tsbedingungen aus dem Kapitel 2.2 nicht bzw. nur in Teilen als XQuery-Anweisungen umgesetzt. F\u00fcr die Version 6.0 ist die Regel 4.5.2.4 hinzugekommen, die ebenfalls nicht als XQuery-Anweisungen umgesetzt wurde.\n",
   "name": "Standard-Validierungsregeln",
@@ -18538,7 +18713,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/startuphafen-sh",
   "landing": "https://www.startuphafen.sh",
-  "last_activity": "2026-05-27T19:43:49.514Z",
+  "last_activity": "2026-08-13T09:43:33.059Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "Startuphafen is a webapplication designed to help users navigate the german company application process. It mainly provides a questionaire, of which it creates a request that is send to ERiC / Elster and the OZG-Cloud provider. It is able to create XML data for ERiC and request for the OZG-Cloud. Furthermore it has an FAQ-Page and a Contact Page. User Login to Startuphafen via BundID. User information is retrieved from BundID and then used in the application process automatically. Every Input into a registration form is saved in between and steps that are standardised are done in the background.\n",
   "maintenance": "contract",
@@ -18546,7 +18721,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2025-03-25",
+  "released": "2026-08-13",
   "repo": "https://github.com/pct-digital/startuphafen-gpl",
   "repo_key": "github.com/pct-digital/startuphafen-gpl",
   "short_desc": "Startuphafen is a webapplication designed to help users navigate the german company application process.",
@@ -18554,7 +18729,7 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 6811,
-  "version": "1.0.0"
+  "version": "2.0.0"
  },
  {
   "categories": [
@@ -18710,7 +18885,7 @@
   ],
   "forge_path": "oc000131359197/sv-hub",
   "landing": "https://sv-hub.de",
-  "last_activity": "2026-03-28T12:33:39.924Z",
+  "last_activity": "2026-08-14T18:07:48.218Z",
   "license": "APACHE-2.0",
   "long_desc": "Der SV-Hub ist eine webbasierte Plattform f\u00fcr die Sch\u00fcler_innenvertretungsarbeit, die unterschiedliche Tools (wie Umfragen, Wikis, Kontaktdatenbanken, Projektmanagement, Finanzmanagement, etc.) zur Verf\u00fcgung stellt, um die inhaltliche und verwalterische Arbeit in der Schule und in den Kreis- und Stadtsch\u00fcler_innenr\u00e4ten zu vereinfachen. Die Arbeit erfolgt hier in Gruppen, die kollaborativ auf diese Tools zugreifen k\u00f6nnen, um gemeinsam an Projekten und Themen in der Sch\u00fcler\\*innenvertretung zu arbeiten.\n",
   "maintenance": "contract",
@@ -18731,7 +18906,7 @@
   "used_by": [
    "Stadt Frankfurt am Main"
   ],
-  "version": "2.2.0"
+  "version": "2.2.1"
  },
  {
   "categories": [
@@ -18802,7 +18977,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/sva-studio/sva-studio.git",
   "forge_path": "bad-belzig/sva-studio/sva-studio",
   "landing": "https://smart-village.app",
-  "last_activity": "2026-08-12T18:42:33.395Z",
+  "last_activity": "2026-08-17T10:08:40.525Z",
   "license": "EUPL-1.2",
   "long_desc": "SVA Studio modernisiert das Redaktionssystem der Smart Village App zu einer integrierten, API-first ausgerichteten Plattform f\u00fcr Kommunen und andere \u00f6ffentliche Organisationen. Das System b\u00fcndelt Content-Management, Identit\u00e4ts- und Rechteverwaltung, Design- und Modulkonfiguration sowie die Anbindung externer Fachverfahren in einer erweiterbaren Webanwendung. Der Schwerpunkt liegt auf typsicherer, modularer Architektur, nachnutzbaren Schnittstellen, sicherem Betrieb und der Unterst\u00fctzung kommunaler Redaktions- und Verwaltungsprozesse.",
   "maintenance": "community",
@@ -19367,7 +19542,7 @@
   ],
   "forge_path": "urbandataspaceplatform/core-platform",
   "landing": "https://www.hypertegrity.de/",
-  "last_activity": "2026-08-12T08:11:19.158Z",
+  "last_activity": "2026-08-14T14:39:15.223Z",
   "license": "EUPL-1.2",
   "long_desc": "The Urban Data Space Platform is based on Kubernetes and offers an open, cloud-independent infrastructure for the secure integration, standardization, and visualization of city data. The platform is based on the FIWARE architecture and DIN SPEC 91357. It is completely open source, promotes digital sovereignty, and supports local authorities in efficiently providing data to citizens and external partners. Modular components, a strong role and rights system and open API management create a sustainable and future-proof ecosystem for smart cities.\n",
   "maintenance": "internal",
@@ -20507,7 +20682,7 @@
   ],
   "forge_path": "zammad/zammad",
   "landing": "https://zammad.com/",
-  "last_activity": "2026-08-12T13:15:21.646Z",
+  "last_activity": "2026-08-17T10:36:42.029Z",
   "license": "AGPL-3.0-only",
   "long_desc": "# Welcome to Zammad\nAre you juggling countless customer inquiries across multiple channels? Struggling to keep your support team on the same page? Or spending more time managing your helpdesk than delivering exceptional support to your customers?\nZammad is your Swiss Army knife - a web-based, open-source helpdesk and customer support platform packed with features to streamline customer communication across channels like email, chat, telephone and social media.\n## The Software\nThe Zammad software is and will stay open source. It is licensed under the GNU AGPLv3. The source code is [available on GitHub](https://github.com/zammad/zammad) and owned by the [Zammad Foundation](https://zammad-foundation.org/), which is independent of commercial providers such as Zammad GmbH.\n## The Company - Zammad GmbH\nThe development of Zammad is carried out by the [amazing team of people](https://zammad.com/en/company) at [Zammad GmbH](https://zammad.com/) in collaboration with the community. We love to create open source software for you. If you want to ensure the Zammad software has a bright and sustainable future, consider becoming a Zammad customer!\nAre you tired of complex setup, configuration, ba",
   "maintenance": "internal",

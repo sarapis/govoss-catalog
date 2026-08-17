@@ -797,7 +797,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T15:08:41Z",
+  "last_activity": "2026-08-17T05:32:59Z",
   "license": "EUPL-1.2",
   "long_desc": "Abacus is the new software developed by the Dutch Electoral Council\n(Kiesraad) for calculating election results in the Netherlands. It tallies\npolling station results and computes the seat allocation.\n\nAbacus replaces the result-consolidation module of the current election\nsoftware OSV2020 and will be used for all Dutch elections. The first\nversion targets the 2026 municipal council elections (GR26).\n\nThe software runs as a standalone binary accessible via a web browser on a\nlocal network. The backend is written in Rust, the frontend in\nTypeScript/React.\n\nKey design principles are ease-of-use and simplicity. \nFrom the (dutch) report [Stemmen met vertrouwen](https://www.kiesraad.nl/documenten/2007/09/27/eindrapport-commissie-korthals-altes-stemmen-met-vertrouwen) the \nvalues integrity, transparency and verifiability are most important.\n",
   "maintenance": "internal",
@@ -833,7 +833,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T12:55:18Z",
+  "last_activity": "2026-08-14T15:14:15Z",
   "name": "Abacus-Documentatie",
   "repo": "https://code.overheid.nl/Kiesraad/Abacus-Documentatie",
   "repo_key": "code.overheid.nl/kiesraad/abacus-documentatie",
@@ -1498,7 +1498,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://adaptmap.de/",
-  "last_activity": "2026-05-19T19:27:16.865Z",
+  "last_activity": "2026-08-13T11:04:03.649Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "**AdaptMap** is a German-language, mobile\u2011first web application that helps cities understand and respond to heat stress at neighborhood level. It combines an easy\u2011to\u2011use citizen questionnaire, an anonymized public heatmap, and optional AI\u2011generated advice for residents. The app is designed to work well as a \u201cstreet\u2011ready\u201d tool: people scan a QR code or open a short link, complete a focused set of questions about their heat situation, and immediately see a simple result and further options.\n\n\u200b\n\n### **Primary Goals**\n\n- **Lower the threshold to reporting heat problems**: People should be able to report their situation in under a few minutes, on a smartphone, without creating an account.\n- **Create a privacy\u2011respecting evidence base**: Collected information is aggregated and geospatially generalized so that individual households cannot be identified, while still giving planners and policymakers a clear picture of where heat stress is concentrated.\n- **Offer immediate, practical value to respondents**: After filling out the questionnaire, users receive a simple \u201cheat problem index\u201d plus the option to generate AI\u2011based recommendations tailored to their answers and neighborhood.\n- **Empo",
   "maintenance": "contract",
@@ -2259,7 +2259,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-06T08:42:08Z",
+  "last_activity": "2026-08-17T07:23:00Z",
   "license": "CC-BY-SA-4.0",
   "name": "ai-heatcontrol",
   "repo": "https://github.com/OS2sandbox/ai-heatcontrol",
@@ -2303,7 +2303,7 @@
   ],
   "functions_inferred": true,
   "landing": "https://leos.pages.code.europa.eu/ai4drpm",
-  "last_activity": "2026-08-12T15:08:50.809Z",
+  "last_activity": "2026-08-14T06:17:06.220Z",
   "license": "EUPL-1.2",
   "long_desc": "AI4DRPM (Artificial Intelligence for Digital-Ready Policymaking) is a\nPython microservice designed to facilitate the collection, annotation,\ntransformation, and compilation of legal documents and data.\n\nIt is part of the AI4DRPM project, which aims to enhance\ndigital-ready policymaking by leveraging artificial intelligence and\nadvanced data processing techniques.\n",
   "maintenance": "internal",
@@ -2729,6 +2729,37 @@
   "catalogue_entries": [
    {
     "entry_url": null,
+    "name": "Alaveteli (Handlingar.se)",
+    "repo_url": "https://github.com/mysociety/alaveteli",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "datadelning"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "Alaveteli (Handlingar.se)",
+  "repo": "https://github.com/mysociety/alaveteli",
+  "repo_key": "github.com/mysociety/alaveteli",
+  "short_desc": "Provide a Freedom of Information request system for your jurisdiction",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "openknowledgesweden"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
     "name": "alexa-gc-recalls",
     "repo_url": "https://github.com/tc-ca/alexa-gc-recalls",
     "source": "CA/code.open.canada.ca"
@@ -3142,7 +3173,7 @@
   "functions_inferred": true,
   "is_fork": false,
   "landing": "https://designsystem.amsterdam",
-  "last_activity": "2026-08-10T14:00:43Z",
+  "last_activity": "2026-08-14T12:27:43Z",
   "license": "EUPL-1.2",
   "long_desc": "Amsterdam Design System is an open-source toolkit of ready-made\ncomponents that are accessible (WCAG), adaptive, and user-friendly.\nTeams reuse them instead of starting from scratch on every project,\nsaving time and money.\n\nPublished as separate packages for CSS, React, and design tokens,\nthe system lets teams adopt just the parts they need. That makes it\nframework-agnostic and suitable for both tailor-made applications and\nSaaS applications.\n\nNL Design System\u2019s layered architecture lets other public organisations\nreuse these components and apply their own design tokens to tailor them\nto their own channels.\n\nThe team actively maintains the library, publishes regular releases,\nand welcomes contributions.\n",
   "maintenance": "internal",
@@ -3414,7 +3445,7 @@
   "version": "0.1.0"
  },
  {
-  "catalogue_count": 2,
+  "catalogue_count": 3,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Ansible",
@@ -3427,11 +3458,21 @@
     "name": "Ansible",
     "repo_url": null,
     "source": "DE/opensource.muenchen.de"
+   },
+   {
+    "entry_url": null,
+    "name": "Ansible",
+    "repo_url": "https://github.com/ansible/ansible",
+    "source": "SE/offentligkod"
    }
+  ],
+  "categories": [
+   "arkiv"
   ],
   "countries": [
    "DE",
-   "FR"
+   "FR",
+   "SE"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -3439,7 +3480,8 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Ansible",
   "functions": [
-   "infrastructure"
+   "infrastructure",
+   "documents"
   ],
   "functions_inferred": true,
   "keywords": [
@@ -3452,7 +3494,7 @@
   ],
   "landing": "https://www.ansible.com/",
   "license": "GPLv3+",
-  "merged_count": 2,
+  "merged_count": 3,
   "name": "Ansible",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -3463,7 +3505,8 @@
   "source": "FR/sill",
   "sources": [
    "DE/opensource.muenchen.de",
-   "FR/sill"
+   "FR/sill",
+   "SE/offentligkod"
   ],
   "tier": "index",
   "translated": true,
@@ -3494,7 +3537,12 @@
    "Sorbonne Universit\u00e9",
    "a",
    "irsn",
-   "other"
+   "other",
+   "lfv",
+   "orebro_r",
+   "sundsvall_k",
+   "svedala_k",
+   "fk"
   ],
   "version": "2.21.3",
   "wikidata": "Q2852503"
@@ -3713,6 +3761,37 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": null,
+    "name": "Apache Camel",
+    "repo_url": "https://github.com/apache/camel",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "integration"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "Apache Camel",
+  "repo": "https://github.com/apache/camel",
+  "repo_key": "github.com/apache/camel",
+  "short_desc": "Apache Camel is an open source integration framework with 350+ connectors. Write routes in Java, YAML, or XML. Run on Spring Boot, Quarkus, or standalone. Apache License 2.0.",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "lfv"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20CouchDB",
     "name": "Apache CouchDB",
     "repo_url": "https://github.com/apache/couchdb",
@@ -3907,7 +3986,10 @@
   ]
  },
  {
-  "catalogue_count": 2,
+  "also_known_as": [
+   "Apache HTTP Server Project"
+  ],
+  "catalogue_count": 3,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20HTTP%20Server",
@@ -3920,11 +4002,21 @@
     "name": "Apache HTTP Server",
     "repo_url": null,
     "source": "DE/opensource.muenchen.de"
+   },
+   {
+    "entry_url": null,
+    "name": "Apache HTTP Server Project",
+    "repo_url": "https://github.com/apache/httpd",
+    "source": "SE/offentligkod"
    }
+  ],
+  "categories": [
+   "kommunikation"
   ],
   "countries": [
    "DE",
-   "FR"
+   "FR",
+   "SE"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -3932,7 +4024,8 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20HTTP%20Server",
   "functions": [
-   "infrastructure"
+   "infrastructure",
+   "collaboration"
   ],
   "functions_inferred": true,
   "keywords": [
@@ -3945,7 +4038,7 @@
   ],
   "landing": "https://httpd.apache.org/",
   "license": "Apache-2.0",
-  "merged_count": 2,
+  "merged_count": 3,
   "name": "Apache HTTP Server",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -3956,7 +4049,8 @@
   "source": "FR/sill",
   "sources": [
    "DE/opensource.muenchen.de",
-   "FR/sill"
+   "FR/sill",
+   "SE/offentligkod"
   ],
   "tier": "index",
   "translated": true,
@@ -3975,7 +4069,8 @@
    "MINISTERE INTERIEUR/SG/SHFD/C2MI",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sorbonne Universit\u00e9",
-   "other"
+   "other",
+   "fk"
   ],
   "version": "2.4.68",
   "wikidata": "Q11354"
@@ -4447,7 +4542,7 @@
    "Universit\u00e9 de Rouen Normandie",
    "other"
   ],
-  "version": "8.0.0",
+  "version": "8.0.1",
   "wikidata": "Q131422056"
  },
  {
@@ -6222,7 +6317,7 @@
    "integration"
   ],
   "functions_inferred": true,
-  "last_activity": "2026-08-12T14:47:59.797Z",
+  "last_activity": "2026-08-17T08:31:50.139Z",
   "license": "MIT",
   "long_desc": "Die Anwendung besteht aus mehreren lose gekoppelten Diensten, die gemeinsam eine skalierbare und flexible Transkriptionsl\u00f6sung f\u00fcr Audio- und Videodateien bereitstellen. Der ASR Service \u00fcbernimmt die automatische Spracherkennung. Er nimmt Transkriptionsanfragen entgegen, erkennt selbstst\u00e4ndig die verwendete Sprache und transkribiert die Inhalte mithilfe des Whisper-Modells. Zus\u00e4tzlich wird eine Sprecherdiarisierung durchgef\u00fchrt, sodass unterschiedliche Sprecher im Transkript eindeutig getrennt werden k\u00f6nnen. F\u00fcr eine performante Verarbeitung, insbesondere bei gr\u00f6\u00dferen Dateien oder hoher Auslastung, wird der Einsatz von GPU-beschleunigter Hardware empfohlen.\n\nDer FS Watcher dient der Anbindung an bestehende Dateisysteme. Er \u00fcberwacht ein konfigurierbares, geteiltes Verzeichnis und erkennt neu hinzugef\u00fcgte Audio- oder Videodateien automatisch. Sobald eine neue Datei erkannt wird, st\u00f6\u00dft der Dienst die Verarbeitung an und stellt sicher, dass das fertige Transkript nach Abschluss wieder am urspr\u00fcnglichen Speicherort abgelegt wird. Dadurch ist eine nahtlose Integration in bestehende Arbeitsabl\u00e4ufe ohne manuelle Uploads m\u00f6glich.\n\nDer Web Service stellt die zentrale Benutzeroberfl\u00e4che bere",
   "maintenance": "internal",
@@ -6385,7 +6480,7 @@
    "infrastructure"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-07-15T06:33:03.732Z",
+  "last_activity": "2026-08-14T06:26:49.476Z",
   "license": "EUPL-1.2",
   "long_desc": "Die AusweisApp ist eine Open-Source-Anwendung zur Nutzung der Online-Ausweisfunktion (eID) des deutschen Personalausweises, des elektronischen Aufenthaltstitels sowie der eID-Karte f\u00fcr EU-/EWR-B\u00fcrgerinnen und -B\u00fcrger.\nSie erm\u00f6glicht eine sichere Authentisierung gegen\u00fcber Online-Diensten von Beh\u00f6rden und Unternehmen. Die Kommunikation erfolgt verschl\u00fcsselt nach den Vorgaben des Bundesamts f\u00fcr Sicherheit in der Informationstechnik (BSI).\nDie Anwendung unterst\u00fctzt NFC-f\u00e4hige Smartphones sowie Kartenleseger\u00e4te am Desktop und steht f\u00fcr Windows, macOS, iOS, Android und inoffiziell f\u00fcr Linux zur Verf\u00fcgung.\n",
   "maintenance": "contract",
@@ -6397,7 +6492,7 @@
    "ios",
    "android"
   ],
-  "released": "2026-07-15",
+  "released": "2026-08-14",
   "repo": "https://github.com/Governikus/AusweisApp",
   "repo_key": "github.com/governikus/ausweisapp",
   "repo_owner": "Governikus",
@@ -6485,7 +6580,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-06-29T14:08:18Z",
+  "last_activity": "2026-08-13T11:02:51Z",
   "license": "EUPL-1.2",
   "name": "autenticacao.gov",
   "repo": "https://github.com/amagovpt/autenticacao.gov",
@@ -7186,7 +7281,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://badges.opencode.de/de/",
-  "last_activity": "2026-08-07T09:34:39.402Z",
+  "last_activity": "2026-08-14T13:45:05.648Z",
   "license": "MIT",
   "long_desc": "Das Badge Programm pr\u00fcft openCode Repositories und vergibt Badges, die im [openCode Softwareverzeichnis](https://opencode.de/de/software) angezeigt werden und den Status der Repositories in Bezug auf **Wartung**, **Wiederverwendung** und **Sicherheit** anzeigen.\n\nMit der Badge-API k\u00f6nnen Sie interagieren, indem Sie eine Repository-URL \u00fcbermitteln. Basierend auf den erf\u00fcllten Kriterien des Repositorys erhalten Sie entsprechende Badges. Zudem stellt die API eine detaillierte Erkl\u00e4rung des Ergebnisses bereit. In der [Dokumentation](https://badges.opencode.de/de/?repositoryUrl=https%3A%2F%2Fgitlab.opencode.de%2Fopen-code%2Fbadgebackend%2Fbadge-api) k\u00f6nnen Sie es sofort ausprobieren.\n",
   "maintenance": "contract",
@@ -7594,6 +7689,37 @@
   ],
   "version": "25.1.0",
   "wikidata": "Q25387280"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "BasicUse",
+    "repo_url": "https://github.com/umea-kommun/BasicUse",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "e-service"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "sv",
+  "functions": [
+   "citizen-services"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "BasicUse",
+  "repo": "https://github.com/umea-kommun/BasicUse",
+  "repo_key": "github.com/umea-kommun/basicuse",
+  "short_desc": "Applikation f\u00f6r att skapa och publicera e-tj\u00e4nster",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "umea_k"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -9824,7 +9950,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-11T12:09:19Z",
+  "last_activity": "2026-08-13T14:50:56Z",
   "name": "brp-amsterdam-api",
   "repo": "https://code.overheid.nl/GemAmsterdam/brp-amsterdam-api",
   "repo_key": "code.overheid.nl/gemamsterdam/brp-amsterdam-api",
@@ -9939,7 +10065,7 @@
    "crm-service"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T15:08:59.069Z",
+  "last_activity": "2026-08-17T07:32:07.817Z",
   "license": "Apache-2.0",
   "long_desc": "Das BuMAP-Core-Projekt ist das Backend-Modul des BundesMessenger-Admin-Portals (BuMAP), das die zentrale Konfiguration des gesamten BundesMessenger-Backends erm\u00f6glicht.\nEs aggregiert Daten aus verschiedenen Backend-Diensten und stellt diese \u00fcber eine REST-API der Benutzeroberfl\u00e4che zur Verf\u00fcgung.\n\n**Einfach konfigurierbar und 100% anpassbar.**\n\nDas BuMAP-Core ist f\u00fcr die \u00f6ffentliche Verwaltung optimiert und erm\u00f6glicht eine flexible und sichere Konfiguration des BundesMessenger-Systems.\nEs wird kontinuierlich weiterentwickelt, um den Anforderungen der Beh\u00f6rden in Deutschland gerecht zu werden.\n",
   "maintenance": "internal",
@@ -9947,7 +10073,7 @@
   "platforms": [
    "linux"
   ],
-  "released": "2026-01-19",
+  "released": "2026-08-14",
   "repo": "https://gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core",
   "repo_key": "gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core",
   "short_desc": "Backend for frontend for central configuration of the BundesMessenger backend.",
@@ -9956,7 +10082,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": 3101,
-  "version": "3.2.2"
+  "version": "5.0.0"
  },
  {
   "catalogue_count": 1,
@@ -9984,21 +10110,21 @@
   "features": [
    "UI zur zentralen Konfiguration des BundesMessenger-Backends",
    "Benutzerverwaltung (\u00dcbersicht, User-Daten, Sitzungen, ...)",
-   "Raumverwaltung (Mitgliedschaften, Medien, Zustandereignisse, ...)",
+   "Gruppenverwaltung (Mitgliedschaften, Medien, Zustandereignisse, ...)",
    "Einsicht von KPIs",
    "Rollen- und Rechtesteuerung auf Basis angebundener IAM-Provider",
    "Pflege von 1st-Level Support Information",
    "Benutzer kann die Version der Anwendung und die zugeh\u00f6rigen Abh\u00e4ngigkeiten \u00fcberpr\u00fcfen",
-   "Pflege der Datenschutz URL, wenn App Konfig unterst\u00fctzt wird"
+   "Pflege der Datenschutz URL, wenn App Config unterst\u00fctzt wird"
   ],
   "forge_path": "bwi/bundesmessenger/admin-portal/bumap-ui",
   "functions": [
    "crm-service"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-05-22T12:52:11.052Z",
+  "last_activity": "2026-08-13T14:23:30.988Z",
   "license": "Apache-2.0",
-  "long_desc": "Das BundesMessenger Admin-Portal (BuMAP) ist der zentrale Einstiegspunkt f\u00fcr die \nKonfiguration des gesamten BundesMessenger-Backends. Es bietet ein Web-Frontend, um Benutzer- \nund Raumverwaltung, KPIs sowie App-Anpassungen und Rollen-/Rechteverwaltung \nf\u00fcr den BundesMessenger bereitzustellen.\n",
+  "long_desc": "Das BundesMessenger Admin-Portal (BuMAP) ist der zentrale Einstiegspunkt f\u00fcr die \nKonfiguration des gesamten BundesMessenger-Backends. Es bietet ein Web-Frontend, um Benutzer- \nund Gruppenverwaltung, KPIs sowie App-Anpassungen und Rollen-/Rechteverwaltung \nf\u00fcr den BundesMessenger bereitzustellen.\n",
   "maintenance": "internal",
   "name": "BuMAP UI",
   "platforms": [
@@ -10447,7 +10573,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T08:04:18.580Z",
+  "last_activity": "2026-08-17T08:02:58.463Z",
   "license": "Apache-2.0",
   "long_desc": "Das BundesMessenger Backend ist Bestandteil einer Sammlung von\nRepositories zum BundesMessenger. Allgemeine Informationen zum Projekt\nbefinden sich im \u00fcbergeordneten [BundesMessenger\nRepository](https://gitlab.opencode.de/bwi/bundesmessenger/info).\n\n\nDieses Repository stellt ein [Helm Chart](https://helm.sh/) zur\nautomatisierten Bereitstellung eines Backends bzw. Infrastruktur f\u00fcr die\nNutzung mit dem BundesMessenger Client zur Verf\u00fcgung. Hauptbestandteil ist\nder [Synapse Server](https://github.com/element-hq/synapse), Dieser ist\neine Matrix homeserver Implementierung in Python auf Basis des [Matrix\nProtokolls](https://matrix.org/).\n",
   "maintenance": "internal",
@@ -11850,7 +11976,7 @@
    "identity-security"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-07-08T02:16:56.843Z",
+  "last_activity": "2026-08-14T02:27:07.371Z",
   "license": "BSD-3-Clause",
   "long_desc": "This repository contains the recipe for a custom build of the Caddy web server including the ggicci/caddy-jwt plugin. It can be used to implement JWT authentication for backend services via reverse proxying.\n",
   "maintenance": "community",
@@ -12039,7 +12165,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T02:27:16.029Z",
+  "last_activity": "2026-08-16T02:37:04.001Z",
   "license": "BSD-3-Clause",
   "long_desc": "The calendar-manager service serves as a proxy for a third-party CalDAV and CardDAV server and enables various backend components of the NRW.desk system to create calendar entries and retrieve a user's contacts.\n",
   "maintenance": "community",
@@ -12442,6 +12568,38 @@
   ],
   "version": "5.0.9",
   "wikidata": "Q616639"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "casual",
+    "repo_url": "https://github.com/casualcore/casual",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "middleware"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "casual",
+  "repo": "https://github.com/casualcore/casual",
+  "repo_key": "github.com/casualcore/casual",
+  "short_desc": "casual xatmi implementation",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "fk",
+   "bolagsverket"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -13604,7 +13762,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://github.com/cibseven/cibseven",
-  "last_activity": "2026-08-12T00:34:55.469Z",
+  "last_activity": "2026-08-15T00:34:36.927Z",
   "license": "Apache-2.0",
   "long_desc": " \n\n**CIB seven** is a powerful process engine developed in Java that enables companies and public authorities to model, execute, and monitor business processes. It was created as a fork of the globally widespread **Camunda Platform 7** and positions itself as its long-term open-source alternative.\n\nSince manufacturer support for the Camunda 7 Community Edition has been discontinued, CIB seven fills a critical gap for public administration: It offers **guaranteed further development** and maintenance of the proven architecture beyond 2025. This makes it the ideal solution for institutions that rely on the stability of Camunda 7 technology but want to avoid migration efforts to proprietary cloud solutions or complete architecture changes (e.g., Camunda 8).\n\nThe platform includes not only the core engine for **BPMN** (Business Process Model and Notation), **DMN** (Decision Model and Notation), and **CMMN** (Case Management Model and Notation), but also modernized web applications for administration, task management (Tasklist), and operational monitoring (Cockpit).\n\n### **Why CIB seven for Public Administration?**\n\n- **Investment Protection:** Existing Camunda 7 applications can contin",
   "maintenance": "internal",
@@ -13816,7 +13974,7 @@
   "used_by": [
    "other"
   ],
-  "version": "3.21.0",
+  "version": "3.21.1",
   "wikidata": "Q135450643"
  },
  {
@@ -15169,6 +15327,37 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": null,
+    "name": "clixon-pyapi",
+    "repo_url": "https://github.com/clicon/clixon-pyapi",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "network"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "clixon-pyapi",
+  "repo": "https://github.com/clicon/clixon-pyapi",
+  "repo_key": "github.com/clicon/clixon-pyapi",
+  "short_desc": "Clixon python API layer using internal NETCONF",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Clojure",
     "name": "Clojure",
     "repo_url": "https://github.com/clojure/clojure",
@@ -15342,6 +15531,68 @@
   ],
   "version": "1.30.0",
   "wikidata": "Q123516142"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "cnaas-nac",
+    "repo_url": "https://github.com/sunet/cnaas-nac",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "network"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "cnaas-nac",
+  "repo": "https://github.com/sunet/cnaas-nac",
+  "repo_key": "github.com/sunet/cnaas-nac",
+  "short_desc": "CNaaS Network Admission Control",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "CNaaS-NMS",
+    "repo_url": "https://github.com/SUNET/cnaas-nms",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "network"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "infrastructure"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "CNaaS-NMS",
+  "repo": "https://github.com/SUNET/cnaas-nms",
+  "repo_key": "github.com/sunet/cnaas-nms",
+  "short_desc": "Campus Network as-a-Service - Network Management System (Campus network automation software)",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -15531,7 +15782,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "365",
+  "version": "366",
   "wikidata": "Q114691201"
  },
  {
@@ -17597,7 +17848,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-backend",
-  "last_activity": "2026-08-11T02:33:04.834Z",
+  "last_activity": "2026-08-16T02:39:11.596Z",
   "license": "BSD-3-Clause",
   "long_desc": "The main backend service for conference management. This service manages the database and general requests for creating, editing, and deleting conferences and rooms. It also defines the database models necessary for managing calendar entries using the calendar-manager.\nFor an overview of the project as a whole, please refer to https://gitlab.opencode.de/it.nrw/nrw.desk/nrwdesk-helm\nconference-backend is the backend service for conference-frontend and exposes a HTTP-REST API protected through bearer token authentication. It connects itself to calendar-manager and/or identity-curator via their respective APIs to interact with calendars with CalDAV support and identity cards either via CardDAV or direct communication with the upstream identity provider/broker.\nAlternative clients that want to interact with the conference management system of NRW.Desk must learn how to obtain a valid OAuth2 token for their user from the token provider (e.g. Keycloak) and use the API defined in this project. Note: conference-backend does not validate the access token signature. It only uses the contained fields to identify the authorization scope of a user. Token validation should be handled by an appro",
   "maintenance": "contract",
@@ -17651,7 +17902,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T02:34:35.915Z",
+  "last_activity": "2026-08-16T02:41:04.363Z",
   "license": "BSD-3-Clause",
   "long_desc": "Django-based synchronization service that keeps the external gateway database (`gateway-backend`)\nin sync with the internal conference database (`conference-backend`). It is designed to resolve\ndata drift caused by service outages or other failures.\n\nThe service connects to the internal database directly via its native protocol\n(e.g., PostgreSQL) and communicates with the gateway through its HTTP CRUD API. The internal\ndatabase is treated as **read-only**. No writes, migrations, or other modifications are\nperformed against it.\n\nDuring synchronization, the service compares internal conferences with those stored on the\ngateway. The following actions might be queued and are executed in batches once all\ncomparisons are complete:\n- **Delete** from the gateway if the conference no longer exists internally,\nis marked as deleted, or has both guest and phone access deactivated.\n- **Update** in the gateway if the conference exists on both sides but data has diverged.\n- **Create** in the gateway if the conference exists internally with access enabled\nbut is missing from the gateway.\n\nThe service has no HTTP endpoints and operates purely as a background process. It supports\ntwo operation modes",
   "maintenance": "contract",
@@ -17761,7 +18012,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-08T02:36:10.239Z",
+  "last_activity": "2026-08-13T02:37:38.756Z",
   "license": "BSD-3-Clause",
   "long_desc": "This project implements the conference-phone-access-api to seamlessly integrate Jitsi Meet and Jigasi with the conference-management. It helps users to join conferences that are protected with an access code. When a correct phone code is given the conference UUID is returned.\n",
   "maintenance": "contract",
@@ -17807,7 +18058,7 @@
   "forge_path": "it.nrw/nrw.desk/config-check",
   "functions": [],
   "functions_inferred": false,
-  "last_activity": "2026-08-04T02:33:39.061Z",
+  "last_activity": "2026-08-15T02:42:38.833Z",
   "license": "BSD-3-Clause",
   "long_desc": "config-check is a lightweight, statically-linked Go CLI tool that validates environment variable configurations for frontend services within the NRW.desk collaboration platform. It ensures all required environment variables are present, have correct types, and conform to the expected format. The tool operates in three modes: conference-frontend, portal-frontend, and gateway-frontend, each defining its configuration requirements through structured Go types. Validation covers base URLs, OIDC authentication settings, dashboard tile configurations, header menu items, feedback forms, browser restrictions, and feature flags. Custom validation types enforce type safety: URLs must be valid absolute URIs or paths, booleans (FEBool) strictly accept \"true\" or \"false\". Validation includes conditional logic for context-dependent requirements and triggers migration warnings for deprecated variables like legacy Keycloak settings. Designed for containerized deployments, it runs as an inline validation step or Kubernetes init container. Compiled with CGO_ENABLED=0, the static binary is easily embedded into other container images. Part of the NRW.desk project by IT.NRW, built by GONICUS GmbH.\n",
   "maintenance": "contract",
@@ -18794,7 +19045,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T15:49:14.685Z",
+  "last_activity": "2026-08-13T14:36:14.025Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Main codebase for the WECHANGE suite. Contains the core functionality and models: user account management, groups/projects, ideas, user-dashboard, map, search, and all base templates, forms, and stylesheets. Cosinnus is the heart of the collaboration software to implement many of the best Free and Open Source Software to work together. It include chat, file sharing, project management, video conferencing and much more with focus real privacy. There a no cookies or something else thats connect to Google or etc. All services can be self hosted.",
   "maintenance": "contract",
@@ -21571,7 +21822,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://umwelt.info",
-  "last_activity": "2026-08-12T12:02:29.929Z",
+  "last_activity": "2026-08-17T10:18:56.637Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "Data-stories originally created for the umwelt.info portal provides Python- and R-based scripts to collect, analyze and visualize metadata found in umwelt.info. The main focus is on environmental and nature protection data and information and their related metadata. The metadata catalogue on umwelt.info is accessed via the public API documented at https://md.umwelt.info/swagger-ui/. \n",
   "maintenance": "internal",
@@ -21635,6 +21886,34 @@
   "upstream_id": "GID0091597",
   "used_by": [
    "United States of America"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "Datahike",
+    "repo_url": "https://github.com/replikativ/datahike",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "has_publiccode": false,
+  "name": "Datahike",
+  "repo": "https://github.com/replikativ/datahike",
+  "repo_key": "github.com/replikativ/datahike",
+  "short_desc": "Versioned, fast, distributed Datalog engine for everyone.",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "arbetsformedlingen"
   ]
  },
  {
@@ -22403,7 +22682,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-15T13:25:02Z",
+  "last_activity": "2026-08-17T08:59:09Z",
   "name": "DAWO",
   "repo": "https://code.overheid.nl/MinBZK/DAWO",
   "repo_key": "code.overheid.nl/minbzk/dawo",
@@ -22497,7 +22776,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T09:36:52Z",
+  "last_activity": "2026-08-14T07:16:07Z",
   "name": "DAWO-NixOS",
   "repo": "https://code.overheid.nl/MinBZK/DAWO-NixOS",
   "repo_key": "code.overheid.nl/minbzk/dawo-nixos",
@@ -22527,7 +22806,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T16:45:51Z",
+  "last_activity": "2026-08-13T08:49:47Z",
   "name": "DAWO-Sextant",
   "repo": "https://code.overheid.nl/MinBZK/DAWO-Sextant",
   "repo_key": "code.overheid.nl/minbzk/dawo-sextant",
@@ -22635,7 +22914,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://daz-pilot.de",
-  "last_activity": "2026-08-12T16:10:24.367Z",
+  "last_activity": "2026-08-17T09:31:19.623Z",
   "license": "EUPL-1.2",
   "long_desc": "In vocational school classes with German as a second or foreign language (DaZ/DaF), technical-language barriers regularly disrupt the flow of teaching. At levels A2\u2013B1 there is a lack of low-threshold, subject-specific learning offerings that are integrated directly into everyday school life.\n\nDaZ-Pilot is a digital language copilot for inclusive vocational education. Students point their device camera at a tool or classroom object and instantly receive an image, the technical term, its article, and its singular and plural forms. The pronunciation is played back through the device's own text-to-speech engine \u2013 offline and without any external services.\n\nAssignments from Moodle are automatically scanned for technical terms; a QR code in the document links the assignment directly to the matching vocabulary training, with no additional effort for teachers. A review mode with quizzes, points and badges motivates learners to practise regularly.\n\nThrough a web dashboard, teachers manage assignments and the central technical vocabulary database and review class overviews as well as difficulty analyses. Login uses existing school accounts via OpenID Connect \u2013 without any separate registrat",
   "maintenance": "contract",
@@ -26228,7 +26507,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-11T08:16:17Z",
+  "last_activity": "2026-08-17T10:45:47Z",
   "license": "MPL-2.0",
   "name": "display-api-service",
   "repo": "https://github.com/os2display/display-api-service",
@@ -27779,7 +28058,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.38.26",
+  "version": "0.38.27",
   "wikidata": "Q112073283"
  },
  {
@@ -28044,201 +28323,6 @@
   "stars": 0,
   "tier": "index",
   "translated": true
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/edelivery/domibus",
-    "name": "Domibus",
-    "repo_url": "https://code.europa.eu/edelivery/domibus",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "communications"
-  ],
-  "contacts": [
-   "eDelivery Support Service"
-  ],
-  "country": "EU",
-  "desc_en": "Domibus implements an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/edelivery/domibus",
-  "fallback_repo": "https://code.europa.eu/edelivery/domibus.git",
-  "features": [
-   "Secure and reliable message exchange \u2013 Implements the AS4 protocol for payload agnostic, encrypted, and signed messages with acknowledgements and retries, ensuring end-to-end confidentiality, integrity, and reliability.",
-   "Sample eDelivery AS4 Access Point \u2013 Conformant EC open-source implementation of the eDelivery AS4 profile that can be used to set up Access Points in distributed eDelivery secure exchange networks, ensuring interoperability between organisations.",
-   "Open-source, vendor-neutral, and extensible architecture \u2013 Maintained under the European Union Public Licence, with plugins/connectors (e.g., JMS, WS, File System) for integration with backend systems, allowing organisations to adapt and extend the code.",
-   "Management of participants and P-Modes \u2013 Handles metadata, communication parameters, and protocol configuration for multiple parties, including multi-tenancy support. Supports both static configuration and dynamic lookup using the BDXL/SMP standards.",
-   "Administration and monitoring tools \u2013 Web console and configuration tools for managing certificates, message filtering, monitoring, and logging.",
-   "Audit logging and traceability \u2013 Complete logging of message exchanges for compliance, dispute resolution, and auditing.",
-   "Compliance with EU legal standards \u2013 Aligned with ETSI standards defined for eIDAS (Q)ERDS and with EU security regulations for digital signatures, encryption, and secure exchange.",
-   "Web Services APIs (SOAP/REST) \u2013 Standard interfaces for sending, receiving, and managing messages, enabling integration with external systems."
-  ],
-  "forge_path": "edelivery/domibus",
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": false,
-  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus",
-  "last_activity": "2026-08-12T16:10:09.016Z",
-  "license": "EUPL-1.2-or-later",
-  "long_desc": "[Domibus](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110244/Domibus) is the sample software provided by the European Commission to implement an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange. It is based on the [eDelivery AS4 profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specification for the secure, web-based, payload-agnostic exchange of data or documents.\n",
-  "maintenance": "internal",
-  "name": "Domibus",
-  "platforms": [
-   "windows",
-   "mac",
-   "linux"
-  ],
-  "released": "2026-06-26",
-  "repo": "https://code.europa.eu/edelivery/domibus",
-  "repo_key": "code.europa.eu/edelivery/domibus",
-  "repo_owner": "DIGIT",
-  "short_desc": "Domibus implements an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange.",
-  "software_type": "standalone/backend",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 211,
-  "used_by": [
-   "EU institutions, bodies and agencies",
-   "EU Member State administrations",
-   "OpenPeppol Service Providers",
-   "EU private organisations",
-   "etc."
-  ],
-  "version": "5.2.1"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/edelivery/domisml",
-    "name": "DomiSML",
-    "repo_url": "https://code.europa.eu/edelivery/bdmsl",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "communications"
-  ],
-  "contacts": [
-   "eDelivery Support Service"
-  ],
-  "country": "EU",
-  "desc_en": "DomiSML implements an eDelivery Service Metadata Locator for publishing the location of metadata necessary for message exchange.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/edelivery/domisml",
-  "fallback_repo": "https://code.europa.eu/edelivery/domisml.git",
-  "features": [
-   "Maintains a trusted registry of authorised Service Metadata Publishers (SMPs) and their registered network participants.",
-   "Ensures secure and reliable discovery of the location where participant service metadata is published, using a standards\u2011based lookup mechanism.",
-   "Adheres to EU eDelivery specifications, ensuring full interoperability across European digital systems.",
-   "Scales to support national or multi\u2011country ecosystems with millions of participants.",
-   "Provides clear administrative controls and comprehensive audit trails to support transparency, accountability, and good governance."
-  ],
-  "forge_path": "edelivery/domisml",
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": false,
-  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSML",
-  "last_activity": "2026-08-11T13:47:06.313Z",
-  "license": "EUPL-1.2-or-later",
-  "long_desc": "[DomiSML](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118040/DomiSML) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Locator for an eDelivery party  to discover the URLs of other counterparties using eDelivery Access Points and their corresponding metadata. It is based on  the [eDelivery BDXL profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), an open technical specification for locating Access Points within a network, and on the [PEPPOL SML Specification](https://docs.peppol.eu/edelivery/), a technical specification defining a BDXL administration API.\n",
-  "maintenance": "internal",
-  "name": "DomiSML",
-  "platforms": [
-   "windows",
-   "mac",
-   "linux"
-  ],
-  "released": "2026-06-22",
-  "repo": "https://code.europa.eu/edelivery/bdmsl",
-  "repo_key": "code.europa.eu/edelivery/bdmsl",
-  "repo_owner": "DIGIT",
-  "short_desc": "DomiSML implements an eDelivery Service Metadata Locator for publishing the location of metadata necessary for message exchange.",
-  "software_type": "standalone/backend",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 212,
-  "used_by": [
-   "EU institutions, bodies and agencies",
-   "EU Member State administrations",
-   "OpenPeppol Service Providers",
-   "EU private organisations",
-   "etc."
-  ],
-  "version": 5.1
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/edelivery/domismp",
-    "name": "DomiSMP",
-    "repo_url": "https://code.europa.eu/edelivery/smp",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "communications"
-  ],
-  "contacts": [
-   "eDelivery Support Service"
-  ],
-  "country": "EU",
-  "desc_en": "DomiSMP implements an eDelivery Service Metadata Publisher for publishing and retrieving metadata necessary for message exchange.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/edelivery/domismp",
-  "fallback_repo": "https://code.europa.eu/edelivery/domismp.git",
-  "features": [
-   "Trusted participant registry and its service capabilities metadata (service descriptions) publication and retrieval.",
-   "Standards\u2011compliant metadata service aligned with EU eDelivery specifications to enable interoperability across EU systems.",
-   "Automatic endpoint discovery enabling seamless cross\u2011border and inter\u2011agency digital communication.",
-   "High availability and scalability to support large public\u2011sector networks.",
-   "Strong security and governance controls ensuring only verified organisations can register and exchange data.",
-   "User interface for managing participant registrations and service metadata, with support for bulk operations and API access.",
-   "Support for multiple document types, processes, and transport profiles to facilitate diverse message exchange scenarios.",
-   "Certificate and trust validation to ensure secure and trusted metadata publication and retrieval."
-  ],
-  "forge_path": "edelivery/domismp",
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": false,
-  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSMP",
-  "last_activity": "2026-08-12T14:06:18.807Z",
-  "license": "EUPL-1.2-or-later",
-  "long_desc": "[DomiSMP](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117783/DomiSMP) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Publisher for publishing and retrieving data necessary for an eDelivery party to dynamically configure its system for message exchange with other parties using eDelivery. It is based on the [eDelivery SMP profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications), an open technical specification for publishing service metadata within a 4-corner network.\n",
-  "maintenance": "internal",
-  "name": "DomiSMP",
-  "platforms": [
-   "windows",
-   "mac",
-   "linux"
-  ],
-  "released": "2025-10-12",
-  "repo": "https://code.europa.eu/edelivery/smp",
-  "repo_key": "code.europa.eu/edelivery/smp",
-  "repo_owner": "DIGIT",
-  "short_desc": "DomiSMP implements an eDelivery Service Metadata Publisher for publishing and retrieving metadata necessary for message exchange.",
-  "software_type": "standalone/backend",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 162,
-  "used_by": [
-   "EU institutions, bodies and agencies",
-   "EU Member State administrations",
-   "OpenPeppol Service Providers",
-   "EU private organisations",
-   "etc."
-  ],
-  "version": 5.2
  },
  {
   "catalogue_count": 1,
@@ -28689,6 +28773,37 @@
   ],
   "version": "31.1.8",
   "wikidata": "Q59339175"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "drive-tests",
+    "repo_url": "https://github.com/sunet/drive-tests",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "e-service"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "citizen-services"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "drive-tests",
+  "repo": "https://github.com/sunet/drive-tests",
+  "repo_key": "github.com/sunet/drive-tests",
+  "short_desc": "This is the test suite used by the SUNET Drive team",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -29322,71 +29437,6 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.europa.eu/edelivery/dynamic-discovery-client",
-    "name": "Dynamic Discovery Client (DDC)",
-    "repo_url": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "communications"
-  ],
-  "contacts": [
-   "eDelivery Support Service"
-  ],
-  "country": "EU",
-  "desc_en": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/edelivery/dynamic-discovery-client",
-  "fallback_repo": "https://code.europa.eu/edelivery/dynamic-discovery-client.git",
-  "features": [
-   "Automatic participant lookup using SML to locate the SMP service where a network participant published its service capabilities metadata.",
-   "SMP metadata retrieval to obtain service metadata such as document types, transport profiles, and endpoint details.",
-   "Support for multiple transport profiles (e.g., AS4, AS2, etc.) to enable interoperability with different Access Points.",
-   "Support for multiple document types and processes to facilitate diverse message exchange scenarios.",
-   "Support for various party identifier schemes (e.g., eDelivery identifiers, PEPPOL identifiers) to accommodate different identification standards.",
-   "Certificate and trust validation to ensure secure and trusted metadata retrieval.",
-   "Compliance with eDelivery Dynamic Discovery specifications (SML/SMP standards, DNS-based addressing)."
-  ],
-  "forge_path": "edelivery/dynamic-discovery-client",
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": false,
-  "landing": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
-  "last_activity": "2026-08-11T06:19:03.552Z",
-  "license": "EUPL-1.2-or-later",
-  "long_desc": "[DDC](https://code.europa.eu/edelivery/dynamic-discovery-client/) is the sample Java library provided by the European Commission to implement an eDelivery dynamic discovery lookup for an eDelivery party to discover the URLs and metadata of other eDelivery Access Point counterparties. It is based on the [eDelivery BDXL specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), the [eDelivery SMP specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications) and the dynamic sender and receiver enhancements of the [eDelivery AS4 specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specifications for locating Access Points within a network.\n",
-  "maintenance": "internal",
-  "name": "Dynamic Discovery Client (DDC)",
-  "platforms": [
-   "windows",
-   "mac",
-   "linux"
-  ],
-  "released": "2026-02-18",
-  "repo": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
-  "repo_key": "code.europa.eu/edelivery/dynamic-discovery-client",
-  "repo_owner": "DIGIT",
-  "short_desc": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
-  "software_type": "standalone/backend",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 214,
-  "used_by": [
-   "EU institutions, bodies and agencies",
-   "EU Member State administrations",
-   "OpenPeppol Service Providers",
-   "EU private organisations",
-   "etc."
-  ],
-  "version": 3.2
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
     "entry_url": "https://code.gouv.fr/sill/detail?name=DynFi",
     "name": "DynFi",
     "repo_url": "https://github.com/DynFi",
@@ -29529,7 +29579,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://github.com/IMIO/buildout.pm.portal",
-  "last_activity": "2026-08-03T08:48:09Z",
+  "last_activity": "2026-08-17T08:50:44Z",
   "license": "GPL-2.0",
   "long_desc": "Deliberations.be is a web application that allows citizens to consult official deliberations and publications from local authorities in Wallonia (Belgium). It offers advanced search features and ensures compliance with regional legislation. Built on the open-source Plone CMS, the platform guarantees reliability and flexibility. It integrates with iA.Delib, a deliberation management system, to automate parts of the publication process and streamline administrative workflows.",
   "maintenance": "internal",
@@ -29537,7 +29587,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-03",
+  "released": "2026-08-17",
   "repo": "https://github.com/IMIO/buildout.pm.portal",
   "repo_key": "github.com/imio/buildout.pm.portal",
   "repo_owner": "iMio, scrl",
@@ -29752,7 +29802,7 @@
    "Zone de police des Hauts-Pays",
    "Zone de secours Hainaut-Centre"
   ],
-  "version": "2.5.1"
+  "version": "2.5.2"
  },
  {
   "catalogue_count": 2,
@@ -30146,7 +30196,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T15:52:23Z",
+  "last_activity": "2026-08-14T14:41:08Z",
   "name": "e-KS",
   "repo": "https://code.overheid.nl/Kiesraad/e-KS",
   "repo_key": "code.overheid.nl/kiesraad/e-ks",
@@ -30412,7 +30462,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T16:54:23.650Z",
+  "last_activity": "2026-08-14T16:09:53.120Z",
   "license": "MIT",
   "long_desc": "## Convert Markdown files into static websites and interactive WebBooks\n\neasyWebsite \u2013 Markdown WebBook is part of the Document Writing Tools on openCode. It allows you to transform Markdown files into a static website.\n\nSupported themes: KERN-UX, Bund, openCode, openDesk \u2014 for federal, state, municipal and other public organisations.\n\nBuilt on Next.js, React, and TypeScript. Contributions are welcome.\n",
   "maintenance": "community",
@@ -30450,7 +30500,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-10T05:11:34Z",
+  "last_activity": "2026-08-13T18:49:01Z",
   "license": "Apache-2.0",
   "name": "eAuth-v2",
   "repo": "https://github.com/governmentbg/eAuth-v2",
@@ -30703,6 +30753,68 @@
   "stars": 1,
   "tier": "index",
   "translated": true
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "eduID Backend",
+    "repo_url": "https://github.com/SUNET/eduid-backend",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "security"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "eduID Backend",
+  "repo": "https://github.com/SUNET/eduid-backend",
+  "repo_key": "github.com/sunet/eduid-backend",
+  "short_desc": "eduID backend code",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "eduID Front",
+    "repo_url": "https://github.com/SUNET/eduid-front",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "security"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "eduID Front",
+  "repo": "https://github.com/SUNET/eduid-front",
+  "repo_key": "github.com/sunet/eduid-front",
+  "short_desc": "Frontend code for eduID",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -31870,6 +31982,57 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+    "name": "Elterngeldrechner und Planer",
+    "repo_url": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner.git",
+    "source": "DE/openCode"
+   }
+  ],
+  "categories": [
+   "digital-citizenship",
+   "educational-content"
+  ],
+  "country": "DE",
+  "desc_lang": "en",
+  "desc_src": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs.",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "fallback_repo": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner.git",
+  "features": [
+   "Berechnung des voraussichtlichen Elterngelds",
+   "Planung des Bezugszeitraums",
+   "\u00dcbertragung von Daten in den digitalen Elterngeldantrag"
+  ],
+  "forge_path": "digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "functions": [
+   "citizen-services",
+   "learning-knowledge"
+  ],
+  "functions_inferred": false,
+  "landing": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "last_activity": "2026-08-17T07:33:01.403Z",
+  "license": "EUPL-1.2",
+  "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
+  "maintenance": "contract",
+  "name": "Elterngeldrechner und Planer",
+  "platforms": [
+   "web"
+  ],
+  "repo": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner.git",
+  "repo_key": "gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
+  "repo_owner": "DigitalService GmbH des Bundes",
+  "short_desc": "Parental-allowance calculator and planner for non-binding calculation and planning of parental allowance.",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "translated": true,
+  "upstream_id": 12493
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner",
     "name": "Elterngeldrechner und Planer",
     "repo_url": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner.git",
@@ -31899,7 +32062,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner",
-  "last_activity": "2026-08-12T14:06:21.374Z",
+  "last_activity": "2026-08-17T04:09:34.100Z",
   "license": "EUPL-1.2",
   "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
   "maintenance": "contract",
@@ -32141,7 +32304,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-07-15T13:19:15Z",
+  "last_activity": "2026-08-13T12:12:07Z",
   "name": "EnergieWiki",
   "repo": "https://code.overheid.nl/RVO/EnergieWiki",
   "repo_key": "code.overheid.nl/rvo/energiewiki",
@@ -34914,7 +35077,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://f13-os.de/",
-  "last_activity": "2026-08-06T08:12:59.885Z",
+  "last_activity": "2026-08-14T14:22:23.621Z",
   "license": "MPL-2.0",
   "long_desc": "F13 stellt eine Vielzahl modularer, flexibel einsetzbarer KI-Funktionen bereit \u2013 zum Verarbeiten von Informationen, Erstellen von Texten, oder zum Recherchieren. Nutzende k\u00f6nnen mit F13 gezielt, wirksam und sicher Generative K\u00fcnstliche Intelligenz bei t\u00e4glichen B\u00fcroarbeiten einsetzen. Mit dem \u00dcbergang in eine Open-Source-Weiterentwicklung wird F13 seit Juli 2025 als gemeinschaftliches Vorhaben ge\u00f6ffnet: Der Quellcode steht frei zur Verf\u00fcgung, die Nutzung ist offen. Interessierte Verwaltungen, Organisationen sowie Entwicklerinnen und Entwickler sind eingeladen, das System f\u00fcr eigene Bedarfe anzupassen, weiterzuentwickeln und diese Entwicklungen wiederum Open Source bereitzustellen. F13 versteht sich als Beitrag zu einer modernen, transparenten und kooperativen Verwaltungsdigitalisierung \u2013 praxisnah erprobt, offen zug\u00e4nglich und auf das Gemeinwohl ausgerichtet. F13 ist Work-in-Progress und es gibt somit allen, die KI-Basisl\u00f6sungen in die deutsche Verwaltung tragen wollen, die M\u00f6glichkeit zur Mitwirkung.\n",
   "maintenance": "community",
@@ -35693,7 +35856,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-08T02:37:35.716Z",
+  "last_activity": "2026-08-13T02:39:43.115Z",
   "license": "BSD-3-Clause",
   "long_desc": "Backend service for managing and storing feedback data from NRW.desk applications. Collected data can be retrieved and analyzed using the Infinity Datasource plugin for Grafana.\n",
   "maintenance": "contract",
@@ -36011,7 +36174,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T15:26:42.020Z",
+  "last_activity": "2026-08-15T06:50:02.131Z",
   "license": "EUPL-v1.2",
   "maintenance": "internal",
   "name": "FIM Datenfelder-Sammelrepository",
@@ -36987,7 +37150,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T07:11:46.064Z",
+  "last_activity": "2026-08-17T04:59:35.705Z",
   "license": "EUPL-1.2",
   "long_desc": "This repository provides comprehensive documentation on the solution architecture of the Matrix-based G2X communication infrastructure pilot (https://gitlab.opencode.de/fitko/g2x-matrix-pilot).\n",
   "maintenance": "internal",
@@ -37042,7 +37205,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-10T05:03:14.378Z",
+  "last_activity": "2026-08-17T05:02:33.489Z",
   "license": "EUPL-1.2",
   "long_desc": "A template for software artifacts repositories that are part of the FITKO Matrix G2C Pilot Project.\nIt includes platform agnostic tooling, CI/CD workflows and documentation for managing software assets and deliverable artifacts.\n",
   "maintenance": "internal",
@@ -37202,6 +37365,39 @@
    "MEN"
   ],
   "wikidata": "Q5455377"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "FixMyStreet",
+    "repo_url": "https://github.com/mysociety/fixmystreet",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "e-service"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "citizen-services"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "FixMyStreet",
+  "repo": "https://github.com/mysociety/fixmystreet",
+  "repo_key": "github.com/mysociety/fixmystreet",
+  "short_desc": "This is mySociety's popular map-based reporting platform: easy to install in new countries and regions",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "gbg_k"
+  ],
+  "wikidata": "Q5456301",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -37584,7 +37780,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://foodcoops.net",
-  "last_activity": "2026-08-10T04:14:10.370Z",
+  "last_activity": "2026-08-15T04:14:22.000Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Foodsoft is a web-based software designed to help food cooperatives manage their operations more effectively. It provides tools for small regional producers to distribute their products directly to consumers. With Foodsoft, cooperatives can handle orders, keep track of inventory, and communicate with their members easily. The platform allows producers to list their products, making it simple for consumers to find and purchase fresh, local food. By connecting producers and consumers, Foodsoft supports local businesses and encourages the use of locally sourced ingredients.\n",
   "maintenance": "community",
@@ -38302,7 +38498,7 @@
    "Prefecture 974",
    "\u00e9ducation"
   ],
-  "version": "14.7",
+  "version": "14.11",
   "wikidata": "Q18150468"
  },
  {
@@ -39210,7 +39406,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://docs.fitko.de",
-  "last_activity": "2026-08-11T09:02:21.363Z",
+  "last_activity": "2026-08-13T12:02:20.132Z",
   "license": "EUPL-1.2",
   "long_desc": "The Federal Development Portal (FEP) consolidates technical information for the development and integration of digital administrative services in Germany. It provides documentation, standards, API descriptions, help texts, background information, and additional development resources inin a single web portal. The target audience of the development portal includes:\n- Software developers\n- IT architects\n- Project and program managers\n- Product teams\n- Open-source enthusiasts\n\nThe development portal facilitates access to relevant materials, reduces search effort and supports more consistent use of federal IT buildin blocks. Content can be maintained in a structured way, published in multiple languages, and organised for different subject areas such as FIT standards, resource directories, and project-specific documentation. The software therefore acts as a central knowledge and publishing platform for development-facing information in the public sector.\n\nThe Federal Development Portal is a product of the German IT Planning Council and is managed by the FITKO product management team.\n",
   "maintenance": "internal",
@@ -39830,7 +40026,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-08T02:38:24.957Z",
+  "last_activity": "2026-08-15T02:44:28.162Z",
   "license": "BSD-3-Clause",
   "long_desc": "An additional backend service for conference management. This service is used for access for users of external networks. If a conference that is created by the conference-backend saved with settings for guest access (including among other things phone access) the conference will be saved in the database of the gateway-backend, too. The gateway-crud-api handles all requests of conference-backend instances, that are used to create, update or read conferences. The gateway-api on the other hand handles requests of the gateway-frontend that are made for external users, to redirect and set guest permissions for the jitsi instance.\n",
   "maintenance": "contract",
@@ -41020,7 +41216,7 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE"
   ],
-  "version": "3.0.0",
+  "version": "3.0.1",
   "wikidata": "Q1502779"
  },
  {
@@ -41066,7 +41262,7 @@
    "geospatial"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T01:08:19.578Z",
+  "last_activity": "2026-08-17T01:08:23.612Z",
   "license": "GPL-3.0-only",
   "long_desc": "This is an Open-Source-Project from Landesamt f\u00fcr Geobasisinformation Sachsen (GeoSN) with development support from con terra GmbH.\n\nGeospatialAnalyzer is a Node.js based HTTP-API using NestJS, TypeORM, fastify, OpenAPI, Swagger and more.\n\nThe API can be integrated into different data processing and information systems, such as applications and specialised procedures.\n\nIt enables the transfer of geo-objects in the form of coordinates to check them against certain data topics using spatial tests. The response contains attributes of the objects found and optionally their geometry. In this way its possible to automatically determine, for example, in which district or on which parcel a transferred object is located.\n\nFor more information have a look in the documentation.\n",
   "maintenance": "community",
@@ -41135,7 +41331,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.0",
+  "version": "2.126.1",
   "wikidata": "Q116819111"
  },
  {
@@ -42503,7 +42699,7 @@
    "DINUM",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "1.27.1",
+  "version": "1.27.2",
   "wikidata": "Q28714270"
  },
  {
@@ -51012,7 +51208,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://ds.services.gov.ie/",
-  "last_activity": "2026-08-12T11:16:16Z",
+  "last_activity": "2026-08-17T10:33:25Z",
   "license": "MIT",
   "long_desc": "The Government of Ireland Design System is an open-source design system developed by the Office of the Government Chief Information Officer (OGCIO). It provides tools for design and development, along with resources and guidelines to help teams create consistent, accessible, and user-centred digital services across government.",
   "maintenance": "internal",
@@ -51025,7 +51221,7 @@
   "short_desc": "An open-source design system providing tools and guidelines to create consistent, accessible, and user-centred government digital services.",
   "software_type": "library",
   "source": "IE/ogcio",
-  "stars": 6,
+  "stars": 7,
   "tier": "publiccode",
   "used_by": [
    "Office of Government's Chief Information Officer, Ireland",
@@ -51187,7 +51383,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T03:25:16.126Z",
+  "last_activity": "2026-08-16T18:19:39.517Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n**To obtain the current approved release version of the GSB11, which will be subject to quarterly acceptance tests in the future, please contact gsb11-entwicklung@itzbund.de.**\n\n## Government Site Builder 11 - Extension: gsb-permission\nThe extension gsb-permission provides the gsb11 standard permissions.\n",
   "maintenance": "contract",
@@ -51239,7 +51435,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T04:16:37.685Z",
+  "last_activity": "2026-08-17T03:23:46.504Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n**To obtain the current approved release version of the GSB11, which will be subject to quarterly acceptance tests in the future, please contact gsb11-entwicklung@itzbund.de.**\n\n## Government Site Builder 11 - Extension: siteconfig\\_impexp\nThe extension siteconfig\\_impexp provides a backend module to import and export your site configuration.\n",
   "maintenance": "contract",
@@ -51635,7 +51831,7 @@
   "tier": "index"
  },
  {
-  "catalogue_count": 2,
+  "catalogue_count": 3,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Grafana",
@@ -51648,14 +51844,22 @@
     "name": "Grafana",
     "repo_url": null,
     "source": "DE/opensource.muenchen.de"
+   },
+   {
+    "entry_url": null,
+    "name": "Grafana",
+    "repo_url": "https://github.com/grafana/grafana",
+    "source": "SE/offentligkod"
    }
   ],
   "categories": [
-   "Monitoring & Logging"
+   "Monitoring & Logging",
+   "devops"
   ],
   "countries": [
    "DE",
-   "FR"
+   "FR",
+   "SE"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -51664,7 +51868,8 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Grafana",
   "functions": [
    "infrastructure",
-   "data-analytics"
+   "data-analytics",
+   "dev-tools"
   ],
   "functions_inferred": false,
   "keywords": [
@@ -51679,7 +51884,7 @@
   ],
   "landing": "https://grafana.com",
   "license": "Apache-2.0",
-  "merged_count": 2,
+  "merged_count": 3,
   "name": "Grafana",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -51690,7 +51895,8 @@
   "source": "FR/sill",
   "sources": [
    "DE/opensource.muenchen.de",
-   "FR/sill"
+   "FR/sill",
+   "SE/offentligkod"
   ],
   "tier": "index",
   "translated": true,
@@ -51705,9 +51911,13 @@
    "PREF",
    "SG",
    "Sorbonne Universit\u00e9",
-   "inrae"
+   "inrae",
+   "lfv",
+   "smhi",
+   "orebro_r",
+   "fk"
   ],
-  "version": "13.0.0",
+  "version": "13.1.3",
   "wikidata": "Q43399271"
  },
  {
@@ -51901,7 +52111,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.12.14",
+  "version": "4.12.15",
   "wikidata": "Q97819945"
  },
  {
@@ -52528,7 +52738,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T03:20:25.253Z",
+  "last_activity": "2026-08-16T18:20:50.157Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n\n## Extension: gsb\\_public\\_frontend\nThe extension gsb\\_public\\_frontend contains the standard frontend of the GSB 11, without the federal style guide.\n",
   "maintenance": "contract",
@@ -52888,6 +53098,51 @@
   "catalogue_entries": [
    {
     "entry_url": null,
+    "name": "Hajk",
+    "repo_url": "https://github.com/hajkmap/Hajk",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "datadelning"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "Hajk",
+  "repo": "https://github.com/hajkmap/Hajk",
+  "repo_key": "github.com/hajkmap/hajk",
+  "short_desc": "A modern, full-featured OpenLayers based map viewer and editor",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "halmstad_k",
+   "uddevalla_k",
+   "varberg_k",
+   "gbg_k",
+   "orebro_k",
+   "kungsbacka_k",
+   "pts",
+   "sig",
+   "ale_k",
+   "askersund_k",
+   "gr",
+   "lekeberg_k",
+   "laxa_k",
+   "nacka_k",
+   "Varmdo_k"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
     "name": "Hakurekisteri",
     "repo_url": "https://github.com/Opetushallitus/hakurekisteri",
     "source": "FI/avoinkoodi"
@@ -53095,8 +53350,8 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "1.7.5",
-  "wikidata": "Q131622251"
+  "version": "2.0.2",
+  "wikidata": "Q131897282"
  },
  {
   "catalogue_count": 1,
@@ -54046,6 +54301,37 @@
    "Stadt Wuerzburg"
   ],
   "version": "1.0.0"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "hittade-server",
+    "repo_url": "https://github.com/SUNET/hittade-server",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "security"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "hittade-server",
+  "repo": "https://github.com/SUNET/hittade-server",
+  "repo_key": "github.com/sunet/hittade-server",
+  "short_desc": "Small Django based web application which parses input JSON and shows the state of various hosts and containers",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -55064,7 +55350,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T02:39:18.683Z",
+  "last_activity": "2026-08-17T02:40:57.743Z",
   "license": "BSD-3-Clause",
   "long_desc": "The identity-curator service acts as a proxy layer in front of Keycloak to enable other services with access to its API to trade unique user identifier for exhaustive user information. If custom mappings between application-level user-IDs and Keycloak-user properties have been configured, this service needs to be extended in order to provide a correct translation.\n",
   "maintenance": "none OR contract",
@@ -55644,7 +55930,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-07-01T12:05:04Z",
+  "last_activity": "2026-08-14T12:34:52Z",
   "name": "imio-ts-aes",
   "repo": "https://github.com/IMIO/imio-ts-aes",
   "repo_key": "github.com/imio/imio-ts-aes",
@@ -55670,7 +55956,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-04T14:21:29Z",
+  "last_activity": "2026-08-17T08:59:35Z",
   "name": "imio.actionspanel",
   "repo": "https://github.com/IMIO/imio.actionspanel",
   "repo_key": "github.com/imio/imio.actionspanel",
@@ -55861,7 +56147,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-03T13:39:02Z",
+  "last_activity": "2026-08-14T13:38:09Z",
   "license": "GPL-2.0",
   "name": "imio.events.core",
   "repo": "https://github.com/IMIO/imio.events.core",
@@ -56050,7 +56336,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-07-07T15:14:36Z",
+  "last_activity": "2026-08-13T12:55:23Z",
   "license": "GPL-2.0",
   "name": "imio.news.core",
   "repo": "https://github.com/IMIO/imio.news.core",
@@ -56323,7 +56609,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T12:07:54Z",
+  "last_activity": "2026-08-17T09:47:10Z",
   "license": "GPL-2.0",
   "name": "imio.smartweb.core",
   "repo": "https://github.com/IMIO/imio.smartweb.core",
@@ -56539,7 +56825,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-11T13:23:27Z",
+  "last_activity": "2026-08-14T08:12:05Z",
   "name": "imio.zamqp.dms",
   "repo": "https://github.com/IMIO/imio.zamqp.dms",
   "repo_key": "github.com/imio/imio.zamqp.dms",
@@ -56621,7 +56907,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T13:52:19Z",
+  "last_activity": "2026-08-17T09:24:43Z",
   "name": "imio_smartweb_themes",
   "repo": "https://github.com/IMIO/imio_smartweb_themes",
   "repo_key": "github.com/imio/imio_smartweb_themes",
@@ -57062,7 +57348,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://getindico.io",
-  "last_activity": "2026-08-12T01:16:37.342Z",
+  "last_activity": "2026-08-17T01:15:33.657Z",
   "license": "MIT",
   "long_desc": "Indico is a general-purpose, fully web-based event management system originally developed at CERN, the European Organization for Nuclear Research. It supports the full lifecycle of conferences, meetings and lectures, from the initial call for abstracts through registration, scheduling, paper reviewing and archival of materials.\n\nKey capabilities include a hierarchical content management system for organizing events of any size, from single meetings to multi-week international conferences; a call for abstracts and abstract reviewing workflow; flexible, configurable registration forms with integration for external payment systems; a paper reviewing workflow for peer-reviewed contributions; a drag-and-drop timetable management interface for scheduling sessions and contributions; a badge and ticket editor for printing participant badges; a powerful room booking system for managing shared meeting spaces; and integration with common video conferencing solutions.\n\nIndico is released under the MIT license and is developed as a community project, with contributions from more than 100 developers, translators and usability specialists worldwide. It is extensible through a plugin system, allow",
   "maintenance": "community",
@@ -57532,7 +57818,7 @@
    "mac",
    "linux"
   ],
-  "released": "2026-07-30",
+  "released": "2026-08-13",
   "repo": "https://github.com/INGV/mcp-fdsnws-event",
   "repo_key": "github.com/ingv/mcp-fdsnws-event",
   "short_desc": "MCP server wrapping the FDSN Web Service Event APIs of multiple seismological datacenters.",
@@ -57543,7 +57829,7 @@
   "used_by": [
    "INGV"
   ],
-  "version": "v1.7.0"
+  "version": "v1.8.0"
  },
  {
   "active": true,
@@ -58598,6 +58884,37 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": null,
+    "name": "integration_jupyterhub",
+    "repo_url": "https://github.com/SUNET/nextcloud-integration_jupyterhub",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "integration"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "integration_jupyterhub",
+  "repo": "https://github.com/SUNET/nextcloud-integration_jupyterhub",
+  "repo_key": "github.com/sunet/nextcloud-integration_jupyterhub",
+  "short_desc": "Integrate Jupyther Hub into Nextcloud",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://opensource.muenchen.de/software/integreat.html",
     "name": "integreat",
     "repo_url": "https://github.com/digitalfabrik/integreat-app",
@@ -58923,7 +59240,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-04T11:33:23Z",
+  "last_activity": "2026-08-13T20:41:54Z",
   "name": "Internet.nl",
   "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl",
   "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl",
@@ -59098,262 +59415,32 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.europa.eu/ITB/gitb",
-    "name": "Interoperability Test Bed",
-    "repo_url": "https://github.com/ISAITB/gitb",
-    "source": "EU/code.europa.eu"
+    "entry_url": null,
+    "name": "Intric",
+    "repo_url": "https://github.com/inooLabs/intric-release/",
+    "source": "SE/offentligkod"
    }
   ],
   "categories": [
-   "test-management"
+   "ml"
   ],
-  "contacts": [
-   "Test Bed team"
-  ],
-  "country": "EU",
-  "desc_en": "Web application for the conformance testing of IT systems against semantic and technical specifications.",
+  "country": "SE",
+  "desc_from": "github-api",
   "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/ITB/gitb",
-  "fallback_repo": "https://code.europa.eu/ITB/gitb.git",
-  "features": [
-   "Conformance testing",
-   "Interoperability testing",
-   "Integration testing",
-   "Certification",
-   "Test automation",
-   "Reporting",
-   "Test monitoring",
-   "Quality assurance"
-  ],
-  "forge_path": "ITB/gitb",
   "functions": [
-   "case-workflow"
+   "data-analytics"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-04T14:26:11.747Z",
-  "license": "EUPL-1.2",
-  "long_desc": "The Interoperability Test Bed is a service offered by the European Commission\u2019s DIGIT to facilitate the conformance testing of IT systems. The Test Bed is itself a software system that can be both downloaded and installed locally, but also reused through a shared online installation operated by DIGIT. It offers an intuitive web user interface and rich integration features that allow administrators to define their project\u2019s overall testing setup as well as users to connect and run tests.\nIn terms of the testing approach it follows, the Test Bed is typically used to exchange messages with the software systems being tested, supporting both the sending and receiving of messages, validating all steps against the target specification and according to the specific scenario\u2019s expectations. Such scenarios can focus on technical details but can also be defined at business-level, exposing details only when needed to troubleshoot failures. Furthermore, tests can be designed to cover both normal flows but also edge cases and error scenarios that would be otherwise difficult to replicate.",
-  "maintenance": "internal",
-  "name": "Interoperability Test Bed",
-  "platforms": [
-   "web",
-   "linux",
-   "windows",
-   "mac"
-  ],
-  "released": "2026-06-19",
-  "repo": "https://github.com/ISAITB/gitb",
-  "repo_key": "github.com/isaitb/gitb",
-  "short_desc": "Web application for the conformance testing of IT systems against semantic and technical specifications.",
-  "software_type": "standalone/web",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 1230,
+  "has_publiccode": true,
+  "name": "Intric",
+  "repo": "https://github.com/inooLabs/intric-release/",
+  "repo_key": "github.com/inoolabs/intric-release",
+  "short_desc": "Release repository for intric",
+  "source": "SE/offentligkod",
+  "tier": "index",
   "used_by": [
-   "European Commission",
-   "World Health Organization",
-   "European Maritime Safety Agency",
-   "Publications Office of the European Union",
-   "IHE Europe"
-  ],
-  "version": "1.29.5"
- },
- {
-  "also_known_as": [
-   "Interoperability Test Bed - SHACL validator"
-  ],
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/ITB/csv-validator",
-    "name": "Interoperability Test Bed - CSV validator",
-    "repo_url": "https://github.com/ISAITB/shacl-validator",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "test-management"
-  ],
-  "contacts": [
-   "Test Bed team"
-  ],
-  "countries": [
-   "EU"
-  ],
-  "country": "EU",
-  "desc_en": "Customisable web application for the validation of CSV data via various APIs.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/ITB/csv-validator",
-  "fallback_repo": "https://code.europa.eu/ITB/csv-validator.git",
-  "features": [
-   "Data validation",
-   "Reporting",
-   "Quality control",
-   "Quality assurance"
-  ],
-  "forge_path": "ITB/csv-validator",
-  "functions": [
-   "case-workflow"
-  ],
-  "functions_inferred": false,
-  "last_activity": "2026-08-07T16:09:03.405Z",
-  "license": "EUPL-1.2",
-  "long_desc": "The Interoperability Test Bed's CSV validator is a web application for the validation of CSV data against Table Schemas. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
-  "maintenance": "internal",
-  "merged_count": 2,
-  "name": "Interoperability Test Bed - CSV validator",
-  "platforms": [
-   "web",
-   "linux",
-   "windows",
-   "mac"
-  ],
-  "released": "2026-08-07",
-  "repo": "https://github.com/ISAITB/shacl-validator",
-  "repo_key": "github.com/isaitb/shacl-validator",
-  "short_desc": "Customisable web application for the validation of CSV data via various APIs.",
-  "software_type": "standalone/web",
-  "source": "EU/code.europa.eu",
-  "sources": [
-   "EU/code.europa.eu"
-  ],
-  "tier": "publiccode",
-  "upstream_id": 1226,
-  "used_by": [
-   "European Commission",
-   "World Health Organization",
-   "European Maritime Safety Agency",
-   "European Union Agency for Railways",
-   "Publications Office of the European Union",
-   "IHE Europe"
-  ],
-  "version": "1.12.3"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/ITB/json-validator",
-    "name": "Interoperability Test Bed - JSON validator",
-    "repo_url": "https://github.com/ISAITB/json-validator",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "test-management"
-  ],
-  "contacts": [
-   "Test Bed team"
-  ],
-  "country": "EU",
-  "desc_en": "Customisable web application for the validation of JSON data via various APIs.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/ITB/json-validator",
-  "fallback_repo": "https://code.europa.eu/ITB/json-validator.git",
-  "features": [
-   "Data validation",
-   "Reporting",
-   "Quality control",
-   "Quality assurance"
-  ],
-  "forge_path": "ITB/json-validator",
-  "functions": [
-   "case-workflow"
-  ],
-  "functions_inferred": false,
-  "last_activity": "2026-08-07T16:25:08.717Z",
-  "license": "EUPL-1.2",
-  "long_desc": "The Interoperability Test Bed's JSON validator is a web application for the validation of JSON data against JSON Schemas. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
-  "maintenance": "internal",
-  "name": "Interoperability Test Bed - JSON validator",
-  "platforms": [
-   "web",
-   "linux",
-   "windows",
-   "mac"
-  ],
-  "released": "2026-08-07",
-  "repo": "https://github.com/ISAITB/json-validator",
-  "repo_key": "github.com/isaitb/json-validator",
-  "short_desc": "Customisable web application for the validation of JSON data via various APIs.",
-  "software_type": "standalone/web",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 1227,
-  "used_by": [
-   "European Commission",
-   "World Health Organization",
-   "European Maritime Safety Agency",
-   "European Union Agency for Railways",
-   "Publications Office of the European Union",
-   "IHE Europe"
-  ],
-  "version": "1.12.3"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/ITB/xml-validator",
-    "name": "Interoperability Test Bed - XML validator",
-    "repo_url": "https://github.com/ISAITB/xml-validator",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "test-management"
-  ],
-  "contacts": [
-   "Test Bed team"
-  ],
-  "country": "EU",
-  "desc_en": "Customisable web application for the validation of XML data via various APIs.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/ITB/xml-validator",
-  "fallback_repo": "https://code.europa.eu/ITB/xml-validator.git",
-  "features": [
-   "Data validation",
-   "Reporting",
-   "Quality control",
-   "Quality assurance"
-  ],
-  "forge_path": "ITB/xml-validator",
-  "functions": [
-   "case-workflow"
-  ],
-  "functions_inferred": false,
-  "last_activity": "2026-08-07T16:18:15.083Z",
-  "license": "EUPL-1.2",
-  "long_desc": "The Interoperability Test Bed's XML validator is a web application for the validation of XML data against XML Schemas and Schematron rules. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
-  "maintenance": "internal",
-  "name": "Interoperability Test Bed - XML validator",
-  "platforms": [
-   "web",
-   "linux",
-   "windows",
-   "mac"
-  ],
-  "released": "2026-08-07",
-  "repo": "https://github.com/ISAITB/xml-validator",
-  "repo_key": "github.com/isaitb/xml-validator",
-  "short_desc": "Customisable web application for the validation of XML data via various APIs.",
-  "software_type": "standalone/web",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 1228,
-  "used_by": [
-   "European Commission",
-   "World Health Organization",
-   "European Maritime Safety Agency",
-   "European Union Agency for Railways",
-   "Publications Office of the European Union",
-   "IHE Europe"
-  ],
-  "version": "1.12.3"
+   "sundsvall_k"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -59437,7 +59524,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-10T08:39:34Z",
+  "last_activity": "2026-08-13T18:40:54Z",
   "name": "invulhulpen",
   "repo": "https://code.overheid.nl/MinBZK/invulhulpen",
   "repo_key": "code.overheid.nl/minbzk/invulhulpen",
@@ -63401,7 +63488,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://www.kern-ux.de/",
-  "last_activity": "2026-08-11T09:33:17.094Z",
+  "last_activity": "2026-08-14T09:23:09.019Z",
   "license": "EUPL-1.2",
   "long_desc": "# What is KERN?\nWith **KERN** we provide an open UX standard for Germany's public administration that enables delivery teams to build accessible digital services efficiently and with a user-centred approach.\n# Open Source\n**KERN** is an open source project initiated by the federal states of Hamburg and Schleswig-Holstein. Everyone interested in the digital transformation of public administration is invited to join the national, interdisciplinary community.\n# Community\nAdoption is driven by collaborations within a cross-state specialist community (bottom up) and by partnerships on the decision-making level (top down). As a toolkit for digital government solutions, **KERN** strengthens the unified 'public administration' brand and builds trust in services from the municipal to the federal level.\n# Awards and further information\n\n  - **KERN** received the 2024 Prize for Good Administration.\n  - **KERN** is part of the digital umbrella brand initiative.\n  - The [service standard](https://servicestandard.gov.de/) builds on and\n    with **KERN**.\n  - Find our [roadmap](https://www.kern-ux.de/ueber-kern/roadmap) on\n    kern-ux.de.\n\n# What does KERN include?\n\n  - **KERN** provides an exten",
   "maintenance": "community",
@@ -63503,7 +63590,7 @@
    "Institut Laue Langevin (ILL)",
    "MS"
   ],
-  "version": "26.7.0",
+  "version": "26.7.1",
   "wikidata": "Q42916195"
  },
  {
@@ -63986,7 +64073,7 @@
    "CNRS",
    "INSEE"
   ],
-  "version": "9.5.0",
+  "version": "9.5.1",
   "wikidata": "Q21156460"
  },
  {
@@ -64720,11 +64807,11 @@
   ],
   "functions_inferred": false,
   "landing": "https://klimadashboard.ms/",
-  "last_activity": "2026-08-12T12:51:43.527Z",
+  "last_activity": "2026-08-14T05:41:34.886Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "The climate dashboard is a software solution that provides real-time information about the\nclimate balance of the city of M\u00fcnster. It allows users to visualize the current climate data using various diagrams and a tile-based layout. Each category of the climate footprint is presented on a separate page to provide a clear overview.\nThe data presented in this dashboard comes from a variety of providers, including the City of M\u00fcnster's Open Data Portal, the German Weather Service (DWD), BrightSky, and other data providers. By integrating these different data sources, the climate dashboard provides a comprehensive and up-to-date representation of the climate situation in M\u00fcnster.\nThe climate dashboard serves not only as a source of information, but also as a tool for evaluating and monitoring measures to combat climate change. It supports the city of M\u00fcnster and its partners in analyzing the impact of climate protection measures and evaluating the effectiveness of their efforts with regard to sustainable urban development.\nThe dashboard's interactive user interface allows users to visualize climate data on a map and access detailed information on individual measurement points. In addit",
   "maintenance": "none",
-  "merged_count": 4,
+  "merged_count": 5,
   "name": "Klimadashboard M\u00fcnster",
   "platforms": [
    "web"
@@ -65353,7 +65440,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://github.com/public-ui",
-  "last_activity": "2026-08-12T15:00:46.866Z",
+  "last_activity": "2026-08-17T08:01:59.672Z",
   "license": "EUPL-1.2",
   "long_desc": "\nThe HTML web standard is in itself very \"open\" specified to be as durable and robust as possible. Therefore, it often happens that HTML compositions are not easily accessible, semantic and valid. KoliBri builds directly on the web standards of the W3C (framework- agnostic), is thereby a generic reference implementation of the WCAG standard and the BITV for accessibility and implemented as a multi-theme capable presentation layer. There no technical reference and no data transfer functionalities. Thus KoliBri is for the realization of static websites as well as dynamic web applications of different corporate designs and style guides and therefore very interesting for open source.\n",
   "maintenance": "community with internal coordination",
@@ -65366,7 +65453,7 @@
    "web",
    "windows"
   ],
-  "released": "2026-08-04",
+  "released": "2026-08-14",
   "repo": "https://github.com/public-ui/kolibri",
   "repo_key": "github.com/public-ui/kolibri",
   "short_desc": "KoliBri \u2013 The accessible WebComponent library",
@@ -65377,7 +65464,7 @@
   "used_by": [
    "Informationstechnikzentrum Bund"
   ],
-  "version": "4.3.0"
+  "version": "4.3.1-rc.1"
  },
  {
   "catalogue_count": 1,
@@ -65479,7 +65566,7 @@
    "data-analytics"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T12:46:07.976Z",
+  "last_activity": "2026-08-13T12:05:14.407Z",
   "license": "MIT",
   "long_desc": "KommunalEnergie is a web-based application designed to support municipalities\nand public institutions in collecting, managing and analysing energy\nconsumption data of public properties.\n\nThe application integrates existing Home Assistant installations via a\ndefined interface to automatically collect metering data. For properties\nwithout automated data sources, manual data entry is supported.\n\nCollected data can be monitored over time and exported in order to fulfil\nstatutory reporting obligations, including annual energy consumption reports.\n",
   "maintenance": "community",
@@ -66185,7 +66272,7 @@
   ],
   "tier": "index",
   "translated": true,
-  "version": "0.20.0",
+  "version": "0.21.0",
   "wikidata": "Q135432577"
  },
  {
@@ -66245,7 +66332,7 @@
    "DINUM",
    "Minsit\u00e8re de la Justice"
   ],
-  "version": "1.25.0",
+  "version": "1.27.0",
   "wikidata": "Q135433339"
  },
  {
@@ -66559,7 +66646,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.24.0",
+  "version": "13.25.0",
   "wikidata": "Q13634357"
  },
  {
@@ -67221,6 +67308,9 @@
   "contacts": [
    "DIGIT LEOS team"
   ],
+  "countries": [
+   "EU"
+  ],
   "country": "EU",
   "desc_en": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
   "desc_lang": "en",
@@ -67240,10 +67330,11 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T16:29:13.052Z",
+  "last_activity": "2026-08-17T08:49:03.760Z",
   "license": "EUPL-1.2",
   "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
   "maintenance": "internal",
+  "merged_count": 2,
   "name": "LEOS core",
   "platforms": [
    "web"
@@ -67255,6 +67346,9 @@
   "short_desc": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
   "software_type": "standalone/web",
   "source": "EU/code.europa.eu",
+  "sources": [
+   "EU/code.europa.eu"
+  ],
   "tier": "publiccode",
   "upstream_id": 85,
   "used_by": [
@@ -70349,11 +70443,11 @@
   ],
   "functions_inferred": false,
   "landing": "https://www.masterportal.org",
-  "last_activity": "2026-08-12T16:44:42.950Z",
+  "last_activity": "2026-08-13T09:09:13.835Z",
   "license": "MIT",
   "long_desc": " ## Masterportal\n\n # Konfigurierbares Geoportal mit starker Community\n Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web. In Hamburg kommt das Masterportal immer dann zum Einsatz,\n wenn webbasierte Kartenanwendungen ben\u00f6tigt werden \u2013 als eigenst\u00e4ndige Anwendung oder als Teil einer E-Government-L\u00f6sung.\n Auch in anderen St\u00e4dten und Kreisen wird das Masterportal eingesetzt und in einer Kooperation in Form einer [++Implementierungspartnerschaft++](https://www.masterportal.org/)\n von mehr als 50 Partnern aus der Verwaltung weiterentwickelt.\n\n # Open Source und offene Standards\n Das Masterportal ist Open-Source-Software und setzt auf offene Standards. Es ist unter der [++MIT-Lizenz++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/License.txt) ver\u00f6ffentlicht.\n\n # Issues melden\n Der offizielle Issue Tracker ist auf Bitbucket zu finden: [++Issue Tracker++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/issues?status=new&status=open&status=submitted&is_spam=!spam)\n\n # Diskussionsforum des Masterportals\n Das Diskussionsforum findet man auf openCode: [++Diskussionsforum++](https://discourse.opencode.de/t/ueber-die-kategorie-masterportal-projekt-413/1",
   "maintenance": "community",
-  "merged_count": 4,
+  "merged_count": 5,
   "name": "Masterportal",
   "platforms": [
    "web"
@@ -70553,7 +70647,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "other"
   ],
-  "version": "4.6.5",
+  "version": "4.6.6",
   "wikidata": "Q27986619"
  },
  {
@@ -70587,7 +70681,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T21:27:28.424Z",
+  "last_activity": "2026-08-14T21:26:34.894Z",
   "license": "EUPL-1.2",
   "long_desc": "This is the backend CMS based on Strapi for the DigitalHub project.\n",
   "maintenance": "internal",
@@ -70637,7 +70731,7 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T03:07:16.457Z",
+  "last_activity": "2026-08-15T03:06:35.420Z",
   "license": "EUPL-1.2",
   "long_desc": "This is the backend CMS based on Strapi for the DigitalHub project.\n",
   "maintenance": "internal",
@@ -70985,7 +71079,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T02:41:56.026Z",
+  "last_activity": "2026-08-17T02:44:06.128Z",
   "license": "BSD-3-Clause",
   "long_desc": "The purpose of this bot is to listen to commands issued in any rooms it has been invited to and set up conference rooms on demand by interacting with the backend-api of the conference management. Upon success, the bot responds with the klickable link to the freshly created conference room.\n",
   "maintenance": "community",
@@ -71041,7 +71135,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T02:45:04.007Z",
+  "last_activity": "2026-08-17T02:46:51.505Z",
   "license": "BSD-3-Clause",
   "long_desc": "This chat bot may be fed with information about a conference and its participants to schedule automatic reminder messages via Matrix chat prior to the meeting. Access links and conference information details are advertised for convenience. The bot acts deliberately without the need to invite it to a specific room while treating all messages as confidential and refusing to risk any data leak to third parties by managing its own rooms.\n",
   "maintenance": "community",
@@ -72731,7 +72825,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://umwelt.info",
-  "last_activity": "2026-08-12T14:31:30.168Z",
+  "last_activity": "2026-08-15T16:52:31.743Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "The metadata index developed for the umwelt.info project.\nIt collects information on datasets from diverse sources stored in different formats using various systems. This information is then harmonized and indexed so that it can be searched using the provided HTTP/JSON API.\nIt does not aim to be generic, configurable or programmable and is intended to work only as a component of the umwelt.info project.\n",
   "maintenance": "internal",
@@ -73159,7 +73253,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://mijnoverheidzakelijk.nl",
-  "last_activity": "2026-08-12T12:51:42Z",
+  "last_activity": "2026-08-13T12:30:45Z",
   "license": "EUPL-1.2",
   "long_desc": "\"MijnOverheid Zakelijk\" (My Government Business) provides business users with a central portal where they can find all their data and interactions with the government in one place. The project is currently in prototype phase.\nThis repository contains the documentation for MOZa. The code developed for business services is spread across several other repositories within the MinBZK organisation, identifiable by the moza- prefix or the mijnoverheidzakelijk topic (https://github.com/topics/mijnoverheidzakelijk).\n",
   "maintenance": "internal",
@@ -73643,6 +73737,37 @@
   ],
   "version": "1.6.1",
   "wikidata": "Q102565362"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "MLA",
+    "repo_url": "https://github.com/diggsweden/mla",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "ml"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "MLA",
+  "repo": "https://github.com/diggsweden/mla",
+  "repo_key": "github.com/diggsweden/mla",
+  "short_desc": "A powerful, easy to use and intuitive way to create network analysis charts",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "skatteverket"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -74218,6 +74343,57 @@
   "wikidata": "Q190434"
  },
  {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+    "name": "Moodle eTranslation filter plugin ",
+    "repo_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "learning-management-system"
+  ],
+  "contacts": [
+   "BTSF ACADEMY Team"
+  ],
+  "country": "EU",
+  "desc_en": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
+  "desc_lang": "en",
+  "dev_status": "beta",
+  "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+  "fallback_repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin.git",
+  "features": [
+   "Automatic Moodle content translation"
+  ],
+  "forge_path": "btsf/moodle-etranslation-filter-plugin",
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": false,
+  "last_activity": "2026-08-04T08:48:04.149Z",
+  "license": "GPL-3.0-or-later",
+  "long_desc": "The eTranslation filter provides an automatic translation of the content\nof Moodle courses into different languages. It uses the European\nCommission's neural machine translation service\n([eTranslation](https://commission.europa.eu/resources-partners/etranslation_en)).\n\n\nThe filter parses and processes every piece of content including HTML\ntexts, [File resource](https://docs.moodle.org/405/en/File_resource)s,\n[Folder resource](https://docs.moodle.org/405/en/Folder_resource)s and\nheadings.\n\n\nFor each content item:\n\n\n- If the current language is the configured base language, then the\noriginal text is returned untouched.\n\n- Else, hash the full original text as the HASHKEY to look into the\ntranslation repository.\n\n- If the HASHKEY is found, then look for a translation in the selected\nlanguage.\n    - If the translation exists, then return the translated content\n- Else the HASHKEY is not found, request a translation from the\neTranslation API and wait for the translation in the background. Once it\nis ready, the translated content will be stored in the repository with the\nHASHKEY.\n\n\nThe translation availability is configurable through [Moodle\ncapabilities](https://docs.moodle.org/405/en/Cat",
+  "maintenance": "internal",
+  "name": "Moodle eTranslation filter plugin ",
+  "platforms": [
+   "web"
+  ],
+  "released": "2023-09-26",
+  "repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+  "repo_key": "code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+  "repo_owner": "BTSF ACADEMY Team",
+  "short_desc": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
+  "software_type": "library",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 1006,
+  "used_by": [
+   "BTSF ACADEMY Team"
+  ]
+ },
+ {
   "active": true,
   "catalogue_count": 1,
   "catalogue_entries": [
@@ -74348,7 +74524,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://mijnoverheidzakelijk.nl",
-  "last_activity": "2026-08-12T13:12:40Z",
+  "last_activity": "2026-08-13T21:47:06Z",
   "license": "EUPL-1.2",
   "long_desc": "The MOZa Profile Service manages profile data and preferences of business users within \"MijnOverheid Zakelijk\". This service is part of the MOZa platform and provides APIs for storing and retrieving user profiles.\n\nThis repository contains the source code of the profile service. The MOZa project consists of multiple repositories within the MinBZK organisation, identifiable by the moza- prefix or the mijnoverheidzakelijk topic.\n",
   "maintenance": "internal",
@@ -74382,7 +74558,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T14:50:08Z",
+  "last_activity": "2026-08-14T06:05:18Z",
   "name": "moza-poc",
   "repo": "https://code.overheid.nl/MinBZK/moza-poc",
   "repo_key": "code.overheid.nl/minbzk/moza-poc",
@@ -74412,7 +74588,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-10T12:59:53Z",
+  "last_activity": "2026-08-15T22:32:44Z",
   "name": "moza-site",
   "repo": "https://code.overheid.nl/MinBZK/moza-site",
   "repo_key": "code.overheid.nl/minbzk/moza-site",
@@ -74578,7 +74754,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "153.0.4",
+  "version": "154.0b10",
   "wikidata": "Q698"
  },
  {
@@ -74671,7 +74847,7 @@
    "acad\u00e9mie de Poitiers",
    "other"
   ],
-  "version": "153.0.2",
+  "version": "153.0.3",
   "wikidata": "Q483604"
  },
  {
@@ -75325,6 +75501,71 @@
   "tier": "index",
   "translated": true,
   "wikidata": "Q98731933"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "multiverse",
+    "repo_url": "https://github.com/SUNET/multiverse.git",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "devops"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "multiverse",
+  "repo": "https://github.com/SUNET/multiverse.git",
+  "repo_key": "github.com/sunet/multiverse",
+  "short_desc": "A complete setup of puppet+cosmos - clone to setup your own simple host mgmt automation",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "Municipo",
+    "repo_url": "https://github.com/municipio-se/municipio-deployment/tree/stage",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "cms"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "web-content"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "Municipo",
+  "repo": "https://github.com/municipio-se/municipio-deployment/tree/stage",
+  "repo_key": "github.com/municipio-se/municipio-deployment",
+  "short_desc": "Deploy of Municpio by fork",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "helsingborg_k",
+   "eslov_k",
+   "horby_k",
+   "rsnv"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -76356,6 +76597,33 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://github.com/governmentbg/nacid-mpk",
+    "name": "nacid-mpk",
+    "repo_url": "https://github.com/governmentbg/nacid-mpk",
+    "source": "BG/governmentbg"
+   }
+  ],
+  "country": "BG",
+  "desc_lang": "bg",
+  "entry_url": "https://github.com/governmentbg/nacid-mpk",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2026-08-17T07:19:33Z",
+  "license": "EUPL-1.2",
+  "name": "nacid-mpk",
+  "repo": "https://github.com/governmentbg/nacid-mpk",
+  "repo_key": "github.com/governmentbg/nacid-mpk",
+  "repo_owner": "governmentbg",
+  "short_desc": "95-00-46 10.11.2025 - \u041d\u0430\u0434\u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0420\u0414\u041f\u0417\u0421\u0414 \u0441 \u043d\u043e\u0432 \u043c\u043e\u0434\u0443\u043b \u0437\u0430 \u043f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u043d\u0438 \u043a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u043d\u0430 \u0443\u0447\u0438\u0442\u0435\u043b\u0438\u0442\u0435, \u0434\u0438\u0440\u0435\u043a\u0442\u043e\u0440\u0438\u0442\u0435 \u0438 \u0434\u0440\u0443\u0433\u0438\u0442\u0435 \u043f\u0435\u0434\u0430\u0433\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0438.",
+  "source": "BG/governmentbg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://github.com/governmentbg/nacid-nesc",
     "name": "nacid-nesc",
     "repo_url": "https://github.com/governmentbg/nacid-nesc",
@@ -77367,6 +77635,37 @@
   "catalogue_entries": [
    {
     "entry_url": null,
+    "name": "Nerblackbox",
+    "repo_url": "https://github.com/flxst/nerblackbox",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "ml"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "Nerblackbox",
+  "repo": "https://github.com/flxst/nerblackbox",
+  "repo_key": "github.com/flxst/nerblackbox",
+  "short_desc": "A High-level Library for Named Entity Recognition in Python.",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "esv_datalabb"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
     "name": "NetarchiveSuite",
     "repo_url": "https://sbforge.org/display/NAS/NetarchiveSuite",
     "source": "SE/offentligkod"
@@ -77626,7 +77925,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.3.0",
+  "version": "16.3.1",
   "wikidata": "Q56062435"
  },
  {
@@ -77878,7 +78177,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.95.0-07",
+  "version": "3.95.1-01",
   "wikidata": "Q119269051"
  },
  {
@@ -77955,21 +78254,36 @@
   "wikidata": "Q306144"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Nginx%20Proxy%20Manager",
     "name": "Nginx Proxy Manager",
     "repo_url": "https://github.com/NginxProxyManager/nginx-proxy-manager",
     "source": "FR/sill"
+   },
+   {
+    "entry_url": null,
+    "name": "Nginx Proxy Manager",
+    "repo_url": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+    "source": "SE/offentligkod"
    }
+  ],
+  "categories": [
+   "kommunikation"
+  ],
+  "countries": [
+   "FR",
+   "SE"
   ],
   "country": "FR",
   "desc_lang": "en",
   "desc_src": "Solution de reverse proxy facile \u00e0 prendre en main.",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Nginx%20Proxy%20Manager",
-  "functions": [],
+  "functions": [
+   "collaboration"
+  ],
   "functions_inferred": false,
   "keywords": [
    "reverse",
@@ -77979,6 +78293,7 @@
   ],
   "landing": "https://nginxproxymanager.com",
   "license": "MIT",
+  "merged_count": 2,
   "name": "Nginx Proxy Manager",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -77987,11 +78302,17 @@
   "short_desc": "Reverse proxy solution that is easy to get started with.",
   "sill_id": 407,
   "source": "FR/sill",
+  "sources": [
+   "FR/sill",
+   "SE/offentligkod"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
    "MD",
-   "Mairie de LOURDES"
+   "Mairie de LOURDES",
+   "fk",
+   "svedala_k"
   ]
  },
  {
@@ -78219,7 +78540,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T15:07:14Z",
+  "last_activity": "2026-08-14T12:31:49Z",
   "name": "nl-design-system",
   "repo": "https://code.overheid.nl/RVO/nl-design-system",
   "repo_key": "code.overheid.nl/rvo/nl-design-system",
@@ -78690,7 +79011,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-10T02:56:39.429Z",
+  "last_activity": "2026-08-15T02:55:36.166Z",
   "license": "BSD-3-Clause",
   "long_desc": "The notification-service serves as a proxy for a third-party SMTP server and enables different backend components of the NRW.desk system to send email notifications to administrators and users.\n",
   "maintenance": "contract",
@@ -79919,7 +80240,7 @@
    "Universit\u00e9 d'Angers",
    "dgfip"
   ],
-  "version": "32.2.1",
+  "version": "32.2.2",
   "wikidata": "Q21707789"
  },
  {
@@ -79941,7 +80262,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T07:15:54Z",
+  "last_activity": "2026-08-14T12:05:46Z",
   "name": "observability",
   "repo": "https://code.overheid.nl/RWS/observability",
   "repo_key": "code.overheid.nl/rws/observability",
@@ -79968,7 +80289,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-06-22T06:43:07Z",
+  "last_activity": "2026-08-15T11:47:30Z",
   "license": "MIT",
   "name": "observatory",
   "repo": "https://github.com/amagovpt/observatory",
@@ -80086,7 +80407,7 @@
    "DGFiP - Direction G\u00e9n\u00e9rale des Finances Publiques",
    "MTE"
   ],
-  "version": "1.13.6",
+  "version": "1.13.7",
   "wikidata": "Q103994532"
  },
  {
@@ -80443,7 +80764,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://githubnewbie0.github.io/odf-kit",
-  "last_activity": "2026-08-12T00:05:21.386Z",
+  "last_activity": "2026-08-14T23:05:21.258Z",
   "license": "Apache-2.0",
   "long_desc": "odf-kit is an open-source TypeScript library for working with OpenDocument Format (ODF) documents programmatically. It provides thirteen distinct document modes in a single package: build ODT documents from scratch, fill existing .odt templates with data, convert DOCX to ODT, HTML to ODT, Markdown to ODT, TipTap JSON to ODT, Lexical editor state to ODT, build ODS spreadsheets, read ODT and ODS files, convert XLSX to ODS, convert ODT to Markdown, and export ODT to Typst for PDF generation. All modes work in Node.js 22+ and modern browsers \u2014 documents can be generated entirely client-side with no server required.\nThe template engine fills existing .odt files created in LibreOffice with data using {placeholders}, loops for repeating content, conditionals for optional sections, and dot notation for nested data. It automatically handles LibreOffice's XML fragmentation of placeholder text.\nThe ODT builder produces documents with rich text formatting, tables with cell merging and formatting, bullet and numbered lists with up to 6 levels of nesting, embedded images, hyperlinks, internal bookmarks, headers and footers with page numbers, and full page layout control. Generated files open in ",
   "maintenance": "community",
@@ -80889,7 +81210,7 @@
    "MI",
    "VIGINUM"
   ],
-  "version": "0.32.8",
+  "version": "0.32.13",
   "wikidata": "Q124636097"
  },
  {
@@ -83298,7 +83619,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-03",
+  "released": "2026-08-14",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -83787,7 +84108,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.14.1"
+  "version": "4.14.3"
  },
  {
   "active": true,
@@ -84436,8 +84757,8 @@
    "web-content"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T16:04:17.424Z",
-  "license": "GPL-2",
+  "last_activity": "2026-08-17T07:55:45.956Z",
+  "license": "GPL-2.0-or-later",
   "long_desc": "## Cultural event platform with event calendar, profiles, magazine\n\nWeb-based content management platform software, ready for editorial and/or user-generated content such as: personal/group profiles, event locations, points of interest, reusable event descriptions, event dates (repeating dates possible), FAQ, magazine articles.\n\nTagging in many dimensions: common focus tags, per-type categorization, magazine columns, accessibility, trigger warnings etc. Content creation components like reusable media assets (images, video, audio, embeddable remote media, downloadable documents), galleries, press quotes, custom teaser sections, automatic teaser placement for interlinked content.\n\nMultilingual, with publication workflows, WCAG compliant, cookie consent management, search engine optimized. Logged in users can manage personal bookmarks, publish recommendations and write comments to commentable content.\n\nGovernance: Site owners and proven agencies decide jointly on further development as members of OpenCulturas e. V. (non-profit association), open for everyone interested! Budgets for new features and sustainable mainenance are welcome. Full-service offers including hosting and individua",
   "maintenance": "community",
   "name": "OpenCulturas",
@@ -84743,16 +85064,16 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T18:28:15.902Z",
+  "last_activity": "2026-08-17T10:48:23.139Z",
   "license": "Apache-2.0",
   "long_desc": "openDesk is the adaptable office and collaboration suite specifically developed to meet the needs of the public administration.\n\nFocusing on data sovereignty, security, and seamless collaboration, openDesk provides all the familiar tools required for day-to-day administrative work. It brings together all essential office applications under a single, user-friendly interface.\n\nopenDesk is the evolution of the \u201cSovereign Workplace,\u201d an initiative by the Federal Ministry of the Interior. With openDesk, the public administration gains greater control over its digital tools and can respond more flexibly to changing requirements. Federal, state, and local authorities receive a comprehensive office solution that works independently of specific providers, in any browser, and on all devices.\n",
   "maintenance": "contract",
-  "merged_count": 15,
+  "merged_count": 16,
   "name": "openDesk",
   "platforms": [
    "web"
   ],
-  "released": "2026-08-06",
+  "released": "2026-08-14",
   "repo": "https://gitlab.opencode.de/bmi/opendesk/",
   "repo_key": "gitlab.opencode.de/bmi/opendesk",
   "short_desc": "The adaptable office and collaboration suite for the public administration.\n",
@@ -84769,7 +85090,7 @@
    "F\u00f6derale IT-Kooperation (FITKO)",
    "ZenDiS"
   ],
-  "version": "1.17.2",
+  "version": "1.17.3",
   "wikidata": "Q136905151",
   "wikidata_via": "wikidata:repo"
  },
@@ -87266,7 +87587,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://gitlab.opencode.de/opentalk",
-  "last_activity": "2026-08-11T07:32:50.942Z",
+  "last_activity": "2026-08-14T08:39:14.250Z",
   "license": "EUPL-1.2",
   "long_desc": "OpenTalk is the video conferencing solution for anyone who values digital\nsovereignty and data protection. OpenTalk can be operated both in your \ncustom data center (on-premises) and on our servers in Germany (SaaS). \nOpenTalk consistently implements the requirements of the GDPR and is \naimed at public authorities, educational institutions, providers, and \ncompanies. Behind OpenTalk is the Heinlein Group with around 30 years \nof experience in secure communication.\n\nFind out more at [https://opentalk.eu](https://opentalk.eu).\n",
   "maintenance": "contract",
@@ -87769,6 +88090,38 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": null,
+    "name": "OrigoMap",
+    "repo_url": "https://github.com/origo-map/origo",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "datadelning"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": false,
+  "name": "OrigoMap",
+  "repo": "https://github.com/origo-map/origo",
+  "repo_key": "github.com/origo-map/origo",
+  "short_desc": "Origo",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sundsvall_k",
+   "enkoping_k"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://www.digitalpublicgoods.net/r/orthanc",
     "name": "Orthanc",
     "repo_url": "https://orthanc.uclouvain.be/hg/",
@@ -88049,7 +88402,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T10:25:33Z",
+  "last_activity": "2026-08-17T06:29:48Z",
   "license": "CC-BY-SA-4.0",
   "name": "os2-sekretariat-docs",
   "repo": "https://github.com/OS2offdig/os2-sekretariat-docs",
@@ -88334,7 +88687,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T12:53:04Z",
+  "last_activity": "2026-08-14T08:32:27Z",
   "license": "GPL-3.0",
   "name": "os2borgerpc-admin-site",
   "repo": "https://github.com/OS2borgerPC/os2borgerpc-admin-site",
@@ -88617,7 +88970,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-11T06:58:43Z",
+  "last_activity": "2026-08-17T09:12:01Z",
   "license": "GPL-3.0",
   "name": "os2borgerpc-produktforvaltning",
   "repo": "https://github.com/OS2borgerPC/os2borgerpc-produktforvaltning",
@@ -88701,7 +89054,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-10T10:34:26Z",
+  "last_activity": "2026-08-17T10:08:44Z",
   "name": "OS2compliance-docs",
   "repo": "https://github.com/OS2compliance/OS2compliance-docs",
   "repo_key": "github.com/os2compliance/os2compliance-docs",
@@ -88956,7 +89309,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-31T09:47:36Z",
+  "last_activity": "2026-08-14T15:50:22Z",
   "name": "os2forms",
   "repo": "https://github.com/OS2Forms/os2forms",
   "repo_key": "github.com/os2forms/os2forms",
@@ -89010,7 +89363,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-31T14:54:06Z",
+  "last_activity": "2026-08-14T15:59:11Z",
   "license": "GPL-2.0",
   "name": "os2forms8",
   "repo": "https://github.com/OS2Forms/os2forms8",
@@ -89432,7 +89785,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://github.com/OS2mo/os2mo",
-  "last_activity": "2026-08-12T18:58:20Z",
+  "last_activity": "2026-08-17T10:53:36Z",
   "license": "MPL-2.0",
   "long_desc": "GIR is an IT system for organisational and identity management.\nIt enables your organisation to maintain information about the organisation and its employees, volunteers, external consultants, robot users, and so on, from a single user interface.\nYou get a complete overview of all departments, employees' (multiple) employments, their IT access, their affiliations, and roles throughout the organisation. You also get a complete picture of management hierarchies, and you can see your union representative organisation, your payroll organisation, your safety organisation, your line organisation, etc.\nThe vision for GIR is that it should be *the* source system for the entire organisation and its employees: this is where organisational changes are made, this is where employees are created and removed, and this information will automatically - and immediately - be sent to other systems. The information can also come from other systems - or be enriched from them - but it is GIR that contains the complete picture of the organisation.\nBecause GIR contains all the information about the organisation, and it is always up-to-date and correct, it is important to connect GIR to other systems that n",
   "maintenance": "contract",
@@ -89688,7 +90041,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T12:38:55Z",
+  "last_activity": "2026-08-14T08:47:44Z",
   "name": "os2mo-data-import-and-export",
   "repo": "https://github.com/OS2mo/os2mo-data-import-and-export",
   "repo_key": "github.com/os2mo/os2mo-data-import-and-export",
@@ -89747,7 +90100,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-11T06:31:29Z",
+  "last_activity": "2026-08-17T07:27:51Z",
   "name": "os2mo-fkk",
   "repo": "https://github.com/OS2mo/os2mo-fkk",
   "repo_key": "github.com/os2mo/os2mo-fkk",
@@ -89943,7 +90296,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-06T11:26:13Z",
+  "last_activity": "2026-08-14T19:04:37Z",
   "name": "os2mo-ldap-import-export",
   "repo": "https://github.com/OS2mo/os2mo-ldap-import-export",
   "repo_key": "github.com/os2mo/os2mo-ldap-import-export",
@@ -89995,7 +90348,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T11:14:13Z",
+  "last_activity": "2026-08-14T14:27:44Z",
   "name": "os2mo-naldo",
   "repo": "https://github.com/OS2mo/os2mo-naldo",
   "repo_key": "github.com/os2mo/os2mo-naldo",
@@ -90021,7 +90374,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T08:24:11Z",
+  "last_activity": "2026-08-13T09:06:37Z",
   "license": "NOASSERTION",
   "name": "os2mo-os2sync-export",
   "repo": "https://github.com/OS2mo/os2mo-os2sync-export",
@@ -90050,7 +90403,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T12:17:59Z",
+  "last_activity": "2026-08-17T11:10:02Z",
   "name": "os2mo-rollekatalog",
   "repo": "https://github.com/OS2mo/os2mo-rollekatalog",
   "repo_key": "github.com/os2mo/os2mo-rollekatalog",
@@ -90078,7 +90431,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-07T09:56:39Z",
+  "last_activity": "2026-08-13T10:51:25Z",
   "name": "os2mo-safetynet",
   "repo": "https://github.com/OS2mo/os2mo-safetynet",
   "repo_key": "github.com/os2mo/os2mo-safetynet",
@@ -90164,7 +90517,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-05T12:24:00Z",
+  "last_activity": "2026-08-14T13:52:02Z",
   "name": "os2mo-sdtool-plus",
   "repo": "https://github.com/OS2mo/os2mo-sdtool-plus",
   "repo_key": "github.com/os2mo/os2mo-sdtool-plus",
@@ -90591,7 +90944,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-11T07:50:50Z",
+  "last_activity": "2026-08-17T08:25:55Z",
   "license": "EUPL-1.2",
   "name": "os2web8",
   "repo": "https://github.com/OS2web/os2web8",
@@ -93163,7 +93516,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire et de la For\u00eat",
    "PREF"
   ],
-  "version": "3.10.1",
+  "version": "3.10.2",
   "wikidata": "Q2049294"
  },
  {
@@ -94757,7 +95110,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-03-19T12:17:56Z",
+  "last_activity": "2026-08-13T14:06:03Z",
   "name": "passerelle-imio-ia-tech",
   "repo": "https://github.com/IMIO/passerelle-imio-ia-tech",
   "repo_key": "github.com/imio/passerelle-imio-ia-tech",
@@ -95231,6 +95584,8 @@
    "Marcello Esposito"
   ],
   "country": "IT",
+  "desc_from": "github-api",
+  "desc_lang": "en",
   "dev_status": "development",
   "fallback_repo": "https://github.com/vvfosprojects/pca.git",
   "functions": [
@@ -95250,6 +95605,7 @@
   "repo": "https://github.com/vvfosprojects/pca.git",
   "repo_key": "github.com/vvfosprojects/pca",
   "repo_owner": "Corpo Nazionale dei Vigili del Fuoco",
+  "short_desc": "Manages applications for public competitions",
   "software_type": "standalone",
   "source": "IT/developers-italia",
   "tier": "publiccode",
@@ -97239,7 +97595,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.3.0",
+  "version": "13.3.1",
   "wikidata": "Q1663673"
  },
  {
@@ -97728,7 +98084,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T04:06:18.017Z",
+  "last_activity": "2026-08-14T04:05:32.894Z",
   "license": "LGPL-2.1-only",
   "long_desc": "All in one video conferencing platform powered by BigBlueButton\u2122.\nDesigned with education at its core, PILOS offers a seamless, interactive, and secure solution for online learning, teaching, and all kinds of virtual meetings. Adaptable to your needs, PILOS delivers high-quality video, robust collaboration tools, and an intuitive user experience.\n\n**All you need for a great video conference experience:**\n- **Video and Audio**\n  High quality video and audio to foster a more personal and engaging experience.\n- **Collaboration**\n  Share your screen, use the interactive multi-user whiteboard, and work together in breakout rooms.\n- **Engagement**\n  Engage your audience with interactive tools like chat, emojis, surveys and much more.\n- **Recording**\n  Record your videoconferences and make them available using fine grained permission control.\n- **Live Streaming**\n  Reach a wider audience by streaming video conferences to an RTMP endpoint.\n- **Security**\n  All communication data is securely encrypted during transmission using the WebRTC protocol.\n- **Statistics**\n  Get detailed reports on the attendance and usage of your videoconferences.",
   "maintenance": "internal",
@@ -98729,7 +99085,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-07-09T12:01:38Z",
+  "last_activity": "2026-08-17T08:22:05Z",
   "license": "GPL-2.0",
   "name": "plonemeeting.portal.core",
   "repo": "https://github.com/IMIO/plonemeeting.portal.core",
@@ -99020,7 +99376,7 @@
   "also_known_as": [
    "Podman"
   ],
-  "catalogue_count": 2,
+  "catalogue_count": 3,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=podman",
@@ -99033,14 +99389,22 @@
     "name": "Podman",
     "repo_url": null,
     "source": "DE/opensource.muenchen.de"
+   },
+   {
+    "entry_url": null,
+    "name": "Podman",
+    "repo_url": "https://github.com/containers/podman",
+    "source": "SE/offentligkod"
    }
   ],
   "categories": [
-   "Virtualization & Containers"
+   "Virtualization & Containers",
+   "devops"
   ],
   "countries": [
    "DE",
-   "FR"
+   "FR",
+   "SE"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -99048,7 +99412,8 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=podman",
   "functions": [
-   "infrastructure"
+   "infrastructure",
+   "dev-tools"
   ],
   "functions_inferred": false,
   "keywords": [
@@ -99063,7 +99428,7 @@
   ],
   "landing": "https://podman.io",
   "license": "Apache License v2.0",
-  "merged_count": 2,
+  "merged_count": 3,
   "name": "podman",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -99074,15 +99439,17 @@
   "source": "FR/sill",
   "sources": [
    "DE/opensource.muenchen.de",
-   "FR/sill"
+   "FR/sill",
+   "SE/offentligkod"
   ],
   "tier": "index",
   "translated": true,
   "used_by": [
    "CentraleSup\u00e9lec",
-   "MESR"
+   "MESR",
+   "fk"
   ],
-  "version": "6.0.2",
+  "version": "6.1.0",
   "wikidata": "Q70876440"
  },
  {
@@ -99309,7 +99676,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-11T02:48:44.946Z",
+  "last_activity": "2026-08-17T03:13:28.572Z",
   "license": "BSD-3-Clause",
   "long_desc": "portal-backend is the main backend microservice for NRW.Desk, a collaboration portal developed by Information und Technik Nordrhein-Westfalen (IT.NRW) for the German state of North Rhine-Westphalia. It serves as the persistence and API layer that manages user personalization data for the portal's frontend dashboard.\nThe service provides a RESTful HTTP API (OpenAPI 3.0.3) that enables users to manage their personalized dashboard, including widget layout, visibility, and display order. Upon first authenticated request, each user is automatically provisioned with default settings and a set of pre-configured widgets arranged on a grid layout.\nSupported widget types include email, videoconference, chat, calendar, documents, files, diagrams, web shortcuts, upcoming conferences, and news. Each widget can be individually positioned (x, y coordinates), sized (width, height), reordered, and toggled visible or hidden. Users can also manage accordion states for the sidebar.\nAdministrators can create, update, and delete system-wide announcements that are displayed to all portal users. These notifications are time-bounded (with a start and end datetime) and come in three types: info, warn, and f",
   "maintenance": "contract",
@@ -100025,7 +100392,7 @@
    "other",
    "vetagro sup"
   ],
-  "version": "19 beta 2",
+  "version": "19 beta 3",
   "wikidata": "Q192490"
  },
  {
@@ -100566,56 +100933,6 @@
   "used_by": [
    "India"
   ]
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.europa.eu/dit/preserve-eu",
-    "name": "PreserveEU",
-    "repo_url": "https://code.europa.eu/dit/preserve-eu.git",
-    "source": "EU/code.europa.eu"
-   }
-  ],
-  "categories": [
-   "e-signature",
-   "document-management"
-  ],
-  "contacts": [
-   "AAPLADAS Apostolos"
-  ],
-  "country": "EU",
-  "desc_en": "Ensures that signed digital documents remain verifiable for decades",
-  "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/dit/preserve-eu",
-  "fallback_repo": "https://code.europa.eu/dit/preserve-eu.git",
-  "features": [
-   "Efficient e-signature preservation",
-   "Evidence Records (ERs)",
-   "Merkle Tree (Hash Tree) structure"
-  ],
-  "forge_path": "dit/preserve-eu",
-  "functions": [
-   "documents"
-  ],
-  "functions_inferred": false,
-  "last_activity": "2025-12-16T15:26:56.264Z",
-  "license": "EUPL-1.2",
-  "long_desc": "The PreserveEU system is a digital preservation solution to ensure the long-term validity, integrity,  and authenticity of electronically signed documents. Instead of applying multiple timestamps to  each document (as in traditional extension methods), it leverages a Merkle Tree (Hash Tree)  structure to efficiently group document hashes and preserve them collectively.\nBy combining cryptographic hashing and trusted timestamps, PreserveEU offers a scalable, secure,  and cost-efficient way to maintain compliance and protect digital evidence for decades.\n",
-  "maintenance": "internal",
-  "name": "PreserveEU",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "repo": "https://code.europa.eu/dit/preserve-eu.git",
-  "repo_key": "code.europa.eu/dit/preserve-eu",
-  "short_desc": "Ensures that signed digital documents remain verifiable for decades",
-  "software_type": "standalone/backend",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 1250
  },
  {
   "catalogue_count": 1,
@@ -102882,6 +103199,37 @@
   "tier": "index"
  },
  {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "puppet-sunet",
+    "repo_url": "https://github.com/SUNET/puppet-sunet",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "devops"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "puppet-sunet",
+  "repo": "https://github.com/SUNET/puppet-sunet",
+  "repo_key": "github.com/sunet/puppet-sunet",
+  "short_desc": "It slices and dices",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
   "also_known_as": [
    "Putty"
   ],
@@ -102951,7 +103299,7 @@
    "Rectorat de Lyon",
    "other"
   ],
-  "version": "0.84",
+  "version": "0.85",
   "wikidata": "Q841685"
  },
  {
@@ -105593,7 +105941,8 @@
   "tier": "index",
   "translated": true,
   "used_by": [
-   "06"
+   "06",
+   "Arcep"
   ],
   "version": "1.75.0",
   "wikidata": "Q56795481"
@@ -105736,7 +106085,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://ready2race.info",
-  "last_activity": "2026-08-12T09:03:56.346Z",
+  "last_activity": "2026-08-16T09:04:14.030Z",
   "license": "GPL-3.0-only",
   "long_desc": "**Ready2Race** is a web-based pop-up solution for clubs to manage competitions. Events with competitions can be created and published, and competition teams can be registered by clubs. Ready2Race also supports the execution of competitions using predefined competition modes. During the different phases, documents can be generated and exported automatically, for example registration summaries, entry fee invoices, or start lists for individual matches. Tasks can also be assigned to volunteers. Ready2Race is designed to advance digitalization in clubs and to simplify the organization of such events while reducing time and administrative effort.\n",
   "maintenance": "contract",
@@ -106234,7 +106583,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-10T19:47:04Z",
+  "last_activity": "2026-08-13T18:16:08Z",
   "name": "regelrecht",
   "repo": "https://code.overheid.nl/MinBZK/regelrecht",
   "repo_key": "code.overheid.nl/minbzk/regelrecht",
@@ -106694,6 +107043,37 @@
   "stars": 1,
   "tier": "index",
   "translated": true
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "reqstool",
+    "repo_url": "https://github.com/Luftfartsverket/reqstool-client",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "krav"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "reqstool",
+  "repo": "https://github.com/Luftfartsverket/reqstool-client",
+  "repo_key": "github.com/luftfartsverket/reqstool-client",
+  "short_desc": "Reqstool is a tool for managing requirements with related software verification cases (aka tests) and verification results (test results)",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "lfv"
+  ]
  },
  {
   "active": true,
@@ -107263,7 +107643,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-10T10:15:43Z",
+  "last_activity": "2026-08-17T00:07:56Z",
   "name": "rfc9068-python-access-token-validator",
   "repo": "https://code.overheid.nl/GemAmsterdam/rfc9068-python-access-token-validator",
   "repo_key": "code.overheid.nl/gemamsterdam/rfc9068-python-access-token-validator",
@@ -107441,7 +107821,7 @@
    "dev-tools"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T16:25:25.505Z",
+  "last_activity": "2026-08-14T11:29:18.932Z",
   "license": "Apache-2.0",
   "long_desc": "Beschreibung......................................................................................................................................................................\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung......................................................................................................................................................................\n\nBeschreibung.............................................................................................................",
   "maintenance": "contract",
@@ -107549,7 +107929,7 @@
    "identity-security"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-05T07:36:29.109Z",
+  "last_activity": "2026-08-17T03:14:16.005Z",
   "license": "Apache-2.0",
   "long_desc": "Dieses Projekt stellt Policies f\u00fcr StackRox bereit, die auf den durch die Interessensgemeinschaft Betrieb von Containern (IG BvC) erarbeiteten Richtlinien basieren.\nDiese wiederum stellen eine mit Teilnehmern mehrerer Bundesbeh\u00f6rden und IT Dienstleistern von L\u00e4ndern und Bund Interpretation von technisch Pr\u00fcfbaren Ma\u00dfnahmen der Bausteine SYS.1.6 und APP.4.4 des BSI (Bundesamt f\u00fcr Sicherheit in der Informationstechnik) bereit.\nDas Projekt soll es erm\u00f6glichen, dass Firmen, Beh\u00f6rden oder auch Privatpersonen, die StackRox einsetzen, ein leicht zu importierendes, und anzupassendes Set an Policies haben, die sie wiederverwenden und anpassen k\u00f6nnen.\n",
   "maintenance": "community",
@@ -108975,7 +109355,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-10T10:27:12Z",
+  "last_activity": "2026-08-16T21:25:57Z",
   "name": "rust-eml-nl",
   "repo": "https://code.overheid.nl/Kiesraad/rust-eml-nl",
   "repo_key": "code.overheid.nl/kiesraad/rust-eml-nl",
@@ -109467,7 +109847,7 @@
    "MESR",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "4.24.5",
+  "version": "4.24.6",
   "wikidata": "Q1830735"
  },
  {
@@ -113531,7 +113911,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-09T20:59:40Z",
+  "last_activity": "2026-08-14T07:56:03Z",
   "name": "signals",
   "repo": "https://code.overheid.nl/GemAmsterdam/signals",
   "repo_key": "code.overheid.nl/gemamsterdam/signals",
@@ -115979,7 +116359,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://smart-village.app",
-  "last_activity": "2026-08-03T15:19:23.920Z",
+  "last_activity": "2026-08-14T12:41:02.453Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "The Smart Village App is an information and service app. In addition to administrative services, which are made available in bundled form via the app, locals and tourists can obtain information on and from the respective municipality. For example, hiking routes are provided via the app, local news and events are published, and basic public services are offered. Citizens can use the Smart Village App to report current issues or learn about administrative services, among other things. The Smart Village App thus contributes to improving the exchange of information between administrations and citizens. It was developed by municipalities for municipalities and is adaptable to the individual needs of each city or town. Counties and municipal associations also use the Smart Village App for their areas. All participating municipalities are in constant exchange with one another. The goal of this network is to facilitate work sharing: the joint creation and utilization of synergies from the ideas and experiences of the participants reduces costs and helps launch new apps more successfully. The Smart Village App is a nationwide offering that has already been implemented in numerous municipali",
   "maintenance": "contract",
@@ -116788,7 +117168,7 @@
    "dev-tools"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-08-12T05:39:52.243Z",
+  "last_activity": "2026-08-17T09:11:47.433Z",
   "license": "EUPL-1.2",
   "long_desc": " \n\nThe SoestApp is an open source city app that retrieves services by and information about the city of Soest from various sources and makes them available on a single platform for citizens.\n\nThe app accesses information from the Soest data platform and bundles the content available there into thematic-functional modules.\n\nThe current modules (still under development - as of Jul. 2024) are\n\n\u200b\n\n- News\n- Events\n- Citizen services\n- Feedback/Support\n- Parking\n- POIs\n- Waste calendar\n\nThe app is being developed by the city of Soest together with the company SWCode. The development is supported by the federal funding programme \"Modellprojekte Smart Cities (MPSC)\" of the Kreditanstalt f\u00fcr Wiederaufbau (KfW) and the Bundesministerium des Innern und f\u00fcr Heimat (BMI).\n",
   "maintenance": "contract",
@@ -117037,7 +117417,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "5.12.9",
+  "version": "5.12.10",
   "wikidata": "Q1523357"
  },
  {
@@ -119257,7 +119637,7 @@
   "functions": [],
   "functions_inferred": false,
   "landing": "https://xleitstelle.de/",
-  "last_activity": "2026-08-04T16:58:45.209Z",
+  "last_activity": "2026-08-13T09:45:45.383Z",
   "license": "LGPL-2.1-only",
   "long_desc": "Diese Repository beinhaltet XPlanung-Validierungsregeln des [XPlanung-Standards](https://xleitstelle.de/xplanung/releases-xplanung) als XQuery-Anweisungen. Weitere Informationen zum Standard XPlanung finden Sie bei der [Leitstelle XPlanung/XBau](http://xleitstelle.de/). Der \u00f6ffentlich verf\u00fcgbare XPlanGML Validator der Leitstelle ist unter der Adresse [https://www.xplanungsplattform.de/xplan-validator/](https://www.xplanungsplattform.de/xplan-validator/) erreichbar.\nDie Implementierung der Konformit\u00e4tsregeln sind nach Version getrennt unterhalb des Ordners `rules` abgelegt.\nAktuell sind die geometrischen Konformit\u00e4tsbedingungen aus dem Kapitel 2.2 nicht bzw. nur in Teilen als XQuery-Anweisungen umgesetzt. F\u00fcr die Version 6.0 ist die Regel 4.5.2.4 hinzugekommen, die ebenfalls nicht als XQuery-Anweisungen umgesetzt wurde.\n",
   "name": "Standard-Validierungsregeln",
@@ -119378,7 +119758,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://www.startuphafen.sh",
-  "last_activity": "2026-05-27T19:43:49.514Z",
+  "last_activity": "2026-08-13T09:43:33.059Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "Startuphafen is a webapplication designed to help users navigate the german company application process. It mainly provides a questionaire, of which it creates a request that is send to ERiC / Elster and the OZG-Cloud provider. It is able to create XML data for ERiC and request for the OZG-Cloud. Furthermore it has an FAQ-Page and a Contact Page. User Login to Startuphafen via BundID. User information is retrieved from BundID and then used in the application process automatically. Every Input into a registration form is saved in between and steps that are standardised are done in the background.\n",
   "maintenance": "contract",
@@ -119386,7 +119766,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2025-03-25",
+  "released": "2026-08-13",
   "repo": "https://github.com/pct-digital/startuphafen-gpl",
   "repo_key": "github.com/pct-digital/startuphafen-gpl",
   "short_desc": "Startuphafen is a web application designed to help users navigate the German company registration process.",
@@ -119395,7 +119775,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": 6811,
-  "version": "1.0.0"
+  "version": "2.0.0"
  },
  {
   "catalogue_count": 1,
@@ -119436,6 +119816,37 @@
   "source": "GLOBAL/dpg",
   "tier": "index",
   "upstream_id": "GID0092066"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "stepupauth",
+    "repo_url": "https://github.com/SUNET/nextcloud-stepupauth",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "integration"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "stepupauth",
+  "repo": "https://github.com/SUNET/nextcloud-stepupauth",
+  "repo_key": "github.com/sunet/nextcloud-stepupauth",
+  "short_desc": "The Step Up Authentication app allows you to trigger a second factor authentication for Single Sign On (SSO) accounts in Nextcloud.",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
  },
  {
   "active": true,
@@ -120689,6 +121100,37 @@
   "catalogue_entries": [
    {
     "entry_url": null,
+    "name": "sunet-auth-server",
+    "repo_url": "https://github.com/SUNET/sunet-auth-server",
+    "source": "SE/offentligkod"
+   }
+  ],
+  "categories": [
+   "security"
+  ],
+  "country": "SE",
+  "desc_from": "github-api",
+  "desc_lang": "en",
+  "functions": [
+   "identity-security"
+  ],
+  "functions_inferred": false,
+  "has_publiccode": true,
+  "name": "sunet-auth-server",
+  "repo": "https://github.com/SUNET/sunet-auth-server",
+  "repo_key": "github.com/sunet/sunet-auth-server",
+  "short_desc": "oauth.xyz/GNAP auth server",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "sunet"
+  ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": null,
     "name": "sunrise-cms",
     "repo_url": "https://github.com/cityssm/sunrise-cms",
     "source": "CA/code.open.canada.ca"
@@ -120995,7 +121437,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://sv-hub.de",
-  "last_activity": "2026-03-28T12:33:39.924Z",
+  "last_activity": "2026-08-14T18:07:48.218Z",
   "license": "APACHE-2.0",
   "long_desc": "Der SV-Hub ist eine webbasierte Plattform f\u00fcr die Sch\u00fcler_innenvertretungsarbeit, die unterschiedliche Tools (wie Umfragen, Wikis, Kontaktdatenbanken, Projektmanagement, Finanzmanagement, etc.) zur Verf\u00fcgung stellt, um die inhaltliche und verwalterische Arbeit in der Schule und in den Kreis- und Stadtsch\u00fcler_innenr\u00e4ten zu vereinfachen. Die Arbeit erfolgt hier in Gruppen, die kollaborativ auf diese Tools zugreifen k\u00f6nnen, um gemeinsam an Projekten und Themen in der Sch\u00fcler\\*innenvertretung zu arbeiten.\n",
   "maintenance": "contract",
@@ -121021,7 +121463,7 @@
   "used_by": [
    "Stadt Frankfurt am Main"
   ],
-  "version": "2.2.0"
+  "version": "2.2.1"
  },
  {
   "catalogue_count": 1,
@@ -121060,7 +121502,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://smart-village.app",
-  "last_activity": "2026-08-12T18:42:33.395Z",
+  "last_activity": "2026-08-17T10:08:40.525Z",
   "license": "EUPL-1.2",
   "long_desc": "SVA Studio modernisiert das Redaktionssystem der Smart Village App zu einer integrierten, API-first ausgerichteten Plattform f\u00fcr Kommunen und andere \u00f6ffentliche Organisationen. Das System b\u00fcndelt Content-Management, Identit\u00e4ts- und Rechteverwaltung, Design- und Modulkonfiguration sowie die Anbindung externer Fachverfahren in einer erweiterbaren Webanwendung. Der Schwerpunkt liegt auf typsicherer, modularer Architektur, nachnutzbaren Schnittstellen, sicherem Betrieb und der Unterst\u00fctzung kommunaler Redaktions- und Verwaltungsprozesse.",
   "maintenance": "community",
@@ -123835,7 +124277,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.30.0",
+  "version": "3.30.1",
   "wikidata": "Q110643961"
  },
  {
@@ -125655,7 +126097,7 @@
    "catalog"
   ],
   "landing": "http://udata.readthedocs.org",
-  "last_activity": "2026-08-12T17:24:31Z",
+  "last_activity": "2026-08-13T15:15:10Z",
   "license": "agpl-3.0",
   "maintenance": "community",
   "merged_count": 3,
@@ -127372,7 +127814,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://www.hypertegrity.de/",
-  "last_activity": "2026-08-12T08:11:19.158Z",
+  "last_activity": "2026-08-14T14:39:15.223Z",
   "license": "EUPL-1.2",
   "long_desc": "The Urban Data Space Platform is based on Kubernetes and offers an open, cloud-independent infrastructure for the secure integration, standardization, and visualization of city data. The platform is based on the FIWARE architecture and DIN SPEC 91357. It is completely open source, promotes digital sovereignty, and supports local authorities in efficiently providing data to citizens and external partners. Modular components, a strong role and rights system and open API management create a sustainable and future-proof ecosystem for smart cities.\n",
   "maintenance": "internal",
@@ -128114,17 +128556,31 @@
   "translated": true
  },
  {
-  "catalogue_count": 1,
+  "also_known_as": [
+   "Varnish Cache"
+  ],
+  "catalogue_count": 2,
   "catalogue_entries": [
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Varnish",
     "name": "Varnish",
     "repo_url": "https://code.vinyl-cache.org/vinyl-cache/vinyl-cache",
     "source": "FR/sill"
+   },
+   {
+    "entry_url": null,
+    "name": "Varnish Cache",
+    "repo_url": "https://github.com/varnishcache/varnish-cache",
+    "source": "SE/offentligkod"
    }
   ],
   "categories": [
-   "Web Servers"
+   "Web Servers",
+   "devops"
+  ],
+  "countries": [
+   "FR",
+   "SE"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -128132,7 +128588,8 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Varnish",
   "functions": [
-   "infrastructure"
+   "infrastructure",
+   "dev-tools"
   ],
   "functions_inferred": false,
   "keywords": [
@@ -128145,6 +128602,7 @@
   ],
   "landing": "https://vinyl-cache.org",
   "license": "BSD-3-Clause",
+  "merged_count": 2,
   "name": "Varnish",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -128153,10 +128611,16 @@
   "short_desc": "Web cache.",
   "sill_id": 152,
   "source": "FR/sill",
+  "sources": [
+   "FR/sill",
+   "SE/offentligkod"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
-   "DR67-SNSSI"
+   "DR67-SNSSI",
+   "arbetsformedlingen",
+   "smhi"
   ],
   "version": "9.0.0",
   "wikidata": "Q1602447"
@@ -128910,11 +129374,11 @@
   ],
   "functions_inferred": false,
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-08-12T09:28:08.308Z",
+  "last_activity": "2026-08-17T07:05:36.808Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
-  "merged_count": 8,
+  "merged_count": 3,
   "name": "vecto-sim",
   "platforms": [
    "windows",
@@ -131515,7 +131979,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T21:51:32Z",
+  "last_activity": "2026-08-17T11:10:31Z",
   "license": "EUPL-1.2",
   "long_desc": "NOTE: Waggle is an individual experiment within the Dutch central government and is known not to meet the requirements and standards the Dutch government sets for production software (BIO/ISO 27001, DPIA/GDPR, WCAG 2.2, NeRDS, Forum Standaardisatie). No formal maintenance, no SLA, single-user single-tenant architecture.\nWaggle imports your flagged Mattermost posts into one kanban board with the columns backlog, in progress and done, plus a separate reading list. It has two-way sync with Mattermost (completing a card in Waggle unsaves the post in Mattermost automatically; posts unsaved externally move to done automatically), a rich preview of messages with markdown rendering, attachments, thread context and private notes. Bubble-up to defer cards, a blocked flag for waiting on others, and full keyboard navigation.\nThe user interface is in Dutch; the documentation is in English.\n",
   "maintenance": "internal",
@@ -133444,7 +133908,7 @@
    "MJ",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "4.7.2",
+  "version": "4.6.8",
   "wikidata": "Q403539"
  },
  {
@@ -133900,7 +134364,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "7.0.3",
+  "version": "7.0.4",
   "wikidata": "Q13166"
  },
  {
@@ -135747,7 +136211,7 @@
    "k8s"
   ],
   "landing": "https://zammad.com/",
-  "last_activity": "2026-08-12T13:15:21.646Z",
+  "last_activity": "2026-08-17T10:36:42.029Z",
   "license": "AGPL-3.0-only",
   "long_desc": "# Welcome to Zammad\nAre you juggling countless customer inquiries across multiple channels? Struggling to keep your support team on the same page? Or spending more time managing your helpdesk than delivering exceptional support to your customers?\nZammad is your Swiss Army knife - a web-based, open-source helpdesk and customer support platform packed with features to streamline customer communication across channels like email, chat, telephone and social media.\n## The Software\nThe Zammad software is and will stay open source. It is licensed under the GNU AGPLv3. The source code is [available on GitHub](https://github.com/zammad/zammad) and owned by the [Zammad Foundation](https://zammad-foundation.org/), which is independent of commercial providers such as Zammad GmbH.\n## The Company - Zammad GmbH\nThe development of Zammad is carried out by the [amazing team of people](https://zammad.com/en/company) at [Zammad GmbH](https://zammad.com/) in collaboration with the community. We love to create open source software for you. If you want to ensure the Zammad software has a bright and sustainable future, consider becoming a Zammad customer!\nAre you tired of complex setup, configuration, ba",
   "maintenance": "internal",
@@ -135814,7 +136278,7 @@
   "source": "FR/sill",
   "tier": "index",
   "translated": true,
-  "version": "1.14.2",
+  "version": "1.15.0",
   "wikidata": "Q112301707"
  },
  {
@@ -137794,7 +138258,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-06-23T12:22:09Z",
+  "last_activity": "2026-08-14T14:56:02Z",
   "name": ".github",
   "repo": "https://github.com/IMIO/.github",
   "repo_key": "github.com/imio/.github",
@@ -137956,6 +138420,25 @@
  },
  {
   "country": "PT",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/amagovpt/a11y-da",
+  "exclude_reason": "upstream-fork",
+  "excluded": true,
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": true,
+  "last_activity": "2026-08-17T11:01:44Z",
+  "name": "a11y-da",
+  "repo": "https://github.com/amagovpt/a11y-da",
+  "repo_key": "github.com/amagovpt/a11y-da",
+  "repo_owner": "amagovpt",
+  "short_desc": "Gerador da Declara\u00e7\u00e3o de Acessibilidade do DL 83/2018",
+  "source": "PT/arte",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "country": "PT",
   "entry_url": "https://github.com/amagovpt/a11yNPM",
   "exclude_reason": "no-description",
   "excluded": true,
@@ -138009,27 +138492,6 @@
   "source": "DK/os2",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "datadelning"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Alaveteli (Handlingar.se)",
-  "repo": "https://github.com/mysociety/alaveteli",
-  "repo_key": "github.com/mysociety/alaveteli",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "openknowledgesweden"
-  ]
  },
  {
   "categories": [
@@ -138101,77 +138563,6 @@
   "used_by": [
    "gbg_k"
   ]
- },
- {
-  "categories": [
-   "arkiv"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "documents"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Ansible",
-  "repo": "https://github.com/ansible/ansible",
-  "repo_key": "github.com/ansible/ansible",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "lfv",
-   "orebro_r",
-   "sundsvall_k",
-   "svedala_k",
-   "fk"
-  ],
-  "wikidata": "Q2852503",
-  "wikidata_via": "comptoir:repo"
- },
- {
-  "categories": [
-   "integration"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Apache Camel",
-  "repo": "https://github.com/apache/camel",
-  "repo_key": "github.com/apache/camel",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "lfv"
-  ]
- },
- {
-  "categories": [
-   "kommunikation"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Apache HTTP Server Project",
-  "repo": "https://github.com/apache/httpd",
-  "repo_key": "github.com/apache/httpd",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "fk"
-  ],
-  "wikidata": "Q11354",
-  "wikidata_via": "comptoir:repo"
  },
  {
   "country": "PT",
@@ -138334,27 +138725,6 @@
  },
  {
   "categories": [
-   "e-service"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "citizen-services"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "BasicUse",
-  "repo": "https://github.com/umea-kommun/BasicUse",
-  "repo_key": "github.com/umea-kommun/basicuse",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "umea_k"
-  ]
- },
- {
-  "categories": [
    "dataprocessering"
   ],
   "country": "SE",
@@ -138502,7 +138872,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-26T17:44:37Z",
+  "last_activity": "2026-08-17T07:45:59Z",
   "name": "buildout.events",
   "repo": "https://github.com/IMIO/buildout.events",
   "repo_key": "github.com/imio/buildout.events",
@@ -138555,7 +138925,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-07T13:56:42Z",
+  "last_activity": "2026-08-13T13:44:54Z",
   "name": "buildout.news",
   "repo": "https://github.com/IMIO/buildout.news",
   "repo_key": "github.com/imio/buildout.news",
@@ -138736,28 +139106,6 @@
   ]
  },
  {
-  "categories": [
-   "middleware"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "casual",
-  "repo": "https://github.com/casualcore/casual",
-  "repo_key": "github.com/casualcore/casual",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "fk",
-   "bolagsverket"
-  ]
- },
- {
   "country": "PT",
   "entry_url": "https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI",
   "exclude_reason": "no-description",
@@ -138924,27 +139272,6 @@
   "tier": "index"
  },
  {
-  "categories": [
-   "network"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "infrastructure"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "clixon-pyapi",
-  "repo": "https://github.com/clicon/clixon-pyapi",
-  "repo_key": "github.com/clicon/clixon-pyapi",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
   "country": "PT",
   "entry_url": "https://github.com/amagovpt/cloud",
   "exclude_reason": "no-description",
@@ -138962,48 +139289,6 @@
   "source": "PT/arte",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "network"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "infrastructure"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "cnaas-nac",
-  "repo": "https://github.com/sunet/cnaas-nac",
-  "repo_key": "github.com/sunet/cnaas-nac",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
-  "categories": [
-   "network"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "infrastructure"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "CNaaS-NMS",
-  "repo": "https://github.com/SUNET/cnaas-nms",
-  "repo_key": "github.com/sunet/cnaas-nms",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
  },
  {
   "country": "BE",
@@ -139121,7 +139406,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-10T07:10:40Z",
+  "last_activity": "2026-08-14T07:53:58Z",
   "license": "GPL-2.0",
   "name": "collective.classification.folder",
   "repo": "https://github.com/IMIO/collective.classification.folder",
@@ -139139,7 +139424,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-06-26T06:31:30Z",
+  "last_activity": "2026-08-14T07:56:59Z",
   "license": "GPL-2.0",
   "name": "collective.classification.tree",
   "repo": "https://github.com/IMIO/collective.classification.tree",
@@ -139432,7 +139717,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T18:09:58Z",
+  "last_activity": "2026-08-14T10:37:27Z",
   "name": "dadosgov-fe",
   "repo": "https://github.com/amagovpt/dadosgov-fe",
   "repo_key": "github.com/amagovpt/dadosgov-fe",
@@ -139500,24 +139785,6 @@
   "tier": "index"
  },
  {
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": true,
-  "has_publiccode": false,
-  "name": "Datahike",
-  "repo": "https://github.com/replikativ/datahike",
-  "repo_key": "github.com/replikativ/datahike",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "arbetsformedlingen"
-  ]
- },
- {
   "country": "NL",
   "entry_url": "https://code.overheid.nl/MinBZK/DAWO-AI",
   "exclude_reason": "no-description",
@@ -139552,6 +139819,24 @@
   "name": "DAWO-Cloud",
   "repo": "https://code.overheid.nl/MinBZK/DAWO-Cloud",
   "repo_key": "code.overheid.nl/minbzk/dawo-cloud",
+  "repo_owner": "MinBZK",
+  "source": "NL/code.overheid.nl",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "country": "NL",
+  "entry_url": "https://code.overheid.nl/MinBZK/DAWO-Core",
+  "exclude_reason": "no-description",
+  "excluded": true,
+  "forge_path": "MinBZK/DAWO-Core",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2026-08-13T10:41:03Z",
+  "name": "DAWO-Core",
+  "repo": "https://code.overheid.nl/MinBZK/DAWO-Core",
+  "repo_key": "code.overheid.nl/minbzk/dawo-core",
   "repo_owner": "MinBZK",
   "source": "NL/code.overheid.nl",
   "stars": 0,
@@ -139976,7 +140261,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-03T12:36:33Z",
+  "last_activity": "2026-08-14T10:12:51Z",
   "name": "docker-publik-devinst",
   "repo": "https://github.com/IMIO/docker-publik-devinst",
   "repo_key": "github.com/imio/docker-publik-devinst",
@@ -140059,27 +140344,6 @@
   "tier": "index"
  },
  {
-  "categories": [
-   "e-service"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "citizen-services"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "drive-tests",
-  "repo": "https://github.com/sunet/drive-tests",
-  "repo_key": "github.com/sunet/drive-tests",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
   "country": "DK",
   "entry_url": "https://github.com/os2indberetning/drive_opus_filegenerator",
   "exclude_reason": "no-description",
@@ -140154,7 +140418,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-07-30T11:01:18Z",
+  "last_activity": "2026-08-14T14:45:16Z",
   "license": "Apache-2.0",
   "name": "eAuthV2",
   "repo": "https://github.com/governmentbg/eAuthV2",
@@ -140164,48 +140428,6 @@
   "source": "BG/governmentbg",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "security"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "identity-security"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "eduID Backend",
-  "repo": "https://github.com/SUNET/eduid-backend",
-  "repo_key": "github.com/sunet/eduid-backend",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
-  "categories": [
-   "security"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "identity-security"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "eduID Front",
-  "repo": "https://github.com/SUNET/eduid-front",
-  "repo_key": "github.com/sunet/eduid-front",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
  },
  {
   "categories": [
@@ -140510,29 +140732,6 @@
   "tier": "index"
  },
  {
-  "categories": [
-   "e-service"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "citizen-services"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "FixMyStreet",
-  "repo": "https://github.com/mysociety/fixmystreet",
-  "repo_key": "github.com/mysociety/fixmystreet",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "gbg_k"
-  ],
-  "wikidata": "Q5456301",
-  "wikidata_via": "wikidata:repo"
- },
- {
   "country": "NL",
   "entry_url": "https://code.overheid.nl/RWS/FLOW",
   "exclude_reason": "no-description",
@@ -140541,7 +140740,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T10:39:18Z",
+  "last_activity": "2026-08-14T12:16:29Z",
   "name": "FLOW",
   "repo": "https://code.overheid.nl/RWS/FLOW",
   "repo_key": "code.overheid.nl/rws/flow",
@@ -140967,32 +141166,6 @@
  },
  {
   "categories": [
-   "devops"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Grafana",
-  "repo": "https://github.com/grafana/grafana",
-  "repo_key": "github.com/grafana/grafana",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "lfv",
-   "smhi",
-   "orebro_r",
-   "fk"
-  ],
-  "wikidata": "Q43399271",
-  "wikidata_via": "comptoir:repo"
- },
- {
-  "categories": [
    "integration"
   ],
   "country": "SE",
@@ -141047,41 +141220,6 @@
   "source": "NL/code.overheid.nl",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "datadelning"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Hajk",
-  "repo": "https://github.com/hajkmap/Hajk",
-  "repo_key": "github.com/hajkmap/hajk",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "halmstad_k",
-   "uddevalla_k",
-   "varberg_k",
-   "gbg_k",
-   "orebro_k",
-   "kungsbacka_k",
-   "pts",
-   "sig",
-   "ale_k",
-   "askersund_k",
-   "gr",
-   "lekeberg_k",
-   "laxa_k",
-   "nacka_k",
-   "Varmdo_k"
-  ]
  },
  {
   "categories": [
@@ -141171,27 +141309,6 @@
   "source": "NL/code.overheid.nl",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "security"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "identity-security"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "hittade-server",
-  "repo": "https://github.com/SUNET/hittade-server",
-  "repo_key": "github.com/sunet/hittade-server",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
  },
  {
   "country": "PT",
@@ -141385,7 +141502,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-12T13:54:02Z",
+  "last_activity": "2026-08-15T16:53:36Z",
   "name": "imio.dms.mail",
   "repo": "https://github.com/IMIO/imio.dms.mail",
   "repo_key": "github.com/imio/imio.dms.mail",
@@ -141453,7 +141570,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T12:48:14Z",
+  "last_activity": "2026-08-14T08:59:05Z",
   "license": "GPL-2.0",
   "name": "imio.esign",
   "repo": "https://github.com/IMIO/imio.esign",
@@ -141845,27 +141962,6 @@
   ],
   "functions_inferred": false,
   "has_publiccode": true,
-  "name": "integration_jupyterhub",
-  "repo": "https://github.com/SUNET/nextcloud-integration_jupyterhub",
-  "repo_key": "github.com/sunet/nextcloud-integration_jupyterhub",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
-  "categories": [
-   "integration"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
   "name": "integration_oidc",
   "repo": "https://github.com/SUNET/nextcloud-integration_oidc",
   "repo_key": "github.com/sunet/nextcloud-integration_oidc",
@@ -141910,27 +142006,6 @@
   "source": "PT/arte",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "ml"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "Intric",
-  "repo": "https://github.com/inooLabs/intric-release/",
-  "repo_key": "github.com/inoolabs/intric-release",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sundsvall_k"
-  ]
  },
  {
   "categories": [
@@ -142651,7 +142726,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T14:54:37Z",
+  "last_activity": "2026-08-14T15:10:14Z",
   "name": "meldingen",
   "repo": "https://code.overheid.nl/GemAmsterdam/meldingen",
   "repo_key": "code.overheid.nl/gemamsterdam/meldingen",
@@ -142669,7 +142744,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-11T14:50:19Z",
+  "last_activity": "2026-08-17T09:06:54Z",
   "name": "meldingen-core",
   "repo": "https://code.overheid.nl/GemAmsterdam/meldingen-core",
   "repo_key": "code.overheid.nl/gemamsterdam/meldingen-core",
@@ -142687,7 +142762,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T14:13:28Z",
+  "last_activity": "2026-08-14T09:46:26Z",
   "name": "meldingen-frontend",
   "repo": "https://code.overheid.nl/GemAmsterdam/meldingen-frontend",
   "repo_key": "code.overheid.nl/gemamsterdam/meldingen-frontend",
@@ -142779,27 +142854,6 @@
  },
  {
   "categories": [
-   "ml"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "MLA",
-  "repo": "https://github.com/diggsweden/mla",
-  "repo_key": "github.com/diggsweden/mla",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "skatteverket"
-  ]
- },
- {
-  "categories": [
    "e-learning"
   ],
   "country": "SE",
@@ -142857,51 +142911,6 @@
   ]
  },
  {
-  "categories": [
-   "devops"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "multiverse",
-  "repo": "https://github.com/SUNET/multiverse.git",
-  "repo_key": "github.com/sunet/multiverse",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
-  "categories": [
-   "cms"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "web-content"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "Municipo",
-  "repo": "https://github.com/municipio-se/municipio-deployment/tree/stage",
-  "repo_key": "github.com/municipio-se/municipio-deployment",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "helsingborg_k",
-   "eslov_k",
-   "horby_k",
-   "rsnv"
-  ]
- },
- {
   "country": "BG",
   "desc_lang": null,
   "desc_src": "\u0414\u043e\u0433\u043e\u0432\u043e\u0440 \u043d\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 \u2116 BG05SFOP001-1.002-0018-C01/18.04.2017\u0433. ",
@@ -142924,27 +142933,6 @@
   "source": "BG/governmentbg",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "ml"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Nerblackbox",
-  "repo": "https://github.com/flxst/nerblackbox",
-  "repo_key": "github.com/flxst/nerblackbox",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "esv_datalabb"
-  ]
  },
  {
   "categories": [
@@ -142981,28 +142969,6 @@
   ],
   "wikidata": "Q25874683",
   "wikidata_via": "comptoir:repo"
- },
- {
-  "categories": [
-   "kommunikation"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Nginx Proxy Manager",
-  "repo": "https://github.com/NginxProxyManager/nginx-proxy-manager",
-  "repo_key": "github.com/nginxproxymanager/nginx-proxy-manager",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "fk",
-   "svedala_k"
-  ]
  },
  {
   "categories": [
@@ -143359,28 +143325,6 @@
   "tier": "index"
  },
  {
-  "categories": [
-   "datadelning"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "OrigoMap",
-  "repo": "https://github.com/origo-map/origo",
-  "repo_key": "github.com/origo-map/origo",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sundsvall_k",
-   "enkoping_k"
-  ]
- },
- {
   "country": "DK",
   "entry_url": "https://github.com/OS2borgerPC/os2borgerpc-kiosk-image",
   "exclude_reason": "no-description",
@@ -143477,7 +143421,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-12T13:36:57Z",
+  "last_activity": "2026-08-14T12:40:11Z",
   "license": "MPL-2.0",
   "name": "OS2fleetoptimiser",
   "repo": "https://github.com/OS2fleetoptimiser/OS2fleetoptimiser",
@@ -143569,7 +143513,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-30T13:45:50Z",
+  "last_activity": "2026-08-14T15:28:54Z",
   "license": "MIT",
   "name": "os2forms_sync",
   "repo": "https://github.com/OS2Forms/os2forms_sync",
@@ -143589,7 +143533,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-05T07:24:12Z",
+  "last_activity": "2026-08-14T13:57:13Z",
   "name": "os2fri-dokumentation",
   "repo": "https://github.com/OS2sandbox/os2fri-dokumentation",
   "repo_key": "github.com/os2sandbox/os2fri-dokumentation",
@@ -143973,7 +143917,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-31T14:53:05Z",
+  "last_activity": "2026-08-14T15:45:57Z",
   "name": "os2web_datalookup",
   "repo": "https://github.com/OS2web/os2web_datalookup",
   "repo_key": "github.com/os2web/os2web_datalookup",
@@ -144129,7 +144073,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-07-31T09:48:42Z",
+  "last_activity": "2026-08-14T15:35:41Z",
   "name": "os2web_key",
   "repo": "https://github.com/OS2web/os2web_key",
   "repo_key": "github.com/os2web/os2web_key",
@@ -144620,7 +144564,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-10T11:57:31Z",
+  "last_activity": "2026-08-17T08:46:57Z",
   "name": "plugfs",
   "repo": "https://code.overheid.nl/GemAmsterdam/plugfs",
   "repo_key": "code.overheid.nl/gemamsterdam/plugfs",
@@ -144628,29 +144572,6 @@
   "source": "NL/code.overheid.nl",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "devops"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Podman",
-  "repo": "https://github.com/containers/podman",
-  "repo_key": "github.com/containers/podman",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "fk"
-  ],
-  "wikidata": "Q70876440",
-  "wikidata_via": "comptoir:repo"
  },
  {
   "categories": [
@@ -145098,27 +145019,6 @@
   "tier": "index"
  },
  {
-  "categories": [
-   "devops"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "puppet-sunet",
-  "repo": "https://github.com/SUNET/puppet-sunet",
-  "repo_key": "github.com/sunet/puppet-sunet",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
- },
- {
   "country": "BE",
   "entry_url": "https://github.com/IMIO/puppet-vault_agent",
   "exclude_reason": "upstream-fork",
@@ -145497,27 +145397,6 @@
  },
  {
   "categories": [
-   "krav"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "case-workflow"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "reqstool",
-  "repo": "https://github.com/Luftfartsverket/reqstool-client",
-  "repo_key": "github.com/luftfartsverket/reqstool-client",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "lfv"
-  ]
- },
- {
-  "categories": [
    "dataprocessering"
   ],
   "country": "SE",
@@ -145789,7 +145668,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-03T14:42:14Z",
+  "last_activity": "2026-08-17T10:33:15Z",
   "name": "server.dmsmail",
   "repo": "https://github.com/IMIO/server.dmsmail",
   "repo_key": "github.com/imio/server.dmsmail",
@@ -145832,7 +145711,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-07-24T19:15:28Z",
+  "last_activity": "2026-08-12T19:02:40Z",
   "name": "server.urban",
   "repo": "https://github.com/IMIO/server.urban",
   "repo_key": "github.com/imio/server.urban",
@@ -145912,7 +145791,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-08-10T15:33:14Z",
+  "last_activity": "2026-08-13T21:41:31Z",
   "name": "squidex-dadosgov",
   "repo": "https://github.com/amagovpt/squidex-dadosgov",
   "repo_key": "github.com/amagovpt/squidex-dadosgov",
@@ -145920,27 +145799,6 @@
   "source": "PT/arte",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "integration"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "stepupauth",
-  "repo": "https://github.com/SUNET/nextcloud-stepupauth",
-  "repo_key": "github.com/sunet/nextcloud-stepupauth",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
-  ]
  },
  {
   "categories": [
@@ -145962,27 +145820,6 @@
   "used_by": [
    "digg",
    "su_uh"
-  ]
- },
- {
-  "categories": [
-   "security"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "identity-security"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": true,
-  "name": "sunet-auth-server",
-  "repo": "https://github.com/SUNET/sunet-auth-server",
-  "repo_key": "github.com/sunet/sunet-auth-server",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "sunet"
   ]
  },
  {
@@ -146546,30 +146383,6 @@
   "source": "DK/os2",
   "stars": 0,
   "tier": "index"
- },
- {
-  "categories": [
-   "devops"
-  ],
-  "country": "SE",
-  "exclude_reason": "no-description",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": false,
-  "has_publiccode": false,
-  "name": "Varnish Cache",
-  "repo": "https://github.com/varnishcache/varnish-cache",
-  "repo_key": "github.com/varnishcache/varnish-cache",
-  "source": "SE/offentligkod",
-  "tier": "index",
-  "used_by": [
-   "arbetsformedlingen",
-   "smhi"
-  ],
-  "wikidata": "Q1602447",
-  "wikidata_via": "comptoir:repo"
  },
  {
   "country": "BE",

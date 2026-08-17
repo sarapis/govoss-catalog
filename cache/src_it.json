@@ -14349,7 +14349,7 @@
    "mac",
    "linux"
   ],
-  "released": "2026-07-30",
+  "released": "2026-08-13",
   "repo": "https://github.com/INGV/mcp-fdsnws-event",
   "repo_key": "github.com/ingv/mcp-fdsnws-event",
   "short_desc": "MCP server wrapping the FDSN Web Service Event APIs of multiple seismological datacenters.",
@@ -14360,7 +14360,7 @@
   "used_by": [
    "INGV"
   ],
-  "version": "v1.7.0"
+  "version": "v1.8.0"
  },
  {
   "active": true,
@@ -18301,7 +18301,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-03",
+  "released": "2026-08-14",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18789,7 +18789,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.14.1"
+  "version": "4.14.3"
  },
  {
   "active": true,

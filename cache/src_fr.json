@@ -881,7 +881,7 @@
    "Universit\u00e9 de Rouen Normandie",
    "other"
   ],
-  "version": "8.0.0",
+  "version": "8.0.1",
   "wikidata": "Q131422056"
  },
  {
@@ -1615,7 +1615,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "3.0.34",
+  "version": "3.0.35",
   "wikidata": "Q4904858"
  },
  {
@@ -2689,7 +2689,7 @@
   "used_by": [
    "other"
   ],
-  "version": "3.21.0",
+  "version": "3.21.1",
   "wikidata": "Q135450643"
  },
  {
@@ -2977,7 +2977,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "365",
+  "version": "366",
   "wikidata": "Q114691201"
  },
  {
@@ -4616,7 +4616,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.38.26",
+  "version": "0.38.27",
   "wikidata": "Q112073283"
  },
  {
@@ -6337,7 +6337,7 @@
    "Prefecture 974",
    "\u00e9ducation"
   ],
-  "version": "14.7",
+  "version": "14.11",
   "wikidata": "Q18150468"
  },
  {
@@ -6960,7 +6960,7 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE"
   ],
-  "version": "3.0.0",
+  "version": "3.0.1",
   "wikidata": "Q1502779"
  },
  {
@@ -6997,7 +6997,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.0",
+  "version": "2.126.1",
   "wikidata": "Q116819111"
  },
  {
@@ -7226,7 +7226,7 @@
    "DINUM",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "1.27.1",
+  "version": "1.27.2",
   "wikidata": "Q28714270"
  },
  {
@@ -7861,7 +7861,7 @@
    "Sorbonne Universit\u00e9",
    "inrae"
   ],
-  "version": "13.0.0",
+  "version": "13.1.3",
   "wikidata": "Q43399271"
  },
  {
@@ -7999,7 +7999,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.12.14",
+  "version": "4.12.15",
   "wikidata": "Q97819945"
  },
  {
@@ -8303,8 +8303,8 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "1.7.5",
-  "wikidata": "Q131622251"
+  "version": "2.0.2",
+  "wikidata": "Q131897282"
  },
  {
   "country": "FR",
@@ -10029,7 +10029,7 @@
    "Institut Laue Langevin (ILL)",
    "MS"
   ],
-  "version": "26.7.0",
+  "version": "26.7.1",
   "wikidata": "Q42916195"
  },
  {
@@ -10131,7 +10131,7 @@
    "CNRS",
    "INSEE"
   ],
-  "version": "9.5.0",
+  "version": "9.5.1",
   "wikidata": "Q21156460"
  },
  {
@@ -10436,7 +10436,7 @@
   "sill_id": 601,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "wikidata": "Q135432577"
  },
  {
@@ -10466,7 +10466,7 @@
    "DINUM",
    "Minsit\u00e8re de la Justice"
   ],
-  "version": "1.25.0",
+  "version": "1.27.0",
   "wikidata": "Q135433339"
  },
  {
@@ -10560,7 +10560,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.24.0",
+  "version": "13.25.0",
   "wikidata": "Q13634357"
  },
  {
@@ -11606,7 +11606,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "other"
   ],
-  "version": "4.6.5",
+  "version": "4.6.6",
   "wikidata": "Q27986619"
  },
  {
@@ -11689,7 +11689,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "5.12.0",
+  "version": "5.13.0",
   "wikidata": "Q34162"
  },
  {
@@ -12353,7 +12353,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "153.0.4",
+  "version": "154.0b10",
   "wikidata": "Q698"
  },
  {
@@ -12432,7 +12432,7 @@
    "acad\u00e9mie de Poitiers",
    "other"
   ],
-  "version": "153.0.2",
+  "version": "153.0.3",
   "wikidata": "Q483604"
  },
  {
@@ -13011,7 +13011,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.3.0",
+  "version": "16.3.1",
   "wikidata": "Q56062435"
  },
  {
@@ -13089,7 +13089,7 @@
    "acad\u00e9mie de Poitiers",
    "other"
   ],
-  "version": "34.0.2",
+  "version": "34.0.3",
   "wikidata": "Q25874683"
  },
  {
@@ -13125,7 +13125,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.95.0-07",
+  "version": "3.95.1-01",
   "wikidata": "Q119269051"
  },
  {
@@ -13595,7 +13595,7 @@
    "Universit\u00e9 d'Angers",
    "dgfip"
   ],
-  "version": "32.2.1",
+  "version": "32.2.2",
   "wikidata": "Q21707789"
  },
  {
@@ -13650,7 +13650,7 @@
    "DGFiP - Direction G\u00e9n\u00e9rale des Finances Publiques",
    "MTE"
   ],
-  "version": "1.13.6",
+  "version": "1.13.7",
   "wikidata": "Q103994532"
  },
  {
@@ -13817,7 +13817,7 @@
    "MI",
    "VIGINUM"
   ],
-  "version": "0.32.8",
+  "version": "0.32.13",
   "wikidata": "Q124636097"
  },
  {
@@ -14805,7 +14805,7 @@
    "Prefecture 974",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "17.7.1",
+  "version": "17.7.2",
   "wikidata": "Q14468709"
  },
  {
@@ -15441,7 +15441,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire et de la For\u00eat",
    "PREF"
   ],
-  "version": "3.10.1",
+  "version": "3.10.2",
   "wikidata": "Q2049294"
  },
  {
@@ -16044,7 +16044,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.3.0",
+  "version": "13.3.1",
   "wikidata": "Q1663673"
  },
  {
@@ -16204,7 +16204,7 @@
    "CentraleSup\u00e9lec",
    "MESR"
   ],
-  "version": "6.0.2",
+  "version": "6.1.0",
   "wikidata": "Q70876440"
  },
  {
@@ -16439,7 +16439,7 @@
    "other",
    "vetagro sup"
   ],
-  "version": "19 beta 2",
+  "version": "19 beta 3",
   "wikidata": "Q192490"
  },
  {
@@ -17052,7 +17052,7 @@
    "Rectorat de Lyon",
    "other"
   ],
-  "version": "0.84",
+  "version": "0.85",
   "wikidata": "Q841685"
  },
  {
@@ -17451,7 +17451,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "06"
+   "06",
+   "Arcep"
   ],
   "version": "1.75.0",
   "wikidata": "Q56795481"
@@ -18159,7 +18160,7 @@
    "MESR",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "4.24.5",
+  "version": "4.24.6",
   "wikidata": "Q1830735"
  },
  {
@@ -19002,7 +19003,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "5.12.9",
+  "version": "5.12.10",
   "wikidata": "Q1523357"
  },
  {
@@ -20535,7 +20536,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.30.0",
+  "version": "3.30.1",
   "wikidata": "Q110643961"
  },
  {
@@ -21161,7 +21162,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.2.0",
+  "version": "17.3.0",
   "wikidata": "Q99493159"
  },
  {
@@ -22519,7 +22520,7 @@
    "MJ",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "4.7.2",
+  "version": "4.6.8",
   "wikidata": "Q403539"
  },
  {
@@ -22589,7 +22590,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "7.0.3",
+  "version": "7.0.4",
   "wikidata": "Q13166"
  },
  {
@@ -23050,7 +23051,7 @@
   "sill_id": 666,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.14.2",
+  "version": "1.15.0",
   "wikidata": "Q112301707"
  },
  {
