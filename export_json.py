@@ -30,7 +30,11 @@ _ss = importlib.util.spec_from_file_location("sources", f"{OUT}/sources.py")
 _S = importlib.util.module_from_spec(_ss); _ss.loader.exec_module(_S)
 
 GENERATED_AT = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-SCHEMA_VERSION = "1.0.0"
+# 1.1.0: added counts.rows_in_entries_json + counts_note. Purely ADDITIVE - no
+# key changed meaning, so a 1.0.0 consumer is unaffected. Bumped the minor rather
+# than staying silent because /v1/entries.json exists for consumers who pin, and
+# a schema that gains fields without saying so teaches them not to trust it.
+SCHEMA_VERSION = "1.1.0"
 
 # Licence strings arrive in three dialects: real SPDX ids from publiccode.yml,
 # display strings from SILL ("MIT licence", "GPLv3+"), and free text. Only claim
@@ -259,8 +263,36 @@ def build():
         "schema_version": SCHEMA_VERSION,
         "generated_at": GENERATED_AT,
         "human_page": "https://govoss-catalog.vercel.app/",
+        # ⚠ `entries` counts the ACTIVE catalogue; /entries.json deliberately
+        # ships MORE rows than that, because a set-aside entry is flagged rather
+        # than dropped. Reported upstream 2026-08-14 by a consumer who read
+        # `counts.entries` (2,753), counted /entries.json (3,206) and called the
+        # difference a bug — reasonably, since `counts.entries` sits next to
+        # `files.entries` and the same word meant two things. The reconciling
+        # figures were already here (`filtered_out`, `total_including_set_aside`)
+        # and llms.txt already spelled it out, so nothing was WRONG; it was
+        # unfindable from the key a consumer naturally reads first.
+        #
+        # `entries` keeps its meaning - renaming it would break anyone already
+        # reading it correctly. `rows_in_entries_json` is the fix: a key that
+        # names the file it describes, so the question cannot be asked twice.
+        # ⚠ The first draft of this note listed /v1/entries.json among the
+        # active-only indexes. It is not one - it is a byte alias of
+        # /entries.json, so it carries all rows by design. Caught by checking the
+        # published files for set-aside ids instead of restating the docs; the
+        # note would have shipped a confident, wrong claim into the artefact that
+        # exists to stop exactly this confusion.
+        "counts_note": (
+            "`entries` is the ACTIVE catalogue. /entries.json holds "
+            "`rows_in_entries_json` rows, because a set-aside entry is flagged "
+            "`excluded: true` with an `exclude_reason` rather than dropped — filter "
+            "on `excluded` for the active catalogue. /v1/entries.json is an alias of "
+            "/entries.json and carries the same rows. The curated browse indexes "
+            "(/by-product.json, /by-category/, mcp-index.json) are active-only."
+        ),
         "counts": {
             "entries": len(active),
+            "rows_in_entries_json": len(entries),
             "with_publiccode": sum(1 for e in active if e["has_publiccode"]),
             "with_wikidata": sum(1 for e in active if e["wikidata"]),
             "with_replaces": sum(1 for e in active if e["replaces"]),
