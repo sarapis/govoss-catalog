@@ -18,7 +18,7 @@
   ],
   "forge_path": "leos/ai4drpm",
   "landing": "https://leos.pages.code.europa.eu/ai4drpm",
-  "last_activity": "2026-08-14T06:17:06.220Z",
+  "last_activity": "2026-08-24T13:43:38.856Z",
   "license": "EUPL-1.2",
   "long_desc": "AI4DRPM (Artificial Intelligence for Digital-Ready Policymaking) is a\nPython microservice designed to facilitate the collection, annotation,\ntransformation, and compilation of legal documents and data.\n\nIt is part of the AI4DRPM project, which aims to enhance\ndigital-ready policymaking by leveraging artificial intelligence and\nadvanced data processing techniques.\n",
   "maintenance": "internal",
@@ -30,90 +30,6 @@
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
   "upstream_id": 1469
- },
- {
-  "categories": [
-   "e-signature"
-  ],
-  "contacts": [
-   "David Naramski",
-   "Pierrick Vandenbroucke",
-   "Aleksandr Beliakov"
-  ],
-  "country": "EU",
-  "desc_en": "DSS is an open-source software library for electronic signature creation, augmentation and validation.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/dit/dss",
-  "fallback_repo": "https://code.europa.eu/dit/dss.git",
-  "features": [
-   "Electronic signatures (XAdES, CAdES, PAdES, JAdES and ASiC)",
-   "Timestamps",
-   "Revocation data (CRL and OCSP)",
-   "Evidence Records (XMLERS and ERS)",
-   "REST and SOAP webServices"
-  ],
-  "forge_path": "dit/dss",
-  "last_activity": "2026-01-16T09:42:05.738Z",
-  "license": "LGPL-2.1",
-  "long_desc": "DSS (Digital Signature Services) is an open-source software library for electronic signature creation and validation.  DSS supports the creation and verification of interoperable and secure electronic signatures in line with European  legislation. In particular, DSS aims to follow the eIDAS Regulation and related standards closely. \nDSS can be re-used in an IT solution for electronic signatures to ensure that signatures are created and verified in line with European legislation and standards. DSS allows re-use in a variety of different ways: in an applet, in a standalone application or in a server application. DSS can also be used as a reference implementation for IT solutions which do not directly re-use it. Demos are also available to assist the use of DSS as a reference implementation.\nThe project is written in Java and issued under LGPL 2.1, a non-viral open source license.\n",
-  "maintenance": "internal",
-  "name": "DSS",
-  "platforms": [
-   "windows",
-   "linux",
-   "mac"
-  ],
-  "released": "2025-08-05",
-  "repo": "https://code.europa.eu/dit/dss.git",
-  "repo_key": "code.europa.eu/dit/dss",
-  "short_desc": "DSS is an open-source software library for electronic signature creation, augmentation and validation.",
-  "software_type": "library",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 111,
-  "version": "6.3"
- },
- {
-  "categories": [
-   "e-signature"
-  ],
-  "contacts": [
-   "David Naramski",
-   "Pierrick Vandenbroucke",
-   "Aleksandr Beliakov"
-  ],
-  "country": "EU",
-  "desc_en": "DSS Demonstrations is the demonstration repository for project DSS.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/dit/dss-demonstrations",
-  "fallback_repo": "https://code.europa.eu/dit/dss-demonstrations.git",
-  "features": [
-   "Web application;",
-   "Standalone application;",
-   "REST samples generation;",
-   "eSig Validation Test Cases."
-  ],
-  "forge_path": "dit/dss-demonstrations",
-  "last_activity": "2026-01-22T18:39:04.165Z",
-  "license": "LGPL-2.1",
-  "long_desc": "With the framework, the following demonstrations are provided: \n- DSS online demo web application; \n- Ready to use demo web application build;\n- JavaFX Standalone Application;\n- eSignature validation test cases.\n",
-  "maintenance": "internal",
-  "name": "DSS Demonstrations",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2025-08-05",
-  "repo": "https://code.europa.eu/dit/dss-demonstrations.git",
-  "repo_key": "code.europa.eu/dit/dss-demonstrations",
-  "short_desc": "DSS Demonstrations is the demonstration repository for project DSS.",
-  "software_type": "standalone/other",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 112,
-  "version": "6.3"
  },
  {
   "categories": [
@@ -209,7 +125,7 @@
    "Rich text"
   ],
   "forge_path": "leos/core",
-  "last_activity": "2026-08-17T08:49:03.760Z",
+  "last_activity": "2026-08-24T14:22:26.971Z",
   "license": "EUPL-1.2",
   "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
   "maintenance": "internal",
@@ -315,6 +231,45 @@
  },
  {
   "categories": [
+   "it-development"
+  ],
+  "contacts": [
+   "EU-CODE-EUROPA"
+  ],
+  "country": "EU",
+  "desc_en": "Calculates energy needed to transform water into steam at given conditions.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/realfa/steam-energy-calculator",
+  "fallback_repo": "https://code.europa.eu/realfa/steam-energy-calculator.git",
+  "features": [
+   "Calculate enthalpy change for water-to-steam transformation",
+   "Support for multiple temperature and pressure units",
+   "Configurable boiler efficiency and natural gas LHV",
+   "Interactive Streamlit web interface"
+  ],
+  "forge_path": "realfa/steam-energy-calculator",
+  "last_activity": "2026-08-21T13:31:15.745Z",
+  "license": "EUPL-1.2",
+  "long_desc": "This tool calculates the energy requirements for water-to-steam transformation given initial and final temperature and pressure. It accounts for boiler efficiency and determines natural gas consumption. An interactive Streamlit web interface is provided.",
+  "maintenance": "internal",
+  "name": "Steam Energy Requirements Calculator",
+  "platforms": [
+   "web"
+  ],
+  "released": "2025-01-01",
+  "repo": "https://code.europa.eu/realfa/steam-energy-calculator",
+  "repo_key": "code.europa.eu/realfa/steam-energy-calculator",
+  "repo_owner": "European Commission",
+  "short_desc": "Calculates energy needed to transform water into steam at given conditions.",
+  "software_type": "standalone/web",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 1855,
+  "version": "1.0.0"
+ },
+ {
+  "categories": [
    "compliance-management"
   ],
   "contacts": [
@@ -324,16 +279,16 @@
   "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
   "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/alixgui/vecto",
-  "fallback_repo": "https://code.europa.eu/alixgui/vecto.git",
+  "entry_url": "https://code.europa.eu/amogoda/vecto",
+  "fallback_repo": "https://code.europa.eu/amogoda/vecto.git",
   "features": [
    "fuel, co2 and energy calculator",
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "forge_path": "alixgui/vecto",
+  "forge_path": "amogoda/vecto",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-08-17T07:40:03.732Z",
+  "last_activity": "2026-08-21T13:17:58.218Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
@@ -350,7 +305,47 @@
   "software_type": "standalone/desktop",
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
-  "upstream_id": 716,
+  "upstream_id": 451,
+  "version": "4.0.1.3217"
+ },
+ {
+  "categories": [
+   "compliance-management"
+  ],
+  "contacts": [
+   "JRC-VECTO"
+  ],
+  "country": "EU",
+  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
+  "desc_lang": "en",
+  "dev_status": "beta",
+  "entry_url": "https://code.europa.eu/anagnko/sandbox",
+  "fallback_repo": "https://code.europa.eu/anagnko/sandbox.git",
+  "features": [
+   "fuel, co2 and energy calculator",
+   "heavy duty vehicle simulator",
+   "heavy duty vechicle certification"
+  ],
+  "forge_path": "anagnko/sandbox",
+  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
+  "last_activity": "2025-12-16T15:09:55.346Z",
+  "license": "EUPL-1.2",
+  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
+  "maintenance": "internal",
+  "name": "vecto-sim",
+  "platforms": [
+   "windows",
+   "linux"
+  ],
+  "released": "2023-10-23",
+  "repo": "https://code.europa.eu/vecto/vecto.git",
+  "repo_key": "code.europa.eu/vecto/vecto",
+  "repo_owner": "European Commission",
+  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
+  "software_type": "standalone/desktop",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 449,
   "version": "4.0.1.3217"
  },
  {
@@ -373,7 +368,7 @@
   ],
   "forge_path": "vecto/guests/vecto-sim-harry",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-08-17T07:59:04.430Z",
+  "last_activity": "2026-08-24T07:41:07.943Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
@@ -413,7 +408,7 @@
   ],
   "forge_path": "vecto/vecto",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-08-17T07:05:36.808Z",
+  "last_activity": "2026-08-24T13:47:55.215Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",

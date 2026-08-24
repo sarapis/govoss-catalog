@@ -46,7 +46,8 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb",
+   "stk",
+   "stk_datalabb",
    "sundsvall_k"
   ]
  },
@@ -191,7 +192,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -222,7 +223,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -335,6 +336,18 @@
   ]
  },
  {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Codex CLI",
+  "repo": "https://github.com/openai/codex",
+  "repo_key": "github.com/openai/codex",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
   "categories": [
    "kommunikation"
   ],
@@ -364,7 +377,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -522,10 +535,22 @@
   "used_by": [
    "lfv",
    "orebro_r",
-   "esv_datalabb",
+   "stk_datalabb",
    "sundsvall_k",
    "svedala_k",
    "motala_k"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Docling",
+  "repo": "https://docling.ai/",
+  "repo_key": "docling.ai",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -721,8 +746,20 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb",
+   "stk_datalabb",
    "motala_k"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "FastMCP",
+  "repo": "https://gofastmcp.com/getting-started/welcome",
+  "repo_key": "gofastmcp.com/getting-started/welcome",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -753,6 +790,18 @@
   "tier": "index",
   "used_by": [
    "sjv"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Gatus",
+  "repo": "https://gatus.io",
+  "repo_key": "gatus.io",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -821,6 +870,18 @@
    "sundsvall_k",
    "svedala_k",
    "fk"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "goose",
+  "repo": "https://goose-docs.ai/",
+  "repo_key": "goose-docs.ai",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -1090,7 +1151,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1203,7 +1264,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1258,6 +1319,48 @@
   ]
  },
  {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Liteparse",
+  "repo": "https://developers.llamaindex.ai/liteparse/",
+  "repo_key": "developers.llamaindex.ai/liteparse",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
+  "categories": [
+   "sprakmodeller"
+  ],
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "llama-swap",
+  "repo": "https://github.com/mostlygeek/llama-swap",
+  "repo_key": "github.com/mostlygeek/llama-swap",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
+  "categories": [
+   "sprakmodeller"
+  ],
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "llama.cpp",
+  "repo": "https://github.com/ggml-org/llama.cpp",
+  "repo_key": "github.com/ggml-org/llama.cpp",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
   "categories": [
    "sprakmodeller"
   ],
@@ -1269,7 +1372,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1355,6 +1458,18 @@
   "used_by": [
    "smhi",
    "gotland_k"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Meilisearch",
+  "repo": "https://www.meilisearch.com/",
+  "repo_key": "meilisearch.com",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -1476,7 +1591,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1581,7 +1696,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb",
+   "stk_datalabb",
    "sundsvall_k"
   ]
  },
@@ -1597,7 +1712,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1642,7 +1757,34 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "omp",
+  "repo": "https://omp.sh",
+  "repo_key": "omp.sh",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
+  "categories": [
+   "integration"
+  ],
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "ONECore",
+  "repo": "https://github.com/Bostads-AB-Mimer/onecore",
+  "repo_key": "github.com/bostads-ab-mimer/onecore",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "mimer"
   ]
  },
  {
@@ -1669,6 +1811,18 @@
   ]
  },
  {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "OpenCode",
+  "repo": "https://opencode.ai",
+  "repo_key": "opencode.ai",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
   "categories": [
    "dataprocessering"
   ],
@@ -1680,7 +1834,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1712,7 +1866,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1743,7 +1897,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1759,6 +1913,18 @@
   "tier": "index",
   "used_by": [
    "arbetsformedlingen"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "pi",
+  "repo": "https://pi.dev",
+  "repo_key": "pi.dev",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -1788,7 +1954,19 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Portainer",
+  "repo": "https://www.portainer.io",
+  "repo_key": "portainer.io",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -1844,7 +2022,8 @@
    "sundsvall_k",
    "raa",
    "brottsforebyggande",
-   "fk"
+   "fk",
+   "stk_datalabb"
   ]
  },
  {
@@ -1942,7 +2121,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -1957,7 +2136,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -2044,6 +2223,18 @@
   ]
  },
  {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Quarto",
+  "repo": "https://quarto.org/",
+  "repo_key": "quarto.org",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
   "categories": [
    "utvecklarverktyg"
   ],
@@ -2055,7 +2246,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -2070,7 +2261,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb",
+   "stk_datalabb",
    "sundsvall_k"
   ]
  },
@@ -2154,7 +2345,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -2221,7 +2412,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -2351,6 +2542,30 @@
   ]
  },
  {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Supabase",
+  "repo": "https://supabase.com/",
+  "repo_key": "supabase.com",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "SuperDoc",
+  "repo": "https://www.superdoc.dev/",
+  "repo_key": "superdoc.dev",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
+  ]
+ },
+ {
   "categories": [
    "projekthantering"
   ],
@@ -2396,7 +2611,7 @@
    "smhi",
    "fk",
    "lfv",
-   "esv_datalabb",
+   "stk_datalabb",
    "sundsvall_k",
    "motala_k",
    "svedala_k"
@@ -2430,7 +2645,7 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb"
+   "stk_datalabb"
   ]
  },
  {
@@ -2445,8 +2660,23 @@
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
-   "esv_datalabb",
+   "stk_datalabb",
    "svedala_k"
+  ]
+ },
+ {
+  "categories": [
+   "sprakmodeller"
+  ],
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "vLLM",
+  "repo": "https://vllm.ai/",
+  "repo_key": "vllm.ai",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  },
  {
@@ -2521,6 +2751,18 @@
    "tillvaxtverket",
    "natur",
    "kronofogden"
+  ]
+ },
+ {
+  "country": "SE",
+  "has_publiccode": false,
+  "name": "Zensical",
+  "repo": "https://zensical.org/",
+  "repo_key": "zensical.org",
+  "source": "SE/offentligkod",
+  "tier": "index",
+  "used_by": [
+   "stk_datalabb"
   ]
  }
 ]

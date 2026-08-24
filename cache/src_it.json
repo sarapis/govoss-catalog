@@ -16073,7 +16073,7 @@
    "linux",
    "android"
   ],
-  "released": "2026-07-21",
+  "released": "2026-08-14",
   "repo": "https://github.com/tdf/libreoffice-metadata",
   "repo_key": "github.com/tdf/libreoffice-metadata",
   "repo_owner": "The Document Foundation",
@@ -16082,7 +16082,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "14ee01d2-ef4b-46ac-a7cb-21df6af68d01",
-  "version": "26.8.0.1"
+  "version": "26.8.0.2"
  },
  {
   "active": true,
@@ -18826,7 +18826,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-04-16",
+  "released": "2026-08-21",
   "repo": "https://gitlab.com/opencontent/opensegnalazioni",
   "repo_key": "gitlab.com/opencontent/opensegnalazioni",
   "repo_owner": "OpenCity Labs srl",
@@ -18854,7 +18854,7 @@
    "Comune di Monselice (PD)",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.2.5"
+  "version": "4.2.6"
  },
  {
   "active": true,

@@ -32,6 +32,7 @@
    "ARCOM",
    "ASP",
    "Acad\u00e9mie de Lille",
+   "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Normandie",
    "CCAS Saint-Paul de la R\u00e9union",
    "CDC des pays de L'Aigle",
@@ -575,6 +576,7 @@
   "tier": "index",
   "used_by": [
    "AP-HP",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DGAC",
    "MI",
    "Sorbonne Universit\u00e9"
@@ -602,7 +604,8 @@
   "tier": "index",
   "used_by": [
    "MEN",
-   "MI"
+   "MI",
+   "SGAMI SUD"
   ]
  },
  {
@@ -635,6 +638,7 @@
    "CDC des pays de L'Aigle",
    "CNAM",
    "CNRS",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DINUM",
    "Institut Laue Langevin (ILL)",
    "MD",
@@ -1983,7 +1987,7 @@
   "used_by": [
    "Campus Num\u00e9rique 47"
   ],
-  "version": "1.6.13",
+  "version": "1.6.14",
   "wikidata": "Q122929604"
  },
  {
@@ -2014,7 +2018,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "Acad\u00e9mie de Nantes"
+   "Acad\u00e9mie de Nantes",
+   "CNRS"
   ],
   "wikidata": "Q15777"
  },
@@ -2348,6 +2353,7 @@
   "tier": "index",
   "used_by": [
    "CDC des pays de L'Aigle",
+   "CNRS",
    "DGFIP",
    "MI",
    "MJ",
@@ -2613,7 +2619,7 @@
    "MI",
    "Universit\u00e9 de Guyane"
   ],
-  "version": "2.7.3",
+  "version": "2.7.4",
   "wikidata": "Q16988239"
  },
  {
@@ -2689,7 +2695,7 @@
   "used_by": [
    "other"
   ],
-  "version": "3.21.1",
+  "version": "3.21.2",
   "wikidata": "Q135450643"
  },
  {
@@ -3093,6 +3099,7 @@
   "tier": "index",
   "used_by": [
    "Education Nationale",
+   "INSEE",
    "MEN",
    "Minist\u00e8re \u00c9ducation Nationale",
    "Minist\u00e8re \u00e9ducation nationale",
@@ -3604,6 +3611,7 @@
   "tier": "index",
   "used_by": [
    "CEA",
+   "CNRS",
    "CentraleSup\u00e9lec",
    "Lyc\u00e9e les Lombards",
    "MESR",
@@ -3673,7 +3681,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "15.20.1",
+  "version": "15.21.0",
   "wikidata": "Q115978662"
  },
  {
@@ -3939,6 +3947,7 @@
   "used_by": [
    "CEA",
    "CNRS",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Conseil D\u00e9partemental du Val d'Oise",
    "DIRN",
    "DREAL Occitanie",
@@ -3956,7 +3965,7 @@
    "administration centrale",
    "other"
   ],
-  "version": "26.1.4",
+  "version": "26.1.5",
   "wikidata": "Q28956992"
  },
  {
@@ -4476,6 +4485,7 @@
    "ARCOM",
    "BFO",
    "CNRS",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DGA-TN",
    "DGAC",
    "DGDDI",
@@ -4527,6 +4537,7 @@
   "used_by": [
    "ANCT",
    "ASP",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DGFiP",
    "DINUM",
    "R\u00e9seau Canop\u00e9"
@@ -4683,7 +4694,7 @@
    "Instituts Nationaux Polytechniques (INP)",
    "PREF"
   ],
-  "version": "23.0.3",
+  "version": "24.0.0",
   "wikidata": "Q2076540"
  },
  {
@@ -4821,7 +4832,7 @@
    "academie de clermont ",
    "other"
   ],
-  "version": "31.1.8",
+  "version": "31.3.1",
   "wikidata": "Q59339175"
  },
  {
@@ -5223,7 +5234,7 @@
    "MS",
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
-  "version": "9.5.1",
+  "version": "9.5.2",
   "wikidata": "Q3050461"
  },
  {
@@ -5837,6 +5848,32 @@
   ]
  },
  {
+  "country": "FR",
+  "desc_lang": "fr",
+  "desc_src": "Service de stockage et de partage de fichiers",
+  "desc_src_lang": "fr",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Fichiers",
+  "keywords": [
+   "drive",
+   "partage",
+   "stocakge",
+   "fichier"
+  ],
+  "landing": "https://lasuite.numerique.gouv.fr/produits/fichiers",
+  "license": "MIT",
+  "name": "Fichiers",
+  "note": "recommended to public agents; not necessarily gov-authored",
+  "recommended_for_gov": true,
+  "repo": "https://github.com/suitenumerique/drive",
+  "repo_key": "github.com/suitenumerique/drive",
+  "short_desc": "Service de stockage et de partage de fichiers",
+  "sill_id": 680,
+  "source": "FR/sill",
+  "tier": "index",
+  "version": "0.21.0",
+  "wikidata": "Q137909707"
+ },
+ {
   "categories": [
    "Web Applications"
   ],
@@ -5899,11 +5936,13 @@
   "tier": "index",
   "used_by": [
    "Acad\u00e9mie d'Amiens",
+   "Acad\u00e9mie de Nancy-Metz",
    "Biblioth\u00e8que Sainte-Genevi\u00e8ve",
    "CIVIS EPCI La R\u00e9union",
    "CNAM",
    "CNRS",
    "CentraleSup\u00e9lec",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DREAL Pays Loire/SCTE/CSD",
    "GRETA",
    "Lyc\u00e9e les Lombards",
@@ -6637,11 +6676,12 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "CNRS",
    "GRETA",
    "INRAE",
    "MESR"
   ],
-  "version": "4.0.3",
+  "version": "4.0.4",
   "wikidata": "Q21041255"
  },
  {
@@ -6790,6 +6830,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "CNRS",
    "Education Nationale"
   ],
   "version": "2.1.0",
@@ -7054,6 +7095,7 @@
    "ASP",
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
    "Acad\u00e9mie de Lille",
+   "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Rennes",
    "Biblioth\u00e8que Sainte-Genevi\u00e8ve",
    "CDC des pays de L'Aigle",
@@ -7358,6 +7400,7 @@
    "CDC des pays de L'Aigle",
    "CNRS",
    "Centre Hospitalier de CREST",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Conseil d'\u00e9tat",
    "DREETS Normandie",
    "France Travail",
@@ -7402,6 +7445,7 @@
   "tier": "index",
   "used_by": [
    "CNRS",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Laboratoire national de m\u00e9trologie et d'essais",
    "MD",
    "Universit\u00e9 Grenoble Alpes"
@@ -7566,6 +7610,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "CNRS",
    "DGFIP",
    "D\u00e9partement de la Vend\u00e9e",
    "MD"
@@ -7780,6 +7825,7 @@
   "tier": "index",
   "used_by": [
    "CNAM",
+   "CNRS",
    "CentraleSup\u00e9lec",
    "DINUM",
    "GRETA",
@@ -7861,7 +7907,7 @@
    "Sorbonne Universit\u00e9",
    "inrae"
   ],
-  "version": "13.1.3",
+  "version": "13.2.0",
   "wikidata": "Q43399271"
  },
  {
@@ -7999,7 +8045,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.12.15",
+  "version": "4.12.17",
   "wikidata": "Q97819945"
  },
  {
@@ -8086,6 +8132,7 @@
    "Acad\u00e9mie de Rennes",
    "CCAS Saint-Paul de la R\u00e9union",
    "CLG DE COUTACH",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Conseil d'\u00e9tat",
    "DGAC",
    "DIE",
@@ -8172,7 +8219,7 @@
    "MI",
    "MI/SG/DTNUM/SDAIT/BS"
   ],
-  "version": "26.0.0",
+  "version": "26.1.0",
   "wikidata": "Q5618801"
  },
  {
@@ -8303,8 +8350,8 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "2.0.2",
-  "wikidata": "Q131897282"
+  "version": "1.7.5",
+  "wikidata": "Q131622251"
  },
  {
   "country": "FR",
@@ -8360,7 +8407,7 @@
    "DINUM",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "1.11.1",
+  "version": "1.12.0",
   "wikidata": "Q98731953"
  },
  {
@@ -8515,7 +8562,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "6.0.17",
+  "version": "6.0.18",
   "wikidata": "Q11223506"
  },
  {
@@ -8627,7 +8674,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "2.16.4",
+  "version": "2.16.5",
   "wikidata": "Q3499542"
  },
  {
@@ -8754,6 +8801,7 @@
    "CNRS",
    "CREPS de Nancy",
    "CentraleSup\u00e9lec",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Commune de Vand\u0153uvre-l\u00e8s-Nancy",
    "DINUM",
    "DRAAF",
@@ -9223,7 +9271,7 @@
    "MEN",
    "SG"
   ],
-  "version": "2.577",
+  "version": "2.578",
   "wikidata": "Q7491312"
  },
  {
@@ -9382,7 +9430,7 @@
    "ddtm 56",
    "dzpn-nord"
   ],
-  "version": "3.6.15",
+  "version": "3.6.16",
   "wikidata": "Q97175797"
  },
  {
@@ -9964,6 +10012,7 @@
    "Ars PACA",
    "CNRS",
    "CentraleSup\u00e9lec",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Collectivit\u00e9 territoriale",
    "Communaut\u00e9 de communes du Romorantinais et du Monestois",
    "DREAL BFC",
@@ -10029,7 +10078,7 @@
    "Institut Laue Langevin (ILL)",
    "MS"
   ],
-  "version": "26.7.1",
+  "version": "26.7.2",
   "wikidata": "Q42916195"
  },
  {
@@ -10131,7 +10180,7 @@
    "CNRS",
    "INSEE"
   ],
-  "version": "9.5.1",
+  "version": "9.5.2",
   "wikidata": "Q21156460"
  },
  {
@@ -10377,7 +10426,7 @@
    "MS",
    "SG"
   ],
-  "version": "1.36.3",
+  "version": "1.36.4",
   "wikidata": "Q22661306"
  },
  {
@@ -10560,7 +10609,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.25.0",
+  "version": "13.26.1",
   "wikidata": "Q13634357"
  },
  {
@@ -10714,7 +10763,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "26.7.0",
+  "version": "26.8.1",
   "wikidata": "Q77554277"
  },
  {
@@ -10751,6 +10800,7 @@
    "Acad\u00e9mie d'Amiens",
    "Acad\u00e9mie de Cr\u00e9teil",
    "Acad\u00e9mie de Lille",
+   "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Normandie",
    "Acad\u00e9mie de Rennes",
    "CAEC SI",
@@ -10831,6 +10881,7 @@
    "academie de Lyon",
    "academie de nice",
    "acad\u00e9mie de Nouvelle-Cal\u00e9donie",
+   "acad\u00e9mie de montpellier",
    "other",
    "pr\u00e9fecture 81",
    "universit\u00e9 lumi\u00e8re lyon 2"
@@ -11009,6 +11060,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "Acad\u00e9mie de Nancy-Metz",
    "CNRS",
    "academie de Lyon"
   ],
@@ -11432,7 +11484,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "2.4.1",
+  "version": "2.4.2",
   "wikidata": "Q98732050"
  },
  {
@@ -11606,7 +11658,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "other"
   ],
-  "version": "4.6.6",
+  "version": "4.7.0",
   "wikidata": "Q27986619"
  },
  {
@@ -11757,7 +11809,7 @@
   "used_by": [
    "CEA"
   ],
-  "version": "5.49.0",
+  "version": "5.50.0",
   "wikidata": "Q938304"
  },
  {
@@ -11901,6 +11953,7 @@
   "tier": "index",
   "used_by": [
    "CNAM",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation"
   ],
   "wikidata": "Q133443899"
@@ -12021,6 +12074,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "CNRS",
    "MEN",
    "SIDSIC"
   ],
@@ -12290,6 +12344,7 @@
    "Acad\u00e9mie de Dijon",
    "Acad\u00e9mie de Lille",
    "Acad\u00e9mie de Limoges",
+   "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Nantes",
    "Acad\u00e9mie de Rennes",
    "Avignon Universit\u00e9",
@@ -12353,7 +12408,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "154.0b10",
+  "version": "155.0b3",
   "wikidata": "Q698"
  },
  {
@@ -12390,6 +12445,7 @@
    "Acad\u00e9mie d'Amiens",
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
    "Acad\u00e9mie de Lille",
+   "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Nantes",
    "Acad\u00e9mie de Rennes",
    "CCAS Saint-Paul de la R\u00e9union",
@@ -12432,7 +12488,7 @@
    "acad\u00e9mie de Poitiers",
    "other"
   ],
-  "version": "153.0.3",
+  "version": "154.0",
   "wikidata": "Q483604"
  },
  {
@@ -12461,6 +12517,9 @@
   "sill_id": 500,
   "source": "FR/sill",
   "tier": "index",
+  "used_by": [
+   "Acad\u00e9mie de Nancy-Metz"
+  ],
   "version": "0.41.0",
   "wikidata": "Q20760334"
  },
@@ -12890,7 +12949,7 @@
    "MEN",
    "MI"
   ],
-  "version": "0.12.3",
+  "version": "0.12.5",
   "wikidata": "Q28975246"
  },
  {
@@ -13011,7 +13070,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.3.1",
+  "version": "16.3.2",
   "wikidata": "Q56062435"
  },
  {
@@ -13125,7 +13184,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.95.1-01",
+  "version": "3.95.2-01",
   "wikidata": "Q119269051"
  },
  {
@@ -13165,7 +13224,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "other"
   ],
-  "version": "1.31.3",
+  "version": "1.31.4",
   "wikidata": "Q306144"
  },
  {
@@ -13279,7 +13338,7 @@
    "MEAE",
    "MS"
   ],
-  "version": "26.5.1",
+  "version": "26.7.0",
   "wikidata": "Q756100"
  },
  {
@@ -13402,8 +13461,38 @@
    "Eurom\u00e9tropole de Strasbourg",
    "rectorat acad\u00e9mie orl\u00e9ans tours"
   ],
-  "version": "3.4.5",
+  "version": "3.4.6",
   "wikidata": "Q128944229"
+ },
+ {
+  "country": "FR",
+  "desc_lang": "fr",
+  "desc_src": "noyau de syst\u00e8me d'exploitation de type UNIX",
+  "desc_src_lang": "fr",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Noyau%20Linux",
+  "keywords": [
+   "noyau",
+   "OS",
+   "linux",
+   "syst\u00e8me d'exploitation",
+   "kernel"
+  ],
+  "landing": "https://kernel.org",
+  "license": "GPL-2.0 license",
+  "name": "Noyau Linux",
+  "note": "recommended to public agents; not necessarily gov-authored",
+  "recommended_for_gov": true,
+  "repo": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git",
+  "repo_key": "git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux",
+  "short_desc": "noyau de syst\u00e8me d'exploitation de type UNIX",
+  "sill_id": 678,
+  "source": "FR/sill",
+  "tier": "index",
+  "used_by": [
+   "Acad\u00e9mie de Nancy-Metz"
+  ],
+  "version": "7.2",
+  "wikidata": "Q14579"
  },
  {
   "categories": [
@@ -13572,6 +13661,7 @@
    "CGSS R\u00e9union : Caisse G\u00e9n\u00e9rale de S\u00e9curit\u00e9 Sociale",
    "CNRS",
    "CREPS de Nancy",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DIRN",
    "DRIEAT",
    "D\u00e9partement de la Vend\u00e9e",
@@ -13814,10 +13904,11 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "CNRS",
    "MI",
    "VIGINUM"
   ],
-  "version": "0.32.13",
+  "version": "0.32.15",
   "wikidata": "Q124636097"
  },
  {
@@ -14606,6 +14697,30 @@
   "tier": "publiccode"
  },
  {
+  "country": "FR",
+  "desc_lang": "fr",
+  "desc_src": "Service web bas\u00e9 sur un logiciel libre pour utiliser des LLM",
+  "desc_src_lang": "fr",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=OpenGateLLM",
+  "keywords": [
+   "llm",
+   "ia",
+   "conversation"
+  ],
+  "license": "MIT",
+  "name": "OpenGateLLM",
+  "note": "recommended to public agents; not necessarily gov-authored",
+  "recommended_for_gov": true,
+  "repo": "https://github.com/etalab-ia/OpenGateLLM",
+  "repo_key": "github.com/etalab-ia/opengatellm",
+  "short_desc": "Service web bas\u00e9 sur un logiciel libre pour utiliser des LLM",
+  "sill_id": 681,
+  "source": "FR/sill",
+  "tier": "index",
+  "version": "0.5.0",
+  "wikidata": "Q140290134"
+ },
+ {
   "categories": [
    "Databases"
   ],
@@ -14998,7 +15113,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "Acad\u00e9mie de Nantes"
+   "Acad\u00e9mie de Nantes",
+   "CNRS"
   ],
   "version": "10.5",
   "wikidata": "Q847062"
@@ -15416,9 +15532,6 @@
   "desc_src": "logiciel de conversion de documents",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Pandoc",
-  "keywords": [
-   ""
-  ],
   "landing": "https://pandoc.org/",
   "license": "GNU GPLv2",
   "name": "Pandoc",
@@ -15467,6 +15580,7 @@
   "tier": "index",
   "used_by": [
    "CNAPS",
+   "CNRS",
    "MI"
   ]
  },
@@ -15526,6 +15640,7 @@
   "tier": "index",
   "used_by": [
    "ARS",
+   "Acad\u00e9mie de Nancy-Metz",
    "DDT53",
    "DRIEAT",
    "MI"
@@ -15752,7 +15867,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.17.0",
+  "version": "2.17.1",
   "wikidata": "Q111586053"
  },
  {
@@ -16766,7 +16881,7 @@
    "SG",
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
-  "version": "3.13.2",
+  "version": "3.14.0",
   "wikidata": "Q52534999"
  },
  {
@@ -17419,6 +17534,7 @@
   "tier": "index",
   "used_by": [
    "Acad\u00e9mie de Limoges",
+   "Acad\u00e9mie de Nancy-Metz",
    "CDC des pays de L'Aigle",
    "CNAM",
    "CNRS",
@@ -17593,7 +17709,7 @@
    "CNAM",
    "other"
   ],
-  "version": "8.10.0",
+  "version": "8.10.1",
   "wikidata": "Q2136322"
  },
  {
@@ -17658,6 +17774,7 @@
   "tier": "index",
   "used_by": [
    "AP-HP",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "FPH GHT8",
    "INRAE",
    "MD",
@@ -17821,7 +17938,7 @@
    "Universit\u00e9 de Lille",
    "academie de Lyon"
   ],
-  "version": "8.7.0",
+  "version": "8.7.1",
   "wikidata": "Q24050001"
  },
  {
@@ -17885,7 +18002,7 @@
    "MTE",
    "POLICE NATIONALE"
   ],
-  "version": "1.7.1",
+  "version": "1.7.3",
   "wikidata": "Q1769269"
  },
  {
@@ -18925,7 +19042,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "0.48",
+  "version": "0.49",
   "wikidata": "Q130224405"
  },
  {
@@ -19206,7 +19323,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.19",
+  "version": "4.4.20",
   "wikidata": "Q1536426"
  },
  {
@@ -19241,7 +19358,7 @@
    "MI",
    "other"
   ],
-  "version": "4.1.0",
+  "version": "4.1.1",
   "wikidata": "Q98731994"
  },
  {
@@ -19999,7 +20116,7 @@
    "MESR",
    "MI"
   ],
-  "version": "8.1.4",
+  "version": "8.1.5",
   "wikidata": "Q1322933"
  },
  {
@@ -20281,6 +20398,31 @@
   "wikidata": "Q94086638"
  },
  {
+  "country": "FR",
+  "desc_lang": "fr",
+  "desc_src": "Service de messagerie instantan\u00e9e fran\u00e7ais bas\u00e9 sur le protocole Matrix",
+  "desc_src_lang": "fr",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=Tchap",
+  "keywords": [
+   "messagerie instantan\u00e9e",
+   "matrix",
+   "element"
+  ],
+  "landing": "https://tchap.numerique.gouv.fr/",
+  "license": "AGPLv3",
+  "name": "Tchap",
+  "note": "recommended to public agents; not necessarily gov-authored",
+  "recommended_for_gov": true,
+  "repo": "https://github.com/tchapgouv/tchap-web-v4",
+  "repo_key": "github.com/tchapgouv/tchap-web-v4",
+  "short_desc": "Service de messagerie instantan\u00e9e fran\u00e7ais bas\u00e9 sur le protocole Matrix",
+  "sill_id": 679,
+  "source": "FR/sill",
+  "tier": "index",
+  "version": "1.11.44",
+  "wikidata": "Q137106265"
+ },
+ {
   "categories": [
    "Miscellaneous"
   ],
@@ -20365,7 +20507,7 @@
   "sill_id": 472,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.15.8",
+  "version": "1.15.9",
   "wikidata": "Q28957072"
  },
  {
@@ -20536,7 +20678,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.30.1",
+  "version": "3.30.2",
   "wikidata": "Q110643961"
  },
  {
@@ -20567,7 +20709,7 @@
   "used_by": [
    "Acad\u00e9mie de Nantes"
   ],
-  "version": "3.7b",
+  "version": "3.7c",
   "wikidata": "Q1935361"
  },
  {
@@ -20693,7 +20835,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "3.7.10",
+  "version": "3.7.11",
   "wikidata": "Q96332968"
  },
  {
@@ -20820,7 +20962,7 @@
    "CDC des pays de L'Aigle",
    "DGDDI"
   ],
-  "version": "25.10.4",
+  "version": "25.10.6",
   "wikidata": "Q1328132"
  },
  {
@@ -20954,6 +21096,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "Acad\u00e9mie de La R\u00e9union",
    "CIVIS EPCI La R\u00e9union",
    "MESR",
    "Universcience"
@@ -21162,7 +21305,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.3.0",
+  "version": "17.6.0",
   "wikidata": "Q99493159"
  },
  {
@@ -21226,7 +21369,7 @@
    "DINUM",
    "Lyc\u00e9e des m\u00e9tiers entre Meurthe et Sanon"
   ],
-  "version": "3.7.3",
+  "version": "3.8.1",
   "wikidata": "Q28502462"
  },
  {
@@ -21392,7 +21535,7 @@
    "MD",
    "MEN"
   ],
-  "version": "2.5.0",
+  "version": "2.5.3",
   "wikidata": "Q118611125"
  },
  {
@@ -21638,7 +21781,7 @@
   "sill_id": 611,
   "source": "FR/sill",
   "tier": "index",
-  "version": "4.11.0",
+  "version": "4.11.1",
   "wikidata": "Q287012"
  },
  {
@@ -21700,7 +21843,7 @@
   "used_by": [
    "Arcep"
   ],
-  "version": "1.149.0",
+  "version": "1.150.0",
   "wikidata": "Q122753170"
  },
  {
@@ -21783,7 +21926,7 @@
    "CNAPS",
    "MEN - DNE - ETNA - \u00c9quipe nationale Nuage"
   ],
-  "version": "7.2.14",
+  "version": "7.2.16",
   "wikidata": "Q11393"
  },
  {
@@ -21938,7 +22081,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "8.2.1",
+  "version": "8.2.2",
   "wikidata": "Q111590996"
  },
  {
@@ -22066,6 +22209,7 @@
    "DGDDI",
    "DGFiP",
    "DINUM",
+   "Gendarmerie Nationale",
    "IGN",
    "INRAE",
    "MA",
@@ -22201,7 +22345,7 @@
   "sill_id": 598,
   "source": "FR/sill",
   "tier": "index",
-  "version": "7.4.2",
+  "version": "7.4.3",
   "wikidata": "Q25206006"
  },
  {
@@ -22516,6 +22660,7 @@
   "tier": "index",
   "used_by": [
    "AP-HP",
+   "CNRS",
    "MEN - DNE - ETNA - \u00c9quipe nationale Nuage",
    "MJ",
    "MJ/DSJ/Cour de cassation"
@@ -22580,6 +22725,7 @@
   "used_by": [
    "Acad\u00e9mie d'Amiens",
    "CDC des pays de L'Aigle",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Commune de Vand\u0153uvre-l\u00e8s-Nancy",
    "DINUM",
    "DIRM-MEMN",
@@ -22590,7 +22736,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "7.0.4",
+  "version": "7.1",
   "wikidata": "Q13166"
  },
  {
@@ -23034,11 +23180,11 @@
  {
   "country": "FR",
   "desc_lang": "fr",
-  "desc_src": "Editeur minimaliste",
+  "desc_src": "Editeur int\u00e9grant de l'IA (possibilit\u00e9 d'y connecter Albert via l'API). Mode collaboration en temps r\u00e9el (multi-utilisateurs).",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Zed",
   "keywords": [
-   ""
+   "IA Albert editeur \"collaboration en temps r\u00e9el\"  \"multi-utilisateurs\""
   ],
   "landing": "https://zed.dev/",
   "license": "GPL 3.0",
@@ -23047,11 +23193,14 @@
   "recommended_for_gov": true,
   "repo": "https://github.com/zed-industries/zed",
   "repo_key": "github.com/zed-industries/zed",
-  "short_desc": "Editeur minimaliste",
+  "short_desc": "Editeur int\u00e9grant de l'IA (possibilit\u00e9 d'y connecter Albert via l'API). Mode collaboration en temps r\u00e9el (multi-utilisateurs).",
   "sill_id": 666,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.15.0",
+  "used_by": [
+   "CNRS"
+  ],
+  "version": "1.16.1",
   "wikidata": "Q112301707"
  },
  {
@@ -23128,7 +23277,7 @@
    "Universit\u00e9 de Lorraine",
    "other"
   ],
-  "version": "10.1.16",
+  "version": "10.1.20",
   "wikidata": "Q203485"
  },
  {
@@ -23181,6 +23330,7 @@
    "CNRS",
    "CREPS de Nancy",
    "CentraleSup\u00e9lec",
+   "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "Cerema",
    "DDT 54",
    "DDT12",
@@ -23193,7 +23343,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "universit\u00e9 caen normandie"
   ],
-  "version": "9.0.6",
+  "version": "10.0.0",
   "wikidata": "Q226915"
  },
  {
