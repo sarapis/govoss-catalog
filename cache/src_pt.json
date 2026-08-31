@@ -279,7 +279,7 @@
   "repo_owner": "amagovpt",
   "short_desc": "Middleware Oficial de Identifica\u00e7\u00e3o Eletr\u00f3nica em Portugal - Cart\u00e3o de Cidad\u00e3o, da Chave M\u00f3vel Digital e Sistema de Certifica\u00e7\u00e3o de atributos profissionais",
   "source": "PT/arte",
-  "stars": 233,
+  "stars": 234,
   "tier": "index"
  },
  {
@@ -302,7 +302,7 @@
   "country": "PT",
   "entry_url": "https://github.com/amagovpt/booka11y",
   "is_fork": false,
-  "last_activity": "2026-07-01T15:07:25Z",
+  "last_activity": "2026-08-26T12:24:59Z",
   "name": "booka11y",
   "repo": "https://github.com/amagovpt/booka11y",
   "repo_key": "github.com/amagovpt/booka11y",
@@ -397,7 +397,7 @@
   "country": "PT",
   "entry_url": "https://github.com/amagovpt/dadosgov-fe",
   "is_fork": false,
-  "last_activity": "2026-08-24T14:25:16Z",
+  "last_activity": "2026-08-28T16:37:22Z",
   "name": "dadosgov-fe",
   "repo": "https://github.com/amagovpt/dadosgov-fe",
   "repo_key": "github.com/amagovpt/dadosgov-fe",
@@ -899,7 +899,7 @@
   "repo_owner": "amagovpt",
   "short_desc": "Reposit\u00f3rio da API de  Integra\u00e7\u00e3o de Servi\u00e7os Comuns ",
   "source": "PT/arte",
-  "stars": 2,
+  "stars": 3,
   "tier": "index"
  },
  {
@@ -1200,7 +1200,7 @@
   "fallback_repo": "https://github.com/amagovpt/udata-pt",
   "is_fork": false,
   "landing": "http://udata.readthedocs.org",
-  "last_activity": "2026-08-24T11:20:52Z",
+  "last_activity": "2026-08-28T16:36:53Z",
   "license": "agpl-3.0",
   "maintenance": "community",
   "name": "udata",

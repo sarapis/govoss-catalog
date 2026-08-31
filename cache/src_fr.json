@@ -454,6 +454,7 @@
    "CNRS",
    "CREPS de Nancy",
    "DREAL Hauts-de-France",
+   "SDIS26",
    "SGC-SIC82",
    "Universit\u00e9 Le Havre Normandie",
    "Universit\u00e9 de Lorraine"
@@ -1214,7 +1215,7 @@
   "used_by": [
    "other"
   ],
-  "version": "2.10.1",
+  "version": "2.10.2",
   "wikidata": "Q73673993"
  },
  {
@@ -1280,15 +1281,15 @@
  {
   "country": "FR",
   "desc_lang": "fr",
-  "desc_src": "Auto Multiple Choice is a piece of software that can help you creating and managing multiple choice questionnaires in LaTeX",
+  "desc_src": "Gestion et correction automatique de QCM papiers \u00e0 partir des scans, avec m\u00e9lange optionnel des r\u00e9ponses et des questions.",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Auto%20Multiple%20Choice",
   "keywords": [
    "LaTex",
    "Quizz",
-   "Formular",
+   "QCM",
    "Questionaire",
-   "Automatic correction"
+   "correction automatique"
   ],
   "license": " GPLv2+",
   "name": "Auto Multiple Choice",
@@ -1296,13 +1297,14 @@
   "recommended_for_gov": true,
   "repo": null,
   "repo_key": null,
-  "short_desc": "Auto Multiple Choice is a piece of software that can help you creating and managing multiple choice questionnaires in LaTeX",
+  "short_desc": "Gestion et correction automatique de QCM papiers \u00e0 partir des scans, avec m\u00e9lange optionnel des r\u00e9ponses et des questions.",
   "sill_id": 671,
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
    "Acad\u00e9mie d'Amiens",
-   "Acad\u00e9mie de Limoges"
+   "Acad\u00e9mie de Limoges",
+   "Universit\u00e9 Claude Bernard Lyon 1"
   ]
  },
  {
@@ -1327,7 +1329,7 @@
   "sill_id": 548,
   "source": "FR/sill",
   "tier": "index",
-  "version": "2.0.26",
+  "version": "2.0.27",
   "wikidata": "Q784816"
  },
  {
@@ -1662,7 +1664,7 @@
    "Nantes Universit\u00e9",
    "other"
   ],
-  "version": "32.0.3",
+  "version": "1.48.1",
   "wikidata": "Q56319818"
  },
  {
@@ -1903,7 +1905,7 @@
    "MEN",
    "ville de claix"
   ],
-  "version": "26.05.3",
+  "version": "26.05.4",
   "wikidata": "Q107122654"
  },
  {
@@ -2695,7 +2697,7 @@
   "used_by": [
    "other"
   ],
-  "version": "3.21.2",
+  "version": "3.21.3",
   "wikidata": "Q135450643"
  },
  {
@@ -2983,7 +2985,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "366",
+  "version": "367",
   "wikidata": "Q114691201"
  },
  {
@@ -3200,7 +3202,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "Universit\u00e9 de Pau et des Pays de l'Adour"
+   "Universit\u00e9 de Pau et des Pays de l'Adour",
+   "administration centrale"
   ],
   "version": "1.7.16",
   "wikidata": "Q2982932"
@@ -3297,7 +3300,7 @@
    "IGN",
    "MEN"
   ],
-  "version": "2.10.2",
+  "version": "2.10.3",
   "wikidata": "Q15252222"
  },
  {
@@ -3681,7 +3684,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "15.21.0",
+  "version": "15.21.1",
   "wikidata": "Q115978662"
  },
  {
@@ -4026,6 +4029,7 @@
   "used_by": [
    "ARS",
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
+   "Acad\u00e9mie de Bordeaux",
    "Acad\u00e9mie de Limoges",
    "Acad\u00e9mie de Nantes",
    "CDC des pays de L'Aigle",
@@ -4059,6 +4063,7 @@
    "Nantes M\u00e9tropole",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sorbonne Universit\u00e9",
+   "Universit\u00e9 Claude Bernard Lyon 1",
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne",
    "Universit\u00e9 de Franche-Comt\u00e9",
    "Universit\u00e9 de Guyane",
@@ -4189,7 +4194,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2.9.5",
+  "version": "2.9.6",
   "wikidata": "Q65070939"
  },
  {
@@ -4506,6 +4511,7 @@
    "Prefecture 21",
    "SG",
    "Sorbonne Universit\u00e9",
+   "Universit\u00e9 Claude Bernard Lyon 1",
    "Universit\u00e9 de Limoges",
    "a",
    "aefe",
@@ -4542,7 +4548,7 @@
    "DINUM",
    "R\u00e9seau Canop\u00e9"
   ],
-  "version": "5.4.1",
+  "version": "5.5.0",
   "wikidata": "Q133821372"
  },
  {
@@ -4729,7 +4735,7 @@
    "CentraleSup\u00e9lec",
    "MI"
   ],
-  "version": "2.4.4",
+  "version": "2.4.5",
   "wikidata": "Q742820"
  },
  {
@@ -4992,7 +4998,8 @@
   "tier": "index",
   "used_by": [
    "MINISTERE INTERIEUR/PP/PJ/AEF/BEFTI/SEC/GE1",
-   "MTE"
+   "MTE",
+   "sgcd33"
   ],
   "version": "3.2.1",
   "wikidata": "Q4117800"
@@ -5727,6 +5734,7 @@
   "used_by": [
    "AP-HP",
    "Acad\u00e9mie de Normandie",
+   "Assemblee nationale",
    "Communaut\u00e9 de communes du Pays d'Iroise",
    "DISP21",
    "Direction Ecole primaire de G\u00e9nissac",
@@ -5870,7 +5878,10 @@
   "sill_id": 680,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.21.0",
+  "used_by": [
+   "DINUM"
+  ],
+  "version": "0.21.1",
   "wikidata": "Q137909707"
  },
  {
@@ -6121,7 +6132,7 @@
   "used_by": [
    "ENSAN"
   ],
-  "version": "15.0.4",
+  "version": "16.0.3",
   "wikidata": "Q115962387"
  },
  {
@@ -7198,6 +7209,7 @@
    "Prefecture 21",
    "SG",
    "Sorbonne Universit\u00e9",
+   "Universit\u00e9 Claude Bernard Lyon 1",
    "Universit\u00e9 Grenoble Alpes",
    "Universit\u00e9 Le Havre Normandie",
    "other"
@@ -7363,7 +7375,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2.3.22",
+  "version": "2.3.24",
   "wikidata": "Q112595096"
  },
  {
@@ -7522,7 +7534,7 @@
    "SGAMI Sud-Est",
    "Universit\u00e9 de Rouen"
   ],
-  "version": "30.2",
+  "version": "31.1",
   "wikidata": "Q1252773"
  },
  {
@@ -8219,7 +8231,7 @@
    "MI",
    "MI/SG/DTNUM/SDAIT/BS"
   ],
-  "version": "26.1.0",
+  "version": "26.2.0",
   "wikidata": "Q5618801"
  },
  {
@@ -8312,7 +8324,7 @@
    "Sorbonne Universit\u00e9",
    "other"
   ],
-  "version": "3.3-dev3",
+  "version": "3.4.3",
   "wikidata": "Q5628948"
  },
  {
@@ -8562,7 +8574,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "6.0.18",
+  "version": "6.0.20",
   "wikidata": "Q11223506"
  },
  {
@@ -8823,6 +8835,7 @@
    "Mairie d'Arcueil",
    "Nantes Universit\u00e9",
    "R\u00e9seau Canop\u00e9",
+   "SDIS26",
    "Setra_5192",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Grenoble Alpes",
@@ -9271,7 +9284,7 @@
    "MEN",
    "SG"
   ],
-  "version": "2.578",
+  "version": "2.579",
   "wikidata": "Q7491312"
  },
  {
@@ -10426,7 +10439,7 @@
    "MS",
    "SG"
   ],
-  "version": "1.36.4",
+  "version": "1.37.0",
   "wikidata": "Q22661306"
  },
  {
@@ -10485,7 +10498,7 @@
   "sill_id": 601,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.21.0",
+  "version": "0.21.1",
   "wikidata": "Q135432577"
  },
  {
@@ -10512,10 +10525,11 @@
   "tier": "index",
   "used_by": [
    "35",
+   "CNRS",
    "DINUM",
    "Minsit\u00e8re de la Justice"
   ],
-  "version": "1.27.0",
+  "version": "1.29.0",
   "wikidata": "Q135433339"
  },
  {
@@ -10609,7 +10623,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.26.1",
+  "version": "13.29.0",
   "wikidata": "Q13634357"
  },
  {
@@ -10660,6 +10674,8 @@
    "MD",
    "MEN",
    "MEN - DNE - ETNA - \u00c9quipe nationale Nuage",
+   "Nantes Universit\u00e9",
+   "Universit\u00e9 Claude Bernard Lyon 1",
    "Universit\u00e9 Grenoble Alpes",
    "dgfip"
   ],
@@ -10798,7 +10814,9 @@
   "used_by": [
    "06",
    "Acad\u00e9mie d'Amiens",
+   "Acad\u00e9mie de Besan\u00e7on",
    "Acad\u00e9mie de Cr\u00e9teil",
+   "Acad\u00e9mie de Guadeloupe",
    "Acad\u00e9mie de Lille",
    "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Normandie",
@@ -10864,6 +10882,7 @@
    "SG",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sorbonne Universit\u00e9",
+   "Universit\u00e9 Claude Bernard Lyon 1",
    "Universit\u00e9 C\u00f4te d'Azur",
    "Universit\u00e9 Grenoble Alpes",
    "Universit\u00e9 Gustave Eiffel",
@@ -10886,7 +10905,7 @@
    "pr\u00e9fecture 81",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "26.2.5",
+  "version": "26.8",
   "wikidata": "Q10135"
  },
  {
@@ -11036,7 +11055,7 @@
   "used_by": [
    "DGITM"
   ],
-  "version": "6.5.3",
+  "version": "6.5.5",
   "wikidata": "Q16655955"
  },
  {
@@ -11136,6 +11155,7 @@
    "DDT12",
    "DDTM34",
    "Office Fran\u00e7ais de la Biodiversit\u00e9",
+   "SDIS26",
    "Ville de Marseille",
    "other"
   ],
@@ -11622,7 +11642,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "12.3.2",
+  "version": "12.3.3",
   "wikidata": "Q787177"
  },
  {
@@ -12340,6 +12360,7 @@
    "ARCOM",
    "ARS ILE-DE-FRANCE",
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
+   "Acad\u00e9mie de Besan\u00e7on",
    "Acad\u00e9mie de Cr\u00e9teil",
    "Acad\u00e9mie de Dijon",
    "Acad\u00e9mie de Lille",
@@ -12408,7 +12429,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "155.0b3",
+  "version": "157.0a1",
   "wikidata": "Q698"
  },
  {
@@ -12444,6 +12465,7 @@
    "ACADEMIE DE PARIS",
    "Acad\u00e9mie d'Amiens",
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
+   "Acad\u00e9mie de Besan\u00e7on",
    "Acad\u00e9mie de Lille",
    "Acad\u00e9mie de Nancy-Metz",
    "Acad\u00e9mie de Nantes",
@@ -12585,7 +12607,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "9.3.1",
+  "version": "9.4.0",
   "wikidata": "Q118628169"
  },
  {
@@ -12655,7 +12677,7 @@
    "D\u00e9veloppement durable",
    "Universit\u00e9 d'Angers"
   ],
-  "version": "1.28.2",
+  "version": "1.28.3",
   "wikidata": "Q6930567"
  },
  {
@@ -12979,7 +13001,7 @@
    "MD",
    "Nantes M\u00e9tropole"
   ],
-  "version": "4.6.8",
+  "version": "4.6.9",
   "wikidata": "Q132952391"
  },
  {
@@ -13070,13 +13092,10 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.3.2",
+  "version": "16.3.3",
   "wikidata": "Q56062435"
  },
  {
-  "categories": [
-   "Web Applications"
-  ],
   "country": "FR",
   "desc_lang": "fr",
   "desc_src": "Partage de fichiers",
@@ -13089,7 +13108,10 @@
    "partage de fichiers",
    "file sharing",
    "synchronisation",
-   "sync"
+   "sync",
+   "agenda",
+   "contacts",
+   "notes"
   ],
   "landing": "https://nextcloud.com/",
   "license": "AGPL-3.0-or-later",
@@ -13104,6 +13126,7 @@
   "tier": "index",
   "used_by": [
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
+   "Acad\u00e9mie de Besan\u00e7on",
    "Acad\u00e9mie de La R\u00e9union",
    "Acad\u00e9mie de Nantes",
    "CCAS Saint-Paul de la R\u00e9union",
@@ -13128,6 +13151,7 @@
    "Instituts Nationaux Polytechniques (INP)",
    "Lyc\u00e9e des m\u00e9tiers entre Meurthe et Sanon",
    "MD",
+   "MEFR",
    "MEN",
    "MEN - DNE - ETNA - \u00c9quipe nationale Nuage",
    "MEN - Greta Rouen Maritime",
@@ -13184,7 +13208,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.95.2-01",
+  "version": "3.95.3-02",
   "wikidata": "Q119269051"
  },
  {
@@ -13338,7 +13362,7 @@
    "MEAE",
    "MS"
   ],
-  "version": "26.7.0",
+  "version": "26.8.1",
   "wikidata": "Q756100"
  },
  {
@@ -13371,7 +13395,7 @@
    "Acad\u00e9mie de La R\u00e9union",
    "DDT 77/STAC/PSIT/UACIG"
   ],
-  "version": "3.22.1",
+  "version": "3.22.2",
   "wikidata": "Q53407524"
  },
  {
@@ -13430,7 +13454,7 @@
    "iut d'auxerre",
    "other"
   ],
-  "version": "8.9.7",
+  "version": "8.9.8",
   "wikidata": "Q2033"
  },
  {
@@ -13489,7 +13513,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "Acad\u00e9mie de Nancy-Metz"
+   "Acad\u00e9mie de Nancy-Metz",
+   "DGFIP"
   ],
   "version": "7.2",
   "wikidata": "Q14579"
@@ -13908,7 +13933,7 @@
    "MI",
    "VIGINUM"
   ],
-  "version": "0.32.15",
+  "version": "0.33.1",
   "wikidata": "Q124636097"
  },
  {
@@ -14717,6 +14742,9 @@
   "sill_id": 681,
   "source": "FR/sill",
   "tier": "index",
+  "used_by": [
+   "DINUM"
+  ],
   "version": "0.5.0",
   "wikidata": "Q140290134"
  },
@@ -15083,7 +15111,7 @@
    "Universit\u00e9 de Lorraine",
    "centre de "
   ],
-  "version": "3.5.1",
+  "version": "4.0.0",
   "wikidata": "Q769346"
  },
  {
@@ -15325,6 +15353,7 @@
   "used_by": [
    "DGFIP",
    "ESI59 LILLE",
+   "MEN",
    "MESR",
    "Universit\u00e9 Rennes"
   ]
@@ -15643,7 +15672,8 @@
    "Acad\u00e9mie de Nancy-Metz",
    "DDT53",
    "DRIEAT",
-   "MI"
+   "MI",
+   "sdis62"
   ],
   "version": "1.14.0",
   "wikidata": "Q135271145"
@@ -15867,7 +15897,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.17.1",
+  "version": "2.17.2",
   "wikidata": "Q111586053"
  },
  {
@@ -16159,7 +16189,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.3.1",
+  "version": "13.3.2",
   "wikidata": "Q1663673"
  },
  {
@@ -16545,6 +16575,7 @@
    "MS",
    "ODEADOM",
    "Rectorat de Strasbourg",
+   "SDIS26",
    "SGAMI OUEST",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sorbonne Universit\u00e9",
@@ -17331,6 +17362,7 @@
    "MI/DGPN/SNPS",
    "MTE",
    "Mairie Ville de Grenoble",
+   "SDIS26",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "communaute de communes Le Grand Charolais",
@@ -17339,7 +17371,7 @@
    "pr\u00e9fecture 81",
    "sdjes dsden 54"
   ],
-  "version": "4.2.1",
+  "version": "4.2.2",
   "wikidata": "Q1329181"
  },
  {
@@ -18746,7 +18778,7 @@
    "DGFIP",
    "D\u00e9partement de la Vend\u00e9e"
   ],
-  "version": "4.47.0",
+  "version": "4.48.0",
   "wikidata": "Q752522"
  },
  {
@@ -19323,7 +19355,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.20",
+  "version": "4.4.21",
   "wikidata": "Q1536426"
  },
  {
@@ -19417,7 +19449,7 @@
    "ACADEMIE DE PARIS",
    "Acad\u00e9mie de Limoges"
   ],
-  "version": "6.1.6",
+  "version": "6.1.7",
   "wikidata": "Q7581736"
  },
  {
@@ -19688,7 +19720,7 @@
    "MESR",
    "eipi"
   ],
-  "version": "7.6",
+  "version": "7.7",
   "wikidata": "Q841783"
  },
  {
@@ -20507,7 +20539,7 @@
   "sill_id": 472,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.15.9",
+  "version": "1.16.0",
   "wikidata": "Q28957072"
  },
  {
@@ -20678,7 +20710,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.30.2",
+  "version": "3.30.5",
   "wikidata": "Q110643961"
  },
  {
@@ -20727,7 +20759,7 @@
    "apprentissage",
    "learning"
   ],
-  "landing": "https://doc.scenari.software/Topaze",
+  "landing": "https://doc.scenari.software/Topaze/fr/",
   "license": "MPL-2.0, GPL-3.0-only, LGPL-3.0-only, CECILL-2.1",
   "name": "Topaze",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20744,6 +20776,7 @@
    "MESR",
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
+  "version": "26.0.0",
   "wikidata": "Q112062753"
  },
  {
@@ -20835,7 +20868,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "3.7.11",
+  "version": "3.7.12",
   "wikidata": "Q96332968"
  },
  {
@@ -21191,7 +21224,7 @@
    "academie d'Aix marseille",
    "dipn78/sdan"
   ],
-  "version": "1.73.0",
+  "version": "1.74.0",
   "wikidata": "Q19881587"
  },
  {
@@ -21231,7 +21264,7 @@
    "Universit\u00e9 Grenoble Alpes",
    "ac-bordeaux.fr"
   ],
-  "version": "26.04 LTS",
+  "version": "26.04.1 LTS",
   "wikidata": "Q381"
  },
  {
@@ -21781,7 +21814,7 @@
   "sill_id": 611,
   "source": "FR/sill",
   "tier": "index",
-  "version": "4.11.1",
+  "version": "4.11.2",
   "wikidata": "Q287012"
  },
  {
@@ -22345,7 +22378,7 @@
   "sill_id": 598,
   "source": "FR/sill",
   "tier": "index",
-  "version": "7.4.3",
+  "version": "8.0",
   "wikidata": "Q25206006"
  },
  {
@@ -23200,7 +23233,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "1.16.1",
+  "version": "1.17.2",
   "wikidata": "Q112301707"
  },
  {
@@ -23343,7 +23376,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "universit\u00e9 caen normandie"
   ],
-  "version": "10.0.0",
+  "version": "10.0.1",
   "wikidata": "Q226915"
  },
  {

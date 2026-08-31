@@ -1403,6 +1403,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/compar-ia",
   "keywords": [
    "SDG4",
    "SDG9",
@@ -1432,6 +1433,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/compar-ia-datatsets",
   "keywords": [
    "SDG4",
    "SDG9",
@@ -1764,6 +1766,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/data-exchange-agreement-protocol-suit-for-auditable-privacy-preserving-data-transactions-in-dataspaces",
   "extra_repos": [
    "https://github.com/decentralised-dataexchange/dexa-protocol",
    "https://github.com/decentralised-dataexchange/dexa-sdk",
@@ -2914,6 +2917,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/food-fortification-quality-management-system",
   "keywords": [
    "SDG2"
   ],
@@ -2942,6 +2946,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/food-price-monitoring-and-analysis-tool",
   "keywords": [
    "SDG2"
   ],
@@ -3030,6 +3035,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/gaul-2024",
   "keywords": [
    "SDG1",
    "SDG2",
@@ -3387,6 +3393,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/go-data",
   "keywords": [
    "SDG3",
    "SDG6",
@@ -3613,6 +3620,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/hcw-home",
   "keywords": [
    "SDG3"
   ],
@@ -3642,6 +3650,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/health-claims-data-exchange",
   "extra_repos": [
    "https://github.com/Swasth-Digital-Health-Foundation/hcx-apps"
   ],
@@ -3675,6 +3684,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/hope",
   "keywords": [
    "SDG1",
    "SDG2",
@@ -4247,6 +4257,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/jempi",
   "keywords": [
    "SDG3",
    "SDG9"
@@ -4278,6 +4289,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/joomla-cms",
   "keywords": [
    "SDG9",
    "SDG16"
@@ -4462,6 +4474,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/la-suite-drive",
   "keywords": [
    "SDG9"
   ],
@@ -4487,6 +4500,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/la-suite-meet",
   "keywords": [
    "SDG9"
   ],
@@ -4804,6 +4818,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/marine-spatial-planning-sahav",
   "keywords": [
    "SDG11",
    "SDG13",
@@ -5286,6 +5301,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/mozilla-common-voice",
   "keywords": [
    "SDG9",
    "SDG10"
@@ -5395,7 +5411,7 @@
   "dpg_type": [
    "Open Software"
   ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/nextcloud",
+  "entry_url": "https://www.digitalpublicgoods.net/r/nextcloud-server",
   "keywords": [
    "SDG9"
   ],
@@ -5775,6 +5791,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/open-contracting-portal",
   "keywords": [
    "SDG16"
   ],
@@ -6059,6 +6076,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/open-pryv-io",
   "keywords": [
    "SDG9",
    "SDG16"
@@ -7007,6 +7025,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/oshwa-open-source-hardware-certification-data",
   "keywords": [
    "SDG9"
   ],
@@ -7032,6 +7051,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/ozone",
   "keywords": [
    "SDG3",
    "SDG9"
@@ -7115,6 +7135,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/pol-is",
   "keywords": [
    "SDG10",
    "SDG11",
@@ -7207,6 +7228,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/presco-neonatal-predictive-scoring-application-and-platform",
   "keywords": [
    "SDG3"
   ],
@@ -7621,6 +7643,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/querido-di-rio",
   "keywords": [
    "SDG16"
   ],
@@ -8040,6 +8063,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/sentinel-2-10m-land-use-land-cover-time-series",
   "keywords": [
    "SDG11",
    "SDG13",
@@ -8160,7 +8184,7 @@
   "dpg_type": [
    "Open Data"
   ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/software-heritage",
+  "entry_url": "https://www.digitalpublicgoods.net/r/software-heritage-archive",
   "keywords": [
    "SDG4",
    "SDG9"
@@ -8265,6 +8289,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/statbus",
   "keywords": [
    "SDG8",
    "SDG9"
@@ -8857,6 +8882,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/the-ushahidi-platform",
   "extra_repos": [
    "https://github.com/ushahidi/platform-client-mzima"
   ],
@@ -9273,6 +9299,7 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/upyog",
   "keywords": [
    "SDG6",
    "SDG8",
@@ -9714,6 +9741,7 @@
   "dpg_type": [
    "Open Data"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/wikirate-data",
   "keywords": [
    "SDG4",
    "SDG17"
