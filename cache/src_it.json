@@ -542,7 +542,7 @@
   "country": "IT",
   "desc_en": "PDND authentication client and ANNCSU address synchronization tool",
   "desc_lang": "en",
-  "dev_status": "beta",
+  "dev_status": "stable",
   "fallback_repo": "https://github.com/ComuneMontelupoFiorentino/ANNCSU-PostgreSQL-PDND-sync.git",
   "features": [
    "Test and Production Environment Management",
@@ -572,7 +572,7 @@
    "Comune di Montelupo Fiorentino",
    "Comune di Dalmine"
   ],
-  "version": "0.1.0"
+  "version": "0.1.4"
  },
  {
   "active": true,
@@ -13624,7 +13624,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-07",
+  "released": "2026-09-06",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
   "repo_owner": "Comune di Montesilvano",
@@ -13637,7 +13637,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.5.47"
+  "version": "1.5.71"
  },
  {
   "active": true,
@@ -14937,7 +14937,8 @@
    "Provincia di Lecco",
    "Libero Consorzio Comunale di Siracusa",
    "Provincia di Pisa",
-   "Comune di San Donato Milanese"
+   "Comune di San Donato Milanese",
+   "Comune di Lodi"
   ]
  },
  {
@@ -15189,7 +15190,7 @@
   ],
   "country": "IT",
   "desc_lang": "it",
-  "desc_src": "Crea con semplicit\u00e0 il nuovo sito del tuo Comune o Ente Pubblico: conforme\n\nalle nuove linee guida di Designers Italia, accessibile a tutti.",
+  "desc_src": "Crea con semplicit\u00e0 il nuovo sito del tuo Comune o Ente Pubblico: conforme\nalle nuove linee guida di Designers Italia, accessibile a tutti.",
   "desc_src_lang": "it",
   "dev_status": "stable",
   "fallback_repo": "https://github.com/italia/design-comuni-plone-theme.git",
@@ -15198,24 +15199,24 @@
    "PNRR/Misura/1.2",
    "PNRR/Misura/1.4.1",
    "PNRR/Beneficiari/Comuni",
-   "Semplice ed intuitivo, non \u00e8 richiesta nessuna conoscenza di\n\nprogrammazione.",
-   "Workflow di approvazione contenuti configurabili in base alle esigenze\n\nspecifiche.",
-   "Gestione diretta ed esclusiva tramite un semplice browser ed a prova di\n\nclick.",
-   "Creazione potenzialmente illimitata di pagine informative e relative\n\ncategorie."
+   "Semplice ed intuitivo, non \u00e8 richiesta nessuna conoscenza di programmazione.",
+   "Workflow di approvazione contenuti configurabili in base alle esigenze specifiche.",
+   "Gestione diretta ed esclusiva tramite un semplice browser ed a prova di click.",
+   "Creazione potenzialmente illimitata di pagine informative e relative categorie."
   ],
   "landing": "https://www.io-comune.it/",
-  "license": "GPL-3.0",
-  "long_desc": "**io-Comune: pensato per i cittadini, costruito con i redattori**\n\n\n\nio-Comune \u00e8 la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.\n\n\n\n**AgID 3.0 - Misura 1.4.1 \"Esperienza del Cittadino nei servizi pubblici\"**\n\n\n\nio-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AgID.\n\n\n\n**Trovabilit\u00e0 dei contenuti**\n\n\n\nio-Comune integra componenti e flussi di navigazione suggeriti da AgID con l'esperienza ventennale di RedTurtle nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.\n\n\n\n**La porta per i servizi online**\n\n\n\nio-Comune supporta nativamente le piattaforme abilitanti, come la componente di autenticazione SPID e il sistema di pagamento pagoPA.\nInoltre, io-Comune permetter\u00e0 l\u2019integrazione con IO, l'app ufficiale dei servizi pubblici, per poter dialogare con i cittadini anche dal telefono.\n\n\n\n**io-Comune \u00e8 certificato, sicuro e si affida ad ",
+  "license": "GPL-3.0-only",
+  "long_desc": "**io-Comune: pensato per i cittadini, costruito con i redattori**\n\nio-Comune \u00e8 la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi del tuo Comune, sia dal PC che da mobile.\n\n**AgID 3.0 - Misura 1.4.1 \"Esperienza del Cittadino nei servizi pubblici\"**\n\nio-Comune segue le linee guida ufficiali per il design dei siti web dei Comuni italiani: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AgID.\n\n**Trovabilit\u00e0 dei contenuti**\n\nio-Comune integra componenti e flussi di navigazione suggeriti da AgID con l'esperienza ventennale di RedTurtle nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.\n\n**La porta per i servizi online**\n\nio-Comune supporta nativamente le piattaforme abilitanti, come la componente di autenticazione SPID e il sistema di pagamento pagoPA.\nInoltre, io-Comune permetter\u00e0 l\u2019integrazione con IO, l'app ufficiale dei servizi pubblici, per poter dialogare con i cittadini anche dal telefono.\n\n**io-Comune \u00e8 certificato, sicuro e si affida ad un CMS open sour",
   "maintenance": "internal",
   "name": "io-Comune - Il sito AgID per Comuni ed Enti Pubblici",
   "platforms": [
    "web"
   ],
-  "released": "2026-08-24",
+  "released": "2026-09-01",
   "repo": "https://github.com/italia/design-comuni-plone-theme",
   "repo_key": "github.com/italia/design-comuni-plone-theme",
   "repo_owner": "RedTurtle Technology srl",
-  "short_desc": "Crea con semplicit\u00e0 il nuovo sito del tuo Comune o Ente Pubblico: conforme\n\nalle nuove linee guida di Designers Italia, accessibile a tutti.",
+  "short_desc": "Crea con semplicit\u00e0 il nuovo sito del tuo Comune o Ente Pubblico: conforme\nalle nuove linee guida di Designers Italia, accessibile a tutti.",
   "software_type": "standalone/web",
   "source": "IT/developers-italia",
   "tier": "publiccode",
@@ -15332,7 +15333,7 @@
    "Unione Val di Bisenzio",
    "Unioncamere Emilia-Romagna"
   ],
-  "version": "12.15.0"
+  "version": "12.15.1"
  },
  {
   "active": true,
@@ -18161,6 +18162,42 @@
  {
   "active": true,
   "categories": [
+   "data-collection"
+  ],
+  "contacts": [
+   "Fabio Bonelli"
+  ],
+  "country": "IT",
+  "desc_en": "RESTful API for public software catalogs.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/developers-italia-api.git",
+  "features": [
+   "RESTful API Design",
+   "Can use either SQLite or PostgreSQL",
+   "Optional rate limiting to manage the number of requests per minute.",
+   "Containerization support",
+   "Helm chart available"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "long_desc": "**open-catalog-api** is a RESTful API for public software catalogs.\nIt powers developers.italia.it and can be deployed as a standalone\ninstance for any public software catalog.\n",
+  "maintenance": "community",
+  "name": "open-catalog-api",
+  "platforms": [
+   "web"
+  ],
+  "repo": "https://github.com/italia/open-catalog-api",
+  "repo_key": "github.com/italia/open-catalog-api",
+  "short_desc": "RESTful API for public software catalogs.",
+  "software_type": "standalone/backend",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "ddc5ae92-bd70-4c76-8510-0a7e02b0647e",
+  "version": "v1.0.0"
+ },
+ {
+  "active": true,
+  "categories": [
    "collaboration",
    "communications",
    "event-management"
@@ -18964,7 +19001,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-27",
+  "released": "2026-09-01",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19226,7 +19263,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.1"
+  "version": "4.1.2"
  },
  {
   "active": true,
@@ -27603,42 +27640,6 @@
  {
   "active": true,
   "categories": [
-   "data-collection"
-  ],
-  "contacts": [
-   "Fabio Bonelli"
-  ],
-  "country": "IT",
-  "desc_en": "RESTful API for public software catalogs.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "fallback_repo": "https://github.com/italia/developers-italia-api.git",
-  "features": [
-   "RESTful API Design",
-   "Can use either SQLite or PostgreSQL",
-   "Optional rate limiting to manage the number of requests per minute.",
-   "Containerization support",
-   "Helm chart available"
-  ],
-  "license": "AGPL-3.0-or-later",
-  "long_desc": "**software-catalog-api** is a RESTful API for public software catalogs.\nIt powers developers.italia.it and can be deployed as a standalone\ninstance for any public software catalog.\n",
-  "maintenance": "community",
-  "name": "software-catalog-api",
-  "platforms": [
-   "web"
-  ],
-  "repo": "https://github.com/italia/developers-italia-api",
-  "repo_key": "github.com/italia/developers-italia-api",
-  "short_desc": "RESTful API for public software catalogs.",
-  "software_type": "standalone/backend",
-  "source": "IT/developers-italia",
-  "tier": "publiccode",
-  "upstream_id": "ddc5ae92-bd70-4c76-8510-0a7e02b0647e",
-  "version": "v1.0.0"
- },
- {
-  "active": true,
-  "categories": [
    "crm",
    "customer-service-and-support"
   ],
@@ -29344,7 +29345,7 @@
    "linux",
    "web"
   ],
-  "released": "2026-07-07",
+  "released": "2026-09-03",
   "repo": "https://github.com/UniversitaDellaCalabria/unicms-template-unical",
   "repo_key": "github.com/universitadellacalabria/unicms-template-unical",
   "short_desc": "Universit\u00e0 della Calabria template for uniCMS",
@@ -29355,7 +29356,7 @@
   "used_by": [
    "Universit\u00e0 della Calabria - https://www.unical.it"
   ],
-  "version": "1.9.2"
+  "version": "1.9.3"
  },
  {
   "active": true,

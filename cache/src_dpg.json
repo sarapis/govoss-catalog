@@ -668,6 +668,38 @@
   "desc_lang": "en",
   "dpg": true,
   "dpg_type": [
+   "Open AI System"
+  ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/biomass-prediction-model",
+  "keywords": [
+   "SDG2",
+   "SDG12",
+   "SDG13",
+   "SDG15"
+  ],
+  "landing": "https://felt.com/embed/map/Goa-Biomass-DL-Estimation-P9AL0V5AwRD9BDpHIijjlO3C?loc=15.3875,74.0447,10.24z",
+  "license": "CC-BY-4.0",
+  "name": "Biomass Prediction Model",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://huggingface.co/vertify/biomass-model",
+  "repo_key": "huggingface.co/vertify/biomass-model",
+  "repo_owner": "Biomass Prediction Model",
+  "sdgs": [
+   "SDG2: Zero Hunger",
+   "SDG12: Responsible Consumption and Production",
+   "SDG13: Climate Action",
+   "SDG15: Life on Land"
+  ],
+  "short_desc": "The vertify Biomass Prediction Model uses multispectral satellite imagery to predict forest Above-Ground Biomass, providing accurate, verifiable carbon-stock data. It supports climate action, sustainable forest management, monitoring to detect land-use change and deforestation.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0092892"
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
    "Open Software"
   ],
   "entry_url": "https://www.digitalpublicgoods.net/r/bisa-health",
