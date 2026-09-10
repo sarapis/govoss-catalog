@@ -13,9 +13,12 @@
 >
 > | **F6** translation-key rot is invisible | `2026-09-10` | `out/translation_orphans.json`; page warns on GROWTH, runlog trends it |
 >
-> **F7–F8 remain open** (Vercel stored-login; test coverage for dedupe identity
-> and liveness's two-strike logic). **None of this has run unattended yet** —
-> 2026-09-14 07:00 is the first scheduled run to exercise it.
+> | **F8** one test file guards one function | `2026-09-10` | 6 suites / 163 checks; **5 of the 8 named gaps** incl. both priorities |
+>
+> **F7 remains open** (Vercel stored-login — a credential decision). F8 is
+> substantially addressed but not closed: `get()`'s raise semantics, crosswalk's
+> three guards and the Worker still have no tests. **None of this has run
+> unattended yet** — 2026-09-14 07:00 is the first scheduled run to exercise it.
 >
 > Three bugs were found *while fixing*, all invisible to reading: the F1 warning
 > was a silent no-op keyed on the wrong dict (`"DK/os2"` vs `"os2"`); `NOW` was
@@ -235,6 +238,41 @@ sabotage.
   two-strike logic are the same shape of pure, regression-prone function and are one
   incident away from earning theirs the same way.
 - **Confidence: confirmed** (absence verified).
+
+**SUBSTANTIALLY ADDRESSED 2026-09-10 — 5 of the 8 gaps, including both named priorities.**
+The suite went from 1 file / 23 checks to **6 files / 163 checks**:
+
+| gap | status |
+|---|---|
+| dedupe identity + `merge()` union | `test_dedupe_identity.py` — 41 checks |
+| liveness two-strike logic | `test_liveness_strikes.py` — 33 checks |
+| translation-key hashing | `test_translation_orphans.py` (landed with F6) — 14 |
+| `filters.py` rules | `test_filters.py` — 28 of its 37 |
+| `export_json` vocabulary validation | `test_filters.py` — 9 of its 37 |
+| `get()` raise semantics | **still none** — needs a stubbed opener |
+| crosswalk's three guards | **still none** — inline inside SPARQL-calling functions; needs the same extraction `fold_history` got |
+| the MCP Worker | **still none** — JS on Cloudflare, outside this Python suite |
+
+`liveness.fold_history()` was extracted from `main()` to make the state machine testable at
+all; the extracted body was verified line-for-line identical to the original block, and the
+refactored monitor was then run for real (6m43s, 3,065 ok / 27 dead / **1 pending** / 1 newly
+dead), so the refactor is confirmed end-to-end and not merely by unit test.
+
+Every suite was validated by SABOTAGE, which is what turned up three defects the tests were
+not looking for:
+
+1. **`norm_repo`/`norm_site` substituted `^www.` and `^https?://` BEFORE lowercasing**, so a
+   capitalised `Www.` or `HTTPS://` survived and produced a key that could not join its
+   lowercase twin. Latent — **0 of 4,464 real URLs** trigger it — and fixed with `re.I`,
+   verified a no-op on every one of those 4,464.
+2. **The `replaces.json` refusal named the key lowercased** (`limesurvey` for a file that
+   spells it `LimeSurvey`), i.e. pointed at a string you cannot grep for in the hand-edited
+   file it tells you to fix. Now iterates `replaces_raw` instead of the lookup map.
+3. **`filters.py`'s cost comment was stale in the direction that argues for weakening the
+   rule.** It claimed a set-aside entry "disappears from /entries.json and every derived
+   file… 316 entries removed from the public API". `entries.json` has carried every row
+   flagged since 08-14 — verified: 3,318 rows, 484 flagged, PloneMeeting present. A stale
+   cost estimate is an argument for softening a rule that is cheaper than advertised.
 
 ---
 

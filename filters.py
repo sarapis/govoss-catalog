@@ -93,12 +93,18 @@ def classify(rec):
     # page behind the "set-aside entries" toggle, and if a publisher adds a
     # description the next run returns it on its own.
     #
-    # BUT NOTE WHAT IT DOES COST. export_json.py exports only non-excluded rows,
-    # so a set-aside entry disappears from /entries.json and every derived file.
-    # This rule therefore removed 316 entries from the public API, PloneMeeting
-    # among them. That is a deliberate consequence of the editorial standard, not
-    # an oversight — but it is an API-visible break, so if the standard is ever
-    # softened, soften it here rather than by special-casing the export.
+    # WHAT IT COSTS, corrected 2026-09-10. This comment used to say a set-aside
+    # entry "disappears from /entries.json and every derived file", removing 316
+    # entries from the public API. That was true when written and is no longer:
+    # export_json.py now emits EVERY row carrying `excluded` + `exclude_reason`
+    # (verified — /entries.json has 3,318 rows, 484 flagged, PloneMeeting among
+    # them), and only the DERIVED indexes stay curated to active rows.
+    #
+    # The distinction matters for anyone weighing this rule: its cost is that an
+    # entry leaves the default view and the browse surfaces, NOT that it leaves
+    # the dataset. A stale cost estimate argues for softening a rule that is
+    # cheaper than advertised. If the standard is ever softened, soften it here
+    # rather than by special-casing the export.
     if not (rec.get("short_desc") or "").strip():
         return True, "no-description"
 

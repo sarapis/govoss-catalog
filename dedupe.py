@@ -69,8 +69,9 @@ def norm_site(url):
     are different products from the same publisher."""
     if not url or not isinstance(url, str):
         return None
-    u = re.sub(r"^https?://", "", url.strip().rstrip("/"))
-    u = re.sub(r"^www\.", "", u)
+    # re.I for the same reason as harvest.norm_repo: these run before .lower().
+    u = re.sub(r"^https?://", "", url.strip().rstrip("/"), flags=re.I)
+    u = re.sub(r"^www\.", "", u, flags=re.I)
     return u.lower() or None
 
 

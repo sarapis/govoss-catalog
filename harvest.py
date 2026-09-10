@@ -98,8 +98,12 @@ def norm_repo(url):
     """Canonical join key: host+path, no scheme/www/.git/trailing slash."""
     if not url or not isinstance(url, str):
         return None
-    u = re.sub(r"^https?://", "", url.strip().rstrip("/"))
-    u = re.sub(r"^www\.", "", u)
+    # re.I on both anchored subs: they run BEFORE the .lower() below, so a
+    # capitalised "Www." or "HTTPS://" used to survive and produce a key that
+    # could not join its lowercase twin. Not reached by today's data (0 of 4,519
+    # urls), which is exactly why it needed a test rather than a bug report.
+    u = re.sub(r"^https?://", "", url.strip().rstrip("/"), flags=re.I)
+    u = re.sub(r"^www\.", "", u, flags=re.I)
     u = re.sub(r"\.git$", "", u)
     u = re.sub(r"/-/(tree|blob)/.*$", "", u)      # gitlab deep links
     u = re.sub(r"/(tree|blob)/.*$", "", u)        # github deep links

@@ -241,6 +241,53 @@ def check_head_per_host(by_host, urls=None):
 
 
 # ---------------------------------------------------------------- report
+def fold_history(results, prev, names, now):
+    """Fold this sweep's statuses into the previous run's records.
+
+    Extracted from main() so the two-strike state machine can be tested without
+    a network sweep — review finding F8 named it and dedupe identity as the two
+    pure, regression-prone functions "one incident away" from earning a suite
+    the way detect_lang did after five recurrences. test_liveness_strikes.py is
+    that suite, and the transitions it locks in are the ones commented below.
+
+    Returns (repos, newly_dead, revived). Pure: no I/O, no globals but DEAD.
+    """
+    repos, newly_dead, revived = {}, [], []
+    for k, res in results.items():
+        st = res.get("status")
+        p = prev.get(k, {})
+        # NO per-record "checked". Every record in a file is checked in the same
+        # ~4.5 min sweep, so storing the timestamp 3,000 times recorded one fact
+        # 3,000 times — and made all 3,000 records differ every run. It was 3,005
+        # of 3,005 "changed" records against ~90 real ones, and it alone took the
+        # weekly diff from 470 lines to 47,563. The run timestamp lives in
+        # summary["checked"], which is where consumers already read it.
+        rec = {"status": st, "name": names[k]}
+        for f in ("archived", "empty", "last_push"):
+            if res.get(f) is not None:
+                rec[f] = res[f]
+        # Require TWO consecutive dead observations before calling it dead.
+        # Single observations oscillate: gitlab.com GROUP urls (as opposed to
+        # project urls) 404 from the projects API and answer inconsistently to
+        # HEAD, so run N "rescued" them and run N+1 declared them dead. An
+        # unstable signal is worse than a steady wrong one — it trains you to
+        # ignore the report. dead_count survives across runs in liveness.json.
+        if st in DEAD:
+            rec["dead_count"] = p.get("dead_count", 0) + 1
+            if rec["dead_count"] >= 2:
+                rec["dead_since"] = p.get("dead_since") or now
+                if not p.get("dead_since") and p:
+                    newly_dead.append(k)
+            else:
+                rec["unconfirmed_dead"] = True   # not counted as dead yet
+        elif st == 200:
+            if p.get("dead_since"):
+                revived.append(k)
+            rec["dead_count"] = 0
+        repos[k] = rec
+    return repos, newly_dead, revived
+
+
 def main():
     catalog = json.load(open(f"{OUT}/catalog.json"))
     prev = {}
@@ -297,39 +344,7 @@ def main():
         print(f"    rescued {rescued} that the API called 404 but the web serves fine")
 
     # ---- fold in history so "dead since" is meaningful
-    repos, newly_dead, revived = {}, [], []
-    for k, res in results.items():
-        st = res.get("status")
-        p = prev.get(k, {})
-        # NO per-record "checked". Every record in a file is checked in the same
-        # ~4.5 min sweep, so storing the timestamp 3,000 times recorded one fact
-        # 3,000 times — and made all 3,000 records differ every run. It was 3,005
-        # of 3,005 "changed" records against ~90 real ones, and it alone took the
-        # weekly diff from 470 lines to 47,563. The run timestamp lives in
-        # summary["checked"], which is where consumers already read it.
-        rec = {"status": st, "name": names[k]}
-        for f in ("archived", "empty", "last_push"):
-            if res.get(f) is not None:
-                rec[f] = res[f]
-        # Require TWO consecutive dead observations before calling it dead.
-        # Single observations oscillate: gitlab.com GROUP urls (as opposed to
-        # project urls) 404 from the projects API and answer inconsistently to
-        # HEAD, so run N "rescued" them and run N+1 declared them dead. An
-        # unstable signal is worse than a steady wrong one — it trains you to
-        # ignore the report. dead_count survives across runs in liveness.json.
-        if st in DEAD:
-            rec["dead_count"] = p.get("dead_count", 0) + 1
-            if rec["dead_count"] >= 2:
-                rec["dead_since"] = p.get("dead_since") or NOW
-                if not p.get("dead_since") and p:
-                    newly_dead.append(k)
-            else:
-                rec["unconfirmed_dead"] = True   # not counted as dead yet
-        elif st == 200:
-            if p.get("dead_since"):
-                revived.append(k)
-            rec["dead_count"] = 0
-        repos[k] = rec
+    repos, newly_dead, revived = fold_history(results, prev, names, NOW)
 
     ok = sum(1 for v in repos.values() if v["status"] == 200)
     dead = [k for k, v in repos.items() if v["status"] in DEAD and v.get("dead_since")]

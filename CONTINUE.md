@@ -117,6 +117,32 @@ hard gate reads sensors that cannot trip.*
 
 All four self-clear on success, which was verified rather than assumed.
 
+**F8 substantially addressed — the suite is 6 files / 163 checks**, from 1 file / 23. Run
+them all before touching `dedupe.py`, `liveness.py`, `filters.py`, `taxonomy.py`,
+`merge_translations.py` or `export_json.py`:
+
+```
+for t in test_*.py; do python3 $t; done
+```
+
+`liveness.fold_history()` was **extracted from `main()`** so the two-strike state machine
+could be tested without a network sweep. The extracted body was checked line-for-line
+identical to the block it replaced, and the refactored monitor was then run for real —
+6m43s, 3,065 ok / 27 dead / 1 pending / 1 newly dead — so the refactor is confirmed
+end-to-end, not just by unit test.
+
+**Three defects fell out of sabotage-testing the new suites**, none of which they were
+looking for:
+
+- **`norm_repo`/`norm_site` stripped `^www.` and `^https?://` BEFORE lowercasing**, so a
+  capitalised `Www.` produced a key that could not join its lowercase twin. Latent — 0 of
+  4,464 real URLs — fixed with `re.I`, and verified a no-op on all 4,464.
+- **The `replaces.json` refusal named the key lowercased**, pointing at a string you cannot
+  grep for in the hand-edited file it tells you to fix.
+- **`filters.py`'s cost comment was stale in the direction that argues for weakening the
+  rule** — it still claimed set-aside entries vanish from `/entries.json`, which stopped
+  being true on 08-14. Verified: 3,318 rows, 484 flagged, PloneMeeting present.
+
 **F6 also closed — `out/translation_orphans.json`.** `merge_translations.py` now reports
 tr_*.json keys whose source text is no longer in the catalogue: **59 of 1,762 today** (3%).
 The entry falls back to its foreign original, which stays documented and accepted — what was
@@ -212,15 +238,19 @@ Three things about it worth not re-litigating:
    ⚠ The rule still stands for the next one: do **not** silence an unmapped value by widening
    a bucket — the warning is only useful near zero.
 
-2. **F7–F8 from the review are open** (F5 and F6 closed 2026-09-10 — see below), in the
-   review's own words:
+2. **F7 from the review is open, F8 is 5/8 done** (F5 and F6 closed 2026-09-10 — see
+   below), in the review's own words:
    - **F7** deploy rests on the Vercel CLI's stored login; `~/.config/govoss/vercel-token`
      does not exist (verified).
-   - **F8** the test suite is **three** files now (`test_stage_guard.py` with F5,
-     `test_translation_orphans.py` with F6), but **dedupe identity and liveness's two-strike
-     logic still have none**, and they are the same shape of regression-prone pure function
-     that earned `detect_lang` its suite. This is the one genuinely open piece of the
-     review's central theme.
+   - **F8** the suite is **6 files / 163 checks** (from 1 / 23), covering **5 of the 8 gaps
+     the finding listed — including both it called priorities**: dedupe identity + `merge()`
+     union, liveness's two-strike logic, translation-key hashing, `filters.py` rules, and
+     `export_json`'s vocabulary gate. **Three left, each with a reason:** `get()`'s raise
+     semantics needs a stubbed opener; crosswalk's three guards sit inline inside
+     SPARQL-calling functions and need the same extraction `fold_history` got; the MCP Worker
+     is JS on Cloudflare, outside a Python suite. Do the crosswalk extraction next if you
+     want one — it is the same shape of work, and its guards (must BE software; a shared
+     homepage is an organisation) were both added after watching them fail.
 
 3. **Expand `replaces.json`.** 194 of 2,834 entries → 290 products. Read the `_README` block
    first: `kind` (`software` / `service` / `paid-tier`) and `confidence` both matter, and

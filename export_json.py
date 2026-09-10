@@ -95,8 +95,13 @@ def build():
     # confidence:"paid-tier" (a `kind` value) in the confidence field. Same rule
     # as taxonomy.py: an unmapped value is a BUG, not something to bucket.
     _vc, _vk = set(replaces_raw["_README"]["confidence"]), set(replaces_raw["_README"]["kind"])
+    # Iterate replaces_raw, NOT rmap: rmap is lowercased for lookup, so the
+    # refusal used to name `limesurvey` for a key the file spells `LimeSurvey` —
+    # a message pointing at a string you cannot grep for in the hand-edited file
+    # it tells you to fix.
     bad_vals = [f"{k} -> {m.get('product')}: {f}={m.get(f)!r}"
-                for k, v in rmap.items() for m in v
+                for k, v in replaces_raw.items() if not k.startswith("_")
+                for m in v
                 for f, ok in (("confidence", _vc), ("kind", _vk))
                 if m.get(f) not in ok]
     if bad_vals:

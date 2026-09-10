@@ -879,6 +879,42 @@ conformance claim. `DESIGN-BRIEF.md` has the seven UI rules this produced, inclu
 native `<select>` ignores your CSS until `appearance:none`, and that a flex item's default
 `min-width:auto` defeats `overflow-x`.
 
+## Tests
+
+Six suites, 163 checks, all manual — **not** wired into `run.sh`, because a test step that
+can fail the weekly publish is a test step someone switches off, and the guards these cover
+are already in the pipeline. Run them all before touching `dedupe.py`, `liveness.py`,
+`filters.py`, `taxonomy.py`, `merge_translations.py` or `export_json.py`:
+
+```bash
+for t in test_*.py; do python3 $t; done
+```
+
+| file | covers |
+|---|---|
+| `test_detect_lang.py` | 5 language-tagging recurrences, real catalogue strings |
+| `test_dedupe_identity.py` | the 3 identity rules, `norm_repo`/`norm_site`, survivor selection, `merge()` unions |
+| `test_liveness_strikes.py` | `fold_history()` — two strikes, unknown-never-dead, revival, oscillation |
+| `test_translation_orphans.py` | orphan-key detection, and the naive rule it rejects |
+| `test_filters.py` | `filters.classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
+| `test_stage_guard.py` | the refuse-on-merged-input guard, both directions |
+
+**Every one of them is validated by SABOTAGE** — break the thing it checks and watch it fail
+— because this repo has shipped a guard that could only ever pass. Two habits came out of
+doing that:
+
+- **A test must never ask the thing it is testing whether to run its hardest case.**
+  `test_stage_guard.py` first keyed its subprocess cases on `is_post_dedupe()`, so a
+  sabotaged no-op guard made the test *skip* exactly the cases that prove destruction.
+- **Sabotage finds bugs the assertions were not written for.** Three fell out this way: the
+  `^www\.`-before-`.lower()` case bug in `norm_repo`/`norm_site` (latent, 0 of 4,464 URLs),
+  a refusal message naming a lowercased key you cannot grep for, and a stale cost comment in
+  `filters.py` arguing for weakening a rule.
+
+Still untested, with reasons: `get()`'s raise semantics (needs a stubbed opener),
+crosswalk's three guards (inline inside SPARQL-calling functions — they need the extraction
+`liveness.fold_history()` got), and the MCP Worker (JS on Cloudflare).
+
 ## Four bugs that recurred — check for these first
 
 The same shapes came back repeatedly. If something looks wrong, suspect these before
