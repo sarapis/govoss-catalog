@@ -317,6 +317,16 @@ kebab-case, SILL ships Title Case free text, Offentligkod ships Swedish, openCod
 64% classified from source, 23% inferred from text via multilingual keyword rules (flagged
 `functions_inferred`), 14% left unclassified rather than force-fitted.
 
+**An unmapped value now reaches someone.** Saying "it is a bug" was a print into a log nobody
+reads, and it fired unnoticed on 2026-08-24
+(`information-and-communication-technology`, 2 entries) and again on 09-07 (`scheduling`, 1) —
+all of them shipping unclassified. `taxonomy.py` writes `out/taxonomy_unmapped.json`
+(gitignored, per-run) and `build_sources.py` warns on it by name. It self-clears: a run with
+nothing unmapped writes `{}` and the warning disappears. ⚠ **`/sources.html` reads `warn`
+today because `scheduling` is genuinely unmapped** — that is the feature working, and the fix
+is one line in `taxonomy.py:M`. Do not silence it by widening a bucket; the point of the
+warning is that it stays near zero.
+
 ## Liveness monitor
 
 `liveness.py` → `liveness.json`, and reports the **delta** against the previous run, which is
@@ -359,7 +369,19 @@ repo-state filter), because a monitor whose output only lands in a JSON file nob
 the same failure as having no monitor.
 
 It always **exits 0**: a monitor that can fail the pipeline gets switched off the first time
-it is wrong.
+it is wrong. **But exiting 0 used to be the whole story**, and that was a hole: a crash left
+`steps.tsv` reading `liveness 0`, `/sources.html` rendering the step green, and the previous
+`liveness.json` still feeding its counts to the page, the run log and every entry's
+`last_checked`. "No newly dead repos" read identically whether the sweep ran clean or never
+ran — this repo's own bug #3, absence of evidence, inside its own monitor.
+
+Since 2026-09-10 a crash **annotates `liveness.json`** with `summary.failed_at` and
+`summary.last_error`, leaving `summary.checked` and `repos` untouched. So `checked` keeps
+meaning *last SUCCESSFUL sweep* — the same semantics as `_fetched.json`'s `fetched_at` — and
+its age is what `build_sources.py` warns on (>15 days is critical: every repo state shown is
+that old). **A successful run rebuilds `summary` from scratch, so the markers clear
+themselves** — verified by stubbing the network and calling `main()`, not assumed; no stale
+error can outlive the failure it describes.
 
 ## Per-source freshness (`cache/_fetched.json`) — READ THIS BEFORE TRUSTING A COUNT
 

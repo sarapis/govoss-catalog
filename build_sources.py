@@ -143,6 +143,58 @@ def build():
             problems.append(("warn", "catalogue '%s' last fetched %d days ago (%s)"
                                      % (meta["label"], int(days),
                                         rec.get("error") or "reason not recorded")))
+    # ---- did the LIVENESS MONITOR actually run? (F3)
+    #
+    # liveness.py exits 0 even when it throws — correct, a monitor that can fail
+    # the pipeline gets switched off. But that made a crash invisible: steps.tsv
+    # recorded `liveness 0`, this page rendered the step green, and the previous
+    # liveness.json kept feeding its counts to the page and to every entry's
+    # last_checked. "No newly dead repos" read the same whether the sweep ran
+    # clean or never ran.
+    #
+    # summary.checked is only written by a SUCCESSFUL sweep (same semantics as
+    # _fetched.json's fetched_at), and a crash now annotates failed_at/last_error
+    # beside it. Age is the signal; the error just says why.
+    lv_sum = {}
+    try:
+        with open(f"{OUT}/liveness.json") as fh:
+            lv_sum = (json.load(fh) or {}).get("summary") or {}
+    except Exception:
+        pass
+    if lv_sum.get("failed_at"):
+        problems.append(("warn", "the liveness monitor failed on its last attempt (%s); "
+                                 "repo status below is from the last good sweep"
+                                 % (lv_sum.get("last_error") or "no reason recorded")))
+    lv_checked = lv_sum.get("checked")
+    if lv_checked:
+        try:
+            lv_days = (time.mktime(time.gmtime())
+                       - time.mktime(time.strptime(lv_checked, "%Y-%m-%dT%H:%M:%SZ"))) / 86400
+            if lv_days > 15:
+                problems.append(("critical", "the liveness monitor has not completed in "
+                                             "%d days — every repo state shown is that old"
+                                             % int(lv_days)))
+        except Exception:
+            pass
+
+    # ---- unmapped taxonomy values (F4)
+    #
+    # taxonomy.py treats an unmapped source value as a BUG rather than bucketing
+    # it into "other" — but saying so was a print into a log nobody reads, and it
+    # fired unnoticed on 08-24 and again on 09-07. Both entries shipped
+    # unclassified. Warn, and name the values, so the fix is obvious.
+    try:
+        with open(f"{OUT}/out/taxonomy_unmapped.json") as fh:
+            unmapped = json.load(fh) or {}
+    except Exception:
+        unmapped = {}
+    if unmapped:
+        top = ", ".join("%r (%d)" % (k, v) for k, v in
+                        sorted(unmapped.items(), key=lambda kv: -kv[1])[:4])
+        problems.append(("warn", "%d source category value(s) map to no function, so those "
+                                 "entries ship unclassified: %s — add them to taxonomy.py:M"
+                                 % (len(unmapped), top)))
+
     state = ("critical" if any(p[0] == "critical" for p in problems)
              else "warn" if any(p[0] == "warn" for p in problems) else "ok")
 

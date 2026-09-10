@@ -372,5 +372,35 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"[liveness] FAILED: {type(e).__name__}: {e}", file=sys.stderr)
+        # Exit 0 stays: a monitor that can fail the pipeline gets switched off
+        # the first time it is wrong. But until 2026-09-10 exiting 0 was the
+        # WHOLE story — steps.tsv recorded `liveness 0`, /sources.html rendered
+        # the step green, and the previous liveness.json kept feeding its counts
+        # to the page, the run log and every entry's last_checked. "No newly
+        # dead repos" read identically whether the sweep ran clean or never ran
+        # at all. That is this repo's own bug #3 — absence of evidence — inside
+        # its own monitor.
+        #
+        # So record the crash IN liveness.json, leaving `summary.checked` and
+        # `repos` untouched: checked keeps meaning "last SUCCESSFUL sweep", the
+        # same semantics as _fetched.json's fetched_at, and its age is what
+        # build_sources.py warns on. A successful run rebuilds summary from
+        # scratch, so these markers clear themselves — no stale error can
+        # outlive the failure it describes.
+        msg = f"{type(e).__name__}: {e}"
+        print(f"[liveness] FAILED: {msg}", file=sys.stderr)
+        try:
+            with open(f"{OUT}/liveness.json") as fh:
+                d = json.load(fh)
+            d.setdefault("summary", {})["failed_at"] = NOW
+            d["summary"]["last_error"] = msg
+            with open(f"{OUT}/liveness.json", "w") as fh:
+                json.dump(d, fh, indent=1, sort_keys=True)
+            print(f"[liveness] recorded the failure in liveness.json; "
+                  f"summary.checked still reads {d['summary'].get('checked')}",
+                  file=sys.stderr)
+        except Exception as e2:
+            # Nothing to annotate (first run, or the file is unreadable). The
+            # absent/stale file is itself the signal build_sources reads.
+            print(f"[liveness] could not annotate liveness.json: {e2}", file=sys.stderr)
     sys.exit(0)
