@@ -95,6 +95,54 @@ def build():
     for k, meta in S.SOURCES.items():
         if counts.get(k, 0) == 0:
             problems.append(("warn", "catalogue '%s' contributed 0 entries" % meta["label"]))
+
+    # ---- per-source FRESHNESS, from cache/_fetched.json (harvest.py stamps it,
+    # and only ever advances it on a SUCCESS).
+    #
+    # The zero-entries rule above cannot catch a stale source, and that was the
+    # gap: a failed source reuses its last good checkpoint and keeps contributing
+    # its old NON-ZERO count, so the only alarm watching per-source health stayed
+    # silent while a country's data aged indefinitely. The catalogue rendered as
+    # current and this page said "ok". Age is the signal the counts cannot carry.
+    #
+    # Thresholds are in RUNS, not days, because the schedule is weekly: >2 missed
+    # runs is warn, >4 is critical. A single missed week is normal enough
+    # (throttling, a slow upstream) that alarming on it would train the reader to
+    # ignore this page — the same objection this repo makes to a monitor nobody
+    # opens.
+    fetched = {}
+    try:
+        with open(f"{OUT}/cache/_fetched.json") as fh:
+            fetched = json.load(fh)
+    except Exception:
+        pass
+    src_age = {}
+    for k, meta in S.SOURCES.items():
+        # ⚠ Look up by the CHECKPOINT key, not the SOURCES key. S.SOURCES is
+        # keyed "DK/os2" while _fetched.json (like _timing.json) is keyed "os2",
+        # so `fetched.get(k)` matched nothing for all 17 sources and this whole
+        # block was a silent no-op — it built, rendered "ok", and warned about
+        # nothing. Caught only by seeding a stale entry and watching for the
+        # alarm that never came. A guard that cannot fire is not a guard.
+        ck = meta.get("checkpoint")
+        rec = fetched.get(ck) or {}
+        ts = rec.get("fetched_at")
+        if not ts:
+            continue
+        try:
+            days = (time.mktime(time.gmtime())
+                    - time.mktime(time.strptime(ts, "%Y-%m-%dT%H:%M:%SZ"))) / 86400
+        except Exception:
+            continue
+        src_age[ck] = {"days": days, "ok": rec.get("ok", True), "error": rec.get("error")}
+        if days > 29:
+            problems.append(("critical", "catalogue '%s' has not fetched successfully in "
+                                         "%d days — the page is showing its last good copy"
+                                         % (meta["label"], int(days))))
+        elif days > 15:
+            problems.append(("warn", "catalogue '%s' last fetched %d days ago (%s)"
+                                     % (meta["label"], int(days),
+                                        rec.get("error") or "reason not recorded")))
     state = ("critical" if any(p[0] == "critical" for p in problems)
              else "warn" if any(p[0] == "warn" for p in problems) else "ok")
 
@@ -132,6 +180,18 @@ def build():
             stamps += '<span class="stamp multi">publiccode.yml</span>'
         if n == 0:
             stamps += '<span class="stamp warn">contributed nothing</span>'
+        # Freshness on EVERY row, not only the unhealthy ones. A count alone
+        # cannot distinguish "fetched today, unchanged" from "failing since
+        # July, showing its last good copy" — they render identically, which is
+        # exactly how a stale source stayed invisible. Showing the age always
+        # means a healthy row proves it is healthy, rather than merely not
+        # complaining.
+        age = src_age.get(meta.get("checkpoint"))
+        if age:
+            d = int(age["days"])
+            if not age["ok"] or d > 15:
+                stamps += ('<span class="stamp warn">stale: %s</span>'
+                           % ("last good %dd ago" % d if d else "failing"))
         crows += (
             '<div class="crow">'
             '<div class="c-cc">%s <b>%s</b></div>'

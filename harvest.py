@@ -29,6 +29,9 @@ import certifi, yaml
 CTX = ssl.create_default_context(cafile=certifi.where())
 OUT = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(OUT, "cache")
+# One timestamp for the whole run, matching liveness.py's format. Per-source
+# freshness is stamped with it in cache/_fetched.json.
+NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 os.makedirs(CACHE, exist_ok=True)
 UA = {"User-Agent": "govoss-catalog/0.2 (public-sector OSS catalogue harvester)"}
 
@@ -67,6 +70,28 @@ def get(url, timeout=60, raw=False, headers=None, tries=3):
             last = e
         time.sleep(1.5 * (attempt + 1))
     raise last
+
+
+def _gh_token():
+    """liveness.gh_token(): GITHUB_TOKEN, then a chmod-600 file, then `gh`.
+
+    Imported, not copied — enrich_desc.py borrows it the same way. Safe to
+    import: liveness.py guards its entry point with __name__ and imports nothing
+    local, so there is no cycle and no module body to execute.
+
+    ⚠ This read GITHUB_TOKEN ALONE until 2026-09-10, and that variable is not in
+    the LaunchAgent plist (checked: PATH, HOME, GOVOSS_TRIGGER only). So every
+    scheduled run scanned GitHub UNAUTHENTICATED at 60 requests/hour while making
+    ~27+ org-list calls across be/bg/pt/ie/os2 — os2 alone walks 20 orgs. The
+    budget held only because the calls are cheap and spread out; it was one busy
+    hour away from the partial-scan failure os2() now refuses to checkpoint.
+    With a token the ceiling is 5,000/hour.
+    """
+    try:
+        import liveness
+        return liveness.gh_token()
+    except Exception:
+        return os.environ.get("GITHUB_TOKEN")
 
 
 def norm_repo(url):
@@ -275,8 +300,9 @@ def github_org_scan(org, source, country, workers=12):
     """GitHub org: list repos, then hit raw.githubusercontent (not rate-limited
     like the REST API, so a 380-repo org costs 4 API calls, not 380)."""
     hdr = {"Accept": "application/vnd.github+json"}
-    if os.environ.get("GITHUB_TOKEN"):
-        hdr["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    tok = _gh_token()
+    if tok:
+        hdr["Authorization"] = "Bearer " + tok
     repos, page = [], 1
     while page <= 20:
         d = get(f"https://api.github.com/orgs/{org}/repos?per_page=100&page={page}",
@@ -451,15 +477,46 @@ def os2():
     Products live one-per-GitHub-org; see OS2_ORGS for the verified allowlist and
     OS2_EXCLUDED for the name collisions deliberately kept out.
     """
-    out = []
+    out, broke = [], []
     for org in OS2_ORGS:
         try:
             got, _ = github_org_scan(org, "DK/os2", "DK")
             out += got
         except Exception as e:
+            broke.append(f"{org} ({type(e).__name__})")
             print(f"    {org}: FAILED {type(e).__name__}")
     print(f"    -> {len(out)} repos across {len(OS2_ORGS)} verified OS2 orgs "
           f"({len(OS2_EXCLUDED)} name collisions excluded)")
+
+    # ⚠ RAISE rather than return a short list. This is the ONLY adapter that
+    # loops over sub-sources swallowing their failures, and returning the
+    # partial made main() treat it as SUCCESS and overwrite src_os2.json —
+    # destroying the last-good copy the checkpoint design exists to keep. Every
+    # other GitHub adapter (be/bg/pt/ie) lets the exception propagate and keeps
+    # its checkpoint; os2 was the one defeating its own safety net.
+    #
+    # Denmark is ~300 of ~3,300 rows, so a total loss is ~9% — under run.sh's
+    # 10% shrink warning. Nothing downstream would have said a word.
+    #
+    # The test is failure AND regression, not failure alone. An org that fails
+    # without costing records is not harm, and a genuine upstream decline with
+    # no failures is real data that must still be written — otherwise the
+    # catalogue freezes on its own high-water mark.
+    if broke:
+        prev = 0
+        try:
+            with open(f"{CACHE}/src_os2.json") as fh:
+                prev = len(json.load(fh))
+        except Exception:
+            pass
+        if len(out) < prev:
+            raise RuntimeError(
+                f"partial OS2 scan: {len(out)} repos vs {prev} in the last good "
+                f"checkpoint, after {len(broke)} org(s) failed: {', '.join(broke)}. "
+                f"Refusing to checkpoint a short list; reusing the previous one. "
+                f"If an org is permanently gone, remove it from OS2_ORGS — the "
+                f"per-source age on /sources.html is what makes this visible."
+            )
     return out
 
 
@@ -962,6 +1019,27 @@ if __name__ == "__main__":
     # and catalog.json is always assembled from every checkpoint on disk, not
     # just the sources requested this time.
     timings = {}
+    # Per-source FRESHNESS. The checkpoint design deliberately reuses a source's
+    # last good data when it fails, which is right — but until 2026-09-10 that
+    # reuse was INVISIBLE: checkpoint records carry no date, nothing read file
+    # mtime, and the status page's only per-source alarm fires on a count of
+    # ZERO. A reused checkpoint contributes its old non-zero count, so a source
+    # dead for six months rendered as current, forever, on a page saying "ok".
+    #
+    # `fetched_at` is only ever advanced by a SUCCESS. A failure records its
+    # error and leaves the old timestamp standing, so the age keeps growing —
+    # that growing age is the signal, and build_sources.py warns on it.
+    #
+    # A per-source summary file, never a per-record field: 17 timestamps a week
+    # is meaningful churn, where the same idea per record once turned one
+    # liveness diff into 47,563 lines. Same rule, opposite side of the line.
+    fetched = {}
+    try:
+        with open(f"{CACHE}/_fetched.json") as fh:
+            fetched = json.load(fh)
+    except Exception:
+        pass
+
     for k in want:
         if k not in SOURCES:
             print(f"unknown source {k!r}; known: {', '.join(SOURCES)}")
@@ -977,16 +1055,33 @@ if __name__ == "__main__":
             json.dump(sorted(got, key=stable_order), open(f"{CACHE}/src_{k}.json", "w"),
                       indent=1, default=str, sort_keys=True)
             print(f"    -> {len(got)} records (checkpointed)")
+            fetched[k] = {"fetched_at": NOW, "records": len(got), "ok": True}
         except Exception as e:
             failed[k] = f"{type(e).__name__}: {e}"
             print(f"    !! FAILED {failed[k]}")
+            # Keep the PREVIOUS fetched_at. Advancing it here would relabel
+            # reused data as fresh, which is the bug this file exists to expose.
+            prev = dict(fetched.get(k) or {})
+            prev.update({"ok": False, "error": failed[k], "last_error_at": NOW})
+            prev.setdefault("fetched_at", None)
+            fetched[k] = prev
         # Per-source wall time. Recorded because the status page reports how long
         # each catalogue takes, and because a source that suddenly slows is the
         # earliest sign it has started throttling us - visible long before it
         # starts failing outright. Written every run, success or failure.
         timings[k] = round(time.time() - _t0, 1)
 
-    json.dump(timings, open(f"{CACHE}/_timing.json", "w"), indent=1, sort_keys=True)
+    # ⚠ ONLY when sources were actually attempted. `--from-cache` sets want=[],
+    # so these dicts are empty, and writing them blanked BOTH observability
+    # files over real data — found by running it during the 2026-09-10 fix:
+    # _timing.json went from 17 real durations to `{}`. _timing.json has had
+    # this bug since it was added; _fetched.json would have shipped with it.
+    # A no-network rebuild must not be able to destroy the record of the last
+    # real fetch — that is the same "reused data looks fresh" failure one level
+    # up, and it would have wiped precisely the evidence F1 exists to keep.
+    if want:
+        json.dump(timings, open(f"{CACHE}/_timing.json", "w"), indent=1, sort_keys=True)
+        json.dump(fetched, open(f"{CACHE}/_fetched.json", "w"), indent=1, sort_keys=True)
 
     for k in SOURCES:
         f = f"{CACHE}/src_{k}.json"

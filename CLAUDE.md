@@ -361,6 +361,67 @@ the same failure as having no monitor.
 It always **exits 0**: a monitor that can fail the pipeline gets switched off the first time
 it is wrong.
 
+## Per-source freshness (`cache/_fetched.json`) — READ THIS BEFORE TRUSTING A COUNT
+
+Checkpoint reuse is deliberate: a source that fails contributes its last good data
+rather than dropping a country. **Until 2026-09-10 that reuse was invisible**, and the
+combination was the worst failure this repo can have — a confidently wrong catalogue:
+
+- `harvest.py` exits **0** no matter how many sources failed (only an unknown source
+  *name* exits 2), so `steps.tsv` records success and the run **deploys and commits**;
+- checkpoint records carry no date, and nothing read file mtime;
+- the only per-source alarm on `/sources.html` fires on a count of **zero** — and a
+  reused checkpoint contributes its old **non-zero** count.
+
+So a source dead for six months rendered as current, on a page saying `ok`, in a commit
+titled `Data: <date> run`. Nothing lied; nothing could tell you either.
+
+`harvest.py` now writes `cache/_fetched.json` — `{checkpoint: {fetched_at, records, ok,
+error, last_error_at}}`:
+
+- **`fetched_at` is only ever advanced by a SUCCESS.** A failure records its error and
+  leaves the old timestamp standing, so the age grows. That growing age is the signal.
+- A **per-source summary**, never a per-record field. 17 timestamps a week is meaningful
+  churn; the same idea per record once turned one liveness diff into 47,563 lines. Same
+  rule, opposite side of the line.
+- `build_sources.py` warns at **>15 days** (≈2 missed runs) and goes **critical at >29**,
+  and stamps `stale: last good Nd ago` on the catalogue row. Thresholds are in *runs*, not
+  days: alarming on one missed week would train the reader to ignore the page.
+- Every row shows its state whether healthy or not — a count alone cannot distinguish
+  "fetched today, unchanged" from "failing since July".
+
+⚠ **Harvest still exits 0 on a failed source, and that is deliberate.** One flaky source
+must not block the weekly publish of sixteen good ones; converting a partial-freshness
+problem into total staleness is worse. The fix is *visibility*, not a hard gate.
+
+⚠ **Look these up by the CHECKPOINT key (`os2`), not the `sources.py` key (`DK/os2`).**
+The first version of the warning used the long key, matched nothing for all 17 sources,
+built cleanly and reported `ok` — a silent no-op. Caught only by seeding a stale entry and
+watching for an alarm that never came. Note `nlreg` has a checkpoint but no `sources.py`
+row (key-gated, 0 records), and the two French catalogues **share** the `fr` checkpoint.
+
+⚠ **`--from-cache` must not write `_fetched.json` or `_timing.json`.** Both are guarded by
+`if want:`. Without it a no-network rebuild blanked them to `{}` — found by running it
+during this fix, which wiped 17 real durations. `_timing.json` had had that bug since it
+was added. A rebuild that destroys the record of the last real fetch is the same
+"reused data looks fresh" failure, one level up.
+
+**`os2()` is the one adapter that could destroy its own checkpoint.** It loops 20 GitHub
+orgs swallowing each failure, so a rate limit mid-scan returned a short list, `main()`
+treated it as success, and `src_os2.json` — the last good copy — was overwritten. Denmark
+is ~9% of the catalogue, **under** `run.sh`'s 10% shrink warning, so nothing would have
+said a word. It now **raises** when orgs failed *and* the result regressed against the
+checkpoint. Failure alone is not the test: an org that fails without costing records is
+not harm, and a genuine upstream decline with no failures is real data that must still be
+written, or the catalogue freezes on its own high-water mark. If an org is permanently
+gone, remove it from `OS2_ORGS` — the per-source age is what makes that visible.
+
+**`github_org_scan` authenticates via `liveness.gh_token()`**, not `GITHUB_TOKEN` alone.
+That variable is *not* in the LaunchAgent plist, so every scheduled run scanned GitHub
+unauthenticated at 60 req/hr while making ~27+ org-list calls (os2 walks 20 orgs on its
+own). It held only because the calls are cheap; it was one busy hour from the partial scan
+above. With a token the ceiling is 5,000/hr. Same chain `enrich_desc.py` uses.
+
 ## Filtering non-software (`filters.py`)
 
 iMio publishes 236 repos but only **one** has a `publiccode.yml`, so the rest are indexed
