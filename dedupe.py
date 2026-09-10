@@ -54,6 +54,8 @@ publiccode tier over index, then the one with the most populated fields.
 """
 import json, os, re, collections
 
+import stage_guard
+
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 # fields unioned across the merged group rather than taken from the survivor
@@ -190,6 +192,9 @@ def merge(group):
 
 if __name__ == "__main__":
     c = json.load(open(f"{OUT}/catalog.json"))
+    # A second pass sees every survivor as a group of one and resets its
+    # catalogue_count to 1, wiping the "In N catalogues" pill. Review F5.
+    stage_guard.assert_pre_dedupe(c, "dedupe.py")
     active = [r for r in c if not r.get("excluded")]
     excluded = [r for r in c if r.get("excluded")]
 

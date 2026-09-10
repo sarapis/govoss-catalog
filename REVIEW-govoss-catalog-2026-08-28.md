@@ -9,9 +9,11 @@
 > | **F3** crashed liveness shows green | `100e757` | annotates `summary.failed_at`/`last_error`, preserves `checked`; page warns |
 > | **F4** unmapped taxonomy value reaches nobody | `100e757` | `out/taxonomy_unmapped.json`; page warns naming the values |
 >
-> **F5–F8 remain open** (dedupe re-run wipes provenance; translation-key rot;
-> Vercel stored-login; one test file). **None of this has run unattended yet** —
-> 2026-09-14 07:00 is the first scheduled run to exercise it.
+> | **F5** re-running dedupe wipes provenance | `2026-09-10` | `stage_guard.assert_pre_dedupe()`; both dedupe **and taxonomy** refuse on merged input |
+>
+> **F6–F8 remain open** (translation-key rot; Vercel stored-login; one test
+> file). **None of this has run unattended yet** — 2026-09-14 07:00 is the first
+> scheduled run to exercise it.
 >
 > Three bugs were found *while fixing*, all invisible to reading: the F1 warning
 > was a silent no-op keyed on the wrong dict (`"DK/os2"` vs `"os2"`); `NOW` was
@@ -155,6 +157,29 @@ of that one theme.
   (or skip the reset when `catalogue_entries` exists).
 - **Confidence: confirmed** by code reading; not executed against the live file (would
   have modified state mid-review).
+
+**CLOSED 2026-09-10 — `stage_guard.py`, and the review's parenthetical was the wrong
+one of its two options.** "Skip the reset when `catalogue_entries` exists" makes the
+stage merge-aware, which means a record that legitimately *stopped* being listed by
+three catalogues keeps its stale count forever, with nothing to say so — a loud bug
+traded for a silent permanent one, in the reassuring direction. So it refuses, with no
+`--force`; the way forward is `harvest.py --from-cache`, which is offline and cheap.
+
+**Executing it found a second instance the code reading missed, exactly where the
+review said to look** ("all in-place catalog.json writers share the shape"):
+**`taxonomy.py` has the same defect.** `functions` is in `dedupe.py:UNION_LIST`, so a
+survivor carries functions from its merge partners, and `classify()` recomputes from
+the survivor alone — returning at most one function from the inference branch, and
+never consulting inference once a source category maps. A second pass **narrows 45
+entries** (7-Zip loses `data-analytics`, Apache HTTP Server `infrastructure`, Decidim
+`citizen-services`). Both stages now call the same guard.
+
+Verified by sabotage, not by watching it pass: with the guard stubbed to `return
+False`, both stages exit **0** and modify `catalog.json` — the silent destruction, run
+for real against a backed-up copy rather than reasoned about. `test_stage_guard.py`
+locks in both directions, including the two implementation mistakes that would leave
+the guard useless (`all()` for `any()`, forgetting to skip `excluded` rows) and a
+subprocess case asserting `catalog.json` is byte-identical after a refusal.
 
 ### F6 · LOW · Translation-key rot is invisible
 `merge_translations.py` (no orphan report)

@@ -593,6 +593,44 @@ fork or mirror, and the declared url is the identity.
 `endswith()` test failed for the real project *and* every fork, and richness alone handed the
 entry to `tlrz/opendesk` — a fork.
 
+### `stage_guard.py` — two stages REFUSE to run out of order
+
+`run.sh`'s ordering is load-bearing, and `taxonomy.py` and `dedupe.py` are **destructive**
+when run on an already-merged `catalog.json` — silently, exiting 0. Both compute a field from
+scratch, and both fields can also carry information that only the merge produced and the
+survivor's own record cannot reconstruct:
+
+- **`dedupe.py`** — a second pass sees each survivor as a group of ONE, takes the
+  `len(g) == 1` branch, and resets `catalogue_entries` to a single-element list with
+  `catalogue_count = 1`. The "In N catalogues" pill — 98 entries, and the whole point of a
+  union catalogue — gone, no error. (Review F5.)
+- **`taxonomy.py`** — `functions` is in `dedupe.py:UNION_LIST`, so a survivor carries
+  functions its merge partners contributed. `classify()` recomputes from the survivor alone,
+  returns at most **one** function from the inference branch, and never consults inference
+  once a source category maps. A second pass **narrows 45 entries** (7-Zip loses
+  `data-analytics`, Apache HTTP Server `infrastructure`, Decidim `citizen-services`).
+
+Both now call `stage_guard.assert_pre_dedupe()`, which exits 2 if any **active** row carries
+`catalogue_count`. (Active only: the 484 set-aside rows never get one, so a guard requiring it
+on every row could never fire.) Raw checkpoints carry no `catalogue_count`, so
+`harvest.py --from-cache` restores the pre-dedupe shape and the guard passes again.
+
+⚠ **It REFUSES. Do not make it merge-aware, and do not add `--force`.** Unioning the
+recomputed value with the stored one is the obvious fix and it is wrong: a mapping corrected
+in `taxonomy.py:M`, or a record that legitimately stopped being listed by three catalogues,
+would keep its stale value forever with nothing to say so. That trades a loud bug for a
+silent permanent one, in the reassuring direction — the same shape as an API 404 read as a
+dead repo, or a green pipeline log over a dead harvest.
+
+⚠ **A by-hand re-run is therefore the wrong way to verify a change to either stage.** Dry-run
+the pure function instead, and diff it against itself with and without your edit — that is
+what separates your 1 change from the 45 the merge accounts for.
+
+`test_stage_guard.py` was verified by **sabotage**: stubbed to `return False`, both stages
+exit 0 and modify `catalog.json`. Its first version asked `is_post_dedupe()` whether
+`catalog.json` was merged, so a broken guard made the test *skip* the cases that prove
+destruction — a test must never ask the thing it tests whether to run its hardest case.
+
 ## Agent discoverability
 
 The page tells agents not to scrape it, in four places, because the first consumer probed
@@ -865,6 +903,9 @@ anything else:
   and exits 1 with instructions if none has them. **The publish step hit the identical bug
   from the other direction** — `vercel` was on PATH but its `#!/usr/bin/env node` was not.
   Treat "works in my shell, not under launchd" as a PATH question first, every time.
+- **Two stages refuse to run on already-merged `catalog.json`** (`taxonomy.py`, `dedupe.py`)
+  — see `stage_guard.py`. If one exits 2 saying REFUSING, rebuild with
+  `python3 harvest.py --from-cache`; do not reach for a force flag, there isn't one.
 - **Harvest checkpoints per source** to `cache/src_<key>.json` the moment a source succeeds,
   and `catalog.json` is assembled from *every* checkpoint on disk. This exists because a DNS
   blip once killed four sources and overwrote a complete catalogue with a partial one.

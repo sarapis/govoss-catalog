@@ -16,6 +16,8 @@ never mistaken for source data.
 """
 import json, os, re, collections
 
+import stage_guard
+
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 FUNCTIONS = {
@@ -244,6 +246,10 @@ def classify(rec):
 
 if __name__ == "__main__":
     c = json.load(open(f"{OUT}/catalog.json"))
+    # `functions` is union'd on merge (dedupe.py:UNION_LIST), and classify()
+    # recomputes it from this record alone — so a second pass over merged output
+    # silently NARROWS 45 entries. See stage_guard.py.
+    stage_guard.assert_pre_dedupe(c, "taxonomy.py")
     unmapped = collections.Counter()
     stats = collections.Counter()
     fcount = collections.Counter()

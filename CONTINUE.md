@@ -110,6 +110,28 @@ hard gate reads sensors that cannot trip.*
 
 All four self-clear on success, which was verified rather than assumed.
 
+**F5 also closed — `stage_guard.py`.** `dedupe.py` **and `taxonomy.py`** now refuse to run
+on an already-merged `catalog.json` (marker: `catalogue_count` on an active row). Both were
+destroying data only the merge has: dedupe resets `catalogue_count` to 1 on every survivor,
+wiping the "In N catalogues" pill; taxonomy narrows `functions` on **45 entries**, because
+`functions` is union'd in `dedupe.py:UNION_LIST` and `classify()` only sees the survivor.
+Three things about it worth not re-litigating:
+
+- **It refuses; it is not merge-aware, and there is no `--force`.** Unioning the recomputed
+  value with the stored one is the obvious fix and it is wrong — a corrected mapping, or a
+  record that legitimately stopped being multi-catalogue, would keep its stale value forever
+  with nothing to say so. That is a loud bug traded for a silent permanent one. The way
+  forward is `python3 harvest.py --from-cache`, which is offline and cheap.
+- **Verified by sabotage.** Stubbed to `return False`, both stages exit **0** and modify
+  `catalog.json` — the destruction observed, not inferred. `test_stage_guard.py` locks in
+  both directions plus the two mistakes that would make the guard useless (`all()` for
+  `any()`; forgetting to skip `excluded` rows, which never carry the marker).
+- **The first version of the test had the hole this repo keeps hitting.** It asked
+  `stage_guard.is_post_dedupe()` whether `catalog.json` was merged, so a sabotaged no-op
+  guard reported "not merged" and the test *skipped* its subprocess cases — the ones that
+  prove destruction is prevented — precisely when the guard was broken. A test must never
+  ask the thing it is testing whether to run its hardest case.
+
 ## Shipped 2026-08-13/14
 
 - **govoss left the CTFG design system** for `@wegovnyc/design-tokens` v0.7.0 under a `govoss`
@@ -156,22 +178,15 @@ All four self-clear on success, which was verified rather than assumed.
    ⚠ The rule still stands for the next one: do **not** silence an unmapped value by widening
    a bucket — the warning is only useful near zero.
 
-2. **F5–F8 from the review are open**, in the review's own words:
-   - **F5** re-running `dedupe.py` by hand on already-merged output silently wipes
-     `catalogue_count`/`catalogue_entries` — the "In N catalogs" pill (`dedupe.py:211`).
-     ⚠ **`taxonomy.py` has the same defect, found 2026-09-10 and not yet in the review.**
-     `functions` is in `dedupe.py:UNION_LIST`, so a merge survivor carries functions its own
-     categories and description do not support; re-running `taxonomy.py` by hand on the
-     committed (post-dedupe) `catalog.json` narrows **45 entries**. Harmless in `run.sh`,
-     where taxonomy precedes dedupe — but it means a by-hand taxonomy run is not idempotent,
-     and the two fixes are probably one fix. It also makes any by-hand re-run a bad way to
-     verify a taxonomy change: dry-run `classify()` instead, and diff it against itself with
-     and without your edit to see what is actually attributable to you.
+2. **F6–F8 from the review are open** (F5 closed 2026-09-10 — see below), in the review's
+   own words:
    - **F6** translation-key rot is unreported (no orphan warning, unlike `replaces.json`).
+     This is the last instance of the one idea at the top of this file still open.
    - **F7** deploy rests on the Vercel CLI's stored login; `~/.config/govoss/vercel-token`
      does not exist (verified).
-   - **F8** the test suite is one file. Dedupe identity and liveness's two-strike logic are
-     the same shape of regression-prone pure function that earned `detect_lang` its suite.
+   - **F8** the test suite is **two** files now (`test_stage_guard.py` landed with F5), but
+     dedupe identity and liveness's two-strike logic are still the same shape of
+     regression-prone pure function that earned `detect_lang` its suite.
 
 3. **Expand `replaces.json`.** 194 of 2,834 entries → 290 products. Read the `_README` block
    first: `kind` (`software` / `service` / `paid-tier`) and `confidence` both matter, and
