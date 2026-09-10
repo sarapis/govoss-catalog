@@ -43,15 +43,17 @@ the page already looks."
 
 ### Waiting on a human — not work that was skipped
 
-- **Which function `scheduling` maps to** (item 1). Three plausible homes; a wrong pick is a
-  confident category error, which is the failure `kind`/`confidence` exist to prevent.
 - **The demand-side go/no-go** (item 0) — a scope decision about what the catalogue *is*.
 - **A Vercel deploy token** (F7) — a credential decision.
 
 ### Traps — looks broken but is not, and vice versa
 
-- **`/sources.html` reading `warn` is CORRECT right now.** `scheduling` is genuinely
-  unmapped. Do not chase it as a regression.
+- **`/sources.html` reads `warn` until the next run, and that is not a regression.**
+  `scheduling` was the only unmapped value and it was mapped on 2026-09-10, but
+  `out/taxonomy_unmapped.json` and `site/status.json` are per-run artefacts — they still
+  hold the pre-fix state, so local reads `warn` until `taxonomy.py` runs again. Verified by
+  dry-running `classify()` over the whole catalogue: the unmapped set is now empty, so the
+  warning self-clears on 09-14.
 - **Live says `ok`, local says `warn`.** The live copy was built 09-07, before these fixes.
   Not drift — just an unpublished change. It resolves itself on 09-14.
 - **`cache/_fetched.json` has 16 entries, not 17.** `nlreg` is key-gated and absent from
@@ -79,9 +81,12 @@ What to look at:
   this week left no trace anywhere. It holds **16** entries today and should hold **17**
   after the run: the bootstrap iterated `sources.py`, which has no row for the key-gated
   `nlreg`, but `harvest.py` does harvest it.
-- **`/sources.html` should read `warn`, for `scheduling` only** (see item 1). Anything else
-  is new. ⚠ The LIVE page reads `ok` until that run: it was built 09-07, before these fixes.
-  Local `site/status.json` already reads `warn` — do not mistake that gap for a bug.
+- **`/sources.html` should read `ok`.** `scheduling` — the one unmapped value, and the only
+  thing that had it at `warn` — was mapped on 2026-09-10, so this is the run where
+  `out/taxonomy_unmapped.json` is rewritten to `{}` and the warning self-clears. A `warn`
+  naming any *other* value is new and real. ⚠ Both the LIVE page and the local
+  `site/status.json` read `warn`/`ok` from artefacts built before that fix — do not mistake
+  either gap for a bug.
 - **The GitHub-backed sources (BE, BG, PT, IE, DK/os2) run authenticated for the first
   time.** Counts should not move; `_timing.json` may drop.
 
@@ -133,14 +138,35 @@ All four self-clear on success, which was verified rather than assumed.
    product names normalise across two. A day's work, and it decides everything after it.
    Read this before doing (1) — it may reorder the work.
 
-1. **Map `scheduling` in `taxonomy.py:M`** — one line, and it is why `/sources.html` reads
-   `warn`. One entry ships unclassified. It is an editorial call between `case-workflow`,
-   `collaboration` and `hr-workforce`, which is why the fixing session did not choose.
-   ⚠ Do **not** silence it by widening a bucket — the warning is only useful near zero.
+1. ~~**Map `scheduling` in `taxonomy.py:M`.**~~ **Done 2026-09-10 — `scheduling` →
+   `case-workflow`.** It was NOT the three-way editorial call recorded here, and the two
+   reasons are worth keeping:
+   - **`M` already maps the whole sibling family to `case-workflow`** —
+     `appointment-scheduling`, `online-booking`, `booking-and-reservation`,
+     `calendar-management`, `termine`, `event-management`. Putting `scheduling` anywhere else
+     would have split one concept across two functions, which is the drift `M` exists to
+     collapse. So this is not widening a bucket to silence the alarm.
+   - **No entry was shipping unclassified.** The single entry is `newdle` (DE/openCode,
+     CERN/Indico's meeting-scheduling tool), whose categories are
+     `['scheduling', 'project-collaboration']` — the second already mapped, so it carried
+     `functions: ['case-workflow']` throughout. The unmapped value cost a *signal*, never a
+     classification.
+   Verified by dry-running `classify()` over all 3,318 rows: unmapped set now empty, and the
+   change is provably output-neutral (identical diff computed with and without the mapping).
+   ⚠ The rule still stands for the next one: do **not** silence an unmapped value by widening
+   a bucket — the warning is only useful near zero.
 
 2. **F5–F8 from the review are open**, in the review's own words:
    - **F5** re-running `dedupe.py` by hand on already-merged output silently wipes
      `catalogue_count`/`catalogue_entries` — the "In N catalogs" pill (`dedupe.py:211`).
+     ⚠ **`taxonomy.py` has the same defect, found 2026-09-10 and not yet in the review.**
+     `functions` is in `dedupe.py:UNION_LIST`, so a merge survivor carries functions its own
+     categories and description do not support; re-running `taxonomy.py` by hand on the
+     committed (post-dedupe) `catalog.json` narrows **45 entries**. Harmless in `run.sh`,
+     where taxonomy precedes dedupe — but it means a by-hand taxonomy run is not idempotent,
+     and the two fixes are probably one fix. It also makes any by-hand re-run a bad way to
+     verify a taxonomy change: dry-run `classify()` instead, and diff it against itself with
+     and without your edit to see what is actually attributable to you.
    - **F6** translation-key rot is unreported (no orphan warning, unlike `replaces.json`).
    - **F7** deploy rests on the Vercel CLI's stored login; `~/.config/govoss/vercel-token`
      does not exist (verified).

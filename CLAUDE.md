@@ -322,10 +322,22 @@ reads, and it fired unnoticed on 2026-08-24
 (`information-and-communication-technology`, 2 entries) and again on 09-07 (`scheduling`, 1) —
 all of them shipping unclassified. `taxonomy.py` writes `out/taxonomy_unmapped.json`
 (gitignored, per-run) and `build_sources.py` warns on it by name. It self-clears: a run with
-nothing unmapped writes `{}` and the warning disappears. ⚠ **`/sources.html` reads `warn`
-today because `scheduling` is genuinely unmapped** — that is the feature working, and the fix
-is one line in `taxonomy.py:M`. Do not silence it by widening a bucket; the point of the
-warning is that it stays near zero.
+nothing unmapped writes `{}` and the warning disappears. Do not silence an unmapped value by
+widening a bucket; the point of the warning is that it stays near zero.
+
+**`scheduling` was the last one, mapped 2026-09-10 → `case-workflow`.** Recorded because the
+reasoning is the template for the next unmapped value: `M` already mapped the entire sibling
+family there (`appointment-scheduling`, `online-booking`, `booking-and-reservation`,
+`calendar-management`, `termine`, `event-management`), so any other home would have split one
+concept across two functions. And the entry it belonged to — `newdle`, CERN/Indico's meeting
+scheduler — was **never unclassified**: its other category `project-collaboration` already
+mapped, so the unmapped value cost a signal, not a classification. Check both before treating
+an unmapped value as an editorial judgement call; this one only looked like one.
+
+⚠ **`out/taxonomy_unmapped.json` and `site/status.json` are per-run artefacts, so a mapping
+fix does not clear the page until the next run.** A local `warn` naming a value you just
+mapped is stale output, not a failed fix — confirm by dry-running `classify()` rather than by
+reading the page.
 
 ## Liveness monitor
 
