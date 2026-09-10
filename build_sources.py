@@ -195,6 +195,41 @@ def build():
                                  "entries ship unclassified: %s — add them to taxonomy.py:M"
                                  % (len(unmapped), top)))
 
+    # ---- orphaned translation keys (F6)
+    #
+    # Rot is EXPECTED to be non-zero and slowly growing: upstream rewords text,
+    # and the translation for the old wording stops applying. So the total alone
+    # cannot be the trigger — 59 orphans on the day this shipped would mean the
+    # page reads warn from day one for a pre-existing backlog, and a warning that
+    # is always on is one you stop reading. The DELTA is the signal, which is the
+    # same call liveness.py already makes: "3 newly-dead repos" over "81 dead".
+    #
+    # ⚠ A missing previous figure is NOT zero. runs[-2] predates F6 and has no
+    # orphan_keys, and treating that as 0 would report the whole standing backlog
+    # as new rot on the first run — a false alarm on day one, which is exactly
+    # how a reader learns to ignore this page.
+    try:
+        with open(f"{OUT}/out/translation_orphans.json") as fh:
+            orph = json.load(fh) or {}
+    except Exception:
+        orph = {}
+    n_orph = orph.get("total")
+    if isinstance(n_orph, int) and n_orph:
+        # runlog.py runs BEFORE this page, so runs[-1] is the run being reported
+        # and runs[-2] is the previous one.
+        prev_orph = ((runs[-2].get("translation") or {}).get("orphan_keys")
+                     if len(runs) > 1 else None)
+        worst = max(((v.get("orphans") or 0, k)
+                     for k, v in (orph.get("by_file") or {}).items()),
+                    default=(0, None))
+        if isinstance(prev_orph, int) and n_orph > prev_orph:
+            problems.append(("warn", "%d translation key(s) went stale this run (%d total): "
+                                     "upstream reworded the text, so those entries fall back "
+                                     "to the foreign original%s — see "
+                                     "out/translation_orphans.json"
+                             % (n_orph - prev_orph, n_orph,
+                                (", mostly %s" % worst[1]) if worst[1] else "")))
+
     state = ("critical" if any(p[0] == "critical" for p in problems)
              else "warn" if any(p[0] == "warn" for p in problems) else "ok")
 

@@ -289,6 +289,27 @@ carry surrounding whitespace, and keys built from `.strip()`ed text silently mat
 Do not "fix" this by stripping in `merge_translations.py`: that would invalidate every key in
 every `tr_*.json` at once.
 
+**Rotted keys are reported (`out/translation_orphans.json`).** When upstream rewords a
+description its translation stops applying and the entry falls back to the foreign original —
+documented and accepted, but until 2026-09-10 nothing said it happened, so the only symptom
+was the English-coverage tile drifting down by ones. **59 of 1,762 keys are orphaned today**
+(3%). `runlog.py` trends the total into `history.json`; `build_sources.py` warns when it
+GROWS.
+
+⚠ **"Keys this merge pass looked up" is the natural definition of orphaned and it is
+unusable.** A merged row carries `translated: True` and short-circuits before the lookup, so
+on already-merged input that rule reports **1,762 of 1,762** — measured. The live set is built
+from the SOURCE TEXT still in the catalogue: `short_desc` (the original on a raw row) **and**
+`desc_src` (the original on a merged one). That is re-run-stable by construction, and was
+checked against all 1,731 merged rows carrying a `desc_src` — zero false orphans.
+
+⚠ **The trigger is GROWTH, not the total, and a missing previous figure is not zero.** Rot is
+expected to be non-zero and slowly rising, so alarming on 59 would leave the page reading
+`warn` permanently — which is how a reader learns to ignore it, the same end state as no
+sensor. And `runs[-2]` predates the field: treating its absent `orphan_keys` as 0 would report
+the entire standing backlog as new rot on the first run. Both are the same rule the liveness
+monitor already follows — the delta is the part with value.
+
 **The stat tile used to overstate this**, and the shape is worth remembering. It computed
 `n_en + n_tr` where `n_en` was "has a description and is not machine-translated" — which
 counts HAVING A DESCRIPTION and calls it English, so every Bulgarian row counted as English.

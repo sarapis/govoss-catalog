@@ -19,10 +19,17 @@ file). Scheduled Mondays 07:00 — `bash schedule/install.sh`.
 **Every failure sensor in this pipeline was a `print`, and the one hard gate reads sensors
 that cannot trip.** `steps.tsv` was built so the end state cannot hide a failed *step* — and
 then failed sources, a crashed monitor, unmapped taxonomy values and rotted translation keys
-all learned to hide inside steps that exit 0. The 2026-09-10 fixes moved four of those into
-files the status page reads. **F6 (translation-key rot) is the same shape and is still
-open.** When you find the next one, the fix is not "add a warning"; it is "write it where
-the page already looks."
+all learned to hide inside steps that exit 0. The 2026-09-10 fixes moved **all five** of
+those into files the status page reads — F1 `cache/_fetched.json`, F3 `summary.failed_at`,
+F4 `out/taxonomy_unmapped.json`, F6 `out/translation_orphans.json` — plus F5, which was the
+same idea one layer down: a stage that destroys data has to *refuse*, not report.
+
+**So the known instances are closed, and the rule is what survives:** when you find the next
+one, the fix is not "add a warning"; it is "write it where the page already looks." Two
+corollaries this week earned the hard way — **the total is rarely the trigger** (rot that is
+expected to grow needs a delta, or the page reads `warn` forever and nobody reads it), and
+**a missing previous measurement is not zero** (that turns a standing backlog into a day-one
+false alarm).
 
 ### Invariants — break these and something already fixed re-breaks
 
@@ -110,6 +117,33 @@ hard gate reads sensors that cannot trip.*
 
 All four self-clear on success, which was verified rather than assumed.
 
+**F6 also closed — `out/translation_orphans.json`.** `merge_translations.py` now reports
+tr_*.json keys whose source text is no longer in the catalogue: **59 of 1,762 today** (3%).
+The entry falls back to its foreign original, which stays documented and accepted — what was
+missing was any report that it happened. `runlog.py` records the total into `history.json`
+and `build_sources.py` warns when it **grows**. Three decisions worth not re-litigating:
+
+- **The obvious implementation is wrong, badly.** "Keys this merge pass actually looked up"
+  is the natural reading, and a merged row carries `translated: True` and short-circuits
+  before the lookup — so on already-merged input it reports **1,762 of 1,762 keys orphaned**
+  against a real 59. Measured, not imagined. The rule instead hashes the SOURCE TEXT still in
+  the catalogue, from `short_desc` (the original on a raw row) **and** `desc_src` (the
+  original on a merged one), which is stable across re-runs by construction. Verified against
+  all 1,731 merged rows carrying a `desc_src`: zero false orphans.
+- **The DELTA is the trigger, not the total.** Rot is expected to be non-zero and slowly
+  growing, so warning on 59 would have shipped a page that reads `warn` from day one for a
+  pre-existing backlog — and a warning that is always on is one you stop reading. Same call
+  `liveness.py` already makes: "3 newly-dead repos" over "81 dead".
+- **A missing previous figure is NOT zero.** `runs[-2]` predates F6 and has no
+  `orphan_keys`; treating that as 0 would have reported the whole standing backlog as new rot
+  on the first run. Verified across the whole matrix (prev absent / 59→60 / flat / improved /
+  0→60): only genuine growth warns.
+
+`test_translation_orphans.py` locks in both rules side by side, so the naive one cannot look
+reasonable to the next reader, and was checked by sabotage — dropping `desc_src` from the
+live set, and stripping text before hashing (the Bulgarian whitespace trap), each fail
+several assertions.
+
 **F5 also closed — `stage_guard.py`.** `dedupe.py` **and `taxonomy.py`** now refuse to run
 on an already-merged `catalog.json` (marker: `catalogue_count` on an active row). Both were
 destroying data only the merge has: dedupe resets `catalogue_count` to 1 on every survivor,
@@ -178,15 +212,15 @@ Three things about it worth not re-litigating:
    ⚠ The rule still stands for the next one: do **not** silence an unmapped value by widening
    a bucket — the warning is only useful near zero.
 
-2. **F6–F8 from the review are open** (F5 closed 2026-09-10 — see below), in the review's
-   own words:
-   - **F6** translation-key rot is unreported (no orphan warning, unlike `replaces.json`).
-     This is the last instance of the one idea at the top of this file still open.
+2. **F7–F8 from the review are open** (F5 and F6 closed 2026-09-10 — see below), in the
+   review's own words:
    - **F7** deploy rests on the Vercel CLI's stored login; `~/.config/govoss/vercel-token`
      does not exist (verified).
-   - **F8** the test suite is **two** files now (`test_stage_guard.py` landed with F5), but
-     dedupe identity and liveness's two-strike logic are still the same shape of
-     regression-prone pure function that earned `detect_lang` its suite.
+   - **F8** the test suite is **three** files now (`test_stage_guard.py` with F5,
+     `test_translation_orphans.py` with F6), but **dedupe identity and liveness's two-strike
+     logic still have none**, and they are the same shape of regression-prone pure function
+     that earned `detect_lang` its suite. This is the one genuinely open piece of the
+     review's central theme.
 
 3. **Expand `replaces.json`.** 194 of 2,834 entries → 290 products. Read the `_README` block
    first: `kind` (`software` / `service` / `paid-tier`) and `confidence` both matter, and

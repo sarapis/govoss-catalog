@@ -11,9 +11,11 @@
 >
 > | **F5** re-running dedupe wipes provenance | `2026-09-10` | `stage_guard.assert_pre_dedupe()`; both dedupe **and taxonomy** refuse on merged input |
 >
-> **F6–F8 remain open** (translation-key rot; Vercel stored-login; one test
-> file). **None of this has run unattended yet** — 2026-09-14 07:00 is the first
-> scheduled run to exercise it.
+> | **F6** translation-key rot is invisible | `2026-09-10` | `out/translation_orphans.json`; page warns on GROWTH, runlog trends it |
+>
+> **F7–F8 remain open** (Vercel stored-login; test coverage for dedupe identity
+> and liveness's two-strike logic). **None of this has run unattended yet** —
+> 2026-09-14 07:00 is the first scheduled run to exercise it.
 >
 > Three bugs were found *while fixing*, all invisible to reading: the F1 warning
 > was a silent no-op keyed on the wrong dict (`"DK/os2"` vs `"os2"`); `NOW` was
@@ -191,6 +193,26 @@ subprocess case asserting `catalog.json` is byte-identical after a refusal.
 - **Fix:** print (and count into history) unmatched-key totals per tr file.
 - **Confidence: confirmed.**
 
+**CLOSED 2026-09-10.** Done as specified — per-file totals printed,
+`out/translation_orphans.json` written for the page, total trended into `history.json` —
+plus two things the finding did not anticipate:
+
+**The natural implementation of "unmatched" is unusable.** "Keys this pass looked up" reports
+**1,762 of 1,762 orphaned** on already-merged input, because a merged row carries
+`translated: True` and short-circuits before the lookup. The rule hashes the source text
+still present in the catalogue — `short_desc` on a raw row, `desc_src` on a merged one —
+giving a re-run-stable **59 of 1,762** (3%). Checked against all 1,731 merged rows carrying a
+`desc_src`: zero false orphans.
+
+**The total cannot be the trigger.** Rot is expected to be non-zero and slowly growing, so
+warning on the standing 59 would ship a page reading `warn` from day one — the state in which
+a reader stops looking, which is the same end state as no sensor. `build_sources.py` warns on
+GROWTH against the previous run, and treats a missing previous figure as unknown rather than
+zero; the whole matrix was verified (prev absent / 59→60 / flat / improved / 0→60).
+
+`test_translation_orphans.py` exercises both rules side by side and was validated by
+sabotage.
+
 ### F7 · LOW · Deploy auth rests on the Vercel CLI's stored login
 `run.sh:205-208`; verified: `~/.config/govoss/vercel-token` does not exist, no
 `VERCEL_TOKEN` in the plist
@@ -263,6 +285,14 @@ hide inside steps that exit 0. The fix is one habit applied five times: everythi
 currently printed as `!!` should also land in `history.json` and render as a chip on
 /sources.html, which is exactly the pull-based surface the task-drift strip already
 proved out.
+
+**Applied all five times as of 2026-09-10** (F1 `cache/_fetched.json`, F3
+`summary.failed_at`, F4 `out/taxonomy_unmapped.json`, F6 `out/translation_orphans.json`,
+and F5 by refusing rather than reporting). Two refinements the habit needed in practice:
+the **total is rarely the trigger** — a sensor for something expected to grow needs a
+delta, or the page reads `warn` forever and stops being read — and **a missing previous
+measurement is not zero**, which otherwise converts a standing backlog into a day-one
+false alarm. Both are the rule `liveness.py` already followed.
 
 ## Killed in phase 3½ (7)
 

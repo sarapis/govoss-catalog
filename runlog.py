@@ -79,6 +79,11 @@ def main():
     catalogues = collections.Counter(
         s for r in active for s in (r.get("sources") or [r.get("source")]) if s)
 
+    # orphaned translation keys (F6), written by merge_translations.py. Recorded
+    # so the count TRENDS: 59 orphans is a number nobody reads, +6 since last week
+    # is a signal — the same reason liveness reports its delta rather than a total.
+    orph = load(f"{OUT}/out/translation_orphans.json", {}) or {}
+
     translated = sum(1 for r in active if r.get("translated"))
     described = sum(1 for r in active if r.get("short_desc"))
     src_en = sum(1 for r in active if r.get("short_desc") and not r.get("translated"))
@@ -105,6 +110,11 @@ def main():
             "source_english": src_en,
             "machine_translated": translated,
             "coverage_pct": round(100 * (src_en + translated) / described, 1) if described else None,
+            # None, not 0, when the file is absent (a run predating F6, or a
+            # --from-cache rebuild that skipped the merge step). 0 would claim
+            # "no rot" for "never measured" — this repo's bug 3.
+            "orphan_keys": orph.get("total"),
+            "translation_keys": orph.get("keys_total"),
         },
         "categorisation": {
             "classified": sum(1 for r in active if r.get("functions")),
@@ -142,6 +152,10 @@ def main():
                if v["records"] != ps.get(k, {}).get("records")}
         if per:
             d["per_source"] = per
+        po = (prev.get("translation") or {}).get("orphan_keys")
+        co = rec["translation"]["orphan_keys"]
+        if isinstance(po, int) and isinstance(co, int) and po != co:
+            d["translation_orphan_keys"] = co - po
         for k in ("dead", "ok", "unknown"):
             pv, cv = (prev.get("liveness") or {}).get(k), rec["liveness"].get(k)
             if isinstance(pv, int) and isinstance(cv, int) and pv != cv:
