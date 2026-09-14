@@ -227,6 +227,38 @@
   "desc_lang": "en",
   "dpg": true,
   "dpg_type": [
+   "Open Software"
+  ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/agrios",
+  "keywords": [
+   "SDG1",
+   "SDG2",
+   "SDG8",
+   "SDG9"
+  ],
+  "landing": "https://www.agrios.org/",
+  "license": "LGPL-3.0",
+  "name": "AgriOS",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/advanceinsight/AgriOS",
+  "repo_key": "github.com/advanceinsight/agrios",
+  "repo_owner": "AgriOS",
+  "sdgs": [
+   "SDG1: End Poverty in all its forms everywhere",
+   "SDG2: Zero Hunger",
+   "SDG8: Decent Work and Economic Growth",
+   "SDG9: Industry\u00b8 Innovation and Infrastructure"
+  ],
+  "short_desc": "AgriOS is an open-source, subscription-free ERP designed for African agri-SMEs. It integrates business operations with traceability to improve efficiency, ensure compliance, and unlock access to finance.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0092909"
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
    "Open Data"
   ],
   "entry_url": "https://www.digitalpublicgoods.net/r/agris-open-data-set",
@@ -3099,6 +3131,42 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/gdevelop",
+  "keywords": [
+   "SDG4",
+   "SDG8"
+  ],
+  "landing": "https://gdevelop.io",
+  "license": "MIT",
+  "name": "GDevelop",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/4ian/GDevelop",
+  "repo_key": "github.com/4ian/gdevelop",
+  "repo_owner": "GDevelop",
+  "sdgs": [
+   "SDG4: Quality Education",
+   "SDG8: Decent Work and Economic Growth"
+  ],
+  "short_desc": "GDevelop is an open-source, cross-platform 2D/3D/multiplayer game engine designed for everyone.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0091478",
+  "used_by": [
+   "Australia",
+   "Brazil",
+   "Canada",
+   "Colombia",
+   "France",
+   "Paraguay"
+  ]
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
   "entry_url": "https://www.digitalpublicgoods.net/r/geoprism-registry",
   "keywords": [
    "SDG3",
@@ -4384,94 +4452,24 @@
   ],
   "entry_url": "https://www.digitalpublicgoods.net/r/kobotoolbox",
   "keywords": [
-   "SDG3",
-   "SDG4",
-   "SDG5",
-   "SDG10",
-   "SDG11",
-   "SDG13"
+   "SDG9",
+   "SDG16"
   ],
   "landing": "https://www.kobotoolbox.org",
   "license": "AGPL-3.0",
   "name": "KoboToolbox",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "repo": "https://github.com/kobotoolbox/",
-  "repo_key": "github.com/kobotoolbox",
+  "repo": "https://github.com/kobotoolbox/kpi",
+  "repo_key": "github.com/kobotoolbox/kpi",
   "repo_owner": "KoboToolbox",
   "sdgs": [
-   "SDG3: Good Health and Well-Being",
-   "SDG4: Quality Education",
-   "SDG5: Gender Equity",
-   "SDG10: Reduced Inequalities",
-   "SDG11: Sustainable Cities and Communities",
-   "SDG13: Climate Action"
+   "SDG9: Industry\u00b8 Innovation and Infrastructure",
+   "SDG16: Peace\u00b8 Justice and Strong Institutions"
   ],
-  "short_desc": "KoboToolbox is an open source platform for the collection, management, and visualization of data. As the most widely used primary data collection tool in the nonprofit sector, it is the tool of choice for over 16,000 social impact organizations worldwide.",
+  "short_desc": "KoboToolbox is an open source platform for the collection, management, and visualization of data. As the most widely used primary data collection tool in the nonprofit sector, it is the tool of choice for over 32,000 social impact organizations worldwide.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090130",
-  "used_by": [
-   "Afghanistan",
-   "Albania",
-   "Algeria",
-   "Andorra",
-   "Angola",
-   "Antigua and Barbuda",
-   "Argentina",
-   "Armenia",
-   "Australia",
-   "Austria",
-   "Azerbaijan",
-   "Bahamas",
-   "Bahrain",
-   "Bangladesh",
-   "Barbados",
-   "Belarus",
-   "Belgium",
-   "Belize",
-   "Benin",
-   "Bhutan",
-   "Bolivia",
-   "Bosnia and Herzegovina",
-   "Botswana",
-   "Brazil",
-   "Brunei",
-   "Bulgaria",
-   "Burkina Faso",
-   "Burundi",
-   "Cabo Verde",
-   "Cambodia",
-   "Cameroon",
-   "Canada",
-   "Central African Republic",
-   "Chad",
-   "Chile",
-   "China",
-   "Colombia",
-   "Comoros",
-   "Congo (Congo-Brazzaville)",
-   "Costa Rica",
-   "Croatia",
-   "Cuba",
-   "Cyprus",
-   "Czechia (Czech Republic)",
-   "Democratic Republic of the Congo",
-   "Denmark",
-   "Djibouti",
-   "Dominica",
-   "Dominican Republic",
-   "Ecuador",
-   "Egypt",
-   "El Salvador",
-   "Equatorial Guinea",
-   "Eritrea",
-   "Estonia",
-   "Ethiopia",
-   "Fiji",
-   "Finland",
-   "France",
-   "Gabon"
-  ]
+  "upstream_id": "GID0090130"
  },
  {
   "country": "GLOBAL",
@@ -4775,6 +4773,41 @@
    "Colombia",
    "France",
    "Gambia",
+   "United Kingdom"
+  ]
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/localgov-drupal",
+  "keywords": [
+   "SDG8",
+   "SDG10",
+   "SDG17"
+  ],
+  "landing": "https://localgovdrupal.org/",
+  "license": "GPL-2.0",
+  "name": "LocalGov Drupal",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://git.drupalcode.org/project/localgov",
+  "repo_key": "git.drupalcode.org/project/localgov",
+  "repo_owner": "LocalGov Drupal",
+  "sdgs": [
+   "SDG8: Decent Work and Economic Growth",
+   "SDG10: Reduced Inequalities",
+   "SDG17: Partnerships for the Goals"
+  ],
+  "short_desc": "LocalGov Drupal is an open source content management system, built on Drupal, optimised for use by public sector organisations for their public facing corporate websites.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0090666",
+  "used_by": [
+   "Ireland",
+   "Scotland",
    "United Kingdom"
   ]
  },
@@ -7696,6 +7729,38 @@
   "used_by": [
    "Brazil"
   ]
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/rafiki",
+  "keywords": [
+   "SDG8",
+   "SDG9",
+   "SDG10",
+   "SDG17"
+  ],
+  "landing": "https://rafiki.dev",
+  "license": "Apache-2.0",
+  "name": "Rafiki",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/interledger/rafiki",
+  "repo_key": "github.com/interledger/rafiki",
+  "repo_owner": "Rafiki",
+  "sdgs": [
+   "SDG8: Decent Work and Economic Growth",
+   "SDG9: Industry\u00b8 Innovation and Infrastructure",
+   "SDG10: Reduced Inequalities",
+   "SDG17: Partnerships for the Goals"
+  ],
+  "short_desc": "Rafiki is an open source gateway that lets licensed Account Servicing Entities connect to the Interledger Network and send secure, atomic transfers via the Interledger Protocol and Open Payments APIs, enabling fast and reliable cross-network payment clearing.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0092379"
  },
  {
   "country": "GLOBAL",

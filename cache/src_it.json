@@ -2558,7 +2558,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-07-08",
+  "released": "2026-08-11",
   "repo": "https://github.com/consiglionazionaledellericerche/cool-jconon",
   "repo_key": "github.com/consiglionazionaledellericerche/cool-jconon",
   "short_desc": "The system manages all the phases of a public call, from the publication, to the presentation of the application.",
@@ -2579,7 +2579,7 @@
    "AMA SpA L'Aquila",
    "SED SpA L'Aquila"
   ],
-  "version": "5.10.12"
+  "version": "5.10.13"
  },
  {
   "active": true,
@@ -3540,14 +3540,14 @@
    "Gestione delle pubblicazioni del laboratorio.",
    "Gestione degli indirizzi di ricerca."
   ],
-  "license": "GPL-3.0-only",
+  "license": "GPL-3.0-or-later",
   "long_desc": "Design laboratori e centri di ricerca \u00e8 un tema wordpress basato sul modello di siti per le scuole italiane e sviluppato dalla Scuola Normale Superiore con l'obiettivo di creare un modello di sito per le strutture di ricerca (centri e laboratori).  Una volta installato, l'ambiente offre una serie di contenuti predefiniti che rendono semplice e veloce l'allestimento del sito. Questo sito permette di pubblicare tutte le informazioni relative ad una struttura di ricerca: personale afferente organizzato per struttura, pubblicazioni, progetti di ricerca, attivit\u00e0 di ricerca (aggregazione di progetti) oltre a news ed eventi correlati alle attivit\u00e0. Il progetto si  pone l'obiettivo di obiettivo di dare evidenza e valore alle attivit\u00e0 e al personale di ricerca delle strutture. E' possibile provare in modo semplice il sistema in locale utilizzando il Dockerfile predente nel sorgente del progetto.\n",
   "maintenance": "community",
   "name": "Design Laboratori Italia",
   "platforms": [
    "web"
   ],
-  "released": "2023-03-06",
+  "released": "2026-09-10",
   "repo": "https://github.com/ScuolaNormaleSuperiore/design-laboratori-wordpress-theme",
   "repo_key": "github.com/scuolanormalesuperiore/design-laboratori-wordpress-theme",
   "short_desc": "Design laboratori e centri di ricerca \u00e8 un tema WordPress sviluppato da SNS con l'obiettivo di creare un modello di sito per le strutture di ricerca.",
@@ -3562,7 +3562,7 @@
    "FROID- Corso di dottorato in Filologia Romanza e Italiana Digitale - Scuola Normale Superiore - https://froid.sns.it",
    "CRM De Giorgi - Centro di Ricerca Matematica Ennio De Giorgi - Scuola Normale Superiore - https://crmdegiorgi.sns.it"
   ],
-  "version": "REL-1.8.1"
+  "version": "1.8.2"
  },
  {
   "active": true,
@@ -3616,7 +3616,7 @@
   "desc_lang": "it",
   "desc_src": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
   "desc_src_lang": "it",
-  "dev_status": "development",
+  "dev_status": "stable",
   "fallback_repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme.git",
   "features": [
    "Popolamento automatico del sito (pagine e menu).",
@@ -3628,14 +3628,14 @@
    "Gestione delle sedi del sito.",
    "Gestione delle FAQ e dei documenti ICT."
   ],
-  "license": "GPL-3.0-only",
+  "license": "GPL-3.0-or-later",
   "long_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione. Il sito offre una serie di tipi di contenuto personalizzati per pubblicare servizi, faq, documentazione ecc.\n",
   "maintenance": "community",
   "name": "Design Sito ICT",
   "platforms": [
    "web"
   ],
-  "released": "2025-03-07",
+  "released": "2026-09-10",
   "repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme",
   "repo_key": "github.com/scuolanormalesuperiore/design-ictsite-wp-theme",
   "short_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
@@ -3646,7 +3646,7 @@
   "used_by": [
    "Sito ICT - Scuola Normale Superiore - https://ict.sns.it/"
   ],
-  "version": "DEV-0.2.0"
+  "version": "1.0.1"
  },
  {
   "active": true,
@@ -4643,7 +4643,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-08-24",
+  "released": "2026-09-09",
   "repo": "https://github.com/consiglionazionaledellericerche/epas",
   "repo_key": "github.com/consiglionazionaledellericerche/epas",
   "short_desc": "ePAS \u00e8 il nuovo sistema di rilevazione e gestione delle presenze del personale pensato per le specifiche esigenze degli Enti Pubblici di Ricerca.",
@@ -4657,7 +4657,7 @@
    "Consorzio LAMMA",
    "Ministero dei Trasporti"
   ],
-  "version": "2.33.2"
+  "version": "2.33.3"
  },
  {
   "active": true,
@@ -5715,7 +5715,7 @@
    "android",
    "mac"
   ],
-  "released": "2026-03-11",
+  "released": "2026-09-23",
   "repo": "https://invent.kde.org/education/gcompris.git",
   "repo_key": "invent.kde.org/education/gcompris",
   "short_desc": "GCompris is a high quality educational software suite, including a large\nnumber of activities for children aged 2 to 10.",
@@ -5723,7 +5723,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "a2ea59b0-87cd-4419-b93f-00bed8a7b859",
-  "version": "26.1"
+  "version": "26.2"
  },
  {
   "active": true,
@@ -13576,7 +13576,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-07-03",
+  "released": "2026-09-14",
   "repo": "https://github.com/link-it/govpay",
   "repo_key": "github.com/link-it/govpay",
   "repo_owner": "Link.it s.r.l.",
@@ -13591,7 +13591,7 @@
    "MIC - Ministero della Cultura",
    "MISE - Ministero dello Sviluppo Economico"
   ],
-  "version": "3.9.3.p2"
+  "version": "3.9.3.p3"
  },
  {
   "active": true,
@@ -13637,7 +13637,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.5.71"
+  "version": "1.5.74"
  },
  {
   "active": true,
@@ -14349,7 +14349,7 @@
    "mac",
    "linux"
   ],
-  "released": "2026-08-13",
+  "released": "2026-09-09",
   "repo": "https://github.com/INGV/mcp-fdsnws-event",
   "repo_key": "github.com/ingv/mcp-fdsnws-event",
   "short_desc": "MCP server wrapping the FDSN Web Service Event APIs of multiple seismological datacenters.",
@@ -14360,7 +14360,7 @@
   "used_by": [
    "INGV"
   ],
-  "version": "v1.8.0"
+  "version": "v1.9.0"
  },
  {
   "active": true,
@@ -18366,7 +18366,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-27",
+  "released": "2026-09-11",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18854,7 +18854,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.15.0"
+  "version": "4.17.0-rc.0"
  },
  {
   "active": true,
@@ -18952,7 +18952,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-06-17",
+  "released": "2026-09-08",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/opencityitalia-asl",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/opencityitalia-asl",
   "repo_owner": "OpenCity Labs srl",
@@ -18964,7 +18964,7 @@
   "used_by": [
    "ASP Siracusa"
   ],
-  "version": "1.1.6"
+  "version": "1.1.7"
  },
  {
   "active": true,
@@ -19001,7 +19001,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-01",
+  "released": "2026-09-08",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19263,7 +19263,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.2"
+  "version": "4.1.3"
  },
  {
   "active": true,
@@ -23397,7 +23397,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2025-07-23",
+  "released": "2026-09-08",
   "repo": "https://github.com/italia/publiccode-editor",
   "repo_key": "github.com/italia/publiccode-editor",
   "short_desc": "Un editor web per generare e validare file publiccode.yml.",
@@ -23405,7 +23405,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "ddd289d3-cd80-4cb0-b5e0-2a12701c4c51",
-  "version": "2.1.1"
+  "version": "2.2.0"
  },
  {
   "active": true,
