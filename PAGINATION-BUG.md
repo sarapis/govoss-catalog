@@ -1,9 +1,44 @@
 # Bug report: EU Open Source Solutions Catalogue — all query parameters ignored, 98% of solutions unreachable
 
 **Affected URL:** https://interoperable-europe.ec.europa.eu/eu-oss-catalogue/solutions
-**Tested:** 2026-08-10, ~14:00–14:40 UTC
+**Tested:** 2026-08-10, ~14:00–14:40 UTC · **re-verified 2026-09-20, still present**
 **Severity:** High — 1,064 of 1,084 catalogued solutions cannot be reached by any public route
 **Reporter's interest:** building a first-hand harvester of national public-sector OSS catalogues; found this while evaluating whether to syndicate the EU catalogue instead
+
+---
+
+## Re-verified 2026-09-20 — still present, 41 days later
+
+Re-run before sending. The defect is unchanged, and one new observation
+strengthens it.
+
+| request | result |
+|---|---|
+| `?page=3` | byte-identical response to the unparameterised page (254,606 bytes) |
+| `?page=54` | byte-identical |
+| `?oss_keys=nextcloud` | byte-identical |
+| `?oss_keys=zzzznomatch` | byte-identical |
+| `?cachebust=<random>` | **byte-identical** |
+
+The set of solution links returned is the same for all six requests, compared
+as sorted sets. The cache-buster returning an identical body again rules out
+CDN caching: a URL never requested before still yields page 1.
+
+**The catalogue is actively maintained while this persists.** Page 1's contents
+have changed since August — it opened with `ciso-assistant`,
+`easywebsite-markdown-webbook`, `elementpath`, `form-designer` and now opens
+with `bytype`, `ciso-assistant`, `core-ux-mkdocs`, `design-sito-ict`. New
+solutions are being added and published; they are simply unreachable once they
+fall past the first page.
+
+`sitemap.xml` is also unchanged in the relevant respect: 10,000 URLs across the
+first five sitemap pages, **zero** of them `/eu-oss-catalogue/solutions/*`.
+
+*Not re-confirmed today:* the exact total of 1,084 solutions. The page renders
+its result count in a form widget that resisted plain text extraction on this
+pass, so treat the 1,084 and the "1,064 unreachable" arithmetic below as of
+2026-08-10. The mechanism — every query string collapsing to the same
+response — is re-confirmed and is the substance of the report.
 
 ---
 
