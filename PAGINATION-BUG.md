@@ -34,11 +34,24 @@ fall past the first page.
 `sitemap.xml` is also unchanged in the relevant respect: 10,000 URLs across the
 first five sitemap pages, **zero** of them `/eu-oss-catalogue/solutions/*`.
 
-*Not re-confirmed today:* the exact total of 1,084 solutions. The page renders
-its result count in a form widget that resisted plain text extraction on this
-pass, so treat the 1,084 and the "1,064 unreachable" arithmetic below as of
-2026-08-10. The mechanism — every query string collapsing to the same
-response — is re-confirmed and is the substance of the report.
+⚠ **Correction: the page serves 16 solutions, not 20.** Counted with a permissive
+pattern against every `/eu-oss-catalogue/solutions/<slug>` href on the page, all
+16 resolving to real slugs (`bytype`, `ciso-assistant`, `core-ux-mkdocs`,
+`design-sito-ict`, `firma-con-io`, `forsakringskassans-designsystem`, `io`,
+`odf-kit`, `one-identity`, `opencity-italia-la-stanza-del-cittadino`, `pleio`,
+`publicodes`, `qfield`, `recommandations-collaboratives`, `semantic-mediawiki`,
+`valtimo`). Everything below saying "20 solutions" is wrong, and the
+`1,064 = 1,084 − 20` arithmetic in the header inherits the error. Either the page
+size changed since August or the original count was mistaken; this pass cannot
+distinguish those. **State the mechanism, not the arithmetic** — see below.
+
+*Not re-confirmed today:* the total of 1,084. The page renders its result count in
+a form widget that resisted plain-text extraction on this pass, so treat 1,084 and
+the derived "1,064 unreachable" as of 2026-08-10 only.
+
+**What IS re-confirmed is the mechanism**: every query string collapses to the same
+response, so only the first page is reachable by any route. That claim needs
+neither total and is the substance of the report. Lead with it.
 
 ---
 
