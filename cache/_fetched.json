@@ -1,86 +1,86 @@
 {
  "be": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 236
  },
  "bg": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 193
  },
  "ca": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 67
  },
  "de": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
-  "records": 528
+  "records": 544
  },
  "dpg": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 254
  },
  "eu": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
-  "records": 20
+  "records": 18
  },
  "fi": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 72
  },
  "fr": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 691
  },
  "ie": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 5
  },
  "it": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 550
  },
  "muc": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 141
  },
  "nl": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
-  "records": 195
+  "records": 198
  },
  "nlreg": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 0
  },
  "os2": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
-  "records": 297
+  "records": 298
  },
  "pt": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 92
  },
  "se": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 167
  },
  "tw": {
-  "fetched_at": "2026-09-14T11:00:03Z",
+  "fetched_at": "2026-09-21T11:00:02Z",
   "ok": true,
   "records": 58
  }

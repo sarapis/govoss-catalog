@@ -24,7 +24,7 @@
   ],
   "forge_path": "edelivery/domibus",
   "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus",
-  "last_activity": "2026-09-14T10:47:15.450Z",
+  "last_activity": "2026-09-21T09:51:07.745Z",
   "license": "EUPL-1.2-or-later",
   "long_desc": "[Domibus](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110244/Domibus) is the sample software provided by the European Commission to implement an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange. It is based on the [eDelivery AS4 profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specification for the secure, web-based, payload-agnostic exchange of data or documents.\n",
   "maintenance": "internal",
@@ -127,7 +127,7 @@
   ],
   "forge_path": "edelivery/domismp",
   "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSMP",
-  "last_activity": "2026-09-11T07:09:09.951Z",
+  "last_activity": "2026-09-16T09:28:04.662Z",
   "license": "EUPL-1.2-or-later",
   "long_desc": "[DomiSMP](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117783/DomiSMP) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Publisher for publishing and retrieving data necessary for an eDelivery party to dynamically configure its system for message exchange with other parties using eDelivery. It is based on the [eDelivery SMP profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications), an open technical specification for publishing service metadata within a 4-corner network.\n",
   "maintenance": "internal",
@@ -357,7 +357,7 @@
    "Quality assurance"
   ],
   "forge_path": "ITB/gitb",
-  "last_activity": "2026-09-09T12:45:03.870Z",
+  "last_activity": "2026-09-21T09:40:06.507Z",
   "license": "EUPL-1.2",
   "long_desc": "The Interoperability Test Bed is a service offered by the European Commission\u2019s DIGIT to facilitate the conformance testing of IT systems. The Test Bed is itself a software system that can be both downloaded and installed locally, but also reused through a shared online installation operated by DIGIT. It offers an intuitive web user interface and rich integration features that allow administrators to define their project\u2019s overall testing setup as well as users to connect and run tests.\nIn terms of the testing approach it follows, the Test Bed is typically used to exchange messages with the software systems being tested, supporting both the sending and receiving of messages, validating all steps against the target specification and according to the specific scenario\u2019s expectations. Such scenarios can focus on technical details but can also be defined at business-level, exposing details only when needed to troubleshoot failures. Furthermore, tests can be designed to cover both normal flows but also edge cases and error scenarios that would be otherwise difficult to replicate.",
   "maintenance": "internal",
@@ -368,7 +368,7 @@
    "windows",
    "mac"
   ],
-  "released": "2026-06-19",
+  "released": "2026-09-21",
   "repo": "https://github.com/ISAITB/gitb",
   "repo_key": "github.com/isaitb/gitb",
   "short_desc": "Web application for the conformance testing of IT systems against semantic and technical specifications.",
@@ -383,7 +383,7 @@
    "Publications Office of the European Union",
    "IHE Europe"
   ],
-  "version": "1.29.5"
+  "version": "1.30.0"
  },
  {
   "categories": [
@@ -405,7 +405,7 @@
    "Quality assurance"
   ],
   "forge_path": "ITB/csv-validator",
-  "last_activity": "2026-08-31T10:08:14.005Z",
+  "last_activity": "2026-09-16T15:29:07.160Z",
   "license": "EUPL-1.2",
   "long_desc": "The Interoperability Test Bed's CSV validator is a web application for the validation of CSV data against Table Schemas. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
   "maintenance": "internal",
@@ -454,7 +454,7 @@
    "Quality assurance"
   ],
   "forge_path": "ITB/json-validator",
-  "last_activity": "2026-08-31T10:02:03.260Z",
+  "last_activity": "2026-09-16T15:53:07.126Z",
   "license": "EUPL-1.2",
   "long_desc": "The Interoperability Test Bed's JSON validator is a web application for the validation of JSON data against JSON Schemas. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
   "maintenance": "internal",
@@ -503,7 +503,7 @@
    "Quality assurance"
   ],
   "forge_path": "ITB/shacl-validator",
-  "last_activity": "2026-08-31T10:19:06.455Z",
+  "last_activity": "2026-09-16T15:41:08.841Z",
   "license": "EUPL-1.2",
   "long_desc": "The Interoperability Test Bed's SHACL validator is a web application for the validation of RDF data against SHACL shapes. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
   "maintenance": "internal",
@@ -552,7 +552,7 @@
    "Quality assurance"
   ],
   "forge_path": "ITB/xml-validator",
-  "last_activity": "2026-08-31T10:26:03.773Z",
+  "last_activity": "2026-09-18T13:35:05.603Z",
   "license": "EUPL-1.2",
   "long_desc": "The Interoperability Test Bed's XML validator is a web application for the validation of XML data against XML Schemas and Schematron rules. It supports a web user interface, as well as SOAP and REST APIs for machine-to-machine integration. It can also be (re)used as the implementation of a validation step in GITB TDL test cases, the executable test cases used in the Interoperability Test Bed for conformance testing. The validator is fully configuration-driven allowing its customisation for the needs of specific projects and organisations, ranging from the configuration of supported types of validation to its look  and feel. \nThe validator is supported by the European Commission's DIGIT which also provides hosting for eligible public validators on its cloud infrastructure. In such a case, operation is managed by DIGIT but the validator's configuration and updates remain fully under the control of its owner. Alternatively, the validator can also be self-hosted by using its public Docker image and providing it with the project's specific configuration.",
   "maintenance": "internal",
@@ -603,7 +603,7 @@
    "Rich text"
   ],
   "forge_path": "leos/core",
-  "last_activity": "2026-09-14T10:49:14.087Z",
+  "last_activity": "2026-09-21T10:14:50.595Z",
   "license": "EUPL-1.2",
   "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
   "maintenance": "internal",
@@ -682,7 +682,7 @@
   ],
   "forge_path": "alixgui/vecto",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-11T15:09:17.419Z",
+  "last_activity": "2026-09-18T15:51:28.217Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
@@ -753,86 +753,6 @@
   "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
   "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim",
-  "fallback_repo": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim.git",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "forge_path": "bharat-vecto/bharat-vecto-sim",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-08T04:31:13.703Z",
-  "license": "EUPL-1.2",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "maintenance": "internal",
-  "name": "vecto-sim",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2023-10-23",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "repo_owner": "European Commission",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "software_type": "standalone/desktop",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 1306,
-  "version": "4.0.1.3217"
- },
- {
-  "categories": [
-   "compliance-management"
-  ],
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "country": "EU",
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/doumpst/vecto",
-  "fallback_repo": "https://code.europa.eu/doumpst/vecto.git",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "forge_path": "doumpst/vecto",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-11T15:27:07.021Z",
-  "license": "EUPL-1.2",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "maintenance": "internal",
-  "name": "vecto-sim",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2023-10-23",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "repo_owner": "European Commission",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "software_type": "standalone/desktop",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 304,
-  "version": "4.0.1.3217"
- },
- {
-  "categories": [
-   "compliance-management"
-  ],
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "country": "EU",
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "dev_status": "beta",
   "entry_url": "https://code.europa.eu/vecto/guests/vecto-sim-harry",
   "fallback_repo": "https://code.europa.eu/vecto/guests/vecto-sim-harry.git",
   "features": [
@@ -882,7 +802,7 @@
   ],
   "forge_path": "vecto/vecto",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-11T14:28:35.850Z",
+  "last_activity": "2026-09-18T08:00:10.041Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",

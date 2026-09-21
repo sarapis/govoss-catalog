@@ -1638,7 +1638,7 @@
    "web"
   ],
   "released": "2019-07-24",
-  "repo": "https://oros-git.regione.puglia.it/innovapuglia/c4s/C4S",
+  "repo": "https://oros-git.regione.puglia.it/innovapuglia/c4s/c4s",
   "repo_key": "oros-git.regione.puglia.it/innovapuglia/c4s/c4s",
   "short_desc": "ERP web multi-azienda",
   "software_type": "standalone/web",
@@ -3481,6 +3481,50 @@
  {
   "active": true,
   "categories": [
+   "website-builder"
+  ],
+  "contacts": [
+   "Servizi Informativi SNS"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme.git",
+  "features": [
+   "Popolamento automatico del sito (pagine e menu).",
+   "Sezione per la configurazione di temi e contenuti.",
+   "Personalizzazione del layout della home page.",
+   "Gestione del personale ICT.",
+   "Gestione dei progetti ICT.",
+   "Gestione di news ed eventi.",
+   "Gestione delle sedi del sito.",
+   "Gestione delle FAQ e dei documenti ICT."
+  ],
+  "license": "GPL-3.0-or-later",
+  "long_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione. Il sito offre una serie di tipi di contenuto personalizzati per pubblicare servizi, faq, documentazione ecc.\n",
+  "maintenance": "community",
+  "name": "Design ICT Site",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-09-17",
+  "repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme",
+  "repo_key": "github.com/scuolanormalesuperiore/design-ictsite-wp-theme",
+  "short_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
+  "software_type": "addon",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "721253b5-4075-4f9f-b16c-eb3eee57cd36",
+  "used_by": [
+   "Sito ICT - Scuola Normale Superiore - https://ict.sns.it/"
+  ],
+  "version": "1.0.5"
+ },
+ {
+  "active": true,
+  "categories": [
    "website-builder",
    "content-management"
   ],
@@ -3594,7 +3638,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-01-29",
+  "released": "2026-09-01",
   "repo": "https://github.com/italia/design-scuole-wordpress-theme",
   "repo_key": "github.com/italia/design-scuole-wordpress-theme",
   "short_desc": "Tema WordPress per realizzare e gestire siti web scolastici basati sul Modello Scuole di Designers Italia.",
@@ -3602,51 +3646,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "24d4abae-9b42-454a-beae-6f4bf3fc7c7d",
-  "version": "v1.12.5"
- },
- {
-  "active": true,
-  "categories": [
-   "website-builder"
-  ],
-  "contacts": [
-   "Servizi Informativi SNS"
-  ],
-  "country": "IT",
-  "desc_lang": "it",
-  "desc_src": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
-  "desc_src_lang": "it",
-  "dev_status": "stable",
-  "fallback_repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme.git",
-  "features": [
-   "Popolamento automatico del sito (pagine e menu).",
-   "Sezione per la configurazione di temi e contenuti.",
-   "Personalizzazione del layout della home page.",
-   "Gestione del personale ICT.",
-   "Gestione dei progetti ICT.",
-   "Gestione di news ed eventi.",
-   "Gestione delle sedi del sito.",
-   "Gestione delle FAQ e dei documenti ICT."
-  ],
-  "license": "GPL-3.0-or-later",
-  "long_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione. Il sito offre una serie di tipi di contenuto personalizzati per pubblicare servizi, faq, documentazione ecc.\n",
-  "maintenance": "community",
-  "name": "Design Sito ICT",
-  "platforms": [
-   "web"
-  ],
-  "released": "2026-09-10",
-  "repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme",
-  "repo_key": "github.com/scuolanormalesuperiore/design-ictsite-wp-theme",
-  "short_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
-  "software_type": "addon",
-  "source": "IT/developers-italia",
-  "tier": "publiccode",
-  "upstream_id": "721253b5-4075-4f9f-b16c-eb3eee57cd36",
-  "used_by": [
-   "Sito ICT - Scuola Normale Superiore - https://ict.sns.it/"
-  ],
-  "version": "1.0.1"
+  "version": "v2.18.3"
  },
  {
   "active": true,
@@ -13624,7 +13624,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-06",
+  "released": "2026-09-15",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
   "repo_owner": "Comune di Montesilvano",
@@ -13637,7 +13637,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.5.74"
+  "version": "1.5.76"
  },
  {
   "active": true,
@@ -18366,7 +18366,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-11",
+  "released": "2026-09-17",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18854,7 +18854,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.17.0-rc.0"
+  "version": "4.17.0-rc.1"
  },
  {
   "active": true,
