@@ -183,17 +183,40 @@ PFACETS = json.dumps([[k, k, n] for k, n in
 
 DATA = json.dumps(rows, separators=(",", ":"))
 
-# The Country facet is GONE — it was largely redundant with Source catalog (a
-# catalogue belongs to one country) and the sidebar had grown taller than the
-# viewport, which stopped it pinning. The country now rides on the source label
-# instead, so nothing is lost from view.
+# The Source country facet is BACK (2026-09-21), after being removed for two
+# reasons that are worth recording because only one of them was ever true.
 #
+# 1. "Largely redundant with Source catalog (a catalogue belongs to one
+#    country)." Half true. A catalogue belongs to one country, but a COUNTRY has
+#    several catalogues: DE is openCode + Munich, FR is SILL +
+#    awesome-codegouvfr. The removal comment named the cost itself —
+#    "everything from Germany now means selecting openCode and Munich
+#    separately" — and that is precisely the query a policy researcher asked for
+#    in September, which is also why /by-country/ now exists. A facet that
+#    unions the catalogues of one country is not redundant with picking them
+#    one by one.
+# 2. "The sidebar had grown taller than the viewport, which stopped it pinning."
+#    True, and NOT fixed by removing the group: measured 2026-09-21 on the live
+#    page at 1280x860, the sidebar was 887px against an 860px viewport — still
+#    27px unreachable while pinned, with the facet already gone. The cause was
+#    an unbounded `position:sticky` element, not the number of groups. `.side`
+#    now carries max-height + overflow-y:auto so it scrolls internally, which
+#    fixes the pre-existing overhang and makes the group count irrelevant.
+#
+# ⚠ The facet VALUE is the country CODE and is matched against r.cs, the full
+# countries list, so an entry listed by catalogues in two countries is found
+# under both. That is the case the old single-country `r.c` could not serve.
+#
+# ⚠ It is called SOURCE COUNTRY, not Country, and that wording is load-bearing:
+# it is the country of the CATALOGUE that listed the software, not the tier of
+# government that published it. Same caveat as /by-country/ and /sources.html.
+_CC_FLAG = {(m.get("country") or ""): m.get("flag") or ""
+            for m in _S.SOURCES.values() if m.get("country")}
+CCFACETS = json.dumps([[k, ("%s %s" % (_CC_FLAG.get(k, ""), k)).strip(), v]
+                       for k, v in sorted(countries.items(), key=lambda x: -x[1])])
+
 # The facet VALUE stays the bare label because it is matched against r.ss; only
 # the display label carries the country. Entry cards keep the plain label.
-#
-# What this does cost: an entry listed by catalogues in two countries can no
-# longer be found by country alone, and "everything from Germany" now means
-# selecting openCode and Munich separately. GLOBAL/EU are shown as-is.
 _SRC_CC = {lbl: (_S.SOURCES.get(k) or {}).get("country")
            for k, lbl in SRC_LABEL.items() if (_S.SOURCES.get(k) or {}).get("country")}
 SFACETS = json.dumps([[k, ("%s (%s)" % (k, _SRC_CC[k])) if k in _SRC_CC else k, v]
@@ -223,6 +246,7 @@ SUBS = {
     "__DATA__": DATA,
     "__FFACETS__": FFACETS,
     "__SFACETS__": SFACETS,
+    "__CCFACETS__": CCFACETS,
     "__PFACETS__": PFACETS,
     "__LOPTS__": LOPTS,
     "__NENTRIES__": f"{n_entries:,}",

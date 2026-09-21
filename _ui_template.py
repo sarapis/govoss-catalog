@@ -50,7 +50,13 @@ PAGE_CSS = """
    A fixed two-column grid collapsed the entry column to 48px at 924px wide.
    Wrapping flex has no such failure mode and needs no media query. */
 .body{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;}
-.side{flex:1 1 260px;max-width:320px;position:sticky;top:20px;}
+/* max-height + overflow is what lets the sidebar carry any number of facet
+   groups. Without it a `position:sticky` element taller than the viewport
+   leaves its bottom permanently unreachable: measured 887px against an 860px
+   viewport with only three groups, i.e. already broken before Source country
+   was added. A facet group was once DELETED to treat this symptom. */
+.side{flex:1 1 260px;max-width:320px;position:sticky;top:20px;
+  max-height:calc(100vh - 40px);overflow-y:auto;overscroll-behavior:contain;}
 .results{flex:1 1 600px;min-width:0;}
 
 /* ---- sidebar facets ---- */
@@ -184,7 +190,8 @@ PAGE_CSS = """
   border-radius:var(--r-med);box-shadow:var(--shadow-bar);padding:28px 32px;
   margin-top:48px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
 
-@media (max-width:940px){ .side{position:static;max-width:none;} }
+@media (max-width:940px){ .side{position:static;max-width:none;
+  max-height:none;overflow-y:visible;} }
 @media (max-width:720px){
   .hero{padding:36px 0 28px;}
   .colhead{display:none;}
@@ -323,6 +330,7 @@ SCRIPT = """
 <script>
 var DATA = __DATA__;
 var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
+var CCFACETS = __CCFACETS__;
 var PAGE_SIZE = 100;
 
 /* State. NOTHING here is named after an element id: browsers expose ids as
@@ -350,6 +358,11 @@ var GROUPS = [
   { key: 'fn', title: 'Function', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
   { key: 'rp', title: 'Replaces', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
     link: 'products.html', linkLabel: 'Proprietary software catalog' },
+  // Source COUNTRY, above Source catalog and deliberately named that way: it is
+  // the country of the catalogue that listed the software, not the tier of
+  // government that published it. Matched against r.cs (all countries), so an
+  // entry listed in two countries appears under both.
+  { key: 'cc', title: 'Source country', rows: CCFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
   { key: 'src', title: 'Source catalog', rows: SFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) }
 ];
 
@@ -391,16 +404,23 @@ function renderFacets() {
 function current() {
   var q = (el('q').value || '').trim().toLowerCase();
   var lic = el('lic').value, lvf = el('lv').value, sort = el('sort').value;
-  var fns = [], srcs = [], rps = [];
+  var fns = [], srcs = [], rps = [], ccs = [];
+  // Every key routed EXPLICITLY. This was `else srcs.push(v)`, a catch-all, so
+  // adding the 'cc' group silently pushed country codes into the source-catalog
+  // filter — which matches nothing and empties the list, reading as "no entries
+  // from Germany". A default branch that swallows unknown keys is how a new
+  // facet breaks the old one.
   activeFacets.forEach(function (id) {
     var i = id.indexOf(':'), k = id.slice(0, i), v = id.slice(i + 1);
     if (k === 'fn') fns.push(v);
     else if (k === 'rp') rps.push(v);
-    else srcs.push(v);
+    else if (k === 'cc') ccs.push(v);
+    else if (k === 'src') srcs.push(v);
   });
   var out = DATA.filter(function (r) {
     if (!showSetAside && r.ex) return false;
     if (fns.length && !r.fx.some(function (f) { return fns.indexOf(f) >= 0; })) return false;
+    if (ccs.length && !(r.cs || [r.c]).some(function (x) { return ccs.indexOf(x) >= 0; })) return false;
     if (srcs.length && !(r.ss || [r.s]).some(function (x) { return srcs.indexOf(x) >= 0; })) return false;
     if (rps.length && !(r.rp || []).some(function (x) { return rps.indexOf(x) >= 0; })) return false;
     if (lic && r.l !== lic) return false;

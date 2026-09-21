@@ -856,6 +856,37 @@ system loads them from a CDN; we do not, because the readership is European publ
 and a Google Fonts request is a live GDPR objection. Upstream now records this as a sanctioned
 divergence.
 
+### The catalog sidebar is bounded, and that is load-bearing
+
+`.side` is `position:sticky` **with `max-height:calc(100vh - 40px)` and
+`overflow-y:auto`**, reset to static/unbounded under the 940px breakpoint. Keep all
+three: an unbounded sticky element taller than the viewport leaves its bottom
+permanently unreachable, and the facet list grows every time a source is added.
+
+⚠ **A whole facet group was once DELETED to treat that symptom.** The Source country
+facet was removed with the reasoning "the sidebar had grown taller than the viewport,
+which stopped it pinning" — and it did not work: measured on the live page at
+1280x860 with the facet already gone, the sidebar was **887px against an 860px
+viewport**, still 27px unreachable. The cause was the missing bound, not the group
+count. Bounding it fixed the pre-existing overhang *and* made room for the facet to
+come back (820px cap, 1,143px of content scrolling internally).
+
+The other half of that removal — "largely redundant with Source catalog, a catalogue
+belongs to one country" — was half true and worth understanding before trusting a
+similar argument. A catalogue belongs to one country, but a **country has several
+catalogues**: DE is openCode + Munich, FR is SILL + awesome-codegouvfr. The removal
+comment named its own cost, "everything from Germany now means selecting openCode and
+Munich separately", and that is exactly the query the facet exists to answer. It also
+restores something no combination of source facets could: **64 multi-catalogue entries
+whose `countries` span several states** (LibreOffice and QGIS are `[DE, FR, GLOBAL,
+IT]`) are findable under each, because the facet matches `r.cs`, not the single `r.c`.
+
+⚠ **`current()` routes every facet key EXPLICITLY — never restore the `else` default.**
+It was `if fn / else if rp / else srcs`, so adding the `cc` group silently pushed
+country codes into the source-catalog filter, which matches no source label and empties
+the list. "No entries from Germany" is what that looks like from the outside. A default
+branch that swallows unknown keys is how a new facet breaks an old one.
+
 ### `/sources.html` answers four questions, deliberately
 
 Rebuilt 2026-09-20 after a policy researcher asked how the data is obtained, whether it can be
