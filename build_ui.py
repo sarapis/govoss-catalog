@@ -212,7 +212,13 @@ DATA = json.dumps(rows, separators=(",", ":"))
 # government that published it. Same caveat as /by-country/ and /sources.html.
 _CC_FLAG = {(m.get("country") or ""): m.get("flag") or ""
             for m in _S.SOURCES.values() if m.get("country")}
-CCFACETS = json.dumps([[k, ("%s %s" % (_CC_FLAG.get(k, ""), k)).strip(), v]
+# Label is the country NAME, not the code: "France", not "FR". The code is what
+# the data joins on and stays the facet VALUE (matched against r.cs) — only the
+# display changes. sources.py:COUNTRY_NAME owns the mapping so the page and any
+# other consumer cannot disagree; a code with no name falls back to itself rather
+# than rendering blank.
+CCFACETS = json.dumps([[k, ("%s %s" % (_CC_FLAG.get(k, ""),
+                                       _S.COUNTRY_NAME.get(k, k))).strip(), v]
                        for k, v in sorted(countries.items(), key=lambda x: -x[1])])
 
 # The facet VALUE stays the bare label because it is matched against r.ss; only
@@ -224,6 +230,29 @@ SFACETS = json.dumps([[k, ("%s (%s)" % (k, _SRC_CC[k])) if k in _SRC_CC else k, 
 LOPTS = "".join(f'<option value="{html.escape(k)}">{html.escape(k)} ({v})</option>'
                 for k, v in licenses.most_common()
                 ).encode("ascii", "xmlcharrefreplace").decode()
+
+# Source catalog moved from a sidebar facet to a toolbar <select>, which is
+# SINGLE-select — you can no longer union two catalogues. That was a deliberate
+# trade: the Source country facet now answers the case it existed for ("all of
+# Germany" rather than openCode + Munich ticked separately), and a 17-value list
+# is a better dropdown than a 6-of-17 facet with a "Show all" expander.
+#
+# The option VALUE is the bare label, because it is matched against r.ss, and
+# /sources.html links here as ?src=<label>. Those two must agree: both read
+# sources.py SOURCES[key]["label"].
+SOPTS = "".join(
+    f'<option value="{html.escape(lbl)}">{html.escape(lbl)}'
+    f'{" (" + _SRC_CC[lbl] + ")" if lbl in _SRC_CC else ""} ({n})</option>'
+    for lbl, n in sorted(sources.items(), key=lambda kv: -kv[1])
+).encode("ascii", "xmlcharrefreplace").decode()
+
+# The set-aside toggle is SPLIT, because one label covered two unrelated claims
+# and the project's own owner could not say what it meant. 384 entries have no
+# description the publisher or GitHub could supply; 104 are judged not adoptable
+# (forks, deployment recipes, CI plumbing, locale bundles, org meta). "Set aside"
+# said neither. Counts are computed here so the labels cannot drift from the data.
+n_ex_nodesc = sum(1 for r in rows if r["ex"] == "no-description")
+n_ex_notsoft = sum(1 for r in rows if r["ex"] and r["ex"] != "no-description")
 
 
 # --------------------------------------------------------------------------
@@ -247,6 +276,9 @@ SUBS = {
     "__FFACETS__": FFACETS,
     "__SFACETS__": SFACETS,
     "__CCFACETS__": CCFACETS,
+    "__SOPTS__": SOPTS,
+    "__N_EX_NODESC__": "{:,}".format(n_ex_nodesc),
+    "__N_EX_NOTSOFT__": "{:,}".format(n_ex_notsoft),
     "__PFACETS__": PFACETS,
     "__LOPTS__": LOPTS,
     "__NENTRIES__": f"{n_entries:,}",

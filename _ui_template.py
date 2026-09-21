@@ -96,6 +96,14 @@ PAGE_CSS = """
 
 /* ---- results toolbar ---- */
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
+.drawer{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-card);padding:14px 16px;margin:-6px 0 14px;
+  display:flex;flex-direction:column;gap:12px;}
+.drow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.dlab{font-family:var(--font-ui);font-size:11px;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--ink-600);
+  flex:0 0 100%;}
+.dnote{font-size:12px;line-height:1.55;color:var(--ink-600);margin:0;}
 .sel,.tog{background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-pill);padding:8px 14px;font:inherit;font-size:13px;
   color:var(--ink);cursor:pointer;transition:background-color 120ms,color 120ms;
@@ -282,14 +290,43 @@ BODY = """
         <select class="sel" id="lic" aria-label="Filter by licence">
           <option value="">Any licence</option>__LOPTS__
         </select>
-        <select class="sel" id="lv" aria-label="Filter by repository state">
-          <option value="">Any repo state</option>
-          <option value="ok">Reachable</option>
-          <option value="archived">Archived upstream</option>
-          <option value="dead">Repo gone</option>
+        <select class="sel" id="src" aria-label="Filter by source catalog">
+          <option value="">Any source catalog</option>__SOPTS__
         </select>
         <button class="tog" type="button" id="onlyrep" aria-pressed="false">Replaces a paid product</button>
-        <button class="tog" type="button" id="setaside" aria-pressed="false">Include __N_EX__ set-aside entries</button>
+        <button class="tog" type="button" id="morefilters" aria-expanded="false"
+                aria-controls="drawer">More filters</button>
+      </div>
+
+      <!-- The drawer holds the controls that are rarely touched and need more
+           words than a toolbar chip allows. The set-aside toggle lived in the
+           toolbar as "Include 488 set-aside entries", which named neither what
+           was set aside nor why - and it covered TWO unrelated claims, so no
+           single label could. Split and spelled out here instead. -->
+      <div class="drawer" id="drawer" hidden>
+        <div class="drow">
+          <label class="dlab" for="lv">Repository state</label>
+          <select class="sel" id="lv" aria-label="Filter by repository state">
+            <option value="">Any repo state</option>
+            <option value="ok">Reachable</option>
+            <option value="archived">Archived upstream</option>
+            <option value="dead">Repo gone</option>
+          </select>
+        </div>
+        <div class="drow">
+          <span class="dlab">Entries held out of the default view</span>
+          <button class="tog" type="button" id="exnodesc" aria-pressed="false">
+            Show __N_EX_NODESC__ with no description</button>
+          <button class="tog" type="button" id="exnotsoft" aria-pressed="false">
+            Show __N_EX_NOTSOFT__ judged not adoptable</button>
+        </div>
+        <p class="dnote">No description means the publisher wrote none and GitHub had
+          none either &mdash; not saying what software does is a failure to share it.
+          Not adoptable means an upstream fork, a deployment recipe, CI plumbing, a
+          locale bundle or org metadata: real files, but nothing a government can
+          adopt. Both are <b>flagged, never deleted</b>, and both are always present
+          in <span class="mono">/entries.json</span> with an
+          <span class="mono">exclude_reason</span>.</p>
       </div>
 
       <div class="countline"><span id="count"></span><span id="fcount"></span></div>
@@ -331,6 +368,12 @@ SCRIPT = """
 var DATA = __DATA__;
 var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var CCFACETS = __CCFACETS__;
+// code -> display name, derived from the facet labels so there is ONE source for
+// them. The flag is stripped: the label is "<flag> Germany" and sorting on that
+// would order by emoji codepoint, not by name.
+var CCNAME = {};
+CCFACETS.forEach(function (f) { CCNAME[f[0]] = String(f[1]).replace(/^\S+\s+/, ''); });
+function ccLabel(code) { return CCNAME[code] || code; }
 var PAGE_SIZE = 100;
 
 /* State. NOTHING here is named after an element id: browsers expose ids as
@@ -339,7 +382,11 @@ var PAGE_SIZE = 100;
 var activeFacets = new Set();
 var facetQuery = '';
 var onlyReplaces = false;
-var showSetAside = false;
+// Two flags, not one: the old single `showSetAside` could not express "show me
+// the undescribed ones but not the forks", and the label could not say which was
+// which. r.ex carries the reason, so the split is in the data already.
+var showNoDesc = false;
+var showNotSoft = false;
 var visibleCount = PAGE_SIZE;
 var expanded = new Set();
 
@@ -358,12 +405,14 @@ var GROUPS = [
   { key: 'fn', title: 'Function', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
   { key: 'rp', title: 'Replaces', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
     link: 'products.html', linkLabel: 'Proprietary software catalog' },
-  // Source COUNTRY, above Source catalog and deliberately named that way: it is
-  // the country of the catalogue that listed the software, not the tier of
-  // government that published it. Matched against r.cs (all countries), so an
-  // entry listed in two countries appears under both.
-  { key: 'cc', title: 'Source country', rows: CCFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
-  { key: 'src', title: 'Source catalog', rows: SFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) }
+  // Source COUNTRY, deliberately named that way: it is the country of the
+  // catalogue that listed the software, not the tier of government that published
+  // it. Matched against r.cs (all countries), so an entry listed in two countries
+  // appears under both. Labels are country NAMES; the VALUE stays the code.
+  //
+  // Source CATALOG is not here any more - it is the #src <select> in the toolbar.
+  // SFACETS is still used, to validate an incoming ?src= value.
+  { key: 'cc', title: 'Source country', rows: CCFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) }
 ];
 
 function renderFacets() {
@@ -415,10 +464,17 @@ function current() {
     if (k === 'fn') fns.push(v);
     else if (k === 'rp') rps.push(v);
     else if (k === 'cc') ccs.push(v);
-    else if (k === 'src') srcs.push(v);
   });
+  // Source catalog is a single-select dropdown now, not a facet set.
+  var srcOne = el('src').value;
+  if (srcOne) srcs.push(srcOne);
   var out = DATA.filter(function (r) {
-    if (!showSetAside && r.ex) return false;
+    if (r.ex) {
+      // r.ex is the exclude_reason. 'no-description' is an editorial standard
+      // about publisher effort; every other reason is a judgement that the thing
+      // is not adoptable software. They are shown independently.
+      if (r.ex === 'no-description' ? !showNoDesc : !showNotSoft) return false;
+    }
     if (fns.length && !r.fx.some(function (f) { return fns.indexOf(f) >= 0; })) return false;
     if (ccs.length && !(r.cs || [r.c]).some(function (x) { return ccs.indexOf(x) >= 0; })) return false;
     if (srcs.length && !(r.ss || [r.s]).some(function (x) { return srcs.indexOf(x) >= 0; })) return false;
@@ -434,7 +490,11 @@ function current() {
     return true;
   });
   if (sort === 'name') out.sort(function (a, b) { return a.n.toLowerCase().localeCompare(b.n.toLowerCase()); });
-  else if (sort === 'country') out.sort(function (a, b) { return a.c.localeCompare(b.c) || a.n.localeCompare(b.n); });
+  // Sort by the DISPLAYED name, not the code. Once the facet started showing
+  // "Germany" instead of "DE", a code sort put Germany before Denmark and the
+  // list read as unsorted. Sort on what the reader can see.
+  else if (sort === 'country') out.sort(function (a, b) {
+    return ccLabel(a.c).localeCompare(ccLabel(b.c)) || a.n.localeCompare(b.n); });
   else out.sort(function (a, b) { return (b.cc2 || 1) - (a.cc2 || 1) || b.ub - a.ub || a.n.localeCompare(b.n); });
   return out;
 }
@@ -452,11 +512,17 @@ function stamps(r) {
 
 function render() {
   var rs = current();
-  var universe = showSetAside ? DATA.length : DATA.filter(function (r) { return !r.ex; }).length;
+  // The denominator has to move with the toggles, or "N of M" silently compares
+  // the filtered list against a universe the page is not showing.
+  var universe = DATA.filter(function (r) {
+    if (!r.ex) return true;
+    return r.ex === 'no-description' ? showNoDesc : showNotSoft;
+  }).length;
   el('count').innerHTML = '<b>' + rs.length.toLocaleString() + '</b> of ' +
     universe.toLocaleString() + ' entries';
   var nf = activeFacets.size + (onlyReplaces ? 1 : 0) +
-           (el('lic').value ? 1 : 0) + (el('lv').value ? 1 : 0);
+           (el('lic').value ? 1 : 0) + (el('lv').value ? 1 : 0) +
+           (el('src').value ? 1 : 0);
   el('fcount').textContent = nf ? (nf + (nf === 1 ? ' filter applied' : ' filters applied')) : '';
 
   if (!rs.length) {
@@ -501,8 +567,11 @@ function render() {
 function reset() { visibleCount = PAGE_SIZE; render(); }
 function clearAll() {
   activeFacets.clear(); facetQuery = ''; onlyReplaces = false;
-  el('fq').value = ''; el('lic').value = ''; el('lv').value = '';
+  showNoDesc = false; showNotSoft = false;
+  el('fq').value = ''; el('lic').value = ''; el('lv').value = ''; el('src').value = '';
   el('onlyrep').setAttribute('aria-pressed', 'false');
+  el('exnodesc').setAttribute('aria-pressed', 'false');
+  el('exnotsoft').setAttribute('aria-pressed', 'false');
   renderFacets(); reset();
 }
 
@@ -523,6 +592,7 @@ el('q').oninput = reset;
 el('qbtn').onclick = reset;
 el('lic').onchange = reset;
 el('lv').onchange = reset;
+el('src').onchange = reset;
 el('sort').onchange = reset;
 el('clearall').onclick = clearAll;
 el('onlyrep').onclick = function () {
@@ -530,9 +600,22 @@ el('onlyrep').onclick = function () {
   this.setAttribute('aria-pressed', onlyReplaces ? 'true' : 'false');
   reset();
 };
-el('setaside').onclick = function () {
-  showSetAside = !showSetAside;
-  this.setAttribute('aria-pressed', showSetAside ? 'true' : 'false');
+el('morefilters').onclick = function () {
+  // el.hidden, not style.display: the page reset sets [hidden]{display:none
+  // !important}, so toggling style.display would be overridden and the drawer
+  // would never appear.
+  var open = el('drawer').hidden;
+  el('drawer').hidden = !open;
+  this.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+el('exnodesc').onclick = function () {
+  showNoDesc = !showNoDesc;
+  this.setAttribute('aria-pressed', showNoDesc ? 'true' : 'false');
+  reset();
+};
+el('exnotsoft').onclick = function () {
+  showNotSoft = !showNotSoft;
+  this.setAttribute('aria-pressed', showNotSoft ? 'true' : 'false');
   reset();
 };
 el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
@@ -546,6 +629,29 @@ el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
   var want = decodeURIComponent(m[1].replace(/\\+/g, ' '));
   var known = PFACETS.some(function (f) { return f[0] === want; });
   if (known) activeFacets.add('rp:' + want);
+})();
+
+// ?src=<catalog label> arrives from sources.html ("See catalog entries"). Same
+// guard as ?rp=: set the dropdown only if the value is one it actually offers.
+// An unknown value would filter the catalogue to nothing and read as "this
+// catalogue contributed no entries", which is the one thing that page exists to
+// disprove. Both sides read sources.py SOURCES[key]["label"].
+(function () {
+  var m = /[?&]src=([^&]*)/.exec(location.search);
+  if (!m) return;
+  var want = decodeURIComponent(m[1].replace(/\\+/g, ' '));
+  var sel = el('src');
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === want) { sel.value = want; return; }
+  }
+})();
+
+// ?cc=<country code> for completeness, validated against the facet values.
+(function () {
+  var m = /[?&]cc=([^&]*)/.exec(location.search);
+  if (!m) return;
+  var want = decodeURIComponent(m[1].replace(/\\+/g, ' ')).toUpperCase();
+  if (CCFACETS.some(function (f) { return f[0] === want; })) activeFacets.add('cc:' + want);
 })();
 
 renderFacets();

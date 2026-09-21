@@ -11,6 +11,23 @@ same thing three months later.
 """
 
 # ---- ingested sources
+# Display names for the country codes carried on SOURCES and on every entry's
+# `country` / `countries`. Codes are what the DATA joins on; these are for humans.
+#
+# ⚠ EU and GLOBAL are not countries and must not be given country names. GLOBAL
+# is the Digital Public Goods registry, which is UN-affiliated and deliberately a
+# wider criterion than the rest; EU is code.europa.eu. Both are kept distinct in
+# the data for exactly that reason, so the labels keep them distinct too.
+COUNTRY_NAME = {
+    "BE": "Belgium",     "BG": "Bulgaria",  "CA": "Canada",
+    "DE": "Germany",     "DK": "Denmark",   "FI": "Finland",
+    "FR": "France",      "IE": "Ireland",   "IT": "Italy",
+    "NL": "Netherlands", "PT": "Portugal",  "SE": "Sweden",
+    "TW": "Taiwan",
+    "EU": "European Union",
+    "GLOBAL": "Global",
+}
+
 SOURCES = {
     "IT/developers-italia": {
         "checkpoint": "it",

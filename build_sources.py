@@ -13,6 +13,7 @@ decision; retiring the endpoint would be a breaking change.
 No f-strings for markup: plain strings with __PLACEHOLDER__ tokens, substituted
 at the end, so no literal CSS or JS brace needs doubling.
 """
+from urllib.parse import quote
 import json, os, importlib.util, collections, time
 
 OUT = os.path.dirname(os.path.abspath(__file__))
@@ -376,18 +377,32 @@ def build():
             if not age["ok"] or d > 15:
                 stamps += ('<span class="stamp warn">stale: %s</span>'
                            % ("last good %dd ago" % d if d else "failing"))
+        # "See catalog entries" -> the catalog filtered to this source.
+        #
+        # ⚠ The link value is SOURCES[key]["label"], which is exactly what
+        # build_ui.py's SRC_LABEL and the #src dropdown use. If those ever
+        # diverge the link filters to nothing and reads as "this catalogue
+        # contributed no entries" — the one claim this page exists to disprove.
+        # The catalog side validates the value against its own options and
+        # ignores an unknown one rather than emptying the list.
+        #
+        # Only offered where there is something to see: a source contributing 0
+        # would hand the reader an empty catalogue.
+        seelink = ('<a class="c-see" href="/?src=%s">See catalog entries &rarr;</a>'
+                   % quote(meta["label"], safe="")) if n else ""
         crows += (
             '<div class="crow">'
             '<div class="c-cc">%s <b>%s</b></div>'
             '<div class="c-main"><div class="c-t">'
             '<a href="%s" target="_blank" rel="noopener">%s</a>%s</div>'
-            '<div class="c-note">%s</div></div>'
+            '<div class="c-note">%s</div>%s</div>'
             '<div class="c-n"><b class="num">%s</b><span>entries</span></div>'
             '<div class="c-m"><span class="mono">%s</span><span class="c-sec">%s</span></div>'
             '<div class="c-s">%s</div>'
             '</div>'
         ) % (meta["flag"], esc(meta["country"]), esc(meta["site"]), esc(meta["label"]),
-             stamps, esc(meta.get("note") or meta.get("claim") or ""), "{:,}".format(n),
+             stamps, esc(meta.get("note") or meta.get("claim") or ""), seelink,
+             "{:,}".format(n),
              esc(meta.get("route", "")),
              ("%ss" % int(secs)) if secs is not None else "&mdash;", spark(key))
 
@@ -545,6 +560,7 @@ PAGE_CSS = """
   text-decoration:none;}
 .c-t a:hover{color:var(--primary);text-decoration:underline;}
 .c-note{font-size:13px;color:var(--ink-600);margin-top:3px;text-wrap:pretty;}
+.c-see{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;}
 .c-n{flex:0 0 88px;text-align:right;}
 .c-n b{display:block;font-family:var(--font-display);font-size:20px;color:var(--ink);}
 .c-n span{font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;

@@ -893,6 +893,55 @@ system loads them from a CDN; we do not, because the readership is European publ
 and a Google Fonts request is a live GDPR objection. Upstream now records this as a sanctioned
 divergence.
 
+### The toolbar, the drawer, and what "set aside" now says (2026-09-21)
+
+- **Source country labels are country NAMES** ("Germany", not "DE"), from
+  `sources.py:COUNTRY_NAME`. The facet **VALUE stays the code**, matched against
+  `r.cs` — only the display changed. ⚠ `EU` and `GLOBAL` are not countries and are
+  deliberately "European Union" and "Global": GLOBAL is the UN-affiliated DPG
+  registry on a wider criterion than the rest, and conflating it with a state
+  would misrepresent 253 entries.
+- **`Sort: country` sorts by the NAME, not the code.** Once the label read
+  "Germany", a code sort put Germany before Denmark and the list looked unsorted.
+  `CCNAME` is derived from the facet labels so there is one source for them, with
+  the flag stripped — sorting the raw label orders by emoji codepoint.
+- **Source catalog is a toolbar `<select>`, not a sidebar facet.** SINGLE-select, by
+  decision: the Source country facet now answers the case multi-select existed for
+  ("all of Germany" rather than ticking openCode and Munich separately), and 17
+  values make a better dropdown than a 6-of-17 facet with an expander. `SFACETS` is
+  still built — it validates an incoming `?src=`.
+- **`?src=<label>` and `?cc=<code>`** are entry points, both validated against the
+  values the page actually offers. An unknown one is IGNORED, never applied:
+  filtering to nothing would read as "this catalogue contributed no entries", which
+  is the one claim `/sources.html` exists to disprove. ⚠ The link value is
+  `SOURCES[key]["label"]` on BOTH sides — `build_sources.py` writes it,
+  `build_ui.py:SRC_LABEL` and the dropdown consume it. If they diverge the link
+  silently empties the catalogue.
+
+**"Include 488 set-aside entries" is gone, and the reason is worth keeping.** One
+label covered two unrelated claims, and the project's own owner asked what it meant
+— which is the strongest evidence a label can get. It is now two controls in a
+**More filters** drawer, with the counts computed in `build_ui.py` so they cannot
+drift:
+
+| control | n | the claim |
+|---|---|---|
+| `Show N with no description` | 384 | The publisher wrote none and GitHub had none either (`enrich_desc` runs first). An editorial standard about publisher effort. |
+| `Show N judged not adoptable` | 104 | Fork, deployment recipe, CI plumbing, locale bundle, org metadata. A judgement about the artefact. |
+
+⚠ **Keep both reachable.** That toggle is the only UI route to those entries, and
+`Products.PloneMeeting` is among them — it vanished once already. Both remain in
+`/entries.json` flagged with an `exclude_reason` regardless of the toggles.
+
+⚠ **The denominator moves with the toggles.** `render()` recomputes the universe
+from the same predicate, or "N of M" compares the filtered list against a universe
+the page is not showing. Verified: 2,857 → 3,241 (+384) → 3,345 (+104).
+
+The drawer also holds **Repository state**, moved out of the toolbar: it is rarely
+touched and the toolbar was full. Toggle it with `el.hidden`, never
+`style.display` — the page reset carries `[hidden]{display:none!important}`, which
+would win.
+
 ### The catalog sidebar is bounded, and that is load-bearing
 
 `.side` is `position:sticky` **with `max-height:calc(100vh - 40px)` and
