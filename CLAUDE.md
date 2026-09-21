@@ -893,6 +893,59 @@ system loads them from a CDN; we do not, because the readership is European publ
 and a Google Fonts request is a live GDPR objection. Upstream now records this as a sanctioned
 divergence.
 
+### ⚠ `el.hidden` needs `[hidden]{display:none!important}` — theme.py carries it
+
+The `hidden` attribute hides via the UA stylesheet's `[hidden]{display:none}`, and
+**any author `display:` rule outranks it.** Two elements were defeated by exactly
+that, both shipped and live:
+
+- `.drawer{display:flex}` — the More filters drawer rendered **253px tall with
+  `hidden` set**, so it was open on every page load.
+- `.more{display:block}` — "Show 100 more" was offered even for a 2-result list.
+  Live since the 2026-08 restyle.
+
+`theme.py` now carries `[hidden]{display:none!important}` in the shared reset, so
+`el.hidden` means hidden on all four pages. Nothing in this repo assigns
+`style.display`, so the `!important` is safe; keep it that way and keep using
+`el.hidden`.
+
+⚠ **`.nores` on /products.html was never affected, and the reason is the rule to
+remember:** it has no author `display` rule, so the UA `[hidden]` won on its own.
+The bug only appears where an author rule sets `display` on something you also
+hide by attribute.
+
+⚠ **Checking `el.hidden` is NOT checking that it is hidden.** The property reads
+`true` while the element renders at full height — which is how this shipped: the
+verification asserted `drawerHiddenInitially: true` and moved on. Assert
+`getComputedStyle(el).display === 'none'`, or a rendered height of 0. Same rule as
+"verify the built output, not the patch report", one level further in.
+
+### The toolbar is ONE row above 940px, by `nowrap` not by tuned widths
+
+`flex-wrap:wrap` wraps a line **before** shrinking anything on it, so capping each
+control only moves the width at which it breaks — 160+220+190+100 fits the 825px
+column at 1280 and wraps to two rows in the 615px column at 1024. Above the
+breakpoint the toolbar is `nowrap` with `min-width:0` on the selects, so they
+compress and ellipsis instead. Below 941px the sidebar goes static and wrapping is
+correct, so the default stands.
+
+- **Selects absorb the squeeze; buttons do not.** `flex:0 0 auto` +
+  `white-space:nowrap` on `.tog`, because letting `#morefilters` shrink took it to
+  67px, wrapped "More filters" onto two lines and made it 57px tall beside 38px
+  selects. A control that changes height as the window narrows reads as broken.
+- **`#lic` carries its own `max-width:220px` from an ID selector**, which outranks
+  a class rule and left it hogging 220 of a 615px column, squeezing `#sort` to
+  101px where "Sort: most catalogs" truncates to about three characters. An ID
+  needs an ID to beat it: `.toolbar #lic`.
+- **Anything that does not fit goes in the drawer.** `Replaces a paid product`
+  moved there for this reason, leaving sort / licence / source catalog / More
+  filters on the row.
+
+⚠ **Measure rows by vertical CENTRE, not `top`.** The toolbar is
+`align-items:center`, so controls of different heights have different `top` values
+on the *same* row — which reported "2 rows" for a correct single-row layout twice
+during this work. Compare `toolbar.height` against the tallest child instead.
+
 ### The toolbar, the drawer, and what "set aside" now says (2026-09-21)
 
 - **Source country labels are country NAMES** ("Germany", not "DE"), from

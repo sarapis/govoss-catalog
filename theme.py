@@ -336,6 +336,13 @@ def assert_variant_live(html):
 
 BASE_CSS = """
 *{box-sizing:border-box;}
+/* The `hidden` attribute hides via the UA stylesheet's `[hidden]{display:none}`,
+   which ANY author `display:` rule outranks. Two elements were defeated by it:
+   the catalog's `.drawer{display:flex}` rendered 253px tall while `hidden` was
+   set, and `.more{display:block}` meant "Show 100 more" was offered even for a
+   2-result list — the latter live since the 2026-08 restyle.
+   Author-level and !important, so `el.hidden` means hidden. */
+[hidden]{display:none!important;}
 html{-webkit-text-size-adjust:100%;}
 body{
   margin:0;

@@ -95,7 +95,39 @@ PAGE_CSS = """
   text-decoration:underline;}
 
 /* ---- results toolbar ---- */
+/* The toolbar is meant to be ONE row. A <select> is sized by its longest option,
+   and "Digital Public Goods Registry (GLOBAL) (253)" made #src 329px wide, which
+   with the other controls totalled 1,029px in a 615px column and wrapped to
+   THREE rows. Capping the width truncates the closed display only — the dropdown
+   list still shows each option in full — and everything that does not fit has
+   moved into the drawer instead. */
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
+.toolbar .sel{max-width:190px;}
+.toolbar #sort{max-width:170px;}
+/* #lic carries its own `max-width:220px` from an ID selector, which outranks the
+   class rule above and left it hogging 220 of a 615px column — squeezing #sort to
+   101px, where "Sort: most catalogs" truncates to about three characters. An ID
+   needs an ID to beat it. "Any licence" fits comfortably; the long SPDX names
+   ellipsis either way. */
+.toolbar #lic{max-width:150px;}
+.drawer .sel{max-width:none;}
+/* ONE ROW above the sidebar breakpoint, and it has to be `nowrap` rather than
+   tuned widths. With `flex-wrap:wrap` the browser wraps a line BEFORE shrinking
+   anything on it, so capping each control just moves the width at which it
+   breaks: 160+220+190+100 fits an 825px column at 1280 and wraps to two rows in
+   the 615px column at 1024. `nowrap` plus `min-width:0` lets them compress
+   instead, so the row holds at any desktop width and the labels ellipsis (which
+   `.sel` already does). Below 941px the sidebar goes static and wrapping is
+   correct, so the default stands. */
+@media (min-width:941px){
+  .toolbar{flex-wrap:nowrap;}
+  /* The SELECTS absorb the squeeze — they already ellipsis. The buttons do not:
+     letting #morefilters shrink took it to 67px, wrapped "More filters" onto two
+     lines and made it 57px tall beside 38px selects. A control that changes
+     height when the window narrows reads as broken. */
+  .toolbar .sel{min-width:0;flex:1 1 auto;}
+  .toolbar .tog{flex:0 0 auto;white-space:nowrap;}
+}
 .drawer{background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-card);padding:14px 16px;margin:-6px 0 14px;
   display:flex;flex-direction:column;gap:12px;}
@@ -293,7 +325,6 @@ BODY = """
         <select class="sel" id="src" aria-label="Filter by source catalog">
           <option value="">Any source catalog</option>__SOPTS__
         </select>
-        <button class="tog" type="button" id="onlyrep" aria-pressed="false">Replaces a paid product</button>
         <button class="tog" type="button" id="morefilters" aria-expanded="false"
                 aria-controls="drawer">More filters</button>
       </div>
@@ -304,6 +335,10 @@ BODY = """
            was set aside nor why - and it covered TWO unrelated claims, so no
            single label could. Split and spelled out here instead. -->
       <div class="drawer" id="drawer" hidden>
+        <div class="drow">
+          <span class="dlab">Procurement</span>
+          <button class="tog" type="button" id="onlyrep" aria-pressed="false">Replaces a paid product</button>
+        </div>
         <div class="drow">
           <label class="dlab" for="lv">Repository state</label>
           <select class="sel" id="lv" aria-label="Filter by repository state">
