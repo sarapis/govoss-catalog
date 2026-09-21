@@ -56,6 +56,11 @@ def build():
         ("/by-product.json", "Inverted index: proprietary product to open source "
                              "alternatives. Two requests answer a licence inventory.",
          "by-product.json", "%s products mapped" % counts.get("distinct_products_mapped", "-")),
+        ("/by-country/FR.json", "One file per country, 15 of them. \u26a0 The code is "
+                                "the country of the CATALOGUE that listed the software, "
+                                "not the tier of government that published it \u2014 there "
+                                "is no municipal/regional/national distinction here.",
+         "by-country/FR.json", "15 countries"),
         ("/sources.json", "The catalogues harvested, their access routes and entry counts, "
                           "plus the ones surveyed and rejected with reasons.",
          "sources.json", "17 catalogues"),

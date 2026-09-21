@@ -462,6 +462,7 @@ def write_agent_files(entries, meta, by_product):
     never drift from the data they describe."""
     cats = "\n".join(f"  {c['key']:22} {c['label']:34} {c['count']}" for c in meta["categories"])
     srcs = "\n".join(f"  {s['name']:22} {s['count']}" for s in meta["sources"])
+    ctry = "\n".join(f"  {c['code']:8} {c['count']}" for c in meta["countries"])
     gaps = meta["known_gaps"]
     nl = chr(10)
     txt = f"""# govoss-catalog
@@ -482,6 +483,12 @@ scraping it is both harder and less complete than one HTTP GET.
   GET /meta.json                 category enum, sources, licences, counts, known gaps
   GET /by-product.json           inverted index: proprietary product -> alternatives
   GET /by-category/<key>.json    one file per category, keys listed below
+  GET /by-country/<CC>.json      one file per country, codes listed below.
+                                 NOTE: the code is the country of the CATALOGUE that
+                                 listed the software, NOT the tier of government that
+                                 published it. There is no municipal/regional/national
+                                 distinction in this data. An entry listed by several
+                                 catalogues appears under each.
   GET /v1/entries.json           versioned alias - pin this
   GET /status.json               freshness, last run, per-source counts, change log
   GET /                          the human page
@@ -526,6 +533,16 @@ An empty array means NOT MAPPED, not "no European alternative exists".
 ## Sources
 
 {srcs}
+
+## Countries ({len(meta['countries'])})
+
+The country of the CATALOGUE that listed the software, NOT the tier of government
+that published it. This data carries no municipal/regional/national distinction,
+so /by-country/NL.json is "what code.overheid.nl lists", ministries included — it
+cannot answer "what do Dutch LOCAL governments publish". Entries listed by several
+catalogues appear under each code, so these sum to more than the active total.
+
+{ctry}
 
 ## Known gaps
 
