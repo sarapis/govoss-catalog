@@ -333,6 +333,7 @@ def build():
             "meta": "/meta.json",
             "by_product": "/by-product.json",
             "by_category": "/by-category/<category-key>.json",
+            "by_country": "/by-country/<ISO-3166-alpha-2>.json (plus EU, GLOBAL)",
             "sources": "/sources.json",
             "status": "/status.json",
             "versioned": "/v1/entries.json",
@@ -359,6 +360,7 @@ def build():
 
     os.makedirs(f"{SITE}/v1", exist_ok=True)
     os.makedirs(f"{SITE}/by-category", exist_ok=True)
+    os.makedirs(f"{SITE}/by-country", exist_ok=True)
 
     def w(path, obj):
         with open(f"{SITE}/{path}", "w") as f:
@@ -406,12 +408,43 @@ def build():
         subset = [e for e in active if key in e["category_keys"]]
         sizes[f"by-category/{key}.json"] = w(f"by-category/{key}.json", subset)
 
+    # ---- by COUNTRY. Asked for by a researcher who wanted the German subset and
+    # had no route to it but downloading 6 MB and filtering client-side.
+    #
+    # A merged entry credits EVERY country that listed it, not just the survivor's
+    # — the same rule meta's per-source counts use, and the point of a union
+    # catalogue: software both France and Italy publish belongs in both subsets.
+    #
+    # ⚠ The code is the country of the CATALOGUE that listed the software, NOT the
+    # tier of government that published it. There is no municipal/regional/national
+    # field, so /by-country/NL.json is "what code.overheid.nl lists", ministries
+    # included — it cannot answer "what do Dutch LOCAL governments publish". The
+    # note below ships in the file so the distinction travels with the data rather
+    # than living only in docs the caller never reads.
+    by_country = collections.defaultdict(list)
+    for e in active:
+        for code in (e.get("countries") or ([e["country"]] if e.get("country") else [])):
+            by_country[code].append(e)
+    for code, subset in sorted(by_country.items()):
+        sizes[f"by-country/{code}.json"] = w(f"by-country/{code}.json", {
+            "country": code,
+            "count": len(subset),
+            "generated_at": GENERATED_AT,
+            "note": ("The country of the CATALOGUE that listed this software, not "
+                     "the tier of government that published it. This catalogue "
+                     "carries no municipal/regional/national distinction. Entries "
+                     "listed by several catalogues appear under each."),
+            "entries": subset,
+        })
+
     write_agent_files(entries, meta, by_product)
 
     print(f"exported {len(entries)} entries  (schema {SCHEMA_VERSION}, {GENERATED_AT})")
     for k in ("entries.json", "meta.json", "by-product.json", "mcp-index.json"):
         print(f"   {k:22} {sizes[k]/1024:8.0f} KB")
     print(f"   by-category/           {len(FUNCTIONS)} files")
+    print(f"   by-country/            {len(by_country)} files  "
+          f"({', '.join(f'{k} {len(v)}' for k, v in sorted(by_country.items(), key=lambda kv: -len(kv[1]))[:6])}...)")
     print(f"   v1/ aliases            2 files")
     print(f"\n   with replaces mapping: {meta['counts']['with_replaces']} entries "
           f"-> {meta['counts']['distinct_products_mapped']} proprietary products")

@@ -256,6 +256,65 @@ def build():
                 cls, esc(r["run_at"][:10]), tip)
         return cells
 
+    # ---- per-source DEPTH and LINK HEALTH.
+    #
+    # A count alone says how many rows a catalogue contributed, not how much is
+    # actually in them. SILL contributes 670 entries of which 4% carry a
+    # publiccode.yml; Developers Italia contributes 537 of which 100% do. Those
+    # are very different datasets and the page rendered them as two numbers of
+    # similar size. The tier split is the honest depth metric, and link health
+    # is reliability attributed to the catalogue that published the link rather
+    # than pooled into one site-wide percentage.
+    #
+    # Link health counts only repos with a DECIDED verdict — 200, or dead and
+    # confirmed over two runs. `unknown` (403/429/5xx) is excluded from the
+    # denominator rather than counted as either, the same rule liveness.py uses:
+    # rate-limiting is not evidence of anything.
+    lv_repos = {}
+    try:
+        with open(f"{OUT}/liveness.json") as fh:
+            lv_repos = (json.load(fh) or {}).get("repos") or {}
+    except Exception:
+        pass
+    DEAD_ST = {404, 410}
+    depth, n_live, n_decided = collections.Counter(), collections.Counter(), collections.Counter()
+    for r in active:
+        for s in (r.get("sources") or [r.get("source")]):
+            if not s:
+                continue
+            if r.get("tier") == "publiccode":
+                depth[s] += 1
+            rec = lv_repos.get(r.get("repo_key") or "")
+            if rec:
+                st = rec.get("status")
+                if st == 200:
+                    n_live[s] += 1
+                    n_decided[s] += 1
+                elif st in DEAD_ST and rec.get("dead_since"):
+                    n_decided[s] += 1
+
+    # ---- countries. Asked for by a policy researcher who wanted one country's
+    # subset and had no route to it short of downloading 6 MB and filtering.
+    #
+    # ⚠ The caveat ships ON THE PAGE, not only in the docs, because this is the
+    # figure most likely to be misread by the audience most likely to read it:
+    # the code is the country of the CATALOGUE, not the tier of government that
+    # published the software. There is no municipal/regional/national field.
+    by_country = collections.Counter()
+    for r in active:
+        for cc in (r.get("countries") or ([r["country"]] if r.get("country") else [])):
+            by_country[cc] += 1
+    FLAGS = {m["country"]: m["flag"] for m in S.SOURCES.values()}
+    vrows_c = ""
+    for cc, n in by_country.most_common():
+        vrows_c += (
+            '<div class="ccard">'
+            '<span class="cc-f">%s <b>%s</b></span>'
+            '<span class="cc-n">%s</span>'
+            '<a class="mono" href="/by-country/%s.json">JSON</a>'
+            '</div>'
+        ) % (FLAGS.get(cc, "&#127758;"), esc(cc), "{:,}".format(n), esc(cc))
+
     # ---- catalogue rows
     crows = ""
     for key, meta in sorted(S.SOURCES.items(), key=lambda kv: -counts.get(kv[0], 0)):
@@ -267,6 +326,20 @@ def build():
             stamps += '<span class="stamp multi">publiccode.yml</span>'
         if n == 0:
             stamps += '<span class="stamp warn">contributed nothing</span>'
+        # Depth, not just volume: what share of this catalogue's rows carry a
+        # publisher-written publiccode.yml rather than bare forge metadata.
+        if n:
+            pc = depth.get(key, 0)
+            stamps += ('<span class="stamp">%d%% publiccode</span>'
+                       % round(100 * pc / n))
+        # Link health for THIS catalogue's repos, unknowns excluded.
+        dec = n_decided.get(key, 0)
+        if dec:
+            pct = round(100 * n_live.get(key, 0) / dec)
+            cls = "" if pct >= 95 else " warn"
+            stamps += ('<span class="stamp%s" title="%d of %d repo URLs with a '
+                       'decided verdict resolve; rate-limited/unreachable excluded">'
+                       '%d%% links live</span>' % (cls, n_live.get(key, 0), dec, pct))
         # Freshness on EVERY row, not only the unhealthy ones. A count alone
         # cannot distinguish "fetched today, unchanged" from "failing since
         # July, showing its last good copy" — they render identically, which is
@@ -383,6 +456,7 @@ def build():
 
     subs = {
         "__CROWS__": crows, "__SROWS__": srows, "__DROWS__": drows, "__VROWS__": vrows,
+        "__CROWS_C__": vrows_c,
         "__N_CAT__": str(len(S.SOURCES)),
         "__N_COUNTRIES__": str(n_countries),
         "__N_ADDED__": "%+d" % added,
@@ -490,6 +564,17 @@ PAGE_CSS = """
 .s-bar.s-unknown{background:transparent;border:1px dashed var(--border);}
 .s-d{flex:0 0 54px;text-align:right;color:var(--ink-600);font-size:12px;}
 
+/* by country - a dense grid, NOT .crow. Reusing the 5-column catalogue row
+   left three cells empty and made each country 141px tall: 15 of them became
+   ~2,100px of scrolling for what is a lookup table. */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:8px;}
+.ccard{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-card);padding:10px 12px;display:flex;
+  align-items:baseline;gap:8px;flex-wrap:wrap;}
+.ccard .cc-f{font-size:12px;color:var(--ink-600);white-space:nowrap;}
+.ccard .cc-n{font-weight:600;}
+.ccard a{font-size:11px;margin-left:auto;}
+
 /* surveyed */
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
 .vcard{background:var(--surface);border:1px solid var(--border);
@@ -550,6 +635,21 @@ BODY = """
       <span><i style="background:var(--border-soft)"></i>not a source yet, or not recorded</span>
       <span style="color:var(--ink-faint)">last __SPARK_N__ runs, oldest first</span>
     </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h3>By country</h3>
+      <span class="r">One JSON file per country, CORS-open, no key. An entry listed
+        by several catalogues appears under each.</span></div>
+    <hr class="dashed">
+    <p class="note" style="margin-top:12px"><b>Read this before citing a country
+      figure.</b> The code is the country of the <b>catalogue that listed the
+      software</b>, not the tier of government that published it. This catalogue
+      carries no municipal / regional / national distinction, so
+      <span class="mono">/by-country/NL.json</span> is &ldquo;what code.overheid.nl
+      lists&rdquo;, national ministries included &mdash; it cannot answer
+      &ldquo;what do Dutch <i>local</i> governments publish&rdquo;.</p>
+    <div class="cgrid" style="margin-top:14px">__CROWS_C__</div>
   </section>
 
   <section class="sec">

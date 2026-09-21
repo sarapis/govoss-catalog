@@ -184,6 +184,15 @@ M = {
  "Open Software":None,"Open Data":None,"Open Content":None,
  "Open AI Model":None,"Open Standard":None,
  "Miscellaneous":None,"other":None,"Other":None,"as":None,
+ # SECTOR labels, not functions. "government" says WHO the software is for, and
+ # every entry in this catalogue is government software — so it carries no
+ # functional signal by construction and must not be force-fitted to a bucket.
+ # Mapped to None so the taxonomy falls through to text inference, exactly like
+ # the DPG artefact types above. (Reached 2026-09-14 via openCode's
+ # `ki-chatbot-perplexity`, whose other category `communications` already
+ # classified it — so, like `scheduling` before it, the unmapped value cost a
+ # signal rather than a classification.)
+ "government":None,"public-administration":None,"öffentliche-verwaltung":None,
 }
 
 # multilingual keyword rules for entries with NO source categories

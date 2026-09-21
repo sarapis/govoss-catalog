@@ -346,6 +346,16 @@ all of them shipping unclassified. `taxonomy.py` writes `out/taxonomy_unmapped.j
 nothing unmapped writes `{}` and the warning disappears. Do not silence an unmapped value by
 widening a bucket; the point of the warning is that it stays near zero.
 
+**`government` is mapped to `None` — a SECTOR, not a function (2026-09-14).** `M` already
+carries nine values mapped to nothing (`Open Software`, `Miscellaneous`, `other`…): values
+saying what *kind of thing* something is, not what it *does*, so the taxonomy falls through to
+text inference instead of force-fitting a bucket. `government` is the clearest case — every
+entry here is government software, so the label carries no functional signal by construction.
+`public-administration` and `öffentliche-verwaltung` went in beside it. **Reaching for `None`
+is right whenever a source value describes the audience or the artefact type rather than the
+function** — a third outcome beside "map it" and "it's a bug", and the one a sector label
+needs.
+
 **`scheduling` was the last one, mapped 2026-09-10 → `case-workflow`.** Recorded because the
 reasoning is the template for the next unmapped value: `M` already mapped the entire sibling
 family there (`appointment-scheduling`, `online-booking`, `booking-and-reservation`,
@@ -520,6 +530,7 @@ Static files in `site/`, no backend. `run.sh` emits them every run.
 | `/meta.json` | categories, sources, licences, counts, `generated_at`, known gaps |
 | `/by-product.json` | **inverted index**: proprietary product -> alternatives |
 | `/by-category/<key>.json` | one file per functional category |
+| `/by-country/<CC>.json` | one file per country (15, incl. `EU` + `GLOBAL`) |
 | `/v1/entries.json` | versioned alias so consumers can pin |
 
 `Access-Control-Allow-Origin: *` on all `*.json`. `/api/entries`, `/api/catalog`,
@@ -844,6 +855,31 @@ watching the build succeed. **Test a guard adversarially.**
 system loads them from a CDN; we do not, because the readership is European public-sector staff
 and a Google Fonts request is a live GDPR objection. Upstream now records this as a sanctioned
 divergence.
+
+### `/sources.html` answers four questions, deliberately
+
+Rebuilt 2026-09-20 after a policy researcher asked how the data is obtained, whether it can be
+filtered regionally, how much there is, and how reliable it is. Three gaps, now closed:
+
+- **Depth per source, not just volume.** `N% publiccode` on every row. SILL contributes 670
+  entries of which **4%** carry a publisher-written `publiccode.yml`; Developers Italia
+  contributes 537 of which **100%** do. Two similar-looking counts, very different datasets —
+  the page used to render them identically.
+- **Link health per source.** `N% links live`, counting only repos with a DECIDED verdict:
+  `unknown` (403/429/5xx) is excluded from the denominator rather than counted as either, the
+  same rule `liveness.py` uses. Attributes rot to the catalogue that published the link
+  instead of pooling it into one site-wide figure.
+- **A `By country` grid** linking `/by-country/<CC>.json`, ⚠ **with the caveat rendered on the
+  page**: the code is the country of the **catalogue that listed the software**, not the tier
+  of government that published it — there is no municipal/regional/national field. That
+  distinction belongs where the number is read, not only in docs; it is the figure most likely
+  to be misread by the audience most likely to want it.
+
+⚠ **Do not build the country grid out of `.crow`.** It was, first: the 5-column catalogue-row
+grid left three cells empty and made each country **141px** tall, turning a 15-row lookup
+table into ~2,100px of scrolling. `.cgrid`/`.ccard` is 46px a card, 5 across at 1200px, 260px
+for the whole section. Measure the rendered DOM — the preview pane returns blank screenshots
+for this page.
 
 ## The MCP server
 
