@@ -105,6 +105,7 @@ M = {
  "Databases":"infrastructure","databas":"infrastructure","database":"infrastructure",
  # geo
  "geographic-information-systems":"geospatial","geospatial":"geospatial",
+ "geospatial-information":"geospatial",
  "GeoSpatial":"geospatial","geodata":"geospatial","cad":"geospatial",
  "smart-city":"geospatial","urban-issues":"geospatial",
  # identity / security
@@ -169,6 +170,7 @@ M = {
  "healthcare":"health-social",
  # environment / transport
  "energy":"environment-transport","transport":"environment-transport",
+ "environmental-protection":"environment-transport",
  "fleet-management":"environment-transport",
  # office
  "office":"office","Office & Productivity":"office","productivity-suite":"office",
