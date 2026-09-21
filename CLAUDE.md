@@ -716,6 +716,43 @@ its own status page still said "Operational", and every update needed a hand-run
   stored login. The file is preferred over the plist because LaunchAgent plists are
   world-readable and end up in backups, and rotating a file needs no `launchctl` reload.
 
+### Deploy auth is REPORTED, not just relied on (F7)
+
+`run.sh` resolves auth in order — `VERCEL_TOKEN`, then
+`~/.config/govoss/vercel-token` (chmod 600), then the CLI's stored login — and now
+records which one it used to `out/deploy_auth.txt`. `runlog.py` puts it in
+`history.json` as `deploy_auth`; `build_sources.py` **warns on `/sources.html`
+while the route is `stored-login`**.
+
+The fragile mode was already *printed*. That is the sensor this repo keeps finding
+inadequate: a revoked login fails the deploy step, which does block the publish —
+but the only outward signal is the public copy going stale, and the browser-side
+Stale badge does not flip for 8 days. A week of a quietly out-of-date site is too
+long to learn it from the site itself.
+
+⚠ **`None` is not `stored-login`.** A run that never reached the deploy step records
+`None`, and the warning does not fire on it. Defaulting an absent value to the
+fragile route would report a posture the run never had.
+
+`warn`, not `critical` — nothing is broken while the stored login works, and
+over-grading config debt trains the reader to ignore an otherwise accurate page.
+
+**The pre-flight checks CONTENT, not the exit status.** `vercel whoami` prints a
+bare username on success and an `Error: … err.sh/…` block on a bad credential. It
+does exit 1 — but that status only survives `| tail -1` because run.sh sets
+`pipefail` 130 lines earlier, and a check that becomes a silent no-op if someone
+edits that line is exactly the guard-that-can-only-pass this repo has shipped twice.
+Verified both ways: without `pipefail` the pipeline reports success for an invalid
+token. The pre-flight is also deliberately **non-fatal** — a transient `whoami`
+hiccup must not block a publish that would otherwise succeed; the deploy is the
+real test, and the pre-flight only makes its failure legible (auth, not PATH — a
+distinction this repo got wrong once already).
+
+⚠ **The remaining step is a CREDENTIAL and is not code.** Mint a token at
+https://vercel.com/account/tokens and write it to the file; `~/.config/govoss/`
+exists with mode 700 and a README. Until then the page carries the warning, which
+is the intended state, not a defect.
+
 ### `record` — the run commits and pushes its own data
 
 The step after `deploy`, sharing its gate, so **what is committed is what is published**. It

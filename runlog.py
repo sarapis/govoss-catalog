@@ -58,6 +58,16 @@ def main():
                     "seconds": timing.get(key),
                 }
 
+    # F7: which auth route the deploy used, written by run.sh's publish().
+    # Recorded so the status page can say the weaker posture is in use, and so
+    # the week a token finally lands is visible in history rather than inferred.
+    deploy_auth = None
+    try:
+        with open(f"{OUT}/out/deploy_auth.txt") as fh:
+            deploy_auth = (fh.read() or "").strip() or None
+    except Exception:
+        pass
+
     steps, failures = [], {}
     sp = f"{OUT}/out/steps.tsv"
     if os.path.exists(sp):
@@ -133,6 +143,9 @@ def main():
             "revived": lsum.get("revived") or [],
         },
         "filters": dict(collections.Counter(r.get("exclude_reason") for r in excluded)),
+        # None on a run that did not reach the deploy step, which is meaningfully
+        # different from "deployed on a stored login" — do not default it.
+        "deploy_auth": deploy_auth,
     }
 
     if started:

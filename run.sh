@@ -203,8 +203,55 @@ publish () {
 
   local token="${VERCEL_TOKEN:-}"
   local tokfile="${VERCEL_TOKEN_FILE:-$HOME/.config/govoss/vercel-token}"
+  local route="stored-login"
+  [ -n "$token" ] && route="env:VERCEL_TOKEN"
   if [ -z "$token" ] && [ -r "$tokfile" ]; then
     token=$(tr -d ' \t\r\n' < "$tokfile")
+    [ -n "$token" ] && route="token-file"
+  fi
+
+  # F7: which auth route this ran on, written where the status page can read it.
+  #
+  # The fragile mode was already PRINTED ("using the CLI's stored login") and that
+  # is exactly the sensor this repo keeps finding inadequate: a line in a log
+  # nobody opens. A revoked login fails the deploy step, which does block the
+  # publish and does flip the browser-side Stale badge — but only after 8 days of
+  # a quietly stale public site. Recording the route makes the weaker posture
+  # visible on the run that uses it, not a week after it breaks.
+  mkdir -p out
+  printf '%s' "$route" > out/deploy_auth.txt
+
+  # PRE-FLIGHT. `whoami` is a cheap read that distinguishes "auth is broken" from
+  # every other reason a deploy fails — the distinction this repo already got
+  # wrong once, when a missing `node` on the launchd PATH read as an auth failure.
+  #
+  # Deliberately NON-FATAL: a transient hiccup on whoami must not block a publish
+  # that would otherwise succeed. The deploy below is the real test; this only
+  # makes its failure legible.
+  #
+  # ⚠ CHECKS THE CONTENT, NOT JUST THE EXIT STATUS. `vercel whoami` prints the
+  # bare username on success and an "Error: ... Learn More: https://err.sh/..."
+  # block on a bad credential. It does exit 1 on failure — but that status only
+  # survives the `| tail -1` because this script sets `pipefail` far above, and a
+  # check that silently becomes a no-op if someone edits `set -uo pipefail` is
+  # the "guard that can only ever pass" this repo has already shipped twice.
+  # Measured both ways before writing this: without pipefail the pipeline
+  # reports success for an invalid token.
+  local who ok=1
+  who=$("$VERCEL" whoami ${token:+--token "$token"} 2>&1 | tail -1) || ok=0
+  case "$who" in
+    *Error:*|*err.sh*|*invalid*|*" "*|"") ok=0 ;;
+  esac
+  if [ "$ok" = 1 ]; then
+    echo "auth: $route (account: $who)"
+  else
+    echo "auth: $route — PRE-FLIGHT FAILED: $who" >&2
+    echo "  if the deploy now fails, this is why, and it is auth, not PATH." >&2
+    if [ "$route" = "stored-login" ]; then
+      echo "  the CLI's stored login looks revoked or expired. Mint a token:" >&2
+      echo "    https://vercel.com/account/tokens" >&2
+      echo "    printf '%s' '<TOKEN>' > $tokfile && chmod 600 $tokfile" >&2
+    fi
   fi
 
   if [ ! -f site/.vercel/project.json ]; then
@@ -219,6 +266,8 @@ publish () {
     ( cd site && "$VERCEL" deploy --prod --yes --token "$token" )
   else
     echo "no VERCEL_TOKEN and no $tokfile — using the CLI's stored login."
+    echo "  a stored login is revocable and would then fail every Monday;"
+    echo "  /sources.html carries this as a warning until a token is in place."
     ( cd site && "$VERCEL" deploy --prod --yes )
   fi
 }

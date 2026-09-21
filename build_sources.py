@@ -230,6 +230,30 @@ def build():
                              % (n_orph - prev_orph, n_orph,
                                 (", mostly %s" % worst[1]) if worst[1] else "")))
 
+    # ---- F7: deploy auth posture.
+    #
+    # The deploy prefers a token file and falls back to the Vercel CLI's stored
+    # login, which is revocable. When it is revoked the deploy step fails, which
+    # correctly blocks the publish — but the only outward signal is the public
+    # copy going stale, and the browser-side Stale badge does not flip for 8
+    # days. That is a week of a quietly out-of-date site.
+    #
+    # So the POSTURE is reported, not just the failure: while the run is leaning
+    # on a stored login, the page says so. This is the F1/F3/F4/F6 pattern one
+    # more time — the fragile mode was already printed by run.sh, and a print is
+    # not a sensor.
+    #
+    # `warn`, not `critical`: nothing is broken today. It is config debt with a
+    # known one-line remedy, and over-grading it would train the reader to
+    # ignore a page that is otherwise accurate.
+    auth = (latest.get("deploy_auth") or "").strip()
+    if auth == "stored-login":
+        problems.append(("warn", "the weekly deploy is authenticating with the Vercel "
+                                 "CLI's stored login, which is revocable — the day it is, "
+                                 "the public copy silently stops updating. Mint a token "
+                                 "into ~/.config/govoss/vercel-token (chmod 600); run.sh "
+                                 "already prefers it (review finding F7)"))
+
     state = ("critical" if any(p[0] == "critical" for p in problems)
              else "warn" if any(p[0] == "warn" for p in problems) else "ok")
 
