@@ -300,13 +300,51 @@ published on `/products.html` and the matched side is browsable. See *What shipp
 check whether product names normalise across the two. A day's work, not a project. If two
 jurisdictions cohere it is a catalogue; if they do not, building one has been avoided.
 
+> **Retried 2026-09-21: Portland is still blocked.** Every tool on the OCDS connector —
+> `get_database_overview`, `search_contracts`, `get_tender_stats` — returns the same
+> `permission denied for table tenders`. It is a server-side grant, not a query to work
+> around, so this route needs someone with access to the database rather than another
+> attempt. Recorded so the next session does not spend the same try. (NYC's export was
+> re-checked in the same pass and is unchanged: 1,601 contracts, $1,770,420,800, 927
+> products, 815 families, 6 competitively bid — every figure in this note still holds.)
+
+> ⚠ **STAGE 1 AS WRITTEN MAY BE UNSATISFIABLE, and this note's own crux is why.** It asks for
+> a second jurisdiction that already publishes product-level licence data — but *What NYC
+> proved* establishes that NYC's clean `product` column exists **because Databook ran an LLM
+> extraction**, not because procurement systems publish it. Raw NYC records read "Microsoft
+> Premier Support" with a reseller in the vendor field. So the search is for a second instance
+> of work that essentially nobody does.
+>
+> **The runnable version:** take a second jurisdiction's **raw** contract data, which is
+> published widely, run the same extraction, and check whether the two extracted vocabularies
+> cohere. That tests the actual risk instead of shopping for a pre-extracted export.
+>
+> ⚠ But it prices in a cost this note does not. **An extraction pipeline is not harvesting.**
+> govoss's identity is finding the machine route a catalogue's own site is built from and
+> reading it — 17 sources, none transcribed. Owning an extraction means *generating* the data
+> and being answerable for it, which quietly breaks the condition *Costs* sets: "viable
+> **only** if harvested from procurement data, which governments do maintain." **That is the
+> real decision, and it is bigger than Stage 1.**
+>
+> There is also a third path that needs no decision: the **application portfolio register**,
+> a different genre from procurement data — a government publishing what software it *runs*
+> rather than what it *bought*. Those are maintained upstream by the publisher, which
+> satisfies *Costs* where an extraction does not. See `DEMAND-SIDE-CALL-FOR-SOURCES.md`, the
+> shareable brief written 2026-09-21 for people who might know of one.
+
 **Stage 2 — build, only if Stage 1 passes.** Harvest pipeline, QID-keyed identity, aliases as
 data, and `replaces.json` narrows to edges-only against a harvested vocabulary.
 
 ## Not decided here
 
 - **Stage 1 has not run.** Whether product-level licence data generalises beyond NYC is still
-  the open question, and everything past Stage 0 depends on it.
+  the open question, and everything past Stage 0 depends on it. Portland, the intended test,
+  is still permission-denied as of 2026-09-21 — see the box above, which also reframes what
+  Stage 1 should actually test and names the cost that reframing exposes.
+- **Whether to own an extraction pipeline.** Surfaced 2026-09-21. If product-level data does
+  not exist upstream anywhere, the only route to a second jurisdiction is extracting it, and
+  that is a different commitment from harvesting. Decide this before Stage 1, not after: it
+  determines whether Stage 1 is even the right test.
 - Whether the NYC CSV should be vendored. Recommendation is **no** — it is NYC's to publish and
   the export URL is the durable reference. `proprietary.json` is the checked-in derivative.
 - How far to take alias harvesting. Nine are recorded; the remaining unmatched families are a
