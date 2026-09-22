@@ -187,16 +187,20 @@
 "31746d702b": "The CSV magician.",
 "9e5d2a405d": "Open Camera is an open source camera app for Android phones and tablets.",
 "3b9dadf76b": "GrapheneOS is a privacy- and security-focused mobile OS with Android app compatibility, developed as a non-profit open source project.",
-"333327815d": "Minimalist editor.",
 "d6061649ce": "OpenID Connect certified identity and authorisation management in Python. Manages a user base held in a directory.",
 "7eb92cd444": "Modern, powerful colour management and selection software.",
 "68864ffd19": "Self-hosted photo and video management software.",
 "2c15db30d3": "PDF editor.",
-"2270097425": "Auto Multiple Choice is software that helps you create and manage multiple choice questionnaires in LaTeX.",
 "ed22a827d0": "Producing scientific and technical documentation. You define your materials in Markdown, which quarto can then transform.",
 "9bcd238bdf": "Linux distribution.",
 "6db831461f": "Software for graphic retouching, creation and animation.",
 "f311607587": "Forensic identification.",
 "1637c8d31e": "Researcher-oriented database builder and web publisher for rich linked humanities data.",
-"c3593dbf7c": "Ekdosis is an open source LuaLaTeX package for producing scholarly critical editions from a single encoding."
+"c3593dbf7c": "Ekdosis is an open source LuaLaTeX package for producing scholarly critical editions from a single encoding.",
+"d04bf6b4cd": "Orchestration of task pipelines.",
+"82a7df848d": "Automatic management and marking of paper multiple-choice tests from scans, with optional shuffling of answers and questions.",
+"1b6fbfb8d8": "UNIX-like operating system kernel.",
+"f5ea91a005": "Open source web service for using LLMs.",
+"00adb866ee": "French instant messaging service based on the Matrix protocol.",
+"b6f893abbe": "Editor with AI built in (Albert can be connected via the API). Real-time collaboration mode (multi-user)."
 }

@@ -37,5 +37,8 @@
 "c86361a254": "Installation repository for the Skadesoekonomi (damage economics) project.",
 "5ccf701a94": "Adgangskomponent connects OIDC-based authentication mechanisms to Faelleskommunal Adgangsstyring, the joint municipal access management service.",
 "3b345a5a0e": "Report bugs or suggest ideas for OS2ai here.",
-"f17a92c68f": "Temporary repository holding a CKAN extension that adds extra metadata fields to a dataset."
+"f17a92c68f": "Temporary repository holding a CKAN extension that adds extra metadata fields to a dataset.",
+"f4ed824a19": "The purpose of this documentation is to make user guides easily accessible.",
+"fcac075e4d": "Central documentation for OS2ai, with technical guides for developers and operations staff and solution documentation for system owners.",
+"6528611daf": "This repository supports product management for OS2Display. Central documents, decisions and working materials are collected here, so that there is one shared and transparent source for governance and coordination."
 }

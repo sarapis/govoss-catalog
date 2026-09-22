@@ -310,6 +310,24 @@ sensor. And `runs[-2]` predates the field: treating its absent `orphan_keys` as 
 the entire standing backlog as new rot on the first run. Both are the same rule the liveness
 monitor already follows — the delta is the part with value.
 
+**Orphaned keys: 25 -> 3 on 2026-09-21**, by translating the text that had replaced
+them rather than deleting the keys. 37 entries were showing German, French, Dutch, Danish,
+Bulgarian, Italian or Swedish to a European public-sector readership; the 25 dead keys were
+removed as well, since their source text is gone from the catalogue and a counter that never
+returns to zero stops meaning anything.
+
+⚠ **THE ORPHAN COUNT IS POSITION-DEPENDENT.** `run.sh` runs this step **before dedupe**, and
+that is the number that means something. Run it after, and every row dedupe merged away has
+taken its source text out of the catalogue with it, so its translation looks rotted:
+measured, a post-dedupe run reported **32 orphans of which 29 were dedupe casualties and 3
+were real**. `merge_translations.py` now detects merged input and says so.
+
+It **warns** rather than refusing, unlike `taxonomy.py` and `dedupe.py`, which are
+destructive in that position and call `stage_guard.assert_pre_dedupe()`. Same family, and the
+remedy differs for a reason: a translated row carries `translated: True` and short-circuits,
+so re-running is safe — it is only the *reading* that misleads. Guard what destroys data;
+warn where the number lies.
+
 **The stat tile used to overstate this**, and the shape is worth remembering. It computed
 `n_en + n_tr` where `n_en` was "has a description and is not machine-translated" — which
 counts HAVING A DESCRIPTION and calls it English, so every Bulgarian row counted as English.

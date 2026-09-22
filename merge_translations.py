@@ -123,6 +123,27 @@ json.dump(c, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
 # what tell you which file to edit, and tr.update() order is irrelevant to that.
 orphans = orphans_of(per_file, live_keys)
 n_orph = sum(len(v) for v in orphans.values())
+
+# ⚠ THE ORPHAN COUNT IS POSITION-DEPENDENT, and a by-hand run out of position
+# inflates it. run.sh puts this step BEFORE dedupe, which is the number that
+# means something. Run it AFTER dedupe and every row dedupe merged away has
+# taken its source text out of the catalogue with it, so its translation looks
+# rotted when it is nothing of the kind: measured 2026-09-21, a post-dedupe run
+# reported 32 orphans of which **29 were dedupe casualties and 3 were real**.
+#
+# The step itself is safe to re-run — a translated row carries translated=True and
+# short-circuits — so this WARNS rather than refusing, unlike taxonomy.py and
+# dedupe.py, which destroy data in the same position and use
+# stage_guard.assert_pre_dedupe(). Same family, different remedy: there the data
+# is at risk, here only the reading is.
+if any("catalogue_count" in r for r in c if not r.get("excluded")):
+    print(f"\n   !! catalog.json has already been through dedupe, so the {n_orph} "
+          f"orphan count above is INFLATED:\n"
+          f"      rows dedupe merged away took their source text with them, and "
+          f"their translations\n"
+          f"      now look rotted. For the number that means something, run this "
+          f"before dedupe:\n"
+          f"        python3 harvest.py --from-cache && bash run.sh")
 os.makedirs(f"{OUT}/out", exist_ok=True)
 json.dump({
     "total": n_orph,

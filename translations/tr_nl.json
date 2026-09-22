@@ -49,7 +49,6 @@
 "fd20099dea": "FLOW documentation.",
 "b6fee2f7ae": "Open documentation for users of social.overheid.nl (Mastodon).",
 "5fbedf89b5": "Repository generiekefuncties-docs for the Ministry of Health, Welfare and Sport.",
-"697f9bc9db": "Completion aid for pre-scan, DPIA and IAMA assessments. Together online or entirely locally in your browser, without an account.",
 "523eb8ec8e": "Keycloak SAML identity providers (IdPs) for connecting to DigiD, eHerkenning and eIDAS.",
 "ff54bd7986": "Public knowledge base for the new Dutch Code of Criminal Procedure.",
 "cfb5ab5eb5": "FLOW MinIO chart.",
@@ -58,8 +57,6 @@
 "7a3f1dc6e1": "Modern Python finite state machine.",
 "1d68d07930": "Work in progress: RVO design system based on the NL Design System architecture, for the Netherlands Enterprise Agency.",
 "ee0753c9e9": "NDW Location Services accessibility map API.",
-"c7f4ff2c4d": "NDW Location Services geometry library.",
-"8448e6d82d": "NDW Location Services routing map matcher library.",
 "78322a8a73": "This is the Dimpact object-type repository for use with the objecttypes API in PodiumD.",
 "e4be077d63": "FLOW observability chart.",
 "7c67c76670": "Python OpenID Connect discovery client.",
@@ -74,7 +71,6 @@
 "9e49cca022": "Proof of concept testing the deployment and configuration of the EDC connector for making TFDS data available.",
 "6ca65bc021": "A pydantic type for media types.",
 "cf56079fff": "Python bindings for the EML_NL standard.",
-"17b409d792": "Download and visualise road traffic signs in minutes.",
 "8ad76aac7b": "RegelRecht.",
 "2032f2874b": "NBNL scenarios region viewer.",
 "0572888e9b": "How ICTU uses code.overheid.nl. Guidelines for ICTU projects, departments and staff using the platform.",
@@ -86,5 +82,10 @@
 "20da834fb7": "Mirror of the Internet.nl toolbox wiki, with documentation and examples of how internet standards should be configured.",
 "1f3d40c061": "FLOW traefik-forward-auth chart.",
 "566e9e9911": "Common Ground provision - base set of software components.",
-"ec92905b1a": "Freedom of Information (Woo) decision: PLOOI source code."
+"ec92905b1a": "Freedom of Information (Woo) decision: PLOOI source code.",
+"41a30e76ac": "Web application for Pre-scan, DPIA and IAMA assessments, following the Dutch government's Rijksmodel DPIA and IAMA.",
+"6b73311e97": "Description of the structure, relationships and meaning of the metadata, and the values that are permitted.",
+"f1e78b5cfa": "This module is to be used together with the specification for delivery to an e-depot. It provides a standard method for delivering information from a source system to a target system.",
+"71e53afa01": "This repository contains all documentation for the code.overheid.nl code platform.",
+"127cc33355": "Template repository for a ReSpec document of the National Archives of the Netherlands."
 }

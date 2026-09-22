@@ -241,5 +241,6 @@
 "465d9e14c1": "Base image: CentOS.",
 "34221129d4": "Base image: Debian.",
 "f71d25f38d": "BvC - CI/CD signed-commit tests.",
-"a4fa36db2d": "Open source repository."
+"a4fa36db2d": "Open source repository.",
+"d7bae60b42": "Runnable demo of Service App: drag-and-drop form builder, json-logic and MongoDB."
 }
