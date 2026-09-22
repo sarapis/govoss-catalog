@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Smoke test for the BUILT pages, and the contracts that span two of them.
+
+    bash run.sh          # or at least build_ui + build_site + the page builders
+    python3 test_built_pages.py
+
+Why this file exists: on 2026-09-21 a More filters drawer shipped rendering 253px
+tall with its `hidden` attribute correctly set, because `.drawer{display:flex}`
+outranks the UA stylesheet's `[hidden]{display:none}`. The verification that
+passed had asserted `el.hidden === true` — the property, not the rendering. At
+that point the repo had 163 tests and **not one of them touched built output**,
+which is precisely where the bug was.
+
+The checks below are the ones that were run by hand that day. A check that exists
+only in someone's session is a check that does not exist.
+
+⚠ Two of these are CROSS-PAGE contracts, and both fail silently and invisibly:
+
+  * `/sources.html` links to `/?src=<label>`, and the catalog validates that value
+    against its own <option> list and IGNORES an unknown one. So renaming a label
+    in sources.py does not error — all 17 "See catalog entries" links just stop
+    filtering, which reads as "this catalogue contributed no entries", the one
+    claim that page exists to disprove.
+  * `pslug()` exists TWICE — Python in build_products.py, JavaScript in
+    _ui_template.py — because importing across those modules would execute a
+    module body. The catalog computes product anchors client-side, so if the two
+    drift, every "Replaces X" link lands on an anchor that is not there. Checked
+    at the OUTCOME level (do the links land?) rather than by comparing the two
+    functions — see the note on check 5 for why the direct comparison was written
+    and then deleted.
+
+Not wired into run.sh, same as the other five suites: a test that can fail the
+weekly publish is a test someone switches off, and run.sh already gates its deploy
+on every build step exiting 0.
+"""
+import html
+import json
+import os
+import re
+import sys
+import urllib.parse
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SITE = os.path.join(HERE, "site")
+
+PAGES = {
+    "index.html": os.path.join(SITE, "index.html"),
+    "sources.html": os.path.join(SITE, "sources.html"),
+    "api.html": os.path.join(SITE, "api.html"),
+    "products.html": os.path.join(SITE, "products.html"),
+    "catalogue.html": os.path.join(HERE, "catalogue.html"),
+}
+
+
+def read(path):
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
+def py_pslug(s):
+    """The PYTHON pslug, copied from build_products.py."""
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
+
+
+def extract_js_array(page, var):
+    m = re.search(r"var %s = (\[.*?\]);" % re.escape(var), page, re.S)
+    return json.loads(m.group(1)) if m else None
+
+
+def main():
+    missing = [n for n, p in PAGES.items() if not os.path.exists(p)]
+    if missing:
+        print("SKIP  not built: %s\n      run `bash run.sh` (or the page builders) first."
+              % ", ".join(missing))
+        return 0
+
+    pages = {n: read(p) for n, p in PAGES.items()}
+    failed = []
+
+    def check(label, got, want):
+        if got != want:
+            failed.append("%s: expected %r, got %r" % (label, want, got))
+
+    # ---- 1. no unsubstituted placeholders.
+    # theme.py and _ui_template.py hold markup as PLAIN strings with
+    # __TOKEN__ substituted at the end. The builders assert none survive, but only
+    # for the pages they write; this covers every page at once.
+    for name, page in pages.items():
+        left = sorted(set(re.findall(r"__[A-Z][A-Z0-9_]*__", page)))
+        check("%s has no unsubstituted placeholder" % name, left, [])
+
+    # ---- 2. catalogue.html is pure ASCII.
+    # Artifacts cannot set <meta charset>, so depending on the host to declare
+    # UTF-8 once rendered "open source â€” aggregated".
+    raw = open(PAGES["catalogue.html"], "rb").read()
+    check("catalogue.html non-ASCII byte count", sum(1 for b in raw if b > 127), 0)
+
+    # ---- 3. the [hidden] reset, on every page whose JS toggles el.hidden.
+    # This is the drawer bug. `hidden` hides via the UA stylesheet, which any
+    # author `display:` rule outranks; the reset is what makes el.hidden mean
+    # hidden. Asserted as PRESENT because its absence is invisible — the attribute
+    # is set, the property reads true, and the element renders anyway.
+    for name in ("index.html", "products.html"):
+        page = pages[name]
+        if ".hidden" in page or "hidden>" in page:
+            check("%s carries [hidden]{display:none!important}" % name,
+                  bool(re.search(r"\[hidden\]\s*\{[^}]*display\s*:\s*none\s*!important", page)),
+                  True)
+
+    # ---- 4. CROSS-PAGE: every ?src= link resolves to a real <option>.
+    src_links = [urllib.parse.unquote(m)
+                 for m in re.findall(r'href="/\?src=([^"]*)"', pages["sources.html"])]
+    options = set(html.unescape(m)
+                  for m in re.findall(r'<option value="([^"]*)">', pages["index.html"]))
+    check("sources.html emits a ?src= link per harvested catalogue",
+          len(src_links) > 0, True)
+    check("every ?src= value matches a catalog <option>",
+          sorted(l for l in src_links if l not in options), [])
+
+    # ---- 5. CROSS-PAGE: every product the catalog links to has an anchor.
+    #
+    # ⚠ This replaced a direct "do the two pslug implementations agree?" check,
+    # which was written, tested by sabotage, and DELETED because it could only
+    # ever pass. Both implementations run `[^a-z0-9]+ -> -` and then collapse
+    # `-+ -> -`, and that pipeline absorbs every plausible one-sided edit: dropping
+    # the `+` from one character class, or the difference between Python's
+    # `.strip("-")` and the JS single-hyphen strip, produce identical output for
+    # every input tried (`--Foo--`, `C++ / C#`, `.NET`, `a---b`, `Ärger`, `...`).
+    # No input distinguishes them, so the comparison was untestable decoration.
+    #
+    # This check tests the OUTCOME instead: the links have to land. It does not
+    # care why two slugs might diverge, which is what makes it robust to causes
+    # nobody thought of. It fails on a sabotaged anchor (verified).
+    # The catalog builds `products.html#p-<pslug(name)>` in JS at render time, so
+    # this cannot be checked by grepping the static HTML — it has to be recomputed
+    # from the data the page ships.
+    anchors = set(re.findall(r'id="(p-[a-z0-9-]+)"', pages["products.html"]))
+    data = extract_js_array(pages["index.html"], "DATA")
+    check("catalog page ships its DATA array", data is not None, True)
+    if data:
+        linked = sorted({p for r in data for p in (r.get("rp") or []) if p})
+        check("catalog links to products", len(linked) > 0, True)
+        orphans = sorted(p for p in linked if "p-" + py_pslug(p) not in anchors)
+        check("every product the catalog links to has an anchor on products.html",
+              orphans, [])
+
+    # ---- 7. by-country files exist and agree with meta.json.
+    meta = json.load(open(os.path.join(SITE, "meta.json")))
+    codes = [c["code"] for c in meta["countries"]]
+    check("meta.json lists countries", len(codes) > 0, True)
+    absent, mismatched = [], []
+    for c in codes:
+        p = os.path.join(SITE, "by-country", "%s.json" % c)
+        if not os.path.exists(p):
+            absent.append(c)
+            continue
+        d = json.load(open(p))
+        declared = next(x["count"] for x in meta["countries"] if x["code"] == c)
+        if d.get("count") != declared or len(d.get("entries") or []) != declared:
+            mismatched.append("%s: meta %s, file count %s, entries %s"
+                              % (c, declared, d.get("count"), len(d.get("entries") or [])))
+    check("every country in meta.json has a by-country file", absent, [])
+    check("every by-country file agrees with meta.json", mismatched, [])
+
+    # ---- 8. the caveat that must travel WITH the data, not just in the docs.
+    # /by-country/<CC>.json is the figure most likely to be misread by the audience
+    # most likely to want it, so the note ships in the file itself.
+    de = json.load(open(os.path.join(SITE, "by-country", "DE.json")))
+    check("by-country files carry the catalogue-vs-tier-of-government caveat",
+          "not the tier of government" in (de.get("note") or ""), True)
+
+    # ---- 9. meta.json's literal file paths resolve on disk.
+    for key, path in (meta.get("files") or {}).items():
+        if "<" in path:
+            continue                      # a template, e.g. /by-country/<CC>.json
+        check("meta.json files[%s] -> %s exists" % (key, path),
+              os.path.exists(os.path.join(SITE, path.lstrip("/"))), True)
+
+    for f in failed:
+        print("FAIL  %s" % f)
+    total = 9 + len(pages) + 2
+    print("\n%d checks run, %d failed" % (total, len(failed)))
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

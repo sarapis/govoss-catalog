@@ -1087,7 +1087,7 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Six suites, 163 checks, all manual — **not** wired into `run.sh`, because a test step that
+Seven suites, 179 checks, all manual — **not** wired into `run.sh`, because a test step that
 can fail the weekly publish is a test step someone switches off, and the guards these cover
 are already in the pipeline. Run them all before touching `dedupe.py`, `liveness.py`,
 `filters.py`, `taxonomy.py`, `merge_translations.py` or `export_json.py`:
@@ -1104,6 +1104,7 @@ for t in test_*.py; do python3 $t; done
 | `test_translation_orphans.py` | orphan-key detection, and the naive rule it rejects |
 | `test_filters.py` | `filters.classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
 | `test_stage_guard.py` | the refuse-on-merged-input guard, both directions |
+| `test_built_pages.py` | the BUILT pages + the two cross-page contracts |
 
 **Every one of them is validated by SABOTAGE** — break the thing it checks and watch it fail
 — because this repo has shipped a guard that could only ever pass. Two habits came out of
@@ -1116,6 +1117,33 @@ doing that:
   `^www\.`-before-`.lower()` case bug in `norm_repo`/`norm_site` (latent, 0 of 4,464 URLs),
   a refusal message naming a lowercased key you cannot grep for, and a stale cost comment in
   `filters.py` arguing for weakening a rule.
+
+**`test_built_pages.py` exists because the other six could not have caught the drawer
+bug.** They test pure functions; the bug was in built output. It asserts what was checked by
+hand that day — no unsubstituted `__PLACEHOLDER__` on any page, `catalogue.html` at 0
+non-ASCII bytes, the `[hidden]` reset present, by-country files agreeing with `meta.json`,
+and the caveat actually shipping inside `/by-country/*.json`. Run it after `bash run.sh`; it
+**skips cleanly** when a page is not built, since `site/` is gitignored and a fresh checkout
+has none.
+
+Its two cross-page contracts are the part worth keeping, because both fail **silently**:
+
+- **`/sources.html` → `/?src=<label>`.** The catalog validates the value against its own
+  options and ignores an unknown one, so renaming a `label` in `sources.py` does not error —
+  all 17 "See catalog entries" links just stop filtering, which reads as "this catalogue
+  contributed no entries".
+- **`products.html#p-<pslug(name)>`**, computed in JS at render time, so it cannot be
+  grepped out of the static HTML — it has to be recomputed from the data the page ships.
+
+⚠ **One check was written, sabotage-tested, and DELETED for being unfalsifiable**, which is
+worth recording as the standard. A direct "do Python's `pslug` and the JavaScript one agree?"
+comparison can only ever pass: both run `[^a-z0-9]+ -> -` then collapse `-+ -> -`, and that
+pipeline absorbs every plausible one-sided edit — dropping the `+` from one character class,
+or `.strip("-")` versus the JS single-hyphen strip, give identical output for every input
+tried (`--Foo--`, `C++ / C#`, `.NET`, `a---b`, `Ärger`, `...`). It was replaced by an
+**outcome-level** check — do the links land? — which does not care why two slugs might
+diverge and so survives causes nobody thought of. **If a guard cannot be made to fail, delete
+it rather than shipping it with a comment claiming it guards something.**
 
 Still untested, with reasons: `get()`'s raise semantics (needs a stubbed opener),
 crosswalk's three guards (inline inside SPARQL-calling functions — they need the extraction
