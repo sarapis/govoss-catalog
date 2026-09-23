@@ -88,7 +88,8 @@ const TOOLS = [
     name: "search_entries",
     description:
       "Full-text search over government open source entries: name, description, " +
-      "owner and also-known-as, with optional facet filters. All filters are AND-ed. " +
+      "owner, also-known-as and the proprietary products each replaces, with " +
+      "optional facet filters. All filters are AND-ed. " +
       "Returns compact records; use get_entry for the full record. variant_of (an " +
       "entry id) marks one government's version of another entry - skip those to " +
       "count software rather than deployments.",
@@ -151,8 +152,12 @@ const TOOLS = [
 
 function matches(e, q) {
   if (!q) return true;
+  // Every field the tool description names. o (owner) and a (also-known-as)
+  // were promised from the start but absent from mcp-index.json until
+  // 2026-09-23, so neither was searched; export_json.py now writes them.
   const hay = (
-    e.n + " " + (e.d || "") + " " + (e.rp || []).join(" ")
+    e.n + " " + (e.d || "") + " " + (e.o || "") + " " + (e.a || []).join(" ") +
+    " " + (e.rp || []).join(" ")
   ).toLowerCase();
   return hay.indexOf(q) >= 0;
 }
@@ -271,8 +276,12 @@ async function handleRpc(env, msg) {
       capabilities: { tools: {} },
       serverInfo: SERVER_INFO,
       instructions:
+        // No catalogue COUNT here: this Worker is not redeployed by the weekly
+        // run, so a number written here goes stale (it said 17 while 19 were
+        // live). list_sources and get_stats carry the current figure.
         "A union catalogue of government open source software, harvested first-hand " +
-        "from 17 national, municipal and international government catalogues. Use " +
+        "from national, municipal and international government catalogues - " +
+        "list_sources names them. Use " +
         "find_replacements to answer 'what can we stop paying for?'. A null field means " +
         "the upstream government catalogue did not state that value - it is never " +
         "guessed - so read null as 'not stated', not 'unknown'.",

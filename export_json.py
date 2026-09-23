@@ -458,6 +458,11 @@ def build():
                 **({"vc": r["variant_count"]} if r.get("variant_count") else {}),
                 "rp": [m.get("product") for m in (r.get("replaces") or [])
                        if m.get("product")],
+                # search_entries promised owner and also-known-as from the start,
+                # and this index carried neither, so neither was ever searched
+                # (found 2026-09-23). Omitted when empty, like vo/vc.
+                **({"o": r["owner"]} if r.get("owner") else {}),
+                **({"a": r["also_known_as"]} if r.get("also_known_as") else {}),
                 "x": 1 if r.get("link_dead") else 0}
 
     with open(f"{SITE}/mcp-index.json", "w") as f:

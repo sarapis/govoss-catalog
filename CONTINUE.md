@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 9 suites, 433 checks
+for t in test_*.py; do python3 $t; done                     # 11 suites, 506 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,14 +32,14 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **9 suites, 433 checks, all passing.** Manual on purpose.
+- **11 suites, 506 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
 - Variants: 12 linked to 9 cores (2 curated, 9 publisher `isBasedOn`, 1 fork - Bulgaria's
   CKAN). `replaces.json`: 303 keys, 300 active entries -> 343 products (+92 rows 2026-09-23, not yet
   deployed); 65 products still have no alternative. Orphaned translation keys: 3.
-- Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 closed, F8 at 5 of 8 gaps, F7
+- Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 closed, F8 at 7 of 8 gaps, F7
   code-complete and credential-blocked (now a Cloudflare credential).
 
 ## Invariants - break these and something already fixed re-breaks
@@ -66,6 +66,10 @@ Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if 
 - **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` (still answering, still
   the pre-variant code) - it is in the itspruvn.com Cloudflare account, which the
   deploy login cannot reach. Nothing in the repo points at it any more.
+- **Redeploy the MCP Worker** (`cd mcp-server && npx wrangler deploy`): its code changed
+  2026-09-23 - search now reads owner and also-known-as (both promised, neither searched), and
+  the instructions no longer claim "17" catalogues. Safe in either order with Monday's run:
+  the old Worker ignores the new index fields. Verify with a `search_entries` for "Rocket.Chat".
 - **A Catalan speaker's read of `/ca/`** before pointing Catalan institutions at it. The
   strings are machine-written; `i18n/ca.json` is the one file to edit.
 - **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) - a scope decision about what
@@ -115,11 +119,9 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
    genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
    and three publiccode-tier NC entries the publiccode exemption protects.
-3. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
-   Workers (JS). **Screen-reader testing** has never been done.
-
-**Decided, not pending:** no Catalan phase 2 (owner, 2026-09-23). `/ca/` stays chrome-only;
-data, products and source notes stay English. Do not re-propose it.
+3. **F8's last gap**: crosswalk's `__main__` wiring (Comptoir precedence, org-shared-homepage
+   skip). `get()` and the Workers are now pinned (`test_harvest_get.py`, `test_workers.py`).
+   **Screen-reader testing** has never been done.
 
 ## Traps - looks broken but is not, and vice versa
 

@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 9 suites, 433 checks, all manual
+for t in test_*.py; do python3 $t; done     # 11 suites, 506 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -213,7 +213,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
 
 `mcp-server/`, a stateless Worker; the tool contract lives once in `mcp_tools.py`. It reads
 `mcp-index.json` (a Worker gets 10ms CPU; the 5.6 MB export does not parse in time), written
-in the same export run. **Not part of `run.sh`** - redeploy only when its code changes. `cf:
+in the same export run. **Not part of `run.sh`** - redeploy only when its code changes, and
+never write a catalogue COUNT into it (it said 17 while 19 were live). Search reads every field
+the tool promises: `n d o a rp` - add to `compact()` in `export_json.py` and `matches()` together. `cf:
 {cacheTtl}` caches every status, and `cacheTtl: 0` does not force a miss: change the cache KEY.
 
 ## Accessibility
@@ -223,7 +225,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Nine suites, 433 checks, **all manual** - a test that can fail the weekly publish is one someone
+Eleven suites, 506 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -241,8 +243,11 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, hosting files |
+| `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()` |
+| `test_workers.py` | the three Workers under Node: site indexes and `/ca`, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 
-Untested, with reasons: `get()`'s raise semantics, crosswalk's inline guards, the Workers (JS).
+Untested, with reasons: crosswalk's `__main__` wiring (Comptoir precedence, the org-shared-homepage
+skip) - its parts are pinned, the glue needs a stubbed Comptoir and SPARQL together.
 
 ## Four bugs that recurred - suspect these first
 
