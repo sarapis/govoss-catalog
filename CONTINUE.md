@@ -6,7 +6,7 @@ manual; `ARCHIVE.md` holds the incidents behind its rules and older session
 records, and is not required reading.
 
 **State: 2,857 active entries · 488 set aside · 17 catalogues · 15 countries.**
-Pipeline is `bash run.sh` (17 steps, ~20 min; the order is load-bearing and
+Pipeline is `bash run.sh` (18 steps, ~20 min; the order is load-bearing and
 documented at the top of the file). Scheduled Mondays 07:00. Live at
 https://govoss-catalog.vercel.app, deployed and current.
 
@@ -33,13 +33,13 @@ the page already looks."** Three corollaries this cost real sessions to learn:
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 7 suites, 193 checks
+for t in test_*.py; do python3 $t; done                     # 8 suites, 261 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
 - **Last run 2026-09-21**, trigger `schedule`, ok, 17/17 sources fetched cleanly.
 - **Liveness 3,089/3,189 ok (96.9%)**, 26 dead, 39 archived.
-- **7 test suites, 193 checks, all passing.** Manual — not in `run.sh`, because a
+- **8 test suites, 261 checks, all passing.** Manual — not in `run.sh`, because a
   test that can fail the weekly publish is one someone switches off.
 - **`/sources.html` reads `warn`**, for two taxonomy values only. See Traps.
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: **F1–F6 closed, F8 at 5 of 8 gaps,
@@ -106,7 +106,9 @@ violation is silent.
 3. **F8's last three gaps**: `get()`'s raise semantics (needs a stubbed opener),
    crosswalk's three guards (inline in SPARQL-calling functions — they need the
    extraction `liveness.fold_history()` got), and the MCP Worker (JS).
-4. **Expand `replaces.json`** — 194 of 2,857 entries. Read the `_README` first;
+4. **Expand `replaces.json`** — 245 of 2,857 entries. A seeded sample puts the
+   honestly-mappable share of the publiccode tier at ~20%; search it by shape
+   ("platform", CMS, ERP, workflow engine), don't sweep it. Read the `_README` first;
    `kind` and `confidence` both matter and `export_json.py` fails the build on a bad
    value. ⚠ Check existing product names before adding; `Dropbox Business` beside
    `Dropbox` splits one product across two index keys.
@@ -114,6 +116,19 @@ violation is silent.
    plus keyboard. Until it runs, nothing should claim conformance.
 
 ## Traps — looks broken but is not, and vice versa
+
+- **Osnabrück and Regensburg are not linked as variants yet.** Their
+  `isBasedOn` reaches `catalog.json` on the next LIVE harvest (checkpoints do
+  not carry it). After Monday, `out/variants.json` should resolve both via
+  `publiccode`; then delete their two hand rows from `replaces.json` so they
+  inherit instead of appearing in `by-product.json` a second time.
+- **Bulgaria's CKAN fork is not a variant yet** for the same reason:
+  `fork_parent` is fetched on a live harvest. After Monday, expect it
+  reinstated with `reinstated_as_variant: upstream-fork` and 14 same-catalogue
+  forks in `out/variants.json` › rejected. Active entries go 2,857 -> 2,858.
+- **The MCP Worker's `search_entries` change needs `wrangler deploy`**
+  (`mcp-server/`); it is not part of `run.sh`. The index fields ship with the
+  site either way, and the old Worker simply ignores them.
 
 - **The language fix lands on the next LIVE harvest, not on `--from-cache`.**
   `desc_lang` is stamped when the adapter runs and stored in `cache/src_fr.json`

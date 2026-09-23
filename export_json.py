@@ -34,7 +34,9 @@ GENERATED_AT = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 # key changed meaning, so a 1.0.0 consumer is unaffected. Bumped the minor rather
 # than staying silent because /v1/entries.json exists for consumers who pin, and
 # a schema that gains fields without saying so teaches them not to trust it.
-SCHEMA_VERSION = "1.1.0"
+# 1.2.0: added variant_of / variants / variant_count, and `inherited_from` on a
+# replaces row a variant takes from its core. Additive, same reasoning.
+SCHEMA_VERSION = "1.2.0"
 
 # Licence strings arrive in three dialects: real SPDX ids from publiccode.yml,
 # display strings from SILL ("MIT licence", "GPLv3+"), and free text. Only claim
@@ -69,6 +71,11 @@ def spdx(raw):
 
 def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")
+
+
+def _ident(r):
+    """variants.py / first_seen.py identity, which variant_of links carry."""
+    return r.get("repo_key") or "%s|%s" % (r.get("name"), r.get("source"))
 
 
 def entry_id(r):
@@ -118,6 +125,7 @@ def build():
     # browse surfaces. One complete source of truth, curated views over it.
     entries, used_keys = [], set()
     id_counts = collections.Counter()
+    by_ident, vlinks = {}, []
 
     for r in catalog:
         lv = live.get(r.get("repo_key") or "", {})
@@ -143,10 +151,15 @@ def build():
                 if pk and pk not in seen_prod:
                     seen_prod.add(pk)
                     rep.append(m)
+        # a publisher may also declare it upstream in publiccode.yml (harvest
+        # marks those rows via=publiccode). A curated row for the same product
+        # wins: it carries confidence and kind a publisher often leaves out.
+        for x in (r.get("replaces") or []):
+            pk = (x.get("product") or "").lower() if isinstance(x, dict) else ""
+            if pk and pk not in seen_prod:
+                seen_prod.add(pk)
+                rep.append(x)
         rep = rep or None
-        # a publisher may also declare it upstream in publiccode.yml
-        if r.get("replaces"):
-            rep = (rep or []) + [x for x in r["replaces"] if isinstance(x, dict)]
 
         eid = entry_id(r)
         id_counts[eid] += 1
@@ -181,7 +194,11 @@ def build():
                  "catalogue_url": (_S.SOURCES.get(ce.get("source")) or {}).get("site"),
                  "entry_url": ce.get("entry_url"),
                  "name_there": ce.get("name")}
-                for ce in (r.get("catalogue_entries") or [])],
+                # A fork reinstated by variants.py never passed through dedupe,
+                # so it has no catalogue_entries; it is listed by its own source.
+                for ce in (r.get("catalogue_entries") or
+                           [{"source": r.get("source"), "name": r.get("name"),
+                             "entry_url": r.get("entry_url")}])],
             "also_known_as": r.get("also_known_as") or [],
 
             "repo_url": r.get("repo") or None,
@@ -222,12 +239,42 @@ def build():
 
             "replaces": rep or [],
 
+            # "this entry is a version of that one" - see variants.py. Filled in
+            # below, once every entry has its id.
+            "variant_of": None,
+            "variants": [],
+            "variant_count": 0,
+
             # why a row is held out of the default view, and of every derived
             # index here. null when the entry is in the catalogue proper.
             "excluded": bool(r.get("excluded")),
             "exclude_reason": r.get("exclude_reason"),
         }
         entries.append(e)
+        if not r.get("excluded") or _ident(r) not in by_ident:
+            by_ident[_ident(r)] = e          # an active row wins a shared ident
+        if r.get("variant_of") and not r.get("excluded"):
+            vlinks.append((e, r["variant_of"]))
+
+    # ---- variants -> core. Resolved by variants.py against catalog idents; here
+    # they become entry ids. A variant with no mapping of its own INHERITS its
+    # core's, each row marked `inherited_from`, so a buyer who lands on the
+    # Osnabrueck portal still gets a route to what it replaces. Inherited rows are
+    # kept OUT of by-product.json below: the buyer should see Consul Democracy
+    # once, carrying its variant count, not the same software four times.
+    for e, vo in vlinks:
+        core = by_ident.get(vo["ident"])
+        if core is None or core["excluded"]:
+            continue
+        e["variant_of"] = {"id": core["id"], "name": core["name"],
+                           "via": vo["via"], "evidence": vo["evidence"]}
+        core["variants"].append({"id": e["id"], "name": e["name"], "owner": e["owner"],
+                                 "countries": e["countries"], "via": vo["via"]})
+        if not e["replaces"]:
+            e["replaces"] = [dict(m, inherited_from=core["name"]) for m in core["replaces"]]
+    for e in entries:
+        e["variants"].sort(key=lambda v: (v["name"] or "").lower())
+        e["variant_count"] = len(e["variants"])
 
     entries.sort(key=lambda e: (e["name"] or "").lower())
     active = [e for e in entries if not e["excluded"]]
@@ -238,8 +285,18 @@ def build():
     # ---- inverted index: proprietary product -> catalogue alternatives.
     # This is the /api/match use case, precomputed as a static file.
     by_product = collections.defaultdict(list)
+    known_products = {p["name"] for p in json.load(open(f"{OUT}/proprietary.json"))["products"]}
+    publisher_unknown = set()
     for e in active:
         for m in e["replaces"]:
+            if m.get("inherited_from"):
+                continue          # the core is listed; see the variants block above
+            # A publisher-declared product with no proprietary.json record stays on
+            # the entry but out of the index: build_products.py fails on a product
+            # it cannot describe, and someone else's typo must not block a publish.
+            if m.get("via") == "publiccode" and m["product"] not in known_products:
+                publisher_unknown.add(m["product"])
+                continue
             by_product[m["product"]].append({
                 "name": e["name"], "id": e["id"],
                 "confidence": m.get("confidence"), "kind": m.get("kind"),
@@ -247,6 +304,7 @@ def build():
                 "adopters": e["adopters"], "licence_spdx": e["licence_spdx"],
                 "repo_url": e["repo_url"], "category": e["category"],
                 "link_dead": e["link_dead"], "note": m.get("note"),
+                "variant_count": e["variant_count"],
             })
     # Collapse rows that name the same software: two catalogue entries can share a
     # name without dedupe merging them (different repo urls, no shared QID), which
@@ -300,7 +358,14 @@ def build():
             "rows_in_entries_json": len(entries),
             "with_publiccode": sum(1 for e in active if e["has_publiccode"]),
             "with_wikidata": sum(1 for e in active if e["wikidata"]),
-            "with_replaces": sum(1 for e in active if e["replaces"]),
+            # DIRECT mappings only; a variant's inherited rows are counted apart,
+            # or every variant would inflate the figure llms.txt quotes.
+            "with_replaces": sum(1 for e in active
+                                 if any(not m.get("inherited_from") for m in e["replaces"])),
+            "with_inherited_replaces": sum(1 for e in active if e["replaces"]
+                                           and all(m.get("inherited_from") for m in e["replaces"])),
+            "variants_linked": sum(1 for e in active if e["variant_of"]),
+            "variant_cores": sum(1 for e in active if e["variant_count"]),
             "in_multiple_catalogues": sum(1 for e in active if e["catalogue_count"] > 1),
             "with_entry_links": sum(1 for e in active
                                     if any(c["entry_url"] for c in e["catalogues"])),
@@ -386,6 +451,11 @@ def build():
                 "s": r.get("sources") or [], "f": r.get("functions") or [],
                 "l": r.get("licence"), "u": r.get("repo_url"),
                 "cc": r.get("catalogue_count", 1),
+                # variants.py: vo = the core's id when this is a version of another
+                # entry, vc = how many versions a core has. Omitted when empty -
+                # 2,850 of 2,859 rows would otherwise carry two nulls.
+                **({"vo": r["variant_of"]["id"]} if r.get("variant_of") else {}),
+                **({"vc": r["variant_count"]} if r.get("variant_count") else {}),
                 "rp": [m.get("product") for m in (r.get("replaces") or [])
                        if m.get("product")],
                 "x": 1 if r.get("link_dead") else 0}
@@ -446,6 +516,10 @@ def build():
     print(f"   by-country/            {len(by_country)} files  "
           f"({', '.join(f'{k} {len(v)}' for k, v in sorted(by_country.items(), key=lambda kv: -len(kv[1]))[:6])}...)")
     print(f"   v1/ aliases            2 files")
+    if publisher_unknown:
+        print(f"\n   {len(publisher_unknown)} publisher-declared replaces product(s) have no "
+              f"proprietary.json record, kept out of by-product.json: "
+              f"{', '.join(sorted(publisher_unknown)[:8])}")
     print(f"\n   with replaces mapping: {meta['counts']['with_replaces']} entries "
           f"-> {meta['counts']['distinct_products_mapped']} proprietary products")
     print(f"   dead links exposed per-entry: {meta['counts']['dead_links']}")
@@ -513,6 +587,18 @@ Read the `kind` field before reporting a saving:
 
 `confidence` is strong | partial | adjacent. Do not treat adjacent as a saving.
 An empty array means NOT MAPPED, not "no European alternative exists".
+A row carrying `inherited_from` is the core's mapping, taken by a variant (below);
+/by-product.json lists the core only, with its variant_count.
+
+## Variants: one software, several governments' versions
+
+  variant_of      {{id, name, via, evidence}} - this entry is a version of that one.
+                  via = publiccode (the publisher's isBasedOn) or curated (checked by
+                  hand; evidence says what was checked). Never inferred from names.
+  variants        on the core: the entries that are versions of it.
+  variant_count   len(variants). NOT the same claim as catalogue_count, which counts
+                  catalogues listing the SAME software.
+Count software, not deployments: skip entries whose variant_of is set.
 
 ## Honesty flags you should carry into anything you publish
 
@@ -523,7 +609,8 @@ An empty array means NOT MAPPED, not "no European alternative exists".
   merged_from              how many catalogue records were merged into this entry
   licence_spdx             null where the upstream string was not a real SPDX id
                            ("GPLv3+", "MIT licence"). Use `licence` for the raw string.
-  generated_at             build time. Harvest runs weekly; REDEPLOY IS MANUAL, so trust
+  generated_at             build time. The weekly run harvests and publishes itself;
+                           a hand redeploy between runs is possible, so trust
                            generated_at over the deploy date.
 
 ## Categories ({len(meta['categories'])})

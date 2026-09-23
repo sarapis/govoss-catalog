@@ -310,7 +310,52 @@ def from_publiccode(pc, source, country, **kw):
         long_desc=(primary.get("longDescription") or "")[:1200] if primary else None,
         features=(primary.get("features") or [])[:8] if primary else [],
         used_by=(primary.get("usedBy") if primary else None) or pc.get("usedBy") or [],
+        # The publisher's own claim that this is a version of other software.
+        # Kept RAW: in practice it also names libraries a project merely uses
+        # (bootstrap-italia, PyTorch, Debian), so variants.py decides what it
+        # means, and only a claim that resolves to a catalogue entry counts.
+        based_on=_based_on(pc.get("isBasedOn")),
+        # Non-standard: a publisher's own top-level `replaces:` list, promised by
+        # replaces.json's _README. 0 of 551 Italian files use it (2026-09-22).
+        replaces=_pc_replaces(pc.get("replaces")),
         **kw)
+
+
+_CONF = {"strong", "partial", "adjacent"}
+_KIND = {"software", "service", "paid-tier"}
+
+
+def _pc_replaces(v):
+    """A publisher's `replaces:` - strings or {product, confidence, kind} dicts.
+
+    Marked via=publiccode so a publisher claim is never mistaken for a curated
+    one. Values outside the vocabulary are DROPPED rather than failing: this is
+    someone else's file, and a typo in it must not block the weekly publish -
+    unlike replaces.json, which export_json.py fails on because we own it."""
+    out = []
+    for it in (v if isinstance(v, list) else []):
+        d = {"product": it} if isinstance(it, str) else it
+        if not isinstance(d, dict) or not isinstance(d.get("product"), str) or not d["product"].strip():
+            continue
+        row = {"product": d["product"].strip(), "via": "publiccode"}
+        if d.get("vendor"):
+            row["vendor"] = str(d["vendor"])
+        if d.get("confidence") in _CONF:
+            row["confidence"] = d["confidence"]
+        if d.get("kind") in _KIND:
+            row["kind"] = d["kind"]
+        out.append(row)
+    return out
+
+
+def _based_on(v):
+    """publiccode.yml `isBasedOn`: a string, a list, or a comma-joined string."""
+    items = v if isinstance(v, list) else [v]
+    out = []
+    for it in items:
+        if isinstance(it, str):
+            out += [x.strip() for x in it.split(",") if x.strip()]
+    return out
 
 
 def parse_pc(blob):
@@ -388,8 +433,21 @@ def github_org_scan(org, source, country, workers=12):
     # Recorded, not dropped here; filters.py decides.
     print(f"    {len(repos)} non-archived repos in github.com/{org}")
 
+    def parent_of(r):
+        """A fork's parent, for variants.py. The org listing says `fork: true`
+        but carries no parent, so this is one GET per fork (~71 a week, all
+        authenticated). Non-fatal: a failure costs the fork evidence only."""
+        if not r.get("fork"):
+            return None
+        try:
+            d = get(f"https://api.github.com/repos/{r['full_name']}", headers=hdr, tries=1)
+            return (d.get("parent") or {}).get("html_url")
+        except Exception:
+            return None
+
     def one(r):
         pc = None
+        fork_parent = parent_of(r)
         try:
             pc = parse_pc(get(f"https://raw.githubusercontent.com/{org}/{r['name']}/HEAD/publiccode.yml",
                               timeout=25, raw=True, tries=1))
@@ -401,7 +459,7 @@ def github_org_scan(org, source, country, workers=12):
                                    entry_url=r.get("html_url"),
                                    stars=r.get("stargazers_count"),
                                    last_activity=r.get("pushed_at"),
-                                   is_fork=bool(r.get("fork")))
+                                   is_fork=bool(r.get("fork")), fork_parent=fork_parent)
         # iMio publishes almost no publiccode.yml, but the repos are still
         # genuine public-sector OSS — index them rather than drop them.
         return rec(source, country, "index", r.get("name"), r.get("html_url"),
@@ -416,7 +474,7 @@ def github_org_scan(org, source, country, workers=12):
                        hint={"amagovpt": "pt", "governmentbg": "bg"}.get(
                            org, "da" if org in OS2_ORGS else None)),
                    stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
-                   is_fork=bool(r.get("fork")))
+                   is_fork=bool(r.get("fork")), fork_parent=fork_parent)
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
         out = [x for x in ex.map(one, repos) if x]
@@ -799,6 +857,8 @@ def nl_forgejo():
                                    entry_url=r.get("html_url"),
                                    forge_path=r.get("full_name"),
                                    is_fork=bool(r.get("fork")),
+                                   # Forgejo's listing carries the parent inline
+                                   fork_parent=(r.get("parent") or {}).get("html_url"),
                                    last_activity=r.get("updated_at"))
         return rec("NL/code.overheid.nl", "NL", "index", r.get("name"), r.get("html_url"),
                    entry_url=r.get("html_url"),
@@ -809,6 +869,7 @@ def nl_forgejo():
                    desc_src_lang=lang_with_prior(r.get("description"), "nl"),
                    forge_path=r.get("full_name"),
                    is_fork=bool(r.get("fork")),
+                   fork_parent=(r.get("parent") or {}).get("html_url"),
                    stars=r.get("stars_count"),
                    last_activity=r.get("updated_at"))
 

@@ -254,6 +254,7 @@ PAGE_CSS = """
 .item .title a:hover{color:var(--primary);text-decoration:underline;}
 .item .desc{font-size:14px;line-height:1.5;color:var(--ink-600);text-wrap:pretty;}
 .item .rp{font-size:12px;color:var(--primary);}
+.item .vars{font-size:12px;color:var(--ink-600);}
 /* Qualifier on a replaces target that is not a like-for-like software swap.
    --ink-faint is the documented tertiary tier (5.17:1 on paper), so this sits
    at the audited floor rather than below it. */
@@ -573,6 +574,23 @@ function renderFacets() {
   }).join('');
 }
 
+// VARIANTS (variants.py): an entry that is a version of another carries vo, the
+// DATA index of its core; the core carries vs, its variants' indices. After
+// filtering, a variant is FOLDED under its core when the core is in the same
+// result set - the list shows the core once, naming its variants. When the core
+// is filtered out (e.g. ?src= Munich), the variant stands alone, saying what it
+// is a version of. Never hidden outright: a source filter that silently drops
+// its variants reads as "this catalogue contributed nothing", the claim
+// /sources.html exists to disprove.
+var lastFolded = 0;   // how many the last current() folded, for the count line
+function fold(list) {
+  var inSet = new Set(list.map(function (r) { return r.__i; }));
+  var kept = list.filter(function (r) { return r.vo == null || !inSet.has(r.vo); });
+  lastFolded = list.length - kept.length;
+  return kept;
+}
+DATA.forEach(function (r, i) { r.__i = i; });
+
 function current() {
   var q = (el('q').value || '').trim().toLowerCase();
   var lic = el('lic').value, lvf = el('lv').value, sort = el('sort').value;
@@ -607,11 +625,14 @@ function current() {
     if (onlyReplaces && !(r.rp && r.rp.length)) return false;
     if (q) {
       var hay = (r.n + ' ' + r.d + ' ' + r.o + ' ' + (r.g || []).join(' ') + ' ' +
-                 (r.aka || []).join(' ') + ' ' + (r.rp || []).join(' ')).toLowerCase();
+                 (r.aka || []).join(' ') + ' ' + (r.rp || []).join(' ') + ' ' +
+                 (r.vs || []).map(function (i) { return DATA[i].n + ' ' + DATA[i].o; }).join(' ')
+                ).toLowerCase();
       if (hay.indexOf(q) < 0) return false;
     }
     return true;
   });
+  out = fold(out);
   if (sort === 'name') out.sort(function (a, b) { return a.n.toLowerCase().localeCompare(b.n.toLowerCase()); });
   // Sort by the DISPLAYED name, not the code. Once the facet started showing
   // "Germany" instead of "DE", a code sort put Germany before Denmark and the
@@ -636,6 +657,10 @@ function stamps(r) {
   // SILL's real assertion and Munich's inferred one. The field is still in
   // /entries.json as recommended_for_government. See build_ui.py for why.
   if (r.cc2 > 1) s += '<span class="stamp multi">In ' + r.cc2 + ' catalogs</span>';
+  // A DIFFERENT claim from "In N catalogs" (listings of the same software), so a
+  // different pill: N governments run their own version of it.
+  if (r.vs && r.vs.length) s += '<span class="stamp multi">' + r.vs.length +
+    (r.vs.length === 1 ? ' variant' : ' variants') + '</span>';
   if (r.lv === 'dead') s += '<span class="stamp warn">__ICON_ALERT__ Repo gone</span>';
   else if (r.lv === 'archived') s += '<span class="stamp warn">__ICON_ALERT__ Archived upstream</span>';
   return s;
@@ -645,12 +670,16 @@ function render() {
   var rs = current();
   // The denominator has to move with the toggles, or "N of M" silently compares
   // the filtered list against a universe the page is not showing.
+  // NOT folded: a variant is still an entry, and the headline stat counts it.
+  // The gap is explained instead, or an unfiltered page reads as filtered.
   var universe = DATA.filter(function (r) {
     if (!r.ex) return true;
     return r.ex === 'no-description' ? showNoDesc : showNotSoft;
   }).length;
   el('count').innerHTML = '<b>' + rs.length.toLocaleString() + '</b> of ' +
-    universe.toLocaleString() + ' entries';
+    universe.toLocaleString() + ' entries' + (lastFolded ? ' &middot; ' + lastFolded +
+    (lastFolded === 1 ? ' variant' : ' variants') + ' listed under ' +
+    (lastFolded === 1 ? 'its core' : 'their core') : '');
   var nf = activeFacets.size + (onlyReplaces ? 1 : 0) +
            (el('lic').value ? 1 : 0) + (el('lv').value ? 1 : 0) +
            (el('src').value ? 1 : 0);
@@ -695,6 +724,12 @@ function render() {
             return '<a href="products.html#p-' + esc(pslug(p)) + '">' + esc(p) + '</a>' +
               (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
         }).join(', ') + '</div>' : '') +
+        (r.vs && r.vs.length ? '<div class="vars">Variants: ' + r.vs.map(function (i) {
+            var v = DATA[i], vl = v.u || v.h;
+            var nm = esc(v.n) + (v.o ? ' <span class="rpq">(' + esc(v.o) + ')</span>' : '');
+            return vl ? '<a href="' + esc(vl) + '" target="_blank" rel="noopener">' + nm + '</a>' : nm;
+          }).join(', ') + '</div>' : '') +
+        (r.vo != null ? '<div class="vars">A version of <b>' + esc(DATA[r.vo].n) + '</b></div>' : '') +
         '<div class="meta">' + meta.join(' &middot; ') + '</div>' +
         (r.ex ? '<div class="why">Set aside: ' + esc(r.ex) + '</div>' : '') +
       '</div>' +

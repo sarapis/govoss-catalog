@@ -33,6 +33,7 @@ sort last instead of being reported, which is how `Icinga -> Nagios XI` sat with
 a `kind` value in its `confidence` field.
 """
 import hashlib
+import importlib.util
 import json
 import os
 import shutil
@@ -170,9 +171,29 @@ def main():
         if hashlib.sha256(open(rp, "rb").read()).hexdigest() != before_sha:
             failed.append("replaces.json was NOT restored — check it before committing")
 
+    # ---- a PUBLISHER's own `replaces:` (harvest._pc_replaces) is the opposite
+    # posture from the gate above: someone else's file, so a bad value is
+    # DROPPED, never fatal, and every row is marked via=publiccode so it cannot
+    # pass for a curated claim.
+    _hs = importlib.util.spec_from_file_location("harvest", f"{HERE}/harvest.py")
+    H = importlib.util.module_from_spec(_hs); _hs.loader.exec_module(H)
+    PCR = [
+        ("a bare string is a product", ["Zoom"], [{"product": "Zoom", "via": "publiccode"}]),
+        ("valid vocabulary kept", [{"product": "Webex", "confidence": "strong", "kind": "software"}],
+         [{"product": "Webex", "via": "publiccode", "confidence": "strong", "kind": "software"}]),
+        ("bad vocabulary dropped, row kept", [{"product": "X", "confidence": "paid-tier", "kind": "strong"}],
+         [{"product": "X", "via": "publiccode"}]),
+        ("junk ignored", [3, {"nope": 1}, "  ", {"product": ""}], []),
+        ("a non-list is ignored", "Zoom", []),
+    ]
+    for label, given, want in PCR:
+        got = H._pc_replaces(given)
+        if got != want:
+            failed.append(f"_pc_replaces: {label}: expected {want!r}, got {got!r}")
+
     for f in failed:
         print(f"FAIL  {f}")
-    n = len(CASES) + 2 + 9
+    n = len(CASES) + 2 + 9 + len(PCR)
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 

@@ -13,7 +13,7 @@
    "service": "the paid item is a hosted SERVICE or CONTENT subscription; self-hosting this replaces the software but you still need hosting/content. Drupal does not replace hosting; Moodle does not produce training content.",
    "paid-tier": "the paid item is a commercial edition of software that is ALREADY open source. Usually the cheapest win in a procurement review - often no migration at all, just a licence you stop renewing."
   },
-  "how_to_extend": "Add entries here, or declare them upstream in publiccode.yml as a top-level `replaces:` list (non-standard extension; harvest.py picks it up if present so publishers can own their own claims)."
+  "how_to_extend": "Add entries here, or declare them upstream in publiccode.yml as a top-level `replaces:` list (non-standard extension; harvest.py reads it, marks each row via=publiccode, and DROPS values outside the vocabulary rather than failing - it is the publisher's file. A publisher-declared product with no proprietary.json record stays on the entry but out of by-product.json. A row here wins over a publisher's row for the same product.)"
  },
  "LimeSurvey": [
   {
@@ -3305,22 +3305,6 @@
    "vendor": "OpenGov",
    "confidence": "partial",
    "kind": "software"
-  }
- ],
- "Mitmachportal Würzburg": [
-  {
-   "product": "EngagementHQ",
-   "vendor": "Granicus",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "a deployment of Consul Democracy"
-  },
-  {
-   "product": "Neighborland",
-   "vendor": "OpenGov",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "a deployment of Consul Democracy"
   }
  ],
  "Dialog- und Beteiligungsportal Osnabrück": [

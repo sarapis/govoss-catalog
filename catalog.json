@@ -18704,7 +18704,13 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Consul is a free software for citizen participation.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "variant_of": {
+   "ident": "github.com/consul/consul",
+   "name": "Consul Democracy",
+   "via": "curated",
+   "evidence": "README titled 'CONSUL' with the upstream consul/consul logo; homepage demokratie.today, the Consul deployment vendor Wuerzburg also uses. Not a GitHub fork (fork: false), so no forge evidence. Checked 2026-09-22."
+  }
  },
  {
   "catalogue_count": 1,
@@ -76211,7 +76217,13 @@
    "Stadt Wuerzburg",
    "Landkreis W\u00fcrzburg"
   ],
-  "version": "2026.06.29"
+  "version": "2026.06.29",
+  "variant_of": {
+   "ident": "github.com/consul/consul",
+   "name": "Consul Democracy",
+   "via": "curated",
+   "evidence": "README titled 'CONSUL - demokratie.today'; default branch cli_wur_2 follows the same vendor naming as Osnabrueck (cli_osn_2) and Regensburg (cli_reg_2), which both declare isBasedOn Consul Democracy. Checked 2026-09-22."
+  }
  },
  {
   "catalogue_count": 1,

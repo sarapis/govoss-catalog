@@ -1,0 +1,23 @@
+{
+ "_README": {
+  "purpose": "Hand-curated 'this entry is a version of that entry' links, read by variants.py. Supplements the publisher's own publiccode.yml isBasedOn, which is rare (31 of 551 Italian files) and often names a dependency rather than a parent.",
+  "keyed_by": "REPO URL, never name. The bare name 'Consul' is both HashiCorp Consul and Munich's Consul Democracy deployment; a name key would link one of them wrongly.",
+  "variants": "{repo, based_on, evidence}. based_on is the CORE's repo URL and must resolve to a catalogue entry. based_on null VETOES a publisher's isBasedOn claim - give the reason in evidence. evidence is required: say what was checked, so the link can be re-verified.",
+  "aliases": "old repo URL -> current one, for a core that moved. Only for a verified redirect."
+ },
+ "aliases": {
+  "https://github.com/consuldemocracy/consuldemocracy": "https://github.com/consul/consul"
+ },
+ "variants": [
+  {
+   "repo": "https://gitlab.opencode.de/wuerzburg/mitmachportal/mitmachportal",
+   "based_on": "https://github.com/consul/consul",
+   "evidence": "README titled 'CONSUL - demokratie.today'; default branch cli_wur_2 follows the same vendor naming as Osnabrueck (cli_osn_2) and Regensburg (cli_reg_2), which both declare isBasedOn Consul Democracy. Checked 2026-09-22."
+  },
+  {
+   "repo": "https://github.com/it-at-m/consul-lhm-dev",
+   "based_on": "https://github.com/consul/consul",
+   "evidence": "README titled 'CONSUL' with the upstream consul/consul logo; homepage demokratie.today, the Consul deployment vendor Wuerzburg also uses. Not a GitHub fork (fork: false), so no forge evidence. Checked 2026-09-22."
+  }
+ ]
+}

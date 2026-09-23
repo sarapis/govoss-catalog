@@ -17,6 +17,9 @@
 #                functions for when the UI toggle reveals them
 #   dedupe       merges records for the same software (QID, then repo URL). Must
 #                run AFTER filters so forks are already gone, and BEFORE export
+#   variants     links an entry to the catalogue entry it is a version of
+#                (publiccode isBasedOn, or variants.json). AFTER dedupe, so a
+#                claim resolves against surviving identities
 #   first seen   stamps cache/_first_seen.json with the date each entry first
 #                appeared; must run AFTER dedupe so the date attaches to the
 #                surviving identity. Backfilled once from the weekly Data: commits
@@ -102,6 +105,9 @@ step "taxonomy"     "$PY" -u taxonomy.py
 step "crosswalk"    "$PY" -u crosswalk.py
 step "filters"      "$PY" -u filters.py
 step "dedupe"       "$PY" -u dedupe.py
+# AFTER dedupe: a variant claim resolves against SURVIVING entries. Pure
+# recomputation, so safe to re-run; see variants.py.
+step "variants"     "$PY" -u variants.py
 # AFTER dedupe, so an entry is stamped under its surviving identity rather than
 # under a row that is about to be merged away. Never fails the run: a missing
 # date costs the "recently added" ordering, nothing else.

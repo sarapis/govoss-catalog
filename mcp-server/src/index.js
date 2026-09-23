@@ -89,7 +89,9 @@ const TOOLS = [
     description:
       "Full-text search over government open source entries: name, description, " +
       "owner and also-known-as, with optional facet filters. All filters are AND-ed. " +
-      "Returns compact records; use get_entry for the full record.",
+      "Returns compact records; use get_entry for the full record. variant_of (an " +
+      "entry id) marks one government's version of another entry - skip those to " +
+      "count software rather than deployments.",
     inputSchema: {
       type: "object",
       properties: {
@@ -181,6 +183,9 @@ async function callTool(env, name, args) {
         id: e.id, name: e.n, description: e.d, country: e.c, countries: e.cs,
         sources: e.s, functions: e.f, licence: e.l, repo_url: e.u,
         catalogue_count: e.cc, replaces: e.rp, link_dead: !!e.x,
+        // variants.py: a version of another entry (id), or how many versions a
+        // core has. Omitted when absent; get_entry has the full objects.
+        variant_of: e.vo, variant_count: e.vc,
       })),
       note: total > out.length
         ? `${total - out.length} more match; raise limit or narrow the filters.`

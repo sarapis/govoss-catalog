@@ -36,7 +36,7 @@ TOOLS = [
         "name": "search_entries",
         "args": "query?: string, country?: string, function?: string, "
                 "source?: string, licence?: string, limit?: number = 20",
-        "returns": "matching entries, most-catalogued first",
+        "returns": "matching entries, most-catalogued first, with variant_of / variant_count",
         "desc": "Full-text search over name, description, owner and also-known-as, "
                 "with optional facet filters. Every filter is AND-ed.",
     },
@@ -94,6 +94,10 @@ FIELD_RULES = [
     ("translated_from", "set when the description is machine-translated, with the original "
                         "in `description_original`. Absent means the publisher wrote it in "
                         "English - the two are never conflated."),
+    ("variant_of", "set when this entry is a version of another catalogue entry - a city's "
+                   "own Consul Democracy, Bulgaria's fork of CKAN - with `via` saying how that "
+                   "is known (publiccode, fork or curated) and `evidence`. Never inferred from "
+                   "names. To count software rather than deployments, skip these entries."),
     ("catalogues", "one object per government catalogue that lists this software, each with "
                    "a deep link, so a cross-listing claim can be verified upstream rather "
                    "than taken on trust."),

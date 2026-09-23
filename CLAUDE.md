@@ -500,6 +500,44 @@ Its orphan count is position-dependent — run after dedupe, merged-away rows ta
 their source text with them and their translations look rotted (measured: 32
 reported, 29 of them dedupe casualties). Re-running is safe; only the reading
 misleads. Guard what destroys data, warn where the number lies.
+
+### Variants (`variants.py`, `variants.json`)
+
+"This entry is a version of that one" - three city participation portals are
+all Consul Democracy. **Linked, never merged**: merging would destroy the
+adoption evidence (three governments running their own) and blur
+`catalogue_count`, which counts listings of the SAME software. Runs after
+dedupe, so claims resolve against surviving entries; recomputes every run, so
+it needs no stage_guard.
+
+- **Evidence is repo URLs only**: the publisher's `publiccode.yml` `isBasedOn`
+  (harvest keeps it raw as `based_on`), or `variants.json`, keyed on REPO URL
+  because the bare name "Consul" is also HashiCorp Consul. A curated row can
+  add a link or VETO one (`based_on: null`), and must say what was checked.
+- ⚠ **`isBasedOn` is rare and noisy**: 31 of 551 Italian files, many naming a
+  dependency. So a claim counts only if it resolves to an active entry, and
+  never if the core is a `library` (Bootstrap Italia), the entry is an `addon`
+  or `configurationFiles`, or the claim is a homepage (`www.debian.org`).
+- **A variant inherits its core's `replaces`** (`inherited_from` on the row,
+  "via X" on the page) unless it has its own; inherited rows stay OUT of
+  `by-product.json`, so a buyer sees the core once with its `variant_count`.
+- **The page FOLDS, never hides**: a variant disappears under its core only when
+  the core is in the same result set. Hiding it outright would make a source
+  filter read as "this catalogue contributed nothing".
+- **Forks are the third evidence** (`fork_parent`: one GitHub GET per fork,
+  inline on Forgejo). ⚠ **A fork counts only when a DIFFERENT catalogue
+  publishes it than lists its parent.** Of 71 forks, 15 have a parent in the
+  catalogue but 13 are copies inside one catalogue (OS2 modules forked between
+  OS2's own orgs, Dutch doc repos) and ARTE's udata fork sits in a catalogue
+  that already lists upstream udata - leaving Bulgaria's CKAN. A qualifying
+  `upstream-fork` is REINSTATED (original reason in `reinstated_as_variant`);
+  each run first undoes last run's reinstatements, so the stage stays pure.
+- **Publishers can declare `replaces:` in publiccode.yml** (non-standard; 0 of
+  551 Italian files do). Rows are marked `via: publiccode`, bad vocabulary is
+  DROPPED not fatal - the opposite of `replaces.json`, because it is someone
+  else's file - and an unknown product stays off `by-product.json` and the page,
+  which would otherwise link a missing anchor.
+
 ## Agent discoverability
 
 The page tells agents not to scrape it, in four places, because the first consumer probed
@@ -754,7 +792,7 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Seven suites, 193 checks, **all manual** — a test step that can fail the weekly
+Eight suites, 261 checks, **all manual** — a test step that can fail the weekly
 publish is one someone switches off, and `run.sh` already gates its deploy on every
 build step exiting 0. Run before touching `dedupe.py`, `liveness.py`, `filters.py`,
 `taxonomy.py`, `merge_translations.py`, `export_json.py` or the page builders:
@@ -771,7 +809,8 @@ for t in test_*.py; do python3 $t; done
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
-| `test_built_pages.py` | the built pages + three cross-page contracts |
+| `test_built_pages.py` | the built pages + four cross-page contracts |
+| `test_variants.py` | every `variants.resolve()` rule incl. forks and reinstatement, the real Consul portals and CKAN/udata forks, `norm_repo` parity |
 
 **Every suite is validated by SABOTAGE** — break the thing it checks and watch it
 fail — because this repo has shipped a guard that could only ever pass.

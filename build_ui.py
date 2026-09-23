@@ -24,6 +24,7 @@ if os.path.exists(f"{OUT}/liveness.json"):
 # two in step - if this rule changes, change it in both.
 _RAW = json.load(open(f"{OUT}/replaces.json"))
 RMAP = {k.lower(): v for k, v in _RAW.items() if not k.startswith("_")}
+_KNOWN = {p["name"] for p in json.load(open(f"{OUT}/proprietary.json"))["products"]}
 
 
 def _replaces(r):
@@ -38,6 +39,11 @@ def _replaces(r):
                 seen.add(pk)
                 out.append(m)
     for m in (r.get("replaces") or []):
+        # A publisher-declared product with no proprietary.json record has no
+        # anchor on /products.html to link to; export_json.py keeps it out of
+        # by-product.json for the same reason. It stays in /entries.json.
+        if isinstance(m, dict) and m.get("via") == "publiccode" and m.get("product") not in _KNOWN:
+            continue
         if isinstance(m, dict):
             pk = (m.get("product") or "").lower()
             if pk and pk not in seen:
@@ -97,9 +103,28 @@ CLAIM = {
     "FR/sill": "recommended to public agents",
 }
 
+# Variants (variants.py): an entry that is a version of another carries
+# variant_of.ident. A variant with no mapping of its own INHERITS its core's,
+# qualified "via <core>" - the same rule export_json.py applies, so the page and
+# /entries.json agree. Keep the two in step.
+_BY_IDENT = {}
+for r in c:
+    if not r.get("excluded"):
+        _BY_IDENT.setdefault(_fs_ident(r), r)
+
+
+def _core(r):
+    vo = r.get("variant_of") if not r.get("excluded") else None
+    return _BY_IDENT.get(vo["ident"]) if vo else None
+
+
 rows = []
 for r in c:
     _rp = _replaces(r)
+    _cr = _core(r)
+    _inh = bool(_cr is not None and not _rp)
+    if _inh:
+        _rp = _replaces(_cr)
     rows.append({
         "n": r.get("name") or "(unnamed)",
         "fs": _FIRST_SEEN.get(_fs_ident(r)),
@@ -148,14 +173,32 @@ for r in c:
         "ex": r.get("exclude_reason") or "",
         # rp and rpq are built from one pass so they cannot fall out of alignment
         "rp": [m.get("product") for m in _rp if m.get("product")],
-        "rpq": [_rp_qual(m) for m in _rp if m.get("product")],
+        "rpq": [", ".join(x for x in (_rp_qual(m), ("via " + _cr["name"]) if _inh else "") if x)
+                for m in _rp if m.get("product")],
+        "_id": _fs_ident(r), "_core": _fs_ident(_cr) if _cr is not None else None,
+        "_rep": _BY_IDENT.get(_fs_ident(r)) is r,     # the row a core ident means
         # dead_since is only set after 2 consecutive dead observations, so the
         # page never shows a one-off 404 as "repo gone"
         "lv": (lambda v: "dead" if v.get("dead_since")
                     else ("archived" if v.get("archived") else ""))(
                     LIVE.get(r.get("repo_key") or "", {})),
     })
+for x, r in zip(rows, c):
+    if x["_core"] is not None and not _replaces(r):
+        x["rpi"] = 1          # inherited rows; absent otherwise, ~27 KB saved
 rows.sort(key=lambda x: (x["n"] or "").lower())
+
+# Positions are only final after the sort. vo = index of the core row (or absent),
+# vs = indices of a core's variants. The page folds a variant under its core
+# whenever both are in the result set; see fold() in _ui_template.py.
+_pos = {x["_id"]: i for i, x in enumerate(rows) if x["_rep"]}
+for i, x in enumerate(rows):
+    core = x.pop("_core")
+    if core is not None and core in _pos:
+        x["vo"] = _pos[core]
+        rows[_pos[core]].setdefault("vs", []).append(i)
+for x in rows:
+    x.pop("_id"); x.pop("_rep")
 n_ex = sum(1 for r in rows if r["ex"])
 
 # facet counts describe the DEFAULT view (excluded hidden), or the chips would
@@ -196,7 +239,9 @@ FFACETS = json.dumps([[k, FUNCTIONS[k], n] for k, n in funcs.most_common()])
 # only place products with NO alternative can live - a facet yielding zero rows
 # would just be broken. Ordered most-replaceable first, name breaking ties so
 # the list is deterministic (most products have exactly one alternative).
-prods = collections.Counter(p for r in _inc for p in (r["rp"] or []))
+# Direct mappings only: an inherited row folds under its core on the page, so
+# counting it would advertise more results than the facet returns.
+prods = collections.Counter(p for r in _inc if not r.get("rpi") for p in (r["rp"] or []))
 PFACETS = json.dumps([[k, k, n] for k, n in
                       sorted(prods.items(), key=lambda kv: (-kv[1], kv[0].lower()))])
 

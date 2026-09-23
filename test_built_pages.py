@@ -14,7 +14,7 @@ which is precisely where the bug was.
 The checks below are the ones that were run by hand that day. A check that exists
 only in someone's session is a check that does not exist.
 
-⚠ Three of these are CROSS-PAGE contracts, and all fail silently and invisibly:
+⚠ Four of these are CROSS-PAGE contracts, and all fail silently and invisibly:
 
   * `/sources.html` links to `/?src=<label>`, and the catalog validates that value
     against its own <option> list and IGNORES an unknown one. So renaming a label
@@ -31,6 +31,9 @@ only in someone's session is a check that does not exist.
   * The "Get involved" block on / and /sources.html comes from one function,
     theme.submit_block(). It used to be two copies, and a fix to one left the
     other stale; check 10 fails if the two renderings differ again.
+  * Variants are linked in two builders - by DATA index on the page, by id in
+    entries.json - and inherited mappings must stay out of by-product.json.
+    Check 11.
 
 Not wired into run.sh, same as the other five suites: a test that can fail the
 weekly publish is a test someone switches off, and run.sh already gates its deploy
@@ -194,9 +197,29 @@ def main():
           submit(pages["sources.html"]) is not None
           and submit(pages["index.html"]) == submit(pages["sources.html"]), True)
 
+    # ---- 11. CROSS-PAGE: variants agree between the page and /entries.json.
+    # The page folds a variant under its core by DATA index (vo/vs); entries.json
+    # links them by id. Both derive from variant_of in catalog.json, in two
+    # builders, so they can drift. And an inherited replaces row must never reach
+    # by-product.json - the buyer should see the core once, not every deployment.
+    back = all(i in (data[r["vo"]].get("vs") or []) and not data[r["vo"]].get("ex")
+               for i, r in enumerate(data) if r.get("vo") is not None) if data else False
+    check("every page variant points at a core that lists it back", back, True)
+    ents = json.load(open(os.path.join(SITE, "entries.json")))
+    page_pairs = sorted((r["n"], data[r["vo"]]["n"]) for r in data if r.get("vo") is not None)
+    json_pairs = sorted((e["name"], e["variant_of"]["name"]) for e in ents
+                        if e.get("variant_of") and not e.get("excluded"))
+    check("page and entries.json agree on variant links", page_pairs, json_pairs)
+    bp = json.load(open(os.path.join(SITE, "by-product.json")))
+    inh = {(m["product"], e["name"]) for e in ents for m in (e.get("replaces") or [])
+           if m.get("inherited_from")}
+    leaked = sorted(p + " <- " + x["name"] for p, rows in bp.items() for x in rows
+                    if (p, x["name"]) in inh)
+    check("no inherited replaces row reaches by-product.json", leaked, [])
+
     for f in failed:
         print("FAIL  %s" % f)
-    total = 9 + len(pages) + 4
+    total = 9 + len(pages) + 7
     print("\n%d checks run, %d failed" % (total, len(failed)))
     return 1 if failed else 0
 

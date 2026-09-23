@@ -59,7 +59,8 @@ import stage_guard
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 # fields unioned across the merged group rather than taken from the survivor
-UNION_LIST = ["categories", "functions", "platforms", "used_by", "contacts", "keywords"]
+UNION_LIST = ["categories", "functions", "platforms", "used_by", "contacts", "keywords",
+              "based_on", "replaces"]
 
 
 def norm_site(url):

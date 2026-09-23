@@ -111,7 +111,12 @@ def build():
             url = a.get("repo_url") or ""
             nm = ('<a href="%s">%s</a>' % (esc(url), esc(a["name"]))) if url \
                 else '<span class="a-x">' + esc(a["name"]) + '</span>'
-            links.append(nm + (' <span class="a-q">(' + esc(q) + ')</span>' if q else ""))
+            # variant_count: other governments run their own version of this one
+            # (variants.py). Separate from the qualifier, which grades the MATCH.
+            vc = a.get("variant_count") or 0
+            links.append(nm + (' <span class="a-q">(' + esc(q) + ')</span>' if q else "")
+                         + (' <span class="a-v">+%d %s</span>' % (vc, "variant" if vc == 1 else "variants")
+                            if vc else ""))
         cell = ", ".join(links) if links else (
             '<span class="a-none">' + ("content or data subscription"
                                        if p.get("kind") == "data-service"
@@ -188,7 +193,9 @@ def build():
                                "confidence": a["confidence"], "kind": a["kind"],
                                "country": a["country"], "adopters": a["adopters"],
                                "licence_spdx": a["licence_spdx"],
-                               "repo_url": a["repo_url"]} for a in (bp.get(n) or [])]}
+                               "repo_url": a["repo_url"],
+                               "variant_count": a.get("variant_count") or 0}
+                              for a in (bp.get(n) or [])]}
             for n in names],
         "aliases": aliases,
     }, open(f"{SITE}/products.json", "w"), indent=1, sort_keys=True)
@@ -237,6 +244,7 @@ table.ptab td{padding:9px 14px;vertical-align:top;color:var(--ink-600);}
 .c-alt a:hover{text-decoration:underline;}
 .a-x{color:var(--ink-600);}          /* no repo url upstream - nothing to link to */
 .a-q{color:var(--ink-faint);font-size:12px;}
+.a-v{color:var(--ink-600);font-size:12px;}      /* "+2 variants" - see variants.py */
 .a-none{color:var(--ink-faint);font-style:italic;}
 .c-act{white-space:nowrap;text-align:right;}
 .c-act a{color:var(--primary);text-decoration:none;font-size:12px;}
