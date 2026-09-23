@@ -338,7 +338,7 @@ def build():
             '<span class="cc-n">%s</span>'
             '<a class="mono" href="/by-country/%s.json">JSON</a>'
             '</div>'
-        ) % (FLAGS.get(cc, "&#127758;"), esc(cc), "{:,}".format(n), esc(cc))
+        ) % (FLAGS.get(cc, "&#127758;"), esc(S.country_label(cc)), "{:,}".format(n), esc(cc))
 
     # ---- catalogue rows
     crows = ""
@@ -400,7 +400,7 @@ def build():
             '<div class="c-m"><span class="mono">%s</span><span class="c-sec">%s</span></div>'
             '<div class="c-s">%s</div>'
             '</div>'
-        ) % (meta["flag"], esc(meta["country"]), esc(meta["site"]), esc(meta["label"]),
+        ) % (meta["flag"], esc(S.country_label(meta["country"])), esc(meta["site"]), esc(meta["label"]),
              stamps, esc(meta.get("note") or meta.get("claim") or ""), seelink,
              "{:,}".format(n),
              esc(meta.get("route", "")),
@@ -461,7 +461,7 @@ def build():
             '<a class="v-n" href="%s" target="_blank" rel="noopener">%s</a>'
             '<span class="v-chip">%s</span>'
             '<p class="v-d">%s</p></div>'
-        ) % (e["flag"], esc(e["country"]), esc(e["url"]), esc(e["name"]),
+        ) % (e["flag"], esc(S.country_label(e["country"])), esc(e["url"]), esc(e["name"]),
              esc(STATUS_LABEL.get(e["status"], e["status"])), esc(e["detail"]))
 
     n_countries = len({m["country"] for m in S.SOURCES.values()})
@@ -554,7 +554,9 @@ PAGE_CSS = """
 .crow:last-child{border-bottom:0;}
 .clist{background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-card);overflow:hidden;}
-.c-cc{flex:0 0 52px;font-size:12px;color:var(--ink-600);}
+/* Sized for the longest NAME ("European Union"), not a two-letter code; nowrap
+   keeps the flag beside the name instead of stacking it above. */
+.c-cc{flex:0 0 124px;font-size:12px;color:var(--ink-600);white-space:nowrap;}
 .c-main{flex:1 1 320px;min-width:0;}
 .c-t{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
 .c-t a{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink);
@@ -607,8 +609,10 @@ PAGE_CSS = """
 
 /* by country - a dense grid, NOT .crow. Reusing the 5-column catalogue row
    left three cells empty and made each country 141px tall: 15 of them became
-   ~2,100px of scrolling for what is a lookup table. */
-.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:8px;}
+   ~2,100px of scrolling for what is a lookup table. The minimum fits the
+   longest NAME: at 178px "European Union" pushed its JSON link to a second line
+   and stretched its whole grid row. */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(208px,1fr));gap:8px;}
 .ccard{background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-card);padding:10px 12px;display:flex;
   align-items:baseline;gap:8px;flex-wrap:wrap;}

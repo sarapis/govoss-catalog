@@ -26,7 +26,26 @@ COUNTRY_NAME = {
     "TW": "Taiwan",
     "EU": "European Union",
     "GLOBAL": "Global",
+    # Surveyed and not harvested (SURVEY below) - no entries carry these codes.
+    "BR": "Brazil",      "CY": "Cyprus",    "ES": "Spain",
+    "IN": "India",       "KR": "South Korea", "MD": "Moldova",
+    "US": "United States",
 }
+
+
+def country_label(code):
+    """Display name for a country code. SURVEY rows also carry compound codes
+    ("DK/BG") and non-country labels ("meta", "n/a", "EU facets"); a compound is
+    named part by part, and anything unknown is shown as written rather than
+    blanked - an empty cell reads as missing data. Split only when EVERY part
+    is a known code, or "n/a" renders as "n / a"."""
+    if not code:
+        return ""
+    parts = [p.strip().upper() for p in str(code).split("/")]
+    if all(p in COUNTRY_NAME for p in parts):
+        return " / ".join(COUNTRY_NAME[p] for p in parts)
+    return str(code)
+
 
 SOURCES = {
     "IT/developers-italia": {
@@ -315,7 +334,7 @@ SURVEY = [
                "repository links, so what is published looks like policy and guidance rather "
                "than a structured software list. Worth a closer read before writing off - it "
                "would be a new country."},
-    {"country": "ES", "flag": "\U0001F1EA\U0001F1F8", "name": "Comptoir du Libre (crosswalk)",
+    {"country": "FR", "flag": "\U0001F1EB\U0001F1F7", "name": "Comptoir du Libre (crosswalk)",
      "url": "https://comptoir-du-libre.org/api/v1/softwares.json", "status": "ready",
      "detail": "Not a national catalogue but a CROSSWALK, and an open one: 780 entries in a "
                "single JSON with url_repository, wikidata, sill, cnll, framalibre and "
