@@ -66,10 +66,6 @@ Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if 
 - **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` (still answering, still
   the pre-variant code) - it is in the itspruvn.com Cloudflare account, which the
   deploy login cannot reach. Nothing in the repo points at it any more.
-- **Redeploy the MCP Worker** (`cd mcp-server && npx wrangler deploy`): its code changed
-  2026-09-23 - search now reads owner and also-known-as (both promised, neither searched), and
-  the instructions no longer claim "17" catalogues. Safe in either order with Monday's run:
-  the old Worker ignores the new index fields. Verify with a `search_entries` for "Rocket.Chat".
 - **A Catalan speaker's read of `/ca/`** before pointing Catalan institutions at it. The
   strings are machine-written; `i18n/ca.json` is the one file to edit.
 - **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) - a scope decision about what
@@ -91,6 +87,9 @@ Expected, from an end-to-end run on a scratch copy (harvest --from-cache .. vari
 - **Recently added shows no false "new" entries**: the 4 identities that move were
   migrated in `cache/_first_seen.json` (all baseline `null`).
 - Liveness checks ~109 fewer URLs: Swedish homepages were being checked as repos.
+- **MCP search by also-known-as / owner goes live** with the new `mcp-index.json` (the Worker
+  was redeployed 2026-09-23, version e22a48dd; until the run the live index has no `o`/`a`).
+  Check: `search_entries` for "rocket.chat" returns Rocketchat (it returns 0 before the run).
 - **Helsingborg's first harvest** (source 20, `hbg`): 291 rows, 103 set aside as
   `wordpress-plugin`, ~98 active and correctly shown as Recently added. With it, the
   scratch run gave **active 3,128** (3,030 + 98); update the header counts in CLAUDE.md
