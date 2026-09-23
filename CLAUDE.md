@@ -643,6 +643,29 @@ this week", which it could not before.
 
 ## The pages
 
+**Every page is built once per language** — English at `/`, Catalan at `/ca/`
+(`i18n.py`, `i18n/ca.json`). Phase 1: the chrome is translated; descriptions,
+source notes, survey write-ups, operator diagnostics and the API contract stay
+English on every copy, because they are data or a contract.
+
+- **Translations are keyed on the English text** (a gettext msgid). Templates mark
+  strings `⟪…⟫`, or `⟪js:…⟫` inside a single-quoted JS string; Python-built
+  strings use `i18n.t(lang, msg, **kw)` with NAMED arguments, because Catalan
+  word order differs ("fa {n} d"). Rewording an English string orphans its
+  translation, which is reported rather than shown stale.
+- ⚠ **Order is load-bearing: markers → placeholders → links.** Markers resolve
+  while `__PLACEHOLDERS__` are intact so msgids stay stable; values go in after;
+  `i18n.links()` then points root-relative page links at `/ca/`, skipping any tag
+  with `hreflang` (the switcher and alternates must point at the OTHER language).
+- ⚠ **`⟪js:…⟫` escapes to `\uXXXX`.** A Catalan apostrophe inside a single-quoted
+  JS string breaks the whole catalog while every static check passes;
+  `test_built_pages.py` runs `node --check` on each copy's inline script for that.
+- **A missing translation falls back to English** and lands in
+  `out/i18n_missing.json`, which `/sources.html` warns on. A translation whose
+  placeholders differ from the English FAILS the build (it is our own file).
+- **Adding a language** is `i18n.LANGS` + `i18n/<lang>.json` + `NAMES`; the
+  builders, links and tests loop over `LANGS`.
+
 Four generated surfaces on `@wegovnyc/design-tokens` under the **`govoss` brand
 variant** — the system wegov.nyc and unnyc.wegov.nyc share. `/` (`build_ui.py` +
 `_ui_template.py`), `/sources.html` (`build_sources.py`, also build status),
@@ -792,7 +815,7 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Eight suites, 261 checks, **all manual** — a test step that can fail the weekly
+Eight suites, 310 checks, **all manual** — a test step that can fail the weekly
 publish is one someone switches off, and `run.sh` already gates its deploy on every
 build step exiting 0. Run before touching `dedupe.py`, `liveness.py`, `filters.py`,
 `taxonomy.py`, `merge_translations.py`, `export_json.py` or the page builders:
@@ -809,7 +832,7 @@ for t in test_*.py; do python3 $t; done
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
-| `test_built_pages.py` | the built pages + four cross-page contracts |
+| `test_built_pages.py` | the built pages + four cross-page contracts, and every language copy (lang, hreflang, links, inline script parses) |
 | `test_variants.py` | every `variants.resolve()` rule incl. forks and reinstatement, the real Consul portals and CKAN/udata forks, `norm_repo` parity |
 
 **Every suite is validated by SABOTAGE** — break the thing it checks and watch it

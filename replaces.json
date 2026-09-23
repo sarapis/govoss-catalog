@@ -3307,38 +3307,6 @@
    "kind": "software"
   }
  ],
- "Dialog- und Beteiligungsportal Osnabrück": [
-  {
-   "product": "EngagementHQ",
-   "vendor": "Granicus",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "a deployment of Consul Democracy"
-  },
-  {
-   "product": "Neighborland",
-   "vendor": "OpenGov",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "a deployment of Consul Democracy"
-  }
- ],
- "Öffentlichkeitsbeteiligung in der Stadt Regensburg": [
-  {
-   "product": "EngagementHQ",
-   "vendor": "Granicus",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "a deployment of Consul Democracy"
-  },
-  {
-   "product": "Neighborland",
-   "vendor": "OpenGov",
-   "confidence": "strong",
-   "kind": "software",
-   "note": "a deployment of Consul Democracy"
-  }
- ],
  "UrbanKIT Plattform": [
   {
    "product": "EngagementHQ",

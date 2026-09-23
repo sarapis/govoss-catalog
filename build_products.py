@@ -140,10 +140,11 @@ def build(lang="en"):
             + '<td class="c-alt">' + cell + '</td>'
             + '<td class="c-act">' + act + '</td></tr>')
 
-    # Sorted by the DISPLAYED label, in this page's language.
+    # Sorted by the DISPLAYED label, in this page's language, ignoring case: a
+    # plain sort put "CRM ..." before "Col·laboració ..." and "Case ...".
     fopts = "".join(
         '<option value="%s">%s</option>' % (esc(k), esc(FN(k)))
-        for k in sorted(TAX.FUNCTIONS, key=FN)
+        for k in sorted(TAX.FUNCTIONS, key=lambda k: FN(k).casefold())
         if any(p["function"] == k for p in pmeta.values()))
 
     n_links = sum(len(v) for v in bp.values())

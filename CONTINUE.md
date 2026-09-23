@@ -33,13 +33,13 @@ the page already looks."** Three corollaries this cost real sessions to learn:
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 8 suites, 261 checks
+for t in test_*.py; do python3 $t; done                     # 8 suites, 310 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
 - **Last run 2026-09-21**, trigger `schedule`, ok, 17/17 sources fetched cleanly.
 - **Liveness 3,089/3,189 ok (96.9%)**, 26 dead, 39 archived.
-- **8 test suites, 261 checks, all passing.** Manual — not in `run.sh`, because a
+- **8 test suites, 310 checks, all passing.** Manual — not in `run.sh`, because a
   test that can fail the weekly publish is one someone switches off.
 - **`/sources.html` reads `warn`**, for two taxonomy values only. See Traps.
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: **F1–F6 closed, F8 at 5 of 8 gaps,
@@ -117,24 +117,16 @@ violation is silent.
 
 ## Traps — looks broken but is not, and vice versa
 
-- **Osnabrück and Regensburg are not linked as variants yet.** Their
-  `isBasedOn` reaches `catalog.json` on the next LIVE harvest (checkpoints do
-  not carry it). After Monday, `out/variants.json` should resolve both via
-  `publiccode`; then delete their two hand rows from `replaces.json` so they
-  inherit instead of appearing in `by-product.json` a second time.
-- **Bulgaria's CKAN fork is not a variant yet** for the same reason:
-  `fork_parent` is fetched on a live harvest. After Monday, expect it
-  reinstated with `reinstated_as_variant: upstream-fork` and 14 same-catalogue
-  forks in `out/variants.json` › rejected. Active entries go 2,857 -> 2,858.
 - **The MCP Worker's `search_entries` change needs `wrangler deploy`**
   (`mcp-server/`); it is not part of `run.sh`. The index fields ship with the
-  site either way, and the old Worker simply ignores them.
-
-- **The language fix lands on the next LIVE harvest, not on `--from-cache`.**
-  `desc_lang` is stamped when the adapter runs and stored in `cache/src_fr.json`
-  and `src_nl.json`, so a cache rebuild still carries the old `fr`/`nl` tags.
-  After Monday: SILL should show 6 rows `desc_lang: en`, code.overheid.nl 21,
-  and Munich's Epitaph should display English (tagged `de`, then translated).
+  site either way, and the old Worker simply ignores them. It lives in the
+  **Devin@itspruvn.com** Cloudflare account (id `31f41ae0…`), not the
+  sarapis.org one wrangler may be signed in to: `npx wrangler login` as that
+  account first, or the deploy fails with an authentication error.
+- **`/sources.html` can warn about missing page translations one run late.**
+  It is built before `/api.html` and `/products.html`, so it reads their
+  entries in `out/i18n_missing.json` from the PREVIOUS run. A fix to those
+  two pages clears the warning on the following run.
 
 - **`/sources.html` reading `warn` is correct right now.** Two taxonomy values are
   genuinely unmapped *in the published artefact*; both are already mapped in
