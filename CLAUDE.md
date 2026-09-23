@@ -744,7 +744,7 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Seven suites, 179 checks, **all manual** — a test step that can fail the weekly
+Seven suites, 181 checks, **all manual** — a test step that can fail the weekly
 publish is one someone switches off, and `run.sh` already gates its deploy on every
 build step exiting 0. Run before touching `dedupe.py`, `liveness.py`, `filters.py`,
 `taxonomy.py`, `merge_translations.py`, `export_json.py` or the page builders:
@@ -761,7 +761,7 @@ for t in test_*.py; do python3 $t; done
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
-| `test_built_pages.py` | the built pages + two cross-page contracts |
+| `test_built_pages.py` | the built pages + three cross-page contracts |
 
 **Every suite is validated by SABOTAGE** — break the thing it checks and watch it
 fail — because this repo has shipped a guard that could only ever pass. Three rules

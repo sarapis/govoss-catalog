@@ -33,13 +33,13 @@ the page already looks."** Three corollaries this cost real sessions to learn:
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 7 suites, 179 checks
+for t in test_*.py; do python3 $t; done                     # 7 suites, 181 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
 - **Last run 2026-09-21**, trigger `schedule`, ok, 17/17 sources fetched cleanly.
 - **Liveness 3,089/3,189 ok (96.9%)**, 26 dead, 39 archived.
-- **7 test suites, 179 checks, all passing.** Manual — not in `run.sh`, because a
+- **7 test suites, 181 checks, all passing.** Manual — not in `run.sh`, because a
   test that can fail the weekly publish is one someone switches off.
 - **`/sources.html` reads `warn`**, for two taxonomy values only. See Traps.
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: **F1–F6 closed, F8 at 5 of 8 gaps,
@@ -119,8 +119,6 @@ violation is silent.
    `Dropbox` splits one product across two index keys.
 6. **Screen-reader testing has never been done.** The audits are contrast sweeps
    plus keyboard. Until it runs, nothing should claim conformance.
-7. **The get-involved block is duplicated** in `_ui_template.py` and
-   `build_sources.py`, and has already caused one bug.
 
 ## Traps — looks broken but is not, and vice versa
 

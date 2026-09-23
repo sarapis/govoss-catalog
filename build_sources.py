@@ -497,6 +497,7 @@ def build():
         "__CROWS__": crows, "__SROWS__": srows, "__DROWS__": drows, "__VROWS__": vrows,
         "__CROWS_C__": vrows_c,
         "__N_CAT__": str(len(S.SOURCES)),
+        "__SUBMIT__": theme.submit_block(len(S.SOURCES)),
         "__N_COUNTRIES__": str(n_countries),
         "__N_ADDED__": "%+d" % added,
         "__N_RUNS__": str(len(runs)),
@@ -731,14 +732,7 @@ BODY = """
 
   </main>
 
-  <div class="submit" id="submit">
-    <p class="overline">Get involved</p>
-    <h3>Are we missing a catalog?</h3>
-    <p style="color:var(--ink-600)">If your government publishes an open source
-      register, open an issue. It will be assessed against the same first-hand rule as the
-      __N_CAT__ already here &mdash; a live endpoint is not enough, the data has to be there.</p>
-    <a class="btn btn-primary" href="https://github.com/sarapis/govoss-catalog/issues/new">Submit a catalog</a>
-  </div>
+  __SUBMIT__
 </div>
 """
 

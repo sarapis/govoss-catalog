@@ -339,6 +339,7 @@ SUBS = {
     "__LOPTS__": LOPTS,
     "__NENTRIES__": f"{n_entries:,}",
     "__N_ENTRIES__": f"{n_entries:,}",
+    "__SUBMIT__": theme.submit_block(n_srcs),
     "__N_SOURCES__": str(n_srcs),
     "__N_PC__": f"{n_pc:,}",
     "__N_EN__": f"{n_en:,}",

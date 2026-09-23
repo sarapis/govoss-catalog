@@ -540,6 +540,22 @@ def topbar(active=""):
        item("/api.html", "API", "api"))
 
 
+# The "Get involved" block, shared by / and /sources.html. It used to be written
+# out in both page templates, and a fix to one left the other stale. `n` is the
+# catalogue count the calling page already shows, so the block cannot disagree
+# with the stat tile above it.
+def submit_block(n):
+    return """<div class="submit" id="submit">
+    <p class="overline">Get involved</p>
+    <h3>Are we missing a catalog?</h3>
+    <p style="color:var(--ink-600)">If your government publishes an open source
+      register, or you know one that is not listed, open an issue. It will be assessed
+      against the same first-hand rule as the __N__ already here &mdash; a live endpoint
+      is not enough, the data has to be there.</p>
+    <a class="btn btn-primary" href="https://github.com/sarapis/govoss-catalog/issues/new">Submit a catalog</a>
+  </div>""".replace("__N__", str(int(n)))
+
+
 # Published by Sarapis, affiliated with CTFG - not a CTFG property.
 #
 # The Sarapis lockup is the REAL one, pulled from next.sarapis.org rather than

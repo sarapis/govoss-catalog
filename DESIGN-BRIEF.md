@@ -402,8 +402,9 @@ value would reintroduce contrast failures in ~50 places and would look like a ti
 - **`vendor/wegovnyc/README.md` claims govoss's guard is "the contrast assert in `theme.py`".**
   There isn't one — `assert_variant_live()` is the only build-time guard, and contrast is swept
   manually. Either write the assert or correct the README.
-- **The get-involved block is duplicated** in `_ui_template.py` and `build_sources.py`. It has
-  already caused one bug where a fix to one left the other stale.
+- **The get-involved block is `theme.submit_block(n)`**, shared by `/` and `/sources.html`.
+  It was duplicated in both templates and a fix to one left the other stale;
+  `test_built_pages.py` check 10 now fails if the two renderings differ.
 - **The sparklines fill in over time.** Runs before 2026-08-12 have no per-catalogue record, so
   they render as grey "not recorded" bars rather than invented history.
 - **`get_stats` on the MCP server can be up to an hour stale** — a 1-hour edge cache on

@@ -14,7 +14,7 @@ which is precisely where the bug was.
 The checks below are the ones that were run by hand that day. A check that exists
 only in someone's session is a check that does not exist.
 
-⚠ Two of these are CROSS-PAGE contracts, and both fail silently and invisibly:
+⚠ Three of these are CROSS-PAGE contracts, and all fail silently and invisibly:
 
   * `/sources.html` links to `/?src=<label>`, and the catalog validates that value
     against its own <option> list and IGNORES an unknown one. So renaming a label
@@ -28,6 +28,9 @@ only in someone's session is a check that does not exist.
     at the OUTCOME level (do the links land?) rather than by comparing the two
     functions — see the note on check 5 for why the direct comparison was written
     and then deleted.
+  * The "Get involved" block on / and /sources.html comes from one function,
+    theme.submit_block(). It used to be two copies, and a fix to one left the
+    other stale; check 10 fails if the two renderings differ again.
 
 Not wired into run.sh, same as the other five suites: a test that can fail the
 weekly publish is a test someone switches off, and run.sh already gates its deploy
@@ -176,9 +179,24 @@ def main():
         check("meta.json files[%s] -> %s exists" % (key, path),
               os.path.exists(os.path.join(SITE, path.lstrip("/"))), True)
 
+    # ---- 10. CROSS-PAGE: one "Get involved" block, rendered the same on both pages.
+    # It was written out twice, in _ui_template.py and build_sources.py, and a fix
+    # to one left the other stale; it now comes from theme.submit_block(). Digits
+    # are masked because each page passes its own catalogue count. The topbar's
+    # "Submit a catalog" button on every page links to /#submit, so the catalog
+    # page must carry exactly one target for it.
+    def submit(page):
+        m = re.search(r'<div class="submit" id="submit">.*?</div>', page, re.S)
+        return re.sub(r"\d+", "N", m.group(0)) if m else None
+    check("index.html carries exactly one #submit target",
+          pages["index.html"].count('id="submit"'), 1)
+    check("the Get involved block is identical on / and /sources.html",
+          submit(pages["sources.html"]) is not None
+          and submit(pages["index.html"]) == submit(pages["sources.html"]), True)
+
     for f in failed:
         print("FAIL  %s" % f)
-    total = 9 + len(pages) + 2
+    total = 9 + len(pages) + 4
     print("\n%d checks run, %d failed" % (total, len(failed)))
     return 1 if failed else 0
 

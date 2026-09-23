@@ -469,14 +469,7 @@ BODY = """
     </div>
   </main>
 
-  <div class="submit" id="submit">
-    <p class="overline">Get involved</p>
-    <h3>Are we missing a catalog?</h3>
-    <p style="color:var(--ink-600)">If your government publishes an open source
-      register, or you know one that is not listed, open an issue and it will be assessed
-      against the same first-hand rule as the __N_SOURCES__ already here.</p>
-    <a class="btn btn-primary" href="https://github.com/sarapis/govoss-catalog/issues/new">Submit a catalog</a>
-  </div>
+  __SUBMIT__
 </div>
 """
 
