@@ -164,14 +164,20 @@ PAGE_CSS = """
    list still shows each option in full — and everything that does not fit has
    moved into the drawer instead. */
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;}
-.toolbar .sel{max-width:190px;}
-.toolbar #sort{max-width:170px;}
+/* Caps are sized for the WIDEST LANGUAGE's closed label (measured 2026-09-23):
+   "Ordena: més catàlegs" needs 185px, "Qualsevol llicència" 164px. The English
+   caps (190/170/150) clipped every Catalan label and even English "Sort:
+   recently added" (176px). A cap is only a ceiling - each select still takes its
+   own intrinsic width up to it. Re-measure when adding a language; a static
+   check cannot see font metrics. */
+.toolbar .sel{max-width:216px;}
+.toolbar #sort{max-width:190px;}
 /* #lic carries its own `max-width:220px` from an ID selector, which outranks the
    class rule above and left it hogging 220 of a 615px column — squeezing #sort to
    101px, where "Sort: most catalogs" truncates to about three characters. An ID
    needs an ID to beat it. "Any licence" fits comfortably; the long SPDX names
    ellipsis either way. */
-.toolbar #lic{max-width:150px;}
+.toolbar #lic{max-width:170px;}
 .drawer .sel{max-width:none;}
 /* ONE ROW above the sidebar breakpoint, and it has to be `nowrap` rather than
    tuned widths. With `flex-wrap:wrap` the browser wraps a line BEFORE shrinking
@@ -188,6 +194,17 @@ PAGE_CSS = """
      lines and made it 57px tall beside 38px selects. A control that changes
      height when the window narrows reads as broken. */
   .toolbar .sel{min-width:0;flex:1 1 auto;}
+  /* ...except #sort. It is the one label a reader must read to know the order
+     they are looking at, and it shrank FIRST: at 1024px (a 615px column) it was
+     118px wide and "Sort: most catalogs" read as "Sort: m…". Licence and source
+     are filters whose empty state is self-evident, so they take the squeeze. */
+  .toolbar #sort{flex:0 0 auto;}
+  /* Equal bases, so licence and source share the squeeze. With flex-basis:auto
+     the shrink is weighted by each select's natural width, and #lic's long SPDX
+     options made it refuse to shrink while #src took the whole cut. At 1024px
+     the pair still needs a few px more than the row has in Catalan (318 vs 311),
+     so one of them ellipses by a few px there; from ~1100px up both fit. */
+  .toolbar #lic, .toolbar #src{flex:1 1 150px;}
   .toolbar .tog{flex:0 0 auto;white-space:nowrap;}
 }
 .drawer{background:var(--surface);border:1px solid var(--border);
