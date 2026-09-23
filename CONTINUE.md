@@ -1,206 +1,154 @@
 # Open items
 
-Where the work stands as of **2026-09-23**. Written to be handed to whoever — or
-whatever — picks this up cold. `CLAUDE.md` is auto-loaded and is the operating
-manual; `ARCHIVE.md` holds the incidents behind its rules and older session
-records, and is not required reading.
+Where the work stands as of **2026-09-23**. `CLAUDE.md` (auto-loaded) is the rules;
+`ARCHIVE.md` holds the reasoning and incidents behind them, including the full
+long-form manual `CLAUDE.md` was pruned from on this date. Neither is required
+reading beyond what loads by itself.
 
-**State: 2,857 active entries · 488 set aside · 17 catalogues · 15 countries.**
-Pipeline is `bash run.sh` (18 steps, ~20 min; the order is load-bearing and
-documented at the top of the file). Scheduled Mondays 07:00. Live at
-https://govoss.cat (Cloudflare; MCP at https://mcp.govoss.cat), deployed and current.
+**State: 3,054 active entries · 3,553 rows · 19 catalogues · 16 countries and bodies.**
+Live at https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat, both on
+Cloudflare. Pipeline `bash run.sh`, scheduled Mondays 07:00, publishes and commits itself.
 
 ## The one idea, if you remember nothing else
 
-**Every failure sensor in this pipeline started as a `print`, and the one hard gate
-read sensors that could not trip.** All the known instances are now files the
-status page reads — `cache/_fetched.json`, `summary.failed_at`,
-`out/taxonomy_unmapped.json`, `out/translation_orphans.json`,
-`out/deploy_auth.txt` — plus `stage_guard.py`, which is the same idea one step
-further: a stage that *destroys* data has to refuse, not report.
+**Every failure sensor here started as a `print`, and the fix is never "add a warning":
+it is "write it where the page already looks."** The known instances are files
+`/sources.html` reads - `cache/_fetched.json`, `summary.failed_at`,
+`out/taxonomy_unmapped.json`, `out/translation_orphans.json`, `out/deploy_auth.txt`,
+`out/i18n_missing.json` - plus `stage_guard.py`, the same idea one step further: a stage
+that DESTROYS data refuses instead of reporting. Corollaries that cost real sessions:
+the total is rarely the trigger (use a delta); a missing previous measurement is not
+zero; if a guard cannot be made to fail, delete it.
 
-When you find the next one, the fix is not "add a warning"; it is **"write it where
-the page already looks."** Three corollaries this cost real sessions to learn:
-
-- **The total is rarely the trigger.** Something expected to grow needs a delta, or
-  the page reads `warn` forever and nobody reads it.
-- **A missing previous measurement is not zero.** That turns a standing backlog
-  into a day-one false alarm.
-- **If a guard cannot be made to fail, delete it.** One was written,
-  sabotage-tested and removed this month for exactly that.
-
-## State — verified, not recalled
+## State - verified, not recalled
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 8 suites, 310 checks
+for t in test_*.py; do python3 $t; done                     # 8 suites, 315 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
-- **Last run 2026-09-21**, trigger `schedule`, ok, 17/17 sources fetched cleanly.
-- **Liveness 3,089/3,189 ok (96.9%)**, 26 dead, 39 archived.
-- **8 test suites, 310 checks, all passing.** Manual — not in `run.sh`, because a
-  test that can fail the weekly publish is one someone switches off.
-- **`/sources.html` reads `warn`**, for two taxonomy values only. See Traps.
-- Review `REVIEW-govoss-catalog-2026-08-28.md`: **F1–F6 closed, F8 at 5 of 8 gaps,
-  F7 code-complete and credential-blocked.**
+- Tree clean on `main`, nothing unpushed, one worktree. Last commit `e552cb0`.
+- **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
+  (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
+  of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
+- **8 suites, 315 checks, all passing.** Manual on purpose.
+- **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
+  stored login. Intended until a token exists (Waiting on a human).
+- Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
+- Variants: 12 linked to 9 cores (2 curated, 9 publisher `isBasedOn`, 1 fork - Bulgaria's
+  CKAN). `replaces.json`: 244 entries -> 314 products. Orphaned translation keys: 3.
+- Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 closed, F8 at 5 of 8 gaps, F7
+  code-complete and credential-blocked (now a Cloudflare credential).
 
-## Invariants — break these and something already fixed re-breaks
+## Invariants - break these and something already fixed re-breaks
 
-Each is pinned by a test or stated in full in `CLAUDE.md`; these are the ones whose
-violation is silent.
+Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if violated:
 
-- **`fetched_at` and `summary.checked` advance ONLY on success**, and both
-  self-clear on a good run. Stamp either on a failure and staleness becomes
-  undetectable again.
-- **Never store a per-run value PER RECORD** — per-source or summary only. The same
-  idea per record once turned one `liveness.json` diff into 47,563 lines.
-- **`--from-cache` must not write `cache/_timing.json` or `cache/_fetched.json`**
-  (guarded by `if want:`), or a no-network rebuild destroys the record of the last
-  real fetch.
-- **Look `_fetched.json` up by the CHECKPOINT key (`os2`), not `DK/os2`.** Getting
-  this wrong is silent: the first version matched nothing for all 17 sources and
-  reported `ok`.
-- **`harvest.py` exits 0 on a failed source, on purpose.** Do not "fix" it into a
-  hard failure — one flaky source would block the weekly publish of sixteen good
-  ones.
-- **`taxonomy.py` and `dedupe.py` refuse already-merged input** (`stage_guard.py`,
-  pinned by `test_stage_guard.py`). Do not make either merge-aware and do not add
-  `--force`. `merge_translations.py` is the same family but only *warns*, because
-  it is safe to re-run and only its orphan count misleads.
-- **`build_ui._fs_ident()` must match `first_seen.ident()`** or every entry reads as
-  undated and the Recently-added strip silently empties.
-- **`el.hidden` works only because `theme.py` ships
-  `[hidden]{display:none!important}`.** Keep it; never `style.display`.
-- **Never reintroduce a per-source language assumption**, and never replace one with
-  bare `detect_lang` — it calls 532 of 672 SILL descriptions English. SILL and
-  code.overheid.nl use `lang_with_prior()`; see `CLAUDE.md` › Translation.
+- **`fetched_at` and `summary.checked` advance ONLY on success.** Stamp either on a
+  failure and staleness becomes undetectable.
+- **Never store a per-run value PER RECORD** - per-source or summary only.
+- **`--from-cache` must not write `_fetched.json` / `_timing.json`** (guarded by `if want:`).
+- **`harvest.py` exits 0 on a failed source, on purpose** - one flaky source must not
+  block the publish of eighteen good ones.
+- **`sources.py:SITE_URL` is the only place the address is written**, and every wrangler
+  config pins `account_id`. Remove the pin and a cached login can deploy elsewhere.
+- **Only one wrangler config may claim a hostname** (`www.govoss.cat` is `govoss-www`'s).
+- **`build_ui._fs_ident()` must equal `first_seen.ident()`** or the Recently-added strip
+  silently empties.
 
-## Waiting on a human — not work that was skipped
+## Waiting on a human - not work that was skipped
 
-- **A Cloudflare API token (F7).** Hosting moved from Vercel to Cloudflare on
-  2026-09-23, so the credential is now a Cloudflare token with Workers Scripts:Edit
-  on Devin@sarapis.org's Account. Verified absent: `~/.config/govoss/` exists with
-  mode 700 and a README, and no `cloudflare-token`. Everything around it is done — the
-  route is recorded, the page warns while on the stored login, the pre-flight
-  validates content not exit status. One command:
+- **A Cloudflare API token (F7)**, Workers Scripts:Edit on Devin@sarapis.org's Account.
+  Verified absent: `~/.config/govoss/` holds only its README. One command:
   `printf '%s' 'TOKEN' > ~/.config/govoss/cloudflare-token && chmod 600 ~/.config/govoss/cloudflare-token`
-- **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) — a scope decision about
-  what the catalogue *is*, and a bigger one than it looks: see Candidates.
-- **Three documents drafted and unsent** — a reply to an OpenForum Europe policy
-  advisor, an OFE-voiced version of the EU catalogue defect report, and a
-  shareable call for sources (`DEMAND-SIDE-CALL-FOR-SOURCES.md`, in the repo). The
-  first two are session artefacts, not committed.
+- **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` (still answering, still
+  the pre-variant code) - it is in the itspruvn.com Cloudflare account, which the
+  deploy login cannot reach. Nothing in the repo points at it any more.
+- **A Catalan speaker's read of `/ca/`** before pointing Catalan institutions at it. The
+  strings are machine-written; `i18n/ca.json` is the one file to edit.
+- **The GCHQ decision** - but only after candidate 1. Recorded in `sources.py:SURVEY`
+  as `ready`, with the editorial question (is an intelligence agency's tooling "software
+  a government could adopt"?) left to the owner.
+- **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) - a scope decision about what
+  the catalogue is. And three drafted, unsent documents (an OpenForum Europe reply, an
+  OFE-voiced EU defect report - session artefacts, not committed - and
+  `DEMAND-SIDE-CALL-FOR-SOURCES.md`).
 
 ## Candidates, ranked
 
-1. **Map `environmental-protection` and `geospatial-information`** — already done in
-   `taxonomy.py`; this is just waiting for the next run to clear the artefact. No
-   action unless the warning persists past Monday.
-2. **The demand-side Stage 1**, but read the reframing first. The note asks for a
-   second jurisdiction publishing product-level licence data; its own crux says
-   that data exists in NYC only because Databook ran an LLM extraction. So the
-   runnable test is to extract from a second jurisdiction's *raw* contract data —
-   which prices in a cost the note never named: **an extraction pipeline is not
-   harvesting**, and that breaks the condition its own Costs section sets. Portland
-   was the intended test and is still `permission denied for table tenders`
-   (re-checked 2026-09-21).
-3. **F8's last three gaps**: `get()`'s raise semantics (needs a stubbed opener),
-   crosswalk's three guards (inline in SPARQL-calling functions — they need the
-   extraction `liveness.fold_history()` got), and the MCP Worker (JS).
-4. **Expand `replaces.json`** — 245 of 2,857 entries. A seeded sample puts the
-   honestly-mappable share of the publiccode tier at ~20%; search it by shape
-   ("platform", CMS, ERP, workflow engine), don't sweep it. Read the `_README` first;
-   `kind` and `confidence` both matter and `export_json.py` fails the build on a bad
-   value. ⚠ Check existing product names before adding; `Dropbox Business` beside
-   `Dropbox` splits one product across two index keys.
-5. **Screen-reader testing has never been done.** The audits are contrast sweeps
-   plus keyboard. Until it runs, nothing should claim conformance.
+1. **Size up the UK sources (alphagov/GDS, MoJ, other departments) before deciding on
+   GCHQ.** GCHQ alone would be the first UK source but a narrow one: 58 active repos,
+   ~30 of them Stroom components, no `publiccode.yml`, one clear product (CyberChef).
+   The starting point, verified 2026-09-23 but NOT yet measured: GitHub's
+   `github/government.github.com` repo, file `_data/governments.yml`, lists **169 "U.K.
+   Central" orgs and 46 "U.K. Councils"** (alphagov, ministryofjustice, hmrc, dwp,
+   govuk-pay, govuk-one-login, GCHQ ...) - a machine route in the sense this repo means.
+   Measure per org: active repos, forks, `publiccode.yml` count (via raw.githubusercontent,
+   not code search - it rate-limits), and how many repos are products vs plumbing. Expect
+   almost no publiccode.yml, so the real question is a CURATION rule, not a scan: the
+   GCHQ analysis concluded hand-picking ~8 products beats 58 index entries. The same
+   file covers 77 country groups - a discovery source for elsewhere too.
+2. **Expand `replaces.json` by SHAPE, not sweep.** A seeded 60-entry sample put the
+   honestly-mappable share of the publiccode tier at ~20% (95% CI 12-32%); every hit was
+   a platform, CMS, ERP, workflow engine or security scanner. Read the `_README` first.
+3. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
+   translation cost (~20-200 new entries per run), so only if someone will use it; it would
+   also need a "missing Catalan" sensor on the same growth rule as orphans.
+4. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
+   undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
+5. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
+   Workers (JS). **Screen-reader testing** has never been done.
 
-## Hosting moved to Cloudflare, at govoss.cat (2026-09-23)
+## Traps - looks broken but is not, and vice versa
 
-Done and verified: the site is the `govoss-site` Worker at `govoss.cat` and
-`www.govoss.cat`; the MCP server is at `mcp.govoss.cat` reading from govoss.cat;
-`sources.py:SITE_URL` is `https://govoss.cat`; `govoss-catalog.vercel.app`
-308-redirects every path there; the domain is removed from the Vercel project.
-Left, all yours: the Cloudflare API token (F7, above), and deleting the OLD
-MCP Worker at `govoss-mcp.devin-31f.workers.dev` in the itspruvn.com account.
-`www.govoss.cat` 301-redirects to the apex through its own Worker (`govoss-www`).
+- **`www.govoss.cat` and `govoss.cat` are different Workers.** A deploy of the site never
+  touches `www`, and `run.sh` never redeploys `govoss-www` or `mcp-server` (no data).
+- **The old `govoss-catalog.vercel.app` redirect has no CORS header**, so a browser page
+  fetching the OLD JSON cross-origin fails. Scripts and agents follow it. The `www`
+  redirect DOES carry CORS - by design, verified end to end.
+- **`/sources.html` can warn about missing page translations one run late** - it is built
+  before `/api.html` and `/products.html` and reads their entries from the previous run.
+- **3,070 of 3,391 first-seen ids are `null`** - the baseline, known and never new. Not a gap.
+- **A variant list that includes an obvious mirror is expected**: Munich's SDS Calculator
+  links to itself under two catalogues via its publisher's `isBasedOn`. It folds; harmless.
+- **The vendored design-token CSS mentions `govoss-catalog.vercel.app` in a comment.** It is
+  copied from upstream as-is; do not "fix" it here.
+- **`out/` and `site/` are gitignored** - absent on a fresh checkout; `build_sources.py`
+  degrades to `ok`, and `test_built_pages.py` SKIPs until the pages are built.
+- **The browser pane returns stale and blank frames.** Measure the DOM; rebuild `site/`
+  before testing it. A `curl` seconds after a deploy can also hit a stale edge copy -
+  cache-bust, and re-check before concluding anything.
+- **`PAGINATION-BUG.md` is about someone else's service**, not a defect here.
+- **`python3 -B` for sabotage runs.** Same-second, same-size edits otherwise run stale
+  bytecode - this produced a false "guard is load-bearing" conclusion once this session.
 
-## Traps — looks broken but is not, and vice versa
+## Last session (2026-09-22 → 23), in one screen
 
-- **The MCP Worker's `search_entries` change needs `wrangler deploy`**
-  (`mcp-server/`); it is not part of `run.sh`. The index fields ship with the
-  site either way. It now lives in **Devin@sarapis.org's Account**
-  (`account_id` pinned in `mcp-server/wrangler.jsonc`, 2026-09-23). The OLD copy
-  at `govoss-mcp.devin-31f.workers.dev` (itspruvn.com account) still runs the
-  pre-variant code; delete it once nothing points at it - that needs the
-  itspruvn.com login.
-- **`/sources.html` can warn about missing page translations one run late.**
-  It is built before `/api.html` and `/products.html`, so it reads their
-  entries in `out/i18n_missing.json` from the PREVIOUS run. A fix to those
-  two pages clears the warning on the following run.
-
-- **`/sources.html` reading `warn` is correct right now.** Two taxonomy values are
-  genuinely unmapped *in the published artefact*; both are already mapped in
-  `taxonomy.py`. `out/taxonomy_unmapped.json` is per-run, so a mapping fix does not
-  clear the page until the next run. Confirm by dry-running `classify()`, not by
-  reading the page.
-- **`out/translation_orphans.json` reads 0, and that is real** — but only when
-  measured *in position*. Run `merge_translations.py` by hand on a post-dedupe
-  `catalog.json` and it reports ~37, of which ~29 are rows dedupe merged away, not
-  rot. The script now says so when it detects merged input.
-- **A "flat" source count is not staleness.** Eight catalogues genuinely do not
-  change weekly; freshness comes from `_fetched.json`, not from the count moving.
-- **The Recently-added strip being all-German is real**, not a bug — the 2026-09-21
-  run added 20 entries, almost all openCode.
-- **3,070 of 3,189 entries carry no first-seen date.** That is the baseline, not a
-  gap: they predate the record, and `null` there means *known and never new*, which
-  is deliberately not the same as absent.
-- **`out/` is gitignored**, so its artefacts are per-run and absent on a fresh
-  checkout; `build_sources.py` degrades to `ok`, by design.
-- **`PAGINATION-BUG.md` is a report about someone else's service**, not a defect
-  here. Re-verified 2026-09-20, still reproducing.
-- **Nine class names in `_ui_template.py` carry more than one rule block.** Most are
-  a base plus a media-query override, but a collision there cost a session: a link
-  given `class="more"` inherited `display:block;width:100%` and looked like a
-  wrapping bug.
-
-## Verification habits this project earned the hard way
-
-- Check the **built output**, not that a patch reported success — and after a
-  structural edit, grep for what should still be there.
-- **Test a guard adversarially.** If it cannot be made to fail, delete it.
-- Confirm a **dead** verdict through a second channel before asserting it.
-- **Detect** description language from text; read `desc_lang`, never
-  `desc_src_lang`.
-- Measure UI rows by **vertical centre**, not `top`; assert
-  `getComputedStyle(el).display`, not `el.hidden`.
-- Run `bash run.sh` rather than the steps from memory — the ordering is
-  load-bearing.
-- **The browser pane returns stale and blank frames.** Measure the DOM; rebuild
-  `site/` before testing it.
+Shipped, each verified live or by test: shared get-involved block; per-source language
+fixes for SILL/NL (`lang_with_prior`) and Munich/DPG (`lang_assume_en`); +52
+`replaces.json` mappings; the variants system (`variants.py`, curated/publisher/fork
+evidence, inheritance, folding, MCP + products fields); Switzerland and DIGG sources and
+the shared ä/ö language fix; the OSOR list fully evaluated (`sources.py:SURVEY`); Catalan
+copies of all four pages (`i18n.py`); hosting moved from Vercel to Cloudflare at
+govoss.cat with `www` and `mcp.` subdomains; `CLAUDE.md` pruned 949 -> 243 lines into rules.
+Mistakes worth knowing: one commit (`84ec9c3`) went out with a failing check (fixed in
+`ea3f93f`); a sabotage script once left `variants.py` broken (restored from a backup).
 
 ---
 
 ## Starting the next session
 
-Paste this into a fresh session in `~/Antigravity/govoss-catalog`:
-
-> I'm continuing work on ~/Antigravity/govoss-catalog, a union catalogue of
-> government open source software (live at https://govoss.cat,
-> repo github.com/sarapis/govoss-catalog).
+> I'm continuing work on ~/Antigravity/govoss-catalog, a union catalogue of government
+> open source software (live at https://govoss.cat, repo github.com/sarapis/govoss-catalog).
 >
-> Read `/Users/devin/Antigravity/govoss-catalog/CONTINUE.md` first — it has the
-> state, the invariants, what's waiting on me, and a traps section that will save
-> you a morning. Everything else is conditional: read
-> `/Users/devin/Antigravity/govoss-catalog/ARCHIVE.md` only if you need the
-> incident behind a rule, `DEMAND-SIDE-CATALOGUE.md` only if you touch the
-> demand-side question, and `REVIEW-govoss-catalog-2026-08-28.md` only if you work
-> on F7 or F8.
+> Read `/Users/devin/Antigravity/govoss-catalog/CONTINUE.md` first - it has the state,
+> what's waiting on me, the ranked next moves, and the traps. Read
+> `/Users/devin/Antigravity/govoss-catalog/ARCHIVE.md` only if a rule in `CLAUDE.md` is too
+> terse to apply and you need the reasoning behind it.
 >
-> Tree is clean and everything is pushed as of 2026-09-23. The next scheduled run
-> is Monday 07:00 and will be the first to exercise `first_seen.py`.
+> Start with candidate 1: size up the UK government sources before we decide on GCHQ.
+> Measure and recommend; do not add a source until I have seen the numbers.
 >
 > Do not write a handoff, continuation prompt, or session record unless I ask for
 > `/handoff`. End your turn with what you did and what you recommend next.
