@@ -348,7 +348,6 @@ ICONS = {
 BODY = """
 <div class="hero tex">
   <div class="inner">
-    <p class="overline">⟪The union catalog &middot; updated every Monday⟫</p>
     <h1>⟪Open source software catalog for governments⟫</h1>
     <p class="lede">⟪An aggregation of open source software catalogs from national, regional,
       local and global governing institutions &mdash; updated weekly. Are we missing a catalog?
