@@ -12,6 +12,7 @@ run AFTER export_json.py.
 No f-strings for markup: plain strings with __PLACEHOLDER__ tokens.
 """
 import json, os, gzip, importlib.util, time
+import i18n
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = f"{OUT}/site"
@@ -45,30 +46,39 @@ def kb(n):
     return "%.0f KB" % (n / 1024) if n < 1024 * 1024 else "%.1f MB" % (n / 1048576)
 
 
-def build():
+def build(lang="en"):
+    """One language's /api.html. The CONTRACT stays English on every copy: field
+    rules, MCP tool definitions and etiquette come from mcp_tools.py, which the
+    Worker also serves, and the JSON itself is English. Only the framing is
+    translated."""
+    _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
+    N = lambda n: i18n.num(lang, n)
     entries = json.load(open(f"{SITE}/entries.json"))
     meta = json.load(open(f"{SITE}/meta.json"))
     counts = meta.get("counts", {})
 
     ENDPOINTS = [
-        ("/entries.json", "Every entry, one request. No key, no pagination, no rate limit.",
-         "entries.json", "%s entries" % "{:,}".format(len(entries))),
-        ("/by-product.json", "Inverted index: proprietary product to open source "
-                             "alternatives. Two requests answer a licence inventory.",
-         "by-product.json", "%s products mapped" % counts.get("distinct_products_mapped", "-")),
-        ("/by-country/FR.json", "One file per country, 15 of them. \u26a0 The code is "
-                                "the country of the CATALOGUE that listed the software, "
-                                "not the tier of government that published it \u2014 there "
-                                "is no municipal/regional/national distinction here.",
-         "by-country/FR.json", "15 countries"),
-        ("/sources.json", "The catalogues harvested, their access routes and entry counts, "
-                          "plus the ones surveyed and rejected with reasons.",
-         "sources.json", "17 catalogues"),
-        ("/meta.json", "Counts, the controlled vocabulary for functions and countries, and "
-                       "generated_at. Poll this, not the pages.",
-         "meta.json", "freshness signal"),
-        ("/status.json", "Last run, per-step results, open items. Whether the machine is "
-                         "still running.", "status.json", "build health"),
+        ("/entries.json", _("Every entry, one request. No key, no pagination, no rate limit."),
+         "entries.json", _("{n} entries", n=N(len(entries)))),
+        ("/by-product.json", _("Inverted index: proprietary product to open source "
+                               "alternatives. Two requests answer a licence inventory."),
+         "by-product.json", _("{n} products mapped", n=counts.get("distinct_products_mapped", "-"))),
+        # Counts measured, not typed: this said "15 countries" and "17 catalogues"
+        # as literals, and the catalogue had moved past both.
+        ("/by-country/FR.json", _("One file per country, {n} of them. \u26a0 The code is "
+                                  "the country of the CATALOGUE that listed the software, "
+                                  "not the tier of government that published it \u2014 there "
+                                  "is no municipal/regional/national distinction here.",
+                                  n=len(meta.get("countries") or [])),
+         "by-country/FR.json", _("{n} countries", n=len(meta.get("countries") or []))),
+        ("/sources.json", _("The catalogues harvested, their access routes and entry counts, "
+                            "plus the ones surveyed and rejected with reasons."),
+         "sources.json", _("{n} catalogues", n=len(meta.get("sources") or []))),
+        ("/meta.json", _("Counts, the controlled vocabulary for functions and countries, and "
+                         "generated_at. Poll this, not the pages."),
+         "meta.json", _("freshness signal")),
+        ("/status.json", _("Last run, per-step results, open items. Whether the machine is "
+                           "still running."), "status.json", _("build health")),
     ]
     erows = ""
     for path, desc, fname, fact in ENDPOINTS:
@@ -79,9 +89,9 @@ def build():
             '<a class="mono e-p" href="%s">%s</a></div>'
             '<p class="e-d">%s</p>'
             '<div class="e-f"><span class="fact">%s</span>'
-            '<span class="fact">%s raw</span><span class="fact">%s gzip</span></div>'
+            '<span class="fact">%s</span><span class="fact">%s</span></div>'
             '</div>'
-        ) % (path, path, esc(desc), esc(fact), kb(raw), kb(gz))
+        ) % (path, path, esc(desc), esc(fact), _("{kb} raw", kb=kb(raw)), _("{kb} gzip", kb=kb(gz)))
 
     # A REAL entry, chosen deterministically: most-catalogued of the entries that
     # carry both a replaces mapping and a licence, so the example shows the
@@ -108,8 +118,8 @@ def build():
     trows = "".join(
         '<div class="trow"><div class="t-h"><code class="t-n">%s</code>'
         '<code class="t-a">(%s)</code></div><p class="t-d">%s</p>'
-        '<p class="t-r">returns %s</p></div>'
-        % (esc(t["name"]), esc(t["args"]), esc(t["desc"]), esc(t["returns"]))
+        '<p class="t-r">%s %s</p></div>'
+        % (esc(t["name"]), esc(t["args"]), esc(t["desc"]), _("returns"), esc(t["returns"]))
         for t in M.TOOLS)
 
     # Don't advise using a server that is not live. The rule this whole page
@@ -118,7 +128,7 @@ def build():
                  if M.ENDPOINT or "MCP server" not in e[1]]
     etq = "".join(
         '<div class="qcard %s"><span class="qtag">%s</span><h4>%s</h4><p>%s</p></div>'
-        % (kind, "do" if kind == "do" else "don't", esc(title), esc(body))
+        % (kind, _("do") if kind == "do" else _("don't"), esc(title), esc(body))
         for kind, title, body in etiquette)
 
     # MCP: live only when the Worker exists. Until then the section says so
@@ -127,22 +137,23 @@ def build():
     if M.ENDPOINT:
         mcp_config = esc(json.dumps({"mcpServers": {"govoss": {"url": M.ENDPOINT}}}, indent=2))
         mcp_state = ('<div class="code"><pre>%s</pre></div>' % mcp_config)
-        mcp_note = ('Add that to your MCP client config. No key, no account. The server '
-                    'reads the same public JSON as everyone else, so it can never return '
-                    'something the published data does not contain.')
+        mcp_note = _('Add that to your MCP client config. No key, no account. The server '
+                     'reads the same public JSON as everyone else, so it can never return '
+                     'something the published data does not contain.')
     else:
-        mcp_state = ('<div class="notyet"><b>Not live yet.</b> The server is built but not '
+        mcp_state = ('<div class="notyet">%s</div>' % _(
+                     '<b>Not live yet.</b> The server is built but not '
                      'deployed, so no endpoint is published here. The tools below are its '
                      'actual definitions, shared with the implementation &mdash; when it '
-                     'deploys, the connection details appear here and nowhere else changes.</div>')
-        mcp_note = ('Until then, everything the tools do can be done with the JSON above: '
-                    'they exist to save an agent downloading 5.6 MB to answer one question.')
+                     'deploys, the connection details appear here and nowhere else changes.'))
+        mcp_note = _('Until then, everything the tools do can be done with the JSON above: '
+                     'they exist to save an agent downloading 5.6 MB to answer one question.')
 
     subs = {
         "__EROWS__": erows, "__FROWS__": frows, "__TROWS__": trows, "__ETQ__": etq,
         "__EXAMPLE__": example_json, "__EXAMPLE_NAME__": esc(example.get("name", "")),
         "__MCP_STATE__": mcp_state, "__MCP_NOTE__": mcp_note,
-        "__N_ENTRIES__": "{:,}".format(len(entries)),
+        "__N_ENTRIES__": N(len(entries)),
         "__N_TOOLS__": str(len(M.TOOLS)),
         "__GEN__": esc(meta.get("generated_at") or NOW),
         "__CITE__": esc("govoss-catalog (%s). Union catalogue of government open source "
@@ -151,13 +162,15 @@ def build():
     }
 
     page = (theme.head(
-        "API and MCP for agents | govoss",
-        "Take the data, don't scrape the page. %s government open source entries as static "
-        "JSON - no key, no rate limit, no pagination - plus an MCP server."
-        % "{:,}".format(len(entries)))
+        _("API and MCP for agents | govoss"),
+        _("Take the data, don't scrape the page. {n} government open source entries as static "
+          "JSON - no key, no rate limit, no pagination - plus an MCP server.",
+          n=N(len(entries))), lang=lang, route="/api.html")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar() + theme.topbar("api") + BODY + theme.footer())
+        + theme.utility_bar(lang=lang) + theme.topbar("api", lang, "/api.html")
+        + BODY + theme.footer(lang=lang))
 
+    page = i18n.markers(page, lang)
     for k, v in subs.items():
         page = page.replace(k, v)
     import re as _re
@@ -165,12 +178,15 @@ def build():
     if left:
         raise SystemExit("build_api: unsubstituted placeholders %s" % left)
 
+    page = i18n.links(page, lang)
     theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
-    open(f"{SITE}/api.html", "w").write(page)
-    print("api page: %d endpoints, %d tools, MCP %s (%.0f KB)"
-          % (len(ENDPOINTS), len(M.TOOLS),
+    out = f"{SITE}/api.html" if lang == "en" else f"{SITE}/{lang}/api.html"
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, "w").write(page)
+    print("api page [%s]: %d endpoints, %d tools, MCP %s (%.0f KB)"
+          % (lang, len(ENDPOINTS), len(M.TOOLS),
              "live" if M.ENDPOINT else "NOT LIVE (no endpoint published)", len(page) / 1024))
 
 
@@ -244,14 +260,14 @@ PAGE_CSS = """
 BODY = """
 <div class="hero tex">
   <div class="inner">
-    <p class="overline">For agents and developers</p>
-    <h2>Take the data, don't scrape the page</h2>
-    <p class="lede">Everything this site displays is available as static JSON &mdash;
+    <p class="overline">⟪For agents and developers⟫</p>
+    <h2>⟪Take the data, don't scrape the page⟫</h2>
+    <p class="lede">⟪Everything this site displays is available as static JSON &mdash;
       __N_ENTRIES__ entries in one request. No key, no rate limit, no pagination, no
-      account. CORS is open. Last rebuilt __GEN__.</p>
+      account. CORS is open. Last rebuilt __GEN__.⟫</p>
     <div class="btns">
-      <a class="btn btn-primary" href="/entries.json">Get entries.json</a>
-      <a class="btn btn-ghost" href="#mcp">The MCP server</a>
+      <a class="btn btn-primary" href="/entries.json">⟪Get entries.json⟫</a>
+      <a class="btn btn-ghost" href="#mcp">⟪The MCP server⟫</a>
     </div>
   </div>
 </div>
@@ -259,37 +275,37 @@ BODY = """
 <div class="wrap">
   <main id="main">
   <section class="sec" style="margin-top:36px">
-    <div class="sechead"><h3>Endpoints</h3>
-      <span class="r" style="font-size:12px;color:var(--ink-faint)">Sizes measured at build
-        time, so they cannot drift from what is served.</span></div>
+    <div class="sechead"><h3>⟪Endpoints⟫</h3>
+      <span class="r" style="font-size:12px;color:var(--ink-faint)">⟪Sizes measured at build
+        time, so they cannot drift from what is served.⟫</span></div>
     <hr class="dashed">
     <div class="egrid" style="margin-top:14px">__EROWS__</div>
   </section>
 
   <section class="sec">
-    <div class="sechead"><h3>One entry, and the fields that carry rules</h3></div>
+    <div class="sechead"><h3>⟪One entry, and the fields that carry rules⟫</h3></div>
     <hr class="dashed">
     <div class="two" style="margin-top:14px">
       <div class="col-code">
-        <p style="font-size:12px;color:var(--ink-faint);margin-bottom:8px">A real record
-          &mdash; __EXAMPLE_NAME__ &mdash; trimmed to the fields worth explaining.</p>
+        <p style="font-size:12px;color:var(--ink-faint);margin-bottom:8px">⟪A real record
+          &mdash; __EXAMPLE_NAME__ &mdash; trimmed to the fields worth explaining.⟫</p>
         <div class="code"><pre>__EXAMPLE__</pre></div>
       </div>
       <div class="col-rules">
         __FROWS__
-        <div class="rule-hero">The governing rule: <b>a value the upstream catalogue did
+        <div class="rule-hero">⟪The governing rule: <b>a value the upstream catalogue did
           not state is null.</b> Never guessed, never back-filled from a search. Read null
           as &ldquo;the government did not say&rdquo;, not &ldquo;unknown to us&rdquo;
           &mdash; the difference matters if you are about to publish a claim about who
-          licenses what.</div>
+          licenses what.⟫</div>
       </div>
     </div>
   </section>
 
   <section class="sec" id="mcp">
-    <div class="sechead"><h3>MCP server</h3>
-      <span class="r" style="font-size:12px;color:var(--ink-faint)">__N_TOOLS__ tools over the
-        same public data.</span></div>
+    <div class="sechead"><h3>⟪MCP server⟫</h3>
+      <span class="r" style="font-size:12px;color:var(--ink-faint)">⟪__N_TOOLS__ tools over the
+        same public data.⟫</span></div>
     <hr class="dashed">
     <div class="two" style="margin-top:14px">
       <div class="col-code">
@@ -301,23 +317,22 @@ BODY = """
   </section>
 
   <section class="sec">
-    <div class="sechead"><h3>Etiquette</h3></div>
+    <div class="sechead"><h3>⟪Etiquette⟫</h3></div>
     <hr class="dashed">
     <div class="qgrid" style="margin-top:14px">__ETQ__</div>
   </section>
 
   <section class="sec">
-    <div class="sechead"><h3>Licence and citation</h3></div>
+    <div class="sechead"><h3>⟪Licence and citation⟫</h3></div>
     <hr class="dashed">
     <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
-      <p style="font-size:14px;color:var(--ink-600);line-height:1.6">
-        The compilation is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
+      <p style="font-size:14px;color:var(--ink-600);line-height:1.6">⟪The compilation is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
         4.0</a> and the pipeline code is <a
         href="https://github.com/sarapis/govoss-catalog/blob/main/LICENSE">MIT</a>. The
         individual entries are not ours to relicense &mdash; each describes software
         published by a government catalogue under that country's own terms, and every entry
         links back to its source. <b>Cite the government for a fact about one project</b>;
-        cite this catalogue for the aggregate.</p>
+        cite this catalogue for the aggregate.⟫</p>
       <div class="cite">__CITE__</div>
     </div>
   </section>
@@ -326,4 +341,6 @@ BODY = """
 """
 
 if __name__ == "__main__":
-    build()
+    for _lang in i18n.LANGS:
+        build(_lang)
+    i18n.report("build_api")

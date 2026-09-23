@@ -23,6 +23,7 @@ Runs AFTER export_json.py - it reads by-product.json.
 No f-strings for markup: plain strings with __PLACEHOLDER__ tokens.
 """
 import json, os, re, importlib.util, time
+import i18n
 from urllib.parse import quote
 
 OUT = os.path.dirname(os.path.abspath(__file__))
@@ -53,7 +54,7 @@ def pslug(name):
 QUAL = {"paid-tier": "paid tier", "service": "hosted service"}
 
 
-def qual(m):
+def qual(m, lang="en"):
     """Same rule as the catalog page: qualify anything that is not a
     like-for-like software swap, so 'Replaces X' is never asserted flatly."""
     q = []
@@ -61,10 +62,16 @@ def qual(m):
         q.append(QUAL[m["kind"]])
     if m.get("confidence") in ("partial", "adjacent"):
         q.append(m["confidence"])
-    return ", ".join(q)
+    return ", ".join(i18n.t(lang, x) for x in q)
 
 
-def build():
+def build(lang="en"):
+    """One language's /products.html. Product names and descriptions are data and
+    stay English (phase 2 would translate them); products.json is written on the
+    English pass only."""
+    _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
+    N = lambda n: i18n.num(lang, n)
+    FN = lambda k: i18n.function(lang, k, TAX.FUNCTIONS[k])
     bp = json.load(open(f"{SITE}/by-product.json"))
     meta = json.load(open(f"{SITE}/meta.json"))
     prop = json.load(open(f"{OUT}/proprietary.json"))
@@ -107,7 +114,7 @@ def build():
             n_alt += 1
         links = []
         for a in alts:
-            q = qual(a)
+            q = qual(a, lang)
             url = a.get("repo_url") or ""
             nm = ('<a href="%s">%s</a>' % (esc(url), esc(a["name"]))) if url \
                 else '<span class="a-x">' + esc(a["name"]) + '</span>'
@@ -115,13 +122,13 @@ def build():
             # (variants.py). Separate from the qualifier, which grades the MATCH.
             vc = a.get("variant_count") or 0
             links.append(nm + (' <span class="a-q">(' + esc(q) + ')</span>' if q else "")
-                         + (' <span class="a-v">+%d %s</span>' % (vc, "variant" if vc == 1 else "variants")
+                         + (' <span class="a-v">+%d %s</span>' % (vc, _("variant") if vc == 1 else _("variants"))
                             if vc else ""))
         cell = ", ".join(links) if links else (
-            '<span class="a-none">' + ("content or data subscription"
+            '<span class="a-none">' + (_("content or data subscription")
                                        if p.get("kind") == "data-service"
-                                       else "none mapped") + '</span>')
-        act = ('<a href="/?rp=' + quote(name, safe="") + '">See alternatives &rarr;</a>'
+                                       else _("none mapped")) + '</span>')
+        act = ('<a href="/?rp=' + quote(name, safe="") + '">' + _("See alternatives &rarr;") + '</a>'
                if alts else "")
         rows.append(
             '<tr id="p-' + pslug(name) + '" data-n="'
@@ -129,13 +136,14 @@ def build():
             + '" data-f="' + esc(p["function"]) + '" data-a="' + ("1" if alts else "0") + '">'
             + '<th scope="row">' + esc(name) + '</th>'
             + '<td class="c-desc">' + esc(p.get("description") or "") + '</td>'
-            + '<td class="c-fn">' + esc(TAX.FUNCTIONS[p["function"]]) + '</td>'
+            + '<td class="c-fn">' + esc(FN(p["function"])) + '</td>'
             + '<td class="c-alt">' + cell + '</td>'
             + '<td class="c-act">' + act + '</td></tr>')
 
+    # Sorted by the DISPLAYED label, in this page's language.
     fopts = "".join(
-        '<option value="%s">%s</option>' % (esc(k), esc(v))
-        for k, v in sorted(TAX.FUNCTIONS.items(), key=lambda kv: kv[1])
+        '<option value="%s">%s</option>' % (esc(k), esc(FN(k)))
+        for k in sorted(TAX.FUNCTIONS, key=FN)
         if any(p["function"] == k for p in pmeta.values()))
 
     n_links = sum(len(v) for v in bp.values())
@@ -143,9 +151,10 @@ def build():
     n_data = sum(1 for p in pmeta.values() if p.get("kind") == "data-service")
 
     subs = {
-        "__NPROD__": "{:,}".format(len(names)),
-        "__NALT__": "{:,}".format(n_alt),
-        "__NLINKS__": "{:,}".format(n_links),
+        "__NPROD__": N(len(names)),
+        "__NALT__": N(n_alt),
+        "__NLINKS__": N(n_links),
+        "__LANG__": lang,
         "__NGAP__": str(n_gap),
         "__NDATA__": str(n_data),
         "__NCURATED__": str(sum(1 for p in pmeta.values() if p.get("desc_src") == "curated")),
@@ -155,22 +164,31 @@ def build():
     }
 
     page = (theme.head(
-        "Proprietary software and open source alternatives | govoss",
-        "%s proprietary products governments buy, %s of them with a government "
-        "open source alternative, filterable by function." % (len(names), n_alt))
+        _("Proprietary software and open source alternatives | govoss"),
+        _("{n} proprietary products governments buy, {k} of them with a government "
+          "open source alternative, filterable by function.", n=N(len(names)), k=N(n_alt)),
+        lang=lang, route="/products.html")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar() + theme.topbar("") + BODY + theme.footer())
+        + theme.utility_bar(lang=lang) + theme.topbar("", lang, "/products.html")
+        + BODY + theme.footer(lang=lang))
 
+    page = i18n.markers(page, lang)
     for k, v in subs.items():
         page = page.replace(k, v)
     left = sorted(set(re.findall(r"__[A-Z_]{3,}__", page)))
     if left:
         raise SystemExit("build_products: unsubstituted placeholders %s" % left)
 
+    page = i18n.links(page, lang)
     theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
-    open(f"{SITE}/products.html", "w").write(page)
+    out = f"{SITE}/products.html" if lang == "en" else f"{SITE}/{lang}/products.html"
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, "w").write(page)
+    if lang != "en":
+        print("products page [%s]: (%.0f KB)" % (lang, len(page) / 1024))
+        return
 
     json.dump({
         "generated_at": meta.get("generated_at") or NOW,
@@ -267,44 +285,44 @@ BODY = """
   <main id="main">
 
   <section class="sec" style="margin-top:28px">
-    <h1 style="font-size:30px;margin:0 0 12px">Proprietary software, and what could replace it</h1>
-    <p class="lede">The catalogue lists government open source. This is the other side of it:
+    <h1 style="font-size:30px;margin:0 0 12px">⟪Proprietary software, and what could replace it⟫</h1>
+    <p class="lede">⟪The catalogue lists government open source. This is the other side of it:
       <b>__NPROD__ proprietary products</b> governments buy, of which <b>__NALT__</b> have an
       open source alternative a government somewhere already publishes &mdash; <b>__NLINKS__</b>
       alternatives in all. The other <b>__NGAP__</b> are listed too, so a gap reads as a gap
-      rather than as an oversight.</p>
-    <p class="note">These mappings are <b>hand-curated and unverified</b>, and __NCURATED__ of
+      rather than as an oversight.⟫</p>
+    <p class="note">⟪These mappings are <b>hand-curated and unverified</b>, and __NCURATED__ of
       the descriptions are written for this catalogue rather than taken from a source. Absence
       of a mapping is not evidence that no alternative exists. Anything that is not a
       like-for-like swap is qualified &mdash; a <i>paid tier</i> is usually a licence you stop
       renewing, a <i>hosted service</i> means you still need somewhere to run it, and
       <i>partial</i> or <i>adjacent</i> means real gaps or a changed workflow. __NDATA__ entries
       are content or data subscriptions, where open source cannot substitute the content at all.
-      Machine readable at <a href="/products.json">/products.json</a>.</p>
+      Machine readable at <a href="/products.json">/products.json</a>.⟫</p>
 
     <div class="pctl">
-      <input id="pq" class="fq" type="search" placeholder="Filter products, e.g. Dropbox"
-        aria-label="Filter products">
-      <select id="pf" class="sel" aria-label="Filter by function">
-        <option value="">Any function</option>__FOPTS__
+      <input id="pq" class="fq" type="search" placeholder="⟪Filter products, e.g. Dropbox⟫"
+        aria-label="⟪Filter products⟫">
+      <select id="pf" class="sel" aria-label="⟪Filter by function⟫">
+        <option value="">⟪Any function⟫</option>__FOPTS__
       </select>
-      <button type="button" id="pa" class="tog" aria-pressed="true">Has a govoss alternative</button>
+      <button type="button" id="pa" class="tog" aria-pressed="true">⟪Has a govoss alternative⟫</button>
     </div>
-    <p class="pcount"><b id="pn">__NALT__</b> of __NPROD__ products</p>
+    <p class="pcount">⟪<b id="pn">__NALT__</b> of __NPROD__ products⟫</p>
 
     <div class="twrap" id="twrap">
       <table class="ptab">
         <thead><tr>
-          <th scope="col">Proprietary product</th>
-          <th scope="col">Description</th>
-          <th scope="col">Function</th>
-          <th scope="col">Open source alternatives</th>
-          <th scope="col"><span class="vh">See them in the catalog</span></th>
+          <th scope="col">⟪Proprietary product⟫</th>
+          <th scope="col">⟪Description⟫</th>
+          <th scope="col">⟪Function⟫</th>
+          <th scope="col">⟪Open source alternatives⟫</th>
+          <th scope="col"><span class="vh">⟪See them in the catalog⟫</span></th>
         </tr></thead>
         <tbody id="prows">__ROWS__</tbody>
       </table>
     </div>
-    <p class="nores" id="nores" hidden>No product matches those filters.</p>
+    <p class="nores" id="nores" hidden>⟪No product matches those filters.⟫</p>
   </section>
 
   </main>
@@ -326,7 +344,7 @@ BODY = """
       r.hidden = !hit;
       if (hit) n++;
     }
-    out.textContent = n.toLocaleString();
+    out.textContent = n.toLocaleString('__LANG__');
     // Hide the whole table when nothing matches - a bare header row over an
     // empty body reads as a broken table rather than as an empty result.
     wrap.hidden = n === 0;
@@ -359,4 +377,6 @@ BODY = """
 """
 
 if __name__ == "__main__":
-    build()
+    for _lang in i18n.LANGS:
+        build(_lang)
+    i18n.report("build_products")

@@ -2,6 +2,7 @@
 out/
 site/
 catalogue.html
+catalogue.ca.html
 *.pyc
 __pycache__/
 
