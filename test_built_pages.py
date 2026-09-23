@@ -310,7 +310,9 @@ def main():
     # would move it back and forth on every deploy of either.
     wcfg = read(os.path.join(HERE, "wrangler.www.jsonc"))
     check("www.govoss.cat is claimed by govoss-www alone",
-          ("www.govoss.cat" in cfg, '"pattern": "www.govoss.cat"' in wcfg), (False, True))
+          # match the ROUTE, not the text: the site config's own comment names www
+          ('"pattern": "www.govoss.cat"' in cfg, '"pattern": "www.govoss.cat"' in wcfg),
+          (False, True))
 
     for f in failed:
         print("FAIL  %s" % f)
