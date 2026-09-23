@@ -262,6 +262,14 @@ def build(lang="en"):
                              % (n_orph - prev_orph, n_orph,
                                 (", mostly %s" % worst[1]) if worst[1] else "")))
 
+    # ---- crosswalk identity inputs (Comptoir, Wikidata). They were reused for six
+    # weeks without refreshing and nothing said so; crosswalk.py now records each
+    # refresh in out/crosswalk_cache.json, and this is where it becomes visible.
+    # No try/except: a sensor that swallows its own import error is off without
+    # saying so. _load_state() already treats a missing file as a fresh checkout.
+    import crosswalk
+    problems.extend(crosswalk.cache_problems(crosswalk._load_state()))
+
     # ---- F7: deploy auth posture.
     #
     # The deploy prefers a token file and falls back to wrangler's stored login

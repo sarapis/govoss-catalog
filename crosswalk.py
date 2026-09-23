@@ -49,13 +49,16 @@ Wikidata is BEST EFFORT: any failure warns and leaves the Comptoir result in
 place. This is a gated step in run.sh, and a third-party SPARQL endpoint being
 slow must never block the deploy.
 """
-import json, os, re, collections
+import calendar, collections, json, os, re, time
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SRC = f"{OUT}/out/comptoir.json"
 API = "https://comptoir-du-libre.org/api/v1/softwares.json"
 WD_REPO_CACHE = f"{OUT}/out/wikidata_repo.json"
 WD_SITE_CACHE = f"{OUT}/out/wikidata_site.json"
+CACHE_STATE = f"{OUT}/out/crosswalk_cache.json"
+# The weekly run refreshes every input; a same-week manual run reuses them.
+MAX_AGE_DAYS = 6
 WDQS = "https://query.wikidata.org/sparql"
 UA = "govoss-catalog/0.2 (https://github.com/sarapis/govoss-catalog)"
 
@@ -73,17 +76,78 @@ def norm(url):
     return u.lower() or None
 
 
-def load_comptoir():
-    if os.path.exists(SRC):
-        d = json.load(open(SRC))
-    else:
-        import ssl, urllib.request, certifi
-        ctx = ssl.create_default_context(cafile=certifi.where())
-        req = urllib.request.Request(API, headers={"User-Agent": "govoss-catalog/0.2"})
-        with urllib.request.urlopen(req, timeout=90, context=ctx) as r:
-            d = json.load(r)
-        os.makedirs(f"{OUT}/out", exist_ok=True)
-        json.dump(d, open(SRC, "w"))
+def _now():
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def _age_days(ts, now=None):
+    """Days since `ts`, or None when there is no usable stamp. None means STALE:
+    a missing measurement is not a fresh one."""
+    try:
+        t = calendar.timegm(time.strptime(ts, "%Y-%m-%dT%H:%M:%SZ"))
+        n = calendar.timegm(time.strptime(now or _now(), "%Y-%m-%dT%H:%M:%SZ"))
+        return (n - t) / 86400
+    except Exception:
+        return None
+
+
+def _load_state(path=None):
+    try:
+        return json.load(open(path or CACHE_STATE))
+    except Exception:
+        return {}
+
+
+def _save_state(state, path=None):
+    os.makedirs(os.path.dirname(path or CACHE_STATE), exist_ok=True)
+    json.dump(state, open(path or CACHE_STATE, "w"), indent=1, sort_keys=True)
+
+
+def cached(name, path, fetch, state, now=None, max_age=MAX_AGE_DAYS):
+    """Return the cached copy of one crosswalk input, refreshing it when old.
+
+    WHY. Until 2026-09-23 every input here was reused for as long as its file
+    existed: comptoir.json dated from 08-11 and the Wikidata files from 08-13,
+    six weeks of weekly runs later, and nothing said so. A frozen input that
+    looks live is the fourth recurring bug in CLAUDE.md.
+
+    The rules, each pinned by test_crosswalk_cache.py:
+      * no `fetched_at` recorded = stale, never fresh;
+      * `fetched_at` advances ONLY on a successful fetch - the same invariant as
+        cache/_fetched.json - so a failure cannot make old data look new;
+      * a failed fetch falls back to the old copy (this step never fails the
+        run) and records `error`, which /sources.html reports once it is old;
+      * no old copy and a failed fetch raises, so the caller's best-effort
+        handler decides, exactly as before."""
+    rec = state.get(name) or {}
+    age = _age_days(rec.get("fetched_at"), now)
+    if os.path.exists(path) and age is not None and age < max_age:
+        return json.load(open(path))
+    try:
+        data = fetch()
+    except Exception as ex:
+        state[name] = dict(rec, error=f"{type(ex).__name__}: {ex}"[:300])
+        if not os.path.exists(path):
+            raise
+        print(f"   {name}: refresh failed ({state[name]['error']}); using the copy "
+              f"from {rec.get('fetched_at') or 'an unrecorded date'}")
+        return json.load(open(path))
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    json.dump(data, open(path, "w"))
+    state[name] = {"fetched_at": now or _now(), "error": None}
+    return data
+
+
+def _fetch_comptoir():
+    import ssl, urllib.request, certifi
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    req = urllib.request.Request(API, headers={"User-Agent": "govoss-catalog/0.2"})
+    with urllib.request.urlopen(req, timeout=90, context=ctx) as r:
+        return json.load(r)
+
+
+def load_comptoir(state):
+    d = cached("comptoir", SRC, _fetch_comptoir, state)
     rows = d if isinstance(d, list) else (d.get("softwares") or list(d.values())[0])
     if rows and isinstance(rows[0], dict) and "software" in rows[0]:
         rows = [r["software"] for r in rows]
@@ -146,15 +210,143 @@ def software_qids(qids, chunk=300):
     return out
 
 
-def wikidata_by_repo(repo_keys):
+def site_lookup(sites, ask, cache, fresh):
+    """Which homepages to send, and the merged result. Pure; `ask(batch)` is the
+    network and returns {norm site: {qid}} or raises.
+
+    The cache records the homepages it ASKED, not only the ones that matched.
+    Before 2026-09-23 it stored matches alone, so a homepage added after the
+    cache was written was never sent at all - not "asked and not found", simply
+    never asked. While the cache is fresh only the new homepages go out; once it
+    is stale, all of them. A failed batch is left un-asked so the next run
+    retries it. -> (new cache, number of failed batches)."""
+    prior_asked = set(cache.get("asked") or [])
+    prior_found = cache.get("found") or {}
+    want = {x for x in sites if x}
+    todo = sorted(want - prior_asked) if fresh else sorted(want)
+    newly, got_all, failed = set(), collections.defaultdict(set), 0
+    for batch in ask.batches(todo):
+        try:
+            got = ask(batch)
+        except Exception as ex:                          # one bad chunk, not the run
+            print(f"   wikidata: website batch failed ({ex})")
+            failed += 1
+            continue
+        for k, v in got.items():
+            got_all[k] |= set(v)
+        newly |= set(batch)
+    # An answer supersedes the old one; a homepage that went un-answered (failed
+    # batch) keeps its old match rather than losing its identity for a week.
+    found = {k: set(v) for k, v in prior_found.items()
+             if k not in newly and (fresh or k in want)}
+    for k, v in got_all.items():
+        found[k] = set(v)
+    asked = (prior_asked if fresh else set()) | newly
+    return {"asked": sorted(asked),
+            "found": {k: sorted(v) for k, v in sorted(found.items())}}, failed
+
+
+class _AskWikidata:
+    """<property> URL -> QID, asked only about URLs we hold (P856 official website).
+    One retry per batch: the endpoint answers 502/503 under load and a second try
+    a few seconds later usually lands."""
+    def __init__(self, prop, chunk=200):
+        self.prop, self.chunk = prop, chunk
+
+    def batches(self, cands):
+        return [cands[i:i + self.chunk] for i in range(0, len(cands), self.chunk)]
+
+    def __call__(self, batch):
+        vals = " ".join("<%s>" % v for b in batch for v in sorted(_variants(b)) if _iri_safe(v))
+        found = collections.defaultdict(set)
+        if not vals:
+            return found
+        q = "SELECT ?item ?s WHERE { VALUES ?s { %s } ?item wdt:%s ?s . }" % (vals, self.prop)
+        try:
+            rows = _sparql(q, timeout=120)
+        except Exception:
+            time.sleep(5)
+            rows = _sparql(q, timeout=120)
+        for b in rows:
+            found[norm(b["s"]["value"])].add(_qid(b["item"]))
+        return found
+
+
+def wikidata_by_url(name, path, ask, urls, state, now=None):
+    """The website route's refresh: an asked-set cache under
+    `path`, the clock under state[name]. -> {norm url: qid}, one-claim only."""
+    rec = state.get(name) or {}
+    age = _age_days(rec.get("fetched_at"), now)
+    fresh = age is not None and age < MAX_AGE_DAYS
+    try:
+        cache = json.load(open(path))
+    except Exception:
+        cache = {}
+    if not isinstance(cache, dict) or "asked" not in cache:
+        # the pre-2026-09-23 shape: {site: [qid]}, matches only, no asked set.
+        # Keep its matches as the fallback and re-ask everything.
+        cache, fresh = {"asked": [], "found": cache or {}}, False
+    cache, failed = site_lookup(urls, ask, cache, fresh)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    json.dump(cache, open(path, "w"))
+    if failed:
+        state[name] = dict(rec, error=f"{failed} batch(es) failed")
+    elif not fresh:
+        # a FULL refresh that fully succeeded is the only thing that restarts the clock
+        state[name] = {"fetched_at": now or _now(), "error": None}
+    # One url claimed by two items is not an identity. Drop it.
+    return {k: v[0] for k, v in cache["found"].items() if len(v) == 1 and k in urls}
+
+
+def p1324_rows(text, expected):
+    """Parse the P1324 CSV dump -> [[qid, url]], or raise if it is incomplete.
+
+    The query service TRUNCATES under load and still answers HTTP 200: measured
+    2026-09-23, one download returned all 28,759 rows in 10s and the next, a
+    minute later, 11,116 rows cut off mid-line. A responding endpoint is not a
+    working source (CLAUDE.md, recurring bug 1), so the dump is checked against
+    a separate COUNT. The 0.5% slack absorbs edits landing between the two
+    queries; a truncation is never that small."""
+    import csv, io
+    if not text.endswith("\n"):
+        text = text[:text.rfind("\n") + 1]        # drop a half-written last row
+    rows = [[_qid({"value": r["item"]}), r["r"]]
+            for r in csv.DictReader(io.StringIO(text)) if r.get("item") and r.get("r")]
+    if len(rows) < expected * 0.995:
+        raise RuntimeError(f"P1324 dump truncated: {len(rows)} of {expected} rows")
+    return rows
+
+
+def _sparql_csv(query, timeout=200):
+    import ssl, urllib.request, urllib.parse, certifi
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    data = urllib.parse.urlencode({"query": query}).encode()
+    req = urllib.request.Request(WDQS, data=data, headers={
+        "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "text/csv"})
+    with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def _fetch_p1324(tries=3):
+    """Every P1324 value on Wikidata, as CSV (a third of the JSON's size), checked
+    complete. Asking per repo instead was measured and rejected: 25 repos took
+    29s and 50 got a 502, so the ~3,000 we hold would take about an hour."""
+    n = int(_sparql_csv("SELECT (COUNT(*) AS ?n) WHERE { ?item wdt:P1324 ?r . }")
+            .split("\n")[1].strip())
+    last = None
+    for i in range(tries):
+        try:
+            return p1324_rows(_sparql_csv("SELECT ?item ?r WHERE { ?item wdt:P1324 ?r . }"), n)
+        except Exception as ex:
+            last = ex
+            time.sleep(10 * (i + 1))
+    raise last
+
+
+def wikidata_by_repo(repo_keys, state):
     """P1324 source code repository -> QID, for repo urls we actually hold."""
-    if os.path.exists(WD_REPO_CACHE):
-        raw = json.load(open(WD_REPO_CACHE))
-    else:
-        rows = _sparql("SELECT ?item ?r WHERE { ?item wdt:P1324 ?r . }")
-        raw = [[_qid(b["item"]), b["r"]["value"]] for b in rows]
-        os.makedirs(f"{OUT}/out", exist_ok=True)
-        json.dump(raw, open(WD_REPO_CACHE, "w"))
+    raw = cached("wikidata_repo", WD_REPO_CACHE, _fetch_p1324, state)
     idx = collections.defaultdict(set)
     for qid, url in raw:
         k = norm(url)
@@ -164,29 +356,39 @@ def wikidata_by_repo(repo_keys):
     return {k: next(iter(v)) for k, v in idx.items() if len(v) == 1 and k in repo_keys}
 
 
-def wikidata_by_site(sites, chunk=200):
+def wikidata_by_site(sites, state):
     """P856 official website -> QID, asked only about homepages we hold."""
-    if os.path.exists(WD_SITE_CACHE):
-        found = {k: set(v) for k, v in json.load(open(WD_SITE_CACHE)).items()}
-    else:
-        found = collections.defaultdict(set)
-        cands = sorted(s for s in sites if s)
-        for i in range(0, len(cands), chunk):
-            vals = " ".join("<%s>" % v for b in cands[i:i + chunk]
-                            for v in _variants(b) if _iri_safe(v))
-            if not vals:
-                continue
-            try:
-                rows = _sparql("SELECT ?item ?s WHERE { VALUES ?s { %s } "
-                               "?item wdt:P856 ?s . }" % vals)
-            except Exception as ex:                       # one bad chunk, not the run
-                print(f"   wikidata: website chunk {i // chunk} failed ({ex})")
-                continue
-            for b in rows:
-                found[norm(b["s"]["value"])].add(_qid(b["item"]))
-        os.makedirs(f"{OUT}/out", exist_ok=True)
-        json.dump({k: sorted(v) for k, v in found.items()}, open(WD_SITE_CACHE, "w"))
-    return {k: next(iter(v)) for k, v in found.items() if len(v) == 1}
+    return wikidata_by_url("wikidata_site", WD_SITE_CACHE, _AskWikidata("P856"),
+                           set(sites), state)
+
+
+CACHE_NAMES = {"comptoir": "Comptoir du Libre", "wikidata_repo": "Wikidata (repositories)",
+               "wikidata_site": "Wikidata (websites)"}
+WARN_AFTER_DAYS = 14
+
+
+def cache_problems(state, now=None):
+    """-> [(level, message)] for /sources.html. `warn`, never `critical`: these
+    inputs only add identity, and the catalogue is correct without them - but a
+    reader should know dedupe is working from an old copy.
+
+    An EMPTY state is a fresh checkout that has not run the crosswalk yet, and
+    says nothing, like every other out/ sensor. A state that names some inputs
+    but not others is not empty: the missing one never refreshed."""
+    if not state:
+        return []
+    out = []
+    for name, label in CACHE_NAMES.items():
+        rec = state.get(name) or {}
+        age = _age_days(rec.get("fetched_at"), now)
+        why = rec.get("error") or "reason not recorded"
+        if age is None:
+            out.append(("warn", "identity input '%s' has no recorded successful refresh (%s); "
+                                "dedupe is using whatever copy is on disk" % (label, why)))
+        elif age > WARN_AFTER_DAYS:
+            out.append(("warn", "identity input '%s' last refreshed %d days ago (%s); "
+                                "dedupe is using that copy" % (label, int(age), why)))
+    return out
 
 
 def resolve_landing(url, timeout=15):
@@ -250,7 +452,8 @@ def redirect_matches(active, resolve, org_sites=frozenset()):
 
 
 if __name__ == "__main__":
-    rows = load_comptoir()
+    state = _load_state()
+    rows = load_comptoir(state)
     catalog = json.load(open(f"{OUT}/catalog.json"))
 
     by_repo, by_sill, by_site, by_name = {}, {}, {}, {}
@@ -300,7 +503,7 @@ if __name__ == "__main__":
     todo = [e for e in active if not e.get("wikidata")]
     try:
         repo_keys = {e["repo_key"] for e in todo if e.get("repo_key")}
-        by_wd_repo = wikidata_by_repo(repo_keys)
+        by_wd_repo = wikidata_by_repo(repo_keys, state)
 
         # A homepage shared by entries with DIFFERENT names is an ORGANISATION
         # site, not a product identity. Measured: umwelt.info is the official
@@ -316,7 +519,7 @@ if __name__ == "__main__":
         org_sites = {s for s, n in site_names.items() if len(n) > 1}
 
         want = {norm(e.get("landing")) for e in todo if norm(e.get("landing"))} - org_sites
-        by_wd_site = wikidata_by_site(want)
+        by_wd_site = wikidata_by_site(want, state)
 
         # A URL match says the page belongs to the item, not that the item is
         # software. Verify before stamping — see software_qids().
@@ -366,6 +569,7 @@ if __name__ == "__main__":
     except Exception as ex:
         print(f"redirect: SKIPPED ({type(ex).__name__}: {ex})")
 
+    _save_state(state)
     json.dump(catalog, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
     total = sum(hits.values())
     have = sum(1 for e in catalog if e.get("wikidata"))
