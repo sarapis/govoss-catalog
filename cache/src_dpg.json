@@ -7200,6 +7200,34 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/pix",
+  "keywords": [
+   "SDG4",
+   "SDG8"
+  ],
+  "landing": "https://pix.org",
+  "license": "AGPL-3.0",
+  "name": "Pix",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/1024pix/pix",
+  "repo_key": "github.com/1024pix/pix",
+  "repo_owner": "Pix",
+  "sdgs": [
+   "SDG4: Quality Education",
+   "SDG8: Decent Work and Economic Growth"
+  ],
+  "short_desc": "Pix is a free, open-source public service for assessing and certifying digital skills. With over 15M users in 43 countries, it empowers students and professionals to develop their digital competencies, promoting lifelong learning for all.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0092012"
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
   "entry_url": "https://www.digitalpublicgoods.net/r/pol-is",
   "keywords": [
    "SDG10",

@@ -670,6 +670,26 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/enova-editor.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application",
+   "eigenentwicklung"
+  ],
+  "license": "MIT",
+  "name": "eNoVa-Editor",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/it-at-m/eNoVa-Editor/",
+  "repo_key": "github.com/it-at-m/enova-editor",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "The eNoVa Editor is a Java desktop application designed to facilitate XJustiz communication between municipalities and notaries, which will become mandatory as of January 1, 2027.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "de",
   "entry_url": "https://opensource.muenchen.de/software/epitaph.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -2189,7 +2209,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "application",
-   "desktop"
+   "desktop",
+   "featurefunding"
   ],
   "landing": "https://www.qgis.org",
   "license": "GPL-2.0",

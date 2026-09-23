@@ -1913,9 +1913,9 @@
    "Web Browsers & Extensions"
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "Small utility to launch a different browser depending on the domain of the url being launched.",
-  "desc_src_lang": "fr",
+  "desc_src_lang": "en",
   "entry_url": "https://code.gouv.fr/sill/detail?name=BrowserSelector",
   "keywords": [
    "navigateur",
@@ -1989,7 +1989,7 @@
   "used_by": [
    "Campus Num\u00e9rique 47"
   ],
-  "version": "1.6.14",
+  "version": "1.6.15",
   "wikidata": "Q122929604"
  },
  {
@@ -2589,7 +2589,7 @@
   "used_by": [
    "INRAE"
   ],
-  "version": "4.19.1",
+  "version": "4.19.2",
   "wikidata": "Q120147501"
  },
  {
@@ -2640,7 +2640,7 @@
    "browser",
    "internet"
   ],
-  "landing": "https://www.chromium.org/chromium-projects/",
+  "landing": "https://www.chromium.org/Home",
   "license": "BSD-3-Clause",
   "name": "Chromium",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2698,7 +2698,7 @@
   "used_by": [
    "other"
   ],
-  "version": "4.0.4",
+  "version": "4.0.6",
   "wikidata": "Q135450643"
  },
  {
@@ -3432,9 +3432,9 @@
  },
  {
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "digital platform that aims at empowering open research and studies in humanities about the dynamic of science, technology, innovation and knowledge production",
-  "desc_src_lang": "fr",
+  "desc_src_lang": "en",
   "entry_url": "https://code.gouv.fr/sill/detail?name=CorTexT",
   "keywords": [
    "analyse textuelle",
@@ -3971,7 +3971,7 @@
    "administration centrale",
    "other"
   ],
-  "version": "26.2.0",
+  "version": "26.2.1",
   "wikidata": "Q28956992"
  },
  {
@@ -4638,7 +4638,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.38.28",
+  "version": "0.38.29",
   "wikidata": "Q112073283"
  },
  {
@@ -5242,7 +5242,8 @@
    "MC",
    "MI/SG/DTNUM/SDAS/BACI/SCPI",
    "MS",
-   "Saint-Nazaire Agglom\u00e9ration (Carene)"
+   "Saint-Nazaire Agglom\u00e9ration (Carene)",
+   "Sciences Po"
   ],
   "version": "9.5.4",
   "wikidata": "Q3050461"
@@ -5347,7 +5348,7 @@
   "used_by": [
    "CEA"
   ],
-  "version": "5.6.2",
+  "version": "5.7.0",
   "wikidata": "Q17105199"
  },
  {
@@ -6091,9 +6092,9 @@
  },
  {
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "Foreman plugin that adds Proxmox compute resource: managing virtual machines and containers using the fog-proxmox module.",
-  "desc_src_lang": "fr",
+  "desc_src_lang": "en",
   "entry_url": "https://code.gouv.fr/sill/detail?name=foreman_fog_proxmox",
   "keywords": [
    "proxmox",
@@ -6821,6 +6822,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "Education Nationale",
    "MEN",
    "Universit\u00e9 Grenoble Alpes"
   ],
@@ -7060,7 +7062,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.1",
+  "version": "2.126.2",
   "wikidata": "Q116819111"
  },
  {
@@ -7985,9 +7987,9 @@
  },
  {
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "GrapheneOS is a privacy and security focused mobile OS with Android app compatibility developed as a non-profit open source project.",
-  "desc_src_lang": "fr",
+  "desc_src_lang": "en",
   "entry_url": "https://code.gouv.fr/sill/detail?name=GrapheneOS",
   "keywords": [
    "Privacy",
@@ -8070,7 +8072,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.12.19",
+  "version": "4.12.20",
   "wikidata": "Q97819945"
  },
  {
@@ -8376,8 +8378,8 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "1.7.5",
-  "wikidata": "Q131622251"
+  "version": "2.0.2",
+  "wikidata": "Q131897282"
  },
  {
   "country": "FR",
@@ -8588,7 +8590,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "7.0.4",
+  "version": "7.0.6",
   "wikidata": "Q11223506"
  },
  {
@@ -8623,9 +8625,9 @@
  },
  {
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "JavaScript library that extends HTML via custom attributes to implement client-server interactions",
-  "desc_src_lang": "fr",
+  "desc_src_lang": "en",
   "entry_url": "https://code.gouv.fr/sill/detail?name=htmx",
   "keywords": [
    "javascript",
@@ -9301,7 +9303,7 @@
    "MEN",
    "SG"
   ],
-  "version": "2.581",
+  "version": "2.583",
   "wikidata": "Q7491312"
  },
  {
@@ -9602,7 +9604,7 @@
    "Universit\u00e9 de Limoges",
    "administration centrale"
   ],
-  "version": "7.6.2",
+  "version": "7.6.3",
   "wikidata": "Q105099901"
  },
  {
@@ -9669,7 +9671,7 @@
    "MINISTERE INTERIEUR/DGPN/ANDV",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "4.6.3",
+  "version": "4.6.4",
   "wikidata": "Q99439725"
  },
  {
@@ -10175,7 +10177,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "DINUM"
+   "DINUM",
+   "Sciences Po"
   ],
   "version": "2.1.0",
   "wikidata": "Q98732055"
@@ -10696,6 +10699,7 @@
    "Nantes Universit\u00e9",
    "Universit\u00e9 Claude Bernard Lyon 1",
    "Universit\u00e9 Grenoble Alpes",
+   "Universit\u00e9 Perpignan Via Domitia",
    "dgfip"
   ],
   "version": "June 2026 LaTeX release",
@@ -10798,7 +10802,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "26.8.2",
+  "version": "26.9.0",
   "wikidata": "Q77554277"
  },
  {
@@ -11616,7 +11620,8 @@
   "tier": "index",
   "used_by": [
    "MEAE",
-   "MEFR"
+   "MEFR",
+   "Sciences Po"
   ],
   "version": "2.28.4",
   "wikidata": "Q1421571"
@@ -11781,7 +11786,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "5.13.0",
+  "version": "5.14.0",
   "wikidata": "Q34162"
  },
  {
@@ -12335,6 +12340,7 @@
    "Pr\u00e9fecture de police",
    "R\u00e9seau Canop\u00e9",
    "SIU Unisciel - Universit\u00e9 de Lille",
+   "Sciences Po",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne",
    "Universit\u00e9 Le Havre Normandie",
@@ -12451,7 +12457,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "157.0b3",
+  "version": "156.0.1",
   "wikidata": "Q698"
  },
  {
@@ -13235,7 +13241,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.96.1-01",
+  "version": "3.96.3-01",
   "wikidata": "Q119269051"
  },
  {
@@ -13389,7 +13395,7 @@
    "MEAE",
    "MS"
   ],
-  "version": "26.9.0",
+  "version": "26.10.0",
   "wikidata": "Q756100"
  },
  {
@@ -13580,7 +13586,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "12.0.2",
+  "version": "12.1.0",
   "wikidata": "Q7067518"
  },
  {
@@ -13616,6 +13622,7 @@
    "Association NumaHOP",
    "Biblioth\u00e8que Sainte-Genevi\u00e8ve",
    "GIP BULAC",
+   "Sciences Po",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 de Tours"
   ],
@@ -13959,6 +13966,7 @@
   "used_by": [
    "CNRS",
    "MI",
+   "Sciences Po",
    "VIGINUM"
   ],
   "version": "0.34.2",
@@ -14042,7 +14050,8 @@
   "used_by": [
    "Biblioth\u00e8que Sainte-Genevi\u00e8ve",
    "CNRS",
-   "Mairie d'Orl\u00e9ans"
+   "Mairie d'Orl\u00e9ans",
+   "Sciences Po"
   ],
   "version": "4.2.1",
   "wikidata": "Q98732070"
@@ -14730,7 +14739,7 @@
   "sill_id": 200,
   "source": "FR/sill",
   "tier": "index",
-  "version": "43.5.0",
+  "version": "45.0.2",
   "wikidata": "Q64777688"
  },
  {
@@ -14770,7 +14779,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.6.0",
+  "version": "0.7.0",
   "wikidata": "Q140290134"
  },
  {
@@ -15003,6 +15012,7 @@
   "tier": "index",
   "used_by": [
    "Eurom\u00e9tropole de Strasbourg",
+   "Sciences Po",
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "Universit\u00e9 de Strasbourg"
   ],
@@ -15011,9 +15021,9 @@
  },
  {
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "rsync implementation by the OpenBSD Project",
-  "desc_src_lang": "fr",
+  "desc_src_lang": "en",
   "entry_url": "https://code.gouv.fr/sill/detail?name=OpenRsync",
   "keywords": [
    "d\u00e9veloppement",
@@ -15800,6 +15810,7 @@
    "MD",
    "MEN",
    "MI",
+   "MINISTERE INTERIEUR/DGPN/DCCRS/DZCRSSUD",
    "MIOM",
    "MISC",
    "MJ",
@@ -16274,6 +16285,7 @@
   "used_by": [
    "Acad\u00e9mie de Cr\u00e9teil",
    "Biblioth\u00e8que Sainte-Genevi\u00e8ve",
+   "Sciences Po",
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
   "version": "26.04.09",
@@ -18139,7 +18151,7 @@
    "MESR",
    "MTE"
   ],
-  "version": "8.2606.0",
+  "version": "8.2608.0",
   "wikidata": "Q995115"
  },
  {
@@ -19385,7 +19397,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.23",
+  "version": "4.4.24",
   "wikidata": "Q1536426"
  },
  {
@@ -19840,7 +19852,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "Beta.gouv"
+   "Beta.gouv",
+   "Sciences Po"
   ]
  },
  {
@@ -22120,7 +22133,8 @@
   "tier": "index",
   "used_by": [
    "Biblioth\u00e8que Sainte-Genevi\u00e8ve",
-   "MC"
+   "MC",
+   "Sciences Po"
   ],
   "version": "version 9",
   "wikidata": "Q65130365"
@@ -22302,7 +22316,7 @@
    "minist\u00e8re int\u00e9rieur",
    "other"
   ],
-  "version": "1.70.1",
+  "version": "1.135.06055",
   "wikidata": "Q111967621"
  },
  {
@@ -22612,7 +22626,7 @@
    "MINISTERE INTERIEUR/SG/SHFD/C2MI",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "2.5.314",
+  "version": "2.5.315",
   "wikidata": "Q28957083"
  },
  {
@@ -23412,6 +23426,7 @@
    "INRAE",
    "MA",
    "Pr\u00e9fecture 69",
+   "Sciences Po",
    "Setra_5192",
    "Universit\u00e9 C\u00f4te d'Azur",
    "dgscgc",

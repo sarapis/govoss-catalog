@@ -1,86 +1,96 @@
 {
  "be": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 236
  },
  "bg": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 193
  },
  "ca": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 67
  },
- "de": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+ "ch": {
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
-  "records": 544
+  "records": 164
+ },
+ "de": {
+  "fetched_at": "2026-09-23T15:31:44Z",
+  "ok": true,
+  "records": 548
+ },
+ "digg": {
+  "fetched_at": "2026-09-23T15:31:44Z",
+  "ok": true,
+  "records": 44
  },
  "dpg": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
-  "records": 254
+  "records": 255
  },
  "eu": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
-  "records": 18
+  "records": 16
  },
  "fi": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 72
  },
  "fr": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 691
  },
  "ie": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 5
  },
  "it": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 550
  },
  "muc": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
-  "records": 141
+  "records": 142
  },
  "nl": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 198
  },
  "nlreg": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 0
  },
  "os2": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 298
  },
  "pt": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 92
  },
  "se": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 167
  },
  "tw": {
-  "fetched_at": "2026-09-21T11:00:02Z",
+  "fetched_at": "2026-09-23T15:31:44Z",
   "ok": true,
   "records": 58
  }

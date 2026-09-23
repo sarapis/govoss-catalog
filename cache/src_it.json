@@ -976,6 +976,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/SIMPATICOProject/aac"
+  ],
   "categories": [
    "it-security",
    "resource-management"
@@ -1360,6 +1363,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/twbs/bootstrap"
+  ],
   "categories": [
    "website-builder",
    "integrated-library-system",
@@ -1687,6 +1693,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://gitlab.com/opencontent/opencity"
+  ],
   "categories": [
    "content-management",
    "communications",
@@ -2165,6 +2174,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/RegioneLombardia/Open20"
+  ],
   "categories": [
    "content-management",
    "communications",
@@ -2558,7 +2570,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-08-11",
+  "released": "2026-09-10",
   "repo": "https://github.com/consiglionazionaledellericerche/cool-jconon",
   "repo_key": "github.com/consiglionazionaledellericerche/cool-jconon",
   "short_desc": "The system manages all the phases of a public call, from the publication, to the presentation of the application.",
@@ -2579,7 +2591,7 @@
    "AMA SpA L'Aquila",
    "SED SpA L'Aquila"
   ],
-  "version": "5.10.13"
+  "version": "5.10.14"
  },
  {
   "active": true,
@@ -2630,6 +2642,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/SIMPATICOProject/CPD"
+  ],
   "categories": [
    "business-process-management",
    "graphic-design",
@@ -3124,6 +3139,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://scriptella.org/"
+  ],
   "categories": [
    "procurement"
   ],
@@ -3438,6 +3456,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/italia/bootstrap-italia"
+  ],
   "categories": [
    "website-builder"
   ],
@@ -3610,6 +3631,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/italia/design-scuole-pagine-statiche"
+  ],
   "categories": [
    "it-development",
    "design",
@@ -5419,6 +5443,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://www.debian.org"
+  ],
   "categories": [
    "it-management"
   ],
@@ -13957,6 +13984,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/idempiere/idempiere"
+  ],
   "categories": [
    "erp"
   ],
@@ -14349,7 +14379,7 @@
    "mac",
    "linux"
   ],
-  "released": "2026-09-09",
+  "released": "2026-09-23",
   "repo": "https://github.com/INGV/mcp-fdsnws-event",
   "repo_key": "github.com/ingv/mcp-fdsnws-event",
   "short_desc": "MCP server wrapping the FDSN Web Service Event APIs of multiple seismological datacenters.",
@@ -14360,7 +14390,7 @@
   "used_by": [
    "INGV"
   ],
-  "version": "v1.9.0"
+  "version": "v2.0.0"
  },
  {
   "active": true,
@@ -14943,6 +14973,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/SIMPATICOProject/IFE"
+  ],
   "categories": [
    "content-management",
    "digital-citizenship"
@@ -16064,6 +16097,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "http://svn.services.openoffice.org/ooo/trunk"
+  ],
   "categories": [
    "office",
    "productivity-suite",
@@ -16161,6 +16197,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/essepuntato/LODE/"
+  ],
   "categories": [
    "data-analytics",
    "data-collection",
@@ -16198,6 +16237,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/LodLive/LodView/"
+  ],
   "categories": [
    "data-analytics",
    "data-collection",
@@ -16235,6 +16277,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/LodLive/LodView/"
+  ],
   "categories": [
    "data-analytics",
    "data-collection",
@@ -17354,6 +17399,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/collectiveaccess/providence.git"
+  ],
   "categories": [
    "content-management",
    "data-collection",
@@ -17814,6 +17862,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/wenzhixin/bootstrap-table.git"
+  ],
   "categories": [
    "survey",
    "event-management",
@@ -18366,7 +18417,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-22",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18854,7 +18905,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.17.0-rc.1"
+  "version": "4.17.0-rc.7"
  },
  {
   "active": true,
@@ -18923,6 +18974,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://gitlab.com/opencity-labs/sito-istituzionale/cms"
+  ],
   "categories": [
    "content-management"
   ],
@@ -21113,6 +21167,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/nteract/nteract"
+  ],
   "categories": [
    "data-analytics",
    "data-visualization",
@@ -21335,6 +21392,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "PEM"
+  ],
   "categories": [
    "business-process-management",
    "document-management",
@@ -25360,6 +25420,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/swagger-api/swagger-editor"
+  ],
   "categories": [
    "application-development",
    "it-development"
@@ -27251,6 +27314,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "G3W%20Suite"
+  ],
   "categories": [
    "geographic-information-systems"
   ],
@@ -27554,6 +27620,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/pytorch/pytorch"
+  ],
   "categories": [
    "data-analytics",
    "document-management",
@@ -27769,6 +27838,10 @@
  },
  {
   "active": true,
+  "based_on": [
+   "spid-sp-access-button",
+   "%20spid-smart-button"
+  ],
   "categories": [
    "it-development"
   ],
@@ -28134,6 +28207,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/SIMPATICOProject/simpatico-adaptation-engines"
+  ],
   "categories": [
    "content-management",
    "digital-citizenship"
@@ -28177,6 +28253,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/AgID/ccros-valcomp"
+  ],
   "categories": [
    "compliance-management"
   ],
@@ -28419,6 +28498,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/zammad/zammad"
+  ],
   "categories": [
    "call-center-management",
    "service-desk",
@@ -28536,6 +28618,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/italia/bootstrap-italia"
+  ],
   "categories": [
    "it-development",
    "design"
@@ -30754,6 +30839,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "sencha"
+  ],
   "categories": [
    "geographic-information-systems"
   ],
@@ -30873,6 +30961,10 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/VisualDataWeb/WebVOWL",
+   "https://github.com/VisualDataWeb/OWL2VOWL"
+  ],
   "categories": [
    "data-analytics",
    "data-collection",
@@ -31560,6 +31652,9 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/ctt-gob-es/FirmaXadesNet45"
+  ],
   "categories": [
    "application-development",
    "e-signature"
