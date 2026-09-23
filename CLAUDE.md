@@ -249,262 +249,119 @@ useful ready-made crosswalk (`url_repository`, `wikidata`, `sill`, `wikipedia_en
 
 ## Translation
 
-`translations/tr_*.json` map `sha1(source_text)[:10]` → English. Keying on the text hash means
-translations **survive a re-harvest** as long as upstream wording is unchanged.
-`merge_translations.py` applies them; `desc_src` keeps the original and `translated: true`
-marks machine translation so it is never confused with publisher-supplied English (`desc_en`).
+`translations/tr_*.json` map `sha1(source_text)[:10]` -> English, so a translation
+survives a re-harvest while upstream wording is unchanged. `desc_src` keeps the
+original; `translated: true` marks machine translation. **2,921 of 2,938 described
+entries display English.** Pinned by `test_translation_orphans.py` and
+`test_detect_lang.py`.
 
-**2,751 of 2,753 active entries display English.** The two exceptions shipped a
-`publiccode.yml`, which `filters.py` never overrides.
+- ⚠ **Keys hash the RAW `short_desc`, never a stripped one** — 12 Bulgarian
+  descriptions carry surrounding whitespace, and stripping anywhere in the chain
+  invalidates every key in every file at once.
+- ⚠ **Read `desc_lang` (what is displayed), never `desc_src_lang`** (the language
+  of the original). openCode and NL entries carry a foreign original in `desc_src`
+  beside publisher English; counting by it reports 358 false "untranslated".
+- **Entries with NO description are set aside** (`no-description`, 384) rather than
+  shown — an editorial standard about publisher effort, running after
+  `enrich_desc.py`, flagging not deleting. It read 316 entries out of the public
+  API until `/entries.json` started carrying set-aside rows flagged.
+- **Orphaned keys are reported** in `out/translation_orphans.json`; the trigger is
+  GROWTH, not the total, and a missing previous figure is not zero. The naive
+  definition ("keys this pass looked up") reports 1,762 of 1,762 on merged input.
+- **The files are hand-maintained with MIXED indentation.** Rewriting them in one
+  style turned a 62-line change into 1,145 lines of noise; preserve each file's own
+  indent and key order.
 
-Entries whose publisher wrote NO description are **set aside** (`exclude_reason:
-no-description`, 351 of them) rather than shown: not saying what the software does is a
-failure to share it. They keep their reason, stay in `catalog.json` and on the page behind the
-set-aside toggle, and return on their own if a publisher adds a description.
-
-**`/entries.json` carries them, flagged.** It exports EVERY row with `excluded` and
-`exclude_reason`, so a consumer can filter rather than silently lose 316 records. The first cut
-of this rule exported active rows only and PloneMeeting simply vanished from the API.
-The **derived** indexes stay curated (active only): `by-product.json` must never offer a
-set-aside entry as a replacement, and `by-category/` and `mcp-index.json` are browse surfaces.
-One complete source of truth, curated views over it.
-
-**Read this before touching that rule.** A near-identical rule existed and was removed for
-cause: `no-usable-metadata` hid Products.PloneMeeting, iMio's flagship deliberations product,
-plus the ten municipality `Meeting*` profiles Walloon councils run. Those are set aside again
-now. What changed is the CLAIM, not the evidence — this is an editorial standard about
-publisher effort, not an assertion that the entry is not software, and it flags rather than
-deletes. `enrich_desc.py` runs first, so it only fires when GitHub had nothing either.
-
-**The Bulgarian 175 are now translated.** The earlier call to skip them was half right: they
-are procurement records, but the contract reference is a PREFIX and a real project title
-follows it — `Договор № 98-00-101/15.03.2023 Сайт на град Благоевград` is "Website of the city
-of Blagoevgrad". `translations/tr_bg.json` drops the reference and translates the title. Eight
-whose whole description was a contract number map to an EMPTY string, which
-`merge_translations.py` treats as no description rather than as English — otherwise the
-coverage arithmetic counts them twice.
-
-**Translation keys hash the RAW `short_desc`, not a stripped one.** 12 Bulgarian descriptions
-carry surrounding whitespace, and keys built from `.strip()`ed text silently matched nothing.
-Do not "fix" this by stripping in `merge_translations.py`: that would invalidate every key in
-every `tr_*.json` at once.
-
-**Rotted keys are reported (`out/translation_orphans.json`).** When upstream rewords a
-description its translation stops applying and the entry falls back to the foreign original —
-documented and accepted, but until 2026-09-10 nothing said it happened, so the only symptom
-was the English-coverage tile drifting down by ones. **59 of 1,762 keys are orphaned today**
-(3%). `runlog.py` trends the total into `history.json`; `build_sources.py` warns when it
-GROWS.
-
-⚠ **"Keys this merge pass looked up" is the natural definition of orphaned and it is
-unusable.** A merged row carries `translated: True` and short-circuits before the lookup, so
-on already-merged input that rule reports **1,762 of 1,762** — measured. The live set is built
-from the SOURCE TEXT still in the catalogue: `short_desc` (the original on a raw row) **and**
-`desc_src` (the original on a merged one). That is re-run-stable by construction, and was
-checked against all 1,731 merged rows carrying a `desc_src` — zero false orphans.
-
-⚠ **The trigger is GROWTH, not the total, and a missing previous figure is not zero.** Rot is
-expected to be non-zero and slowly rising, so alarming on 59 would leave the page reading
-`warn` permanently — which is how a reader learns to ignore it, the same end state as no
-sensor. And `runs[-2]` predates the field: treating its absent `orphan_keys` as 0 would report
-the entire standing backlog as new rot on the first run. Both are the same rule the liveness
-monitor already follows — the delta is the part with value.
-
-**Orphaned keys: 25 -> 3 on 2026-09-21**, by translating the text that had replaced
-them rather than deleting the keys. 37 entries were showing German, French, Dutch, Danish,
-Bulgarian, Italian or Swedish to a European public-sector readership; the 25 dead keys were
-removed as well, since their source text is gone from the catalogue and a counter that never
-returns to zero stops meaning anything.
-
-⚠ **THE ORPHAN COUNT IS POSITION-DEPENDENT.** `run.sh` runs this step **before dedupe**, and
-that is the number that means something. Run it after, and every row dedupe merged away has
-taken its source text out of the catalogue with it, so its translation looks rotted:
-measured, a post-dedupe run reported **32 orphans of which 29 were dedupe casualties and 3
-were real**. `merge_translations.py` now detects merged input and says so.
-
-It **warns** rather than refusing, unlike `taxonomy.py` and `dedupe.py`, which are
-destructive in that position and call `stage_guard.assert_pre_dedupe()`. Same family, and the
-remedy differs for a reason: a translated row carries `translated: True` and short-circuits,
-so re-running is safe — it is only the *reading* that misleads. Guard what destroys data;
-warn where the number lies.
-
-**The stat tile used to overstate this**, and the shape is worth remembering. It computed
-`n_en + n_tr` where `n_en` was "has a description and is not machine-translated" — which
-counts HAVING A DESCRIPTION and calls it English, so every Bulgarian row counted as English.
-
-**Read `desc_lang`, not `desc_src_lang`.** `desc_src_lang` is the language of the ORIGINAL:
-openCode and code.overheid.nl entries carry a German or Dutch original in `desc_src` alongside
-publisher-supplied English, so counting by it reports 358 "untranslated" entries that are
-already in English. That is bug #2 in the other direction.
-
-**Two traps that produced false "done" claims:**
-1. Gap detection keyed off `desc_lang`, which the index-tier adapters never set — so 72
-   Finnish and 7 Swedish descriptions were skipped entirely while the queue reported 100%.
-   Adapters now set `desc_lang`; **verify against content, not against the queue.**
-2. **12 entries declare `description.en` but are not English** (`Hochwasserinfosystem` is pure
-   German; `Leezenflow` is half-German). Trusting the language tag leaves them untranslated
-   while reporting success. Catch these by grepping *output* for foreign function words.
-
+⚠ **Per-source language assumptions are forbidden and there are still TWO**:
+`harvest.py:741` sets `desc_lang="nl"` for every Dutch-platform description and
+`:406` hardcodes `"fr"`. Measured: the blanket `nl` is wrong about **87 of 121**
+where `detect_lang` would be wrong about ~2. Not fixed — `detect_lang` has broken
+five times and over-correcting into English is the worse direction, so the call is
+a human's. 17 entries currently read as foreign that are already English.
 ## Categorisation
 
-`taxonomy.py` collapses **233 inconsistent source values** onto 19 functional categories.
-The mapping is explicit, never fuzzy, and **an unmapped value is reported as a bug** rather
-than bucketed into "other". Sources disagree structurally: publiccode ships controlled
-kebab-case, SILL ships Title Case free text, Offentligkod ships Swedish, openCode has drift
-(`IAM` / `IDM` / `Identity- und Access-Management` all separately).
+`taxonomy.py` collapses **233 inconsistent source values** onto 19 functional
+categories. Explicit, never fuzzy, and **an unmapped value is a BUG** rather than an
+"other" bucket — sources disagree structurally (publiccode ships controlled
+kebab-case, SILL Title Case free text, Offentligkod Swedish, openCode drifts across
+`IAM`/`IDM`/`Identity- und Access-Management`). 44% from source, 41% inferred from
+text (flagged `functions_inferred`), 15% left unclassified rather than force-fitted.
 
-64% classified from source, 23% inferred from text via multilingual keyword rules (flagged
-`functions_inferred`), 14% left unclassified rather than force-fitted.
+`taxonomy.py` writes `out/taxonomy_unmapped.json` and `build_sources.py` warns by
+name; it self-clears. Saying "it is a bug" was previously a print into a log nobody
+read, and fired unnoticed twice.
 
-**An unmapped value now reaches someone.** Saying "it is a bug" was a print into a log nobody
-reads, and it fired unnoticed on 2026-08-24
-(`information-and-communication-technology`, 2 entries) and again on 09-07 (`scheduling`, 1) —
-all of them shipping unclassified. `taxonomy.py` writes `out/taxonomy_unmapped.json`
-(gitignored, per-run) and `build_sources.py` warns on it by name. It self-clears: a run with
-nothing unmapped writes `{}` and the warning disappears. Do not silence an unmapped value by
-widening a bucket; the point of the warning is that it stays near zero.
+**Three outcomes, not two.** Beside "map it" and "it's a bug" there is **map it to
+`None`** — for a value describing the *audience* or the *artefact type* rather than
+the function. `government`, `public-administration` and the DPG artefact types sit
+there: every entry here is government software, so the label carries no functional
+signal by construction, and the taxonomy falls through to text inference instead of
+force-fitting a bucket.
 
-**`government` is mapped to `None` — a SECTOR, not a function (2026-09-14).** `M` already
-carries nine values mapped to nothing (`Open Software`, `Miscellaneous`, `other`…): values
-saying what *kind of thing* something is, not what it *does*, so the taxonomy falls through to
-text inference instead of force-fitting a bucket. `government` is the clearest case — every
-entry here is government software, so the label carries no functional signal by construction.
-`public-administration` and `öffentliche-verwaltung` went in beside it. **Reaching for `None`
-is right whenever a source value describes the audience or the artefact type rather than the
-function** — a third outcome beside "map it" and "it's a bug", and the one a sector label
-needs.
+⚠ **Check whether the entry is actually unclassified before treating an unmapped
+value as an editorial judgement call.** `scheduling` and `government` both looked
+like hard calls and neither was: each sat on an entry whose *other* category already
+classified it, so the unmapped value cost a signal, not a classification. And check
+for a sibling family — `M` already mapped six spellings of scheduling to
+`case-workflow`, so any other home would have split one concept in two.
 
-**`scheduling` was the last one, mapped 2026-09-10 → `case-workflow`.** Recorded because the
-reasoning is the template for the next unmapped value: `M` already mapped the entire sibling
-family there (`appointment-scheduling`, `online-booking`, `booking-and-reservation`,
-`calendar-management`, `termine`, `event-management`), so any other home would have split one
-concept across two functions. And the entry it belonged to — `newdle`, CERN/Indico's meeting
-scheduler — was **never unclassified**: its other category `project-collaboration` already
-mapped, so the unmapped value cost a signal, not a classification. Check both before treating
-an unmapped value as an editorial judgement call; this one only looked like one.
-
-⚠ **`out/taxonomy_unmapped.json` and `site/status.json` are per-run artefacts, so a mapping
-fix does not clear the page until the next run.** A local `warn` naming a value you just
-mapped is stale output, not a failed fix — confirm by dry-running `classify()` rather than by
-reading the page.
-
+⚠ **`out/taxonomy_unmapped.json` and `site/status.json` are per-run artefacts**, so
+a mapping fix does not clear the page until the next run. A local `warn` naming a
+value you just mapped is stale output, not a failed fix — confirm by dry-running
+`classify()`, not by reading the page.
 ## Liveness monitor
 
-`liveness.py` → `liveness.json`, and reports the **delta** against the previous run, which is
-the part with value: 3 newly-dead repos is a signal, "81 dead" is a number nobody reads.
+`liveness.py` -> `liveness.json`, reporting the **delta** — "3 newly dead" is a
+signal, "81 dead" is a number nobody reads. Not 1,940 HEADs: GitHub via GraphQL
+100-at-a-time, GitLab hosts via their API, ~240 others via HEAD serialised per
+host. ~4.5 min. Current: **3,089 of 3,189 ok (96.9%), 26 dead, 39 archived, 69
+unknown.** State machine pinned by `test_liveness_strikes.py`.
 
-It is **not** 1,940 HEAD requests. An earlier version was, and **27% came back 429** — that
-measured GitHub's rate limiter, not the catalogue. Instead: GitHub via **GraphQL, 100 repos
-per request** (~14 requests, and yields `isArchived`/`pushedAt` too); GitLab hosts via their
-API; the ~240 repos across 176 other hosts via HEAD **serialised per host** with backoff.
-Runtime ~4.5 min, no throttling.
+- **`403/429/5xx` are UNKNOWN, never dead.** An earlier all-HEAD version measured
+  GitHub's rate limiter: 27% 429s.
+- **Two consecutive dead observations before a dead verdict**, because single ones
+  oscillate (a gitlab *group* URL 404s the projects API and answers HEAD
+  inconsistently). One-offs are `pending`, never shown.
+- **Every dead verdict is confirmed by a plain web HEAD.** Load-bearing:
+  `gitlab.huma-num.fr` restricts anonymous API access, so a first version called
+  **53 of 82** dead when they were fine, KiCad among them.
+- **HEAD fetches the ORIGINAL url, never `repo_key`** — that is lowercased for
+  joining and 404s case-sensitive paths.
+- **It always exits 0**, but a crash annotates `summary.failed_at`/`last_error` and
+  leaves `checked` standing, so `checked` means *last successful sweep* and its age
+  is what the page warns on. A successful run rebuilds `summary`, clearing the
+  markers.
+## Per-source freshness (`cache/_fetched.json`) — read before trusting a count
 
-`403/429/5xx` are recorded as **unknown, never dead** — the distinction matters, since
-treating rate-limiting as death would invent drift. Current: **96.3% ok, 22 confirmed dead (1.1%), 48 unknown (2.5%), 15 archived**.
+Checkpoint reuse is deliberate: a failed source contributes its last good data
+rather than dropping a country. That reuse used to be **invisible** — harvest exits
+0 regardless, checkpoints carry no date, and the only per-source alarm fires on a
+count of *zero*, which a reused checkpoint never produces. A source dead for six
+months rendered as current, on a page saying `ok`, in a commit titled `Data: <date>
+run`.
 
-**Every dead verdict is confirmed with a plain web HEAD before being recorded.** This is not
-belt-and-braces, it is load-bearing: `gitlab.huma-num.fr` restricts anonymous API access, so
-its live projects returned 404 from `/api/v4` while the web URL answered 200. The first version
-without this pass called **53 of 82** "dead" repos dead when they were fine — including KiCad,
-Lazarus IDE and FreePascal — overstating the dead rate roughly 3x and reporting live projects
-as newly-dead drift. An API 404 is not evidence of absence.
+- **`fetched_at` advances ONLY on success.** A failure records its error and leaves
+  the old timestamp standing; the growing age is the signal.
+- **Per-source summary, never per-record.** 17 timestamps a week is meaningful
+  churn; the same idea per record once turned one liveness diff into 47,563 lines.
+- `build_sources.py` warns >15 days, critical >29 — thresholds in **runs**, not
+  days.
+- ⚠ **Look these up by the CHECKPOINT key (`os2`), not the `sources.py` key
+  (`DK/os2`).** The first version matched nothing for all 17 sources, built cleanly
+  and reported `ok`. `nlreg` has a checkpoint and no `sources.py` row; the two
+  French catalogues share the `fr` checkpoint.
+- ⚠ **`--from-cache` must not write `_fetched.json` or `_timing.json`** (guarded by
+  `if want:`) — a no-network rebuild blanked both to `{}` and destroyed the record
+  of the last real fetch.
+- **`os2()` is the one adapter that could destroy its own checkpoint** — 20 orgs,
+  failures swallowed, a short scan overwriting the last good copy. It now raises
+  when orgs failed **and** the result regressed; failure alone is not the test.
+- **`github_org_scan` authenticates via `liveness.gh_token()`**, not `GITHUB_TOKEN`
+  alone — that variable is not in the plist, so scheduled runs scanned at 60/hr.
 
-**A dead verdict requires TWO consecutive dead observations** (`dead_count` persists in
-liveness.json). Single observations oscillate: `gitlab.com/opentestfactory` is a *group* URL,
-not a project URL, so the projects API 404s it and HEAD answers inconsistently — one run
-"rescued" it, the next declared it dead. An unstable signal is worse than a steady wrong one
-because it trains you to ignore the report. One-off 404s are reported as **pending**, never as
-dead, and never shown on the page.
-
-**HEAD always fetches the ORIGINAL url, never `repo_key`.** repo_key is lowercased for joining;
-fetching it 404s case-sensitive paths — which is how a Wikipedia page SILL uses as BeautifulSoup's
-"repository" got reported dead. GitHub and GitLab are case-insensitive, which is why this hid.
-
-Roughly a third of raw 404s are not dead software at all but **upstream data quality**: SILL
-points at gitweb CGI (`git.postgresql.org/gitweb/?p=postgresql`), an SVN trunk, a download page,
-and in one case a Wikipedia article. Those resolve via the confirmation HEAD; the residue that
-genuinely is gone is dominated by removed GitHub repos (15 of 22).
-
-Dead and archived state is also shown **on the page** (stat tile, `repo gone` pill, and a
-repo-state filter), because a monitor whose output only lands in a JSON file nobody opens is
-the same failure as having no monitor.
-
-It always **exits 0**: a monitor that can fail the pipeline gets switched off the first time
-it is wrong. **But exiting 0 used to be the whole story**, and that was a hole: a crash left
-`steps.tsv` reading `liveness 0`, `/sources.html` rendering the step green, and the previous
-`liveness.json` still feeding its counts to the page, the run log and every entry's
-`last_checked`. "No newly dead repos" read identically whether the sweep ran clean or never
-ran — this repo's own bug #3, absence of evidence, inside its own monitor.
-
-Since 2026-09-10 a crash **annotates `liveness.json`** with `summary.failed_at` and
-`summary.last_error`, leaving `summary.checked` and `repos` untouched. So `checked` keeps
-meaning *last SUCCESSFUL sweep* — the same semantics as `_fetched.json`'s `fetched_at` — and
-its age is what `build_sources.py` warns on (>15 days is critical: every repo state shown is
-that old). **A successful run rebuilds `summary` from scratch, so the markers clear
-themselves** — verified by stubbing the network and calling `main()`, not assumed; no stale
-error can outlive the failure it describes.
-
-## Per-source freshness (`cache/_fetched.json`) — READ THIS BEFORE TRUSTING A COUNT
-
-Checkpoint reuse is deliberate: a source that fails contributes its last good data
-rather than dropping a country. **Until 2026-09-10 that reuse was invisible**, and the
-combination was the worst failure this repo can have — a confidently wrong catalogue:
-
-- `harvest.py` exits **0** no matter how many sources failed (only an unknown source
-  *name* exits 2), so `steps.tsv` records success and the run **deploys and commits**;
-- checkpoint records carry no date, and nothing read file mtime;
-- the only per-source alarm on `/sources.html` fires on a count of **zero** — and a
-  reused checkpoint contributes its old **non-zero** count.
-
-So a source dead for six months rendered as current, on a page saying `ok`, in a commit
-titled `Data: <date> run`. Nothing lied; nothing could tell you either.
-
-`harvest.py` now writes `cache/_fetched.json` — `{checkpoint: {fetched_at, records, ok,
-error, last_error_at}}`:
-
-- **`fetched_at` is only ever advanced by a SUCCESS.** A failure records its error and
-  leaves the old timestamp standing, so the age grows. That growing age is the signal.
-- A **per-source summary**, never a per-record field. 17 timestamps a week is meaningful
-  churn; the same idea per record once turned one liveness diff into 47,563 lines. Same
-  rule, opposite side of the line.
-- `build_sources.py` warns at **>15 days** (≈2 missed runs) and goes **critical at >29**,
-  and stamps `stale: last good Nd ago` on the catalogue row. Thresholds are in *runs*, not
-  days: alarming on one missed week would train the reader to ignore the page.
-- Every row shows its state whether healthy or not — a count alone cannot distinguish
-  "fetched today, unchanged" from "failing since July".
-
-⚠ **Harvest still exits 0 on a failed source, and that is deliberate.** One flaky source
-must not block the weekly publish of sixteen good ones; converting a partial-freshness
-problem into total staleness is worse. The fix is *visibility*, not a hard gate.
-
-⚠ **Look these up by the CHECKPOINT key (`os2`), not the `sources.py` key (`DK/os2`).**
-The first version of the warning used the long key, matched nothing for all 17 sources,
-built cleanly and reported `ok` — a silent no-op. Caught only by seeding a stale entry and
-watching for an alarm that never came. Note `nlreg` has a checkpoint but no `sources.py`
-row (key-gated, 0 records), and the two French catalogues **share** the `fr` checkpoint.
-
-⚠ **`--from-cache` must not write `_fetched.json` or `_timing.json`.** Both are guarded by
-`if want:`. Without it a no-network rebuild blanked them to `{}` — found by running it
-during this fix, which wiped 17 real durations. `_timing.json` had had that bug since it
-was added. A rebuild that destroys the record of the last real fetch is the same
-"reused data looks fresh" failure, one level up.
-
-**`os2()` is the one adapter that could destroy its own checkpoint.** It loops 20 GitHub
-orgs swallowing each failure, so a rate limit mid-scan returned a short list, `main()`
-treated it as success, and `src_os2.json` — the last good copy — was overwritten. Denmark
-is ~9% of the catalogue, **under** `run.sh`'s 10% shrink warning, so nothing would have
-said a word. It now **raises** when orgs failed *and* the result regressed against the
-checkpoint. Failure alone is not the test: an org that fails without costing records is
-not harm, and a genuine upstream decline with no failures is real data that must still be
-written, or the catalogue freezes on its own high-water mark. If an org is permanently
-gone, remove it from `OS2_ORGS` — the per-source age is what makes that visible.
-
-**`github_org_scan` authenticates via `liveness.gh_token()`**, not `GITHUB_TOKEN` alone.
-That variable is *not* in the LaunchAgent plist, so every scheduled run scanned GitHub
-unauthenticated at 60 req/hr while making ~27+ org-list calls (os2 walks 20 orgs on its
-own). It held only because the calls are cheap; it was one busy hour from the partial scan
-above. With a token the ceiling is 5,000/hr. Same chain `enrich_desc.py` uses.
-
+⚠ **Harvest still exits 0 on a failed source, deliberately.** One flaky source must
+not block the weekly publish of sixteen good ones. The fix is visibility, not a
+gate.
 ## Filtering non-software (`filters.py`)
 
 iMio publishes 236 repos but only **one** has a `publiccode.yml`, so the rest are indexed
@@ -562,67 +419,34 @@ procurement inventory in 0.2s, versus the ~35 browser searches it replaced.
 
 ### `replaces.json` — the field that changes what the catalogue is for
 
-**Matching UNIONS every key that matches the survivor name or any `also_known_as`.**
-First-match-wins was wrong: dedupe can pick a different survivor name than a mapping was
-keyed on — merging "GitLab Community Edition" into "GitLab" flagged three keys as rot when
-they were merely redundant, *and* silently dropped what those keys mapped that the survivor's
-did not (GitLab lost its `GitLab Premium` paid-tier row). The orphan warning is what caught
-it, which is the whole reason that warning exists.
+Maps catalogue entry -> proprietary products it can replace, inverting the lookup so
+a buyer starts from an invoice line. **194 entries -> 290 products**, hand-seeded,
+browsable at `/products.html`. Metadata in `proprietary.json` (descriptions: NYC's
+own `purpose` string where available, hand-written otherwise; **functions
+hand-assigned** — deriving them from the alternatives' categories filed Bitbucket
+under *Case & Workflow Management*).
 
-Maps catalogue entry -> proprietary products it can replace, inverting the lookup so a
-buyer starts from an invoice line. Currently **194 entries -> 290 products**, hand-seeded,
-and browsable at `/products.html` (see below).
-`export_json.py` **warns on keys matching no entry**, so the seed cannot rot unnoticed.
+`confidence`: `strong` | `partial` | `adjacent`. `kind` matters as much —
+`software` replaces it, `service` means the paid item is hosted service or CONTENT
+(Drupal does not replace *hosting*), `paid-tier` means a commercial edition of
+already-open-source software and is usually the cheapest win.
 
-`confidence`: `strong` | `partial` | `adjacent`. `kind` matters as much:
-- `software` — replaces the software
-- `service` — the paid item is hosted service or CONTENT. Drupal does not replace *hosting*;
-  Moodle does not produce *training content*. Without this the field generates confident
-  category errors.
-- `paid-tier` — the paid item is a commercial edition of software that is **already open
-  source** (NGINX Plus, Elastic licence tiers, DBeaver PRO, MySQL Enterprise). Usually the
-  cheapest win in a procurement review: often no migration, just a renewal you stop.
-
-**`export_json.py` validates both vocabularies against the file's own `_README` and FAILS
-the step on a bad value.** It used to pass silently: the by-product sort does
-`rank.get(confidence, 3)`, so an invalid confidence just sorted last. That is how
-`Icinga -> Nagios XI` sat with `confidence: "paid-tier"` — a `kind` value in the confidence
-field. Same rule as `taxonomy.py`: an unmapped value is a **bug**, not something to bucket.
-Failing is right here because this file is hand-edited and the check is deterministic — it
-cannot be wrong the way a network measurement can, and failing at export means a bad edit
-never reaches the deploy.
-
-That entry was also mis-*kinded*. `paid-tier` promises "no migration, just a renewal you
-stop", and Icinga2 is a **fork** of Nagios, not a rebuild — so it is `software`/`partial`,
-and the genuine paid-tier exit from Nagios XI is **Nagios Core**, which is separately in
-the catalogue. Check that the paid-tier row is keyed on the software the commercial edition
-is actually built from.
-
-**`/products.html` is the proprietary side made browsable** — ONE dense table of 372
-products with description, function, alternatives and a link into the filtered catalogue.
-Products with and without an alternative are the same kind of object, so they share a table
-and *has a govoss alternative* is a filter over it, on by default. Two tables made the gap
-list read as a separate artefact rather than the other end of the same shelf.
-
-Metadata lives in `proprietary.json`: descriptions are NYC's own `purpose` string where the
-product appears in its licence export (`desc_src: nyc`, 132) and hand-written otherwise
-(`desc_src: curated`, 240). **Functions are hand-assigned throughout.** Deriving them from the
-alternatives' categories was tried and is too noisy — it filed Bitbucket under *Case & Workflow
-Management*, because that is where the catalogue files GitLab.
-
-**The page qualifies anything that is not `strong` + `software`.** 62% of mappings are not
-like-for-like swaps (21% paid tier or hosted service, 53% partial or adjacent), and the
-catalog page used to print all of them as a flat `Replaces X, Y, Z` — asserting exactly the
-category error the `_README` exists to prevent. It now renders `Contentful (hosted service,
-adjacent)`. The qualifier is **display only**: `rp` stays the clean product names so the
-search haystack and the "Replaces a paid product" filter are unchanged, and `rpq` carries
-the qualifier in a parallel array built in the same pass so the two cannot fall out of
-alignment. `note` is export-only — it reaches `entries.json` and `by-product.json`, never
-the page.
-
-Publishers can also declare `replaces:` in their own `publiccode.yml` (non-standard
-extension) and `harvest.py` picks it up, so claims can be owned upstream.
-
+- **Matching UNIONS every key matching the survivor name or any `also_known_as`.**
+  First-match-wins dropped GitLab's `GitLab Premium` row when dedupe picked a
+  different survivor name.
+- **`export_json.py` validates both vocabularies against the file's own `_README`
+  and FAILS the step.** It used to pass silently — the by-product sort does
+  `rank.get(confidence, 3)`, so a bad value just sorted last. Failing is right
+  here: the file is hand-edited and the check is deterministic. Pinned by
+  `test_filters.py`.
+- ⚠ **Check a `paid-tier` row is keyed on the software the commercial edition is
+  built from.** `Icinga -> Nagios XI` was `paid-tier` *and* mis-kinded: Icinga2 is
+  a fork, so it is `software`/`partial`, and the real paid-tier exit is Nagios Core.
+- **`export_json.py` warns on keys matching no entry**, so the seed cannot rot
+  unnoticed — that warning is what caught the union bug above.
+- **The page qualifies anything not `strong`+`software`** (62% of mappings).
+  Display only: `rp` stays clean names for search and the filter, `rpq` carries the
+  qualifier in a parallel array built in the same pass.
 ### Dedupe (`dedupe.py`)
 
 Merges on **Wikidata QID, then normalised repo URL**, union-find so identities chain.
@@ -643,44 +467,29 @@ fork or mirror, and the declared url is the identity.
 `endswith()` test failed for the real project *and* every fork, and richness alone handed the
 entry to `tlrz/opendesk` — a fork.
 
-### `stage_guard.py` — two stages REFUSE to run out of order
+### `stage_guard.py` — taxonomy and dedupe REFUSE merged input
 
-`run.sh`'s ordering is load-bearing, and `taxonomy.py` and `dedupe.py` are **destructive**
-when run on an already-merged `catalog.json` — silently, exiting 0. Both compute a field from
-scratch, and both fields can also carry information that only the merge produced and the
-survivor's own record cannot reconstruct:
+Both are **destructive** on an already-merged `catalog.json`, silently, exiting 0:
+dedupe resets every survivor's `catalogue_count` to 1 (the "In N catalogues" pill,
+98 entries); taxonomy narrows `functions` on 45 entries, because `functions` is in
+`UNION_LIST` and `classify()` only sees the survivor. `assert_pre_dedupe()` exits 2
+if any **active** row carries `catalogue_count`; `harvest.py --from-cache` restores
+the shape. Pinned by `test_stage_guard.py`.
 
-- **`dedupe.py`** — a second pass sees each survivor as a group of ONE, takes the
-  `len(g) == 1` branch, and resets `catalogue_entries` to a single-element list with
-  `catalogue_count = 1`. The "In N catalogues" pill — 98 entries, and the whole point of a
-  union catalogue — gone, no error. (Review F5.)
-- **`taxonomy.py`** — `functions` is in `dedupe.py:UNION_LIST`, so a survivor carries
-  functions its merge partners contributed. `classify()` recomputes from the survivor alone,
-  returns at most **one** function from the inference branch, and never consults inference
-  once a source category maps. A second pass **narrows 45 entries** (7-Zip loses
-  `data-analytics`, Apache HTTP Server `infrastructure`, Decidim `citizen-services`).
+⚠ **It REFUSES; do not make it merge-aware and do not add `--force`.** Unioning the
+recomputed value with the stored one means a corrected mapping, or a record that
+legitimately stopped being multi-catalogue, keeps its stale value forever with
+nothing to say so — a loud bug traded for a silent permanent one.
 
-Both now call `stage_guard.assert_pre_dedupe()`, which exits 2 if any **active** row carries
-`catalogue_count`. (Active only: the 484 set-aside rows never get one, so a guard requiring it
-on every row could never fire.) Raw checkpoints carry no `catalogue_count`, so
-`harvest.py --from-cache` restores the pre-dedupe shape and the guard passes again.
+⚠ **A by-hand re-run is therefore the wrong way to verify a change to either
+stage.** Dry-run the pure function and diff it against itself with and without
+your edit; that separates your 1 change from the 45 the merge accounts for.
 
-⚠ **It REFUSES. Do not make it merge-aware, and do not add `--force`.** Unioning the
-recomputed value with the stored one is the obvious fix and it is wrong: a mapping corrected
-in `taxonomy.py:M`, or a record that legitimately stopped being listed by three catalogues,
-would keep its stale value forever with nothing to say so. That trades a loud bug for a
-silent permanent one, in the reassuring direction — the same shape as an API 404 read as a
-dead repo, or a green pipeline log over a dead harvest.
-
-⚠ **A by-hand re-run is therefore the wrong way to verify a change to either stage.** Dry-run
-the pure function instead, and diff it against itself with and without your edit — that is
-what separates your 1 change from the 45 the merge accounts for.
-
-`test_stage_guard.py` was verified by **sabotage**: stubbed to `return False`, both stages
-exit 0 and modify `catalog.json`. Its first version asked `is_post_dedupe()` whether
-`catalog.json` was merged, so a broken guard made the test *skip* the cases that prove
-destruction — a test must never ask the thing it tests whether to run its hardest case.
-
+⚠ **`merge_translations.py` is in the same family but WARNS rather than refusing.**
+Its orphan count is position-dependent — run after dedupe, merged-away rows take
+their source text with them and their translations look rotted (measured: 32
+reported, 29 of them dedupe casualties). Re-running is safe; only the reading
+misleads. Guard what destroys data, warn where the number lies.
 ## Agent discoverability
 
 The page tells agents not to scrape it, in four places, because the first consumer probed
@@ -718,409 +527,186 @@ reader's clock using the same 8-day trigger and flip the badge to **Stale**.
 
 ## Publishing
 
-`run.sh`'s last step is `deploy`, which pushes `site/` to Vercel. Before it existed the
-weekly run regenerated everything and published none of it: the live copy went stale while
-its own status page still said "Operational", and every update needed a hand-run
-`vercel deploy --prod`.
+`run.sh`'s last two steps publish and commit. Before they existed the weekly run
+regenerated everything and published none of it, while its own status page still
+said "Operational".
 
-- **Gated on `out/steps.tsv`.** Any non-zero step and nothing is published — a partially
-  harvested catalogue overwriting a good public copy is worse than a stale one.
-- **Runs last**, after the run log, sources and status pages, so the published copy
-  describes the run that published it.
-- **Aborts if `site/.vercel/project.json` is missing.** `site/` is gitignored, so a fresh
-  checkout has no project link, and `vercel deploy --yes` would silently create a *new*
-  project rather than fail. Relink with `cd site && vercel link --yes --project govoss-catalog`.
-- **Auth**: `VERCEL_TOKEN`, else `~/.config/govoss/vercel-token` (chmod 600), else the CLI's
-  stored login. The file is preferred over the plist because LaunchAgent plists are
-  world-readable and end up in backups, and rotating a file needs no `launchctl` reload.
+- **`deploy` is gated on `out/steps.tsv`** — any non-zero step and nothing is
+  published; a partially harvested catalogue overwriting a good public copy is
+  worse than a stale one. It runs after the run log and pages, so the published
+  copy describes the run that published it, and **aborts if
+  `site/.vercel/project.json` is missing** (`site/` is gitignored, and
+  `vercel deploy --yes` would silently create a NEW project).
+- **`record` commits `catalog.json`, `history.json`, `liveness.json` and `cache/`
+  and pushes**, sharing the deploy's gate so what is committed is what is
+  published. Deliberately narrow: explicit path list never `git add -A`; refuses
+  any branch but `main` and mid-rebase/merge/bisect; `git commit -- <paths>` so a
+  human's staged edits survive; never force-pushes; `GIT_TERMINAL_PROMPT=0`
+  because a prompt under launchd hangs forever.
+- Git auth is the macOS keychain and **does** resolve under launchd — checked with
+  `git credential fill` under `env -i`. ⚠ `git ls-remote` and `push --dry-run` both
+  succeed on a public repo *without* authenticating, so neither is evidence.
+- ⚠ **"Deploy doesn't work under launchd" was a misdiagnosis** — the `vercel` shim's
+  `#!/usr/bin/env node` could not find node on the launchd PATH, which reads as an
+  auth failure. Third instance of the same shape (see the python3/pyyaml gotcha).
+  Check with `env -i PATH=<plist PATH> HOME=$HOME vercel whoami`.
 
 ### Deploy auth is REPORTED, not just relied on (F7)
 
-`run.sh` resolves auth in order — `VERCEL_TOKEN`, then
-`~/.config/govoss/vercel-token` (chmod 600), then the CLI's stored login — and now
-records which one it used to `out/deploy_auth.txt`. `runlog.py` puts it in
-`history.json` as `deploy_auth`; `build_sources.py` **warns on `/sources.html`
-while the route is `stored-login`**.
+Auth resolves `VERCEL_TOKEN` -> `~/.config/govoss/vercel-token` (chmod 600) -> the
+CLI's stored login, and `publish()` records which to `out/deploy_auth.txt`;
+`runlog.py` puts it in `history.json` as `deploy_auth` and `build_sources.py`
+**warns while the route is `stored-login`**. The fragile mode was already
+*printed*, and a print is not a sensor: a revoked login fails the deploy, but the
+only outward signal is the site going stale and the Stale badge not flipping for 8
+days.
 
-The fragile mode was already *printed*. That is the sensor this repo keeps finding
-inadequate: a revoked login fails the deploy step, which does block the publish —
-but the only outward signal is the public copy going stale, and the browser-side
-Stale badge does not flip for 8 days. A week of a quietly out-of-date site is too
-long to learn it from the site itself.
-
-⚠ **`None` is not `stored-login`.** A run that never reached the deploy step records
-`None`, and the warning does not fire on it. Defaulting an absent value to the
-fragile route would report a posture the run never had.
-
-`warn`, not `critical` — nothing is broken while the stored login works, and
-over-grading config debt trains the reader to ignore an otherwise accurate page.
-
-**The pre-flight checks CONTENT, not the exit status.** `vercel whoami` prints a
-bare username on success and an `Error: … err.sh/…` block on a bad credential. It
-does exit 1 — but that status only survives `| tail -1` because run.sh sets
-`pipefail` 130 lines earlier, and a check that becomes a silent no-op if someone
-edits that line is exactly the guard-that-can-only-pass this repo has shipped twice.
-Verified both ways: without `pipefail` the pipeline reports success for an invalid
-token. The pre-flight is also deliberately **non-fatal** — a transient `whoami`
-hiccup must not block a publish that would otherwise succeed; the deploy is the
-real test, and the pre-flight only makes its failure legible (auth, not PATH — a
-distinction this repo got wrong once already).
-
-⚠ **The remaining step is a CREDENTIAL and is not code.** Mint a token at
-https://vercel.com/account/tokens and write it to the file; `~/.config/govoss/`
-exists with mode 700 and a README. Until then the page carries the warning, which
-is the intended state, not a defect.
-
-### `record` — the run commits and pushes its own data
-
-The step after `deploy`, sharing its gate, so **what is committed is what is published**. It
-commits `catalog.json`, `history.json`, `liveness.json` and `cache/` and pushes to
-`origin/main`. Before it existed the repo showed whatever was last committed by hand while
-the site moved on weekly — the same drift as the manual deploy, one layer over.
-
-It is deliberately narrow, because this is a public repo and it runs unattended:
-
-- **Explicit path list, never `git add -A`.** An automated `add -A` is how a stray token,
-  scratch file or half-finished edit gets published. `.gitignore` is a backstop, not the plan.
-- **Refuses any branch but `main`**, and refuses mid-rebase/merge/bisect, so it cannot commit
-  onto work in progress.
-- **`git commit -- <paths>`** scopes the commit to the data even if a human had something else
-  staged; their staged edits survive untouched. Verified, along with every guard above.
-- **Never force-pushes.** If origin moved ahead the commit stays local and says so — a data
-  file auto-rebased through a conflict is worse than a stale repo.
-- **`GIT_TERMINAL_PROMPT=0`.** A credential prompt under launchd would hang the job forever
-  with no terminal to answer it.
-
-Git auth is macOS keychain (`credential.helper osxkeychain`, from Xcode's gitconfig) and it
-*does* resolve from a launchd job — checked with `git credential fill` under `env -i`, not
-inferred. Note `git ls-remote` and a no-op `git push --dry-run` both succeed on a public repo
-**without authenticating**, so neither is evidence the credential works; that is the same
-absence-of-evidence shape as bug 3 below.
+- ⚠ **`None` is not `stored-login`.** A run that never reached deploy records
+  `None` and must not warn — defaulting it would report a posture the run never had.
+- `warn`, not `critical`: nothing is broken while the login works, and over-grading
+  config debt trains the reader to ignore the page.
+- **The pre-flight checks CONTENT, not exit status.** `vercel whoami` prints a bare
+  username on success and an `Error: … err.sh/…` block otherwise. It does exit 1,
+  but that only survives `| tail -1` because `run.sh` sets `pipefail` 130 lines
+  earlier — a check that silently no-ops if someone edits that line. It is also
+  deliberately **non-fatal**: a transient hiccup must not block a good publish; it
+  only makes the failure legible (auth, not PATH).
+- ⚠ **The remaining step is a CREDENTIAL, not code.** Mint a token at
+  vercel.com/account/tokens into the file; `~/.config/govoss/` exists (mode 700,
+  with a README). Until then the page carries the warning, which is intended.
 
 ### Committed JSON must be deterministic
 
-**Every file in `DATA_PATHS` is written sorted, and stores no per-record timestamp.** This is
-not tidiness — before it, week-over-week churn was **50,199 diff lines; it is now 2,365**, a
-95% cut, and the repo went from ~100–250 MB/year of growth to single digits.
+Every file in `DATA_PATHS` is written sorted with no per-record timestamp. Not
+tidiness: weekly churn went **50,199 diff lines -> 2,365**, and repo growth from
+~100-250 MB/year to single digits. Two causes, both measured — unstable record
+order (`src_tw.json` churned 458 lines with 0 of 58 records changed) and a per-run
+timestamp stored per record (`liveness.json`'s `checked` was 47,563 of a
+47,563-line diff).
 
-Two causes, both measured rather than guessed:
+- Write with `sort_keys=True` **and** `stable_order()`, whose key is deliberately
+  total — name alone ties constantly and a tie lets rows swap between runs. It is
+  duplicated in `harvest.py` and `dedupe.py` on purpose; importing `harvest`
+  executes its module body.
+- **Never store a per-run value per record.** It belongs in a summary.
 
-1. **Unstable record order.** Adapters emit in whatever order upstream answered, so
-   byte-identical records changed position. `cache/src_tw.json` churned **458 lines with 0 of
-   its 58 records changed** — the cleanest possible demonstration. Sorting took it to 0.
-2. **A per-run timestamp stored per record.** `liveness.json` gave every repo a `checked`
-   field set to the same `NOW`, so all 3,005 records differed every run against ~90 real
-   changes. That one field was 47,563 of the 47,563-line diff; without it, 487.
+The payoff is not megabytes: `git log -p liveness.json` now answers "what changed
+this week", which it could not before.
 
-Rules for anything added to `DATA_PATHS`:
+## The pages
 
-- Write with `sort_keys=True` **and** sort the records with `stable_order()`. That key is
-  deliberately **total** — name alone ties constantly (localised builds, forks, the same
-  product in two catalogues) and a tie lets rows swap between runs, which is the churn you
-  were removing. It is duplicated in `harvest.py` and `dedupe.py` on purpose; importing
-  `harvest` would execute its module body.
-- **Never store a per-run value per record.** It belongs in a summary. `export_json.py` reads
-  `summary.checked` for every entry's `last_checked`, guarded by `if lv` so an entry with no
-  liveness record stays `null` instead of inheriting a time it was never checked at.
+Four generated surfaces on `@wegovnyc/design-tokens` under the **`govoss` brand
+variant** — the system wegov.nyc and unnyc.wegov.nyc share. `/` (`build_ui.py` +
+`_ui_template.py`), `/sources.html` (`build_sources.py`, also build status),
+`/api.html`, `/products.html`, shared chrome in `theme.py`. `build_status.py` is
+retired; `/status.html` 308s to `/sources.html`, but **`/status.json` is still
+written** — retiring a page is a design decision, retiring an endpoint breaks
+agents.
 
-The real payoff is not the megabytes: `git log -p liveness.json` now answers "what changed
-this week", which it could not before. History you cannot read is history you are storing for
-nothing — the same objection this repo already makes about a monitor nobody opens.
+- **No f-strings for markup.** `theme.py` and `_ui_template.py` hold CSS/HTML/JS as
+  plain strings with `__PLACEHOLDER__` tokens substituted at the end, and the
+  substitution asserts none survived. This removed the brace-doubling trap.
+- **Tokens are VENDORED, not transcribed** (`vendor/wegovnyc/`, pinned release,
+  inlined at build). govoss has no bundler. The tradeoff is real: an upstream fix
+  does not reach govoss until someone copies it.
+- **`theme.py` is an ALIAS LAYER onto `--wg-*`**, diverging from the siblings which
+  migrated and deleted their aliases. The aliases carry no values, so a variant
+  remap still propagates — that is the property to protect.
+- ⚠ **The alias map is by ROLE and MEASURED CONTRAST, never by name.**
+  `--wg-text-muted` is 2.90:1 and `--wg-accent` 3.15:1 on the page ground, and
+  govoss uses those roles 24 and 26 times as text. Recompute rather than copy;
+  these read 3.00/3.26 until they were re-measured.
+- **The brand variant must be APPLIED, not merely present.**
+  `theme.assert_variant_live()` checks the ROOT TAG — an unapplied variant falls
+  back to a face this repo does not ship and the page silently renders in Georgia.
+  ⚠ Its first version substring-searched the whole page and the vendored CSS's own
+  comment contains the literal, so it could only ever pass.
+- **Fonts are self-hosted** — the readership is European public-sector staff and a
+  Google Fonts request is a live GDPR objection. Upstream records this as a
+  sanctioned divergence.
 
-`catalog.json` is the one file that did not shrink (998 → 1,072 lines). Its churn was already
-mostly genuine, so there was nothing artificial to remove.
+govoss left the CTFG design system on 2026-08-13 by owner decision; CTFG remains a
+consumer of this data. `DESIGN-BRIEF.md` has the UI rules; `UPSTREAM-CTFG.md` and
+`CTFG-CONTRAST-REPORT.md` are historical record. Side effect worth having: the
+build now makes **no network request at all**.
+### Catalog page UI — rules paid for in bugs
 
-**"Deploy doesn't work under launchd" was a misdiagnosis, and it is the same bug as the
-python3 with no pyyaml — third instance in this repo.** The `vercel` shim's shebang is
-`#!/usr/bin/env node`, `node` was not on the launchd PATH, and the job died with
-`env: node: No such file or directory` — which reads as an auth failure if all you observe
-is that nothing deployed. Stored auth is fine; check with
-`env -i PATH=<plist PATH> HOME=$HOME vercel whoami`. Both the plist PATH and `publish()`
-now resolve **`/usr/local/bin/node`**, not the nvm one — that path carries a version number
-and moves on every upgrade.
+Full incidents in `ARCHIVE.md`; `test_built_pages.py` pins what a static check can
+reach. These bite again if violated.
 
-`history.json` begins 2026-08-11 and is seeded with the one genuine launchd run from
-`~/Library/Logs/govoss-harvest.log`. That record carries a `_note` saying it predates the
-dedupe, filter and export steps and the liveness confirmation pass — which is why its dead
-count is 83 against today's 22. Nothing else is back-filled; with one run the page says so
-rather than drawing a trend line it cannot support.
+- **`el.hidden` works only because `theme.py` ships `[hidden]{display:none!important}`.**
+  The attribute hides via the UA stylesheet, which ANY author `display:` rule
+  outranks — `.drawer{display:flex}` rendered 253px tall with `hidden` set, and
+  `.more{display:block}` offered "Show 100 more" for a 2-result list. Never
+  `style.display`.
+- ⚠ **Checking `el.hidden` is not checking that it is hidden.** The property reads
+  `true` while the element renders full height. Assert
+  `getComputedStyle(el).display === 'none'`.
+- ⚠ **Measure rows by vertical CENTRE, not `top`** — `align-items:center` gives
+  differently-sized controls different tops on the *same* row. This reported
+  "2 rows" for a correct single-row toolbar twice.
+- ⚠ **Check a class name is free.** `class="more"` collided with the "Show 100
+  more" button's `display:block;width:100%`, so a link filled its row and looked
+  like a wrapping bug. Nine names in `_ui_template.py` carry >1 rule block.
+- **The toolbar is one row above 940px by `flex-wrap:nowrap` + `min-width:0`**, not
+  tuned widths — wrap wraps a line *before* shrinking anything on it. Selects
+  absorb the squeeze; `.tog` gets `flex:0 0 auto` or it wraps its label and changes
+  height. `#lic` needs `.toolbar #lic` to beat its own ID rule.
+- **`.side` is sticky WITH `max-height:calc(100vh - 40px)` + `overflow-y:auto`**,
+  static under 940px. Unbounded, its bottom is unreachable — measured 887px in an
+  860px viewport *after* a facet group was deleted to "fix" it. The bound is the
+  fix; the group count never was.
+- ⚠ **`current()` routes every facet key EXPLICITLY.** It was `else srcs.push(v)`,
+  so a new `cc` group silently filtered by source and emptied the list.
+- **`?src=<label>` / `?cc=<code>` are validated and an unknown value is IGNORED.**
+  Filtering to nothing reads as "this catalogue contributed no entries" — the claim
+  `/sources.html` exists to disprove. The value is `SOURCES[key]["label"]` on both
+  sides.
+- **Source country shows NAMES; the facet VALUE stays the code**, matched against
+  `r.cs` so a multi-country entry is findable under each. `EU`/`GLOBAL` are not
+  countries. `Sort: country` sorts by the displayed name.
+- **Flags split out of the facet label in JS** — one source for flag and name, so
+  sidebar and strip cannot disagree. Unknown -> the name, never an empty cell.
 
-## The pages (restyled 2026-08-12, re-branded 2026-08-13)
+### Recently added, and `cache/_first_seen.json`
 
-Four surfaces, all generated, all on `@wegovnyc/design-tokens` under the **`govoss` brand
-variant** — the same system wegov.nyc, unnyc.wegov.nyc and (in progress) Databook share.
+`first_seen.py` stamps when each entry first appeared, after dedupe, committed with
+`cache/`. Backfilled once from the weekly `Data:` commits — **3,070 baseline, 119
+dated across 9 runs.**
 
-| page | built by |
-|---|---|
-| `/` catalog | `build_ui.py` + `_ui_template.py` |
-| `/sources.html` sources **and build status** | `build_sources.py` |
-| `/api.html` API + MCP | `build_api.py` |
-| `/products.html` proprietary software catalogue | `build_products.py` |
-| shared chrome | `theme.py` |
+- ⚠ **`null` means BASELINE, not absent.** An id carrying `null` predates the record
+  and is never "new"; a *missing* id is unseen and gets stamped. Conflating them
+  dated the whole 3,070-entry baseline to the backfill day.
+- ⚠ **Only `Data:` commits count as observations** — 16 of git's 27 revisions of
+  `catalog.json` are the project being *built*, not entries arriving.
+- ⚠ **`build_ui._fs_ident()` must match `first_seen.ident()`** or every entry reads
+  as undated and the strip silently empties.
+- The strip shows **10**, carrying a description **only when English**; the rest is
+  reachable via `Sort: recently added`, whose tie-break must match the strip's
+  (name ascending, then date descending — `reverse=True` on a tuple reverses both
+  keys and the two led with different entries).
+- ⚠ **Undated entries sort LAST under `recent`,** never first.
 
-`build_status.py` is **retired** — its page merged into `/sources.html`, which 308s from
-`/status.html`. **`/status.json` is still written**: retiring the page was a design decision,
-retiring the endpoint would break agents.
+### The API note is agent affordance 3 of 4
 
-**No f-strings for markup.** `theme.py` and `_ui_template.py` hold CSS/HTML/JS as PLAIN strings
-with `__PLACEHOLDER__` tokens substituted at the end, and the substitution asserts none
-survived. This removed the brace-doubling trap that was the most common way these files broke.
+Small, directly under the search field — *earlier* in the DOM than its old slot
+above the stat tiles, so the affordance improved. It must stay visible text: never
+a tooltip, a collapsed disclosure or an image. ⚠ `theme.py`'s icons carry a viewBox
+and no width/height, so every context sizes its own or it renders enormous.
 
-**govoss left the Civic Tech Field Guide design system on 2026-08-13**, by owner decision: the
-Sarapis properties share one system. The CTFG utility bar, its mark in the topbar and the four
-CMS-fed footer columns are gone, along with `ctfg_nav.py`. **CTFG remains a consumer of this
-catalogue's data** — the change is branding, not the relationship. `DESIGN-BRIEF.md`,
-`UPSTREAM-CTFG.md` and `CTFG-CONTRAST-REPORT.md` are kept as the historical record, including
-three defects we reported that CTFG fixed in its v2.0.0.
+### `/sources.html` answers four questions
 
-Side effect worth having: with `ctfg_nav.py` retired the build makes **no network request at
-all**, so a weekly unattended run can no longer be affected by a third party's CMS.
+How the data is obtained, whether it filters regionally, how much there is, how
+reliable it is — after a policy researcher asked all four. Per source: `N%
+publiccode` (depth, not volume — SILL is 4% of 670, Developers Italia 100% of 537)
+and `N% links live` (unknowns excluded from the denominator), plus a `By country`
+grid linking `/by-country/<CC>.json`.
 
-**Tokens are VENDORED, not transcribed** — `vendor/wegovnyc/` holds `core.css` and
-`variant-govoss.css` at a pinned release, and `theme.py` inlines them at build time. govoss has
-no bundler (it is Python emitting static HTML), so it cannot install the package the way the
-Next.js siblings do; the version + commit stamp in `vendor/wegovnyc/README.md` is what makes
-"which release is this?" answerable. The tradeoff is real: **an upstream fix does not reach
-govoss until someone copies it.**
+⚠ **The country code is the country of the CATALOGUE, not the tier of government
+that published the software** — there is no municipal/regional/national field. The
+caveat ships in the JSON, on the page, in `meta.json` and in `llms.txt`: it is the
+figure most likely to be misread by the audience most likely to want it.
 
-**`theme.py` is an ALIAS LAYER onto the `--wg-*` semantics**, which diverges from how wegov.nyc
-and UNNYC consume the package (they migrated every rule and deleted their aliases). The aliases
-carry no VALUES — each resolves to a semantic — so a variant remap still propagates, which is
-the property that rule protects. What it buys is not touching ~250 `var()` call sites inside
-Python template strings, where a missed one fails silently.
-
-⚠ **The alias map is by ROLE and MEASURED CONTRAST, never by name.** Two family semantics
-cannot be used where their names suggest: `--wg-text-muted` is **2.90:1** and `--wg-accent`
-**3.15:1** on the page ground, and govoss uses those roles 24 and 26 times as text. Mapping
-them naively would have broken the floor in 50 places. Both are fine as fills; they are not
-text colours here. (Recomputed 2026-08-14 — these read 3.00 and 3.26 until then. The real
-values are worse, so the conclusion held, but recompute rather than copy.)
-
-**The brand variant must be APPLIED, not merely present.** `theme.assert_variant_live()` runs
-on every build and checks the ROOT TAG. This system has already shipped a dead variant once
-(wegov.nyc, KI `wegovnyc-design-system`); govoss would fail differently — `variant-govoss.css`
-is what remaps the display face to the self-hosted Space Grotesk, so an unapplied variant falls
-back to a `DM Serif Display` this repo deliberately does not ship, and the page silently
-renders in Georgia. ⚠ The FIRST version of that assert was broken: it substring-searched the
-whole page, and the vendored variant file's own comment contains the literal
-`[data-brand="govoss"]`, so it could only ever pass. Caught by deleting the attribute and
-watching the build succeed. **Test a guard adversarially.**
-
-**Fonts are self-hosted** (`fonts/`, 9 woff2, 344 KB, ~103 KB typically fetched). The design
-system loads them from a CDN; we do not, because the readership is European public-sector staff
-and a Google Fonts request is a live GDPR objection. Upstream now records this as a sanctioned
-divergence.
-
-### ⚠ `el.hidden` needs `[hidden]{display:none!important}` — theme.py carries it
-
-The `hidden` attribute hides via the UA stylesheet's `[hidden]{display:none}`, and
-**any author `display:` rule outranks it.** Two elements were defeated by exactly
-that, both shipped and live:
-
-- `.drawer{display:flex}` — the More filters drawer rendered **253px tall with
-  `hidden` set**, so it was open on every page load.
-- `.more{display:block}` — "Show 100 more" was offered even for a 2-result list.
-  Live since the 2026-08 restyle.
-
-`theme.py` now carries `[hidden]{display:none!important}` in the shared reset, so
-`el.hidden` means hidden on all four pages. Nothing in this repo assigns
-`style.display`, so the `!important` is safe; keep it that way and keep using
-`el.hidden`.
-
-⚠ **`.nores` on /products.html was never affected, and the reason is the rule to
-remember:** it has no author `display` rule, so the UA `[hidden]` won on its own.
-The bug only appears where an author rule sets `display` on something you also
-hide by attribute.
-
-⚠ **Checking `el.hidden` is NOT checking that it is hidden.** The property reads
-`true` while the element renders at full height — which is how this shipped: the
-verification asserted `drawerHiddenInitially: true` and moved on. Assert
-`getComputedStyle(el).display === 'none'`, or a rendered height of 0. Same rule as
-"verify the built output, not the patch report", one level further in.
-
-### The toolbar is ONE row above 940px, by `nowrap` not by tuned widths
-
-`flex-wrap:wrap` wraps a line **before** shrinking anything on it, so capping each
-control only moves the width at which it breaks — 160+220+190+100 fits the 825px
-column at 1280 and wraps to two rows in the 615px column at 1024. Above the
-breakpoint the toolbar is `nowrap` with `min-width:0` on the selects, so they
-compress and ellipsis instead. Below 941px the sidebar goes static and wrapping is
-correct, so the default stands.
-
-- **Selects absorb the squeeze; buttons do not.** `flex:0 0 auto` +
-  `white-space:nowrap` on `.tog`, because letting `#morefilters` shrink took it to
-  67px, wrapped "More filters" onto two lines and made it 57px tall beside 38px
-  selects. A control that changes height as the window narrows reads as broken.
-- **`#lic` carries its own `max-width:220px` from an ID selector**, which outranks
-  a class rule and left it hogging 220 of a 615px column, squeezing `#sort` to
-  101px where "Sort: most catalogs" truncates to about three characters. An ID
-  needs an ID to beat it: `.toolbar #lic`.
-- **Anything that does not fit goes in the drawer.** `Replaces a paid product`
-  moved there for this reason, leaving sort / licence / source catalog / More
-  filters on the row.
-
-⚠ **Measure rows by vertical CENTRE, not `top`.** The toolbar is
-`align-items:center`, so controls of different heights have different `top` values
-on the *same* row — which reported "2 rows" for a correct single-row layout twice
-during this work. Compare `toolbar.height` against the tallest child instead.
-
-### Recently added, and `cache/_first_seen.json` (2026-09-22)
-
-Nothing recorded when an entry arrived. `history.json` carried the COUNT — `+16` —
-but not which sixteen, so "what's new" could not be shown or even asked.
-`first_seen.py` now stamps `cache/_first_seen.json` after dedupe, and it is
-committed with the rest of `cache/` by the `record` step. Same contract as
-`_fetched.json`: a date is written ONCE and never overwritten, and the file is
-sorted so a weekly diff is ~20 lines.
-
-⚠ **`None` means BASELINE and is not the same as absent.** Entries present at the
-first weekly run carry `null` — they existed before the record began, and dating
-them to the day the backfill ran would assert an arrival nobody observed. An id
-carrying `null` is *known* and never reported as new; an id **missing** from the
-file is genuinely unseen and gets stamped. Conflating them dated the entire
-3,070-entry baseline to the backfill date on the first attempt. Current state:
-**3,070 baseline, 119 dated across 9 weekly runs.**
-
-⚠ **The backfill counts only `Data:` commits.** git holds 27 revisions of
-`catalog.json`, but 16 are dated 2026-08-11 — the project being *built*, not
-entries arriving. Treating those as observations dated 1,185 entries to a day on
-which nothing was harvested. A `Data:` commit is written by `record` at the end of
-a run, so it is the only revision where the catalogue itself changed.
-
-⚠ **`build_ui._fs_ident()` must match `first_seen.ident()` exactly** (`repo_key`,
-falling back to `name|source`). If they drift every entry reads as undated and the
-strip silently empties.
-
-**The strip shows 10, and that is why the sort exists.** `Recently added` sits
-where the API banner used to, above the stat tiles: ten cards, horizontally
-scrollable, with `See all, newest first` switching the table to the matching sort.
-A strip you can read beats one you have to work through.
-
-⚠ **The strip's tie-break must match the table's `recent` sort exactly.** Python's
-`reverse=True` on a `(date, name)` tuple reverses BOTH keys, so the strip led with
-`VC Solar` while the table led with `bytype` — same date, opposite name order, and
-"See all" landed the reader somewhere the strip did not start. Sort by name
-ascending, then stable-sort by date descending, which is what the JS does.
-
-⚠ **Undated entries sort LAST under `recent`, never first.** `fs` is `null` for the
-3,070 baseline, and a falsy-to-empty-string comparison floats them to the top as if
-they were the newest thing in the catalogue.
-
-**The API note moved under the search field and shrank** — and that is compatible
-with agent affordance 3 of 4, not a violation of it: the searchbar is in the hero,
-so the note is now EARLIER in the DOM, which is what that affordance asks for. It
-must stay visible text; a tooltip or a collapsed disclosure would end it.
-
-⚠ **The strip's arrow-disabled test needs a tolerance, not `<= 0`.** The track
-carries 2px of padding plus `scroll-snap-align`, and rests at `scrollLeft` **2** —
-measured — so an exact test left the left arrow enabled on a strip already at its
-start. `.rbtn`/`.rall` also had to be added to the 44px touch-target rule; they
-were 30px.
-
-### The toolbar, the drawer, and what "set aside" now says (2026-09-21)
-
-- **Source country labels are country NAMES** ("Germany", not "DE"), from
-  `sources.py:COUNTRY_NAME`. The facet **VALUE stays the code**, matched against
-  `r.cs` — only the display changed. ⚠ `EU` and `GLOBAL` are not countries and are
-  deliberately "European Union" and "Global": GLOBAL is the UN-affiliated DPG
-  registry on a wider criterion than the rest, and conflating it with a state
-  would misrepresent 253 entries.
-- **`Sort: country` sorts by the NAME, not the code.** Once the label read
-  "Germany", a code sort put Germany before Denmark and the list looked unsorted.
-  `CCNAME` is derived from the facet labels so there is one source for them, with
-  the flag stripped — sorting the raw label orders by emoji codepoint.
-- **Source catalog is a toolbar `<select>`, not a sidebar facet.** SINGLE-select, by
-  decision: the Source country facet now answers the case multi-select existed for
-  ("all of Germany" rather than ticking openCode and Munich separately), and 17
-  values make a better dropdown than a 6-of-17 facet with an expander. `SFACETS` is
-  still built — it validates an incoming `?src=`.
-- **`?src=<label>` and `?cc=<code>`** are entry points, both validated against the
-  values the page actually offers. An unknown one is IGNORED, never applied:
-  filtering to nothing would read as "this catalogue contributed no entries", which
-  is the one claim `/sources.html` exists to disprove. ⚠ The link value is
-  `SOURCES[key]["label"]` on BOTH sides — `build_sources.py` writes it,
-  `build_ui.py:SRC_LABEL` and the dropdown consume it. If they diverge the link
-  silently empties the catalogue.
-
-**"Include 488 set-aside entries" is gone, and the reason is worth keeping.** One
-label covered two unrelated claims, and the project's own owner asked what it meant
-— which is the strongest evidence a label can get. It is now two controls in a
-**More filters** drawer, with the counts computed in `build_ui.py` so they cannot
-drift:
-
-| control | n | the claim |
-|---|---|---|
-| `Show N with no description` | 384 | The publisher wrote none and GitHub had none either (`enrich_desc` runs first). An editorial standard about publisher effort. |
-| `Show N judged not adoptable` | 104 | Fork, deployment recipe, CI plumbing, locale bundle, org metadata. A judgement about the artefact. |
-
-⚠ **Keep both reachable.** That toggle is the only UI route to those entries, and
-`Products.PloneMeeting` is among them — it vanished once already. Both remain in
-`/entries.json` flagged with an `exclude_reason` regardless of the toggles.
-
-⚠ **The denominator moves with the toggles.** `render()` recomputes the universe
-from the same predicate, or "N of M" compares the filtered list against a universe
-the page is not showing. Verified: 2,857 → 3,241 (+384) → 3,345 (+104).
-
-The drawer also holds **Repository state**, moved out of the toolbar: it is rarely
-touched and the toolbar was full. Toggle it with `el.hidden`, never
-`style.display` — the page reset carries `[hidden]{display:none!important}`, which
-would win.
-
-### The catalog sidebar is bounded, and that is load-bearing
-
-`.side` is `position:sticky` **with `max-height:calc(100vh - 40px)` and
-`overflow-y:auto`**, reset to static/unbounded under the 940px breakpoint. Keep all
-three: an unbounded sticky element taller than the viewport leaves its bottom
-permanently unreachable, and the facet list grows every time a source is added.
-
-⚠ **A whole facet group was once DELETED to treat that symptom.** The Source country
-facet was removed with the reasoning "the sidebar had grown taller than the viewport,
-which stopped it pinning" — and it did not work: measured on the live page at
-1280x860 with the facet already gone, the sidebar was **887px against an 860px
-viewport**, still 27px unreachable. The cause was the missing bound, not the group
-count. Bounding it fixed the pre-existing overhang *and* made room for the facet to
-come back (820px cap, 1,143px of content scrolling internally).
-
-The other half of that removal — "largely redundant with Source catalog, a catalogue
-belongs to one country" — was half true and worth understanding before trusting a
-similar argument. A catalogue belongs to one country, but a **country has several
-catalogues**: DE is openCode + Munich, FR is SILL + awesome-codegouvfr. The removal
-comment named its own cost, "everything from Germany now means selecting openCode and
-Munich separately", and that is exactly the query the facet exists to answer. It also
-restores something no combination of source facets could: **64 multi-catalogue entries
-whose `countries` span several states** (LibreOffice and QGIS are `[DE, FR, GLOBAL,
-IT]`) are findable under each, because the facet matches `r.cs`, not the single `r.c`.
-
-⚠ **`current()` routes every facet key EXPLICITLY — never restore the `else` default.**
-It was `if fn / else if rp / else srcs`, so adding the `cc` group silently pushed
-country codes into the source-catalog filter, which matches no source label and empties
-the list. "No entries from Germany" is what that looks like from the outside. A default
-branch that swallows unknown keys is how a new facet breaks an old one.
-
-### `/sources.html` answers four questions, deliberately
-
-Rebuilt 2026-09-20 after a policy researcher asked how the data is obtained, whether it can be
-filtered regionally, how much there is, and how reliable it is. Three gaps, now closed:
-
-- **Depth per source, not just volume.** `N% publiccode` on every row. SILL contributes 670
-  entries of which **4%** carry a publisher-written `publiccode.yml`; Developers Italia
-  contributes 537 of which **100%** do. Two similar-looking counts, very different datasets —
-  the page used to render them identically.
-- **Link health per source.** `N% links live`, counting only repos with a DECIDED verdict:
-  `unknown` (403/429/5xx) is excluded from the denominator rather than counted as either, the
-  same rule `liveness.py` uses. Attributes rot to the catalogue that published the link
-  instead of pooling it into one site-wide figure.
-- **A `By country` grid** linking `/by-country/<CC>.json`, ⚠ **with the caveat rendered on the
-  page**: the code is the country of the **catalogue that listed the software**, not the tier
-  of government that published it — there is no municipal/regional/national field. That
-  distinction belongs where the number is read, not only in docs; it is the figure most likely
-  to be misread by the audience most likely to want it.
-
-⚠ **Do not build the country grid out of `.crow`.** It was, first: the 5-column catalogue-row
-grid left three cells empty and made each country **141px** tall, turning a 15-row lookup
-table into ~2,100px of scrolling. `.cgrid`/`.ccard` is 46px a card, 5 across at 1200px, 260px
-for the whole section. Measure the rendered DOM — the preview pane returns blank screenshots
-for this page.
 
 ## The MCP server
 
@@ -1158,105 +744,73 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Seven suites, 179 checks, all manual — **not** wired into `run.sh`, because a test step that
-can fail the weekly publish is a test step someone switches off, and the guards these cover
-are already in the pipeline. Run them all before touching `dedupe.py`, `liveness.py`,
-`filters.py`, `taxonomy.py`, `merge_translations.py` or `export_json.py`:
+Seven suites, 179 checks, **all manual** — a test step that can fail the weekly
+publish is one someone switches off, and `run.sh` already gates its deploy on every
+build step exiting 0. Run before touching `dedupe.py`, `liveness.py`, `filters.py`,
+`taxonomy.py`, `merge_translations.py`, `export_json.py` or the page builders:
 
 ```bash
 for t in test_*.py; do python3 $t; done
 ```
 
-| file | covers |
+| file | pins |
 |---|---|
 | `test_detect_lang.py` | 5 language-tagging recurrences, real catalogue strings |
 | `test_dedupe_identity.py` | the 3 identity rules, `norm_repo`/`norm_site`, survivor selection, `merge()` unions |
 | `test_liveness_strikes.py` | `fold_history()` — two strikes, unknown-never-dead, revival, oscillation |
-| `test_translation_orphans.py` | orphan-key detection, and the naive rule it rejects |
-| `test_filters.py` | `filters.classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
-| `test_stage_guard.py` | the refuse-on-merged-input guard, both directions |
-| `test_built_pages.py` | the BUILT pages + the two cross-page contracts |
+| `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
+| `test_filters.py` | `classify()` incl. 2 rules removed for cause, + the `replaces.json` vocabulary gate |
+| `test_stage_guard.py` | refuse-on-merged-input, both directions |
+| `test_built_pages.py` | the built pages + two cross-page contracts |
 
-**Every one of them is validated by SABOTAGE** — break the thing it checks and watch it fail
-— because this repo has shipped a guard that could only ever pass. Two habits came out of
-doing that:
+**Every suite is validated by SABOTAGE** — break the thing it checks and watch it
+fail — because this repo has shipped a guard that could only ever pass. Three rules
+came out of doing that:
 
-- **A test must never ask the thing it is testing whether to run its hardest case.**
-  `test_stage_guard.py` first keyed its subprocess cases on `is_post_dedupe()`, so a
-  sabotaged no-op guard made the test *skip* exactly the cases that prove destruction.
-- **Sabotage finds bugs the assertions were not written for.** Three fell out this way: the
-  `^www\.`-before-`.lower()` case bug in `norm_repo`/`norm_site` (latent, 0 of 4,464 URLs),
-  a refusal message naming a lowercased key you cannot grep for, and a stale cost comment in
-  `filters.py` arguing for weakening a rule.
+- **A test must never ask the thing it tests whether to run its hardest case.**
+  `test_stage_guard.py` keyed its subprocess cases on `is_post_dedupe()`, so a
+  sabotaged guard made the test *skip* the cases that prove destruction.
+- **If a guard cannot be made to fail, delete it.** A "do the two `pslug`
+  implementations agree?" check was written, sabotage-tested and removed: both
+  collapse `[^a-z0-9]+` then `-+`, which absorbs every plausible one-sided edit.
+  Replaced by an outcome check — do the links land? — which survives causes nobody
+  thought of.
+- **Sabotage finds bugs the assertions were not written for.** Three did: a
+  `^www\.`-before-`.lower()` case bug in `norm_repo` (latent, 0 of 4,464 URLs), a
+  refusal naming a lowercased key you cannot grep for, and a stale cost comment
+  arguing for weakening a rule.
 
-**`test_built_pages.py` exists because the other six could not have caught the drawer
-bug.** They test pure functions; the bug was in built output. It asserts what was checked by
-hand that day — no unsubstituted `__PLACEHOLDER__` on any page, `catalogue.html` at 0
-non-ASCII bytes, the `[hidden]` reset present, by-country files agreeing with `meta.json`,
-and the caveat actually shipping inside `/by-country/*.json`. Run it after `bash run.sh`; it
-**skips cleanly** when a page is not built, since `site/` is gitignored and a fresh checkout
-has none.
-
-Its two cross-page contracts are the part worth keeping, because both fail **silently**:
-
-- **`/sources.html` → `/?src=<label>`.** The catalog validates the value against its own
-  options and ignores an unknown one, so renaming a `label` in `sources.py` does not error —
-  all 17 "See catalog entries" links just stop filtering, which reads as "this catalogue
-  contributed no entries".
-- **`products.html#p-<pslug(name)>`**, computed in JS at render time, so it cannot be
-  grepped out of the static HTML — it has to be recomputed from the data the page ships.
-
-⚠ **One check was written, sabotage-tested, and DELETED for being unfalsifiable**, which is
-worth recording as the standard. A direct "do Python's `pslug` and the JavaScript one agree?"
-comparison can only ever pass: both run `[^a-z0-9]+ -> -` then collapse `-+ -> -`, and that
-pipeline absorbs every plausible one-sided edit — dropping the `+` from one character class,
-or `.strip("-")` versus the JS single-hyphen strip, give identical output for every input
-tried (`--Foo--`, `C++ / C#`, `.NET`, `a---b`, `Ärger`, `...`). It was replaced by an
-**outcome-level** check — do the links land? — which does not care why two slugs might
-diverge and so survives causes nobody thought of. **If a guard cannot be made to fail, delete
-it rather than shipping it with a comment claiming it guards something.**
-
-Still untested, with reasons: `get()`'s raise semantics (needs a stubbed opener),
-crosswalk's three guards (inline inside SPARQL-calling functions — they need the extraction
-`liveness.fold_history()` got), and the MCP Worker (JS on Cloudflare).
-
+Untested, with reasons: `get()`'s raise semantics (needs a stubbed opener),
+crosswalk's three guards (inline in SPARQL-calling functions — they need the
+extraction `fold_history()` got), and the MCP Worker (JS on Cloudflare).
 ## Four bugs that recurred — check for these first
 
-The same shapes came back repeatedly. If something looks wrong, suspect these before
-anything else:
+If something looks wrong, suspect these before anything else.
 
-1. **A responding endpoint is not a working source.** `code.gov` returns 200 and is retired.
-   India's OpenForge has a live API, 1,502 projects and zero code. A green pipeline log once
-   hid a dead harvest. *Verify content, not status codes.*
-2. **Language tagging.** Broke **five** times: Finnish/Swedish skipped entirely, 12 entries
-   declaring `description.en` while being German, all 88 Portuguese strings mislabelled
-   English, 45 English strings called Danish because English *for* is also a Danish stopword
-   — and then, after that was "fixed" by requiring two markers, English text that simply
-   repeats the homograph: *"used **for** enabling … **for** Dexterity content"* scored two
-   Danish markers, *"print **a** rss feed from **a** given URL"* two Portuguese ones. Five
-   iMio repos were tagged `da`/`pt`.
-   Now: two markers **of which at least one is not also an English word** (`_EN_HOMOGRAPH`).
-   **`test_detect_lang.py` locks all five recurrences in with real catalogue strings** —
-   run it after touching `_STOP`, `_EN_HOMOGRAPH` or `detect_lang`.
-   Two traps found while fixing it, both worth knowing:
-   - **Over-correcting is the worse failure.** A first attempt also listed `la`, `le`, `per`,
-     `van`, `die` as English homographs — true in a dictionary, but they are the *core*
-     stopwords of Italian, French and Dutch, and that version called *"Applicazione vocale su
-     Alexa per la richiesta"* English. Mislabelling foreign text as English silently drops it
-     **out** of the translation queue; the original bug only put the wrong text **in**. Keep
-     `_EN_HOMOGRAPH` to high-frequency English function words.
-   - **Diacritics are evidence, not decoration.** Transcribing a Danish test case as
-     `gor … Faelleskommunal` instead of `gør … Fælleskommunal` made it fail, because `ø`/`æ`
-     were the entire signal. Test strings must be byte-exact from the catalogue.
-   *Never reintroduce a per-source language assumption.*
-3. **Absence of evidence treated as evidence of absence.** An API 404 meant "dead repo" until
-   `gitlab.huma-num.fr` turned out to restrict anonymous API access — 53 of 82 "dead" repos
-   were alive, including KiCad. A missing GitHub description meant "not software" until it
-   excluded `Products.PloneMeeting`. *Confirm through a second channel before asserting.*
-4. **String-replace patching fails silently.** A visible UI banner "landed" against markup
-   from a different file and simply did not appear. `showex` resolved to an id-global DOM
-   element instead of the variable. *Verify the built output, not the patch report.*
-
+1. **A responding endpoint is not a working source.** `code.gov` returns 200 and is
+   retired; India's OpenForge has a live API, 1,502 projects and zero code; a green
+   pipeline log once hid a dead harvest. *Verify content, not status codes.*
+2. **Language tagging** — broke **five** times: per-source tagging skipping Finnish
+   and Swedish; 12 entries declaring `description.en` while German; 88 Portuguese
+   strings called English; 45 English strings called Danish because English *for*
+   is a Danish stopword; then English text repeating that homograph twice. Now: two
+   markers, at least one not also an English word (`_EN_HOMOGRAPH`). Pinned by
+   `test_detect_lang.py` — run it after touching `_STOP`, `_EN_HOMOGRAPH` or
+   `detect_lang`. ⚠ **Over-correcting is the worse failure**: listing `la`/`le`/
+   `per`/`van`/`die` as English homographs called Italian and French text English,
+   which drops real text *out* of the queue. ⚠ **Diacritics are the signal** — a
+   test string transcribed `gor` for `gør` fails for the right reason.
+   *Never reintroduce a per-source language assumption* (two still exist — see
+   Translation).
+3. **Absence of evidence treated as evidence of absence.** An API 404 meant "dead
+   repo" until `gitlab.huma-num.fr` turned out to restrict anonymous access — 53 of
+   82 were alive, KiCad among them. A missing description meant "not software"
+   until it excluded `Products.PloneMeeting`. *Confirm through a second channel.*
+4. **String-replace patching fails silently.** A banner "landed" against markup from
+   a different file and never appeared. *Verify the built output, not the patch
+   report* — and after a structural edit, grep for what should still be there. This
+   bit twice while pruning these very docs: a `##`-level replacement swallowed four
+   `###` subsections, both times caught only by checking.
 ## Gotchas in this repo
 
 - **`run.sh` resolves its own interpreter.** Do not add bare `python3` calls. Under launchd,
