@@ -67,9 +67,6 @@ Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if 
   deploy login cannot reach. Nothing in the repo points at it any more.
 - **A Catalan speaker's read of `/ca/`** before pointing Catalan institutions at it. The
   strings are machine-written; `i18n/ca.json` is the one file to edit.
-- **The GCHQ decision** - but only after candidate 1. Recorded in `sources.py:SURVEY`
-  as `ready`, with the editorial question (is an intelligence agency's tooling "software
-  a government could adopt"?) left to the owner.
 - **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) - a scope decision about what
   the catalogue is. And three drafted, unsent documents (an OpenForum Europe reply, an
   OFE-voiced EU defect report - session artefacts, not committed - and
@@ -77,27 +74,20 @@ Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if 
 
 ## Candidates, ranked
 
-1. **Size up the UK sources (alphagov/GDS, MoJ, other departments) before deciding on
-   GCHQ.** GCHQ alone would be the first UK source but a narrow one: 58 active repos,
-   ~30 of them Stroom components, no `publiccode.yml`, one clear product (CyberChef).
-   The starting point, verified 2026-09-23 but NOT yet measured: GitHub's
-   `github/government.github.com` repo, file `_data/governments.yml`, lists **169 "U.K.
-   Central" orgs and 46 "U.K. Councils"** (alphagov, ministryofjustice, hmrc, dwp,
-   govuk-pay, govuk-one-login, GCHQ ...) - a machine route in the sense this repo means.
-   Measure per org: active repos, forks, `publiccode.yml` count (via raw.githubusercontent,
-   not code search - it rate-limits), and how many repos are products vs plumbing. Expect
-   almost no publiccode.yml, so the real question is a CURATION rule, not a scan: the
-   GCHQ analysis concluded hand-picking ~8 products beats 58 index entries. The same
-   file covers 77 country groups - a discovery source for elsewhere too.
-2. **Expand `replaces.json` by SHAPE, not sweep.** A seeded 60-entry sample put the
+**Scope rule (owner, 2026-09-23): government-produced catalogues only - never a list
+govoss curates itself.** The UK was measured and has no catalogue (`sources.py:SURVEY`
+GB entry, status `none-found`; GCHQ folded into it). A hand-picked list of 40 UK
+products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner).
+
+1. **Expand `replaces.json` by SHAPE, not sweep.** A seeded 60-entry sample put the
    honestly-mappable share of the publiccode tier at ~20% (95% CI 12-32%); every hit was
    a platform, CMS, ERP, workflow engine or security scanner. Read the `_README` first.
-3. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
+2. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
    translation cost (~20-200 new entries per run), so only if someone will use it; it would
    also need a "missing Catalan" sensor on the same growth rule as orphans.
-4. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
+3. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
    undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
-5. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
+4. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
    Workers (JS). **Screen-reader testing** has never been done.
 
 ## Traps - looks broken but is not, and vice versa
@@ -147,8 +137,7 @@ Mistakes worth knowing: one commit (`84ec9c3`) went out with a failing check (fi
 > `/Users/devin/Antigravity/govoss-catalog/ARCHIVE.md` only if a rule in `CLAUDE.md` is too
 > terse to apply and you need the reasoning behind it.
 >
-> Start with candidate 1: size up the UK government sources before we decide on GCHQ.
-> Measure and recommend; do not add a source until I have seen the numbers.
+> Start with candidate 1: expand `replaces.json` by shape.
 >
 > Do not write a handoff, continuation prompt, or session record unless I ask for
 > `/handoff`. End your turn with what you did and what you recommend next.

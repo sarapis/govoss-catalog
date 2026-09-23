@@ -29,6 +29,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
 
 - **`sources.py` is the single source of truth** for labels, links, routes, `SITE_URL`, country
   names and the survey of rejected catalogues; `/sources.html` + `/sources.json` render it.
+- **Scope: catalogues a government produces (or a government body's own forge org). Never a
+  list govoss curates itself** (owner, 2026-09-23; the parked UK list is `UK-CURATED-DRAFT.md`).
 - **The pattern: find the machine route the catalogue's own site is built from, and read that.**
   Never scrape a rendered page. Every source here was found that way.
 - **Checkpoint keys (`os2`, `ch`) are not `sources.py` keys (`DK/os2`, `CH/swiss`).** Look

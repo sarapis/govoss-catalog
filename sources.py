@@ -350,20 +350,26 @@ SURVEY = [
                "catalogues with owner, language and geographic coverage. Unlike the EU OSS "
                "Catalogue on the same portal, this page renders fine. Every entry has now been "
                "evaluated (last pass 2026-09-22): OS2, Bulgaria, Switzerland and DIGG were "
-               "ingested from it; GCHQ and Helsingborg are recorded below as candidates; ICT "
+               "ingested from it; Helsingborg is recorded below as a candidate and GCHQ under "
+               "the UK entry (no UK catalogue exists); ICT "
                "ReUse, the Adullact forge, Forja RedIRIS, OW2 and the Swedish community wiki "
                "are recorded below with why not. Awesome Free Software lists private "
                "publishers, not government software; Etalab's Public Sector Code is the "
                "24,440-repo inventory excluded on purpose (harvest.py:fr()); Joinup is the EU "
                "catalogue already rejected. publiccode.directory is a dead domain."},
-    {"country": "GB", "flag": "\U0001F1EC\U0001F1E7", "name": "GCHQ",
-     "url": "https://github.com/gchq",
-     "status": "ready",
-     "detail": "Would be the first UK source. 58 active repos, 2 forks, every non-fork one "
-               "described, CyberChef (36k stars) and Stroom among them, but NO publiccode.yml "
-               "at all, so it is index tier only, like Ireland. A national-security agency's "
-               "tooling is genuinely government-published; whether it fits 'software a "
-               "government could adopt' is an editorial call."},
+    {"country": "GB", "flag": "\U0001F1EC\U0001F1E7", "name": "United Kingdom (incl. GCHQ)",
+     "url": "https://github.com/github/government.github.com/blob/gh-pages/_data/governments.yml",
+     "status": "none-found",
+     "detail": "No UK government publishes a software catalogue. Measured 2026-09-23 across the "
+               "215 UK orgs in GitHub's government list (169 central, 46 councils): 14,320 "
+               "active non-fork repos - ~4.7x this whole catalogue, hmrc alone 1,499 with 26 "
+               "described - and ZERO publiccode.yml, so an org scan would be index-tier "
+               "plumbing. The nearest first-hand list is GOV.UK's Service Toolkit (six "
+               "products, services rather than repos). GCHQ, once recorded here as ready, is "
+               "58 repos of which about five are products (CyberChef, Stroom, Bailo, "
+               "Sleeper, LD-Explorer). A hand-picked UK list was drafted "
+               "(UK-CURATED-DRAFT.md) and parked: this catalogue ingests government-produced "
+               "catalogues, not lists of its own."},
     {"country": "SE", "flag": "\U0001F1F8\U0001F1EA", "name": "Helsingborg City",
      "url": "https://github.com/helsingborg-stad",
      "status": "needs-research",
