@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 9 suites, 408 checks, all manual
+for t in test_*.py; do python3 $t; done     # 9 suites, 412 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -72,6 +72,7 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
   moves only on success; a failure keeps the old copy). `/sources.html` warns past 14 days.
   Websites are asked per homepage (an asked set, so new ones are sent); repos come from the full
   P1324 dump, accepted ONLY when its rows match a COUNT - the service truncates with HTTP 200.
+  A software-check batch that fails twice is UNVERIFIED: not stamped, never trusted, never fatal.
 - **`taxonomy.py` and `dedupe.py` REFUSE already-merged input** (`stage_guard.py`, pinned by
   `test_stage_guard.py`). Do not make them merge-aware or add `--force`; rebuild with
   `--from-cache`. To verify a change, dry-run the pure function, not a by-hand re-run.
@@ -219,7 +220,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Nine suites, 408 checks, **all manual** - a test that can fail the weekly publish is one someone
+Nine suites, 412 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -230,7 +231,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en` and shared ä/ö |
 | `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect/repo-rename QID loans, `is_repo_url` |
-| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry |
+| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()`, the `replaces.json` vocabulary gate, publisher `replaces:` |

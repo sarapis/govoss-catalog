@@ -182,6 +182,34 @@ def main():
         raise OSError("down")
     check("two network failures give None, not a raise", (cw._retry_once(down, pause=0), len(tries)), (None, 2))
 
+    # ---- software_qids(): one 503 used to raise out of the whole Wikidata stage.
+    # Now each batch gets one retry, and a batch that still fails is UNVERIFIED:
+    # its QIDs are not stamped, and the other batches' are.
+    real_sparql, real_sleep = cw._sparql, cw.time.sleep
+    cw.time.sleep = lambda s: None
+    calls = []
+
+    def fake(query, timeout=None):
+        calls.append(query)
+        if "wd:Q2 " in query + " " and len([c for c in calls if "wd:Q2 " in c + " "]) <= 2:
+            raise OSError("503 Backend fetch failed")     # batch with Q2 fails twice
+        if "wd:Q1 " in query + " " and len(calls) == 1:
+            raise OSError("503 once")                     # batch with Q1 fails once
+        ids = [w[3:] for w in query.split() if w.startswith("wd:Q") and w != "wd:Q7397"]
+        return [{"item": {"value": "http://www.wikidata.org/entity/" + q}} for q in ids]
+    cw._sparql = fake
+    try:
+        ok, unver = cw.software_qids({"Q1", "Q2", "Q3"}, chunk=1)
+        raised = None
+    except Exception as ex:
+        ok, unver, raised = set(), set(), ex
+    finally:
+        cw._sparql, cw.time.sleep = real_sparql, real_sleep
+    check("software_qids never raises on a failed batch", raised, None)
+    check("a batch that fails ONCE is retried and verified", "Q1" in ok, True)
+    check("a batch that fails twice is unverified, not stamped", (sorted(unver), "Q2" in ok), (["Q2"], False))
+    check("other batches still verified", "Q3" in ok, True)
+
     # ---- cache_problems(): the /sources.html sensor
     good = {n: {"fetched_at": DAY(1), "error": None} for n in cw.CACHE_NAMES}
     check("all fresh: silent", cw.cache_problems(good, NOW), [])

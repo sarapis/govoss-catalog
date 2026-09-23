@@ -197,17 +197,39 @@ def software_qids(qids, chunk=300):
     entries later.
 
     Asked only about the handful of items a URL actually matched — the same
-    constraint asked over all of Wikidata times out (504)."""
+    constraint asked over all of Wikidata times out (504).
+
+    -> (software, unverified). A batch that fails twice is UNVERIFIED, not
+    rejected and not accepted: its QIDs are not stamped this run, and the rest
+    still are. Until 2026-09-23 one 503 here raised out of the whole Wikidata
+    stage and cost every website and repo stamp for the week."""
     if not qids:
-        return set()
-    out = set()
+        return set(), set()
+    out, unverified = set(), set()
     qids = sorted(qids)
     for i in range(0, len(qids), chunk):
-        vals = " ".join("wd:%s" % q for q in qids[i:i + chunk])
-        rows = _sparql("SELECT DISTINCT ?item WHERE { VALUES ?item { %s } "
-                       "?item wdt:P31/wdt:P279* wd:Q7397 . }" % vals)
+        batch = qids[i:i + chunk]
+        vals = " ".join("wd:%s" % q for q in batch)
+        try:
+            rows = _sparql_twice("SELECT DISTINCT ?item WHERE { VALUES ?item { %s } "
+                                 "?item wdt:P31/wdt:P279* wd:Q7397 . }" % vals, timeout=300)
+        except Exception as ex:
+            print(f"   wikidata: software check failed for {len(batch)} items ({ex}); "
+                  f"not stamping them this run")
+            unverified |= set(batch)
+            continue
         out |= {_qid(b["item"]) for b in rows}
-    return out
+    return out, unverified
+
+
+def _sparql_twice(query, timeout=120, pause=5):
+    """One retry for any SPARQL failure. Unlike _retry_once(), an HTTP error is
+    retried too: from the query service a 429, 502 or 503 is load, not an answer."""
+    try:
+        return _sparql(query, timeout=timeout)
+    except Exception:
+        time.sleep(pause)
+        return _sparql(query, timeout=timeout)
 
 
 def site_lookup(sites, ask, cache, fresh):
@@ -262,11 +284,7 @@ class _AskWikidata:
         if not vals:
             return found
         q = "SELECT ?item ?s WHERE { VALUES ?s { %s } ?item wdt:%s ?s . }" % (vals, self.prop)
-        try:
-            rows = _sparql(q, timeout=120)
-        except Exception:
-            time.sleep(5)
-            rows = _sparql(q, timeout=120)
+        rows = _sparql_twice(q)
         for b in rows:
             found[norm(b["s"]["value"])].add(_qid(b["item"]))
         return found
@@ -597,8 +615,8 @@ if __name__ == "__main__":
 
         # A URL match says the page belongs to the item, not that the item is
         # software. Verify before stamping — see software_qids().
-        ok = software_qids(set(by_wd_repo.values()) | set(by_wd_site.values()))
-        dropped = len(set(by_wd_repo.values()) | set(by_wd_site.values())) - len(ok)
+        ok, unverified = software_qids(set(by_wd_repo.values()) | set(by_wd_site.values()))
+        dropped = len(set(by_wd_repo.values()) | set(by_wd_site.values())) - len(ok) - len(unverified)
         by_wd_repo = {k: v for k, v in by_wd_repo.items() if v in ok}
         by_wd_site = {k: v for k, v in by_wd_site.items() if v in ok}
 
@@ -618,7 +636,8 @@ if __name__ == "__main__":
                 hits[f"wd_{how}"] += 1
         print(f"wikidata: {len(by_wd_repo)} repo urls, {len(by_wd_site)} websites resolved to "
               f"exactly one SOFTWARE item ({len(org_sites)} org-shared homepages skipped, "
-              f"{dropped} matched items rejected as not software)")
+              f"{dropped} matched items rejected as not software"
+              + (f", {len(unverified)} left unverified" if unverified else "") + ")")
     except Exception as ex:
         # A gated step must not fail the run because a third-party endpoint is
         # slow. Comptoir's stamps are already applied and stand on their own.

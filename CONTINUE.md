@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 9 suites, 408 checks
+for t in test_*.py; do python3 $t; done                     # 9 suites, 412 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,7 +32,7 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **9 suites, 408 checks, all passing.** Manual on purpose.
+- **9 suites, 412 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
@@ -113,10 +113,7 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    also need a "missing Catalan" sensor on the same growth rule as orphans.
 4. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
    undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
-5. **`crosswalk.software_qids()` has no retry**: one 503 on that single query skips the
-   whole Wikidata stage for the run (seen 2026-09-23). Fails safe, but fragile - give it
-   the same one-retry as the website batches.
-6. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
+5. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
    Workers (JS). **Screen-reader testing** has never been done.
 
 ## Traps - looks broken but is not, and vice versa
