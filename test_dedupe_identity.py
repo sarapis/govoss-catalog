@@ -203,9 +203,50 @@ def main():
           dedupe.canonical_score(rec("x", tier="publiccode"))
           > dedupe.canonical_score(rec("x", tier="index")), True)
 
+    # ---- crosswalk.redirect_matches: lend a QID when homepages redirect to one
+    # page. Real redirects as measured 2026-09-23; `resolve` is a fake, offline.
+    import crosswalk
+    R = {"http://www.knime.org/": "https://www.knime.com/",
+         "https://www.knime.com": "https://www.knime.com/",
+         "https://freemind.sourceforge.net": "https://freemind.sourceforge.io/",
+         "https://freemind.sourceforge.io/wiki/index.php/Main_Page":
+             "https://freemind.sourceforge.io/wiki/index.php/Main_Page",
+         "https://www.consul.io/": "https://developer.hashicorp.com/consul",
+         "https://demokratie.today": "https://demokratie.today/"}
+    res = R.get
+
+    def lent(rows, org=frozenset()):
+        return [(t["source"], q) for t, q, _ in crosswalk.redirect_matches(rows, res, org)]
+
+    k_sill = rec("KNIME Analytics Platform", source="FR/sill", wikidata="Q639194",
+                 landing="http://www.knime.org/")
+    k_muc = rec("KNIME Analytics Platform", source="DE/muc", landing="https://www.knime.com")
+    check("KNIME: Munich row borrows SILL's QID", lent([k_sill, k_muc]), [("DE/muc", "Q639194")])
+    check("KNIME: then dedupe merges them on QID",
+          len(group_of([k_sill, dict(k_muc, wikidata="Q639194")])), 1)
+    check("different final PATH is not a match (FreeMind)",
+          lent([rec("FreeMind", source="FR/sill", wikidata="Q1331559",
+                    landing="https://freemind.sourceforge.io/wiki/index.php/Main_Page"),
+                rec("Freemind", source="DE/muc", landing="https://freemind.sourceforge.net")]), [])
+    check("same name, different final host is not a match (Consul)",
+          lent([rec("Consul", source="FR/sill", wikidata="Q28709844", landing="https://www.consul.io/"),
+                rec("Consul", source="DE/muc", landing="https://demokratie.today")]), [])
+    check("same catalogue is not a match", lent([k_sill, dict(k_muc, source="FR/sill")]), [])
+    check("a different NAME is not a match, even on the same page",
+          lent([k_sill, dict(k_muc, name="KNIME Server")]), [])
+    check("an unresolvable page is not a match",
+          lent([k_sill, dict(k_muc, landing="https://gone.example")]), [])
+    check("two donor QIDs: not ours to pick",
+          lent([k_sill, dict(k_sill, source="IT/it", wikidata="Q999"), k_muc]), [])
+    check("no homepage is not a match", lent([k_sill, dict(k_muc, landing=None)]), [])
+    check("an org-shared homepage is not a match",
+          lent([k_sill, k_muc], org=frozenset({"knime.com"})), [])
+    check("a row that already has a QID is left alone",
+          lent([k_sill, dict(k_muc, wikidata="Q1")]), [])
+
     for f in failed:
         print(f"FAIL  {f}")
-    n = 41
+    n = 52
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 

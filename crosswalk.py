@@ -189,6 +189,66 @@ def wikidata_by_site(sites, chunk=200):
     return {k: next(iter(v)) for k, v in found.items() if len(v) == 1}
 
 
+def resolve_landing(url, timeout=15):
+    """Final URL after redirects, or None. A redirect is the site owner saying
+    two addresses are one site - the evidence redirect_matches() rests on."""
+    import ssl, urllib.request, certifi
+    if not url or not url.startswith(("http://", "https://")) or not _iri_safe(url):
+        return None
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+            return r.geturl() if r.status < 400 else None
+    except Exception:
+        return None
+
+
+def redirect_matches(active, resolve, org_sites=frozenset()):
+    """Same-name rows in DIFFERENT catalogues whose homepages END at the same
+    page -> [(row without a QID, the other row's QID, donor source)].
+
+    Why: KNIME was two entries. SILL records http://www.knime.org/ (as does
+    Wikidata's P856, so SILL's row has Q639194); Munich records
+    https://www.knime.com, which is on no Wikidata item, and neither row's repo
+    matches, so no URL route reaches the Munich row. knime.org redirects to
+    knime.com - the vendor itself says the two are one site.
+
+    This is dedupe identity 3 (exact name AND exact homepage) with the homepage
+    taken AFTER redirects, and it only lends an existing QID; it never mints one.
+    The final page must match EXACTLY, path included: FreeMind (/ vs /wiki/...)
+    and Alfresco (two Hyland pages) stay split, and Consul - HashiCorp's tool vs
+    the citizen-participation platform - ends on two different hosts. Pure:
+    `resolve` is injected, so test_dedupe_identity.py runs it offline."""
+    by_name = collections.defaultdict(list)
+    for e in active:
+        n = (e.get("name") or "").strip().lower()
+        if n:
+            by_name[n].append(e)
+    out, seen = [], {}
+
+    def final(u):
+        if u not in seen:
+            seen[u] = resolve(u)
+        return norm(seen[u])
+
+    for rows in by_name.values():
+        donors = [e for e in rows if e.get("wikidata") and e.get("landing")]
+        if len({e["wikidata"] for e in donors}) != 1:
+            continue                      # none, or two identities: not ours to pick
+        for t in rows:
+            if t.get("wikidata") or not t.get("landing") or norm(t["landing"]) in org_sites:
+                continue
+            for d in donors:
+                if d.get("source") == t.get("source") or norm(d["landing"]) in org_sites:
+                    continue
+                a, b = final(t["landing"]), final(d["landing"])
+                if a and a == b:
+                    out.append((t, d["wikidata"], d.get("source")))
+                    break
+    return out
+
+
 if __name__ == "__main__":
     rows = load_comptoir()
     catalog = json.load(open(f"{OUT}/catalog.json"))
@@ -286,6 +346,25 @@ if __name__ == "__main__":
         # A gated step must not fail the run because a third-party endpoint is
         # slow. Comptoir's stamps are already applied and stand on their own.
         print(f"wikidata: SKIPPED ({type(ex).__name__}: {ex})")
+
+    # ---- third: lend a QID across catalogues when homepages redirect to one
+    # page. After both sources above, so it lends every QID they stamped. Best
+    # effort like Wikidata: it only reaches the network for the few same-name
+    # cross-catalogue pairs, and a failed fetch simply matches nothing.
+    try:
+        active = [e for e in catalog if not e.get("excluded")]
+        site_names = collections.defaultdict(set)
+        for e in active:
+            s = norm(e.get("landing"))
+            if s:
+                site_names[s].add((e.get("name") or "").strip().lower())
+        org_sites = {s for s, n in site_names.items() if len(n) > 1}
+        for e, qid, donor in redirect_matches(active, resolve_landing, org_sites):
+            e["wikidata"] = qid
+            e["wikidata_via"] = f"redirect:{donor}"
+            hits["redirect"] += 1
+    except Exception as ex:
+        print(f"redirect: SKIPPED ({type(ex).__name__}: {ex})")
 
     json.dump(catalog, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
     total = sum(hits.values())

@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 8 suites, 335 checks
+for t in test_*.py; do python3 $t; done                     # 8 suites, 346 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,7 +32,7 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **8 suites, 335 checks, all passing.** Manual on purpose.
+- **8 suites, 346 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
@@ -93,8 +93,12 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
    genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
    and three publiccode-tier NC entries the publiccode exemption protects.
-3. **KNIME Analytics Platform is two entries** (Munich: knime.com, no QID; SILL: knime.org,
-   Q639194) - the crosswalk's by-URL QID stamp missed the Munich row.
+3. **The crosswalk's caches never refresh**: `out/wikidata_site.json`, `wikidata_repo.json`
+   (2026-08-13) and `comptoir.json` (2026-08-11) are reused whenever the file exists, so no
+   homepage added since has been asked of Wikidata. Measured 2026-09-23: a fresh website
+   lookup over 689 homepages gains ONE QID (Pix), so the cost is low today - but it is a
+   frozen input that looks live. Fix: an age limit, falling back to the stale cache on a
+   failed fetch, with the cache age written where `/sources.html` looks.
 4. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
    translation cost (~20-200 new entries per run), so only if someone will use it; it would
    also need a "missing Catalan" sensor on the same growth rule as orphans.
