@@ -2,7 +2,7 @@
 
 MCP server over the govoss-catalog union catalogue. Public, keyless, stateless.
 
-    https://govoss-mcp.devin-31f.workers.dev
+    https://govoss-mcp.devin-a8e.workers.dev
 
 ## Deploying
 

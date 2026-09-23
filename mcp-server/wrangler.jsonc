@@ -1,6 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "govoss-mcp",
+  // Pinned so a cached login for another account cannot redirect the deploy:
+  // the first move failed because node_modules/.cache/wrangler pointed at the
+  // itspruvn.com account. This is Devin@sarapis.org's Account.
+  "account_id": "a8e2fa072ede7a6389e8db8cad00f774",
   "main": "src/index.js",
   "compatibility_date": "2025-07-01",
 

@@ -10,6 +10,14 @@ live source — it stops the next person re-probing code.gov and concluding the
 same thing three months later.
 """
 
+# The site's canonical address - the ONE place it is written. i18n.py (hreflang),
+# export_json.py (llms.txt, robots.txt, sitemap.xml, meta.json), build_api.py
+# (citation) and build_products.py read it. Switch it only once the new address
+# actually answers: canonical and hreflang links pointing at a domain that does
+# not resolve would send search engines and agents to nothing. The vercel.app
+# address keeps working after a switch.
+SITE_URL = "https://govoss-catalog.vercel.app"
+
 # ---- ingested sources
 # Display names for the country codes carried on SOURCES and on every entry's
 # `country` / `countries`. Codes are what the DATA joins on; these are for humans.
@@ -327,7 +335,7 @@ SURVEY = [
                "municipality, likely a handful of repos) and hosting_platform:dmrid_dits "
                "(github.com/DMRID is an individual user with one repo, not a registry)."},
     {"country": "DK/BG", "flag": "\u26A0", "name": "translation debt (OS2 + Bulgaria)",
-     "url": "https://govoss-catalog.vercel.app/status.html", "status": "needs-research",
+     "url": SITE_URL + "/sources.html", "status": "needs-research",
      "detail": "English coverage dropped from 100% to 91% when OS2 Denmark and Bulgaria were "
                "added: 265 strings remain untranslated (171 Bulgarian, 82 Danish, 12 other). "
                "Recorded rather than papered over - every entry still carries description_lang "

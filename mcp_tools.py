@@ -22,7 +22,7 @@ supports, but the URL is not invented here - it stays empty until it exists.
 # origin, which ships with the site. Until the restyled site reaches production
 # that one tool returns a clean "catalogue index unavailable (404)" rather than
 # a crash; the other four answer from files production already serves.
-ENDPOINT = "https://govoss-mcp.devin-31f.workers.dev"
+ENDPOINT = "https://govoss-mcp.devin-a8e.workers.dev"
 
 # Why a separate Worker rather than a Vercel function: the catalogue deployment
 # is deliberately backend-free - it is a directory of static files behind a CDN,

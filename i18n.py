@@ -33,7 +33,7 @@ import re
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 LANGS = ("en", "ca")
-BASE = "https://govoss-catalog.vercel.app"
+from sources import SITE_URL as BASE        # the one place the address is written
 NAMES = {"en": "English", "ca": "Català"}
 
 # Page routes that have a Catalan counterpart. Everything else root-relative

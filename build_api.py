@@ -157,8 +157,8 @@ def build(lang="en"):
         "__N_TOOLS__": str(len(M.TOOLS)),
         "__GEN__": esc(meta.get("generated_at") or NOW),
         "__CITE__": esc("govoss-catalog (%s). Union catalogue of government open source "
-                        "software. https://govoss-catalog.vercel.app, CC BY 4.0."
-                        % (meta.get("generated_at") or NOW)[:10]),
+                        "software. %s, CC BY 4.0."
+                        % ((meta.get("generated_at") or NOW)[:10], i18n.BASE)),
     }
 
     page = (theme.head(

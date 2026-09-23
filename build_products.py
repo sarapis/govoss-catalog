@@ -193,7 +193,7 @@ def build(lang="en"):
 
     json.dump({
         "generated_at": meta.get("generated_at") or NOW,
-        "human_page": "https://govoss-catalog.vercel.app/products.html",
+        "human_page": i18n.BASE + "/products.html",
         "disclaimer": prop["_README"]["status"],
         "counts": {"products": len(names), "with_alternatives": n_alt,
                    "no_alternative": n_gap, "alternatives": n_links,

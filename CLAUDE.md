@@ -781,7 +781,7 @@ figure most likely to be misread by the audience most likely to want it.
 
 ## The MCP server
 
-`mcp-server/` — a Cloudflare Worker at `https://govoss-mcp.devin-31f.workers.dev`. Public,
+`mcp-server/` — a Cloudflare Worker at `https://govoss-mcp.devin-a8e.workers.dev`. Public,
 keyless, stateless, no Durable Object. Five tools; the contract lives once in `mcp_tools.py`,
 read by both the Worker and `/api.html`.
 

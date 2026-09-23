@@ -115,14 +115,35 @@ violation is silent.
 5. **Screen-reader testing has never been done.** The audits are contrast sweeps
    plus keyboard. Until it runs, nothing should claim conformance.
 
+## govoss.cat — waiting on DNS (2026-09-23)
+
+Registered at Namecheap; `govoss.cat` and `www.govoss.cat` are added to the
+Vercel project. Decided: DNS on Cloudflare (sarapis.org account), English at the
+root, Catalan at `/ca/` as everywhere else. Once the zone is active:
+
+1. Cloudflare DNS, both **DNS only** (grey cloud): `A govoss.cat 76.76.21.21`,
+   `A www.govoss.cat 76.76.21.21`. Vercel verifies and issues certificates itself.
+2. Confirm it answers: `curl -sI https://govoss.cat/` must return 200 with the page.
+3. Flip `sources.py:SITE_URL` to `https://govoss.cat` - the ONE place the address
+   is written (hreflang, sitemap, robots, llms.txt, meta.json, citation). Only
+   after step 2, or canonical links point at nothing.
+4. Redirect the old address: in `deploy-vercel.json`, a `redirects` rule with
+   `"has": [{"type": "host", "value": "govoss-catalog.vercel.app"}]` to
+   `https://govoss.cat/:path*`, permanent. JSON paths included - agents follow.
+5. Worker: add `"routes": [{"pattern": "mcp.govoss.cat", "custom_domain": true}]`
+   to `mcp-server/wrangler.jsonc`, `npx wrangler deploy`, then point
+   `mcp_tools.py:ENDPOINT` and the four docs at `https://mcp.govoss.cat`.
+   `CATALOG_ORIGIN` can move to `https://govoss.cat` at the same time.
+
 ## Traps — looks broken but is not, and vice versa
 
 - **The MCP Worker's `search_entries` change needs `wrangler deploy`**
   (`mcp-server/`); it is not part of `run.sh`. The index fields ship with the
-  site either way, and the old Worker simply ignores them. It lives in the
-  **Devin@itspruvn.com** Cloudflare account (id `31f41ae0…`), not the
-  sarapis.org one wrangler may be signed in to: `npx wrangler login` as that
-  account first, or the deploy fails with an authentication error.
+  site either way. It now lives in **Devin@sarapis.org's Account**
+  (`account_id` pinned in `mcp-server/wrangler.jsonc`, 2026-09-23). The OLD copy
+  at `govoss-mcp.devin-31f.workers.dev` (itspruvn.com account) still runs the
+  pre-variant code; delete it once nothing points at it - that needs the
+  itspruvn.com login.
 - **`/sources.html` can warn about missing page translations one run late.**
   It is built before `/api.html` and `/products.html`, so it reads their
   entries in `out/i18n_missing.json` from the PREVIOUS run. A fix to those

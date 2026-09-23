@@ -325,7 +325,7 @@ def build():
     meta = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": GENERATED_AT,
-        "human_page": "https://govoss-catalog.vercel.app/",
+        "human_page": _S.SITE_URL + "/",
         # ⚠ `entries` counts the ACTIVE catalogue; /entries.json deliberately
         # ships MORE rows than that, because a set-aside entry is flagged rather
         # than dropped. Reported upstream 2026-08-14 by a consumer who read
@@ -541,8 +541,10 @@ def write_agent_files(entries, meta, by_product):
     nl = chr(10)
     txt = f"""# govoss-catalog
 
-> Aggregated catalogue of national government open source software, harvested first-hand
-> from eight European national catalogues. {len(entries)} entries. Generated {meta['generated_at']}.
+> Union catalogue of government open source software, harvested first-hand from
+> {len(meta['sources'])} national, municipal and international catalogues across {len(meta['countries'])} countries and
+> bodies. {meta['counts']['entries']:,} active entries ({len(entries):,} rows in /entries.json, set-aside
+> ones included and flagged). Generated {meta['generated_at']}.
 
 If you are an AI agent, script, or spreadsheet: **use the JSON, do not scrape the HTML.**
 The HTML page renders only 100 rows at a time and its data array is module-scoped, so
@@ -650,17 +652,20 @@ search all ignore query strings, so only 20 of its 1,084 solutions are reachable
         "User-agent: *\nAllow: /\n\n"
         "# Structured data - prefer these over parsing the HTML\n"
         "# /entries.json  /meta.json  /by-product.json  /status.json  /llms.txt\n"
-        "Sitemap: https://govoss-catalog.vercel.app/sitemap.xml\n")
+        "Sitemap: %s/sitemap.xml\n" % _S.SITE_URL)
     # products.html/.json are written later by build_products.py, but they are
     # listed here because this is where the sitemap is generated. They are static
     # paths, so no ordering problem — only a missing-file one if that step fails,
     # and a failed step blocks the deploy anyway.
     urls = ["/", "/sources.html", "/api.html", "/products.html", "/entries.json",
-            "/meta.json", "/by-product.json", "/products.json", "/llms.txt"]
+            "/meta.json", "/by-product.json", "/products.json", "/llms.txt",
+            # the Catalan copies (i18n.py), which search engines otherwise meet
+            # only through the hreflang links
+            "/ca/", "/ca/sources.html", "/ca/api.html", "/ca/products.html"]
     open(f"{SITE}/sitemap.xml", "w").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "".join(f'<url><loc>https://govoss-catalog.vercel.app{u}</loc>'
+        + "".join(f'<url><loc>{_S.SITE_URL}{u}</loc>'
                   f'<lastmod>{meta["generated_at"][:10]}</lastmod></url>\n' for u in urls)
         + "</urlset>\n")
 
