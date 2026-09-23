@@ -65,6 +65,15 @@ CASES = [
     ("nl", "Software voor het optellen van verkiezingsuitslagen en berekenen van de "
            "zetelverdeling."),
 
+    # ---- ä/ö are shared by German, Swedish and Finnish (the sixth recurrence).
+    # Counted for German alone, these read as German; dropped from German, the
+    # German one read as English. Real strings, DIGG and Avoinkoodi.
+    ("fi", "Omaolosta löydät sosiaali- ja terveyspalvelut nopeasti ja esteettömästi, ympäri vuorokauden."),
+    ("fi", "Lupapiste on sähköinen palvelu, jossa rakennus-, ympäristö- ja yleisten alueiden käyttölupiin liittyvät asiat"),
+    ("sv", "Ett ramverk för att förenkla applikationsutveckling."),
+    ("sv", "Granskar kodkvalitet och kodsäkerhetsverktyg."),
+    ("de", "Digitale Koordination von Einsatzkräften im Katastrophenfall"),
+
     # ---- Script detection is decisive and must not be reachable by stopwords.
     ("bg", "Регистър на информационните ресурси"),
     ("zh", "GOV.UK Forms 是英國 GDS 政府數位服務團隊維運之公部門線上表單平台"),
@@ -150,7 +159,13 @@ def main():
     for expect, got, text in failed:
         print(f"FAIL  expected {expect!r}, got {got!r}\n      {(text or '')[:88]!r}")
 
-    n = len(CASES) + len(PRIOR_CASES) + len(ASSUME_EN_CASES)
+    # A tie between languages sharing ä/ö is broken by the org's hint, and ".se"
+    # is Sweden's code, never Finnish `se`. DIGG passes hint="sv".
+    for expect, hint, text in [("sv", "sv", "Källkod för dataportal.se")]:
+        got = h.detect_lang(text, hint=hint)
+        if got != expect:
+            failed.append((expect, got, text))
+    n = len(CASES) + len(PRIOR_CASES) + len(ASSUME_EN_CASES) + 1
     print(f"\n{n - len(failed)}/{n} passed")
     return 1 if failed else 0
 

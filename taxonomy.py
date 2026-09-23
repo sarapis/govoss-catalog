@@ -195,6 +195,9 @@ M = {
  # classified it — so, like `scheduling` before it, the unmapped value cost a
  # signal rather than a classification.)
  "government":None,"public-administration":None,"öffentliche-verwaltung":None,
+ # A TEMPLATE PLACEHOLDER left in a publiccode.yml (DIGG, 2026-09-23): says
+ # nothing about function, so it falls through to text inference like the above.
+ "<TBD>":None,
 }
 
 # multilingual keyword rules for entries with NO source categories

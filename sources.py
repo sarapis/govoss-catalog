@@ -187,6 +187,27 @@ SOURCES = {
                 "also identifies the EU catalogue facet hosting_platform:arte - which had "
                 "been misread here as ARTE the Franco-German broadcaster.",
     },
+    "CH/swiss": {
+        "checkpoint": "ch",
+        "label": "Swiss Confederation", "country": "CH", "flag": "\U0001F1E8\U0001F1ED",
+        "site": "https://github.com/swiss/index",
+        "api": "https://raw.githubusercontent.com/swiss/index/HEAD/README.md",
+        "route": "GitHub index + orgs", "claim": "published by Swiss federal and cantonal bodies",
+        "note": "The Federal Chancellery's own index of government GitHub accounts - federal "
+                "offices, federal projects and cantons - read fresh each run. PUBLICCODE TIER "
+                "ONLY: 164 of ~1,035 active repos ship a publiccode.yml; the rest is largely "
+                "research and data code. Found via the OSOR list.",
+    },
+    "SE/digg": {
+        "checkpoint": "digg",
+        "label": "DIGG", "country": "SE", "flag": "\U0001F1F8\U0001F1EA",
+        "site": "https://github.com/diggsweden",
+        "api": "https://api.github.com/orgs/diggsweden/repos",
+        "route": "GitHub org", "claim": "built by the Swedish Agency for Digital Government",
+        "note": "National agency, first-hand: the EU Digital Identity Wallet and Sweden Connect "
+                "(the eIDAS node). 44 active repos, 8 with a publiccode.yml; Offentligkod lists "
+                "only 2. Found via the OSOR list.",
+    },
     "IE/ogcio": {
         "checkpoint": "ie",
         "label": "OGCIO Ireland", "country": "IE", "flag": "\U0001F1EE\U0001F1EA",
@@ -320,31 +341,13 @@ SURVEY = [
                "first: a hand-curated, server-rendered directory of ~29 public-sector OSS "
                "catalogues with owner, language and geographic coverage. Unlike the EU OSS "
                "Catalogue on the same portal, this page renders fine. Every entry has now been "
-               "evaluated (last pass 2026-09-22): OS2 and Bulgaria were ingested from it; "
-               "Switzerland, DIGG, GCHQ and Helsingborg are recorded below as candidates; ICT "
+               "evaluated (last pass 2026-09-22): OS2, Bulgaria, Switzerland and DIGG were "
+               "ingested from it; GCHQ and Helsingborg are recorded below as candidates; ICT "
                "ReUse, the Adullact forge, Forja RedIRIS, OW2 and the Swedish community wiki "
                "are recorded below with why not. Awesome Free Software lists private "
                "publishers, not government software; Etalab's Public Sector Code is the "
                "24,440-repo inventory excluded on purpose (harvest.py:fr()); Joinup is the EU "
                "catalogue already rejected. publiccode.directory is a dead domain."},
-    {"country": "CH", "flag": "\U0001F1E8\U0001F1ED", "name": "Swiss Federal Chancellery GitHub index",
-     "url": "https://github.com/swiss/index",
-     "status": "ready",
-     "detail": "The strongest new source found. The Federal Chancellery maintains a markdown "
-               "index of the GitHub accounts of federal offices, federal projects and cantons - "
-               "the Denmark-style org allowlist, but published by the government itself, so "
-               "parsing its README is the machine route. Measured 2026-09-22: 52 accounts, "
-               "1,035 active repos (102 forks), 164 with a publiccode.yml - the rich tier, "
-               "led by jeap-admin-ch (54) and jme-admin-ch (29). None overlap the catalogue. "
-               "Recommended: ingest the 164 publiccode entries; the other ~870 are largely "
-               "research and data code (MeteoSwiss alone has 125 repos). Four accounts are "
-               "users, not orgs, so list them with /users/<x>/repos."},
-    {"country": "SE", "flag": "\U0001F1F8\U0001F1EA", "name": "DIGG (Swedish Agency for Digital Government)",
-     "url": "https://github.com/diggsweden",
-     "status": "ready",
-     "detail": "National agency, first-hand: the EU Digital Identity Wallet work and Sweden "
-               "Connect. 44 active repos, 8 with a publiccode.yml; Offentligkod lists only 2. "
-               "Small and clean - a github_org_scan like Ireland's."},
     {"country": "GB", "flag": "\U0001F1EC\U0001F1E7", "name": "GCHQ",
      "url": "https://github.com/gchq",
      "status": "ready",

@@ -134,8 +134,14 @@ _STOP = {
     "it": r"\b(il|lo|la|dei|delle|per|con|che|sono|della|gli)\b",
     "pt": r"\b(o|a|os|as|dos|das|para|com|que|uma|não|serviço)\b",
     "es": r"\b(el|la|los|las|del|para|con|que|una|no)\b",
-    "sv": r"\b(och|att|för|med|som|inte|kan|av|till)\b",
-    "fi": r"\b(ja|on|se|ei|joka|sekä|palvelu\w*|tieto\w*)\b",
+    # ä/ö are SHARED by German, Swedish and Finnish, so they count for all three
+    # and the stopwords decide. Counting them for German alone tagged 21 Finnish
+    # and 5 Swedish descriptions German ("Källkod för dataportal.se"); dropping
+    # them from German instead made 17 German texts English ("Digitale
+    # Koordination von Einsatzkräften") - the worse direction. `se` never counts
+    # after . - / : that is Sweden's code ("dataportal.se", "DCAT-AP-SE").
+    "sv": r"\b(och|att|för|med|som|inte|kan|av|till)\b|[äöåÄÖÅ]",
+    "fi": r"\b(ja|on|(?<![.\-/])se|ei|joka|sekä|palvelu\w*|tieto\w*)\b|[äöÄÖ]",
 }
 _STOP_RE = {k: re.compile(v, re.I) for k, v in _STOP.items()}
 
@@ -471,7 +477,7 @@ def github_org_scan(org, source, country, workers=12):
                    # detection neither skips these rows nor mislabels them.
                    desc_lang=detect_lang(
                        r.get("description"),
-                       hint={"amagovpt": "pt", "governmentbg": "bg"}.get(
+                       hint={"amagovpt": "pt", "governmentbg": "bg", "diggsweden": "sv"}.get(
                            org, "da" if org in OS2_ORGS else None)),
                    stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
                    is_fork=bool(r.get("fork")), fork_parent=fork_parent)
@@ -630,22 +636,33 @@ def os2():
     # without costing records is not harm, and a genuine upstream decline with
     # no failures is real data that must still be written — otherwise the
     # catalogue freezes on its own high-water mark.
-    if broke:
-        prev = 0
-        try:
-            with open(f"{CACHE}/src_os2.json") as fh:
-                prev = len(json.load(fh))
-        except Exception:
-            pass
-        if len(out) < prev:
-            raise RuntimeError(
-                f"partial OS2 scan: {len(out)} repos vs {prev} in the last good "
-                f"checkpoint, after {len(broke)} org(s) failed: {', '.join(broke)}. "
-                f"Refusing to checkpoint a short list; reusing the previous one. "
-                f"If an org is permanently gone, remove it from OS2_ORGS — the "
-                f"per-source age on /sources.html is what makes this visible."
-            )
+    _refuse_short_scan("os2", "OS2", out, broke, "OS2_ORGS")
     return out
+
+
+def _refuse_short_scan(key, what, out, broke, where):
+    """Raise instead of checkpointing a scan that lost sub-sources AND records.
+
+    Shared by every adapter that loops over sub-sources swallowing their
+    failures (os2, ch): returning the partial list would make main() treat it
+    as success and overwrite the last good checkpoint. See os2() for why the
+    test is failure AND regression, not failure alone."""
+    if not broke:
+        return
+    prev = 0
+    try:
+        with open(f"{CACHE}/src_{key}.json") as fh:
+            prev = len(json.load(fh))
+    except Exception:
+        pass
+    if len(out) < prev:
+        raise RuntimeError(
+            f"partial {what} scan: {len(out)} repos vs {prev} in the last good "
+            f"checkpoint, after {len(broke)} org(s) failed: {', '.join(broke)}. "
+            f"Refusing to checkpoint a short list; reusing the previous one. "
+            f"If an org is permanently gone, remove it from {where} — the "
+            f"per-source age on /sources.html is what makes this visible."
+        )
 
 
 def bg():
@@ -1098,10 +1115,101 @@ def dpg():
     return out
 
 
+CH_INDEX = "https://raw.githubusercontent.com/swiss/index/HEAD/README.md"
+
+
+def ch():
+    """Switzerland — the Federal Chancellery's own index of government GitHub accounts.
+
+    github.com/swiss/index is a markdown list, maintained by the Chancellery, of
+    the GitHub accounts of federal offices, federal projects and cantons. It is
+    the Denmark-style allowlist, except the government publishes it - so the
+    README IS the machine route, read fresh every run rather than copied here.
+    Found via the OSOR list (2026-09-22).
+
+    PUBLICCODE TIER ONLY: of ~1,035 active repos, 164 ship a publiccode.yml -
+    the publisher saying "this is reusable". The rest is largely research and
+    data code (MeteoSwiss alone has 125 repos), which an index tier would pull
+    in wholesale. Four accounts are users, not orgs, so repos are listed with
+    /users/<x>/repos, which serves both. Non-GitHub entries in the index
+    (gitlab.com/swiss-armed-forces, gitlabext.wsl.ch) are skipped and printed.
+    """
+    md = get(CH_INDEX, raw=True).decode("utf-8", "replace")
+    accounts, seen = [], set()
+    for a in re.findall(r"https://github\.com/([A-Za-z0-9_.-]+)/?\s*$", md, flags=re.M):
+        if a.lower() not in seen:
+            seen.add(a.lower())
+            accounts.append(a)
+    other = re.findall(r"https://(?!github\.com)[^\s)]+", md)
+    if len(accounts) < 20:
+        # The index is the whole source; a truncated or restructured README must
+        # not quietly checkpoint a Switzerland of three accounts.
+        raise RuntimeError(f"swiss/index lists only {len(accounts)} GitHub accounts; "
+                           f"refusing - check whether the README changed shape")
+    hdr = {"Accept": "application/vnd.github+json"}
+    tok = _gh_token()
+    if tok:
+        hdr["Authorization"] = "Bearer " + tok
+
+    def repos_of(a):
+        out, page = [], 1
+        while page <= 20:
+            d = get(f"https://api.github.com/users/{a}/repos?per_page=100&page={page}&type=owner",
+                    headers=hdr)
+            if not d:
+                break
+            out += d
+            page += 1
+        return [r for r in out if not r.get("archived")]
+
+    repos, broke = [], []
+    for a in accounts:
+        try:
+            repos += repos_of(a)
+        except Exception as e:
+            broke.append(f"{a} ({type(e).__name__})")
+            print(f"    {a}: FAILED {type(e).__name__}")
+
+    def one(r):
+        try:
+            pc = parse_pc(get(f"https://raw.githubusercontent.com/{r['full_name']}/HEAD/publiccode.yml",
+                              timeout=25, raw=True, tries=1))
+        except Exception:
+            return None
+        if not pc:
+            return None
+        return from_publiccode(pc, "CH/swiss", "CH",
+                               fallback_repo=r.get("html_url"),
+                               entry_url=r.get("html_url"),
+                               stars=r.get("stargazers_count"),
+                               last_activity=r.get("pushed_at"),
+                               is_fork=bool(r.get("fork")))
+
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        out = [x for x in ex.map(one, repos) if x]
+    print(f"    {len(accounts)} GitHub accounts in swiss/index, {len(repos)} active repos, "
+          f"{len(out)} with publiccode.yml; skipped non-GitHub: {', '.join(other) or 'none'}")
+    _refuse_short_scan("ch", "Swiss index", out, broke, "github.com/swiss/index (upstream)")
+    return out
+
+
+def digg():
+    """Sweden — DIGG, the Agency for Digital Government (github.com/diggsweden).
+
+    National and first-hand: the EU Digital Identity Wallet work and Sweden
+    Connect, the eIDAS node. 44 active repos, 8 with a publiccode.yml, and
+    Offentligkod lists only 2 of them. Found via the OSOR list (2026-09-22).
+    Descriptions mix Swedish and English, so detect_lang gets `sv` only as a
+    tie-break hint, never as an assumption.
+    """
+    out, _ = github_org_scan("diggsweden", "SE/digg", "SE")
+    return out
+
+
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
            "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "pt": pt,
            "muc": muc, "os2": os2, "bg": bg,
-           "dpg": dpg,
+           "dpg": dpg, "ch": ch, "digg": digg,
            "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as
