@@ -399,11 +399,32 @@ def resolve_landing(url, timeout=15):
         return None
     ctx = ssl.create_default_context(cafile=certifi.where())
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
-            return r.geturl() if r.status < 400 else None
-    except Exception:
-        return None
+    return _retry_once(lambda: _final_url(req, timeout, ctx))
+
+
+def _final_url(req, timeout, ctx):
+    import urllib.request
+    with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+        return r.geturl() if r.status < 400 else None
+
+
+def _retry_once(call, pause=2):
+    """One retry for a NETWORK failure; an HTTP answer (404, 410...) is final.
+
+    Measured 2026-09-23: in one end-to-end run a single failed fetch of a KNIME
+    homepage returned None, the loan did not happen, and the entry split for
+    that run; the same call succeeded on the next. A lost fetch must not cost a
+    merge for a week - but a real 404 is an answer, not a flake."""
+    import urllib.error
+    for attempt in (1, 2):
+        try:
+            return call()
+        except urllib.error.HTTPError:
+            return None
+        except Exception:
+            if attempt == 2:
+                return None
+            time.sleep(pause)
 
 
 def redirect_matches(active, resolve, org_sites=frozenset()):
@@ -444,11 +465,11 @@ def resolve_github_repo(repo_key, token=None, timeout=15):
     if token:
         hdr["Authorization"] = "Bearer " + token
     req = urllib.request.Request(f"https://api.github.com/repos/{m[1]}/{m[2]}", headers=hdr)
-    try:
+
+    def call():
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
             return "github.com/" + json.load(r)["full_name"].lower()
-    except Exception:
-        return None
+    return _retry_once(call)
 
 
 def repo_rename_matches(active, resolve):

@@ -159,6 +159,29 @@ def main():
     check("edits between COUNT and dump (<0.5%) are tolerated",
           len(cw.p1324_rows(head + "".join(row(i) for i in range(997)), 1000)), 997)
 
+    # ---- _retry_once(): a network failure gets one more try; an HTTP answer is final
+    import urllib.error
+    tries = []
+
+    def flaky():
+        tries.append(1)
+        if len(tries) == 1:
+            raise OSError("connection reset")
+        return "ok"
+    check("network failure retried once, then succeeds", (cw._retry_once(flaky, pause=0), len(tries)), ("ok", 2))
+    tries.clear()
+
+    def gone():
+        tries.append(1)
+        raise urllib.error.HTTPError("u", 404, "Not Found", {}, None)
+    check("an HTTP 404 is an answer: no retry", (cw._retry_once(gone, pause=0), len(tries)), (None, 1))
+    tries.clear()
+
+    def down():
+        tries.append(1)
+        raise OSError("down")
+    check("two network failures give None, not a raise", (cw._retry_once(down, pause=0), len(tries)), (None, 2))
+
     # ---- cache_problems(): the /sources.html sensor
     good = {n: {"fetched_at": DAY(1), "error": None} for n in cw.CACHE_NAMES}
     check("all fresh: silent", cw.cache_problems(good, NOW), [])
