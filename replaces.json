@@ -245,6 +245,12 @@
    "vendor": "GO1",
    "confidence": "adjacent",
    "kind": "service"
+  },
+  {
+   "product": "Meridian Learning Management System",
+   "vendor": "Meridian Knowledge Solutions",
+   "confidence": "partial",
+   "kind": "software"
   }
  ],
  "ILIAS": [
@@ -252,6 +258,12 @@
    "product": "Blackboard",
    "vendor": "Anthology",
    "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Meridian Learning Management System",
+   "vendor": "Meridian Knowledge Solutions",
+   "confidence": "partial",
    "kind": "software"
   }
  ],
@@ -441,6 +453,12 @@
    "vendor": "Salesforce",
    "confidence": "adjacent",
    "kind": "software"
+  },
+  {
+   "product": "Dynatrace",
+   "vendor": "Dynatrace",
+   "confidence": "adjacent",
+   "kind": "software"
   }
  ],
  "Metabase": [
@@ -468,6 +486,12 @@
    "product": "Qlik Sense",
    "vendor": "Qlik",
    "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Information Builders (WebFOCUS)",
+   "vendor": "Cloud Software Group",
+   "confidence": "partial",
    "kind": "software"
   }
  ],
@@ -531,6 +555,12 @@
    "product": "Splunk",
    "vendor": "Cisco",
    "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Mindbreeze",
+   "vendor": "Mindbreeze",
+   "confidence": "adjacent",
    "kind": "software"
   }
  ],
@@ -877,6 +907,11 @@
    "vendor": "Spatial Networks",
    "confidence": "strong",
    "kind": "software"
+  },
+  {
+   "product": "eXFORMA / MobiTask",
+   "confidence": "partial",
+   "kind": "software"
   }
  ],
  "ODK": [
@@ -890,6 +925,11 @@
    "product": "Fulcrum",
    "vendor": "Spatial Networks",
    "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "eXFORMA / MobiTask",
+   "confidence": "partial",
    "kind": "software"
   }
  ],
@@ -2230,6 +2270,12 @@
    "vendor": "Broadcom",
    "confidence": "partial",
    "kind": "software"
+  },
+  {
+   "product": "Amazon Web Services",
+   "vendor": "Amazon",
+   "confidence": "partial",
+   "kind": "service"
   }
  ],
  "Opnsense": [
@@ -2248,6 +2294,12 @@
   {
    "product": "SonicWall",
    "vendor": "SonicWall",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Check Point",
+   "vendor": "Check Point",
    "confidence": "partial",
    "kind": "software"
   }
@@ -2290,6 +2342,12 @@
    "vendor": "Microsoft",
    "confidence": "partial",
    "kind": "software"
+  },
+  {
+   "product": "Information Builders (WebFOCUS)",
+   "vendor": "Cloud Software Group",
+   "confidence": "partial",
+   "kind": "software"
   }
  ],
  "pfSense": [
@@ -2308,6 +2366,12 @@
   {
    "product": "SonicWall",
    "vendor": "SonicWall",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Check Point",
+   "vendor": "Check Point",
    "confidence": "partial",
    "kind": "software"
   }
@@ -3499,6 +3563,602 @@
    "confidence": "partial",
    "kind": "software",
    "note": "the public catalogue (discovery) layer only, on Italy's SBN library network"
+  }
+ ],
+ "Open EDX": [
+  {
+   "product": "Blackboard",
+   "vendor": "Anthology",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Meridian Learning Management System",
+   "vendor": "Meridian Knowledge Solutions",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Knowage Server": [
+  {
+   "product": "Information Builders (WebFOCUS)",
+   "vendor": "Cloud Software Group",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Tableau",
+   "vendor": "Salesforce",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Power BI",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenELIS Global": [
+  {
+   "product": "STARLIMS",
+   "vendor": "STARLIMS",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "HAProxy": [
+  {
+   "product": "Citrix",
+   "vendor": "Cloud Software Group",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "NGINX Plus",
+   "vendor": "F5",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Traefik Proxy": [
+  {
+   "product": "NGINX Plus",
+   "vendor": "F5",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "FileSender": [
+  {
+   "product": "Kiteworks",
+   "vendor": "Kiteworks",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Accellion Kiteworks",
+   "vendor": "Kiteworks",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "LinShare": [
+  {
+   "product": "Kiteworks",
+   "vendor": "Kiteworks",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Accellion Kiteworks",
+   "vendor": "Kiteworks",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Box",
+   "vendor": "Box",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Waarp": [
+  {
+   "product": "Kiteworks",
+   "vendor": "Kiteworks",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "XiVO": [
+  {
+   "product": "Cisco Unified Communications Manager",
+   "vendor": "Cisco",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "3CX Phone System",
+   "vendor": "3CX",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Avaya Aura",
+   "vendor": "Avaya",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "ConvergeOne Call Center Solution",
+   "vendor": "ConvergeOne",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "geOrchestra": [
+  {
+   "product": "ArcGIS Enterprise",
+   "vendor": "Esri",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Lizmap": [
+  {
+   "product": "ArcGIS Enterprise",
+   "vendor": "Esri",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "ArcGIS Server",
+   "vendor": "Esri",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "BlueMind": [
+  {
+   "product": "Microsoft Exchange Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Open-Xchange": [
+  {
+   "product": "Microsoft Exchange Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "SOGo": [
+  {
+   "product": "Microsoft Exchange Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Zimbra Core": [
+  {
+   "product": "Microsoft Exchange Server",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Rocketchat": [
+  {
+   "product": "Slack",
+   "vendor": "Salesforce",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft Teams",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Indico": [
+  {
+   "product": "Cvent",
+   "vendor": "Cvent",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Wagtail": [
+  {
+   "product": "Sitecore",
+   "vendor": "Sitecore",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Adobe Experience Manager",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Optimizely CMS",
+   "vendor": "Optimizely",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Cachet": [
+  {
+   "product": "StatusPage",
+   "vendor": "Atlassian",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Asqatasun": [
+  {
+   "product": "Siteimprove",
+   "vendor": "Siteimprove",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Omeka S": [
+  {
+   "product": "CONTENTdm",
+   "vendor": "OCLC",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "AtoM - Access to Memory": [
+  {
+   "product": "Axiell Collections",
+   "vendor": "Axiell",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "PMB": [
+  {
+   "product": "SirsiDynix Symphony",
+   "vendor": "SirsiDynix",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Bonita": [
+  {
+   "product": "Pega Platform",
+   "vendor": "Pegasystems",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Camunda Enterprise",
+   "vendor": "Camunda",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "ProjeQtOr": [
+  {
+   "product": "Microsoft Project",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "eXo Platform": [
+  {
+   "product": "SharePoint",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "openDesk": [
+  {
+   "product": "Microsoft 365",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Google Workspace",
+   "vendor": "Google",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "GNU Health": [
+  {
+   "product": "Epic",
+   "vendor": "Epic Systems",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Cerner Millennium",
+   "vendor": "Oracle",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Robot Framework": [
+  {
+   "product": "OpenText UFT One",
+   "vendor": "OpenText",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "ITSM-NG": [
+  {
+   "product": "ServiceNow",
+   "vendor": "ServiceNow",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Lansweeper",
+   "vendor": "Lansweeper",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Track-It!",
+   "vendor": "BMC",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Ivanti Neurons",
+   "vendor": "Ivanti",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "CiviCRM": [
+  {
+   "product": "Blackbaud Raiser's Edge NXT",
+   "vendor": "Blackbaud",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Salesforce",
+   "vendor": "Salesforce",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apereo CAS": [
+  {
+   "product": "Okta",
+   "vendor": "Okta",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "LemonLDAP::NG": [
+  {
+   "product": "Okta",
+   "vendor": "Okta",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OWASP ZAP": [
+  {
+   "product": "Burp Suite Professional",
+   "vendor": "PortSwigger",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "PacketFence": [
+  {
+   "product": "Cisco Identity Services Engine",
+   "vendor": "Cisco",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Madis": [
+  {
+   "product": "OneTrust",
+   "vendor": "OneTrust",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "ShredOS": [
+  {
+   "product": "Blancco Drive Eraser",
+   "vendor": "Blancco",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "389 Directory Server": [
+  {
+   "product": "Oracle Directory Server Enterprise Edition",
+   "vendor": "Oracle",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Active Directory Domain Services",
+   "vendor": "Microsoft",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "AWX": [
+  {
+   "product": "Red Hat Ansible Automation Platform",
+   "vendor": "Red Hat",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "Centreon": [
+  {
+   "product": "SolarWinds",
+   "vendor": "SolarWinds",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "PRTG Network Monitor",
+   "vendor": "Paessler",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Nagios XI",
+   "vendor": "Nagios",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "XCP-ng": [
+  {
+   "product": "VMware vSphere",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "VMware ESXi",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenNebula Community Edition": [
+  {
+   "product": "VMware Cloud Foundation",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Proxmox Backup Server": [
+  {
+   "product": "Veeam Backup & Replication",
+   "vendor": "Veeam",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "WAPT Community": [
+  {
+   "product": "Microsoft Configuration Manager",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OCS Inventory": [
+  {
+   "product": "Lansweeper",
+   "vendor": "Lansweeper",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Medulla": [
+  {
+   "product": "Microsoft Configuration Manager",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Rancher": [
+  {
+   "product": "Red Hat OpenShift Container Platform",
+   "vendor": "Red Hat",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "VMware Tanzu",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "dokku": [
+  {
+   "product": "Heroku",
+   "vendor": "Salesforce",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "KNIME Analytics Platform": [
+  {
+   "product": "Alteryx Designer",
+   "vendor": "Alteryx",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "LabPlot": [
+  {
+   "product": "OriginPro",
+   "vendor": "OriginLab",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "SciDAVis": [
+  {
+   "product": "OriginPro",
+   "vendor": "OriginLab",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenBoard": [
+  {
+   "product": "SMART Notebook",
+   "vendor": "SMART Technologies",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Veyon": [
+  {
+   "product": "NetSupport School",
+   "vendor": "NetSupport",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Gravitee Community Edition": [
+  {
+   "product": "Google Apigee",
+   "vendor": "Google",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Hoppscotch": [
+  {
+   "product": "Postman",
+   "vendor": "Postman",
+   "confidence": "partial",
+   "kind": "software"
   }
  ]
 }

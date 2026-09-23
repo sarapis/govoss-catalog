@@ -37,7 +37,8 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
 - Variants: 12 linked to 9 cores (2 curated, 9 publisher `isBasedOn`, 1 fork - Bulgaria's
-  CKAN). `replaces.json`: 244 entries -> 314 products. Orphaned translation keys: 3.
+  CKAN). `replaces.json`: 303 keys, 300 active entries -> 343 products (+92 rows 2026-09-23, not yet
+  deployed); 65 products still have no alternative. Orphaned translation keys: 3.
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 closed, F8 at 5 of 8 gaps, F7
   code-complete and credential-blocked (now a Cloudflare credential).
 
@@ -79,15 +80,23 @@ govoss curates itself.** The UK was measured and has no catalogue (`sources.py:S
 GB entry, status `none-found`; GCHQ folded into it). A hand-picked list of 40 UK
 products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner).
 
-1. **Expand `replaces.json` by SHAPE, not sweep.** A seeded 60-entry sample put the
-   honestly-mappable share of the publiccode tier at ~20% (95% CI 12-32%); every hit was
-   a platform, CMS, ERP, workflow engine or security scanner. Read the `_README` first.
-2. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
+1. **Expand `replaces.json` by SHAPE, not sweep.** First pass done 2026-09-23 (+92 rows,
+   66 entries, 16 new products). Two routes worked: the DEMAND side (products in
+   `proprietary.json` with no alternative - 13 of 78 closed; the other 65 are verticals
+   with nothing in the catalogue, a real gap not a to-do) and the SUPPLY side (unmapped
+   entries that carry a Wikidata QID - recognisable software; 467 of them, ~50 mapped).
+   n8n was skipped on purpose: its Sustainable Use License is not open source.
+2. **SILL passes closed software through**: `Veeam Backup & Replication` ("non-free
+   license"), `Obsidian (logiciel)` (Freemium), `PDF24 Creator` (Freeware) are active
+   entries. A `filters.py` rule on those licence strings, pinned in `test_filters.py`.
+3. **KNIME Analytics Platform is two entries** (Munich: knime.com, no QID; SILL: knime.org,
+   Q639194) - the crosswalk's by-URL QID stamp missed the Munich row.
+4. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
    translation cost (~20-200 new entries per run), so only if someone will use it; it would
    also need a "missing Catalan" sensor on the same growth rule as orphans.
-3. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
+5. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
    undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
-4. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
+6. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
    Workers (JS). **Screen-reader testing** has never been done.
 
 ## Traps - looks broken but is not, and vice versa

@@ -284,6 +284,14 @@
    "seen_in": []
   },
   {
+   "name": "Alteryx Designer",
+   "description": "Visual data preparation and analytics workflows",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Amazon S3",
    "description": "Cloud object storage",
    "desc_src": "curated",
@@ -534,6 +542,14 @@
    "seen_in": []
   },
   {
+   "name": "Blackbaud Raiser's Edge NXT",
+   "description": "Fundraising and constituent relationship management",
+   "desc_src": "curated",
+   "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Blackboard",
    "description": "Virtual learning environment and courseware",
    "desc_src": "curated",
@@ -546,6 +562,14 @@
    "description": "Virtual classroom and web conferencing",
    "desc_src": "curated",
    "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Blancco Drive Eraser",
+   "description": "Certified data erasure for storage media",
+   "desc_src": "curated",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": []
   },
@@ -608,6 +632,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Burp Suite Professional",
+   "description": "Web application security testing",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Calendly",
@@ -734,6 +766,14 @@
    "description": "Hosted continuous integration",
    "desc_src": "curated",
    "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Cisco Identity Services Engine",
+   "description": "Network access control",
+   "desc_src": "curated",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": []
   },
@@ -866,6 +906,14 @@
    "seen_in": []
   },
   {
+   "name": "CONTENTdm",
+   "description": "Digital collections management and publishing",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Contentful",
    "description": "Headless content management delivered as a hosted service",
    "desc_src": "curated",
@@ -946,6 +994,14 @@
    "description": "Secure file transfer client",
    "desc_src": "curated",
    "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Cvent",
+   "description": "Event management and registration",
+   "desc_src": "curated",
+   "function": "citizen-services",
    "kind": "software",
    "seen_in": []
   },
@@ -1392,6 +1448,14 @@
    "seen_in": []
   },
   {
+   "name": "Google Apigee",
+   "description": "API management platform",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Google Docs",
    "description": "Hosted collaborative document editing",
    "desc_src": "curated",
@@ -1506,6 +1570,14 @@
    "description": "Mapping, geocoding and traffic data services",
    "desc_src": "curated",
    "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Heroku",
+   "description": "Platform-as-a-service application hosting",
+   "desc_src": "curated",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": []
   },
@@ -2192,6 +2264,14 @@
    "seen_in": []
   },
   {
+   "name": "NetSupport School",
+   "description": "Classroom management and student screen monitoring",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "New Relic",
    "description": "Hosted application performance monitoring",
    "desc_src": "curated",
@@ -2270,6 +2350,14 @@
    "seen_in": []
   },
   {
+   "name": "OneTrust",
+   "description": "Privacy and GDPR compliance management",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "OpenDataSoft",
    "description": "Open data portal and dataset publishing",
    "desc_src": "curated",
@@ -2286,6 +2374,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "OpenText UFT One",
+   "description": "Functional test automation",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "OPNsense Business Edition",
@@ -2324,6 +2420,14 @@
    "description": "Enterprise web server",
    "desc_src": "curated",
    "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "OriginPro",
+   "description": "Scientific data analysis and graphing",
+   "desc_src": "curated",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": []
   },
@@ -2386,6 +2490,14 @@
    ]
   },
   {
+   "name": "Pega Platform",
+   "description": "Business process management and case automation",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Pentaho Enterprise",
    "description": "Commercial edition of Pentaho data integration and BI",
    "desc_src": "curated",
@@ -2422,6 +2534,14 @@
   {
    "name": "Posit Workbench",
    "description": "Commercial hosted R and Python analysis environment",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Postman",
+   "description": "API development and testing",
    "desc_src": "curated",
    "function": "dev-tools",
    "kind": "software",
@@ -2780,6 +2900,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "SMART Notebook",
+   "description": "Interactive whiteboard lesson software",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Smartsheet",
