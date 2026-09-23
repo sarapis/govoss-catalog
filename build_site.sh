@@ -27,11 +27,10 @@ mkdir -p site site/fonts site/ca
 cp catalogue.html site/index.html
 # Catalan copy of the catalog (i18n.py); the other /ca/ pages are written by their builders
 cp catalogue.ca.html site/ca/index.html
-cp deploy-vercel.json site/vercel.json
 # Cloudflare Workers static assets (wrangler.site.jsonc): headers, redirects, and
 # what never to upload. Same rules as deploy-vercel.json, in Cloudflare's format.
 cp deploy-cloudflare/_headers deploy-cloudflare/_redirects deploy-cloudflare/.assetsignore site/
 cp fonts/*.woff2 fonts/OFL-*.txt site/fonts/
 # the real Sarapis mark, pulled from next.sarapis.org - not redrawn
 cp assets/sarapis-mark.png site/
-echo "site/ assembled: index.html + ca/index.html + vercel.json + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"
+echo "site/ assembled: index.html + ca/index.html + _headers + _redirects + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"

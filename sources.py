@@ -16,7 +16,7 @@ same thing three months later.
 # actually answers: canonical and hreflang links pointing at a domain that does
 # not resolve would send search engines and agents to nothing. The vercel.app
 # address keeps working after a switch.
-SITE_URL = "https://govoss-catalog.vercel.app"
+SITE_URL = "https://govoss.cat"
 
 # ---- ingested sources
 # Display names for the country codes carried on SOURCES and on every entry's

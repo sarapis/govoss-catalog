@@ -3,7 +3,7 @@
 The reference for the design system **as implemented**: what it is, why each part is the way
 it is, and what will break if you change it carelessly. Read it before touching the UI.
 
-**Live:** https://govoss-catalog.vercel.app · **Repo:** https://github.com/sarapis/govoss-catalog
+**Live:** https://govoss.cat · **Repo:** https://github.com/sarapis/govoss-catalog
 · **MCP:** https://mcp.govoss.cat
 
 > **Rewritten 2026-08-14.** The previous version described the Civic Tech Field Guide design
@@ -357,8 +357,10 @@ open site/index.html
 
 **Do not run `bash run.sh` to preview** — it is 16 steps and ~20 minutes of harvest against
 fourteen governments' infrastructure, and it deploys, commits and pushes at the end. For a real
-URL without touching production, `cd site && vercel deploy --yes` gives a preview; add `--prod`
-only when you mean it.
+preview without touching production, rebuild the pages and serve `site/` locally (the `site`
+config in `.claude/launch.json`: `python3 -m http.server 8791 --directory site`). Production is
+Cloudflare since 2026-09-23; `wrangler deploy --config wrangler.site.jsonc` IS a production deploy,
+so only when you mean it.
 
 `run.sh` deploys and commits automatically at the end of every successful run, gated on every
 earlier step exiting 0. Merge to `main` and Monday publishes it.

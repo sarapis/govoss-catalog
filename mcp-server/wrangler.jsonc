@@ -20,7 +20,7 @@
     // Read from the published site, not from a private copy. The server
     // therefore has no privileged access and cannot serve anything the public
     // data does not contain.
-    "CATALOG_ORIGIN": "https://govoss-catalog.vercel.app"
+    "CATALOG_ORIGIN": "https://govoss.cat"
   },
 
   "observability": { "enabled": true }

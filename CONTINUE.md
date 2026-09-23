@@ -8,7 +8,7 @@ records, and is not required reading.
 **State: 2,857 active entries · 488 set aside · 17 catalogues · 15 countries.**
 Pipeline is `bash run.sh` (18 steps, ~20 min; the order is load-bearing and
 documented at the top of the file). Scheduled Mondays 07:00. Live at
-https://govoss-catalog.vercel.app, deployed and current.
+https://govoss.cat (Cloudflare; MCP at https://mcp.govoss.cat), deployed and current.
 
 ## The one idea, if you remember nothing else
 
@@ -78,11 +78,13 @@ violation is silent.
 
 ## Waiting on a human — not work that was skipped
 
-- **A Vercel deploy token (F7).** Verified absent: `~/.config/govoss/` exists with
-  mode 700 and a README, and no `vercel-token`. Everything around it is done — the
+- **A Cloudflare API token (F7).** Hosting moved from Vercel to Cloudflare on
+  2026-09-23, so the credential is now a Cloudflare token with Workers Scripts:Edit
+  on Devin@sarapis.org's Account. Verified absent: `~/.config/govoss/` exists with
+  mode 700 and a README, and no `cloudflare-token`. Everything around it is done — the
   route is recorded, the page warns while on the stored login, the pre-flight
   validates content not exit status. One command:
-  `printf '%s' 'TOKEN' > ~/.config/govoss/vercel-token && chmod 600 ~/.config/govoss/vercel-token`
+  `printf '%s' 'TOKEN' > ~/.config/govoss/cloudflare-token && chmod 600 ~/.config/govoss/cloudflare-token`
 - **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) — a scope decision about
   what the catalogue *is*, and a bigger one than it looks: see Candidates.
 - **Three documents drafted and unsent** — a reply to an OpenForum Europe policy
@@ -115,25 +117,16 @@ violation is silent.
 5. **Screen-reader testing has never been done.** The audits are contrast sweeps
    plus keyboard. Until it runs, nothing should claim conformance.
 
-## govoss.cat — waiting on DNS (2026-09-23)
+## Hosting moved to Cloudflare, at govoss.cat (2026-09-23)
 
-Registered at Namecheap; `govoss.cat` and `www.govoss.cat` are added to the
-Vercel project. Decided: DNS on Cloudflare (sarapis.org account), English at the
-root, Catalan at `/ca/` as everywhere else. Once the zone is active:
-
-1. Cloudflare DNS, both **DNS only** (grey cloud): `A govoss.cat 76.76.21.21`,
-   `A www.govoss.cat 76.76.21.21`. Vercel verifies and issues certificates itself.
-2. Confirm it answers: `curl -sI https://govoss.cat/` must return 200 with the page.
-3. Flip `sources.py:SITE_URL` to `https://govoss.cat` - the ONE place the address
-   is written (hreflang, sitemap, robots, llms.txt, meta.json, citation). Only
-   after step 2, or canonical links point at nothing.
-4. Redirect the old address: in `deploy-vercel.json`, a `redirects` rule with
-   `"has": [{"type": "host", "value": "govoss-catalog.vercel.app"}]` to
-   `https://govoss.cat/:path*`, permanent. JSON paths included - agents follow.
-5. Worker: add `"routes": [{"pattern": "mcp.govoss.cat", "custom_domain": true}]`
-   to `mcp-server/wrangler.jsonc`, `npx wrangler deploy`, then point
-   `mcp_tools.py:ENDPOINT` and the four docs at `https://mcp.govoss.cat`.
-   `CATALOG_ORIGIN` can move to `https://govoss.cat` at the same time.
+Done and verified: the site is the `govoss-site` Worker at `govoss.cat` and
+`www.govoss.cat`; the MCP server is at `mcp.govoss.cat` reading from govoss.cat;
+`sources.py:SITE_URL` is `https://govoss.cat`; `govoss-catalog.vercel.app`
+308-redirects every path there; the domain is removed from the Vercel project.
+Left, all yours: the Cloudflare API token (F7, above), and deleting the OLD
+MCP Worker at `govoss-mcp.devin-31f.workers.dev` in the itspruvn.com account.
+`www` serves the same pages rather than redirecting to the apex; the hreflang
+links name the apex, so search engines treat that as canonical.
 
 ## Traps — looks broken but is not, and vice versa
 
@@ -196,7 +189,7 @@ root, Catalan at `/ca/` as everywhere else. Once the zone is active:
 Paste this into a fresh session in `~/Antigravity/govoss-catalog`:
 
 > I'm continuing work on ~/Antigravity/govoss-catalog, a union catalogue of
-> government open source software (live at https://govoss-catalog.vercel.app,
+> government open source software (live at https://govoss.cat,
 > repo github.com/sarapis/govoss-catalog).
 >
 > Read `/Users/devin/Antigravity/govoss-catalog/CONTINUE.md` first — it has the

@@ -4,11 +4,11 @@ A union catalogue of **government open source software**, harvested first-hand f
 national, municipal and international catalogues, normalised onto one schema, translated to
 English, categorised by function, de-duplicated, and liveness-monitored.
 
-**Live:** [catalog](https://govoss-catalog.vercel.app/)
-· [sources & build status](https://govoss-catalog.vercel.app/sources.html)
-· [API & MCP](https://govoss-catalog.vercel.app/api.html)
-· [entries.json](https://govoss-catalog.vercel.app/entries.json)
-· [llms.txt](https://govoss-catalog.vercel.app/llms.txt)
+**Live:** [catalog](https://govoss.cat/)
+· [sources & build status](https://govoss.cat/sources.html)
+· [API & MCP](https://govoss.cat/api.html)
+· [entries.json](https://govoss.cat/entries.json)
+· [llms.txt](https://govoss.cat/llms.txt)
 
 **MCP server:** `https://mcp.govoss.cat` — public, keyless, five tools.
 
@@ -20,7 +20,7 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 | Functional categories | 19, all 233 source category values explicitly mapped |
 | Repos reachable | 24 confirmed dead · 39 archived |
 | Set aside | 453 flagged, exported with `excluded` — 351 have no description upstream |
-| Procurement mappings | 194 entries → 290 proprietary products · [browsable](https://govoss-catalog.vercel.app/products.html) |
+| Procurement mappings | 194 entries → 290 proprietary products · [browsable](https://govoss.cat/products.html) |
 | Accessibility | WCAG 2.1 AA re-audited 2026-08-13; zero failures, lowest ratio 4.9:1 |
 
 ## What makes it different
@@ -66,7 +66,7 @@ rendered from `schedule/*.plist.template` rather than checked in verbatim, becau
 does not expand `~` inside a plist and a checked-in copy of somebody's home directory drifts
 from the one actually running.
 
-**The run publishes and records itself.** `run.sh` deploys `site/` to Vercel and then commits
+**The run publishes and records itself.** `run.sh` deploys `site/` to Cloudflare and then commits
 and pushes the run's data output — both gated on every earlier step succeeding, so a run with
 a failed step publishes nothing, commits nothing, and leaves the last good copy up. What is
 committed here is what is live. `generated_at` in `/meta.json` is the freshness signal, and
@@ -88,11 +88,11 @@ committed here is what is live. `generated_at` in `/meta.json` is the freshness 
 | `liveness.py` | GitHub GraphQL + GitLab APIs + per-host HEAD; diffs vs last run |
 | `build_ui.py` → `build_site.sh` → `export_json.py` | the page, the deploy dir, the JSON |
 | `runlog.py` → `build_sources.py` → `build_api.py` → `build_products.py` | run history; sources page (which absorbed the status page); API page; the proprietary-software page |
-| `deploy` → `record` | publish `site/` to Vercel, then commit + push the data — both gated on every earlier step passing |
+| `deploy` → `record` | publish `site/` to Cloudflare, then commit + push the data — both gated on every earlier step passing |
 
 ## Data model
 
-Static files, no backend. `site/` is assembled from tracked sources and deployed to Vercel.
+Static files, no backend. `site/` is assembled from tracked sources and served by Cloudflare (an assets-only Worker) at govoss.cat.
 
     /entries.json              ALL rows incl. set-aside, flagged `excluded`
     /meta.json                 category enum, sources, counts, known gaps
@@ -128,7 +128,7 @@ Two contributions are worth more than the rest:
 **A source we've missed.** The pattern that generalises is *find the machine route the
 catalogue's own site is built from, and read that* — an API, a bulk export, a file in git —
 never a scraped rendered page. Every one of the 17 was found that way. Check
-[`/sources.json`](https://govoss-catalog.vercel.app/sources.json) first: it publishes 13
+[`/sources.json`](https://govoss.cat/sources.json) first: it publishes 13
 catalogues already checked and **rejected**, with the reason, precisely so nobody spends the
 same twenty minutes twice. A live endpoint is not a working source — `code.gov` returns HTTP
 200 and is retired; India's OpenForge has an API, 1,502 projects and zero code.
