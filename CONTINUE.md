@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 8 suites, 315 checks
+for t in test_*.py; do python3 $t; done                     # 8 suites, 335 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,7 +32,7 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **8 suites, 315 checks, all passing.** Manual on purpose.
+- **8 suites, 335 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
@@ -86,9 +86,13 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    with nothing in the catalogue, a real gap not a to-do) and the SUPPLY side (unmapped
    entries that carry a Wikidata QID - recognisable software; 467 of them, ~50 mapped).
    n8n was skipped on purpose: its Sustainable Use License is not open source.
-2. **SILL passes closed software through**: `Veeam Backup & Replication` ("non-free
-   license"), `Obsidian (logiciel)` (Freemium), `PDF24 Creator` (Freeware) are active
-   entries. A `filters.py` rule on those licence strings, pinned in `test_filters.py`.
+2. **Licence filter shipped 2026-09-23, first live on the next run** (`filters.py`
+   `LICENCE_RULES`): 21 rows flagged - 12 `closed-licence` (all SILL: Veeam, Obsidian x2,
+   PDF24, Postman, n8n, IrfanView, Balabolka, HEC-RAS, Wink, silhouette, FreeFileSync) and
+   9 `non-commercial-licence` (7 DPG content items, 2 SILL). Verify on that run that the
+   flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
+   genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
+   and three publiccode-tier NC entries the publiccode exemption protects.
 3. **KNIME Analytics Platform is two entries** (Munich: knime.com, no QID; SILL: knime.org,
    Q639194) - the crosswalk's by-URL QID stamp missed the Munich row.
 4. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly

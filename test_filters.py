@@ -111,6 +111,38 @@ CASES = [
      r("Products.MeetingNamur", short_desc="Namur council deliberations profile"),
      (False, None)),
 
+    # ---- licence: the source's own claim. Real SILL / DPG strings.
+    ("non-free license", r("Veeam", license="non-free license"), (True, "closed-licence")),
+    ("Freemium", r("Obsidian", license="Freemium"), (True, "closed-licence")),
+    ("FREEWARE", r("Balabolka", license="FREEWARE"), (True, "closed-licence")),
+    ("gratis software", r("IrfanView", license="gratis software"), (True, "closed-licence")),
+    ("Propriétaire", r("Postman", license="Propriétaire"), (True, "closed-licence")),
+    ("EULA", r("silhouette", license="EULA"), (True, "closed-licence")),
+    ("no longer free", r("FreeFileSync", license="N'est plus libre et open-source"),
+     (True, "closed-licence")),
+    ("n8n's licence pointer",
+     r("n8n", license="https://github.com/n8n-io/n8n/blob/master/LICENSE.md"),
+     (True, "closed-licence")),
+    ("CC NC, SILL spelling", r("CodEx", license="cc BY-NC-SA 4.0"),
+     (True, "non-commercial-licence")),
+    ("CC NC, SPDX", r("WaPOR", license="CC-BY-NC-SA-4.0"), (True, "non-commercial-licence")),
+    ("PolyForm Noncommercial", r("x", license="PolyForm-Noncommercial-1.0.0"),
+     (True, "non-commercial-licence")),
+    ("licence beats no-description", r("x", license="Freeware", short_desc=""),
+     (True, "closed-licence")),
+    # ⚠ Stale, not closed: Elasticsearch and Kibana added AGPL-3.0 in 2024.
+    ("SSPL + Elastic is NOT flagged", r("Elasticsearch", license="SSPL 1.0 + Elastic Licence 2.0"),
+     (False, None)),
+    # ⚠ Unknown is not closed.
+    ("N/A is NOT flagged", r("Debian", license="N/A"), (False, None)),
+    ("Je ne sais pas is NOT flagged", r("PDFgear", license="Je ne sais pas"), (False, None)),
+    ("free software is NOT freeware", r("x", license="Free software"), (False, None)),
+    ("GNU FSDG", r("x", license="GNU FSDG"), (False, None)),
+    ("CC BY-SA", r("x", license="CC-BY-SA-4.0"), (False, None)),
+    ("a licence containing 'nc' inside a word", r("x", license="Licence MIT, Inc."), (False, None)),
+    ("publiccode with an NC licence is NOT filtered",
+     r("Dove voto?", tier="publiccode", license="PolyForm-Noncommercial-1.0.0"), (False, None)),
+
     # ---- ordinary software passes
     ("plain software", r("QGIS"), (False, None)),
     ("a name merely containing 'action'", r("transaction-manager"), (False, None)),

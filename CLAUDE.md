@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 8 suites, 315 checks, all manual
+for t in test_*.py; do python3 $t; done     # 8 suites, 335 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -114,7 +114,9 @@ State machine pinned by `test_liveness_strikes.py`.
 `filters.py` FLAGS, never deletes (`excluded` + `exclude_reason`). Anything with a
 `publiccode.yml` is never filtered. `fork: true` is evidence; names are not. Two rules were
 removed after they caught real products (`Products.PloneMeeting`, a `-german` build) - do not
-re-add them. Pinned by `test_filters.py`.
+re-add them. Pinned by `test_filters.py`. Licence rules read the SOURCE'S claim (`closed-licence`,
+`non-commercial-licence`); never flag SSPL/Elastic (stale for Elasticsearch, now AGPL) or an
+unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
 
 ## Export, replaces, products
 
@@ -207,7 +209,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Eight suites, 315 checks, **all manual** - a test that can fail the weekly publish is one someone
+Eight suites, 335 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it

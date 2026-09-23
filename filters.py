@@ -57,6 +57,30 @@ RULES = [
     # of a real product — software, not a resource bundle.
 ]
 
+# licence string -> reason. These read the SOURCE'S OWN licence claim, so they
+# are evidence, not a guess. SILL's field is free text (156 distinct strings in
+# 2026-09) and lists software French administrations use, not only free
+# software: Veeam ("non-free license"), Obsidian ("Freemium"), PDF24
+# ("Freeware"), Postman ("Propriétaire").
+LICENCE_RULES = [
+    ("closed-licence", re.compile(r"""
+        non-free
+      | \bfree\s?ware\b | \bshareware\b | \bfreemium\b | \bgratis\b
+      | \bpropri[ée]taire\b | \bproprietary\b | ^eula$
+      | n'est\ plus\ libre | no\ longer\ (free|open)
+      # n8n's field is a pointer to its LICENSE.md, which is the Sustainable Use
+      # License (read 2026-09-23) - source-available, not open source.
+      | github\.com/n8n-io/n8n/.*license
+    """, re.X | re.I)),
+    # Open source permits commercial use (OSD 6), so an NC licence is not one.
+    ("non-commercial-licence", re.compile(r"\bnc\b|non-?commercial", re.I)),
+    # NOTE: do NOT add SSPL / Elastic License here. SILL's "SSPL 1.0 + Elastic
+    # Licence 2.0" for Elasticsearch and Kibana is stale - both added AGPL-3.0
+    # in 2024 - and would remove software that is open today.
+    # NOTE: do NOT flag "N/A", "NSP", "Je ne sais pas". Unknown is not closed:
+    # Debian and CentOS carry "N/A".
+]
+
 
 def classify(rec):
     """-> (excluded: bool, reason: str|None)"""
@@ -68,6 +92,11 @@ def classify(rec):
 
     if rec.get("is_fork"):
         return True, "upstream-fork"
+
+    lic = (rec.get("license") or "").strip()
+    for reason, pat in LICENCE_RULES:
+        if pat.search(lic):
+            return True, reason
 
     name = (rec.get("name") or "").strip()
     for reason, pat in RULES:
