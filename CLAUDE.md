@@ -964,6 +964,59 @@ correct, so the default stands.
 on the *same* row — which reported "2 rows" for a correct single-row layout twice
 during this work. Compare `toolbar.height` against the tallest child instead.
 
+### Recently added, and `cache/_first_seen.json` (2026-09-22)
+
+Nothing recorded when an entry arrived. `history.json` carried the COUNT — `+16` —
+but not which sixteen, so "what's new" could not be shown or even asked.
+`first_seen.py` now stamps `cache/_first_seen.json` after dedupe, and it is
+committed with the rest of `cache/` by the `record` step. Same contract as
+`_fetched.json`: a date is written ONCE and never overwritten, and the file is
+sorted so a weekly diff is ~20 lines.
+
+⚠ **`None` means BASELINE and is not the same as absent.** Entries present at the
+first weekly run carry `null` — they existed before the record began, and dating
+them to the day the backfill ran would assert an arrival nobody observed. An id
+carrying `null` is *known* and never reported as new; an id **missing** from the
+file is genuinely unseen and gets stamped. Conflating them dated the entire
+3,070-entry baseline to the backfill date on the first attempt. Current state:
+**3,070 baseline, 119 dated across 9 weekly runs.**
+
+⚠ **The backfill counts only `Data:` commits.** git holds 27 revisions of
+`catalog.json`, but 16 are dated 2026-08-11 — the project being *built*, not
+entries arriving. Treating those as observations dated 1,185 entries to a day on
+which nothing was harvested. A `Data:` commit is written by `record` at the end of
+a run, so it is the only revision where the catalogue itself changed.
+
+⚠ **`build_ui._fs_ident()` must match `first_seen.ident()` exactly** (`repo_key`,
+falling back to `name|source`). If they drift every entry reads as undated and the
+strip silently empties.
+
+**The strip shows 10, and that is why the sort exists.** `Recently added` sits
+where the API banner used to, above the stat tiles: ten cards, horizontally
+scrollable, with `See all, newest first` switching the table to the matching sort.
+A strip you can read beats one you have to work through.
+
+⚠ **The strip's tie-break must match the table's `recent` sort exactly.** Python's
+`reverse=True` on a `(date, name)` tuple reverses BOTH keys, so the strip led with
+`VC Solar` while the table led with `bytype` — same date, opposite name order, and
+"See all" landed the reader somewhere the strip did not start. Sort by name
+ascending, then stable-sort by date descending, which is what the JS does.
+
+⚠ **Undated entries sort LAST under `recent`, never first.** `fs` is `null` for the
+3,070 baseline, and a falsy-to-empty-string comparison floats them to the top as if
+they were the newest thing in the catalogue.
+
+**The API note moved under the search field and shrank** — and that is compatible
+with agent affordance 3 of 4, not a violation of it: the searchbar is in the hero,
+so the note is now EARLIER in the DOM, which is what that affordance asks for. It
+must stay visible text; a tooltip or a collapsed disclosure would end it.
+
+⚠ **The strip's arrow-disabled test needs a tolerance, not `<= 0`.** The track
+carries 2px of padding plus `scroll-snap-align`, and rests at `scrollLeft` **2** —
+measured — so an exact test left the left arrow enabled on a strip already at its
+start. `.rbtn`/`.rall` also had to be added to the 44px touch-target rule; they
+were 30px.
+
 ### The toolbar, the drawer, and what "set aside" now says (2026-09-21)
 
 - **Source country labels are country NAMES** ("Germany", not "DE"), from

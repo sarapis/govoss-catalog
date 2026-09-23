@@ -69,6 +69,23 @@ def _rp_qual(m):
 # sources.py and covered none of the other 9, so those rendered in the sidebar
 # and on entry cards as raw keys - "DK/os2" rather than "OS2 Denmark".
 SRC_LABEL = {k: v["label"] for k, v in _S.SOURCES.items()}
+
+# When each entry first appeared, from cache/_first_seen.json (first_seen.py).
+# ⚠ A value of None is BASELINE — present before the record began — and is not
+# the same as a missing key. Both render as "no date" here, but the distinction
+# is what stops first_seen.py restamping 3,070 entries every run; see its
+# docstring. Absent file degrades to no dates at all, which costs the "recently
+# added" ordering and nothing else.
+try:
+    with open(f"{OUT}/cache/_first_seen.json") as _fh:
+        _FIRST_SEEN = json.load(_fh)
+except Exception:
+    _FIRST_SEEN = {}
+
+
+def _fs_ident(r):
+    """Must match first_seen.ident() exactly, or every entry reads as undated."""
+    return r.get("repo_key") or "%s|%s" % (r.get("name"), r.get("source"))
 CLAIM = {
     "IT/developers-italia": "built for public administration",
     "DE/openCode": "built for public administration",
@@ -85,6 +102,7 @@ for r in c:
     _rp = _replaces(r)
     rows.append({
         "n": r.get("name") or "(unnamed)",
+        "fs": _FIRST_SEEN.get(_fs_ident(r)),
         "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
         "cs": r.get("countries") or ([r["country"]] if r.get("country") else []),
         "mc": r.get("merged_count", 1),
@@ -181,6 +199,28 @@ prods = collections.Counter(p for r in _inc for p in (r["rp"] or []))
 PFACETS = json.dumps([[k, k, n] for k, n in
                       sorted(prods.items(), key=lambda kv: (-kv[1], kv[0].lower()))])
 
+# ---- Recently added: the 10 newest ACTIVE entries, newest first.
+#
+# Ten, not the whole 119: a strip you can read is worth more than one you have to
+# work through, and the full list is reachable by sorting the table on "Recently
+# added" — which is why that sort option exists rather than a longer strip.
+#
+# Ties inside a date are broken by name so the order is deterministic; a run that
+# adds 20 entries on one day would otherwise reshuffle the strip on every build
+# for no reason, the same churn rule the committed JSON follows.
+# ⚠ Tie-break must match the page's `recent` sort EXACTLY, or "See all, newest
+# first" lands the reader somewhere the strip did not start. `reverse=True` on a
+# (date, name) tuple reverses BOTH keys, so the strip led with VC Solar while the
+# table led with bytype — same date, opposite name order. Sort by name ascending
+# first, then stable-sort by date descending, which is what the JS does.
+_dated = sorted((r for r in _inc if r.get("fs")), key=lambda r: r["n"].lower())
+_dated.sort(key=lambda r: r["fs"], reverse=True)
+NEWEST = json.dumps([
+    {"n": r["n"], "c": r["c"], "s": r["s"], "fs": r["fs"],
+     "u": r.get("u"), "d": (r.get("d") or "")[:110]}
+    for r in _dated[:10]
+])
+
 DATA = json.dumps(rows, separators=(",", ":"))
 
 # The Source country facet is BACK (2026-09-21), after being removed for two
@@ -276,6 +316,7 @@ SUBS = {
     "__FFACETS__": FFACETS,
     "__SFACETS__": SFACETS,
     "__CCFACETS__": CCFACETS,
+    "__NEWEST__": NEWEST,
     "__SOPTS__": SOPTS,
     "__N_EX_NODESC__": "{:,}".format(n_ex_nodesc),
     "__N_EX_NOTSOFT__": "{:,}".format(n_ex_notsoft),

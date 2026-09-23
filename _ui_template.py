@@ -23,6 +23,45 @@ PAGE_CSS = """
   font-size:16px;color:var(--ink);min-width:0;padding:10px 0;}
 .searchbar input::placeholder{color:var(--ink-faint);}
 
+/* The API note: small, but plain visible text. It is an agent affordance, so it
+   may not become a tooltip, a collapsed disclosure or an image. */
+.apinote{margin:10px 0 0;font-size:12.5px;line-height:1.7;color:var(--ink-600);
+  max-width:760px;}
+.apinote b{color:var(--ink);font-weight:600;}
+.apinote a{margin-left:8px;font-family:var(--font-mono,ui-monospace,monospace);
+  font-size:12px;}
+.apinote a.more{font-family:inherit;font-size:12.5px;font-weight:600;}
+
+/* Recently added. The track is the ONLY thing that scrolls sideways on this page
+   - it is its own overflow container, so the body never does. */
+.recent{margin:0 0 20px;}
+.rhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-bottom:10px;}
+.rhead h2{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-600);margin:0;}
+.rnav{display:flex;gap:6px;align-items:center;}
+.rbtn{background:var(--surface);border:1px solid var(--border);border-radius:6px;
+  width:30px;height:30px;line-height:1;cursor:pointer;color:var(--ink-600);
+  font-size:14px;}
+.rbtn:hover{background:var(--bg-alt);color:var(--ink);}
+.rbtn[disabled]{opacity:.35;cursor:default;}
+.rbtn:focus-visible,.rall:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.rall{background:none;border:0;padding:0 0 0 6px;cursor:pointer;font:inherit;
+  font-size:12.5px;font-weight:600;color:var(--accent);}
+.rtrack{display:flex;gap:10px;list-style:none;margin:0;padding:2px;
+  overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x proximity;
+  overscroll-behavior-x:contain;}
+.rcard{flex:0 0 232px;scroll-snap-align:start;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r-card);padding:12px 14px;
+  display:flex;flex-direction:column;gap:5px;min-width:0;}
+.rcard .rt{font-weight:600;font-size:14px;line-height:1.3;overflow-wrap:anywhere;}
+.rcard .rt a{color:inherit;}
+.rcard .rd{font-size:12.5px;line-height:1.45;color:var(--ink-600);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.rcard .rm{margin-top:auto;padding-top:4px;font-size:11px;color:var(--ink-faint);
+  display:flex;gap:6px;flex-wrap:wrap;}
+@media (prefers-reduced-motion:reduce){.rtrack{scroll-behavior:auto;}}
+
 /* ---- agent banner: must sit directly above the tiles, early in the DOM ---- */
 .apibar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;
   background:var(--surface);border:1px solid var(--ink);border-radius:var(--r-med);
@@ -237,7 +276,10 @@ PAGE_CSS = """
   .colhead{display:none;}
   /* every hit target, not just the obvious ones - .fmore ("Show all N") and the
      Clear all button were 28px and 18px */
-  .btn,.fopt,.tog,.sel,.fmore,.facets .fhead button{min-height:44px;}
+  .btn,.fopt,.tog,.sel,.fmore,.facets .fhead button,
+  .rbtn,.rall{min-height:44px;}
+  /* square, or a 44px-tall 30px-wide arrow reads as a mis-sized button */
+  .rbtn{min-width:44px;}
   .facets .fhead button,.fmore{display:inline-flex;align-items:center;}
 }
 """
@@ -276,21 +318,37 @@ BODY = """
              aria-label="Search the catalog">
       <button class="btn btn-primary" id="qbtn">Search</button>
     </div>
+    <!-- Agent affordance 3 of 4. It used to sit above the stat tiles; directly
+         under the search field is EARLIER in the DOM, so a text extraction hits
+         it sooner, not later. Smaller, because it is a standing note rather than
+         an announcement — but it must stay visible text, not a tooltip or a
+         collapsed disclosure, or it stops being an affordance at all. -->
+    <p class="apinote">
+      <b>__ICON_CODE__ Building something?</b> Don&rsquo;t scrape this page &mdash; the
+      whole catalog is one request:
+      <a href="/entries.json">/entries.json</a>
+      <a href="/sources.json">/sources.json</a>
+      <a href="/meta.json">/meta.json</a>
+      <a class="more" href="/api.html">API and MCP &rarr;</a>
+    </p>
   </div>
 </div>
 
 <div class="wrap">
-  <!-- Agent affordance 3 of 4: this banner must stay directly above the stat
-       tiles and early in the DOM, so a text extraction hits it in the first
-       screenful. Moved below the fold, it stops doing its job. -->
-  <div class="apibar">
-    <span class="lbl">__ICON_CODE__ Building something?</span>
-    <span class="msg">Don't scrape this page. The whole catalog is one request:
-      <span class="links"><a href="/entries.json">/entries.json</a>
-      <a href="/sources.json">/sources.json</a>
-      <a href="/meta.json">/meta.json</a></span></span>
-    <a class="btn btn-ghost" href="/api.html">API and MCP</a>
-  </div>
+  <!-- Recently added. Hidden entirely when there are no dated entries rather
+       than rendered empty: a fresh checkout has no cache/_first_seen.json, and an
+       empty strip claiming "recently added" is worse than no strip. -->
+  <section class="recent" id="recent" hidden>
+    <div class="rhead">
+      <h2>Recently added</h2>
+      <div class="rnav">
+        <button type="button" class="rbtn" id="rprev" aria-label="Scroll left">&larr;</button>
+        <button type="button" class="rbtn" id="rnext" aria-label="Scroll right">&rarr;</button>
+        <button type="button" class="rall" id="rall">See all, newest first</button>
+      </div>
+    </div>
+    <ul class="rtrack" id="rtrack"></ul>
+  </section>
 
   <div class="stats">
     <div class="stat"><b>__N_ENTRIES__</b><span>entries</span></div>
@@ -318,6 +376,7 @@ BODY = """
           <option value="catalogs">Sort: most catalogs</option>
           <option value="name">Sort: name A&ndash;Z</option>
           <option value="country">Sort: country</option>
+          <option value="recent">Sort: recently added</option>
         </select>
         <select class="sel" id="lic" aria-label="Filter by licence">
           <option value="">Any licence</option>__LOPTS__
@@ -403,6 +462,7 @@ SCRIPT = """
 var DATA = __DATA__;
 var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var CCFACETS = __CCFACETS__;
+var NEWEST = __NEWEST__;
 // code -> display name, derived from the facet labels so there is ONE source for
 // them. The flag is stripped: the label is "<flag> Germany" and sorting on that
 // would order by emoji codepoint, not by name.
@@ -530,6 +590,14 @@ function current() {
   // list read as unsorted. Sort on what the reader can see.
   else if (sort === 'country') out.sort(function (a, b) {
     return ccLabel(a.c).localeCompare(ccLabel(b.c)) || a.n.localeCompare(b.n); });
+  // Recently added. UNDATED ENTRIES SORT LAST, never first: `fs` is null for the
+  // 3,070 that predate the record, and an empty string would sort them to the top
+  // as if they were the newest thing in the catalogue.
+  else if (sort === 'recent') out.sort(function (a, b) {
+    if (!a.fs && !b.fs) return a.n.localeCompare(b.n);
+    if (!a.fs) return 1;
+    if (!b.fs) return -1;
+    return b.fs.localeCompare(a.fs) || a.n.localeCompare(b.n); });
   else out.sort(function (a, b) { return (b.cc2 || 1) - (a.cc2 || 1) || b.ub - a.ub || a.n.localeCompare(b.n); });
   return out;
 }
@@ -687,6 +755,56 @@ el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
   if (!m) return;
   var want = decodeURIComponent(m[1].replace(/\\+/g, ' ')).toUpperCase();
   if (CCFACETS.some(function (f) { return f[0] === want; })) activeFacets.add('cc:' + want);
+})();
+
+// ---- Recently added strip.
+(function () {
+  if (!NEWEST.length) return;            // stays hidden; see the markup comment
+  el('recent').hidden = false;
+  el('rtrack').innerHTML = NEWEST.map(function (r) {
+    var title = r.u
+      ? '<a href="' + esc(r.u) + '" target="_blank" rel="noopener">' + esc(r.n) + '</a>'
+      : esc(r.n);
+    return '<li class="rcard"><div class="rt">' + title + '</div>' +
+      (r.d ? '<div class="rd">' + esc(r.d) + '</div>' : '') +
+      '<div class="rm"><span>' + esc(ccLabel(r.c)) + '</span>' +
+      '<span>&middot;</span><span>' + esc(r.s) + '</span>' +
+      '<span>&middot;</span><span>' + esc(r.fs) + '</span></div></li>';
+  }).join('');
+
+  var track = el('rtrack');
+  function page(dir) {
+    // Scroll by a whole card plus its gap, so a card never lands half-cut.
+    var card = track.querySelector('.rcard');
+    var step = card ? card.getBoundingClientRect().width + 10 : 240;
+    track.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
+  }
+  el('rprev').onclick = function () { page(-1); };
+  el('rnext').onclick = function () { page(1); };
+
+  function arrows() {
+    // Disabled at the ends rather than hidden, so the control does not move.
+    //
+    // ⚠ TOLERANCE, not `<= 0`. The track carries 2px of padding and
+    // scroll-snap-align, and it settles at scrollLeft 2 at rest — measured, so
+    // an exact test left the left arrow enabled on a strip already at its start.
+    // Sub-pixel rounding puts the right end a fraction short for the same reason.
+    var EPS = 4;
+    var max = track.scrollWidth - track.clientWidth;
+    el('rprev').disabled = track.scrollLeft <= EPS;
+    el('rnext').disabled = track.scrollLeft >= max - EPS;
+  }
+  track.addEventListener('scroll', arrows);
+  window.addEventListener('resize', arrows);
+  arrows();
+
+  // "See all" is the strip's whole reason for being only ten long: it hands the
+  // reader the full list in the table, ordered the same way.
+  el('rall').onclick = function () {
+    el('sort').value = 'recent';
+    reset();
+    el('list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 })();
 
 renderFacets();

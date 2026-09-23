@@ -17,6 +17,9 @@
 #                functions for when the UI toggle reveals them
 #   dedupe       merges records for the same software (QID, then repo URL). Must
 #                run AFTER filters so forks are already gone, and BEFORE export
+#   first seen   stamps cache/_first_seen.json with the date each entry first
+#                appeared; must run AFTER dedupe so the date attaches to the
+#                surviving identity. Backfilled once from the weekly Data: commits
 #   liveness     diffs against the previous liveness.json to find newly-dead repos
 #   build_ui     regenerates catalogue.html from the finished catalog.json
 #   build_site   assembles site/ from tracked sources (html + vercel.json)
@@ -99,6 +102,10 @@ step "taxonomy"     "$PY" -u taxonomy.py
 step "crosswalk"    "$PY" -u crosswalk.py
 step "filters"      "$PY" -u filters.py
 step "dedupe"       "$PY" -u dedupe.py
+# AFTER dedupe, so an entry is stamped under its surviving identity rather than
+# under a row that is about to be merged away. Never fails the run: a missing
+# date costs the "recently added" ordering, nothing else.
+step "first seen"   "$PY" -u first_seen.py
 step "liveness"     "$PY" -u liveness.py
 step "build page"   "$PY" -u build_ui.py
 step "assemble site" bash build_site.sh
