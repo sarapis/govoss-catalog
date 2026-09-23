@@ -125,8 +125,7 @@ Done and verified: the site is the `govoss-site` Worker at `govoss.cat` and
 308-redirects every path there; the domain is removed from the Vercel project.
 Left, all yours: the Cloudflare API token (F7, above), and deleting the OLD
 MCP Worker at `govoss-mcp.devin-31f.workers.dev` in the itspruvn.com account.
-`www` serves the same pages rather than redirecting to the apex; the hreflang
-links name the apex, so search engines treat that as canonical.
+`www.govoss.cat` 301-redirects to the apex through its own Worker (`govoss-www`).
 
 ## Traps — looks broken but is not, and vice versa
 

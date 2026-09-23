@@ -8,9 +8,9 @@
   "account_id": "a8e2fa072ede7a6389e8db8cad00f774",
   // The public addresses; Cloudflare creates their DNS records and certificates.
   // workers.dev stays on as a fallback and for testing a deploy.
+  // www.govoss.cat belongs to the govoss-www Worker, which redirects it here.
   "routes": [
-    { "pattern": "govoss.cat", "custom_domain": true },
-    { "pattern": "www.govoss.cat", "custom_domain": true }
+    { "pattern": "govoss.cat", "custom_domain": true }
   ],
   "workers_dev": true,
   "compatibility_date": "2025-07-01",

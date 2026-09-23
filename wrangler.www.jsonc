@@ -1,0 +1,12 @@
+{
+  "$schema": "mcp-server/node_modules/wrangler/config-schema.json",
+  // www.govoss.cat -> govoss.cat (deploy-cloudflare/www-redirect.js). Holds no
+  // data, so run.sh does not redeploy it; deploy by hand if the script changes:
+  //   mcp-server/node_modules/.bin/wrangler deploy --config wrangler.www.jsonc
+  "name": "govoss-www",
+  "account_id": "a8e2fa072ede7a6389e8db8cad00f774",
+  "compatibility_date": "2025-07-01",
+  "main": "deploy-cloudflare/www-redirect.js",
+  "routes": [{ "pattern": "www.govoss.cat", "custom_domain": true }],
+  "workers_dev": false
+}

@@ -603,8 +603,13 @@ said "Operational".
 ### Hosting: Cloudflare (since 2026-09-23; it was Vercel)
 
 The site is an assets-only Worker (`govoss-site`, `wrangler.site.jsonc`) serving
-`site/`, at `govoss.cat` and `www.govoss.cat` (custom domains - Cloudflare owns
-their DNS records and certificates). DNS, site and the MCP Worker share
+`site/` at `govoss.cat` (a custom domain - Cloudflare owns its DNS record and
+certificate). `www.govoss.cat` is a separate tiny Worker (`govoss-www`,
+`wrangler.www.jsonc`, `deploy-cloudflare/www-redirect.js`) that 301s every path to
+the apex, query kept, WITH `Access-Control-Allow-Origin` on the redirect so a
+cross-origin browser fetch survives it. A Worker because the deploy login cannot
+edit zone rules; separate so the site itself runs no script per request. run.sh
+does not redeploy it (it holds no data). DNS, site and the MCP Worker share
 Devin@sarapis.org's Account.
 
 - **Headers and redirects are `deploy-cloudflare/_headers` + `_redirects`**,

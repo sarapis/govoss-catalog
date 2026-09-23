@@ -306,10 +306,15 @@ def main():
     cfg = read(os.path.join(HERE, "wrangler.site.jsonc"))
     check("wrangler.site.jsonc is pinned to the sarapis.org account",
           '"account_id": "a8e2fa072ede7a6389e8db8cad00f774"' in cfg, True)
+    # www belongs to the redirect Worker ONLY: two configs claiming one hostname
+    # would move it back and forth on every deploy of either.
+    wcfg = read(os.path.join(HERE, "wrangler.www.jsonc"))
+    check("www.govoss.cat is claimed by govoss-www alone",
+          ("www.govoss.cat" in cfg, '"pattern": "www.govoss.cat"' in wcfg), (False, True))
 
     for f in failed:
         print("FAIL  %s" % f)
-    total = 9 + len(pages) + 7 + 1 + n12 + 4
+    total = 9 + len(pages) + 7 + 1 + n12 + 5
     print("\n%d checks run, %d failed" % (total, len(failed)))
     return 1 if failed else 0
 
