@@ -76,6 +76,45 @@ CASES = [
     (None, None),
 ]
 
+# lang_with_prior(): for SILL (prior "fr") and code.overheid.nl (prior "nl"),
+# which used to hardcode their language. detect_lang() cannot replace that tag —
+# it called 532 of 672 SILL descriptions English, because a short French phrase
+# carries no stopword at all. The prior stays unless the text is PROVABLY English.
+# The first block is the direction that must never happen: every string there is
+# one detect_lang() calls English.
+PRIOR_CASES = [
+    ("fr", "fr", "Logiciel d'\u00e9dition de vid\u00e9o"),
+    ("fr", "fr", "Compression: Cr\u00e9ation de .zip, .rar, .tar.gz etc."),
+    ("fr", "fr", "Serveur Web & Reverse Proxy"),
+    ("fr", "fr", "Framework Javascript."),
+    ("fr", "fr", "Version libre d'Ansible Tower, pour l'administration d'Ansible."),
+    ("fr", "fr", "Service de stockage et de partage de fichiers"),
+    ("fr", "fr", "Solution de reporting et de business intelligence, permettant un "
+                 "d\u00e9ploiement rapide des r\u00e9sultats de requ\u00eate"),
+    ("nl", "nl", "Documentatie voor Abacus"),
+    ("nl", "nl", "Openbare beleidsontwikkeling"),
+    ("nl", "nl", "Elektronisch kandidaatstellingssysteem"),
+    ("nl", "nl", "Test repository voor Logius"),
+    ("nl", "nl", "Proof of Concept voor MijnOverheid Zakelijk"),
+    ("nl", "nl", "Vergunning Controle Service is een tool om ingediende BIM-modellen "
+                 "geautomatiseerd te toetsen op de geldende regels"),
+    # ONE English marker, from an expanded acronym or a product's English name.
+    # These are what the two-marker threshold exists for.
+    ("fr", "fr", "Aussi appel\u00e9 \"PDF Split and Merge\". Outil de fusion, extraction et d\u00e9coupage de fichiers PDF. Il permet aussi de changer le sens des pages."),
+    ("fr", "fr", "OptimOffice est une suite bureautique Wysiwym (What You See Is What You Mean) qui permet d'automatiser la publication d'un contenu sous trois formes ( site web, papier, diaporama )  et de faciliter la r\u00e9utilisation de fragments de contenus."),
+    # ---- English published under a French/Dutch catalogue. Must come OUT.
+    ("en", "fr", "Small utility to launch a different browser depending on the domain "
+                 "of the url being launched."),
+    ("en", "fr", "JavaScript library that extends HTML via custom attributes to implement "
+                 "client-server interactions"),
+    ("en", "nl", "Migration from gitlab.com/logius/nldoc to code.overheid.nl/Logius is "
+                 "currently paused."),
+    ("en", "nl", "Learn more about NLdoc and how to use it within your own organization."),
+    ("en", "nl", "Convert Dutch election .EML files to a SQLite database with no loss of data"),
+    (None, "nl", ""),
+    (None, "fr", None),
+]
+
 
 def main():
     failed = []
@@ -83,11 +122,16 @@ def main():
         got = h.detect_lang(text)
         if got != expect:
             failed.append((expect, got, text))
+    for expect, prior, text in PRIOR_CASES:
+        got = h.lang_with_prior(text, prior)
+        if got != expect:
+            failed.append((expect, got, text))
 
     for expect, got, text in failed:
         print(f"FAIL  expected {expect!r}, got {got!r}\n      {(text or '')[:88]!r}")
 
-    print(f"\n{len(CASES) - len(failed)}/{len(CASES)} passed")
+    n = len(CASES) + len(PRIOR_CASES)
+    print(f"\n{n - len(failed)}/{n} passed")
     return 1 if failed else 0
 
 

@@ -272,12 +272,15 @@ entries display English.** Pinned by `test_translation_orphans.py` and
   style turned a 62-line change into 1,145 lines of noise; preserve each file's own
   indent and key order.
 
-⚠ **Per-source language assumptions are forbidden and there are still TWO**:
-`harvest.py:741` sets `desc_lang="nl"` for every Dutch-platform description and
-`:406` hardcodes `"fr"`. Measured: the blanket `nl` is wrong about **87 of 121**
-where `detect_lang` would be wrong about ~2. Not fixed — `detect_lang` has broken
-five times and over-correcting into English is the worse direction, so the call is
-a human's. 17 entries currently read as foreign that are already English.
+⚠ **SILL and code.overheid.nl use `lang_with_prior()`, NOT `detect_lang()`.**
+Both used to hardcode `"fr"`/`"nl"`. `detect_lang` cannot replace that: it returns
+`en` whenever it finds no foreign stopwords, and a short catalogue phrase has none
+— it called **532 of 672** SILL descriptions English ("Logiciel d'édition de
+vidéo"), which would have dropped them all out of translation. `lang_with_prior`
+keeps the source's language unless the text carries **two distinct** English
+function words that are not stopwords in any catalogue language. It moves 27 rows
+to `en`, all read and all English; 13 were untranslated English showing as
+foreign. Pinned by `test_detect_lang.py`, sabotaged three ways.
 ## Categorisation
 
 `taxonomy.py` collapses **233 inconsistent source values** onto 19 functional
@@ -744,7 +747,7 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Seven suites, 181 checks, **all manual** — a test step that can fail the weekly
+Seven suites, 185 checks, **all manual** — a test step that can fail the weekly
 publish is one someone switches off, and `run.sh` already gates its deploy on every
 build step exiting 0. Run before touching `dedupe.py`, `liveness.py`, `filters.py`,
 `taxonomy.py`, `merge_translations.py`, `export_json.py` or the page builders:
@@ -764,7 +767,12 @@ for t in test_*.py; do python3 $t; done
 | `test_built_pages.py` | the built pages + three cross-page contracts |
 
 **Every suite is validated by SABOTAGE** — break the thing it checks and watch it
-fail — because this repo has shipped a guard that could only ever pass. Three rules
+fail — because this repo has shipped a guard that could only ever pass.
+
+⚠ **Sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`.** The suites load modules
+via `spec_from_file_location`, which trusts `__pycache__` when mtime and size
+match — and a sed swapping `2` for `1` inside the same second changes neither. Every
+run then tests the PREVIOUS edit, and a restored file reports failures. Three rules
 came out of doing that:
 
 - **A test must never ask the thing it tests whether to run its hardest case.**
@@ -800,8 +808,8 @@ If something looks wrong, suspect these before anything else.
    `per`/`van`/`die` as English homographs called Italian and French text English,
    which drops real text *out* of the queue. ⚠ **Diacritics are the signal** — a
    test string transcribed `gor` for `gør` fails for the right reason.
-   *Never reintroduce a per-source language assumption* (two still exist — see
-   Translation).
+   *Never reintroduce a per-source language assumption* — and never swap one for
+   bare `detect_lang` either; see `lang_with_prior` under Translation.
 3. **Absence of evidence treated as evidence of absence.** An API 404 meant "dead
    repo" until `gitlab.huma-num.fr` turned out to restrict anonymous access — 53 of
    82 were alive, KiCad among them. A missing description meant "not software"

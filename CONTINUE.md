@@ -33,13 +33,13 @@ the page already looks."** Three corollaries this cost real sessions to learn:
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 7 suites, 181 checks
+for t in test_*.py; do python3 $t; done                     # 7 suites, 185 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
 - **Last run 2026-09-21**, trigger `schedule`, ok, 17/17 sources fetched cleanly.
 - **Liveness 3,089/3,189 ok (96.9%)**, 26 dead, 39 archived.
-- **7 test suites, 181 checks, all passing.** Manual — not in `run.sh`, because a
+- **7 test suites, 185 checks, all passing.** Manual — not in `run.sh`, because a
   test that can fail the weekly publish is one someone switches off.
 - **`/sources.html` reads `warn`**, for two taxonomy values only. See Traps.
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: **F1–F6 closed, F8 at 5 of 8 gaps,
@@ -72,8 +72,9 @@ violation is silent.
   undated and the Recently-added strip silently empties.
 - **`el.hidden` works only because `theme.py` ships
   `[hidden]{display:none!important}`.** Keep it; never `style.display`.
-- **Never reintroduce a per-source language assumption.** ⚠ Two still exist — see
-  Candidates.
+- **Never reintroduce a per-source language assumption**, and never replace one with
+  bare `detect_lang` — it calls 532 of 672 SILL descriptions English. SILL and
+  code.overheid.nl use `lang_with_prior()`; see `CLAUDE.md` › Translation.
 
 ## Waiting on a human — not work that was skipped
 
@@ -84,9 +85,6 @@ violation is silent.
   `printf '%s' 'TOKEN' > ~/.config/govoss/vercel-token && chmod 600 ~/.config/govoss/vercel-token`
 - **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) — a scope decision about
   what the catalogue *is*, and a bigger one than it looks: see Candidates.
-- **The two remaining per-source language assumptions.** Measured, one-line fix,
-  deliberately left: `detect_lang` has broken five times and over-correcting into
-  English is the worse direction, so the call is yours.
 - **Three documents drafted and unsent** — a reply to an OpenForum Europe policy
   advisor, an OFE-voiced version of the EU catalogue defect report, and a
   shareable call for sources (`DEMAND-SIDE-CALL-FOR-SOURCES.md`, in the repo). The
@@ -94,15 +92,10 @@ violation is silent.
 
 ## Candidates, ranked
 
-1. **Fix the two per-source language assumptions**, if you want them fixed.
-   `harvest.py:741` sets `desc_lang="nl"` for every Dutch-platform description and
-   `:406` hardcodes `"fr"`. Measured: the blanket `nl` is wrong about **87 of 121**
-   descriptions where `detect_lang` would be wrong about ~2. Cost of not fixing:
-   17 entries read as foreign that are already English.
-2. **Map `environmental-protection` and `geospatial-information`** — already done in
+1. **Map `environmental-protection` and `geospatial-information`** — already done in
    `taxonomy.py`; this is just waiting for the next run to clear the artefact. No
    action unless the warning persists past Monday.
-3. **The demand-side Stage 1**, but read the reframing first. The note asks for a
+2. **The demand-side Stage 1**, but read the reframing first. The note asks for a
    second jurisdiction publishing product-level licence data; its own crux says
    that data exists in NYC only because Databook ran an LLM extraction. So the
    runnable test is to extract from a second jurisdiction's *raw* contract data —
@@ -110,17 +103,22 @@ violation is silent.
    harvesting**, and that breaks the condition its own Costs section sets. Portland
    was the intended test and is still `permission denied for table tenders`
    (re-checked 2026-09-21).
-4. **F8's last three gaps**: `get()`'s raise semantics (needs a stubbed opener),
+3. **F8's last three gaps**: `get()`'s raise semantics (needs a stubbed opener),
    crosswalk's three guards (inline in SPARQL-calling functions — they need the
    extraction `liveness.fold_history()` got), and the MCP Worker (JS).
-5. **Expand `replaces.json`** — 194 of 2,857 entries. Read the `_README` first;
+4. **Expand `replaces.json`** — 194 of 2,857 entries. Read the `_README` first;
    `kind` and `confidence` both matter and `export_json.py` fails the build on a bad
    value. ⚠ Check existing product names before adding; `Dropbox Business` beside
    `Dropbox` splits one product across two index keys.
-6. **Screen-reader testing has never been done.** The audits are contrast sweeps
+5. **Screen-reader testing has never been done.** The audits are contrast sweeps
    plus keyboard. Until it runs, nothing should claim conformance.
 
 ## Traps — looks broken but is not, and vice versa
+
+- **The language fix lands on the next LIVE harvest, not on `--from-cache`.**
+  `desc_lang` is stamped when the adapter runs and stored in `cache/src_fr.json`
+  and `src_nl.json`, so a cache rebuild still carries the old `fr`/`nl` tags.
+  After Monday: SILL should show 6 rows `desc_lang: en`, code.overheid.nl 21.
 
 - **`/sources.html` reading `warn` is correct right now.** Two taxonomy values are
   genuinely unmapped *in the published artefact*; both are already mapped in

@@ -193,6 +193,48 @@ def detect_lang(text, hint=None):
     return "en"       # Latin script, no convincing non-English markers
 
 
+# POSITIVE evidence of English, for sources whose catalogue has a known working
+# language (SILL writes French, code.overheid.nl mostly Dutch). detect_lang()
+# cannot serve there: it answers "en" whenever it finds no foreign markers, and
+# a short catalogue phrase rarely carries any — it called 532 of 672 SILL
+# descriptions English ("Logiciel d'édition de vidéo"), which would have pulled
+# them all out of the translation queue. So the source's language stays the
+# default and is overridden only when the text itself reads as English.
+#
+# Only English function words that are NOT stopwords in a catalogue language:
+# `of` is Dutch ("or"), `is`/`in` are Dutch, `an` is German, `a`/`for`/`on`/`no`
+# are _EN_HOMOGRAPH. TWO DISTINCT markers are required; at one, French prose
+# quoting an English name ("PDF Split and Merge", "What You See Is What You
+# Mean") flips. Pinned by those real SILL strings in test_detect_lang.py.
+#
+# Deliberately not one marker, although that would catch 21 more English SILL
+# rows: a short French phrase with no stopwords and one English word would flip
+# with it, and those 21 already carry translations, so leaving them "fr" costs
+# nothing. Err toward the prior.
+#
+# Two vetoes were written and REMOVED because on every cached description they
+# changed no outcome: "more English markers than prior-language stopwords", and
+# "none of the prior language's diacritics" (the six strings it did touch
+# elsewhere were English naming German places — "Münster", "Würzburg").
+_EN_MARK = re.compile(r"\b(the|and|to|with|from|this|that|you|your|are|be|by|which|"
+                      r"into|using|used|its|it|allows?|based|built)\b", re.I)
+
+
+def lang_with_prior(text, prior):
+    """The source's language, unless the text is demonstrably English.
+    Errs toward `prior`: a wrong `prior` leaves an English string in the
+    translation queue, a wrong "en" silently drops foreign text out of it."""
+    if not text or not text.strip():
+        return None
+    for code, rx in _SCRIPTS:
+        if rx.search(text):
+            return code
+    en = {m.group(0).lower() for m in _EN_MARK.finditer(text)}
+    if len(en) >= 2:
+        return "en"
+    return prior
+
+
 def base_lang(code):
     """it-IT / IT / en-US -> it / it / en. publiccode.yml is inconsistent here."""
     return (code or "").split("-")[0].lower() or None
@@ -403,9 +445,9 @@ def fr():
                        categories=s.get("categories") or [],
                        keywords=(s.get("keywords") or [])[:10],
                        short_desc=(s.get("description") or "")[:400],
-                       desc_lang="fr",
+                       desc_lang=lang_with_prior(s.get("description"), "fr"),
                        desc_src=(s.get("description") or "")[:400] or None,
-                       desc_src_lang="fr",
+                       desc_src_lang=lang_with_prior(s.get("description"), "fr"),
                        version=lv.get("semVer"),
                        used_by=sorted((s.get("userAndReferentCountByOrganization") or {}).keys()),
                        recommended_for_gov=True,
@@ -738,9 +780,9 @@ def nl_forgejo():
                    entry_url=r.get("html_url"),
                    repo_owner=(r.get("owner") or {}).get("login"),
                    short_desc=(r.get("description") or "")[:400],
-                   desc_lang="nl" if r.get("description") else None,
+                   desc_lang=lang_with_prior(r.get("description"), "nl"),
                    desc_src=(r.get("description") or "")[:400] or None,
-                   desc_src_lang="nl" if r.get("description") else None,
+                   desc_src_lang=lang_with_prior(r.get("description"), "nl"),
                    forge_path=r.get("full_name"),
                    is_fork=bool(r.get("fork")),
                    stars=r.get("stars_count"),
