@@ -3643,7 +3643,7 @@
    }
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "L'orchestration de suites de t\u00e2ches",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20Airflow",
@@ -3664,7 +3664,7 @@
   "recommended_for_gov": true,
   "repo": "https://github.com/apache/airflow",
   "repo_key": "github.com/apache/airflow",
-  "short_desc": "L'orchestration de suites de t\u00e2ches",
+  "short_desc": "Orchestration of task pipelines.",
   "sill_id": 482,
   "source": "FR/sill",
   "tier": "index",
@@ -3676,7 +3676,8 @@
    "MI/SG/DTNUM/SDID"
   ],
   "version": "3.3.0",
-  "wikidata": "Q28915062"
+  "wikidata": "Q28915062",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -6707,7 +6708,7 @@
    }
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "Gestion et correction automatique de QCM papiers \u00e0 partir des scans, avec m\u00e9lange optionnel des r\u00e9ponses et des questions.",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Auto%20Multiple%20Choice",
@@ -6728,7 +6729,7 @@
   "recommended_for_gov": true,
   "repo": null,
   "repo_key": null,
-  "short_desc": "Gestion et correction automatique de QCM papiers \u00e0 partir des scans, avec m\u00e9lange optionnel des r\u00e9ponses et des questions.",
+  "short_desc": "Automatic management and marking of paper multiple-choice tests from scans, with optional shuffling of answers and questions.",
   "sill_id": 671,
   "source": "FR/sill",
   "tier": "index",
@@ -6736,7 +6737,8 @@
    "Acad\u00e9mie d'Amiens",
    "Acad\u00e9mie de Limoges",
    "Universit\u00e9 Claude Bernard Lyon 1"
-  ]
+  ],
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -7768,7 +7770,7 @@
   ],
   "country": "SE",
   "desc_from": "github-api",
-  "desc_lang": "sv",
+  "desc_lang": "en",
   "functions": [
    "citizen-services"
   ],
@@ -7777,12 +7779,15 @@
   "name": "BasicUse",
   "repo": "https://github.com/umea-kommun/BasicUse",
   "repo_key": "github.com/umea-kommun/basicuse",
-  "short_desc": "Applikation f\u00f6r att skapa och publicera e-tj\u00e4nster",
+  "short_desc": "Application for creating and publishing e-services.",
   "source": "SE/offentligkod",
   "tier": "index",
   "used_by": [
    "umea_k"
-  ]
+  ],
+  "desc_src": "Applikation f\u00f6r att skapa och publicera e-tj\u00e4nster",
+  "desc_src_lang": "sv",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -14374,7 +14379,7 @@
    "core@civitasconnect.digital"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "CIVITAS/CORE ist das Herzst\u00fcck von urbanen Datenplattformen f\u00fcr St\u00e4dte, Regionen und kommunale Unternehmen.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -14410,7 +14415,7 @@
   "released": "2024-04-12",
   "repo": "https://gitlab.com/civitas-connect/civitas-core/civitas-core",
   "repo_key": "gitlab.com/civitas-connect/civitas-core/civitas-core",
-  "short_desc": "CIVITAS/CORE ist das Herzst\u00fcck von urbanen Datenplattformen f\u00fcr St\u00e4dte, Regionen und kommunale Unternehmen.\n",
+  "short_desc": "CIVITAS/CORE is the core of urban data platforms for cities, regions and municipal enterprises.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
@@ -14435,7 +14440,8 @@
    "Stadtwerke Gie\u00dfen",
    "regio iT gesellschaft f\u00fcr informationstechnologie mbh"
   ],
-  "version": "prod"
+  "version": "prod",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -25749,7 +25755,7 @@
    "Kreis Viersen - Amt f\u00fcr Kataster und Geoinformation"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Webanwendung zur Recherche und PDF-Ausgabe historischer und aktueller Karten, Luftbilder und Katasterinformationen in Nordrhein-Westfalen.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -25782,7 +25788,7 @@
   "released": "2026-09-16",
   "repo": "https://gitlab.opencode.de/kreis-viersen/geschichte-eines-grundstuecks",
   "repo_key": "gitlab.opencode.de/kreis-viersen/geschichte-eines-grundstuecks",
-  "short_desc": "Webanwendung zur Recherche und PDF-Ausgabe historischer und aktueller Karten, Luftbilder und Katasterinformationen in Nordrhein-Westfalen.\n",
+  "short_desc": "Web application for researching and exporting to PDF historical and current maps, aerial photographs and cadastral information in North Rhine-Westphalia.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
@@ -25790,7 +25796,8 @@
   "used_by": [
    "Kreis Viersen"
   ],
-  "version": "2.2.58"
+  "version": "2.2.58",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -26939,7 +26946,7 @@
    "n.n"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Digitales Anzeigesystem f\u00fcr Buchungen und Reservierungen von R\u00e4umen und anderen Ressourcen.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -26971,12 +26978,13 @@
   "released": "2026-05-25",
   "repo": "https://gitlab.opencode.de/smart-city-ulm/co-learning-spaces/display-server",
   "repo_key": "gitlab.opencode.de/smart-city-ulm/co-learning-spaces/display-server",
-  "short_desc": "Digitales Anzeigesystem f\u00fcr Buchungen und Reservierungen von R\u00e4umen und anderen Ressourcen.\n",
+  "short_desc": "Digital display system for bookings and reservations of rooms and other resources.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 9952,
-  "version": "0.0.5"
+  "version": "0.0.5",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -28107,7 +28115,7 @@
    }
   ],
   "country": "NL",
-  "desc_lang": "nl",
+  "desc_lang": "en",
   "desc_src": "Deze repository bevat alle documentatie rondom het codeplatform code.overheid.nl.",
   "desc_src_lang": "nl",
   "entry_url": "https://code.overheid.nl/code/docs",
@@ -28122,10 +28130,11 @@
   "repo": "https://code.overheid.nl/code/docs",
   "repo_key": "code.overheid.nl/code/docs",
   "repo_owner": "code",
-  "short_desc": "Deze repository bevat alle documentatie rondom het codeplatform code.overheid.nl.",
+  "short_desc": "This repository contains all documentation for the code.overheid.nl code platform.",
   "source": "NL/code.overheid.nl",
   "stars": 8,
-  "tier": "index"
+  "tier": "index",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -28407,7 +28416,7 @@
    }
   ],
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/os2ai/documentation",
   "functions": [
    "documents"
@@ -28420,10 +28429,13 @@
   "repo": "https://github.com/os2ai/documentation",
   "repo_key": "github.com/os2ai/documentation",
   "repo_owner": "os2ai",
-  "short_desc": "Central dokumentation for OS2ai med tekniske vejledninger til udviklere og driftsansvarlige samt l\u00f8sningsdokumentation til systemejere",
+  "short_desc": "Central documentation for OS2ai, with technical guides for developers and operations staff and solution documentation for system owners.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "desc_src": "Central dokumentation for OS2ai med tekniske vejledninger til udviklere og driftsansvarlige samt l\u00f8sningsdokumentation til systemejere",
+  "desc_src_lang": "da",
+  "translated": true
  },
  {
   "active": true,
@@ -29800,7 +29812,7 @@
    "DE"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Ein Frage-und-Antwort-Werkzeug, das Verwaltungs-Mitarbeitenden die mit personenbezogenen Daten arbeiten hilft, Datenschutzdokumentation zu erstellen.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -29835,7 +29847,7 @@
   "released": "2026-07-01",
   "repo": "https://gitlab.opencode.de/kompetenzteam-datenschutz-it-planungsrat/ds-dok-gen/",
   "repo_key": "gitlab.opencode.de/kompetenzteam-datenschutz-it-planungsrat/ds-dok-gen",
-  "short_desc": "Ein Frage-und-Antwort-Werkzeug, das Verwaltungs-Mitarbeitenden die mit personenbezogenen Daten arbeiten hilft, Datenschutzdokumentation zu erstellen.\n",
+  "short_desc": "A question-and-answer tool that helps administrative staff who work with personal data to produce data-protection documentation.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "sources": [
@@ -29843,7 +29855,8 @@
   ],
   "tier": "publiccode",
   "upstream_id": 12499,
-  "version": "1.0.5"
+  "version": "1.0.5",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -34157,7 +34170,7 @@
    }
   ],
   "country": "BG",
-  "desc_lang": "bg",
+  "desc_lang": "en",
   "entry_url": "https://github.com/governmentbg/EPRO",
   "functions": [],
   "functions_inferred": false,
@@ -34168,10 +34181,13 @@
   "repo": "https://github.com/governmentbg/EPRO",
   "repo_key": "github.com/governmentbg/epro",
   "repo_owner": "governmentbg",
-  "short_desc": "\u0412\u0421\u0421-9037/01.07.2026 \u0418\u0437\u0432\u044a\u043d\u0433\u0430\u0440\u0430\u043d\u0446\u0438\u043e\u043d\u043d\u0430 \u043f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u043d\u0430 \"\u0415\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0435\u043d \u043f\u0443\u0431\u043b\u0438\u0447\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u043e\u0442\u0432\u043e\u0434\u0438\u0442\u0435(\u0415\u041f\u0420\u041e)\"",
+  "short_desc": "Post-warranty support for the Electronic Public Register of Recusals (EPRO).",
   "source": "BG/governmentbg",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "desc_src": "\u0412\u0421\u0421-9037/01.07.2026 \u0418\u0437\u0432\u044a\u043d\u0433\u0430\u0440\u0430\u043d\u0446\u0438\u043e\u043d\u043d\u0430 \u043f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u043d\u0430 \"\u0415\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0435\u043d \u043f\u0443\u0431\u043b\u0438\u0447\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u043e\u0442\u0432\u043e\u0434\u0438\u0442\u0435(\u0415\u041f\u0420\u041e)\"",
+  "desc_src_lang": "bg",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -34503,7 +34519,7 @@
    }
   ],
   "country": "BG",
-  "desc_lang": "bg",
+  "desc_lang": "en",
   "entry_url": "https://github.com/governmentbg/ERSP1",
   "functions": [],
   "functions_inferred": false,
@@ -34513,10 +34529,13 @@
   "repo": "https://github.com/governmentbg/ERSP1",
   "repo_key": "github.com/governmentbg/ersp1",
   "repo_owner": "governmentbg",
-  "short_desc": "\u0412\u0421\u0421-6508/29.04.2026 \u0433. - \u0418\u0437\u0432\u044a\u043d\u0433\u0430\u0440\u0430\u043d\u0446\u0438\u043e\u043d\u043d\u0430 \u043f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u043d\u0430 \"\u0415\u0434\u0438\u043d\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0421\u044a\u0434\u0435\u0431\u043d\u0438\u0442\u0435 \u043f\u0440\u0435\u0432\u043e\u0434\u0430\u0447\u0438 (\u0415\u0420\u0421\u041f)",
+  "short_desc": "Post-warranty support for the Unified Register of Court Translators (ERSP).",
   "source": "BG/governmentbg",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "desc_src": "\u0412\u0421\u0421-6508/29.04.2026 \u0433. - \u0418\u0437\u0432\u044a\u043d\u0433\u0430\u0440\u0430\u043d\u0446\u0438\u043e\u043d\u043d\u0430 \u043f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u043d\u0430 \"\u0415\u0434\u0438\u043d\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 \u043d\u0430 \u0421\u044a\u0434\u0435\u0431\u043d\u0438\u0442\u0435 \u043f\u0440\u0435\u0432\u043e\u0434\u0430\u0447\u0438 (\u0415\u0420\u0421\u041f)",
+  "desc_src_lang": "bg",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -39324,7 +39343,7 @@
    "Kreis Viersen - Amt f\u00fcr Kataster und Geoinformation"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Browsertool zum Anzeigen, Ver\u00e4ndern und neu Setzen der Aufnahmeposition und Orientierung von Bildern.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -39357,7 +39376,7 @@
   "released": "2026-09-03",
   "repo": "https://gitlab.opencode.de/kreis-viersen/fotostandort",
   "repo_key": "gitlab.opencode.de/kreis-viersen/fotostandort",
-  "short_desc": "Browsertool zum Anzeigen, Ver\u00e4ndern und neu Setzen der Aufnahmeposition und Orientierung von Bildern.\n",
+  "short_desc": "Browser tool for viewing, changing and re-setting the capture position and orientation of images.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
@@ -39365,7 +39384,8 @@
   "used_by": [
    "Kreis Viersen"
   ],
-  "version": "1.1.1"
+  "version": "1.1.1",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -54542,7 +54562,7 @@
    "digital-asset-management"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "HAL-Plan ist ein digitaler Zwilling f\u00fcr die Bereiche der Stadtentwicklung und des strategischen Fl\u00e4chenmanagements.",
   "desc_src_lang": "de",
   "dev_status": "beta",
@@ -54572,12 +54592,13 @@
   "released": "2026-01-01",
   "repo": "https://gitlab.opencode.de/smart-city-halle-saale/hal-plan/hal-plan",
   "repo_key": "gitlab.opencode.de/smart-city-halle-saale/hal-plan/hal-plan",
-  "short_desc": "HAL-Plan ist ein digitaler Zwilling f\u00fcr die Bereiche der Stadtentwicklung und des strategischen Fl\u00e4chenmanagements.",
+  "short_desc": "HAL-Plan is a digital twin for urban development and strategic land management.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 10032,
-  "version": "22.57.0"
+  "version": "22.57.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -60119,7 +60140,7 @@
    "Alessio Gerace"
   ],
   "country": "IT",
-  "desc_lang": "it",
+  "desc_lang": "en",
   "desc_src": "Demo eseguibile di Service App: form builder Drag&Drop, json-logic e MongoDB.",
   "desc_src_lang": "it",
   "dev_status": "stable",
@@ -60149,12 +60170,13 @@
   "released": "2026-08-26",
   "repo": "https://github.com/INRIM/inrim-forms-demo",
   "repo_key": "github.com/inrim/inrim-forms-demo",
-  "short_desc": "Demo eseguibile di Service App: form builder Drag&Drop, json-logic e MongoDB.",
+  "short_desc": "Runnable demo of Service App: drag-and-drop form builder, json-logic and MongoDB.",
   "software_type": "standalone/web",
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "c69374c7-cb8e-4165-a17f-4889ccd90ae6",
-  "version": "3.0"
+  "version": "3.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -61397,7 +61419,7 @@
    "Digi Gilde (Rijksorganisatie ODI)"
   ],
   "country": "NL",
-  "desc_lang": "nl",
+  "desc_lang": "en",
   "desc_src": "Webapplicatie voor Pre-scan-, DPIA- en IAMA-assessments volgens het Rijksmodel DPIA en het IAMA van de Nederlandse overheid.",
   "desc_src_lang": "nl",
   "dev_status": "beta",
@@ -61430,14 +61452,15 @@
   "released": "2026-08-25",
   "repo": "https://github.com/MinBZK/par-dpia-form",
   "repo_key": "github.com/minbzk/par-dpia-form",
-  "short_desc": "Webapplicatie voor Pre-scan-, DPIA- en IAMA-assessments volgens het Rijksmodel DPIA en het IAMA van de Nederlandse overheid.",
+  "short_desc": "Web application for Pre-scan, DPIA and IAMA assessments, following the Dutch government's Rijksmodel DPIA and IAMA.",
   "software_type": "standalone/web",
   "source": "NL/code.overheid.nl",
   "tier": "publiccode",
   "used_by": [
    "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties"
   ],
-  "version": "2026.8.25"
+  "version": "2026.8.25",
+  "translated": true
  },
  {
   "active": true,
@@ -64687,7 +64710,7 @@
    "Ricarda Frede"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Veranstaltungskalender f\u00fcr Web und App mit integrietem kleinen CMS",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -64717,14 +64740,15 @@
   ],
   "repo": "https://gitlab.opencode.de/oc000173593929/KalenderSoest.git",
   "repo_key": "gitlab.opencode.de/oc000173593929/kalendersoest",
-  "short_desc": "Veranstaltungskalender f\u00fcr Web und App mit integrietem kleinen CMS",
+  "short_desc": "Events calendar for web and app, with a small integrated CMS.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 13187,
   "used_by": [
    "https://kulturbuero-soest.de"
-  ]
+  ],
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -65689,7 +65713,7 @@
    "Michi91"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "MkDocs-Theme auf Basis des KERN-Designsystems der oeffentlichen Verwaltung.",
   "desc_src_lang": "de",
   "dev_status": "beta",
@@ -65723,12 +65747,13 @@
   "released": "2026-09-17",
   "repo": "https://gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-mkdocs.git",
   "repo_key": "gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-mkdocs",
-  "short_desc": "MkDocs-Theme auf Basis des KERN-Designsystems der oeffentlichen Verwaltung.",
+  "short_desc": "MkDocs theme based on the KERN design system for public administration.",
   "software_type": "addon",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 13146,
-  "version": "0.2.0"
+  "version": "0.2.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -65748,7 +65773,7 @@
    "Michi91"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Klassisches WordPress-Theme auf Basis des KERN-Designsystems der oeffentlichen Verwaltung.",
   "desc_src_lang": "de",
   "dev_status": "beta",
@@ -65780,12 +65805,13 @@
   "released": "2026-08-19",
   "repo": "https://gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-wordpress.git",
   "repo_key": "gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-wordpress",
-  "short_desc": "Klassisches WordPress-Theme auf Basis des KERN-Designsystems der oeffentlichen Verwaltung.",
+  "short_desc": "Classic WordPress theme based on the KERN design system for public administration.",
   "software_type": "addon",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 12537,
-  "version": "1.2.0"
+  "version": "1.2.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -65805,7 +65831,7 @@
    "Michi91"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Eigene Gutenberg-Bloecke fuer das KERN-Designsystem der oeffentlichen Verwaltung: Hinweis, Badge, Card und Aufgabenliste.",
   "desc_src_lang": "de",
   "dev_status": "beta",
@@ -65838,12 +65864,13 @@
   "released": "2026-08-18",
   "repo": "https://gitlab.opencode.de/sgemlichheim/kern-ux-theme-companion-plugin-for-wordpress.git",
   "repo_key": "gitlab.opencode.de/sgemlichheim/kern-ux-theme-companion-plugin-for-wordpress",
-  "short_desc": "Eigene Gutenberg-Bloecke fuer das KERN-Designsystem der oeffentlichen Verwaltung: Hinweis, Badge, Card und Aufgabenliste.",
+  "short_desc": "Custom Gutenberg blocks for the KERN design system for public administration: notice, badge, card and task list.",
   "software_type": "addon",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 12538,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "translated": true
  },
  {
   "catalogue_count": 2,
@@ -73967,7 +73994,7 @@
    }
   ],
   "country": "NL",
-  "desc_lang": "nl",
+  "desc_lang": "en",
   "desc_src": "Beschrijving van de structuur, de relaties en betekenis van de metagegevens, en de waarden die zijn toegestaan. ",
   "desc_src_lang": "nl",
   "entry_url": "https://code.overheid.nl/NationaalArchief/MDTO-Metagegevensschema",
@@ -73980,10 +74007,11 @@
   "repo": "https://code.overheid.nl/NationaalArchief/MDTO-Metagegevensschema",
   "repo_key": "code.overheid.nl/nationaalarchief/mdto-metagegevensschema",
   "repo_owner": "NationaalArchief",
-  "short_desc": "Beschrijving van de structuur, de relaties en betekenis van de metagegevens, en de waarden die zijn toegestaan. ",
+  "short_desc": "Description of the structure, relationships and meaning of the metadata, and the values that are permitted.",
   "source": "NL/code.overheid.nl",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -73996,7 +74024,7 @@
    }
   ],
   "country": "NL",
-  "desc_lang": "nl",
+  "desc_lang": "en",
   "desc_src": "Deze module is in combinatie te gebruiken met de specificatie aanlevering aan een e-depot. Het biedt een standaard werkwijze voor de aanlevering van informatie van een bronsysteem naar een doelsysteem.",
   "desc_src_lang": "nl",
   "entry_url": "https://code.overheid.nl/NationaalArchief/MDTO-SIP-aanleverproces",
@@ -74011,10 +74039,11 @@
   "repo": "https://code.overheid.nl/NationaalArchief/MDTO-SIP-aanleverproces",
   "repo_key": "code.overheid.nl/nationaalarchief/mdto-sip-aanleverproces",
   "repo_owner": "NationaalArchief",
-  "short_desc": "Deze module is in combinatie te gebruiken met de specificatie aanlevering aan een e-depot. Het biedt een standaard werkwijze voor de aanlevering van informatie van een bronsysteem naar een doelsysteem.",
+  "short_desc": "This module is to be used together with the specification for delivery to an e-depot. It provides a standard method for delivering information from a source system to a target system.",
   "source": "NL/code.overheid.nl",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -78793,7 +78822,7 @@
    }
   ],
   "country": "NL",
-  "desc_lang": "nl",
+  "desc_lang": "en",
   "desc_src": "Template repository voor ReSpec document van het Nationaal Archief",
   "desc_src_lang": "nl",
   "entry_url": "https://code.overheid.nl/NationaalArchief/na-respec-template",
@@ -78808,10 +78837,11 @@
   "repo": "https://code.overheid.nl/NationaalArchief/na-respec-template",
   "repo_key": "code.overheid.nl/nationaalarchief/na-respec-template",
   "repo_owner": "NationaalArchief",
-  "short_desc": "Template repository voor ReSpec document van het Nationaal Archief",
+  "short_desc": "Template repository for a ReSpec document of the National Archives of the Netherlands.",
   "source": "NL/code.overheid.nl",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -79156,7 +79186,7 @@
    }
   ],
   "country": "BG",
-  "desc_lang": "bg",
+  "desc_lang": "en",
   "entry_url": "https://github.com/governmentbg/nacid-mpk",
   "functions": [],
   "functions_inferred": false,
@@ -79167,10 +79197,13 @@
   "repo": "https://github.com/governmentbg/nacid-mpk",
   "repo_key": "github.com/governmentbg/nacid-mpk",
   "repo_owner": "governmentbg",
-  "short_desc": "95-00-46 10.11.2025 - \u041d\u0430\u0434\u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0420\u0414\u041f\u0417\u0421\u0414 \u0441 \u043d\u043e\u0432 \u043c\u043e\u0434\u0443\u043b \u0437\u0430 \u043f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u043d\u0438 \u043a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u043d\u0430 \u0443\u0447\u0438\u0442\u0435\u043b\u0438\u0442\u0435, \u0434\u0438\u0440\u0435\u043a\u0442\u043e\u0440\u0438\u0442\u0435 \u0438 \u0434\u0440\u0443\u0433\u0438\u0442\u0435 \u043f\u0435\u0434\u0430\u0433\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0438.",
+  "short_desc": "Upgrade of the RDPZSD register with a new module for the professional qualifications of teachers, head teachers and other pedagogical specialists.",
   "source": "BG/governmentbg",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "desc_src": "95-00-46 10.11.2025 - \u041d\u0430\u0434\u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0420\u0414\u041f\u0417\u0421\u0414 \u0441 \u043d\u043e\u0432 \u043c\u043e\u0434\u0443\u043b \u0437\u0430 \u043f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u043d\u0438 \u043a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u043d\u0430 \u0443\u0447\u0438\u0442\u0435\u043b\u0438\u0442\u0435, \u0434\u0438\u0440\u0435\u043a\u0442\u043e\u0440\u0438\u0442\u0435 \u0438 \u0434\u0440\u0443\u0433\u0438\u0442\u0435 \u043f\u0435\u0434\u0430\u0433\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0438.",
+  "desc_src_lang": "bg",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -82389,7 +82422,7 @@
    }
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "noyau de syst\u00e8me d'exploitation de type UNIX",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Noyau%20Linux",
@@ -82409,7 +82442,7 @@
   "recommended_for_gov": true,
   "repo": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git",
   "repo_key": "git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux",
-  "short_desc": "noyau de syst\u00e8me d'exploitation de type UNIX",
+  "short_desc": "UNIX-like operating system kernel.",
   "sill_id": 678,
   "source": "FR/sill",
   "tier": "index",
@@ -82418,7 +82451,8 @@
    "DGFIP"
   ],
   "version": "7.2.6",
-  "wikidata": "Q14579"
+  "wikidata": "Q14579",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -89020,7 +89054,7 @@
    }
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "Service web bas\u00e9 sur un logiciel libre pour utiliser des LLM",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=OpenGateLLM",
@@ -89037,7 +89071,7 @@
   "recommended_for_gov": true,
   "repo": "https://github.com/etalab-ia/OpenGateLLM",
   "repo_key": "github.com/etalab-ia/opengatellm",
-  "short_desc": "Service web bas\u00e9 sur un logiciel libre pour utiliser des LLM",
+  "short_desc": "Open source web service for using LLMs.",
   "sill_id": 681,
   "source": "FR/sill",
   "tier": "index",
@@ -89045,7 +89079,8 @@
    "DINUM"
   ],
   "version": "0.6.0",
-  "wikidata": "Q140290134"
+  "wikidata": "Q140290134",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -92592,7 +92627,7 @@
    }
   ],
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/os2display/os2display-produktforvaltning",
   "functions": [
    "documents"
@@ -92605,10 +92640,13 @@
   "repo": "https://github.com/os2display/os2display-produktforvaltning",
   "repo_key": "github.com/os2display/os2display-produktforvaltning",
   "repo_owner": "os2display",
-  "short_desc": "Dette repository underst\u00f8tter produktforvaltningen for OS2Display. Her samles centrale dokumenter, beslutninger og arbejdsgrundlag, s\u00e5 der er \u00e9n f\u00e6lles og transparent kilde for styring og koordinering.",
+  "short_desc": "This repository supports product management for OS2Display. Central documents, decisions and working materials are collected here, so that there is one shared and transparent source for governance and coordination.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "desc_src": "Dette repository underst\u00f8tter produktforvaltningen for OS2Display. Her samles centrale dokumenter, beslutninger og arbejdsgrundlag, s\u00e5 der er \u00e9n f\u00e6lles og transparent kilde for styring og koordinering.",
+  "desc_src_lang": "da",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -93213,7 +93251,7 @@
    }
   ],
   "country": "DK",
-  "desc_lang": "da",
+  "desc_lang": "en",
   "entry_url": "https://github.com/OS2iot/OS2iot-viden",
   "functions": [
    "documents"
@@ -93226,10 +93264,13 @@
   "repo": "https://github.com/OS2iot/OS2iot-viden",
   "repo_key": "github.com/os2iot/os2iot-viden",
   "repo_owner": "OS2iot",
-  "short_desc": "Form\u00e5let med denne dokumentation er at g\u00f8re brugervejledninger lettilg\u00e6ngelige.",
+  "short_desc": "The purpose of this documentation is to make user guides easily accessible.",
   "source": "DK/os2",
   "stars": 0,
-  "tier": "index"
+  "tier": "index",
+  "desc_src": "Form\u00e5let med denne dokumentation er at g\u00f8re brugervejledninger lettilg\u00e6ngelige.",
+  "desc_src_lang": "da",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -109081,7 +109122,7 @@
    "Kreis Viersen - Amt f\u00fcr Kataster und Geoinformation"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Browsertool zur synchronen Darstellung von bis zu vier verschiedenen Kartenfenstern.\n",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -109113,7 +109154,7 @@
   "released": "2026-09-10",
   "repo": "https://gitlab.opencode.de/kreis-viersen/quattromap",
   "repo_key": "gitlab.opencode.de/kreis-viersen/quattromap",
-  "short_desc": "Browsertool zur synchronen Darstellung von bis zu vier verschiedenen Kartenfenstern.\n",
+  "short_desc": "Browser tool for displaying up to four different map windows in sync.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
@@ -109121,7 +109162,8 @@
   "used_by": [
    "Kreis Viersen"
   ],
-  "version": "2.0.0"
+  "version": "2.0.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -109754,7 +109796,7 @@
    "Stadt Bad Berleburg"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Integration der CO2-Ampel-Daten aus Schulen in Bad Berleburg, welche \u00fcber den Funkstandard LoRaWAN bereitgestellt werden.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -109780,12 +109822,13 @@
   "released": "2026-09-09",
   "repo": "https://gitlab.opencode.de/stadt-bad-berleburg/raumklima",
   "repo_key": "gitlab.opencode.de/stadt-bad-berleburg/raumklima",
-  "short_desc": "Integration der CO2-Ampel-Daten aus Schulen in Bad Berleburg, welche \u00fcber den Funkstandard LoRaWAN bereitgestellt werden.",
+  "short_desc": "Integration of CO2 traffic-light data from schools in Bad Berleburg, delivered over the LoRaWAN radio standard.",
   "software_type": "configurationFiles",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 12977,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -114788,7 +114831,7 @@
    "byte - Bayerische Agentur f\u00fcr Digitales GmbH"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Web-App zur Erstellung von Schrifts\u00e4tzen aus Textbausteinen. Nutzer definieren Frage-Antwort-Pfade, die sie zum fertigen Text f\u00fchren.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -114820,11 +114863,12 @@
   ],
   "repo": "https://gitlab.opencode.de/byte-bayerische-agentur-f-r-digitales-gmbh/schriftsatzgenerator",
   "repo_key": "gitlab.opencode.de/byte-bayerische-agentur-f-r-digitales-gmbh/schriftsatzgenerator",
-  "short_desc": "Web-App zur Erstellung von Schrifts\u00e4tzen aus Textbausteinen. Nutzer definieren Frage-Antwort-Pfade, die sie zum fertigen Text f\u00fchren.",
+  "short_desc": "Web app for producing legal pleadings from text blocks. Users define question-and-answer paths that lead them to the finished text.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
-  "upstream_id": 8776
+  "upstream_id": 8776,
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -120282,7 +120326,7 @@
    "Team IT"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Das Projekt umfasst die Erstellung von Dashboardseiten zur Visualisierung kommunaler Daten aus den Bereichen Klima, Umwelt, Mobilit\u00e4t und Stadtentwicklung.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -120309,12 +120353,13 @@
   "released": "2025-03-05",
   "repo": "https://gitlab.opencode.de/stadt-menden/dashboard-menden",
   "repo_key": "gitlab.opencode.de/stadt-menden/dashboard-menden",
-  "short_desc": "Das Projekt umfasst die Erstellung von Dashboardseiten zur Visualisierung kommunaler Daten aus den Bereichen Klima, Umwelt, Mobilit\u00e4t und Stadtentwicklung.",
+  "short_desc": "The project covers the creation of dashboard pages visualising municipal data on climate, environment, mobility and urban development.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 3477,
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -120664,7 +120709,7 @@
    "Pierre Rotthoff"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Webanwendung zur Planung, Verwaltung und Buchung multifunktionaler Fl\u00e4chen im Stadtgebiet Detmold.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -120694,11 +120739,12 @@
   ],
   "repo": "https://gitlab.opencode.de/stadt-detmold/multifunktionale-flaechennutzung",
   "repo_key": "gitlab.opencode.de/stadt-detmold/multifunktionale-flaechennutzung",
-  "short_desc": "Webanwendung zur Planung, Verwaltung und Buchung multifunktionaler Fl\u00e4chen im Stadtgebiet Detmold.",
+  "short_desc": "Web application for planning, managing and booking multifunctional spaces in the Detmold city area.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
-  "upstream_id": 8403
+  "upstream_id": 8403,
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -124070,7 +124116,7 @@
    "knot dots UG"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "KnotDots / Strategy Tool ist ein Open-Source-Analysetool f\u00fcr St\u00e4dte und Kommunen zur visuellen Verkn\u00fcpfung und zum Monitoring von Strategien, Zielen und konkreten Ma\u00dfnahmen.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -124094,12 +124140,13 @@
   "released": "2024-01-01",
   "repo": "https://gitlab.opencode.de/smart-city-arnsberg/knot-dots",
   "repo_key": "gitlab.opencode.de/smart-city-arnsberg/knot-dots",
-  "short_desc": "KnotDots / Strategy Tool ist ein Open-Source-Analysetool f\u00fcr St\u00e4dte und Kommunen zur visuellen Verkn\u00fcpfung und zum Monitoring von Strategien, Zielen und konkreten Ma\u00dfnahmen.",
+  "short_desc": "KnotDots / Strategy Tool is an open source analysis tool for cities and municipalities, for visually linking and monitoring strategies, objectives and concrete measures.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 11042,
-  "version": "1.0"
+  "version": "1.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -126042,7 +126089,7 @@
    "BWI GmbH"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "Kubernetes-Operator zum dynamischen Anpassen der Synapse-Konfiguration.",
   "desc_src_lang": "de",
   "dev_status": "development",
@@ -126067,12 +126114,13 @@
   "released": "2026-08-28",
   "repo": "https://gitlab.opencode.de/bwi/bundesmessenger/backend/synapse-config-operator",
   "repo_key": "gitlab.opencode.de/bwi/bundesmessenger/backend/synapse-config-operator",
-  "short_desc": "Kubernetes-Operator zum dynamischen Anpassen der Synapse-Konfiguration.",
+  "short_desc": "Kubernetes operator for dynamically adjusting the Synapse configuration.",
   "software_type": "standalone/backend",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 12791,
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -126921,7 +126969,7 @@
    }
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "Service de messagerie instantan\u00e9e fran\u00e7ais bas\u00e9 sur le protocole Matrix",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Tchap",
@@ -126941,7 +126989,7 @@
   "recommended_for_gov": true,
   "repo": "https://github.com/tchapgouv/tchap-web-v4",
   "repo_key": "github.com/tchapgouv/tchap-web-v4",
-  "short_desc": "Service de messagerie instantan\u00e9e fran\u00e7ais bas\u00e9 sur le protocole Matrix",
+  "short_desc": "French instant messaging service based on the Matrix protocol.",
   "sill_id": 679,
   "source": "FR/sill",
   "tier": "index",
@@ -126949,7 +126997,8 @@
    "DGFiP - Direction G\u00e9n\u00e9rale des Finances Publiques"
   ],
   "version": "1.11.44",
-  "wikidata": "Q137106265"
+  "wikidata": "Q137106265",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -133820,7 +133869,7 @@
    "virtualcitysystems GmbH"
   ],
   "country": "DE",
-  "desc_lang": "de",
+  "desc_lang": "en",
   "desc_src": "VC Solar App ist eine Open-Source-Erweiterung f\u00fcr 3D-Karten zur interaktiven Analyse, Ertragsberechnung und WIRTSCHAFTLICHKEITSBEWERTUNG von Photovoltaikanlagen auf D\u00e4chern, Fassaden und Freifl\u00e4chen.",
   "desc_src_lang": "de",
   "dev_status": "stable",
@@ -133844,12 +133893,13 @@
   "released": "2026-04-28",
   "repo": "https://gitlab.opencode.de/smart-city-arnsberg/vc-solar",
   "repo_key": "gitlab.opencode.de/smart-city-arnsberg/vc-solar",
-  "short_desc": "VC Solar App ist eine Open-Source-Erweiterung f\u00fcr 3D-Karten zur interaktiven Analyse, Ertragsberechnung und WIRTSCHAFTLICHKEITSBEWERTUNG von Photovoltaikanlagen auf D\u00e4chern, Fassaden und Freifl\u00e4chen.",
+  "short_desc": "VC Solar App is an open source extension for 3D maps, for interactive analysis, yield calculation and economic assessment of photovoltaic installations on roofs, facades and open land.",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 13139,
-  "version": "3.1.2"
+  "version": "3.1.2",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -140864,7 +140914,7 @@
    }
   ],
   "country": "FR",
-  "desc_lang": "fr",
+  "desc_lang": "en",
   "desc_src": "Editeur int\u00e9grant de l'IA (possibilit\u00e9 d'y connecter Albert via l'API). Mode collaboration en temps r\u00e9el (multi-utilisateurs).",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Zed",
@@ -140882,7 +140932,7 @@
   "recommended_for_gov": true,
   "repo": "https://github.com/zed-industries/zed",
   "repo_key": "github.com/zed-industries/zed",
-  "short_desc": "Editeur int\u00e9grant de l'IA (possibilit\u00e9 d'y connecter Albert via l'API). Mode collaboration en temps r\u00e9el (multi-utilisateurs).",
+  "short_desc": "Editor with AI built in (Albert can be connected via the API). Real-time collaboration mode (multi-user).",
   "sill_id": 666,
   "source": "FR/sill",
   "tier": "index",
@@ -140891,7 +140941,8 @@
    "MAASA :  : Minist\u00e8re de l'Agriculture, de l'Agro-alimentaire et de la Souverainet\u00e9 Alimentaire"
   ],
   "version": "1.20.2",
-  "wikidata": "Q112301707"
+  "wikidata": "Q112301707",
+  "translated": true
  },
  {
   "catalogue_count": 1,

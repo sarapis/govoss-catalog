@@ -103,6 +103,7 @@ for r in c:
     rows.append({
         "n": r.get("name") or "(unnamed)",
         "fs": _FIRST_SEEN.get(_fs_ident(r)),
+        "dl": r.get("desc_lang"),
         "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
         "cs": r.get("countries") or ([r["country"]] if r.get("country") else []),
         "mc": r.get("merged_count", 1),
@@ -213,11 +214,24 @@ PFACETS = json.dumps([[k, k, n] for k, n in
 # (date, name) tuple reverses BOTH keys, so the strip led with VC Solar while the
 # table led with bytype — same date, opposite name order. Sort by name ascending
 # first, then stable-sort by date descending, which is what the JS does.
+# Source label -> flag, for the entry cards. Keyed on the LABEL because that is
+# what the card renders (r.ce[].l and r.ss), the same string /sources.html links
+# on. Falls back to nothing rather than a placeholder: a wrong flag on a country
+# claim is worse than no flag.
+SRCFLAG = json.dumps({lbl: (_S.SOURCES.get(k) or {}).get("flag") or ""
+                      for k, lbl in SRC_LABEL.items()})
+
 _dated = sorted((r for r in _inc if r.get("fs")), key=lambda r: r["n"].lower())
 _dated.sort(key=lambda r: r["fs"], reverse=True)
+# ⚠ The description is carried ONLY when it is English. A card is 232px of prime
+# space on the home page, and this strip is the one place a reader meets an entry
+# with no context — showing them German there is worse than showing them nothing.
+# The name, country, catalogue and date still identify it, and the full entry is
+# one click away. Translations land on the next run, so a card can gain its
+# description without any change here.
 NEWEST = json.dumps([
-    {"n": r["n"], "c": r["c"], "s": r["s"], "fs": r["fs"],
-     "u": r.get("u"), "d": (r.get("d") or "")[:110]}
+    {"n": r["n"], "c": r["c"], "s": r["s"], "fs": r["fs"], "u": r.get("u"),
+     "d": (r.get("d") or "")[:110] if r.get("dl") == "en" else ""}
     for r in _dated[:10]
 ])
 
@@ -317,6 +331,7 @@ SUBS = {
     "__SFACETS__": SFACETS,
     "__CCFACETS__": CCFACETS,
     "__NEWEST__": NEWEST,
+    "__SRCFLAG__": SRCFLAG,
     "__SOPTS__": SOPTS,
     "__N_EX_NODESC__": "{:,}".format(n_ex_nodesc),
     "__N_EX_NOTSOFT__": "{:,}".format(n_ex_notsoft),

@@ -25,12 +25,29 @@ PAGE_CSS = """
 
 /* The API note: small, but plain visible text. It is an agent affordance, so it
    may not become a tooltip, a collapsed disclosure or an image. */
+/* ⚠ theme.py's icons carry a viewBox and NO width/height, so an unsized one
+   renders at the SVG default — the <> rendered enormous here. Every context that
+   uses an icon has to size it; `.stamp svg` already does the same. */
+.apinote svg{width:13px;height:13px;vertical-align:-2px;}
+/* A flex ROW, not an inline paragraph. Inline, the pieces wrapped independently
+   and scattered over four lines at 1280px: /meta.json alone on one, "API and MCP"
+   two lines below it. Its natural single-line width is 766px against the 760px
+   cap the searchbar sets, so the cap alone was breaking it. Flex keeps each piece
+   whole and wraps only between them, which is the same reason `.apibar .links`
+   was a flex row. `max-width` is dropped so one line fits; the hero's own padding
+   still bounds it, and it wraps normally on narrow screens. */
 .apinote{margin:10px 0 0;font-size:12.5px;line-height:1.7;color:var(--ink-600);
-  max-width:760px;}
-.apinote b{color:var(--ink);font-weight:600;}
-.apinote a{margin-left:8px;font-family:var(--font-mono,ui-monospace,monospace);
-  font-size:12px;}
-.apinote a.more{font-family:inherit;font-size:12.5px;font-weight:600;}
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;}
+.apinote b{color:var(--ink);font-weight:600;display:inline-flex;align-items:center;
+  gap:6px;white-space:nowrap;}
+.apinote .m{min-width:0;}
+.apinote a{font-family:var(--font-mono,ui-monospace,monospace);font-size:12px;
+  white-space:nowrap;}
+/* NOT `.more` — that class already belongs to the "Show 100 more" button, which
+   is `display:block;width:100%`. Reusing the name made this link a full-width
+   flex item that filled its row and pushed itself onto a line of its own, which
+   read as a wrapping bug and was a class collision. */
+.apinote a.apimore{font-family:inherit;font-size:12.5px;font-weight:600;}
 
 /* Recently added. The track is the ONLY thing that scrolls sideways on this page
    - it is its own overflow container, so the body never does. */
@@ -50,7 +67,12 @@ PAGE_CSS = """
   font-size:12.5px;font-weight:600;color:var(--accent);}
 .rtrack{display:flex;gap:10px;list-style:none;margin:0;padding:2px;
   overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x proximity;
-  overscroll-behavior-x:contain;}
+  overscroll-behavior-x:contain;
+  /* Scrollbar hidden, scrolling kept. The arrows are the affordance here, and a
+     horizontal bar under a 10-card strip reads as a page defect. Keyboard and
+     wheel/trackpad scrolling are unaffected. */
+  scrollbar-width:none;-ms-overflow-style:none;}
+.rtrack::-webkit-scrollbar{display:none;}
 .rcard{flex:0 0 232px;scroll-snap-align:start;background:var(--surface);
   border:1px solid var(--border);border-radius:var(--r-card);padding:12px 14px;
   display:flex;flex-direction:column;gap:5px;min-width:0;}
@@ -59,7 +81,8 @@ PAGE_CSS = """
 .rcard .rd{font-size:12.5px;line-height:1.45;color:var(--ink-600);
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 .rcard .rm{margin-top:auto;padding-top:4px;font-size:11px;color:var(--ink-faint);
-  display:flex;gap:6px;flex-wrap:wrap;}
+  display:flex;gap:6px;flex-wrap:wrap;align-items:baseline;}
+.rcard .rm .fl{font-size:13px;line-height:1;cursor:default;}
 @media (prefers-reduced-motion:reduce){.rtrack{scroll-behavior:auto;}}
 
 /* ---- agent banner: must sit directly above the tiles, early in the DOM ---- */
@@ -324,12 +347,13 @@ BODY = """
          an announcement — but it must stay visible text, not a tooltip or a
          collapsed disclosure, or it stops being an affordance at all. -->
     <p class="apinote">
-      <b>__ICON_CODE__ Building something?</b> Don&rsquo;t scrape this page &mdash; the
-      whole catalog is one request:
+      <b>__ICON_CODE__ Building something?</b>
+      <span class="m">Don&rsquo;t scrape this page &mdash; the whole catalog is one
+        request:</span>
       <a href="/entries.json">/entries.json</a>
       <a href="/sources.json">/sources.json</a>
       <a href="/meta.json">/meta.json</a>
-      <a class="more" href="/api.html">API and MCP &rarr;</a>
+      <a class="apimore" href="/api.html">API and MCP &rarr;</a>
     </p>
   </div>
 </div>
@@ -463,12 +487,23 @@ var DATA = __DATA__;
 var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var CCFACETS = __CCFACETS__;
 var NEWEST = __NEWEST__;
+var SRCFLAG = __SRCFLAG__;
 // code -> display name, derived from the facet labels so there is ONE source for
 // them. The flag is stripped: the label is "<flag> Germany" and sorting on that
 // would order by emoji codepoint, not by name.
-var CCNAME = {};
-CCFACETS.forEach(function (f) { CCNAME[f[0]] = String(f[1]).replace(/^\S+\s+/, ''); });
+var CCNAME = {}, CCFLAG = {};
+CCFACETS.forEach(function (f) {
+  // The facet label is "<flag> <name>". Both halves are taken from it rather than
+  // shipped twice, so a remapped flag or a renamed country cannot disagree
+  // between the sidebar and the Recently added strip. A label with no space is a
+  // name with no flag: keep the name, leave the flag empty.
+  var lbl = String(f[1]), sp = lbl.indexOf(' ');
+  CCNAME[f[0]] = sp > 0 ? lbl.slice(sp + 1) : lbl;
+  CCFLAG[f[0]] = sp > 0 ? lbl.slice(0, sp) : '';
+});
 function ccLabel(code) { return CCNAME[code] || code; }
+// Flag where there is one, country NAME where there is not — never an empty cell.
+function ccFlag(code) { return CCFLAG[code] || ccLabel(code); }
 var PAGE_SIZE = 100;
 
 /* State. NOTHING here is named after an element id: browsers expose ids as
@@ -640,10 +675,20 @@ function render() {
     var meta = [];
     if (r.l) meta.push(esc(r.l)); else meta.push('Licence not stated by the source');
     if (r.qid) meta.push(esc(r.qid));
+    // Each source catalogue carries its country's flag. An entry listed by three
+    // catalogues shows three flags, which is the point: it is the quickest read of
+    // "who else publishes this" on a card that has no room for a sentence.
+    // Unknown label -> no flag rather than a placeholder; a wrong flag asserts a
+    // country the data never claimed.
+    function flagged(label, href) {
+      var f = SRCFLAG[label] ? SRCFLAG[label] + ' ' : '';
+      return href
+        ? f + '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(label) + '</a>'
+        : f + esc(label);
+    }
     var srcs = (r.ce && r.ce.length ? r.ce : []).map(function (c) {
-      return c.u ? '<a href="' + esc(c.u) + '" target="_blank" rel="noopener">' + esc(c.l) + '</a>'
-                 : esc(c.l);
-    }).join(' + ') || esc((r.ss || [r.s]).join(' + '));
+      return flagged(c.l, c.u);
+    }).join(' + ') || (r.ss || [r.s]).map(function (l) { return flagged(l); }).join(' + ');
     return '<li class="item">' +
       '<div class="cc">' + esc(r.c) + '</div>' +
       '<div class="main">' +
@@ -767,8 +812,11 @@ el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
       : esc(r.n);
     return '<li class="rcard"><div class="rt">' + title + '</div>' +
       (r.d ? '<div class="rd">' + esc(r.d) + '</div>' : '') +
-      '<div class="rm"><span>' + esc(ccLabel(r.c)) + '</span>' +
-      '<span>&middot;</span><span>' + esc(r.s) + '</span>' +
+      // The flag carries a `title` with the country name: a bare emoji is a poor
+      // label on its own, and the name is the thing a reader may actually need.
+      '<div class="rm"><span class="fl" title="' + esc(ccLabel(r.c)) + '">' +
+        esc(ccFlag(r.c)) + '</span>' +
+      '<span>' + esc(r.s) + '</span>' +
       '<span>&middot;</span><span>' + esc(r.fs) + '</span></div></li>';
   }).join('');
 
