@@ -2853,5 +2853,700 @@
    "confidence": "partial",
    "kind": "service"
   }
+ ],
+ "Signalen frontend": [
+  {
+   "product": "SeeClickFix",
+   "vendor": "CivicPlus",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Accela Citizen Relationship Management",
+   "vendor": "Accela",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Bareos": [
+  {
+   "product": "Veeam Backup & Replication",
+   "vendor": "Veeam",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Commvault",
+   "vendor": "Commvault",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Acronis Cyber Protect",
+   "vendor": "Acronis",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "CollectiveAccess": [
+  {
+   "product": "Gallery Systems TMS",
+   "vendor": "Gallery Systems",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Axiell Collections",
+   "vendor": "Axiell",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Dashlord": [
+  {
+   "product": "Siteimprove",
+   "vendor": "Siteimprove",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "aggregates open scanners (accessibility, security headers, performance) across a portfolio of sites; no content QA or SEO suite"
+  }
+ ],
+ "Docs - Collaborative Text Editing": [
+  {
+   "product": "HackMD",
+   "vendor": "HackMD",
+   "confidence": "strong",
+   "kind": "service"
+  },
+  {
+   "product": "Google Docs",
+   "vendor": "Google",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Notion",
+   "vendor": "Notion Labs",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "DSS": [
+  {
+   "product": "DocuSign",
+   "vendor": "DocuSign",
+   "confidence": "adjacent",
+   "kind": "software",
+   "note": "a library for creating and validating eIDAS signatures, not a signing workflow; it is what such a workflow is built on"
+  },
+  {
+   "product": "Adobe Acrobat Sign",
+   "vendor": "Adobe",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Démarches simplifiées": [
+  {
+   "product": "Granicus Forms",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Formstack",
+   "vendor": "Formstack",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "La Suite Drive": [
+  {
+   "product": "Dropbox",
+   "vendor": "Dropbox",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Box",
+   "vendor": "Box",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Google Drive",
+   "vendor": "Google",
+   "confidence": "partial",
+   "kind": "service"
+  },
+  {
+   "product": "Microsoft OneDrive for Business",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "La Suite Meet": [
+  {
+   "product": "Zoom",
+   "vendor": "Zoom",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Webex",
+   "vendor": "Cisco",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "GoToMeeting",
+   "vendor": "GoTo",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "MUCGPT": [
+  {
+   "product": "ChatGPT Enterprise",
+   "vendor": "OpenAI",
+   "confidence": "partial",
+   "kind": "service",
+   "note": "the assistant layer only: it still needs a language-model endpoint, bought or self-hosted"
+  },
+  {
+   "product": "Microsoft 365 Copilot",
+   "vendor": "Microsoft",
+   "confidence": "adjacent",
+   "kind": "service"
+  }
+ ],
+ "Onyxia": [
+  {
+   "product": "Domino Data Lab",
+   "vendor": "Domino Data Lab",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Posit Workbench",
+   "vendor": "Posit",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Python": [
+  {
+   "product": "MATLAB",
+   "vendor": "MathWorks",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "SAS",
+   "vendor": "SAS Institute",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Stata",
+   "vendor": "StataCorp",
+   "confidence": "adjacent",
+   "kind": "software"
+  },
+  {
+   "product": "IBM SPSS Statistics",
+   "vendor": "IBM",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "TrueNAS": [
+  {
+   "product": "NetApp ONTAP",
+   "vendor": "NetApp",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Dell PowerScale (Isilon)",
+   "vendor": "Dell Technologies",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Windows Server file services",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Visual Studio Code": [
+  {
+   "product": "Sublime Text",
+   "vendor": "Sublime HQ",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "UltraEdit",
+   "vendor": "IDM Computer Solutions",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "TextPad",
+   "vendor": "Helios Software",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Visual Studio Professional",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Vitam": [
+  {
+   "product": "Preservica",
+   "vendor": "Preservica",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "a back-end archiving core; the front office is built separately"
+  }
+ ],
+ "Whistleblowing": [
+  {
+   "product": "NAVEX EthicsPoint",
+   "vendor": "NAVEX",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "report intake for an anti-corruption officer; no hotline service or compliance case suite"
+  },
+  {
+   "product": "Convercent",
+   "vendor": "OneTrust",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "FastReport": [
+  {
+   "product": "FastReport .NET",
+   "vendor": "Fast Reports",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Crystal Reports",
+   "vendor": "SAP",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Unica Acquisti": [
+  {
+   "product": "Ivalua",
+   "vendor": "Ivalua",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "built around Italian procurement law and ANAC reporting"
+  },
+  {
+   "product": "SAP Ariba",
+   "vendor": "SAP",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "built around Italian procurement law and ANAC reporting"
+  }
+ ],
+ "C4S ERP": [
+  {
+   "product": "NetSuite",
+   "vendor": "Oracle",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "SAP Business One",
+   "vendor": "SAP",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Tazama": [
+  {
+   "product": "NICE Actimize",
+   "vendor": "NICE",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "NetLock RMM": [
+  {
+   "product": "NinjaOne",
+   "vendor": "NinjaOne",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Microsoft Configuration Manager",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "vtenext": [
+  {
+   "product": "SugarCRM",
+   "vendor": "SugarCRM",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Dynamics 365 Sales",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "A12": [
+  {
+   "product": "Mendix",
+   "vendor": "Siemens",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "OutSystems",
+   "vendor": "OutSystems",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "CIVITAS/CORE": [
+  {
+   "product": "OpenDataSoft",
+   "vendor": "OpenDataSoft",
+   "confidence": "adjacent",
+   "kind": "software",
+   "note": "an urban data platform (ingest, store, serve sensor and city data); publishing an open data portal is one use of it"
+  },
+  {
+   "product": "Socrata Open Data",
+   "vendor": "Tyler Technologies",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Data HUB": [
+  {
+   "product": "OpenDataSoft",
+   "vendor": "OpenDataSoft",
+   "confidence": "adjacent",
+   "kind": "software",
+   "note": "an urban data platform (ingest, store, serve sensor and city data); publishing an open data portal is one use of it"
+  },
+  {
+   "product": "Socrata Open Data",
+   "vendor": "Tyler Technologies",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "FixMyStreet": [
+  {
+   "product": "SeeClickFix",
+   "vendor": "CivicPlus",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Accela Citizen Relationship Management",
+   "vendor": "Accela",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "IRIS": [
+  {
+   "product": "SeeClickFix",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenMelder": [
+  {
+   "product": "SeeClickFix",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenCity Italia - OpenSegnalazioni": [
+  {
+   "product": "SeeClickFix",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "ParteciPa": [
+  {
+   "product": "EngagementHQ",
+   "vendor": "Granicus",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Neighborland",
+   "vendor": "OpenGov",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Mitmachportal Würzburg": [
+  {
+   "product": "EngagementHQ",
+   "vendor": "Granicus",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "a deployment of Consul Democracy"
+  },
+  {
+   "product": "Neighborland",
+   "vendor": "OpenGov",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "a deployment of Consul Democracy"
+  }
+ ],
+ "Dialog- und Beteiligungsportal Osnabrück": [
+  {
+   "product": "EngagementHQ",
+   "vendor": "Granicus",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "a deployment of Consul Democracy"
+  },
+  {
+   "product": "Neighborland",
+   "vendor": "OpenGov",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "a deployment of Consul Democracy"
+  }
+ ],
+ "Öffentlichkeitsbeteiligung in der Stadt Regensburg": [
+  {
+   "product": "EngagementHQ",
+   "vendor": "Granicus",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "a deployment of Consul Democracy"
+  },
+  {
+   "product": "Neighborland",
+   "vendor": "OpenGov",
+   "confidence": "strong",
+   "kind": "software",
+   "note": "a deployment of Consul Democracy"
+  }
+ ],
+ "UrbanKIT Plattform": [
+  {
+   "product": "EngagementHQ",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Form PA": [
+  {
+   "product": "Granicus Forms",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Formstack",
+   "vendor": "Formstack",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "MOOn": [
+  {
+   "product": "Granicus Forms",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Formstack",
+   "vendor": "Formstack",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Publik": [
+  {
+   "product": "Granicus Forms",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Formstack",
+   "vendor": "Formstack",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "BasicUse": [
+  {
+   "product": "Granicus Forms",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Formstack",
+   "vendor": "Formstack",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Opencity Italia - Sito web comunale": [
+  {
+   "product": "Granicus govAccess",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "CivicPlus CivicEngage",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Comunweb": [
+  {
+   "product": "Granicus govAccess",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "CivicPlus CivicEngage",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Sitemanager 3": [
+  {
+   "product": "Granicus govAccess",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "CivicPlus CivicEngage",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "KODI Suite Mobile": [
+  {
+   "product": "CivicPlus municipal app",
+   "vendor": "CivicPlus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Notify": [
+  {
+   "product": "Granicus GovDelivery",
+   "vendor": "Granicus",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "VIDE": [
+  {
+   "product": "Qmatic Orchestra",
+   "vendor": "Qmatic",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Appalti": [
+  {
+   "product": "Ivalua",
+   "vendor": "Ivalua",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "built around Italian procurement law and ANAC reporting"
+  }
+ ],
+ "CIB seven": [
+  {
+   "product": "Camunda Enterprise",
+   "vendor": "Camunda",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "a maintained fork of Camunda 7 Community; Camunda's commercial line has moved on to Camunda 8"
+  }
+ ],
+ "DevGuard": [
+  {
+   "product": "Snyk Open Source",
+   "vendor": "Snyk",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Checkmarx One",
+   "vendor": "Checkmarx",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "IT Security Crawler": [
+  {
+   "product": "BitSight Security Ratings",
+   "vendor": "BitSight",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "passive external attack-surface assessment for German local government; no vendor-risk ratings service"
+  }
+ ],
+ "InGrid": [
+  {
+   "product": "ArcGIS Hub",
+   "vendor": "Esri",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "OpenDataSoft",
+   "vendor": "OpenDataSoft",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Nuovo OPAC di polo SBN": [
+  {
+   "product": "Ex Libris Primo",
+   "vendor": "Ex Libris",
+   "confidence": "partial",
+   "kind": "software",
+   "note": "the public catalogue (discovery) layer only, on Italy's SBN library network"
+  }
  ]
 }

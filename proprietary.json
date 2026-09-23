@@ -9,7 +9,7 @@
    "data-service": "the paid item is primarily CONTENT or a data feed. Open source cannot substitute a legal-research corpus or a traffic dataset, so 'no alternative' here is a category fact, not a gap"
   },
   "excluded": "Support contracts, advisory retainers and payment processing are left out entirely - they are not software licences. See NOT_SOFTWARE in scratchpad/gen_proprietary.py.",
-  "how_to_extend": "Add products here by hand, or re-seed from a newer export and review the diff. A product that gains a replaces.json mapping must be REMOVED from here - build_products.py fails if one appears in both.",
+  "how_to_extend": "Add products here by hand, or re-seed from a newer export and review the diff. Every product named in replaces.json must have a record here - build_products.py fails otherwise. Whether a product has an alternative is derived from by-product.json at build time, so a product that gains a mapping stays listed and simply moves to 'has an alternative'.",
   "fields": {
    "description": "what the product does",
    "desc_src": "nyc = NYC's own purpose string from its licence export; curated = hand-written for this catalogue, unverified",
@@ -448,6 +448,14 @@
    "seen_in": []
   },
   {
+   "name": "Axiell Collections",
+   "description": "Museum and archive collections management",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Axon",
    "description": "Data storage and licensing for tasers and body-worn cameras",
    "desc_src": "nyc",
@@ -512,6 +520,14 @@
   {
    "name": "BitLocker",
    "description": "Full-disk encryption for Windows",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "BitSight Security Ratings",
+   "description": "External attack-surface monitoring and security ratings",
    "desc_src": "curated",
    "function": "identity-security",
    "kind": "software",
@@ -610,6 +626,14 @@
    "seen_in": []
   },
   {
+   "name": "Camunda Enterprise",
+   "description": "Commercial workflow and decision automation platform",
+   "desc_src": "curated",
+   "function": "case-workflow",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Canvas",
    "description": "Virtual learning environment and courseware",
    "desc_src": "curated",
@@ -660,6 +684,14 @@
    "description": "Electronic health records for hospitals",
    "desc_src": "curated",
    "function": "health-social",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ChatGPT Enterprise",
+   "description": "Hosted generative-AI assistant for organisations",
+   "desc_src": "curated",
+   "function": "office",
    "kind": "software",
    "seen_in": []
   },
@@ -736,6 +768,14 @@
    "description": "Application and desktop virtualisation",
    "desc_src": "curated",
    "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "CivicPlus CivicEngage",
+   "description": "Municipal website content management",
+   "desc_src": "curated",
+   "function": "web-content",
    "kind": "software",
    "seen_in": []
   },
@@ -890,6 +930,14 @@
    "description": "Hosted endpoint backup",
    "desc_src": "curated",
    "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Crystal Reports",
+   "description": "Report design and generation",
+   "desc_src": "curated",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": []
   },
@@ -1146,6 +1194,14 @@
    "seen_in": []
   },
   {
+   "name": "Ex Libris Primo",
+   "description": "Library discovery and public catalogue",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "eXFORMA / MobiTask",
    "description": "Inspection form management",
    "desc_src": "nyc",
@@ -1154,6 +1210,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "FastReport .NET",
+   "description": "Commercial edition of the FastReport reporting engine for .NET",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Figma",
@@ -1238,6 +1302,14 @@
    "description": "Cloud CAD, CAM and engineering design",
    "desc_src": "curated",
    "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Gallery Systems TMS",
+   "description": "Museum collections management",
+   "desc_src": "curated",
+   "function": "documents",
    "kind": "software",
    "seen_in": []
   },
@@ -1384,6 +1456,14 @@
    "description": "Government online forms and digital services",
    "desc_src": "curated",
    "function": "citizen-services",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Granicus govAccess",
+   "description": "Website platform for local government",
+   "desc_src": "curated",
+   "function": "web-content",
    "kind": "software",
    "seen_in": []
   },
@@ -1856,6 +1936,14 @@
    "seen_in": []
   },
   {
+   "name": "Mendix",
+   "description": "Low-code application development platform",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Meridian Learning Management System",
    "description": "Agency-wide staff training and compliance",
    "desc_src": "nyc",
@@ -1876,6 +1964,14 @@
   {
    "name": "Microsoft 365",
    "description": "Hosted office productivity, email and collaboration suite",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Microsoft 365 Copilot",
+   "description": "Generative-AI assistant inside Microsoft 365 applications",
    "desc_src": "curated",
    "function": "office",
    "kind": "software",
@@ -2124,6 +2220,22 @@
    ]
   },
   {
+   "name": "NICE Actimize",
+   "description": "Fraud and anti-money-laundering transaction monitoring",
+   "desc_src": "curated",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "NinjaOne",
+   "description": "Remote monitoring and management of endpoints",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Notion",
    "description": "Team wiki, notes and lightweight project tracking",
    "desc_src": "curated",
@@ -2220,6 +2332,14 @@
    "description": "Desktop email and calendar client",
    "desc_src": "curated",
    "function": "collaboration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "OutSystems",
+   "description": "Low-code application development platform",
+   "desc_src": "curated",
+   "function": "dev-tools",
    "kind": "software",
    "seen_in": []
   },
@@ -2336,6 +2456,14 @@
    ]
   },
   {
+   "name": "Preservica",
+   "description": "Digital preservation and long-term archiving",
+   "desc_src": "curated",
+   "function": "documents",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "PRTG Network Monitor",
    "description": "Network and infrastructure monitoring",
    "desc_src": "curated",
@@ -2366,6 +2494,14 @@
    "description": "Business intelligence and data discovery",
    "desc_src": "curated",
    "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Qmatic Orchestra",
+   "description": "Queue management and appointment booking for service desks",
+   "desc_src": "curated",
+   "function": "citizen-services",
    "kind": "software",
    "seen_in": []
   },
@@ -2538,6 +2674,14 @@
    ]
   },
   {
+   "name": "SAP Ariba",
+   "description": "Procurement, sourcing and supplier management",
+   "desc_src": "curated",
+   "function": "finance-procurement",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "SAP Business One",
    "description": "ERP for small and mid-sized organisations",
    "desc_src": "curated",
@@ -2620,6 +2764,14 @@
    "seen_in": []
   },
   {
+   "name": "Siteimprove",
+   "description": "Website quality, accessibility and SEO monitoring",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Slack",
    "description": "Internal team communication",
    "desc_src": "nyc",
@@ -2658,6 +2810,14 @@
   {
    "name": "Snyk Container",
    "description": "Container image vulnerability scanning",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Snyk Open Source",
+   "description": "Dependency vulnerability and licence scanning",
    "desc_src": "curated",
    "function": "identity-security",
    "kind": "software",
