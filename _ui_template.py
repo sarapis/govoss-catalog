@@ -331,16 +331,16 @@ ICONS = {
 BODY = """
 <div class="hero tex">
   <div class="inner">
-    <p class="overline">The union catalog &middot; updated every Monday</p>
-    <h1>Open source software catalog for governments</h1>
-    <p class="lede">An aggregation of open source software catalogs from national, regional,
+    <p class="overline">⟪The union catalog &middot; updated every Monday⟫</p>
+    <h1>⟪Open source software catalog for governments⟫</h1>
+    <p class="lede">⟪An aggregation of open source software catalogs from national, regional,
       local and global governing institutions &mdash; updated weekly. Are we missing a catalog?
-      <a href="#submit">Submit it here</a>.</p>
+      <a href="#submit">Submit it here</a>.⟫</p>
     <div class="searchbar">
       <input type="search" id="q" autocomplete="off"
-             placeholder="Search __NENTRIES__ entries, or a product you pay for"
-             aria-label="Search the catalog">
-      <button class="btn btn-primary" id="qbtn">Search</button>
+             placeholder="⟪Search __NENTRIES__ entries, or a product you pay for⟫"
+             aria-label="⟪Search the catalog⟫">
+      <button class="btn btn-primary" id="qbtn">⟪Search⟫</button>
     </div>
     <!-- Agent affordance 3 of 4. It used to sit above the stat tiles; directly
          under the search field is EARLIER in the DOM, so a text extraction hits
@@ -348,13 +348,13 @@ BODY = """
          an announcement — but it must stay visible text, not a tooltip or a
          collapsed disclosure, or it stops being an affordance at all. -->
     <p class="apinote">
-      <b>__ICON_CODE__ Building something?</b>
-      <span class="m">Don&rsquo;t scrape this page &mdash; the whole catalog is one
-        request:</span>
+      <b>__ICON_CODE__ ⟪Building something?⟫</b>
+      <span class="m">⟪Don&rsquo;t scrape this page &mdash; the whole catalog is one
+        request:⟫</span>
       <a href="/entries.json">/entries.json</a>
       <a href="/sources.json">/sources.json</a>
       <a href="/meta.json">/meta.json</a>
-      <a class="apimore" href="/api.html">API and MCP &rarr;</a>
+      <a class="apimore" href="/api.html">⟪API and MCP &rarr;⟫</a>
     </p>
   </div>
 </div>
@@ -365,52 +365,52 @@ BODY = """
        empty strip claiming "recently added" is worse than no strip. -->
   <section class="recent" id="recent" hidden>
     <div class="rhead">
-      <h2>Recently added</h2>
+      <h2>⟪Recently added⟫</h2>
       <div class="rnav">
-        <button type="button" class="rbtn" id="rprev" aria-label="Scroll left">&larr;</button>
-        <button type="button" class="rbtn" id="rnext" aria-label="Scroll right">&rarr;</button>
-        <button type="button" class="rall" id="rall">See all, newest first</button>
+        <button type="button" class="rbtn" id="rprev" aria-label="⟪Scroll left⟫">&larr;</button>
+        <button type="button" class="rbtn" id="rnext" aria-label="⟪Scroll right⟫">&rarr;</button>
+        <button type="button" class="rall" id="rall">⟪See all, newest first⟫</button>
       </div>
     </div>
     <ul class="rtrack" id="rtrack"></ul>
   </section>
 
   <div class="stats">
-    <div class="stat"><b>__N_ENTRIES__</b><span>entries</span></div>
-    <div class="stat"><b>__N_SOURCES__</b><span>source catalogs</span></div>
-    <div class="stat"><b>__N_PC__</b><span>with publiccode.yml</span></div>
-    <div class="stat"><b>__N_EN__</b><span>in English or translated</span></div>
-    <div class="stat"><b>__N_FUNCS__</b><span>functions</span></div>
-    <div class="stat"><b>__N_MULTI__</b><span>in 2+ catalogs</span></div>
+    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
+    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
+    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
+    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
+    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
+    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
   </div>
 
   <main id="main" class="body">
     <aside class="side">
       <div class="facets">
-        <div class="fhead"><h2 class="t">Filters</h2>
-          <button type="button" id="clearall">Clear all</button></div>
+        <div class="fhead"><h2 class="t">⟪Filters⟫</h2>
+          <button type="button" id="clearall">⟪Clear all⟫</button></div>
         <input class="fq" id="fq" type="search" autocomplete="off"
-               placeholder="Narrow the filters&hellip;" aria-label="Filter the filter options">
+               placeholder="⟪Narrow the filters&hellip;⟫" aria-label="⟪Filter the filter options⟫">
         <div id="facetgroups"></div>
       </div>
     </aside>
 
     <div class="results">
       <div class="toolbar">
-        <select class="sel" id="sort" aria-label="Sort entries">
-          <option value="catalogs">Sort: most catalogs</option>
-          <option value="name">Sort: name A&ndash;Z</option>
-          <option value="country">Sort: country</option>
-          <option value="recent">Sort: recently added</option>
+        <select class="sel" id="sort" aria-label="⟪Sort entries⟫">
+          <option value="catalogs">⟪Sort: most catalogs⟫</option>
+          <option value="name">⟪Sort: name A&ndash;Z⟫</option>
+          <option value="country">⟪Sort: country⟫</option>
+          <option value="recent">⟪Sort: recently added⟫</option>
         </select>
-        <select class="sel" id="lic" aria-label="Filter by licence">
-          <option value="">Any licence</option>__LOPTS__
+        <select class="sel" id="lic" aria-label="⟪Filter by licence⟫">
+          <option value="">⟪Any licence⟫</option>__LOPTS__
         </select>
-        <select class="sel" id="src" aria-label="Filter by source catalog">
-          <option value="">Any source catalog</option>__SOPTS__
+        <select class="sel" id="src" aria-label="⟪Filter by source catalog⟫">
+          <option value="">⟪Any source catalog⟫</option>__SOPTS__
         </select>
         <button class="tog" type="button" id="morefilters" aria-expanded="false"
-                aria-controls="drawer">More filters</button>
+                aria-controls="drawer">⟪More filters⟫</button>
       </div>
 
       <!-- The drawer holds the controls that are rarely touched and need more
@@ -420,43 +420,43 @@ BODY = """
            single label could. Split and spelled out here instead. -->
       <div class="drawer" id="drawer" hidden>
         <div class="drow">
-          <span class="dlab">Procurement</span>
-          <button class="tog" type="button" id="onlyrep" aria-pressed="false">Replaces a paid product</button>
+          <span class="dlab">⟪Procurement⟫</span>
+          <button class="tog" type="button" id="onlyrep" aria-pressed="false">⟪Replaces a paid product⟫</button>
         </div>
         <div class="drow">
-          <label class="dlab" for="lv">Repository state</label>
-          <select class="sel" id="lv" aria-label="Filter by repository state">
-            <option value="">Any repo state</option>
-            <option value="ok">Reachable</option>
-            <option value="archived">Archived upstream</option>
-            <option value="dead">Repo gone</option>
+          <label class="dlab" for="lv">⟪Repository state⟫</label>
+          <select class="sel" id="lv" aria-label="⟪Filter by repository state⟫">
+            <option value="">⟪Any repo state⟫</option>
+            <option value="ok">⟪Reachable⟫</option>
+            <option value="archived">⟪Archived upstream⟫</option>
+            <option value="dead">⟪Repo gone⟫</option>
           </select>
         </div>
         <div class="drow">
-          <span class="dlab">Entries held out of the default view</span>
+          <span class="dlab">⟪Entries held out of the default view⟫</span>
           <button class="tog" type="button" id="exnodesc" aria-pressed="false">
-            Show __N_EX_NODESC__ with no description</button>
+            ⟪Show __N_EX_NODESC__ with no description⟫</button>
           <button class="tog" type="button" id="exnotsoft" aria-pressed="false">
-            Show __N_EX_NOTSOFT__ judged not adoptable</button>
+            ⟪Show __N_EX_NOTSOFT__ judged not adoptable⟫</button>
         </div>
-        <p class="dnote">No description means the publisher wrote none and GitHub had
+        <p class="dnote">⟪No description means the publisher wrote none and GitHub had
           none either &mdash; not saying what software does is a failure to share it.
           Not adoptable means an upstream fork, a deployment recipe, CI plumbing, a
           locale bundle or org metadata: real files, but nothing a government can
           adopt. Both are <b>flagged, never deleted</b>, and both are always present
           in <span class="mono">/entries.json</span> with an
-          <span class="mono">exclude_reason</span>.</p>
+          <span class="mono">exclude_reason</span>.⟫</p>
       </div>
 
       <div class="countline"><span id="count"></span><span id="fcount"></span></div>
       <hr class="dashed">
-      <div class="colhead"><span class="c1">CC</span><span class="c2">Entry</span>
-        <span class="c3">Function &middot; harvested from</span></div>
+      <div class="colhead"><span class="c1">CC</span><span class="c2">⟪Entry⟫</span>
+        <span class="c3">⟪Function &middot; harvested from⟫</span></div>
 
       <ul class="list" id="list"></ul>
-      <button class="btn btn-ghost more" type="button" id="more" hidden>Show 100 more</button>
+      <button class="btn btn-ghost more" type="button" id="more" hidden>⟪Show 100 more⟫</button>
 
-      <p class="note">A blank licence means the upstream catalogue did not state a real SPDX
+      <p class="note">⟪A blank licence means the upstream catalogue did not state a real SPDX
       identifier &mdash; it is left empty rather than guessed. &ldquo;Repo gone&rdquo; requires two
       consecutive failed checks, so a single 404 never shows here. Set-aside entries were
       harvested but held out of the default view (forks of upstream projects, CI plumbing,
@@ -466,7 +466,7 @@ BODY = """
       not invented here &mdash; not saying what the software does is a failure to share it.
       __N_NODESC__ stay in the default view despite having none, because they shipped a
       <code>publiccode.yml</code>, and a publisher's own declaration that something is reusable
-      is never overridden by a rule of ours.</p>
+      is never overridden by a rule of ours.⟫</p>
     </div>
   </main>
 
@@ -499,6 +499,7 @@ function ccLabel(code) { return CCNAME[code] || code; }
 // Flag where there is one, country NAME where there is not — never an empty cell.
 function ccFlag(code) { return CCFLAG[code] || ccLabel(code); }
 var PAGE_SIZE = 100;
+var LANG = '__LANG__';   // number format for this copy of the page
 
 /* State. NOTHING here is named after an element id: browsers expose ids as
    globals, and a variable that collides silently resolves to the element -
@@ -526,9 +527,9 @@ function pslug(s) {
     .replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 var GROUPS = [
-  { key: 'fn', title: 'Function', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
-  { key: 'rp', title: 'Replaces', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
-    link: 'products.html', linkLabel: 'Proprietary software catalog' },
+  { key: 'fn', title: '⟪js:Function⟫', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
+  { key: 'rp', title: '⟪js:Replaces⟫', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
+    link: 'products.html', linkLabel: '⟪js:Proprietary software catalog⟫' },
   // Source COUNTRY, deliberately named that way: it is the country of the
   // catalogue that listed the software, not the tier of government that published
   // it. Matched against r.cs (all countries), so an entry listed in two countries
@@ -536,7 +537,7 @@ var GROUPS = [
   //
   // Source CATALOG is not here any more - it is the #src <select> in the toolbar.
   // SFACETS is still used, to validate an incoming ?src= value.
-  { key: 'cc', title: 'Source country', rows: CCFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) }
+  { key: 'cc', title: '⟪js:Source country⟫', rows: CCFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) }
 ];
 
 function renderFacets() {
@@ -568,8 +569,8 @@ function renderFacets() {
       ? '<a class="fmore" href="' + esc(g.link) + '">' + esc(g.linkLabel) + ' \\u2192</a>'
       : ((!q && rows.length > 6)
         ? '<button type="button" class="fmore" data-g="' + esc(g.key) + '">' +
-          (open ? 'Show fewer' : 'Show all ' + rows.length + ' \\u2192') + '</button>' : '');
-    if (!rows.length) opts = '<p class="meta" style="padding:4px 8px">No match</p>';
+          (open ? '⟪js:Show fewer⟫' : '⟪js:Show all⟫ ' + rows.length + ' \\u2192') + '</button>' : '');
+    if (!rows.length) opts = '<p class="meta" style="padding:4px 8px">⟪js:No match⟫</p>';
     return '<div class="fgroup"><h3>' + esc(g.title) + '</h3>' + opts + more + '</div>';
   }).join('');
 }
@@ -656,13 +657,13 @@ function stamps(r) {
   // No "Recommended" stamp (retired 2026-08-14): one pill could not carry both
   // SILL's real assertion and Munich's inferred one. The field is still in
   // /entries.json as recommended_for_government. See build_ui.py for why.
-  if (r.cc2 > 1) s += '<span class="stamp multi">In ' + r.cc2 + ' catalogs</span>';
+  if (r.cc2 > 1) s += '<span class="stamp multi">⟪js:In⟫ ' + r.cc2 + ' ⟪js:catalogs⟫</span>';
   // A DIFFERENT claim from "In N catalogs" (listings of the same software), so a
   // different pill: N governments run their own version of it.
   if (r.vs && r.vs.length) s += '<span class="stamp multi">' + r.vs.length +
-    (r.vs.length === 1 ? ' variant' : ' variants') + '</span>';
-  if (r.lv === 'dead') s += '<span class="stamp warn">__ICON_ALERT__ Repo gone</span>';
-  else if (r.lv === 'archived') s += '<span class="stamp warn">__ICON_ALERT__ Archived upstream</span>';
+    (r.vs.length === 1 ? ' ⟪js:variant⟫' : ' ⟪js:variants⟫') + '</span>';
+  if (r.lv === 'dead') s += '<span class="stamp warn">__ICON_ALERT__ ⟪js:Repo gone⟫</span>';
+  else if (r.lv === 'archived') s += '<span class="stamp warn">__ICON_ALERT__ ⟪js:Archived upstream⟫</span>';
   return s;
 }
 
@@ -676,18 +677,18 @@ function render() {
     if (!r.ex) return true;
     return r.ex === 'no-description' ? showNoDesc : showNotSoft;
   }).length;
-  el('count').innerHTML = '<b>' + rs.length.toLocaleString() + '</b> of ' +
-    universe.toLocaleString() + ' entries' + (lastFolded ? ' &middot; ' + lastFolded +
-    (lastFolded === 1 ? ' variant' : ' variants') + ' listed under ' +
-    (lastFolded === 1 ? 'its core' : 'their core') : '');
+  el('count').innerHTML = '<b>' + rs.length.toLocaleString(LANG) + '</b> ⟪js:of⟫ ' +
+    universe.toLocaleString(LANG) + ' ⟪js:entries⟫' + (lastFolded ? ' &middot; ' + lastFolded +
+    (lastFolded === 1 ? ' ⟪js:variant listed under its core⟫'
+                      : ' ⟪js:variants listed under their core⟫') : '');
   var nf = activeFacets.size + (onlyReplaces ? 1 : 0) +
            (el('lic').value ? 1 : 0) + (el('lv').value ? 1 : 0) +
            (el('src').value ? 1 : 0);
-  el('fcount').textContent = nf ? (nf + (nf === 1 ? ' filter applied' : ' filters applied')) : '';
+  el('fcount').textContent = nf ? (nf + (nf === 1 ? ' ⟪js:filter applied⟫' : ' ⟪js:filters applied⟫')) : '';
 
   if (!rs.length) {
-    el('list').innerHTML = '<li class="empty">No entries match. ' +
-      '<button type="button" class="fmore" id="clear2">Clear the filters</button></li>';
+    el('list').innerHTML = '<li class="empty">⟪js:No entries match.⟫ ' +
+      '<button type="button" class="fmore" id="clear2">⟪js:Clear the filters⟫</button></li>';
     el('more').hidden = true;
     var c2 = el('clear2'); if (c2) c2.onclick = clearAll;
     return;
@@ -695,7 +696,7 @@ function render() {
   el('list').innerHTML = rs.slice(0, visibleCount).map(function (r) {
     var link = r.u || r.h;
     var meta = [];
-    if (r.l) meta.push(esc(r.l)); else meta.push('Licence not stated by the source');
+    if (r.l) meta.push(esc(r.l)); else meta.push('⟪js:Licence not stated by the source⟫');
     if (r.qid) meta.push(esc(r.qid));
     // Each source catalogue carries its country's flag. An entry listed by three
     // catalogues shows three flags, which is the point: it is the quickest read of
@@ -719,19 +720,19 @@ function render() {
                 : '<span class="nm">' + esc(r.n) + '</span>') + stamps(r) +
         '</div>' +
         (r.d ? '<div class="desc">' + esc(r.d) + '</div>' : '') +
-        (r.rp && r.rp.length ? '<div class="rp">Replaces ' + r.rp.map(function(p, i){
+        (r.rp && r.rp.length ? '<div class="rp">⟪js:Replaces⟫ ' + r.rp.map(function(p, i){
             var q = (r.rpq || [])[i];
             return '<a href="products.html#p-' + esc(pslug(p)) + '">' + esc(p) + '</a>' +
               (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
         }).join(', ') + '</div>' : '') +
-        (r.vs && r.vs.length ? '<div class="vars">Variants: ' + r.vs.map(function (i) {
+        (r.vs && r.vs.length ? '<div class="vars">⟪js:Variants:⟫ ' + r.vs.map(function (i) {
             var v = DATA[i], vl = v.u || v.h;
             var nm = esc(v.n) + (v.o ? ' <span class="rpq">(' + esc(v.o) + ')</span>' : '');
             return vl ? '<a href="' + esc(vl) + '" target="_blank" rel="noopener">' + nm + '</a>' : nm;
           }).join(', ') + '</div>' : '') +
-        (r.vo != null ? '<div class="vars">A version of <b>' + esc(DATA[r.vo].n) + '</b></div>' : '') +
+        (r.vo != null ? '<div class="vars">⟪js:A version of⟫ <b>' + esc(DATA[r.vo].n) + '</b></div>' : '') +
         '<div class="meta">' + meta.join(' &middot; ') + '</div>' +
-        (r.ex ? '<div class="why">Set aside: ' + esc(r.ex) + '</div>' : '') +
+        (r.ex ? '<div class="why">⟪js:Set aside:⟫ ' + esc(r.ex) + '</div>' : '') +
       '</div>' +
       '<div class="side2"><span>' + esc((r.fx || []).slice(0, 2).join(', ')) + '</span>' +
         '<span>' + srcs + '</span></div>' +

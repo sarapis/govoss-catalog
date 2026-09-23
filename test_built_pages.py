@@ -55,6 +55,12 @@ PAGES = {
     "api.html": os.path.join(SITE, "api.html"),
     "products.html": os.path.join(SITE, "products.html"),
     "catalogue.html": os.path.join(HERE, "catalogue.html"),
+    # Catalan copies (i18n.py). Every check that loops over PAGES covers them.
+    "ca/index.html": os.path.join(SITE, "ca", "index.html"),
+    "ca/sources.html": os.path.join(SITE, "ca", "sources.html"),
+    "ca/api.html": os.path.join(SITE, "ca", "api.html"),
+    "ca/products.html": os.path.join(SITE, "ca", "products.html"),
+    "catalogue.ca.html": os.path.join(HERE, "catalogue.ca.html"),
 }
 
 
@@ -98,8 +104,9 @@ def main():
     # ---- 2. catalogue.html is pure ASCII.
     # Artifacts cannot set <meta charset>, so depending on the host to declare
     # UTF-8 once rendered "open source â€” aggregated".
-    raw = open(PAGES["catalogue.html"], "rb").read()
-    check("catalogue.html non-ASCII byte count", sum(1 for b in raw if b > 127), 0)
+    for name in ("catalogue.html", "catalogue.ca.html"):
+        raw = open(PAGES[name], "rb").read()
+        check("%s non-ASCII byte count" % name, sum(1 for b in raw if b > 127), 0)
 
     # ---- 3. the [hidden] reset, on every page whose JS toggles el.hidden.
     # This is the drawer bug. `hidden` hides via the UA stylesheet, which any
@@ -217,9 +224,69 @@ def main():
                     if (p, x["name"]) in inh)
     check("no inherited replaces row reaches by-product.json", leaked, [])
 
+    # ---- 12. LANGUAGE COPIES (i18n.py). Each failure here is silent in a browser
+    # check of the English site, which is where anyone would look first.
+    import subprocess
+    sys.path.insert(0, HERE)
+    import i18n
+    ENG = {"index.html": "/", "sources.html": "/sources.html", "api.html": "/api.html",
+           "products.html": "/products.html"}
+    n12 = 0
+    for en_name, route in ENG.items():
+        for lang in i18n.LANGS:
+            name = en_name if lang == "en" else "%s/%s" % (lang, en_name)
+            page = pages[name]
+            n12 += 4
+            check("%s declares lang=%s" % (name, lang),
+                  bool(re.search(r'<html lang="%s"' % lang, page)), True)
+            check("%s has no unresolved translation marker" % name,
+                  "\u27ea" in page or "\u27eb" in page, False)
+            want = sorted('hreflang="%s" href="%s%s"' % (l, i18n.BASE, i18n.path_for(l, route))
+                          for l in i18n.LANGS)
+            got = sorted(set(re.findall(r'hreflang="(?!x-default)[a-z]+" href="[^"]+"', page)))
+            check("%s carries reciprocal hreflang links" % name, got, want)
+            # every page link outside the switcher/alternates stays in this language
+            stray = []
+            for tag in re.findall(r"<(?:a|link)\b[^>]*>", page):
+                if "hreflang=" in tag:
+                    continue
+                for href in re.findall(r'\shref="(/[^"]*)"', tag):
+                    cut = min([i for i in (href.find("?"), href.find("#")) if i >= 0] or [len(href)])
+                    if (href[:cut] or "/") in i18n.ROUTES and lang != "en":
+                        stray.append(href)
+                    if lang == "en" and href.startswith("/ca/"):
+                        stray.append(href)
+            check("%s page links stay in %s" % (name, lang), stray[:3], [])
+    # the Catalan catalog's ?src= links (from /ca/sources.html) must resolve too
+    ca_src = [urllib.parse.unquote(m) for m in
+              re.findall(r'href="/ca/\?src=([^"]*)"', pages["ca/sources.html"])]
+    ca_opts = set(html.unescape(m) for m in
+                  re.findall(r'<option value="([^"]*)">', pages["ca/index.html"]))
+    check("every /ca/?src= value matches a Catalan catalog <option>",
+          (len(ca_src) > 0, sorted(l for l in ca_src if l not in ca_opts)), (True, []))
+    # The catalog's inline script must PARSE in every language. A Catalan
+    # apostrophe unescaped inside a single-quoted JS string would break the whole
+    # page while every static check above still passed.
+    for name in ("index.html", "ca/index.html"):
+        js = "\n".join(re.findall(r"<script>(.*?)</script>", pages[name], re.S))
+        tmp = os.path.join(HERE, "out", "_check_%s.js" % name.replace("/", "_"))
+        os.makedirs(os.path.dirname(tmp), exist_ok=True)
+        open(tmp, "w").write(js)
+        p = subprocess.run(["node", "--check", tmp], capture_output=True, text=True)
+        os.remove(tmp)
+        check("%s inline script parses" % name, p.returncode, 0)
+    # every translatable string resolved on the last build
+    try:
+        miss = json.load(open(os.path.join(HERE, "out", "i18n_missing.json")))
+    except Exception:
+        miss = {}
+    check("no page string is missing a translation", sorted(miss), [])
+    check("i18n/ca.json loads (placeholders validated)", bool(i18n.table("ca")["strings"]), True)
+    n12 += 5
+
     for f in failed:
         print("FAIL  %s" % f)
-    total = 9 + len(pages) + 7
+    total = 9 + len(pages) + 7 + 1 + n12
     print("\n%d checks run, %d failed" % (total, len(failed)))
     return 1 if failed else 0
 

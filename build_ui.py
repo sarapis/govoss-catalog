@@ -60,6 +60,7 @@ def _replaces(r):
 # is not strong+software. The qualifier is display only - `rp` stays the clean
 # product names so the search haystack and the "has replaces" filter are unchanged.
 def _rp_qual(m):
+    """Qualifier PARTS, joined per language at render time (see _rpq_text)."""
     q = []
     k, conf = m.get("kind"), m.get("confidence")
     if k == "paid-tier":
@@ -68,7 +69,7 @@ def _rp_qual(m):
         q.append("hosted service")
     if conf in ("partial", "adjacent"):
         q.append(conf)
-    return ", ".join(q)
+    return q
 
 # Labels come from sources.py, which CLAUDE.md makes the single source of truth
 # for them. The hand-written dict this replaces held 8 entries byte-identical to
@@ -173,7 +174,9 @@ for r in c:
         "ex": r.get("exclude_reason") or "",
         # rp and rpq are built from one pass so they cannot fall out of alignment
         "rp": [m.get("product") for m in _rp if m.get("product")],
-        "rpq": [", ".join(x for x in (_rp_qual(m), ("via " + _cr["name"]) if _inh else "") if x)
+        # PARTS, not text: ["paid tier", ["via", "Consul Democracy"]]. Joined per
+        # language in the render loop, so the qualifier is translated with the page.
+        "rpq": [_rp_qual(m) + ([["via", _cr["name"]]] if _inh else [])
                 for m in _rp if m.get("product")],
         "_id": _fs_ident(r), "_core": _fs_ident(_cr) if _cr is not None else None,
         "_rep": _BY_IDENT.get(_fs_ident(r)) is r,     # the row a core ident means
@@ -230,7 +233,7 @@ n_nodesc = sum(1 for r in _src if not (r.get("short_desc") or "").strip())
 funcs = collections.Counter(f for r in _inc for f in r["fx"])
 n_dead = sum(1 for r in _inc if r["lv"] == "dead")
 n_multi_cat = sum(1 for r in _inc if (r.get("cc2") or 1) > 1)
-FFACETS = json.dumps([[k, FUNCTIONS[k], n] for k, n in funcs.most_common()])
+# FFACETS (function facet labels) is built per language in render().
 
 # Proprietary products as a FACET, not a nav item: they are a way into the open
 # source, not a peer of it. Clicking one filters the catalogue to the entries
@@ -280,7 +283,7 @@ NEWEST = json.dumps([
     for r in _dated[:10]
 ])
 
-DATA = json.dumps(rows, separators=(",", ":"))
+# DATA is serialised per language in render(): only rpq differs between them.
 
 # The Source country facet is BACK (2026-09-21), after being removed for two
 # reasons that are worth recording because only one of them was ever true.
@@ -316,9 +319,7 @@ _CC_FLAG = {(m.get("country") or ""): m.get("flag") or ""
 # display changes. sources.py:COUNTRY_NAME owns the mapping so the page and any
 # other consumer cannot disagree; a code with no name falls back to itself rather
 # than rendering blank.
-CCFACETS = json.dumps([[k, ("%s %s" % (_CC_FLAG.get(k, ""),
-                                       _S.COUNTRY_NAME.get(k, k))).strip(), v]
-                       for k, v in sorted(countries.items(), key=lambda x: -x[1])])
+# CCFACETS is built per language in render(), from these names or i18n/ca.json's.
 
 # The facet VALUE stays the bare label because it is matched against r.ss; only
 # the display label carries the country. Entry cards keep the plain label.
@@ -365,65 +366,90 @@ _th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
 theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
+import i18n
+import re as _re
 
 n_entries = len(_inc)
 n_srcs = len(sources)
 n_funcs = len(funcs)
+_OUTFILE = {"en": "catalogue.html", "ca": "catalogue.ca.html"}
 
-SUBS = {
-    "__DATA__": DATA,
-    "__FFACETS__": FFACETS,
-    "__SFACETS__": SFACETS,
-    "__CCFACETS__": CCFACETS,
-    "__NEWEST__": NEWEST,
-    "__SRCFLAG__": SRCFLAG,
-    "__SOPTS__": SOPTS,
-    "__N_EX_NODESC__": "{:,}".format(n_ex_nodesc),
-    "__N_EX_NOTSOFT__": "{:,}".format(n_ex_notsoft),
-    "__PFACETS__": PFACETS,
-    "__LOPTS__": LOPTS,
-    "__NENTRIES__": f"{n_entries:,}",
-    "__N_ENTRIES__": f"{n_entries:,}",
-    "__SUBMIT__": theme.submit_block(n_srcs),
-    "__N_SOURCES__": str(n_srcs),
-    "__N_PC__": f"{n_pc:,}",
-    "__N_EN__": f"{n_en:,}",
-    "__N_NODESC__": f"{n_nodesc:,}",
-    "__N_FUNCS__": str(n_funcs),
-    "__N_MULTI__": str(n_multi_cat),
-    "__N_EX__": str(n_ex),
-    "__ICON_CODE__": T.ICONS["code"],
-    # no __ICON_SEAL__: its only use on this page was the retired Recommended
-    # stamp. T.ICONS["seal"] stays - build_sources.py still stamps it.
-    "__ICON_ALERT__": T.ICONS["alert"],
-}
 
-PAGE = (
-    theme.head(
-        "Government open source software catalog | govoss",
-        f"{n_entries:,} open source entries harvested first-hand from {n_srcs} government "
-        "catalogues worldwide, normalised onto one schema. Free JSON API at /entries.json "
-        "- no key, no pagination.")
-    + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
-    + theme.utility_bar() + theme.topbar("catalog")
-    + T.BODY + theme.footer() + T.SCRIPT
-)
+def _rpq_text(lang, parts):
+    return ", ".join(i18n.t(lang, "via {name}", name=p[1]) if isinstance(p, list)
+                     else i18n.t(lang, p) for p in parts)
 
-for k, v in SUBS.items():
-    PAGE = PAGE.replace(k, v)
 
-# A missed placeholder is a silent visual bug - the page would render the raw
-# token. Fail the build instead.
-import re as _re
-_left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", PAGE)))
-if _left:
-    raise SystemExit(f"build_ui: unsubstituted placeholders {_left}")
+def render(lang):
+    """One language's page. Everything above is language-neutral and computed once;
+    only labels, qualifiers and number formats change here. Order is load-bearing:
+    markers resolve while __PLACEHOLDERS__ are intact, then values go in, then
+    page links are pointed at this language's copies (i18n.py)."""
+    N = lambda n: i18n.num(lang, n)
+    data = json.dumps([dict(r, rpq=[_rpq_text(lang, q) for q in r["rpq"]]) for r in rows],
+                      separators=(",", ":"))
+    ffacets = json.dumps([[k, i18n.function(lang, k, FUNCTIONS[k]), n]
+                          for k, n in funcs.most_common()])
+    ccfacets = json.dumps([[k, ("%s %s" % (_CC_FLAG.get(k, ""),
+                                           i18n.country(lang, k, _S.COUNTRY_NAME.get(k, k)))).strip(), v]
+                           for k, v in sorted(countries.items(), key=lambda x: -x[1])])
+    subs = {
+        "__DATA__": data,
+        "__FFACETS__": ffacets,
+        "__SFACETS__": SFACETS,
+        "__CCFACETS__": ccfacets,
+        "__NEWEST__": NEWEST,
+        "__SRCFLAG__": SRCFLAG,
+        "__SOPTS__": SOPTS,
+        "__N_EX_NODESC__": N(n_ex_nodesc),
+        "__N_EX_NOTSOFT__": N(n_ex_notsoft),
+        "__PFACETS__": PFACETS,
+        "__LOPTS__": LOPTS,
+        "__NENTRIES__": N(n_entries),
+        "__N_ENTRIES__": N(n_entries),
+        "__SUBMIT__": theme.submit_block(n_srcs, lang),
+        "__N_SOURCES__": str(n_srcs),
+        "__N_PC__": N(n_pc),
+        "__N_EN__": N(n_en),
+        "__N_NODESC__": N(n_nodesc),
+        "__N_FUNCS__": str(n_funcs),
+        "__N_MULTI__": str(n_multi_cat),
+        "__N_EX__": str(n_ex),
+        "__LANG__": lang,
+        "__ICON_CODE__": T.ICONS["code"],
+        # no __ICON_SEAL__: its only use on this page was the retired Recommended
+        # stamp. T.ICONS["seal"] stays - build_sources.py still stamps it.
+        "__ICON_ALERT__": T.ICONS["alert"],
+    }
+    page = (
+        theme.head(
+            i18n.t(lang, "Government open source software catalog | govoss"),
+            i18n.t(lang, "{n} open source entries harvested first-hand from {k} government "
+                         "catalogues worldwide, normalised onto one schema. Free JSON API at "
+                         "/entries.json - no key, no pagination.", n=N(n_entries), k=n_srcs),
+            lang=lang, route="/")
+        + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
+        + theme.utility_bar(lang=lang) + theme.topbar("catalog", lang, "/")
+        + T.BODY + theme.footer(lang=lang) + T.SCRIPT
+    )
+    page = i18n.markers(page, lang)
+    for k, v in subs.items():
+        page = page.replace(k, v)
+    # A missed placeholder is a silent visual bug - the page would render the raw
+    # token. Fail the build instead.
+    left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", page)))
+    if left:
+        raise SystemExit(f"build_ui: unsubstituted placeholders {left} ({lang})")
+    page = i18n.links(page, lang)
+    theme.assert_variant_live(page)
+    page = page.encode("ascii", "xmlcharrefreplace").decode()
+    path = f"{OUT}/{_OUTFILE[lang]}"
+    open(path, "w").write(page)
+    print(f"wrote {path}  ({len(page)/1024:.0f} KB, {len(rows)} rows, "
+          f"{sum(1 for r in rows if r['rp'])} with replaces)")
 
-theme.assert_variant_live(PAGE)
-PAGE = PAGE.encode("ascii", "xmlcharrefreplace").decode()
 
-path = f"{OUT}/catalogue.html"
-open(path, "w").write(PAGE)
-print(f"wrote {path}  ({len(PAGE)/1024:.0f} KB, {len(rows)} rows, "
-      f"{sum(1 for r in rows if r['rp'])} with replaces)")
+for _lang in i18n.LANGS:
+    render(_lang)
+i18n.report("build_ui")
 print(f"   design tokens: @wegovnyc/design-tokens v{theme.TOKENS_VERSION} (vendor/wegovnyc, brand=govoss)")

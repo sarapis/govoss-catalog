@@ -35,6 +35,8 @@ reported that CTFG fixed in its v2.0.0.
 import os
 import re
 
+import i18n
+
 # --------------------------------------------------------------------------
 # Fonts. Self-hosted, NOT a CDN.
 #
@@ -443,6 +445,9 @@ p{margin:0;}
 .nav a:hover{color:var(--primary);}
 .nav a[aria-current="page"]{color:var(--primary);}
 .topbar .t-r{display:flex;align-items:center;gap:12px;}
+/* the other language's copy of this page, named in its own language */
+.topbar .langsw{font-size:13px;font-weight:600;color:var(--ink-600);text-decoration:none;}
+.topbar .langsw:hover{text-decoration:underline;}
 
 /* footer */
 .foot{margin-top:56px;padding:48px 0 44px;border-top:var(--divider);}
@@ -493,7 +498,7 @@ CSS = TOKENS_CSS + BASE_CSS
 # when CTFG edits its menu this bar follows on the next weekly run and nobody has
 # to remember this repo exists. The handoff shipped a guessed five-link set with
 # a note to confirm it; this is the confirmation.
-def utility_bar(nav=None):
+def utility_bar(nav=None, lang="en"):
     """The CTFG utility strip is GONE (2026-08-13, owner decision).
 
     govoss no longer presents as part of the Civic Tech Field Guide network, so
@@ -505,15 +510,16 @@ def utility_bar(nav=None):
     `nav` is accepted and ignored so the four page builders keep one call shape
     while ctfg_nav.py is retired.
     """
-    return '<a class="skip" href="#main">Skip to content</a>\n'
+    return '<a class="skip" href="#main">⟪Skip to content⟫</a>\n'
 
 
 def _esc(t):
     return (str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
-def topbar(active=""):
-    """Site header. `active` is one of catalog | sources | api.
+def topbar(active="", lang="en", route="/"):
+    """Site header. `active` is one of catalog | sources | api; `route` is this
+    page's English path, so the language switcher can point at its twin.
 
     The CTFG mark that used to sit right of the wordmark is GONE (2026-08-13):
     govoss is not presented as a CTFG chapter any more. The lockup is now just
@@ -527,33 +533,39 @@ def topbar(active=""):
 <header class="topbar"><div class="wrap">
   <a class="brand" href="/">
     <span class="bmark">govoss</span>
-    <span class="bsub">Government<br>open source</span>
+    <span class="bsub">⟪Government<br>open source⟫</span>
   </a>
   <nav class="nav">%s %s %s</nav>
   <div class="t-r">
-    <a class="btn btn-primary" href="/#submit">Submit a catalog</a>
+    %s
+    <a class="btn btn-primary" href="/#submit">⟪Submit a catalog⟫</a>
   </div>
 </div></header>
 """ % (
-       item("/", "Catalog", "catalog"),
-       item("/sources.html", "Sources", "sources"),
-       item("/api.html", "API", "api"))
+       item("/", "⟪Catalog⟫", "catalog"),
+       item("/sources.html", "⟪Sources⟫", "sources"),
+       item("/api.html", "⟪API⟫", "api"),
+       i18n.switcher(lang, route))
 
 
 # The "Get involved" block, shared by / and /sources.html. It used to be written
 # out in both page templates, and a fix to one left the other stale. `n` is the
 # catalogue count the calling page already shows, so the block cannot disagree
 # with the stat tile above it.
-def submit_block(n):
+def submit_block(n, lang="en"):
+    """Built with t(), not markers: it is substituted AFTER markers resolve."""
+    T = lambda s, **kw: i18n.t(lang, s, **kw)
     return """<div class="submit" id="submit">
-    <p class="overline">Get involved</p>
-    <h3>Are we missing a catalog?</h3>
-    <p style="color:var(--ink-600)">If your government publishes an open source
-      register, or you know one that is not listed, open an issue. It will be assessed
-      against the same first-hand rule as the __N__ already here &mdash; a live endpoint
-      is not enough, the data has to be there.</p>
-    <a class="btn btn-primary" href="https://github.com/sarapis/govoss-catalog/issues/new">Submit a catalog</a>
-  </div>""".replace("__N__", str(int(n)))
+    <p class="overline">%s</p>
+    <h3>%s</h3>
+    <p style="color:var(--ink-600)">%s</p>
+    <a class="btn btn-primary" href="https://github.com/sarapis/govoss-catalog/issues/new">%s</a>
+  </div>""" % (T("Get involved"), T("Are we missing a catalog?"),
+               T("If your government publishes an open source register, or you know one "
+                 "that is not listed, open an issue. It will be assessed against the same "
+                 "first-hand rule as the {n} already here &mdash; a live endpoint is not "
+                 "enough, the data has to be there.", n=int(n)),
+               T("Submit a catalog"))
 
 
 # Published by Sarapis, affiliated with CTFG - not a CTFG property.
@@ -578,25 +590,25 @@ def submit_block(n):
 # Side effect worth having: with ctfg_nav.py retired, the build makes no network
 # request at all. A weekly unattended run can no longer be affected by a third
 # party's CMS being slow or down.
-def footer(nav=None):
+def footer(nav=None, lang="en"):
     """`nav` is accepted and ignored, so the four builders keep one call shape."""
     cols = (
-        '<div class="col"><h4>This catalogue</h4>'
-        '<a href="/">Browse entries</a>'
-        '<a href="/products.html">Proprietary software</a>'
-        '<a href="/sources.html">Sources &amp; harvest status</a>'
-        '<a href="/api.html">API for agents</a>'
+        '<div class="col"><h4>⟪This catalogue⟫</h4>'
+        '<a href="/">⟪Browse entries⟫</a>'
+        '<a href="/products.html">⟪Proprietary software⟫</a>'
+        '<a href="/sources.html">⟪Sources &amp; harvest status⟫</a>'
+        '<a href="/api.html">⟪API for agents⟫</a>'
         '</div>'
-        '<div class="col"><h4>Data</h4>'
+        '<div class="col"><h4>⟪Data⟫</h4>'
         '<a href="/entries.json">entries.json</a>'
         '<a href="/by-product.json">by-product.json</a>'
         '<a href="/meta.json">meta.json</a>'
         '<a href="/llms.txt">llms.txt</a>'
         '</div>'
-        '<div class="col"><h4>Project</h4>'
-        '<a href="https://github.com/sarapis/govoss-catalog">Source on GitHub</a>'
-        '<a href="https://github.com/sarapis/govoss-catalog/issues">Report a problem</a>'
-        '<a href="/sources.html#surveyed">Catalogues we rejected, and why</a>'
+        '<div class="col"><h4>⟪Project⟫</h4>'
+        '<a href="https://github.com/sarapis/govoss-catalog">⟪Source on GitHub⟫</a>'
+        '<a href="https://github.com/sarapis/govoss-catalog/issues">⟪Report a problem⟫</a>'
+        '<a href="/sources.html#surveyed">⟪Catalogues we rejected, and why⟫</a>'
         '</div>'
     )
     return """
@@ -609,19 +621,17 @@ def footer(nav=None):
       <span class="sds-logo__word">Sarapis</span>
     </a>
     <span class="hair"></span>
-    <span class="legal">
-      Published by Sarapis.
+    <span class="legal">⟪Published by Sarapis.
       Catalogue data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>;
       code <a href="https://github.com/sarapis/govoss-catalog/blob/main/LICENSE">MIT</a>.
       Individual entries remain under the terms of the government catalogue that
-      published them &mdash; every entry links back to its source.
-    </span>
+      published them &mdash; every entry links back to its source.⟫</span>
   </div>
 </div></footer>
 """.replace("__COLS__", cols)
 
 
-def head(title, description, canonical=""):
+def head(title, description, canonical="", lang="en", route=None):
     """The <head> contents, including the agent affordances.
 
     Affordance 1 of 4 is the HTML comment ABOVE <title>, for agents that read
@@ -633,7 +643,7 @@ def head(title, description, canonical=""):
     was wrong in the shipped site: 17 catalogues, 3,070 entries, 15 countries,
     and not only Europe.
     """
-    return """<!--
+    return ("""<!--
   govoss-catalog - a union catalogue of government open source software.
 
   PLEASE DO NOT SCRAPE THIS PAGE. Everything here is available as JSON:
@@ -645,7 +655,7 @@ def head(title, description, canonical=""):
     GET /status.json         freshness, last run, changelog
   CORS is open. Full notes for agents: /llms.txt and /api.html
 -->
-<html lang="en" class="wg-govoss" data-brand="govoss">
+<html lang="__HTML_LANG__" class="wg-govoss" data-brand="govoss">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s</title>
@@ -653,5 +663,6 @@ def head(title, description, canonical=""):
 <link rel="alternate" type="application/json" href="/entries.json" title="All entries as JSON">
 <link rel="alternate" type="application/json" href="/meta.json" title="Catalogue metadata">
 <link rel="alternate" type="application/json" href="/status.json" title="Build status">
-%s""" % (title, description,
-         ('<link rel="canonical" href="%s">\n' % canonical) if canonical else "")
+%s%s""" % (title, description,
+         ('<link rel="canonical" href="%s">\n' % canonical) if canonical else "",
+         i18n.alternates(route) if route else "")).replace("__HTML_LANG__", lang)

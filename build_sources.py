@@ -15,6 +15,7 @@ at the end, so no literal CSS or JS brace needs doubling.
 """
 from urllib.parse import quote
 import json, os, importlib.util, collections, time
+import i18n
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = f"{OUT}/site"
@@ -51,9 +52,9 @@ def dur(sec):
     return "%dm %ds" % (sec // 60, sec % 60)
 
 
-def ago(iso):
+def ago(iso, lang="en"):
     if not iso:
-        return "never"
+        return i18n.t(lang, "never")
     try:
         t = time.mktime(time.strptime(iso, "%Y-%m-%dT%H:%M:%SZ"))
     except Exception:
@@ -61,11 +62,26 @@ def ago(iso):
     d = time.mktime(time.gmtime()) - t
     for n, u in ((86400, "d"), (3600, "h"), (60, "m")):
         if d >= n:
-            return "%d%s ago" % (int(d // n), u)
-    return "just now"
+            return i18n.t(lang, "{n}%s ago" % u, n=int(d // n))
+    return i18n.t(lang, "just now")
 
 
-def build():
+def country_name(lang, code):
+    """S.country_label(), localised: a compound like DK/BG is named part by part."""
+    parts = [p.strip().upper() for p in str(code or "").split("/")]
+    if code and all(p in S.COUNTRY_NAME for p in parts):
+        return " / ".join(i18n.country(lang, p, S.COUNTRY_NAME[p]) for p in parts)
+    return S.country_label(code)
+
+
+def build(lang="en"):
+    """One language's /sources.html. The JSON outputs are written on the English
+    pass only; the operator diagnostics in Open items, the per-source notes and
+    the survey write-ups stay English on every copy (they are data, and the
+    diagnostics are addressed to whoever runs the pipeline)."""
+    _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
+    N = lambda n: i18n.num(lang, n)
+    primary = lang == "en"
     cat = json.load(open(f"{OUT}/catalog.json"))
     hist = json.load(open(f"{OUT}/history.json"))
     runs = hist["runs"]
@@ -196,6 +212,21 @@ def build():
                                  "entries ship unclassified: %s — add them to taxonomy.py:M"
                                  % (len(unmapped), top)))
 
+    # ---- page strings with no translation (i18n.py writes out/i18n_missing.json).
+    # Each shows in English on the translated copy rather than vanishing; this is
+    # where that becomes visible. Per builder, because each page is its own process.
+    try:
+        with open(f"{OUT}/out/i18n_missing.json") as fh:
+            i18n_missing = json.load(fh) or {}
+    except Exception:
+        i18n_missing = {}
+    n_i18n = sum(len(v) for v in i18n_missing.values())
+    if n_i18n:
+        problems.append(("warn", "%d page string(s) have no translation and show in English "
+                                 "on a translated copy (%s) - add them to i18n/<lang>.json; "
+                                 "see out/i18n_missing.json"
+                                 % (n_i18n, ", ".join(sorted(i18n_missing)))))
+
     # ---- orphaned translation keys (F6)
     #
     # Rot is EXPECTED to be non-zero and slowly growing: upstream rewords text,
@@ -270,13 +301,13 @@ def build():
         for r in tail:
             cmap = r.get("catalogues")
             if cmap is None:
-                cls, tip = "s-none", "not recorded for this run"
+                cls, tip = "s-none", _("not recorded for this run")
             elif cmap.get(key, 0) > 0:
-                cls, tip = "s-ok", "%d entries" % cmap[key]
+                cls, tip = "s-ok", _("{n} entries", n=N(cmap[key]))
             elif key in cmap:
-                cls, tip = "s-fail", "contributed nothing"
+                cls, tip = "s-fail", _("contributed nothing")
             else:
-                cls, tip = "s-none", "not a source yet"
+                cls, tip = "s-none", _("not a source yet")
             cells += '<span class="sb %s" title="%s &mdash; %s"></span>' % (
                 cls, esc(r["run_at"][:10]), tip)
         return cells
@@ -338,7 +369,7 @@ def build():
             '<span class="cc-n">%s</span>'
             '<a class="mono" href="/by-country/%s.json">JSON</a>'
             '</div>'
-        ) % (FLAGS.get(cc, "&#127758;"), esc(S.country_label(cc)), "{:,}".format(n), esc(cc))
+        ) % (FLAGS.get(cc, "&#127758;"), esc(country_name(lang, cc)), N(n), esc(cc))
 
     # ---- catalogue rows
     crows = ""
@@ -350,21 +381,23 @@ def build():
                 "IT/developers-italia", "DE/openCode"):
             stamps += '<span class="stamp multi">publiccode.yml</span>'
         if n == 0:
-            stamps += '<span class="stamp warn">contributed nothing</span>'
+            stamps += '<span class="stamp warn">%s</span>' % _("contributed nothing")
         # Depth, not just volume: what share of this catalogue's rows carry a
         # publisher-written publiccode.yml rather than bare forge metadata.
         if n:
             pc = depth.get(key, 0)
-            stamps += ('<span class="stamp">%d%% publiccode</span>'
-                       % round(100 * pc / n))
+            stamps += ('<span class="stamp">%s</span>'
+                       % _("{pct}% publiccode", pct=round(100 * pc / n)))
         # Link health for THIS catalogue's repos, unknowns excluded.
         dec = n_decided.get(key, 0)
         if dec:
             pct = round(100 * n_live.get(key, 0) / dec)
             cls = "" if pct >= 95 else " warn"
-            stamps += ('<span class="stamp%s" title="%d of %d repo URLs with a '
-                       'decided verdict resolve; rate-limited/unreachable excluded">'
-                       '%d%% links live</span>' % (cls, n_live.get(key, 0), dec, pct))
+            stamps += ('<span class="stamp%s" title="%s">%s</span>'
+                       % (cls, _("{live} of {dec} repo URLs with a decided verdict resolve; "
+                                 "rate-limited/unreachable excluded",
+                                 live=N(n_live.get(key, 0)), dec=N(dec)),
+                          _("{pct}% links live", pct=pct)))
         # Freshness on EVERY row, not only the unhealthy ones. A count alone
         # cannot distinguish "fetched today, unchanged" from "failing since
         # July, showing its last good copy" — they render identically, which is
@@ -375,8 +408,9 @@ def build():
         if age:
             d = int(age["days"])
             if not age["ok"] or d > 15:
-                stamps += ('<span class="stamp warn">stale: %s</span>'
-                           % ("last good %dd ago" % d if d else "failing"))
+                stamps += ('<span class="stamp warn">%s</span>'
+                           % _("stale: {why}", why=_("last good {n}d ago", n=d) if d
+                               else _("failing")))
         # "See catalog entries" -> the catalog filtered to this source.
         #
         # ⚠ The link value is SOURCES[key]["label"], which is exactly what
@@ -388,21 +422,21 @@ def build():
         #
         # Only offered where there is something to see: a source contributing 0
         # would hand the reader an empty catalogue.
-        seelink = ('<a class="c-see" href="/?src=%s">See catalog entries &rarr;</a>'
-                   % quote(meta["label"], safe="")) if n else ""
+        seelink = ('<a class="c-see" href="/?src=%s">%s</a>'
+                   % (quote(meta["label"], safe=""), _("See catalog entries &rarr;"))) if n else ""
         crows += (
             '<div class="crow">'
             '<div class="c-cc">%s <b>%s</b></div>'
             '<div class="c-main"><div class="c-t">'
             '<a href="%s" target="_blank" rel="noopener">%s</a>%s</div>'
             '<div class="c-note">%s</div>%s</div>'
-            '<div class="c-n"><b class="num">%s</b><span>entries</span></div>'
+            '<div class="c-n"><b class="num">%s</b><span>' + _("entries") + '</span></div>'
             '<div class="c-m"><span class="mono">%s</span><span class="c-sec">%s</span></div>'
             '<div class="c-s">%s</div>'
             '</div>'
-        ) % (meta["flag"], esc(S.country_label(meta["country"])), esc(meta["site"]), esc(meta["label"]),
+        ) % (meta["flag"], esc(country_name(lang, meta["country"])), esc(meta["site"]), esc(meta["label"]),
              stamps, esc(meta.get("note") or meta.get("claim") or ""), seelink,
-             "{:,}".format(n),
+             N(n),
              esc(meta.get("route", "")),
              ("%ss" % int(secs)) if secs is not None else "&mdash;", spark(key))
 
@@ -419,9 +453,9 @@ def build():
         # recorded duration gets no bar at all, so "quick" and "not measured"
         # stay distinguishable rather than both being blank.
         pct = None if d is None else max(3, int(round(100 * d / longest)))
-        badge = ('<span class="stamp rec">pass</span>' if st["ok"]
-                 else '<span class="stamp warn">fail</span>')
-        bar = ('<span class="s-bar s-unknown" title="duration not recorded"></span>'
+        badge = ('<span class="stamp rec">%s</span>' % _("pass") if st["ok"]
+                 else '<span class="stamp warn">%s</span>' % _("fail"))
+        bar = ('<span class="s-bar s-unknown" title="%s"></span>' % _("duration not recorded")
                if pct is None else
                '<span class="s-bar"><i style="width:%d%%"></i></span>' % pct)
         srows += (
@@ -436,22 +470,23 @@ def build():
         d = r.get("delta") or {}
         chips = ""
         if d.get("entries_active"):
-            chips += '<span class="chip mint">%+d added</span>' % d["entries_active"]
+            chips += '<span class="chip mint">%s</span>' % _("{n} added", n="%+d" % d["entries_active"])
         lv = r.get("liveness") or {}
         if lv.get("newly_dead"):
-            chips += '<span class="chip ink">%d repos gone</span>' % len(lv["newly_dead"])
+            chips += '<span class="chip ink">%s</span>' % _("{n} repos gone", n=len(lv["newly_dead"]))
         if lv.get("revived"):
-            chips += '<span class="chip">%d revived</span>' % len(lv["revived"])
+            chips += '<span class="chip">%s</span>' % _("{n} revived", n=len(lv["revived"]))
         per = d.get("per_source") or {}
         if per:
             chips += '<span class="chip">%s</span>' % esc(
                 ", ".join("%s %+d" % (k, v) for k, v in list(per.items())[:3]))
         if not chips:
-            chips = '<span class="chip">no change</span>'
+            chips = '<span class="chip">%s</span>' % _("no change")
         drows += (
-            '<div class="dcard"><div class="d-h"><b>%s</b><span class="num">%s entries</span></div>'
+            '<div class="dcard"><div class="d-h"><b>%s</b><span class="num">%s</span></div>'
             '<div class="d-c">%s</div></div>'
-        ) % (esc(r["run_at"][:10]), "{:,}".format((r.get("entries") or {}).get("active") or 0), chips)
+        ) % (esc(r["run_at"][:10]),
+             _("{n} entries", n=N((r.get("entries") or {}).get("active") or 0)), chips)
 
     # ---- surveyed and rejected
     vrows = ""
@@ -461,15 +496,18 @@ def build():
             '<a class="v-n" href="%s" target="_blank" rel="noopener">%s</a>'
             '<span class="v-chip">%s</span>'
             '<p class="v-d">%s</p></div>'
-        ) % (e["flag"], esc(S.country_label(e["country"])), esc(e["url"]), esc(e["name"]),
-             esc(STATUS_LABEL.get(e["status"], e["status"])), esc(e["detail"]))
+        ) % (e["flag"], esc(country_name(lang, e["country"])), esc(e["url"]), esc(e["name"]),
+             esc(_(STATUS_LABEL[e["status"]]) if e["status"] in STATUS_LABEL else e["status"]),
+             esc(e["detail"]))
 
     n_countries = len({m["country"] for m in S.SOURCES.values()})
     added = (latest.get("delta") or {}).get("entries_active") or 0
 
     # ---- machine-readable. Same shape as before so existing consumers keep
-    # working; `page` records where the human version now lives.
-    json.dump({
+    # working; `page` records where the human version now lives. Written on the
+    # English pass only: the JSON is language-neutral, and one write is one truth.
+    if primary:
+      json.dump({
         "generated_at": NOW, "state": state,
         "last_run": {k: latest.get(k) for k in
                      ("run_at", "trigger", "duration_s", "ok", "failures")},
@@ -485,9 +523,9 @@ def build():
                      "agent": "org.antigravity.govoss-harvest",
                      "redeploy": "automatic - run.sh publishes and commits as its last "
                                  "steps, gated on every earlier step exiting 0"},
-    }, open(f"{SITE}/status.json", "w"), indent=1, default=str)
+      }, open(f"{SITE}/status.json", "w"), indent=1, default=str)
 
-    json.dump({"generated_at": NOW,
+      json.dump({"generated_at": NOW,
                "ingested": [{**m, "key": k, "entries": counts.get(k, 0)}
                             for k, m in S.SOURCES.items()],
                "survey": S.SURVEY},
@@ -497,33 +535,35 @@ def build():
         "__CROWS__": crows, "__SROWS__": srows, "__DROWS__": drows, "__VROWS__": vrows,
         "__CROWS_C__": vrows_c,
         "__N_CAT__": str(len(S.SOURCES)),
-        "__SUBMIT__": theme.submit_block(len(S.SOURCES)),
+        "__SUBMIT__": theme.submit_block(len(S.SOURCES), lang),
         "__N_COUNTRIES__": str(n_countries),
         "__N_ADDED__": "%+d" % added,
         "__N_RUNS__": str(len(runs)),
         "__N_SURVEY__": str(len(S.SURVEY)),
         "__RUN_AT__": esc(latest["run_at"]),
-        "__RUN_AGO__": esc(ago(latest["run_at"])),
+        "__RUN_AGO__": esc(ago(latest["run_at"], lang)),
         "__RUN_DUR__": dur(latest.get("duration_s")),
         "__STATE_CLS__": {"ok": "rec", "warn": "warn", "critical": "warn"}[state],
-        "__STATE_TXT__": {"ok": "published", "warn": "published with warnings",
-                          "critical": "attention needed"}[state],
-        "__PROBLEMS__": ("".join('<li class="p-%s"><b>%s</b> %s</li>' % (a, a, esc(b))
+        "__STATE_TXT__": _({"ok": "published", "warn": "published with warnings",
+                            "critical": "attention needed"}[state]),
+        "__PROBLEMS__": ("".join('<li class="p-%s"><b>%s</b> %s</li>' % (a, _(a), esc(b))
                                  for a, b in problems)
-                         or '<li class="p-ok">Nothing outstanding. Every step of the last '
-                            'run completed.</li>'),
+                         or '<li class="p-ok">%s</li>'
+                            % _("Nothing outstanding. Every step of the last run completed.")),
         "__SPARK_N__": str(len(tail)),
         "__ICON_SEAL__": T.ICONS["seal"],
     }
 
     page = (theme.head(
-        "Sources and harvest status | govoss",
-        "The %d government catalogues govoss harvests first-hand, how the last harvest "
-        "went, and the %d catalogues that were surveyed and rejected, with reasons."
-        % (len(S.SOURCES), len(S.SURVEY)))
+        _("Sources and harvest status | govoss"),
+        _("The {n} government catalogues govoss harvests first-hand, how the last harvest "
+          "went, and the {s} catalogues that were surveyed and rejected, with reasons.",
+          n=len(S.SOURCES), s=len(S.SURVEY)), lang=lang, route="/sources.html")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar() + theme.topbar("sources") + BODY + theme.footer())
+        + theme.utility_bar(lang=lang) + theme.topbar("sources", lang, "/sources.html")
+        + BODY + theme.footer(lang=lang))
 
+    page = i18n.markers(page, lang)
     for k, v in subs.items():
         page = page.replace(k, v)
     import re as _re
@@ -531,14 +571,19 @@ def build():
     if left:
         raise SystemExit("build_sources: unsubstituted placeholders %s" % left)
 
+    page = i18n.links(page, lang)
     theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
-    open(f"{SITE}/sources.html", "w").write(page)
-    print("sources page: %d catalogues, %d surveyed, state=%s (%.0f KB) + sources.json + status.json"
-          % (len(S.SOURCES), len(S.SURVEY), state, len(page) / 1024))
-    for a, b in problems:
-        print("   [%s] %s" % (a, b))
+    out = f"{SITE}/sources.html" if primary else f"{SITE}/{lang}/sources.html"
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, "w").write(page)
+    print("sources page [%s]: %d catalogues, %d surveyed, state=%s (%.0f KB)%s"
+          % (lang, len(S.SOURCES), len(S.SURVEY), state, len(page) / 1024,
+             " + sources.json + status.json" if primary else ""))
+    if primary:
+        for a, b in problems:
+            print("   [%s] %s" % (a, b))
 
 
 PAGE_CSS = """
@@ -648,57 +693,57 @@ PAGE_CSS = """
 BODY = """
 <div class="hero tex">
   <div class="inner">
-    <p class="overline">Sources</p>
-    <h2>Where the entries come from, and how the last harvest went</h2>
-    <p class="lede">Every entry is harvested first-hand from a government's own catalogue
+    <p class="overline">⟪Sources⟫</p>
+    <h2>⟪Where the entries come from, and how the last harvest went⟫</h2>
+    <p class="lede">⟪Every entry is harvested first-hand from a government's own catalogue
       &mdash; never syndicated from an aggregator. This page shows all __N_CAT__ of them, the
-      __N_SURVEY__ that were surveyed and rejected, and whether the machine is still running.</p>
+      __N_SURVEY__ that were surveyed and rejected, and whether the machine is still running.⟫</p>
     <span class="stamp __STATE_CLS__" style="margin-top:4px">__ICON_SEAL__
-      Last updated __RUN_AT__ &middot; __STATE_TXT__ in __RUN_DUR__</span>
+      ⟪Last updated __RUN_AT__ &middot; __STATE_TXT__ in __RUN_DUR__⟫</span>
   </div>
 </div>
 
 <div class="wrap">
   <main id="main">
   <div class="stats">
-    <div class="stat"><b>__N_CAT__</b><span>catalogues harvested</span></div>
-    <div class="stat"><b>__N_COUNTRIES__</b><span>countries and bodies</span></div>
-    <div class="stat"><b>__N_ADDED__</b><span>entries since last run</span></div>
-    <div class="stat"><b>__N_RUNS__</b><span>runs recorded</span></div>
-    <div class="stat"><b>__N_SURVEY__</b><span>surveyed and rejected</span></div>
+    <div class="stat"><b>__N_CAT__</b><span>⟪catalogues harvested⟫</span></div>
+    <div class="stat"><b>__N_COUNTRIES__</b><span>⟪countries and bodies⟫</span></div>
+    <div class="stat"><b>__N_ADDED__</b><span>⟪entries since last run⟫</span></div>
+    <div class="stat"><b>__N_RUNS__</b><span>⟪runs recorded⟫</span></div>
+    <div class="stat"><b>__N_SURVEY__</b><span>⟪surveyed and rejected⟫</span></div>
   </div>
 
   <section class="sec">
-    <div class="sechead"><h3>Harvested catalogues</h3>
-      <span class="r">Counts credit every catalogue that listed an entry, so a tool in
-        three catalogues counts three times.</span></div>
+    <div class="sechead"><h3>⟪Harvested catalogues⟫</h3>
+      <span class="r">⟪Counts credit every catalogue that listed an entry, so a tool in
+        three catalogues counts three times.⟫</span></div>
     <hr class="dashed">
     <div class="clist" style="margin-top:14px">__CROWS__</div>
     <div class="legend">
-      <span><i style="background:var(--green)"></i>harvested</span>
-      <span><i style="background:var(--ink-900)"></i>contributed nothing</span>
-      <span><i style="background:var(--border-soft)"></i>not a source yet, or not recorded</span>
-      <span style="color:var(--ink-faint)">last __SPARK_N__ runs, oldest first</span>
+      <span><i style="background:var(--green)"></i>⟪harvested⟫</span>
+      <span><i style="background:var(--ink-900)"></i>⟪contributed nothing⟫</span>
+      <span><i style="background:var(--border-soft)"></i>⟪not a source yet, or not recorded⟫</span>
+      <span style="color:var(--ink-faint)">⟪last __SPARK_N__ runs, oldest first⟫</span>
     </div>
   </section>
 
   <section class="sec">
-    <div class="sechead"><h3>By country</h3>
-      <span class="r">One JSON file per country, CORS-open, no key. An entry listed
-        by several catalogues appears under each.</span></div>
+    <div class="sechead"><h3>⟪By country⟫</h3>
+      <span class="r">⟪One JSON file per country, CORS-open, no key. An entry listed
+        by several catalogues appears under each.⟫</span></div>
     <hr class="dashed">
-    <p class="note" style="margin-top:12px"><b>Read this before citing a country
+    <p class="note" style="margin-top:12px">⟪<b>Read this before citing a country
       figure.</b> The code is the country of the <b>catalogue that listed the
       software</b>, not the tier of government that published it. This catalogue
       carries no municipal / regional / national distinction, so
       <span class="mono">/by-country/NL.json</span> is &ldquo;what code.overheid.nl
       lists&rdquo;, national ministries included &mdash; it cannot answer
-      &ldquo;what do Dutch <i>local</i> governments publish&rdquo;.</p>
+      &ldquo;what do Dutch <i>local</i> governments publish&rdquo;.⟫</p>
     <div class="cgrid" style="margin-top:14px">__CROWS_C__</div>
   </section>
 
   <section class="sec">
-    <div class="sechead"><h3>Open items</h3></div>
+    <div class="sechead"><h3>⟪Open items⟫</h3></div>
     <hr class="dashed">
     <ul class="probs" style="margin-top:14px">__PROBLEMS__</ul>
   </section>
@@ -706,30 +751,30 @@ BODY = """
   <section class="sec">
     <div class="two">
       <div class="col-diff">
-        <div class="sechead"><h3>What changed</h3></div>
+        <div class="sechead"><h3>⟪What changed⟫</h3></div>
         <hr class="dashed">
         <div style="margin-top:14px">__DROWS__</div>
       </div>
       <div class="col-steps">
-        <div class="sechead"><h3>Steps of the last run</h3><span class="r">through the run log</span></div>
+        <div class="sechead"><h3>⟪Steps of the last run⟫</h3><span class="r">⟪through the run log⟫</span></div>
         <hr class="dashed">
         <div style="margin-top:8px">__SROWS__</div>
-        <p class="note">A run publishes only if every step exits 0, so a failed step means
+        <p class="note">⟪A run publishes only if every step exits 0, so a failed step means
           the public copy stays on the last good run rather than being overwritten with a
-          partial harvest.</p>
-        <p class="note">This list stops at the step that wrote it: the run log is recorded
+          partial harvest.⟫</p>
+        <p class="note">⟪This list stops at the step that wrote it: the run log is recorded
           before this page is built, so the steps that follow &mdash; building this page and
           the API page, deploying, and committing the data &mdash; cannot appear on it. They
           are not hidden. <b>That you are reading this page at all is the evidence the deploy
           step succeeded</b>, since a failed run publishes nothing and you would be looking at
-          the previous week's copy.</p>
+          the previous week's copy.⟫</p>
       </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sechead"><h3>Surveyed and not harvested</h3>
-      <span class="r">Published with reasons, so nobody spends the same twenty minutes twice.</span></div>
+  <section class="sec" id="surveyed">
+    <div class="sechead"><h3>⟪Surveyed and not harvested⟫</h3>
+      <span class="r">⟪Published with reasons, so nobody spends the same twenty minutes twice.⟫</span></div>
     <hr class="dashed">
     <div class="vgrid" style="margin-top:14px">__VROWS__</div>
   </section>
@@ -741,4 +786,6 @@ BODY = """
 """
 
 if __name__ == "__main__":
-    build()
+    for _lang in i18n.LANGS:
+        build(_lang)
+    i18n.report("build_sources")

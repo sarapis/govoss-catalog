@@ -23,10 +23,12 @@
 # OFL-*.txt files are copied too - do not drop them to save bytes.
 set -euo pipefail
 cd "$(dirname "$0")"
-mkdir -p site site/fonts
+mkdir -p site site/fonts site/ca
 cp catalogue.html site/index.html
+# Catalan copy of the catalog (i18n.py); the other /ca/ pages are written by their builders
+cp catalogue.ca.html site/ca/index.html
 cp deploy-vercel.json site/vercel.json
 cp fonts/*.woff2 fonts/OFL-*.txt site/fonts/
 # the real Sarapis mark, pulled from next.sarapis.org - not redrawn
 cp assets/sarapis-mark.png site/
-echo "site/ assembled: index.html + vercel.json + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"
+echo "site/ assembled: index.html + ca/index.html + vercel.json + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"
