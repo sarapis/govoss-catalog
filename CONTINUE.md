@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 9 suites, 412 checks
+for t in test_*.py; do python3 $t; done                     # 9 suites, 433 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,7 +32,7 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **9 suites, 412 checks, all passing.** Manual on purpose.
+- **9 suites, 433 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
@@ -87,6 +87,13 @@ Expected, from an end-to-end run on a scratch copy (harvest --from-cache .. vari
 - **Recently added shows no false "new" entries**: the 4 identities that move were
   migrated in `cache/_first_seen.json` (all baseline `null`).
 - Liveness checks ~109 fewer URLs: Swedish homepages were being checked as repos.
+- **Helsingborg's first harvest** (source 20, `hbg`): 291 rows, 103 set aside as
+  `wordpress-plugin`, ~98 active and correctly shown as Recently added. With it, the
+  scratch run gave **active 3,128** (3,030 + 98); update the header counts in CLAUDE.md
+  and here (20 catalogues) once the run confirms them.
+- **22 descriptions change language** as DIGG, OS2, ARTE and Helsingborg re-harvest (one
+  Swedish/Danish/Portuguese marker under the org's hint no longer defaults to English);
+  all have translations, so like-for-like untranslated stays 13 -> 13.
 
 ## Candidates, ranked
 
@@ -108,13 +115,11 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
    genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
    and three publiccode-tier NC entries the publiccode exemption protects.
-3. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
-   translation cost (~20-200 new entries per run), so only if someone will use it; it would
-   also need a "missing Catalan" sensor on the same growth rule as orphans.
-4. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
-   undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
-5. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
+3. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
    Workers (JS). **Screen-reader testing** has never been done.
+
+**Decided, not pending:** no Catalan phase 2 (owner, 2026-09-23). `/ca/` stays chrome-only;
+data, products and source notes stay English. Do not re-propose it.
 
 ## Traps - looks broken but is not, and vice versa
 

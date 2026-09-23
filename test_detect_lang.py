@@ -141,6 +141,38 @@ ASSUME_EN_CASES = [
 ]
 
 
+# ---- forges: detect_lang(text, hint=<the org's language>). Real text.
+HINT_CASES = [
+    # A tie between languages sharing ä/ö is broken by the org's hint, and ".se"
+    # is Sweden's code, never Finnish `se`. DIGG passes hint="sv".
+    ("sv", "sv", "Källkod för dataportal.se"),
+    # ONE non-English marker plus the org's known language: the hint decides,
+    # not the English default (2026-09-23). Each was tagged English and so left
+    # out of the translation queue.
+    ("sv", "sv", "Ett childtema för Municipio"),                                # Helsingborg
+    ("sv", "sv", "Helsingborg stads stilguide för webb-baserade projekt. "),
+    ("sv", "sv", "Svinnräknaren"),
+    ("sv", "sv", "Dokumentation för dataportalen"),                             # DIGG
+    ("da", "da", "Vejledninger til OS2Kitos"),                                  # OS2
+    ("da", "da", "Projektets backlog og opgavestyring"),
+    ("pt", "pt", "Documentação técnica relativa ao serviço de alteração de morada"),  # ARTE
+    ("pt", "pt", "Mapa das WCAG"),
+    # ...but a homograph is still not evidence: English stays English.
+    ("en", "da", "Admin for OS2Display version 2"),
+    ("en", "sv", "A theme specifically made for municipalities. "),
+    ("en", "pt", "Products to print a rss feed from a given URL."),
+    # ⚠ ACCEPTED COST, pinned so it is a decision and not a surprise: English
+    # with one foreign word under that language's hint is tagged foreign. It
+    # lands in the translation queue (visible) instead of hiding foreign text
+    # as English (invisible) - the direction CLAUDE.md calls the lesser failure.
+    ("sv", "sv", "Custom API Endpoint for Lärrum"),
+    ("da", "da", "QGIS processing plugin to import data from web flatgeobuf data sosurces "
+                 "til flood damage database"),
+    # No hint: unchanged, one marker is still not enough.
+    ("en", None, "Ett childtema för Municipio"),
+]
+
+
 def main():
     failed = []
     for expect, text in CASES:
@@ -156,16 +188,16 @@ def main():
         if got != expect:
             failed.append((expect, got, text))
 
-    for expect, got, text in failed:
-        print(f"FAIL  expected {expect!r}, got {got!r}\n      {(text or '')[:88]!r}")
-
-    # A tie between languages sharing ä/ö is broken by the org's hint, and ".se"
-    # is Sweden's code, never Finnish `se`. DIGG passes hint="sv".
-    for expect, hint, text in [("sv", "sv", "Källkod för dataportal.se")]:
+    for expect, hint, text in HINT_CASES:
         got = h.detect_lang(text, hint=hint)
         if got != expect:
             failed.append((expect, got, text))
-    n = len(CASES) + len(PRIOR_CASES) + len(ASSUME_EN_CASES) + 1
+
+    # Printed AFTER every list is checked: the hinted case used to be appended
+    # after this loop, so a failure there lowered the count without saying which.
+    for expect, got, text in failed:
+        print(f"FAIL  expected {expect!r}, got {got!r}\n      {(text or '')[:88]!r}")
+    n = len(CASES) + len(PRIOR_CASES) + len(ASSUME_EN_CASES) + len(HINT_CASES)
     print(f"\n{n - len(failed)}/{n} passed")
     return 1 if failed else 0
 

@@ -93,6 +93,13 @@ def classify(rec):
     if rec.get("is_fork"):
         return True, "upstream-fork"
 
+    # The publisher's own composer.json says this is a WordPress plugin: a module
+    # of a platform (Helsingborg's Municipio) or a site tweak, not a product on its
+    # own. EVIDENCE, like is_fork - a repo named "*-plugin" with no such
+    # declaration is never caught. Themes are kept: Municipio IS a theme.
+    if rec.get("composer_type") in ("wordpress-plugin", "wordpress-muplugin"):
+        return True, "wordpress-plugin"
+
     lic = (rec.get("license") or "").strip()
     for reason, pat in LICENCE_RULES:
         if pat.search(lic):

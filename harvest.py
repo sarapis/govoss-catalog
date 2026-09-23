@@ -217,6 +217,15 @@ def detect_lang(text, hint=None):
         if hint and scores.get(hint, 0) == scores[best] and solid(hint):
             return hint
         return best
+    # A KNOWN org language, and one marker for it that English cannot produce:
+    # the hint decides, not the English default. Measured 2026-09-23 on
+    # Helsingborg: "Ett childtema för Municipio", "Helsingborg stads stilguide för
+    # webb-baserade projekt" and "Svinnräknaren" all carry exactly one Swedish
+    # marker, so two-markers-or-English called them English and dropped them out
+    # of the translation queue - the worse failure. Homographs still do not
+    # count, so "Admin for OS2Display" stays English under a Danish hint.
+    if hint and any(hh not in _EN_HOMOGRAPH for hh in hits.get(hint, [])):
+        return hint
     return "en"       # Latin script, no convincing non-English markers
 
 
@@ -438,9 +447,14 @@ def gitlab_scan(base, source, country, cap_pages=60, workers=12):
     return out, len(projs)
 
 
-def github_org_scan(org, source, country, workers=12):
+def github_org_scan(org, source, country, workers=12, composer=False):
     """GitHub org: list repos, then hit raw.githubusercontent (not rate-limited
-    like the REST API, so a 380-repo org costs 4 API calls, not 380)."""
+    like the REST API, so a 380-repo org costs 4 API calls, not 380).
+
+    composer=True also reads each index-tier repo's composer.json and records its
+    declared `type` as `composer_type` - the publisher's own statement that a repo
+    is, say, a WordPress plugin, which filters.py reads the way it reads
+    `fork: true`. One raw request per repo; only orgs that need it ask."""
     hdr = {"Accept": "application/vnd.github+json"}
     tok = _gh_token()
     if tok:
@@ -487,9 +501,18 @@ def github_org_scan(org, source, country, workers=12):
                                    stars=r.get("stargazers_count"),
                                    last_activity=r.get("pushed_at"),
                                    is_fork=bool(r.get("fork")), fork_parent=fork_parent)
+        ctype = None
+        if composer:
+            try:
+                ctype = (json.loads(get(f"https://raw.githubusercontent.com/{org}/{r['name']}"
+                                        f"/HEAD/composer.json", timeout=25, raw=True, tries=1)
+                                    .decode("utf-8", "replace")).get("type") or None)
+            except Exception:
+                pass                      # no composer.json, or unreadable: no claim made
         # iMio publishes almost no publiccode.yml, but the repos are still
         # genuine public-sector OSS — index them rather than drop them.
         return rec(source, country, "index", r.get("name"), r.get("html_url"),
+                   composer_type=ctype.lower() if isinstance(ctype, str) else None,
                    repo_owner=org, license=(r.get("license") or {}).get("spdx_id"),
                    entry_url=r.get("html_url"),
                    short_desc=(r.get("description") or "")[:400],
@@ -498,7 +521,8 @@ def github_org_scan(org, source, country, workers=12):
                    # detection neither skips these rows nor mislabels them.
                    desc_lang=detect_lang(
                        r.get("description"),
-                       hint={"amagovpt": "pt", "governmentbg": "bg", "diggsweden": "sv"}.get(
+                       hint={"amagovpt": "pt", "governmentbg": "bg", "diggsweden": "sv",
+                             "helsingborg-stad": "sv"}.get(
                            org, "da" if org in OS2_ORGS else None)),
                    stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
                    is_fork=bool(r.get("fork")), fork_parent=fork_parent)
@@ -1237,10 +1261,26 @@ def digg():
     return out
 
 
+def hbg():
+    """Sweden — Helsingborg City (github.com/helsingborg-stad). Municipal, first-hand.
+
+    Its product is Municipio, the WordPress theme Swedish municipalities run
+    ("a theme specifically made for municipalities"). Measured 2026-09-23: 291
+    active repos, 26 forks, 0 publiccode.yml, and of the 265 non-forks 103 declare
+    themselves WordPress plugins in composer.json (78 `wordpress-plugin`, 25
+    `wordpress-muplugin`) - Municipio/Modularity modules and site tweaks. So the
+    scan reads composer.json and filters.py sets those aside on that declaration
+    (reason `wordpress-plugin`), never on a name. Themes, apps and everything else
+    stay. Descriptions mix Swedish and English: `sv` is a tie-break hint only.
+    """
+    out, _ = github_org_scan("helsingborg-stad", "SE/helsingborg", "SE", composer=True)
+    return out
+
+
 SOURCES = {"fr": fr, "it": it, "de": de, "eu": eu, "be": be, "fi": fi,
            "se": se, "nl": nl_forgejo, "ca": ca, "tw": tw, "ie": ie, "pt": pt,
            "muc": muc, "os2": os2, "bg": bg,
-           "dpg": dpg, "ch": ch, "digg": digg,
+           "dpg": dpg, "ch": ch, "digg": digg, "hbg": hbg,
            "nlreg": nl_register}
 
 # Reachable, but no machine route found yet — the EU catalogue lists them as

@@ -40,5 +40,12 @@
 "f17a92c68f": "Temporary repository holding a CKAN extension that adds extra metadata fields to a dataset.",
 "f4ed824a19": "The purpose of this documentation is to make user guides easily accessible.",
 "fcac075e4d": "Central documentation for OS2ai, with technical guides for developers and operations staff and solution documentation for system owners.",
-"6528611daf": "This repository supports product management for OS2Display. Central documents, decisions and working materials are collected here, so that there is one shared and transparent source for governance and coordination."
+"6528611daf": "This repository supports product management for OS2Display. Central documents, decisions and working materials are collected here, so that there is one shared and transparent source for governance and coordination.",
+"cacfb05ba9": "The project's backlog and task management.",
+"6ff011f325": "Assorted database backups and installation files.",
+"ce4662d5b6": "QGIS processing plugin to import data from web FlatGeobuf data sources into a flood damage database.",
+"03e8675d0f": "Guides for OS2Kitos.",
+"91c7ece163": "A Raspberry Pi compatible version of OS2borgerPC KIOSK.",
+"9e0ecd57b5": "(Job) Security by Obscurity - a collection of OS2mo integrations.",
+"2c0e9d0fdf": "Introduction to the product OS2valghalla."
 }

@@ -216,6 +216,17 @@ SOURCES = {
                 "(the eIDAS node). 44 active repos, 8 with a publiccode.yml; Offentligkod lists "
                 "only 2. Found via the OSOR list.",
     },
+    "SE/helsingborg": {
+        "checkpoint": "hbg",
+        "label": "Helsingborg City", "country": "SE", "flag": "\U0001F1F8\U0001F1EA",
+        "site": "https://github.com/helsingborg-stad",
+        "api": "https://api.github.com/orgs/helsingborg-stad/repos",
+        "route": "GitHub org", "claim": "built by the City of Helsingborg",
+        "note": "Municipal, first-hand: Municipio, the WordPress theme Swedish municipalities "
+                "run, and the city's apps. 291 active repos, 0 publiccode.yml; the 103 that "
+                "declare themselves WordPress plugins in composer.json are set aside "
+                "(reason wordpress-plugin), not deleted. Found via the OSOR list.",
+    },
     "IE/ogcio": {
         "checkpoint": "ie",
         "label": "OGCIO Ireland", "country": "IE", "flag": "\U0001F1EE\U0001F1EA",
@@ -350,8 +361,8 @@ SURVEY = [
                "catalogues with owner, language and geographic coverage. Unlike the EU OSS "
                "Catalogue on the same portal, this page renders fine. Every entry has now been "
                "evaluated (last pass 2026-09-22): OS2, Bulgaria, Switzerland and DIGG were "
-               "ingested from it; Helsingborg is recorded below as a candidate and GCHQ under "
-               "the UK entry (no UK catalogue exists); ICT "
+               "ingested from it, and Helsingborg (2026-09-23); GCHQ is under the UK entry "
+               "(no UK catalogue exists); ICT "
                "ReUse, the Adullact forge, Forja RedIRIS, OW2 and the Swedish community wiki "
                "are recorded below with why not. Awesome Free Software lists private "
                "publishers, not government software; Etalab's Public Sector Code is the "
@@ -370,14 +381,6 @@ SURVEY = [
                "Sleeper, LD-Explorer). A hand-picked UK list was drafted "
                "(UK-CURATED-DRAFT.md) and parked: this catalogue ingests government-produced "
                "catalogues, not lists of its own."},
-    {"country": "SE", "flag": "\U0001F1F8\U0001F1EA", "name": "Helsingborg City",
-     "url": "https://github.com/helsingborg-stad",
-     "status": "needs-research",
-     "detail": "Municipal and first-hand, but noisy: 291 active repos, 0 publiccode.yml, 78 of "
-               "the 265 non-forks carry neither a description nor a star - mostly WordPress "
-               "plugins around its Municipio theme. Index tier would add real municipal "
-               "software (Municipio) and a lot of plumbing; worth it only with a filter rule "
-               "written for WordPress plugin repos, reviewed like the iMio rules were."},
     {"country": "BE", "flag": "\U0001F1E7\U0001F1EA", "name": "ICT ReUse (Belgian social security)",
      "url": "https://www.ict-reuse.be/fr",
      "status": "no-code",

@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 9 suites, 412 checks, all manual
+for t in test_*.py; do python3 $t; done     # 9 suites, 433 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -43,6 +43,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
   - Sweden: the recutils `Url` field mixes repos and homepages; `is_repo_url()` (explicit forge
     hosts, owner AND repo in the path) decides, and everything else is `landing`.
   - Taiwan: use the official open-data export, not the SPA's POST API.
+  - Helsingborg: the org scan reads each repo's `composer.json` (`composer=True`); a declared
+    `wordpress-plugin`/`wordpress-muplugin` is set aside by filters.py. Themes stay - Municipio IS one.
   - DPG: repo URLs are free text; extras go to `extra_repos`. Deep links are HEAD-verified.
   - Switzerland: the Chancellery's `swiss/index` README is the org list; publiccode tier only;
     four accounts are users (list with `/users/<x>/repos`). Refuses under 20 accounts.
@@ -96,7 +98,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
 - **Never a per-source language assumption, and never bare `detect_lang` in its place** (it
   answers `en` whenever it finds no stopwords, and short catalogue phrases have none). SILL and
   code.overheid.nl use `lang_with_prior()`; Munich and DPG use `lang_assume_en()`; forges use
-  `detect_lang(text, hint=)` with the hint as tie-break only. `ä`/`ö` count for de, sv AND fi;
+  `detect_lang(text, hint=)`: the hint breaks ties, AND decides when the text carries one marker
+  for it that is not an English homograph ("Ett childtema för Municipio" is Swedish). `ä`/`ö` count for de, sv AND fi;
   Finnish `se` never matches after `. - /`. **Over-correcting toward English is the worse
   failure.** All pinned by `test_detect_lang.py` (59 real strings).
 - Entries with no description are set aside (`no-description`), not deleted.
@@ -220,7 +223,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Nine suites, 412 checks, **all manual** - a test that can fail the weekly publish is one someone
+Nine suites, 433 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -229,12 +232,12 @@ config's ROUTE, not its text (a comment once satisfied a check).
 
 | file | pins |
 |---|---|
-| `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en` and shared ä/ö |
+| `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en`, shared ä/ö, org hints |
 | `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect/repo-rename QID loans, `is_repo_url` |
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
-| `test_filters.py` | `classify()`, the `replaces.json` vocabulary gate, publisher `replaces:` |
+| `test_filters.py` | `classify()` incl. licence and `wordpress-plugin`, the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, hosting files |

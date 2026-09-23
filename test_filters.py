@@ -143,6 +143,22 @@ CASES = [
     ("publiccode with an NC licence is NOT filtered",
      r("Dove voto?", tier="publiccode", license="PolyForm-Noncommercial-1.0.0"), (False, None)),
 
+    # ---- wordpress-plugin: the publisher's composer.json `type`, never a name.
+    # Real Helsingborg repos.
+    ("composer wordpress-plugin", r("modularity-timeline", composer_type="wordpress-plugin"),
+     (True, "wordpress-plugin")),
+    ("composer wordpress-muplugin", r("wpmu-allow-cors", composer_type="wordpress-muplugin"),
+     (True, "wordpress-plugin")),
+    ("a THEME is kept - Municipio is the product",
+     r("Municipio", composer_type="wordpress-theme"), (False, None)),
+    ("a composer library is kept", r("x", composer_type="library"), (False, None)),
+    ("a plugin-sounding NAME with no declaration is kept",
+     r("polylang-fallback-plugin"), (False, None)),
+    ("publiccode beats a plugin declaration",
+     r("x", tier="publiccode", composer_type="wordpress-plugin"), (False, None)),
+    ("a fork plugin is reported as a fork", r("x", is_fork=True, composer_type="wordpress-plugin"),
+     (True, "upstream-fork")),
+
     # ---- ordinary software passes
     ("plain software", r("QGIS"), (False, None)),
     ("a name merely containing 'action'", r("transaction-manager"), (False, None)),
