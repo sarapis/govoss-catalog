@@ -21,26 +21,29 @@
                                       (5000 req/hr GraphQL instead of anonymous
                                       HEAD, which is what caused a 27% 429 rate)
     .../Python.framework/3.12/bin  -> a python3 that actually has pyyaml+certifi
-    __HOME__/.npm-global/bin       -> vercel, for the final publish step
-    /usr/local/bin                 -> node. The vercel CLI's shebang is
+    __HOME__/.npm-global/bin       -> a global wrangler, if there is one (run.sh
+                                      prefers mcp-server/node_modules/.bin/wrangler)
+    /usr/local/bin                 -> node. wrangler's shebang is
                                       `#!/usr/bin/env node`, so without this the
                                       publish step dies with "env: node: No such
                                       file or directory" — which looks like an
-                                      auth failure and is not. Prefer a versionless
-                                      node path: an nvm one carries a version
-                                      number and moves on every upgrade.
+                                      auth failure and is not (it happened with the
+                                      vercel CLI). Prefer a versionless node path:
+                                      an nvm one moves on every upgrade.
   If `gh` is missing, liveness degrades to HEAD rather than failing.
   run.sh probes for its own python3 regardless, so a wrong Framework path here
   costs nothing — it is listed for speed, not correctness.
 
-  PUBLISHING: with node on PATH, the Vercel CLI's stored login works from a
-  launchd job (verify with `env -i PATH=<this PATH> HOME=$HOME vercel whoami`).
-  A token is still preferable, since a stored login can be revoked and would then
-  fail every week: run.sh reads VERCEL_TOKEN, then ~/.config/govoss/vercel-token
-  (chmod 600), then falls back to the stored login. The FILE is the preferred
-  route, which is why no token appears below — LaunchAgent plists are
-  world-readable and get swept into backups, and rotating a token in a file needs
-  no launchctl reload. Create tokens at https://vercel.com/account/tokens.
+  PUBLISHING (Cloudflare since 2026-09-23): with node on PATH, wrangler's stored
+  login works from a launchd job - verified by running run.sh's publish() under
+  `env -i PATH=<this PATH> HOME=$HOME`. A token is still preferable, since a stored
+  login can be revoked and would then fail every week: run.sh reads
+  CLOUDFLARE_API_TOKEN, then ~/.config/govoss/cloudflare-token (chmod 600), then
+  falls back to the stored login. The FILE is the preferred route, which is why no
+  token appears below — LaunchAgent plists are world-readable and get swept into
+  backups, and rotating a token in a file needs no launchctl reload. Create one at
+  https://dash.cloudflare.com/profile/api-tokens with Workers Scripts:Edit on
+  Devin@sarapis.org's Account.
 
   NL_API_KEY is intentionally absent — the Dutch OSS register needs a key that
   has not been requested, so harvest.py skips that source and says so. Add it as

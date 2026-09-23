@@ -10,7 +10,7 @@ English, categorised by function, de-duplicated, and liveness-monitored.
 · [entries.json](https://govoss-catalog.vercel.app/entries.json)
 · [llms.txt](https://govoss-catalog.vercel.app/llms.txt)
 
-**MCP server:** `https://govoss-mcp.devin-a8e.workers.dev` — public, keyless, five tools.
+**MCP server:** `https://mcp.govoss.cat` — public, keyless, five tools.
 
 | | |
 |---|---|

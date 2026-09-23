@@ -1,0 +1,5 @@
+# never upload these: the Vercel project link (while it exists)
+.vercel
+# Vercel's own config and link marker - meaningless on Cloudflare
+vercel.json
+.gitignore

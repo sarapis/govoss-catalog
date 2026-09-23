@@ -25,13 +25,13 @@
 #                surviving identity. Backfilled once from the weekly Data: commits
 #   liveness     diffs against the previous liveness.json to find newly-dead repos
 #   build_ui     regenerates catalogue.html from the finished catalog.json
-#   build_site   assembles site/ from tracked sources (html + vercel.json)
+#   build_site   assembles site/ from tracked sources (html, headers, redirects)
 #   json export  writes site/entries.json + meta.json + by-product + by-category
 #   api page     documents those files; measures them, so must run AFTER export
 #   products page  the proprietary side: by-product.json made browsable, plus the
 #                products governments buy that this catalogue cannot answer.
 #                Reads by-product.json, so also AFTER export
-#   deploy       publishes site/ to Vercel. After the sources page (which now
+#   deploy       publishes site/ to Cloudflare. After the sources page (which now
 #                also writes status.json),
 #                so the published copy describes the run that published it —
 #                and gated on every earlier step succeeding.
@@ -156,31 +156,23 @@ step "products page" "$PY" -u build_products.py # reads by-product.json, so runs
 # the live copy silently went stale while its own status page, baked at build
 # time, still read "Operational".
 #
-# Three things this has to get right:
+# Hosted on Cloudflare since 2026-09-23 (Workers static assets, wrangler.site.jsonc,
+# account pinned there). It was Vercel; the move put DNS, site and MCP server in
+# one account. The Vercel lessons carry over unchanged:
 #
 #  1. GATED on out/steps.tsv. A partial run overwriting a good public copy is
 #     worse than a stale one — the whole point of steps.tsv is that reading the
 #     end state cannot tell a failed harvest from a successful one.
-#  2. The CLI *and its interpreter* are resolved, never assumed. This is the
-#     third instance of the same bug in this repo, after the python3 with no
-#     pyyaml: `vercel` lives in ~/.npm-global/bin and its shebang is
-#     `#!/usr/bin/env node`, so under launchd's minimal PATH it failed with
-#     "env: node: No such file or directory" — which reads as an auth problem
-#     if you only look at the deploy not happening. It is not: with node on
-#     PATH, the CLI's stored login authenticates fine from a launchd job
-#     (verified with `env -i PATH=<plist PATH> vercel whoami`). Prefer
-#     /usr/local/bin/node — the nvm one lives under a version-numbered path
-#     that moves on every upgrade.
-#  3. A TOKEN is still preferred, because a stored login can be revoked or
-#     expire and would then fail silently-ish every Monday. Set VERCEL_TOKEN in
-#     the plist's EnvironmentVariables, or put the token alone in
-#     ~/.config/govoss/vercel-token (chmod 600) — the file keeps the secret out
-#     of a world-readable LaunchAgent plist and needs no launchctl reload to
-#     rotate. Without either, this falls back to the stored login and says so.
-#
-# site/ is gitignored, and so is the site/.vercel/project.json that binds it to
-# the right Vercel project. If that file is missing, `vercel deploy --yes`
-# would cheerfully create a NEW project instead of failing, so check for it.
+#  2. The CLI *and its interpreter* are resolved, never assumed. wrangler is a
+#     node script (#!/usr/bin/env node), exactly like the vercel CLI that failed
+#     under launchd with "env: node: No such file or directory" — which reads as
+#     an auth problem if you only look at the deploy not happening. It is the
+#     copy in mcp-server/node_modules (npm install there on a fresh checkout).
+#  3. A TOKEN is preferred, because a stored login can be revoked or expire and
+#     would then fail every Monday. Set CLOUDFLARE_API_TOKEN in the plist, or put
+#     the token alone in ~/.config/govoss/cloudflare-token (chmod 600). It needs
+#     Workers Scripts:Edit on Devin@sarapis.org's Account. Without either, this
+#     falls back to wrangler's stored login and says so (F7).
 publish () {
   local failed
   failed=$(awk -F'\t' '$2 != "0" { printf "%s ", $1 }' out/steps.tsv)
@@ -190,14 +182,14 @@ publish () {
     return 1
   fi
 
-  local VERCEL=""
-  for cand in "$HOME/.npm-global/bin/vercel" /opt/homebrew/bin/vercel \
-              /usr/local/bin/vercel "$(command -v vercel || true)"
+  local WRANGLER=""
+  for cand in "$PWD/mcp-server/node_modules/.bin/wrangler" "$HOME/.npm-global/bin/wrangler" \
+              /opt/homebrew/bin/wrangler /usr/local/bin/wrangler "$(command -v wrangler || true)"
   do
-    [ -x "$cand" ] && { VERCEL="$cand"; break; }
+    [ -x "$cand" ] && { WRANGLER="$cand"; break; }
   done
-  if [ -z "$VERCEL" ]; then
-    echo "NOT PUBLISHING — vercel CLI not found (npm i -g vercel)." >&2
+  if [ -z "$WRANGLER" ]; then
+    echo "NOT PUBLISHING — wrangler not found (cd mcp-server && npm install)." >&2
     return 1
   fi
 
@@ -209,79 +201,60 @@ publish () {
     [ -x "$cand" ] && { NODE="$cand"; break; }
   done
   if [ -z "$NODE" ]; then
-    echo "NOT PUBLISHING — no node found; the vercel CLI cannot run without one." >&2
+    echo "NOT PUBLISHING — no node found; wrangler cannot run without one." >&2
     return 1
   fi
   export PATH="$(dirname "$NODE"):$PATH"
 
-  local token="${VERCEL_TOKEN:-}"
-  local tokfile="${VERCEL_TOKEN_FILE:-$HOME/.config/govoss/vercel-token}"
+  # A missing account pin would let a cached login for another account take the
+  # deploy - which happened to the MCP Worker before its account was pinned.
+  if ! grep -q '"account_id"' wrangler.site.jsonc 2>/dev/null; then
+    echo "NOT PUBLISHING — wrangler.site.jsonc is missing or has no account_id." >&2
+    return 1
+  fi
+
+  local token="${CLOUDFLARE_API_TOKEN:-}"
+  local tokfile="${CLOUDFLARE_TOKEN_FILE:-$HOME/.config/govoss/cloudflare-token}"
   local route="stored-login"
-  [ -n "$token" ] && route="env:VERCEL_TOKEN"
+  [ -n "$token" ] && route="env:CLOUDFLARE_API_TOKEN"
   if [ -z "$token" ] && [ -r "$tokfile" ]; then
     token=$(tr -d ' \t\r\n' < "$tokfile")
     [ -n "$token" ] && route="token-file"
   fi
 
   # F7: which auth route this ran on, written where the status page can read it.
-  #
-  # The fragile mode was already PRINTED ("using the CLI's stored login") and that
-  # is exactly the sensor this repo keeps finding inadequate: a line in a log
-  # nobody opens. A revoked login fails the deploy step, which does block the
-  # publish and does flip the browser-side Stale badge — but only after 8 days of
-  # a quietly stale public site. Recording the route makes the weaker posture
-  # visible on the run that uses it, not a week after it breaks.
+  # A print is not a sensor: a revoked login fails the deploy, but the only
+  # outward signal is the public copy going stale and the Stale badge not
+  # flipping for 8 days. Recording the route makes the weaker posture visible on
+  # the run that uses it.
   mkdir -p out
   printf '%s' "$route" > out/deploy_auth.txt
 
-  # PRE-FLIGHT. `whoami` is a cheap read that distinguishes "auth is broken" from
-  # every other reason a deploy fails — the distinction this repo already got
-  # wrong once, when a missing `node` on the launchd PATH read as an auth failure.
-  #
-  # Deliberately NON-FATAL: a transient hiccup on whoami must not block a publish
-  # that would otherwise succeed. The deploy below is the real test; this only
-  # makes its failure legible.
-  #
-  # ⚠ CHECKS THE CONTENT, NOT JUST THE EXIT STATUS. `vercel whoami` prints the
-  # bare username on success and an "Error: ... Learn More: https://err.sh/..."
-  # block on a bad credential. It does exit 1 on failure — but that status only
-  # survives the `| tail -1` because this script sets `pipefail` far above, and a
-  # check that silently becomes a no-op if someone edits `set -uo pipefail` is
-  # the "guard that can only ever pass" this repo has already shipped twice.
-  # Measured both ways before writing this: without pipefail the pipeline
-  # reports success for an invalid token.
-  local who ok=1
-  who=$("$VERCEL" whoami ${token:+--token "$token"} 2>&1 | tail -1) || ok=0
-  case "$who" in
-    *Error:*|*err.sh*|*invalid*|*" "*|"") ok=0 ;;
-  esac
-  if [ "$ok" = 1 ]; then
-    echo "auth: $route (account: $who)"
+  # PRE-FLIGHT: whoami distinguishes "auth is broken" from every other reason a
+  # deploy fails. NON-FATAL - the deploy is the real test. ⚠ Checks CONTENT: a
+  # working login prints the pinned account id; anything else is a failure,
+  # whatever the exit status says.
+  local who
+  who=$(CLOUDFLARE_API_TOKEN="$token" "$WRANGLER" whoami 2>&1 || true)
+  if printf '%s' "$who" | grep -q "a8e2fa072ede7a6389e8db8cad00f774"; then
+    echo "auth: $route (Devin@sarapis.org's Account)"
   else
-    echo "auth: $route — PRE-FLIGHT FAILED: $who" >&2
+    echo "auth: $route — PRE-FLIGHT FAILED: $(printf '%s' "$who" | tail -2 | tr '\n' ' ')" >&2
     echo "  if the deploy now fails, this is why, and it is auth, not PATH." >&2
     if [ "$route" = "stored-login" ]; then
-      echo "  the CLI's stored login looks revoked or expired. Mint a token:" >&2
-      echo "    https://vercel.com/account/tokens" >&2
+      echo "  wrangler's stored login looks missing or expired. Mint a token with" >&2
+      echo "  Workers Scripts:Edit at https://dash.cloudflare.com/profile/api-tokens" >&2
       echo "    printf '%s' '<TOKEN>' > $tokfile && chmod 600 $tokfile" >&2
     fi
   fi
 
-  if [ ! -f site/.vercel/project.json ]; then
-    echo "NOT PUBLISHING — site/.vercel/project.json is missing." >&2
-    echo "  site/ is gitignored, so a fresh checkout has no project link." >&2
-    echo "  relink with: cd site && vercel link --yes --project govoss-catalog" >&2
-    return 1
-  fi
-
-  echo "vercel: $VERCEL  (node $("$NODE" --version))"
-  if [ -n "$token" ]; then
-    ( cd site && "$VERCEL" deploy --prod --yes --token "$token" )
-  else
-    echo "no VERCEL_TOKEN and no $tokfile — using the CLI's stored login."
-    echo "  a stored login is revocable and would then fail every Monday;"
+  echo "wrangler: $WRANGLER  (node $("$NODE" --version))"
+  if [ "$route" = "stored-login" ]; then
+    echo "no CLOUDFLARE_API_TOKEN and no $tokfile — using wrangler's stored login;"
     echo "  /sources.html carries this as a warning until a token is in place."
-    ( cd site && "$VERCEL" deploy --prod --yes )
+    "$WRANGLER" deploy --config wrangler.site.jsonc
+  else
+    CLOUDFLARE_API_TOKEN="$token" "$WRANGLER" deploy --config wrangler.site.jsonc
   fi
 }
 step "deploy" publish

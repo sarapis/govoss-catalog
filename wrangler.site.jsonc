@@ -1,0 +1,21 @@
+{
+  "$schema": "mcp-server/node_modules/wrangler/config-schema.json",
+  // The public site: an ASSETS-ONLY Worker serving site/ (no script). The MCP
+  // server is a separate Worker (mcp-server/). Deployed by run.sh's publish step.
+  "name": "govoss-site",
+  // Pinned for the same reason as mcp-server/wrangler.jsonc: a cached login for
+  // another account once redirected a deploy. Devin@sarapis.org's Account.
+  "account_id": "a8e2fa072ede7a6389e8db8cad00f774",
+  "compatibility_date": "2025-07-01",
+  // Runs only when no asset matches: directory indexes (/, /ca/), see the file.
+  "main": "deploy-cloudflare/site-worker.js",
+  "assets": {
+    "directory": "./site",
+    "binding": "ASSETS",
+    // .html URLs are served as-is: every page, link, canonical and hreflang
+    // uses /sources.html, and the default (auto-trailing-slash) would 307 them
+    // to /sources. Checked against the live copy before switching the domain.
+    "html_handling": "none",
+    "not_found_handling": "none"
+  }
+}

@@ -264,8 +264,8 @@ def build(lang="en"):
 
     # ---- F7: deploy auth posture.
     #
-    # The deploy prefers a token file and falls back to the Vercel CLI's stored
-    # login, which is revocable. When it is revoked the deploy step fails, which
+    # The deploy prefers a token file and falls back to wrangler's stored login
+    # (Cloudflare since 2026-09-23; it was the Vercel CLI's), which is revocable. When it is revoked the deploy step fails, which
     # correctly blocks the publish — but the only outward signal is the public
     # copy going stale, and the browser-side Stale badge does not flip for 8
     # days. That is a week of a quietly out-of-date site.
@@ -280,10 +280,11 @@ def build(lang="en"):
     # ignore a page that is otherwise accurate.
     auth = (latest.get("deploy_auth") or "").strip()
     if auth == "stored-login":
-        problems.append(("warn", "the weekly deploy is authenticating with the Vercel "
-                                 "CLI's stored login, which is revocable — the day it is, "
-                                 "the public copy silently stops updating. Mint a token "
-                                 "into ~/.config/govoss/vercel-token (chmod 600); run.sh "
+        problems.append(("warn", "the weekly deploy is authenticating with wrangler's "
+                                 "stored Cloudflare login, which is revocable — the day it "
+                                 "is, the public copy silently stops updating. Mint a token "
+                                 "with Workers Scripts:Edit into "
+                                 "~/.config/govoss/cloudflare-token (chmod 600); run.sh "
                                  "already prefers it (review finding F7)"))
 
     state = ("critical" if any(p[0] == "critical" for p in problems)

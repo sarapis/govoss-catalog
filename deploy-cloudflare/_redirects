@@ -1,0 +1,9 @@
+# Cloudflare static-asset redirects, copied into site/ by build_site.sh.
+# Same set as deploy-vercel.json: the paths the first agent to use this
+# catalogue probed and got 404 from, and the retired status page.
+/api/entries   /entries.json   307
+/api/catalog   /entries.json   307
+/api/meta      /meta.json      307
+/catalog.json  /entries.json   307
+/data.json     /entries.json   307
+/status.html   /sources.html   308

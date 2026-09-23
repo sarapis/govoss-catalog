@@ -4,7 +4,7 @@ The reference for the design system **as implemented**: what it is, why each par
 it is, and what will break if you change it carelessly. Read it before touching the UI.
 
 **Live:** https://govoss-catalog.vercel.app · **Repo:** https://github.com/sarapis/govoss-catalog
-· **MCP:** https://govoss-mcp.devin-a8e.workers.dev
+· **MCP:** https://mcp.govoss.cat
 
 > **Rewritten 2026-08-14.** The previous version described the Civic Tech Field Guide design
 > system, which govoss left on 2026-08-13. Every count, token and chrome description below is

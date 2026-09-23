@@ -1,0 +1,21 @@
+# Cloudflare static-asset headers, copied into site/ by build_site.sh.
+# Carries over deploy-vercel.json: CORS open and short caching on every JSON
+# file (agents are the main consumers), long immutable caching on fonts.
+# Content types come from the file extension on Cloudflare; checked live.
+/*.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Cache-Control: public, max-age=900, stale-while-revalidate=86400
+
+/*.html
+  Content-Type: text/html; charset=utf-8
+
+# llms.txt and robots.txt carry non-ASCII (llms.txt quotes names and symbols),
+# and agents fetch llms.txt cross-origin
+/*.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

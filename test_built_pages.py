@@ -284,9 +284,32 @@ def main():
     check("i18n/ca.json loads (placeholders validated)", bool(i18n.table("ca")["strings"]), True)
     n12 += 5
 
+    # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
+    # headers and redirects live in site/_headers and site/_redirects, copied by
+    # build_site.sh. Losing either is silent in a browser: pages still render,
+    # but agents lose CORS on the JSON and the paths the first agent probed
+    # (/api/entries, /data.json, ...) go back to 404.
+    hd = os.path.join(SITE, "_headers")
+    rd = os.path.join(SITE, "_redirects")
+    check("site/_headers and site/_redirects exist", (os.path.exists(hd), os.path.exists(rd)), (True, True))
+    if os.path.exists(hd) and os.path.exists(rd):
+        hdr = read(hd)
+        check("_headers opens CORS on every JSON file",
+              bool(re.search(r"^/\*\.json\s*\n(?:[ \t]+.*\n)*?[ \t]+Access-Control-Allow-Origin: \*",
+                             hdr, re.M)), True)
+        rules = {l.split()[0]: l.split()[1] for l in read(rd).splitlines()
+                 if l.strip() and not l.startswith("#")}
+        want = {"/api/entries": "/entries.json", "/api/catalog": "/entries.json",
+                "/api/meta": "/meta.json", "/catalog.json": "/entries.json",
+                "/data.json": "/entries.json", "/status.html": "/sources.html"}
+        check("_redirects answers every path agents probe", {k: rules.get(k) for k in want}, want)
+    cfg = read(os.path.join(HERE, "wrangler.site.jsonc"))
+    check("wrangler.site.jsonc is pinned to the sarapis.org account",
+          '"account_id": "a8e2fa072ede7a6389e8db8cad00f774"' in cfg, True)
+
     for f in failed:
         print("FAIL  %s" % f)
-    total = 9 + len(pages) + 7 + 1 + n12
+    total = 9 + len(pages) + 7 + 1 + n12 + 4
     print("\n%d checks run, %d failed" % (total, len(failed)))
     return 1 if failed else 0
 
