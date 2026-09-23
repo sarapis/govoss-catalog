@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 9 suites, 383 checks, all manual
+for t in test_*.py; do python3 $t; done     # 9 suites, 391 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -64,6 +64,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
   differently-named entries is an organisation. Records `wikidata_via`. Never fails a step.
   Third route, `redirect_matches()`: LENDS an existing QID to a same-name row in another
   catalogue only when both homepages end, after redirects, at the IDENTICAL page (path included).
+  Fourth, `repo_rename_matches()`: the same when GitHub resolves both repos to ONE repository
+  (a rename or transfer). Both share `_lend()`'s guards and skip pairs already equal.
   **Its inputs refresh after 6 days** (`out/crosswalk_cache.json`; no stamp = stale; the stamp
   moves only on success; a failure keeps the old copy). `/sources.html` warns past 14 days.
   Websites are asked per homepage (an asked set, so new ones are sent); repos come from the full
@@ -215,7 +217,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Nine suites, 383 checks, **all manual** - a test that can fail the weekly publish is one someone
+Nine suites, 391 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -225,7 +227,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | file | pins |
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en` and shared ä/ö |
-| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect QID loan |
+| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect and repo-rename QID loans |
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |

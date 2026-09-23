@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 9 suites, 383 checks
+for t in test_*.py; do python3 $t; done                     # 9 suites, 391 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,7 +32,7 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **9 suites, 383 checks, all passing.** Manual on purpose.
+- **9 suites, 391 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
@@ -93,21 +93,17 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
    genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
    and three publiccode-tier NC entries the publiccode exemption protects.
-3. **Démarches simplifiées will split in two on the next run** - a known consequence of
-   the crosswalk refresh (2026-09-23), not a bug in it. The awesome-codegouvfr row got its
-   QID from Comptoir by exact name; Comptoir renamed the product "Démarche Numérique", so a
-   fresh Comptoir no longer matches. The evidence that they are one: GitHub redirects the
-   row's repo `demarches-simplifiees/demarches-simplifiees.fr` to
-   `demarche-numerique/demarche.numerique.gouv.fr`, SILL's repo. Fix: resolve GitHub repo
-   renames for same-name cross-catalogue pairs, the repo twin of `redirect_matches()`.
-4. **Swedish adapter puts homepages in the repo field** (`harvest.py:se()`, recutils `Url`),
+3. **Swedish adapter puts homepages in the repo field** (`harvest.py:se()`, recutils `Url`),
    so Prometheus, Spring Boot and Ubuntu are each two entries: the SE row has no `landing`
    for dedupe's name+homepage rule to use. Route a non-forge `Url` to `landing`.
-5. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
+4. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
    translation cost (~20-200 new entries per run), so only if someone will use it; it would
    also need a "missing Catalan" sensor on the same growth rule as orphans.
-6. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
+5. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
    undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
+6. **`crosswalk.software_qids()` has no retry**: one 503 on that single query skips the
+   whole Wikidata stage for the run (seen 2026-09-23). Fails safe, but fragile - give it
+   the same one-retry as the website batches.
 7. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
    Workers (JS). **Screen-reader testing** has never been done.
 

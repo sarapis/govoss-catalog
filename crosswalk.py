@@ -422,29 +422,82 @@ def redirect_matches(active, resolve, org_sites=frozenset()):
     and Alfresco (two Hyland pages) stay split, and Consul - HashiCorp's tool vs
     the citizen-participation platform - ends on two different hosts. Pure:
     `resolve` is injected, so test_dedupe_identity.py runs it offline."""
+    seen = {}
+
+    def final(u):
+        if u not in seen:
+            seen[u] = norm(resolve(u))
+        return seen[u]
+    return _lend(active, "landing", final, skip=lambda e: norm(e["landing"]) in org_sites)
+
+
+def resolve_github_repo(repo_key, token=None, timeout=15):
+    """github.com/<owner>/<name> as GitHub now names it, or None. The API answers
+    an old name with the renamed or transferred repo - the owner's own record that
+    the two are one repository."""
+    import ssl, urllib.request, certifi
+    m = re.match(r"^github\.com/([^/]+)/([^/]+)$", repo_key or "")
+    if not m:
+        return None
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    hdr = {"User-Agent": UA, "Accept": "application/vnd.github+json"}
+    if token:
+        hdr["Authorization"] = "Bearer " + token
+    req = urllib.request.Request(f"https://api.github.com/repos/{m[1]}/{m[2]}", headers=hdr)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+            return "github.com/" + json.load(r)["full_name"].lower()
+    except Exception:
+        return None
+
+
+def repo_rename_matches(active, resolve):
+    """Same-name rows in DIFFERENT catalogues whose repos are ONE repository after
+    GitHub's renames -> [(row without a QID, the other row's QID, donor source)].
+
+    Why: Démarches simplifiées. SILL's row asserts Q93597458 with repo
+    github.com/demarche-numerique/demarche.numerique.gouv.fr; the awesome-codegouvfr
+    row still records github.com/demarches-simplifiees/demarches-simplifiees.fr,
+    the name before the product was renamed Démarche Numérique. The two only merged
+    while a six-week-old Comptoir copy still matched the old name; GitHub itself
+    redirects the old repo to the new one. The repo twin of redirect_matches(),
+    with the same guards (_lend). Pure: `resolve` is injected."""
+    seen = {}
+
+    def final(k):
+        if k not in seen:
+            seen[k] = resolve(k)
+        return seen[k]
+    return _lend(active, "repo_key", final)
+
+
+def _lend(active, field, final, skip=lambda e: False):
+    """The shared guards of both lending routes. Only for rows with the EXACT same
+    name in DIFFERENT catalogues; only an existing QID, and only when exactly one
+    is on offer; never to a row that has one; `final` must agree exactly; and
+    never when the two values are ALREADY equal - dedupe joins those itself, and
+    recording a redirect or rename that did not happen would be a false claim."""
     by_name = collections.defaultdict(list)
     for e in active:
         n = (e.get("name") or "").strip().lower()
         if n:
             by_name[n].append(e)
-    out, seen = [], {}
-
-    def final(u):
-        if u not in seen:
-            seen[u] = resolve(u)
-        return norm(seen[u])
-
+    out = []
     for rows in by_name.values():
-        donors = [e for e in rows if e.get("wikidata") and e.get("landing")]
+        if len({e.get("source") for e in rows}) < 2:
+            continue                      # no cross-catalogue pair: never hit the network
+        donors = [e for e in rows if e.get("wikidata") and e.get(field)]
         if len({e["wikidata"] for e in donors}) != 1:
             continue                      # none, or two identities: not ours to pick
         for t in rows:
-            if t.get("wikidata") or not t.get("landing") or norm(t["landing"]) in org_sites:
+            if t.get("wikidata") or not t.get(field) or skip(t):
                 continue
             for d in donors:
-                if d.get("source") == t.get("source") or norm(d["landing"]) in org_sites:
+                if d.get("source") == t.get("source") or skip(d):
                     continue
-                a, b = final(t["landing"]), final(d["landing"])
+                if norm(t[field]) == norm(d[field]):
+                    continue              # already one identity to dedupe; "renamed" would be false
+                a, b = final(t[field]), final(d[field])
                 if a and a == b:
                     out.append((t, d["wikidata"], d.get("source")))
                     break
@@ -568,6 +621,20 @@ if __name__ == "__main__":
             hits["redirect"] += 1
     except Exception as ex:
         print(f"redirect: SKIPPED ({type(ex).__name__}: {ex})")
+
+    # ---- fourth: the same, when GitHub says two repo urls are one repository
+    # (a rename or transfer). After the redirect route, so it lends those too.
+    try:
+        import liveness
+        tok = liveness.gh_token()
+        active = [e for e in catalog if not e.get("excluded")]
+        for e, qid, donor in repo_rename_matches(
+                active, lambda k: resolve_github_repo(k, tok)):
+            e["wikidata"] = qid
+            e["wikidata_via"] = f"repo-rename:{donor}"
+            hits["repo_rename"] += 1
+    except Exception as ex:
+        print(f"repo-rename: SKIPPED ({type(ex).__name__}: {ex})")
 
     _save_state(state)
     json.dump(catalog, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)

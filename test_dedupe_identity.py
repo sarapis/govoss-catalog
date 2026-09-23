@@ -65,9 +65,10 @@ def group_of(rows):
 
 
 def main():
-    failed = []
+    failed, ran = [], []
 
     def check(label, got, want):
+        ran.append(label)          # counted, never hard-coded: a stale n reports a phantom pass
         if got != want:
             failed.append(f"{label}: expected {want!r}, got {got!r}")
 
@@ -244,9 +245,58 @@ def main():
     check("a row that already has a QID is left alone",
           lent([k_sill, dict(k_muc, wikidata="Q1")]), [])
 
+    # ---- crosswalk.repo_rename_matches: the repo twin, for GitHub renames.
+    # Real case, measured 2026-09-23: GitHub answers the old Démarches repo with
+    # the renamed one. `resolve` is a fake; non-GitHub keys resolve to None.
+    G = {"github.com/demarches-simplifiees/demarches-simplifiees.fr":
+             "github.com/demarche-numerique/demarche.numerique.gouv.fr",
+         "github.com/demarche-numerique/demarche.numerique.gouv.fr":
+             "github.com/demarche-numerique/demarche.numerique.gouv.fr",
+         "github.com/other/thing": "github.com/other/thing"}
+    d_sill = rec("Démarches simplifiées", source="FR/sill", wikidata="Q93597458",
+                 repo="https://github.com/demarche-numerique/demarche.numerique.gouv.fr")
+    d_awe = rec("Démarches simplifiées", source="FR/awesome-codegouvfr",
+                repo="https://github.com/demarches-simplifiees/demarches-simplifiees.fr")
+
+    def renamed(rows):
+        return [(t["source"], q) for t, q, _ in crosswalk.repo_rename_matches(rows, G.get)]
+
+    check("Démarches: renamed repo borrows SILL's QID", renamed([d_sill, d_awe]),
+          [("FR/awesome-codegouvfr", "Q93597458")])
+    check("a different repo after resolving is not a match",
+          renamed([d_sill, dict(d_awe, repo_key="github.com/other/thing")]), [])
+    check("rename, but a different NAME, is not a match",
+          renamed([d_sill, dict(d_awe, name="Démarche Numérique")]), [])
+    check("rename, same catalogue, is not a match",
+          renamed([d_sill, dict(d_awe, source="FR/sill")]), [])
+    check("an unresolvable repo is not a match",
+          renamed([d_sill, dict(d_awe, repo_key="gitlab.com/x/y")]), [])
+    check("identical repos are not a 'rename' (dedupe already joins them)",
+          renamed([d_sill, dict(d_awe, repo_key=d_sill["repo_key"])]), [])
+    check("identical homepages are not a 'redirect' either",
+          lent([k_sill, dict(k_muc, landing="http://www.knime.org/")]), [])
+    # the inner same-catalogue guard: a third row in ANOTHER catalogue lets the
+    # group past the cheap "one catalogue only" skip, so only the pair check stops
+    # SILL lending to SILL.
+    check("same-catalogue lending is refused even in a mixed group",
+          renamed([d_sill, dict(d_awe, source="FR/sill"), rec("Démarches simplifiées", source="IT/it")]),
+          [])
+    # "without asking" is the claim, so the network is made to fail loudly: a
+    # non-GitHub key sent to api.github.com would also come back None (a 404),
+    # and a None-only check could not tell the two apart.
+    import urllib.request
+    asked = []
+    real = urllib.request.urlopen
+    urllib.request.urlopen = lambda *a, **k: asked.append(a) or (_ for _ in ()).throw(OSError("net"))
+    try:
+        got = crosswalk.resolve_github_repo("gitlab.com/x/y")
+    finally:
+        urllib.request.urlopen = real
+    check("resolve_github_repo refuses a non-GitHub key without asking", (got, len(asked)), (None, 0))
+
     for f in failed:
         print(f"FAIL  {f}")
-    n = 52
+    n = len(ran)
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 
