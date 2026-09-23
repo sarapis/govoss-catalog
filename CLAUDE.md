@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 11 suites, 506 checks, all manual
+for t in test_*.py; do python3 $t; done     # 12 suites, 530 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -225,7 +225,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Eleven suites, 506 checks, **all manual** - a test that can fail the weekly publish is one someone
+Twelve suites, 530 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -236,6 +236,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en`, shared ä/ö, org hints |
 | `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect/repo-rename QID loans, `is_repo_url` |
+| `test_crosswalk_run.py` | crosswalk `run()` glue: Comptoir precedence, ask only rows without a QID, org-shared skip, software gate, route order, best-effort |
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
@@ -246,8 +247,8 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()` |
 | `test_workers.py` | the three Workers under Node: site indexes and `/ca`, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 
-Untested, with reasons: crosswalk's `__main__` wiring (Comptoir precedence, the org-shared-homepage
-skip) - its parts are pinned, the glue needs a stubbed Comptoir and SPARQL together.
+Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only
+through `run()`'s `*_fn` arguments - keep it that way, or the glue is untestable again.
 
 ## Four bugs that recurred - suspect these first
 

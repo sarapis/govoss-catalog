@@ -543,11 +543,24 @@ def _lend(active, field, final, skip=lambda e: False):
     return out
 
 
-if __name__ == "__main__":
-    state = _load_state()
-    rows = load_comptoir(state)
-    catalog = json.load(open(f"{OUT}/catalog.json"))
+def org_shared_sites(active):
+    """Homepages shared by entries with DIFFERENT names: an ORGANISATION site,
+    not a product identity. Measured: umwelt.info is the official website of one
+    Wikidata item and the landing page of four unrelated German repos
+    (data-stories, journal-web-ui, metadaten, usage-stats-api), so without this
+    the four collapse into a single entry. A wrong merge is worse than the
+    missed merge it was meant to fix."""
+    site_names = collections.defaultdict(set)
+    for e in active:
+        s = norm(e.get("landing"))
+        if s:
+            site_names[s].add((e.get("name") or "").strip().lower())
+    return {s for s, n in site_names.items() if len(n) > 1}
 
+
+def comptoir_stamp(catalog, rows):
+    """Stamp QIDs from Comptoir du Libre rows, in a fixed precedence: repo url,
+    then SILL id, then website, then an EXACT name. -> Counter of routes used."""
     by_repo, by_sill, by_site, by_name = {}, {}, {}, {}
     for r in rows:
         qid = (r.get("wikidata") or "").strip() or None
@@ -589,33 +602,45 @@ if __name__ == "__main__":
             e["wikidata"] = qid
             e["wikidata_via"] = f"comptoir:{how}"
             hits[how] += 1
+    return hits
+
+
+def run(catalog, rows, state, by_repo_fn=None, by_site_fn=None, verify_fn=None,
+        resolve_landing_fn=None, resolve_repo_fn=None):
+    """Every route, in order, on `catalog` in place. -> Counter of stamps.
+
+    The glue that used to live under __main__, where no test could reach it:
+    Comptoir precedence, Wikidata asked only about rows WITHOUT a QID, the
+    org-shared-homepage skip, the software check, then the two lending routes,
+    each best-effort. The network enters only through the *_fn arguments (the
+    real ones by default), so test_crosswalk_run.py drives it offline."""
+    by_repo_fn = by_repo_fn or wikidata_by_repo
+    by_site_fn = by_site_fn or wikidata_by_site
+    verify_fn = verify_fn or software_qids
+    resolve_landing_fn = resolve_landing_fn or resolve_landing
+    if resolve_repo_fn is None:
+        def resolve_repo_fn(k, _tok=[]):
+            if not _tok:
+                import liveness
+                _tok.append(liveness.gh_token())
+            return resolve_github_repo(k, _tok[0])
+
+    hits = comptoir_stamp(catalog, rows)
 
     # ---- second source: Wikidata, by URL only. Best effort.
     active = [e for e in catalog if not e.get("excluded")]
     todo = [e for e in active if not e.get("wikidata")]
     try:
         repo_keys = {e["repo_key"] for e in todo if e.get("repo_key")}
-        by_wd_repo = wikidata_by_repo(repo_keys, state)
+        by_wd_repo = by_repo_fn(repo_keys, state)
 
-        # A homepage shared by entries with DIFFERENT names is an ORGANISATION
-        # site, not a product identity. Measured: umwelt.info is the official
-        # website of one Wikidata item and the landing page of four unrelated
-        # German repos (data-stories, journal-web-ui, metadaten, usage-stats-api),
-        # so without this the four collapse into a single entry. A wrong merge is
-        # worse than the missed merge it was meant to fix.
-        site_names = collections.defaultdict(set)
-        for e in active:
-            s = norm(e.get("landing"))
-            if s:
-                site_names[s].add((e.get("name") or "").strip().lower())
-        org_sites = {s for s, n in site_names.items() if len(n) > 1}
-
+        org_sites = org_shared_sites(active)
         want = {norm(e.get("landing")) for e in todo if norm(e.get("landing"))} - org_sites
-        by_wd_site = wikidata_by_site(want, state)
+        by_wd_site = by_site_fn(want, state)
 
         # A URL match says the page belongs to the item, not that the item is
         # software. Verify before stamping — see software_qids().
-        ok, unverified = software_qids(set(by_wd_repo.values()) | set(by_wd_site.values()))
+        ok, unverified = verify_fn(set(by_wd_repo.values()) | set(by_wd_site.values()))
         dropped = len(set(by_wd_repo.values()) | set(by_wd_site.values())) - len(ok) - len(unverified)
         by_wd_repo = {k: v for k, v in by_wd_repo.items() if v in ok}
         by_wd_site = {k: v for k, v in by_wd_site.items() if v in ok}
@@ -649,13 +674,8 @@ if __name__ == "__main__":
     # cross-catalogue pairs, and a failed fetch simply matches nothing.
     try:
         active = [e for e in catalog if not e.get("excluded")]
-        site_names = collections.defaultdict(set)
-        for e in active:
-            s = norm(e.get("landing"))
-            if s:
-                site_names[s].add((e.get("name") or "").strip().lower())
-        org_sites = {s for s, n in site_names.items() if len(n) > 1}
-        for e, qid, donor in redirect_matches(active, resolve_landing, org_sites):
+        for e, qid, donor in redirect_matches(active, resolve_landing_fn,
+                                              org_shared_sites(active)):
             e["wikidata"] = qid
             e["wikidata_via"] = f"redirect:{donor}"
             hits["redirect"] += 1
@@ -665,17 +685,21 @@ if __name__ == "__main__":
     # ---- fourth: the same, when GitHub says two repo urls are one repository
     # (a rename or transfer). After the redirect route, so it lends those too.
     try:
-        import liveness
-        tok = liveness.gh_token()
         active = [e for e in catalog if not e.get("excluded")]
-        for e, qid, donor in repo_rename_matches(
-                active, lambda k: resolve_github_repo(k, tok)):
+        for e, qid, donor in repo_rename_matches(active, resolve_repo_fn):
             e["wikidata"] = qid
             e["wikidata_via"] = f"repo-rename:{donor}"
             hits["repo_rename"] += 1
     except Exception as ex:
         print(f"repo-rename: SKIPPED ({type(ex).__name__}: {ex})")
+    return hits
 
+
+if __name__ == "__main__":
+    state = _load_state()
+    rows = load_comptoir(state)
+    catalog = json.load(open(f"{OUT}/catalog.json"))
+    hits = run(catalog, rows, state)
     _save_state(state)
     json.dump(catalog, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
     total = sum(hits.values())
