@@ -29,7 +29,7 @@ COUNTRY_NAME = {
     # Surveyed and not harvested (SURVEY below) - no entries carry these codes.
     "BR": "Brazil",      "CY": "Cyprus",    "ES": "Spain",
     "IN": "India",       "KR": "South Korea", "MD": "Moldova",
-    "US": "United States",
+    "US": "United States", "CH": "Switzerland", "GB": "United Kingdom",
 }
 
 
@@ -319,12 +319,84 @@ SURVEY = [
      "detail": "The best discovery resource found so far, and it should have been checked "
                "first: a hand-curated, server-rendered directory of ~29 public-sector OSS "
                "catalogues with owner, language and geographic coverage. Unlike the EU OSS "
-               "Catalogue on the same portal, this page renders fine. It confirmed 6 sources "
-               "already ingested and surfaced these NOT yet evaluated in depth: OS2 (os2.eu, "
-               "Danish municipal community - the Denmark source never found by guessing), "
-               "dev.egov.bg (Bulgaria's e-government dev portal), ICT ReUse Belgium, "
-               "Helsingborg City (SE municipal), Adullact (FR, runs gitlab.adullact.net), "
-               "Forja redIRIS (ES academic) and OW2. publiccode.directory is a dead domain."},
+               "Catalogue on the same portal, this page renders fine. Every entry has now been "
+               "evaluated (last pass 2026-09-22): OS2 and Bulgaria were ingested from it; "
+               "Switzerland, DIGG, GCHQ and Helsingborg are recorded below as candidates; ICT "
+               "ReUse, the Adullact forge, Forja RedIRIS, OW2 and the Swedish community wiki "
+               "are recorded below with why not. Awesome Free Software lists private "
+               "publishers, not government software; Etalab's Public Sector Code is the "
+               "24,440-repo inventory excluded on purpose (harvest.py:fr()); Joinup is the EU "
+               "catalogue already rejected. publiccode.directory is a dead domain."},
+    {"country": "CH", "flag": "\U0001F1E8\U0001F1ED", "name": "Swiss Federal Chancellery GitHub index",
+     "url": "https://github.com/swiss/index",
+     "status": "ready",
+     "detail": "The strongest new source found. The Federal Chancellery maintains a markdown "
+               "index of the GitHub accounts of federal offices, federal projects and cantons - "
+               "the Denmark-style org allowlist, but published by the government itself, so "
+               "parsing its README is the machine route. Measured 2026-09-22: 52 accounts, "
+               "1,035 active repos (102 forks), 164 with a publiccode.yml - the rich tier, "
+               "led by jeap-admin-ch (54) and jme-admin-ch (29). None overlap the catalogue. "
+               "Recommended: ingest the 164 publiccode entries; the other ~870 are largely "
+               "research and data code (MeteoSwiss alone has 125 repos). Four accounts are "
+               "users, not orgs, so list them with /users/<x>/repos."},
+    {"country": "SE", "flag": "\U0001F1F8\U0001F1EA", "name": "DIGG (Swedish Agency for Digital Government)",
+     "url": "https://github.com/diggsweden",
+     "status": "ready",
+     "detail": "National agency, first-hand: the EU Digital Identity Wallet work and Sweden "
+               "Connect. 44 active repos, 8 with a publiccode.yml; Offentligkod lists only 2. "
+               "Small and clean - a github_org_scan like Ireland's."},
+    {"country": "GB", "flag": "\U0001F1EC\U0001F1E7", "name": "GCHQ",
+     "url": "https://github.com/gchq",
+     "status": "ready",
+     "detail": "Would be the first UK source. 58 active repos, 2 forks, every non-fork one "
+               "described, CyberChef (36k stars) and Stroom among them, but NO publiccode.yml "
+               "at all, so it is index tier only, like Ireland. A national-security agency's "
+               "tooling is genuinely government-published; whether it fits 'software a "
+               "government could adopt' is an editorial call."},
+    {"country": "SE", "flag": "\U0001F1F8\U0001F1EA", "name": "Helsingborg City",
+     "url": "https://github.com/helsingborg-stad",
+     "status": "needs-research",
+     "detail": "Municipal and first-hand, but noisy: 291 active repos, 0 publiccode.yml, 78 of "
+               "the 265 non-forks carry neither a description nor a star - mostly WordPress "
+               "plugins around its Municipio theme. Index tier would add real municipal "
+               "software (Municipio) and a lot of plumbing; worth it only with a filter rule "
+               "written for WordPress plugin repos, reviewed like the iMio rules were."},
+    {"country": "BE", "flag": "\U0001F1E7\U0001F1EA", "name": "ICT ReUse (Belgian social security)",
+     "url": "https://www.ict-reuse.be/fr",
+     "status": "no-code",
+     "detail": "An INNER-SOURCE catalogue, not an open source one: ~36 reusable components "
+               "for Belgian social-security institutions, mostly shared services and APIs "
+               "(archiving-as-a-service, CSAM login, address lookup). Where code is linked it "
+               "is git.smals.be, which does not resolve publicly, and repo.ict-reuse.be, a "
+               "login page. Checked 2026-09-22."},
+    {"country": "FR", "flag": "\U0001F1EB\U0001F1F7", "name": "Adullact forge (gitlab.adullact.net)",
+     "url": "https://gitlab.adullact.net",
+     "status": "bot-protected",
+     "detail": "Behind an Anubis proof-of-work challenge: the first API call returned JSON, "
+               "every later one an HTTP 200 'Making sure you're not a bot!' page. Solving it is "
+               "not on the table, as with Spain's CTT. Low loss: Adullact's Comptoir du Libre "
+               "(780 entries) is already used as the identity crosswalk. The legitimate route "
+               "is asking Adullact to allowlist the harvester. Checked 2026-09-22."},
+    {"country": "ES", "flag": "\U0001F1EA\U0001F1F8", "name": "Forja RedIRIS",
+     "url": "https://forja.rediris.es/",
+     "status": "broken",
+     "detail": "forja.rediris.es has no DNS record, and RedIRIS's services page does not "
+               "mention a forge. Academic, not public administration, even when it existed. "
+               "Checked 2026-09-22."},
+    {"country": "global", "flag": "\U0001F310", "name": "OW2 (gitlab.ow2.org)",
+     "url": "https://gitlab.ow2.org",
+     "status": "different-shape",
+     "detail": "An industry consortium's forge, not a government catalogue: 1,824 projects, no "
+               "publiccode.yml, dominated by upstream mirrors (Rocket.Chat 211, Bonita 103) "
+               "and EU research projects. The government-relevant parts - GLPI, Sympa, "
+               "Centreon - already arrive via SILL. One gap it exposes: Lutece, the City of "
+               "Paris portal framework (482 repos), is in no catalogue harvested here."},
+    {"country": "SE", "flag": "\U0001F1F8\U0001F1EA", "name": "Swedish open-data community wiki catalogue",
+     "url": "https://gitlab.com/open-data-knowledge-sharing/wiki/-/wikis/Katalog-%C3%B6ver-%C3%B6ppen-programvara-inom-offentlig-sektor",
+     "status": "retired",
+     "detail": "Superseded: the page says it has been replaced and that offentligkod.se is no "
+               "longer updated from it. It was Offentligkod's upstream, and Offentligkod is "
+               "already ingested. Checked 2026-09-22."},
     {"country": "MD", "flag": "\U0001F1F2\U0001F1E9", "name": "OpenCode Moldova",
      "url": "https://opencode.md/en/registry/", "status": "needs-research",
      "detail": "\"Registry of Open Source Solutions\" - a real national portal covering DPGs, "
