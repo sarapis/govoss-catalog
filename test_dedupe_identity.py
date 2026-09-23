@@ -204,6 +204,29 @@ def main():
           dedupe.canonical_score(rec("x", tier="publiccode"))
           > dedupe.canonical_score(rec("x", tier="index")), True)
 
+    # ---- harvest.is_repo_url: Sweden's one `Url` field mixes repos and homepages;
+    # only a forge URL naming owner AND repo is a repo. Real Url values.
+    iru = harvest.is_repo_url
+    for u, want in [("https://github.com/SUNET/eduid-backend", True),
+                    ("https://platform.sunet.se/SUNET/knotctl", True),
+                    ("https://gitlab.com/arbetsformedlingen/designsystem/digi", True),
+                    ("https://github.com/SUNET/multiverse.git", True),
+                    ("https://prometheus.io", False),              # product homepage
+                    ("https://ubuntu.com/", False),
+                    ("https://github.com/nextcloud", False),       # org page, not a repo
+                    ("https://codeberg.org/jordbruksverket", False),
+                    ("https://codeberg.org", False),               # the forge's own homepage
+                    ("https://www.gitlab.com", False),
+                    ("https://gitlab.example.org/a/b", False),     # unknown host: not assumed
+                    ("", False), (None, False)]:
+        check("is_repo_url(%r)" % (u,), iru(u), want)
+    # ...and the point of it: a Swedish homepage now joins SILL's row by rule 3
+    rows = [rec("Prometheus", source="FR/sill", repo="https://github.com/prometheus/prometheus",
+                landing="https://prometheus.io/"),
+            rec("Prometheus", source="SE/offentligkod", landing="https://prometheus.io")]
+    check("SE homepage as landing merges with SILL (Prometheus)",
+          [len(g) for g in group_of(rows)], [2])
+
     # ---- crosswalk.redirect_matches: lend a QID when homepages redirect to one
     # page. Real redirects as measured 2026-09-23; `resolve` is a fake, offline.
     import crosswalk

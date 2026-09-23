@@ -110,6 +110,27 @@ def norm_repo(url):
     return u.lower() or None
 
 
+# Hosts that serve source repositories, for sources whose one URL field mixes
+# repos and product homepages (Sweden's recutils `Url`). Explicit, never inferred
+# from a name: a host is on the list because its URLs were read.
+_FORGE_HOSTS = {"github.com", "gitlab.com", "codeberg.org", "bitbucket.org",
+                "platform.sunet.se"}   # SUNET's Forgejo
+
+
+def is_repo_url(url):
+    """True only for a forge URL naming an owner AND a repository.
+
+    A forge's own homepage (codeberg.org, www.gitlab.com) and an org page
+    (github.com/nextcloud, codeberg.org/jordbruksverket) are not repositories:
+    filed as `repo` they became a repo_key that joins nothing and a liveness
+    check of a web page. Everything that is not a repo is a landing page."""
+    k = norm_repo(url)
+    if not k:
+        return False
+    host, _, path = k.partition("/")
+    return host in _FORGE_HOSTS and len([p for p in path.split("/") if p]) >= 2
+
+
 def rec(source, country, tier, name, repo, **kw):
     r = {"source": source, "country": country, "tier": tier,
          "name": name, "repo": repo, "repo_key": norm_repo(repo)}
@@ -817,8 +838,15 @@ def se():
     for line in blob.splitlines():
         if not line.strip():
             if cur.get("Name"):
+                url = cur.get("Url")
                 out.append(rec("SE/offentligkod", "SE", "index",
-                               cur.get("Name"), cur.get("Url"),
+                               cur.get("Name"), url if is_repo_url(url) else None,
+                               # 109 of 167 `Url`s are product homepages
+                               # (prometheus.io, ubuntu.com), not repos. As `repo`
+                               # they left `landing` empty, so dedupe's name+homepage
+                               # rule could never join Prometheus, Spring Boot or
+                               # Ubuntu to SILL's rows, which carry those pages.
+                               landing=None if is_repo_url(url) else url,
                                short_desc=(cur.get("Description") or "")[:400],
                                categories=cur.get("Keyword", "").split() if cur.get("Keyword") else [],
                                has_publiccode=bool(cur.get("Publiccode")),
@@ -835,7 +863,10 @@ def se():
             else:
                 cur[k] = v
     if cur.get("Name"):
-        out.append(rec("SE/offentligkod", "SE", "index", cur.get("Name"), cur.get("Url"),
+        url = cur.get("Url")
+        out.append(rec("SE/offentligkod", "SE", "index", cur.get("Name"),
+                       url if is_repo_url(url) else None,
+                       landing=None if is_repo_url(url) else url,
                        short_desc=(cur.get("Description") or "")[:400]))
     return out
 

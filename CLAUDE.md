@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 9 suites, 391 checks, all manual
+for t in test_*.py; do python3 $t; done     # 9 suites, 408 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -40,6 +40,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
   - openCode: the GitLab API reproduces the directory; use `web_url`, never a constructed link.
   - NL: `code.overheid.nl` is open Forgejo, no key. The OSS register (`nlreg`) still needs one.
   - Canada: every field is an `{en, fr}` dict - `loc()` flattens; tags go to `keywords`.
+  - Sweden: the recutils `Url` field mixes repos and homepages; `is_repo_url()` (explicit forge
+    hosts, owner AND repo in the path) decides, and everything else is `landing`.
   - Taiwan: use the official open-data export, not the SPA's POST API.
   - DPG: repo URLs are free text; extras go to `extra_repos`. Deep links are HEAD-verified.
   - Switzerland: the Chancellery's `swiss/index` README is the org list; publiccode tier only;
@@ -217,7 +219,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Nine suites, 391 checks, **all manual** - a test that can fail the weekly publish is one someone
+Nine suites, 408 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -227,8 +229,8 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | file | pins |
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en` and shared ä/ö |
-| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect and repo-rename QID loans |
-| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor |
+| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect/repo-rename QID loans, `is_repo_url` |
+| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()`, the `replaces.json` vocabulary gate, publisher `replaces:` |

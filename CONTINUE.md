@@ -24,7 +24,7 @@ zero; if a guard cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 9 suites, 391 checks
+for t in test_*.py; do python3 $t; done                     # 9 suites, 408 checks
 python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
 ```
 
@@ -32,7 +32,7 @@ python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d
 - **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
   (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
   of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
-- **9 suites, 391 checks, all passing.** Manual on purpose.
+- **9 suites, 408 checks, all passing.** Manual on purpose.
 - **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
   stored login. Intended until a token exists (Waiting on a human).
 - Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
@@ -73,6 +73,21 @@ Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if 
   OFE-voiced EU defect report - session artefacts, not committed - and
   `DEMAND-SIDE-CALL-FOR-SOURCES.md`).
 
+## Check on the next run (2026-09-28) - first live run of five changes
+
+Expected, from an end-to-end run on a scratch copy (harvest --from-cache .. variants):
+- **Active 3,054 -> 3,030.** 21 rows flagged by the licence filter (12 `closed-licence`,
+  9 `non-commercial-licence`); 4 new merges - KNIME (redirect loan), Prometheus, Spring
+  Boot, Ubuntu (Swedish homepages now `landing`); FreeFileSync splits, correctly (its
+  SILL row is flagged). Démarches simplifiées stays ONE entry (repo-rename loan).
+- **`out/crosswalk_cache.json` shows three fresh `fetched_at`** and no error; the step
+  adds ~6 minutes. A 429/503 from Wikidata falls back and is reported, never fails.
+- **Sweden re-harvests into the new shape** (58 repos, 109 landings). If SE fails that run,
+  its old checkpoint is reused and the 3 Swedish merges wait a week - not a regression.
+- **Recently added shows no false "new" entries**: the 4 identities that move were
+  migrated in `cache/_first_seen.json` (all baseline `null`).
+- Liveness checks ~109 fewer URLs: Swedish homepages were being checked as repos.
+
 ## Candidates, ranked
 
 **Scope rule (owner, 2026-09-23): government-produced catalogues only - never a list
@@ -93,18 +108,15 @@ products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner)
    flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
    genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
    and three publiccode-tier NC entries the publiccode exemption protects.
-3. **Swedish adapter puts homepages in the repo field** (`harvest.py:se()`, recutils `Url`),
-   so Prometheus, Spring Boot and Ubuntu are each two entries: the SE row has no `landing`
-   for dedupe's name+homepage rule to use. Route a non-forge `Url` to `landing`.
-4. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
+3. **Catalan phase 2 (data)** - descriptions, products, source notes. It creates a weekly
    translation cost (~20-200 new entries per run), so only if someone will use it; it would
    also need a "missing Catalan" sensor on the same growth rule as orphans.
-5. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
+4. **Helsingborg** (`sources.py:SURVEY`, needs research): 291 repos, 0 publiccode, 78
    undescribed and unstarred - worth it only with a WordPress-plugin filter rule.
-6. **`crosswalk.software_qids()` has no retry**: one 503 on that single query skips the
+5. **`crosswalk.software_qids()` has no retry**: one 503 on that single query skips the
    whole Wikidata stage for the run (seen 2026-09-23). Fails safe, but fragile - give it
    the same one-retry as the website batches.
-7. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
+6. **F8's last three gaps**: `get()`'s raise semantics, crosswalk's inline guards, the
    Workers (JS). **Screen-reader testing** has never been done.
 
 ## Traps - looks broken but is not, and vice versa
