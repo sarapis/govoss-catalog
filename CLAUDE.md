@@ -281,6 +281,13 @@ keeps the source's language unless the text carries **two distinct** English
 function words that are not stopwords in any catalogue language. It moves 27 rows
 to `en`, all read and all English; 13 were untranslated English showing as
 foreign. Pinned by `test_detect_lang.py`, sabotaged three ways.
+
+**Munich and DPG use the mirror, `lang_assume_en()`** — English unless
+demonstrably foreign. They hardcoded `"en"`, which was right for 394 of 395 and
+published Munich's German Epitaph description untranslated. Bare `detect_lang`
+fixes that and mis-tags three English strings (`os` in "OS X" is Portuguese,
+`la`/`no` Spanish), so a foreign verdict also needs fewer than two English
+markers. Changes exactly one row. Its translation is already in `tr_de.json`.
 ## Categorisation
 
 `taxonomy.py` collapses **233 inconsistent source values** onto 19 functional
@@ -747,7 +754,7 @@ native `<select>` ignores your CSS until `appearance:none`, and that a flex item
 
 ## Tests
 
-Seven suites, 185 checks, **all manual** — a test step that can fail the weekly
+Seven suites, 193 checks, **all manual** — a test step that can fail the weekly
 publish is one someone switches off, and `run.sh` already gates its deploy on every
 build step exiting 0. Run before touching `dedupe.py`, `liveness.py`, `filters.py`,
 `taxonomy.py`, `merge_translations.py`, `export_json.py` or the page builders:

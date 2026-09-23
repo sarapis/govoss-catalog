@@ -235,6 +235,30 @@ def lang_with_prior(text, prior):
     return prior
 
 
+def lang_assume_en(text):
+    """The mirror of lang_with_prior, for sources that publish in English
+    (Munich's catalogue, the DPG registry): English unless demonstrably foreign.
+
+    Bare detect_lang() cannot serve: its stopword lists misfire on English
+    product prose — `os` in "OS X"/"OS/2" is Portuguese (FreeFileSync, Scribus),
+    `la`/`no` in "La Suite Meet ... No installation" Spanish — so it traded one
+    right answer for three wrong ones across 395 descriptions. A foreign verdict
+    therefore also needs the text to LACK two English markers; measured, that
+    changes exactly one row: Munich's Epitaph, which is German. Script evidence
+    stays decisive, as in detect_lang.
+
+    The threshold is two for symmetry with lang_with_prior, so "demonstrably
+    English" means one thing in both. Today's data does not distinguish two from
+    one — Epitaph has no English marker, the three misfires have two or more —
+    so the tests pin the rule, not that choice."""
+    if not text or not text.strip():
+        return None
+    d = detect_lang(text)
+    if d == "en" or any(d == code for code, _ in _SCRIPTS):
+        return d
+    return d if len({m.group(0).lower() for m in _EN_MARK.finditer(text)}) < 2 else "en"
+
+
 def base_lang(code):
     """it-IT / IT / en-US -> it / it / en. publiccode.yml is inconsistent here."""
     return (code or "").split("-")[0].lower() or None
@@ -643,7 +667,7 @@ def muc():
                    license=fm.get("license") or None,
                    repo_owner="Landeshauptstadt Muenchen" if built else fm.get("developer"),
                    short_desc=summary[:400] or None,
-                   desc_lang="en" if summary else None,
+                   desc_lang=lang_assume_en(summary[:400]),
                    keywords=tags[:10],
                    gov_tier="municipal",
                    recommended_for_gov=not built,
@@ -997,7 +1021,7 @@ def dpg():
                        entry_url=entry,
                        license=lic,
                        short_desc=(r.get("description") or "")[:400] or None,
-                       desc_lang="en",
+                       desc_lang=lang_assume_en((r.get("description") or "")[:400]),
                        dpg_type=[c for c in (r.get("categories") or []) if isinstance(c, str)],
                        keywords=[x.split(":")[0] for x in sdgs if isinstance(x, str)][:10],
                        repo_owner=orgs[0] if orgs else None,

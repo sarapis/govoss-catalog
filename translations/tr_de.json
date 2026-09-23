@@ -198,5 +198,6 @@
  "108e4e5c35": "Web application for planning, managing and booking multifunctional spaces in the Detmold city area.",
  "0a10da55d7": "KnotDots / Strategy Tool is an open source analysis tool for cities and municipalities, for visually linking and monitoring strategies, objectives and concrete measures.",
  "3c3f4b3e75": "Kubernetes operator for dynamically adjusting the Synapse configuration.",
- "9dabfb5a79": "VC Solar App is an open source extension for 3D maps, for interactive analysis, yield calculation and economic assessment of photovoltaic installations on roofs, facades and open land."
+ "9dabfb5a79": "VC Solar App is an open source extension for 3D maps, for interactive analysis, yield calculation and economic assessment of photovoltaic installations on roofs, facades and open land.",
+ "1fb7b1961d": "Epitaph enables local positioning on mobile devices. The open source library uses the Dart programming language and the Flutter framework."
 }

@@ -116,6 +116,22 @@ PRIOR_CASES = [
 ]
 
 
+# lang_assume_en(): for Munich and the DPG registry, which publish in English.
+# The mirror of the above. Bare detect_lang() flags the three English strings
+# below as foreign on stopword collisions (`os` in "OS X", `la`/`no`), so a
+# foreign verdict also needs the text to lack two English markers.
+ASSUME_EN_CASES = [
+    ("de", "Epitaph erm\u00f6glicht die lokale Positionsbestimmung auf mobilen Ger\u00e4ten. Die Open-Source-Bibliothek verwendet die Programmiersprache Dart und das Flutter-Framework."),
+    ("en", "FreeFileSync is a free open source file synchronization program. It is available on Windows, Linux and OS X. ---"),
+    ("en", "Scribus is a free desktop publishing program for Linux, Unix, Mac OS X, OS/2 and Windows systems, licensed under the GNU General Public License. ---"),
+    ("en", "Powered by LiveKit, La Suite Meet is a video conference software that offers Zoom-level performance with high-quality video and audio. No installation required\u2014simply join calls directly from your browser. "),
+    ("en", "Mozilla Firefox is a free web browser installed on all city devices. ---"),
+    ("en", "Decidim is a digital platform for citizen participation"),
+    ("zh", "GOV.UK Forms \u662f\u82f1\u570b GDS \u653f\u5e9c\u6578\u4f4d\u670d\u52d9"),
+    (None, ""),
+]
+
+
 def main():
     failed = []
     for expect, text in CASES:
@@ -126,11 +142,15 @@ def main():
         got = h.lang_with_prior(text, prior)
         if got != expect:
             failed.append((expect, got, text))
+    for expect, text in ASSUME_EN_CASES:
+        got = h.lang_assume_en(text)
+        if got != expect:
+            failed.append((expect, got, text))
 
     for expect, got, text in failed:
         print(f"FAIL  expected {expect!r}, got {got!r}\n      {(text or '')[:88]!r}")
 
-    n = len(CASES) + len(PRIOR_CASES)
+    n = len(CASES) + len(PRIOR_CASES) + len(ASSUME_EN_CASES)
     print(f"\n{n - len(failed)}/{n} passed")
     return 1 if failed else 0
 
