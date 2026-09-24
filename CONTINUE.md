@@ -64,9 +64,9 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 ## Waiting on a human - not work that was skipped
 
 - **Cloudflare API token (F7): IN PLACE 2026-09-23**, `~/.config/govoss/cloudflare-token`.
-  whoami, token verify (active, no expiry) and read calls on govoss-site all pass; the
-  Scripts:Edit permission is proven only by a deploy, so the 09-28 run must record
-  `deploy_auth` = `token-file` and deploy. Then close Hub `35f61ead` (at Review).
+  whoami, token verify (active, no expiry) and an undeployed `wrangler versions upload`
+  (version fc337081, production untouched) all pass. The 09-28 run should record
+  `deploy_auth` = `token-file`; then close Hub `35f61ead` (at Review).
 - **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` - in the itspruvn.com
   Cloudflare account, which the deploy login cannot reach. Nothing points at it.
 - **Four licence calls left open** (`filters.py` flags only what the source's licence
