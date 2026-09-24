@@ -37,7 +37,7 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
   `deploy` and reads the PREVIOUS run's `deploy_auth`. The next run clears it.
 - Liveness 3,486 ok of 3,612, 28 dead, 39 archived, 59 unknown. Variants: 12 linked to 9
   cores. `replaces.json`: 348 keys -> 379 products, all live; 65 products have none.
-- MCP Worker version `e22a48dd`, reading the 2026-09-24 index.
+- MCP Worker version `a38a84d4` (2026-09-24): search also reads the repo URL (`u`).
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 and F8 closed; F7 credential-blocked.
 
 ## Invariants - break these and something already fixed re-breaks
@@ -93,8 +93,8 @@ Contradicted, and resolved:
   newly lists it, the repo-less Munich row won the merge and DROPPED DPG's repo, moving the
   identity. Fixed in `dedupe.merge()` (backfill a sibling's REAL repo; ckan too) - live next run.
 - **MCP "rocket.chat" -> 0.** The expectation came from a test FIXTURE (owner + aka); the real
-  SILL row has neither and the Swedish "Rocket Chat" row is set aside. Search works as
-  promised. Finding it would mean searching the repo URL too - a contract change, not done.
+  SILL row has neither and the Swedish "Rocket Chat" row is set aside. Search now reads the
+  repo URL too (Worker `a38a84d4`, live-checked: "rocket.chat" -> Rocketchat).
 - Liveness: 3,612 URLs, not ~109 fewer - that figure ignored Helsingborg's 291 rows.
 - 3 orphaned `tr_de.json` keys: upstream rewordings (KI-Buddy and two others). Sensor working.
 

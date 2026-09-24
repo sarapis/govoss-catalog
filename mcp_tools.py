@@ -37,8 +37,8 @@ TOOLS = [
         "args": "query?: string, country?: string, function?: string, "
                 "source?: string, licence?: string, limit?: number = 20",
         "returns": "matching entries, most-catalogued first, with variant_of / variant_count",
-        "desc": "Full-text search over name, description, owner, also-known-as and the "
-                "proprietary products each replaces, with optional facet filters. Every "
+        "desc": "Full-text search over name, description, owner, also-known-as, repo URL "
+                "and the proprietary products each replaces, with optional facet filters. Every "
                 "filter is AND-ed.",
     },
     {

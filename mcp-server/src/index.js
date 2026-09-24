@@ -88,7 +88,7 @@ const TOOLS = [
     name: "search_entries",
     description:
       "Full-text search over government open source entries: name, description, " +
-      "owner, also-known-as and the proprietary products each replaces, with " +
+      "owner, also-known-as, repo URL and the proprietary products each replaces, with " +
       "optional facet filters. All filters are AND-ed. " +
       "Returns compact records; use get_entry for the full record. variant_of (an " +
       "entry id) marks one government's version of another entry - skip those to " +
@@ -155,9 +155,11 @@ function matches(e, q) {
   // Every field the tool description names. o (owner) and a (also-known-as)
   // were promised from the start but absent from mcp-index.json until
   // 2026-09-23, so neither was searched; export_json.py now writes them.
+  // u (repo URL) since 2026-09-24: "Rocket.Chat" is only in Rocketchat's repo
+  // path - the catalogue that lists it records no owner and no other name.
   const hay = (
     e.n + " " + (e.d || "") + " " + (e.o || "") + " " + (e.a || []).join(" ") +
-    " " + (e.rp || []).join(" ")
+    " " + (e.u || "") + " " + (e.rp || []).join(" ")
   ).toLowerCase();
   return hay.indexOf(q) >= 0;
 }

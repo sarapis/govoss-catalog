@@ -215,7 +215,7 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
 `mcp-index.json` (a Worker gets 10ms CPU; the 5.6 MB export does not parse in time), written
 in the same export run. **Not part of `run.sh`** - redeploy only when its code changes, and
 never write a catalogue COUNT into it (it said 17 while 19 were live). Search reads every field
-the tool promises: `n d o a rp` - add to `compact()` in `export_json.py` and `matches()` together. `cf:
+the tool promises: `n d o a u rp` - add to `compact()` in `export_json.py` and `matches()` together. `cf:
 {cacheTtl}` caches every status, and `cacheTtl: 0` does not force a miss: change the cache KEY.
 
 ## Accessibility

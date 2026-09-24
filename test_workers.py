@@ -78,7 +78,7 @@ let INDEX = { generated_at: "g1", entries: [
     c: "FR", cs: ["FR"], s: ["FR/sill"], f: ["collaboration"], l: "MIT", cc: 1,
     rp: ["Slack"] },
   { id: "b", n: "QGIS", d: "Desktop GIS.", c: "DE", cs: ["DE", "FR"], s: ["DE/openCode"],
-    f: ["geospatial"], l: "GPL-2.0", cc: 3, rp: ["ArcGIS Pro"] },
+    f: ["geospatial"], l: "GPL-2.0", cc: 3, rp: ["ArcGIS Pro"], u: "https://github.com/qgis/QGIS" },
   { id: "c", n: "Other", d: "Something else.", o: "regione-marche", c: "IT", s: ["IT/developers-italia"],
     f: ["geospatial"], l: "MIT", cc: 2 },
 ] };
@@ -131,6 +131,7 @@ out.tools_list = await rpc({ jsonrpc: "2.0", id: 4, method: "tools/list" });
 
 out.search_aka = await tool("search_entries", { query: "rocket.chat" });
 out.search_owner = await tool("search_entries", { query: "regione-marche" });
+out.search_repo = await tool("search_entries", { query: "qgis/qgis" });
 out.search_replaces = await tool("search_entries", { query: "arcgis" });
 out.search_country = await tool("search_entries", { country: "FR" });
 out.search_facets = await tool("search_entries", { function: "geospatial", licence: "MIT" });
@@ -250,6 +251,7 @@ def main():
     ids = lambda k: [e["id"] for e in o[k]["data"]["entries"]]
     check("also-known-as is searched (Rocket.Chat)", ids("search_aka"), ["a"])
     check("owner is searched (and nothing else says 'regione-marche')", ids("search_owner"), ["c"])
+    check("repo URL is searched ('qgis/qgis' is only in b's u)", ids("search_repo"), ["b"])
     check("the proprietary products replaced are searched", ids("search_replaces"), ["b"])
     check("country filter reads countries[], not just country", sorted(ids("search_country")), ["a", "b"])
     check("facet filters are AND-ed", ids("search_facets"), ["c"])
