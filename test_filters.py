@@ -167,11 +167,16 @@ CASES = [
 
 
 def main():
-    failed = []
+    failed, ran = [], []
+
+    def ok(label, passed, msg):
+        ran.append(label)          # counted, never hard-coded: a stale n reports a phantom pass
+        if not passed:
+            failed.append(msg)
+
     for label, rec, want in CASES:
         got = filters.classify(rec)
-        if got != want:
-            failed.append(f"classify: {label}: expected {want!r}, got {got!r}")
+        ok(label, got == want, f"classify: {label}: expected {want!r}, got {got!r}")
 
     # classify() must not mutate its input — filters.py's main loop sets
     # excluded/exclude_reason itself, and a classify() that also wrote them
@@ -179,8 +184,8 @@ def main():
     probe = r("thing", short_desc="")
     before = json.dumps(probe, sort_keys=True)
     filters.classify(probe)
-    if json.dumps(probe, sort_keys=True) != before:
-        failed.append("classify() mutated the record it was given")
+    ok("no mutation", json.dumps(probe, sort_keys=True) == before,
+       "classify() mutated the record it was given")
 
     # ---- the replaces.json vocabulary gate must FAIL the build (F8, and the
     # rule export_json.py shares with taxonomy.py: a bad value is a bug).
@@ -191,8 +196,8 @@ def main():
     try:
         raw = json.load(open(rp))
         vocab = raw["_README"]
-        if "confidence" not in vocab or "kind" not in vocab:
-            failed.append("replaces.json:_README no longer declares both vocabularies")
+        ok("vocab declared", "confidence" in vocab and "kind" in vocab,
+           "replaces.json:_README no longer declares both vocabularies")
 
         victim = next(k for k in raw if not k.startswith("_"))
         for field, bad in (("confidence", "paid-tier"),  # the real Icinga bug: a
@@ -204,20 +209,20 @@ def main():
             json.dump(doc, open(rp, "w"), indent=1, ensure_ascii=False)
             p = subprocess.run([sys.executable, "export_json.py"], cwd=HERE,
                                capture_output=True, text=True)
-            if p.returncode == 0:
-                failed.append(f"export_json.py ACCEPTED {field}={bad!r} — the "
-                              f"vocabulary gate is not failing the build")
+            ok(f"{field}={bad} fails", p.returncode != 0,
+               f"export_json.py ACCEPTED {field}={bad!r} — the "
+               f"vocabulary gate is not failing the build")
             out = (p.stdout or "") + (p.stderr or "")
-            if "invalid values" not in out:
-                failed.append(f"export_json.py rejected {field}={bad!r} without "
-                              f"naming it as an invalid value")
-            if victim not in out:
-                failed.append(f"the refusal for {field}={bad!r} does not name the "
-                              f"offending key {victim!r}")
+            ok(f"{field}={bad} named invalid", "invalid values" in out,
+               f"export_json.py rejected {field}={bad!r} without "
+               f"naming it as an invalid value")
+            ok(f"{field}={bad} names key", victim in out,
+               f"the refusal for {field}={bad!r} does not name the "
+               f"offending key {victim!r}")
     finally:
         shutil.copy2(backup, rp)
-        if hashlib.sha256(open(rp, "rb").read()).hexdigest() != before_sha:
-            failed.append("replaces.json was NOT restored — check it before committing")
+        ok("restored", hashlib.sha256(open(rp, "rb").read()).hexdigest() == before_sha,
+           "replaces.json was NOT restored — check it before committing")
 
     # ---- a PUBLISHER's own `replaces:` (harvest._pc_replaces) is the opposite
     # posture from the gate above: someone else's file, so a bad value is
@@ -236,12 +241,11 @@ def main():
     ]
     for label, given, want in PCR:
         got = H._pc_replaces(given)
-        if got != want:
-            failed.append(f"_pc_replaces: {label}: expected {want!r}, got {got!r}")
+        ok(label, got == want, f"_pc_replaces: {label}: expected {want!r}, got {got!r}")
 
     for f in failed:
         print(f"FAIL  {f}")
-    n = len(CASES) + 2 + 9 + len(PCR)
+    n = len(ran)
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 

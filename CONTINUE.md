@@ -23,7 +23,7 @@ cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 12 suites, 530 checks
+for t in test_*.py; do python3 $t; done                     # 12 suites, 545 checks
 curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + problems
 ```
 
@@ -34,7 +34,7 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
 - **COMMITTED IS NOT LIVE.** Everything from the 2026-09-23 evening session (list below)
   publishes on the next run. Until then the live site still shows 19 catalogues and GCHQ as
   `ready` in the survey; `sources.py` already says otherwise.
-- **12 suites, 530 checks, all passing.** Manual on purpose.
+- **12 suites, 545 checks, all passing.** Manual on purpose.
 - Live `/status.json` is `warn` for ONE reason: F7, the deploy on wrangler's stored login.
 - Liveness 3,298 ok of 3,396, 27 dead, 39 archived, 67 unknown. Variants: 12 linked to 9
   cores. `replaces.json`: 303 keys -> 343 products (live: 314); 65 products have none.
@@ -104,10 +104,9 @@ then `--from-cache` .. variants), not from a live run:
 ## Candidates, ranked
 
 1. **Verify the run above**, and fix what it contradicts before anything new.
-2. **Count checks, never hard-code them**: `test_liveness_strikes.py` (`n = 33`),
-   `test_translation_orphans.py` (`n = 14`), and the `+ 2 + 9` / `+ 2 + 6` parts of
-   `test_filters.py` and `test_stage_guard.py`. `test_dedupe_identity.py` had a hard-coded
-   total one too high, so it reported a check that never ran (fixed 2026-09-23).
+2. ~~Count checks, never hard-code them~~ - DONE 2026-09-23: every suite now counts
+   `len(ran)`. The hard-coded totals were wrong in four suites: liveness 33 (ran 41),
+   filters 69 (70), built_pages 69 (76), stage_guard 15 (ran 14 - a phantom pass).
 3. **Expand `replaces.json` by SHAPE, not sweep.** Two routes worked on 2026-09-23 (+92
    rows): the DEMAND side (products in `proprietary.json` with no alternative - 13 of 78
    closed; the other 65 are verticals nothing here does) and the SUPPLY side (unmapped

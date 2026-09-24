@@ -46,9 +46,10 @@ def fold(status, prev=None, **res):
 
 
 def main():
-    failed = []
+    failed, ran = [], []
 
     def check(label, got, want):
+        ran.append(label)          # counted, never hard-coded: a stale n reports a phantom pass
         if got != want:
             failed.append(f"{label}: expected {want!r}, got {got!r}")
 
@@ -87,11 +88,9 @@ def main():
     # ---- UNKNOWN statuses: never dead, and they reset the strike count
     for st in sorted(liveness.UNKNOWN):
         rec, nd, rv = fold(st, prev={"status": 404, "dead_count": 1})
-        if rec.get("dead_since") or rec.get("unconfirmed_dead"):
-            failed.append(f"status {st} produced a dead/pending verdict")
-        if rec.get("dead_count") is not None:
-            failed.append(f"status {st} carried a dead_count forward "
-                          f"({rec.get('dead_count')}) — it must reset")
+        check(f"status {st}: no dead/pending verdict",
+              bool(rec.get("dead_since") or rec.get("unconfirmed_dead")), False)
+        check(f"status {st}: dead_count reset", rec.get("dead_count"), None)
     # A rate-limited sweep must not be able to kill a repo, even twice running.
     rec, nd, rv = fold(429, prev={"status": 429})
     check("429 twice: still not dead", rec.get("dead_since"), None)
@@ -135,7 +134,7 @@ def main():
 
     for f in failed:
         print(f"FAIL  {f}")
-    n = 33
+    n = len(ran)
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 

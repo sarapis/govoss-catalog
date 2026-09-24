@@ -78,17 +78,21 @@ def sha(path):
 
 
 def main():
-    failed = []
+    failed, ran = [], []
+
+    def ok(label, passed, msg):
+        ran.append(label)          # counted, never hard-coded: a stale n reports a phantom pass
+        if not passed:
+            failed.append(msg)
 
     for label, catalog, want in CASES:
         got = stage_guard.is_post_dedupe(catalog)
-        if got != want:
-            failed.append(f"is_post_dedupe: {label}: expected {want}, got {got}")
+        ok(label, got == want, f"is_post_dedupe: {label}: expected {want}, got {got}")
 
     # ---- the real files, both directions
     raw = json.load(open(f"{HERE}/cache/src_tw.json"))
-    if stage_guard.is_post_dedupe(raw):
-        failed.append("a real raw checkpoint (cache/src_tw.json) read as post-dedupe")
+    ok("real raw checkpoint", not stage_guard.is_post_dedupe(raw),
+       "a real raw checkpoint (cache/src_tw.json) read as post-dedupe")
 
     real = json.load(open(f"{HERE}/catalog.json"))
     # ⚠ Decided INDEPENDENTLY of the function under test. Keying this on
@@ -112,14 +116,14 @@ def main():
             for stage in ("taxonomy.py", "dedupe.py"):
                 p = subprocess.run([sys.executable, stage], cwd=HERE,
                                    capture_output=True, text=True)
-                if p.returncode != 2:
-                    failed.append(f"{stage} on merged catalog.json: expected exit 2, "
-                                  f"got {p.returncode}")
-                if "REFUSING" not in (p.stderr or ""):
-                    failed.append(f"{stage}: refusal message missing from stderr")
-                if sha(f"{HERE}/catalog.json") != before:
-                    failed.append(f"{stage} MODIFIED catalog.json despite refusing — "
-                                  f"the guard ran too late to protect anything")
+                ok(f"{stage} exit 2", p.returncode == 2,
+                   f"{stage} on merged catalog.json: expected exit 2, "
+                   f"got {p.returncode}")
+                ok(f"{stage} says REFUSING", "REFUSING" in (p.stderr or ""),
+                   f"{stage}: refusal message missing from stderr")
+                ok(f"{stage} left catalog.json alone", sha(f"{HERE}/catalog.json") == before,
+                   f"{stage} MODIFIED catalog.json despite refusing — "
+                   f"the guard ran too late to protect anything")
         finally:
             # Restore unconditionally: a broken guard means this test is the
             # thing that destroyed the data it was checking.
@@ -130,7 +134,7 @@ def main():
     for f in failed:
         print(f"FAIL  {f}")
 
-    n = len(CASES) + 2 + (6 if real_is_merged else 0)
+    n = len(ran)
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 

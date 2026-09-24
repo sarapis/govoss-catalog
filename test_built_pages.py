@@ -87,9 +87,10 @@ def main():
         return 0
 
     pages = {n: read(p) for n, p in PAGES.items()}
-    failed = []
+    failed, ran = [], []
 
     def check(label, got, want):
+        ran.append(label)          # counted, never hard-coded: a stale total reports a phantom pass
         if got != want:
             failed.append("%s: expected %r, got %r" % (label, want, got))
 
@@ -231,12 +232,10 @@ def main():
     import i18n
     ENG = {"index.html": "/", "sources.html": "/sources.html", "api.html": "/api.html",
            "products.html": "/products.html"}
-    n12 = 0
     for en_name, route in ENG.items():
         for lang in i18n.LANGS:
             name = en_name if lang == "en" else "%s/%s" % (lang, en_name)
             page = pages[name]
-            n12 += 4
             check("%s declares lang=%s" % (name, lang),
                   bool(re.search(r'<html lang="%s"' % lang, page)), True)
             check("%s has no unresolved translation marker" % name,
@@ -282,7 +281,6 @@ def main():
         miss = {}
     check("no page string is missing a translation", sorted(miss), [])
     check("i18n/ca.json loads (placeholders validated)", bool(i18n.table("ca")["strings"]), True)
-    n12 += 5
 
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by
@@ -316,7 +314,7 @@ def main():
 
     for f in failed:
         print("FAIL  %s" % f)
-    total = 9 + len(pages) + 7 + 1 + n12 + 5
+    total = len(ran)
     print("\n%d checks run, %d failed" % (total, len(failed)))
     return 1 if failed else 0
 

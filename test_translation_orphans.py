@@ -75,9 +75,10 @@ def naive_looked_up(catalog):
 
 
 def main():
-    failed = []
+    failed, ran = [], []
 
     def check(label, got, want):
+        ran.append(label)          # counted, never hard-coded: a stale n reports a phantom pass
         if got != want:
             failed.append(f"{label}: expected {want}, got {got}")
 
@@ -118,7 +119,7 @@ def main():
 
     for f in failed:
         print(f"FAIL  {f}")
-    n = 14
+    n = len(ran)
     print(f"\n{n - len(failed)}/{n} checks passed")
     return 1 if failed else 0
 
