@@ -1,164 +1,180 @@
 # Open items
 
-Where the work stands as of **2026-09-23**. `CLAUDE.md` (auto-loaded) is the rules;
-`ARCHIVE.md` holds the reasoning and incidents behind them, including the full
-long-form manual `CLAUDE.md` was pruned from on this date. Neither is required
-reading beyond what loads by itself.
+Where the work stands as of **2026-09-23 (late)**. `CLAUDE.md` (auto-loaded) is the rules;
+`ARCHIVE.md` holds the reasoning and incidents behind them. Neither is required reading
+beyond what loads by itself.
 
-**State: 3,054 active entries · 3,553 rows · 19 catalogues · 16 countries and bodies.**
-Live at https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat, both on
-Cloudflare. Pipeline `bash run.sh`, scheduled Mondays 07:00, publishes and commits itself.
+**Live: 3,054 active entries · 3,553 rows · 19 catalogues · 16 countries and bodies.**
+https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat, both on Cloudflare.
+Pipeline `bash run.sh`, scheduled Mondays 07:00, publishes and commits itself.
 
 ## The one idea, if you remember nothing else
 
 **Every failure sensor here started as a `print`, and the fix is never "add a warning":
-it is "write it where the page already looks."** The known instances are files
-`/sources.html` reads - `cache/_fetched.json`, `summary.failed_at`,
-`out/taxonomy_unmapped.json`, `out/translation_orphans.json`, `out/deploy_auth.txt`,
-`out/i18n_missing.json` - plus `stage_guard.py`, the same idea one step further: a stage
-that DESTROYS data refuses instead of reporting. Corollaries that cost real sessions:
-the total is rarely the trigger (use a delta); a missing previous measurement is not
-zero; if a guard cannot be made to fail, delete it.
+it is "write it where the page already looks."** The instances are files `/sources.html`
+reads - `cache/_fetched.json`, `summary.failed_at`, `out/taxonomy_unmapped.json`,
+`out/translation_orphans.json`, `out/deploy_auth.txt`, `out/i18n_missing.json`, and (new)
+`out/crosswalk_cache.json` - plus `stage_guard.py`, the same idea one step further: a stage
+that DESTROYS data refuses instead of reporting. Corollaries: the total is rarely the
+trigger (use a delta); a missing measurement is not zero, and not fresh either; if a guard
+cannot be made to fail, delete it.
 
-## State - verified, not recalled
+## State - verified 2026-09-23, not recalled
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
 for t in test_*.py; do python3 $t; done                     # 12 suites, 530 checks
-python3 -c "import json;d=json.load(open('site/status.json'));print(d['state'],d['problems'])"
+curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + problems
 ```
 
-- Tree clean on `main`, nothing unpushed, one worktree. Last commit `e552cb0`.
-- **Last run 2026-09-23**, trigger `manual`, all 19 steps ok, deployed and recorded
-  (`6eb6635 Data: 2026-09-23 run - 3,054 entries (+197)`). It was the first live run
-  of `first_seen.py`, the language fixes, variants, Switzerland and DIGG - all verified.
+- Tree clean on `main`, nothing unpushed, one worktree, no jobs running. Last code commit
+  `e71647c` (the handoff commit follows it).
+  Schedule loaded; `bash schedule/install.sh --diff` says the plist matches the template.
+- **Last run 2026-09-23 15:52Z**, `manual`, 19 steps ok, deployed and recorded (`6eb6635`).
+- **COMMITTED IS NOT LIVE.** Everything from the 2026-09-23 evening session (list below)
+  publishes on the next run. Until then the live site still shows 19 catalogues and GCHQ as
+  `ready` in the survey; `sources.py` already says otherwise.
 - **12 suites, 530 checks, all passing.** Manual on purpose.
-- **`/sources.html` reads `warn` for ONE reason: F7**, the deploy running on wrangler's
-  stored login. Intended until a token exists (Waiting on a human).
-- Liveness 3,298 ok of 3,396 checked, 27 dead, 39 archived, 67 unknown.
-- Variants: 12 linked to 9 cores (2 curated, 9 publisher `isBasedOn`, 1 fork - Bulgaria's
-  CKAN). `replaces.json`: 303 keys, 300 active entries -> 343 products (+92 rows 2026-09-23, not yet
-  deployed); 65 products still have no alternative. Orphaned translation keys: 3.
-- Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 and F8 closed, F7
-  code-complete and credential-blocked (now a Cloudflare credential).
+- Live `/status.json` is `warn` for ONE reason: F7, the deploy on wrangler's stored login.
+- Liveness 3,298 ok of 3,396, 27 dead, 39 archived, 67 unknown. Variants: 12 linked to 9
+  cores. `replaces.json`: 303 keys -> 343 products (live: 314); 65 products have none.
+- MCP Worker redeployed 2026-09-23, version `e22a48dd` (live-checked: new instructions,
+  search works). Its owner/aka search waits for the new `mcp-index.json` (next run).
+- Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 and F8 closed; F7 credential-blocked.
 
 ## Invariants - break these and something already fixed re-breaks
 
-Tested ones live in `CLAUDE.md` › Tests as one line each. These are silent if violated:
+Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if violated:
 
-- **`fetched_at` and `summary.checked` advance ONLY on success.** Stamp either on a
-  failure and staleness becomes undetectable.
+- **`fetched_at`, `summary.checked` and `crosswalk_cache.json` stamps advance ONLY on
+  success.** Stamp on a failure and staleness becomes undetectable.
 - **Never store a per-run value PER RECORD** - per-source or summary only.
 - **`--from-cache` must not write `_fetched.json` / `_timing.json`** (guarded by `if want:`).
-- **`harvest.py` exits 0 on a failed source, on purpose** - one flaky source must not
-  block the publish of eighteen good ones.
+- **`harvest.py` exits 0 on a failed source, on purpose** - one flaky source must not block
+  the publish of the others.
 - **`sources.py:SITE_URL` is the only place the address is written**, and every wrangler
   config pins `account_id`. Remove the pin and a cached login can deploy elsewhere.
 - **Only one wrangler config may claim a hostname** (`www.govoss.cat` is `govoss-www`'s).
-- **`build_ui._fs_ident()` must equal `first_seen.ident()`** or the Recently-added strip
-  silently empties.
+- **`build_ui._fs_ident()` must equal `first_seen.ident()`**, and a change that MOVES an
+  entry's identity (repo_key <-> name|source) must migrate its `cache/_first_seen.json`
+  key in the same commit, or it shows as Recently added. Done for 4 ids on 2026-09-23.
+- **Network enters crosswalk only through `run()`'s `*_fn` arguments** - put it anywhere
+  else and the glue is untestable again (`test_crosswalk_run.py`).
 
 ## Waiting on a human - not work that was skipped
 
 - **A Cloudflare API token (F7)**, Workers Scripts:Edit on Devin@sarapis.org's Account.
-  Verified absent: `~/.config/govoss/` holds only its README. One command:
+  Verified absent: `~/.config/govoss/` holds only its README. Hub task `35f61ead` (its
+  Vercel-era description is stale; a comment of 2026-09-23 says so). One command:
   `printf '%s' 'TOKEN' > ~/.config/govoss/cloudflare-token && chmod 600 ~/.config/govoss/cloudflare-token`
-- **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` (still answering, still
-  the pre-variant code) - it is in the itspruvn.com Cloudflare account, which the
-  deploy login cannot reach. Nothing in the repo points at it any more.
-- **A Catalan speaker's read of `/ca/`** before pointing Catalan institutions at it. The
-  strings are machine-written; `i18n/ca.json` is the one file to edit.
-- **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) - a scope decision about what
-  the catalogue is. And three drafted, unsent documents (an OpenForum Europe reply, an
-  OFE-voiced EU defect report - session artefacts, not committed - and
+- **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` - in the itspruvn.com
+  Cloudflare account, which the deploy login cannot reach. Nothing points at it.
+- **Four licence calls left open** (`filters.py` flags only what the source's licence
+  string says): Graylog (SSPL, genuinely not OSI), MongoDB and PDFgear (SILL says unknown;
+  both closed in fact), three publiccode-tier NC entries the publiccode exemption protects.
+- **Review the 103 Helsingborg WordPress plugins set aside** - reviewed like the iMio rules
+  were; two iMio rules were removed after catching real products. The `api-*-manager`
+  repos (WordPress-based backends) are the likeliest false positives.
+- **A Catalan speaker's read of `/ca/`**. No Catalan phase 2 (owner, 2026-09-23): data,
+  products and source notes stay English. Do not re-propose it.
+- **The demand-side go/no-go** (`DEMAND-SIDE-CATALOGUE.md`) and three drafted, unsent
+  documents (an OFE reply and defect report - not committed - and
   `DEMAND-SIDE-CALL-FOR-SOURCES.md`).
+- UK: a curated list of 40 is parked (`UK-CURATED-DRAFT.md`, Hub `dc3de350` Backburner).
+  Scope rule: government-produced catalogues only, never a list govoss curates.
 
-## Check on the next run (2026-09-28) - first live run of five changes
+## First: check the next run (2026-09-28) - first live run of eight changes
 
-Expected, from an end-to-end run on a scratch copy (harvest --from-cache .. variants):
-- **Active 3,054 -> 3,030.** 21 rows flagged by the licence filter (12 `closed-licence`,
-  9 `non-commercial-licence`); 4 new merges - KNIME (redirect loan), Prometheus, Spring
-  Boot, Ubuntu (Swedish homepages now `landing`); FreeFileSync splits, correctly (its
-  SILL row is flagged). Démarches simplifiées stays ONE entry (repo-rename loan).
-- **`out/crosswalk_cache.json` shows three fresh `fetched_at`** and no error; the step
-  adds ~6 minutes. A 429/503 from Wikidata falls back and is reported, never fails.
-- **Sweden re-harvests into the new shape** (58 repos, 109 landings). If SE fails that run,
-  its old checkpoint is reused and the 3 Swedish merges wait a week - not a regression.
-- **Recently added shows no false "new" entries**: the 4 identities that move were
-  migrated in `cache/_first_seen.json` (all baseline `null`).
-- Liveness checks ~109 fewer URLs: Swedish homepages were being checked as repos.
-- **MCP search by also-known-as / owner goes live** with the new `mcp-index.json` (the Worker
-  was redeployed 2026-09-23, version e22a48dd; until the run the live index has no `o`/`a`).
-  Check: `search_entries` for "rocket.chat" returns Rocketchat (it returns 0 before the run).
-- **Helsingborg's first harvest** (source 20, `hbg`): 291 rows, 103 set aside as
-  `wordpress-plugin`, ~98 active and correctly shown as Recently added. With it, the
-  scratch run gave **active 3,128** (3,030 + 98); update the header counts in CLAUDE.md
-  and here (20 catalogues) once the run confirms them.
-- **22 descriptions change language** as DIGG, OS2, ARTE and Helsingborg re-harvest (one
-  Swedish/Danish/Portuguese marker under the org's hint no longer defaults to English);
-  all have translations, so like-for-like untranslated stays 13 -> 13.
+Expected numbers come from end-to-end runs on a SCRATCH COPY (harvest of hbg/se/digg/pt/os2,
+then `--from-cache` .. variants), not from a live run:
+- **Active 3,054 -> ~3,128; 20 catalogues.** 21 rows flagged by the licence filter (12
+  `closed-licence`, 9 `non-commercial-licence`); Helsingborg adds ~98 active, 103 set aside
+  as `wordpress-plugin`; 4 new merges (KNIME by redirect loan; Prometheus, Spring Boot,
+  Ubuntu from Swedish homepages now `landing`); FreeFileSync splits, correctly (its SILL row
+  is flagged); Démarches simplifiées stays ONE entry (repo-rename loan).
+- **`out/crosswalk_cache.json`: three fresh `fetched_at`, no error.** It does not exist in
+  the repo yet - the new crosswalk has only run on scratch copies. The step adds ~6 min.
+- **Recently added: only Helsingborg's ~98.** Anything else there is an identity that moved.
+- **22 descriptions change language** on re-harvest (one Swedish/Danish/Portuguese marker
+  under the org's hint); all translated, so untranslated stays 13 -> 13 like-for-like.
+- **MCP:** `search_entries` for "rocket.chat" returns Rocketchat (0 before the run).
+- Liveness checks ~109 fewer URLs (Swedish homepages were checked as repos).
+- Then update the header counts here and in `CLAUDE.md` from the run, not from this list.
 
 ## Candidates, ranked
 
-**Scope rule (owner, 2026-09-23): government-produced catalogues only - never a list
-govoss curates itself.** The UK was measured and has no catalogue (`sources.py:SURVEY`
-GB entry, status `none-found`; GCHQ folded into it). A hand-picked list of 40 UK
-products is parked in `UK-CURATED-DRAFT.md` and Hub task `dc3de350` (Backburner).
-
-1. **Expand `replaces.json` by SHAPE, not sweep.** First pass done 2026-09-23 (+92 rows,
-   66 entries, 16 new products). Two routes worked: the DEMAND side (products in
-   `proprietary.json` with no alternative - 13 of 78 closed; the other 65 are verticals
-   with nothing in the catalogue, a real gap not a to-do) and the SUPPLY side (unmapped
-   entries that carry a Wikidata QID - recognisable software; 467 of them, ~50 mapped).
-   n8n was skipped on purpose: its Sustainable Use License is not open source.
-2. **Licence filter shipped 2026-09-23, first live on the next run** (`filters.py`
-   `LICENCE_RULES`): 21 rows flagged - 12 `closed-licence` (all SILL: Veeam, Obsidian x2,
-   PDF24, Postman, n8n, IrfanView, Balabolka, HEC-RAS, Wink, silhouette, FreeFileSync) and
-   9 `non-commercial-licence` (7 DPG content items, 2 SILL). Verify on that run that the
-   flagged count by reason matches. Deliberately NOT flagged, owner's call: Graylog (SSPL,
-   genuinely not OSI), MongoDB and PDFgear (licence unknown in SILL; both closed in fact),
-   and three publiccode-tier NC entries the publiccode exemption protects.
-3. **Screen-reader testing** has never been done - the one quality gap left that no suite
-   can close; it needs a person with a screen reader.
+1. **Verify the run above**, and fix what it contradicts before anything new.
+2. **Count checks, never hard-code them**: `test_liveness_strikes.py` (`n = 33`),
+   `test_translation_orphans.py` (`n = 14`), and the `+ 2 + 9` / `+ 2 + 6` parts of
+   `test_filters.py` and `test_stage_guard.py`. `test_dedupe_identity.py` had a hard-coded
+   total one too high, so it reported a check that never ran (fixed 2026-09-23).
+3. **Expand `replaces.json` by SHAPE, not sweep.** Two routes worked on 2026-09-23 (+92
+   rows): the DEMAND side (products in `proprietary.json` with no alternative - 13 of 78
+   closed; the other 65 are verticals nothing here does) and the SUPPLY side (unmapped
+   entries carrying a Wikidata QID: 467, ~50 mapped). n8n skipped: not open source.
+4. **Screen-reader testing** has never been done - needs a person with a screen reader.
 
 ## Traps - looks broken but is not, and vice versa
 
-- **`www.govoss.cat` and `govoss.cat` are different Workers.** A deploy of the site never
-  touches `www`, and `run.sh` never redeploys `govoss-www` or `mcp-server` (no data).
-- **The old `govoss-catalog.vercel.app` redirect has no CORS header**, so a browser page
-  fetching the OLD JSON cross-origin fails. Scripts and agents follow it. The `www`
-  redirect DOES carry CORS - by design, verified end to end.
+- **`www.govoss.cat` and `govoss.cat` are different Workers.** `run.sh` never redeploys
+  `govoss-www` or `mcp-server`; redeploy those by hand, only when their code changes.
+- **The old `govoss-catalog.vercel.app` redirect has no CORS header** - scripts follow it,
+  browser cross-origin fetches fail. The `www` redirect DOES carry CORS (`test_workers.py`).
+- **Wikidata's query service truncates with HTTP 200** (11,116 of 28,759 rows, once) and
+  answers 429/503 after heavy same-day use. The crosswalk falls back and reports; a manual
+  rerun right after a big session often skips Wikidata. Not a regression.
+- **Test end to end on a scratch copy, never by hand in the repo.** `rsync --exclude .git
+  --exclude site` to the scratchpad, then `harvest.py --from-cache` .. `variants.py`.
+  `first_seen.py`, `liveness.py`, `record` and every by-hand stage run rewrite committed
+  files, and `taxonomy.py`/`dedupe.py` refuse merged input anyway.
+- **Compare stages like-for-like.** A pre-dedupe catalogue diffed against the committed
+  (post-dedupe) one shows merged-away rows as "new gaps" - build a baseline with
+  `git archive HEAD` and run it to the same stage.
+- **`detect_lang` tags English-with-one-foreign-word as foreign under that org's hint**
+  ("Custom API Endpoint for Lärrum") - accepted and pinned: visible in the translation
+  queue beats foreign text hidden as English.
+- **Translation keys hash the RAW text; look rows up by TEXT, not by name.** OS2 has one
+  `.github` per org - a name lookup keyed a translation to the wrong repo (caught by audit).
 - **`/sources.html` can warn about missing page translations one run late** - it is built
   before `/api.html` and `/products.html` and reads their entries from the previous run.
-- **3,070 of 3,391 first-seen ids are `null`** - the baseline, known and never new. Not a gap.
-- **A variant list that includes an obvious mirror is expected**: Munich's SDS Calculator
-  links to itself under two catalogues via its publisher's `isBasedOn`. It folds; harmless.
-- **The vendored design-token CSS mentions `govoss-catalog.vercel.app` in a comment.** It is
-  copied from upstream as-is; do not "fix" it here.
-- **`out/` and `site/` are gitignored** - absent on a fresh checkout; `build_sources.py`
-  degrades to `ok`, and `test_built_pages.py` SKIPs until the pages are built.
-- **The browser pane returns stale and blank frames.** Measure the DOM; rebuild `site/`
-  before testing it. A `curl` seconds after a deploy can also hit a stale edge copy -
-  cache-bust, and re-check before concluding anything.
+- **3,074 of 3,395 first-seen ids are `null`** - the baseline, known and never new.
+- **Munich's SDS Calculator links to itself under two catalogues** via its publisher's
+  `isBasedOn`. It folds; harmless.
+- **The vendored design-token CSS mentions `govoss-catalog.vercel.app` in a comment.**
+  Copied from upstream as-is; do not "fix" it here.
+- **`out/` and `site/` are gitignored** - a fresh checkout has neither; `build_sources.py`
+  degrades to `ok`, `test_built_pages.py` SKIPs until the pages are built.
+- **The browser pane returns stale and blank frames**, and a `curl` right after a deploy
+  can hit a stale edge copy. Cache-bust (`?v=$(date +%s)`) and re-check.
 - **`PAGINATION-BUG.md` is about someone else's service**, not a defect here.
-- **`python3 -B` for sabotage runs.** Same-second, same-size edits otherwise run stale
-  bytecode - this produced a false "guard is load-bearing" conclusion once this session.
+- **Sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`**, and check a sabotage actually
+  APPLIED: two this session silently did not (shell escaping), and one "passed" only because
+  a second guard covered the same case. Filter output to `^FAIL|checks passed`.
 
-## Last session (2026-09-22 → 23), in one screen
+## Session 2026-09-23 (evening), in one screen
 
-Shipped, each verified live or by test: shared get-involved block; per-source language
-fixes for SILL/NL (`lang_with_prior`) and Munich/DPG (`lang_assume_en`); +52
-`replaces.json` mappings; the variants system (`variants.py`, curated/publisher/fork
-evidence, inheritance, folding, MCP + products fields); Switzerland and DIGG sources and
-the shared ä/ö language fix; the OSOR list fully evaluated (`sources.py:SURVEY`); Catalan
-copies of all four pages (`i18n.py`); hosting moved from Vercel to Cloudflare at
-govoss.cat with `www` and `mcp.` subdomains; `CLAUDE.md` pruned 949 -> 243 lines into rules.
-Mistakes worth knowing: one commit (`84ec9c3`) went out with a failing check (fixed in
-`ea3f93f`); a sabotage script once left `variants.py` broken (restored from a backup).
+Shipped, each verified by suite and by scratch end-to-end run (not yet live): UK sized (215
+orgs, 14,320 repos, 0 publiccode - no UK catalogue; GCHQ folded into a `none-found` survey
+entry); +92 `replaces.json` rows; licence filter; KNIME, Démarches, Prometheus/Spring
+Boot/Ubuntu merges via redirect and repo-rename QID loans and a Swedish adapter fix;
+crosswalk inputs refresh weekly (they had been frozen since 08-13; P1324 dump now
+count-checked); retries for every crosswalk fetch; Helsingborg as source 20 with a
+`wordpress-plugin` rule; the one-marker language fix (17 live descriptions were mis-tagged
+English); new suites for `get()`, the Workers and crosswalk's glue (F8 closed); MCP search
+now reads owner/aka and no longer claims "17" catalogues (Worker deployed, live-checked).
+NOT done: nothing run live - the Monday run is the real test of all of it.
+
+## Session 2026-09-22 -> 23, in one screen
+
+Shared get-involved block; `lang_with_prior`/`lang_assume_en`; +52 `replaces.json` rows;
+the variants system; Switzerland and DIGG; the OSOR list evaluated; Catalan chrome for all
+four pages; hosting moved from Vercel to Cloudflare; `CLAUDE.md` pruned 949 -> 243 lines.
+Mistakes: one commit (`84ec9c3`) shipped a failing check (fixed `ea3f93f`); a sabotage
+script once left `variants.py` broken (restored from a backup).
 
 ---
 
-## Starting the next session
+## To resume
 
 > I'm continuing work on ~/Antigravity/govoss-catalog, a union catalogue of government
 > open source software (live at https://govoss.cat, repo github.com/sarapis/govoss-catalog).
@@ -168,7 +184,8 @@ Mistakes worth knowing: one commit (`84ec9c3`) went out with a failing check (fi
 > `/Users/devin/Antigravity/govoss-catalog/ARCHIVE.md` only if a rule in `CLAUDE.md` is too
 > terse to apply and you need the reasoning behind it.
 >
-> Start with candidate 1: expand `replaces.json` by shape.
+> Start with candidate 1: check the 2026-09-28 run against the "First: check the next run"
+> list, and fix whatever it contradicts before starting anything new.
 >
 > Do not write a handoff, continuation prompt, or session record unless I ask for
 > `/handoff`. End your turn with what you did and what you recommend next.
