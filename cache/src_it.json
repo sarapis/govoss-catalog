@@ -2570,7 +2570,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-09-10",
+  "released": "2026-09-21",
   "repo": "https://github.com/consiglionazionaledellericerche/cool-jconon",
   "repo_key": "github.com/consiglionazionaledellericerche/cool-jconon",
   "short_desc": "The system manages all the phases of a public call, from the publication, to the presentation of the application.",
@@ -2591,7 +2591,7 @@
    "AMA SpA L'Aquila",
    "SED SpA L'Aquila"
   ],
-  "version": "5.10.14"
+  "version": "5.10.15"
  },
  {
   "active": true,
@@ -14390,7 +14390,7 @@
   "used_by": [
    "INGV"
   ],
-  "version": "v2.0.0"
+  "version": "v2.1.0"
  },
  {
   "active": true,
@@ -15245,7 +15245,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-01",
+  "released": "2026-09-23",
   "repo": "https://github.com/italia/design-comuni-plone-theme",
   "repo_key": "github.com/italia/design-comuni-plone-theme",
   "repo_owner": "RedTurtle Technology srl",
@@ -15366,7 +15366,7 @@
    "Unione Val di Bisenzio",
    "Unioncamere Emilia-Romagna"
   ],
-  "version": "12.15.1"
+  "version": "12.16.0"
  },
  {
   "active": true,
@@ -16138,7 +16138,7 @@
    "linux",
    "android"
   ],
-  "released": "2026-08-21",
+  "released": "2026-09-17",
   "repo": "https://github.com/tdf/libreoffice-metadata",
   "repo_key": "github.com/tdf/libreoffice-metadata",
   "repo_owner": "The Document Foundation",
@@ -16147,7 +16147,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "14ee01d2-ef4b-46ac-a7cb-21df6af68d01",
-  "version": "26.8.0.3"
+  "version": "26.8.1.1"
  },
  {
   "active": true,
@@ -18417,7 +18417,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-23",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18905,7 +18905,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.17.0-rc.7"
+  "version": "4.17.0"
  },
  {
   "active": true,

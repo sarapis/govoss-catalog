@@ -2930,7 +2930,7 @@
   "used_by": [
    "MS"
   ],
-  "version": "1.30.0",
+  "version": "1.30.1",
   "wikidata": "Q123516142"
  },
  {
@@ -2986,7 +2986,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "367",
+  "version": "368",
   "wikidata": "Q114691201"
  },
  {
@@ -4330,7 +4330,7 @@
    "DREAL Nouvelle-Aquitaine",
    "PREF"
   ],
-  "version": "23.3.0",
+  "version": "23.4.0",
   "wikidata": "Q112299414"
  },
  {
@@ -4638,7 +4638,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.38.29",
+  "version": "0.38.30",
   "wikidata": "Q112073283"
  },
  {
@@ -4844,7 +4844,7 @@
    "academie de clermont ",
    "other"
   ],
-  "version": "31.4.6",
+  "version": "31.5.2",
   "wikidata": "Q59339175"
  },
  {
@@ -7713,7 +7713,7 @@
   "used_by": [
    "Acad\u00e9mie de Nantes"
   ],
-  "version": "2.5.22",
+  "version": "2.5.24",
   "wikidata": "Q223204"
  },
  {
@@ -10645,7 +10645,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.32.0",
+  "version": "13.33.0",
   "wikidata": "Q13634357"
  },
  {
@@ -12457,7 +12457,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "156.0.1",
+  "version": "157.0b5",
   "wikidata": "Q698"
  },
  {
@@ -13122,7 +13122,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.3.5",
+  "version": "16.3.6",
   "wikidata": "Q56062435"
  },
  {
@@ -13457,6 +13457,7 @@
   "tier": "index",
   "used_by": [
    "Acad\u00e9mie d'Amiens",
+   "Acad\u00e9mie de Lille",
    "CDC des pays de L'Aigle",
    "CIVIS EPCI La R\u00e9union",
    "CNRS",
@@ -13969,7 +13970,7 @@
    "Sciences Po",
    "VIGINUM"
   ],
-  "version": "0.34.2",
+  "version": "0.34.4",
   "wikidata": "Q124636097"
  },
  {
@@ -14739,7 +14740,7 @@
   "sill_id": 200,
   "source": "FR/sill",
   "tier": "index",
-  "version": "45.0.2",
+  "version": "45.0.4",
   "wikidata": "Q64777688"
  },
  {
@@ -15785,6 +15786,7 @@
    "ASP",
    "Acad\u00e9mie de Bordeaux",
    "Acad\u00e9mie de Cr\u00e9teil",
+   "Acad\u00e9mie de Lille",
    "CNRS",
    "CREPS de Nancy",
    "Collectivit\u00e9 territoriale de Martinique",
@@ -15934,7 +15936,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.17.2",
+  "version": "2.18.0",
   "wikidata": "Q111586053"
  },
  {
@@ -16104,7 +16106,7 @@
   "sill_id": 114,
   "source": "FR/sill",
   "tier": "index",
-  "version": "3.3.17",
+  "version": "3.3.18",
   "wikidata": "Q14270"
  },
  {
@@ -16626,7 +16628,7 @@
    "other",
    "vetagro sup"
   ],
-  "version": "19 beta 3",
+  "version": "19 beta 4",
   "wikidata": "Q192490"
  },
  {
@@ -19188,6 +19190,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "Acad\u00e9mie de Lille",
    "CentraleSup\u00e9lec",
    "Commune de Vand\u0153uvre-l\u00e8s-Nancy",
    "MD",
@@ -19981,6 +19984,7 @@
   "used_by": [
    "Acad\u00e9mie d'Amiens",
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
+   "Acad\u00e9mie de Lille",
    "CDC des pays de L'Aigle",
    "CNRS",
    "CREPS de Nancy",
@@ -20585,7 +20589,7 @@
   "sill_id": 472,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.16.3",
+  "version": "1.16.4",
   "wikidata": "Q28957072"
  },
  {
@@ -22168,7 +22172,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "8.3.0",
+  "version": "8.3.1",
   "wikidata": "Q111590996"
  },
  {
@@ -22822,7 +22826,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "7.1.1",
+  "version": "7.1.2",
   "wikidata": "Q13166"
  },
  {
@@ -23287,7 +23291,7 @@
    "CNRS",
    "MAASA :  : Minist\u00e8re de l'Agriculture, de l'Agro-alimentaire et de la Souverainet\u00e9 Alimentaire"
   ],
-  "version": "1.20.2",
+  "version": "1.21.0",
   "wikidata": "Q112301707"
  },
  {
@@ -23432,7 +23436,7 @@
    "dgscgc",
    "universit\u00e9 caen normandie"
   ],
-  "version": "10.0.3",
+  "version": "10.0.4",
   "wikidata": "Q226915"
  },
  {

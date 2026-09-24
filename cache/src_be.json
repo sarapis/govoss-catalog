@@ -1275,7 +1275,7 @@
   "repo_owner": "IMIO",
   "short_desc": "Helm Chart for Odoo",
   "source": "BE/iMio",
-  "stars": 13,
+  "stars": 14,
   "tier": "index"
  },
  {
@@ -1500,7 +1500,7 @@
   "country": "BE",
   "entry_url": "https://github.com/IMIO/imio.annex",
   "is_fork": false,
-  "last_activity": "2026-09-22T09:54:27Z",
+  "last_activity": "2026-09-24T14:11:52Z",
   "name": "imio.annex",
   "repo": "https://github.com/IMIO/imio.annex",
   "repo_key": "github.com/imio/imio.annex",
@@ -1932,7 +1932,7 @@
   "repo_key": "github.com/imio/imio.omnia.tinymce",
   "repo_owner": "IMIO",
   "source": "BE/iMio",
-  "stars": 0,
+  "stars": 1,
   "tier": "index"
  },
  {
@@ -2386,7 +2386,7 @@
   "desc_lang": "en",
   "entry_url": "https://github.com/IMIO/imio_smartweb_themes",
   "is_fork": false,
-  "last_activity": "2026-09-22T14:19:33Z",
+  "last_activity": "2026-09-24T10:27:39Z",
   "name": "imio_smartweb_themes",
   "repo": "https://github.com/IMIO/imio_smartweb_themes",
   "repo_key": "github.com/imio/imio_smartweb_themes",
@@ -3042,7 +3042,7 @@
   "country": "BE",
   "entry_url": "https://github.com/IMIO/Products.MeetingSeraing",
   "is_fork": false,
-  "last_activity": "2026-09-22T15:26:17Z",
+  "last_activity": "2026-09-24T08:11:44Z",
   "name": "Products.MeetingSeraing",
   "repo": "https://github.com/IMIO/Products.MeetingSeraing",
   "repo_key": "github.com/imio/products.meetingseraing",
@@ -3069,7 +3069,7 @@
   "country": "BE",
   "entry_url": "https://github.com/IMIO/Products.PloneMeeting",
   "is_fork": false,
-  "last_activity": "2026-09-23T13:19:21Z",
+  "last_activity": "2026-09-24T15:30:56Z",
   "name": "Products.PloneMeeting",
   "repo": "https://github.com/IMIO/Products.PloneMeeting",
   "repo_key": "github.com/imio/products.plonemeeting",

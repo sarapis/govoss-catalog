@@ -613,7 +613,8 @@
   "entry_url": "https://opensource.muenchen.de/software/drupal.html",
   "gov_tier": "municipal",
   "keywords": [
-   "application"
+   "application",
+   "cms"
   ],
   "landing": "https://www.drupal.org",
   "license": "GPL",
@@ -674,7 +675,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "application",
-   "eigenentwicklung"
+   "eigenentwicklung",
+   "desktop"
   ],
   "license": "MIT",
   "name": "eNoVa-Editor",
@@ -1535,6 +1537,27 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/magnolia.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application",
+   "opencore",
+   "cms"
+  ],
+  "landing": "https://www.magnolia-cms.com/",
+  "license": "GPL",
+  "name": "Magnolia",
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "Magnolia is a free, Java-based content management system (CMS).",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/mantis.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -1607,6 +1630,25 @@
   "repo": null,
   "repo_key": null,
   "short_desc": "Matomo (formerly Piwik) web tracking is used to analyze user behavior of a web application.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/mautic.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application"
+  ],
+  "landing": "https://mautic.org/",
+  "license": "GPL-3.0",
+  "name": "Mautic",
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "Mautic is open-source marketing automation software.",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
@@ -2627,7 +2669,8 @@
   "entry_url": "https://opensource.muenchen.de/software/typo3.html",
   "gov_tier": "municipal",
   "keywords": [
-   "application"
+   "application",
+   "cms"
   ],
   "landing": "https://typo3.org",
   "license": "GPL-2.0",
@@ -2657,6 +2700,25 @@
   "repo": null,
   "repo_key": null,
   "short_desc": "UMLet is an open-source UML tool with a simple user interface for drawing UML diagrams, creating sequence and activity diagrams from plain text, etc. ---",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/unomi.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application"
+  ],
+  "landing": "https://unomi.apache.org/",
+  "license": "Apache-2.0",
+  "name": "Unomi",
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "Apache Unomi is an open-source customer data platform for managing customer, lead, and visitor data.",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
@@ -2854,7 +2916,8 @@
   "entry_url": "https://opensource.muenchen.de/software/wordpress.html",
   "gov_tier": "municipal",
   "keywords": [
-   "application"
+   "application",
+   "cms"
   ],
   "landing": "https://de.wordpress.com/",
   "license": "GPL-2.0",

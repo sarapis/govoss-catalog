@@ -21,7 +21,7 @@
    "Data Request Management"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T15:22:02Z",
+  "last_activity": "2026-09-24T14:48:09Z",
   "license": "MIT",
   "long_desc": "agridata.ch is the foundation for the Swiss agricultural and food sector\u2019s data space. It provides a secure, efficient, and trustworthy data transfer service that enables interoperability and supports the once-only principle (data is collected once at the source and reused across participants).",
   "maintenance": "internal",
@@ -60,7 +60,7 @@
    "Data Request Management"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T10:43:09Z",
+  "last_activity": "2026-09-24T11:33:09Z",
   "license": "MIT",
   "long_desc": "agridata.ch is the foundation for the Swiss agricultural and food sector\u2019s data space. It provides a secure, efficient, and trustworthy data transfer service that enables interoperability and supports the once-only principle (data is collected once at the source and reused across participants).",
   "maintenance": "internal",
@@ -178,7 +178,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T10:32:40Z",
+  "last_activity": "2026-09-24T03:13:31Z",
   "license": "MIT-0",
   "long_desc": "Bericht Generator Backend is a high-performance FastAPI-based API service that powers the comprehensive report generation system. Built with modern Python 3.12+ and utilizing advanced AI technologies, it provides speech-to-text transcription, intelligent title generation, email services, and comprehensive logging capabilities.",
   "maintenance": "internal",
@@ -298,7 +298,7 @@
   ],
   "is_fork": false,
   "landing": "https://www.swissgeol.ch/",
-  "last_activity": "2026-09-23T15:08:28Z",
+  "last_activity": "2026-09-24T15:53:03Z",
   "license": "MIT",
   "long_desc": "Borehole data is essential for understanding the subsurface and provides a critical foundation for geological analysis and decision-making. At swisstopo, borehole data of national relevance is managed within a centralized database and made accessible to users online, in accordance with defined access rights.\n\nThe open-source platform boreholes.swissgeol.ch enables the structured, standardized, and harmonized capture of borehole data across stakeholders. By applying common data models and controlled vocabularies, the platform ensures interoperability and facilitates the integration of data from different sources and jurisdictions.\n\nA role-based quality assurance workflow supports multi-stage validation and verification processes, ensuring that new datasets meet defined quality standards before publication. This approach strengthens consistency, reliability, and reusability of borehole data, and contributes to a sustainable, interoperable geological data ecosystem.",
   "maintenance": "internal",
@@ -371,7 +371,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T00:03:53Z",
+  "last_activity": "2026-09-23T20:38:18Z",
   "license": "MIT-0",
   "long_desc": "BS Translator is a modern web application for advanced text translation with file processing capabilities. Built with Nuxt.js and TypeScript, it provides intelligent translation services with customizable tone, domain-specific terminology, and support for multiple file formats. This repository contains only the frontend code; the backend is written in Python FastAPI.",
   "maintenance": "internal",
@@ -405,7 +405,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-22T18:49:22Z",
+  "last_activity": "2026-09-24T02:53:00Z",
   "license": "MIT-0",
   "long_desc": "BS Translator is a modern web application for advanced text translation with file processing capabilities. Built with Nuxt.js and TypeScript, it provides intelligent translation services with customizable tone, domain-specific terminology, and support for multiple file formats. This repository contains only the frontend code; the backend is written in Python FastAPI.",
   "maintenance": "internal",
@@ -701,7 +701,7 @@
   ],
   "is_fork": false,
   "landing": "https://blw-ofag-ufag.github.io/system-map/",
-  "last_activity": "2026-09-23T09:20:43Z",
+  "last_activity": "2026-09-24T05:34:38Z",
   "license": "CC-BY-4.0",
   "long_desc": "The DigiAgriFoodCH System Map is a small knowledge graph designed to catalog and visualize the interconnected IT systems, data assets, and operational organizations within the Swiss agri-food sector. The software leverages semantic web technologies, specifically Resource Description Framework (RDF) serialized in Turtle, to construct a formal ontology as well as a data layer. It also includes a graphical user interface which renders the small knowledge graph using the vis.js library.",
   "maintenance": "none",
@@ -983,7 +983,7 @@
    "Execution and verfication of elections"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-22T12:48:16Z",
+  "last_activity": "2026-09-24T14:08:14Z",
   "license": "AGPL-3.0-only",
   "long_desc": "Application for managing extra-parliamentary bodies and their members. Evaluations in the form of statistics and publication of data on the internet as OGD. Handling and verification of general elections and supplementary elections. Preparation of Federal Council affairs for the election of members and reporting to parliament.",
   "maintenance": "internal",
@@ -1208,7 +1208,7 @@
    "Interoperability"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T15:09:34Z",
+  "last_activity": "2026-09-24T16:29:49Z",
   "license": "MIT",
   "long_desc": "I14Y is Switzerland's central directory for metadata about public-sector datasets, electronic interfaces (APIs), and government services. The platform publishes metadata only (not the underlying operational data), including access conditions, standards alignment, update and quality context. It supports harmonization through shared concepts and codelists, improves cross-administration data exchange, and contributes to the once-only principle by reducing duplicate data collection.",
   "maintenance": "internal",
@@ -1322,7 +1322,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-21T02:37:16Z",
+  "last_activity": "2026-09-24T02:37:18Z",
   "license": "Apache-2.0",
   "long_desc": "This archive type registry contains definitions of jEAP archive types produced or consumed by jEAP services /  libraries. This is used for example by the jEAP Process Archive Service and the jEAP Process Context Service.\n",
   "maintenance": "internal",
@@ -1360,7 +1360,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-22T02:37:47Z",
+  "last_activity": "2026-09-24T15:23:36Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Architecture Repository Service (Arch Repo) is a central architecture repository holding the  architecture model for documenting components and their relations in a microservice-based system architecture. It maintains an up-to-date inventory of microservices, their relationships, events, and interfaces, and  automatically generates architecture documentation from this data. The Arch Repo focuses on system architecture  and integrates information from multiple sources, publishing the resulting architecture model to Confluence. A service instance can be created by depending on this template, then adding specific configuration.\n",
   "maintenance": "internal",
@@ -1368,7 +1368,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-archrepo-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-archrepo-service",
   "short_desc": "Service template which provides a centralized system for automatically managing and documenting the application architecture inventory.\n",
@@ -1376,7 +1376,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "13.4.2"
+  "version": "15.5.1"
  },
  {
   "categories": [
@@ -1398,7 +1398,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:39:41Z",
+  "last_activity": "2026-09-24T15:23:29Z",
   "license": "Apache-2.0",
   "long_desc": "jEAP Audit is a library that provides standardized creation and delivery of audit records within the jEAP framework. In distributed government systems, maintaining comprehensive audit trails is essential for compliance, security, and operational transparency. This library simplifies the process of creating and dispatching audit records by offering a fluent builder API for the CreateAuditRecordCommand, ensuring consistent audit record structure across all jEAP-based services. The library supports reliable audit record delivery through integration with the messaging-outbox pattern, guaranteeing that audit commands are persistently stored and eventually delivered even in the face of system failures. Consumer support enables downstream services to extract and process CreateAuditRecordCommand messages from the message stream, facilitating centralized audit log aggregation and analysis. By providing these building blocks, jEAP Audit helps Swiss government applications meet regulatory requirements while maintaining system reliability and consistency in audit record handling across microservices architectures.\n",
   "maintenance": "internal",
@@ -1406,7 +1406,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-audit.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-audit",
   "short_desc": "A jEAP library with a builder for the audit command and support for sending the command via messaging outbox",
@@ -1414,7 +1414,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "11.7.0"
+  "version": "11.8.0"
  },
  {
   "categories": [
@@ -1436,7 +1436,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-21T02:37:49Z",
+  "last_activity": "2026-09-24T02:38:16Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP BusinessProcessTest Orchestrator is a component for orchestrating business process tests. In this context, business process tests are defined as tests that validate the behavior of a business process, ensuring that it meets the specified requirements and functions correctly. In such tests, the orchestrator is responsible for coordinating the execution of the test cases, managing the flow of the test scenarios, and ensuring that test  agents provide the necessary data and responses. The orchestrator also provides reporting capabilities, integrating with the Zephyr JIRA plugin for test case management.\n",
   "maintenance": "internal",
@@ -1444,7 +1444,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-20",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-bptest-orchestrator.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-bptest-orchestrator",
   "short_desc": "The jEAP BusinessProcessTest Orchestrator is a component for orchestrating business process tests.",
@@ -1452,7 +1452,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "18.5.0"
+  "version": "18.6.0"
  },
  {
   "categories": [
@@ -1472,7 +1472,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:38:26Z",
+  "last_activity": "2026-09-24T02:38:29Z",
   "license": "Apache-2.0",
   "long_desc": "This library provides an interface for implementing a rest interface in a TestAgent or Simulator towards the orchestrator. Test agent implementations can use this library to implement the standardized REST interface required by the jEAP test orchestrator.\n",
   "maintenance": "internal",
@@ -1480,7 +1480,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-bptestagent-api.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-bptestagent-api",
   "short_desc": "This library provides an interface for implementing a REST interface in a TestAgent towards the jEAP test orchestrator.",
@@ -1488,7 +1488,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "10.4.0"
+  "version": "10.5.0"
  },
  {
   "categories": [
@@ -1547,7 +1547,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:37:41Z",
+  "last_activity": "2026-09-24T15:22:13Z",
   "license": "Apache-2.0",
   "long_desc": "jEAP Crypto is a library that provides client-side encryption functionality for data at-rest and is part of the jEAP  project. Client-side encryption is based on AES-256 GCM. jEAP Crypto also provides integration with Spring Boot, and simplifies the process of using different Key Management System implementations.\n",
   "maintenance": "internal",
@@ -1555,7 +1555,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-crypto.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-crypto",
   "short_desc": "jEAP library that provides client-side encryption functionality for data at-rest",
@@ -1563,7 +1563,7 @@
   "source": "CH/swiss",
   "stars": 1,
   "tier": "publiccode",
-  "version": "11.9.0"
+  "version": "11.10.0"
  },
  {
   "categories": [
@@ -1622,7 +1622,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-22T02:38:01Z",
+  "last_activity": "2026-09-24T02:39:27Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Deployment Log provides a centralized way to record and track deployments of components across different environments. Delivered as a Spring Boot\u2013based  service library, it offers REST APIs to log deployment events, update their status, and query deployment history. Integrated with Confluence, it automatically generates documentation showing the current state of all environments, deployment histories, and detailed deployment records including version, commit references, and linked Jira issues. It supports direct integration into jEAP CI/CD Pipelines. The Deployment Log enables transparency and traceability while reducing manual documentation effort. A service instance can be created by depending on this template, then adding specific configuration.\n",
   "maintenance": "internal",
@@ -1630,7 +1630,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-deploymentlog-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-deploymentlog-service",
   "short_desc": "Service template to trace the deployments of microservice on stages.",
@@ -1638,7 +1638,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "16.4.0"
+  "version": "16.5.0"
  },
  {
   "categories": [
@@ -1699,7 +1699,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:39:12Z",
+  "last_activity": "2026-09-24T02:38:55Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Doc Service is the central piece of the hybrid documentation approach of the jEAP platform:\ndocumentation lives next to the code, and the doc service turns it into one generated documentation site.\n\n## Purpose\n\nTeams write the documentation of their systems, components and libraries as Markdown in their Git\nrepositories. Their build pipelines validate it and upload it to the doc service, which stores it on S3\nobject storage and records its metadata. The doc service reads the architecture model from the jEAP Arch\nRepo Service, generates the architecture documentation from it, combines it with the uploaded documents into\none site per structure template, and serves that site to the browser.\n\n## Key Features\n\n- **Documentation next to the code:** teams document in their own repository, in the same review and pull\n  request process as the code itself\n- **One site from generated and hand-written content:** the architecture documentation and the documents a\n  team writes end up in one navigation, cross-linked\n- **A system may only change its own documentation:** the write role is granted per system, so a pipeline\n  can never publish into another system's documentation\n\n## Usage\n\n",
   "maintenance": "internal",
@@ -1707,7 +1707,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-doc-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-doc-service",
   "short_desc": "Receives, stores, generates and serves the documentation of systems, components and libraries.",
@@ -1715,7 +1715,7 @@
   "source": "CH/swiss",
   "stars": 1,
   "tier": "publiccode",
-  "version": "3.5.0"
+  "version": "3.6.0"
  },
  {
   "categories": [
@@ -1738,7 +1738,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-21T02:37:33Z",
+  "last_activity": "2026-09-24T15:22:37Z",
   "license": "Apache-2.0",
   "long_desc": "The Error Handling Service supports error handling patterns for errors, i.e. retry for temporary issues, persistence and retry/handling for permanent errors. It is designed to be used with applications based on the jEAP messaging framework. A service instance can be created by depending on this template, then adding specific configuration.\n",
   "maintenance": "internal",
@@ -1746,7 +1746,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-20",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-error-handling.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-error-handling",
   "short_desc": "Service template to support error handling patterns for errors, i.e. retry for temporary issues, persistence and retry/handling for permanent errors.",
@@ -1754,7 +1754,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "24.5.0"
+  "version": "24.6.0"
  },
  {
   "categories": [
@@ -1819,7 +1819,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:37:25Z",
+  "last_activity": "2026-09-24T08:45:30Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Governance Service is a compliance monitoring solution designed to help \ndevelopment teams and administrators maintain adherence to organizational policies and best practices \nacross microservices and systems within the jEAP ecosystem. A service instance can be created by depending on \nthis template,then adding specific configuration and extending it with plugin implementations.\n\n## Purpose\n\nThis service acts as a centralized compliance dashboard and policy enforcement framework, providing \nvisibility into compliance status across all managed services. A scheduled evaluation process \nregularly checks services against defined rules and reports on compliance violations.\n\n## Key Features\n\n- **Developer Feedback:** Teams receive clear information on whether their services comply with \n  organizational policies\n- **Flexible Rule Management:** Administrators can temporarily deactivate individual rules for \n  specific systems or services when exceptions are needed\n- **Extensible Rules Engine:** New compliance rules can be easily added through a plugin mechanism, \n  allowing teams to provide their own custom rules\n\n## Architecture\n\nThe service follows a modular, extensible archite",
   "maintenance": "internal",
@@ -1827,7 +1827,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-governance-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-governance-service",
   "short_desc": "Service template to provide a quick overview of system and service compliance with defined policies.",
@@ -1835,7 +1835,7 @@
   "source": "CH/swiss",
   "stars": 1,
   "tier": "publiccode",
-  "version": "9.3.0"
+  "version": "9.4.1"
  },
  {
   "categories": [
@@ -1857,7 +1857,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:38:54Z",
+  "last_activity": "2026-09-24T02:38:58Z",
   "license": "Apache-2.0",
   "long_desc": "This library allows teams to bootstrap new projects by generating complete, ready-to-use codebases from existing project templates stored in Git repositories. Unlike typical initializer tools, it bases the generated output on real, tested, and version-controlled projects. Templates can evolve independently of the initializer, benefit from their own CI/CD pipelines, and be expanded with new options via configuration.\n",
   "maintenance": "internal",
@@ -1865,7 +1865,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-initializer.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-initializer",
   "short_desc": "A library for generating a ready-to-use project skeleton from self-contained Git-hosted templates.",
@@ -1873,7 +1873,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "10.4.0"
+  "version": "10.5.0"
  },
  {
   "categories": [
@@ -2008,7 +2008,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-19T02:38:20Z",
+  "last_activity": "2026-09-24T02:39:06Z",
   "license": "Apache-2.0",
   "long_desc": "jeap-mcp-server is a Spring Boot/jEAP service that exposes an MCP server for agentic development of jEAP applications. It provides a fixed set of `@Tool`-annotated Java methods over HTTP MCP (Spring AI, Streamable HTTP), letting AI coding agents look up jEAP source, examples, and platform documentation directly. This repository is the reusable core (jeap-mcp-service-web); platform-specific deployment repos depend on it and build their own deployable images.\n",
   "maintenance": "internal",
@@ -2016,7 +2016,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-18",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-mcp-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-mcp-service",
   "short_desc": "A Spring Boot/jEAP service that exposes an MCP server for agentic development of jEAP applications",
@@ -2024,7 +2024,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "2.4.0"
+  "version": "2.5.0"
  },
  {
   "categories": [
@@ -2046,7 +2046,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:37:58Z",
+  "last_activity": "2026-09-24T02:38:02Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP message contract service is used to manage messaging contracts between producers and consumers of avro messages. It is used in compatibility checks upon deployment of a service, similar to consumer-driven contract testing, but for messaging. A service instance can be created by depending on this template, then adding specific configuration.\n",
   "maintenance": "internal",
@@ -2054,7 +2054,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-message-contract-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-message-contract-service",
   "short_desc": "Service template to manage messaging contracts used in compatibility checks upon deployment of a service, similar to consumer-driven contract testing.",
@@ -2062,7 +2062,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.5.0"
+  "version": "12.6.0"
  },
  {
   "categories": [
@@ -2086,7 +2086,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:38:31Z",
+  "last_activity": "2026-09-24T15:22:54Z",
   "license": "Apache-2.0",
   "long_desc": "The Message Exchange Service (MES) is a reusable jEAP-based microservice designed for secure, asynchronous file-transfer-style communication between internal systems and external business partners. It provides a simple REST API for sending, receiving, and retrieving messages, with built-in support for partner-specific roles and tenant security. The Message Exchange Service manages message storage in databases and S3 object storage, includes configurable housekeeping, and offers integration with AWS-based malware scanning to block infected messages before delivery. It exposes detailed operational metrics for HTTP, database, and S3 operations to facilitate monitoring and ensures consistent, standardized deployment aligned with other jEAP microservices.  A service instance can be created by depending on this template, then adding specific configuration.\n",
   "maintenance": "internal",
@@ -2094,7 +2094,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-message-exchange-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-message-exchange-service",
   "short_desc": "Service template for exchanging incoming and outgoing messages with external parties, using an HTTP-based messagebox API.",
@@ -2102,7 +2102,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "16.3.0"
+  "version": "16.4.0"
  },
  {
   "categories": [
@@ -2122,7 +2122,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:37:58Z",
+  "last_activity": "2026-09-24T02:38:01Z",
   "license": "Apache-2.0",
   "long_desc": "This message type registry contains definitions of jEAP message types produced or consumed by jEAP services /  libraries. This is used for example by the jEAP Process Context Service, the jEAP Message Exchange Service and the jEAP Reaction Observer Service.\n",
   "maintenance": "internal",
@@ -2165,7 +2165,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:37:34Z",
+  "last_activity": "2026-09-24T15:22:10Z",
   "license": "Apache-2.0",
   "long_desc": "jEAP Messaging is a Spring Kafka\u2013based library that standardizes messaging between microservices using well-defined, strongly typed message formats. Message types are specified via Avro schemas and descriptors, ensuring schema consistency and interoperability across services. The library provides Avro serialization to Kafka records, pre-configured producer and consumer beans, and Java annotations to declare message type usage on topics. It integrates seamlessly with the jEAP error handling service to handle failed messages, guaranteeing no message is lost. Designed for both events and commands, jEAP Messaging enforces clear contracts, supports robust error recovery, and accelerates development of reliable, maintainable event-driven systems.\n",
   "maintenance": "internal",
@@ -2173,7 +2173,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-messaging.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-messaging",
   "short_desc": "jEAP Messaging is a library to handle messaging using kafka with well-defined message types.",
@@ -2181,7 +2181,7 @@
   "source": "CH/swiss",
   "stars": 1,
   "tier": "publiccode",
-  "version": "19.7.0"
+  "version": "19.8.0"
  },
  {
   "categories": [
@@ -2202,7 +2202,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:38:04Z",
+  "last_activity": "2026-09-24T15:22:16Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Messaging Outbox is a library providing a robust implementation of the Transactional Outbox pattern for jEAP-based applications. It ensures reliable message delivery by persisting outgoing messages in the same database transaction as the associated business data changes, and dispatching them only after a successful commit. This eliminates the need for distributed transactions while guaranteeing consistency, even if the messaging system is temporarily unavailable. The outbox integrates with Kafka and SQL databases via JPA/JDBC, supports both immediate post-commit sending and scheduled background relay processing, and includes mechanisms for retrying or resending failed messages. It offers configurable housekeeping, retention policies, and extensive operational metrics through Micrometer to support monitoring and alerting.\n",
   "maintenance": "internal",
@@ -2210,7 +2210,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-messaging-outbox.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-messaging-outbox",
   "short_desc": "This library is an implementation of the [Transactional outbox pattern](https://microservices.io/patterns/data/transactional-outbox.html)",
@@ -2218,7 +2218,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "18.8.0"
+  "version": "18.9.0"
  },
  {
   "categories": [
@@ -2239,7 +2239,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:38:24Z",
+  "last_activity": "2026-09-24T15:22:35Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Sequential Inbox is a library for microservices that require strict ordering of message processing. It consumes messages from Kafka topics and applies a sequence configuration, defined via YAML, to determine the exact order in which messages with the same contextId should be processed. This allows complex workflows, such as order processing, to maintain data consistency and business rules even when events arrive out of order. The library supports fine-grained sequencing by message type and subtype, release conditions based on predecessor events, and multi-cluster Kafka consumption. It requires the microservice to define the sequencing data model and integrates seamlessly into jEAP-based messaging services.\n",
   "maintenance": "internal",
@@ -2247,7 +2247,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-messaging-sequential-inbox.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-messaging-sequential-inbox",
   "short_desc": "This library lets microservices control message processing order, even when it differs from the order messages are received.",
@@ -2255,7 +2255,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "22.2.0"
+  "version": "22.3.0"
  },
  {
   "categories": [
@@ -2275,7 +2275,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:38:40Z",
+  "last_activity": "2026-09-24T02:38:44Z",
   "license": "Apache-2.0",
   "long_desc": "The jeap-oauth-mock-server is an OpenId Connect / OAuth2 Mock Server to use in automated tests and for local development environments where no real OAuth2 provider is available. The mock server is under no circumstances   intended to be used in production environments and only provides very limited security features.\n",
   "maintenance": "internal",
@@ -2283,7 +2283,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-oauth-mock-server.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-oauth-mock-server",
   "short_desc": "Service which provides a configurable OAuth2/OpenID-Connect server for local development and testing.",
@@ -2291,7 +2291,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "11.3.0"
+  "version": "11.4.0"
  },
  {
   "categories": [
@@ -2312,7 +2312,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:39:09Z",
+  "last_activity": "2026-09-24T15:23:12Z",
   "license": "Apache-2.0",
   "long_desc": "jEAP OpenAPI Specification Publisher is a library based on Spring Boot to publish the OpenAPI specification of a jEAP application to the jEAP Architecture Repository Service.\n* If activated by providing a valid `jeap.archrepo.url` property, it will\n   automatically publish the OpenAPI specification to the jEAP Architecture Repository Service.\n* The request to the Archrepo service will be authenticated using OAuth2. By default, an oauth client registration named\n  `archrepo-client` is expected to be configured under `spring.security.oauth2.client.registration`.\n* The OpenAPI specification will be read and published at application startup, on a best-effort basis. The OpenAPI specification upload\n   process is designed to have the least possible impact on application, i.e. it will not block the application or\n   cause startup to fail if the upload fails.\n",
   "maintenance": "internal",
@@ -2320,7 +2320,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-open-api-publisher-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-open-api-publisher-starter",
   "short_desc": "Publishes a jEAP application's OpenAPI specification to the jEAP Architecture Repository Service at startup.",
@@ -2328,7 +2328,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "8.9.0"
+  "version": "8.10.0"
  },
  {
   "categories": [
@@ -2351,7 +2351,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:40:25Z",
+  "last_activity": "2026-09-24T15:24:09Z",
   "license": "Apache-2.0",
   "long_desc": "jeap-opensearch-client-starter auto-configures an OpenSearchClient and a SearchItemClient that lets jEAP application services query OpenSearch indices defined by IndexType descriptors. It supports both plain HTTP transport (Apache HttpClient 5) and AWS-signed transport (AwsSdk2Transport with DefaultCredentialsProvider), selected automatically based on whether an AWS signing region is configured. Access is restricted by jEAP roles declared on each IndexType, and results are deserialized into the strongly-typed data class of the matching IndexType. The SearchItemClient executes multi-version searches across ISM rollover indices, and UserSearchItemAuthorization integrates with jEAP security for user-based role checks.\n",
   "maintenance": "internal",
@@ -2359,7 +2359,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-client-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-client-starter",
   "short_desc": "Spring Boot starter for type-safe, authorization-aware OpenSearch read access in jEAP applications",
@@ -2367,7 +2367,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "3.10.0"
+  "version": "3.11.0"
  },
  {
   "categories": [
@@ -2472,7 +2472,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:38:24Z",
+  "last_activity": "2026-09-24T15:23:51Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP OpenSearch Index Writer Service bridges Kafka event streams and OpenSearch indices using a declarative message configuration. Each message binds an event type and topic to one or more operations, where each operation defines an index type, an index operation (UPSERT or DELETE), a SearchItem Provider URI, and a reference provider that extracts the business object reference (OriginType, Id, optional Version) from the event.\nOperations can be guarded by conditions and feature flags, ensuring that indexing only occurs when relevant. Before writing, the service validates that the SearchItem returned by the provider is compatible with the target IndexType definition. The service manages search item timestamps and minor version automatically, and always writes via the IndexWriteAlias to support platform-managed index rotation.\nOn startup, the service validates index mappings against the IndexType definitions, applying compatible updates automatically and refusing to start when an incompatible deviation is detected. Failed index operations are forwarded to the jEAP error handling service to ensure no event is lost.\n",
   "maintenance": "internal",
@@ -2480,7 +2480,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-index-writer-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-index-writer-service",
   "short_desc": "Service template to provide event-driven indexing of search items into OpenSearch based on a declarative message and operation configuration.",
@@ -2488,7 +2488,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "6.4.0"
+  "version": "6.5.0"
  },
  {
   "categories": [
@@ -2511,7 +2511,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:40:38Z",
+  "last_activity": "2026-09-24T15:24:24Z",
   "license": "Apache-2.0",
   "long_desc": "jeap-opensearch-searchitem-api provides the SearchItemContainer model and a ready-to-use Spring MVC REST controller (SearchItemsController) for exposing indexed search items via a GET /index-api/searchitems endpoint. The endpoint accepts index_type, origin_id, and an optional origin_version query parameter, enforces role-based access control (role searchitem:read), and returns the SearchItem JSON body together with index-major-version and index-minor-version response headers. Applications implement the SearchItemsProvider interface to supply items from their OpenSearch indices. The multi-module layout separates the lightweight model (SearchItemContainer) from the Spring MVC controller so that providers can depend on the model without pulling in the full web layer.\n",
   "maintenance": "internal",
@@ -2519,7 +2519,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-searchitem-api.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-searchitem-api",
   "short_desc": "Spring MVC REST API and model for exposing indexed search items from OpenSearch in jEAP applications",
@@ -2527,7 +2527,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "3.10.0"
+  "version": "3.11.0"
  },
  {
   "categories": [
@@ -2549,7 +2549,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:37:22Z",
+  "last_activity": "2026-09-24T02:37:24Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Process Archive Reader Library enables clients to access and read artifacts stored in the jEAP Process Archive on an S3-compatible object storage directly as typed objects. It automatically retrieves the writer schema from the archive and verifies compatibility with the reader schema of the generated class, ensuring safe deserialization. The library supports reading specific object versions, handling encrypted artifacts via a DecryptingObjectStorageRepository, and integrating with jEAP Crypto for key management. It requires an AWS S3Client for storage access, which can be auto-configured or instantiated with explicit connection settings. This library simplifies interaction with archived process data, providing a type-safe and secure way to restore historical objects for further processing or analysis.\n",
   "maintenance": "internal",
@@ -2557,7 +2557,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-process-archive-reader.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-process-archive-reader",
   "short_desc": "A library for retrieving and deserializing objects from a jEAP process archive bucket on S3",
@@ -2565,7 +2565,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "9.4.0"
+  "version": "9.5.0"
  },
  {
   "categories": [
@@ -2586,7 +2586,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:37:42Z",
+  "last_activity": "2026-09-24T15:22:14Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Process Archive Service (PAS) is a service template library that provides a way to archive artifacts pertaining to a process. Such artifacts might be required to be archived for audit purposes or due to business requirements. Process artifact archival is triggered by domain events, and artifacts can either be derived from the event's payload or fetched from a business service using its REST API. A service instance can be created by depending on this  template,then adding specific configuration and extending it with plugin implementations.\n",
   "maintenance": "internal",
@@ -2594,7 +2594,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-process-archive-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-process-archive-service",
   "short_desc": "Service template to archive process artifacts for audit or business needs.",
@@ -2602,7 +2602,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "24.3.0"
+  "version": "24.5.0"
  },
  {
   "categories": [
@@ -2625,7 +2625,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-21T02:37:57Z",
+  "last_activity": "2026-09-24T15:23:18Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Process Context Service enables microservices to share and maintain a distributed view of long-running business processes. Instead of using a central process engine, it applies a choreography-based approach where process definitions are modeled as JSON templates. These templates specify tasks, correlations, and completion conditions. The service observes domain events from Kafka, correlates them to process instances, updates process state, and triggers events when processes are started or completed. It also supports advanced features such as optional and conditional task instantiation, process data correlation, relation tracking between business objects, and snapshot creation for auditability. Integrated with jEAP Messaging, it provides both runtime monitoring via a UI and REST APIs, and generates process events for downstream consumers, enabling transparency, traceability, and analytics across distributed systems.  A service instance can be created by depending on this template, then adding specific configuration and extending  it with plugin implementations.\n",
   "maintenance": "internal",
@@ -2633,7 +2633,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-process-context-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-process-context-service",
   "short_desc": "Service template library for observing distributed business processes in event-driven architectures without central orchestration.",
@@ -2641,7 +2641,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "28.3.0"
+  "version": "28.4.0"
  },
  {
   "categories": [
@@ -2662,7 +2662,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-16T23:36:05Z",
+  "last_activity": "2026-09-24T13:22:40Z",
   "license": "MIT",
   "long_desc": "jeap-project-rag is a Rust-based Model Context Protocol (MCP) server that gives AI assistants Retrieval-Augmented Generation (RAG) capabilities for understanding the jEAP codebase: it creates semantic embeddings of code files and stores them in a local vector database for fast, targeted search. This repository packages the upstream open-source project-rag server (github.com/Brainwires/project-rag) for use within the jEAP platform.\n",
   "maintenance": "internal",
@@ -2778,7 +2778,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:40:55Z",
+  "last_activity": "2026-09-24T15:24:42Z",
   "license": "Apache-2.0",
   "long_desc": "jEAP Reaction Observer is a library that detects, tracks, and documents how microservices respond to incoming events such as messages, API requests, or scheduled triggers. It enables automated observation of runtime behaviour, capturing both the type and frequency of reactions across distributed systems. The library emits Reaction Identified Events when a new behavioural pattern is first observed, and Reactions Observed Events to provide aggregated statistics over time. This data forms the foundation for system behaviour documentation, helping architects and developers understand service dynamics without relying on manual documentation. By integrating with the jEAP ArchRepo, the Reaction Observer enriches the generated documentation with insightful runtime behaviour patterns.\n",
   "maintenance": "internal",
@@ -2786,7 +2786,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-reaction-observer.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-reaction-observer",
   "short_desc": "A jEAP library for tracking how microservices react to messages, enabling automated runtime behaviour analysis and documentation",
@@ -2794,7 +2794,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "11.7.0"
+  "version": "11.8.0"
  },
  {
   "categories": [
@@ -2817,7 +2817,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:38:56Z",
+  "last_activity": "2026-09-24T15:25:15Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Reaction Observation Service collects, stores, and analyzes runtime behaviour data produced by the jEAP Reaction Observer library. It consumes Reaction Identified Events and Reactions Observed Events from multiple microservices, aggregates the captured triggers, actions, and reactions, and makes this information accessible through a REST API for consumption by the jEAP Architecture Repository Service. The Arch Repo Service will use this data to provide an automated documentation of the interactions  between microservices, enabling better understanding and management of the system's architecture.\n",
   "maintenance": "internal",
@@ -2825,7 +2825,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-reaction-observer-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-reaction-observer-service",
   "short_desc": "The jEAP Reaction Observation Service records and aggregates triggers, actions, and reactions from events and makes the data available via a REST API.",
@@ -2833,7 +2833,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.4.0"
+  "version": "12.5.0"
  },
  {
   "categories": [
@@ -2897,7 +2897,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-21T02:37:51Z",
+  "last_activity": "2026-09-24T02:38:15Z",
   "license": "Apache-2.0",
   "long_desc": "openrewrite.org recipes for migrating apps based on the jEAP Blueprint Microservices. Used by the jEAP CLI to automated Spring Boot and Spring Framework version migrations, as well as other code refactorings.\n",
   "maintenance": "internal",
@@ -2905,7 +2905,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-20",
+  "released": "2026-09-23",
   "repo": "https://github.com/jeap-admin-ch/jeap-rewrite-recipes.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-rewrite-recipes",
   "short_desc": "openrewrite.org recipes for migrating apps based on the jEAP Blueprint Microservices",
@@ -2913,7 +2913,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "3.0.0"
+  "version": "4.0.0"
  },
  {
   "categories": [
@@ -2937,7 +2937,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:38:41Z",
+  "last_activity": "2026-09-24T15:22:54Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Server-Sent Events (SSE) library enables real-time, server-to-client event streaming over HTTP using the SSE standard. It provides a configurable web endpoint where UI clients can subscribe to receive events such as resource creation, updates, deletions, and periodic heartbeat signals. Multiple backend instances are synchronized via Kafka to ensure all connected clients receive all relevant events, regardless of which instance initiated the change. The library offers flexible authentication options, including insecure, simple role-based, and semantic resource/operation-based access control. It exposes a simple business logic API (`ResourceMutationService`) for publishing events and handles dispatch to all listeners automatically. With configurable heartbeat rates, emitter timeouts, and Kafka topics, it supports scalable, efficient, and secure integration of real-time updates into jEAP-based microservices and UI applications.\n",
   "maintenance": "internal",
@@ -2945,7 +2945,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-server-sent-events.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-server-sent-events",
   "short_desc": "This library provides a way to send real-time events from the server to the client using Server-Sent Events (SSE).",
@@ -2953,7 +2953,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "13.7.0"
+  "version": "13.8.0"
  },
  {
   "categories": [
@@ -3088,7 +3088,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T05:09:04Z",
+  "last_activity": "2026-09-24T15:22:35Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Spring Boot Parent project provides a standardized foundation for building applications with Spring Boot and Spring Cloud. It delivers preconfigured dependency and version management for jEAP components, ensures consistent Maven repository configuration, and simplifies project setup. By consolidating common configurations and dependencies into a single parent POM, it streamlines development, improves maintainability, and promotes best practices across the jEAP ecosystem.\n",
   "maintenance": "internal",
@@ -3096,7 +3096,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-parent.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-parent",
   "short_desc": "A parent project for jEAP, based on Spring Boot and Spring Cloud",
@@ -3104,7 +3104,7 @@
   "source": "CH/swiss",
   "stars": 1,
   "tier": "publiccode",
-  "version": "41.9.0"
+  "version": "41.10.0"
  },
  {
   "categories": [
@@ -3168,7 +3168,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:38:05Z",
+  "last_activity": "2026-09-24T15:23:05Z",
   "license": "Apache-2.0",
   "long_desc": "jEAP Spring Boot Starters provide ready-to-use defaults and auto-configs so developers can focus on business logic instead of infrastructure. Each starter addresses a specific concern: logging, feature flags, monitoring, security, configuration and more.\n",
   "maintenance": "internal",
@@ -3176,7 +3176,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-starters.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-starters",
   "short_desc": "Spring Boot starters that pre-configure and standardise logging, monitoring, security and other cross-cutting concerns for jEAP-based apps",
@@ -3184,7 +3184,7 @@
   "source": "CH/swiss",
   "stars": 4,
   "tier": "publiccode",
-  "version": "25.9.0"
+  "version": "25.10.0"
  },
  {
   "categories": [
@@ -3243,7 +3243,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-23T02:41:21Z",
+  "last_activity": "2026-09-24T15:24:57Z",
   "license": "Apache-2.0",
   "long_desc": "The starter applies a persistent retry policy to Spring Modulith event publications and integrates exhausted failures with the jEAP Error Handling Service. Operators can retry or discard an individual publication through the existing error-handling workflow.\n",
   "maintenance": "internal",
@@ -3251,7 +3251,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-modulith-error-handling-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-modulith-error-handling-starter",
   "short_desc": "A Spring Boot starter for handling failed Spring Modulith event publications.",
@@ -3259,7 +3259,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "1.13.0"
+  "version": "1.14.0"
  },
  {
   "categories": [
@@ -3279,7 +3279,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jeap-admin-ch/jeap",
-  "last_activity": "2026-09-18T02:37:33Z",
+  "last_activity": "2026-09-24T02:37:34Z",
   "license": "Apache-2.0",
   "long_desc": "This repository contains message type definitions used by integration tests in the jEAP messaging module.  It is not intended for productive use and should not serve as a template for a message type registry.\n",
   "maintenance": "internal",
@@ -3354,7 +3354,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:36:58Z",
+  "last_activity": "2026-09-24T03:36:58Z",
   "license": "Apache-2.0",
   "long_desc": "JME Archive Type Registry is a structured Git repository for managing archive data schemas. It keeps published archive types immutable, supports Avro-based schema definitions, and enables generated Java bindings and build-time validation for archive data handled by the Process Archive Service.\n",
   "maintenance": "internal",
@@ -3392,7 +3392,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:37:57Z",
+  "last_activity": "2026-09-24T03:38:21Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Architecture Repository (archrepo) is a service for storing and displaying architecture documentation of software systems, including database schemas, OpenAPI specifications, and system relationships. It is delivered as a jEAP library (jeap-archrepo-web) that development teams instantiate per environment. This repository provides an example of how to set up and configure the Architecture Repository service for local development. It contains the following modules: * jme-archrepo-service: An instance of the Architecture Repository service * jme-archrepo-auth-scs: An instance of the OAuth mock server to access the Architecture Repository\n",
   "maintenance": "internal",
@@ -3400,7 +3400,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-archrepo-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-archrepo-example",
   "short_desc": "Example project demonstrating how to deploy the jEAP Architecture Repository.",
@@ -3408,7 +3408,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "13.1.0"
+  "version": "14.0.0"
  },
  {
   "categories": [
@@ -3431,7 +3431,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:38:39Z",
+  "last_activity": "2026-09-24T03:39:13Z",
   "license": "Apache-2.0",
   "long_desc": "This example project demonstrates how to use the jEAP business process test libraries jeap-bptest-orchestrator and jeap-bptestagent-api. It contains a small example business process spanning two microservices (an order service and a billing service), two test agents that drive and verify these services, and a business process test orchestrator instance that coordinates the test agents to run an end-to-end business process test across the services.\n",
   "maintenance": "internal",
@@ -3439,7 +3439,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-bptest-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-bptest-example",
   "short_desc": "Example project demonstrating how to run jEAP business process tests with the jEAP Business Process Test Orchestrator.",
@@ -3447,7 +3447,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "15.1.0"
+  "version": "16.0.0"
  },
  {
   "categories": [
@@ -3470,7 +3470,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:36:46Z",
+  "last_activity": "2026-09-24T03:36:46Z",
   "license": "Apache-2.0",
   "long_desc": "The jme-cdct-consumer-2-example is a jEAP microservice example. It demonstrates consumer-driven contract testing with Pact in a consumer using the Pact Java legacy DSL. The example includes tests that generate pacts based on the interactions defined by the tests. These pacts are then published to a Pact Broker.\n",
   "maintenance": "internal",
@@ -3478,7 +3478,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-consumer-2-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-consumer-2-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a consumer using the Pact Java legacy DSL.",
@@ -3486,7 +3486,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "11.5.0"
+  "version": "11.6.0"
  },
  {
   "categories": [
@@ -3508,7 +3508,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:36:33Z",
+  "last_activity": "2026-09-24T03:36:33Z",
   "license": "Apache-2.0",
   "long_desc": "The jme-cdct-consumer-example is a jEAP microservice example. It demonstrates consumer-driven contract testing with Pact in a consumer. The example includes tests that generate pacts based on the interactions defined by the tests. These pacts are then published to a Pact Broker.\n",
   "maintenance": "internal",
@@ -3516,7 +3516,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-consumer-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-consumer-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a consumer.",
@@ -3524,7 +3524,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "13.1.0"
+  "version": "14.0.0"
  },
  {
   "categories": [
@@ -3547,7 +3547,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:36:20Z",
+  "last_activity": "2026-09-24T03:36:20Z",
   "license": "Apache-2.0",
   "long_desc": "The jme-cdct-provider-example is a jEAP microservice example. It demonstrates consumer-driven contract testing with Pact in a provider. The example includes a test that retrieves all relevant pacts from a Pact Broker and verifies them against the provider implementation. This test checks if the provider meets all expectations defined by its consumers and reports the verification results back to the Pact Broker.\n",
   "maintenance": "internal",
@@ -3555,7 +3555,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-provider-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-provider-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a provider.",
@@ -3563,7 +3563,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "16.1.0"
+  "version": "17.0.0"
  },
  {
   "categories": [
@@ -3585,7 +3585,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:37:44Z",
+  "last_activity": "2026-09-24T03:38:08Z",
   "license": "Apache-2.0",
   "long_desc": "This project demonstrates consumer-driven contract testing with segregated APIs in a Java-based microservice architecture. The provider service exposes two separate APIs, each configured with its own dedicated Pact provider for independent contract verification. The example includes automated verification tests that retrieve all relevant consumer contracts from a Pact Broker,  validate them against the provider's implementation, and publish the verification results back to the broker.  This ensures the provider fulfills all consumer expectations and maintains contract compliance across both APIs.\n",
   "maintenance": "internal",
@@ -3593,7 +3593,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-segregated-consumer-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-segregated-consumer-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pacts in a consumer (two API of same provider).",
@@ -3601,7 +3601,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "13.1.0"
+  "version": "14.0.0"
  },
  {
   "categories": [
@@ -3624,7 +3624,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:37:31Z",
+  "last_activity": "2026-09-24T03:37:54Z",
   "license": "Apache-2.0",
   "long_desc": "The jme-cdct-segregated-provider-example is a jEAP microservice that demonstrates consumer-driven contract  testing using Pact for a provider service exposing two distinct APIs.  The example includes automated verification tests that retrieve all relevant consumer contracts from a Pact Broker,  validate them against the provider's implementation, and publish the verification results back to the broker.  This ensures the provider fulfills all consumer expectations and maintains contract compliance across both APIs.\n",
   "maintenance": "internal",
@@ -3632,7 +3632,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-segregated-provider-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-segregated-provider-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a provider with segregated APIs.",
@@ -3640,7 +3640,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "16.1.0"
+  "version": "17.0.0"
  },
  {
   "categories": [
@@ -3660,7 +3660,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:38:25Z",
+  "last_activity": "2026-09-24T03:38:59Z",
   "license": "Apache-2.0",
   "long_desc": "This example project provides a comprehensive guide on how to utilize the jEAP Crypto Library  within your applications. It covers setup, configuration, and usage scenarios to help developers  quickly get started and leverage the full capabilities of the library.\n",
   "maintenance": "internal",
@@ -3668,7 +3668,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-crypto-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-crypto-example",
   "short_desc": "Example project demonstrating how to use the jEAP Crypto Library.",
@@ -3676,7 +3676,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "8.1.0"
+  "version": "9.0.0"
  },
  {
   "categories": [
@@ -3696,7 +3696,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-22T03:36:52Z",
+  "last_activity": "2026-09-24T03:38:33Z",
   "license": "Apache-2.0",
   "long_desc": "This example project provides a comprehensive guide on how to integrate and utilize the jEAP DeploymentLog  Service within your applications. It covers setup, configuration, and usage scenarios to help developers  quickly get started and leverage the full capabilities of the service.\n",
   "maintenance": "internal",
@@ -3704,7 +3704,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-deploymentlog-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-deploymentlog-example",
   "short_desc": "Example project demonstrating how to use the jEAP DeploymentLog Service.",
@@ -3712,7 +3712,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.1.0"
+  "version": "13.0.0"
  },
  {
   "categories": [
@@ -3735,7 +3735,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-20T03:38:08Z",
+  "last_activity": "2026-09-24T03:41:48Z",
   "license": "Apache-2.0",
   "long_desc": "This repository shows how to create and run an instance of the jEAP Doc Service, the service that receives the documentation of systems, components and libraries from their build pipelines, stores it and serves it as a documentation site. An instance consists of configuration only, and this example shows that configuration together with everything needed to run and test it:\n* jme-doc-service: the doc service instance and its configuration for a local machine and for the build.\n* jme-doc-auth-scs: an instance of the jEAP OAuth mock server, issuing the tokens a doc pipeline holds.\n* jme-doc-test: an integration test that starts both services and uploads a documentation set end to end.\n* docker: the database and the object storage the doc service needs, including the creation of its bucket.\n",
   "maintenance": "internal",
@@ -3743,7 +3743,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-20",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-doc-service-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-doc-service-example",
   "short_desc": "Example project showing how to run an instance of the jEAP Doc Service.",
@@ -3751,7 +3751,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "6.6.0"
+  "version": "8.0.0"
  },
  {
   "categories": [
@@ -3852,7 +3852,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:40:13Z",
+  "last_activity": "2026-09-24T03:41:33Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP JWE starter provides transparent JSON Web Encryption (JWE) based end-to-end encryption for jEAP Spring Boot services, backed by HashiCorp Vault for key management. Its frontend companion, the jEAP JWE client, is an Angular library that transparently encrypts requests and decrypts responses in the browser. This repository provides a self-contained system (SCS) example showing both libraries working together with jEAP security (OAuth2) and the jEAP web configuration starter. It contains the following modules: * jme-jwe-scs: A self-contained system consisting of a Spring Boot backend using the\n  jEAP JWE starter and an Angular/Oblique frontend using the jEAP JWE client\n* jme-jwe-auth-scs: An instance of the OAuth mock server used as authorization server * jme-jwe-test: Automated integration tests covering the local Docker Compose setup\n",
   "maintenance": "internal",
@@ -3860,7 +3860,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-jwe-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-jwe-example",
   "short_desc": "Example project demonstrating transparent JWE end-to-end encryption with the jEAP JWE starter and client.",
@@ -3868,7 +3868,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.1.0"
+  "version": "13.0.0"
  },
  {
   "categories": [
@@ -3891,7 +3891,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-21T03:36:52Z",
+  "last_activity": "2026-09-24T03:37:23Z",
   "license": "Apache-2.0",
   "long_desc": "jme-message-contract-service is the JME instance of the jEAP Message Contract Service. It provides a Spring Boot backend API for registering producer and consumer message contracts for application versions, storing them in PostgreSQL, recording deployments, and checking whether deployed applications are compatible before or during rollout.\n",
   "maintenance": "internal",
@@ -3899,7 +3899,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-message-contract-service.git",
   "repo_key": "github.com/jme-admin-ch/jme-message-contract-service",
   "short_desc": "Backend service for managing JME message contracts and deployment compatibility checks.",
@@ -3907,7 +3907,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "7.0.0"
+  "version": "8.0.0"
  },
  {
   "categories": [
@@ -3929,7 +3929,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-21T03:39:12Z",
+  "last_activity": "2026-09-24T03:39:42Z",
   "license": "Apache-2.0",
   "long_desc": "This example project demonstrates how to use the jEAP Message Exchange Service, including setup,  configuration, and integration with other components.\n",
   "maintenance": "internal",
@@ -3937,7 +3937,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-23",
   "repo": "https://github.com/jme-admin-ch/jme-message-exchange-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-message-exchange-example",
   "short_desc": "Example project demonstrating the usage of the jEAP Message Exchange Service.",
@@ -3945,7 +3945,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.0.0"
+  "version": "12.1.0"
  },
  {
   "categories": [
@@ -3965,7 +3965,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:37:10Z",
+  "last_activity": "2026-09-24T03:37:11Z",
   "license": "Apache-2.0",
   "long_desc": "This message type registry contains definitions of JME message types produced or consumed by JME services. This is used for example by the JME Process Context Example and the JME Message Exchange Example.\n",
   "maintenance": "internal",
@@ -4003,7 +4003,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-22T03:37:13Z",
+  "last_activity": "2026-09-24T03:39:29Z",
   "license": "Apache-2.0",
   "long_desc": "This example shows how to use the jEAP Messaging Library with Kafka for publishing/subscribing to events and for sending/receiving commands. It demonstrates the transactional outbox pattern, the sequential inbox, idempotent message handling, message signing, dead letter topic handling and backward-compatible schema evolution. The repository contains the following modules: * jme-messaging-sender-service: sends commands * jme-messaging-receiverpublisher-service: receives commands and publishes events * jme-messaging-receiverpublisher-outbox-service: same as receiverpublisher-service but publishes\n  events using the transactional outbox\n* jme-messaging-subscriber-service: subscribes to events and stores them locally * jme-messaging-error-scs: handles errors if an event or command could not be processed * jme-messaging-self-messaging-service: shows how a message type can be evolved for a microservice\n  that sends messages to itself\n* jme-messaging-auth-scs: authenticates users to access the UI of jme-messaging-error-scs * jme-messaging-roguesender-service: sends events directly to the error topic to test error handling * jme-messaging-dltsubscriber-service: subscribes to messages in th",
   "maintenance": "internal",
@@ -4011,7 +4011,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-23",
   "repo": "https://github.com/jme-admin-ch/jme-messaging-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-messaging-example",
   "short_desc": "Example project demonstrating how to use the jEAP Messaging Library with Kafka.",
@@ -4019,7 +4019,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.0.0"
+  "version": "12.1.0"
  },
  {
   "categories": [
@@ -4042,7 +4042,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:38:13Z",
+  "last_activity": "2026-09-24T03:38:46Z",
   "license": "Apache-2.0",
   "long_desc": "This repository shows how to set up logging, distributed tracing and technical monitoring for jEAP Blueprint Microservices. It consists of three services and a local OpenTelemetry backend: * jme-log-service: An example of how to generate structured, trace-correlated logs. * jme-tracing-service: An example of how to use distributed tracing to correlate log lines across services,\n  calling jme-log-service to demonstrate cross-service trace propagation.\n* jme-prometheus-service: An example of how to integrate a Prometheus endpoint for technical monitoring,\n  including custom counters, gauges, distribution summaries and timers.\n",
   "maintenance": "internal",
@@ -4050,7 +4050,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-monitor-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-monitor-example",
   "short_desc": "Example project demonstrating logging, distributed tracing and Prometheus metrics for jEAP microservices.",
@@ -4058,7 +4058,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "8.1.0"
+  "version": "9.0.0"
  },
  {
   "categories": [
@@ -4078,7 +4078,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:38:58Z",
+  "last_activity": "2026-09-24T03:40:07Z",
   "license": "Apache-2.0",
   "long_desc": "This example project demonstrates how to use the jEAP Object Storage Starter, including setup,  configuration and integration. This example can create or delete buckets, upload and download files,  and list the contents of a bucket. It is intended to serve as a reference for developers looking  to integrate object storage capabilities into their own applications.\n",
   "maintenance": "internal",
@@ -4086,7 +4086,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-object-storage-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-object-storage-example",
   "short_desc": "Example project demonstrating the usage of the jEAP Object Storage Starter.",
@@ -4094,7 +4094,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "7.1.0"
+  "version": "8.0.0"
  },
  {
   "categories": [
@@ -4156,7 +4156,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-22T03:37:28Z",
+  "last_activity": "2026-09-24T03:40:19Z",
   "license": "Apache-2.0",
   "long_desc": "This example shows how a microservice can archive artifacts into an S3-compatible object store using the jEAP Process Archive Service (PAS). A resource service publishes domain events/commands over Kafka, a PAS instance consumes them and archives the artifacts with object-lock, encryption via Vault, and optional OpenSearch indexing. The repository contains the following modules: * jme-process-archive-events: thin builder classes around the Avro message types used by this example * jme-process-archive-resource-service: owns the example domain (Decree, DecreeDocument, Diagram,\n  Declaration) and publishes the corresponding events/commands to Kafka\n* jme-process-archive-service: the PAS instance, contributing plugin implementations and configuration * jme-process-archive-inspection-service: REST access to archived objects in the object store * jme-process-archive-auth-scs: authenticates users/clients for the protected PAS APIs\n",
   "maintenance": "internal",
@@ -4164,7 +4164,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-23",
   "repo": "https://github.com/jme-admin-ch/jme-process-archive-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-process-archive-example",
   "short_desc": "Example project demonstrating the jEAP Process Archive Service (PAS).",
@@ -4172,7 +4172,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "3.0.0"
+  "version": "3.1.0"
  },
  {
   "categories": [
@@ -4194,7 +4194,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-21T03:37:06Z",
+  "last_activity": "2026-09-24T03:37:39Z",
   "license": "Apache-2.0",
   "long_desc": "The Process Context Service addresses the challenge of providing process context for cross-service processes in an event-driven architecture without relying on a central process engine to control execution (favoring choreography over orchestration). It enables tracking and analyzing process progress and triggering events when specific state changes occur (e.g., completion of certain tasks). Delivered as a jEAP library, it is instantiated per business application by development teams, with application-specific process definitions in json files configured within it. This repository provides an example of how to use the Process Context Service. It contains the following modules: * jme-process-context-scs: An instance of the Process Context Service * jme-process-context-auth-scs: An instance of the OAuth mock server to access the Process Context Service * jme-process-context-app-service: A mock application using the Process Context Service.\n  This app generates messages and calls the REST endpoints of the Process Context Service\n  to simulate a real application.\n",
   "maintenance": "internal",
@@ -4202,7 +4202,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-23",
   "repo": "https://github.com/jme-admin-ch/jme-process-context-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-process-context-example",
   "short_desc": "Example project demonstrating how to use the jEAP Process Context Service.",
@@ -4210,7 +4210,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "22.0.0"
+  "version": "22.1.0"
  },
  {
   "categories": [
@@ -4231,7 +4231,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-21T03:39:25Z",
+  "last_activity": "2026-09-24T03:39:55Z",
   "license": "Apache-2.0",
   "long_desc": "The jEAP Reaction Observer Service consumes the reaction events published by the jEAP Reaction Observer Library (embedded in each microservice) and aggregates them into a queryable model of how services react to incoming messages. It is delivered as a jEAP product (jeap-reaction-observer-service-instance) that development teams instantiate per environment. This repository provides an example of how to set up and configure a Reaction Observer Service instance for local development.\n",
   "maintenance": "internal",
@@ -4239,7 +4239,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-21",
+  "released": "2026-09-23",
   "repo": "https://github.com/jme-admin-ch/jme-reaction-observer-service.git",
   "repo_key": "github.com/jme-admin-ch/jme-reaction-observer-service",
   "short_desc": "Example project demonstrating how to instantiate the jEAP Reaction Observer Service.",
@@ -4247,7 +4247,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "12.0.0"
+  "version": "12.1.0"
  },
  {
   "categories": [
@@ -4270,7 +4270,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:39:17Z",
+  "last_activity": "2026-09-24T03:40:36Z",
   "license": "Apache-2.0",
   "long_desc": "The JME Security Example is a self-contained reference implementation for securing Spring Boot services and an Angular frontend with OAuth 2.0 and OpenID Connect using jEAP. It demonstrates client-credentials calls between services, browser login, token forwarding, resource-server validation, semantic roles scoped to business partners, operation-based authorization, direct-access users and role introspection. An included OAuth mock server supplies configurable issuers, clients and test identities, while end-to-end tests start the relevant applications, obtain access tokens and exercise protected REST endpoints. The modules can be run together locally or reused as building blocks for deployment-specific examples.\n",
   "maintenance": "internal",
@@ -4278,7 +4278,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-security-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-security-example",
   "short_desc": "Example applications demonstrating OAuth2 security with jEAP.",
@@ -4286,7 +4286,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "11.2.0"
+  "version": "12.0.0"
  },
  {
   "categories": [
@@ -4308,7 +4308,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:39:29Z",
+  "last_activity": "2026-09-24T03:40:49Z",
   "license": "Apache-2.0",
   "long_desc": "This project demonstrates OAuth2 client-credentials service chains using the jEAP security starter. It includes a local authorization server, resource and client services for simple roles, and resource and client services for custom authorities. Portable integration tests start and exercise all five services.\n",
   "maintenance": "internal",
@@ -4316,7 +4316,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-security-oauth2-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-security-oauth2-example",
   "short_desc": "Example services demonstrating OAuth2 clients, resources, roles and custom authorities with JME.",
@@ -4324,7 +4324,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "8.1.0"
+  "version": "9.0.0"
  },
  {
   "categories": [
@@ -4346,7 +4346,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-22T03:38:01Z",
+  "last_activity": "2026-09-24T03:41:03Z",
   "license": "Apache-2.0",
   "long_desc": "This project demonstrates how Spring Boot applications publish resource mutations through Kafka and expose them to Angular frontends as server-sent events. It includes anonymous and OAuth2-protected SSE variants, a local OAuth2 mock server, Docker Compose infrastructure, and browser integration tests covering CRUD and push-driven refresh.\n",
   "maintenance": "internal",
@@ -4354,7 +4354,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-22",
+  "released": "2026-09-23",
   "repo": "https://github.com/jme-admin-ch/jme-server-sent-events-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-server-sent-events-example",
   "short_desc": "Example applications demonstrating anonymous and authenticated server-sent events with jEAP.",
@@ -4362,7 +4362,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "10.5.2"
+  "version": "10.6.0"
  },
  {
   "categories": [
@@ -4427,7 +4427,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/jme-admin-ch/jme",
-  "last_activity": "2026-09-23T03:39:45Z",
+  "last_activity": "2026-09-24T03:41:17Z",
   "license": "Apache-2.0",
   "long_desc": "This example project demonstrates how to document the REST APIs of a microservice with the jEAP Swagger starter, which builds on springdoc-openapi and serves the generated OpenAPI documents in an interactive Swagger UI. It shows how to declare an OpenAPI definition, how to split the endpoints of a service into several API groups and API versions, how to describe endpoints and payloads with OpenAPI annotations, and how to try the documented endpoints out in the Swagger UI authenticated with OAuth 2.0. It also demonstrates the access modes the starter provides for the Swagger UI. The example consists of a microservice documenting its REST APIs (jme-swagger-service), an instance of the jEAP OAuth mock server providing the login for the Swagger UI (jme-swagger-auth-scs) and a module with reusable smoke checks for the Swagger endpoints and the integration tests of this example (jme-swagger-test).\n",
   "maintenance": "internal",
@@ -4435,7 +4435,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-24",
   "repo": "https://github.com/jme-admin-ch/jme-swagger-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-swagger-example",
   "short_desc": "Example project demonstrating how to document the REST APIs of a jEAP microservice with the jEAP Swagger starter.",
@@ -4443,7 +4443,7 @@
   "source": "CH/swiss",
   "stars": 0,
   "tier": "publiccode",
-  "version": "8.1.0"
+  "version": "9.0.0"
  },
  {
   "categories": [
@@ -4584,7 +4584,7 @@
    "Secure Document Previews and Thumbnails"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T06:26:55Z",
+  "last_activity": "2026-09-24T16:57:23Z",
   "license": "MIT",
   "long_desc": "Loom is an open-source document analysis platform that lets you import documents, search, analyze, and export them from a single deployment. It extracts text and metadata from a wide range of file formats, including OCR for scanned documents, and enriches your collection with AI features like an intelligent chatbot, automatic tagging, summarization, and translation. Loom handles Office documents, PDFs, emails, archives, images, and more. It provides safe document previews and thumbnails, archive creation from search results, custom tagging, and a REST API for integration into your own applications. Loom runs completely offline, making it suitable for organizations handling confidential or classified data.",
   "maintenance": "internal",
@@ -4629,7 +4629,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/geoadmin/web-mapviewer",
-  "last_activity": "2026-09-22T13:32:42Z",
+  "last_activity": "2026-09-24T14:11:37Z",
   "license": "BSD-3-Clause-Modification",
   "long_desc": "The Swiss Confederation Map Viewer is an interactive online tool that lets users explore a wide range of official geographic data from Switzerland. Whether you\u2019re a citizen, researcher, or professional, you can easily view, search, and analyze detailed maps showing everything from administrative borders and natural landscapes to infrastructure and environmental information. With its intuitive interface and reliable data from trusted federal and cantonal sources, the viewer supports informed decisions and provides transparent access to Switzerland\u2019s authoritative spatial information.",
   "maintenance": "internal",
@@ -4707,7 +4707,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/oblique-bit/oblique",
-  "last_activity": "2026-09-22T11:32:48Z",
+  "last_activity": "2026-09-24T13:58:46Z",
   "license": "mit",
   "long_desc": "Oblique is the unified frontend ecosystem of the Swiss Confederation \u2014 encompassing all libraries, tools, guidelines and services that shape how we design, build, and maintain user interfaces.\nIt provides a cohesive foundation for consistent, maintainable and high-quality frontend development across all projects.\nIt is a monorepo containing the following packages and applications:\n| Project                          | Description                                           | |----------------------------------|-------------------------------------------------------| | CLI                              | Command-line interface for managing frontend projects | | Design System                    | Core visual and interaction design foundations        | | Oblique                          | The historical all-in-one Angular library             | | Sandbox                          | Development playground for testing Oblique features   | | Sandbox SSR                      | Server-side rendered sandbox setup                    | | SDS                              | The documentation for the Oblique ecosystem           | | Service Navigation Web Component | The Service Navigation implemented ",
   "maintenance": "internal",
@@ -4715,7 +4715,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-18",
+  "released": "2026-09-24",
   "repo": "https://github.com/oblique-bit/oblique.git",
   "repo_key": "github.com/oblique-bit/oblique",
   "short_desc": "Oblique is the unified frontend ecosystem of the Swiss Confederation",
@@ -4742,7 +4742,7 @@
    "State Secretariat for Migration (SEM)",
    "Swiss National Library (NL)"
   ],
-  "version": "15.4.4"
+  "version": "16.0.0"
  },
  {
   "categories": [
@@ -4762,7 +4762,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/oblique-bit/oblique-stackblitz",
-  "last_activity": "2026-09-23T06:58:20Z",
+  "last_activity": "2026-09-24T12:50:41Z",
   "license": "mit",
   "long_desc": "This repository serves two purposes:\n\nIt hosts live StackBlitz examples showcasing Oblique features that are not covered in the main documentation, allowing users to explore and experiment in a hands-on environment.\n\nIt provides a bug report template \u2014 an empty StackBlitz project with Oblique pre-installed \u2014 that can be used to reproduce and report issues for any feature of the library.\n\nThe Oblique team maintains the base setup and keeps dependencies up to date. This repository complements the official documentation by offering interactive demonstrations and a standardized environment for reporting bugs across all features.",
   "maintenance": "internal",
@@ -5084,7 +5084,7 @@
    "Preview and Visualization"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T03:33:59Z",
+  "last_activity": "2026-09-24T04:08:30Z",
   "license": "BSD-3-Clause-Modification",
   "long_desc": "# **SATROMO: Satellite Data for Drought Monitoring**\n\n**SATROMO** (*Satellite Data for Drought Monitoring \u2013 SAtellitendaten f\u00fcrs TROckenheitsMOnitoring*) is an automated geospatial data processing system that generates analysis-ready satellite products specifically designed for drought monitoring across Switzerland.\n\n***\n\n## **What SATROMO Does**\n\nSATROMO transforms raw satellite imagery into valuable environmental insights through a fully automated processing chain:\n\n*   *Processes* **Sentinel-2** satellite data using **Google Earth Engine's** powerful cloud computing platform\n*   *Generates* multiple specialized products for **vegetation health** and **drought assessment**\n*   *Publishes* data daily to accessible platforms for **researchers**, **policymakers**, and the **public**\n*   *Maintains* a complete archive of **historical data** for trend analysis\n\n***\n\n## **Key Products**\n\nSATROMO produces four primary product types that help monitor Switzerland's vegetation health and drought conditions:\n\n*   **Surface Reflectance**  \n    *Description:* Cloud-free, terrain-corrected satellite imagery  \n    *Update Frequency:* **Daily**  \n    *Use Case:* Base data for environmental analy",
   "maintenance": "internal",
@@ -5408,7 +5408,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/geoadmin/service-stac",
-  "last_activity": "2026-09-22T14:33:37Z",
+  "last_activity": "2026-09-24T12:51:17Z",
   "license": "BSD-3-Clause-Modification",
   "long_desc": "The STAC API of geo.admin.ch consists of standardized RESTful API endpoints designed for interacting with federal geodata. All datasets are organized according to the SpatioTemporal Asset Catalog (STAC) specification, which simplifies data discovery and usage. This STAC API implementation conforms to the core STAC API specification. The underlying data model follows the STAC schema and is extended by the forecast extension to support weather forecast data.",
   "maintenance": "internal",
@@ -5716,7 +5716,7 @@
    "Issuing verifiable credentials"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-22T11:58:59Z",
+  "last_activity": "2026-09-24T14:52:26Z",
   "license": "MIT",
   "long_desc": "This software is a web server implementing the technical standards as specified in the Swiss e-ID Interoperability Profile and is part of other generic components allowing the issuance and verification of verifiable credentials without the need of reimplementing the standards.",
   "maintenance": "internal",
@@ -5757,7 +5757,7 @@
    "Verifying verifiable credentials"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-22T15:00:18Z",
+  "last_activity": "2026-09-24T14:13:56Z",
   "license": "MIT",
   "long_desc": "This software is a web server implementing the technical standards as specified in the Swiss e-ID Interoperability Profile and is part of other generic components allowing the issuance and verification of verifiable credentials without the need of reimplementing the standards.",
   "maintenance": "internal",
@@ -5922,7 +5922,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T11:44:44Z",
+  "last_activity": "2026-09-24T02:57:37Z",
   "license": "MIT-0",
   "long_desc": "Text Mate Backend is a powerful Python FastAPI service that provides advanced text analysis and transformation capabilities. It is inspired by DeepL Write and Grammarly",
   "maintenance": "internal",
@@ -5955,7 +5955,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-21T22:32:31Z",
+  "last_activity": "2026-09-23T20:06:42Z",
   "license": "MIT-0",
   "long_desc": "TextMate is a modern web application for advanced text editing and document validation. Built with Nuxt.js and TypeScript, it provides a rich set of tools to enhance writing experiences.",
   "maintenance": "internal",
@@ -5992,7 +5992,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-23T03:29:07Z",
+  "last_activity": "2026-09-23T22:49:15Z",
   "license": "MIT-0",
   "long_desc": "Transcribo Backend is a powerful Python FastAPI service that provides advanced audio and video transcription capabilities with speaker diarization and AI-powered text summarization. This backend service enables high-quality transcription using OpenAIs Whisper API and intelligent summarization using large language models.",
   "maintenance": "internal",
@@ -6026,7 +6026,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-22T22:57:27Z",
+  "last_activity": "2026-09-24T05:31:15Z",
   "license": "MIT-0",
   "long_desc": "Transcribo is a modern web application for audio and video transcription with advanced editing capabilities. Built with Nuxt.js and TypeScript, it provides a comprehensive set of tools for creating, editing, and managing transcriptions with timeline-based visualization",
   "maintenance": "internal",
