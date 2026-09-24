@@ -51,7 +51,7 @@ PAGE_CSS = """
 
 /* Recently added. The track is the ONLY thing that scrolls sideways on this page
    - it is its own overflow container, so the body never does. */
-.recent{margin:0 0 20px;}
+.recent{margin:24px 0 20px;}
 .rhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
   flex-wrap:wrap;margin-bottom:10px;}
 .rhead h2{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
