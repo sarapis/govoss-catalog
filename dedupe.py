@@ -55,6 +55,7 @@ publiccode tier over index, then the one with the most populated fields.
 import json, os, re, collections
 
 import stage_guard
+from harvest import is_repo_url
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 
@@ -188,6 +189,19 @@ def merge(group):
         for r in rest:
             if r.get("wikidata"):
                 out["wikidata"] = r["wikidata"]
+                break
+    # ...and a repo. The survivor is picked by score, and a catalogue that records
+    # no repo can win it (Munich's `recommended_for_gov` outscored DPG's Mautic),
+    # which dropped the link from the page AND moved the entry's identity
+    # (repo_key -> name|source), so it showed as Recently added. The three fields
+    # travel together. Only a real repo URL: DPG's repo field is free text, and
+    # OpenStreetMap's is a wiki page.
+    if not out.get("repo"):
+        for r in rest:
+            if r.get("repo") and is_repo_url(r["repo"]):
+                out["repo"], out["repo_key"] = r["repo"], r.get("repo_key")
+                if r.get("repo_owner"):
+                    out["repo_owner"] = r["repo_owner"]
                 break
     return out
 

@@ -199,6 +199,30 @@ def main():
     dup = dedupe.merge([a, dict(a, repo_key=a["repo_key"], name="Matomo (mirror)")])
     check("same source twice: catalogue_count stays 1", dup["catalogue_count"], 1)
 
+    # ---- a survivor with no repo takes a sibling's REAL repo (Mautic, 2026-09-24:
+    # Munich's repo-less row won on recommended_for_gov, dropping DPG's repo and
+    # moving the identity to name|source, so Mautic showed as Recently added).
+    mu = rec("Mautic", source="DE/opensource.muenchen.de", recommended_for_gov=True,
+             repo=None, wikidata="Q99374512")
+    dp = rec("Mautic", source="GLOBAL/dpg", repo="https://github.com/mautic/mautic",
+             repo_owner="Mautic", wikidata="Q99374512")
+    m = dedupe.merge([dp, mu])
+    check("repo-less row still wins on score", m["source"], "DE/opensource.muenchen.de")
+    check("repo backfilled from a sibling", m.get("repo"), "https://github.com/mautic/mautic")
+    check("repo_key travels with it", m.get("repo_key"), "github.com/mautic/mautic")
+    check("repo_owner travels with it", m.get("repo_owner"), "Mautic")
+    # DPG's repo field is free text: OpenStreetMap's is a wiki page, not a repo.
+    osm = rec("OpenStreetMap", source="GLOBAL/dpg",
+              repo="https://wiki.osmfoundation.org/wiki/How_to_get_OpenStreetMap_Data",
+              wikidata="Q936")
+    m = dedupe.merge([osm, rec("OpenStreetMap", source="DE/opensource.muenchen.de",
+                               recommended_for_gov=True, repo=None, wikidata="Q936")])
+    check("a non-repo URL is not backfilled", (m.get("repo"), m.get("repo_key")), (None, None))
+    # a survivor that HAS a repo keeps its own
+    m = dedupe.merge([a, dict(b, repo="https://gitlab.com/other/matomo",
+                              repo_key="gitlab.com/other/matomo")])
+    check("survivor's own repo is kept", m["repo"], "https://github.com/matomo-org/matomo")
+
     # ---- a singleton is not merge()'s job, but its count must still be 1
     check("publiccode tier outranks index in canonical_score",
           dedupe.canonical_score(rec("x", tier="publiccode"))

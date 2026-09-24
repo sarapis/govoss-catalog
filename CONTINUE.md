@@ -4,7 +4,7 @@ Where the work stands as of **2026-09-23 (late)**. `CLAUDE.md` (auto-loaded) is 
 `ARCHIVE.md` holds the reasoning and incidents behind them. Neither is required reading
 beyond what loads by itself.
 
-**Live: 3,054 active entries · 3,553 rows · 19 catalogues · 16 countries and bodies.**
+**Live: 3,127 active entries · 3,841 rows · 20 catalogues · 16 countries and bodies.**
 https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat, both on Cloudflare.
 Pipeline `bash run.sh`, scheduled Mondays 07:00, publishes and commits itself.
 
@@ -30,16 +30,14 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
 - Tree clean on `main`, nothing unpushed, one worktree, no jobs running. Last code commit
   `e71647c` (the handoff commit follows it).
   Schedule loaded; `bash schedule/install.sh --diff` says the plist matches the template.
-- **Last run 2026-09-23 15:52Z**, `manual`, 19 steps ok, deployed and recorded (`6eb6635`).
-- **COMMITTED IS NOT LIVE.** Everything from the 2026-09-23 evening session (list below)
-  publishes on the next run. Until then the live site still shows 19 catalogues and GCHQ as
-  `ready` in the survey; `sources.py` already says otherwise.
+- **Last run 2026-09-24 19:39Z**, `manual`, 19 steps ok, deployed on `token-file`,
+  recorded (`6cbdcc5`). Everything committed up to `8dae0fc` is live.
 - **12 suites, 545 checks, all passing.** Manual on purpose.
-- Live `/status.json` is `warn` for ONE reason: F7, the deploy on wrangler's stored login.
-- Liveness 3,298 ok of 3,396, 27 dead, 39 archived, 67 unknown. Variants: 12 linked to 9
-  cores. `replaces.json`: 348 keys -> 379 products (live: 314); 65 products have none.
-- MCP Worker redeployed 2026-09-23, version `e22a48dd` (live-checked: new instructions,
-  search works). Its owner/aka search waits for the new `mcp-index.json` (next run).
+- Live `/status.json` still warns F7 (stored login): `/sources.html` is built before
+  `deploy` and reads the PREVIOUS run's `deploy_auth`. The next run clears it.
+- Liveness 3,486 ok of 3,612, 28 dead, 39 archived, 59 unknown. Variants: 12 linked to 9
+  cores. `replaces.json`: 348 keys -> 379 products, all live; 65 products have none.
+- MCP Worker version `e22a48dd`, reading the 2026-09-24 index.
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 and F8 closed; F7 credential-blocked.
 
 ## Invariants - break these and something already fixed re-breaks
@@ -83,27 +81,26 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 - UK: a curated list of 40 is parked (`UK-CURATED-DRAFT.md`, Hub `dc3de350` Backburner).
   Scope rule: government-produced catalogues only, never a list govoss curates.
 
-## First: check the next run (2026-09-28) - first live run of eight changes
+## The 2026-09-24 run, checked against its expectations
 
-Expected numbers come from end-to-end runs on a SCRATCH COPY (harvest of hbg/se/digg/pt/os2,
-then `--from-cache` .. variants), not from a live run:
-- **Active 3,054 -> ~3,128; 20 catalogues.** 21 rows flagged by the licence filter (12
-  `closed-licence`, 9 `non-commercial-licence`); Helsingborg adds ~98 active, 103 set aside
-  as `wordpress-plugin`; 4 new merges (KNIME by redirect loan; Prometheus, Spring Boot,
-  Ubuntu from Swedish homepages now `landing`); FreeFileSync splits, correctly (its SILL row
-  is flagged); Démarches simplifiées stays ONE entry (repo-rename loan).
-- **`out/crosswalk_cache.json`: three fresh `fetched_at`, no error.** It does not exist in
-  the repo yet - the new crosswalk has only run on scratch copies. The step adds ~6 min.
-- **Recently added: only Helsingborg's ~98.** Anything else there is an identity that moved.
-- **22 descriptions change language** on re-harvest (one Swedish/Danish/Portuguese marker
-  under the org's hint); all translated, so untranslated stays 13 -> 13 like-for-like.
-- **MCP:** `search_entries` for "rocket.chat" returns Rocketchat (0 before the run).
-- Liveness checks ~109 fewer URLs (Swedish homepages were checked as repos).
-- Then update the header counts here and in `CLAUDE.md` from the run, not from this list.
+Matched: 3,127 active (expected ~3,128), 20 catalogues; licence filter 12 + 9; Helsingborg
+98 active + 103 `wordpress-plugin`; KNIME, Prometheus, Spring Boot, Ubuntu merged; FreeFileSync
+split; Démarches one entry; `crosswalk_cache.json` three fresh stamps; untranslated unchanged
+like-for-like (the same 9 active rows); `deploy_auth` = `token-file`.
+Contradicted, and resolved:
+- **Recently added had 4 non-Helsingborg ids.** Magnolia and Unomi are genuinely new in Munich.
+  F13 KI Assistenz: openCode changed its repo upstream (an org URL -> a repo). Mautic: Munich
+  newly lists it, the repo-less Munich row won the merge and DROPPED DPG's repo, moving the
+  identity. Fixed in `dedupe.merge()` (backfill a sibling's REAL repo; ckan too) - live next run.
+- **MCP "rocket.chat" -> 0.** The expectation came from a test FIXTURE (owner + aka); the real
+  SILL row has neither and the Swedish "Rocket Chat" row is set aside. Search works as
+  promised. Finding it would mean searching the repo URL too - a contract change, not done.
+- Liveness: 3,612 URLs, not ~109 fewer - that figure ignored Helsingborg's 291 rows.
+- 3 orphaned `tr_de.json` keys: upstream rewordings (KI-Buddy and two others). Sensor working.
 
 ## Candidates, ranked
 
-1. **Verify the run above**, and fix what it contradicts before anything new.
+1. **Verify the next run**: Mautic and ckan carry their repos, F7 warning gone.
 2. ~~Count checks, never hard-code them~~ - DONE 2026-09-23: every suite now counts
    `len(ran)`. The hard-coded totals were wrong in four suites: liveness 33 (ran 41),
    filters 69 (70), built_pages 69 (76), stage_guard 15 (ran 14 - a phantom pass).
