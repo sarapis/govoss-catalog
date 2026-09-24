@@ -37,7 +37,7 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
 - **12 suites, 545 checks, all passing.** Manual on purpose.
 - Live `/status.json` is `warn` for ONE reason: F7, the deploy on wrangler's stored login.
 - Liveness 3,298 ok of 3,396, 27 dead, 39 archived, 67 unknown. Variants: 12 linked to 9
-  cores. `replaces.json`: 303 keys -> 343 products (live: 314); 65 products have none.
+  cores. `replaces.json`: 348 keys -> 379 products (live: 314); 65 products have none.
 - MCP Worker redeployed 2026-09-23, version `e22a48dd` (live-checked: new instructions,
   search works). Its owner/aka search waits for the new `mcp-index.json` (next run).
 - Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F6 and F8 closed; F7 credential-blocked.
@@ -111,6 +111,9 @@ then `--from-cache` .. variants), not from a live run:
    rows): the DEMAND side (products in `proprietary.json` with no alternative - 13 of 78
    closed; the other 65 are verticals nothing here does) and the SUPPLY side (unmapped
    entries carrying a Wikidata QID: 467, ~50 mapped). n8n skipped: not open source.
+   Second supply pass 2026-09-23 (late): +58 rows on 45 keys, 36 new products; the
+   remaining ~370 unmapped QID entries are mostly libraries, languages, OSes and
+   free desktop tools nobody pays for - diminishing returns on this route now.
 4. **Screen-reader testing** has never been done - needs a person with a screen reader.
 
 ## Traps - looks broken but is not, and vice versa

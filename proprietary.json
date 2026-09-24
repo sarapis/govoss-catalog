@@ -178,6 +178,14 @@
    "seen_in": []
   },
   {
+   "name": "Adobe Lightroom",
+   "description": "Photo cataloguing and editing",
+   "desc_src": "curated",
+   "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Adobe Photoshop",
    "description": "Raster image editing and retouching",
    "desc_src": "curated",
@@ -292,6 +300,14 @@
    "seen_in": []
   },
   {
+   "name": "Altium Designer",
+   "description": "Printed circuit board design",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Amazon S3",
    "description": "Cloud object storage",
    "desc_src": "curated",
@@ -380,6 +396,14 @@
    "description": "Map and geospatial service publishing",
    "desc_src": "curated",
    "function": "geospatial",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Archer",
+   "description": "Governance, risk and compliance management",
+   "desc_src": "curated",
+   "function": "identity-security",
    "kind": "software",
    "seen_in": []
   },
@@ -490,6 +514,14 @@
    "seen_in": []
   },
   {
+   "name": "Barracuda Email Protection",
+   "description": "Email security gateway: spam, malware and phishing filtering",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Beyond Compare",
    "description": "File and folder comparison and sync",
    "desc_src": "curated",
@@ -538,6 +570,14 @@
    "description": "External attack-surface monitoring and security ratings",
    "desc_src": "curated",
    "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "BiZZdesign Enterprise Studio",
+   "description": "Enterprise architecture modelling",
+   "desc_src": "curated",
+   "function": "dev-tools",
    "kind": "software",
    "seen_in": []
   },
@@ -754,6 +794,14 @@
    "seen_in": []
   },
   {
+   "name": "Chocolatey for Business",
+   "description": "Commercial edition of the Chocolatey Windows package manager",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Cinema 4D",
    "description": "3D modelling, animation and rendering",
    "desc_src": "curated",
@@ -846,6 +894,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Collibra",
+   "description": "Data catalogue and data governance",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Commvault",
@@ -1042,6 +1098,14 @@
    ]
   },
   {
+   "name": "DataStax Enterprise",
+   "description": "Commercial distribution of Apache Cassandra",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "DBeaver PRO",
    "description": "Commercial tier of the DBeaver database client",
    "desc_src": "curated",
@@ -1060,6 +1124,14 @@
   {
    "name": "Dell PowerScale (Isilon)",
    "description": "Scale-out network-attached storage",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Device42",
+   "description": "IT asset inventory, IPAM and data-centre infrastructure management",
    "desc_src": "curated",
    "function": "infrastructure",
    "kind": "software",
@@ -1126,6 +1198,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Dymola",
+   "description": "Modelica modelling and simulation",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Dynamics 365 Sales",
@@ -1208,10 +1288,26 @@
    "seen_in": []
   },
   {
+   "name": "Enterprise Architect",
+   "description": "UML, BPMN and ArchiMate modelling",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Entra ID",
    "description": "Cloud identity, single sign-on and conditional access",
    "desc_src": "curated",
    "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Envisio",
+   "description": "Strategic and action plan tracking for local government",
+   "desc_src": "curated",
+   "function": "case-workflow",
    "kind": "software",
    "seen_in": []
   },
@@ -1272,6 +1368,14 @@
    "description": "Commercial edition of the FastReport reporting engine for .NET",
    "desc_src": "curated",
    "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Feedly",
+   "description": "RSS and news feed reader",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
    "kind": "software",
    "seen_in": []
   },
@@ -1386,6 +1490,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Ghost(Pro)",
+   "description": "Hosted edition of the Ghost publishing platform",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "GitHub Actions",
@@ -1626,6 +1738,14 @@
    "seen_in": []
   },
   {
+   "name": "IBM Operational Decision Manager",
+   "description": "Business rules management system",
+   "desc_src": "curated",
+   "function": "integration",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "IBM QRadar",
    "description": "Security information and event management",
    "desc_src": "curated",
@@ -1636,6 +1756,22 @@
   {
    "name": "IBM SPSS Statistics",
    "description": "Statistical analysis and modelling",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "IBM WebSphere Application Server",
+   "description": "Java application server",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "IDL",
+   "description": "Interactive Data Language for scientific data analysis and visualisation",
    "desc_src": "curated",
    "function": "data-analytics",
    "kind": "software",
@@ -1992,10 +2128,26 @@
    "seen_in": []
   },
   {
+   "name": "Maple",
+   "description": "Computer algebra system",
+   "desc_src": "curated",
+   "function": "data-analytics",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Marketo",
    "description": "Marketing automation and campaign management",
    "desc_src": "curated",
    "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Mathematica",
+   "description": "Computer algebra and technical computing",
+   "desc_src": "curated",
+   "function": "data-analytics",
    "kind": "software",
    "seen_in": []
   },
@@ -2158,6 +2310,14 @@
    "description": "Mind mapping and visual planning",
    "desc_src": "curated",
    "function": "office",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Minecraft Education",
+   "description": "Game-based learning platform for schools",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
    "kind": "software",
    "seen_in": []
   },
@@ -2424,6 +2584,22 @@
    "seen_in": []
   },
   {
+   "name": "Oracle WebLogic Server",
+   "description": "Java application server",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "OrCAD",
+   "description": "Schematic capture and printed circuit board design",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "OriginPro",
    "description": "Scientific data analysis and graphing",
    "desc_src": "curated",
@@ -2472,6 +2648,14 @@
    "seen_in": []
   },
   {
+   "name": "Parallels Desktop",
+   "description": "Desktop virtualisation",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "PDFsam Enhanced",
    "description": "PDF splitting, merging and editing",
    "desc_src": "curated",
@@ -2514,6 +2698,14 @@
    "seen_in": []
   },
   {
+   "name": "Pinecone",
+   "description": "Hosted vector database",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Pingdom",
    "description": "Hosted uptime and performance checks",
    "desc_src": "curated",
@@ -2530,6 +2722,22 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "PoolParty",
+   "description": "Thesaurus and taxonomy management",
+   "desc_src": "curated",
+   "function": "learning-knowledge",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Portainer Business Edition",
+   "description": "Commercial edition of the Portainer container management UI",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "Posit Workbench",
@@ -2660,6 +2868,22 @@
    "seen_in": []
   },
   {
+   "name": "ReadyAPI",
+   "description": "API testing suite built on SoapUI",
+   "desc_src": "curated",
+   "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "reCAPTCHA Enterprise",
+   "description": "Bot detection and CAPTCHA service",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Recorded Future",
    "description": "Threat intelligence subscription and analysis",
    "desc_src": "curated",
@@ -2726,6 +2950,14 @@
    "seen_in": []
   },
   {
+   "name": "Remote Desktop Manager",
+   "description": "Remote connection and credential management",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Rocket Software",
    "description": "Mainframe modernization and enterprise infrastructure management",
    "desc_src": "nyc",
@@ -2734,6 +2966,14 @@
    "seen_in": [
     "us-nyc"
    ]
+  },
+  {
+   "name": "Royal TS",
+   "description": "Remote connection management",
+   "desc_src": "curated",
+   "function": "infrastructure",
+   "kind": "software",
+   "seen_in": []
   },
   {
    "name": "SafeMeasures",
@@ -2856,6 +3096,14 @@
    "description": "IT service management and enterprise workflow",
    "desc_src": "curated",
    "function": "crm-service",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Sessionize",
+   "description": "Conference call-for-papers and schedule management",
+   "desc_src": "curated",
+   "function": "collaboration",
    "kind": "software",
    "seen_in": []
   },
@@ -3084,6 +3332,14 @@
    "seen_in": []
   },
   {
+   "name": "Substack",
+   "description": "Hosted newsletter and publishing platform",
+   "desc_src": "curated",
+   "function": "web-content",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "SugarCRM",
    "description": "Customer relationship management",
    "desc_src": "curated",
@@ -3130,6 +3386,14 @@
    ]
   },
   {
+   "name": "Symantec Encryption Desktop",
+   "description": "PGP email and file encryption",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
    "name": "Symantec Endpoint Encryption",
    "description": "Full-disk and removable media encryption",
    "desc_src": "curated",
@@ -3142,6 +3406,14 @@
    "description": "Endpoint antivirus and threat protection",
    "desc_src": "curated",
    "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "Symantec Ghost Solution Suite",
+   "description": "Disk imaging and deployment",
+   "desc_src": "curated",
+   "function": "infrastructure",
    "kind": "software",
    "seen_in": []
   },
@@ -3204,6 +3476,22 @@
    "description": "Programmer's text editor",
    "desc_src": "curated",
    "function": "dev-tools",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "ThreatConnect",
+   "description": "Threat intelligence platform",
+   "desc_src": "curated",
+   "function": "identity-security",
+   "kind": "software",
+   "seen_in": []
+  },
+  {
+   "name": "TIBCO Enterprise Message Service",
+   "description": "Enterprise message broker (JMS)",
+   "desc_src": "curated",
+   "function": "integration",
    "kind": "software",
    "seen_in": []
   },

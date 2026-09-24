@@ -4160,5 +4160,443 @@
    "confidence": "partial",
    "kind": "software"
   }
+ ],
+ "AlmaLinux": [
+  {
+   "product": "Red Hat Enterprise Linux",
+   "vendor": "Red Hat",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "VirtualBox": [
+  {
+   "product": "VMware Workstation Pro",
+   "vendor": "Broadcom",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Parallels Desktop",
+   "vendor": "Parallels",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "KVM": [
+  {
+   "product": "VMware vSphere",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "VMware ESXi",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "GNU Privacy Guard": [
+  {
+   "product": "Symantec Encryption Desktop",
+   "vendor": "Broadcom",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "KeePassXC": [
+  {
+   "product": "1Password",
+   "vendor": "AgileBits",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "LastPass",
+   "vendor": "LastPass",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "mRemoteNG": [
+  {
+   "product": "Remote Desktop Manager",
+   "vendor": "Devolutions",
+   "confidence": "strong",
+   "kind": "software"
+  },
+  {
+   "product": "Royal TS",
+   "vendor": "Royal Apps",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "HeidiSQL": [
+  {
+   "product": "Navicat",
+   "vendor": "PremiumSoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "GNU Data Language": [
+  {
+   "product": "IDL",
+   "vendor": "NV5 Geospatial",
+   "confidence": "strong",
+   "kind": "software"
+  }
+ ],
+ "Scilab": [
+  {
+   "product": "MATLAB",
+   "vendor": "MathWorks",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Maxima": [
+  {
+   "product": "Mathematica",
+   "vendor": "Wolfram",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Maple",
+   "vendor": "Maplesoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Openmodelica": [
+  {
+   "product": "Dymola",
+   "vendor": "Dassault Systemes",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "KiCad": [
+  {
+   "product": "Altium Designer",
+   "vendor": "Altium",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "OrCAD",
+   "vendor": "Cadence",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Archi": [
+  {
+   "product": "Enterprise Architect",
+   "vendor": "Sparx Systems",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "BiZZdesign Enterprise Studio",
+   "vendor": "Bizzdesign",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Dia": [
+  {
+   "product": "Visio",
+   "vendor": "Microsoft",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "JabRef": [
+  {
+   "product": "EndNote",
+   "vendor": "Clarivate",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Notesnook": [
+  {
+   "product": "Evernote",
+   "vendor": "Bending Spoons",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "FreshRSS": [
+  {
+   "product": "Feedly",
+   "vendor": "Feedly",
+   "confidence": "strong",
+   "kind": "service"
+  }
+ ],
+ "Omeka": [
+  {
+   "product": "CONTENTdm",
+   "vendor": "OCLC",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "TemaTres": [
+  {
+   "product": "PoolParty",
+   "vendor": "Semantic Web Company",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "VocBench 3": [
+  {
+   "product": "PoolParty",
+   "vendor": "Semantic Web Company",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Minetest": [
+  {
+   "product": "Minecraft Education",
+   "vendor": "Microsoft",
+   "confidence": "adjacent",
+   "kind": "software"
+  }
+ ],
+ "Kausal Watch": [
+  {
+   "product": "Envisio",
+   "vendor": "Envisio",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Pretalx": [
+  {
+   "product": "Sessionize",
+   "vendor": "Sessionize",
+   "confidence": "strong",
+   "kind": "service"
+  }
+ ],
+ "Galène": [
+  {
+   "product": "Zoom",
+   "vendor": "Zoom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Clonezilla Live": [
+  {
+   "product": "Acronis Snap Deploy",
+   "vendor": "Acronis",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "Symantec Ghost Solution Suite",
+   "vendor": "Broadcom",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "DBAN (Darik's Boot and Nuke)": [
+  {
+   "product": "Blancco Drive Eraser",
+   "vendor": "Blancco",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Netbox": [
+  {
+   "product": "Device42",
+   "vendor": "Freshworks",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "OpenCTI": [
+  {
+   "product": "Anomali ThreatStream",
+   "vendor": "Anomali",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "ThreatConnect",
+   "vendor": "ThreatConnect",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "CISO-Assistant CE": [
+  {
+   "product": "Archer",
+   "vendor": "Archer",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "digiKam": [
+  {
+   "product": "Adobe Lightroom",
+   "vendor": "Adobe",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Proxmox Mail Gateway": [
+  {
+   "product": "Barracuda Email Protection",
+   "vendor": "Barracuda",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache Tomcat": [
+  {
+   "product": "Oracle WebLogic Server",
+   "vendor": "Oracle",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "IBM WebSphere Application Server",
+   "vendor": "IBM",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache ActiveMQ": [
+  {
+   "product": "IBM MQ",
+   "vendor": "IBM",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "TIBCO Enterprise Message Service",
+   "vendor": "Cloud Software Group",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Drools": [
+  {
+   "product": "IBM Operational Decision Manager",
+   "vendor": "IBM",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache Atlas": [
+  {
+   "product": "Collibra",
+   "vendor": "Collibra",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Apache NiFi": [
+  {
+   "product": "Informatica PowerCenter",
+   "vendor": "Informatica",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Squash TM": [
+  {
+   "product": "ALM Quality Center",
+   "vendor": "OpenText",
+   "confidence": "partial",
+   "kind": "software"
+  },
+  {
+   "product": "TestRail",
+   "vendor": "Idera",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "Selenium Server": [
+  {
+   "product": "OpenText UFT One",
+   "vendor": "OpenText",
+   "confidence": "partial",
+   "kind": "software"
+  }
+ ],
+ "SOAP UI Open Source": [
+  {
+   "product": "ReadyAPI",
+   "vendor": "SmartBear",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "Cassandra": [
+  {
+   "product": "DataStax Enterprise",
+   "vendor": "IBM",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "Portainer": [
+  {
+   "product": "Portainer Business Edition",
+   "vendor": "Portainer.io",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "Chocolatey": [
+  {
+   "product": "Chocolatey for Business",
+   "vendor": "Chocolatey Software",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  }
+ ],
+ "Ghost": [
+  {
+   "product": "Ghost(Pro)",
+   "vendor": "Ghost Foundation",
+   "confidence": "strong",
+   "kind": "paid-tier"
+  },
+  {
+   "product": "Substack",
+   "vendor": "Substack",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "Qdrant": [
+  {
+   "product": "Pinecone",
+   "vendor": "Pinecone",
+   "confidence": "partial",
+   "kind": "service"
+  }
+ ],
+ "mCaptcha": [
+  {
+   "product": "reCAPTCHA Enterprise",
+   "vendor": "Google",
+   "confidence": "partial",
+   "kind": "service"
+  }
  ]
 }
