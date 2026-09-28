@@ -813,7 +813,7 @@
   ],
   "forge_path": "bfabio/badge-api",
   "landing": "https://badges.opencode.de/de/",
-  "last_activity": "2026-08-31T18:48:36.856Z",
+  "last_activity": "2026-09-25T14:00:53.938Z",
   "license": "MIT",
   "long_desc": "Das Badge Programm pr\u00fcft openCode Repositories und vergibt Badges, die im [openCode Softwareverzeichnis](https://opencode.de/de/software) angezeigt werden und den Status der Repositories in Bezug auf **Wartung**, **Wiederverwendung** und **Sicherheit** anzeigen.\n\nMit der Badge-API k\u00f6nnen Sie interagieren, indem Sie eine Repository-URL \u00fcbermitteln. Basierend auf den erf\u00fcllten Kriterien des Repositorys erhalten Sie entsprechende Badges. Zudem stellt die API eine detaillierte Erkl\u00e4rung des Ergebnisses bereit. In der [Dokumentation](https://badges.opencode.de/de/?repositoryUrl=https%3A%2F%2Fgitlab.opencode.de%2Fopen-code%2Fbadgebackend%2Fbadge-api) k\u00f6nnen Sie es sofort ausprobieren.\n",
   "maintenance": "contract",
@@ -860,7 +860,7 @@
   ],
   "forge_path": "open-code/badgebackend/badge-api",
   "landing": "https://badges.opencode.de/de/",
-  "last_activity": "2026-09-24T10:36:26.446Z",
+  "last_activity": "2026-09-25T14:19:08.338Z",
   "license": "MIT",
   "long_desc": "Das Badge Programm pr\u00fcft openCode Repositories und vergibt Badges, die im [openCode Softwareverzeichnis](https://opencode.de/de/software) angezeigt werden und den Status der Repositories in Bezug auf **Wartung**, **Wiederverwendung** und **Sicherheit** anzeigen.\n\nMit der Badge-API k\u00f6nnen Sie interagieren, indem Sie eine Repository-URL \u00fcbermitteln. Basierend auf den erf\u00fcllten Kriterien des Repositorys erhalten Sie entsprechende Badges. Zudem stellt die API eine detaillierte Erkl\u00e4rung des Ergebnisses bereit. In der [Dokumentation](https://badges.opencode.de/de/?repositoryUrl=https%3A%2F%2Fgitlab.opencode.de%2Fopen-code%2Fbadgebackend%2Fbadge-api) k\u00f6nnen Sie es sofort ausprobieren.\n",
   "maintenance": "contract",
@@ -1448,6 +1448,50 @@
   "desc_src": "Das BIM Portal Hamburg ist ein flexibler Baukasten f\u00fcr Geoportale im Web.",
   "desc_src_lang": "de",
   "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/LGV-BIM-Leitstelle/bim-portal-hh-bimfabrik",
+  "fallback_repo": "https://gitlab.opencode.de/LGV-BIM-Leitstelle/bim-portal-hh-bimfabrik.git",
+  "features": [
+   "OGC-konform",
+   "Konfigurierbar",
+   "Responsiv",
+   "OpenSource",
+   "Adminfreundlich",
+   "Modular",
+   "Metadatenintegration"
+  ],
+  "forge_path": "LGV-BIM-Leitstelle/bim-portal-hh-bimfabrik",
+  "landing": "https://www.masterportal.org",
+  "last_activity": "2026-09-25T11:46:33.320Z",
+  "license": "AGPLv3",
+  "long_desc": "## BIM Portal Hamburg\n\nDie BIMFabrikHH und der BIM-Viewer sind Entwicklungen der Freien und Hansestadt Hamburg, Landesbetrieb Geoinformation und Vermessung, BIM-Leitstelle im Rahmen des Connected Urban Twins (CUT) Projekts.\n\nDie BIMFabrikHH erm\u00f6glicht die automatisierte Umwandlung von Geodaten aus unterschiedlichen Formaten in das IFC (Industry Foundation Classes) Format und unterst\u00fctzt somit die Implementierung der BIM (Building Information Modeling) Methodik.\n\nDer BIM-Viewer wurde mit der Open-Source-Bibliothek xeokit-SDK entwickelt und visualisiert IFC-Dateien direkt im Browser. Mit dem WebIFCLoaderPlugin k\u00f6nnen Modelle samt Metadaten und Eigenschaften dargestellt werden. Zudem lassen sich Objektmerkmale anzeigen, messen und filtern. Mit dem BIM-Viewer haben Nutzende die M\u00f6glichkeit IFC-Dateien hochzuladen. Diese hochgeladenen IFC-Dateien werden zusammen mit dem Modell visualisiert, jedoch nicht abgespeichert.\n",
+  "maintenance": "community",
+  "name": "BIM Portal Hamburg",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-02-27",
+  "repo": "https://bitbucket.org/geowerkstatt-hamburg/bim_portal_hh.git",
+  "repo_key": "bitbucket.org/geowerkstatt-hamburg/bim_portal_hh",
+  "repo_owner": "Freie und Hansestadt Hamburg, Landesbetrieb Geoinformation und Vermessung",
+  "short_desc": "Das BIM Portal Hamburg ist ein flexibler Baukasten f\u00fcr Geoportale im Web.",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 11365,
+  "version": "3.19.0"
+ },
+ {
+  "categories": [
+   "geographic-information-systems"
+  ],
+  "contacts": [
+   "Betrieb Webanwendungen"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Das BIM Portal Hamburg ist ein flexibler Baukasten f\u00fcr Geoportale im Web.",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
   "entry_url": "https://gitlab.opencode.de/bim-portal-hh/bim-portal-hh",
   "fallback_repo": "https://gitlab.opencode.de/bim-portal-hh/bim-portal-hh.git",
   "features": [
@@ -1956,7 +2000,7 @@
    "Hardening by removing package managers and unnecessary tools"
   ],
   "forge_path": "bwi/bundesmessenger/backend/bum-base-images",
-  "last_activity": "2026-07-30T13:26:20.302Z",
+  "last_activity": "2026-09-25T12:03:24.910Z",
   "license": "Apache-2.0",
   "long_desc": "The image definitions contain build instructions and configurations that are used with the Container Factory\nto build and push container images.\nThe images can be be used f.e. in docker, podman or kubernetes.\nAll container images for the BundesMessenger Container Deployment are created from scratch\nby the container factory und are continually updated.\nThe container images are created to be licence-compliant, secure and updatable.\n",
   "maintenance": "internal",
@@ -1998,7 +2042,7 @@
    "Hardening by removing package managers and unnecessary tools"
   ],
   "forge_path": "bwi/bundesmessenger/backend/bum-images",
-  "last_activity": "2026-09-23T13:37:37.600Z",
+  "last_activity": "2026-09-25T11:58:58.062Z",
   "license": "Apache-2.0",
   "long_desc": "The image definitions contain build instructions and configurations that are used with the Container Factory\nto build and push container images.\nThe images can be be used f.e. in docker, podman or kubernetes.\nAll container images for the BundesMessenger Container Deployment are created from scratch\nby the container factory und are continually updated.\nThe container images are created to be licence-compliant, secure and updatable.\n",
   "maintenance": "internal",
@@ -2040,7 +2084,7 @@
    "Hardening by removing package managers and unnecessary tools"
   ],
   "forge_path": "bwi/bundesmessenger/backend/container-factory",
-  "last_activity": "2026-09-24T07:17:59.530Z",
+  "last_activity": "2026-09-25T11:37:28.531Z",
   "license": "Apache-2.0",
   "long_desc": "The Container Image Factory is a buildsystem for container images.\nThe images can be be used f.e. in docker, podman or kubernetes.\nIt includes a toolchain to build basic Docker images and push them to a registry.\nAll container images for the BundesMessenger Container Deployment are created from scratch\nby the container factory und are continually updated.\nThe container images are created to be licence-compliant, secure and updatable.\n",
   "maintenance": "internal",
@@ -2120,7 +2164,7 @@
    "Sprachnachrichten"
   ],
   "forge_path": "bwi/bundesmessenger/backend/helm-chart",
-  "last_activity": "2026-09-24T07:12:16.754Z",
+  "last_activity": "2026-09-28T05:59:05.679Z",
   "license": "Apache-2.0",
   "long_desc": "Das BundesMessenger Backend ist Bestandteil einer Sammlung von\nRepositories zum BundesMessenger. Allgemeine Informationen zum Projekt\nbefinden sich im \u00fcbergeordneten [BundesMessenger\nRepository](https://gitlab.opencode.de/bwi/bundesmessenger/info).\n\n\nDieses Repository stellt ein [Helm Chart](https://helm.sh/) zur\nautomatisierten Bereitstellung eines Backends bzw. Infrastruktur f\u00fcr die\nNutzung mit dem BundesMessenger Client zur Verf\u00fcgung. Hauptbestandteil ist\nder [Synapse Server](https://github.com/element-hq/synapse), Dieser ist\neine Matrix homeserver Implementierung in Python auf Basis des [Matrix\nProtokolls](https://matrix.org/).\n",
   "maintenance": "internal",
@@ -3180,7 +3224,7 @@
   ],
   "forge_path": "regierung-von-oberbayern/cibseven",
   "landing": "https://github.com/cibseven/cibseven",
-  "last_activity": "2026-09-24T00:34:45.600Z",
+  "last_activity": "2026-09-26T00:34:57.429Z",
   "license": "Apache-2.0",
   "long_desc": " \n\n**CIB seven** is a powerful process engine developed in Java that enables companies and public authorities to model, execute, and monitor business processes. It was created as a fork of the globally widespread **Camunda Platform 7** and positions itself as its long-term open-source alternative.\n\nSince manufacturer support for the Camunda 7 Community Edition has been discontinued, CIB seven fills a critical gap for public administration: It offers **guaranteed further development** and maintenance of the proven architecture beyond 2025. This makes it the ideal solution for institutions that rely on the stability of Camunda 7 technology but want to avoid migration efforts to proprietary cloud solutions or complete architecture changes (e.g., Camunda 8).\n\nThe platform includes not only the core engine for **BPMN** (Business Process Model and Notation), **DMN** (Decision Model and Notation), and **CMMN** (Case Management Model and Notation), but also modernized web applications for administration, task management (Tasklist), and operational monitoring (Cockpit).\n\n### **Why CIB seven for Public Administration?**\n\n- **Investment Protection:** Existing Camunda 7 applications can contin",
   "maintenance": "internal",
@@ -4075,7 +4119,7 @@
   ],
   "forge_path": "it.nrw/nrw.desk/conference-backend",
   "landing": "https://gitlab.opencode.de/it.nrw/nrw.desk/conference-backend",
-  "last_activity": "2026-09-24T02:42:25.196Z",
+  "last_activity": "2026-09-28T02:38:52.000Z",
   "license": "BSD-3-Clause",
   "long_desc": "The main backend service for conference management. This service manages the database and general requests for creating, editing, and deleting conferences and rooms. It also defines the database models necessary for managing calendar entries using the calendar-manager.\nFor an overview of the project as a whole, please refer to https://gitlab.opencode.de/it.nrw/nrw.desk/nrwdesk-helm\nconference-backend is the backend service for conference-frontend and exposes a HTTP-REST API protected through bearer token authentication. It connects itself to calendar-manager and/or identity-curator via their respective APIs to interact with calendars with CalDAV support and identity cards either via CardDAV or direct communication with the upstream identity provider/broker.\nAlternative clients that want to interact with the conference management system of NRW.Desk must learn how to obtain a valid OAuth2 token for their user from the token provider (e.g. Keycloak) and use the API defined in this project. Note: conference-backend does not validate the access token signature. It only uses the contained fields to identify the authorization scope of a user. Token validation should be handled by an appro",
   "maintenance": "contract",
@@ -4115,7 +4159,7 @@
    "external-conference-cleanup"
   ],
   "forge_path": "it.nrw/nrw.desk/conference-cleanup",
-  "last_activity": "2026-09-23T02:36:40.045Z",
+  "last_activity": "2026-09-28T02:39:45.101Z",
   "license": "BSD-3-Clause",
   "long_desc": "Django-based synchronization service that keeps the external gateway database (`gateway-backend`)\nin sync with the internal conference database (`conference-backend`). It is designed to resolve\ndata drift caused by service outages or other failures.\n\nThe service connects to the internal database directly via its native protocol\n(e.g., PostgreSQL) and communicates with the gateway through its HTTP CRUD API. The internal\ndatabase is treated as **read-only**. No writes, migrations, or other modifications are\nperformed against it.\n\nDuring synchronization, the service compares internal conferences with those stored on the\ngateway. The following actions might be queued and are executed in batches once all\ncomparisons are complete:\n- **Delete** from the gateway if the conference no longer exists internally,\nis marked as deleted, or has both guest and phone access deactivated.\n- **Update** in the gateway if the conference exists on both sides but data has diverged.\n- **Create** in the gateway if the conference exists internally with access enabled\nbut is missing from the gateway.\n\nThe service has no HTTP endpoints and operates purely as a background process. It supports\ntwo operation modes",
   "maintenance": "contract",
@@ -4198,7 +4242,7 @@
    "jitsi-phone-access"
   ],
   "forge_path": "it.nrw/nrw.desk/conference-phone-codes",
-  "last_activity": "2026-09-24T02:45:20.295Z",
+  "last_activity": "2026-09-28T02:42:08.689Z",
   "license": "BSD-3-Clause",
   "long_desc": "This project implements the conference-phone-access-api to seamlessly integrate Jitsi Meet and Jigasi with the conference-management. It helps users to join conferences that are protected with an access code. When a correct phone code is given the conference UUID is returned.\n",
   "maintenance": "contract",
@@ -4251,6 +4295,55 @@
   "tier": "publiccode",
   "upstream_id": 4467,
   "version": "0.6.0"
+ },
+ {
+  "based_on": [
+   "https://github.com/nextcloud/server"
+  ],
+  "categories": [
+   "compliance-management",
+   "digital-asset-management",
+   "content-management"
+  ],
+  "contacts": [
+   "Lukas Sturm"
+  ],
+  "country": "DE",
+  "desc_en": "Nextcloud app for GDPR-compliant photo consent management, with an OCR-based import pipeline and a four-stage release workflow.\n",
+  "desc_lang": "en",
+  "desc_src": "Nextcloud-App f\u00fcr die DSGVO-konforme Verwaltung von Fotoeinwilligungen, mit OCR-basierter Importpipeline und einem vierstufigen Freigabe-Workflow.\n",
+  "desc_src_lang": "de",
+  "dev_status": "beta",
+  "entry_url": "https://gitlab.opencode.de/oc00014819603/consentmanager",
+  "fallback_repo": "https://gitlab.opencode.de/oc00014819603/consentmanager.git",
+  "features": [
+   "Consent-driven prefiltering, no biometric processing",
+   "Consent records with document upload",
+   "Bulk OCR import of consent forms (Tesseract / Ollama)",
+   "Photo search with person include/exclude and tag filters",
+   "Four-stage release workflow for publication",
+   "Photographer management with EXIF camera matching",
+   "GPS map view (requires Nextcloud Maps)",
+   "Bulk ZIP export and system tag assignment"
+  ],
+  "forge_path": "oc00014819603/consentmanager",
+  "last_activity": "2026-09-28T10:28:07.693Z",
+  "license": "AGPL-3.0-or-later",
+  "long_desc": "ConsentManager is a Nextcloud app that helps municipalities\nand comparable public-sector organisations manage photo\nconsent declarations in a GDPR-compliant way.\n\nThe app works outward from the signed declaration: the\noccasion, the archive's folder structure, capture dates and \u2014\nwhere present \u2014 coordinates narrow thousands of images to a\nreviewable handful, and a person confirms each match. This\nline produces no biometric data: no face detection, no face\nrecognition, no analysis of image content. Nextcloud Recognize\nis not required.\n\nA second line built from the same source uses face recognition\nvia Nextcloud Recognize. It is intended for operators whose\nphotographed population is bounded and enrolled \u2014 clubs,\neditorial picture archives, photo studios.\n\nScanned consent forms can be imported and parsed automatically\nvia OCR (Tesseract or an Ollama vision model) and then\nconfirmed by a human reviewer.\n\nA four-stage workflow (intake \u2192 in-review \u2192 approved \u2192\nblocked) lets editors control which photos are released for\npublication, e.g. to a CMS. All data is strictly\nuser-isolated; every database query is filtered by user id.\n\nBuilt for public-sector use, applicable to any\norganisation w",
+  "maintenance": "internal",
+  "name": "ConsentManager",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-07-31",
+  "repo": "https://gitlab.opencode.de/oc00014819603/consentmanager",
+  "repo_key": "gitlab.opencode.de/oc00014819603/consentmanager",
+  "short_desc": "Nextcloud app for GDPR-compliant photo consent management, with an OCR-based import pipeline and a four-stage release workflow.\n",
+  "software_type": "addon",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13394,
+  "version": "0.23.0"
  },
  {
   "categories": [
@@ -4312,7 +4405,7 @@
    "Communication"
   ],
   "forge_path": "wechange-eg/cosinnus",
-  "last_activity": "2026-09-24T14:16:20.101Z",
+  "last_activity": "2026-09-25T15:37:16.791Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Main codebase for the WECHANGE suite. Contains the core functionality and models: user account management, groups/projects, ideas, user-dashboard, map, search, and all base templates, forms, and stylesheets. Cosinnus is the heart of the collaboration software to implement many of the best Free and Open Source Software to work together. It include chat, file sharing, project management, video conferencing and much more with focus real privacy. There a no cookies or something else thats connect to Google or etc. All services can be self hosted.",
   "maintenance": "contract",
@@ -4609,7 +4702,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/data-stories.git",
   "forge_path": "umwelt-info/data-stories",
   "landing": "https://umwelt.info",
-  "last_activity": "2026-09-23T13:28:21.139Z",
+  "last_activity": "2026-09-26T18:19:15.970Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "Data-stories originally created for the umwelt.info portal provides Python- and R-based scripts to collect, analyze and visualize metadata found in umwelt.info. The main focus is on environmental and nature protection data and information and their related metadata. The metadata catalogue on umwelt.info is accessed via the public API documented at https://md.umwelt.info/swagger-ui/. \n",
   "maintenance": "internal",
@@ -5175,7 +5268,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot",
   "landing": "https://daz-pilot.de",
-  "last_activity": "2026-09-24T09:33:45.687Z",
+  "last_activity": "2026-09-28T08:35:59.872Z",
   "license": "EUPL-1.2",
   "long_desc": "In vocational school classes with German as a second or foreign language (DaZ/DaF), technical-language barriers regularly disrupt the flow of teaching. At levels A2\u2013B1 there is a lack of low-threshold, subject-specific learning offerings that are integrated directly into everyday school life.\n\nDaZ-Pilot is a digital language copilot for inclusive vocational education. Students point their device camera at a tool or classroom object and instantly receive an image, the technical term, its article, and its singular and plural forms. The pronunciation is played back through the device's own text-to-speech engine \u2013 offline and without any external services.\n\nAssignments from Moodle are automatically scanned for technical terms; a QR code in the document links the assignment directly to the matching vocabulary training, with no additional effort for teachers. A review mode with quizzes, points and badges motivates learners to practise regularly.\n\nThrough a web dashboard, teachers manage assignments and the central technical vocabulary database and review class overviews as well as difficulty analyses. Login uses existing school accounts via OpenID Connect \u2013 without any separate registrat",
   "maintenance": "contract",
@@ -5437,7 +5530,7 @@
   ],
   "forge_path": "oci-community/images/l3montree/devguard/devguard",
   "landing": "https://devguard.org",
-  "last_activity": "2026-09-24T12:57:34.414Z",
+  "last_activity": "2026-09-28T09:14:09.129Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "DevGuard is an open-source platform for vulnerability and supply chain security that integrates security checks into the existing development workflow. Results appear right where developers work anyway: in merge requests, the CI/CD pipeline, and the issue tracker\u2014rather than in separate tools or Excel spreadsheets.\nOn openCode, DevGuard forms the technical core of the platform\u2019s security suite and is available to all users ([devguard.opencode.de](https://devguard.opencode.de/)) free of charge . Through the integration directly built into openCode, DevGuard performs automated security analyses and is used for projects requiring professional software security. This includes [openDesk](https://opencode.de/de/software/open-desk-1317), the office and collaboration suite for public administration, whose software supply chain is secured and documented using DevGuard.\n\nInstead of treating each finding based solely on its CVSS score, DevGuard weights findings multidimensionally: based on exploitability (EPSS), the depth of the affected dependency in the dependency tree, and the risk assessment for the respective project. This allows the truly relevant risks to be addressed first and reduces",
   "maintenance": "internal",
@@ -6059,7 +6152,7 @@
   ],
   "forge_path": "fitko/docs/efa-parametrisierung",
   "landing": "https://gitlab.opencode.de/fitko/docs/efa-parametrisierung",
-  "last_activity": "2026-09-24T16:05:28.466Z",
+  "last_activity": "2026-09-28T03:07:11.022Z",
   "license": "Apache-2.0",
   "long_desc": "Die Parametrisierung von \u201eEiner-f\u00fcr-Alle\u201c(EfA) -Onlinediensten dient dazu, eine bundesweite Nachnutzung der Dienste zu erm\u00f6glichen trotz landes- und satzungsrechtlicher Unterschiede. Die Flexibilit\u00e4t von EfA-Onlinediensten soll durch die  Verwendung von Variablen (Parametern) sichergestellt werden. Dies soll standardisiert und gleichartig f\u00fcr m\u00f6glichst viele Dienste der \u00f6ffentlichen Verwaltung erfolgen.\nEin Onlinedienst der \u00f6ffentlichen Verwaltung, der dem Konzept EfA folgen soll, zeichnet sich dadurch aus, dass er bundesweit allen Gebietsk\u00f6rperschaften zur Mitnutzung zur Verf\u00fcgung steht. Es besteht also die Herausforderung, dass ein technisch einheitlicher fachlicher EfA-Onlinedienst f\u00fcr mehrere, unterschiedliche landes- und satzungsrechtliche Grundlagen zur Verf\u00fcgung gestellt wird.\n\nDie Dokumentation zur EfA-Parametrisierung gibt Hinweise, wie die Parametrisierung von Diensten erfolgen soll, wie die Parameter definiert, gepflegt und abgerufen werden sollen und welche Parameter verwendet werden sollen. Es werden Parameter f\u00fcr variable Werte des Onlinedienstes, Kommunikationsparameter f\u00fcr das Antragsrouting, Parameter f\u00fcr die Adressierung von Bezahldiensten sowie Parameter zur Steu",
   "name": "Dokumentation zur EfA-Parametrisierung",
@@ -6367,7 +6460,7 @@
    "Feedback submitted directly as repository issues"
   ],
   "forge_path": "open-code/document-writing-tools/markdown-webbook",
-  "last_activity": "2026-09-24T10:31:37.898Z",
+  "last_activity": "2026-09-28T09:38:58.767Z",
   "license": "MIT",
   "long_desc": "## Convert Markdown files into static websites and interactive WebBooks\n\neasyWebsite \u2013 Markdown WebBook is part of the Document Writing Tools on openCode. It allows you to transform Markdown files into a static website.\n\nSupported themes: KERN-UX, Bund, openCode, openDesk \u2014 for federal, state, municipal and other public organisations.\n\nBuilt on Next.js, React, and TypeScript. Contributions are welcome.\n",
   "maintenance": "community",
@@ -6800,7 +6893,7 @@
   ],
   "forge_path": "digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
   "landing": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
-  "last_activity": "2026-09-24T16:08:14.429Z",
+  "last_activity": "2026-09-28T08:07:17.421Z",
   "license": "EUPL-1.2",
   "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
   "maintenance": "contract",
@@ -6836,7 +6929,7 @@
   ],
   "forge_path": "digitalservicebund/elterngeldrechner",
   "landing": "https://gitlab.opencode.de/digitalservicebund/elterngeldrechner",
-  "last_activity": "2026-09-21T04:09:21.051Z",
+  "last_activity": "2026-09-28T04:08:47.205Z",
   "license": "EUPL-1.2",
   "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
   "maintenance": "contract",
@@ -7014,8 +7107,8 @@
   "fallback_repo": "https://gitlab.opencode.de/landeshauptstadt-muenchen/enova-editor.git",
   "forge_path": "landeshauptstadt-muenchen/enova-editor",
   "landing": "https://opensource.muenchen.de/software/enova-editor.html",
-  "last_activity": "2026-09-24T06:13:33.030Z",
-  "license": "MIT-open-group",
+  "last_activity": "2026-09-28T10:43:27.290Z",
+  "license": "MIT",
   "long_desc": "German local government desktop application to process XJustiz.eNoVa.2900003 files regarding pre-emption rights from notaries, mandatory from January 2027.",
   "maintenance": "community",
   "name": "eNoVa-Editor",
@@ -7031,6 +7124,9 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 13296,
+  "used_by": [
+   "Landeshauptstadt M\u00fcnchen"
+  ],
   "version": "0.9.0"
  },
  {
@@ -7054,7 +7150,7 @@
    "Eventkalenderanbindung"
   ],
   "forge_path": "stadt-menden/erlebnis.stadt",
-  "last_activity": "2026-09-24T00:34:13.493Z",
+  "last_activity": "2026-09-25T21:39:22.494Z",
   "license": "Apache-2.0",
   "long_desc": "Erlebnis.Stadt ist eine digitale Plattform, die B\u00fcrger:innen und Besucher:innen dabei helfen soll, die vielf\u00e4ltigen Erlebnisse, Angebote und versteckten Sch\u00e4tze von Menden zu entdecken. Die Plattform b\u00fcndelt Orte und Mikroerlebnisse in der ganzen Stadt und bietet einen einheitlichen, leicht zug\u00e4nglichen Zugang zu lokaler Kultur, Tourismus und Freizeitaktivit\u00e4ten.\n\nDie L\u00f6sung ist als mobil optimierte Webanwendung konzipiert und bietet Zugriff auf hunderte sogenannte Mikro-Erlebnisse \u2013 von besonderen Naturorten, spannenden Vereinsangeboten und Kulturst\u00e4tten bis hin zu kreativen Beitr\u00e4gen aus Einzelhandel und Gastronomie. Durch Filter wie \u201eFamilienzeit\u201c, \u201eRomantik pur\u201c, \u201eAction unter freiem Himmel\u201c oder \u201eLokal genie\u00dfen\u201c lassen sich passende Erlebnisse einfach entdecken \u2013 auch ohne vorher genau zu wissen, wonach man sucht. \n",
   "maintenance": "internal",
@@ -7251,6 +7347,50 @@
  },
  {
   "categories": [
+   "document-management",
+   "office",
+   "productivity-suite"
+  ],
+  "contacts": [
+   "openCode Issue-Tracker"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Werkzeug zur automatisierten Generierung von Vertr\u00e4gen und anderen Dokumenten",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/opendva/multi-evb-it-digital",
+  "fallback_repo": "https://gitlab.opencode.de/opendva/multi-evb-it-digital.git",
+  "features": [
+   "Intuitive Vertragserstellung durch Interviewtechnik",
+   "Erstellung eigener Vorlagen, z.B. mit eigenen Klauselbibliotheken",
+   "Einfache Erstellung dieser Vorlagen mit Hilfe einer NoCode-Oberfl\u00e4che",
+   "Passwortschutz gegen unerw\u00fcnschte \u00c4nderungen an Vorlagen",
+   "Einfache Nutzung der Software im Web-Browser",
+   "Kommentierung von Interviewfragen mittels Karteikarten",
+   "Export des generierten Dokuments als .docx-Datei"
+  ],
+  "forge_path": "opendva/multi-evb-it-digital",
+  "last_activity": "2026-09-25T18:10:56.189Z",
+  "license": "MIT",
+  "long_desc": "EVB-IT digital ist eine u.a. auf die Bed\u00fcrfnisse der \u00f6ffentlichen Verwaltung zugeschnittene L\u00f6sung, um Vertr\u00e4ge und sonstige Dokumente automatisiert zu generieren.\n\nAuf Basis individuell anpassbarer Vorlagen, f\u00fchrt EVB-IT digital die Anwendenden Schritt f\u00fcr Schritt durch einen strukturierten Fragebogen und generiert daraus passgenau Vertr\u00e4ge oder sonstige Dokumente. Die Software besteht aus zwei Komponenten:\n1. Mit dem EVB-IT digital Designer k\u00f6nnen Vertrags- oder Dokumentenvorlagen erstellt und angepasst werden.\n2. Mit dem EVB-IT digital Player k\u00f6nnen aus den Vorlagen mittels Interviewtechnik passgenaue Vertr\u00e4ge oder Dokumente generiert werden.\n\nEVB-IT digital ist besonders zum einfachen Einsatz konzipiert, z.B. in Beh\u00f6rden. Es besteht lediglich aus zwei HTML-Dateien, die Sie einfach lokal speichern und in Ihrem Web-Browser \u00f6ffnen k\u00f6nnen. Andererseits kann EVB-IT digital auch als Cloud-Software fugieren, indem diese HTML-Dateien von einem Webserver angeboten werden, z.B. in einem Intranet.\n",
+  "maintenance": "community",
+  "name": "EVB-IT digital",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-03-17",
+  "repo": "https://gitlab.opencode.de/evb-it/digital/evb-it-digital",
+  "repo_key": "gitlab.opencode.de/evb-it/digital/evb-it-digital",
+  "short_desc": "Werkzeug zur automatisierten Generierung von Vertr\u00e4gen und anderen Dokumenten",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13327,
+  "version": "2.0.0"
+ },
+ {
+  "categories": [
    "content-management"
   ],
   "contacts": [
@@ -7402,7 +7542,7 @@
   ],
   "forge_path": "f13/dokumentation/dokumentation",
   "landing": "https://f13-os.de/",
-  "last_activity": "2026-09-24T12:50:36.932Z",
+  "last_activity": "2026-09-25T07:22:45.501Z",
   "license": "MPL-2.0",
   "long_desc": "F13 stellt eine Vielzahl modularer, flexibel einsetzbarer KI-Funktionen bereit \u2013 zum Verarbeiten von Informationen, Erstellen von Texten, oder zum Recherchieren. Nutzende k\u00f6nnen mit F13 gezielt, wirksam und sicher Generative K\u00fcnstliche Intelligenz bei t\u00e4glichen B\u00fcroarbeiten einsetzen. Mit dem \u00dcbergang in eine Open-Source-Weiterentwicklung wird F13 seit Juli 2025 als gemeinschaftliches Vorhaben ge\u00f6ffnet: Der Quellcode steht frei zur Verf\u00fcgung, die Nutzung ist offen. Interessierte Verwaltungen, Organisationen sowie Entwicklerinnen und Entwickler sind eingeladen, das System f\u00fcr eigene Bedarfe anzupassen, weiterzuentwickeln und diese Entwicklungen wiederum Open Source bereitzustellen. F13 versteht sich als Beitrag zu einer modernen, transparenten und kooperativen Verwaltungsdigitalisierung \u2013 praxisnah erprobt, offen zug\u00e4nglich und auf das Gemeinwohl ausgerichtet. F13 ist Work-in-Progress und es gibt somit allen, die KI-Basisl\u00f6sungen in die deutsche Verwaltung tragen wollen, die M\u00f6glichkeit zur Mitwirkung.\n",
   "maintenance": "community",
@@ -7518,6 +7658,52 @@
  },
  {
   "categories": [
+   "data-collection",
+   "contact-management",
+   "survey",
+   "data-analytics"
+  ],
+  "contacts": [
+   "Schutzengel-Flensburg GmbH"
+  ],
+  "country": "DE",
+  "desc_en": "Digital case-management application for documenting Fr\u00fche Hilfen (early childhood intervention) cases, built by Schutzengel GmbH.",
+  "desc_lang": "en",
+  "desc_src": "Digitale Fachanwendung zur Dokumentation von F\u00e4llen im Bereich Fr\u00fche Hilfen.",
+  "desc_src_lang": "de",
+  "dev_status": "beta",
+  "entry_url": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/FamDok-2",
+  "fallback_repo": "https://gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/FamDok-2.git",
+  "features": [
+   "Digital case files for families, children and caregivers",
+   "Configurable case-related and general forms",
+   "Contact documentation and goal agreements per case",
+   "Handover of cases between social workers",
+   "Role-based access control",
+   "Anonymised, role-based statistics overview"
+  ],
+  "forge_path": "sh/digitalhub-sh/landesprogramm-offene-innovationen/FamDok-2",
+  "last_activity": "2026-09-25T13:25:37.391Z",
+  "license": "MIT",
+  "long_desc": "FamDok 2 is a digital case-management application for documenting cases in the German \"Fr\u00fche Hilfen\" (early childhood intervention) programme, built by Schutzengel GmbH in Flensburg. It lets social workers structurally capture and manage family cases, contacts, forms and goal agreements, plus a role-based statistics overview.\n\nThe application is a monorepo with an Angular frontend and an Express/TypeScript REST API, persisting data in PostgreSQL via Prisma, with authentication handled by Keycloak (OIDC / bearer token). Frontend and backend share Prisma-generated types.\n",
+  "maintenance": "contract",
+  "name": "FamDok 2",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-08-21",
+  "repo": "https://github.com/Schutzengel-GmbH/FamDok-2",
+  "repo_key": "github.com/schutzengel-gmbh/famdok-2",
+  "repo_owner": "Schutzengel GmbH",
+  "short_desc": "Digital case-management application for documenting Fr\u00fche Hilfen (early childhood intervention) cases, built by Schutzengel GmbH.",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13363,
+  "version": "0.9.0-beta"
+ },
+ {
+  "categories": [
    "collaboration",
    "office",
    "feedback"
@@ -7606,7 +7792,7 @@
   "entry_url": "https://gitlab.opencode.de/fitko/fim/portal",
   "fallback_repo": "https://gitlab.opencode.de/fitko/fim/portal.git",
   "forge_path": "fitko/fim/portal",
-  "last_activity": "2026-09-24T15:40:07.807Z",
+  "last_activity": "2026-09-28T10:22:01.104Z",
   "license": "EUPL-v1.2",
   "maintenance": "internal",
   "name": "FIM Datenfelder-Sammelrepository",
@@ -8071,7 +8257,7 @@
    "Architecture Decisions"
   ],
   "forge_path": "fitko/matrix-g2x/solution-architecture",
-  "last_activity": "2026-09-24T15:37:43.257Z",
+  "last_activity": "2026-09-28T05:02:41.246Z",
   "license": "EUPL-1.2",
   "long_desc": "This repository provides comprehensive documentation on the solution architecture of the Matrix-based G2X communication infrastructure pilot (https://gitlab.opencode.de/fitko/g2x-matrix-pilot).\n",
   "maintenance": "internal",
@@ -8112,7 +8298,7 @@
    "Semantic Release"
   ],
   "forge_path": "fitko/matrix-g2x/neo-rust-sdk",
-  "last_activity": "2026-09-24T16:20:47.818Z",
+  "last_activity": "2026-09-28T09:00:27.467Z",
   "license": "EUPL-1.2",
   "long_desc": "A template for software artifacts repositories that are part of the FITKO Matrix G2C Pilot Project.\nIt includes platform agnostic tooling, CI/CD workflows and documentation for managing software assets and deliverable artifacts.\n",
   "maintenance": "internal",
@@ -8145,7 +8331,7 @@
    "Communication"
   ],
   "forge_path": "fitko/matrix-g2x/fit-neo-web",
-  "last_activity": "2026-09-24T17:14:27.172Z",
+  "last_activity": "2026-09-28T04:57:02.150Z",
   "license": "EUPL-1.2",
   "long_desc": "A Web Client for the Communication between Citizen and Government relying on the backend design of the FITKO Matrix G2C Pilot Project which itself is building upon the Matrix Protocol",
   "maintenance": "internal",
@@ -8371,7 +8557,7 @@
    "Ein Migrationsbericht stellt Abweichungen und Nacharbeiten kompakt dar"
   ],
   "forge_path": "OC000097948268/Formularagent",
-  "last_activity": "2026-09-23T12:00:25.406Z",
+  "last_activity": "2026-09-25T09:09:18.162Z",
   "license": "MPL-2.0",
   "long_desc": "# Willkommen beim Formularagent\nDer Formularagent ist ein Open-Source-Werkzeug zur Migration bestehender Formulare in das offene [Formularschema](https://opencode.de/de/software/formularschema-9726) des OZG-Hubs. Grundlage ist eine vorhandene Formularrepr\u00e4sentation in einem der unterst\u00fctzten Eingabeformate; weitere Formate lassen sich \u00fcber eigene Adapter anbinden. Auf Basis der Eingabeformate wird automatisiert ein schema-konformes Formular-JSON erzeugt und m\u00f6gliche Abweichungen in einem Migrationsbericht zur Verf\u00fcgung gestellt. Der Formularagent ist dabei als Assistenzwerkzeug angelegt: Er \u00fcbernimmt die schematische \u00dcbertragungsarbeit und erzeugt einen Ausgangsstand f\u00fcr die weitere Bearbeitung. \n\n# Funktionsumfang im \u00dcberblick\n* **Erweiterbare Eingabeformate:** form.io, FIM und Excel werden bereits unterst\u00fctzt; weitere Formate lassen sich \u00fcber eigene Adapter anbinden\n* **Schema-konforme Ausgabe:** Automatisierte Validierung gegen das Formularschema sichert Kompatibilit\u00e4t mit schemakonformen Anwendungen \n* **Nachvollziehbarkeit bei Fehlern:** Dokumentation von Abweichungen und erforderlichen Nacharbeiten in einem Migrationsbericht \n* **Standardisierte Bausteine:** Automatische Erg\u00e4",
   "maintenance": "internal",
@@ -8772,7 +8958,7 @@
   ],
   "forge_path": "fitko/docs/portal",
   "landing": "https://docs.fitko.de",
-  "last_activity": "2026-09-24T03:23:11.779Z",
+  "last_activity": "2026-09-25T12:34:55.164Z",
   "license": "EUPL-1.2",
   "long_desc": "The Federal Development Portal (FEP) consolidates technical information for the development and integration of digital administrative services in Germany. It provides documentation, standards, API descriptions, help texts, background information, and additional development resources inin a single web portal. The target audience of the development portal includes:\n- Software developers\n- IT architects\n- Project and program managers\n- Product teams\n- Open-source enthusiasts\n\nThe development portal facilitates access to relevant materials, reduces search effort and supports more consistent use of federal IT buildin blocks. Content can be maintained in a structured way, published in multiple languages, and organised for different subject areas such as FIT standards, resource directories, and project-specific documentation. The software therefore acts as a central knowledge and publishing platform for development-facing information in the public sector.\n\nThe Federal Development Portal is a product of the German IT Planning Council and is managed by the FITKO product management team.\n",
   "maintenance": "internal",
@@ -9024,7 +9210,7 @@
    "conference-access management"
   ],
   "forge_path": "it.nrw/nrw.desk/gateway-backend",
-  "last_activity": "2026-09-23T02:39:44.350Z",
+  "last_activity": "2026-09-25T02:48:05.077Z",
   "license": "BSD-3-Clause",
   "long_desc": "An additional backend service for conference management. This service is used for access for users of external networks. If a conference that is created by the conference-backend saved with settings for guest access (including among other things phone access) the conference will be saved in the database of the gateway-backend, too. The gateway-crud-api handles all requests of conference-backend instances, that are used to create, update or read conferences. The gateway-api on the other hand handles requests of the gateway-frontend that are made for external users, to redirect and set guest permissions for the jitsi instance.\n",
   "maintenance": "contract",
@@ -9143,7 +9329,7 @@
    "Modular codedesign"
   ],
   "forge_path": "OC000024389631/GeospatialAnalyzer",
-  "last_activity": "2026-09-23T01:07:10.846Z",
+  "last_activity": "2026-09-28T01:06:58.437Z",
   "license": "GPL-3.0-only",
   "long_desc": "This is an Open-Source-Project from Landesamt f\u00fcr Geobasisinformation Sachsen (GeoSN) with development support from con terra GmbH.\n\nGeospatialAnalyzer is a Node.js based HTTP-API using NestJS, TypeORM, fastify, OpenAPI, Swagger and more.\n\nThe API can be integrated into different data processing and information systems, such as applications and specialised procedures.\n\nIt enables the transfer of geo-objects in the form of coordinates to check them against certain data topics using spatial tests. The response contains attributes of the objects found and optionally their geometry. In this way its possible to automatically determine, for example, in which district or on which parcel a transferred object is located.\n\nFor more information have a look in the documentation.\n",
   "maintenance": "community",
@@ -9387,7 +9573,7 @@
    "automatic import of the standard user groups and permissions"
   ],
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_permissions",
-  "last_activity": "2026-09-24T03:21:57.263Z",
+  "last_activity": "2026-09-28T03:22:15.926Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n**To obtain the current approved release version of the GSB11, which will be subject to quarterly acceptance tests in the future, please contact gsb11-entwicklung@itzbund.de.**\n\n## Government Site Builder 11 - Extension: gsb-permission\nThe extension gsb-permission provides the gsb11 standard permissions.\n",
   "maintenance": "contract",
@@ -9425,7 +9611,7 @@
    "Import Site-Configuration"
   ],
   "forge_path": "bmi/government-site-builder-11/extensions/siteconfig_impexp",
-  "last_activity": "2026-09-24T18:18:24.725Z",
+  "last_activity": "2026-09-27T18:21:30.878Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n**To obtain the current approved release version of the GSB11, which will be subject to quarterly acceptance tests in the future, please contact gsb11-entwicklung@itzbund.de.**\n\n## Government Site Builder 11 - Extension: siteconfig\\_impexp\nThe extension siteconfig\\_impexp provides a backend module to import and export your site configuration.\n",
   "maintenance": "contract",
@@ -9560,7 +9746,7 @@
    "Frontend Styles"
   ],
   "forge_path": "bmi/government-site-builder-11/extensions/gsb_public_frontend",
-  "last_activity": "2026-09-24T18:29:03.328Z",
+  "last_activity": "2026-09-28T10:22:48.257Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "## Please note!\n**This project reflects the current state of development of the gsb 11 extension. It contains functions and features that have not been tested by an acceptance test. Please use the version that was published with the quarterly release or a security update.**\n\n## Extension: gsb\\_public\\_frontend\nThe extension gsb\\_public\\_frontend contains the standard frontend of the GSB 11, without the federal style guide.\n",
   "maintenance": "contract",
@@ -9985,7 +10171,7 @@
    "Keycloak admin API"
   ],
   "forge_path": "it.nrw/nrw.desk/identity-curator",
-  "last_activity": "2026-09-18T02:46:13.287Z",
+  "last_activity": "2026-09-28T02:46:03.599Z",
   "license": "BSD-3-Clause",
   "long_desc": "The identity-curator service acts as a proxy layer in front of Keycloak to enable other services with access to its API to trade unique user identifier for exhaustive user information. If custom mappings between application-level user-IDs and Keycloak-user properties have been configured, this service needs to be extended in order to provide a correct translation.\n",
   "maintenance": "none OR contract",
@@ -10027,9 +10213,9 @@
    "BSI IT-Grundschutz APP.4.4"
   ],
   "forge_path": "ig-bvc/igbvc-info",
-  "last_activity": "2026-09-24T11:04:16.725Z",
+  "last_activity": "2026-09-25T05:30:53.961Z",
   "license": "Apache-2.0",
-  "long_desc": "Wir sind eine offene Gemeinschaft aus IT-Dienstleistern und IT-affinen Mitarbeitenden  aus dem Umfeld der \u00f6ffentlichen Verwaltung, die sich f\u00fcr Containerisierung, Kubernetes  und/oder die Verwaltungscloud interessieren.\n\n# Was sind die Ziele und Motivation der IG BvC?\n- Austausch von Ergebnissen und F\u00f6rderung der Zusammenarbeit\n- Standards f\u00fcr das Deployment von Fachverfahren in Container-Umgebungen.\n- Standards f\u00fcr den Betrieb von Container-Plattformen zur Herstellung einer Kompatibilit\u00e4t zwischen den Rechenzentren\n- M\u00f6glichkeiten der Koppelung und gemeinsamen Nutzung von Container-Plattformen\n- Entwicklung auf Basis der BSI-Bausteine SYS.1.6 Container und APP.4.4 Kubernetes\n- Kubernetes als Grundlage f\u00fcr die Betrachtungen\n# Was sind die Arbeitsweisen und Prinzipien der IG BvC?\nPrinzipien stellen eine Orientierungshilfe und Leitlinien f\u00fcr die Zusammenarbeit dar.\nBei der Definition von Standards wendet die Interessengruppe folgende Prinzipien:\n- Jeder definierte Standard basiert auf dem Kubernetes-Standard (k8s, Vanilla-Standard in der aktuellen Version) ohne herstellerspezifische Erweiterungen.\n- Die konkrete Kubernetes-Version wird vereinbart und fortlaufend an den Stand der Tech",
+  "long_desc": "Wir sind eine offene Gemeinschaft aus IT-Dienstleistern und IT-affinen Mitarbeitenden  aus dem Umfeld der \u00f6ffentlichen Verwaltung, die sich f\u00fcr Containerisierung, Kubernetes  und/oder die Verwaltungscloud interessieren.\n\u00dcberblick \u00fcber Aktivit\u00e4ten, Artefakte und Projekte in der **[Haupteinstiegsseite](https://gitlab.opencode.de/ig-bvc)**.\n# Was sind die Ziele und Motivation der IG BvC?\n- Austausch von Ergebnissen und F\u00f6rderung der Zusammenarbeit\n- Standards f\u00fcr das Deployment von Fachverfahren in Container-Umgebungen.\n- Standards f\u00fcr den Betrieb von Container-Plattformen zur Herstellung einer Kompatibilit\u00e4t zwischen den Rechenzentren\n- M\u00f6glichkeiten der Koppelung und gemeinsamen Nutzung von Container-Plattformen\n- Entwicklung auf Basis der BSI-Bausteine SYS.1.6 Container und APP.4.4 Kubernetes\n- Kubernetes als Grundlage f\u00fcr die Betrachtungen\n# Was sind die Arbeitsweisen und Prinzipien der IG BvC?\nPrinzipien stellen eine Orientierungshilfe und Leitlinien f\u00fcr die Zusammenarbeit dar.\nBei der Definition von Standards wendet die Interessengruppe folgende Prinzipien:\n- Jeder definierte Standard basiert auf dem Kubernetes-Standard (k8s, Vanilla-Standard in der aktuellen Version) ohne herst",
   "maintenance": "contract",
   "name": "IG BvC",
   "platforms": [
@@ -10331,7 +10517,7 @@
   ],
   "forge_path": "informationgrid/ingrid-editor",
   "landing": "https://ingrid-oss.eu",
-  "last_activity": "2026-09-24T04:24:06.164Z",
+  "last_activity": "2026-09-28T04:23:58.388Z",
   "license": "EUPL-1.2",
   "long_desc": "Der InGrid Editor ist eine zentrale Komponente der [InGrid-Softwarefamilie](https://opencode.de/de/software/in-grid-10691), einer leistungsf\u00e4higen und flexiblen Softwarel\u00f6sung f\u00fcr die Erfassung, Verwaltung und Bereitstellung von Daten und Metadaten, entwickelt und permanent gepflegt im Rahmen einer Bund-L\u00e4nder-Verwaltungskooperation.\n\nDer InGrid-Editor erm\u00f6glicht die Erfassung, Pflege, Validierung und Ver\u00f6ffentlichung von Metadaten \u00fcber flexible Formulare und bietet einen umfangreichen Workflow, der den Import sowie den Export verschiedener Formate erlaubt. Insbesondere wird die Erfassung und Publikation von ISO 19115/19119-, OGC-, INSPIRE- und DCAT-AP.DE-konformen Metadaten unterst\u00fctzt. Durch eine modulare Architektur k\u00f6nnen verschiedene fachliche Profile (wie z.B. Opendata, INSPIRE, HVD oder UVP) integriert werden, um spezifische Anforderungen an die Datenerfassung zu erf\u00fcllen.\n\nWichtige Funktionen sind:\n- Webbasierte Benutzeroberfl\u00e4che f\u00fcr die Metadatenerfassung und -pflege\n- Assistenten f\u00fcr die Metadatenerfassung\n- Validierungstools\n- Flexibles Rollen- und Rechte-Modell\n- Integration in bestehende Infrastrukturen via Keycloak\n\nWeiterf\u00fchrende Links:\n- [Dokumentation](https://ing",
   "maintenance": "contract",
@@ -10469,7 +10655,7 @@
   ],
   "forge_path": "cern/invenioils",
   "landing": "https://invenioils.docs.cern.ch/",
-  "last_activity": "2026-09-24T01:13:33.370Z",
+  "last_activity": "2026-09-28T08:06:46.681Z",
   "license": "MIT",
   "long_desc": "invenio-app-ils is the Integrated Library System flavour of Invenio, the digital repository framework developed at CERN. It provides libraries with the tools to catalogue, circulate and make discoverable their physical and digital collections.\n\nBuilt on the Invenio framework, invenio-app-ils reuses its indexing, search and access-control building blocks to offer cataloguing of bibliographic records, series and multipart monographs; management of physical items and their locations; circulation workflows for loans, requests and returns; acquisition order tracking; and a public discovery interface for patrons to search and browse the collection.\n\nThe software is developed as part of the Invenio ecosystem, with contributions from CERN and partner institutions, and is released under the MIT license.\n",
   "maintenance": "internal",
@@ -10514,7 +10700,7 @@
   ],
   "forge_path": "cern/inveniordm",
   "landing": "https://inveniordm.docs.cern.ch",
-  "last_activity": "2026-09-24T01:13:32.777Z",
+  "last_activity": "2026-09-27T01:13:32.883Z",
   "license": "MIT",
   "long_desc": "InvenioRDM is a turn-key research data management (RDM) platform built on the Invenio framework, developed at CERN. It allows research institutions, universities and libraries to run their own open-access repository for research data, publications and other digital outputs.\n\nInvenioRDM provides rich, community-curated metadata based on the DataCite schema, persistent identifier minting (DOIs) via DataCite, integration with ORCID, ROR and funder registries, versioning and access control for records, and community-based curation and review workflows. It is the software behind CERN's Zenodo repository and is used by a growing number of institutions worldwide as their institutional research data repository.\n\nThe software is developed as part of the Invenio ecosystem, with contributions from CERN and a wide network of partner institutions, and is released under the MIT license.\n",
   "maintenance": "internal",
@@ -10738,7 +10924,7 @@
    "Recherche und Bericht-Erstellung"
   ],
   "forge_path": "thlv/tlrz/it-fachplanung",
-  "last_activity": "2026-08-31T12:30:59.812Z",
+  "last_activity": "2026-09-28T08:35:23.217Z",
   "license": "EUPL-1.2",
   "long_desc": "Die Software mit angebundener Datenbank soll die Erstellung, \u00c4nderung, Pr\u00fcfung und Auswertung der IT-Fach- und Gesamtplanung sowohl f\u00fcr die Ressorts, deren Gesch\u00e4ftsbereiche als auch der KS E-Gov-IT effizienter, zuverl\u00e4ssiger und flexibler machen.\nZiel ist es, mit dem neu zu entwickelnden System den obersten Landesbeh\u00f6rden und  deren Gesch\u00e4ftsbereichen sowie dem Rechnungshof des Freistaats Th\u00fcringen zu einer wesentlich effizienteren IT-Ressortplanung zu verhelfen und Mehrfachentwicklungen/ -beschaffungen zu vermeiden.\n",
   "maintenance": "contract",
@@ -11376,7 +11562,7 @@
   ],
   "forge_path": "kern-ux/kern-ux-plain",
   "landing": "https://www.kern-ux.de/",
-  "last_activity": "2026-09-24T14:41:40.476Z",
+  "last_activity": "2026-09-28T07:04:11.624Z",
   "license": "EUPL-1.2",
   "long_desc": "# What is KERN?\nWith **KERN** we provide an open UX standard for Germany's public administration that enables delivery teams to build accessible digital services efficiently and with a user-centred approach.\n# Open Source\n**KERN** is an open source project initiated by the federal states of Hamburg and Schleswig-Holstein. Everyone interested in the digital transformation of public administration is invited to join the national, interdisciplinary community.\n# Community\nAdoption is driven by collaborations within a cross-state specialist community (bottom up) and by partnerships on the decision-making level (top down). As a toolkit for digital government solutions, **KERN** strengthens the unified 'public administration' brand and builds trust in services from the municipal to the federal level.\n# Awards and further information\n\n  - **KERN** received the 2024 Prize for Good Administration.\n  - **KERN** is part of the digital umbrella brand initiative.\n  - The [service standard](https://servicestandard.gov.de/) builds on and\n    with **KERN**.\n  - Find our [roadmap](https://www.kern-ux.de/ueber-kern/roadmap) on\n    kern-ux.de.\n\n# What does KERN include?\n\n  - **KERN** provides an exten",
   "maintenance": "community",
@@ -11556,7 +11742,7 @@
   ],
   "forge_path": "sgemlichheim/kern-ux-theme-for-wordpress",
   "landing": "https://gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-wordpress.git",
-  "last_activity": "2026-09-23T07:47:57.983Z",
+  "last_activity": "2026-09-25T07:32:05.780Z",
   "license": "GPL-2.0-or-later",
   "long_desc": "KERN-UX for WordPress ist ein klassisches WordPress-Theme auf Basis des KERN Design-Systems (kern-ux-plain / @kern-ux/native). KERN ist ein Open-Source-Designsystem der oeffentlichen Verwaltung, initiiert von den Laendern Hamburg und Schleswig-Holstein und laenderuebergreifend weiterentwickelt, mit dem Ziel eines barrierefrei zugaenglichen Staates.\n\nDieses Theme ist eine Nachnutzung durch eine Kommune, veroeffentlicht, damit andere Verwaltungen dieselbe Arbeit nicht erneut leisten muessen. Es bindet das komplette KERN-Kit unveraendert ein und uebersetzt das von WordPress erzeugte Markup auf die KERN-Designtokens. Es handelt sich um ein nachgenutztes, nicht um ein offizielles Angebot des KERN-Projekts oder eines Landes.\n\nDie eigenen KERN-Bloecke (Hinweis, Badge, Card, Aufgabenliste) liefert das separate Plugin \"KERN-UX Companion\"; das Theme laeuft auch ohne dieses Plugin.\n",
   "maintenance": "internal",
@@ -11564,7 +11750,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-09-25",
   "repo": "https://gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-wordpress.git",
   "repo_key": "gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-wordpress",
   "short_desc": "Klassisches WordPress-Theme auf Basis des KERN-Designsystems der oeffentlichen Verwaltung.",
@@ -11572,7 +11758,7 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 12537,
-  "version": "1.2.1"
+  "version": "1.3.0-beta1"
  },
  {
   "categories": [
@@ -12514,6 +12700,50 @@
   "version": "1.1.0"
  },
  {
+  "categories": [
+   "it-development",
+   "it-security",
+   "it-service-management"
+  ],
+  "contacts": [
+   "Martin Mai"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Setzt auf einer leeren VM einen einzelnen k3s-Knoten mit Plattformschicht auf, geh\u00e4rtet und nachpr\u00fcfbar.",
+  "desc_src_lang": "de",
+  "dev_status": "beta",
+  "entry_url": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1",
+  "fallback_repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1.git",
+  "features": [
+   "Knotenh\u00e4rtung als Skript, nicht als Anleitung",
+   "k3s mit verschl\u00fcsselten Secrets und Audit-Protokoll",
+   "GitOps f\u00fcr Anwendungen und f\u00fcr die Plattform selbst",
+   "Zulassungskontrolle mit Digest-Pflicht und Signaturpr\u00fcfung",
+   "Wirkungsprobe: pr\u00fcft, was passiert, nicht was eingestellt ist",
+   "Messung gegen den Grundschutz++-Anwenderkatalog"
+  ],
+  "forge_path": "zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1",
+  "landing": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1",
+  "last_activity": "2026-09-28T09:27:01.517Z",
+  "license": "EUPL-1.2",
+  "long_desc": "\ud83d\udee0\ufe0f\ud83d\udea7\u2753Security-Advice: Die Inhalte dieses Repositorys sind Ergebnisse und Gegenstand von Tests und Ver\u00e4nderungen. Sie k\u00f6nnen deshalb nur in diesem Sinne verwendet werden.\n\nTexte zwischen den Bot-Markern \ud83e\udd16\u25b6\ufe0f und \ud83e\udd16\u25c0\ufe0f k\u00f6nnen KI-generierte Bestandteile enthalten.\n\n\ud83e\udd16\u25b6\ufe0f\n\nEntstanden im ZKI-Arbeitskreis Informationssicherheit als Erprobungsfall daf\u00fcr, wie sich Aussagen nach BSI Grundschutz++ an einem laufenden System nachpr\u00fcfbar machen lassen.\n\nDrei Skripte und ein paar Manifeste, die aus einer leeren virtuellen Maschine einen einzelnen Kubernetes-Knoten machen: gehaertetes Betriebssystem, k3s mit verschl\u00fcsselten Secrets, cert-manager mit Let's Encrypt, ArgoCD fuer GitOps, Kyverno mit den Richtlinien der Interessengemeinschaft Betrieb von Containern, auf Wunsch Velero fuer Sicherungen.\n\nDer Unterschied zu anderen Baukaesten liegt nicht im Umfang, sondern in der Nachpruefbarkeit. Zu jedem Aufbau gehoeren zwei Proben: eine liest die Einstellungen, die andere versucht jeweils das, was nicht gehen soll \u2014 ein Image mit Tag statt Digest starten, aus einem fremden Namensraum an die Datenbank, den Inhalt eines Secrets im Klartext in der Datenbank finden. Bestanden ist, was scheitert. Der Unterschied",
+  "maintenance": "community",
+  "name": "kubernetes-minimal-on-a-vm",
+  "platforms": [
+   "linux"
+  ],
+  "released": "2026-09-25",
+  "repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1",
+  "repo_key": "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1",
+  "short_desc": "Setzt auf einer leeren VM einen einzelnen k3s-Knoten mit Plattformschicht auf, geh\u00e4rtet und nachpr\u00fcfbar.",
+  "software_type": "standalone/other",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13300,
+  "version": "0.1"
+ },
+ {
   "contacts": [
    "Pocket Rocket GmbH"
   ],
@@ -12660,7 +12890,7 @@
    "Vorgehen beschreiben, Erfahrungswerte teilen"
   ],
   "forge_path": "thlv/agoss",
-  "last_activity": "2026-08-27T10:05:37.702Z",
+  "last_activity": "2026-09-25T09:56:49.125Z",
   "license": "Creative Commons Attribution Share Alike 4.0 International",
   "long_desc": "Diese Einstiegsseite bietet interessierten Personen die M\u00f6glichkeit sich \u00fcber die Open Source Initiative der Th\u00fcringer Landesverwaltung zu informieren.\n\nEinerseits werden Onepager zum Einsatz Open Source in der \u00f6ffentlichen Verwaltung zur Verf\u00fcgung gestellt. Sie sollen h\u00e4ufige Fragen aus unterschiedlichster Perspektive (Beschaffung, Sofwareentwicklung, usw.) beantworten.\n\nDar\u00fcber hinaus sollen Arbeitsergebnisse, wie Evaluierungen, Erfahrungswerte usw. von Open Source Projekten transparent gemacht werden, die in der Landesverwaltung in Th\u00fcringen umgesetzt werden.\n\nDie Landingpage ist kein Softwareentwicklungsprojekt im eigentlichen Sinne. Es geht vielmehr darum, zu demonstrieren, wie Open Source Werkzeuge praktischen Mehrwert f\u00fcr Menschen in der \u00f6ffentlichen Verwaltung bringen k\u00f6nnen.\n\nTechnisch handelt es sich um Inhalte im Markdown Format, aus denen mittels eines Static Site Generator automatisiert eine durchsuchbare Website generiert wird.\n",
   "maintenance": "internal",
@@ -12913,6 +13143,51 @@
  },
  {
   "categories": [
+   "survey",
+   "data-collection",
+   "it-security"
+  ],
+  "contacts": [
+   "Martin Mai"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "LimeSurvey hinter geh\u00e4rtetem nginx, gebaut und ausgerollt so, dass sich jede Aussage dar\u00fcber belegen l\u00e4sst.",
+  "desc_src_lang": "de",
+  "dev_status": "beta",
+  "entry_url": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/limesurvey-1",
+  "fallback_repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/limesurvey-1.git",
+  "features": [
+   "Eigenes Image per Digest, signiert, mit SBOM und VEX",
+   "Gehaertetes nginx aus container.gov.de als einziger Eingang",
+   "Netzregeln mit Default-Deny, Pod Security Standards restricted",
+   "Zulassungskontrolle prueft Digest und Signatur beim Start",
+   "Konfiguration in Git, ausgerollt von ArgoCD",
+   "Messung gegen den Grundschutz++-Anwenderkatalog"
+  ],
+  "forge_path": "zki.de/ak-sec/test-goat-anwendungen/limesurvey-1",
+  "landing": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/limesurvey-1",
+  "last_activity": "2026-09-28T09:26:59.979Z",
+  "license": "EUPL-1.2",
+  "long_desc": "\ud83d\udee0\ufe0f\ud83d\udea7\u2753Security-Advice: Die Inhalte dieses Repositorys sind Ergebnisse und Gegenstand von Tests und Ver\u00e4nderungen. Sie k\u00f6nnen deshalb nur in diesem Sinne verwendet werden.\n\nTexte zwischen den Bot-Markern \ud83e\udd16\u25b6\ufe0f und \ud83e\udd16\u25c0\ufe0f k\u00f6nnen KI-generierte Bestandteile enthalten.\n\n\ud83e\udd16\u25b6\ufe0f\n\nEntstanden im ZKI-Arbeitskreis Informationssicherheit als Erprobungsfall daf\u00fcr, wie sich Aussagen nach BSI Grundschutz++ an einem laufenden System nachpr\u00fcfbar machen lassen.\n\nUmfragen als Demonstrationsfall: eine gewoehnliche PHP-Anwendung mit Datenbank und Dateiablage, aber mit einer Lieferkette, die man pruefen kann. Das Image leitet sich vom gepflegten Community-Image ab und wird auf openCode gebaut, gescannt, signiert und attestiert. Davor steht das gehaertete nginx aus dem Verzeichnis der oeffentlichen Verwaltung (container.gov.de), dahinter ein eigenes PostgreSQL-Image aus derselben Kette.\n\nDer Proxy ist ein eigener Pod und kein Sidecar: Er soll stehen bleiben, wenn die Anwendung neu startet, und er ist das Stueck, das bezogen und nicht selbst gebaut wird. Er setzt Sicherheitskopfzeilen, begrenzt Groesse und Rate, und der Administrationsbereich ist eine eigene Stelle in der Konfiguration \u2014 wer ihn auf bestimmte Netze",
+  "maintenance": "community",
+  "name": "limesurvey-gehaertet",
+  "platforms": [
+   "linux",
+   "web"
+  ],
+  "released": "2026-09-25",
+  "repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/limesurvey-1",
+  "repo_key": "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/limesurvey-1",
+  "short_desc": "LimeSurvey hinter geh\u00e4rtetem nginx, gebaut und ausgerollt so, dass sich jede Aussage dar\u00fcber belegen l\u00e4sst.",
+  "software_type": "standalone/web",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13299,
+  "version": "7.1.2"
+ },
+ {
+  "categories": [
    "business-process-management",
    "it-service-management",
    "it-development"
@@ -12938,7 +13213,7 @@
   ],
   "forge_path": "govstack/kitsoft/liquio",
   "landing": "https://www.liquio.tech/",
-  "last_activity": "2026-09-24T09:58:08.774Z",
+  "last_activity": "2026-09-25T16:02:24.577Z",
   "license": "AGPL-3.0-only",
   "long_desc": "# What is Liquio?\n**Liquio** is a low-code platform for the digital transformation of public services and rapid  development of software solutions for the public sector with minimal manual coding. It is oriented  toward government and local authorities, as well as teams that develop and deploy electronic services  for citizens and businesses.\n## More about Liquio capabilities\nThe platform provides a unified technological foundation for designing, developing, launching,  and maintaining digital services. Thanks to its low-code approach, Liquio significantly reduces  the time required to create services and minimizes reliance on complex development, allowing focus  on business process logic. This is further enhanced by automation tools powered by artificial  intelligence, which assist in designing and configuring processes, increase team productivity,  and simplify development.\nLiquio is designed with the specific needs of the public sector in mind, where security, stability,  and scalability are critical. The platform supports the creation of services capable of handling high  workloads and processing sensitive data in compliance with information security requirements. Liquio's  arc",
   "maintenance": "internal",
@@ -13066,7 +13341,7 @@
    "lorawan"
   ],
   "forge_path": "stadt-bad-berleburg/lorawan-connection-heatmap",
-  "last_activity": "2026-09-23T07:37:25.260Z",
+  "last_activity": "2026-09-25T07:07:01.722Z",
   "license": "EUPL-1.2",
   "long_desc": "**LoRaWAN Netzabdeckung Bad Berleburg**\n\nDieses Projekt erfasst die LoRaWAN-Netzabdeckung im Stadtgebiet Bad Berleburg. GPS-Tracker senden ihre Position sowie Signalparameter (RSSI, SNR, Spreading Factor) \u00fcber das LoRaWAN-Netzwerk an The Things Network (TTN).\n\nDas Repository enth\u00e4lt:\n- den NodeRed-Flow\n- den Context f\u00fcr den Context Broker\n- das Grafana-Dashboard\num die Signaldaten zu empfangen, eine Verbindungsqualit\u00e4t zu berechnen und die Daten als NGSI-LD-Entit\u00e4ten an die Datenplattform weiterzugeben.\n\n**Voraussetzungen**\n- LoRaWAN-f\u00e4hige GPS-Tracker\n- LoRaWAN Network Server (The Things Network)\n- NodeRed\n- Timeseries Datenbank\n- Grafana\n",
   "maintenance": "internal",
@@ -13363,7 +13638,7 @@
   ],
   "forge_path": "lgvhh/urban-data-solutions/masterportal",
   "landing": "https://www.masterportal.org",
-  "last_activity": "2026-09-23T11:49:49.084Z",
+  "last_activity": "2026-09-25T11:02:44.043Z",
   "license": "MIT",
   "long_desc": " ## Masterportal\n\n # Konfigurierbares Geoportal mit starker Community\n Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web. In Hamburg kommt das Masterportal immer dann zum Einsatz,\n wenn webbasierte Kartenanwendungen ben\u00f6tigt werden \u2013 als eigenst\u00e4ndige Anwendung oder als Teil einer E-Government-L\u00f6sung.\n Auch in anderen St\u00e4dten und Kreisen wird das Masterportal eingesetzt und in einer Kooperation in Form einer [++Implementierungspartnerschaft++](https://www.masterportal.org/)\n von mehr als 50 Partnern aus der Verwaltung weiterentwickelt.\n\n # Open Source und offene Standards\n Das Masterportal ist Open-Source-Software und setzt auf offene Standards. Es ist unter der [++MIT-Lizenz++](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/License.txt) ver\u00f6ffentlicht.\n\n # Issues melden\n Der offizielle Issue Tracker ist auf OpenCode zu finden: [++Issue Tracker++](https://gitlab.opencode.de/lgvhh/urban-data-solutions/masterportal/-/work_items)\n\n # Diskussionsforum des Masterportals\n Das Diskussionsforum findet man auf openCode: [++Diskussionsforum++](https://discourse.opencode.de/t/ueber-die-kategorie-masterportal-projekt-413/1691)\n\n # FAQ\n Allgemeine Fragen und An",
   "maintenance": "community",
@@ -13711,7 +13986,7 @@
   ],
   "forge_path": "lgvhh/urban-data-solutions/addons",
   "landing": "https://www.masterportal.org",
-  "last_activity": "2026-09-18T11:14:22.947Z",
+  "last_activity": "2026-09-25T08:00:06.084Z",
   "license": "MIT",
   "long_desc": " Die Masterportal Addons beinhalten spezielle Anwendungen, die individuell in die Open Source Software Masterportal per Konfiguration integriert werden k\u00f6nnen. Das Masterportal ist ein flexibler Baukasten f\u00fcr Geoportale im Web. In Hamburg kommt das Masterportal immer dann zum Einsatz, wenn webbasierte Kartenanwendungen ben\u00f6tigt werden \u2013 als eigenst\u00e4ndige Anwendung oder als Teil einer E-Government-L\u00f6sung. Auch in anderen St\u00e4dten und Kreisen wird das Masterportal eingesetzt und in einer Kooperation von mehr als 30 Partnern aus der Verwaltung weiterentwickelt. Die Masterportal Addons sind Open-Source-Software. Es ist unter der MIT-Lizenz ver\u00f6ffentlicht.\n",
   "maintenance": "community",
@@ -13748,7 +14023,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-cms",
   "landing": "https://portal.digitalhub.sh/",
-  "last_activity": "2026-09-23T21:26:37.968Z",
+  "last_activity": "2026-09-25T21:26:38.075Z",
   "license": "MIT",
   "long_desc": "Das Matchingportal \n",
   "maintenance": "community",
@@ -13790,7 +14065,7 @@
   ],
   "forge_path": "sh/digitalhub-sh/interne-projekte/matchingportal/matchingportal-frontend",
   "landing": "https://portal.digitalhub.sh",
-  "last_activity": "2026-09-24T03:06:50.488Z",
+  "last_activity": "2026-09-28T03:06:36.409Z",
   "license": "EUPL-1.2",
   "long_desc": "Eine sehr lange Beschreibung dieser Software, auch auf mehrere Zeilen aufgeteilt. Sie sollten beschreiben, worum es bei der Software geht und warum man sie ben\u00f6tigt. Hier k\u00f6nnten potenziell sehr viele Zeichen Text enthalten sein. Sie muss zwischen 500 und 10000 Zeichen lang sein.\n",
   "maintenance": "community",
@@ -13832,7 +14107,7 @@
    "Matrix client"
   ],
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-creator",
-  "last_activity": "2026-09-19T02:47:15.820Z",
+  "last_activity": "2026-09-25T02:53:53.860Z",
   "license": "BSD-3-Clause",
   "long_desc": "The purpose of this bot is to listen to commands issued in any rooms it has been invited to and set up conference rooms on demand by interacting with the backend-api of the conference management. Upon success, the bot responds with the klickable link to the freshly created conference room.\n",
   "maintenance": "community",
@@ -13872,7 +14147,7 @@
    "Matrix client"
   ],
   "forge_path": "it.nrw/nrw.desk/matrix-bot-conference-notifier",
-  "last_activity": "2026-09-19T02:49:24.900Z",
+  "last_activity": "2026-09-28T02:49:48.249Z",
   "license": "BSD-3-Clause",
   "long_desc": "This chat bot may be fed with information about a conference and its participants to schedule automatic reminder messages via Matrix chat prior to the meeting. Access links and conference information details are advertised for convenience. The bot acts deliberately without the need to invite it to a specific room while treating all messages as confidential and refusing to risk any data leak to third parties by managing its own rooms.\n",
   "maintenance": "community",
@@ -14351,7 +14626,7 @@
   ],
   "forge_path": "umwelt-info/metadaten",
   "landing": "https://umwelt.info",
-  "last_activity": "2026-09-23T13:39:26.226Z",
+  "last_activity": "2026-09-25T09:50:47.911Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "The metadata index developed for the umwelt.info project.\nIt collects information on datasets from diverse sources stored in different formats using various systems. This information is then harmonized and indexed so that it can be searched using the provided HTTP/JSON API.\nIt does not aim to be generic, configurable or programmable and is intended to work only as a component of the umwelt.info project.\n",
   "maintenance": "internal",
@@ -14370,6 +14645,44 @@
   "used_by": [
    "Umweltbundesamt"
   ]
+ },
+ {
+  "categories": [
+   "application-development"
+  ],
+  "contacts": [
+   "Stadt Bad Berleburg"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Integration von Wetterdaten professioneller Messstationen \u00fcber die AWEKAS-API in eine NGSI-LD-konforme Urbane Datenplattform.",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/stadt-bad-berleburg/mikroklima-wetterdaten",
+  "fallback_repo": "https://gitlab.opencode.de/stadt-bad-berleburg/mikroklima-wetterdaten.git",
+  "features": [
+   "nodered",
+   "sensors",
+   "awekas"
+  ],
+  "forge_path": "stadt-bad-berleburg/mikroklima-wetterdaten",
+  "last_activity": "2026-09-25T07:02:05.393Z",
+  "license": "EUPL-1.2",
+  "long_desc": "**Mikroklima Wetterstationen Bad Berleburg**\n\nDieses Projekt erfasst Wetterdaten von professionellen Messstationen im Stadtgebiet Bad Berleburg \u00fcber die AWEKAS-API und \u00fcberf\u00fchrt sie in NGSI-LD-konforme Entit\u00e4ten auf der Urbanen Datenplattform.\n\nDas Repository enth\u00e4lt:\n- den NodeRed-Flow\n- den Context f\u00fcr den Context Broker\num aktuelle Messwerte, Tagesaggregationen und 6-Tage-Wettervorhersagen von 10 Stationen zu empfangen, zu verarbeiten und an die Datenplattform weiterzugeben.\n\n**Voraussetzungen**\n- AWEKAS-API-Schl\u00fcssel je Station\n- NodeRed\n- Stellio Context Broker\n- Timeseries Datenbank\n\nDie Anlagenliste mit Stationen, Koordinaten und API-Schl\u00fcsseln wird lokal konfiguriert und ist nicht Bestandteil dieses Repositories.\n",
+  "maintenance": "internal",
+  "name": "Mikroklima Wetterstationen Bad Berleburg",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-09-23",
+  "repo": "https://gitlab.opencode.de/stadt-bad-berleburg/mikroklima-wetterdaten",
+  "repo_key": "gitlab.opencode.de/stadt-bad-berleburg/mikroklima-wetterdaten",
+  "short_desc": "Integration von Wetterdaten professioneller Messstationen \u00fcber die AWEKAS-API in eine NGSI-LD-konforme Urbane Datenplattform.",
+  "software_type": "configurationFiles",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 10565,
+  "version": "1.0.0"
  },
  {
   "categories": [
@@ -14922,7 +15235,7 @@
    "Semantic Release"
   ],
   "forge_path": "fitko/matrix-g2x/git-project-template",
-  "last_activity": "2026-09-14T04:58:49.687Z",
+  "last_activity": "2026-09-28T04:57:47.661Z",
   "license": "EUPL-1.2",
   "long_desc": "A template for software artifacts repositories that are part of the Matrix-based G2X communication infrastructure pilot \"Neo\".\nIt includes platform agnostic tooling, CI/CD workflows and documentation for managing software assets and deliverable artifacts.\n",
   "maintenance": "contract",
@@ -15046,7 +15359,7 @@
    "Integration with Indico for meeting creation"
   ],
   "forge_path": "cern/newdle",
-  "last_activity": "2026-09-24T01:13:27.320Z",
+  "last_activity": "2026-09-28T08:07:11.963Z",
   "license": "MIT",
   "long_desc": "newdle is a web-based tool that streamlines the process of finding the best date and time for a meeting or event, replacing the back and forth of emails and private messages that scheduling usually involves.\n\nOrganizers propose a set of candidate slots and share a link with participants, who mark the times that work for them. newdle can fetch free-busy information directly from Exchange servers, helping both organizers and participants see availability at a glance, with support for further calendar providers planned. Once a final slot is chosen, newdle is designed to let organizers create the corresponding event directly in Indico.\n\nnewdle is developed by the same team behind Indico at CERN, as part of the MALT project, and is released under the MIT license.\n",
   "maintenance": "internal",
@@ -15086,7 +15399,7 @@
    "S/MIME email signatures"
   ],
   "forge_path": "it.nrw/nrw.desk/notification-service",
-  "last_activity": "2026-09-22T02:50:12.656Z",
+  "last_activity": "2026-09-28T02:52:16.841Z",
   "license": "BSD-3-Clause",
   "long_desc": "The notification-service serves as a proxy for a third-party SMTP server and enables different backend components of the NRW.desk system to send email notifications to administrators and users.\n",
   "maintenance": "contract",
@@ -15183,7 +15496,7 @@
    "demo-mode"
   ],
   "forge_path": "it.nrw/nrw.desk/nrwdesk-helm",
-  "last_activity": "2026-09-24T13:06:39.362Z",
+  "last_activity": "2026-09-28T08:59:03.198Z",
   "license": "BSD-3-Clause",
   "long_desc": "Helm Chart for NRW.desk. Different deployment modi are supported, including separate deployment of inner services and gateway and a demo or development mode spinning up the whole of NRW.desk including external applications within a kind cluster.\n",
   "maintenance": "community",
@@ -15233,7 +15546,7 @@
   ],
   "forge_path": "bmi/opendesk/component-code/crossfunctional/univention/nubus",
   "landing": "https://nubus.de",
-  "last_activity": "2026-08-01T04:13:57.258Z",
+  "last_activity": "2026-09-26T23:05:47.561Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Nubus is a modular open-source solution for centralized Identity & Access Management (IAM) in organizations. It enables secure and efficient management of user identities, roles, permissions, and access to applications via a central web portal. Integrated Single Sign-On (SSO) allows users to access connected systems without repeated logins, while self-service features like password changes reduce administrative workload.\nThanks to numerous interfaces and expansion options, applications can be connected to Nubus not only via Single Sign-On, but also for a continuous User Lifecycle and authorization management. Existing systems with information on identities or authentication can serve as a source for the User Lifecycle or for authentication. Thanks to Packaged Integrations, widely used open source software based on best practices can be used for the connection and deployments can be carried out quickly.\nNubus supports deployment on Kubernetes, locally (on-premises) and in hybrid IT infrastructures. The solution is based on open standards and is designed for operation in data protection-sensitive environments.\nUnivention offers professional support, maintenance, and consulting servic",
   "maintenance": "contract",
@@ -15242,7 +15555,7 @@
    "linux",
    "web"
   ],
-  "released": "2026-08-28",
+  "released": "2026-09-15",
   "repo": "https://github.com/univention/nubus",
   "repo_key": "github.com/univention/nubus",
   "short_desc": "Nubus is a modular open-source solution for centralized Identity and Access Management (IAM) in organizations and for software stacks.",
@@ -15259,7 +15572,7 @@
    "Landesrechnungshof Mecklenburg-Vorpommern",
    "..."
   ],
-  "version": "1.22.0"
+  "version": "1.23.0"
  },
  {
   "categories": [
@@ -15452,7 +15765,7 @@
   ],
   "forge_path": "oc00013173229/odf-kit",
   "landing": "https://githubnewbie0.github.io/odf-kit",
-  "last_activity": "2026-09-19T20:20:04.810Z",
+  "last_activity": "2026-09-26T18:53:57.533Z",
   "license": "Apache-2.0",
   "long_desc": "odf-kit is an open-source TypeScript library for working with OpenDocument Format (ODF) documents programmatically. It provides fifteen distinct document modes in a single package: build ODT documents from scratch, fill existing .odt templates with data, convert DOCX to ODT, HTML to ODT, Markdown to ODT, TipTap JSON to ODT, Lexical editor state to ODT, build ODS spreadsheets, read ODT and ODS files, convert XLSX to ODS, convert ODT to Markdown, and export ODT to Typst for PDF generation. All modes work in Node.js 22+ and modern browsers \u2014 documents can be generated entirely client-side with no server required.\nThe template engine fills existing .odt files created in LibreOffice with data using {placeholders}, loops for repeating content, conditionals for optional sections, and dot notation for nested data. It automatically handles LibreOffice's XML fragmentation of placeholder text.\nThe ODT builder produces documents with rich text formatting, tables with cell merging and formatting, bullet and numbered lists with up to 6 levels of nesting, embedded images, hyperlinks, internal bookmarks, headers and footers with page numbers, and full page layout control. Generated files open in L",
   "maintenance": "community",
@@ -15859,7 +16172,7 @@
    "Accessibility"
   ],
   "forge_path": "openculturas/openculturas-distribution",
-  "last_activity": "2026-09-24T18:11:44.412Z",
+  "last_activity": "2026-09-27T15:06:42.763Z",
   "license": "GPL-2.0-or-later",
   "long_desc": "## Cultural event platform with event calendar, profiles, magazine\n\nWeb-based content management platform software, ready for editorial and/or user-generated content such as: personal/group profiles, event locations, points of interest, reusable event descriptions, event dates (repeating dates possible), FAQ, magazine articles.\n\nTagging in many dimensions: common focus tags, per-type categorization, magazine columns, accessibility, trigger warnings etc. Content creation components like reusable media assets (images, video, audio, embeddable remote media, downloadable documents), galleries, press quotes, custom teaser sections, automatic teaser placement for interlinked content.\n\nMultilingual, with publication workflows, WCAG compliant, cookie consent management, search engine optimized. Logged in users can manage personal bookmarks, publish recommendations and write comments to commentable content.\n\nGovernance: Site owners and proven agencies decide jointly on further development as members of OpenCulturas e. V. (non-profit association), open for everyone interested! Budgets for new features and sustainable mainenance are welcome. Full-service offers including hosting and individua",
   "maintenance": "community",
@@ -15913,7 +16226,7 @@
    "communication"
   ],
   "forge_path": "bmi/opendesk/deployment/opendesk",
-  "last_activity": "2026-09-24T15:55:23.041Z",
+  "last_activity": "2026-09-28T10:26:17.999Z",
   "license": "Apache-2.0",
   "long_desc": "openDesk is the adaptable office and collaboration suite specifically developed to meet the needs of the public administration.\n\nFocusing on data sovereignty, security, and seamless collaboration, openDesk provides all the familiar tools required for day-to-day administrative work. It brings together all essential office applications under a single, user-friendly interface.\n\nopenDesk is the evolution of the \u201cSovereign Workplace,\u201d an initiative by the Federal Ministry of the Interior. With openDesk, the public administration gains greater control over its digital tools and can respond more flexibly to changing requirements. Federal, state, and local authorities receive a comprehensive office solution that works independently of specific providers, in any browser, and on all devices.\n",
   "maintenance": "contract",
@@ -16869,7 +17182,7 @@
    "Project status reports"
   ],
   "forge_path": "bmi/opendesk/component-code/project-management/openproject/openproject",
-  "last_activity": "2026-09-19T23:52:52.175Z",
+  "last_activity": "2026-09-26T23:00:38.114Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "\nOpenProject is a web-based project management solution specifically tailored to the needs of public administration. It supports project planning, task management, Agile workflows, time tracking, and project portfolio management.\nThe software can be deployed on an organization\u2019s own infrastructure, ensuring that users retain full control over their data and systems.\nAdditionally, the manufacturer offers hosting in a data center within the European Union in their [Enterprise Cloud](https://www.openproject.org/enterprise-edition/), which complies with the General Data Protection Regulation (GDPR).\nOpenProject complies with the requirements of the [BSI IT-Grundschutz](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html) and is continuously tested against the WCAG 2.1 guidelines, as demonstrated in the [audit report](https://gitlab.opencode.de/bmi/opendesk/info/-/blob/main/24.03/Barrierefreiheit/Barrierefreiheitsbericht%20-%20Komponente%20Projekte.pdf).\nOpenProject is fully compatible with the [German Administrative Cloud Strategy (DVS)](https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/digitale-souv",
   "maintenance": "contract",
@@ -17261,7 +17574,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner.git",
   "forge_path": "bmi/ozg-rahmenarchitektur/ozgsec/ozgsec-best-practice-scanner",
   "landing": "https://gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec",
-  "last_activity": "2025-04-03T15:44:12.899Z",
+  "last_activity": "2026-09-28T06:42:07.190Z",
   "license": "EUPL-1.2",
   "long_desc": "B\u00fcrgerinnen, B\u00fcrger und Unternehmen erwarten, dass der Staat vertrauensvoll mit ihren pers\u00f6nlichen Daten umgeht und diese durch ein hohes Ma\u00df an IT-Sicherheit und Best Practices sch\u00fctzt. Das\u00a0BMI\u00a0m\u00f6chte daher die Steigerung der IT-Sicherheit bei der OZG-Umsetzung weiter vorantreiben und hat in Zusammenarbeit mit dem\u00a0BSI\u00a0die \u201eOZG-Security-Challenge 2023\u201c ins Leben gerufen. In diesem Rahmen wurde der \u201eOZG-Security-Schnelltest\u201c entwickelt. \n\n \n\n# OZG Security Challenge - Best Practice Scanner\n\nIn diesem Repository finden Sie den Best Practice Scanner, der im Rahmen der OZG-Security-Challenge entwickelt wurde. Der Best Practice Scanner ist ein Tool, das es erm\u00f6glicht, die IT-Sicherheit und die Umsetzung von Best Practices von Webseiten zu \u00fcberpr\u00fcfen.\n\n## Hintergrund\n\nMit der zunehmenden Digitalisierung der \u00f6ffentlichen Verwaltung steigt die Bedeutung der zugrundeliegenden Informationssicherheit. B\u00fcrgerinnen, B\u00fcrger und Unternehmen erwarten, dass der Staat vertrauensvoll mit ihren pers\u00f6nlichen Daten umgeht und diese durch ein hohes Ma\u00df an IT-Sicherheit sch\u00fctzt. Das [Bundesministerium des Innern und f\u00fcr Heimat (BMI)](https://www.bmi.bund.de/DE/startseite/startseite-node.html) m\u00f6chte daher",
   "maintenance": "community",
@@ -17370,7 +17683,7 @@
    "XPlanDokumenteAPI: REST-Schnittstelle f\u00fcr die Dokumentverwaltung"
   ],
   "forge_path": "diplanung/ozgxplanung",
-  "last_activity": "2026-09-21T01:47:11.867Z",
+  "last_activity": "2026-09-28T01:32:07.179Z",
   "license": "AGPL-3.0",
   "long_desc": "Die Anwendung dient der Abbildung der Bauleit- und der Landschaftsplanung und basiert auf den Standards des \nOpen Geospatial Consortium, der INSPIRE Richtlinie und insbesondere dem Standard XPlanung zur Abbildung des \ndeutschen Planungsrechts durch ein GML-Anwendungsschema. Die Anwendung enth\u00e4lt Komponenten zur Validierung,\nVerwaltung und Bereitstellung von Daten basierend auf XPlanGML. Es werden Bebauungspl\u00e4ne,\nFl\u00e4chennutzungspl\u00e4ne, Landschaftspl\u00e4ne und Raumordnungspl\u00e4ne in den XPlanGML-Versionen 4.0, 4.1, 5.0, 5.1,\n5.2, 5.3, 5.4, 6.0 und 6.1 unterst\u00fctzt. F\u00fcr die Transformation des Fachdatenschemas XPlanGML in das INSPIRE PLU\n(Planned Land Use) Schema stehen ebenfalls Komponenten bereit.",
   "maintenance": "internal",
@@ -17421,7 +17734,7 @@
   ],
   "forge_path": "OC000028072444/p2d2",
   "landing": "https://www.data-dna.eu",
-  "last_activity": "2026-09-19T17:22:27.531Z",
+  "last_activity": "2026-09-26T15:42:05.825Z",
   "license": "EUPL-1.2",
   "long_desc": "**p2d2** (Public-Public Data-DNA) is a modern spatial data infrastructure (SDI) \nthat connects open administrative data with citizen-contributed data. The project \naims to synchronize open government data with OpenStreetMap, WikiData, and other \npublic data platforms.\n\nThe application is built on AstroJS and integrates OpenLayers for map visualization \nand PostGIS for geodata management. It enables the collection, quality assurance, \nand provision of geodata by the public in collaboration with government agencies.\n\nTechnical foundation:\n- Frontend: AstroJS, TypeScript, OpenLayers\n- Backend: PostgreSQL/PostGIS\n- SDI components: Mapserver, Mapproxy, Mapnik\n- Deployment: Proxmox-based infrastructure\n",
   "maintenance": "internal",
@@ -17471,7 +17784,7 @@
   ],
   "forge_path": "unbox-cologne/p2d2/p2d2-mirror",
   "landing": "https://www.data-dna.eu",
-  "last_activity": "2026-09-19T17:22:25.464Z",
+  "last_activity": "2026-09-26T15:42:03.683Z",
   "license": "EUPL-1.2",
   "long_desc": "**p2d2** (Public-Public Data-DNA) is a modern spatial data infrastructure (SDI) \nthat connects open administrative data with citizen-contributed data. The project \naims to synchronize open government data with OpenStreetMap, WikiData, and other \npublic data platforms.\n\nThe application is built on AstroJS and integrates OpenLayers for map visualization \nand PostGIS for geodata management. It enables the collection, quality assurance, \nand provision of geodata by the public in collaboration with government agencies.\n\nTechnical foundation:\n- Frontend: AstroJS, TypeScript, OpenLayers\n- Backend: PostgreSQL/PostGIS\n- SDI components: Mapserver, Mapproxy, Mapnik\n- Deployment: Proxmox-based infrastructure\n",
   "maintenance": "internal",
@@ -17721,7 +18034,7 @@
    "Record and stream video conferences"
   ],
   "forge_path": "THM-Health/PILOS",
-  "last_activity": "2026-09-24T04:05:01.943Z",
+  "last_activity": "2026-09-25T04:05:22.317Z",
   "license": "LGPL-2.1-only",
   "long_desc": "All in one video conferencing platform powered by BigBlueButton\u2122.\nDesigned with education at its core, PILOS offers a seamless, interactive, and secure solution for online learning, teaching, and all kinds of virtual meetings. Adaptable to your needs, PILOS delivers high-quality video, robust collaboration tools, and an intuitive user experience.\n\n**All you need for a great video conference experience:**\n- **Video and Audio**\n  High quality video and audio to foster a more personal and engaging experience.\n- **Collaboration**\n  Share your screen, use the interactive multi-user whiteboard, and work together in breakout rooms.\n- **Engagement**\n  Engage your audience with interactive tools like chat, emojis, surveys and much more.\n- **Recording**\n  Record your videoconferences and make them available using fine grained permission control.\n- **Live Streaming**\n  Reach a wider audience by streaming video conferences to an RTMP endpoint.\n- **Security**\n  All communication data is securely encrypted during transmission using the WebRTC protocol.\n- **Statistics**\n  Get detailed reports on the attendance and usage of your videoconferences.",
   "maintenance": "internal",
@@ -17995,7 +18308,7 @@
    "Swagger API documentation"
   ],
   "forge_path": "it.nrw/nrw.desk/portal-backend",
-  "last_activity": "2026-09-19T02:54:00.325Z",
+  "last_activity": "2026-09-28T03:54:42.811Z",
   "license": "BSD-3-Clause",
   "long_desc": "portal-backend is the main backend microservice for NRW.Desk, a collaboration portal developed by Information und Technik Nordrhein-Westfalen (IT.NRW) for the German state of North Rhine-Westphalia. It serves as the persistence and API layer that manages user personalization data for the portal's frontend dashboard.\nThe service provides a RESTful HTTP API (OpenAPI 3.0.3) that enables users to manage their personalized dashboard, including widget layout, visibility, and display order. Upon first authenticated request, each user is automatically provisioned with default settings and a set of pre-configured widgets arranged on a grid layout.\nSupported widget types include email, videoconference, chat, calendar, documents, files, diagrams, web shortcuts, upcoming conferences, and news. Each widget can be individually positioned (x, y coordinates), sized (width, height), reordered, and toggled visible or hidden. Users can also manage accordion states for the sidebar.\nAdministrators can create, update, and delete system-wide announcements that are displayed to all portal users. These notifications are time-bounded (with a start and end datetime) and come in three types: info, warn, and f",
   "maintenance": "contract",
@@ -18133,7 +18446,7 @@
   ],
   "forge_path": "fitko/pvog/produkt/backoffice",
   "landing": "https://produktportal.pvog.fitko.de/",
-  "last_activity": "2026-09-23T12:58:00.341Z",
+  "last_activity": "2026-09-28T10:18:29.500Z",
   "license": "EUPL-1.2",
   "long_desc": "This single-page application serves as a back office for managing and configuring backend systems via REST APIs. It supports users in maintaining configuration data, viewing informational data, controlling import and export processes, and searching and checking the data inventory. The application combines central functions for operational maintenance and quick orientation within PVOG.\n",
   "maintenance": "internal",
@@ -18214,7 +18527,7 @@
    "Configurable connection timeouts"
   ],
   "forge_path": "fitko/pvog/produkt/bibliotheken/pv-antivirus",
-  "last_activity": "2026-09-24T05:55:49.784Z",
+  "last_activity": "2026-09-28T10:05:43.459Z",
   "license": "EUPL-1.2",
   "long_desc": "Java library for ICAP-based antivirus scanner integration. Provides APIs for scanning files and streams with configurable timeouts and detailed DEBUG logging for diagnostics. Distributed as Maven dependency. Requires Java 25.\n",
   "maintenance": "internal",
@@ -18294,7 +18607,7 @@
    "Uses the Java annotations from the PVOG pv_schema_annotation library to flag some fields of those XZuFi classes."
   ],
   "forge_path": "fitko/pvog/produkt/bibliotheken/pv-schema",
-  "last_activity": "2026-09-24T05:55:48.985Z",
+  "last_activity": "2026-09-28T09:59:59.948Z",
   "license": "EUPL-1.2",
   "long_desc": "This software library is a component of the Portalverbund Online Gateway (PVOG), which is used by several other projects within the PVOG. The PVOG is the central digital infrastructure in Germany that facilitates access to online public administration services. It links the administrative portals and editorial systems of the federal and state governments. The PVOG provides access to data from all state editorial systems, as well as data from the federal editorial system, enabling citizens nationwide to access all online administrative services.\n",
   "maintenance": "internal",
@@ -18334,7 +18647,7 @@
    "A Java Annotation for fields in files in the XZuFi format that may contain HTML tags."
   ],
   "forge_path": "fitko/pvog/produkt/bibliotheken/pv-schema-annotation",
-  "last_activity": "2026-09-24T05:55:33.495Z",
+  "last_activity": "2026-09-28T09:59:25.617Z",
   "license": "EUPL-1.2",
   "long_desc": "This software library is a component of the Portalverbund Online Gateway (PVOG), which is used by several other projects within the PVOG. The PVOG is the central digital infrastructure in Germany that facilitates access to online public administration services. It links the administrative portals and editorial systems of the federal and state governments. The PVOG provides access to data from all state editorial systems, as well as data from the federal editorial system, enabling citizens nationwide to access all online administrative services.\n",
   "maintenance": "internal",
@@ -18416,7 +18729,7 @@
    "Shared helper classes and methods for the PVOG"
   ],
   "forge_path": "fitko/pvog/produkt/bibliotheken/pv-utils",
-  "last_activity": "2026-09-24T05:55:31.015Z",
+  "last_activity": "2026-09-28T09:58:49.506Z",
   "license": "EUPL-1.2",
   "long_desc": "This software library is a component of the Portalverbund Online Gateway (PVOG), which is used by several other projects within the PVOG. The PVOG is the central digital infrastructure in Germany that facilitates access to online public administration services. It links the administrative portals and editorial systems of the federal and state governments. The PVOG provides access to data from all state editorial systems, as well as data from the federal editorial system, enabling citizens nationwide to access all online administrative services.\n",
   "maintenance": "internal",
@@ -18459,7 +18772,7 @@
    "Uses the Java annotations from the PVOG pv_schema_annotation library to flag some fields of those XZuFi classes."
   ],
   "forge_path": "fitko/pvog/produkt/bibliotheken/pv-warteschlange",
-  "last_activity": "2026-09-24T05:54:13.757Z",
+  "last_activity": "2026-09-28T10:01:02.622Z",
   "license": "EUPL-1.2",
   "long_desc": "The PV Warteschlange is a Java/Spring library for the persistent, database-backed management of queue elements. It enables reliable buffering, retrieval, and processing of entries even across restarts, making it particularly suitable for robust, asynchronous processing workflows in distributed domain-specific procedures. In the PVOG context, the library supports the stable operation of backend processes in which messages or tasks must not be lost. It is suitable for use in IT environments where reliability, traceability, and controlled processing are key requirements.\n",
   "maintenance": "internal",
@@ -18498,7 +18811,7 @@
   ],
   "forge_path": "fitko/pvog/produkt/bibliotheken/pv-frontend-configs",
   "landing": "https://produktportal.pvog.fitko.de/",
-  "last_activity": "2026-09-24T10:49:36.944Z",
+  "last_activity": "2026-09-28T10:02:53.430Z",
   "license": "EUPL-1.2",
   "long_desc": "PV-Frontend-Configs is a collection of reusable and combinable configurations for multiple frontend projects in the PVOG. The package is distributed as an npm package, published via a package registry (e.g., GitLab). Currently includes modular configurations for Prettier and ESLint.\n",
   "maintenance": "internal",
@@ -18850,7 +19163,7 @@
   ],
   "forge_path": "qisutu/qisutu",
   "landing": "https://qisutu.de",
-  "last_activity": "2026-09-18T01:03:35.540Z",
+  "last_activity": "2026-09-27T01:03:35.581Z",
   "license": "AGPL-3.0-or-later",
   "long_desc": "Qisutu is a self-contained open-source service desk for support, helpdesk\nand IT service processes. It combines ticket handling with a customer\nportal, email communication, automation, a knowledge base, CMDB,\nreporting and time tracking.\n\nQisutu runs on an organisation's own Linux infrastructure, allowing full\ncontrol over data, integrations and the operating environment. Queues,\ngroups, permissions, services, SLAs, dynamic fields, forms and add-ons\nsupport adaptation to different service organisations. The user\ninterface is available in eleven languages.\n",
   "maintenance": "internal",
@@ -19074,7 +19387,7 @@
    "sensors"
   ],
   "forge_path": "stadt-bad-berleburg/raumklima",
-  "last_activity": "2026-09-21T07:18:14.295Z",
+  "last_activity": "2026-09-25T07:06:05.159Z",
   "license": "EUPL-1.2",
   "long_desc": "**Raumklima Bad Berleburg**\n\nDas Projekt Raumklima Bad Berleburg beinhaltet die Aufnahme der CO2-, Temperatur- sowie Luftfeuchtedaten aus Schulen in Bad Berleburg, welche der Datenplattform \u00fcber den Funkstandard LoRaWAN bereitgestellt werden.\n\nDas Repository enth\u00e4lt:\n- den NodeRed-Flow\n- den Context f\u00fcr den Context Broker\num die Daten von den Sensoren zu empfangen, in nutzbare Daten umzuwandeln und an die Datenplattform weiterzugeben.\n\n**Voraussetzungen**\n- LoRaWAN-f\u00e4hige CO2-Ampeln\n- LoRaWAN Network Server (The Things Network)\n- NodeRed\n- Timeseries Datenbank\n\n**Hardware**\n- Sentinum Febris Indoor CO2 Sensor\n",
   "maintenance": "internal",
@@ -19742,7 +20055,7 @@
   ],
   "forge_path": "cern/rucio",
   "landing": "https://rucio.cern.ch",
-  "last_activity": "2026-09-24T01:13:54.916Z",
+  "last_activity": "2026-09-27T01:13:53.974Z",
   "license": "Apache-2.0",
   "long_desc": "Rucio is a software framework that provides functionality to organize, manage and access large volumes of scientific data using customisable policies. The data can be spread across globally distributed locations and across heterogeneous data centers, uniting different storage and network technologies as a single federated entity.\n\nRucio offers advanced features such as distributed data recovery and adaptive replication, and is highly scalable, modular and extensible. It was originally developed to meet the requirements of the high-energy physics experiment ATLAS at CERN, and is continuously extended to support other LHC experiments and a growing number of diverse scientific communities, including astronomy, bioinformatics and photon science.\n\nThe software is released under the Apache License 2.0 and is developed as a community project with contributions from CERN and partner institutions worldwide.\n",
   "maintenance": "internal",
@@ -19837,7 +20150,7 @@
    "Datenexport in Excel"
   ],
   "forge_path": "samarbeid/samarbeid",
-  "last_activity": "2026-09-23T17:33:34.876Z",
+  "last_activity": "2026-09-28T10:37:32.200Z",
   "license": "MIT",
   "long_desc": "Samarbeid ist eine web-basierte Kollaborationsl\u00f6sung, welche speziell f\u00fcr Teams und kleine Organisationen entwickelt ist, die fallbasiert arbeiten. Mit samarbeid k\u00f6nnen ohne Einbindung von IT-Spezialisten ganz unterschiedliche Arbeitsabl\u00e4ufe digitalisiert werden. Das umfasst Aufgabenmanagement, flexible Workflows sowie das Erfassen und Nutzen aller Daten und Dokumente, die in den Arbeitsabl\u00e4ufen entstehen. Samarbeid kann auf eigenen Servern gehostet werden, so dass volle Souver\u00e4nit\u00e4t \u00fcber Daten, Prozesse  und IT-Budget besteht. Zudem sind [Managed Hosting L\u00f6sungen f\u00fcr samarbeid](https://www.samarbeid.org/samarbeid-hosting/) verf\u00fcgbar. Durch die Nutzung von samarbeid schafft sich das Team oder die Organisation einen zentralen Ort f\u00fcr alle Prozesse, Aufgaben,  Dokumente, Daten und Chats. Mit dem Feature der Zuarbeit k\u00f6nnen auch Externe leicht in die Arbeitsabl\u00e4ufe integriert werden. Es ist eine ausf\u00fchrliche und aktuelle [Awendungs-Dokumentation f\u00fcr samarbeid](https://www.samarbeid.org/support/) sowie ein Community-Support verf\u00fcgbar.",
   "maintenance": "community",
@@ -20302,7 +20615,7 @@
   ],
   "forge_path": "bad-belzig/smart-village-app",
   "landing": "https://smart-village.app",
-  "last_activity": "2026-09-24T09:09:50.832Z",
+  "last_activity": "2026-09-25T13:51:57.665Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "The Smart Village App is an information and service app. In addition to administrative services, which are made available in bundled form via the app, locals and tourists can obtain information on and from the respective municipality. For example, hiking routes are provided via the app, local news and events are published, and basic public services are offered. Citizens can use the Smart Village App to report current issues or learn about administrative services, among other things. The Smart Village App thus contributes to improving the exchange of information between administrations and citizens. It was developed by municipalities for municipalities and is adaptable to the individual needs of each city or town. Counties and municipal associations also use the Smart Village App for their areas. All participating municipalities are in constant exchange with one another. The goal of this network is to facilitate work sharing: the joint creation and utilization of synergies from the ideas and experiences of the participants reduces costs and helps launch new apps more successfully. The Smart Village App is a nationwide offering that has already been implemented in numerous municipali",
   "maintenance": "contract",
@@ -20774,7 +21087,7 @@
    "Explainability, auditability, and human-in-the-loop"
   ],
   "forge_path": "bmds/planungs-und-genehmigungsbeschleunigung/spark-api",
-  "last_activity": "2026-09-24T13:13:12.315Z",
+  "last_activity": "2026-09-28T10:37:45.916Z",
   "license": "EUPL-1.2",
   "long_desc": "## What is SPARK API?\n\nIn the SPARK project (\"Schnellere Planung und Realisierung durch KI\" \u2013 Faster Planning and Implementation through AI), the Federal Ministry for Digital Transformation and Government Modernisation commissioned the development of the AI solution SPARK as part of an innovation partnership. The development was financed by the Climate and Transformation Fund of the Federal Ministry for Economic Affairs and Energy.\n\nSPARK API provides combinable, domain-adaptable AI services for document processing, formal review, objection management, material legal assessment, and AI-assisted decision drafting. The foundation is a versioned, interconnected legal knowledge graph that structures norms, evidence references, and decision options, continuously updated via interfaces to legal sources such as NeuRIS and GII. Explainability, verifiability, and human-in-the-loop mechanisms ensure traceable decisions, review steps, and norm references \u2014 with no black-box character. Full modularity is achieved through Kubernetes, microservices, micro-frontends, and an API-first paradigm.\n\n## Architecture & Platform\n\nSPARK API exposes workflow-agnostic domain services via APIs that can be us",
   "maintenance": "internal",
@@ -20820,7 +21133,7 @@
    "Explainability, auditability, and human-in-the-loop"
   ],
   "forge_path": "oc000167543535/spark-fa",
-  "last_activity": "2026-09-24T17:12:17.717Z",
+  "last_activity": "2026-09-28T10:03:20.916Z",
   "license": "EUPL-1.2",
   "long_desc": "## What is SPARK API?\n\nIn the SPARK project (\"Schnellere Planung und Realisierung durch KI\" \u2013 Faster Planning and Implementation through AI), the Federal Ministry for Digital Transformation and Government Modernisation commissioned the development of the AI solution SPARK as part of an innovation partnership. The development was financed by the Climate and Transformation Fund of the Federal Ministry for Economic Affairs and Energy.\n\nSPARK API provides combinable, domain-adaptable AI services for document processing, formal review, objection management, material legal assessment, and AI-assisted decision drafting. The foundation is a versioned, interconnected legal knowledge graph that structures norms, evidence references, and decision options, continuously updated via interfaces to legal sources such as NeuRIS and GII. Explainability, verifiability, and human-in-the-loop mechanisms ensure traceable decisions, review steps, and norm references \u2014 with no black-box character. Full modularity is achieved through Kubernetes, microservices, micro-frontends, and an API-first paradigm.\n\n## Architecture & Platform\n\nSPARK API exposes workflow-agnostic domain services via APIs that can be us",
   "maintenance": "internal",
@@ -20952,7 +21265,7 @@
    "Digital legal dogmatics"
   ],
   "forge_path": "bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow",
-  "last_activity": "2026-09-24T12:24:59.101Z",
+  "last_activity": "2026-09-28T06:16:23.807Z",
   "license": "EUPL-1.2",
   "long_desc": "## Project Objectives and Core Functionalities\n\nIn the SPARK project (\"Schnellere Planung und Realisierung durch KI\" \u2013 Faster Planning and Implementation through AI), the Federal Ministry for Digital Transformation and Government Modernisation commissioned the development of the AI solution SPARK Workflow as part of an innovation partnership. SPARK Workflow supports complex administrative planning and approval procedures as an operational assistant. The development was financed by the Climate and Transformation Fund of the Federal Ministry for Economic Affairs and Energy. The AI solution helps to accelerate administrative procedures and effectively relieves public administration employees of time-consuming tasks.\n\nPlanning and approval procedures are considered a major bottleneck for the maintenance and expansion of infrastructure in Germany. The underlying administrative procedures are often complex as well as resource- and time-intensive. The AI solution supports staff in public authorities through a workflow, oriented towards their legal working methods, as well as through AI modules that provide review and assessment suggestions.\n\nThe released AI modules are aligned with the ty",
   "maintenance": "internal",
@@ -21529,7 +21842,7 @@
   ],
   "forge_path": "fitko/pvog/produkt/suchclient",
   "landing": "https://pvog.fitko.net",
-  "last_activity": "2026-09-23T06:58:29.515Z",
+  "last_activity": "2026-09-25T10:11:07.838Z",
   "license": "EUPL-1.2",
   "long_desc": "This single-page application provides citizens with a powerful, easy-to-use platform to find and display administrative services, online offerings and points of contact in the Portalverbund Online-Gateway (PVOG). It serves as a reference implementation and a production-ready example, consolidating offerings from the federal government, states and municipalities, organizing them clearly and enabling precise search using various filtering and sorting options. In addition to detailed information about points of contact and online services, the modules of administrative services transmitted via XZuFi, as well as related business objects, are prepared for easy viewing. The user interface is accessible, optimized for different devices and currently available in German and English.\n",
   "maintenance": "internal",
@@ -21665,7 +21978,7 @@
   "fallback_repo": "https://gitlab.opencode.de/bad-belzig/sva-studio/sva-studio.git",
   "forge_path": "bad-belzig/sva-studio/sva-studio",
   "landing": "https://smart-village.app",
-  "last_activity": "2026-09-23T23:35:21.288Z",
+  "last_activity": "2026-09-28T08:40:48.311Z",
   "license": "EUPL-1.2",
   "long_desc": "SVA Studio modernisiert das Redaktionssystem der Smart Village App zu einer integrierten, API-first ausgerichteten Plattform f\u00fcr Kommunen und andere \u00f6ffentliche Organisationen. Das System b\u00fcndelt Content-Management, Identit\u00e4ts- und Rechteverwaltung, Design- und Modulkonfiguration sowie die Anbindung externer Fachverfahren in einer erweiterbaren Webanwendung. Der Schwerpunkt liegt auf typsicherer, modularer Architektur, nachnutzbaren Schnittstellen, sicherem Betrieb und der Unterst\u00fctzung kommunaler Redaktions- und Verwaltungsprozesse.",
   "maintenance": "community",
@@ -21722,6 +22035,47 @@
  },
  {
   "categories": [
+   "backup",
+   "it-security"
+  ],
+  "contacts": [
+   "Martin Mai"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Erprobungsfall: Syncthing-Knoten, der Kopien h\u00e4lt, aber nicht lesen kann, mit gepr\u00fcfter Lieferkette und einer Probe auf Vertraulichkeit.",
+  "desc_src_lang": "de",
+  "dev_status": "development",
+  "entry_url": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/syncthing-1",
+  "fallback_repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/syncthing-1.git",
+  "features": [
+   "Offizielles Syncthing-Release, Signatur und Pr\u00fcfsumme im Bau gepr\u00fcft",
+   "Nur verschl\u00fcsselt empfangene Ordner, keine Passw\u00f6rter auf dem Knoten",
+   "Image ohne Shell, signiert, mit SBOM, VEX und SLSA-Provenance",
+   "Probe mit Kanarien-Dateien auf Vertraulichkeit"
+  ],
+  "forge_path": "zki.de/ak-sec/test-goat-anwendungen/syncthing-1",
+  "landing": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/syncthing-1",
+  "last_activity": "2026-09-27T13:39:45.105Z",
+  "license": "EUPL-1.2",
+  "long_desc": "\ud83d\udee0\ufe0f\ud83d\udea7\u2753Security-Advice: Die Inhalte dieses Repositorys sind Ergebnisse und Gegenstand von Tests und Ver\u00e4nderungen. Sie k\u00f6nnen deshalb nur in diesem Sinne verwendet werden.\nTexte zwischen den Bot-Markern \ud83e\udd16\u25b6\ufe0f und \ud83e\udd16\u25c0\ufe0f k\u00f6nnen KI-generierte Bestandteile enthalten.\n\n\ud83e\udd16\u25b6\ufe0f\n\nEntstanden im ZKI-Arbeitskreis Informationssicherheit. Ein Syncthing-Knoten auf Hardware, der man nicht vertrauen muss, h\u00e4lt eine weitere Kopie von Ordnern, ohne sie lesen zu k\u00f6nnen: alle Ordner sind verschl\u00fcsselt empfangen, die Passw\u00f6rter bleiben auf den Quellen.\n\nDas Image enth\u00e4lt das offizielle Syncthing-Release. Der Bau pr\u00fcft Signatur und Pr\u00fcfsumme selbst und bricht ab, wenn eines nicht stimmt; danach wird das Image mit DevGuard gescannt, signiert und mit SLSA-Provenance, SBOM und VEX attestiert. Betrieben wird es per Digest in Kubernetes, ohne Shell im Image, ohne Rechte, mit nur lesbarem Dateisystem.\n\nOb der Knoten wirklich nichts sieht, wird nicht behauptet, sondern gepr\u00fcft: eine Probe legt einen Ordner mit bekannten Marken an und sucht sie danach auf dem Knoten. Was trotzdem sichtbar bleibt, etwa Anzahl und ungef\u00e4hre Gr\u00f6\u00dfe der Dateien, steht als Ergebnis daneben.\n\n\ud83e\udd16\u25c0\ufe0f",
+  "maintenance": "community",
+  "name": "syncthing-1",
+  "platforms": [
+   "linux"
+  ],
+  "released": "2026-09-26",
+  "repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/syncthing-1",
+  "repo_key": "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/syncthing-1",
+  "short_desc": "Erprobungsfall: Syncthing-Knoten, der Kopien h\u00e4lt, aber nicht lesen kann, mit gepr\u00fcfter Lieferkette und einer Probe auf Vertraulichkeit.",
+  "software_type": "standalone/other",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13378,
+  "version": "2.1.5"
+ },
+ {
+  "categories": [
    "geographic-information-systems",
    "data-collection",
    "data-analytics"
@@ -21768,6 +22122,50 @@
    "Landkreis Hof"
   ],
   "version": "1.0"
+ },
+ {
+  "categories": [
+   "event-management",
+   "collaboration",
+   "digital-citizenship"
+  ],
+  "contacts": [
+   "Martin Mai"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Erprobungsfall: sammelt Termine aus Mastodon-Beitr\u00e4gen und ver\u00f6ffentlicht sie als Webseite, ICS-Kalender und JSON.",
+  "desc_src_lang": "de",
+  "dev_status": "beta",
+  "entry_url": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1",
+  "fallback_repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1.git",
+  "features": [
+   "Termine aus Mastodon-Beitr\u00e4gen, ohne eigene Anmeldung",
+   "Ausgabe als Webseite, ICS-Kalender und JSON",
+   "Kein Zustand auf der Platte, jederzeit neu erzeugbar",
+   "Image signiert, mit SBOM, VEX und SLSA-Provenance",
+   "Betrieb zieht per Digest, nicht per Tag"
+  ],
+  "forge_path": "zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1",
+  "landing": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1",
+  "last_activity": "2026-09-26T14:01:15.473Z",
+  "license": "EUPL-1.2",
+  "long_desc": "\ud83d\udee0\ufe0f\ud83d\udea7\u2753Security-Advice: Die Inhalte dieses Repositorys sind Ergebnisse und Gegenstand von Tests und Ver\u00e4nderungen. Sie k\u00f6nnen deshalb nur in diesem Sinne verwendet werden.\n\nTexte zwischen den Bot-Markern \ud83e\udd16\u25b6\ufe0f und \ud83e\udd16\u25c0\ufe0f k\u00f6nnen KI-generierte Bestandteile enthalten.\n\n\ud83e\udd16\u25b6\ufe0f\n\nEntstanden im ZKI-Arbeitskreis Informationssicherheit als Erprobungsfall daf\u00fcr, wie sich Aussagen nach BSI Grundschutz++ an einem laufenden System nachpr\u00fcfbar machen lassen. Der Terminsammler ist dabei der einfache Fall: eine kleine Anwendung, an der sich die ganze Kette zeigen l\u00e4sst, ohne dass die Anwendung selbst kompliziert w\u00e4re.\n\nEin Ansagekonto im Fediverse liest, wem es folgt, und \u00fcbernimmt von diesen Konten die \u00f6ffentlichen Beitr\u00e4ge mit einem festgelegten Schlagwort. Folgen hei\u00dft vertrauen: Wer nicht gefolgt wird, wird nicht \u00fcbernommen. Aus der Datumszeile jedes Beitrags entsteht ein Termin, und je Ansicht eine Webseite, ein ICS-Kalender und eine JSON-Datei.\n\nAuf der Platte liegt kein Zustand. Ob ein Beitrag schon geteilt wurde, wei\u00df Mastodon selbst; alles unter der Ausgabe l\u00e4sst sich jederzeit neu erzeugen. Das macht den Dienst ersetzbar: Ein verlorener Knoten wird neu aufgesetzt, nicht repariert.\n\nDie Lieferkette ",
+  "maintenance": "community",
+  "name": "termine-fedi-collect",
+  "platforms": [
+   "linux",
+   "web"
+  ],
+  "released": "2026-09-26",
+  "repo": "https://gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1",
+  "repo_key": "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1",
+  "short_desc": "Erprobungsfall: sammelt Termine aus Mastodon-Beitr\u00e4gen und ver\u00f6ffentlicht sie als Webseite, ICS-Kalender und JSON.",
+  "software_type": "standalone/other",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 13270,
+  "version": "0.2"
  },
  {
   "categories": [
@@ -22571,7 +22969,7 @@
   ],
   "forge_path": "stadt-detmold/urban-kit-plattform",
   "landing": "https://urbankit.de",
-  "last_activity": "2026-09-20T00:00:06.915Z",
+  "last_activity": "2026-09-27T17:49:52.404Z",
   "license": "EUPL-1.2",
   "long_desc": "UrbanKIT is the digital civic-participation platform of a municipality. A public portal makes ongoing and completed participation projects visible to all citizens \u2014 including news, events, poll results and CMS-managed content pages. In addition, a protected per-project workspace enables collaboration between project teams and registered participants through toggleable feature modules: news, calendar, polls, forum, tasks, chat, a collaborative realtime whiteboard (Excalidraw over Hocuspocus/Yjs), file storage and a provider-agnostic AI assistant (Urban Agent).\nThe visibility of every piece of content is controlled on three levels (public / project participants / team), with access control enforced server-side per project role. Colors, logos and project color schemes are fully configurable from the admin backend (\"chameleon\" design tokens), so the platform can be rebranded for another municipality without code changes. Technically, UrbanKIT is a single Next.js 15 application (App Router, React 19) with Payload CMS 3 embedded on MongoDB; the interface is German-first with an English fallback. A seed script with seven prototype projects allows spinning up a realistically populated demo",
   "maintenance": "internal",
@@ -22656,7 +23054,7 @@
    "Construction sites"
   ],
   "forge_path": "urbo-community/urbo",
-  "last_activity": "2026-09-24T02:05:42.807Z",
+  "last_activity": "2026-09-28T08:11:26.514Z",
   "license": "EUPL-1.2",
   "long_desc": "Urbo is an open source city app platform that retrieves services and information from various sources and makes them available on a single platform for citizens.\n\nThe app accesses data from city-specific backends and bundles the available content into thematic-functional modules. Cities configure which modules are active and adapt the branding to their own identity.\n\nUrbo is developed and maintained by SWCode, with support from the federal funding programme \"Modellprojekte Smart Cities (MPSC)\" of the Kreditanstalt f\u00fcr Wiederaufbau (KfW) and the Bundesministerium des Innern und f\u00fcr Heimat (BMI).\n",
   "maintenance": "contract",
@@ -22690,7 +23088,7 @@
   "fallback_repo": "https://gitlab.opencode.de/umwelt-info/usage-stats-api.git",
   "forge_path": "umwelt-info/usage-stats-api",
   "landing": "https://umwelt.info",
-  "last_activity": "2026-09-23T13:06:11.076Z",
+  "last_activity": "2026-09-25T08:28:53.205Z",
   "license": "GPL-3.0-or-later",
   "long_desc": "The web application called usage-stats-api and originally created for the umwelt.info portal provides privacy-friendly collection of usage statistics for websites by embedding JavaScript which automically posts usage information without collecting any PII.\n",
   "maintenance": "internal",
@@ -23203,50 +23601,50 @@
  },
  {
   "categories": [
-   "healthcare",
    "digital-citizenship",
-   "content-management"
+   "content-management",
+   "document-management"
   ],
   "contacts": [
-   "Carola Klessen"
+   "Vivodepot GmbH"
   ],
   "country": "DE",
-  "desc_en": "Personal emergency and estate planning documentation \u2014 fully offline, no cloud, no server, no subscription. One-time EUR 49.\n",
+  "desc_en": "A single file in which people keep their own records encrypted on their own device and share extracts from it.\n",
   "desc_lang": "en",
-  "desc_src": "Pers\u00f6nliche Notfall- und Vorsorgedokumentation \u2014 vollst\u00e4ndig offline, keine Cloud, kein Server, kein Abo. Einmalig EUR 49.\n",
+  "desc_src": "Eine einzelne Datei, in der Menschen ihre Unterlagen verschl\u00fcsselt auf dem eigenen Ger\u00e4t halten und daraus Ausz\u00fcge herausgeben.\n",
   "desc_src_lang": "de",
-  "dev_status": "beta",
-  "entry_url": "https://gitlab.opencode.de/oc000142426528/vivodepot",
-  "fallback_repo": "https://gitlab.opencode.de/oc000142426528/vivodepot.git",
+  "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/vivodepot/vivodepot",
+  "fallback_repo": "https://gitlab.opencode.de/vivodepot/vivodepot.git",
   "features": [
-   "100% offline \u2014 no internet connection required",
-   "No account, no registration, no cloud",
-   "AES-256-GCM encryption (optional)",
-   "20 guided input steps",
-   "13 export formats including FHIR R4, PDF, Word, vCard",
-   "WCAG 2.1 accessibility (text-to-speech, dictation, zoom, contrast)",
-   "Open Source under EUPL-1.2"
+   "Runs offline, with no account and no server",
+   "AES-256-GCM encryption, key derived from the user's password",
+   "Export as HL7 FHIR International Patient Summary",
+   "Further exports as vCard, calendar file and PDF",
+   "Separate sub-depots with their own password",
+   "Specially protected entries released by the person",
+   "German and English",
+   "Open source under EUPL-1.2"
   ],
-  "forge_path": "oc000142426528/vivodepot",
+  "forge_path": "vivodepot/vivodepot",
   "landing": "https://vivodepot.de",
-  "last_activity": "2026-07-13T05:31:20.694Z",
+  "last_activity": "2026-09-27T03:31:01.746Z",
   "license": "EUPL-1.2",
-  "long_desc": "VIVODEPOT is a fully offline single-file HTML application for structured personal emergency and estate documentation. All data stays exclusively on the user's device \u2014 no cloud, no server, no data transmission.\nDesigned for seniors, family caregivers, and individuals who want to prepare all vital information (contacts, finances, health, legal documents, final wishes) for their loved ones and authorized representatives.\n",
+  "long_desc": "Vivodepot is an application contained in a single HTML file. It runs without an internet connection on the person's own device, requires no account and sends no data to the publisher; its content security policy forbids outgoing connections.\nThe application is not tied to one area of life. It carries records from several areas side by side, among them health, public administration, social insurance, work and housing, and it addresses adults of any age and any situation.\nFrom that content the person shares targeted extracts, each containing only what the receiving party needs, among them the HL7 FHIR International Patient Summary format, vCard, calendar files and PDF. Specially protected entries leave the file only after the person has released them.\nThe edition for citizens is free of charge and open source. A paid edition for self-employed users and individual content templates are sold, and organisations can publish the application under their own name.\n",
   "maintenance": "internal",
-  "name": "VIVODEPOT",
+  "name": "Vivodepot",
   "platforms": [
    "web"
   ],
-  "released": "2026-05-01",
-  "repo": "https://github.com/carolaklessen/vivodepot",
-  "repo_key": "github.com/carolaklessen/vivodepot",
-  "repo_owner": "Carola Klessen",
-  "short_desc": "Personal emergency and estate planning documentation \u2014 fully offline, no cloud, no server, no subscription. One-time EUR 49.\n",
+  "released": "2026-09-24",
+  "repo": "https://gitlab.opencode.de/vivodepot/vivodepot",
+  "repo_key": "gitlab.opencode.de/vivodepot/vivodepot",
+  "short_desc": "A single file in which people keep their own records encrypted on their own device and share extracts from it.\n",
   "software_type": "standalone/web",
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 10391,
-  "version": "1.0.0-beta.16"
+  "version": "v1.0"
  },
  {
   "categories": [
@@ -23628,6 +24026,52 @@
   "categories": [
    "geographic-information-systems",
    "data-analytics",
+   "data-collection"
+  ],
+  "contacts": [
+   "XLeitstelle Planen und Bauen"
+  ],
+  "country": "DE",
+  "desc_lang": "de",
+  "desc_src": "Python-Bibliothek zum Modellieren, Kodieren, Migrieren und Speichern von Daten nach Anwendungsschemas der XLeitstelle.",
+  "desc_src_lang": "de",
+  "dev_status": "stable",
+  "entry_url": "https://gitlab.opencode.de/xleitstelle/xmas-core",
+  "fallback_repo": "https://gitlab.opencode.de/xleitstelle/xmas-core.git",
+  "features": [
+   "Lesen und Schreiben von GML und JSON-FG aus Dateien, stdin, URLs oder WFS",
+   "Speicherung in PostgreSQL/PostGIS mit Alembic-verwalteten, mandantenf\u00e4higen Schemas",
+   "Migration von XPlanung-Dokumenten auf neuere Versionen mit Bericht \u00fcber nicht \u00fcbertragbare Inhalte",
+   "Regelbasierte Erg\u00e4nzung von Stilattributen (stylesheetId, schriftinhalt) f\u00fcr Pr\u00e4sentationsobjekte",
+   "Kommandozeilenwerkzeug und Container-Image"
+  ],
+  "forge_path": "xleitstelle/xmas-core",
+  "landing": "https://xleitstelle.usercontent.opencode.de/xmas-core/",
+  "last_activity": "2026-09-28T10:11:03.157Z",
+  "license": "EUPL-1.2+",
+  "long_desc": "XMAS-Core bildet die Anwendungsschemas der [XLeitstelle](https://xleitstelle.de) als [Pydantic](https://pydantic.dev)-Modelle ab und dient als Bibliothek f\u00fcr darauf aufbauende Anwendungen, etwa das [XMAS-Plugin](https://gitlab.opencode.de/xleitstelle/xmas-plugin) und die [XMAS-App](https://gitlab.opencode.de/xleitstelle/xmas-app). Das CLI-Tool `xmas` stellt dieselben Funktionen bereit.\n\nDas UML-Modell jedes Anwendungsschemas ist die einzige Quelle: Jede Schemaversion wird daraus generiert, Kodierung, Speicherung, Migration und Stilregeln werden generisch aus den Modell-Metadaten gesteuert statt durch klassenspezifischen Code.\n\nUnterst\u00fctzt werden derzeit:\n- [XPlanung](https://xleitstelle.de/xplanung)\n- [XTrasse](https://xleitstelle.de/xtrassexbreitband)\n- [XW\u00e4rmeplan](https://xleitstelle.de/releases/objektartenkatalogWaermeplan)\n",
+  "maintenance": "internal",
+  "name": "XMAS-Core",
+  "platforms": [
+   "linux",
+   "windows",
+   "mac"
+  ],
+  "repo": "https://gitlab.opencode.de/xleitstelle/xmas-core",
+  "repo_key": "gitlab.opencode.de/xleitstelle/xmas-core",
+  "short_desc": "Python-Bibliothek zum Modellieren, Kodieren, Migrieren und Speichern von Daten nach Anwendungsschemas der XLeitstelle.",
+  "software_type": "library",
+  "source": "DE/openCode",
+  "tier": "publiccode",
+  "upstream_id": 2493,
+  "used_by": [
+   "Freie und Hansestadt Hamburg, Landesbetrieb Geoinformation und Vermessung"
+  ]
+ },
+ {
+  "categories": [
+   "geographic-information-systems",
+   "data-analytics",
    "data-collection",
    "data-visualization"
   ],
@@ -23650,7 +24094,7 @@
   ],
   "forge_path": "xleitstelle/xmas-plugin",
   "landing": "https://xleitstelle.usercontent.opencode.de/xmas-plugin/",
-  "last_activity": "2026-09-21T11:04:25.495Z",
+  "last_activity": "2026-09-28T08:31:44.422Z",
   "license": "EUPL-1.2-or-later",
   "long_desc": "Das **X**Leistelle **m**odelgetriebene **A**nwendungs**s**chema Plugin ist eine QGIS-Erweiterung zur Visualisierung, Erfassung und Bearbeitung von Daten nach Standards und Spezifikationen der [XLeitstelle](https://xleitstelle.de).\n\nUnterst\u00fctzt werden derzeit:\n\n- der verbindliche Standard f\u00fcr r\u00e4umliche Planwerke [XPlanung](https://xleitstelle.de/xplanung)\n\n- der Standard f\u00fcr Leitungsnetze und trassenf\u00f6rmige Planungen [XTrasse](https://xleitstelle.de/xtrassexbreitband)\n\n- der Entwurf eines Standards f\u00fcr kommunale W\u00e4rmeplanungen nach WPG [XWaermeplan](https://xleitstelle.de/releases/objektartenkatalogWaermeplan)\n\nZus\u00e4tzlich wird die komplement\u00e4re Webanwendung [XMAS-App](https://gitlab.opencode.de/xleitstelle/xmas-app) ben\u00f6tigt.",
   "maintenance": "internal",
@@ -23748,7 +24192,7 @@
   ],
   "forge_path": "zammad/zammad",
   "landing": "https://zammad.com/",
-  "last_activity": "2026-09-24T18:41:09.940Z",
+  "last_activity": "2026-09-28T10:39:05.026Z",
   "license": "AGPL-3.0-only",
   "long_desc": "# Welcome to Zammad\nAre you juggling countless customer inquiries and tickets across multiple channels? Struggling to keep your support team on the same page? Or spending more time managing your helpdesk than delivering exceptional support to your customers?\nZammad is your Swiss Army knife - a web-based, open-source helpdesk and customer support platform for ticket management, knowledge base and SLA tracking, available as SaaS or self-hosted in your own environment, packed with features to streamline customer communication across channels like email, chat, telephone and social media. Also known as a ticket system, customer service platform or shared inbox: one place for all your customer requests.\n## The Zammad software: open source under the AGPL\nThe Zammad software is and will stay open source. It is licensed under the GNU AGPLv3. The source code is [available on GitHub](https://github.com/zammad/zammad) and owned by the [Zammad Foundation](https://zammad-foundation.org/), which is independent of commercial providers such as Zammad GmbH.\n## Development by Zammad GmbH and the community\nThe development of Zammad is carried out by the [amazing team of people](https://zammad.com/en/c",
   "maintenance": "internal",

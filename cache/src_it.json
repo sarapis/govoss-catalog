@@ -13664,7 +13664,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.5.76"
+  "version": "1.5.77"
  },
  {
   "active": true,
@@ -14431,6 +14431,48 @@
    "INGV"
   ],
   "version": "v2.59.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "data-analytics"
+  ],
+  "contacts": [
+   "Valentino Lauciani"
+  ],
+  "country": "IT",
+  "desc_en": "MCP server exposing FDSN Web Service Station metadata (networks, stations, channels, instrument responses) of any FDSN datacenter.",
+  "desc_lang": "en",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/INGV/mcp-fdsnws-station.git",
+  "features": [
+   "FDSN Web Service Station query (network, station, channel levels)",
+   "Instrument response from StationXML through ObsPy",
+   "Multi-datacenter access by name, including private intranet services",
+   "Model Context Protocol (MCP) server, stdio and Streamable HTTP"
+  ],
+  "landing": "https://github.com/INGV/mcp-fdsnws-station",
+  "license": "AGPL-3.0-or-later",
+  "long_desc": "An MCP (Model Context Protocol) server for the FDSN Web Service Station API (fdsnws-station 1.1). It exposes network, station, channel and instrument-response metadata of any FDSN-compliant datacenter (INGV, EarthScope, GFZ, ORFEUS, or a private service configured by name) to MCP clients such as Claude Desktop and Open WebUI.\nThe server runs on the mcp 2.x SDK, speaks stdio by default and Streamable HTTP on request, and returns typed objects with a real output schema. Results are sorted and paginated by the server with an exact total count, so a query never floods the client's context.\n",
+  "maintenance": "internal",
+  "name": "INGV - FDSNWS Station MCP Server",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "released": "2026-09-26",
+  "repo": "https://github.com/INGV/mcp-fdsnws-station",
+  "repo_key": "github.com/ingv/mcp-fdsnws-station",
+  "short_desc": "MCP server exposing FDSN Web Service Station metadata (networks, stations, channels, instrument responses) of any FDSN datacenter.",
+  "software_type": "standalone/backend",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "577c45d7-c9f8-42cc-be81-f7103bda7b54",
+  "used_by": [
+   "INGV"
+  ],
+  "version": "v1.2.0-dev"
  },
  {
   "active": true,
