@@ -335,7 +335,7 @@
   ],
   "is_fork": false,
   "landing": "https://github.com/blw-ofag-ufag/boschettissimo",
-  "last_activity": "2026-09-25T07:39:07Z",
+  "last_activity": "2026-09-28T14:55:02Z",
   "license": "CC-BY-4.0",
   "long_desc": "Dieses Repository beinhaltet den Quellcode und die Dokumentation f\u00fcr die Machbarkeitsstudie zur digitalen Erfassung und Bewertung von B\u00e4umen auf der landwirtschaftlichen Nutzfl\u00e4che im Auftrag des Bundesamtes f\u00fcr Landwirtschaft (BLW). Ziel ist die Entwicklung eines Systems, das weg von starren Massnahmenvorschriften (heutiges Direktzahlungssystem) hin zu einer ergebnisorientierten F\u00f6rderung von B\u00e4umen in der Landwirtschaft f\u00fchrt. Anstatt die Pflege massnahmenorientiert vorzuschreiben, soll der effektive \u00f6kologische Wert eines Baumes mittels Fernerkundungsdaten ermittelt und verg\u00fctet werden.",
   "maintenance": "contract",
@@ -371,7 +371,7 @@
    "PWA"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-26T16:52:04Z",
+  "last_activity": "2026-09-28T12:04:28Z",
   "license": "MIT-0",
   "long_desc": "BS Translator is a modern web application for advanced text translation with file processing capabilities. Built with Nuxt.js and TypeScript, it provides intelligent translation services with customizable tone, domain-specific terminology, and support for multiple file formats. This repository contains only the frontend code; the backend is written in Python FastAPI.",
   "maintenance": "internal",
@@ -701,7 +701,7 @@
   ],
   "is_fork": false,
   "landing": "https://blw-ofag-ufag.github.io/system-map/",
-  "last_activity": "2026-09-24T05:34:38Z",
+  "last_activity": "2026-09-28T14:20:41Z",
   "license": "CC-BY-4.0",
   "long_desc": "The DigiAgriFoodCH System Map is a small knowledge graph designed to catalog and visualize the interconnected IT systems, data assets, and operational organizations within the Swiss agri-food sector. The software leverages semantic web technologies, specifically Resource Description Framework (RDF) serialized in Turtle, to construct a formal ontology as well as a data layer. It also includes a graphical user interface which renders the small knowledge graph using the vis.js library.",
   "maintenance": "none",
@@ -1208,7 +1208,7 @@
    "Interoperability"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-28T11:11:43Z",
+  "last_activity": "2026-09-28T14:54:42Z",
   "license": "MIT",
   "long_desc": "I14Y is Switzerland's central directory for metadata about public-sector datasets, electronic interfaces (APIs), and government services. The platform publishes metadata only (not the underlying operational data), including access conditions, standards alignment, update and quality context. It supports harmonization through shared concepts and codelists, improves cross-administration data exchange, and contributes to the once-only principle by reducing duplicate data collection.",
   "maintenance": "internal",
@@ -4584,7 +4584,7 @@
    "Secure Document Previews and Thumbnails"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-27T20:17:56Z",
+  "last_activity": "2026-09-28T14:48:55Z",
   "license": "MIT",
   "long_desc": "Loom is an open-source document analysis platform that lets you import documents, search, analyze, and export them from a single deployment. It extracts text and metadata from a wide range of file formats, including OCR for scanned documents, and enriches your collection with AI features like an intelligent chatbot, automatic tagging, summarization, and translation. Loom handles Office documents, PDFs, emails, archives, images, and more. It provides safe document previews and thumbnails, archive creation from search results, custom tagging, and a REST API for integration into your own applications. Loom runs completely offline, making it suitable for organizations handling confidential or classified data.",
   "maintenance": "internal",
@@ -5084,7 +5084,7 @@
    "Preview and Visualization"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-28T03:33:17Z",
+  "last_activity": "2026-09-28T12:19:15Z",
   "license": "BSD-3-Clause-Modification",
   "long_desc": "# **SATROMO: Satellite Data for Drought Monitoring**\n\n**SATROMO** (*Satellite Data for Drought Monitoring \u2013 SAtellitendaten f\u00fcrs TROckenheitsMOnitoring*) is an automated geospatial data processing system that generates analysis-ready satellite products specifically designed for drought monitoring across Switzerland.\n\n***\n\n## **What SATROMO Does**\n\nSATROMO transforms raw satellite imagery into valuable environmental insights through a fully automated processing chain:\n\n*   *Processes* **Sentinel-2** satellite data using **Google Earth Engine's** powerful cloud computing platform\n*   *Generates* multiple specialized products for **vegetation health** and **drought assessment**\n*   *Publishes* data daily to accessible platforms for **researchers**, **policymakers**, and the **public**\n*   *Maintains* a complete archive of **historical data** for trend analysis\n\n***\n\n## **Key Products**\n\nSATROMO produces four primary product types that help monitor Switzerland's vegetation health and drought conditions:\n\n*   **Surface Reflectance**  \n    *Description:* Cloud-free, terrain-corrected satellite imagery  \n    *Update Frequency:* **Daily**  \n    *Use Case:* Base data for environmental analy",
   "maintenance": "internal",
@@ -5178,7 +5178,7 @@
   "short_desc": "SIARD Suite: Intuitive app for archiving, restoring, searching, and exporting relational database content in the SIARD format.",
   "software_type": "standalone/desktop",
   "source": "CH/swiss",
-  "stars": 23,
+  "stars": 24,
   "tier": "publiccode",
   "version": "2.2"
  },
@@ -5520,7 +5520,7 @@
    "Provide a layer description classification pipeline based on BERT"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-28T10:04:10Z",
+  "last_activity": "2026-09-28T12:08:14Z",
   "license": "AGPL-3.0-only",
   "long_desc": "Boreholes Data Extraction is a pipeline to extract structured data from borehole profiles in PDF files. Extracted properties (currently borehole name, groundwater data, elevation, coordinates, depths and associated material descriptions) are returned in JSON format, and (optionally) visualized as PNG images. Further, an API provides access to  the borehole data extraction pipeline, allowing to process PDF files, generate visualizations,  and retrieve structured geological data in JSON format.\nThe goal of the project is to automate the extraction of structured data from borehole profiles as much as possible and to integrate it with the boreholes.swissgeol.ch application.",
   "maintenance": "community",
@@ -5716,7 +5716,7 @@
    "Issuing verifiable credentials"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-28T10:51:03Z",
+  "last_activity": "2026-09-28T11:26:55Z",
   "license": "MIT",
   "long_desc": "This software is a web server implementing the technical standards as specified in the Swiss e-ID Interoperability Profile and is part of other generic components allowing the issuance and verification of verifiable credentials without the need of reimplementing the standards.",
   "maintenance": "internal",
@@ -5757,7 +5757,7 @@
    "Verifying verifiable credentials"
   ],
   "is_fork": false,
-  "last_activity": "2026-09-28T10:35:41Z",
+  "last_activity": "2026-09-28T12:20:34Z",
   "license": "MIT",
   "long_desc": "This software is a web server implementing the technical standards as specified in the Swiss e-ID Interoperability Profile and is part of other generic components allowing the issuance and verification of verifiable credentials without the need of reimplementing the standards.",
   "maintenance": "internal",
