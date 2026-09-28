@@ -224,7 +224,6 @@
   "{n}m ago": "fa {n} min",
   "{pct}% links live": "{pct}% d'enllaços actius",
   "{pct}% publiccode": "{pct}% publiccode",
-  "Where the catalogues are": "On són els catàlegs",
   "Select a country to see its entries in the catalog.": "Seleccioneu un país per veure'n les entrades al catàleg.",
   "Map of the countries whose government catalogues govoss harvests": "Mapa dels països dels quals govoss recull catàlegs governamentals",
   "{country}: {items}": "{country}: {items}",
@@ -235,7 +234,10 @@
   "global": "global",
   "Not drawn as a country": "No es dibuixa com a país",
   "A shaded country has at least one catalogue from its national, regional or city government. It does not mean that catalogue covers the whole country.": "Un país ombrejat té almenys un catàleg del seu govern estatal, regional o municipal. No vol dir que aquest catàleg cobreixi tot el país.",
-  "Boundaries: Natural Earth (public domain). The same shapes with these counts: {link}": "Fronteres: Natural Earth (domini públic). Les mateixes formes amb aquests recomptes: {link}"
+  "Boundaries: Natural Earth (public domain). The same shapes with these counts: {link}": "Fronteres: Natural Earth (domini públic). Les mateixes formes amb aquests recomptes: {link}",
+  "View": "Vista",
+  "Cards": "Targetes",
+  "Map": "Mapa"
  },
  "functions": {
   "case-workflow": "Gestió d'expedients i fluxos de treball",

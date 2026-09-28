@@ -732,21 +732,59 @@ BODY = """
     <div class="stat"><b>__N_RUNS__</b><span>⟪runs recorded⟫</span></div>
     <div class="stat"><b>__N_SURVEY__</b><span>⟪surveyed and rejected⟫</span></div>
   </div>
-  __MAP__
 
-  <section class="sec">
-    <div class="sechead"><h3>⟪Harvested catalogues⟫</h3>
+  <!-- Two views of one list: the cards (default, and all there is without
+       JavaScript) and the map (sources_map.py). The switch is revealed by the
+       script below, so a reader without JS never sees a control that does
+       nothing. ?view=map (or #map) opens the map, and the switch writes it back. -->
+  <section class="sec" id="catalogues">
+    <div class="sechead"><div class="hl"><h3>⟪Harvested catalogues⟫</h3>
+        <div class="vtog" id="vtog" role="group" aria-label="⟪View⟫" hidden>
+          <button type="button" id="vcards" aria-pressed="true">⟪Cards⟫</button>
+          <button type="button" id="vmap" aria-pressed="false">⟪Map⟫</button>
+        </div></div>
       <span class="r">⟪Counts credit every catalogue that listed an entry, so a tool in
         three catalogues counts three times.⟫</span></div>
     <hr class="dashed">
-    <div class="clist" style="margin-top:14px">__CROWS__</div>
-    <div class="legend">
-      <span><i style="background:var(--green)"></i>⟪harvested⟫</span>
-      <span><i style="background:var(--ink-900)"></i>⟪contributed nothing⟫</span>
-      <span><i style="background:var(--border-soft)"></i>⟪not a source yet, or not recorded⟫</span>
-      <span style="color:var(--ink-faint)">⟪last __SPARK_N__ runs, oldest first⟫</span>
+    <div id="cview-cards">
+      <div class="clist" style="margin-top:14px">__CROWS__</div>
+      <div class="legend">
+        <span><i style="background:var(--green)"></i>⟪harvested⟫</span>
+        <span><i style="background:var(--ink-900)"></i>⟪contributed nothing⟫</span>
+        <span><i style="background:var(--border-soft)"></i>⟪not a source yet, or not recorded⟫</span>
+        <span style="color:var(--ink-faint)">⟪last __SPARK_N__ runs, oldest first⟫</span>
+      </div>
     </div>
+    <div id="cview-map" hidden>__MAP__</div>
   </section>
+<script>
+(function () {
+  var cards = document.getElementById('cview-cards'), map = document.getElementById('cview-map');
+  var bc = document.getElementById('vcards'), bm = document.getElementById('vmap');
+  // el.hidden, never style.display: theme.py ships [hidden]{display:none!important}.
+  function show(asMap, write) {
+    cards.hidden = asMap; map.hidden = !asMap;
+    bc.setAttribute('aria-pressed', asMap ? 'false' : 'true');
+    bm.setAttribute('aria-pressed', asMap ? 'true' : 'false');
+    if (!write) return;
+    try {
+      var P = new URLSearchParams(location.search);
+      if (asMap) P.set('view', 'map'); else P.delete('view');
+      var q = P.toString();
+      history.replaceState(null, '', location.pathname + (q ? '?' + q : '') +
+        (location.hash === '#map' ? '' : location.hash));
+    } catch (e) {}
+  }
+  bc.onclick = function () { show(false, true); };
+  bm.onclick = function () { show(true, true); };
+  var v = null;
+  try { v = new URLSearchParams(location.search).get('view'); } catch (e) {}
+  var want = v === 'map' || location.hash === '#map';
+  show(want, false);
+  document.getElementById('vtog').hidden = false;
+  if (location.hash === '#map') document.getElementById('catalogues').scrollIntoView();
+})();
+</script>
 
   <section class="sec">
     <div class="sechead"><h3>⟪By country⟫</h3>

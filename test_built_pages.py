@@ -310,9 +310,12 @@ def main():
     sys.path.insert(0, HERE)
     import sources as S
     sp = pages["sources.html"]
-    mm = re.search(r'<section class="sec" id="map">(.*?)</section>', sp, re.S)
+    # ONLY the map panel: the section around it also holds the cards, whose own
+    # ?src= links would satisfy every check below with no map at all.
+    MAPRE = r'<div id="cview-map" hidden>(.*?)</div>\s*</section>'
+    mm = re.search(MAPRE, sp, re.S)
     msec = mm.group(1) if mm else ""
-    check("sources.html has the map section", bool(mm), True)
+    check("sources.html has the map view", bool(mm) and "cmap-svg" in msec, True)
     shaded = set(re.findall(r'<a href="/\?cc=([A-Z]{2})"', msec))
     src_on_map = set(urllib.parse.unquote(v) for v in re.findall(r'href="/\?src=([^"]*)"', msec))
     unplaced = sorted(k for k, m in S.SOURCES.items()
@@ -327,9 +330,24 @@ def main():
           re.findall(r'(?:href|src|xlink:href)="(https?://[^"]*)"',
                      re.search(r"<svg class=\"cmap-svg\".*?</svg>", msec, re.S).group(0)
                      if "cmap-svg" in msec else ""), [])
-    cam = re.search(r'<section class="sec" id="map">(.*?)</section>', pages["ca/sources.html"], re.S)
+    cam = re.search(MAPRE, pages["ca/sources.html"], re.S)
     check("the Catalan map links to the Catalan catalog",
           bool(cam) and '"/?cc=' not in cam.group(1) and '"/ca/?cc=' in cam.group(1), True)
+    # the Cards / Map switch: cards are the default (and all a reader without
+    # JS gets), the switch is revealed by script, and the script parses.
+    for name in ("sources.html", "ca/sources.html"):
+        pg = pages[name]
+        check("%s: cards shown and map hidden by default" % name,
+              ('<div id="cview-cards">' in pg, '<div id="cview-map" hidden>' in pg), (True, True))
+        check("%s: the switch starts hidden, with both buttons" % name,
+              (bool(re.search(r'<div class="vtog" id="vtog"[^>]*\bhidden>', pg)),
+               'id="vcards"' in pg, 'id="vmap"' in pg), (True, True, True))
+        js = "\n".join(re.findall(r"<script>(.*?)</script>", pg, re.S))
+        tmp = os.path.join(HERE, "out", "_check_%s.js" % name.replace("/", "_"))
+        open(tmp, "w").write(js)
+        p = subprocess.run(["node", "--check", tmp], capture_output=True, text=True)
+        os.remove(tmp)
+        check("%s inline script parses (and exists)" % name, (bool(js.strip()), p.returncode), (True, 0))
     gpath = os.path.join(SITE, "catalogues.geo.json")
     try:
         gj = json.load(open(gpath))

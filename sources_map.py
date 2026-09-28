@@ -117,14 +117,12 @@ def render(lang, counts, country_name):
            esc(_("{n} entries", n=N(counts.get(k, 0)))) + " &middot; " +
            esc(_("the European Union") if S.SOURCES[k]["country"] == "EU" else _("global")))
         for k in off)
-    html = ('<section class="sec" id="map">'
-            '<div class="sechead"><h3>%s</h3><span class="r">%s</span></div>'
-            '<div class="cmap">%s<div class="cmap-side">%s'
+    # The MAP VIEW of "Harvested catalogues" (the cards are the default view);
+    # build_sources.py places it and owns the switch between the two.
+    html = ('<div class="cmap">%s<div class="cmap-side"><p class="cmap-hint">%s</p>%s'
             '<p class="cmap-h">%s</p><ul class="cmap-off">%s</ul>'
-            '<p class="cmap-note">%s</p><p class="cmap-cred">%s</p></div></div></section>'
-            % (esc(_("Where the catalogues are")),
-               esc(_("Select a country to see its entries in the catalog.")),
-               svg, legend,
+            '<p class="cmap-note">%s</p><p class="cmap-cred">%s</p></div></div>'
+            % (svg, esc(_("Select a country to see its entries in the catalog.")), legend,
                esc(_("Not drawn as a country")), beside,
                esc(_("A shaded country has at least one catalogue from its national, regional "
                      "or city government. It does not mean that catalogue covers the whole "
@@ -192,6 +190,16 @@ CSS = """
 .cmap-svg .inset rect{fill:var(--surface);stroke:var(--border);stroke-width:1;}
 .cmap-svg .inset text{font-family:var(--font-ui);font-size:11px;fill:var(--ink-600);}
 .cmap-side{font-size:13px;color:var(--ink-600);}
+.cmap-hint{margin:0 0 12px;color:var(--ink);}
+/* the Cards / Map switch in the "Harvested catalogues" header */
+.vtog{display:inline-flex;border:1px solid var(--border);border-radius:var(--r-chip);
+  overflow:hidden;background:var(--surface);}
+.vtog button{font:inherit;font-size:12px;font-weight:600;border:0;background:none;
+  padding:6px 14px;color:var(--ink-600);cursor:pointer;}
+.vtog button + button{border-left:1px solid var(--border);}
+.vtog button[aria-pressed="true"]{background:var(--primary-tint);color:var(--ink);}
+.vtog button:focus-visible{outline:2px solid var(--primary);outline-offset:-2px;}
+.sechead .hl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 .cmap-key,.cmap-off{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
 .cmap-key li{display:flex;align-items:center;gap:8px;}
 .cmap-key .sw{display:inline-block;width:14px;height:14px;border-radius:3px;flex:0 0 14px;}
