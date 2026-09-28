@@ -8594,7 +8594,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "7.0.6",
+  "version": "7.0.7",
   "wikidata": "Q11223506"
  },
  {
@@ -15882,7 +15882,7 @@
    "R\u00e9seau Canop\u00e9",
    "Setra_5192"
   ],
-  "version": "8.3.0",
+  "version": "8.3.1",
   "wikidata": "Q50938515"
  },
  {
@@ -21401,7 +21401,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.8.0",
+  "version": "17.9.0",
   "wikidata": "Q99493159"
  },
  {
@@ -21942,7 +21942,7 @@
   "used_by": [
    "Arcep"
   ],
-  "version": "1.152.0",
+  "version": "1.153.0",
   "wikidata": "Q122753170"
  },
  {

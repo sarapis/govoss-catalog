@@ -1,102 +1,132 @@
 {
  "be": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 236
  },
  "bg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 193
  },
  "ca": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 67
  },
  "ch": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 164
  },
  "de": {
-  "fetched_at": "2026-09-28T14:45:33Z",
+  "fetched_at": "2026-09-28T17:35:52Z",
   "ok": true,
   "records": 559
  },
  "digg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 44
  },
  "dpg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 255
  },
  "eu": {
-  "fetched_at": "2026-09-28T14:45:33Z",
+  "fetched_at": "2026-09-28T17:35:52Z",
   "ok": true,
-  "records": 19
+  "records": 8
  },
  "fi": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 72
  },
  "fr": {
-  "fetched_at": "2026-09-28T14:45:33Z",
+  "fetched_at": "2026-09-28T17:35:52Z",
   "ok": true,
   "records": 691
  },
  "hbg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 292
  },
  "ie": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 5
  },
  "it": {
-  "fetched_at": "2026-09-28T14:45:33Z",
+  "fetched_at": "2026-09-28T17:35:52Z",
   "ok": true,
   "records": 551
  },
  "muc": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 145
  },
  "nl": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 198
  },
  "nlreg": {
-  "fetched_at": "2026-09-28T14:45:33Z",
+  "fetched_at": "2026-09-28T17:35:52Z",
   "ok": true,
   "records": 0
  },
  "os2": {
+  "error": "RuntimeError: partial OS2 scan: 0 repos vs 298 in the last good checkpoint, after 20 org(s) failed: OS2web (URLError), OS2WebCore (URLError), OS2mo (URLError), os2sofd (URLError), OS2Forms (URLError), os2display (URLError), OS2borgerPC (URLError), os2ulf (URLError), OS2sandbox (URLError), OS2offdig (URLError), OS2iot (URLError), OS2fleetoptimiser (URLError), OS2Valghalla (URLError), OS2faktor (URLError), os2kitos (URLError), os2indberetning (URLError), OS2rollekatalog (URLError), OS2compliance (URLError), Skadesokonomi (URLError), os2ai (URLError). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from OS2_ORGS \u2014 the per-source age on /sources.html is what makes this visible.",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 298
  },
  "pt": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 92
  },
  "se": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 167
  },
  "tw": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-09-28T14:45:33Z",
-  "ok": true,
+  "last_error_at": "2026-09-28T17:35:52Z",
+  "ok": false,
   "records": 58
  }
 }
