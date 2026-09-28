@@ -23,7 +23,7 @@ cannot be made to fail, delete it.
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 12 suites, 545 checks
+for t in test_*.py; do python3 $t; done                     # 12 suites, 555 checks
 curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + problems
 ```
 
@@ -32,7 +32,7 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
   Schedule loaded; `bash schedule/install.sh --diff` says the plist matches the template.
 - **Last run 2026-09-24 19:39Z**, `manual`, 19 steps ok, deployed on `token-file`,
   recorded (`6cbdcc5`). Everything committed up to `8dae0fc` is live.
-- **12 suites, 545 checks, all passing.** Manual on purpose.
+- **12 suites, 555 checks, all passing.** Manual on purpose.
 - Live `/status.json` still warns F7 (stored login): `/sources.html` is built before
   `deploy` and reads the PREVIOUS run's `deploy_auth`. The next run clears it.
 - Liveness 3,486 ok of 3,612, 28 dead, 39 archived, 59 unknown. Variants: 12 linked to 9

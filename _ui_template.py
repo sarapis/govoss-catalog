@@ -51,7 +51,7 @@ PAGE_CSS = """
 
 /* Recently added. The track is the ONLY thing that scrolls sideways on this page
    - it is its own overflow container, so the body never does. */
-.recent{margin:24px 0 20px;}
+.recent{margin:0 0 36px;}
 .rhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
   flex-wrap:wrap;margin-bottom:10px;}
 .rhead h2{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
@@ -105,7 +105,7 @@ PAGE_CSS = """
    cells as a grey block. */
 .stats{display:grid;grid-template-columns:repeat(6,1fr);
   gap:1px;background:var(--border);border:1px solid var(--border);
-  border-radius:var(--r-table);overflow:hidden;margin:0 0 36px;}
+  border-radius:var(--r-table);overflow:hidden;margin:24px 0 28px;}
 .stat{background:var(--surface);padding:18px 20px;}
 .stat b{display:block;font-family:var(--font-display);font-size:24px;font-weight:700;
   color:var(--primary);font-variant-numeric:tabular-nums;letter-spacing:-0.02em;}
@@ -381,6 +381,15 @@ BODY = """
 </div>
 
 <div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
+    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
+    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
+    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
+    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
+    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
+  </div>
+
   <!-- Recently added. Hidden entirely when there are no dated entries rather
        than rendered empty: a fresh checkout has no cache/_first_seen.json, and an
        empty strip claiming "recently added" is worse than no strip. -->
@@ -395,15 +404,6 @@ BODY = """
     </div>
     <ul class="rtrack" id="rtrack"></ul>
   </section>
-
-  <div class="stats">
-    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
-    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
-    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
-    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
-    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
-    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
-  </div>
 
   <main id="main" class="body">
     <aside class="side">
@@ -762,7 +762,7 @@ function render() {
   el('more').hidden = rs.length <= visibleCount;
 }
 
-function reset() { visibleCount = PAGE_SIZE; render(); }
+function reset() { visibleCount = PAGE_SIZE; render(); writeURL(); }
 function clearAll() {
   activeFacets.clear(); facetQuery = ''; onlyReplaces = false;
   showNoDesc = false; showNotSoft = false;
@@ -818,39 +818,67 @@ el('exnotsoft').onclick = function () {
 };
 el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
 
-// ?rp=<product> arrives from products.html ("See in catalog"). Activated only
-// if the product is a real facet value - an unknown one would silently filter
-// the catalogue to nothing, which reads as "no alternatives exist".
+// ---- The URL carries the view, so a search can be shared. READ once at load,
+// WRITTEN (replaceState, never a history entry per keystroke) on every reset().
+// Every value is validated against what the page offers and an unknown one is
+// IGNORED, never applied: a stale or hand-edited link that filtered the list to
+// nothing would read as "no entries match". Inbound links keep working:
+// ?rp=<product> from products.html, ?src=<label> from sources.html, ?cc=<code>.
+// Keys: q, fn, cc, rp (repeatable), src, lic, lv, sort (omitted at its default),
+// and alt / nodesc / notsoft as =1 flags.
+function offers(sel, v) {
+  for (var i = 0; i < sel.options.length; i++) if (sel.options[i].value === v) return true;
+  return false;
+}
 (function () {
-  var m = /[?&]rp=([^&]*)/.exec(location.search);
-  if (!m) return;
-  var want = decodeURIComponent(m[1].replace(/\\+/g, ' '));
-  var known = PFACETS.some(function (f) { return f[0] === want; });
-  if (known) activeFacets.add('rp:' + want);
-})();
-
-// ?src=<catalog label> arrives from sources.html ("See catalog entries"). Same
-// guard as ?rp=: set the dropdown only if the value is one it actually offers.
-// An unknown value would filter the catalogue to nothing and read as "this
-// catalogue contributed no entries", which is the one thing that page exists to
-// disprove. Both sides read sources.py SOURCES[key]["label"].
-(function () {
-  var m = /[?&]src=([^&]*)/.exec(location.search);
-  if (!m) return;
-  var want = decodeURIComponent(m[1].replace(/\\+/g, ' '));
-  var sel = el('src');
-  for (var i = 0; i < sel.options.length; i++) {
-    if (sel.options[i].value === want) { sel.value = want; return; }
+  var P;
+  try { P = new URLSearchParams(location.search); } catch (e) { return; }
+  var q = P.get('q');
+  if (q) el('q').value = q;
+  P.getAll('fn').forEach(function (v) {
+    if (FFACETS.some(function (f) { return f[0] === v; })) activeFacets.add('fn:' + v); });
+  P.getAll('cc').forEach(function (v) {
+    v = v.toUpperCase();
+    if (CCFACETS.some(function (f) { return f[0] === v; })) activeFacets.add('cc:' + v); });
+  P.getAll('rp').forEach(function (v) {
+    if (PFACETS.some(function (f) { return f[0] === v; })) activeFacets.add('rp:' + v); });
+  ['src', 'lic', 'lv', 'sort'].forEach(function (k) {
+    var v = P.get(k);
+    if (v && offers(el(k), v)) el(k).value = v;
+  });
+  if (P.get('alt') === '1') { onlyReplaces = true; el('onlyrep').setAttribute('aria-pressed', 'true'); }
+  if (P.get('nodesc') === '1') { showNoDesc = true; el('exnodesc').setAttribute('aria-pressed', 'true'); }
+  if (P.get('notsoft') === '1') { showNotSoft = true; el('exnotsoft').setAttribute('aria-pressed', 'true'); }
+  // A shared link that sets a drawer control opens the drawer, so the reader
+  // can see why the list looks the way it does.
+  if (el('lv').value || showNoDesc || showNotSoft) {
+    el('drawer').hidden = false;
+    el('morefilters').setAttribute('aria-expanded', 'true');
   }
 })();
 
-// ?cc=<country code> for completeness, validated against the facet values.
-(function () {
-  var m = /[?&]cc=([^&]*)/.exec(location.search);
-  if (!m) return;
-  var want = decodeURIComponent(m[1].replace(/\\+/g, ' ')).toUpperCase();
-  if (CCFACETS.some(function (f) { return f[0] === want; })) activeFacets.add('cc:' + want);
-})();
+var urlTimer = null;
+function writeURL() {
+  var P = new URLSearchParams();
+  var q = (el('q').value || '').trim();
+  if (q) P.set('q', q);
+  ['fn', 'cc', 'rp'].forEach(function (k) {
+    activeFacets.forEach(function (id) {
+      if (id.indexOf(k + ':') === 0) P.append(k, id.slice(k.length + 1)); }); });
+  ['src', 'lic', 'lv'].forEach(function (k) { if (el(k).value) P.set(k, el(k).value); });
+  if (el('sort').value !== el('sort').options[0].value) P.set('sort', el('sort').value);
+  if (onlyReplaces) P.set('alt', '1');
+  if (showNoDesc) P.set('nodesc', '1');
+  if (showNotSoft) P.set('notsoft', '1');
+  var qs = P.toString();
+  var url = location.pathname + (qs ? '?' + qs : '') + location.hash;
+  // Debounced, and guarded: Safari throws after ~100 replaceState calls in 30s,
+  // which typing into the search field would otherwise reach.
+  clearTimeout(urlTimer);
+  urlTimer = setTimeout(function () {
+    try { history.replaceState(null, '', url); } catch (e) {}
+  }, 250);
+}
 
 // ---- Recently added strip.
 (function () {

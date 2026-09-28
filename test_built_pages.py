@@ -282,6 +282,28 @@ def main():
     check("no page string is missing a translation", sorted(miss), [])
     check("i18n/ca.json loads (placeholders validated)", bool(i18n.table("ca")["strings"]), True)
 
+    # ---- 12b. SHAREABLE URL: every key the catalog WRITES to the address bar is
+    # one it READS back at load. A written-but-unread key makes a shared link that
+    # silently fails to restore the view it promises.
+    idx = pages["index.html"]
+    m = re.search(r"function writeURL\(\) \{(.*?)\n\}", idx, re.S)
+    written = set()
+    if m:
+        body = m.group(1)
+        written |= set(re.findall(r"P\.(?:set|append)\('(\w+)'", body))
+        for grp in re.findall(r"\[((?:'\w+',?\s*)+)\]\.forEach", body):
+            written |= set(re.findall(r"'(\w+)'", grp))
+    rd = re.search(r"new URLSearchParams\(location\.search\)(.*?)\}\)\(\);", idx, re.S)
+    readback = set()
+    if rd:
+        readback |= set(re.findall(r"P\.get(?:All)?\('(\w+)'\)", rd.group(1)))
+        for grp in re.findall(r"\[((?:'\w+',?\s*)+)\]\.forEach", rd.group(1)):
+            readback |= set(re.findall(r"'(\w+)'", grp))
+    check("catalog writes its view to the URL (writeURL found, keys parsed)",
+          len(written) >= 10, True)
+    check("every URL key written is read back at load", sorted(written - readback), [])
+    check("reset() writes the URL", "render(); writeURL(); }" in idx, True)
+
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by
     # build_site.sh. Losing either is silent in a browser: pages still render,

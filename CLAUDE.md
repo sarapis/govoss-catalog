@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 12 suites, 545 checks, all manual
+for t in test_*.py; do python3 $t; done     # 12 suites, 555 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -198,8 +198,10 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
     and source share the squeeze on equal bases. Caps are sized for the widest language -
     re-measure (1024px is the tightest column) when adding one.
   - `.side` is sticky WITH a max-height; `current()` routes every facet key explicitly.
-  - `?src=`/`?cc=`/`?rp=` values are validated and an unknown one IGNORED, never filtered to
-    nothing. Source country shows names; the facet value stays the code.
+  - The URL carries the view (`q fn cc rp src lic lv sort alt nodesc notsoft`): read once at
+    load, written by `reset()` via debounced `replaceState`. Every value is validated and an
+    unknown one IGNORED, never filtered to nothing. A key written must be read back
+    (`test_built_pages.py` 12b). Source country shows names; the facet value stays the code.
   - Never name a JS variable after an element `id` (ids are globals).
   - `catalogue.html` is pure ASCII; entities are not decoded inside `<script>`.
 - **Recently added**: `cache/_first_seen.json`, where `null` means BASELINE (never new) and a
@@ -225,7 +227,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Twelve suites, 545 checks, **all manual** - a test that can fail the weekly publish is one someone
+Twelve suites, 555 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
