@@ -74,7 +74,7 @@
   "Licence not stated by the source": "La font no indica la llicència",
   "MCP server": "Servidor MCP",
   "More filters": "Més filtres",
-  "Narrow the filters&hellip;": "Acota els filtres&hellip;",
+  "Find a filter&hellip;": "Cerca un filtre&hellip;",
   "Needs research": "Cal investigar-ho",
   "No code published": "No hi ha codi publicat",
   "No description means the publisher wrote none and GitHub had none either &mdash; not saying what software does is a failure to share it. Not adoptable means an upstream fork, a deployment recipe, CI plumbing, a locale bundle or org metadata: real files, but nothing a government can adopt. Both are <b>flagged, never deleted</b>, and both are always present in <span class=\"mono\">/entries.json</span> with an <span class=\"mono\">exclude_reason</span>.": "Sense descripció vol dir que el publicador no en va escriure cap i que GitHub tampoc en tenia &mdash; no dir què fa el programari és no compartir-lo. No adoptable vol dir una bifurcació d'un projecte d'origen, una recepta de desplegament, fontaneria d'integració contínua, un paquet de traduccions o metadades de l'organització: fitxers reals, però res que una administració pugui adoptar. Tots dos casos estan <b>marcats, mai esborrats</b>, i sempre són presents a <span class=\"mono\">/entries.json</span> amb un <span class=\"mono\">exclude_reason</span>.",

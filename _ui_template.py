@@ -411,7 +411,7 @@ BODY = """
         <div class="fhead"><h2 class="t">⟪Filters⟫</h2>
           <button type="button" id="clearall">⟪Clear all⟫</button></div>
         <input class="fq" id="fq" type="search" autocomplete="off"
-               placeholder="⟪Narrow the filters&hellip;⟫" aria-label="⟪Filter the filter options⟫">
+               placeholder="⟪Find a filter&hellip;⟫" aria-label="⟪Filter the filter options⟫">
         <div id="facetgroups"></div>
       </div>
     </aside>
