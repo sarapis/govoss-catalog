@@ -304,6 +304,16 @@ def main():
     check("every URL key written is read back at load", sorted(written - readback), [])
     check("reset() writes the URL", "render(); writeURL(); }" in idx, True)
 
+    # ---- 12d. STAT ROWS: each carries the class for its tile count. The shared
+    # rule never leaves an empty (grey) cell, but only .six / .five hold the
+    # measured breakpoints; a changed count without its class wraps 4+1 again.
+    WANT = {6: "six", 5: "five"}
+    for name in ("index.html", "ca/index.html", "sources.html", "ca/sources.html"):
+        m = re.search(r'<div class="stats([^"]*)">(.*?)\n\s*</div>', pages[name], re.S)
+        n = m.group(2).count('class="stat"') if m else 0
+        check("%s: stats row class matches its %d tiles" % (name, n),
+              WANT.get(n) in (m.group(1).split() if m else []), True)
+
     # ---- 12c. THE CATALOGUE MAP (sources_map.py). Every catalogue in sources.py
     # is on the map or named beside it; its links resolve; nothing is fetched from
     # a third party; /catalogues.geo.json agrees with the page.

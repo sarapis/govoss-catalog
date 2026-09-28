@@ -100,18 +100,26 @@ PAGE_CSS = """
 .apibar .links{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:4px;}
 
 /* ---- stat tiles ---- */
-/* Six tiles, so 6, 3 or 2 columns - always full rows. auto-fit left 5+1 or 4+2 at
-   in-between widths, and the grid's border-coloured background filled the empty
-   cells as a grey block. */
-.stats{display:grid;grid-template-columns:repeat(6,1fr);
+/* The 1px gaps show the border-coloured background as grid lines, so an EMPTY
+   cell shows as a grey block (auto-fit left 5+1 / 4+2; a fixed 6 columns then did
+   it to the 5-tile /sources.html). Shared by every page, so the default is a
+   wrapping row whose tiles GROW to fill each line - no empty cell with any count.
+   The catalog's six tiles keep measured 6 / 3 / 2 columns via .six. */
+.stats{display:flex;flex-wrap:wrap;
   gap:1px;background:var(--border);border:1px solid var(--border);
   border-radius:var(--r-table);overflow:hidden;margin:24px 0 28px;}
-.stat{background:var(--surface);padding:18px 20px;}
+.stat{background:var(--surface);padding:18px 20px;flex:1 1 200px;}
+@media (max-width:520px){.stat{flex-basis:40%;}}
+.stats.six{display:grid;grid-template-columns:repeat(6,1fr);}
+/* five tiles (/sources.html): 5, then 3+2, then 2+2+1 - never a lone 4+1 */
+.stats.five .stat{flex-basis:18%;}
+@media (max-width:1080px){.stats.five .stat{flex-basis:30%;}}
+@media (max-width:520px){.stats.five .stat{flex-basis:40%;}}
 .stat b{display:block;font-family:var(--font-display);font-size:24px;font-weight:700;
   color:var(--primary);font-variant-numeric:tabular-nums;letter-spacing:-0.02em;}
 .stat span{display:block;font-size:12px;color:var(--ink-600);margin-top:2px;}
-@media (max-width:1080px){.stats{grid-template-columns:repeat(3,1fr);}}
-@media (max-width:520px){.stats{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:1080px){.stats.six{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:520px){.stats.six{grid-template-columns:repeat(2,1fr);}}
 
 /* ---- body: wrapping flex, NOT a fixed grid ----
    A fixed two-column grid collapsed the entry column to 48px at 924px wide.
@@ -381,7 +389,7 @@ BODY = """
 </div>
 
 <div class="wrap">
-  <div class="stats">
+  <div class="stats six">
     <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
     <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
     <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>

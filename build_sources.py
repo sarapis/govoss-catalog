@@ -725,7 +725,7 @@ BODY = """
 
 <div class="wrap">
   <main id="main">
-  <div class="stats">
+  <div class="stats five">
     <div class="stat"><b>__N_CAT__</b><span>⟪catalogues harvested⟫</span></div>
     <div class="stat"><b>__N_COUNTRIES__</b><span>⟪countries and bodies⟫</span></div>
     <div class="stat"><b>__N_ADDED__</b><span>⟪entries since last run⟫</span></div>
