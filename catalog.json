@@ -303,7 +303,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "389 Directory Server is a free LDAP server. The Lightweight Directory Access Protocol (LDAP) is a network protocol for querying and modifying information from distributed directory services.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q228600",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "also_known_as": [
@@ -798,7 +800,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T13:29:51Z",
+  "last_activity": "2026-09-28T17:45:41Z",
   "license": "EUPL-1.2",
   "long_desc": "Abacus is the new software developed by the Dutch Electoral Council\n(Kiesraad) for calculating election results in the Netherlands. It tallies\npolling station results and computes the seat allocation.\n\nAbacus replaces the result-consolidation module of the current election\nsoftware OSV2020 and will be used for all Dutch elections. The first\nversion targets the 2026 municipal council elections (GR26).\n\nThe software runs as a standalone binary accessible via a web browser on a\nlocal network. The backend is written in Rust, the frontend in\nTypeScript/React.\n\nKey design principles are ease-of-use and simplicity. \nFrom the (dutch) report [Stemmen met vertrouwen](https://www.kiesraad.nl/documenten/2007/09/27/eindrapport-commissie-korthals-altes-stemmen-met-vertrouwen) the \nvalues integrity, transparency and verifiability are most important.\n",
   "maintenance": "internal",
@@ -834,7 +836,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-24T13:58:15Z",
+  "last_activity": "2026-09-28T11:47:56Z",
   "name": "Abacus-Documentatie",
   "repo": "https://code.overheid.nl/Kiesraad/Abacus-Documentatie",
   "repo_key": "code.overheid.nl/kiesraad/abacus-documentatie",
@@ -1854,7 +1856,9 @@
    "United States of America",
    "Zambia",
    "Zimbabwe"
-  ]
+  ],
+  "wikidata": "Q24569417",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -3268,7 +3272,9 @@
   "upstream_id": "GID0090005",
   "used_by": [
    "Norway"
-  ]
+  ],
+  "wikidata": "Q11957606",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -3367,7 +3373,7 @@
   "functions_inferred": true,
   "is_fork": false,
   "landing": "https://designsystem.amsterdam",
-  "last_activity": "2026-09-27T08:14:57Z",
+  "last_activity": "2026-09-28T14:55:11Z",
   "license": "EUPL-1.2",
   "long_desc": "Amsterdam Design System is an open-source toolkit of ready-made\ncomponents that are accessible (WCAG), adaptive, and user-friendly.\nTeams reuse them instead of starting from scratch on every project,\nsaving time and money.\n\nPublished as separate packages for CSS, React, and design tokens,\nthe system lets teams adopt just the parts they need. That makes it\nframework-agnostic and suitable for both tailor-made applications and\nSaaS applications.\n\nNL Design System\u2019s layered architecture lets other public organisations\nreuse these components and apply their own design tokens to tailor them\nto their own channels.\n\nThe team actively maintains the library, publishes regular releases,\nand welcomes contributions.\n",
   "maintenance": "internal",
@@ -3847,7 +3853,9 @@
   "repo_key": null,
   "short_desc": "Apache ActiveMQ is a free message broker that fully implements Java Message Service 1.1 (JMS).",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q773135",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -3926,7 +3934,9 @@
   "repo_key": null,
   "short_desc": "Apache Ant is a Java library and command-line tool whose task is to control processes described in build files as interdependent targets and extension points. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q385970",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -4074,7 +4084,9 @@
   "repo_key": null,
   "short_desc": "Development environment for directory services (LDAP). ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q28916293",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -4115,7 +4127,9 @@
   "short_desc": "Fineract provides a reliable, robust, and affordable solution for entrepreneurs, financial institutions, and service providers to offer financial services to the world\u2019s 3 billion underbanked and unbanked.  Fineract is the backend to the branded Mifos solution.  ",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090006"
+  "upstream_id": "GID0090006",
+  "wikidata": "Q28915157",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -4160,7 +4174,9 @@
    "DGAC",
    "MI",
    "Sorbonne Universit\u00e9"
-  ]
+  ],
+  "wikidata": "Q28915196",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -6973,7 +6989,9 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "translated": true,
-  "upstream_id": 8306
+  "upstream_id": 8306,
+  "wikidata": "Q20828705",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -9941,7 +9959,9 @@
   "repo_owner": "Hallo Welt! GmbH",
   "short_desc": "BlueSpice MediaWiki is a free software, based on MediaWiki, and specifically developed for companies as an enterprise wiki distribution.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q885586",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -13422,7 +13442,9 @@
   "used_by": [
    "MEN: Minist\u00e8re de l'\u00c9ducation nationale",
    "\u00e9ducation nationale"
-  ]
+  ],
+  "wikidata": "Q104417774",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -15530,7 +15552,9 @@
    "DE/opensource.muenchen.de",
    "GLOBAL/dpg"
   ],
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q977484",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -17350,7 +17374,9 @@
   "short_desc": "At CodeCarbon, we believe, as Niels Bohr said, that \"Nothing exists until it is measured\". So we found a way to estimate how much carbon  we produce while running our code.\r\nWe did this by creating a Python package that estimates your hardware electricity power consumption.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092888"
+  "upstream_id": "GID0092888",
+  "wikidata": "Q107382202",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -23029,7 +23055,9 @@
   "short_desc": "Data.norge.no provides a comprehensive overview of datasets, concepts, APIs, information models, services, and events in the public sector, including protected data. It helps you discover, assess, and make use of data. ",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0091996"
+  "upstream_id": "GID0091996",
+  "wikidata": "Q97013549",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -23525,7 +23553,9 @@
   "source": "SE/digg",
   "stars": 28,
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q92961134",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -26805,7 +26835,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-27T22:50:35Z",
+  "last_activity": "2026-09-28T19:15:28Z",
   "license": "CC0-1.0",
   "name": "devbase-core",
   "repo": "https://github.com/diggsweden/devbase-core",
@@ -27438,7 +27468,9 @@
   "upstream_id": "GID0090023",
   "used_by": [
    "India"
-  ]
+  ],
+  "wikidata": "Q115688435",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -28739,7 +28771,9 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q104772330",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -28991,7 +29025,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-25T11:55:01Z",
+  "last_activity": "2026-09-28T15:20:30Z",
   "license": "MPL-2.0",
   "name": "display-api-service",
   "repo": "https://github.com/os2display/display-api-service",
@@ -30952,6 +30986,201 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://code.europa.eu/edelivery/domibus",
+    "name": "Domibus",
+    "repo_url": "https://code.europa.eu/edelivery/domibus",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "communications"
+  ],
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "country": "EU",
+  "desc_en": "Domibus implements an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/edelivery/domibus",
+  "fallback_repo": "https://code.europa.eu/edelivery/domibus.git",
+  "features": [
+   "Secure and reliable message exchange \u2013 Implements the AS4 protocol for payload agnostic, encrypted, and signed messages with acknowledgements and retries, ensuring end-to-end confidentiality, integrity, and reliability.",
+   "Sample eDelivery AS4 Access Point \u2013 Conformant EC open-source implementation of the eDelivery AS4 profile that can be used to set up Access Points in distributed eDelivery secure exchange networks, ensuring interoperability between organisations.",
+   "Open-source, vendor-neutral, and extensible architecture \u2013 Maintained under the European Union Public Licence, with plugins/connectors (e.g., JMS, WS, File System) for integration with backend systems, allowing organisations to adapt and extend the code.",
+   "Management of participants and P-Modes \u2013 Handles metadata, communication parameters, and protocol configuration for multiple parties, including multi-tenancy support. Supports both static configuration and dynamic lookup using the BDXL/SMP standards.",
+   "Administration and monitoring tools \u2013 Web console and configuration tools for managing certificates, message filtering, monitoring, and logging.",
+   "Audit logging and traceability \u2013 Complete logging of message exchanges for compliance, dispute resolution, and auditing.",
+   "Compliance with EU legal standards \u2013 Aligned with ETSI standards defined for eIDAS (Q)ERDS and with EU security regulations for digital signatures, encryption, and secure exchange.",
+   "Web Services APIs (SOAP/REST) \u2013 Standard interfaces for sending, receiving, and managing messages, enabling integration with external systems."
+  ],
+  "forge_path": "edelivery/domibus",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": false,
+  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus",
+  "last_activity": "2026-09-28T16:55:19.799Z",
+  "license": "EUPL-1.2-or-later",
+  "long_desc": "[Domibus](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110244/Domibus) is the sample software provided by the European Commission to implement an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange. It is based on the [eDelivery AS4 profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specification for the secure, web-based, payload-agnostic exchange of data or documents.\n",
+  "maintenance": "internal",
+  "name": "Domibus",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "released": "2026-06-26",
+  "repo": "https://code.europa.eu/edelivery/domibus",
+  "repo_key": "code.europa.eu/edelivery/domibus",
+  "repo_owner": "DIGIT",
+  "short_desc": "Domibus implements an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange.",
+  "software_type": "standalone/backend",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 211,
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "version": "5.2.1"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/edelivery/domisml",
+    "name": "DomiSML",
+    "repo_url": "https://code.europa.eu/edelivery/bdmsl",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "communications"
+  ],
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "country": "EU",
+  "desc_en": "DomiSML implements an eDelivery Service Metadata Locator for publishing the location of metadata necessary for message exchange.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/edelivery/domisml",
+  "fallback_repo": "https://code.europa.eu/edelivery/domisml.git",
+  "features": [
+   "Maintains a trusted registry of authorised Service Metadata Publishers (SMPs) and their registered network participants.",
+   "Ensures secure and reliable discovery of the location where participant service metadata is published, using a standards\u2011based lookup mechanism.",
+   "Adheres to EU eDelivery specifications, ensuring full interoperability across European digital systems.",
+   "Scales to support national or multi\u2011country ecosystems with millions of participants.",
+   "Provides clear administrative controls and comprehensive audit trails to support transparency, accountability, and good governance."
+  ],
+  "forge_path": "edelivery/domisml",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": false,
+  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSML",
+  "last_activity": "2026-09-22T11:10:10.892Z",
+  "license": "EUPL-1.2-or-later",
+  "long_desc": "[DomiSML](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118040/DomiSML) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Locator for an eDelivery party  to discover the URLs of other counterparties using eDelivery Access Points and their corresponding metadata. It is based on  the [eDelivery BDXL profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), an open technical specification for locating Access Points within a network, and on the [PEPPOL SML Specification](https://docs.peppol.eu/edelivery/), a technical specification defining a BDXL administration API.\n",
+  "maintenance": "internal",
+  "name": "DomiSML",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "released": "2026-06-22",
+  "repo": "https://code.europa.eu/edelivery/bdmsl",
+  "repo_key": "code.europa.eu/edelivery/bdmsl",
+  "repo_owner": "DIGIT",
+  "short_desc": "DomiSML implements an eDelivery Service Metadata Locator for publishing the location of metadata necessary for message exchange.",
+  "software_type": "standalone/backend",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 212,
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "version": 5.1
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/edelivery/domismp",
+    "name": "DomiSMP",
+    "repo_url": "https://code.europa.eu/edelivery/smp",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "communications"
+  ],
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "country": "EU",
+  "desc_en": "DomiSMP implements an eDelivery Service Metadata Publisher for publishing and retrieving metadata necessary for message exchange.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/edelivery/domismp",
+  "fallback_repo": "https://code.europa.eu/edelivery/domismp.git",
+  "features": [
+   "Trusted participant registry and its service capabilities metadata (service descriptions) publication and retrieval.",
+   "Standards\u2011compliant metadata service aligned with EU eDelivery specifications to enable interoperability across EU systems.",
+   "Automatic endpoint discovery enabling seamless cross\u2011border and inter\u2011agency digital communication.",
+   "High availability and scalability to support large public\u2011sector networks.",
+   "Strong security and governance controls ensuring only verified organisations can register and exchange data.",
+   "User interface for managing participant registrations and service metadata, with support for bulk operations and API access.",
+   "Support for multiple document types, processes, and transport profiles to facilitate diverse message exchange scenarios.",
+   "Certificate and trust validation to ensure secure and trusted metadata publication and retrieval."
+  ],
+  "forge_path": "edelivery/domismp",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": false,
+  "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/DomiSMP",
+  "last_activity": "2026-09-25T10:50:08.078Z",
+  "license": "EUPL-1.2-or-later",
+  "long_desc": "[DomiSMP](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117783/DomiSMP) is the sample software provided by the European Commission to implement an eDelivery Service Metadata Publisher for publishing and retrieving data necessary for an eDelivery party to dynamically configure its system for message exchange with other parties using eDelivery. It is based on the [eDelivery SMP profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications), an open technical specification for publishing service metadata within a 4-corner network.\n",
+  "maintenance": "internal",
+  "name": "DomiSMP",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "released": "2025-10-12",
+  "repo": "https://code.europa.eu/edelivery/smp",
+  "repo_key": "code.europa.eu/edelivery/smp",
+  "repo_owner": "DIGIT",
+  "short_desc": "DomiSMP implements an eDelivery Service Metadata Publisher for publishing and retrieving metadata necessary for message exchange.",
+  "software_type": "standalone/backend",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 162,
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "version": 5.2
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://www.digitalpublicgoods.net/r/doptor-open-data",
     "name": "Doptor Open Data",
     "repo_url": "https://dpgdata.doptor.gov.bd/documentation/v1",
@@ -31908,9 +32137,14 @@
   "version": "1.0"
  },
  {
-  "active": true,
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/dit/dss",
+    "name": "DSS",
+    "repo_url": "https://code.europa.eu/dit/dss.git",
+    "source": "EU/code.europa.eu"
+   },
    {
     "entry_url": null,
     "name": "DSS",
@@ -31926,11 +32160,16 @@
    "Pierrick Vandenbroucke",
    "Aleksandr Beliakov"
   ],
-  "country": "IT",
+  "countries": [
+   "EU",
+   "IT"
+  ],
+  "country": "EU",
   "desc_en": "DSS is an open-source software library for electronic signature creation, augmentation and validation.",
   "desc_lang": "en",
   "dev_status": "stable",
-  "fallback_repo": "https://github.com/teamdigitale/dss-validation-reports.git",
+  "entry_url": "https://code.europa.eu/dit/dss",
+  "fallback_repo": "https://code.europa.eu/dit/dss.git",
   "features": [
    "Electronic signatures (XAdES, CAdES, PAdES, JAdES and ASiC)",
    "Timestamps",
@@ -31938,13 +32177,16 @@
    "Evidence Records (XMLERS and ERS)",
    "REST and SOAP webServices"
   ],
+  "forge_path": "dit/dss",
   "functions": [
    "documents"
   ],
   "functions_inferred": false,
+  "last_activity": "2026-01-16T09:42:05.738Z",
   "license": "LGPL-2.1",
   "long_desc": "DSS (Digital Signature Services) is an open-source software library for electronic signature creation and validation.  DSS supports the creation and verification of interoperable and secure electronic signatures in line with European  legislation. In particular, DSS aims to follow the eIDAS Regulation and related standards closely. \nDSS can be re-used in an IT solution for electronic signatures to ensure that signatures are created and verified in line with European legislation and standards. DSS allows re-use in a variety of different ways: in an applet, in a standalone application or in a server application. DSS can also be used as a reference implementation for IT solutions which do not directly re-use it. Demos are also available to assist the use of DSS as a reference implementation.\nThe project is written in Java and issued under LGPL 2.1, a non-viral open source license.\n",
   "maintenance": "internal",
+  "merged_count": 2,
   "name": "DSS",
   "platforms": [
    "windows",
@@ -31956,9 +32198,67 @@
   "repo_key": "code.europa.eu/dit/dss",
   "short_desc": "DSS is an open-source software library for electronic signature creation, augmentation and validation.",
   "software_type": "library",
-  "source": "IT/developers-italia",
+  "source": "EU/code.europa.eu",
+  "sources": [
+   "EU/code.europa.eu",
+   "IT/developers-italia"
+  ],
   "tier": "publiccode",
-  "upstream_id": "a457b872-238c-4fba-9cd4-84c3af013ae0",
+  "upstream_id": 111,
+  "version": "6.3"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/dit/dss-demonstrations",
+    "name": "DSS Demonstrations",
+    "repo_url": "https://code.europa.eu/dit/dss-demonstrations.git",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "e-signature"
+  ],
+  "contacts": [
+   "David Naramski",
+   "Pierrick Vandenbroucke",
+   "Aleksandr Beliakov"
+  ],
+  "country": "EU",
+  "desc_en": "DSS Demonstrations is the demonstration repository for project DSS.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/dit/dss-demonstrations",
+  "fallback_repo": "https://code.europa.eu/dit/dss-demonstrations.git",
+  "features": [
+   "Web application;",
+   "Standalone application;",
+   "REST samples generation;",
+   "eSig Validation Test Cases."
+  ],
+  "forge_path": "dit/dss-demonstrations",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": false,
+  "last_activity": "2026-01-22T18:39:04.165Z",
+  "license": "LGPL-2.1",
+  "long_desc": "With the framework, the following demonstrations are provided: \n- DSS online demo web application; \n- Ready to use demo web application build;\n- JavaFX Standalone Application;\n- eSignature validation test cases.\n",
+  "maintenance": "internal",
+  "name": "DSS Demonstrations",
+  "platforms": [
+   "windows",
+   "linux"
+  ],
+  "released": "2025-08-05",
+  "repo": "https://code.europa.eu/dit/dss-demonstrations.git",
+  "repo_key": "code.europa.eu/dit/dss-demonstrations",
+  "short_desc": "DSS Demonstrations is the demonstration repository for project DSS.",
+  "software_type": "standalone/other",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 112,
   "version": "6.3"
  },
  {
@@ -32186,6 +32486,71 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e89a1ef6-72d0-46a8-a4d3-804a4634836c"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/edelivery/dynamic-discovery-client",
+    "name": "Dynamic Discovery Client (DDC)",
+    "repo_url": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "communications"
+  ],
+  "contacts": [
+   "eDelivery Support Service"
+  ],
+  "country": "EU",
+  "desc_en": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/edelivery/dynamic-discovery-client",
+  "fallback_repo": "https://code.europa.eu/edelivery/dynamic-discovery-client.git",
+  "features": [
+   "Automatic participant lookup using SML to locate the SMP service where a network participant published its service capabilities metadata.",
+   "SMP metadata retrieval to obtain service metadata such as document types, transport profiles, and endpoint details.",
+   "Support for multiple transport profiles (e.g., AS4, AS2, etc.) to enable interoperability with different Access Points.",
+   "Support for multiple document types and processes to facilitate diverse message exchange scenarios.",
+   "Support for various party identifier schemes (e.g., eDelivery identifiers, PEPPOL identifiers) to accommodate different identification standards.",
+   "Certificate and trust validation to ensure secure and trusted metadata retrieval.",
+   "Compliance with eDelivery Dynamic Discovery specifications (SML/SMP standards, DNS-based addressing)."
+  ],
+  "forge_path": "edelivery/dynamic-discovery-client",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": false,
+  "landing": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
+  "last_activity": "2026-09-24T08:28:09.724Z",
+  "license": "EUPL-1.2-or-later",
+  "long_desc": "[DDC](https://code.europa.eu/edelivery/dynamic-discovery-client/) is the sample Java library provided by the European Commission to implement an eDelivery dynamic discovery lookup for an eDelivery party to discover the URLs and metadata of other eDelivery Access Point counterparties. It is based on the [eDelivery BDXL specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), the [eDelivery SMP specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications) and the dynamic sender and receiver enhancements of the [eDelivery AS4 specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specifications for locating Access Points within a network.\n",
+  "maintenance": "internal",
+  "name": "Dynamic Discovery Client (DDC)",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "released": "2026-08-17",
+  "repo": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
+  "repo_key": "code.europa.eu/edelivery/dynamic-discovery-client",
+  "repo_owner": "DIGIT",
+  "short_desc": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
+  "software_type": "standalone/backend",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 214,
+  "used_by": [
+   "EU institutions, bodies and agencies",
+   "EU Member State administrations",
+   "OpenPeppol Service Providers",
+   "EU private organisations",
+   "etc."
+  ],
+  "version": 3.4
  },
  {
   "catalogue_count": 1,
@@ -32559,8 +32924,14 @@
   "version": "2.6.0"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
+   {
+    "entry_url": null,
+    "name": "D\u00e9marches simplifi\u00e9es",
+    "repo_url": "https://github.com/demarches-simplifiees/demarches-simplifiees.fr",
+    "source": "FR/awesome-codegouvfr"
+   },
    {
     "entry_url": "https://code.gouv.fr/sill/detail?name=D%C3%A9marches%20simplifi%C3%A9es",
     "name": "D\u00e9marches simplifi\u00e9es",
@@ -32571,11 +32942,13 @@
   "categories": [
    "Web Applications"
   ],
+  "countries": [
+   "FR"
+  ],
   "country": "FR",
   "desc_lang": "en",
-  "desc_src": "Outil de gestion de formulaires en ligne",
+  "desc_src": "D\u00e9mat\u00e9rialiser et simplifier les d\u00e9marches administratives ",
   "desc_src_lang": "fr",
-  "entry_url": "https://code.gouv.fr/sill/detail?name=D%C3%A9marches%20simplifi%C3%A9es",
   "functions": [
    "web-content"
   ],
@@ -32588,52 +32961,28 @@
    "procedures",
    "e-government"
   ],
-  "landing": "https://demarches.numerique.gouv.fr",
-  "license": "AGPL-3.0-only",
+  "landing": "https://www.demarches-simplifiees.fr",
+  "license": "agpl-3.0",
+  "maintenance": "community",
+  "merged_count": 2,
   "name": "D\u00e9marches simplifi\u00e9es",
-  "note": "recommended to public agents; not necessarily gov-authored",
-  "recommended_for_gov": true,
-  "repo": "https://github.com/demarche-numerique/demarche.numerique.gouv.fr",
-  "repo_key": "github.com/demarche-numerique/demarche.numerique.gouv.fr",
-  "short_desc": "Online form management tool.",
-  "sill_id": 205,
-  "source": "FR/sill",
-  "tier": "index",
+  "repo": "https://github.com/demarches-simplifiees/demarches-simplifiees.fr",
+  "repo_key": "github.com/demarches-simplifiees/demarches-simplifiees.fr",
+  "short_desc": "Digitise and simplify administrative procedures.",
+  "source": "FR/awesome-codegouvfr",
+  "sources": [
+   "FR/awesome-codegouvfr",
+   "FR/sill"
+  ],
+  "tier": "publiccode",
   "translated": true,
   "used_by": [
    "DINUM",
    "DNUM/PNM/PNM2",
    "acad\u00e9mie de montpellier"
   ],
-  "version": "2.0",
-  "wikidata": "Q93597458"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": null,
-    "name": "D\u00e9marches simplifi\u00e9es",
-    "repo_url": "https://github.com/demarches-simplifiees/demarches-simplifiees.fr",
-    "source": "FR/awesome-codegouvfr"
-   }
-  ],
-  "country": "FR",
-  "desc_lang": "en",
-  "desc_src": "D\u00e9mat\u00e9rialiser et simplifier les d\u00e9marches administratives ",
-  "desc_src_lang": "fr",
-  "functions": [],
-  "functions_inferred": false,
-  "landing": "https://www.demarches-simplifiees.fr",
-  "license": "agpl-3.0",
-  "maintenance": "community",
-  "name": "D\u00e9marches simplifi\u00e9es",
-  "repo": "https://github.com/demarches-simplifiees/demarches-simplifiees.fr",
-  "repo_key": "github.com/demarches-simplifiees/demarches-simplifiees.fr",
-  "short_desc": "Digitise and simplify administrative procedures.",
-  "source": "FR/awesome-codegouvfr",
-  "tier": "publiccode",
-  "translated": true
+  "wikidata": "Q93597458",
+  "wikidata_via": "repo-rename:FR/sill"
  },
  {
   "catalogue_count": 1,
@@ -32967,7 +33316,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T13:33:50Z",
+  "last_activity": "2026-09-28T17:39:22Z",
   "name": "e-KS",
   "repo": "https://code.overheid.nl/Kiesraad/e-KS",
   "repo_key": "code.overheid.nl/kiesraad/e-ks",
@@ -33459,7 +33808,9 @@
   "upstream_id": "GID0090027",
   "used_by": [
    "New Zealand"
-  ]
+  ],
+  "wikidata": "Q115688412",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -34794,7 +35145,9 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "cf2a4912-a8fd-4dd5-a1a3-43b05c47eb19",
-  "version": "v5.1.4"
+  "version": "v5.1.4",
+  "wikidata": "Q107381202",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -34890,7 +35243,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner",
-  "last_activity": "2026-09-28T17:06:36.393Z",
+  "last_activity": "2026-09-28T19:07:41.216Z",
   "license": "EUPL-1.2",
   "long_desc": "Elterngeldrechner und Planer zur unverbindlichen Berechnung und Planung des Elterngeldbezugs. JavaScript-Widget, eingebunden in das Familienportal des BMFSFJ.",
   "maintenance": "contract",
@@ -38444,7 +38797,9 @@
    "Ministerien und Beh\u00f6rden Baden-W\u00fcrttembergs",
    "Lehrkr\u00e4fte in Baden-W\u00fcrttemberg \u00fcber baden-w\u00fcrttembergische Bildungsplattform"
   ],
-  "version": "1.0"
+  "version": "1.0",
+  "wikidata": "Q138566672",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -38819,7 +39174,9 @@
   "short_desc": "farmOS is a web-based application for farm management, planning, and record keeping.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090033"
+  "upstream_id": "GID0090033",
+  "wikidata": "Q97644687",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -38972,7 +39329,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "FastAPI is a modern, high-performance web framework for building APIs with Python, based on standard Python type hints. It supports asynchronous traffic by default and is designed to be easy to use and learn, while also being highly performant, scalable and with low code footprint. FastAPI uses Pydantic for data validation and parsing.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q101119404",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -39803,7 +40162,7 @@
    "collaboration"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-09-28T17:09:22.070Z",
+  "last_activity": "2026-09-28T18:23:09.343Z",
   "license": "EUPL-v1.2",
   "maintenance": "internal",
   "name": "FIM Datenfelder-Sammelrepository",
@@ -39991,7 +40350,9 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q18760310",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -41022,7 +41383,9 @@
   "tier": "index",
   "used_by": [
    "gbg_k"
-  ]
+  ],
+  "wikidata": "Q5456301",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -42450,7 +42813,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "b6ecf45e-ceb6-4060-91af-65d77fdab33d",
-  "version": "16"
+  "version": "16",
+  "wikidata": "Q5499659",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 2,
@@ -43151,7 +43516,9 @@
   "upstream_id": "GID0090514",
   "used_by": [
    "Italy"
-  ]
+  ],
+  "wikidata": "Q3737390",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -44165,7 +44532,9 @@
    "Colombia",
    "France",
    "Paraguay"
-  ]
+  ],
+  "wikidata": "Q3094963",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -46065,7 +46434,9 @@
   "short_desc": "A free, modern, open platform for independent publishing and journalism.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092823"
+  "upstream_id": "GID0092823",
+  "wikidata": "Q16251204",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "also_known_as": [
@@ -53984,7 +54355,9 @@
    "World Trade Center Genoa",
    "Zeroc SpA"
   ],
-  "version": "4.9.5"
+  "version": "4.9.5",
+  "wikidata": "Q5570030",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -54410,7 +54783,9 @@
    "Philippines",
    "Tanzania",
    "Venezuela"
-  ]
+  ],
+  "wikidata": "Q2703769",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -55308,7 +55683,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://ds.services.gov.ie/",
-  "last_activity": "2026-09-28T14:58:10Z",
+  "last_activity": "2026-09-28T16:16:32Z",
   "license": "MIT",
   "long_desc": "The Government of Ireland Design System is an open-source design system developed by the Office of the Government Chief Information Officer (OGCIO). It provides tools for design and development, along with resources and guidelines to help teams create consistent, accessible, and user-centred digital services across government.",
   "maintenance": "internal",
@@ -56287,7 +56662,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Graylog is a platform for central log management, the collection, analysis and visualization of log data.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q104417945",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -59163,7 +59540,9 @@
    "Laos",
    "Lesotho",
    "Liberia"
-  ]
+  ],
+  "wikidata": "Q100511474",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -59356,7 +59735,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:54:42Z",
+  "last_activity": "2026-09-28T15:23:04Z",
   "license": "MIT",
   "long_desc": "I14Y is Switzerland's central directory for metadata about public-sector datasets, electronic interfaces (APIs), and government services. The platform publishes metadata only (not the underlying operational data), including access conditions, standards alignment, update and quality context. It supports harmonization through shared concepts and codelists, improves cross-administration data exchange, and contributes to the once-only principle by reducing duplicate data collection.",
   "maintenance": "internal",
@@ -61907,7 +62286,9 @@
    "World Intellectual Property Organization (WIPO)",
    "Deutsches Elektronen-Synchrotron (DESY)"
   ],
-  "version": "3.3.13"
+  "version": "3.3.13",
+  "wikidata": "Q126084894",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -64683,7 +65064,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "af6056fc-b2b2-4d31-9961-c9bd94e32bd4",
-  "version": "3.34.0-rc.3"
+  "version": "3.34.0-rc.3",
+  "wikidata": "Q96475297",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -69524,7 +69907,9 @@
   "repo_key": null,
   "short_desc": "jEdit is a sophisticated text editor for programmers. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q292976",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -72404,7 +72789,9 @@
   "repo_key": null,
   "short_desc": "Katello is a software stack of various components integrated together to provide a complete lifecycle and configuration management system for server systems.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q16972131",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -72540,7 +72927,9 @@
   "used_by": [
    "Kausal"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "wikidata": "Q82540532",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -74705,8 +75094,14 @@
   "version": "rolling"
  },
  {
-  "catalogue_count": 1,
+  "catalogue_count": 2,
   "catalogue_entries": [
+   {
+    "entry_url": "https://code.gouv.fr/sill/detail?name=KNIME%20Analytics%20Platform",
+    "name": "KNIME Analytics Platform",
+    "repo_url": "https://github.com/knime/knime-core",
+    "source": "FR/sill"
+   },
    {
     "entry_url": "https://opensource.muenchen.de/software/knime-analytics-platform.html",
     "name": "KNIME Analytics Platform",
@@ -74714,37 +75109,9 @@
     "source": "DE/opensource.muenchen.de"
    }
   ],
-  "country": "DE",
-  "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/knime-analytics-platform.html",
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": true,
-  "gov_tier": "municipal",
-  "keywords": [
-   "infrastruktur"
-  ],
-  "landing": "https://www.knime.com",
-  "license": "GPL-3.0",
-  "name": "KNIME Analytics Platform",
-  "note": "in production use at the City of Munich",
-  "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
-  "short_desc": "KNIME is a free software for interactive data analysis. The program enables the integration of numerous machine learning and data mining methods through the modular pipelining concept. ---",
-  "source": "DE/opensource.muenchen.de",
-  "tier": "index"
- },
- {
-  "catalogue_count": 1,
-  "catalogue_entries": [
-   {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=KNIME%20Analytics%20Platform",
-    "name": "KNIME Analytics Platform",
-    "repo_url": "https://github.com/knime/knime-core",
-    "source": "FR/sill"
-   }
+  "countries": [
+   "DE",
+   "FR"
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -74759,10 +75126,12 @@
    "Datascience",
    "Datavisualisation",
    "IA",
-   "Deep Learning"
+   "Deep Learning",
+   "infrastruktur"
   ],
   "landing": "http://www.knime.org/",
   "license": "GPL",
+  "merged_count": 2,
   "name": "KNIME Analytics Platform",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -74771,6 +75140,10 @@
   "short_desc": "Modular data processing and analysis software. It supports integrating other languages such as Python, R and Java.",
   "sill_id": 480,
   "source": "FR/sill",
+  "sources": [
+   "DE/opensource.muenchen.de",
+   "FR/sill"
+  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -74921,7 +75294,9 @@
   "short_desc": "KoboToolbox is an open source platform for the collection, management, and visualization of data. As the most widely used primary data collection tool in the nonprofit sector, it is the tool of choice for over 32,000 social impact organizations worldwide.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090130"
+  "upstream_id": "GID0090130",
+  "wikidata": "Q134127261",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -76933,7 +77308,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "2e3c6892-995a-4b24-8fd6-d378e5ea2f45",
-  "version": "v1.8.0"
+  "version": "v1.8.0",
+  "wikidata": "Q13685322",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -77341,7 +77718,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Expat is a stream-oriented XML 1.0 parser library written in C.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q2074084",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -78469,7 +78848,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "LiteLLM provides a gateway to access multiple large language models (LLMs) and other AI models via an unified API. It allows usage tracking, caching and access control and provides a web based UI for administration, monitoring and testing of the models.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q136763444",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -78586,7 +78967,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q125998452",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -79970,7 +80353,9 @@
   "translated": true,
   "used_by": [
    "other"
-  ]
+  ],
+  "wikidata": "Q136412223",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -81599,7 +81984,9 @@
    "Portugal",
    "Qatar",
    "Romania"
-  ]
+  ],
+  "wikidata": "Q99374512",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -82051,7 +82438,9 @@
   "used_by": [
    "South Africa",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q6805470",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -83316,7 +83705,9 @@
   "repo_owner": "eccc",
   "short_desc": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
   "source": "CA/code.open.canada.ca",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q3272898",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -83596,7 +83987,9 @@
   "short_desc": "MijnBureau deployment",
   "software_type": "standalone/web",
   "source": "NL/code.overheid.nl",
-  "tier": "publiccode"
+  "tier": "publiccode",
+  "wikidata": "Q140627738",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -84092,7 +84485,9 @@
   "repo_key": null,
   "short_desc": "The Open Source Threat Intelligence Platform (''MISP'') is used as a platform for sharing Indicators of Compromise (IOCs) and other relevant information across all parts of the German Cybersecurity network including the City of Munich.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q63017823",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -84995,6 +85390,57 @@
   "wikidata": "Q190434"
  },
  {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+    "name": "Moodle eTranslation filter plugin ",
+    "repo_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+    "source": "EU/code.europa.eu"
+   }
+  ],
+  "categories": [
+   "learning-management-system"
+  ],
+  "contacts": [
+   "BTSF ACADEMY Team"
+  ],
+  "country": "EU",
+  "desc_en": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
+  "desc_lang": "en",
+  "dev_status": "beta",
+  "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+  "fallback_repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin.git",
+  "features": [
+   "Automatic Moodle content translation"
+  ],
+  "forge_path": "btsf/moodle-etranslation-filter-plugin",
+  "functions": [
+   "learning-knowledge"
+  ],
+  "functions_inferred": false,
+  "last_activity": "2026-08-04T08:48:04.149Z",
+  "license": "GPL-3.0-or-later",
+  "long_desc": "The eTranslation filter provides an automatic translation of the content\nof Moodle courses into different languages. It uses the European\nCommission's neural machine translation service\n([eTranslation](https://commission.europa.eu/resources-partners/etranslation_en)).\n\n\nThe filter parses and processes every piece of content including HTML\ntexts, [File resource](https://docs.moodle.org/405/en/File_resource)s,\n[Folder resource](https://docs.moodle.org/405/en/Folder_resource)s and\nheadings.\n\n\nFor each content item:\n\n\n- If the current language is the configured base language, then the\noriginal text is returned untouched.\n\n- Else, hash the full original text as the HASHKEY to look into the\ntranslation repository.\n\n- If the HASHKEY is found, then look for a translation in the selected\nlanguage.\n    - If the translation exists, then return the translated content\n- Else the HASHKEY is not found, request a translation from the\neTranslation API and wait for the translation in the background. Once it\nis ready, the translated content will be stored in the repository with the\nHASHKEY.\n\n\nThe translation availability is configurable through [Moodle\ncapabilities](https://docs.moodle.org/405/en/Cat",
+  "maintenance": "internal",
+  "name": "Moodle eTranslation filter plugin ",
+  "platforms": [
+   "web"
+  ],
+  "released": "2023-09-26",
+  "repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+  "repo_key": "code.europa.eu/btsf/moodle-etranslation-filter-plugin",
+  "repo_owner": "BTSF ACADEMY Team",
+  "short_desc": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
+  "software_type": "library",
+  "source": "EU/code.europa.eu",
+  "tier": "publiccode",
+  "upstream_id": 1006,
+  "used_by": [
+   "BTSF ACADEMY Team"
+  ]
+ },
+ {
   "active": true,
   "catalogue_count": 1,
   "catalogue_entries": [
@@ -85159,7 +85605,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-24T15:38:16Z",
+  "last_activity": "2026-09-28T12:31:51Z",
   "name": "moza-poc",
   "repo": "https://code.overheid.nl/MinBZK/moza-poc",
   "repo_key": "code.overheid.nl/minbzk/moza-poc",
@@ -85745,7 +86191,9 @@
    "Conseil D\u00e9partemental du Val d'Oise",
    "MD",
    "MTE"
-  ]
+  ],
+  "wikidata": "Q130280113",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -86167,7 +86615,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:40:38Z",
+  "last_activity": "2026-09-28T15:13:55Z",
   "license": "MIT",
   "name": "Municipio",
   "repo": "https://github.com/helsingborg-stad/Municipio",
@@ -86425,7 +86873,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:52:32Z",
+  "last_activity": "2026-09-28T19:31:18Z",
   "name": "municipio-project-aggregator",
   "repo": "https://github.com/helsingborg-stad/municipio-project-aggregator",
   "repo_key": "github.com/helsingborg-stad/municipio-project-aggregator",
@@ -89628,7 +90076,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-25T08:06:07Z",
+  "last_activity": "2026-09-28T14:01:43Z",
   "name": "nl-design-system",
   "repo": "https://code.overheid.nl/RVO/nl-design-system",
   "repo_key": "code.overheid.nl/rvo/nl-design-system",
@@ -91334,7 +91782,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Nuclos is a free enterprise resource planning software that we at it@M use to manage our entire internal IT portfolio and resource planning.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q1265414",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -92522,7 +92972,9 @@
    "Fiji",
    "Finland",
    "France"
-  ]
+  ],
+  "wikidata": "Q56291130",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -94073,7 +94525,9 @@
    "Gabon",
    "Gambia",
    "Georgia"
-  ]
+  ],
+  "wikidata": "Q3353146",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -94626,7 +95080,9 @@
   "short_desc": "A directory and analysis of the open source ecosystem in the areas of climate change, sustainable energy, biodiversity and natural resources.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0091581"
+  "upstream_id": "GID0091581",
+  "wikidata": "Q137335189",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -97131,7 +97587,7 @@
    "office"
   ],
   "functions_inferred": false,
-  "last_activity": "2026-09-28T15:17:58.646Z",
+  "last_activity": "2026-09-28T18:58:51.662Z",
   "license": "Apache-2.0",
   "long_desc": "openDesk is the adaptable office and collaboration suite specifically developed to meet the needs of the public administration.\n\nFocusing on data sovereignty, security, and seamless collaboration, openDesk provides all the familiar tools required for day-to-day administrative work. It brings together all essential office applications under a single, user-friendly interface.\n\nopenDesk is the evolution of the \u201cSovereign Workplace,\u201d an initiative by the Federal Ministry of the Interior. With openDesk, the public administration gains greater control over its digital tools and can respond more flexibly to changing requirements. Federal, state, and local authorities receive a comprehensive office solution that works independently of specific providers, in any browser, and on all devices.\n",
   "maintenance": "contract",
@@ -97157,7 +97613,9 @@
    "F\u00f6derale IT-Kooperation (FITKO)",
    "ZenDiS"
   ],
-  "version": "1.18.1"
+  "version": "1.18.1",
+  "wikidata": "Q136905151",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -97982,7 +98440,9 @@
    "Nepal",
    "Niger",
    "Tanzania"
-  ]
+  ],
+  "wikidata": "Q60785832",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -98398,7 +98858,9 @@
    "North Korea",
    "Pakistan",
    "Palestine State"
-  ]
+  ],
+  "wikidata": "Q7095826",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -98681,7 +99143,9 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 10967,
-  "version": "0.1.15"
+  "version": "0.1.15",
+  "wikidata": "Q137188777",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 3,
@@ -99193,7 +99657,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:38:31Z",
+  "last_activity": "2026-09-28T19:33:11Z",
   "name": "opensource-docs",
   "repo": "https://github.com/diggsweden/opensource-docs",
   "repo_key": "github.com/diggsweden/opensource-docs",
@@ -100310,7 +100774,9 @@
   "sill_id": 473,
   "source": "FR/sill",
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q19348696",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -100471,7 +100937,9 @@
    "Spain",
    "Thailand",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q7104382",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -102611,7 +103079,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:58:12Z",
+  "last_activity": "2026-09-28T15:40:07Z",
   "name": "os2mo-ldap-import-export",
   "repo": "https://github.com/OS2mo/os2mo-ldap-import-export",
   "repo_key": "github.com/os2mo/os2mo-ldap-import-export",
@@ -102663,7 +103131,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T13:31:39Z",
+  "last_activity": "2026-09-28T16:45:10Z",
   "name": "os2mo-naldo",
   "repo": "https://github.com/OS2mo/os2mo-naldo",
   "repo_key": "github.com/os2mo/os2mo-naldo",
@@ -109551,7 +110019,9 @@
   "repo_key": null,
   "short_desc": "pgAdmin is a server-based web application for Postgres database administration. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q310572",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -109787,13 +110257,13 @@
  },
  {
   "also_known_as": [
-   "PHPBB3"
+   "PHPBB"
   ],
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
-    "name": "PHPBB",
+    "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
+    "name": "PHPBB3",
     "repo_url": "https://github.com/phpbb/phpbb",
     "source": "FR/sill"
    }
@@ -109803,33 +110273,33 @@
   ],
   "country": "FR",
   "desc_lang": "en",
-  "desc_src": "Outil de forum",
+  "desc_src": "Forum de discussions en PHP",
   "desc_src_lang": "fr",
-  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
   "functions": [
    "collaboration"
   ],
   "functions_inferred": true,
   "keywords": [
    "forum",
-   "bulletin board",
    "discussion",
    "communaut\u00e9",
    "community",
    "logiciel",
    "software",
-   "web"
+   "web",
+   "bulletin board"
   ],
   "landing": "https://www.phpbb.com/",
-  "license": "GPL-2.0-only",
+  "license": "GNU",
   "merged_count": 2,
-  "name": "PHPBB",
+  "name": "PHPBB3",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
   "repo": "https://github.com/phpbb/phpbb",
   "repo_key": "github.com/phpbb/phpbb",
-  "short_desc": "Forum tool.",
-  "sill_id": 114,
+  "short_desc": "Discussion forum in PHP.",
+  "sill_id": 325,
   "source": "FR/sill",
   "sources": [
    "FR/sill"
@@ -109840,8 +110310,8 @@
    "MI",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "3.3.19",
-  "wikidata": "Q14270"
+  "wikidata": "Q14270",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -111251,7 +111721,9 @@
   "short_desc": "Pix is a free, open-source public service for assessing and certifying digital skills. With over 15M users in 43 countries, it empowers students and professionals to develop their digital competencies, promoting lifelong learning for all.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092012"
+  "upstream_id": "GID0092012",
+  "wikidata": "Q60847204",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -111657,7 +112129,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "842688b2-cfcc-4137-ab22-31cb001e63bb",
-  "version": "1.4.4"
+  "version": "1.4.4",
+  "wikidata": "Q105731934",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -111841,7 +112315,9 @@
   "translated": true,
   "used_by": [
    "MD"
-  ]
+  ],
+  "wikidata": "Q3359740",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -112138,7 +112614,9 @@
   "short_desc": "Polis is a real-time system for gathering, analyzing, and understanding what large groups of people think in their own words, enabled by advanced statistics and machine learning. Polis has been used all over the world by governments, academics, independent media, and citizens.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092151"
+  "upstream_id": "GID0092151",
+  "wikidata": "Q125803048",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -113682,7 +114160,9 @@
   "sill_id": 364,
   "source": "FR/sill",
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q121223640",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -117105,7 +117585,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Pydantic is the de-facto standard data validation library for Python, with a focus on data integrity and type safety. It integrates with linters and IDEs, is fast and extensible, and uses standard Python type hints for defining data models.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q107381687",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -117418,7 +117900,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Qdrant (read: quadrant) is a container-based vector similarity search engine and vector database.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q137839573",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -117502,7 +117986,9 @@
   ],
   "tier": "publiccode",
   "upstream_id": "5cc14825-0d07-408f-a691-2ea68a298d13",
-  "version": "v2.0.0"
+  "version": "v2.0.0",
+  "wikidata": "Q135493504",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -118242,7 +118728,9 @@
   "upstream_id": "GID0090594",
   "used_by": [
    "Brazil"
-  ]
+  ],
+  "wikidata": "Q114647507",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -121725,7 +122213,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Robot Framework is a generic automation framework that can be used for both test automation and robotic process automation.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q2160022",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -122534,7 +123024,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Ruff is an extremely fast Python linter and code formatter, written in Rust. It provides essential features for ensuring code quality and consistency in Python projects, including linting, formatting, and automatic fixing of common issues.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q115911873",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -122797,7 +123289,9 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE",
    "other"
-  ]
+  ],
+  "wikidata": "Q113976362",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -124265,7 +124759,9 @@
   "repo_key": null,
   "short_desc": "Free software for visualization and analysis of measured values. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q1124889",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -125527,7 +126023,9 @@
   "used_by": [
    "Acad\u00e9mie de Dijon",
    "other"
-  ]
+  ],
+  "wikidata": "Q97351209",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -126826,7 +127324,9 @@
    "MI",
    "MINISTERE INTERIEUR/DGPN/DCSP/DZSP SUD/DDSP34 MONTPELLIER/EMD/SEM",
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne"
-  ]
+  ],
+  "wikidata": "Q21977736",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -126984,7 +127484,9 @@
   "source": "CH/swiss",
   "stars": 24,
   "tier": "publiccode",
-  "version": "2.2"
+  "version": "2.2",
+  "wikidata": "Q138745006",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -129719,7 +130221,9 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q130281770",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -132479,7 +132983,9 @@
   "repo_key": null,
   "short_desc": "Spring open source framework for the Java platform, which is often used for web applications. Spring is modular and offers features like dependency injection or aspect-oriented programming. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q720314",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 2,
@@ -134835,7 +135341,9 @@
   "repo_key": null,
   "short_desc": "sudo is a command in Unix and Unix-like operating systems such as Linux or macOS that is used to start processes with the rights of another user.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q300883",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -135518,7 +136026,9 @@
    "Nepal",
    "Nigeria",
    "Tunisia"
-  ]
+  ],
+  "wikidata": "Q104533795",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -135641,7 +136151,9 @@
    "United Kingdom",
    "United States of America",
    "Venezuela"
-  ]
+  ],
+  "wikidata": "Q1759786",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -135750,7 +136262,7 @@
   ],
   "functions_inferred": false,
   "landing": "https://smart-village.app",
-  "last_activity": "2026-09-28T17:29:38.035Z",
+  "last_activity": "2026-09-28T18:55:34.733Z",
   "license": "EUPL-1.2",
   "long_desc": "SVA Studio modernisiert das Redaktionssystem der Smart Village App zu einer integrierten, API-first ausgerichteten Plattform f\u00fcr Kommunen und andere \u00f6ffentliche Organisationen. Das System b\u00fcndelt Content-Management, Identit\u00e4ts- und Rechteverwaltung, Design- und Modulkonfiguration sowie die Anbindung externer Fachverfahren in einer erweiterbaren Webanwendung. Der Schwerpunkt liegt auf typsicherer, modularer Architektur, nachnutzbaren Schnittstellen, sicherem Betrieb und der Unterst\u00fctzung kommunaler Redaktions- und Verwaltungsprozesse.",
   "maintenance": "community",
@@ -139835,7 +140347,9 @@
    "Argentina",
    "Bahamas",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q202044",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -139908,7 +140422,9 @@
   "repo_key": null,
   "short_desc": "A free, web-based project management tool for software development / version management. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q765385",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -140219,7 +140735,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T00:54:41Z",
+  "last_activity": "2026-09-28T18:44:31Z",
   "license": "MIT-0",
   "long_desc": "Transcribo is a modern web application for audio and video transcription with advanced editing capabilities. Built with Nuxt.js and TypeScript, it provides a comprehensive set of tools for creating, editing, and managing transcriptions with timeline-based visualization",
   "maintenance": "internal",
@@ -141582,7 +142098,7 @@
    "catalog"
   ],
   "landing": "http://udata.readthedocs.org",
-  "last_activity": "2026-09-28T13:16:47Z",
+  "last_activity": "2026-09-28T17:13:45Z",
   "license": "agpl-3.0",
   "maintenance": "community",
   "merged_count": 3,
@@ -141862,7 +142378,9 @@
   "repo_key": null,
   "short_desc": "UMLet is an open-source UML tool with a simple user interface for drawing UML diagrams, creating sequence and activity diagrams from plain text, etc. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q956141",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -144093,7 +144611,9 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "uv is an extremely fast Python package and project manager, written in Rust. It provides essential features for Python development \u2014 from installing Python and hacking on simple scripts to working on large projects that support multiple Python versions and platforms.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q131743502",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -144168,7 +144688,9 @@
    "Vietnam",
    "Yemen",
    "Zimbabwe"
-  ]
+  ],
+  "wikidata": "Q136891178",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -145267,7 +145789,7 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim",
+    "entry_url": "https://code.europa.eu/alixgui/vecto",
     "name": "vecto-sim",
     "repo_url": "https://code.europa.eu/vecto/vecto.git",
     "source": "EU/code.europa.eu"
@@ -145279,27 +145801,31 @@
   "contacts": [
    "JRC-VECTO"
   ],
+  "countries": [
+   "EU"
+  ],
   "country": "EU",
   "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
   "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim",
-  "fallback_repo": "https://code.europa.eu/bharat-vecto/bharat-vecto-sim.git",
+  "entry_url": "https://code.europa.eu/alixgui/vecto",
+  "fallback_repo": "https://code.europa.eu/alixgui/vecto.git",
   "features": [
    "fuel, co2 and energy calculator",
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "forge_path": "bharat-vecto/bharat-vecto-sim",
+  "forge_path": "alixgui/vecto",
   "functions": [
    "case-workflow"
   ],
   "functions_inferred": false,
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-17T08:47:02.514Z",
+  "last_activity": "2026-09-25T13:19:43.378Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
+  "merged_count": 9,
   "name": "vecto-sim",
   "platforms": [
    "windows",
@@ -145312,8 +145838,11 @@
   "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "software_type": "standalone/desktop",
   "source": "EU/code.europa.eu",
+  "sources": [
+   "EU/code.europa.eu"
+  ],
   "tier": "publiccode",
-  "upstream_id": 1306,
+  "upstream_id": 716,
   "version": "4.0.1.3217"
  },
  {
@@ -147342,7 +147871,9 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "515826f2-7418-4ad8-81aa-ccc5cd278b98",
-  "version": "15.1.1"
+  "version": "15.1.1",
+  "wikidata": "Q140431709",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -147786,7 +148317,9 @@
   "repo_key": null,
   "short_desc": "Vuetify is a UI library for Vue components in Material Design. In the reference architecture, Vuetify is used for almost all custom development.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index"
+  "tier": "index",
+  "wikidata": "Q112943923",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -147969,7 +148502,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-27T21:30:08Z",
+  "last_activity": "2026-09-28T19:26:38Z",
   "license": "EUPL-1.2",
   "long_desc": "NOTE: Waggle is an individual experiment within the Dutch central government and is known not to meet the requirements and standards the Dutch government sets for production software (BIO/ISO 27001, DPIA/GDPR, WCAG 2.2, NeRDS, Forum Standaardisatie). No formal maintenance, no SLA, single-user single-tenant architecture.\nWaggle imports your flagged Mattermost posts into one kanban board with the columns backlog, in progress and done, plus a separate reading list. It has two-way sync with Mattermost (completing a card in Waggle unsaves the post in Mattermost automatically; posts unsaved externally move to done automatically), a rich preview of messages with markdown rendering, attachments, thread context and private notes. Bubble-up to defer cards, a blocked flag for waiting on others, and full keyboard navigation.\nThe user interface is in Dutch; the documentation is in English.\n",
   "maintenance": "internal",
@@ -149626,7 +150159,9 @@
   "short_desc": "Wikidata is Wikimedia's open community-curated knowledge graph. It acts as central storage for the structured data of its Wikimedia sister projects, including Wikipedia, Wikivoyage, Wiktionary, Wikisource, and others.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092714"
+  "upstream_id": "GID0092714",
+  "wikidata": "Q2013",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -149779,7 +150314,9 @@
   "upstream_id": "GID0091415",
   "used_by": [
    "Germany"
-  ]
+  ],
+  "wikidata": "Q115910233",
+  "wikidata_via": "wikidata:website"
  },
  {
   "active": true,
@@ -151367,7 +151904,9 @@
    "GLOBAL/dpg"
   ],
   "tier": "index",
-  "upstream_id": "GID0090125"
+  "upstream_id": "GID0090125",
+  "wikidata": "Q12379285",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "active": true,
@@ -151838,7 +152377,9 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e43559c5-f7db-4123-bd3a-31294d9461dd",
-  "version": "v4.3.2"
+  "version": "v4.3.2",
+  "wikidata": "Q107381204",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 1,
@@ -152586,7 +153127,9 @@
    "Germany",
    "United Kingdom",
    "United States of America"
-  ]
+  ],
+  "wikidata": "Q115688411",
+  "wikidata_via": "wikidata:repo"
  },
  {
   "catalogue_count": 3,
@@ -154305,7 +154848,9 @@
   "short_desc": "The Taichung City open data platform gathers open data and geospatial imagery from every city agency. Its front-end source code is published as public code, as a reference for industry, government and academia.",
   "source": "TW/code.gov.tw",
   "tier": "index",
-  "translated": true
+  "translated": true,
+  "wikidata": "Q97097415",
+  "wikidata_via": "wikidata:website"
  },
  {
   "catalogue_count": 1,
@@ -156463,7 +157008,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q24008327",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -157348,7 +157895,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:24:17Z",
+  "last_activity": "2026-09-28T16:28:13Z",
   "name": "dadosgov-fe",
   "repo": "https://github.com/amagovpt/dadosgov-fe",
   "repo_key": "github.com/amagovpt/dadosgov-fe",
@@ -157865,7 +158412,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:11:39Z",
+  "last_activity": "2026-09-28T19:08:34Z",
   "name": "digg-scorecard-monitor",
   "repo": "https://github.com/diggsweden/digg-scorecard-monitor",
   "repo_key": "github.com/diggsweden/digg-scorecard-monitor",
@@ -157959,7 +158506,9 @@
   "tier": "index",
   "used_by": [
    "kb"
-  ]
+  ],
+  "wikidata": "Q842014",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "BE",
@@ -158341,7 +158890,9 @@
   "used_by": [
    "arbetsformedlingen",
    "rps"
-  ]
+  ],
+  "wikidata": "Q1344673",
+  "wikidata_via": "wikidata:website"
  },
  {
   "composer_type": "wordpress-plugin",
@@ -159275,7 +159826,9 @@
   "used_by": [
    "lfv",
    "sundsvall_k"
-  ]
+  ],
+  "wikidata": "Q1502779",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "PT",
@@ -159496,7 +160049,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q139918820",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -159581,7 +160136,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T13:03:44Z",
+  "last_activity": "2026-09-28T18:29:38Z",
   "license": "MIT",
   "name": "haffa-backend",
   "repo": "https://github.com/helsingborg-stad/haffa-backend",
@@ -159599,7 +160154,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T12:53:41Z",
+  "last_activity": "2026-09-28T16:06:34Z",
   "license": "MIT",
   "name": "haffa-web",
   "repo": "https://github.com/helsingborg-stad/haffa-web",
@@ -159701,7 +160256,9 @@
    "orebro_r",
    "sundsvall_k",
    "fk"
-  ]
+  ],
+  "wikidata": "Q96869835",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "BE",
@@ -160839,7 +161396,9 @@
    "adda",
    "lfv",
    "fk"
-  ]
+  ],
+  "wikidata": "Q28974968",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "SE",
@@ -161053,7 +161612,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q117340550",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -161075,7 +161636,9 @@
   "tier": "index",
   "used_by": [
    "svedala_k"
-  ]
+  ],
+  "wikidata": "Q13634357",
+  "wikidata_via": "wikidata:website"
  },
  {
   "composer_type": "wordpress-plugin",
@@ -161671,7 +162234,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q107089873",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "NL",
@@ -163542,7 +164107,9 @@
   "tier": "index",
   "used_by": [
    "digg"
-  ]
+  ],
+  "wikidata": "Q59417911",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -163841,7 +164408,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q124636097",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "SE",
@@ -163969,7 +164538,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q140646955",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -163991,7 +164562,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q165277",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "SE",
@@ -164003,7 +164576,7 @@
   ],
   "functions_inferred": true,
   "is_fork": true,
-  "last_activity": "2026-09-28T14:21:27Z",
+  "last_activity": "2026-09-28T15:24:38Z",
   "license": "MIT",
   "name": "openstack-municipio-deployment",
   "repo": "https://github.com/helsingborg-stad/openstack-municipio-deployment",
@@ -165583,7 +166156,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q120549730",
+  "wikidata_via": "wikidata:website"
  },
  {
   "composer_type": "wordpress-plugin",
@@ -165621,7 +166196,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q64825554",
+  "wikidata_via": "wikidata:website"
  },
  {
   "composer_type": "wordpress-plugin",
@@ -166360,7 +166937,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q47509047",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -166469,7 +167048,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q117559664",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -166514,7 +167095,9 @@
   "used_by": [
    "stk_datalabb",
    "sundsvall_k"
-  ]
+  ],
+  "wikidata": "Q19399674",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "SE",
@@ -166887,7 +167470,9 @@
    "lfv",
    "sjov",
    "fk"
-  ]
+  ],
+  "wikidata": "Q37619598",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "NL",
@@ -167111,7 +167696,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q368367",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "BE",
@@ -167824,7 +168411,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q136776342",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "SE",
@@ -168625,7 +169214,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q19841877",
+  "wikidata_via": "wikidata:website"
  },
  {
   "categories": [
@@ -168754,7 +169345,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-28T14:46:45Z",
+  "last_activity": "2026-09-28T15:07:21Z",
   "name": "wallet-app-android",
   "repo": "https://github.com/diggsweden/wallet-app-android",
   "repo_key": "github.com/diggsweden/wallet-app-android",
@@ -168982,7 +169573,9 @@
   "tier": "index",
   "used_by": [
    "motala_k"
-  ]
+  ],
+  "wikidata": "Q28957083",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "FR",
@@ -169563,7 +170156,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-14T08:36:40Z",
+  "last_activity": "2026-09-28T18:38:38Z",
   "name": "wpmu-security",
   "repo": "https://github.com/helsingborg-stad/wpmu-security",
   "repo_key": "github.com/helsingborg-stad/wpmu-security",
@@ -169637,7 +170230,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q141547237",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "BE",

@@ -5152,7 +5152,270 @@
     "liveness_ok": -74,
     "liveness_unknown": 70
    }
+  },
+  {
+   "run_at": "2026-09-28T19:58:23Z",
+   "started_at": "2026-09-28T19:25:39Z",
+   "trigger": "manual",
+   "duration_s": 1964,
+   "ok": true,
+   "steps": [
+    {
+     "step": "harvest",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 853
+    },
+    {
+     "step": "enrich desc",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 1
+    },
+    {
+     "step": "translations",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "taxonomy",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "crosswalk",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 16
+    },
+    {
+     "step": "filters",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "dedupe",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "variants",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "first seen",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "liveness",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 1093
+    },
+    {
+     "step": "build page",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 1
+    },
+    {
+     "step": "assemble site",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    },
+    {
+     "step": "json export",
+     "ok": true,
+     "exit": 0,
+     "duration_s": 0
+    }
+   ],
+   "failures": {},
+   "entries": {
+    "active": 3141,
+    "filtered_out": 714,
+    "publiccode_tier": 1237,
+    "merged_away": 255,
+    "multi_country": 91
+   },
+   "sources": {
+    "be": {
+     "records": 236,
+     "checkpoint_mtime": "2026-09-28T19:37:21Z",
+     "seconds": 10.5
+    },
+    "bg": {
+     "records": 193,
+     "checkpoint_mtime": "2026-09-28T19:38:30Z",
+     "seconds": 9.8
+    },
+    "ca": {
+     "records": 67,
+     "checkpoint_mtime": "2026-09-28T19:37:34Z",
+     "seconds": 0.2
+    },
+    "ch": {
+     "records": 164,
+     "checkpoint_mtime": "2026-09-28T19:39:32Z",
+     "seconds": 58.3
+    },
+    "de": {
+     "records": 559,
+     "checkpoint_mtime": "2026-09-28T19:29:35Z",
+     "seconds": 216.0
+    },
+    "digg": {
+     "records": 44,
+     "checkpoint_mtime": "2026-09-28T19:39:35Z",
+     "seconds": 2.8
+    },
+    "dpg": {
+     "records": 255,
+     "checkpoint_mtime": "2026-09-28T19:38:34Z",
+     "seconds": 3.7
+    },
+    "eu": {
+     "records": 23,
+     "checkpoint_mtime": "2026-09-28T19:37:11Z",
+     "seconds": 456.0
+    },
+    "fi": {
+     "records": 72,
+     "checkpoint_mtime": "2026-09-28T19:37:22Z",
+     "seconds": 0.6
+    },
+    "fr": {
+     "records": 691,
+     "checkpoint_mtime": "2026-09-28T19:25:41Z",
+     "seconds": 2.3
+    },
+    "hbg": {
+     "records": 292,
+     "checkpoint_mtime": "2026-09-28T19:39:52Z",
+     "seconds": 16.9
+    },
+    "ie": {
+     "records": 5,
+     "checkpoint_mtime": "2026-09-28T19:37:39Z",
+     "seconds": 1.7
+    },
+    "it": {
+     "records": 551,
+     "checkpoint_mtime": "2026-09-28T19:25:59Z",
+     "seconds": 17.6
+    },
+    "muc": {
+     "records": 145,
+     "checkpoint_mtime": "2026-09-28T19:37:46Z",
+     "seconds": 2.7
+    },
+    "nl": {
+     "records": 198,
+     "checkpoint_mtime": "2026-09-28T19:37:33Z",
+     "seconds": 10.9
+    },
+    "nlreg": {
+     "records": 0,
+     "checkpoint_mtime": "2026-09-28T19:39:52Z",
+     "seconds": 0.0
+    },
+    "os2": {
+     "records": 298,
+     "checkpoint_mtime": "2026-09-28T19:38:21Z",
+     "seconds": 34.3
+    },
+    "pt": {
+     "records": 92,
+     "checkpoint_mtime": "2026-09-28T19:37:44Z",
+     "seconds": 4.2
+    },
+    "se": {
+     "records": 167,
+     "checkpoint_mtime": "2026-09-28T19:37:23Z",
+     "seconds": 0.9
+    },
+    "tw": {
+     "records": 58,
+     "checkpoint_mtime": "2026-09-28T19:37:38Z",
+     "seconds": 4.0
+    }
+   },
+   "catalogues": {
+    "BG/governmentbg": 180,
+    "IT/developers-italia": 538,
+    "DK/os2": 213,
+    "DE/opensource.muenchen.de": 145,
+    "FR/sill": 656,
+    "PT/arte": 39,
+    "DE/openCode": 472,
+    "GLOBAL/dpg": 247,
+    "NL/code.overheid.nl": 120,
+    "SE/helsingborg": 98,
+    "CH/swiss": 164,
+    "FI/avoinkoodi": 54,
+    "SE/offentligkod": 48,
+    "CA/code.open.canada.ca": 66,
+    "SE/digg": 32,
+    "BE/iMio": 101,
+    "FR/awesome-codegouvfr": 19,
+    "EU/code.europa.eu": 14,
+    "TW/code.gov.tw": 57,
+    "IE/ogcio": 2
+   },
+   "translation": {
+    "described": 3139,
+    "source_english": 1382,
+    "machine_translated": 1757,
+    "coverage_pct": 100.0,
+    "orphan_keys": 3,
+    "translation_keys": 1806
+   },
+   "categorisation": {
+    "classified": 2692,
+    "inferred": 1278,
+    "unclassified": 449
+   },
+   "liveness": {
+    "checked": "2026-09-28T19:40:09Z",
+    "total": 3591,
+    "ok": 3501,
+    "dead": 28,
+    "pending_dead": 0,
+    "unknown": 61,
+    "archived": 39,
+    "newly_dead": [],
+    "revived": []
+   },
+   "filters": {
+    "no-description": 458,
+    "org-meta": 10,
+    "upstream-fork": 95,
+    "wordpress-plugin": 103,
+    "non-commercial-licence": 9,
+    "closed-licence": 12,
+    "deployment-recipe": 17,
+    "locale-bundle": 5,
+    "ci-plumbing": 5
+   },
+   "deploy_auth": "token-file",
+   "delta": {
+    "entries_active": 4,
+    "per_source": {
+     "eu": 15
+    },
+    "liveness_ok": 75,
+    "liveness_unknown": -70
+   }
   }
  ],
- "updated_at": "2026-09-28T18:24:03Z"
+ "updated_at": "2026-09-28T19:58:23Z"
 }

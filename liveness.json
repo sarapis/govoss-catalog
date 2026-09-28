@@ -15,7 +15,7 @@
    "status": 200
   },
   "app.swaggerhub.com/apis-docs/decko/wikirate/1.0.0": {
-   "dead_count": 10,
+   "dead_count": 11,
    "dead_since": "2026-08-31T11:15:23Z",
    "name": "Wikirate Data",
    "status": 404
@@ -61,7 +61,7 @@
    "status": 200
   },
   "bitbucket.org/cse-assemblyline/assemblyline": {
-   "dead_count": 24,
+   "dead_count": 25,
    "dead_since": "2026-08-11T18:45:22Z",
    "name": "Assemblyline",
    "status": 404
@@ -150,16 +150,52 @@
    "name": "Lexsitus",
    "status": 200
   },
+  "code.europa.eu/btsf/moodle-etranslation-filter-plugin": {
+   "dead_count": 0,
+   "last_push": "2026-08-04T08:48:04.149Z",
+   "name": "Moodle eTranslation filter plugin ",
+   "status": 200
+  },
   "code.europa.eu/dit/dss": {
    "dead_count": 0,
    "last_push": "2026-01-16T09:42:05.738Z",
    "name": "DSS",
    "status": 200
   },
+  "code.europa.eu/dit/dss-demonstrations": {
+   "dead_count": 0,
+   "last_push": "2026-01-22T18:39:04.165Z",
+   "name": "DSS Demonstrations",
+   "status": 200
+  },
   "code.europa.eu/dit/preserve-eu": {
    "dead_count": 0,
    "last_push": "2025-12-16T15:26:56.264Z",
    "name": "PreserveEU",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/bdmsl": {
+   "dead_count": 0,
+   "last_push": "2026-09-22T11:10:10.892Z",
+   "name": "DomiSML",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/domibus": {
+   "dead_count": 0,
+   "last_push": "2026-09-28T16:55:19.799Z",
+   "name": "Domibus",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/dynamic-discovery-client": {
+   "dead_count": 0,
+   "last_push": "2026-09-24T08:28:09.724Z",
+   "name": "Dynamic Discovery Client (DDC)",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/smp": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T10:50:08.078Z",
+   "name": "DomiSMP",
    "status": 200
   },
   "code.europa.eu/realfa/steam-energy-calculator": {
@@ -170,7 +206,7 @@
   },
   "code.europa.eu/vecto/vecto": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:11:38.717Z",
+   "last_push": "2026-09-28T18:24:45.423Z",
    "name": "vecto-sim",
    "status": 200
   },
@@ -1248,9 +1284,8 @@
    "status": 200
   },
   "forge.apps.education.fr/chatmd/chatmd.forge.apps.education.fr": {
-   "dead_count": 0,
    "name": "ChatMD",
-   "status": 200
+   "status": 500
   },
   "forge.apps.education.fr/e-combox": {
    "dead_count": 0,
@@ -1319,13 +1354,13 @@
    "status": 200
   },
   "git.centos.org/project/rpms": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "CentOS",
    "status": 404
   },
   "git.code.sf.net/p/opencamera/code": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Open Camera",
    "status": 404
@@ -1513,7 +1548,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:59:46Z",
+   "last_push": "2026-09-28T18:21:25Z",
    "name": "Pix",
    "status": 200
   },
@@ -1606,7 +1641,7 @@
    "status": 200
   },
   "github.com/admin-ch-ssi/pera_swiyu_shared_kmp": {
-   "dead_count": 5,
+   "dead_count": 6,
    "dead_since": "2026-09-24T19:31:59Z",
    "name": "swiyu Shared KMP Libraries",
    "status": 404
@@ -1847,7 +1882,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:24:41Z",
+   "last_push": "2026-09-28T19:25:28Z",
    "name": "Alfresco",
    "status": 200
   },
@@ -1860,8 +1895,9 @@
    "status": 200
   },
   "github.com/almalinux": {
+   "dead_count": 0,
    "name": "AlmaLinux",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/altinn/altinn-studio": {
    "archived": false,
@@ -2627,7 +2663,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:24:31Z",
+   "last_push": "2026-09-28T19:24:28Z",
    "name": "Angular",
    "status": 200
   },
@@ -2659,7 +2695,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:04:02Z",
+   "last_push": "2026-09-28T19:06:52Z",
    "name": "Apache Airflow",
    "status": 200
   },
@@ -2667,7 +2703,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:49:26Z",
+   "last_push": "2026-09-28T19:30:08Z",
    "name": "Apache Camel",
    "status": 200
   },
@@ -2683,7 +2719,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T14:15:25Z",
+   "last_push": "2026-09-28T19:25:10Z",
    "name": "Apache CouchDB",
    "status": 200
   },
@@ -2707,7 +2743,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:51:05Z",
+   "last_push": "2026-09-28T18:59:11Z",
    "name": "Apache HTTP Server",
    "status": 200
   },
@@ -2723,7 +2759,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T14:19:49Z",
+   "last_push": "2026-09-28T19:35:46Z",
    "name": "Apache Maven",
    "status": 200
   },
@@ -2731,7 +2767,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T15:23:58Z",
+   "last_push": "2026-09-28T19:37:27Z",
    "name": "Apache Solr",
    "status": 200
   },
@@ -2739,7 +2775,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:52:11Z",
+   "last_push": "2026-09-28T18:47:38Z",
    "name": "Apache Superset",
    "status": 200
   },
@@ -2760,8 +2796,9 @@
    "status": 200
   },
   "github.com/apsolu": {
+   "dead_count": 0,
    "name": "APSOLU",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/aquasecurity/trivy": {
    "archived": false,
@@ -3015,7 +3052,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:53:21Z",
+   "last_push": "2026-09-28T19:03:32Z",
    "name": "Ruff",
    "status": 200
   },
@@ -3023,7 +3060,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:59:40Z",
+   "last_push": "2026-09-28T19:42:50Z",
    "name": "uv",
    "status": 200
   },
@@ -3092,8 +3129,9 @@
    "status": 200
   },
   "github.com/avniproject": {
+   "dead_count": 0,
    "name": "Avni",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/azienda-usl-di-bologna/babel": {
    "archived": false,
@@ -3112,25 +3150,25 @@
    "status": 200
   },
   "github.com/aziendazero/area": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Sistema di Autorizzazione e Accreditamento delle Strutture Sanitarie, Socio-Sanitarie e Sociali",
    "status": 404
   },
   "github.com/aziendazero/ecm": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Sistema documentale di gestione dell'Educazione Continua in Medicina (ECM)",
    "status": 404
   },
   "github.com/aziendazero/screening": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Screening",
    "status": 404
   },
   "github.com/aziendazero/siavr": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "SIAVr",
    "status": 404
@@ -3235,7 +3273,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:40:25Z",
+   "last_push": "2026-09-28T19:40:16Z",
    "name": "Beekeeper Studio",
    "status": 200
   },
@@ -3291,7 +3329,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:05:56Z",
+   "last_push": "2026-09-28T19:41:50Z",
    "name": "LiteLLM",
    "status": 200
   },
@@ -3344,13 +3382,13 @@
    "status": 200
   },
   "github.com/bioverse-labs/image-processing": {
-   "dead_count": 21,
+   "dead_count": 22,
    "dead_since": "2026-08-11T21:07:15Z",
    "name": "Productive Forests",
    "status": 404
   },
   "github.com/bisamhealth/bisaapp": {
-   "dead_count": 23,
+   "dead_count": 24,
    "dead_since": "2026-08-11T19:34:37Z",
    "name": "Bisa Health",
    "status": 404
@@ -3359,7 +3397,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:59:21Z",
+   "last_push": "2026-09-28T19:40:31Z",
    "name": "Bitwarden Browser Extensions",
    "status": 200
   },
@@ -3375,7 +3413,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:30:00Z",
+   "last_push": "2026-09-28T19:30:38Z",
    "name": "Bitwarden",
    "status": 200
   },
@@ -3428,8 +3466,9 @@
    "status": 200
   },
   "github.com/bonitasoft": {
+   "dead_count": 0,
    "name": "Bonita",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/bookstackapp/bookstack": {
    "archived": false,
@@ -3555,7 +3594,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T15:08:58Z",
+   "last_push": "2026-09-28T18:45:12Z",
    "name": "Catala",
    "status": 200
   },
@@ -3600,8 +3639,9 @@
    "status": 200
   },
   "github.com/ceph": {
+   "dead_count": 0,
    "name": "Ceph",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/chameleon-system/chameleon-system": {
    "archived": false,
@@ -3623,7 +3663,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:00:11Z",
+   "last_push": "2026-09-28T19:00:12Z",
    "name": "Checkmk",
    "status": 200
   },
@@ -3631,7 +3671,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:54:27Z",
+   "last_push": "2026-09-28T19:35:24Z",
    "name": "SonarQube Plugins : CheckStyle",
    "status": 200
   },
@@ -3751,7 +3791,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:44:15Z",
+   "last_push": "2026-09-28T18:10:46Z",
    "name": "contract-expiration-tracker",
    "status": 200
   },
@@ -3879,7 +3919,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:39:55Z",
+   "last_push": "2026-09-28T18:26:33Z",
    "name": "CloudCompare",
    "status": 200
   },
@@ -3948,8 +3988,9 @@
    "status": 200
   },
   "github.com/collectiveaccess": {
+   "dead_count": 0,
    "name": "CollectiveAccess",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/combodo/itop": {
    "archived": false,
@@ -3971,7 +4012,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T08:50:55Z",
+   "last_push": "2026-09-28T19:27:25Z",
    "name": "Pol.is",
    "status": 200
   },
@@ -4288,13 +4329,13 @@
    "status": 200
   },
   "github.com/comunedirimini/gatewayfederaspid": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Gateway Federa SPID",
    "status": 404
   },
   "github.com/comunedirimini/istanzeedichiarazioni": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Istanze Digitali",
    "status": 404
@@ -4548,8 +4589,9 @@
    "status": 200
   },
   "github.com/convexityteam": {
+   "dead_count": 0,
    "name": "Convexity Humanitarian Aid Transfer Solution (CHATS)",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/coronasafe/care": {
    "archived": false,
@@ -4568,8 +4610,9 @@
    "status": 200
   },
   "github.com/cortezaproject": {
+   "dead_count": 0,
    "name": "Corteza",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/creativecommons/cc-legal-tools-app": {
    "archived": false,
@@ -4580,8 +4623,9 @@
    "status": 200
   },
   "github.com/credebl": {
+   "dead_count": 0,
    "name": "CREDEBL",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/cryptomator/cryptomator": {
    "archived": false,
@@ -4731,7 +4775,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:10:10Z",
+   "last_push": "2026-09-28T19:31:50Z",
    "name": "Cypress",
    "status": 200
   },
@@ -4744,8 +4788,9 @@
    "status": 200
   },
   "github.com/dalgot4d": {
+   "dead_count": 0,
    "name": "Dalgo",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/datakind/data-observation-toolkit": {
    "archived": false,
@@ -4791,7 +4836,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:59:15Z",
+   "last_push": "2026-09-28T19:34:56Z",
    "name": "DBeaver",
    "status": 200
   },
@@ -4807,7 +4852,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:59:57Z",
+   "last_push": "2026-09-28T18:39:44Z",
    "name": "dbt",
    "status": 200
   },
@@ -4879,7 +4924,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T00:54:41Z",
+   "last_push": "2026-09-28T18:44:31Z",
    "name": "Transcribo Frontend",
    "status": 200
   },
@@ -4916,22 +4961,15 @@
    "status": 200
   },
   "github.com/deltachat": {
-   "name": "Delta Chat",
-   "status": "error:URLError"
-  },
-  "github.com/demarche-numerique/demarche.numerique.gouv.fr": {
-   "archived": false,
    "dead_count": 0,
-   "empty": false,
-   "last_push": "2026-09-28T17:01:24Z",
-   "name": "D\u00e9marches simplifi\u00e9es",
+   "name": "Delta Chat",
    "status": 200
   },
   "github.com/demarches-simplifiees/demarches-simplifiees.fr": {
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:01:24Z",
+   "last_push": "2026-09-28T19:03:12Z",
    "name": "D\u00e9marches simplifi\u00e9es",
    "status": 200
   },
@@ -5091,7 +5129,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-27T22:50:35Z",
+   "last_push": "2026-09-28T19:15:28Z",
    "name": "devbase-core",
    "status": 200
   },
@@ -5099,7 +5137,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:10:44Z",
+   "last_push": "2026-09-28T19:08:34Z",
    "name": "digg-scorecard-monitor",
    "status": 200
   },
@@ -5187,7 +5225,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:34:02Z",
+   "last_push": "2026-09-28T19:33:11Z",
    "name": "opensource-docs",
    "status": 200
   },
@@ -5376,8 +5414,9 @@
    "status": 200
   },
   "github.com/digiexpress-io": {
+   "dead_count": 0,
    "name": "DigiExpress",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/digitalfabrik/integreat-app": {
    "archived": false,
@@ -5508,8 +5547,9 @@
    "status": 200
   },
   "github.com/docker": {
+   "dead_count": 0,
    "name": "Docker",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/docker/swarm": {
    "archived": true,
@@ -5576,8 +5616,9 @@
    "status": 200
   },
   "github.com/duckdb": {
+   "dead_count": 0,
    "name": "DuckDB",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/dukus/digicamcontrol": {
    "archived": false,
@@ -5591,7 +5632,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-26T09:20:24Z",
+   "last_push": "2026-09-28T19:30:59Z",
    "name": "Duplicati",
    "status": 200
   },
@@ -5636,8 +5677,9 @@
    "status": 200
   },
   "github.com/dynfi": {
+   "dead_count": 0,
    "name": "DynFi",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/ecaunicef/mychildhelpline-app": {
    "archived": false,
@@ -5715,7 +5757,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:56:58Z",
+   "last_push": "2026-09-28T19:39:13Z",
    "name": "Elasticsearch",
    "status": 200
   },
@@ -5723,7 +5765,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:04:42Z",
+   "last_push": "2026-09-28T19:41:05Z",
    "name": "Kibana",
    "status": 200
   },
@@ -5731,7 +5773,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:05:10Z",
+   "last_push": "2026-09-28T19:33:22Z",
    "name": "Logstash",
    "status": 200
   },
@@ -5747,7 +5789,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:54:50Z",
+   "last_push": "2026-09-28T19:22:22Z",
    "name": "Element",
    "status": 200
   },
@@ -5776,8 +5818,9 @@
    "status": 200
   },
   "github.com/energyaccessexplorer": {
+   "dead_count": 0,
    "name": "Energy Access Explorer",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/envmodules/modules": {
    "archived": false,
@@ -5823,7 +5866,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:44:45Z",
+   "last_push": "2026-09-28T18:17:50Z",
    "name": "Ersilia Model Hub",
    "status": 200
   },
@@ -5895,7 +5938,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T14:03:47Z",
+   "last_push": "2026-09-28T18:59:36Z",
    "name": "OpenGateLLM",
    "status": 200
   },
@@ -5932,8 +5975,9 @@
    "status": 200
   },
   "github.com/exoplatform": {
+   "dead_count": 0,
    "name": "eXo Platform",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/eyevinn/intercom-manager": {
    "archived": false,
@@ -5952,8 +5996,9 @@
    "status": 200
   },
   "github.com/farmos": {
+   "dead_count": 0,
    "name": "farmOS",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/fasp-qat/fasp-api": {
    "archived": false,
@@ -5967,7 +6012,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-26T13:35:50Z",
+   "last_push": "2026-09-28T18:16:43Z",
    "name": "FastAPI",
    "status": 200
   },
@@ -6060,8 +6105,9 @@
    "status": 200
   },
   "github.com/fogproject": {
+   "dead_count": 0,
    "name": "FOG",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/food-fortification/food-fortification-quality-management-system": {
    "archived": false,
@@ -6283,19 +6329,20 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:10:07Z",
+   "last_push": "2026-09-28T18:05:46Z",
    "name": "Grav",
    "status": 200
   },
   "github.com/getodk": {
+   "dead_count": 0,
    "name": "ODK",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/ggml-org/llama.cpp": {
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:52:46Z",
+   "last_push": "2026-09-28T19:40:39Z",
    "name": "llama.cpp",
    "status": 200
   },
@@ -6327,7 +6374,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:43:13Z",
+   "last_push": "2026-09-28T18:45:58Z",
    "name": "Glific",
    "status": 200
   },
@@ -6372,8 +6419,9 @@
    "status": 200
   },
   "github.com/go-gitea": {
+   "dead_count": 0,
    "name": "Gitea",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/google/android-fhir": {
    "archived": false,
@@ -6392,8 +6440,9 @@
    "status": 200
   },
   "github.com/gosa-project": {
+   "dead_count": 0,
    "name": "GOSA",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/goteborgsstad/anmalhinder-android": {
    "archived": false,
@@ -7983,7 +8032,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:51:07Z",
+   "last_push": "2026-09-28T19:27:32Z",
    "name": "Grafana",
    "status": 200
   },
@@ -7991,7 +8040,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:04:13Z",
+   "last_push": "2026-09-28T19:21:03Z",
    "name": "Gravitee Community Edition",
    "status": 200
   },
@@ -8015,7 +8064,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:11:51Z",
+   "last_push": "2026-09-28T19:25:22Z",
    "name": "GreenShot",
    "status": 200
   },
@@ -8044,8 +8093,9 @@
    "status": 200
   },
   "github.com/h2database": {
+   "dead_count": 0,
    "name": "H2",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/haiwen/seafile": {
    "archived": false,
@@ -8080,8 +8130,9 @@
    "status": 200
   },
   "github.com/haproxy": {
+   "dead_count": 0,
    "name": "HAProxy",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/hashicorp/consul": {
    "archived": false,
@@ -8119,17 +8170,19 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:04:51Z",
+   "last_push": "2026-09-28T19:02:39Z",
    "name": "Vault",
    "status": 200
   },
   "github.com/hazelcast": {
+   "dead_count": 0,
    "name": "Hazelcast",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/hcw-home": {
+   "dead_count": 0,
    "name": "HCW@Home",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/hedgedoc/hedgedoc": {
    "archived": false,
@@ -8143,7 +8196,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:58:18Z",
+   "last_push": "2026-09-28T19:23:19Z",
    "name": "HeidiSQL",
    "status": 200
   },
@@ -8983,7 +9036,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:23:30Z",
+   "last_push": "2026-09-28T18:29:38Z",
    "name": "haffa-backend",
    "status": 200
   },
@@ -9575,7 +9628,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:47:43Z",
+   "last_push": "2026-09-28T19:31:18Z",
    "name": "municipio-project-aggregator",
    "status": 200
   },
@@ -10471,7 +10524,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-14T08:36:40Z",
+   "last_push": "2026-09-28T18:38:38Z",
    "name": "wpmu-security",
    "status": 200
   },
@@ -10495,7 +10548,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:26:37Z",
+   "last_push": "2026-09-28T19:12:13Z",
    "name": "Heurist",
    "status": 200
   },
@@ -10551,7 +10604,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:19:05Z",
+   "last_push": "2026-09-28T19:36:03Z",
    "name": "Uwazi",
    "status": 200
   },
@@ -10559,7 +10612,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:03:49Z",
+   "last_push": "2026-09-28T18:55:34Z",
    "name": "OpenELIS Global",
    "status": 200
   },
@@ -10596,8 +10649,9 @@
    "status": 200
   },
   "github.com/ignf-ma-carte": {
+   "dead_count": 0,
    "name": "Ma carte",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/ignf/geoportal-sdk": {
    "archived": false,
@@ -12555,7 +12609,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:05:49Z",
+   "last_push": "2026-09-28T19:38:24Z",
    "name": "Immich",
    "status": 200
   },
@@ -12584,8 +12638,9 @@
    "status": 200
   },
   "github.com/informasjonsforvaltning": {
+   "dead_count": 0,
    "name": "Data Norge",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/infotelglpi/additionalalerts": {
    "archived": false,
@@ -12620,7 +12675,7 @@
    "status": 200
   },
   "github.com/ingv/hyp2000-ws": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "INGV - HYP2000-WS",
    "status": 404
@@ -12789,7 +12844,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:28:40Z",
+   "last_push": "2026-09-28T19:36:15Z",
    "name": "CISO-Assistant CE",
    "status": 200
   },
@@ -12813,7 +12868,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:04:20Z",
+   "last_push": "2026-09-28T19:10:39Z",
    "name": "PacketFence",
    "status": 200
   },
@@ -13021,7 +13076,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T14:34:18Z",
+   "last_push": "2026-09-28T19:36:30Z",
    "name": "Zeitmanagementsystem",
    "status": 200
   },
@@ -13242,7 +13297,7 @@
    "status": 200
   },
   "github.com/italia/open-catalog-api": {
-   "dead_count": 8,
+   "dead_count": 9,
    "dead_since": "2026-09-14T11:11:49Z",
    "name": "open-catalog-api",
    "status": 404
@@ -13256,8 +13311,9 @@
    "status": 200
   },
   "github.com/itsmng": {
+   "dead_count": 0,
    "name": "ITSM-NG",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/izsler-si/cap": {
    "archived": false,
@@ -13295,7 +13351,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:05:36Z",
+   "last_push": "2026-09-28T19:36:19Z",
    "name": "JabRef",
    "status": 200
   },
@@ -13311,7 +13367,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T15:23:40Z",
+   "last_push": "2026-09-28T19:39:11Z",
    "name": "Janssen Project",
    "status": 200
   },
@@ -13791,7 +13847,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:02:09Z",
+   "last_push": "2026-09-28T19:37:53Z",
    "name": "Pycharm Community Edition",
    "status": 200
   },
@@ -13815,7 +13871,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:15:36Z",
+   "last_push": "2026-09-28T18:58:42Z",
    "name": "Jitsi Meet",
    "status": 200
   },
@@ -14068,8 +14124,9 @@
    "status": 200
   },
   "github.com/julialang": {
+   "dead_count": 0,
    "name": "Julia",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/junit-team/junit-framework": {
    "archived": false,
@@ -14144,8 +14201,9 @@
    "status": 200
   },
   "github.com/karolina-engine": {
+   "dead_count": 0,
    "name": "Kokeilun paikka",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/kausaltech/kausal-paths": {
    "archived": false,
@@ -14215,7 +14273,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:36:31Z",
+   "last_push": "2026-09-28T18:11:33Z",
    "name": "Keycloak",
    "status": 200
   },
@@ -14244,7 +14302,7 @@
    "status": 200
   },
   "github.com/knime/knime-core": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "KNIME Analytics Platform",
    "status": 404
@@ -14261,7 +14319,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:56:51Z",
+   "last_push": "2026-09-28T18:11:48Z",
    "name": "KoboToolbox",
    "status": 200
   },
@@ -14285,7 +14343,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:04:43Z",
+   "last_push": "2026-09-28T19:40:55Z",
    "name": "Kubernetes",
    "status": 200
   },
@@ -14349,7 +14407,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:43:51Z",
+   "last_push": "2026-09-28T19:39:12Z",
    "name": "LangChain",
    "status": 200
   },
@@ -14357,7 +14415,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T14:33:41Z",
+   "last_push": "2026-09-28T19:15:19Z",
    "name": "Langfuse",
    "status": 200
   },
@@ -14373,7 +14431,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:14:41Z",
+   "last_push": "2026-09-28T19:28:15Z",
    "name": "LaTeX",
    "status": 200
   },
@@ -14429,7 +14487,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:03:24Z",
+   "last_push": "2026-09-28T19:33:45Z",
    "name": "LibreNMS",
    "status": 200
   },
@@ -14445,7 +14503,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:34:27Z",
+   "last_push": "2026-09-28T19:11:16Z",
    "name": "LibreSign",
    "status": 200
   },
@@ -14474,8 +14532,9 @@
    "status": 200
   },
   "github.com/limesurvey": {
+   "dead_count": 0,
    "name": "Limesurvey",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/linagora/linshare": {
    "archived": false,
@@ -14502,8 +14561,9 @@
    "status": 200
   },
   "github.com/linuxmint": {
+   "dead_count": 0,
    "name": "Linux Mint",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/llaske/sugarizer": {
    "archived": false,
@@ -14517,7 +14577,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:45:39Z",
+   "last_push": "2026-09-28T19:29:12Z",
    "name": "Logseq",
    "status": 200
   },
@@ -14570,8 +14630,9 @@
    "status": 200
   },
   "github.com/lxc": {
+   "dead_count": 0,
    "name": "LXC",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/machinelearningzh/ai-chat": {
    "archived": false,
@@ -14681,7 +14742,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:08:05Z",
+   "last_push": "2026-09-28T19:13:39Z",
    "name": "MariaDB",
    "status": 200
   },
@@ -14713,7 +14774,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:43:51Z",
+   "last_push": "2026-09-28T19:41:41Z",
    "name": "Mattermost",
    "status": 200
   },
@@ -14782,8 +14843,9 @@
    "status": 200
   },
   "github.com/medtronic-labs": {
+   "dead_count": 0,
    "name": "SPICE",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/medulla-tech/medulla": {
    "archived": false,
@@ -14797,7 +14859,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:01:17Z",
+   "last_push": "2026-09-28T19:41:36Z",
    "name": "Metabase",
    "status": 200
   },
@@ -14821,7 +14883,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:00:41Z",
+   "last_push": "2026-09-28T19:42:14Z",
    "name": "Visual Studio Code",
    "status": 200
   },
@@ -14893,7 +14955,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T13:12:48Z",
+   "last_push": "2026-09-28T18:35:02Z",
    "name": "Invulhulp voor Pre-scan, DPIA en IAMA",
    "status": 200
   },
@@ -14978,7 +15040,7 @@
    "status": 200
   },
   "github.com/ministero-salute/sdk-lib-componnets": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "sdk-lib-componnets",
    "status": 404
@@ -15051,7 +15113,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T15:26:33Z",
+   "last_push": "2026-09-28T19:40:10Z",
    "name": "Manifest",
    "status": 200
   },
@@ -15104,7 +15166,7 @@
    "status": 200
   },
   "github.com/moda-gov-tw/code-gov-tw": {
-   "dead_count": 17,
+   "dead_count": 18,
    "dead_since": "2026-08-11T22:00:43Z",
    "name": "\u516c\u5171\u7a0b\u5f0f\u5e73\u81fa",
    "status": 404
@@ -15377,7 +15439,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:20:10Z",
+   "last_push": "2026-09-28T18:51:04Z",
    "name": "MongoDB",
    "status": 200
   },
@@ -15401,13 +15463,14 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:00:00Z",
+   "last_push": "2026-09-28T19:38:04Z",
    "name": "Mozilla Firefox (Extended Support Release)",
    "status": 200
   },
   "github.com/mpassid": {
+   "dead_count": 0,
    "name": "MPASSid-tunnistuksenv\u00e4litysratkaisu",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/mpv-player/mpv": {
    "archived": false,
@@ -15421,7 +15484,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-27T22:50:45Z",
+   "last_push": "2026-09-28T19:40:12Z",
    "name": "mRemoteNG",
    "status": 200
   },
@@ -15477,7 +15540,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T14:29:19Z",
+   "last_push": "2026-09-28T19:10:27Z",
    "name": "Alaveteli (Handlingar.se)",
    "status": 200
   },
@@ -15501,7 +15564,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:04:30Z",
+   "last_push": "2026-09-28T19:30:47Z",
    "name": "n8n",
    "status": 200
   },
@@ -15573,7 +15636,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:58:28Z",
+   "last_push": "2026-09-28T19:41:36Z",
    "name": "NextCloud Server",
    "status": 200
   },
@@ -15605,16 +15668,17 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:05:08Z",
+   "last_push": "2026-09-28T19:40:46Z",
    "name": "NixOS",
    "status": 200
   },
   "github.com/nls-oskari": {
+   "dead_count": 0,
    "name": "Oskari - avoin karttarajapintojen ja -aineistojen integraatioalusta ja asiakasohjelma",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/nlsfi/file-download-service": {
-   "dead_count": 7,
+   "dead_count": 8,
    "dead_since": "2026-09-21T11:14:02Z",
    "name": "Avoimien aineistojen tiedostopalvelu",
    "status": 404
@@ -15671,7 +15735,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:30:32Z",
+   "last_push": "2026-09-28T18:31:46Z",
    "name": "Npm",
    "status": 200
   },
@@ -15764,8 +15828,9 @@
    "status": 200
   },
   "github.com/obsidianmd": {
+   "dead_count": 0,
    "name": "Obsidian (logiciel)",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/obsproject/obs-studio": {
    "archived": false,
@@ -15872,8 +15937,9 @@
    "status": 200
   },
   "github.com/omahoito": {
+   "dead_count": 0,
    "name": "Omaolo",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/omeka/omeka": {
    "archived": false,
@@ -15919,7 +15985,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T13:10:30Z",
+   "last_push": "2026-09-28T19:20:38Z",
    "name": "ckanext-canada",
    "status": 200
   },
@@ -15940,7 +16006,7 @@
    "status": 200
   },
   "github.com/open-io/oio-sds": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "OpenIO",
    "status": 404
@@ -15949,7 +16015,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:58:53Z",
+   "last_push": "2026-09-28T19:08:48Z",
    "name": "Codex CLI",
    "status": 200
   },
@@ -15978,14 +16044,15 @@
    "status": 200
   },
   "github.com/openconceptlab": {
+   "dead_count": 0,
    "name": "Open Concept Lab",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/opencrvs/opencrvs-core": {
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:06:21Z",
+   "last_push": "2026-09-28T18:36:19Z",
    "name": "OpenCRVS",
    "status": 200
   },
@@ -16086,8 +16153,9 @@
    "status": 200
   },
   "github.com/openfoodfacts": {
+   "dead_count": 0,
    "name": "Open Food Facts",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/opengisch/qfield": {
    "archived": false,
@@ -16109,17 +16177,19 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:52:49Z",
+   "last_push": "2026-09-28T18:43:34Z",
    "name": "Isomer",
    "status": 200
   },
   "github.com/openimis": {
+   "dead_count": 0,
    "name": "openIMIS",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/openjdk": {
+   "dead_count": 0,
    "name": "OpenJDK",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/openkfw/trubudget": {
    "archived": false,
@@ -16138,8 +16208,9 @@
    "status": 200
   },
   "github.com/openmandrivasoftware": {
+   "dead_count": 0,
    "name": "OpenMandriva Lx",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/openmf/mifos-x": {
    "archived": false,
@@ -16161,7 +16232,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:19:48Z",
+   "last_push": "2026-09-28T19:33:04Z",
    "name": "Openmodelica",
    "status": 200
   },
@@ -16169,7 +16240,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:10:31Z",
+   "last_push": "2026-09-28T18:54:07Z",
    "name": "OpenMRS",
    "status": 200
   },
@@ -16201,13 +16272,14 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:59:50Z",
+   "last_push": "2026-09-28T18:37:48Z",
    "name": "OpenSearch",
    "status": 200
   },
   "github.com/openshot": {
+   "dead_count": 0,
    "name": "OpenShot",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/openspp/openspp2": {
    "archived": false,
@@ -16226,8 +16298,9 @@
    "status": 200
   },
   "github.com/openssh": {
+   "dead_count": 0,
    "name": "OpenSSH",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/openstad/openstad-headless": {
    "archived": false,
@@ -16241,7 +16314,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:54:46Z",
+   "last_push": "2026-09-28T19:37:52Z",
    "name": "Open Supply Hub",
    "status": 200
   },
@@ -18711,8 +18784,9 @@
    "status": 200
   },
   "github.com/osunyorg": {
+   "dead_count": 0,
    "name": "osuny",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/otavanopisto/muikku": {
    "archived": false,
@@ -18731,8 +18805,9 @@
    "status": 200
   },
   "github.com/ozone-his": {
+   "dead_count": 0,
    "name": "Ozone",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/pagopa/interop-be-monorepo": {
    "archived": false,
@@ -18815,8 +18890,9 @@
    "status": 200
   },
   "github.com/passbolt": {
+   "dead_count": 0,
    "name": "Passbolt Community Edition",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/pbatard/rufus": {
    "archived": false,
@@ -18867,18 +18943,20 @@
    "status": 200
   },
   "github.com/penpot": {
+   "dead_count": 0,
    "name": "Penpot",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/pentaho": {
+   "dead_count": 0,
    "name": "Pentaho Community Edition",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/perl/perl5": {
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T08:25:22Z",
+   "last_push": "2026-09-28T18:29:19Z",
    "name": "Perl",
    "status": 200
   },
@@ -18927,12 +19005,13 @@
    "dead_count": 0,
    "empty": false,
    "last_push": "2026-09-28T14:41:59Z",
-   "name": "PHPBB",
+   "name": "PHPBB3",
    "status": 200
   },
   "github.com/phpboost": {
+   "dead_count": 0,
    "name": "PHPBoost",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/phpipam/phpipam": {
    "archived": false,
@@ -18986,7 +19065,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:54:13Z",
+   "last_push": "2026-09-28T18:15:03Z",
    "name": "Dash",
    "status": 200
   },
@@ -19055,12 +19134,14 @@
    "status": 200
   },
   "github.com/postmanlabs": {
+   "dead_count": 0,
    "name": "Postman",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/potlock": {
+   "dead_count": 0,
    "name": "PotLock",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/pretalx/pretalx": {
    "archived": false,
@@ -19074,7 +19155,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:43:18Z",
+   "last_push": "2026-09-28T19:40:34Z",
    "name": "Primero",
    "status": 200
   },
@@ -19175,7 +19256,7 @@
    "status": 200
   },
   "github.com/provincia-pescara/gte-abruzzo": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "GTE-Abruzzo",
    "status": 404
@@ -19272,7 +19353,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:02:26Z",
+   "last_push": "2026-09-28T18:41:58Z",
    "name": "KoliBri \u2013 Die barrierefreie WebComponent-Bibliothek",
    "status": 200
   },
@@ -19296,7 +19377,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:32:02Z",
+   "last_push": "2026-09-28T18:35:10Z",
    "name": "Qdrant",
    "status": 200
   },
@@ -19304,7 +19385,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T13:02:54Z",
+   "last_push": "2026-09-28T18:49:16Z",
    "name": "QGIS",
    "status": 200
   },
@@ -19344,7 +19425,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:58:43Z",
+   "last_push": "2026-09-28T18:48:11Z",
    "name": "Rancher",
    "status": 200
   },
@@ -19357,8 +19438,9 @@
    "status": 200
   },
   "github.com/raspberrypi": {
+   "dead_count": 0,
    "name": "Raspberry Pi OS",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/rclone/rclone": {
    "archived": false,
@@ -20593,7 +20675,7 @@
    "status": 200
   },
   "github.com/regioneumbria-rcb/gari-umbria": {
-   "dead_count": 6,
+   "dead_count": 7,
    "dead_since": "2026-09-23T15:45:30Z",
    "name": "GARI (Gestione Agricola Rurale Informatizzata della Regione Umbria)",
    "status": 404
@@ -20639,8 +20721,9 @@
    "status": 200
   },
   "github.com/reseau-constellation": {
+   "dead_count": 0,
    "name": "Constellation (logiciel)",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/restic/restic": {
    "archived": false,
@@ -20678,7 +20761,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:02:27Z",
+   "last_push": "2026-09-28T19:32:31Z",
    "name": "Rocketchat",
    "status": 200
   },
@@ -20686,7 +20769,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:55:22Z",
+   "last_push": "2026-09-28T19:10:54Z",
    "name": "RStudio",
    "status": 200
   },
@@ -20718,7 +20801,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:46:56Z",
+   "last_push": "2026-09-28T19:31:38Z",
    "name": "Rundeck",
    "status": 200
   },
@@ -20827,8 +20910,9 @@
    "status": 200
   },
   "github.com/sdkman": {
+   "dead_count": 0,
    "name": "sdkman",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/sebastianbergmann/phpunit": {
    "archived": false,
@@ -20839,8 +20923,9 @@
    "status": 200
   },
   "github.com/seleniumhq": {
+   "dead_count": 0,
    "name": "Selenium IDE",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/seleniumhq/selenium": {
    "archived": false,
@@ -21046,7 +21131,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:30:06Z",
+   "last_push": "2026-09-28T19:25:45Z",
    "name": "SVA Studio",
    "status": 200
   },
@@ -21091,7 +21176,7 @@
    "status": 200
   },
   "github.com/soikea/sitoumus2050-public": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Sitoumus2050.fi-verkkopalvelu",
    "status": 404
@@ -21105,8 +21190,9 @@
    "status": 200
   },
   "github.com/somleng": {
+   "dead_count": 0,
    "name": "Somleng",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/somleng/open-ews": {
    "archived": false,
@@ -21136,7 +21222,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:29:51Z",
+   "last_push": "2026-09-28T18:17:20Z",
    "name": "Surveillance Outbreak Response Management and Analysis System",
    "status": 200
   },
@@ -21173,8 +21259,9 @@
    "status": 200
   },
   "github.com/ssi-quarkid": {
+   "dead_count": 0,
    "name": "QuarkID",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/stackstorm/st2": {
    "archived": false,
@@ -21204,7 +21291,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:01:45Z",
+   "last_push": "2026-09-28T19:04:48Z",
    "name": "Statbus",
    "status": 200
   },
@@ -21252,7 +21339,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:41:41Z",
+   "last_push": "2026-09-28T19:37:45Z",
    "name": "Subtitle Edit",
    "status": 200
   },
@@ -21276,7 +21363,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T16:32:35Z",
+   "last_push": "2026-09-28T19:24:18Z",
    "name": "La Suite Drive",
    "status": 200
   },
@@ -21305,12 +21392,14 @@
    "status": 200
   },
   "github.com/sunbird-ed": {
+   "dead_count": 0,
    "name": "Sunbird",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/sunbird-lern": {
+   "dead_count": 0,
    "name": "Sunbird Lern",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/sunbird-rc/sunbird-rc-core": {
    "archived": false,
@@ -21489,8 +21578,9 @@
    "status": 200
   },
   "github.com/suomenriistakeskus": {
+   "dead_count": 0,
    "name": "Oma riista \u2013 Riistahallinnon asiointipalvelu",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/supabase-community/postgrest-py": {
    "archived": true,
@@ -21768,13 +21858,14 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:47:24Z",
+   "last_push": "2026-09-28T19:30:45Z",
    "name": "Symfony",
    "status": 200
   },
   "github.com/sympa-community": {
+   "dead_count": 0,
    "name": "Sympa",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/sync-in/server": {
    "archived": false,
@@ -21913,8 +22004,9 @@
    "status": 200
   },
   "github.com/tazama-lf": {
+   "dead_count": 0,
    "name": "Tazama",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/tbellembois/gochimitheque": {
    "archived": false,
@@ -22136,7 +22228,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:59:58Z",
+   "last_push": "2026-09-28T18:55:12Z",
    "name": "K-9 Mail",
    "status": 200
   },
@@ -22256,7 +22348,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-27T11:31:26Z",
+   "last_push": "2026-09-28T19:15:24Z",
    "name": "trpc",
    "status": 200
   },
@@ -22269,14 +22361,15 @@
    "status": 200
   },
   "github.com/truenas": {
+   "dead_count": 0,
    "name": "TrueNAS",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/tryghost/ghost": {
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:57:39Z",
+   "last_push": "2026-09-28T19:37:43Z",
    "name": "Ghost",
    "status": 200
   },
@@ -22705,14 +22798,15 @@
    "status": 200
   },
   "github.com/veracrypt": {
+   "dead_count": 0,
    "name": "VeraCrypt",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/vercel/next.js": {
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:55:15Z",
+   "last_push": "2026-09-28T19:39:30Z",
    "name": "Next.js",
    "status": 200
   },
@@ -22760,13 +22854,14 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:03:49Z",
+   "last_push": "2026-09-28T19:29:24Z",
    "name": "Vim",
    "status": 200
   },
   "github.com/virtualbox": {
+   "dead_count": 0,
    "name": "VirtualBox",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/vision-impulse/lautrerwissen-backend": {
    "archived": false,
@@ -22817,14 +22912,15 @@
    "status": 200
   },
   "github.com/vrk-kpa/ptv-releases": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Suomi.fi-palvelutietovaranto",
    "status": 404
   },
   "github.com/vrk-kpa?utf8=%e2%9c%93&query=e-identification": {
+   "dead_count": 0,
    "name": "Suomi.fi-tunnistaminen",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/vscodium/vscodium": {
    "archived": false,
@@ -22843,12 +22939,14 @@
    "status": 200
   },
   "github.com/vuejs": {
+   "dead_count": 0,
    "name": "Vue.js",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/vultureproject": {
+   "dead_count": 0,
    "name": "Vulture Project",
-   "status": "error:URLError"
+   "status": 200
   },
   "github.com/vvfosprojects/atb": {
    "archived": false,
@@ -22910,7 +23008,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T09:51:25Z",
+   "last_push": "2026-09-28T18:55:42Z",
    "name": "Wekan",
    "status": 200
   },
@@ -23006,7 +23104,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T18:00:33Z",
+   "last_push": "2026-09-28T18:19:07Z",
    "name": "Yarn",
    "status": 200
   },
@@ -23019,7 +23117,7 @@
    "status": 200
   },
   "github.com/yleisradio/yle-api-template": {
-   "dead_count": 17,
+   "dead_count": 18,
    "dead_since": "2026-08-11T22:00:43Z",
    "name": "Yle - API template",
    "status": 404
@@ -23076,7 +23174,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T17:03:19Z",
+   "last_push": "2026-09-28T19:19:02Z",
    "name": "Zed",
    "status": 200
   },
@@ -23108,7 +23206,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-09-28T15:44:17Z",
+   "last_push": "2026-09-28T18:50:24Z",
    "name": "Zotero",
    "status": 200
   },
@@ -23190,7 +23288,7 @@
    "status": 200
   },
   "gitlab.com/comunedicagliari/componenti_icare": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "SISA CAGLIARI",
    "status": 404
@@ -23241,7 +23339,7 @@
   },
   "gitlab.com/gitlab-org/gitlab": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:17:29.512Z",
+   "last_push": "2026-09-28T19:17:44.944Z",
    "name": "GitLab",
    "status": 200
   },
@@ -23338,7 +23436,7 @@
   },
   "gitlab.com/prospect-energy/prospect-server": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:05:17.003Z",
+   "last_push": "2026-09-28T18:14:21.932Z",
    "name": "Prospect",
    "status": 200
   },
@@ -23356,7 +23454,7 @@
   },
   "gitlab.com/samarbeid-org/samarbeid": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:13:48.422Z",
+   "last_push": "2026-09-28T19:19:57.397Z",
    "name": "samarbeid",
    "status": 200
   },
@@ -23368,7 +23466,7 @@
   },
   "gitlab.com/scilab/scilab": {
    "dead_count": 0,
-   "last_push": "2026-09-28T15:33:33.752Z",
+   "last_push": "2026-09-28T19:10:41.694Z",
    "name": "Scilab",
    "status": 200
   },
@@ -23397,7 +23495,7 @@
   },
   "gitlab.com/wireshark/wireshark": {
    "dead_count": 0,
-   "last_push": "2026-09-28T16:25:40.280Z",
+   "last_push": "2026-09-28T19:39:07.639Z",
    "name": "Wireshark",
    "status": 200
   },
@@ -23449,7 +23547,7 @@
   },
   "gitlab.gnome.org/gnome/gimp": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:48:42.640Z",
+   "last_push": "2026-09-28T19:16:25.028Z",
    "name": "GIMP",
    "status": 200
   },
@@ -23975,7 +24073,7 @@
   },
   "gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:06:36.393Z",
+   "last_push": "2026-09-28T19:07:41.216Z",
    "name": "Elterngeldrechner und Planer",
    "status": 200
   },
@@ -24059,7 +24157,7 @@
   },
   "gitlab.opencode.de/fitko/fim/schema-repository": {
    "dead_count": 0,
-   "last_push": "2026-09-28T17:09:22.070Z",
+   "last_push": "2026-09-28T18:23:09.343Z",
    "name": "FIM Datenfelder-Sammelrepository",
    "status": 200
   },
@@ -25725,7 +25823,7 @@
   },
   "gitlab.ow2.org/lemonldap-ng/lemonldap-ng": {
    "dead_count": 0,
-   "last_push": "2026-09-28T10:32:43.125Z",
+   "last_push": "2026-09-28T18:56:08.265Z",
    "name": "LemonLDAP::NG",
    "status": 200
   },
@@ -25737,7 +25835,7 @@
   },
   "gitlab.torproject.org/tpo/core/tor": {
    "dead_count": 0,
-   "last_push": "2026-09-28T16:58:45.620Z",
+   "last_push": "2026-09-28T19:25:27.935Z",
    "name": "Tor Browser",
    "status": 200
   },
@@ -26130,13 +26228,13 @@
    "status": 403
   },
   "turku.fi/github": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Munpalvelut.fi digitaalinen palvelutori",
    "status": 404
   },
   "turku.fi/github-turkufi": {
-   "dead_count": 26,
+   "dead_count": 27,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "KADA \u2013 Kuntien avoin digialusta",
    "status": 404
@@ -26154,13 +26252,13 @@
  },
  "summary": {
   "archived": 39,
-  "checked": "2026-09-28T17:55:11Z",
+  "checked": "2026-09-28T19:40:09Z",
   "dead": 28,
   "newly_dead": [],
-  "ok": 3426,
+  "ok": 3501,
   "pending_dead": 0,
   "revived": [],
-  "total": 3586,
-  "unknown": 131
+  "total": 3591,
+  "unknown": 61
  }
 }
