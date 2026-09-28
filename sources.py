@@ -95,6 +95,9 @@ SOURCES = {
     "DE/opensource.muenchen.de": {
         "checkpoint": "muc",
         "label": "Munich Open Source", "country": "DE", "flag": "\U0001F1E9\U0001F1EA",
+        # A city catalogue: /sources.html draws it as a dot at the city (lon, lat),
+        # not a country shape - Munich is 1-2 pixels at map scale.
+        "map_point": (11.576, 48.137),
         "site": "https://opensource.muenchen.de/software/",
         "api": "https://github.com/it-at-m/opensource.muenchen.de/tree/main/software",
         "route": "markdown files in git", "claim": "built or used by the City of Munich",
@@ -219,6 +222,7 @@ SOURCES = {
     "SE/helsingborg": {
         "checkpoint": "hbg",
         "label": "Helsingborg City", "country": "SE", "flag": "\U0001F1F8\U0001F1EA",
+        "map_point": (12.694, 56.046),   # a city dot, like Munich's
         "site": "https://github.com/helsingborg-stad",
         "api": "https://api.github.com/orgs/helsingborg-stad/repos",
         "route": "GitHub org", "claim": "built by the City of Helsingborg",

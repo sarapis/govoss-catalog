@@ -401,6 +401,7 @@ def build():
             "by_country": "/by-country/<ISO-3166-alpha-2>.json (plus EU, GLOBAL)",
             "sources": "/sources.json",
             "status": "/status.json",
+            "catalogue_map": "/catalogues.geo.json",
             "versioned": "/v1/entries.json",
         },
         "known_gaps": {
@@ -572,6 +573,9 @@ scraping it is both harder and less complete than one HTTP GET.
                                  catalogues appears under each.
   GET /v1/entries.json           versioned alias - pin this
   GET /status.json               freshness, last run, per-source counts, change log
+  GET /catalogues.geo.json       GeoJSON: where each harvested catalogue is (country
+                                 shapes, EU outline, city points), per-catalogue
+                                 counts. Never sum them per country.
   GET /                          the human page
 
 These also redirect to /entries.json because they are what people try first:

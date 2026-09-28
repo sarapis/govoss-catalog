@@ -16,6 +16,7 @@ at the end, so no literal CSS or JS brace needs doubling.
 from urllib.parse import quote
 import json, os, importlib.util, collections, time
 import i18n
+import sources_map
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = f"{OUT}/site"
@@ -540,7 +541,16 @@ def build(lang="en"):
                "survey": S.SURVEY},
               open(f"{SITE}/sources.json", "w"), indent=1)
 
+    # ---- the map (sources_map.py): shapes from the committed geo snapshot, this
+    # run's counts joined on. /catalogues.geo.json is the same data for anyone
+    # drawing their own (un.opensource.nyc rebuilt it from Natural Earth itself).
+    map_html, map_geo = sources_map.render(lang, counts, country_name)
+    if primary:
+        with open(f"{SITE}/catalogues.geo.json", "w") as fh:
+            json.dump({"generated_at": NOW, **map_geo}, fh, separators=(",", ":"))
+
     subs = {
+        "__MAP__": map_html,
         "__CROWS__": crows, "__SROWS__": srows, "__DROWS__": drows, "__VROWS__": vrows,
         "__CROWS_C__": vrows_c,
         "__N_CAT__": str(len(S.SOURCES)),
@@ -568,7 +578,8 @@ def build(lang="en"):
         _("The {n} government catalogues govoss harvests first-hand, how the last harvest "
           "went, and the {s} catalogues that were surveyed and rejected, with reasons.",
           n=len(S.SOURCES), s=len(S.SURVEY)), lang=lang, route="/sources.html")
-        + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
+        + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS
+        + sources_map.CSS + "</style>\n"
         + theme.utility_bar(lang=lang) + theme.topbar("sources", lang, "/sources.html")
         + BODY + theme.footer(lang=lang))
 
@@ -721,6 +732,7 @@ BODY = """
     <div class="stat"><b>__N_RUNS__</b><span>⟪runs recorded⟫</span></div>
     <div class="stat"><b>__N_SURVEY__</b><span>⟪surveyed and rejected⟫</span></div>
   </div>
+  __MAP__
 
   <section class="sec">
     <div class="sechead"><h3>⟪Harvested catalogues⟫</h3>

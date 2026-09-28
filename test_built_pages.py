@@ -304,6 +304,45 @@ def main():
     check("every URL key written is read back at load", sorted(written - readback), [])
     check("reset() writes the URL", "render(); writeURL(); }" in idx, True)
 
+    # ---- 12c. THE CATALOGUE MAP (sources_map.py). Every catalogue in sources.py
+    # is on the map or named beside it; its links resolve; nothing is fetched from
+    # a third party; /catalogues.geo.json agrees with the page.
+    sys.path.insert(0, HERE)
+    import sources as S
+    sp = pages["sources.html"]
+    mm = re.search(r'<section class="sec" id="map">(.*?)</section>', sp, re.S)
+    msec = mm.group(1) if mm else ""
+    check("sources.html has the map section", bool(mm), True)
+    shaded = set(re.findall(r'<a href="/\?cc=([A-Z]{2})"', msec))
+    src_on_map = set(urllib.parse.unquote(v) for v in re.findall(r'href="/\?src=([^"]*)"', msec))
+    unplaced = sorted(k for k, m in S.SOURCES.items()
+                      if m["country"] not in shaded and m["label"] not in src_on_map)
+    check("every catalogue is shaded, a city dot, or named beside the map", unplaced, [])
+    check("every city catalogue (map_point) has its dot",
+          sorted(m["label"] for m in S.SOURCES.values()
+                 if "map_point" in m and m["label"] not in src_on_map), [])
+    ccf = set(f[0] for f in (extract_js_array(pages["index.html"], "CCFACETS") or []))
+    check("every map ?cc= value is a catalog country facet", sorted(shaded - ccf), [])
+    check("the map loads nothing from another origin",
+          re.findall(r'(?:href|src|xlink:href)="(https?://[^"]*)"',
+                     re.search(r"<svg class=\"cmap-svg\".*?</svg>", msec, re.S).group(0)
+                     if "cmap-svg" in msec else ""), [])
+    cam = re.search(r'<section class="sec" id="map">(.*?)</section>', pages["ca/sources.html"], re.S)
+    check("the Catalan map links to the Catalan catalog",
+          bool(cam) and '"/?cc=' not in cam.group(1) and '"/ca/?cc=' in cam.group(1), True)
+    gpath = os.path.join(SITE, "catalogues.geo.json")
+    try:
+        gj = json.load(open(gpath))
+    except Exception as e:
+        gj = {"features": [], "_error": str(e)}
+    gcodes = set(f["properties"]["code"] for f in gj.get("features", [])
+                 if f["properties"].get("kind") == "country")
+    check("/catalogues.geo.json has a country feature per shaded country",
+          sorted(gcodes ^ shaded), [])
+    check("/catalogues.geo.json never carries a per-country total",
+          [f["properties"]["code"] for f in gj.get("features", [])
+           if set(f["properties"]) & {"entries", "total", "total_entries"}], [])
+
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by
     # build_site.sh. Losing either is silent in a browser: pages still render,
