@@ -87,5 +87,8 @@
 "6b73311e97": "Description of the structure, relationships and meaning of the metadata, and the values that are permitted.",
 "f1e78b5cfa": "This module is to be used together with the specification for delivery to an e-depot. It provides a standard method for delivering information from a source system to a target system.",
 "71e53afa01": "This repository contains all documentation for the code.overheid.nl code platform.",
-"127cc33355": "Template repository for a ReSpec document of the National Archives of the Netherlands."
+"127cc33355": "Template repository for a ReSpec document of the National Archives of the Netherlands.",
+"2972f6b265": "Repository for the MijND project.",
+"aa050b4fba": "Umbrella repository for NLdoc: original GitLab directory structure, components as submodules.",
+"6a7ec18f37": "A SharePoint adapter for plugfs"
 }
