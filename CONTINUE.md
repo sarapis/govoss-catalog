@@ -29,12 +29,11 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
 
 - Tree clean on `main`, nothing unpushed, one worktree, no jobs running. Schedule loaded;
   `bash schedule/install.sh --diff` says the plist matches the template.
-- **Last run 2026-09-28 19:58Z**, `manual`, 19 steps ok, deployed on `token-file`,
-  recorded (`13099b3`). Live `/status.json`: `ok`, no problems.
-- **COMMITTED, NOT LIVE** (publishes with the next run): `cba9cbc` five translations,
-  `e97e19f` the GeoJSON timestamp fix, and the Swiss source switched to the Chancellery's
-  catalogue API (164 -> ~161 Swiss entries, deep links to opensource.admin.ch; scratch-verified,
-  no identity moves). `47b9911` is a review document only.
+- **Last run 2026-09-29 20:33Z**, `manual`, 19 steps ok, deployed on `token-file`,
+  recorded (`16c0bc9`). Everything committed up to `1ed21ae` is live: the five translations,
+  the GeoJSON stamp (live `generated_at` = `meta.json`'s), and the Swiss catalogue source
+  (161 active, all 161 linking to opensource.admin.ch; `ogdch_checker` got its description
+  from `enrich_desc.py`; Loom is one entry). Live `/status.json`: `ok`, no problems.
 - Liveness (2026-09-28): 3,501 ok of 3,591, 28 dead, 39 archived, 61 unknown.
   `replaces.json` 348 keys; 444 products, 379 with an alternative (live-checked).
   Variants: 14 linked to 12 cores. MCP Worker `a38a84d4` (search reads `n d o a u rp`).
@@ -87,13 +86,9 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 
 ## Candidates, ranked
 
-1. **Check the next run (Monday 2026-10-05)** - the first to carry `cba9cbc`, `e97e19f` and the
-   Swiss switch: Switzerland ~161 active with `opensource.admin.ch` entry links, the harvest log
-   says "162 entries in opensource.admin.ch", `ogdch_checker` gets a description from
-   `enrich_desc.py` (the catalogue's copy is empty), Loom is one entry, and:
-   URBO, mijnd, nldoc, plugfs-sharepoint and KI-Buddy show English and translated;
-   `/catalogues.geo.json` `generated_at` equals `/meta.json`'s; `/status.json` `ok`; Recently
-   added holds only genuinely new ids (anything else is an identity that moved).
+1. **Watch the Monday 2026-10-05 scheduled run** - the first unattended one on the Swiss API:
+   the harvest log should say "162 entries in opensource.admin.ch" (a refusal means the API
+   moved or shrank - see `ch()`); `/status.json` `ok`; Recently added only genuinely new ids.
 2. **Act on the Helsingborg decision** once made - an allow-list of repo URLs in `filters.py`
    pinned in `test_filters.py` (never a name pattern); stamp returned ids `null` in
    `_first_seen.json` if the owner does not want a week of Helsingborg in the strip.
