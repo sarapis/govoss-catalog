@@ -3530,7 +3530,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-09-28",
   "repo": "https://github.com/ScuolaNormaleSuperiore/design-ictsite-wp-theme",
   "repo_key": "github.com/scuolanormalesuperiore/design-ictsite-wp-theme",
   "short_desc": "Tema WordPress per la creazione di siti web che presentano e facilitano l'utilizzo dei servizi ICT di un'organizzazione.",
@@ -3541,7 +3541,7 @@
   "used_by": [
    "Sito ICT - Scuola Normale Superiore - https://ict.sns.it/"
   ],
-  "version": "1.0.5"
+  "version": "1.0.6"
  },
  {
   "active": true,

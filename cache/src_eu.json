@@ -24,7 +24,7 @@
   ],
   "forge_path": "edelivery/domibus",
   "landing": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/Domibus",
-  "last_activity": "2026-09-28T16:55:19.799Z",
+  "last_activity": "2026-09-29T15:40:06.705Z",
   "license": "EUPL-1.2-or-later",
   "long_desc": "[Domibus](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467110244/Domibus) is the sample software provided by the European Commission to implement an eDelivery AS4 Access Point for interoperable, secure and reliable data exchange. It is based on the [eDelivery AS4 profile](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specification for the secure, web-based, payload-agnostic exchange of data or documents.\n",
   "maintenance": "internal",
@@ -241,55 +241,45 @@
  },
  {
   "categories": [
-   "communications"
+   "data-analytics",
+   "data-visualization"
   ],
   "contacts": [
-   "eDelivery Support Service"
+   "European Commission Joint Research Centre"
   ],
   "country": "EU",
-  "desc_en": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
+  "desc_en": "Analysis of the environmental vs economic trade-off in hydrogen production via electrolysis.",
   "desc_lang": "en",
   "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/edelivery/dynamic-discovery-client",
-  "fallback_repo": "https://code.europa.eu/edelivery/dynamic-discovery-client.git",
+  "entry_url": "https://code.europa.eu/realfa/h2_temporal_analysis",
+  "fallback_repo": "https://code.europa.eu/realfa/h2_temporal_analysis.git",
   "features": [
-   "Automatic participant lookup using SML to locate the SMP service where a network participant published its service capabilities metadata.",
-   "SMP metadata retrieval to obtain service metadata such as document types, transport profiles, and endpoint details.",
-   "Support for multiple transport profiles (e.g., AS4, AS2, etc.) to enable interoperability with different Access Points.",
-   "Support for multiple document types and processes to facilitate diverse message exchange scenarios.",
-   "Support for various party identifier schemes (e.g., eDelivery identifiers, PEPPOL identifiers) to accommodate different identification standards.",
-   "Certificate and trust validation to ensure secure and trusted metadata retrieval.",
-   "Compliance with eDelivery Dynamic Discovery specifications (SML/SMP standards, DNS-based addressing)."
+   "Levelised Cost of Hydrogen calculation",
+   "GHG footprint analysis",
+   "GHG abatement cost curves",
+   "Optimal load factor determination",
+   "Cross-country comparison of hydrogen production economics"
   ],
-  "forge_path": "edelivery/dynamic-discovery-client",
-  "landing": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
-  "last_activity": "2026-09-24T08:28:09.724Z",
-  "license": "EUPL-1.2-or-later",
-  "long_desc": "[DDC](https://code.europa.eu/edelivery/dynamic-discovery-client/) is the sample Java library provided by the European Commission to implement an eDelivery dynamic discovery lookup for an eDelivery party to discover the URLs and metadata of other eDelivery Access Point counterparties. It is based on the [eDelivery BDXL specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467118561/BDXL+specifications), the [eDelivery SMP specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117984/SMP+specifications) and the dynamic sender and receiver enhancements of the [eDelivery AS4 specifications](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467117619/AS4+Access+Point+specifications), an open technical specifications for locating Access Points within a network.\n",
+  "forge_path": "realfa/h2_temporal_analysis",
+  "last_activity": "2026-08-25T13:23:09.067Z",
+  "license": "EUPL-1.2",
+  "long_desc": "This repository contains the analysis code for investigating the trade-off between environmental and economic performance in hydrogen production via electrolysis. The project calculates and visualises key metrics including Levelised Cost of Hydrogen (LCOH), Greenhouse Gas (GHG) Footprint, GHG Abatement Cost, and Optimal Load Factors across multiple European countries. The analysis processes electricity price data and grid emissions factors from ENTSO-E to identify optimal operating strategies for green hydrogen production.",
   "maintenance": "internal",
-  "name": "Dynamic Discovery Client (DDC)",
+  "name": "H2 Temporal Analysis",
   "platforms": [
+   "linux",
    "windows",
-   "mac",
-   "linux"
+   "mac"
   ],
-  "released": "2026-08-17",
-  "repo": "https://code.europa.eu/edelivery/dynamic-discovery-client/",
-  "repo_key": "code.europa.eu/edelivery/dynamic-discovery-client",
-  "repo_owner": "DIGIT",
-  "short_desc": "DDC is Java library that implements a mechanism for Access Points to discover each other\u2019s endpoints and capabilities without manual configuration.",
-  "software_type": "standalone/backend",
+  "released": "2025-01-01",
+  "repo": "https://code.europa.eu/TODO/h2_temporal_analysis",
+  "repo_key": "code.europa.eu/todo/h2_temporal_analysis",
+  "repo_owner": "European Commission, Joint Research Centre",
+  "short_desc": "Analysis of the environmental vs economic trade-off in hydrogen production via electrolysis.",
+  "software_type": "standalone/other",
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
-  "upstream_id": 214,
-  "used_by": [
-   "EU institutions, bodies and agencies",
-   "EU Member State administrations",
-   "OpenPeppol Service Providers",
-   "EU private organisations",
-   "etc."
-  ],
-  "version": 3.4
+  "upstream_id": 1574
  },
  {
   "categories": [
@@ -541,41 +531,47 @@
  },
  {
   "categories": [
-   "learning-management-system"
+   "productivity-suite"
   ],
   "contacts": [
-   "BTSF ACADEMY Team"
+   "DIGIT LEOS team"
   ],
   "country": "EU",
-  "desc_en": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
+  "desc_en": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
   "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
-  "fallback_repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin.git",
+  "dev_status": "stable",
+  "entry_url": "https://code.europa.eu/leos/core",
+  "fallback_repo": "https://code.europa.eu/leos/core.git",
   "features": [
-   "Automatic Moodle content translation"
+   "Legal document structure",
+   "Collaboration",
+   "Import legal text",
+   "Versioning",
+   "Annotations",
+   "Rich text"
   ],
-  "forge_path": "btsf/moodle-etranslation-filter-plugin",
-  "last_activity": "2026-08-04T08:48:04.149Z",
-  "license": "GPL-3.0-or-later",
-  "long_desc": "The eTranslation filter provides an automatic translation of the content\nof Moodle courses into different languages. It uses the European\nCommission's neural machine translation service\n([eTranslation](https://commission.europa.eu/resources-partners/etranslation_en)).\n\n\nThe filter parses and processes every piece of content including HTML\ntexts, [File resource](https://docs.moodle.org/405/en/File_resource)s,\n[Folder resource](https://docs.moodle.org/405/en/Folder_resource)s and\nheadings.\n\n\nFor each content item:\n\n\n- If the current language is the configured base language, then the\noriginal text is returned untouched.\n\n- Else, hash the full original text as the HASHKEY to look into the\ntranslation repository.\n\n- If the HASHKEY is found, then look for a translation in the selected\nlanguage.\n    - If the translation exists, then return the translated content\n- Else the HASHKEY is not found, request a translation from the\neTranslation API and wait for the translation in the background. Once it\nis ready, the translated content will be stored in the repository with the\nHASHKEY.\n\n\nThe translation availability is configurable through [Moodle\ncapabilities](https://docs.moodle.org/405/en/Cat",
+  "forge_path": "leos/core",
+  "last_activity": "2026-09-29T18:40:12.964Z",
+  "license": "EUPL-1.2",
+  "long_desc": " \n\nLEOS (**L**egislation **E**diting **O**pen **S**oftware) is an open source\n\nsoftware designed to help those involved in dra\ufb05ing legislation, which in\n\nitself is a complex knowledge-intensive process, by supporting e\ufb03cient\n\nonline collaboration. Comments, suggestions, version control, co-edition,\n\neverything is there. Regarding the structure, that is where we aim to be\n\nas restrictive as possible and this is not because we are conservative,\n\nbut because this helps the dra\ufb05ers follow the rules and avoid mistakes.\n\nContent is stored in an XML format, currently Akoma Ntoso V3.\n\n\n\nLEOS (**L**egislation\u00a0**E**diting\u00a0**O**pen\u00a0**S**oftware) is a project\n\nunder [**Interoperable\n\nEurope**](https://joinup.ec.europa.eu/interoperable-europe) initiative of\n\nthe European Commission for a reinforced public sector interoperability\n\npolicy, funded by the [Digital Europe\n\nProgramme](https://digital-strategy.ec.europa.eu/en/activities/digital-programme\n\n\"https://digital-strategy.ec.europa.eu/en/activities/digital-programme\")\u00a0(DIGITAL).\n\n\n\nThe LEOS\u00a0project under **Interoperable Europe** focuses on supporting the\n\nco-development co-design, and co-deployment of an \u2018IT eco-system centred\n\non augmented L",
   "maintenance": "internal",
-  "name": "Moodle eTranslation filter plugin ",
+  "name": "LEOS core",
   "platforms": [
    "web"
   ],
-  "released": "2023-09-26",
-  "repo": "https://code.europa.eu/btsf/moodle-etranslation-filter-plugin",
-  "repo_key": "code.europa.eu/btsf/moodle-etranslation-filter-plugin",
-  "repo_owner": "BTSF ACADEMY Team",
-  "short_desc": "Moodle content translation filter plugin using the European Commission's\neTranslation service",
-  "software_type": "library",
+  "released": "2023-12-07",
+  "repo": "https://code.europa.eu/leos/core/-/tree/development",
+  "repo_key": "code.europa.eu/leos/core",
+  "repo_owner": "European Commission",
+  "short_desc": "LEOS (Legislation Editing Open Software) is an open source software\n\ndesigned to help those involved in dra\ufb05ing legislation.",
+  "software_type": "standalone/web",
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
-  "upstream_id": 1006,
+  "upstream_id": 85,
   "used_by": [
-   "BTSF ACADEMY Team"
-  ]
+   "European Commission"
+  ],
+  "version": "5.0.*"
  },
  {
   "categories": [
@@ -616,45 +612,6 @@
  },
  {
   "categories": [
-   "it-development"
-  ],
-  "contacts": [
-   "EU-CODE-EUROPA"
-  ],
-  "country": "EU",
-  "desc_en": "Calculates energy needed to transform water into steam at given conditions.",
-  "desc_lang": "en",
-  "dev_status": "stable",
-  "entry_url": "https://code.europa.eu/realfa/steam-energy-calculator",
-  "fallback_repo": "https://code.europa.eu/realfa/steam-energy-calculator.git",
-  "features": [
-   "Calculate enthalpy change for water-to-steam transformation",
-   "Support for multiple temperature and pressure units",
-   "Configurable boiler efficiency and natural gas LHV",
-   "Interactive Streamlit web interface"
-  ],
-  "forge_path": "realfa/steam-energy-calculator",
-  "last_activity": "2026-08-25T13:23:11.113Z",
-  "license": "EUPL-1.2",
-  "long_desc": "This tool calculates the energy requirements for water-to-steam transformation given initial and final temperature and pressure. It accounts for boiler efficiency and determines natural gas consumption. An interactive Streamlit web interface is provided.",
-  "maintenance": "internal",
-  "name": "Steam Energy Requirements Calculator",
-  "platforms": [
-   "web"
-  ],
-  "released": "2025-01-01",
-  "repo": "https://code.europa.eu/realfa/steam-energy-calculator",
-  "repo_key": "code.europa.eu/realfa/steam-energy-calculator",
-  "repo_owner": "European Commission",
-  "short_desc": "Calculates energy needed to transform water into steam at given conditions.",
-  "software_type": "standalone/web",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 1855,
-  "version": "1.0.0"
- },
- {
-  "categories": [
    "compliance-management"
   ],
   "contacts": [
@@ -691,86 +648,6 @@
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
   "upstream_id": 716,
-  "version": "4.0.1.3217"
- },
- {
-  "categories": [
-   "compliance-management"
-  ],
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "country": "EU",
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/amogoda/vecto",
-  "fallback_repo": "https://code.europa.eu/amogoda/vecto.git",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "forge_path": "amogoda/vecto",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-25T15:18:44.210Z",
-  "license": "EUPL-1.2",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "maintenance": "internal",
-  "name": "vecto-sim",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2023-10-23",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "repo_owner": "European Commission",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "software_type": "standalone/desktop",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 451,
-  "version": "4.0.1.3217"
- },
- {
-  "categories": [
-   "compliance-management"
-  ],
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "country": "EU",
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/anagnko/sandbox",
-  "fallback_repo": "https://code.europa.eu/anagnko/sandbox.git",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "forge_path": "anagnko/sandbox",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2025-12-16T15:09:55.346Z",
-  "license": "EUPL-1.2",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "maintenance": "internal",
-  "name": "vecto-sim",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2023-10-23",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "repo_owner": "European Commission",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "software_type": "standalone/desktop",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 449,
   "version": "4.0.1.3217"
  },
  {
@@ -864,16 +741,16 @@
   "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
   "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/doumpst/vecto",
-  "fallback_repo": "https://code.europa.eu/doumpst/vecto.git",
+  "entry_url": "https://code.europa.eu/vecto/guests/vecto-sim-harry",
+  "fallback_repo": "https://code.europa.eu/vecto/guests/vecto-sim-harry.git",
   "features": [
    "fuel, co2 and energy calculator",
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "forge_path": "doumpst/vecto",
+  "forge_path": "vecto/guests/vecto-sim-harry",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-15T17:20:42.626Z",
+  "last_activity": "2026-09-23T08:09:14.764Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
@@ -890,7 +767,7 @@
   "software_type": "standalone/desktop",
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
-  "upstream_id": 304,
+  "upstream_id": 1129,
   "version": "4.0.1.3217"
  },
  {
@@ -904,16 +781,16 @@
   "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
   "desc_lang": "en",
   "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/vecto/guests/vecto-sim-iker",
-  "fallback_repo": "https://code.europa.eu/vecto/guests/vecto-sim-iker.git",
+  "entry_url": "https://code.europa.eu/vecto/vecto",
+  "fallback_repo": "https://code.europa.eu/vecto/vecto.git",
   "features": [
    "fuel, co2 and energy calculator",
    "heavy duty vehicle simulator",
    "heavy duty vechicle certification"
   ],
-  "forge_path": "vecto/guests/vecto-sim-iker",
+  "forge_path": "vecto/vecto",
   "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2025-12-17T10:06:24.281Z",
+  "last_activity": "2026-09-29T17:03:00.385Z",
   "license": "EUPL-1.2",
   "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
   "maintenance": "internal",
@@ -930,87 +807,7 @@
   "software_type": "standalone/desktop",
   "source": "EU/code.europa.eu",
   "tier": "publiccode",
-  "upstream_id": 415,
-  "version": "4.0.1.3217"
- },
- {
-  "categories": [
-   "compliance-management"
-  ],
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "country": "EU",
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/vecto/tug-itna/hm_vecto-sim",
-  "fallback_repo": "https://code.europa.eu/vecto/tug-itna/hm_vecto-sim.git",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "forge_path": "vecto/tug-itna/hm_vecto-sim",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-11T15:30:03.663Z",
-  "license": "EUPL-1.2",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "maintenance": "internal",
-  "name": "vecto-sim",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2023-10-23",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "repo_owner": "European Commission",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "software_type": "standalone/desktop",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 423,
-  "version": "4.0.1.3217"
- },
- {
-  "categories": [
-   "compliance-management"
-  ],
-  "contacts": [
-   "JRC-VECTO"
-  ],
-  "country": "EU",
-  "desc_en": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "desc_lang": "en",
-  "dev_status": "beta",
-  "entry_url": "https://code.europa.eu/vecto/tug-itna/mq_vecto-sim",
-  "fallback_repo": "https://code.europa.eu/vecto/tug-itna/mq_vecto-sim.git",
-  "features": [
-   "fuel, co2 and energy calculator",
-   "heavy duty vehicle simulator",
-   "heavy duty vechicle certification"
-  ],
-  "forge_path": "vecto/tug-itna/mq_vecto-sim",
-  "landing": "https://code.europa.eu/groups/vecto/-/wikis/vecto-sim",
-  "last_activity": "2026-09-23T11:35:58.803Z",
-  "license": "EUPL-1.2",
-  "long_desc": "VECTO is the simulation tool that has been developed by the European\nCommission and is used for determining CO2 emissions and Fuel Consumption\nfrom Heavy Duty Vehicles (trucks, buses and coaches) with a Gross Vehicle\nWeight above 3500kg.\n\nSince 1 January 2019, the tool is mandatory for new trucks under certain\nvehicle categories in application to the certification legislation under\ntype approval. \n\nCO2 emissions and fuel consumption data determined with VECTO, together\nwith other related parameters, must be monitored and reported to the\nCommission by Member States and manufacturers, and made publicly available\nfor each of those new trucks.\n\nFive different mission profiles for trucks and five different mission\nprofiles for buses and coaches have been developed and implemented in the\ntool to better reflect the current European fleet. VECTO is a downloadable\nexecutable file designed to operate on a single computer.\n\nThe inputs for VECTO are characteristic parameters to determine the power\nconsumption of every relevant vehicle component. Among others, the\nparameters for rolling resistance, air drag, masses and inertias, gearbox\nfriction, auxiliary power and engine performance are input",
-  "maintenance": "internal",
-  "name": "vecto-sim",
-  "platforms": [
-   "windows",
-   "linux"
-  ],
-  "released": "2023-10-23",
-  "repo": "https://code.europa.eu/vecto/vecto.git",
-  "repo_key": "code.europa.eu/vecto/vecto",
-  "repo_owner": "European Commission",
-  "short_desc": "Simulation tool that developed by the European Commission used for\ndetermining CO2 emissions from Heavy Duty Vehicles.",
-  "software_type": "standalone/desktop",
-  "source": "EU/code.europa.eu",
-  "tier": "publiccode",
-  "upstream_id": 422,
+  "upstream_id": 89,
   "version": "4.0.1.3217"
  }
 ]
