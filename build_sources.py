@@ -546,8 +546,16 @@ def build(lang="en"):
     # drawing their own (un.opensource.nyc rebuilt it from Natural Earth itself).
     map_html, map_geo = sources_map.render(lang, counts, country_name)
     if primary:
+        # Stamped with meta.json's generated_at, NOT this script's clock (as
+        # build_api/build_products do): un.opensource.nyc refuses the file unless
+        # the two match, and export_json.py runs seconds earlier, so NOW matched
+        # only when both landed in the same second.
+        try:
+            geo_at = json.load(open(f"{SITE}/meta.json")).get("generated_at") or NOW
+        except Exception:
+            geo_at = NOW
         with open(f"{SITE}/catalogues.geo.json", "w") as fh:
-            json.dump({"generated_at": NOW, **map_geo}, fh, separators=(",", ":"))
+            json.dump({"generated_at": geo_at, **map_geo}, fh, separators=(",", ":"))
 
     subs = {
         "__MAP__": map_html,

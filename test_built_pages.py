@@ -367,6 +367,12 @@ def main():
                  if f["properties"].get("kind") == "country")
     check("/catalogues.geo.json has a country feature per shaded country",
           sorted(gcodes ^ shaded), [])
+    try:
+        meta_at = json.load(open(os.path.join(SITE, "meta.json"))).get("generated_at")
+    except Exception:
+        meta_at = "unreadable"
+    check("/catalogues.geo.json is stamped with meta.json's generated_at (UNNYC requires it)",
+          gj.get("generated_at"), meta_at)
     check("/catalogues.geo.json never carries a per-country total",
           [f["properties"]["code"] for f in gj.get("features", [])
            if set(f["properties"]) & {"entries", "total", "total_entries"}], [])
