@@ -3,7 +3,7 @@
 > Union catalogue of **government open source software**, harvested first-hand from 20
 > national, municipal and international catalogues, normalised onto one schema, translated,
 > categorised by function, de-duplicated, linked to variants and liveness-monitored.
-> **3,127 active entries · 20 catalogues · 16 countries and bodies.** Live at
+> **3,141 active entries · 20 catalogues · 16 countries and bodies.** Live at
 > https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat.
 
 This file is RULES ONLY - it loads into every session, budget 300 lines. The reasoning,
@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 12 suites, 574 checks, all manual
+for t in test_*.py; do python3 $t; done     # 12 suites, 575 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -213,6 +213,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   when a catalogue country or a city `map_point` (in `sources.py`) is added - check 12c fails
   until you do. Natural Earth `ISO_A2` is `-99` for France: `ne_code()` falls through. Also
   published as `/catalogues.geo.json`. **Never show a per-country sum of counts.**
+  That file has an OUTSIDE consumer (un.opensource.nyc's fetch script stops on a missing key,
+  an unknown feature `kind`, a changed licence string, or `generated_at` != `meta.json`'s) -
+  keep its shape, and stamp it from `meta.json`, never a fresh clock (check 12c).
 - **The country code is the country of the CATALOGUE, not the tier of government** - the caveat
   ships in the JSON, on the page, in `meta.json` and `llms.txt`.
 - Agents are told not to scrape in four places: the HTML comment above `<title>`, alternate
@@ -234,7 +237,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Twelve suites, 574 checks, **all manual** - a test that can fail the weekly publish is one someone
+Twelve suites, 575 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -244,7 +247,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | file | pins |
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en`, shared ä/ö, org hints |
-| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, redirect/repo-rename QID loans, `is_repo_url` |
+| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url` |
 | `test_crosswalk_run.py` | crosswalk `run()` glue: Comptoir precedence, ask only rows without a QID, org-shared skip, software gate, route order, best-effort |
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
@@ -252,7 +255,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin`, the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
-| `test_built_pages.py` | built pages, cross-page contracts, language copies, hosting files |
+| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), hosting files |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()` |
 | `test_workers.py` | the three Workers under Node: site indexes and `/ca`, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 

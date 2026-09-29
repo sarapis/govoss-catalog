@@ -1322,3 +1322,31 @@ If something looks wrong, suspect these before anything else.
   80% no licence, dominated by research code, only 18 entries with a `publiccode.yml`. See the
   comment in `harvest.py:fr()`. Re-add it as an *enrichment join* (it has `is_archived`,
   `last_update`, `software_heritage_url`), never as catalogue entries.
+
+## Moved from CONTINUE.md on 2026-09-29
+
+### Session 2026-09-22 -> 23, in one screen
+
+Shared get-involved block; `lang_with_prior`/`lang_assume_en`; +52 `replaces.json` rows;
+the variants system; Switzerland and DIGG; the OSOR list evaluated; Catalan chrome for all
+four pages; hosting moved from Vercel to Cloudflare; `CLAUDE.md` pruned 949 -> 243 lines.
+Mistakes: one commit (`84ec9c3`) shipped a failing check (fixed `ea3f93f`); a sabotage
+script once left `variants.py` broken (restored from a backup).
+
+### The 2026-09-24 run, checked against its expectations
+
+Matched: 3,127 active (expected ~3,128), 20 catalogues; licence filter 12 + 9; Helsingborg
+98 active + 103 `wordpress-plugin`; KNIME, Prometheus, Spring Boot, Ubuntu merged; FreeFileSync
+split; Démarches one entry; `crosswalk_cache.json` three fresh stamps; untranslated unchanged
+like-for-like (the same 9 active rows); `deploy_auth` = `token-file`.
+Contradicted, and resolved:
+- **Recently added had 4 non-Helsingborg ids.** Magnolia and Unomi are genuinely new in Munich.
+  F13 KI Assistenz: openCode changed its repo upstream (an org URL -> a repo). Mautic: Munich
+  newly lists it, the repo-less Munich row won the merge and DROPPED DPG's repo, moving the
+  identity. Fixed in `dedupe.merge()` (backfill a sibling's REAL repo; ckan too) - live next run.
+- **MCP "rocket.chat" -> 0.** The expectation came from a test FIXTURE (owner + aka); the real
+  SILL row has neither and the Swedish "Rocket Chat" row is set aside. Search now reads the
+  repo URL too (Worker `a38a84d4`, live-checked: "rocket.chat" -> Rocketchat).
+- Liveness: 3,612 URLs, not ~109 fewer - that figure ignored Helsingborg's 291 rows.
+- 3 orphaned `tr_de.json` keys: upstream rewordings (KI-Buddy and two others). Sensor working.
+
