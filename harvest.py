@@ -689,7 +689,7 @@ def _refuse_short_scan(key, what, out, broke, where):
     """Raise instead of checkpointing a scan that lost sub-sources AND records.
 
     Shared by every adapter that loops over sub-sources swallowing their
-    failures (os2, ch): returning the partial list would make main() treat it
+    failures (os2; ch did until it moved to the catalogue API): returning the partial list would make main() treat it
     as success and overwrite the last good checkpoint. See os2() for why the
     test is failure AND regression, not failure alone."""
     if not broke:
@@ -1170,81 +1170,87 @@ def dpg():
     return out
 
 
-CH_INDEX = "https://raw.githubusercontent.com/swiss/index/HEAD/README.md"
+CH_API = ("https://oss-catalog-api.ocp.cloudscale.puzzle.ch/v1/software"
+          "?page%5Bsize%5D=10000")
+CH_PAGE = "https://www.opensource.admin.ch/en/softwares/%s/"
+
+
+def ch_page_id(url):
+    """The id of an entry's page on opensource.admin.ch: a port of hashUrl() in
+    github.com/swiss/oss-catalog client/src/utils/hash.ts (Java-style 32-bit
+    string hash, absolute value, base 36), applied to the API's `url` field AS
+    GIVEN (".git" included). Checked against all 162 links on the live list
+    page on 2026-09-29; pinned by test_harvest_get.py."""
+    h = 0
+    for ch_ in url:
+        h = ((h << 5) - h + ord(ch_)) & 0xFFFFFFFF
+    if h >= 2 ** 31:
+        h -= 2 ** 32
+    h, out = abs(h), ""
+    digits = "0123456789abcdefghijklmnopqrstuvwxyz"
+    while h:
+        h, r = divmod(h, 36)
+        out = digits[r] + out
+    return out or "0"
 
 
 def ch():
-    """Switzerland — the Federal Chancellery's own index of government GitHub accounts.
+    """Switzerland - the Federal Chancellery's Open Source Software Catalogue,
+    https://www.opensource.admin.ch, read through the API its site is built from.
 
-    github.com/swiss/index is a markdown list, maintained by the Chancellery, of
-    the GitHub accounts of federal offices, federal projects and cantons. It is
-    the Denmark-style allowlist, except the government publishes it - so the
-    README IS the machine route, read fresh every run rather than copied here.
-    Found via the OSOR list (2026-09-22).
+    The catalogue (github.com/swiss/oss-catalog) is a Developers Italia API fed by
+    a publiccode crawler whose publishers come from github.com/swiss/index - the
+    very list the previous adapter scanned itself. So this reads the Chancellery's
+    own result instead of re-running its crawler: one request instead of ~1,035
+    repos over ~55 accounts. Same record shape as Italy's (`publiccodeYml`,
+    `vitality`, `active`), so the same parse.
 
-    PUBLICCODE TIER ONLY: of ~1,035 active repos, 164 ship a publiccode.yml -
-    the publisher saying "this is reusable". The rest is largely research and
-    data code (MeteoSwiss alone has 125 repos), which an index tier would pull
-    in wholesale. Four accounts are users, not orgs, so repos are listed with
-    /users/<x>/repos, which serves both. Non-GitHub entries in the index
-    (gitlab.com/swiss-armed-forces, gitlabext.wsl.ch) are skipped and printed.
+    Measured against the old scan on 2026-09-29: 160 of 162 identical, Loom the
+    same entry (the API lists the GitHub mirror; its publiccode.yml `url` is the
+    GitLab original, and `repo` comes from that field). Lost: two live repos
+    whose publiccode.yml is spec 0.7.0, which the Swiss crawler did not take up,
+    and one deleted repo. Gained: a deep link to each entry's catalogue page.
+
+    The API is on the vendor's host (Puzzle ITC), not admin.ch. The Chancellery's
+    own build calls it every 6 hours, but a moved or emptied API must not
+    checkpoint a small Switzerland - hence the shrink guard below.
     """
-    md = get(CH_INDEX, raw=True).decode("utf-8", "replace")
-    accounts, seen = [], set()
-    for a in re.findall(r"https://github\.com/([A-Za-z0-9_.-]+)/?\s*$", md, flags=re.M):
-        if a.lower() not in seen:
-            seen.add(a.lower())
-            accounts.append(a)
-    other = re.findall(r"https://(?!github\.com)[^\s)]+", md)
-    if len(accounts) < 20:
-        # The index is the whole source; a truncated or restructured README must
-        # not quietly checkpoint a Switzerland of three accounts.
-        raise RuntimeError(f"swiss/index lists only {len(accounts)} GitHub accounts; "
-                           f"refusing - check whether the README changed shape")
-    hdr = {"Accept": "application/vnd.github+json"}
-    tok = _gh_token()
-    if tok:
-        hdr["Authorization"] = "Bearer " + tok
-
-    def repos_of(a):
-        out, page = [], 1
-        while page <= 20:
-            d = get(f"https://api.github.com/users/{a}/repos?per_page=100&page={page}&type=owner",
-                    headers=hdr)
-            if not d:
-                break
-            out += d
-            page += 1
-        return [r for r in out if not r.get("archived")]
-
-    repos, broke = [], []
-    for a in accounts:
-        try:
-            repos += repos_of(a)
-        except Exception as e:
-            broke.append(f"{a} ({type(e).__name__})")
-            print(f"    {a}: FAILED {type(e).__name__}")
-
-    def one(r):
-        try:
-            pc = parse_pc(get(f"https://raw.githubusercontent.com/{r['full_name']}/HEAD/publiccode.yml",
-                              timeout=25, raw=True, tries=1))
-        except Exception:
-            return None
+    d = get(CH_API)
+    rows = d.get("data") if isinstance(d, dict) else None
+    if not isinstance(rows, list):
+        raise RuntimeError("opensource.admin.ch API answered without a `data` list")
+    if (d.get("links") or {}).get("next"):
+        # page[size]=10000 returns everything today; a next link means the API
+        # started capping pages and this read is PARTIAL.
+        raise RuntimeError("opensource.admin.ch API paginated a page[size]=10000 read; "
+                           "refusing a partial Switzerland - follow links.next")
+    out = []
+    for x in rows:
+        if x.get("active") is False:
+            continue
+        pc = parse_pc(x.get("publiccodeYml") or "")
         if not pc:
-            return None
-        return from_publiccode(pc, "CH/swiss", "CH",
-                               fallback_repo=r.get("html_url"),
-                               entry_url=r.get("html_url"),
-                               stars=r.get("stargazers_count"),
-                               last_activity=r.get("pushed_at"),
-                               is_fork=bool(r.get("fork")))
-
-    with ThreadPoolExecutor(max_workers=12) as ex:
-        out = [x for x in ex.map(one, repos) if x]
-    print(f"    {len(accounts)} GitHub accounts in swiss/index, {len(repos)} active repos, "
-          f"{len(out)} with publiccode.yml; skipped non-GitHub: {', '.join(other) or 'none'}")
-    _refuse_short_scan("ch", "Swiss index", out, broke, "github.com/swiss/index (upstream)")
+            continue
+        v = x.get("vitality")
+        out.append(from_publiccode(pc, "CH/swiss", "CH",
+                                   fallback_repo=x.get("url"),
+                                   entry_url=CH_PAGE % ch_page_id(x.get("url") or ""),
+                                   upstream_id=x.get("id"),
+                                   active=x.get("active"),
+                                   vitality=v[-1] if isinstance(v, list) and v else v))
+    prev = 0
+    try:
+        with open(f"{CACHE}/src_ch.json") as fh:
+            prev = len(json.load(fh))
+    except Exception:
+        pass
+    # A catalogue shrinking by a fifth in a week is a broken read, not a policy
+    # change; a failed source reuses its checkpoint and /sources.html shows its age.
+    if len(out) < 50 or (prev and len(out) < 0.8 * prev):
+        raise RuntimeError(f"opensource.admin.ch API gave {len(out)} entries against "
+                           f"{prev} in the last good checkpoint; refusing a short list")
+    print(f"    {len(rows)} entries in opensource.admin.ch, {len(out)} with a parsable "
+          f"publiccode.yml")
     return out
 
 

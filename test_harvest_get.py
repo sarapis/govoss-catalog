@@ -16,8 +16,8 @@ overwrites it. So get() must never turn a failure into data:
     source" is recurring bug 1 in CLAUDE.md;
   * it never returns None, so no adapter can mistake a failure for "no entries".
 
-_refuse_short_scan() is the guard multi-org adapters (os2, ch) rely on: they
-swallow per-org failures, so returning their partial list would checkpoint it.
+_refuse_short_scan() is the guard the multi-org adapter (os2) relies on: it
+swallows per-org failures, so returning their partial list would checkpoint it.
 
 Offline: urllib's opener and time.sleep are replaced for the duration.
 """
@@ -142,6 +142,59 @@ def main():
         check("no previous checkpoint: nothing to protect, keeps", refuse([{}], ["os2web"]), "kept")
     finally:
         h.CACHE = real_cache
+
+    # ---- ch(): the Federal Chancellery catalogue API (opensource.admin.ch)
+    # Page ids: real pairs read off the live list page on 2026-09-29. A port that
+    # drifts from hashUrl() gives every Swiss entry a dead deep link.
+    for url, pid in (("https://github.com/agridata-ch/backend.git", "3xfy5y"),
+                     ("https://github.com/opendata-swiss/ckanext-geocat.git", "t78sgz"),
+                     ("https://github.com/agroscope-ch/digiRhythm.git", "d8rezf"),
+                     ("https://github.com/oblique-bit/oblique-stackblitz.git", "8a5mbf")):
+        check("ch_page_id(%s)" % url.rsplit("/", 1)[-1], h.ch_page_id(url), pid)
+
+    PC = ("publiccodeYmlVersion: 0.4\nname: Loom\nurl: https://gitlab.com/swiss-armed-forces/loom\n"
+          "description:\n  en:\n    shortDescription: Document search\n")
+    def api_row(i, url="https://github.com/swiss-armed-forces/loom.git", pc=PC, active=True):
+        return {"id": "id-%d" % i, "url": url, "aliases": [], "publiccodeYml": pc,
+                "active": active, "vitality": None}
+    real_get = h.get
+    tmp = tempfile.mkdtemp()
+    real_cache = h.CACHE
+    h.CACHE = tmp
+    try:
+        def run_ch(rows, links=None, prev=None):
+            if prev is not None:
+                json.dump([{}] * prev, open(os.path.join(tmp, "src_ch.json"), "w"))
+            elif os.path.exists(os.path.join(tmp, "src_ch.json")):
+                os.remove(os.path.join(tmp, "src_ch.json"))
+            h.get = lambda *a, **k: {"data": rows, "links": links or {"next": None}}
+            try:
+                return h.ch()
+            except RuntimeError as ex:
+                return "refused: " + str(ex)[:40]
+        many = [api_row(0)] + [api_row(i, url="https://github.com/x/r%d.git" % i,
+                                        pc=PC.replace("name: Loom", "name: r%d" % i)
+                                              .replace("/loom", "/r%d" % i))
+                               for i in range(1, 60)]
+        got = run_ch(many)
+        r0 = got[0] if isinstance(got, list) else {}
+        check("repo comes from publiccode.yml `url`, not the API's (Loom's GitLab original)",
+              r0.get("repo"), "https://gitlab.com/swiss-armed-forces/loom")
+        check("entry_url deep-links the catalogue page",
+              r0.get("entry_url"), h.CH_PAGE % h.ch_page_id("https://github.com/swiss-armed-forces/loom.git"))
+        check("source and tier", (r0.get("source"), r0.get("tier")), ("CH/swiss", "publiccode"))
+        check("an inactive row is skipped",
+              len(run_ch(many + [api_row(99, url="https://github.com/x/gone.git", active=False)])), 60)
+        check("a paginated answer is refused as partial",
+              str(run_ch(many, links={"next": "?page[after]=x"})).startswith("refused"), True)
+        check("shrinking by more than a fifth is refused",
+              str(run_ch(many, prev=100)).startswith("refused"), True)
+        check("a normal week against the checkpoint is kept",
+              isinstance(run_ch(many, prev=62), list), True)
+        check("under 50 entries is refused even with no checkpoint",
+              str(run_ch(many[:10])).startswith("refused"), True)
+    finally:
+        h.get, h.CACHE = real_get, real_cache
 
     for f in failed:
         print(f"FAIL  {f}")

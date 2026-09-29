@@ -201,13 +201,18 @@ SOURCES = {
     "CH/swiss": {
         "checkpoint": "ch",
         "label": "Swiss Confederation", "country": "CH", "flag": "\U0001F1E8\U0001F1ED",
-        "site": "https://github.com/swiss/index",
-        "api": "https://raw.githubusercontent.com/swiss/index/HEAD/README.md",
-        "route": "GitHub index + orgs", "claim": "published by Swiss federal and cantonal bodies",
-        "note": "The Federal Chancellery's own index of government GitHub accounts - federal "
-                "offices, federal projects and cantons - read fresh each run. PUBLICCODE TIER "
-                "ONLY: 164 of ~1,035 active repos ship a publiccode.yml; the rest is largely "
-                "research and data code. Found via the OSOR list.",
+        "site": "https://www.opensource.admin.ch/en/",
+        "api": "https://oss-catalog-api.ocp.cloudscale.puzzle.ch/v1/software",
+        "route": "REST API (Developers Italia API)",
+        "claim": "listed in the Federal Chancellery's Open Source Software Catalogue",
+        "note": "The Federal Chancellery's Open Source Software Catalogue, read through the "
+                "API its site is built from (github.com/swiss/oss-catalog; the API is hosted "
+                "by the vendor, Puzzle ITC). Its crawler reads the publishers in "
+                "github.com/swiss/index - federal offices, federal projects and cantons - and "
+                "keeps repos that ship a publiccode.yml, so this is PUBLICCODE TIER by the "
+                "catalogue's own rule. Until 2026-09-29 govoss scanned that index itself "
+                "(164 entries); the catalogue lists 162, 160 of them identical. Each entry "
+                "links to its catalogue page. Found via the OSOR list.",
     },
     "SE/digg": {
         "checkpoint": "digg",
