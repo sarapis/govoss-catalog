@@ -13603,7 +13603,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-14",
+  "released": "2026-10-02",
   "repo": "https://github.com/link-it/govpay",
   "repo_key": "github.com/link-it/govpay",
   "repo_owner": "Link.it s.r.l.",
@@ -13618,7 +13618,7 @@
    "MIC - Ministero della Cultura",
    "MISE - Ministero dello Sviluppo Economico"
   ],
-  "version": "3.9.3.p3"
+  "version": "3.9.3.p5"
  },
  {
   "active": true,
@@ -13651,7 +13651,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-15",
+  "released": "2026-09-29",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
   "repo_owner": "Comune di Montesilvano",
@@ -13664,7 +13664,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.5.77"
+  "version": "1.5.78"
  },
  {
   "active": true,
@@ -18459,7 +18459,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-10-02",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18947,7 +18947,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.17.0"
+  "version": "4.18.0-rc.0"
  },
  {
   "active": true,
@@ -28814,43 +28814,51 @@
  {
   "active": true,
   "categories": [
-   "it-security"
+   "it-asset-management",
+   "it-security",
+   "compliance-management",
+   "it-service-management"
   ],
   "contacts": [
+   "TLSA customer support",
    "Salvatore Manfredi",
-   "Matteo Rizzi",
-   "Riccardo Germenia"
+   "Riccardo Germenia",
+   "Emiliano Rizzonelli"
   ],
   "country": "IT",
-  "desc_lang": "it",
-  "desc_src": "Analizza implementazioni TLS per scoprirne le vulnerabilit\u00e0, il grado di\n\nconformit\u00e0 e suggerire le mitigazioni necessarie per correggerne i\n\nproblemi",
+  "desc_en": "Analyze TLS implementations to identify vulnerabilities and assess compliance levels, and recommend the necessary mitigations to resolve the issues",
+  "desc_lang": "en",
+  "desc_src": "Analizza implementazioni TLS per scoprirne le vulnerabilit\u00e0, il grado di conformit\u00e0 e suggerire le mitigazioni necessarie per correggerne i problemi",
   "desc_src_lang": "it",
   "dev_status": "stable",
   "fallback_repo": "https://github.com/stfbk/tlsassistant.git",
   "features": [
-   "analisi di vulnerabilit\u00e0 per webserver Apache e nginx",
-   "analisi di conformit\u00e0 per webserver Apache e nginx",
-   "report contenenti frammenti di codice da copia-incollare per mitigare i\n\nproblemi rilevati"
+   "TLS vulnerability analysis for Apache and Nginx webservers, iOS and Android Apps",
+   "TLS compliance analysis for Apache and Nginx webservers",
+   "Actionable reports containing copy-and-paste code snippets to address the detected issues"
   ],
+  "landing": "https://st.fbk.eu/tools/TLSAssistant/",
   "license": "Apache-2.0",
-  "long_desc": "TLSAssistant \u00e8 un tool di ricerca sviluppato per facilitare il lavoro\n\ndegli amministratori di sistema e sviluppatori iOS/Android alle prese con\n\nimplementazioni TLS.\n\n\n\nIl suo utilizzo permette di analizzare i webserver (in locale o da remoto)\n\ne le app iOS/Android per valutarne lo stato di sicurezza e la totalit\u00e0 delle\n\nvulnerabilit\u00e0 TLS che potrebbero essere sfruttate per mettere in pericolo\n\nla sicurezza delle trasmissioni.\n\n\n\nTLSAssistant \u00e8 anche in grado di verificare il grado di conformit\u00e0 di un\n\nimplementazione rispetto a una serie di cinque linee guida nazionali e\n\nsovranazionali\n\n\n\n\u200b\n\n\n\nIl punto di forza di TLSAssistant \u00e8 la generazione di un report in grado\n\ndi elencare le vulnerabilit\u00e0 presenti, spiegare il loro impatto e guidare\n\npasso passo verso la loro risoluzione.\n\n\n\n\u200b\n\n\n\nLe mitigazioni sono state collezionate estraendo informazioni dalla\n\nletteratura scientifica e dai manuali tecnici forniti da ogni produttore.\n",
+  "long_desc": "TLSAssistant is a research tool developed to assist system administrators and iOS/Android developers working on TLS implementations. It allows users to analyze web servers (locally or remotely) and iOS/Android apps to assess their security status and identify all TLS vulnerabilities that could be exploited to compromise the security of data transmissions.\nTLSAssistant can also verify the degree of compliance of an implementation with a set of national and supranational guidelines.\n\nThe strength of TLSAssistant lies in its ability to generate an actionable report that lists existing misconfigurations, explains their impact, and provides step-by-step guidance on how to resolve them.\n\u200bThe mitigation strategies were compiled by extracting information from scientific literature and technical manuals provided by each vendor.",
   "maintenance": "internal",
   "name": "TLSAssistant",
   "platforms": [
-   "linux"
+   "linux",
+   "windows",
+   "mac"
   ],
-  "released": "2024-12-18",
+  "released": "2026-10-02",
   "repo": "https://github.com/stfbk/tlsassistant",
   "repo_key": "github.com/stfbk/tlsassistant",
-  "short_desc": "Analizza implementazioni TLS per scoprirne le vulnerabilit\u00e0, il grado di\n\nconformit\u00e0 e suggerire le mitigazioni necessarie per correggerne i\n\nproblemi",
+  "short_desc": "Analyze TLS implementations to identify vulnerabilities and assess compliance levels, and recommend the necessary mitigations to resolve the issues",
   "software_type": "standalone/desktop",
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e39901be-aa38-4fa9-a98c-25ff819f3101",
   "used_by": [
-   "Poligrafico e Zecca dello Stato"
+   "Istituto Poligrafico e Zecca dello Stato (IPZS)"
   ],
-  "version": "3.1.0"
+  "version": "3.2"
  },
  {
   "active": true,
@@ -29915,7 +29923,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-02-10",
+  "released": "2026-09-04",
   "repo": "https://github.com/RegioneUmbria-RCB/VBG",
   "repo_key": "github.com/regioneumbria-rcb/vbg",
   "repo_owner": "Regione Umbria",
@@ -30391,7 +30399,7 @@
    "CodiceIPA r_umbria, Regione Umbria _PUNTO ZERO SCARL_ VBG_Ambiente (AUA, AIA)",
    "CodiceIPA arpa_umb, Agenzia Regionale Protezione Ambientale dell'Umbria _PUNTO ZERO SCARL_ VBG_Ambiente (AUA, AIA)"
   ],
-  "version": "2.124"
+  "version": "2.127"
  },
  {
   "active": true,

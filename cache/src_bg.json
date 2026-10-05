@@ -1959,6 +1959,22 @@
  {
   "country": "BG",
   "desc_lang": "bg",
+  "entry_url": "https://github.com/governmentbg/MT-VisitBulgaria",
+  "is_fork": false,
+  "last_activity": "2026-09-30T08:08:50Z",
+  "license": "EUPL-1.2",
+  "name": "MT-VisitBulgaria",
+  "repo": "https://github.com/governmentbg/MT-VisitBulgaria",
+  "repo_key": "github.com/governmentbg/mt-visitbulgaria",
+  "repo_owner": "governmentbg",
+  "short_desc": "\u0422-\u0420\u0414-29-179/23.10.2025\u0433  -  \u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0432\u0430\u043d\u0435 \u043d\u0430 \u0435\u0434\u0438\u043d\u043d\u0430 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430 \u0437\u0430 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u0435\u043d \u0442\u0443\u0440\u0438\u0437\u044a\u043c \u0438 \u0441\u044a\u043f\u044a\u0442\u0441\u0442\u0432\u0430\u0449\u0438\u044f \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u0442\u0443\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u043e\u0440\u0442\u0430\u043b VisitBulgaria.com \u0438 \u0438\u043d\u0442\u0435\u043b\u0438\u0433\u0435\u043d\u0442\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0437\u0430 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u0441\u044a\u0431\u0438\u0442\u0438\u0439\u043d\u0438\u044f \u043a\u0430\u043b\u0435\u043d\u0434\u0430\u0440 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0430\u0442\u0430.",
+  "source": "BG/governmentbg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "country": "BG",
+  "desc_lang": "bg",
   "entry_url": "https://github.com/governmentbg/MVR-Centralized-Electronic-Identification-System",
   "is_fork": false,
   "last_activity": "2025-09-25T06:15:03Z",

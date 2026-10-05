@@ -5,13 +5,14 @@
    "application-development"
   ],
   "contacts": [
+   "Pascal S\u00fcess",
    "Bengt Gade",
    "Samuel Imboden"
   ],
   "country": "CH",
   "desc_en": "Data transfer service for the secure and trustworthy sharing of data within the Swiss agriculture and food sector",
   "desc_lang": "en",
-  "dev_status": "beta",
+  "dev_status": "stable",
   "entry_url": "https://www.opensource.admin.ch/en/softwares/3xfy5y/",
   "fallback_repo": "https://github.com/agridata-ch/backend.git",
   "features": [
@@ -43,13 +44,14 @@
    "application-development"
   ],
   "contacts": [
+   "Pascal S\u00fcess",
    "Bengt Gade",
    "Samuel Imboden"
   ],
   "country": "CH",
   "desc_en": "Data transfer service for the secure and trustworthy sharing of data within the Swiss agriculture and food sector",
   "desc_lang": "en",
-  "dev_status": "beta",
+  "dev_status": "stable",
   "entry_url": "https://www.opensource.admin.ch/en/softwares/f6n4ws/",
   "fallback_repo": "https://github.com/agridata-ch/frontend.git",
   "features": [
@@ -1332,7 +1334,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-archrepo-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-archrepo-service",
   "short_desc": "Service template which provides a centralized system for automatically managing and documenting the application architecture inventory.\n",
@@ -1340,7 +1342,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "be4c7f58-b1cf-40c0-925b-01052a8d3594",
-  "version": "15.6.0"
+  "version": "15.8.0"
  },
  {
   "active": true,
@@ -1369,7 +1371,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-audit.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-audit",
   "short_desc": "A jEAP library with a builder for the audit command and support for sending the command via messaging outbox",
@@ -1377,7 +1379,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "a2bf3b6b-901d-4dce-a0d0-cb6a08599a62",
-  "version": "11.9.0"
+  "version": "11.12.0"
  },
  {
   "active": true,
@@ -1406,7 +1408,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-02",
   "repo": "https://github.com/jeap-admin-ch/jeap-bptest-orchestrator.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-bptest-orchestrator",
   "short_desc": "The jEAP BusinessProcessTest Orchestrator is a component for orchestrating business process tests.",
@@ -1414,7 +1416,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "885cbf30-6c87-4a37-88ed-cd53ea700f3b",
-  "version": "18.7.0"
+  "version": "18.10.0"
  },
  {
   "active": true,
@@ -1441,7 +1443,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-bptestagent-api.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-bptestagent-api",
   "short_desc": "This library provides an interface for implementing a REST interface in a TestAgent towards the jEAP test orchestrator.",
@@ -1449,7 +1451,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "79f20bb2-5c1d-4671-aefb-bf2ce55a83cc",
-  "version": "10.6.0"
+  "version": "10.8.0"
  },
  {
   "active": true,
@@ -1514,7 +1516,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-crypto.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-crypto",
   "short_desc": "jEAP library that provides client-side encryption functionality for data at-rest",
@@ -1522,7 +1524,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "ff270572-e7f5-45c8-8868-150cf4f316f6",
-  "version": "11.11.0"
+  "version": "11.14.0"
  },
  {
   "active": true,
@@ -1550,7 +1552,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-db-schema-publisher.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-db-schema-publisher",
   "short_desc": "Publishes a jEAP application's DB schema to the jEAP Architecture Repository Service at startup.",
@@ -1558,7 +1560,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "f08b2567-0855-4118-8038-aefa06eb0c61",
-  "version": "3.49.0"
+  "version": "3.52.0"
  },
  {
   "active": true,
@@ -1587,7 +1589,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-deploymentlog-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-deploymentlog-service",
   "short_desc": "Service template to trace the deployments of microservice on stages.",
@@ -1595,7 +1597,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "43cd9db7-42f3-4e93-a324-4710fc2f3334",
-  "version": "16.6.0"
+  "version": "16.12.0"
  },
  {
   "active": true,
@@ -1662,7 +1664,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-02",
   "repo": "https://github.com/jeap-admin-ch/jeap-error-handling.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-error-handling",
   "short_desc": "Service template to support error handling patterns for errors, i.e. retry for temporary issues, persistence and retry/handling for permanent errors.",
@@ -1670,7 +1672,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "5635389a-c4b4-4e67-a44a-f256cef56a36",
-  "version": "25.0.0"
+  "version": "25.3.0"
  },
  {
   "active": true,
@@ -1741,7 +1743,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-governance-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-governance-service",
   "short_desc": "Service template to provide a quick overview of system and service compliance with defined policies.",
@@ -1749,7 +1751,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "c79a8e56-1293-4529-bfe6-5bde0538b674",
-  "version": "9.5.0"
+  "version": "9.7.0"
  },
  {
   "active": true,
@@ -1778,7 +1780,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-initializer.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-initializer",
   "short_desc": "A library for generating a ready-to-use project skeleton from self-contained Git-hosted templates.",
@@ -1786,7 +1788,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "510091b2-52ca-45fc-9578-dd4519062063",
-  "version": "10.6.0"
+  "version": "10.8.0"
  },
  {
   "active": true,
@@ -1813,7 +1815,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-internal-spring-boot-parent",
   "short_desc": "Dependency management for Spring Boot libraries and applications, used by all jEAP projects.",
@@ -1821,7 +1823,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "384d5aec-e5dd-43da-a631-1bfc9149158e",
-  "version": "11.1.0"
+  "version": "11.1.3"
  },
  {
   "active": true,
@@ -1889,7 +1891,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-17",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-license-template.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-license-template",
   "short_desc": "Third-party license list file template for the Maven License Plugin",
@@ -1925,7 +1927,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-mcp-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-mcp-service",
   "short_desc": "A Spring Boot/jEAP service that exposes an MCP server for agentic development of jEAP applications",
@@ -1933,7 +1935,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "821e8093-cf29-4baf-936c-01ac1371d9d4",
-  "version": "2.6.0"
+  "version": "2.8.0"
  },
  {
   "active": true,
@@ -1962,7 +1964,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-message-contract-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-message-contract-service",
   "short_desc": "Service template to manage messaging contracts used in compatibility checks upon deployment of a service, similar to consumer-driven contract testing.",
@@ -1970,7 +1972,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "fd78ac63-de48-4cf9-91ad-52df4fa24c6c",
-  "version": "12.7.0"
+  "version": "12.8.0"
  },
  {
   "active": true,
@@ -2001,7 +2003,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-02",
   "repo": "https://github.com/jeap-admin-ch/jeap-message-exchange-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-message-exchange-service",
   "short_desc": "Service template for exchanging incoming and outgoing messages with external parties, using an HTTP-based messagebox API.",
@@ -2009,7 +2011,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "8cec32f2-13c3-4a74-819e-b2cc152d97ff",
-  "version": "16.5.0"
+  "version": "16.7.0"
  },
  {
   "active": true,
@@ -2078,7 +2080,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-messaging.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-messaging",
   "short_desc": "jEAP Messaging is a library to handle messaging using kafka with well-defined message types.",
@@ -2086,7 +2088,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "7e55c2e7-a2d3-4669-a2e4-017930a01562",
-  "version": "19.9.0"
+  "version": "19.12.0"
  },
  {
   "active": true,
@@ -2114,7 +2116,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-messaging-outbox.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-messaging-outbox",
   "short_desc": "This library is an implementation of the [Transactional outbox pattern](https://microservices.io/patterns/data/transactional-outbox.html)",
@@ -2122,7 +2124,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "6004ca72-f1b4-4f47-8d71-86b997bbbba8",
-  "version": "18.10.0"
+  "version": "18.13.0"
  },
  {
   "active": true,
@@ -2150,7 +2152,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-messaging-sequential-inbox.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-messaging-sequential-inbox",
   "short_desc": "This library lets microservices control message processing order, even when it differs from the order messages are received.",
@@ -2158,7 +2160,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "fd430597-37b8-4bfd-9b02-9fee6abaed48",
-  "version": "22.4.0"
+  "version": "22.7.0"
  },
  {
   "active": true,
@@ -2185,7 +2187,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-oauth-mock-server.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-oauth-mock-server",
   "short_desc": "Service which provides a configurable OAuth2/OpenID-Connect server for local development and testing.",
@@ -2193,7 +2195,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "bb115fcd-5cce-4a18-829c-34191c514719",
-  "version": "11.5.0"
+  "version": "11.7.0"
  },
  {
   "active": true,
@@ -2221,7 +2223,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-open-api-publisher-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-open-api-publisher-starter",
   "short_desc": "Publishes a jEAP application's OpenAPI specification to the jEAP Architecture Repository Service at startup.",
@@ -2229,7 +2231,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "f4fd92c8-36bc-451d-9a21-92799d4f26dd",
-  "version": "8.11.0"
+  "version": "8.14.0"
  },
  {
   "active": true,
@@ -2259,7 +2261,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-client-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-client-starter",
   "short_desc": "Spring Boot starter for type-safe, authorization-aware OpenSearch read access in jEAP applications",
@@ -2267,7 +2269,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "e2c4785c-f884-4055-96d6-f04e57194276",
-  "version": "3.12.0"
+  "version": "3.15.0"
  },
  {
   "active": true,
@@ -2297,7 +2299,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-index-type.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-index-type",
   "short_desc": "Core domain model defining IndexType and SearchItem contracts for jEAP OpenSearch infrastructure",
@@ -2305,7 +2307,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "6d96145f-183c-4b18-bfb3-bb3bc7212830",
-  "version": "1.46.0"
+  "version": "1.49.0"
  },
  {
   "active": true,
@@ -2335,7 +2337,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-index-type-registry-maven-plugin.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-index-type-registry-maven-plugin",
   "short_desc": "Maven plugin for managing an OpenSearch index type registry with validation and code generation",
@@ -2343,7 +2345,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "e2d5904c-c349-46ae-84b8-0b593540e7ff",
-  "version": "3.27.0"
+  "version": "3.30.0"
  },
  {
   "active": true,
@@ -2377,7 +2379,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-index-writer-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-index-writer-service",
   "short_desc": "Service template to provide event-driven indexing of search items into OpenSearch based on a declarative message and operation configuration.",
@@ -2385,7 +2387,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "90b0d047-18a3-433c-971c-4d8f49a11e05",
-  "version": "6.6.0"
+  "version": "6.8.0"
  },
  {
   "active": true,
@@ -2415,7 +2417,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-opensearch-searchitem-api.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-opensearch-searchitem-api",
   "short_desc": "Spring MVC REST API and model for exposing indexed search items from OpenSearch in jEAP applications",
@@ -2423,7 +2425,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "d905c2ba-f6d8-47b5-99f0-75e84e35d875",
-  "version": "3.12.0"
+  "version": "3.15.0"
  },
  {
   "active": true,
@@ -2452,7 +2454,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-process-archive-reader.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-process-archive-reader",
   "short_desc": "A library for retrieving and deserializing objects from a jEAP process archive bucket on S3",
@@ -2460,7 +2462,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "1037b8bf-52e1-442b-a92b-34d996f5567c",
-  "version": "9.6.0"
+  "version": "9.8.0"
  },
  {
   "active": true,
@@ -2488,7 +2490,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-02",
   "repo": "https://github.com/jeap-admin-ch/jeap-process-archive-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-process-archive-service",
   "short_desc": "Service template to archive process artifacts for audit or business needs.",
@@ -2496,7 +2498,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "6984f28e-cd7b-4b42-8dc9-1f1441bdded0",
-  "version": "24.6.0"
+  "version": "24.9.0"
  },
  {
   "active": true,
@@ -2526,7 +2528,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-24",
+  "released": "2026-10-02",
   "repo": "https://github.com/jeap-admin-ch/jeap-process-context-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-process-context-service",
   "short_desc": "Service template library for observing distributed business processes in event-driven architectures without central orchestration.",
@@ -2534,7 +2536,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "19746dd8-a90b-4d18-bcda-c17e10aaf0e2",
-  "version": "28.4.0"
+  "version": "28.8.0"
  },
  {
   "active": true,
@@ -2675,7 +2677,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-reaction-observer.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-reaction-observer",
   "short_desc": "A jEAP library for tracking how microservices react to messages, enabling automated runtime behaviour analysis and documentation",
@@ -2683,7 +2685,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "45fdebd7-609c-42d6-b64f-1fad9c8f107f",
-  "version": "11.9.0"
+  "version": "11.12.0"
  },
  {
   "active": true,
@@ -2713,7 +2715,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-02",
   "repo": "https://github.com/jeap-admin-ch/jeap-reaction-observer-service.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-reaction-observer-service",
   "short_desc": "The jEAP Reaction Observation Service records and aggregates triggers, actions, and reactions from events and makes the data available via a REST API.",
@@ -2721,7 +2723,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "7a8b8adc-7820-4d51-bd68-7fae8e4d2990",
-  "version": "12.6.0"
+  "version": "12.8.0"
  },
  {
   "active": true,
@@ -2791,7 +2793,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-rewrite-recipes.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-rewrite-recipes",
   "short_desc": "openrewrite.org recipes for migrating apps based on the jEAP Blueprint Microservices",
@@ -2799,7 +2801,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "c598e495-1fc5-4a17-b5d1-b3cee137ad0b",
-  "version": "4.1.0"
+  "version": "4.1.2"
  },
  {
   "active": true,
@@ -2830,7 +2832,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-server-sent-events.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-server-sent-events",
   "short_desc": "This library provides a way to send real-time events from the server to the client using Server-Sent Events (SSE).",
@@ -2838,7 +2840,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "5ac7aa15-6ff9-4cbf-8013-31adb13c806e",
-  "version": "13.9.0"
+  "version": "13.12.0"
  },
  {
   "active": true,
@@ -2866,7 +2868,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-config-aws-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-config-aws-starter",
   "short_desc": "jEAP Spring Boot Config AWS Starter integrates Spring Boot applications with AWS AppConfig and AWS Secrets Manager.",
@@ -2874,7 +2876,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "c58f78dd-dff4-45b8-8c55-76036c3eb6dd",
-  "version": "19.50.0"
+  "version": "19.53.0"
  },
  {
   "active": true,
@@ -2901,7 +2903,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-db-migration-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-db-migration-starter",
   "short_desc": "jEAP Spring Boot DB Migration Starter is a Spring Boot starter for running DB migrations as separate jobs (i.e. on Kubernetes/OpenShift).",
@@ -2909,7 +2911,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "5c83a8e7-030c-4d51-a97e-cfc39495cd7f",
-  "version": "19.48.0"
+  "version": "19.51.0"
  },
  {
   "active": true,
@@ -2940,7 +2942,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-jwe-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-jwe-starter",
   "short_desc": "A Spring Boot starter for transparent JWE-based end-to-end encryption in jEAP services.",
@@ -2948,7 +2950,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "3d1294ce-44d3-4ce4-a3a3-254131731710",
-  "version": "1.43.0"
+  "version": "1.46.0"
  },
  {
   "active": true,
@@ -2977,7 +2979,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-parent.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-parent",
   "short_desc": "A parent project for jEAP, based on Spring Boot and Spring Cloud",
@@ -2985,7 +2987,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "944f1817-7750-42e0-9a91-3316b9335c94",
-  "version": "41.11.0"
+  "version": "41.14.0"
  },
  {
   "active": true,
@@ -3013,7 +3015,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-roles-anywhere-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-roles-anywhere-starter",
   "short_desc": "This library provides seamless integration with AWS IAM Roles Anywhere in Spring Boot.",
@@ -3021,7 +3023,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "ce28bf4d-fe46-44c1-9577-f2006eb4612a",
-  "version": "3.50.0"
+  "version": "3.53.0"
  },
  {
   "active": true,
@@ -3055,7 +3057,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-starters.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-starters",
   "short_desc": "Spring Boot starters that pre-configure and standardise logging, monitoring, security and other cross-cutting concerns for jEAP-based apps",
@@ -3063,7 +3065,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "4d0b1044-b7bb-46d6-93c1-3c54de268d65",
-  "version": "25.11.0"
+  "version": "25.14.0"
  },
  {
   "active": true,
@@ -3091,7 +3093,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-boot-tls-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-boot-tls-starter",
   "short_desc": "This library enables TLS on the Spring Boot web server and optionally generates a certificate at startup.",
@@ -3099,7 +3101,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "4711e6aa-83a8-4393-914a-d983002606c9",
-  "version": "19.48.0"
+  "version": "19.51.0"
  },
  {
   "active": true,
@@ -3128,7 +3130,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-spring-modulith-error-handling-starter.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-spring-modulith-error-handling-starter",
   "short_desc": "A Spring Boot starter for handling failed Spring Modulith event publications.",
@@ -3136,7 +3138,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "c174e464-852c-405c-8825-8c9db0a03e77",
-  "version": "1.15.0"
+  "version": "1.18.0"
  },
  {
   "active": true,
@@ -3198,7 +3200,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-26",
+  "released": "2026-10-01",
   "repo": "https://github.com/jeap-admin-ch/jeap-truststore-maven-plugin.git",
   "repo_key": "github.com/jeap-admin-ch/jeap-truststore-maven-plugin",
   "short_desc": "Maven plugin to assemble truststores from X509 certificates stored in a Git repository",
@@ -3206,7 +3208,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "f1f190a7-6505-4d3d-80c9-d453dc875d02",
-  "version": "3.48.0"
+  "version": "3.51.0"
  },
  {
   "active": true,
@@ -3273,7 +3275,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-archrepo-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-archrepo-example",
   "short_desc": "Example project demonstrating how to deploy the jEAP Architecture Repository.",
@@ -3281,7 +3283,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "ada76c52-871a-4c23-85e3-6e557641b0d3",
-  "version": "15.1.0"
+  "version": "15.4.1"
  },
  {
   "active": true,
@@ -3311,7 +3313,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-bptest-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-bptest-example",
   "short_desc": "Example project demonstrating how to run jEAP business process tests with the jEAP Business Process Test Orchestrator.",
@@ -3319,7 +3321,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "a3d5fa0a-8b5a-46b6-bde1-4689dbe34c78",
-  "version": "16.2.0"
+  "version": "16.6.0"
  },
  {
   "active": true,
@@ -3349,7 +3351,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-25",
+  "released": "2026-10-02",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-consumer-2-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-consumer-2-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a consumer using the Pact Java legacy DSL.",
@@ -3357,7 +3359,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "353c5746-0567-4797-8c9c-8c4f77a5feee",
-  "version": "11.7.0"
+  "version": "11.10.0"
  },
  {
   "active": true,
@@ -3386,7 +3388,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-consumer-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-consumer-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a consumer.",
@@ -3394,7 +3396,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "be60ec05-2388-4f08-b108-fa9ad7bbef17",
-  "version": "14.2.0"
+  "version": "14.5.1"
  },
  {
   "active": true,
@@ -3424,7 +3426,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-provider-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-provider-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a provider.",
@@ -3432,7 +3434,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "0e5c8270-2129-49f5-9f76-16cf8a342e9b",
-  "version": "17.2.0"
+  "version": "17.5.1"
  },
  {
   "active": true,
@@ -3461,7 +3463,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-segregated-consumer-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-segregated-consumer-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pacts in a consumer (two API of same provider).",
@@ -3469,7 +3471,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "d96ffd87-30a6-4b86-962b-580470dffe27",
-  "version": "14.2.0"
+  "version": "14.5.1"
  },
  {
   "active": true,
@@ -3499,7 +3501,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-cdct-segregated-provider-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-cdct-segregated-provider-example",
   "short_desc": "jEAP microservice example demonstrating consumer-driven contract testing with Pact in a provider with segregated APIs.",
@@ -3507,7 +3509,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "1568970a-31ec-4e9c-bdbd-7428433f6b13",
-  "version": "17.2.0"
+  "version": "17.5.1"
  },
  {
   "active": true,
@@ -3534,7 +3536,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-crypto-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-crypto-example",
   "short_desc": "Example project demonstrating how to use the jEAP Crypto Library.",
@@ -3542,7 +3544,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "98175cf0-2980-4de4-ae30-775f64c63c99",
-  "version": "9.2.0"
+  "version": "9.5.1"
  },
  {
   "active": true,
@@ -3569,7 +3571,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-deploymentlog-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-deploymentlog-example",
   "short_desc": "Example project demonstrating how to use the jEAP DeploymentLog Service.",
@@ -3577,7 +3579,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "e6a15848-8541-442b-b279-839e448e5812",
-  "version": "13.1.0"
+  "version": "13.3.1"
  },
  {
   "active": true,
@@ -3645,7 +3647,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-27",
+  "released": "2026-10-02",
   "repo": "https://github.com/jme-admin-ch/jme-integration-test.git",
   "repo_key": "github.com/jme-admin-ch/jme-integration-test",
   "short_desc": "jEAP microservice example integration test support library, providing a re-usable test harness for JME examples",
@@ -3653,7 +3655,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "b0a78a3d-5f29-4846-9fc3-8808b27a4c66",
-  "version": "8.1.0"
+  "version": "8.1.3"
  },
  {
   "active": true,
@@ -3683,7 +3685,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-09-29",
   "repo": "https://github.com/jme-admin-ch/jme-jwe-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-jwe-example",
   "short_desc": "Example project demonstrating transparent JWE end-to-end encryption with the jEAP JWE starter and client.",
@@ -3691,7 +3693,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "c47a8f4c-c761-4ce7-b3eb-1d715efcb2ba",
-  "version": "13.2.0"
+  "version": "13.3.0"
  },
  {
   "active": true,
@@ -3721,7 +3723,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-message-contract-service.git",
   "repo_key": "github.com/jme-admin-ch/jme-message-contract-service",
   "short_desc": "Backend service for managing JME message contracts and deployment compatibility checks.",
@@ -3729,7 +3731,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "0d4b58f4-450f-4e17-a893-f9964455b41a",
-  "version": "8.1.0"
+  "version": "8.2.1"
  },
  {
   "active": true,
@@ -3758,7 +3760,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-message-exchange-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-message-exchange-example",
   "short_desc": "Example project demonstrating the usage of the jEAP Message Exchange Service.",
@@ -3766,7 +3768,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "e3afa77c-bf59-4ea9-b813-03b207af91af",
-  "version": "13.2.0"
+  "version": "13.6.0"
  },
  {
   "active": true,
@@ -3830,7 +3832,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-messaging-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-messaging-example",
   "short_desc": "Example project demonstrating how to use the jEAP Messaging Library with Kafka.",
@@ -3838,7 +3840,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "34e1f599-f804-4e85-b0bb-9182cbb4b29c",
-  "version": "14.0.0"
+  "version": "14.4.0"
  },
  {
   "active": true,
@@ -3868,7 +3870,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-monitor-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-monitor-example",
   "short_desc": "Example project demonstrating logging, distributed tracing and Prometheus metrics for jEAP microservices.",
@@ -3876,7 +3878,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "67defc1e-49da-48c3-9679-a690297d932e",
-  "version": "9.2.0"
+  "version": "9.5.1"
  },
  {
   "active": true,
@@ -3903,7 +3905,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-object-storage-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-object-storage-example",
   "short_desc": "Example project demonstrating the usage of the jEAP Object Storage Starter.",
@@ -3911,7 +3913,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "953ffad2-254f-41f4-ad75-97aa3c6c7440",
-  "version": "8.2.0"
+  "version": "8.5.1"
  },
  {
   "active": true,
@@ -3941,7 +3943,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-16",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-opensearch-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-opensearch-example",
   "short_desc": "Example of event-driven indexing and authorization-aware OpenSearch queries with jEAP.",
@@ -3949,7 +3951,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "e7b85b7b-1be7-439a-bb30-5a104dcd35b7",
-  "version": "1.1.2"
+  "version": "2.1.1"
  },
  {
   "active": true,
@@ -3979,7 +3981,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-02",
   "repo": "https://github.com/jme-admin-ch/jme-process-archive-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-process-archive-example",
   "short_desc": "Example project demonstrating the jEAP Process Archive Service (PAS).",
@@ -3987,7 +3989,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "60f41c8b-8a9a-4064-9576-8765aed17302",
-  "version": "4.2.0"
+  "version": "4.5.0"
  },
  {
   "active": true,
@@ -4016,7 +4018,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-process-context-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-process-context-example",
   "short_desc": "Example project demonstrating how to use the jEAP Process Context Service.",
@@ -4024,7 +4026,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "18e51c61-5a1d-45ba-8fb4-6ecaa6f77f78",
-  "version": "23.2.0"
+  "version": "23.7.0"
  },
  {
   "active": true,
@@ -4052,7 +4054,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-25",
+  "released": "2026-09-29",
   "repo": "https://github.com/jme-admin-ch/jme-reaction-observer-service.git",
   "repo_key": "github.com/jme-admin-ch/jme-reaction-observer-service",
   "short_desc": "Example project demonstrating how to instantiate the jEAP Reaction Observer Service.",
@@ -4060,7 +4062,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "cfd4fd83-94cd-4be3-adf7-a2c8dabb0f3d",
-  "version": "13.1.0"
+  "version": "13.3.0"
  },
  {
   "active": true,
@@ -4090,7 +4092,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-09-29",
   "repo": "https://github.com/jme-admin-ch/jme-security-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-security-example",
   "short_desc": "Example applications demonstrating OAuth2 security with jEAP.",
@@ -4098,7 +4100,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "0acf6fb3-0af2-426a-8899-180aefc94e66",
-  "version": "12.2.0"
+  "version": "12.3.0"
  },
  {
   "active": true,
@@ -4127,7 +4129,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-security-oauth2-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-security-oauth2-example",
   "short_desc": "Example services demonstrating OAuth2 clients, resources, roles and custom authorities with JME.",
@@ -4135,7 +4137,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "7dedc23a-a0c4-4cc1-a0da-c3a8cc0a56b5",
-  "version": "9.2.0"
+  "version": "9.5.1"
  },
  {
   "active": true,
@@ -4205,7 +4207,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-10",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-spring-modulith-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-spring-modulith-example",
   "short_desc": "Example project demonstrating how to build a Spring Modulith application on the jEAP platform.",
@@ -4213,7 +4215,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "40eca5e5-96ee-4634-8e00-09bc9316efef",
-  "version": "1.1.1"
+  "version": "2.2.0"
  },
  {
   "active": true,
@@ -4243,7 +4245,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-28",
+  "released": "2026-10-03",
   "repo": "https://github.com/jme-admin-ch/jme-swagger-example.git",
   "repo_key": "github.com/jme-admin-ch/jme-swagger-example",
   "short_desc": "Example project demonstrating how to document the REST APIs of a jEAP microservice with the jEAP Swagger starter.",
@@ -4251,7 +4253,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "077991a6-b8fc-48c1-ad0d-34d6dee633cd",
-  "version": "9.2.0"
+  "version": "9.5.1"
  },
  {
   "active": true,
@@ -4851,6 +4853,42 @@
  },
  {
   "active": true,
+  "contacts": [
+   "Olivier Dalang"
+  ],
+  "country": "CH",
+  "desc_en": "This plugin for QGIS makes it easier to use the services provided by the Canton of Geneva\u2019s Geographic Information System (SITG).",
+  "desc_lang": "en",
+  "desc_src": "Ce plugin pour QGIS permet de faciliter l'utilisation des services du Syst\u00e8me d'Informations du Territoire du Canton de Gen\u00e8ve (SITG).",
+  "desc_src_lang": "fr",
+  "dev_status": "stable",
+  "entry_url": "https://www.opensource.admin.ch/en/softwares/g7ywss/",
+  "fallback_repo": "https://github.com/republique-et-canton-de-geneve/sitg-qgis-plugin.git",
+  "features": [
+   "Pre-configuration of official SITG basemaps as vector tiles",
+   "Pre-configuration of the vector.sitg.ge.ch, raster.sitg.ge.ch, and thematic.sitg.ge.ch geoservices",
+   "Support for authenticated access to geoservices using a GINA/e-Demarches account",
+   "Shortcuts to the SITG data portal and the SITG guide for using QGIS"
+  ],
+  "license": "AGPL-3.0-only",
+  "long_desc": "This plugin makes it easier to use the services provided by the Canton of Geneva\u2019s Geographic Information System (SITG) in QGIS.\n\nFeatures\n\n- Pre-configuration of official SITG basemaps as vector tiles\n- Pre-configuration of the vector.sitg.ge.ch, raster.sitg.ge.ch, and thematic.sitg.ge.ch geoservices\n- Support for authenticated access to geoservices using a GINA/e-Demarches account\n- Shortcuts to the SITG data portal and the SITG guide for using QGIS\n\nImportant\n\nThe use of SITG data is subject to conditions. The access level for each dataset is described on the SITG portal.\n\nWarning\n\nSITG services are based on proprietary solutions that are not yet fully compatible with QGIS and the open-source geospatial ecosystem.\n\nVarious performance and reliability issues are known, and using QGIS as a client to consume SITG geoservices should be considered experimental. The State of Geneva is actively contributing to improving QGIS compatibility and keeps users informed through its newsletter.\n\nFor critical work, we recommend using the downloadable datasets available through the SITG portal instead.",
+  "maintenance": "internal",
+  "name": "Plugin QGIS SITG",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "repo": "https://github.com/republique-et-canton-de-geneve/sitg-qgis-plugin",
+  "repo_key": "github.com/republique-et-canton-de-geneve/sitg-qgis-plugin",
+  "short_desc": "This plugin for QGIS makes it easier to use the services provided by the Canton of Geneva\u2019s Geographic Information System (SITG).",
+  "software_type": "addon",
+  "source": "CH/swiss",
+  "tier": "publiccode",
+  "upstream_id": "57bbbf3a-d02c-4816-9f2d-b4b0bf84fa88"
+ },
+ {
+  "active": true,
   "categories": [
    "application-development"
   ],
@@ -5051,7 +5089,7 @@
   "country": "CH",
   "desc_en": "Use LLMs to simplify your institutional communication. Get rid of \u00abBeh\u00f6rdendeutsch\u00bb.",
   "desc_lang": "en",
-  "dev_status": "stable",
+  "dev_status": "development",
   "entry_url": "https://www.opensource.admin.ch/en/softwares/uopfen/",
   "fallback_repo": "https://github.com/machinelearningZH/simply-simplify-language.git",
   "features": [
@@ -5061,7 +5099,7 @@
    "Schweizer Hochdeutsch"
   ],
   "license": "MIT",
-  "long_desc": "Simply Simplify Language helps public institutions rewrite complex official communication into clear, accessible language \u2014 commonly known in German as \u00abEinfache Sprache\u00bb or \u00abLeichte Sprache\u00bb \u2014 using large language models. Beyond rewriting text, it acts as a writing coach, giving staff detailed, sentence-by-sentence feedback, and scores how understandable a text is using the ZIX understandability index, an open-source metric also developed and published by the Canton of Zurich. Its One-Click feature sends a text to multiple configured language models at once and returns several draft versions as a ready-to-use Word document, letting staff quickly compare and pick the best result. The tool is built on OpenRouter, a unified API for accessing commercial models from providers such as OpenAI, Anthropic, Google, and Mistral AI, which keeps usage costs low and gives full control over which models are used. This reliance on external commercial providers is an important consideration: using the app sends the submitted text to OpenRouter and its partner model providers, so it must not be used with sensitive or confidential data.",
+  "long_desc": "Simply Simplify Language helps public institutions rewrite complex official communication into clear, accessible language \u2014 commonly known in German as \u00abEinfache Sprache\u00bb or \u00abLeichte Sprache\u00bb \u2014 using large language models. Beyond rewriting text, it acts as a writing coach, giving staff detailed, sentence-by-sentence feedback, and scores how understandable a text is using the ZIX understandability index, an open-source metric also developed and published by the Canton of Zurich. Its One-Click feature sends a text to multiple configured language models at once and returns several draft versions in a downloadable Word document for staff to compare, review, and edit. The tool is built on OpenRouter, a unified API for accessing commercial models from providers such as OpenAI, Anthropic, Google, and Mistral AI, which allows operators to configure the models used. This reliance on external commercial providers is an important consideration: using the app sends the submitted text to OpenRouter and its partner model providers, so it must not be used with sensitive or confidential data.",
   "maintenance": "internal",
   "name": "Sprache vereinfachen",
   "platforms": [
@@ -5070,7 +5108,6 @@
    "mac",
    "linux"
   ],
-  "released": "2025-07-14",
   "repo": "https://github.com/machinelearningZH/simply-simplify-language",
   "repo_key": "github.com/machinelearningzh/simply-simplify-language",
   "short_desc": "Use LLMs to simplify your institutional communication. Get rid of \u00abBeh\u00f6rdendeutsch\u00bb.",
