@@ -196,6 +196,55 @@ def main():
     finally:
         h.get, h.CACHE = real_get, real_cache
 
+    # ---- gitlab_scan(): a FAILED file fetch is not "no publiccode.yml"
+    # (2026-10-07: ~110 failed fetches on openCode were read as "none" and an
+    # 86-short list was published). 404/401/403 mean none; anything else counts,
+    # and a failure AND a shrink against the checkpoint refuses the result.
+    PCY = b"publiccodeYmlVersion: 0.4\nname: P%d\nurl: https://example.org/p%d\n"
+    def gl_get(mode):
+        def fake(url, **kw):
+            if url.endswith("&page=1") or "page=1&" in url:
+                return [{"id": i, "default_branch": "main", "web_url": "https://g/p%d" % i,
+                         "http_url_to_repo": "https://g/p%d.git" % i,
+                         "path_with_namespace": "g/p%d" % i} for i in range(4)]
+            if "/projects?" in url:
+                return []
+            pid = int(url.split("/projects/")[1].split("/")[0])
+            code = mode.get(pid)
+            if code == "ok":
+                return PCY % (pid, pid)
+            if isinstance(code, int):
+                raise urllib.error.HTTPError(url, code, "x", {}, io.BytesIO(b""))
+            raise TimeoutError("slow")
+        return fake
+    tmp = tempfile.mkdtemp()
+    real_get, real_cache = h.get, h.CACHE
+    h.CACHE = tmp
+    try:
+        def scan(mode, prev=None):
+            ck = os.path.join(tmp, "src_gl.json")
+            if prev is not None:
+                json.dump([{}] * prev, open(ck, "w"))
+            elif os.path.exists(ck):
+                os.remove(ck)
+            h.get = gl_get(mode)
+            try:
+                return len(h.gitlab_scan("https://g", "X/g", "XX", key="gl")[0])
+            except RuntimeError as ex:
+                return "refused"
+        check("404/403 mean 'no publiccode.yml', never a failure",
+              scan({0: "ok", 1: 404, 2: 403, 3: "ok"}, prev=4), 2)
+        check("a 429 that shrinks the list is refused",
+              scan({0: "ok", 1: 429, 2: "ok", 3: "ok"}, prev=4), "refused")
+        check("a timeout that shrinks the list is refused",
+              scan({0: "ok", 1: "slow", 2: "ok", 3: "ok"}, prev=4), "refused")
+        check("a failure with nothing lost is kept",
+              scan({0: "ok", 1: 500, 2: "ok", 3: "ok"}, prev=3), 3)
+        check("a failure with no checkpoint to protect is kept",
+              scan({0: "ok", 1: 500, 2: "ok", 3: "ok"}), 3)
+    finally:
+        h.get, h.CACHE = real_get, real_cache
+
     for f in failed:
         print(f"FAIL  {f}")
     n = len(ran)

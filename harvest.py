@@ -21,7 +21,7 @@ Env:
     NL_API_KEY     x-api-key for the Dutch OSS register (see SOURCES['nl'])
     GITHUB_TOKEN   optional, raises the GitHub API rate limit
 """
-import json, os, re, ssl, sys, time, urllib.error, urllib.parse, urllib.request
+import collections, json, os, re, ssl, sys, time, urllib.error, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 import certifi, yaml
@@ -403,11 +403,18 @@ def parse_pc(blob):
 
 
 # ------------------------------------------------- generic forge adapters
-def gitlab_scan(base, source, country, cap_pages=60, workers=12):
+def gitlab_scan(base, source, country, cap_pages=60, workers=12, key=None):
     """Any GitLab instance: list public projects, pull publiccode.yml from each.
 
     This is exactly how openCode.de builds its own directory, so it reproduces
     the official listing rather than approximating it.
+
+    A FAILED file fetch is not "no publiccode.yml" (2026-10-07: openCode listed
+    3,598 projects as usual, but ~110 file fetches failed, the catch-all read
+    each failure as "none", and a list 86 entries short was checkpointed and
+    published). Now only 401/403/404 mean "none"; anything else is counted, and
+    `_refuse_short_scan()` refuses the result if it also shrank against the
+    checkpoint `key`, so the last good list is reused instead.
     """
     api = f"{base}/api/v4"
     projs, page = [], 1
@@ -426,7 +433,12 @@ def gitlab_scan(base, source, country, cap_pages=60, workers=12):
         try:
             pc = parse_pc(get(f"{api}/projects/{p['id']}/repository/files/publiccode.yml/raw?ref={ref}",
                               timeout=30, raw=True, tries=2))
-        except Exception:
+        except urllib.error.HTTPError as e:
+            if e.code not in (401, 403, 404):
+                failed.append(e.code)
+            return None
+        except Exception as e:
+            failed.append(type(e).__name__)
             return None
         if not pc:
             return None
@@ -442,8 +454,16 @@ def gitlab_scan(base, source, country, cap_pages=60, workers=12):
                                entry_url=entry,
                                last_activity=p.get("last_activity_at"))
 
+    failed = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
         out = [r for r in ex.map(one, projs) if r]
+    if failed:
+        kinds = collections.Counter(str(f) for f in failed).most_common(4)
+        what = "%d publiccode.yml fetch(es) failed (%s)" % (
+            len(failed), ", ".join("%s x%d" % k for k in kinds))
+        print("    " + what)
+        if key:
+            _refuse_short_scan(key, base, out, [what], base + " (retry the run later)")
     return out, len(projs)
 
 
@@ -613,12 +633,12 @@ def it():
 
 
 def de():
-    out, _ = gitlab_scan("https://gitlab.opencode.de", "DE/openCode", "DE")
+    out, _ = gitlab_scan("https://gitlab.opencode.de", "DE/openCode", "DE", key="de")
     return out
 
 
 def eu():
-    out, _ = gitlab_scan("https://code.europa.eu", "EU/code.europa.eu", "EU")
+    out, _ = gitlab_scan("https://code.europa.eu", "EU/code.europa.eu", "EU", key="eu")
     return out
 
 

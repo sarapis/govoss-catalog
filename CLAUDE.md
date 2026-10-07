@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 12 suites, 647 checks, all manual
+for t in test_*.py; do python3 $t; done     # 12 suites, 652 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -56,7 +56,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
 - **Harvest exits 0 on a failed source, deliberately**; the failed source reuses its
   checkpoint. Visibility is `cache/_fetched.json` (advances ONLY on success) and its age on
   `/sources.html`. `--from-cache` must never write `_fetched.json` or `_timing.json`.
-- **The multi-org adapter (`os2`) uses `_refuse_short_scan()`**: raise when sub-sources
+- **`os2` and the GitLab scans (`de`, `eu`) use `_refuse_short_scan()`**: raise when sub-sources
+  or file fetches
   failed AND the result shrank, so a partial scan never overwrites a good checkpoint.
 - `github_org_scan` authenticates via `liveness.gh_token()`; `GITHUB_TOKEN` is not in the plist.
 
@@ -245,7 +246,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Twelve suites, 647 checks, **all manual** - a test that can fail the weekly publish is one someone
+Twelve suites, 652 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
