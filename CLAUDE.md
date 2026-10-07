@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 13 suites, 834 checks, all manual
+for t in test_*.py; do python3 $t; done     # 13 suites, 838 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -184,7 +184,7 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
 ## The pages
 
 - Six pages x two languages (since 2026-10-07): `/` home (`HOME_BODY` + home-only
-  `HOME_CSS`: search, four section cards, a card per catalogue, Recently added open source
+  `HOME_CSS`: search, four section cards, the catalogues as a scrolling strip, Recently added open source
   software, For builders, Get involved - NO entry DATA; its search is a GET form to `/software`;
   each card figure equals what its page publishes, pinned cross-page), `/software` (the catalog,
   `BODY`, with the six stats), both from `build_ui.py` + `_ui_template.py`; `/catalogs` (`build_sources.py`, was
@@ -264,7 +264,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Thirteen suites, 834 checks, **all manual** - a test that can fail the weekly publish is one someone
+Thirteen suites, 838 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it

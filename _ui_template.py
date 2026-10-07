@@ -342,19 +342,19 @@ PAGE_CSS = """
 
 # ---------------------------------------------------------------- icons
 ICONS = {
-    "code": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+    "code": '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
             'stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6">'
             '</polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
-    "alert": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+    "alert": '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
              'stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 '
              '1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>'
              '<line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17">'
              '</line></svg>',
-    "seal": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 2.1 3.3-.3.9 3.2 '
+    "seal": '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 2.1 3.3-.3.9 3.2 '
             '2.8 1.8-1.4 3 1.4 3-2.8 1.8-.9 3.2-3.3-.3L12 22.5l-2.6-2.1-3.3.3-.9-3.2L2.4 15.7l'
             '1.4-3-1.4-3 2.8-1.8.9-3.2 3.3.3z" opacity=".95"/><path d="M10.6 15.4L7.8 12.6l1.2-1.2 '
             '1.6 1.6 4-4 1.2 1.2z" fill="#fff"/></svg>',
-    "search": '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+    "search": '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
               'stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle>'
               '<line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
 }
@@ -506,18 +506,8 @@ HOME_CSS = """
 .hm-door b{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--primary);
   font-variant-numeric:tabular-nums;letter-spacing:-0.02em;margin-top:6px;}
 .hm-dd{font-size:13px;color:var(--ink-600);line-height:1.4;}
-.hm-cats{margin:0 0 36px;}
-.hm-catlist{list-style:none;margin:0;padding:0;display:grid;gap:10px;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));}
-.hm-cat{display:flex;flex-direction:column;gap:4px;height:100%;background:var(--surface);
-  border:1px solid var(--border);border-radius:var(--r-card);padding:12px 14px;color:var(--ink);
-  text-decoration:none;}
-a.hm-cat:hover{border-color:var(--primary);text-decoration:none;}
-a.hm-cat:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-/* two columns on a phone: twenty cards one per row ran ~2,200px */
-@media (max-width:520px){.hm-catlist{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
-  .hm-cat{padding:10px 12px;}}
-.hm-cn{font-weight:600;font-size:14px;line-height:1.3;overflow-wrap:anywhere;}
+/* catalogue cards ride the Recently added strip (.rtrack/.rcard, shared); these
+   rules are only what a catalogue card shows that an entry card does not */
 .hm-cc{font-size:12px;color:var(--ink-600);}
 .hm-cc .fl{font-size:14px;line-height:1;margin-right:4px;}
 .hm-ce{font-size:12.5px;color:var(--ink-600);margin-top:auto;padding-top:4px;}
@@ -529,7 +519,6 @@ a.hm-cat:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .hm-build .hm-bt{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.06em;
   text-transform:uppercase;color:var(--primary-deep);display:flex;gap:6px;align-items:center;
   margin-bottom:4px;}
-.hm-bt svg{width:14px;height:14px;flex:none;}
 """
 
 HOME_BODY = """
@@ -581,12 +570,16 @@ HOME_BODY = """
   <!-- One card per harvested catalogue: its name, its entry count (the same count
        /catalogs shows) and the country of the CATALOGUE. Each opens /software
        filtered to that catalogue. -->
-  <section class="hm-cats" aria-labelledby="hm-cats-h">
+  <section class="recent" aria-labelledby="hm-cats-h">
     <div class="rhead">
       <h2 id="hm-cats-h">⟪The catalogs we harvest⟫</h2>
-      <a class="rall" href="/catalogs">⟪All catalogs, with sources and health &rarr;⟫</a>
+      <div class="rnav">
+        <button type="button" class="rbtn" id="cprev" aria-label="⟪Scroll left⟫">&larr;</button>
+        <button type="button" class="rbtn" id="cnext" aria-label="⟪Scroll right⟫">&rarr;</button>
+        <a class="rall" href="/catalogs">⟪All catalogs, with sources and health &rarr;⟫</a>
+      </div>
     </div>
-    <ul class="hm-catlist">__HCATS__</ul>
+    <ul class="rtrack" id="ctrack">__HCATS__</ul>
   </section>
 
   <!-- Recently added. Hidden entirely when there are no dated entries rather
@@ -605,7 +598,7 @@ HOME_BODY = """
   </section>
 
   <div class="hm-build">
-    <p class="hm-bt">__ICON_CODE__ ⟪For builders⟫</p>
+    <p class="hm-bt">⟪For builders⟫</p>
     <p>⟪The whole catalog is one request, with no key and no pagination, and an MCP server
       answers agents.⟫ <a href="/docs">⟪API and MCP &rarr;⟫</a></p>
   </div>
@@ -1038,32 +1031,36 @@ function esc(s) {
       '<span>&middot;</span><span>' + esc(r.fs) + '</span></div></li>';
   }).join('');
 
-  var track = el('rtrack');
+  strip('rtrack', 'rprev', 'rnext');
+})();
+// ---- the catalogue strip: static cards (they work with no script), same arrows
+strip('ctrack', 'cprev', 'cnext');
+
+// Arrows for a horizontal strip. Scroll by whole cards so none lands half-cut;
+// disabled at the ends rather than hidden, so the control does not move.
+function strip(trackId, prevId, nextId) {
+  var track = el(trackId);
+  if (!track) return;
   function page(dir) {
-    // Scroll by a whole card plus its gap, so a card never lands half-cut.
     var card = track.querySelector('.rcard');
     var step = card ? card.getBoundingClientRect().width + 10 : 240;
     track.scrollBy({ left: dir * step * 2, behavior: 'smooth' });
   }
-  el('rprev').onclick = function () { page(-1); };
-  el('rnext').onclick = function () { page(1); };
-
+  el(prevId).onclick = function () { page(-1); };
+  el(nextId).onclick = function () { page(1); };
   function arrows() {
-    // Disabled at the ends rather than hidden, so the control does not move.
-    //
     // ⚠ TOLERANCE, not `<= 0`. The track carries 2px of padding and
-    // scroll-snap-align, and it settles at scrollLeft 2 at rest — measured, so
+    // scroll-snap-align, and it settles at scrollLeft 2 at rest - measured, so
     // an exact test left the left arrow enabled on a strip already at its start.
     // Sub-pixel rounding puts the right end a fraction short for the same reason.
     var EPS = 4;
     var max = track.scrollWidth - track.clientWidth;
-    el('rprev').disabled = track.scrollLeft <= EPS;
-    el('rnext').disabled = track.scrollLeft >= max - EPS;
+    el(prevId).disabled = track.scrollLeft <= EPS;
+    el(nextId).disabled = track.scrollLeft >= max - EPS;
   }
   track.addEventListener('scroll', arrows);
   window.addEventListener('resize', arrows);
   arrows();
-
-})();
+}
 </script>
 """

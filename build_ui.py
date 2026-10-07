@@ -395,25 +395,23 @@ def _home_cats(lang):
     """One card per harvested catalogue, largest first: name, the country of the
     CATALOGUE, and its entry count - the same count /catalogs shows. Each opens
     /software filtered to it (the value /catalogs' links use: the source label).
-    A catalogue that contributed nothing gets no link: it would open an empty list."""
+    A catalogue that contributed nothing gets no link: it would open an empty list.
+    Cards in the Recently added strip's style (.rcard), in a strip of their own."""
     N = lambda n: i18n.num(lang, n)
     out = []
     for key, m in sorted(_S.SOURCES.items(), key=lambda kv: (-sources.get(kv[1]["label"], 0),
                                                               kv[1]["label"].lower())):
         n = sources.get(m["label"], 0)
         cc = m.get("country") or ""
-        inner = ('<span class="hm-cn">%s</span>'
-                 '<span class="hm-cc"><span class="fl" aria-hidden="true">%s</span>%s</span>'
-                 '<span class="hm-ce"><b>%s</b>%s</span>'
-                 % (html.escape(m["label"]), m.get("flag") or "",
-                    html.escape(i18n.country(lang, cc, _S.COUNTRY_NAME.get(cc, cc))),
-                    N(n), html.escape(i18n.t(lang, "entries"))))
+        name = html.escape(m["label"])
         if n:
-            inner = '<a class="hm-cat" href="/software?src=%s">%s</a>' % (
-                urllib.parse.quote(m["label"], safe=""), inner)
-        else:
-            inner = '<div class="hm-cat">%s</div>' % inner
-        out.append('<li>%s</li>' % inner)
+            name = '<a href="/software?src=%s">%s</a>' % (urllib.parse.quote(m["label"], safe=""), name)
+        out.append('<li class="rcard"><div class="rt">%s</div>'
+                   '<div class="hm-cc"><span class="fl" aria-hidden="true">%s</span>%s</div>'
+                   '<div class="hm-ce"><b>%s</b>%s</div></li>'
+                   % (name, m.get("flag") or "",
+                      html.escape(i18n.country(lang, cc, _S.COUNTRY_NAME.get(cc, cc))),
+                      N(n), html.escape(i18n.t(lang, "entries"))))
     return "".join(out)
 
 

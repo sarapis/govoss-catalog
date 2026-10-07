@@ -406,8 +406,10 @@ def main():
                (i18n.path_for(lang, "/ospos"), len(_osj["ospos"])),
                (i18n.path_for(lang, "/resources"),
                 len(_rsj["resources"]) + len(_rsj["added_by_govoss"]["resources"]))])
-        cards = re.findall(r'<li>(?:<a class="hm-cat" href="([^"]+)">|<div class="hm-cat">)'
-                           r'<span class="hm-cn">(.*?)</span>.*?<span class="hm-ce"><b>([^<]+)</b>', pg, re.S)
+        ct = re.search(r'<ul class="rtrack" id="ctrack">(.*?)</ul>', pg, re.S)
+        cards = [(h, lbl or lbl2, n) for h, lbl, lbl2, n in re.findall(
+            r'<li class="rcard"><div class="rt">(?:<a href="([^"]+)">([^<]*)</a>|([^<]*))</div>'
+            r'.*?<div class="hm-ce"><b>([^<]+)</b>', ct.group(1) if ct else "", re.S)]
         want = {html.unescape(i["label"]): i["entries"] for i in _srcj["ingested"]}
         got = {html.unescape(lbl): num(n) for _h, lbl, n in cards}
         check("%s: one card per catalogue, with the count /catalogs shows" % name, got, want)
@@ -416,6 +418,14 @@ def main():
                                                     != html.unescape(lbl))]
         check("%s: each catalogue card opens /software filtered to it (none for an empty one)" % name,
               badlink, [])
+        # the catalogues scroll like the software strip: own arrows, and no icon
+        # without a size of its own (an unsized one filled a whole card)
+        check("%s: catalogue strip has its scroll arrows, and the script drives both strips" % name,
+              ('id="cprev"' in pg and 'id="cnext"' in pg, "strip('ctrack', 'cprev', 'cnext')" in pg,
+               "strip('rtrack', 'rprev', 'rnext')" in pg), (True, True, True))
+        check("%s: every inline icon carries its own width and height" % name,
+              [m for m in re.findall(r'<svg aria-hidden="true"[^>]*>', pg)
+               if not re.search(r'\bwidth="\d+" height="\d+"', m)], [])
         check("%s: the strip says what it is: recently added open source software" % name,
               bool(re.search(r'<section class="recent" id="recent" hidden>\s*<div class="rhead">\s*<h2>(Recently '
                              r'added open source software|Programari de codi obert afegit recentment)</h2>', pg)), True)
