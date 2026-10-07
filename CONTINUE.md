@@ -106,6 +106,11 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 
 - **`www.govoss.cat` and `govoss.cat` are different Workers.** `run.sh` never redeploys
   `govoss-www` or `mcp-server`; redeploy those by hand, only when their code changes.
+- **To republish without harvesting, use `bash run.sh --no-harvest`** (a page change, restored
+  checkpoints). A full run for that on 2026-10-07 drew 429s from openCode and code.europa.eu.
+  It logs trigger `rebuild` and resets the "last run" age on /catalogs; per-source ages and
+  the liveness date stay true. Not yet exercised end to end.
+- **Never edit `run.sh` itself while it runs** - bash reads the script as it executes.
 - **Do not edit page builders while `run.sh` runs** - it builds from the working tree, so a
   half-made edit can publish. Wait for the run to finish.
 - **Right after a deploy, a NEW file can 404 for a minute** (`/catalogues.geo.json` did) and

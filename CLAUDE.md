@@ -14,6 +14,7 @@ manual, as of 2026-09-23". Open items and traps: `CONTINUE.md`.
 
 ```
 bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> deploy -> record
+bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: no catalogue or liveness traffic
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min

@@ -40,9 +40,28 @@
 #
 # Safe to re-run. Harvest checkpoints per source in cache/, so a network blip
 # costs one source, not the whole run.
+#
+#   bash run.sh               the weekly run: harvest everything, then the rest
+#   bash run.sh --no-harvest  REBUILD AND PUBLISH from the checkpoints on disk:
+#       harvest.py --from-cache (no catalogue is contacted, and the per-source
+#       fetched_at stamps do not move, so /catalogs still shows each source's
+#       true age) and NO liveness sweep (it HEADs ~3,600 repo URLs on every
+#       upstream host; the last sweep stays, with its date). Everything else -
+#       dedupe, pages, the gated deploy and record - runs as normal, logged as
+#       trigger "rebuild". For a page or code change, or to republish restored
+#       checkpoints: on 2026-10-07 a full re-run for that drew HTTP 429s from
+#       openCode and code.europa.eu, the third harvest of the day.
 
 set -uo pipefail
 cd "$(dirname "$0")"
+
+NO_HARVEST=0
+for arg in "$@"; do
+  case "$arg" in
+    --no-harvest) NO_HARVEST=1 ;;
+    *) echo "usage: bash run.sh [--no-harvest]" >&2; exit 2 ;;
+  esac
+done
 
 # Pick an interpreter that actually has the deps, and say so if none does.
 # Do NOT rely on `python3` from PATH: under launchd it resolved to Homebrew's
@@ -78,6 +97,7 @@ mkdir -p out
 : > out/steps.tsv          # fresh per run; runlog.py reads it
 STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 TRIGGER="${GOVOSS_TRIGGER:-manual}"
+[ "$NO_HARVEST" = 1 ] && TRIGGER="${GOVOSS_TRIGGER:-rebuild}"
 
 # steps.tsv is name<TAB>exit<TAB>seconds. The third column is new: the status
 # page shows each step's share of the run, and nothing recorded how long a step
@@ -98,7 +118,12 @@ step () {
   return $code
 }
 
-step "harvest"      "$PY" -u harvest.py
+if [ "$NO_HARVEST" = 1 ]; then
+  echo "mode: --no-harvest - rebuilding from cache/ checkpoints; no catalogue is contacted"
+  step "harvest (from cache)" "$PY" -u harvest.py --from-cache
+else
+  step "harvest"      "$PY" -u harvest.py
+fi
 step "enrich desc"  "$PY" -u enrich_desc.py    # fills gaps from GitHub; BEFORE translations
 step "translations" "$PY" -u merge_translations.py
 step "taxonomy"     "$PY" -u taxonomy.py
@@ -112,7 +137,11 @@ step "variants"     "$PY" -u variants.py
 # under a row that is about to be merged away. Never fails the run: a missing
 # date costs the "recently added" ordering, nothing else.
 step "first seen"   "$PY" -u first_seen.py
-step "liveness"     "$PY" -u liveness.py
+if [ "$NO_HARVEST" = 1 ]; then
+  echo ""; echo "── liveness: skipped (--no-harvest); liveness.json keeps the last sweep and its date"
+else
+  step "liveness"     "$PY" -u liveness.py
+fi
 step "build page"   "$PY" -u build_ui.py
 step "assemble site" bash build_site.sh
 step "json export"  "$PY" -u export_json.py
