@@ -399,8 +399,10 @@ BODY = """
         <span><i style="background:var(--ink-600)"></i>⟪Both, at one place⟫</span></div>
       __MAPNOTE__
     </div>
-    <p class="ocred">⟪Government offices: the <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO
-      Network</a>'s public-sector OSPO list (CC0), fetched __FLOSS_AT__. Academic offices: the
+    <p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
+      <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO Network</a>, a volunteer
+      project under the <a href="https://ospo-alliance.org/">OSPO Alliance</a>&rsquo;s umbrella,
+      fetched __FLOSS_AT__. Academic offices: the
       <a href="https://sustainoss.org/academic-map/">SustainOSS academic map</a> (MIT), the
       universities and research institutes it lists under &ldquo;OSPOs&rdquo;, fetched __AMAP_AT__.
       Two FLOSS-PSO offices are universities and are shown as academic. Locations are placed by

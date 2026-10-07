@@ -30,6 +30,9 @@ import i18n
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = f"{OUT}/site"
 SRC = f"{OUT}/resources/ospo-resources.json"
+# govoss's OWN additions, same record shape, kept out of the UN+NYC file so a
+# replacement of that file never drops them and never credits them to UN+NYC.
+ADD = f"{OUT}/resources/govoss-additions.json"
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 _th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
@@ -40,7 +43,8 @@ T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 # Short names for the facet and the card; the file's own long names are kept for
 # the card's title attribute. A case not listed here falls back to its long name.
 CASE_SHORT = {"munich": "Munich", "paris": "Paris", "barcelona": "Barcelona",
-              "ec": "European Commission", "un": "United Nations", "cms": "US CMS"}
+              "ec": "European Commission", "un": "United Nations", "cms": "US CMS",
+              "networks": "OSPO networks"}
 LANG_NAME = {"en": "English", "de": "German", "fr": "French", "ca": "Catalan"}
 
 
@@ -65,14 +69,22 @@ def load():
         # The file states its own count; disagreeing with it means a truncated copy.
         raise SystemExit("build_resources: file says total=%s but carries %d records"
                          % (d.get("total"), len(rs)))
-    return d, rs
+    add = json.load(open(ADD))
+    clash = {r["id"] for r in add["resources"]} & {r["id"] for r in rs}
+    if clash or any(r.get("added_by") != "govoss" for r in add["resources"]):
+        raise SystemExit("build_resources: %s must use new ids and mark each record "
+                         "added_by govoss (clash: %s)" % (ADD, sorted(clash)))
+    return d, rs, add
 
 
-def build(lang, d, rs):
+def build(lang, d, rs, add):
     _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
     N = lambda n: i18n.num(lang, n)
-    cases = {c["id"]: c for c in d.get("cases") or []}
+    cases = {c["id"]: c for c in (d.get("cases") or []) + (add.get("cases") or [])}
     short = lambda cid: CASE_SHORT.get(cid) or (cases.get(cid) or {}).get("name") or cid
+    # the lede and description count the UN+NYC compilation; the cards are all of it
+    n_compiled, n_cases = len(rs), len({r["case"] for r in rs})
+    rs = rs + add["resources"]
 
     by_case = collections.Counter(r["case"] for r in rs)
     by_cat = collections.Counter(r["category"] for r in rs)
@@ -125,9 +137,17 @@ def build(lang, d, rs):
                esc(_("For building an OSPO:")), esc(r["use_for_ospo_construction"]), extra,
                esc(_("Citation")), esc(r["citation"])))
 
+    added = ""
+    if add["resources"]:
+        added = ('<p class="rcred">%s</p>'
+                 % _("{n} more added by govoss, marked on each card: networks of open source "
+                     "program offices rather than offices. In /resources.json they are kept apart "
+                     "from the compilation, under added_by_govoss.", n=N(len(add["resources"]))))
     subs = {
-        "__N__": N(len(rs)),
-        "__NCASES__": N(len(by_case)),
+        "__N__": N(n_compiled),
+        "__NALL__": N(len(rs)),
+        "__NCASES__": N(n_cases),
+        "__ADDED__": added,
         "__NPB__": N(n_pb),
         "__FACETS__": facets,
         "__CARDS__": "".join(cards),
@@ -138,7 +158,7 @@ def build(lang, d, rs):
         _("OSPO resources | govoss"),
         _("{n} documents, decisions and accounts from {k} public-sector open source program "
           "offices, each with what it is for and how to use it when building an OSPO.",
-          n=N(len(rs)), k=len(by_case)), lang=lang, route="/resources")
+          n=N(n_compiled), k=n_cases), lang=lang, route="/resources")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
         + theme.utility_bar(lang=lang) + theme.topbar("resources", lang, "/resources")
         + BODY + theme.footer(lang=lang) + SCRIPT)
@@ -229,11 +249,12 @@ BODY = """
           <option value="title">⟪Sort: title A&ndash;Z⟫</option>
         </select>
       </div>
-      <p class="rcount" id="rcount" aria-live="polite">⟪__N__ resources⟫</p>
+      <p class="rcount" id="rcount" aria-live="polite">⟪__NALL__ resources⟫</p>
       <ul class="rlist" id="rlist">__CARDS__</ul>
       <p class="rcred">⟪Catalogue version __VERSION__, compiled by
         <a href="https://un.opensource.nyc">UN+NYC</a>. Records are shown as compiled, in
         English. The same data as one file: <a href="/resources.json">/resources.json</a>.⟫</p>
+      __ADDED__
     </div>
   </main>
 </div>
@@ -337,11 +358,12 @@ SCRIPT = """
 
 
 if __name__ == "__main__":
-    d, rs = load()
+    d, rs, add = load()
     for _lang in i18n.LANGS:
-        build(_lang, d, rs)
-    # the data as one request, for agents: the file as compiled, plus where it is shown
+        build(_lang, d, rs, add)
+    # the data as one request, for agents: the file as compiled, plus where it is shown,
+    # and govoss's own additions under their own key - never mixed into resources[]
     with open(f"{SITE}/resources.json", "w") as fh:
-        json.dump({"generated_at": NOW, "human_page": i18n.BASE + "/resources", **d}, fh,
-                  ensure_ascii=False, indent=1)
+        json.dump({"generated_at": NOW, "human_page": i18n.BASE + "/resources", **d,
+                   "added_by_govoss": add}, fh, ensure_ascii=False, indent=1)
     i18n.report("build_resources")

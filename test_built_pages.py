@@ -408,10 +408,23 @@ def main():
                   (btn.group(1) if btn else None, bool(btn and "aria-current" in btn.group(2))),
                   (i18n.path_for(lang, "/docs"), name == "docs.html"))
     rfile = json.load(open(os.path.join(HERE, "resources", "ospo-resources.json")))
+    # govoss's own additions sit in their own file, every record marked, and the page
+    # says so on each card and under the compilation's credit (never credited to UN+NYC)
+    radd = json.load(open(os.path.join(HERE, "resources", "govoss-additions.json")))
     for name in ("resources.html", "ca/resources.html"):
         ids = re.findall(r'<li class="res" id="([^"]+)"', pages[name])
-        check("%s renders every resource in the file" % name,
-              sorted(ids), sorted(r["id"] for r in rfile["resources"]))
+        check("%s renders every resource in the file, plus govoss's additions" % name,
+              sorted(ids), sorted(r["id"] for r in rfile["resources"] + radd["resources"]))
+        addcards = [body for i, body in re.findall(r'<li class="res" id="([^"]+)"(.*?)</li>', pages[name], re.S)
+                    if i in {r["id"] for r in radd["resources"]}]
+        check("%s marks each govoss addition on its card, and counts them apart" % name,
+              (all("Added by govoss" in b for b in addcards),
+               bool(re.search(r'<p class="rcred">%d (more added by govoss|m&#233;s afegits per govoss)'
+                              % len(radd["resources"]), pages[name]))), (True, True))
+    check("govoss's additions are all marked added_by govoss, with ids the compilation does not use",
+          ([r.get("added_by") for r in radd["resources"]].count("govoss") == len(radd["resources"]),
+           sorted({r["id"] for r in radd["resources"]} & {r["id"] for r in rfile["resources"]})),
+          (True, []))
     # "Check a class name is free before using it": the Resources page's own CSS
     # once reused .rhead (the Recently added header, a space-between flex row) and
     # spread every card's tags across its width.
@@ -431,8 +444,9 @@ def main():
         rj = json.load(open(os.path.join(SITE, "resources.json")))
     except Exception:
         rj = {}
-    check("/resources.json publishes every resource",
-          len(rj.get("resources") or []), len(rfile["resources"]))
+    check("/resources.json publishes every resource, with govoss's additions apart",
+          (len(rj.get("resources") or []), rj.get("added_by_govoss")),
+          (len(rfile["resources"]), radd))
     check("the pre-2026-10-07 page files are gone from site/",
           [n for n in ("sources.html", "api.html", "ca/sources.html", "ca/api.html")
            if os.path.exists(os.path.join(SITE, n))], [])
@@ -471,6 +485,10 @@ def main():
         check("%s Resources links land on real cases with the right counts" % name,
               [(c, n) for c, n in links if rcases.get(c) != int(n)], [])
         check("%s links to Resources for at least one office" % name, len(links) > 0, True)
+        cred = re.search(r'<p class="ocred">(.*?)</p>', pg, re.S)
+        check("%s credits the FLOSS-PSO Network and the OSPO Alliance, its umbrella" % name,
+              bool(cred and 'href="https://floss-pso.network/public-sector-ospos/"' in cred.group(1)
+                   and 'href="https://ospo-alliance.org/">OSPO Alliance</a>' in cred.group(1)), True)
         # pins open a popup of their place's cards: each names its place, the
         # popup and its labelled close button exist, and no character entity sits
         # inside a script (entities are not decoded there: a "·" once showed as &#183;)

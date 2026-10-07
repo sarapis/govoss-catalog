@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 13 suites, 807 checks, all manual
+for t in test_*.py; do python3 $t; done     # 13 suites, 812 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -188,7 +188,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `BODY`), both from `build_ui.py` + `_ui_template.py`; `/catalogs` (`build_sources.py`, was
   /sources.html), `/docs` (`build_api.py`, was /api.html; the top-right button, not a nav item),
   `/products` (no nav item, owner's call), `/resources` (`build_resources.py` from the committed `resources/ospo-resources.json`,
-  compiled by UN+NYC - replace the file to update; records stay English), `/ospos`
+  compiled by UN+NYC - replace the file to update; records stay English - plus govoss's OWN
+  `resources/govoss-additions.json`, same shape, each record `added_by: govoss`, its own
+  group, never mixed into their file or credited to them), `/ospos`
   (`build_ospos.py`, nav between Catalogs and Resources: the FLOSS-PSO list (CC0) as
   government, plus the SustainOSS academic map's own "## OSPOs" sections (MIT) as academic,
   fetched weekly by `fetch_ospos.py` into `cache/ospos.json`, last good copy kept; two FLOSS-PSO
@@ -260,7 +262,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Thirteen suites, 807 checks, **all manual** - a test that can fail the weekly publish is one someone
+Thirteen suites, 812 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it

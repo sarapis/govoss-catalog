@@ -1,0 +1,28 @@
+{
+ "_about": "Resources govoss adds to /resources, in the same record shape as resources/ospo-resources.json (compiled by UN+NYC). Kept in a separate file so replacing theirs never drops these, and so these are never credited to them. Every record carries added_by: govoss.",
+ "cases": [
+  {
+   "id": "networks",
+   "name": "Networks of open source program offices (added by govoss)"
+  }
+ ],
+ "resources": [
+  {
+   "case": "networks",
+   "id": "net-01",
+   "added_by": "govoss",
+   "title": "OSPO Alliance",
+   "publisher": "OSPO Alliance",
+   "date": "n.d.",
+   "type": "official_site",
+   "category": "context",
+   "language": "en",
+   "what_it_is_for": "Community network for open source good governance; the umbrella for the FLOSS-PSO list of public-sector OSPOs",
+   "use_for_ospo_construction": "Its Good Governance Handbook is a blueprint for defining and building an OSPO, and OSPO OnRamp holds monthly sessions to learn from peers. It provides the infrastructure for the FLOSS-PSO Network, the list of public-sector OSPOs and the venue for joining it.",
+   "verification_status": "opened",
+   "url": "https://ospo-alliance.org/",
+   "citation": "OSPO Alliance. n.d. \"OSPO Alliance.\" Accessed October 7, 2026. https://ospo-alliance.org/",
+   "notes": "Added by govoss; not part of the UN+NYC compilation."
+  }
+ ]
+}
