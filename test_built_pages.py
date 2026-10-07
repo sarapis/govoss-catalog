@@ -453,6 +453,20 @@ def main():
         noflag = [i for i, body in re.findall(r'<li class="ocard" id="([^"]+)"[^>]*data-cc="[^"]+">(.*?)</li>', pg, re.S)
                   if not re.search(r'<span class="oflag" aria-hidden="true">&#\d+;', body)]
         check("%s: every office with a country shows its flag" % name, noflag, [])
+        # code links: every listed one is on its card, at most CODE_SHOWN outside the
+        # fold, and the fold's "+N" counts what it holds
+        ncode = {r["id"]: len(r.get("code") or []) for r in od}
+        badcode = []
+        for i, body in re.findall(r'<li class="ocard" id="([^"]+)"[^>]*>(.*?)</li>', pg, re.S):
+            fold = re.search(r'<details class="omore"><summary>\+(\d+) .*?</summary>(.*?)</details>', body, re.S)
+            shown = (body[:fold.start()] + body[fold.end():]) if fold else body
+            n_shown = len(re.findall(r'rel="noopener">(?:Code|Codi):', shown))
+            n_fold = len(re.findall(r'rel="noopener">(?:Code|Codi):', fold.group(2))) if fold else 0
+            if (n_shown + n_fold != ncode.get(i) or n_shown > 3
+                    or (fold and int(fold.group(1)) != n_fold) or (n_fold == 0) != (fold is None)):
+                badcode.append((i, n_shown, n_fold))
+        check("%s: code links all present, at most %d shown, the rest folded and counted"
+              % (name, 3), badcode, [])
         links = re.findall(r'class="ores" href="(?:/ca)?/resources\?case=([a-z]+)">(\d+)', pg)
         check("%s Resources links land on real cases with the right counts" % name,
               [(c, n) for c, n in links if rcases.get(c) != int(n)], [])

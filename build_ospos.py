@@ -36,6 +36,9 @@ theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 
+# Code links shown on a card before the rest fold behind "+N more code links".
+CODE_SHOWN = 3
+
 # An office's URL (its key in FLOSS-PSO) -> its case in resources/ospo-resources.json.
 # Named, never guessed: UNDP is NOT the "un" case (that is the UN's OICT and the
 # Open Source United community, a different office).
@@ -121,10 +124,19 @@ def build(lang, data, locs, geo, res):
         links = ['<a href="%s" target="_blank" rel="noopener">%s</a>'
                  % (esc(r["url"]), esc(_("Website")))]
         # each code link named by its account or group (ANSSI lists 13; "Code" x13 said nothing)
+        code = []
         for c in r.get("code") or []:
             seg = [x for x in c.split("://", 1)[-1].split("/")[1:] if x and x != "groups"]
-            links.append('<a href="%s" target="_blank" rel="noopener">%s %s</a>'
-                         % (esc(c), esc(_("Code:")), esc(seg[-1] if seg else c.split("://", 1)[-1])))
+            code.append('<a href="%s" target="_blank" rel="noopener">%s %s</a>'
+                        % (esc(c), esc(_("Code:")), esc(seg[-1] if seg else c.split("://", 1)[-1])))
+        # past CODE_SHOWN, the rest fold behind a native <details> (OS2 lists 19): policy
+        # and email stay in the visible row, after the shown code links
+        links += code[:CODE_SHOWN]
+        more = ""
+        if len(code) > CODE_SHOWN:
+            more = ('<details class="omore"><summary>%s</summary><p class="olinks">%s</p></details>'
+                    % (esc(_("+{n} more code links", n=N(len(code) - CODE_SHOWN))),
+                       " &middot; ".join(code[CODE_SHOWN:])))
         if r.get("policy"):
             links.append('<a href="%s" target="_blank" rel="noopener">%s</a>'
                          % (esc(r["policy"]), esc(_("Open source policy"))))
@@ -146,13 +158,13 @@ def build(lang, data, locs, geo, res):
             '<li class="ocard" id="%s" data-type="%s" data-cc="%s">'
             '<div class="ohead"><span class="otype %s">%s</span><span class="ometa">%s</span></div>'
             '<h3>%s</h3>%s%s'
-            '<p class="olinks">%s</p>%s</li>'
+            '<p class="olinks">%s</p>%s%s</li>'
             % (esc(r["id"]), esc(r["type"]), esc(r["_cc"] or ""), esc(r["type"]), esc(typ),
                " &middot; ".join(meta), esc(r["name"]),
                ('<p class="odesc">%s</p>' % esc(r["description"])) if r.get("description") else "",
                ('<p class="onote"><b>%s</b> %s</p>' % (esc(_("OSPO:")), esc(r["ospo_note"])))
                if r.get("ospo_note") else "",
-               " &middot; ".join(links), res_link))
+               " &middot; ".join(links), more, res_link))
 
     # ---- the map: one dot per spot; offices sharing a spot share a dot
     spots = collections.OrderedDict()
@@ -258,6 +270,9 @@ PAGE_CSS = """
 .odesc{margin:0;font-size:13.5px;color:var(--ink);line-height:1.5;text-wrap:pretty;}
 .onote{margin:0;font-size:13px;color:var(--ink-600);line-height:1.5;}
 .olinks{margin:4px 0 0;font-size:12.5px;word-break:break-word;}
+.omore{font-size:12.5px;}
+.omore summary{cursor:pointer;color:var(--ink-600);width:max-content;}
+.omore .olinks{margin-top:2px;}
 .ores{align-self:flex-start;margin-top:4px;font-size:12.5px;font-weight:600;}
 .omap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
   padding:14px;margin-top:14px;}
