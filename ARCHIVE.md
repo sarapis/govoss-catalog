@@ -1350,3 +1350,13 @@ Contradicted, and resolved:
 - Liveness: 3,612 URLs, not ~109 fewer - that figure ignored Helsingborg's 291 rows.
 - 3 orphaned `tr_de.json` keys: upstream rewordings (KI-Buddy and two others). Sensor working.
 
+## Moved from CONTINUE.md on 2026-10-07
+
+### Session 2026-09-23 (evening), in one screen
+
+UK sized (215 orgs, 0 publiccode - no UK catalogue); +92 `replaces.json` rows; licence
+filter; KNIME, Démarches, Prometheus/Spring Boot/Ubuntu merges via redirect and repo-rename
+QID loans; crosswalk inputs refresh weekly (P1324 dump count-checked); Helsingborg as source
+20 with a `wordpress-plugin` rule; the one-marker language fix; suites for `get()`, the
+Workers and crosswalk's glue (F8 closed). All went live on the 2026-09-24 run; its check
+against expectations is in `ARCHIVE.md` › "Moved from CONTINUE.md on 2026-09-29".

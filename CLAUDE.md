@@ -3,7 +3,7 @@
 > Union catalogue of **government open source software**, harvested first-hand from 20
 > national, municipal and international catalogues, normalised onto one schema, translated,
 > categorised by function, de-duplicated, linked to variants and liveness-monitored.
-> **3,141 active entries · 20 catalogues · 16 countries and bodies.** Live at
+> **3,163 active entries · 20 catalogues · 16 countries and bodies.** Live at
 > https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat.
 
 This file is RULES ONLY - it loads into every session, budget 300 lines. The reasoning,

@@ -21,10 +21,10 @@
  },
  "de": {
   "error": "HTTPError: HTTP Error 429: Too Many Requests",
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-05T11:00:01Z",
   "last_error_at": "2026-10-07T19:33:18Z",
   "ok": false,
-  "records": 450
+  "records": 561
  },
  "digg": {
   "fetched_at": "2026-10-07T19:33:18Z",
@@ -38,10 +38,10 @@
  },
  "eu": {
   "error": "RuntimeError: partial https://code.europa.eu scan: 12 repos vs 23 in the last good checkpoint, after 1 org(s) failed: 956 publiccode.yml fetch(es) failed (429 x956). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from https://code.europa.eu (retry the run later) \u2014 the per-source age on /catalogs is what makes this visible.",
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-05T11:00:01Z",
   "last_error_at": "2026-10-07T19:33:18Z",
   "ok": false,
-  "records": 12
+  "records": 23
  },
  "fi": {
   "fetched_at": "2026-10-07T19:33:18Z",

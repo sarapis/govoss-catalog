@@ -1,10 +1,10 @@
 # Open items
 
-Where the work stands as of **2026-09-29**. `CLAUDE.md` (auto-loaded) is the rules;
+Where the work stands as of **2026-10-07 (late)**. `CLAUDE.md` (auto-loaded) is the rules;
 `ARCHIVE.md` holds the reasoning, incidents and older session records. Neither is required
 reading beyond what loads by itself.
 
-**Live: 3,141 active entries · 3,855 rows · 20 catalogues · 16 countries and bodies.**
+**Live: 3,163 active entries · 3,883 rows · 20 catalogues · 16 countries and bodies.**
 https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat, both on Cloudflare.
 Pipeline `bash run.sh`, scheduled Mondays 07:00, publishes and commits itself.
 
@@ -19,31 +19,29 @@ that DESTROYS data refuses instead of reporting. Corollaries: the total is rarel
 trigger (use a delta); a missing measurement is not zero, and not fresh either; if a guard
 cannot be made to fail, delete it.
 
-## State - verified 2026-09-29, not recalled
+## State - verified 2026-10-07, not recalled
 
 ```bash
 git status --short && git log --oneline origin/main..HEAD   # clean, nothing unpushed
-for t in test_*.py; do python3 $t; done                     # 12 suites, 587 checks
+for t in test_*.py; do python3 $t; done                     # 13 suites, 727 checks
 curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + problems
 ```
 
-- Tree clean on `main`, nothing unpushed, one worktree, no jobs running. Schedule loaded;
-  `bash schedule/install.sh --diff` says the plist matches the template.
-- **Last run 2026-10-05 11:26Z**, scheduled, all steps ok, deployed on `token-file`
-  (`08e8210`); the Swiss API gave 163 entries. Live `/status.json`: `warn` for one stale
-  translation key - TLSAssistant (IT) now ships its own English, so it is redundant, not rot.
-- **Live since 2026-10-07 (`87b8143`): the reorganisation** - Home, Software, Catalogs, Docs
-  (top-right button), Resources, clean paths and the 301s; MCP Worker `fd7a287d` links `/docs`.
-  The 2026-10-07 runs: openCode published 86 short (fetch failures read as "none"), fixed in
-  `gitlab_scan()` and republished; both GitLab sources then rate-limited (429) and reused their
-  2026-10-05 checkpoints - expect their age to show on /catalogs until Monday.
-- **COMMITTED, NOT LIVE: `/ospos`** (49 offices, map, Resources links). Publish with
-  `bash run.sh --no-harvest` (first real use of the flag - verify it) or Monday's run.
-- Liveness (2026-09-28): 3,501 ok of 3,591, 28 dead, 39 archived, 61 unknown.
+- Tree clean on `main`, nothing unpushed, one worktree, no jobs or preview servers running.
+  Schedule loaded; `bash schedule/install.sh --diff` says the plist matches the template.
+- **Last run 2026-10-07 20:19Z, `--no-harvest` (trigger `rebuild`)**, 20 steps ok, deployed on
+  `token-file`, recorded (`8baa50d`). Live-checked: every page of the reorganisation and
+  `/ospos` (49 cards, 46 dots, 49 flags, Munich/Paris/CMS Resources links), the old-name and
+  shared-search 301s, `/status.json` `ok`. Last HARVEST: 2026-10-07 19:50Z (`87b8143`).
+- **openCode and code.europa.eu are on their 2026-10-05 data**: both answered 429 to the
+  day's third harvest and the guard kept their last good lists. `cache/_fetched.json` was
+  corrected by hand to say so (the short 19:03 run had stamped them fresh) - that correction
+  is committed but reaches `/catalogs` only on the next build. Monday's run should refresh both.
+- Liveness (2026-10-07 19:43Z): 3,530 ok of 3,619, 27 dead, 40 archived, 59 unknown.
   `replaces.json` 348 keys; 444 products, 379 with an alternative (live-checked).
-  Variants: 14 linked to 12 cores. MCP Worker `a38a84d4` (search reads `n d o a u rp`).
-- Hub `35f61ead` (the deploy token) closed Done 2026-09-24 with the run as evidence.
-- Review `REVIEW-govoss-catalog-2026-08-28.md`: F1-F8 all closed.
+  Variants: 14 linked to 12 cores. MCP Worker `fd7a287d` (search `n d o a u rp`; docs `/docs`).
+- Site map: Home `/`, `/software`, `/catalogs`, `/ospos`, `/resources` in the nav; `/docs` is the
+  top-right button; `/products` has no nav item (owner). `/ca/` copies of all.
 
 ## Invariants - break these and something already fixed re-breaks
 
@@ -63,6 +61,9 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
   `dedupe.merge()` now backfills a sibling's real repo so a repo-less survivor keeps its
   identity (Mautic, ckan; `test_dedupe_identity.py`).
 - **Network enters crosswalk only through `run()`'s `*_fn` arguments** (`test_crosswalk_run.py`).
+- **A failed fetch is never "no data"**: `gitlab_scan()` counts non-404 failures and refuses a
+  short list (`test_harvest_get.py`); `fetch_ospos.py` keeps a failed or halved list's last good
+  copy (`test_ospos.py`). The catch-all that read failures as "none" published 86 short.
 - **`/catalogues.geo.json` has an outside consumer**: un.opensource.nyc
   (`~/Antigravity/unnyc/scripts/fetch-govoss-catalogues.mjs`, PR #109) STOPS if a top-level
   key is missing (`about generated_at licence source trimmed not_drawn features`), a feature
@@ -72,9 +73,12 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 
 ## Waiting on a human - not work that was skipped
 
-- **Helsingborg's 103 WordPress plugins: decide.** Review written: `HELSINGBORG-PLUGINS-REVIEW.md`.
+- **Helsingborg's 103 WordPress plugins: decide** (Hub `f88d3498`, Idea). Review: `HELSINGBORG-PLUGINS-REVIEW.md`.
   73 are at stake (30 have no description and stay out regardless); 13 municipal tools, 16
   Municipio modules, 44 plumbing; three options. Nothing in `filters.py` changed.
+- **The Resources data has no licence statement** (`resources/ospo-resources.json`, compiled by
+  UN+NYC). `/resources` credits UN+NYC and states none; give one and it goes on the page and in
+  `/resources.json`. Replacing the file is also how it updates - nothing fetches it.
 - **Delete the OLD MCP Worker** `govoss-mcp.devin-31f.workers.dev` - in the itspruvn.com
   Cloudflare account, which the deploy token cannot reach. Nothing points at it.
 - **Four licence calls left open** (`filters.py` flags only what the source's licence
@@ -91,25 +95,26 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 
 ## Candidates, ranked
 
-1. **Publish `/ospos`** and check it live: 49 cards, 46 dots, the Munich/Paris/CMS Resources
-   links, `/ospos.json`; then tell UNNYC their OSPO list could read `/ospos.json` too.
-2. **Act on the Helsingborg decision** once made - an allow-list of repo URLs in `filters.py`
+1. **Check Monday's 2026-10-12 scheduled run** - the first unattended run with `ospos fetch`, the
+   GitLab failure guard and the reorganised pages: openCode ~478 active again (not 392),
+   code.europa.eu ~14, both stamped fresh on `/catalogs`; the harvest log says "18" and "31"
+   OSPOs; `/status.json` `ok`; Recently added only genuinely new ids.
+2. **Tell UNNYC** their resources page could read `/ospos.json` (same FLOSS-PSO list, plus the
+   academic offices and govoss's placements) instead of keeping its own copy - their repo.
+3. **Act on the Helsingborg decision** once made - an allow-list of repo URLs in `filters.py`
    pinned in `test_filters.py` (never a name pattern); stamp returned ids `null` in
    `_first_seen.json` if the owner does not want a week of Helsingborg in the strip.
-3. **Stale translation keys**: 3 in `tr_de.json` (`108e4e5c35`, `439e2a2853`, `f1d34f9c9f`)
-   belong to rows reworded or gone. Harmless (the sensor triggers on GROWTH); delete only
-   with the owner's nod, since the files are hand-maintained.
-4. `replaces.json` by shape has diminishing returns now: ~370 unmapped QID entries are
-   libraries, languages, OSes and free tools nobody pays for.
+4. **Stale translation keys**: 3 in `tr_de.json`, 1 in `tr_it1.json` (TLSAssistant now ships
+   English). Harmless (the sensor triggers on GROWTH); delete only with the owner's nod.
 
 ## Traps - looks broken but is not, and vice versa
 
 - **`www.govoss.cat` and `govoss.cat` are different Workers.** `run.sh` never redeploys
   `govoss-www` or `mcp-server`; redeploy those by hand, only when their code changes.
-- **To republish without harvesting, use `bash run.sh --no-harvest`** (a page change, restored
-  checkpoints). A full run for that on 2026-10-07 drew 429s from openCode and code.europa.eu.
-  It logs trigger `rebuild` and resets the "last run" age on /catalogs; per-source ages and
-  the liveness date stay true. Not yet exercised end to end.
+- **To republish without harvesting, use `bash run.sh --no-harvest`** (verified 2026-10-07:
+  harvest from cache in 0s, liveness and the OSPO fetch skipped). Three full runs in a day drew
+  429s from openCode and code.europa.eu. It logs trigger `rebuild` and resets the "last run"
+  age on /catalogs; per-source ages and the liveness date stay true.
 - **A new OSPO upstream has no map location until `ospos/locations.json` gets it** (keyed by
   the id `fetch_ospos.py` derives from its URL). It is still listed; /ospos names it as not on
   the map. Place it at its city (seat) or its organisation's headquarters (hq).
@@ -139,21 +144,34 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
   ("Custom API Endpoint for Lärrum") - accepted and pinned: visible in the queue beats hidden.
 - **Translation keys hash the RAW text; look rows up by TEXT, not by name.** OS2 has one
   `.github` per org - a name lookup keyed a translation to the wrong repo.
-- **`/sources.html` can warn about missing page translations one run late** - it reads the
+- **`/catalogs` can warn about missing page translations one run late** - it reads the
   previous build's `out/i18n_missing.json`. Build twice locally before believing it.
-- **3,074 of 3,507 first-seen ids are `null`** - the baseline, known and never new.
+- **3,074 of 3,540 first-seen ids are `null`** - the baseline, known and never new.
   Set-aside rows are never recorded, so a reinstated row arrives as Recently added.
 - **Munich's SDS Calculator links to itself under two catalogues** via `isBasedOn`. Harmless.
 - **The vendored design-token CSS mentions `govoss-catalog.vercel.app` in a comment.**
   Copied from upstream as-is; do not "fix" it here.
 - **`out/` and `site/` are gitignored** - a fresh checkout has neither; `test_built_pages.py`
   SKIPs until the pages are built.
+- **Preview the real routing with launch config `site-worker`** (`wrangler dev --local` on
+  `site/`): clean paths and 301s only exist in the Worker; the plain `site` config cannot show them.
 - **The browser pane returns stale and blank frames.** `computer {action:"zoom"}` returns a
   fresh full frame when `screenshot` shows a blank band; measure with `javascript_tool`.
 - **`PAGINATION-BUG.md` is about someone else's service**, not a defect here.
 - **Sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`**, and check the sabotage APPLIED.
   `grep` here is ugrep: back-references like `\1` error out, so a result filter can print
-  nothing and look like a pass - read each suite's last line instead.
+  nothing and look like a pass - read each suite's last line instead. Quote sabotage heredocs
+  (`<<'EOF'`): an unquoted one ran `$(...)` inside a regex and the sabotage never applied.
+
+## Session 2026-10-07, in one screen
+
+Shipped and live-checked: the reorganisation (Home + `/software` split from the catalog, Sources
+-> `/catalogs`, API -> `/docs` as the top-right button, `/resources` from UN+NYC's OSPO resources
+file, clean paths and 301s in `site-worker.js`, the nav wrapping up to 900px); `/ospos` (FLOSS-PSO
++ SustainOSS academic map, Government/Academic and country filters, a North America + Europe
+map, flags, Resources links); `run.sh --no-harvest`; the GitLab failed-fetch guard after openCode
+published 86 short. Mistakes: a full re-run to republish restored checkpoints drew the 429s that
+`--no-harvest` now avoids; a Resources class reused `.rhead` (now pinned by a check).
 
 ## Session 2026-09-23 (late) -> 29, in one screen
 
@@ -167,15 +185,6 @@ stat rows never leave a grey cell. Not live yet: five translations, the GeoJSON 
 fix (found during handoff: the two stamps matched only by luck). Written, undecided: the
 Helsingborg review.
 
-## Session 2026-09-23 (evening), in one screen
-
-UK sized (215 orgs, 0 publiccode - no UK catalogue); +92 `replaces.json` rows; licence
-filter; KNIME, Démarches, Prometheus/Spring Boot/Ubuntu merges via redirect and repo-rename
-QID loans; crosswalk inputs refresh weekly (P1324 dump count-checked); Helsingborg as source
-20 with a `wordpress-plugin` rule; the one-marker language fix; suites for `get()`, the
-Workers and crosswalk's glue (F8 closed). All went live on the 2026-09-24 run; its check
-against expectations is in `ARCHIVE.md` › "Moved from CONTINUE.md on 2026-09-29".
-
 ---
 
 ## Starting the next session
@@ -188,7 +197,8 @@ against expectations is in `ARCHIVE.md` › "Moved from CONTINUE.md on 2026-09-2
 > `/Users/devin/Antigravity/govoss-catalog/HELSINGBORG-PLUGINS-REVIEW.md` only if I have
 > decided on the plugins, and `ARCHIVE.md` only if a rule in `CLAUDE.md` is too terse to apply.
 >
-> Start with candidate 1 once the 2026-10-05 run has happened; if it has not, say so and ask.
+> Start with candidate 1 once the 2026-10-12 scheduled run has happened; if it has not, say
+> so and ask.
 >
 > Do not write a handoff, continuation prompt, or session record unless I ask for
 > `/handoff`. End your turn with what you did and what you recommend next.
