@@ -199,18 +199,19 @@ def build(lang, data, locs, geo, res):
         rx, ry, rw, rh = fr["rect"]
         svg.append('<g class="oframe"><rect x="%s" y="%s" width="%s" height="%s" rx="8"/>'
                    '<path d="%s" aria-hidden="true"/></g>' % (rx, ry, rw, rh, fr["land"]))
-    for k, x, y, rs in merged:
+    # drawn smallest first, so a numbered pin is never covered by a single one
+    for k, x, y, rs in reversed(merged):
         places = list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))
         label = "; ".join("%s (%s)" % (r["name"], _("Government") if r["type"] == "government"
                                        else _("Academic")) for r in rs)
         types = sorted({r["type"] for r in rs})
         cls = types[0] if len(types) == 1 else "mixed"
         svg.append('<a class="odot %s" href="#%s" data-ids="%s" data-place="%s" aria-label="%s" '
-                   'aria-haspopup="dialog"><title>%s</title><g transform="translate(%s %s) scale(%s)">'
-                   '<path d="%s"/>%s</g></a>'
+                   'aria-haspopup="dialog"><title>%s</title><g transform="translate(%s %s)">'
+                   '<g class="opin"%s><path d="%s"/>%s</g></g></a>'
                    % (cls, esc(rs[0]["id"]), esc(" ".join(r["id"] for r in rs)),
                       esc("; ".join(places)), esc(label), esc(label),
-                      x, y, 1 if len(rs) == 1 else 1.3, PIN,
+                      x, y, ' style="--k:1.3"' if len(rs) > 1 else "", PIN,
                       '<text x="0" y="-7">%d</text>' % len(rs) if len(rs) > 1
                       else '<circle class="ohole" cx="0" cy="-10" r="2.2"/>'))
     svg.append("</svg>")
@@ -300,6 +301,11 @@ PAGE_CSS = """
 .oframe rect{fill:var(--surface);stroke:var(--border);stroke-width:1;}
 .oframe path{fill:var(--bg-alt);stroke:var(--surface);stroke-width:.6;}
 .odot{cursor:pointer;}
+/* the map shrinks with the page and the pins with it: --pin scales them back up on
+   narrow screens, about the tip (the place), so a pin stays a usable tap target */
+.opin{transform:scale(calc(var(--pin,1) * var(--k,1)));transform-origin:0 0;}
+@media (max-width:800px){.omap-svg{--pin:1.5;}}
+@media (max-width:520px){.omap-svg{--pin:2.2;}}
 .odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
 .odot.government path{fill:var(--primary);}
 .odot.academic path{fill:var(--green);}

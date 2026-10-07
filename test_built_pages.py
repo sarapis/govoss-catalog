@@ -478,6 +478,12 @@ def main():
                           r' aria-label="[^"]+" aria-haspopup="dialog">', pg)
         check("%s: every map pin names its place and opens a popup" % name,
               (len(pins), pins.count("")), (pg.count('class="odot '), 0))
+        # pins scale back up on narrow screens: each pin's shape sits in a .opin
+        # group, and a max-width rule sets --pin above 1 (they were ~5px on a phone)
+        check("%s: every pin is scalable, and scaled up on narrow screens" % name,
+              (pg.count('<g class="opin"'), bool(re.search(
+                  r'@media \(max-width:\d+px\)\{\.omap-svg\{--pin:(?!1;)\d+(\.\d+)?;\}\}', pg))),
+              (pg.count('class="odot '), True))
         check("%s has the pin popup with a labelled close button" % name,
               bool(re.search(r'<div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>'
                              r'.*?<button type="button" class="opop-x" id="opop-x" aria-label="[^"]+">', pg, re.S)), True)
