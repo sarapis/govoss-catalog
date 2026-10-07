@@ -2656,6 +2656,34 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/eurosky-identity-platform",
+  "keywords": [
+   "SDG9",
+   "SDG16"
+  ],
+  "landing": "https://eurosky.tech/",
+  "license": "Apache-2.0",
+  "name": "Eurosky Identity Platform",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/eurosky-social/eurosky-portal",
+  "repo_key": "github.com/eurosky-social/eurosky-portal",
+  "repo_owner": "Eurosky Identity Platform",
+  "sdgs": [
+   "SDG9: Industry\u00b8 Innovation and Infrastructure",
+   "SDG16: Peace\u00b8 Justice and Strong Institutions"
+  ],
+  "short_desc": "Sovereign, EU-hosted identity and data hosting for the AT Protocol: a Personal Data Server that holds each user's account and data, plus Portal, the account-creation and management interface. One account works across hundreds of apps and can move to any provider.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0094184"
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
   "entry_url": "https://www.digitalpublicgoods.net/r/everwell-hub",
   "keywords": [
    "SDG3"

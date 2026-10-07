@@ -82,7 +82,7 @@
    "other",
    "\u00e9ducation"
   ],
-  "version": "26.03",
+  "version": "26.04",
   "wikidata": "Q215051"
  },
  {
@@ -426,7 +426,7 @@
    "irsn",
    "other"
   ],
-  "version": "2.21.4",
+  "version": "2.21.5",
   "wikidata": "Q2852503"
  },
  {
@@ -1049,6 +1049,7 @@
   "tier": "index",
   "used_by": [
    "CNAM",
+   "CNRS",
    "MESR",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Grenoble Alpes",
@@ -3628,7 +3629,7 @@
    "Universit\u00e9 d'Angers",
    "other"
   ],
-  "version": "2.4.19",
+  "version": "2.4.20",
   "wikidata": "Q868171"
  },
  {
@@ -3922,9 +3923,6 @@
   "wikidata": "Q1165893"
  },
  {
-  "categories": [
-   "Databases"
-  ],
   "country": "FR",
   "desc_lang": "fr",
   "desc_src": "Logiciel de gestion de base de donn\u00e9es",
@@ -3938,8 +3936,7 @@
    "outil",
    "tool",
    "gestion",
-   "management",
-   ""
+   "management"
   ],
   "landing": "https://dbeaver.io/",
   "license": "Apache",
@@ -3969,12 +3966,13 @@
    "MI",
    "MIOM",
    "MTE",
+   "SSIC",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sorbonne Universit\u00e9",
    "administration centrale",
    "other"
   ],
-  "version": "26.2.1",
+  "version": "26.2.2",
   "wikidata": "Q28956992"
  },
  {
@@ -4400,7 +4398,7 @@
    "MI/SG/DTNUM/SDAIT/BS",
    "MINISTERE INTERIEUR/SG/SHFD/C2MI"
   ],
-  "version": "6.1.1",
+  "version": "6.1.2",
   "wikidata": "Q842014"
  },
  {
@@ -4554,6 +4552,7 @@
    "Centre Hospitalier de SAINT-LAURENT-DU-PONT",
    "DGFiP",
    "DINUM",
+   "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "R\u00e9seau Canop\u00e9"
   ],
   "version": "5.7.0",
@@ -4672,7 +4671,7 @@
    "IRD: Institut de Recherche pour le D\u00e9veloppement",
    "MI"
   ],
-  "version": "2026-07-14",
+  "version": "2026-07-14c",
   "wikidata": "Q851864"
  },
  {
@@ -5249,7 +5248,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sciences Po"
   ],
-  "version": "9.5.4",
+  "version": "9.5.5",
   "wikidata": "Q3050461"
  },
  {
@@ -5891,7 +5890,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "DINUM"
+   "DINUM",
+   "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire"
   ],
   "version": "0.23.0",
   "wikidata": "Q137909707"
@@ -6142,7 +6142,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "ENSAN"
+   "ENSAN",
+   "Minist\u00e8re des arm\u00e9es"
   ],
   "version": "16.0.4",
   "wikidata": "Q115962387"
@@ -6565,7 +6566,7 @@
   "used_by": [
    "VIGINUM"
   ],
-  "version": "1.30.0",
+  "version": "1.30.1",
   "wikidata": "Q17628654"
  },
  {
@@ -7069,7 +7070,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.2",
+  "version": "2.126.3",
   "wikidata": "Q116819111"
  },
  {
@@ -7301,7 +7302,7 @@
    "DINUM",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "28.0.0",
+  "version": "28.1.0",
   "wikidata": "Q28714270"
  },
  {
@@ -8079,7 +8080,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.12.20",
+  "version": "4.12.21",
   "wikidata": "Q97819945"
  },
  {
@@ -8386,8 +8387,8 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "2.0.2",
-  "wikidata": "Q131897282"
+  "version": "1.7.5",
+  "wikidata": "Q131622251"
  },
  {
   "country": "FR",
@@ -8598,7 +8599,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "7.0.7",
+  "version": "7.0.8",
   "wikidata": "Q11223506"
  },
  {
@@ -8745,7 +8746,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "11.4",
+  "version": "11.5",
   "wikidata": "Q1623223"
  },
  {
@@ -9313,7 +9314,7 @@
    "MEN",
    "SG"
   ],
-  "version": "2.584",
+  "version": "2.585",
   "wikidata": "Q7491312"
  },
  {
@@ -10226,7 +10227,7 @@
    "CNRS",
    "INSEE"
   ],
-  "version": "9.5.4",
+  "version": "9.5.5",
   "wikidata": "Q21156460"
  },
  {
@@ -10660,7 +10661,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.34.0",
+  "version": "13.35.0",
   "wikidata": "Q13634357"
  },
  {
@@ -10850,6 +10851,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "01 bureau ",
    "06",
    "Acad\u00e9mie d'Amiens",
    "Acad\u00e9mie de Besan\u00e7on",
@@ -11397,6 +11399,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "CNRS",
    "Universit\u00e9 Grenoble Alpes"
   ],
   "version": "2.5.1",
@@ -11803,7 +11806,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "5.14.0",
+  "version": "5.14.1",
   "wikidata": "Q34162"
  },
  {
@@ -12447,6 +12450,7 @@
    "Lyc\u00e9e Blaise Pascal",
    "Lyc\u00e9e les Lombards",
    "MA",
+   "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "MD",
    "MEAE",
    "MEF/SG/DSCI",
@@ -12475,7 +12479,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "158.0b3",
+  "version": "157.0.1",
   "wikidata": "Q698"
  },
  {
@@ -13142,7 +13146,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.3.8",
+  "version": "16.4.0",
   "wikidata": "Q56062435"
  },
  {
@@ -13541,7 +13545,7 @@
    "Eurom\u00e9tropole de Strasbourg",
    "rectorat acad\u00e9mie orl\u00e9ans tours"
   ],
-  "version": "3.4.8",
+  "version": "3.4.9",
   "wikidata": "Q128944229"
  },
  {
@@ -13572,7 +13576,7 @@
    "Acad\u00e9mie de Nancy-Metz",
    "DGFIP"
   ],
-  "version": "7.2.9",
+  "version": "7.3-rc6",
   "wikidata": "Q14579"
  },
  {
@@ -13991,7 +13995,7 @@
    "Sciences Po",
    "VIGINUM"
   ],
-  "version": "0.35.1",
+  "version": "0.40.0",
   "wikidata": "Q124636097"
  },
  {
@@ -15202,7 +15206,7 @@
    "Acad\u00e9mie de Nantes",
    "CNRS"
   ],
-  "version": "10.5",
+  "version": "10.6",
   "wikidata": "Q847062"
  },
  {
@@ -15756,7 +15760,7 @@
   "sill_id": 528,
   "source": "FR/sill",
   "tier": "index",
-  "version": "11.30.1",
+  "version": "11.31.0",
   "wikidata": "Q16529629"
  },
  {
@@ -15831,6 +15835,7 @@
    "Grand Paris Seine Ouest",
    "INRAE",
    "IUT GMP Amiens",
+   "Intendance",
    "MA",
    "MD",
    "MEN",
@@ -15960,7 +15965,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.18.1",
+  "version": "2.18.3",
   "wikidata": "Q111586053"
  },
  {
@@ -16252,7 +16257,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.4.0",
+  "version": "13.4.1",
   "wikidata": "Q1663673"
  },
  {
@@ -17129,6 +17134,7 @@
    "MI",
    "MINISTERE INTERIEUR/SG/SHFD/C2MI",
    "Mairie de Saint-Joseph (La R\u00e9union)",
+   "Minist\u00e8re des arm\u00e9es",
    "SIDSIC",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Gustave Eiffel",
@@ -18040,7 +18046,7 @@
    "Universit\u00e9 de Lille",
    "academie de Lyon"
   ],
-  "version": "8.8.1",
+  "version": "8.9.0",
   "wikidata": "Q24050001"
  },
  {
@@ -19425,7 +19431,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.25",
+  "version": "4.4.28",
   "wikidata": "Q1536426"
  },
  {
@@ -20316,7 +20322,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.1.5",
+  "version": "2.1.6",
   "wikidata": "Q17089344"
  },
  {
@@ -20525,6 +20531,7 @@
   "tier": "index",
   "used_by": [
    "DGFiP - Direction G\u00e9n\u00e9rale des Finances Publiques",
+   "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "academie d'Aix marseille"
   ],
   "version": "1.11.44",
@@ -20945,7 +20952,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "3.7.13",
+  "version": "3.7.14",
   "wikidata": "Q96332968"
  },
  {
@@ -21416,7 +21423,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.10.0",
+  "version": "17.11.1",
   "wikidata": "Q99493159"
  },
  {
@@ -21893,6 +21900,7 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
+   "ENSP",
    "MI"
   ],
   "version": "4.11.3",
@@ -22198,7 +22206,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "8.3.2",
+  "version": "8.3.3",
   "wikidata": "Q111590996"
  },
  {
@@ -23456,6 +23464,7 @@
    "INRAE",
    "MA",
    "Pr\u00e9fecture 69",
+   "SCL67",
    "Sciences Po",
    "Setra_5192",
    "Universit\u00e9 C\u00f4te d'Azur",

@@ -2766,6 +2766,52 @@
  {
   "active": true,
   "categories": [
+   "knowledge-management",
+   "it-service-management",
+   "content-management"
+  ],
+  "contacts": [
+   "Settore Informatica - Comune di Montesilvano"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Portale Intranet per i dipendenti dell'ente: link agli applicativi e guide/FAQ contestuali, filtrati per ufficio di appartenenza.\n",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/Comune-di-Montesilvano/CruscottoPA.git",
+  "features": [
+   "Dashboard personalizzata per ufficio di appartenenza",
+   "Card separate per applicativi e per guide/FAQ",
+   "Riconoscimento automatico del dipendente",
+   "Pannello di amministrazione per link, guide e gruppi",
+   "Assegnazione rapida dei dipendenti agli uffici",
+   "Deploy containerizzato compatibile con Podman rootless"
+  ],
+  "landing": "https://github.com/Comune-di-Montesilvano/CruscottoPA",
+  "license": "EUPL-1.2",
+  "long_desc": "CruscottoPA \u00e8 la homepage e plancia di comando dei dipendenti di un ente pubblico. Centralizza in un'unica griglia a card i collegamenti agli applicativi web, ai portali e alle utility usati quotidianamente, affiancandoli a guide tecniche e FAQ contestuali, con l'obiettivo di ridurre le richieste di assistenza al servizio informatico.\n\nOgni dipendente vede solo le card pertinenti al proprio ufficio: i contenuti sono associati a gruppi (es. Anagrafe, Ufficio Tecnico, Tributi) e l'utente viene riconosciuto automaticamente all'apertura della pagina. Un pannello di amministrazione permette di gestire link, guide e gruppi e di spostare un dipendente da un ufficio all'altro senza ricaricare la pagina.\n\nIl software \u00e8 un singolo binario Go con database SQLite integrato, distribuito come immagine container su GitHub Container Registry ed eseguibile con Docker o Podman rootless.\n",
+  "maintenance": "internal",
+  "name": "CruscottoPA",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-10-06",
+  "repo": "https://github.com/Comune-di-Montesilvano/CruscottoPA",
+  "repo_key": "github.com/comune-di-montesilvano/cruscottopa",
+  "repo_owner": "Comune di Montesilvano",
+  "short_desc": "Portale Intranet per i dipendenti dell'ente: link agli applicativi e guide/FAQ contestuali, filtrati per ufficio di appartenenza.\n",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "97a2bdf3-0bfc-4ad8-a2d2-f2b11a51457d",
+  "used_by": [
+   "Comune di Montesilvano"
+  ],
+  "version": "0.4.0"
+ },
+ {
+  "active": true,
+  "categories": [
    "data-visualization",
    "geographic-information-systems"
   ],
@@ -4667,7 +4713,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-09-09",
+  "released": "2026-10-05",
   "repo": "https://github.com/consiglionazionaledellericerche/epas",
   "repo_key": "github.com/consiglionazionaledellericerche/epas",
   "short_desc": "ePAS \u00e8 il nuovo sistema di rilevazione e gestione delle presenze del personale pensato per le specifiche esigenze degli Enti Pubblici di Ricerca.",
@@ -4681,7 +4727,7 @@
    "Consorzio LAMMA",
    "Ministero dei Trasporti"
   ],
-  "version": "2.33.3"
+  "version": "2.34.0"
  },
  {
   "active": true,
@@ -18459,7 +18505,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-02",
+  "released": "2026-10-06",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18947,7 +18993,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.18.0-rc.0"
+  "version": "4.18.0-rc.3"
  },
  {
   "active": true,
@@ -19097,7 +19143,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-08",
+  "released": "2026-10-06",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19359,7 +19405,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.3"
+  "version": "4.1.5"
  },
  {
   "active": true,
@@ -29040,7 +29086,8 @@
    "time-management"
   ],
   "contacts": [
-   "Vincenzo Scaccianoce, Sonia Lombardo, Gianni Smaldino"
+   "Sonia Lombardo",
+   "Gianni Smaldino"
   ],
   "country": "IT",
   "desc_lang": "it",
@@ -29051,15 +29098,15 @@
   "features": [
    "Budget autorizzatorio annuale e pluriennale",
    "Contabilit\u00e0 Finanziaria",
-   "Contabilit\u00e0 IVA, Istituzionale, Commerciale, Prorata, Promiscuo, Intra \\ Extra UE",
-   "Comunicazione periodica liquidazione IVA  (Li.Pe Xml ), Esterometro Xml",
+   "Contabilit\u00e0 IVA, Istituzionale, Commerciale, Prorata, Promiscuo, Intra/Extra UE",
+   "Comunicazione periodica liquidazione IVA (Li.Pe Xml), Esterometro Xml",
    "Compensi occasionali, professionali, parasubordinati",
    "Liquidazione ritenute, certificazione unica",
    "Gestione magazzino",
    "Contabilit\u00e0 Generale (metodo della partita doppia)"
   ],
   "license": "GPL-3.0-or-later",
-  "long_desc": "Budget Pianificazione strategica: budget e controllo dei costi. Easy \u00e8 un ERP realizzato specificatamente per gli enti che hanno necessit\u00e0 di autorizzare e controllare preventivamente l'assunzione di nuovi impegni e costi. E' particolarmente indicato per le Aziende Sanitarie, le Universit\u00e0, le Fondazioni di diritto privato a totale partecipazione pubblica.  Il controllo autorizzatorio del budget in corso d\u2019esercizio avviene attraverso la registrazione di Impegni e Accertamenti di Budget, che in Easy vengono generati automaticamente al salvataggio dei documenti amministrativi che richiedono l\u2019accantonamento di una certa quota di budget; ad esempio un ordine a fornitore, un contratto per prestazione occasionale, una missione, ecc\u2026  Al salvataggio di ciascun documento, Easy effettua un controllo sul budget disponibile annuale e pluriennale e blocca (in funzione delle regole parametrizzate sulla base delle esigenze dell'ente) eventualmente il salvataggio, qualora la disponibilit\u00e0 risulti insufficiente. Ogni modifica di un documento genera in automatico delle variazioni agli Impegni o Accertamenti di budget. In Easy la gestione della Contabilit\u00e0 Economico-Patrimoniale risulta particolar",
+  "long_desc": "Budget Pianificazione strategica: budget e controllo dei costi. Easy \u00e8 un ERP realizzato specificatamente per gli enti che hanno necessit\u00e0 di autorizzare e controllare preventivamente l'assunzione di nuovi impegni e costi. E' particolarmente indicato per le Aziende Sanitarie, le Universit\u00e0, le Fondazioni di diritto privato a totale partecipazione pubblica.  Il controllo autorizzatorio del budget in corso d'esercizio avviene attraverso la registrazione di Impegni e Accertamenti di Budget, che in Easy vengono generati automaticamente al salvataggio dei documenti amministrativi che richiedono l'accantonamento di una certa quota di budget; ad esempio un ordine a fornitore, un contratto per prestazione occasionale, una missione, ecc...  Al salvataggio di ciascun documento, Easy effettua un controllo sul budget disponibile annuale e pluriennale e blocca (in funzione delle regole parametrizzate sulla base delle esigenze dell'ente) eventualmente il salvataggio, qualora la disponibilit\u00e0 risulti insufficiente. Ogni modifica di un documento genera in automatico delle variazioni agli Impegni o Accertamenti di budget. In Easy la gestione della Contabilit\u00e0 Economico-Patrimoniale risulta particol",
   "maintenance": "contract",
   "name": "UNI.co. Easy",
   "platforms": [
@@ -29068,26 +29115,41 @@
   "released": "2022-02-22",
   "repo": "https://github.com/UniCt-Easy/Easy-Uni.Co.",
   "repo_key": "github.com/unict-easy/easy-uni.co.",
-  "repo_owner": "Universit\u00e0 degli Studi di Catania",
   "short_desc": "UNI.CO. Easy (contabilit\u00e0 CO.FI. CO.AN. CO.GE.) Gestione della contabilit\u00e0 : finanziaria, economico-patrimoniale, analitica.",
   "software_type": "standalone/other",
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "bd52bbbd-40e2-414e-b2da-5155ca76538f",
   "used_by": [
-   "Universit\u00e0 degli Studi di Catania",
-   "Universit\u00e0 degli Studi del Piemonte Orientale",
    "Universit\u00e0 degli Studi della Basilicata",
-   "Universit\u00e0 degli Studi della Campania Luigi Vanvitelli",
-   "Universit\u00e0 degli Studi della Tuscia",
-   "Universit\u00e0 degli Studi di Cassino e del Lazio Meridionale",
-   "Universit\u00e0 degli Studi di Roma Foro Italico",
-   "Universit\u00e0 del Salento",
-   "Universit\u00e0 di Roma Tor Vergata",
+   "Universit\u00e0 di Cassino e del Lazio Meridionale",
+   "Universit\u00e0 degli Studi di Bari Aldo Moro",
+   "Universit\u00e0 della Campania Luigi Vanvitelli",
+   "Universit\u00e0 del Piemonte Orientale Amedeo Avogadro",
    "Universit\u00e0 Mediterranea di Reggio Calabria",
-   "Universit\u00e0 degli Studi di Bari Aldo Moro"
+   "Universit\u00e0 degli Studi di Roma Torvergata",
+   "Universit\u00e0 del Salento",
+   "Universit\u00e0 degli Studi di Roma \"Foro Italico\"",
+   "Universit\u00e0 degli Studi di Catania",
+   "Universit\u00e0 della Tuscia",
+   "Conservatorio di Cagliari",
+   "Consorzio di Bonifica Toscana 1",
+   "ARPAL Puglia",
+   "CINIGeo",
+   "Consorzio Gerard Boulvert",
+   "CIRCC",
+   "Conservatorio di Musica di Reggio Emilia e Castelnovo ne' Monti",
+   "Fondazione Scuola Beni e Attivit\u00e0 Culturali",
+   "Conservatorio di Modena",
+   "Conservatorio di Aosta",
+   "Conservatorio di Trapani",
+   "Centro Nazionale di Ricerca in HPC, Big Data and Quantum Computing",
+   "Centro InterUniversitario per la Previsione e Prevenzione Grandi Rischi",
+   "Accademia di Belle Arti di Frosinone",
+   "Centro Nazionale di Ricerca per le Tecnologie dell'Agricoltura",
+   "MOST (Centro Nazionale per la Mobilit\u00e0 Sostenibile)"
   ],
-  "version": "32.03.901"
+  "version": "90.01.368"
  },
  {
   "active": true,
