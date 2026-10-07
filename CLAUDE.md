@@ -57,8 +57,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
   checkpoint. Visibility is `cache/_fetched.json` (advances ONLY on success) and its age on
   `/sources.html`. `--from-cache` must never write `_fetched.json` or `_timing.json`.
 - **`os2` and the GitLab scans (`de`, `eu`) use `_refuse_short_scan()`**: raise when sub-sources
-  or file fetches
-  failed AND the result shrank, so a partial scan never overwrites a good checkpoint.
+  or file fetches failed AND the result shrank, so a partial scan never overwrites a good
+  checkpoint. A failed fetch is never "no publiccode.yml" (only 401/403/404 are).
 - `github_org_scan` authenticates via `liveness.gh_token()`; `GITHUB_TOKEN` is not in the plist.
 
 ## Identity, dedupe, variants
