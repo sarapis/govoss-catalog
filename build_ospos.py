@@ -24,6 +24,7 @@ import os
 import re
 import time
 
+import fetch_ospos
 import i18n
 import ospo_contract as C
 import sources as S
@@ -540,12 +541,16 @@ if __name__ == "__main__":
                  "approximate. lat/lon are WGS84 degrees. An academic office not yet placed "
                  "has location null; every FLOSS-PSO office is placed. "
                  "COUNTRY codes are listed in country_codes: ISO 3166-1 alpha-2 except EL "
-                 "(Greece, the EU's code) and INT (an international body). "
+                 "(Greece, the EU's code) and INT (an international body); country_names "
+                 "gives a short display name for each. "
+                 "An EXAMPLE of a failed FLOSS-PSO fetch, as this file would then read, is "
+                 "published at /ospos.example-failed.json. "
                  "LICENCES: each list's rows are under that list's licence (sources[key].licence); "
                  "govoss's own fields - id, type, location, resources_case, and country where "
                  "the list gives none - are under licence.govoss_fields.",
         "licence": C.LICENCE,
         "country_codes": C.COUNTRIES,
+        "country_names": C.COUNTRY_NAMES,
         "sources": data.get("sources"),
         "ospos": [dict({k: v for k, v in r.items() if not k.startswith("_")},
                        country=r["_cc"], location=r["_loc"] or None,
@@ -560,4 +565,20 @@ if __name__ == "__main__":
                          + "\n  ".join(probs))
     with open(f"{SITE}/ospos.json", "w") as fh:
         json.dump(doc, fh, ensure_ascii=False, indent=1)
+    # the same document after a failed FLOSS-PSO fetch, written by the fetcher's own
+    # failed_state(), so a reader can test ok:false handling without a real outage
+    ex = json.loads(json.dumps(doc))
+    ex["example"] = ("NOT LIVE DATA: /ospos.json as it reads after a failed FLOSS-PSO fetch. "
+                     "The rows are the last good copy; fetched_at and count are that copy's; "
+                     "failed_at and error describe the failed attempt.")
+    ex["sources"]["floss-pso"] = fetch_ospos.failed_state(
+        doc["sources"]["floss-pso"], "floss-pso",
+        "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        doc["sources"]["floss-pso"]["count"], NOW)
+    probs = C.doc_problems(ex)
+    if probs:
+        raise SystemExit("build_ospos: the failed-fetch example breaks the contract:\n  "
+                         + "\n  ".join(probs))
+    with open(f"{SITE}/ospos.example-failed.json", "w") as fh:
+        json.dump(ex, fh, ensure_ascii=False, indent=1)
     i18n.report("build_ospos")

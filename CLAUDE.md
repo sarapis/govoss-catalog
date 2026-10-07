@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 13 suites, 795 checks, all manual
+for t in test_*.py; do python3 $t; done     # 13 suites, 807 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -233,8 +233,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   keep its shape, and stamp it from `meta.json`, never a fresh clock (check 12c).
 - **`/ospos.json` has an OUTSIDE consumer too** (un.opensource.nyc reads the FLOSS-PSO rows and
   throws on anything unexpected). Its contract lives once, in `ospo_contract.py`: exact licence
-  strings, `country_codes` (a new code is a contract change), row shapes, `count`, ids from the
-  office URL. `fetch_ospos.py` REFUSES an upstream list that breaks it (ok:false, last good copy,
+  strings, `country_codes` + `country_names` (a new code is a contract change), row shapes,
+  `count`, ids from the office URL. `/ospos.example-failed.json` is the same file after a failed
+  FLOSS-PSO fetch, written by `fetch_ospos.failed_state()` (the one writer of that state). `fetch_ospos.py` REFUSES an upstream list that breaks it (ok:false, last good copy,
   `fetched_at` unmoved - so a new FLOSS-PSO office waits until it is placed in
   `ospos/locations.json`); `build_ospos.py` refuses to write a breaking file, which stops the
   publish. Change the contract only together with UNNYC.
@@ -259,7 +260,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Thirteen suites, 795 checks, **all manual** - a test that can fail the weekly publish is one someone
+Thirteen suites, 807 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -279,7 +280,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, nav and Resources (12e), /ospos cards, map pins (scaled up on narrow screens), the stacked phone map, the pin popup, Resources links, folded code links, no entity in a script, projection (12f), hosting files |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
-| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at, a contract break refused like a failed fetch) |
+| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch) |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 
 Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only

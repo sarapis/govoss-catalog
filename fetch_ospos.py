@@ -207,6 +207,18 @@ def floss_contract(recs):
                                                                     if len(probs) > 5 else ""))
 
 
+def failed_state(prev, key, error, kept, now):
+    """A source's state after a failed fetch. ok:false means "these rows are the last
+    good copy, fetched at fetched_at": fetched_at and count stay those of the copy
+    kept, never this attempt's. build_ospos.py publishes an example built by this
+    same function (/ospos.example-failed.json), so the example cannot drift."""
+    st = dict(prev or {})
+    st.update({"ok": False, "error": error,
+               "failed_at": now, "count": kept, "licence": LICENCES[key],
+               "url": FLOSS_PAGE if key == "floss-pso" else AMAP_SITE})
+    return st
+
+
 def merge(floss, amap):
     """FLOSS-PSO wins a duplicate: same host is the same office."""
     hosts = {host_of(r["url"]) for r in floss}
@@ -239,12 +251,8 @@ def main():
             print("    %s: %d OSPOs" % (key, len(recs)))
         except Exception as e:
             got[key] = old
-            # ok:false means "this is the last good copy, fetched at fetched_at":
-            # fetched_at and count stay those of the copy kept, never this attempt's
-            st = dict(state.get(key) or {})
-            st.update({"ok": False, "error": "%s: %s" % (type(e).__name__, str(e)[:400]),
-                       "failed_at": NOW, "count": len(old), "licence": LICENCES[key],
-                       "url": FLOSS_PAGE if key == "floss-pso" else AMAP_SITE})
+            st = failed_state(state.get(key), key, "%s: %s" % (type(e).__name__, str(e)[:400]),
+                              len(old), NOW)
             state[key] = st
             print("    %s: FAILED %s - keeping %d from the last good fetch" % (key, st["error"], len(old)))
     ospos = merge(got.get("floss-pso", []), got.get("academic-map", []))

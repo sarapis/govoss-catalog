@@ -533,6 +533,30 @@ def main():
     check("/ospos.json documents its country codes",
           sorted(oj.get("country_codes") or {}),
           ["DE", "DK", "EL", "ES", "FR", "GB", "IE", "INT", "LU", "NL", "US"])
+    check("/ospos.json names every country code, exactly (UNNYC's headings)",
+          (oj.get("country_names"), sorted(oj.get("country_names") or {}) == sorted(oj.get("country_codes") or {})),
+          ({"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
+            "GB": "United Kingdom", "IE": "Ireland", "INT": "International", "LU": "Luxembourg",
+            "NL": "Netherlands", "US": "United States"}, True))
+    # the failed-fetch example: the live document with ONLY the floss-pso state
+    # changed, the way fetch_ospos.failed_state() writes it, and still in contract
+    try:
+        ex = json.load(open(os.path.join(SITE, "ospos.example-failed.json")))
+    except Exception:
+        ex = {}
+    exf = (ex.get("sources") or {}).get("floss-pso") or {}
+    livef = (oj.get("sources") or {}).get("floss-pso") or {}
+    check("/ospos.example-failed.json keeps the contract", _oc.doc_problems(ex) if ex else ["missing"], [])
+    check("/ospos.example-failed.json: ok false, the live copy's fetched_at/count/licence/url, "
+          "a later failed_at, an error, and nothing else changed",
+          (exf.get("ok"), exf.get("fetched_at"), exf.get("count"), exf.get("licence"), exf.get("url"),
+           (exf.get("failed_at") or "") > (exf.get("fetched_at") or "~"), bool(exf.get("error")),
+           ex.get("ospos") == oj.get("ospos"),
+           {k: v for k, v in ex.items() if k not in ("sources", "example")}
+           == {k: v for k, v in oj.items() if k != "sources"},
+           bool(re.match(r"^NOT LIVE DATA", ex.get("example") or ""))),
+          (False, livef.get("fetched_at"), livef.get("count"), livef.get("licence"), livef.get("url"),
+           True, True, True, True, True))
     ab = oj.get("about") or ""
     check("/ospos.json's about documents basis (hq approximate) and ok:false (last good copy)",
           (bool(re.search(r"'seat' is the office's own city; 'hq' is its parent organisation's "

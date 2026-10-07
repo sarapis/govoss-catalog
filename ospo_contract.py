@@ -12,6 +12,10 @@ What it relies on is written down here, once, and checked in three places:
                    and the failed step stops the publish.
   test_ospos.py, test_built_pages.py   pin it, by sabotage.
 
+Also published: /ospos.example-failed.json, the same document as a failed
+FLOSS-PSO fetch leaves it (built by fetch_ospos.failed_state), so a reader can
+test its ok:false handling without waiting for a real failure.
+
 Free to change, because they do not read them: human_page, about, created,
 resources_case, kind, ospo_note, source_url, and any NEW key. A change to
 anything checked below is a contract change: tell UNNYC first, then change
@@ -35,6 +39,13 @@ COUNTRIES = {
     "DE": "Germany", "DK": "Denmark", "EL": "Greece (the EU's code; ISO is GR)",
     "ES": "Spain", "FR": "France", "GB": "United Kingdom", "IE": "Ireland",
     "INT": "an international or intergovernmental body", "LU": "Luxembourg",
+    "NL": "Netherlands", "US": "United States",
+}
+# A short display name per code, for headings - a SEPARATE key so country_codes
+# keeps its shape (asked for by UNNYC 2026-10-07; a contract addition, not a change).
+COUNTRY_NAMES = {
+    "DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
+    "GB": "United Kingdom", "IE": "Ireland", "INT": "International", "LU": "Luxembourg",
     "NL": "Netherlands", "US": "United States",
 }
 TYPES = ("government", "academic")
@@ -113,6 +124,10 @@ def doc_problems(doc):
         p.append("generated_at is not an ISO 8601 UTC time")
     if doc.get("licence") != LICENCE:
         p.append("licence is not %r" % (LICENCE,))
+    if doc.get("country_codes") != COUNTRIES:
+        p.append("country_codes is not the documented set")
+    if doc.get("country_names") != COUNTRY_NAMES:
+        p.append("country_names is not the documented set")
     rows = doc.get("ospos")
     if not isinstance(rows, list):
         return p + ["ospos is not an array"]

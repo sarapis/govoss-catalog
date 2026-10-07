@@ -159,6 +159,10 @@ def main():
            "lists": "each list's own: sources[*].licence"})
     check("contract: the documented country codes", sorted(C.COUNTRIES),
           ["DE", "DK", "EL", "ES", "FR", "GB", "IE", "INT", "LU", "NL", "US"])
+    check("contract: the display name per code (UNNYC's headings)", C.COUNTRY_NAMES,
+          {"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
+                     "GB": "United Kingdom", "IE": "Ireland", "INT": "International",
+                     "LU": "Luxembourg", "NL": "Netherlands", "US": "United States"})
     check("contract: types", sorted(C.TYPES), ["academic", "government"])
     check("contract: location bases", sorted(C.BASES), ["hq", "seat"])
 
@@ -172,6 +176,7 @@ def main():
             "url": "https://b.example/", "description": "", "email": None, "policy": None,
             "code": [], "country": None, "location": None}
     DOC = {"generated_at": "2026-10-07T20:54:31Z", "licence": dict(C.LICENCE),
+           "country_codes": dict(C.COUNTRIES), "country_names": dict(C.COUNTRY_NAMES),
            "sources": {"floss-pso": {"licence": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
                                      "url": "https://floss-pso.network/public-sector-ospos/",
                                      "fetched_at": "2026-10-07T20:10:41Z", "count": 1, "ok": True}},
@@ -193,6 +198,10 @@ def main():
         (("generated_at",), "2026-10-07 20:54"), (("generated_at",), KeyError),
         (("licence",), {"govoss_fields": "CC BY 4.0"}), (("licence",), KeyError),
         (("sources",), []), (("ospos",), {}),
+        (("country_codes",), KeyError), (("country_codes", "EL"), {"name": "Greece"}),
+        (("country_codes", "IT"), "Italy"),
+        (("country_names",), KeyError), (("country_names", "EL"), "Hellas"),
+        (("country_names", "INT"), KeyError),
         (("sources", "floss-pso"), KeyError),
         (("sources", "floss-pso", "licence"), "CC0 1.0"),
         (("sources", "floss-pso", "url"), ""),
@@ -215,6 +224,19 @@ def main():
     ]:
         check("contract: %s = %r is a problem" % ("/".join(map(str, path)), value),
               len(broken(path, value)) > 0, True)
+
+    # ---- failed_state(): the one writer of a failed source's state, also used for
+    # the published /ospos.example-failed.json
+    prev = {"ok": True, "fetched_at": "2026-10-07T20:10:41Z", "count": 18,
+            "licence": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
+            "url": "https://floss-pso.network/public-sector-ospos/"}
+    st = F.failed_state(prev, "floss-pso", "OSError: down", 18, "2026-10-14T07:01:00Z")
+    check("failed_state: ok false, the copy kept's fetched_at and count, this attempt's "
+          "failed_at, the error as given",
+          st, dict(prev, ok=False, error="OSError: down", failed_at="2026-10-14T07:01:00Z"))
+    check("failed_state: a source never fetched still gets licence, url and count",
+          sorted(F.failed_state(None, "floss-pso", "OSError: down", 0, "2026-10-14T07:01:00Z")),
+          ["count", "error", "failed_at", "licence", "ok", "url"])
 
     # ---- ids: derived from the office's URL alone, so stable for an unchanged
     # upstream entry whatever else about it, or its file, or the order, changes
