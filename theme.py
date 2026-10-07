@@ -526,7 +526,10 @@ def _esc(t):
 
 def topbar(active="", lang="en", route="/"):
     """Site header. `active` is one of home | software | catalogs | docs | resources
-    (products has no nav item, by the owner's choice); `route` is this
+    (products has no nav item, by the owner's choice). Docs is the top-right
+    button rather than a nav item (owner, 2026-10-07: it replaced "Submit a
+    catalog", which lives on as the Get involved block on / and /catalogs).
+    `route` is this
     page's English path, so the language switcher can point at its twin.
 
     The CTFG mark that used to sit right of the wordmark is GONE (2026-08-13):
@@ -543,19 +546,19 @@ def topbar(active="", lang="en", route="/"):
     <span class="bmark">govoss</span>
     <span class="bsub">⟪Government<br>open source⟫</span>
   </a>
-  <nav class="nav">%s %s %s %s %s</nav>
+  <nav class="nav">%s %s %s %s</nav>
   <div class="t-r">
     %s
-    <a class="btn btn-primary" href="/#submit">⟪Submit a catalog⟫</a>
+    <a class="btn btn-primary" href="/docs"%s>⟪Docs⟫</a>
   </div>
 </div></header>
 """ % (
        item("/", "⟪Home⟫", "home"),
        item("/software", "⟪Software⟫", "software"),
        item("/catalogs", "⟪Catalogs⟫", "catalogs"),
-       item("/docs", "⟪Docs⟫", "docs"),
        item("/resources", "⟪Resources⟫", "resources"),
-       i18n.switcher(lang, route))
+       i18n.switcher(lang, route),
+       ' aria-current="page"' if active == "docs" else "")
 
 
 # The "Get involved" block, shared by / and /catalogs. It used to be written

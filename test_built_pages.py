@@ -190,9 +190,9 @@ def main():
     # ---- 10. CROSS-PAGE: one "Get involved" block, rendered the same on both pages.
     # It was written out twice, in _ui_template.py and build_sources.py, and a fix
     # to one left the other stale; it now comes from theme.submit_block(). Digits
-    # are masked because each page passes its own catalogue count. The topbar's
-    # "Submit a catalog" button on every page links to /#submit, so the catalog
-    # page must carry exactly one target for it.
+    # are masked because each page passes its own catalogue count. The home page
+    # must carry exactly one #submit target (its lede's "Submit it here" links
+    # to it; the top bar's "Submit a catalog" button became Docs on 2026-10-07).
     def submit(page):
         m = re.search(r'<div class="submit" id="submit">.*?</div>', page, re.S)
         return re.sub(r"\d+", "N", m.group(0)) if m else None
@@ -386,18 +386,25 @@ def main():
               (f.group(1) if f else None, bool(f and 'name="q"' in f.group(2))), (sw, True))
     check("home 'See all, newest first' opens /software sorted newest",
           'href="/software?sort=recent"' in home, True)
+    # Docs is the top-right button, not a nav item (owner, 2026-10-07)
     NAV = [("/", "home"), ("/software", "software"), ("/catalogs", "catalogs"),
-           ("/docs", "docs"), ("/resources", "resources")]
+           ("/resources", "resources")]
     for name in ROUTE_OF:
         for lang in i18n.LANGS:
             pname = name if lang == "en" else "%s/%s" % (lang, name)
             nav = re.search(r'<nav class="nav">(.*?)</nav>', pages[pname], re.S)
             hrefs = re.findall(r'href="([^"]+)"', nav.group(1)) if nav else []
-            check("%s nav: the five links, in order" % pname,
+            check("%s nav: the four links, in order" % pname,
                   hrefs, [i18n.path_for(lang, r) for r, _ in NAV])
             cur = re.findall(r'href="([^"]+)" aria-current="page"', nav.group(1)) if nav else []
-            want_cur = [i18n.path_for(lang, ROUTE_OF[name])] if name != "products.html" else []
+            want_cur = ([i18n.path_for(lang, ROUTE_OF[name])]
+                        if name not in ("products.html", "docs.html") else [])
             check("%s nav marks its own page current" % pname, cur, want_cur)
+            btn = re.search(r'<div class="t-r">.*?<a class="btn btn-primary" href="([^"]+)"([^>]*)>',
+                            pages[pname], re.S)
+            check("%s top-right button is Docs (current only on /docs)" % pname,
+                  (btn.group(1) if btn else None, bool(btn and "aria-current" in btn.group(2))),
+                  (i18n.path_for(lang, "/docs"), name == "docs.html"))
     rfile = json.load(open(os.path.join(HERE, "resources", "ospo-resources.json")))
     for name in ("resources.html", "ca/resources.html"):
         ids = re.findall(r'<li class="res" id="([^"]+)"', pages[name])
