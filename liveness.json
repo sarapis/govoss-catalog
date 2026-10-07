@@ -15,7 +15,7 @@
    "status": 200
   },
   "app.swaggerhub.com/apis-docs/decko/wikirate/1.0.0": {
-   "dead_count": 14,
+   "dead_count": 15,
    "dead_since": "2026-08-31T11:15:23Z",
    "name": "Wikirate Data",
    "status": 404
@@ -23,6 +23,11 @@
   "archive.softwareheritage.org": {
    "dead_count": 0,
    "name": "Software Heritage Archive",
+   "status": 200
+  },
+  "audiominer-7fb8ed.usercontent.opencode.de": {
+   "dead_count": 0,
+   "name": "Audiominer",
    "status": 200
   },
   "bit.ly/ph-ee": {
@@ -56,10 +61,15 @@
    "status": 200
   },
   "bitbucket.org/cse-assemblyline/assemblyline": {
-   "dead_count": 28,
+   "dead_count": 29,
    "dead_since": "2026-08-11T18:45:22Z",
    "name": "Assemblyline",
    "status": 404
+  },
+  "bitbucket.org/epic-ai/kifo-public": {
+   "dead_count": 0,
+   "name": "KiF\u00f6 AI Backend",
+   "status": 200
   },
   "bitbucket.org/geowerkstatt-hamburg/addons": {
    "dead_count": 0,
@@ -69,6 +79,16 @@
   "bitbucket.org/geowerkstatt-hamburg/bim_portal_hh": {
    "dead_count": 0,
    "name": "BIM Portal Hamburg",
+   "status": 200
+  },
+  "bitbucket.org/geowerkstatt-hamburg/bim_portal_hh_addons": {
+   "dead_count": 0,
+   "name": "BIM Portal Hamburg Addons",
+   "status": 200
+  },
+  "bitbucket.org/geowerkstatt-hamburg/hh-udp-iot": {
+   "dead_count": 0,
+   "name": "HH-UDP-IoT",
    "status": 200
   },
   "bitbucket.org/geowerkstatt-hamburg/masterportal": {
@@ -121,6 +141,11 @@
    "name": "Chromium",
    "status": 200
   },
+  "cibseven.org": {
+   "dead_count": 0,
+   "name": "CIB seven",
+   "status": 200
+  },
   "cilrap-lexsitus.org": {
    "name": "Lexsitus",
    "status": 403
@@ -131,33 +156,52 @@
    "name": "Moodle eTranslation filter plugin ",
    "status": 200
   },
-  "code.europa.eu/cbe/kpi-webtool": {
-   "dead_count": 0,
-   "last_push": "2026-01-22T18:12:56.062Z",
-   "name": "KPI Webtool",
-   "status": 200
-  },
   "code.europa.eu/dit/dss": {
    "dead_count": 0,
    "last_push": "2026-01-16T09:42:05.738Z",
    "name": "DSS",
    "status": 200
   },
-  "code.europa.eu/leos/ai4drpm": {
+  "code.europa.eu/dit/dss-demonstrations": {
    "dead_count": 0,
-   "last_push": "2026-10-07T15:29:04.632Z",
-   "name": "AI4DRPM",
+   "last_push": "2026-01-22T18:39:04.165Z",
+   "name": "DSS Demonstrations",
    "status": 200
   },
-  "code.europa.eu/leos/core": {
+  "code.europa.eu/dit/preserve-eu": {
    "dead_count": 0,
-   "last_push": "2026-10-07T18:14:09.823Z",
-   "name": "LEOS core",
+   "last_push": "2025-12-16T15:26:56.264Z",
+   "name": "PreserveEU",
    "status": 200
   },
-  "code.europa.eu/todo/h2_temporal_analysis": {
+  "code.europa.eu/edelivery/bdmsl": {
    "dead_count": 0,
-   "name": "H2 Temporal Analysis",
+   "last_push": "2026-09-22T11:10:10.892Z",
+   "name": "DomiSML",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/domibus": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T14:34:19.298Z",
+   "name": "Domibus",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/dynamic-discovery-client": {
+   "dead_count": 0,
+   "last_push": "2026-09-24T08:28:09.724Z",
+   "name": "Dynamic Discovery Client (DDC)",
+   "status": 200
+  },
+  "code.europa.eu/edelivery/smp": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T12:30:14.530Z",
+   "name": "DomiSMP",
+   "status": 200
+  },
+  "code.europa.eu/realfa/steam-energy-calculator": {
+   "dead_count": 0,
+   "last_push": "2026-08-25T13:23:11.113Z",
+   "name": "Steam Energy Requirements Calculator",
    "status": 200
   },
   "code.europa.eu/vecto/vecto": {
@@ -1214,7 +1258,7 @@
   },
   "dev.gnupg.org/source/gnupg": {
    "name": "GNU Privacy Guard",
-   "status": "error:URLError"
+   "status": 429
   },
   "developer.yr.no/doc/gettingstarted": {
    "dead_count": 0,
@@ -1345,13 +1389,13 @@
    "status": 200
   },
   "git.centos.org/project/rpms": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "CentOS",
    "status": 404
   },
   "git.code.sf.net/p/opencamera/code": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Open Camera",
    "status": 404
@@ -2697,7 +2741,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T17:15:25Z",
+   "last_push": "2026-10-07T19:42:10Z",
    "name": "Apache Camel",
    "status": 200
   },
@@ -2761,7 +2805,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:38:42Z",
+   "last_push": "2026-10-07T19:34:25Z",
    "name": "Apache Solr",
    "status": 200
   },
@@ -3046,7 +3090,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:21:48Z",
+   "last_push": "2026-10-07T19:40:03Z",
    "name": "Ruff",
    "status": 200
   },
@@ -3054,7 +3098,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:26:41Z",
+   "last_push": "2026-10-07T19:45:13Z",
    "name": "uv",
    "status": 200
   },
@@ -3064,14 +3108,6 @@
    "empty": false,
    "last_push": "2023-09-07T15:10:58Z",
    "name": "Khartis",
-   "status": 200
-  },
-  "github.com/atraintranscription/atrain": {
-   "archived": false,
-   "dead_count": 0,
-   "empty": false,
-   "last_push": "2026-10-07T09:41:10Z",
-   "name": "aTrain",
    "status": 200
   },
   "github.com/atsmilano/controllo-di-gestione": {
@@ -3152,25 +3188,25 @@
    "status": 200
   },
   "github.com/aziendazero/area": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Sistema di Autorizzazione e Accreditamento delle Strutture Sanitarie, Socio-Sanitarie e Sociali",
    "status": 404
   },
   "github.com/aziendazero/ecm": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Sistema documentale di gestione dell'Educazione Continua in Medicina (ECM)",
    "status": 404
   },
   "github.com/aziendazero/screening": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Screening",
    "status": 404
   },
   "github.com/aziendazero/siavr": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "SIAVr",
    "status": 404
@@ -3331,7 +3367,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:26:03Z",
+   "last_push": "2026-10-07T19:43:48Z",
    "name": "LiteLLM",
    "status": 200
   },
@@ -3355,7 +3391,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T17:06:50Z",
+   "last_push": "2026-10-07T19:44:17Z",
    "name": "Recomandations Collaboratives (Recoco)",
    "status": 200
   },
@@ -3384,13 +3420,13 @@
    "status": 200
   },
   "github.com/bioverse-labs/image-processing": {
-   "dead_count": 25,
+   "dead_count": 26,
    "dead_since": "2026-08-11T21:07:15Z",
    "name": "Productive Forests",
    "status": 404
   },
   "github.com/bisamhealth/bisaapp": {
-   "dead_count": 27,
+   "dead_count": 28,
    "dead_since": "2026-08-11T19:34:37Z",
    "name": "Bisa Health",
    "status": 404
@@ -3399,7 +3435,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:15:21Z",
+   "last_push": "2026-10-07T19:35:21Z",
    "name": "Bitwarden Browser Extensions",
    "status": 200
   },
@@ -3415,7 +3451,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:44:11Z",
+   "last_push": "2026-10-07T19:42:58Z",
    "name": "Bitwarden",
    "status": 200
   },
@@ -3673,7 +3709,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:26:34Z",
+   "last_push": "2026-10-07T19:30:54Z",
    "name": "SonarQube Plugins : CheckStyle",
    "status": 200
   },
@@ -3779,6 +3815,14 @@
    "empty": false,
    "last_push": "2023-09-29T03:23:39Z",
    "name": "Pori Events -tapahtumakalenteri (Drupal 9)",
+   "status": 200
+  },
+  "github.com/citysciencelab/cut-data-narrator": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2024-04-25T14:39:21Z",
+   "name": "Data Narrator (Masterportal AddOn)",
    "status": 200
   },
   "github.com/cityssm/contract-expiration-tracker": {
@@ -4331,13 +4375,13 @@
    "status": 200
   },
   "github.com/comunedirimini/gatewayfederaspid": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Gateway Federa SPID",
    "status": 404
   },
   "github.com/comunedirimini/istanzeedichiarazioni": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Istanze Digitali",
    "status": 404
@@ -4802,6 +4846,30 @@
    "name": "Data Observation Toolkit",
    "status": 200
   },
+  "github.com/dataport/polar": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T19:10:15Z",
+   "name": "POLAR",
+   "status": 200
+  },
+  "github.com/dataport/terminfinder-backend": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-09-17T11:27:30Z",
+   "name": "Terminfinder",
+   "status": 200
+  },
+  "github.com/dataport/terminfinder-frontend": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T11:37:53Z",
+   "name": "Terminfinder",
+   "status": 200
+  },
   "github.com/daxstudio/daxstudio": {
    "archived": false,
    "dead_count": 0,
@@ -4862,7 +4930,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T00:45:24Z",
+   "last_push": "2026-10-07T19:36:50Z",
    "name": "BS-\u00dcbersetzer Frontend",
    "status": 200
   },
@@ -5448,7 +5516,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:53:56Z",
+   "last_push": "2026-10-07T19:39:33Z",
    "name": "CommCare",
    "status": 200
   },
@@ -5496,7 +5564,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:18:30Z",
+   "last_push": "2026-10-07T19:42:47Z",
    "name": "Discourse",
    "status": 200
   },
@@ -5767,7 +5835,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:24:00Z",
+   "last_push": "2026-10-07T19:43:59Z",
    "name": "Elasticsearch",
    "status": 200
   },
@@ -5775,7 +5843,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:24:16Z",
+   "last_push": "2026-10-07T19:44:44Z",
    "name": "Kibana",
    "status": 200
   },
@@ -5966,14 +6034,6 @@
    "empty": false,
    "last_push": "2026-10-07T09:10:41Z",
    "name": "Eurosky Identity Platform",
-   "status": 200
-  },
-  "github.com/eusurvey/eusurvey": {
-   "archived": false,
-   "dead_count": 0,
-   "empty": false,
-   "last_push": "2026-10-07T13:25:12Z",
-   "name": "EUSurvery",
    "status": 200
   },
   "github.com/evarisk/digirisk": {
@@ -6259,7 +6319,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:24:37Z",
+   "last_push": "2026-10-07T19:27:31Z",
    "name": "GCconnex",
    "status": 200
   },
@@ -6500,6 +6560,14 @@
    "empty": false,
    "last_push": "2023-01-07T21:06:01Z",
    "name": "Smartakartan",
+   "status": 200
+  },
+  "github.com/governikus/ausweisapp": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T05:04:35Z",
+   "name": "AusweisApp",
    "status": 200
   },
   "github.com/governmentbg/--investbg": {
@@ -8066,7 +8134,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:24:16Z",
+   "last_push": "2026-10-07T19:42:42Z",
    "name": "Grafana",
    "status": 200
   },
@@ -8082,7 +8150,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:18:31Z",
+   "last_push": "2026-10-07T19:40:48Z",
    "name": "Graylog",
    "status": 200
   },
@@ -8098,7 +8166,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:18:31Z",
+   "last_push": "2026-10-07T19:35:56Z",
    "name": "GreenShot",
    "status": 200
   },
@@ -9678,7 +9746,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:20:35Z",
+   "last_push": "2026-10-07T19:32:46Z",
    "name": "municipio-project-aggregator",
    "status": 200
   },
@@ -10670,7 +10738,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T16:06:32Z",
+   "last_push": "2026-10-07T19:40:12Z",
    "name": "OpenELIS Global",
    "status": 200
   },
@@ -12691,7 +12759,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:53:06Z",
+   "last_push": "2026-10-07T19:30:38Z",
    "name": "Immich",
    "status": 200
   },
@@ -12757,7 +12825,7 @@
    "status": 200
   },
   "github.com/ingv/hyp2000-ws": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "INGV - HYP2000-WS",
    "status": 404
@@ -12970,6 +13038,38 @@
    "name": "7zip",
    "status": 200
   },
+  "github.com/isaitb/gitb": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T16:12:15Z",
+   "name": "Interoperability Test Bed",
+   "status": 200
+  },
+  "github.com/isaitb/json-validator": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-05T10:12:21Z",
+   "name": "Interoperability Test Bed - JSON validator",
+   "status": 200
+  },
+  "github.com/isaitb/shacl-validator": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-05T10:12:32Z",
+   "name": "Interoperability Test Bed - CSV validator",
+   "status": 200
+  },
+  "github.com/isaitb/xml-validator": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-05T10:12:12Z",
+   "name": "Interoperability Test Bed - XML validator",
+   "status": 200
+  },
   "github.com/isprambiente/domando": {
    "archived": false,
    "dead_count": 0,
@@ -13126,7 +13226,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T15:51:48Z",
+   "last_push": "2026-10-07T19:35:59Z",
    "name": "Zeitmanagementsystem",
    "status": 200
   },
@@ -13231,7 +13331,7 @@
    "dead_count": 0,
    "empty": false,
    "last_push": "2026-10-06T00:45:52Z",
-   "name": "Kiwi - Unicode Tastatur",
+   "name": "KIWI",
    "status": 200
   },
   "github.com/it-at-m/wahllokalsystem": {
@@ -13347,7 +13447,7 @@
    "status": 200
   },
   "github.com/italia/open-catalog-api": {
-   "dead_count": 12,
+   "dead_count": 13,
    "dead_since": "2026-09-14T11:11:49Z",
    "name": "open-catalog-api",
    "status": 404
@@ -13913,7 +14013,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:09:11Z",
+   "last_push": "2026-10-07T19:42:15Z",
    "name": "Jitsi Meet",
    "status": 200
   },
@@ -14239,6 +14339,38 @@
    "name": "Kokeilun paikka",
    "status": 200
   },
+  "github.com/kausaltech/kausal-paths": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T19:14:38Z",
+   "name": "Kausal Paths",
+   "status": 200
+  },
+  "github.com/kausaltech/kausal-paths-ui": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T14:26:41Z",
+   "name": "kausal-paths-ui",
+   "status": 200
+  },
+  "github.com/kausaltech/kausal-watch": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T17:26:14Z",
+   "name": "Kausal Watch",
+   "status": 200
+  },
+  "github.com/kausaltech/kausal-watch-ui": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T14:38:38Z",
+   "name": "Kausal Watch Action Plan Monitoring UI",
+   "status": 200
+  },
   "github.com/kee-org/browser-addon": {
    "archived": false,
    "dead_count": 0,
@@ -14275,7 +14407,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:44:36Z",
+   "last_push": "2026-10-07T19:27:07Z",
    "name": "Keycloak",
    "status": 200
   },
@@ -14304,7 +14436,7 @@
    "status": 200
   },
   "github.com/knime/knime-core": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "KNIME Analytics Platform",
    "status": 404
@@ -14417,7 +14549,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:22:14Z",
+   "last_push": "2026-10-07T19:36:17Z",
    "name": "Langfuse",
    "status": 200
   },
@@ -14489,7 +14621,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T17:34:15Z",
+   "last_push": "2026-10-07T19:32:50Z",
    "name": "LibreNMS",
    "status": 200
   },
@@ -14579,7 +14711,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:09:14Z",
+   "last_push": "2026-10-07T19:43:22Z",
    "name": "Logseq",
    "status": 200
   },
@@ -14768,7 +14900,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:26:06Z",
+   "last_push": "2026-10-07T19:34:38Z",
    "name": "Matomo",
    "status": 200
   },
@@ -14861,7 +14993,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:16:00Z",
+   "last_push": "2026-10-07T19:43:49Z",
    "name": "Metabase",
    "status": 200
   },
@@ -14885,7 +15017,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:20:28Z",
+   "last_push": "2026-10-07T19:44:19Z",
    "name": "Visual Studio Code",
    "status": 200
   },
@@ -15042,7 +15174,7 @@
    "status": 200
   },
   "github.com/ministero-salute/sdk-lib-componnets": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "sdk-lib-componnets",
    "status": 404
@@ -15168,7 +15300,7 @@
    "status": 200
   },
   "github.com/moda-gov-tw/code-gov-tw": {
-   "dead_count": 21,
+   "dead_count": 22,
    "dead_since": "2026-08-11T22:00:43Z",
    "name": "\u516c\u5171\u7a0b\u5f0f\u5e73\u81fa",
    "status": 404
@@ -15441,7 +15573,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:12:03Z",
+   "last_push": "2026-10-07T19:40:06Z",
    "name": "MongoDB",
    "status": 200
   },
@@ -15465,7 +15597,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:24:59Z",
+   "last_push": "2026-10-07T19:36:31Z",
    "name": "Mozilla Firefox (Extended Support Release)",
    "status": 200
   },
@@ -15488,6 +15620,14 @@
    "empty": false,
    "last_push": "2026-10-07T13:26:17Z",
    "name": "mRemoteNG",
+   "status": 200
+  },
+  "github.com/mrmap-community/xplanung_light": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T12:57:20Z",
+   "name": "XPlanung-light",
    "status": 200
   },
   "github.com/msh/openpv": {
@@ -15558,7 +15698,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:22:43Z",
+   "last_push": "2026-10-07T19:41:53Z",
    "name": "n8n",
    "status": 200
   },
@@ -15614,7 +15754,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:23:57Z",
+   "last_push": "2026-10-07T19:29:22Z",
    "name": "Netbox",
    "status": 200
   },
@@ -15630,7 +15770,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:25:38Z",
+   "last_push": "2026-10-07T19:31:13Z",
    "name": "NextCloud Server",
    "status": 200
   },
@@ -15662,7 +15802,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:25:16Z",
+   "last_push": "2026-10-07T19:45:06Z",
    "name": "NixOS",
    "status": 200
   },
@@ -15672,7 +15812,7 @@
    "status": 200
   },
   "github.com/nlsfi/file-download-service": {
-   "dead_count": 11,
+   "dead_count": 12,
    "dead_since": "2026-09-21T11:14:02Z",
    "name": "Avoimien aineistojen tiedostopalvelu",
    "status": 404
@@ -15779,6 +15919,30 @@
    "empty": false,
    "last_push": "2026-10-07T15:41:31Z",
    "name": "IS Designer",
+   "status": 200
+  },
+  "github.com/oberverwaltungsgericht-rheinland-pfalz/egvp-addressbook": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2025-08-27T11:35:50Z",
+   "name": "EGVP-AddressBook",
+   "status": 200
+  },
+  "github.com/oberverwaltungsgericht-rheinland-pfalz/egvp-enterprise-receiver": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2022-05-05T11:03:54Z",
+   "name": "EGVP-Enterprise-Receiver",
+   "status": 200
+  },
+  "github.com/oberverwaltungsgericht-rheinland-pfalz/ovgrlp-ressourcenplanung": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2025-11-21T14:27:43Z",
+   "name": "OVGRLP-Ressourcenplanung",
    "status": 200
   },
   "github.com/oblique-bit/oblique": {
@@ -15976,7 +16140,7 @@
    "status": 200
   },
   "github.com/open-io/oio-sds": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "OpenIO",
    "status": 404
@@ -15985,7 +16149,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:04:31Z",
+   "last_push": "2026-10-07T19:42:51Z",
    "name": "Codex CLI",
    "status": 200
   },
@@ -16030,7 +16194,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:19:09Z",
+   "last_push": "2026-10-07T19:40:59Z",
    "name": "OpenCTI",
    "status": 200
   },
@@ -16356,7 +16520,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:26:53Z",
+   "last_push": "2026-10-07T19:42:14Z",
    "name": "Valtionavustusj\u00e4rjestelm\u00e4",
    "status": 200
   },
@@ -16364,7 +16528,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T17:08:43Z",
+   "last_push": "2026-10-07T19:44:37Z",
    "name": "OpenProject",
    "status": 200
   },
@@ -19242,7 +19406,7 @@
    "status": 200
   },
   "github.com/provincia-pescara/gte-abruzzo": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "GTE-Abruzzo",
    "status": 404
@@ -19335,6 +19499,14 @@
    "name": "Accessible Medical Records via Integrated Technologies",
    "status": 200
   },
+  "github.com/public-ui/kolibri": {
+   "archived": false,
+   "dead_count": 0,
+   "empty": false,
+   "last_push": "2026-10-07T17:56:10Z",
+   "name": "KoliBri \u2013 Die barrierefreie WebComponent-Bibliothek",
+   "status": 200
+  },
   "github.com/publicodes/publicodes": {
    "archived": false,
    "dead_count": 0,
@@ -19347,7 +19519,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:05:00Z",
+   "last_push": "2026-10-07T19:31:54Z",
    "name": "Pydantic",
    "status": 200
   },
@@ -20653,7 +20825,7 @@
    "status": 200
   },
   "github.com/regioneumbria-rcb/gari-umbria": {
-   "dead_count": 10,
+   "dead_count": 11,
    "dead_since": "2026-09-23T15:45:30Z",
    "name": "GARI (Gestione Agricola Rurale Informatizzata della Regione Umbria)",
    "status": 404
@@ -20755,7 +20927,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:22:25Z",
+   "last_push": "2026-10-07T19:45:13Z",
    "name": "Rocketchat",
    "status": 200
   },
@@ -20763,7 +20935,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T17:34:49Z",
+   "last_push": "2026-10-07T19:43:02Z",
    "name": "RStudio",
    "status": 200
   },
@@ -20795,7 +20967,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:26:42Z",
+   "last_push": "2026-10-07T19:44:40Z",
    "name": "Rundeck",
    "status": 200
   },
@@ -20925,7 +21097,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:24:16Z",
+   "last_push": "2026-10-07T19:35:34Z",
    "name": "Selenium Server",
    "status": 200
   },
@@ -21125,7 +21297,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T18:57:58Z",
+   "last_push": "2026-10-07T19:39:05Z",
    "name": "SVA Studio",
    "status": 200
   },
@@ -21170,7 +21342,7 @@
    "status": 200
   },
   "github.com/soikea/sitoumus2050-public": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Sitoumus2050.fi-verkkopalvelu",
    "status": 404
@@ -21373,7 +21545,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:21:02Z",
+   "last_push": "2026-10-07T19:33:58Z",
    "name": "SumatraPDF",
    "status": 200
   },
@@ -22363,7 +22535,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:24:54Z",
+   "last_push": "2026-10-07T19:43:16Z",
    "name": "Ghost",
    "status": 200
   },
@@ -22800,7 +22972,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T19:19:26Z",
+   "last_push": "2026-10-07T19:42:54Z",
    "name": "Next.js",
    "status": 200
   },
@@ -22906,7 +23078,7 @@
    "status": 200
   },
   "github.com/vrk-kpa/ptv-releases": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Suomi.fi-palvelutietovaranto",
    "status": 404
@@ -23026,7 +23198,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-05T15:01:21Z",
+   "last_push": "2026-10-07T19:44:03Z",
    "name": "PRISM",
    "status": 200
   },
@@ -23111,7 +23283,7 @@
    "status": 200
   },
   "github.com/yleisradio/yle-api-template": {
-   "dead_count": 21,
+   "dead_count": 22,
    "dead_since": "2026-08-11T22:00:43Z",
    "name": "Yle - API template",
    "status": 404
@@ -23152,7 +23324,7 @@
    "archived": false,
    "dead_count": 0,
    "empty": false,
-   "last_push": "2026-10-07T15:23:39Z",
+   "last_push": "2026-10-07T19:41:26Z",
    "name": "Zammad",
    "status": 200
   },
@@ -23282,7 +23454,7 @@
    "status": 200
   },
   "gitlab.com/comunedicagliari/componenti_icare": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "SISA CAGLIARI",
    "status": 404
@@ -23333,7 +23505,7 @@
   },
   "gitlab.com/gitlab-org/gitlab": {
    "dead_count": 0,
-   "last_push": "2026-10-07T18:32:04.081Z",
+   "last_push": "2026-10-07T19:32:09.593Z",
    "name": "GitLab",
    "status": 200
   },
@@ -23348,9 +23520,10 @@
    "status": 200
   },
   "gitlab.com/henixdevelopment/open-source/squash-tm": {
-   "dead_count": 0,
+   "dead_count": 1,
    "name": "Squash TM",
-   "status": 200
+   "status": 404,
+   "unconfirmed_dead": true
   },
   "gitlab.com/inkscape/inkscape": {
    "dead_count": 0,
@@ -23430,7 +23603,7 @@
   },
   "gitlab.com/prospect-energy/prospect-server": {
    "dead_count": 0,
-   "last_push": "2026-10-07T16:55:22.688Z",
+   "last_push": "2026-10-07T19:37:01.730Z",
    "name": "Prospect",
    "status": 200
   },
@@ -23556,10 +23729,9 @@
    "status": "error:URLError"
   },
   "gitlab.inria.fr/learninglab/epoc": {
-   "dead_count": 1,
+   "dead_count": 0,
    "name": "ePoc Mobile",
-   "status": 404,
-   "unconfirmed_dead": true
+   "status": 200
   },
   "gitlab.linphone.org/bc/public/linphone-desktop": {
    "name": "Linphone",
@@ -23570,6 +23742,38 @@
    "name": "VIPS",
    "status": 200
   },
+  "gitlab.o4oe.de/ig-bvc/ag-sig/cicd-signed-commit-tests": {
+   "name": "BvC - CICD-signed-commit-tests",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/ag-sig/cosign-admissioncontroller-tests": {
+   "name": "BvC - Cosign Admissioncontroller Tests",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/demo-apps/kube-prometheus": {
+   "name": "BvC - kube-prometheus - operator",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/demo-apps/prometheus": {
+   "name": "BvC - Prometheus - Installation",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/richtlinien": {
+   "name": "IG BvC - Richtlinien",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/standard-images/grund-images/alpine": {
+   "name": "BvC - Basis-Image alpine",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/standard-images/grund-images/centos": {
+   "name": "BvC - Basis-Image CentOS",
+   "status": "error:URLError"
+  },
+  "gitlab.o4oe.de/ig-bvc/standard-images/grund-images/debian": {
+   "name": "BvC - Basis-Image Debian",
+   "status": "error:URLError"
+  },
   "gitlab.open-xchange.com/frontend/core": {
    "dead_count": 0,
    "last_push": "2026-03-24T15:36:22.217Z",
@@ -23577,1292 +23781,2238 @@
    "status": 200
   },
   "gitlab.opencode.de/-/ide/project/ig-bvc/ig-bvc-poc-2/ig-bvc-poc-ii-ap-4.1-ff-policy-entwicklung/rl-kyverno": {
+   "dead_count": 0,
    "name": "Richtlinien-Umsetzung Kyverno",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/-/ide/project/ig-bvc/ig-bvc-poc-2/ig-bvc-poc-ii-ap-4.1-ff-policy-entwicklung/rl-neuvector": {
+   "dead_count": 0,
    "name": "Richtlinien-Umsetzung NeuVector",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/-/ide/project/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno": {
+   "dead_count": 0,
    "name": "Richtlinien-Umsetzung Kyverno",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/-/ide/project/ig-bvc/policy-entwicklung/richtlinien-umsetzung-stackrox": {
+   "dead_count": 0,
    "name": "Richtlinien-Umsetzung StackRox",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/5fswf/co2-ampeln": {
+   "dead_count": 0,
    "name": "CO2-Flow f\u00fcr NodeRed u. Grafana",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/alte-hansestadt-lemgo/smarte-einsatzkraefteortung": {
+   "dead_count": 0,
+   "last_push": "2026-05-21T10:57:20.656Z",
    "name": "Smarte Einsatzkr\u00e4fteortung",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/awv-ostthueringen/appframework": {
+   "dead_count": 0,
+   "last_push": "2025-05-22T10:42:15.746Z",
    "name": "AppFramework",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bad-belzig/gesundheitsplattform/gesundimflaeming-wp-theme": {
+   "dead_count": 0,
+   "last_push": "2025-12-18T10:02:28.003Z",
+   "name": "Gesund im Fl\u00e4ming \u2013 Gesundheitsplattform (WordPress)",
+   "status": 200
+  },
+  "gitlab.opencode.de/bad-belzig/thingsboard-ce-klimadaten-mandanten-wasserkarte": {
+   "dead_count": 0,
+   "last_push": "2026-03-09T15:32:50.499Z",
+   "name": "ThingsBoard \u2013 Klimadaten Mandat (Wasserkarte)",
+   "status": 200
   },
   "gitlab.opencode.de/bad-belzig/wasserkarte": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T07:23:13.325Z",
    "name": "Wasserkarte",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bayerisches-staatsministerium-f-r-digitales/bayernapp/ausweisapp2sdk-flutter-plugin": {
+   "dead_count": 0,
+   "last_push": "2026-03-06T08:10:02.057Z",
+   "name": "ausweisapp2_sdk",
+   "status": 200
+  },
+  "gitlab.opencode.de/behoerden-klartext": {
+   "dead_count": 0,
+   "name": "Beh\u00f6rden-KlarText",
+   "status": 200
   },
   "gitlab.opencode.de/berlin/kiezbox/kiezbox": {
+   "dead_count": 0,
+   "last_push": "2026-09-16T13:00:27.021Z",
    "name": "Kiezbox",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp-flutter-2": {
+   "dead_count": 0,
+   "last_push": "2026-06-26T12:56:38.446Z",
    "name": "VHP 2.5 \u2014 App (vhp-flutter-2)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp-seas": {
+   "dead_count": 0,
+   "last_push": "2026-06-26T12:56:55.281Z",
    "name": "VHP 2.5 \u2014 SEAS (Street Events & Availability Service)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp2api": {
+   "dead_count": 0,
+   "last_push": "2026-06-26T12:55:18.465Z",
    "name": "VHP 2.5 \u2014 Backend (vhp2api)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/berlin/vhp-smart-space-hardenbergplatz/vhp2react": {
+   "dead_count": 0,
+   "last_push": "2026-06-26T12:55:01.438Z",
    "name": "VHP 2.5 \u2014 Web-Frontend (vhp2react)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bfn/open-access/qgis-ms": {
+   "dead_count": 0,
+   "last_push": "2026-01-29T12:22:37.346Z",
    "name": "MDI_DE_METADATASEARCH",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bmbf/datenlabor/a11yshiny": {
+   "dead_count": 0,
+   "last_push": "2026-06-26T08:49:38.721Z",
+   "name": "a11yShiny",
+   "status": 200
   },
   "gitlab.opencode.de/bmbf/ism/elastic-siem-mip-connector": {
+   "dead_count": 0,
+   "last_push": "2024-05-02T15:50:12.184Z",
    "name": "Elastic SIEM MIP-Connector",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmbf/teamdigital/hdp": {
+   "dead_count": 0,
+   "last_push": "2026-01-07T13:08:31.960Z",
    "name": "BlueSpice Wiki mit Chatbot",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-api": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:43:49.540Z",
    "name": "SPARK API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmds/planungs-und-genehmigungsbeschleunigung/spark-workflow": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:42:44.467Z",
    "name": "SPARK Workflow",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/e-gesetzgebung": {
+   "dead_count": 0,
    "name": "E-Gesetzgebung",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb-permission": {
+   "dead_count": 0,
    "name": "Government Site Builder 11 - Extension:gsb-permission",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_public_frontend": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T03:34:48.841Z",
    "name": "gsb_public_frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/government-site-builder-11/extensions/siteconfig_impexp": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T18:18:37.196Z",
    "name": "Government Site Builder 11 - Extension:siteconfig_impexp",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/government-site-builder-11/gsb11": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T18:15:43.856Z",
    "name": "Government Site Builder 11 (GSB 11)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/opendesk": {
+   "dead_count": 0,
    "name": "openDesk",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bmi/ozg-rahmenarchitektur/ozgsec": {
+   "dead_count": 0,
    "name": "OZGSec",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bmuv/bmu/xml-schema": {
+   "dead_count": 0,
+   "last_push": "2026-02-09T10:48:22.696Z",
+   "name": "BMU-Schnittstelle",
+   "status": 200
+  },
+  "gitlab.opencode.de/bpol-verb/verb-app": {
+   "dead_count": 0,
+   "last_push": "2023-06-02T12:15:33.731Z",
+   "name": "VERB (Vorerfassung der Einreisebefragung)",
+   "status": 200
   },
   "gitlab.opencode.de/buergerdashboard-muehlhausen": {
+   "dead_count": 0,
    "name": "B\u00fcrgerdashboard M\u00fchlhausen/Th\u00fcringen",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bva/ida/xta-crypto-lib": {
+   "dead_count": 0,
+   "last_push": "2026-07-24T14:49:40.025Z",
    "name": "IDA XTA Cryptography Library (ida-xta-crypto-lib)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bva/softwaretest/qs-baukasten": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T09:34:55.313Z",
    "name": "QS-Baukasten",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-core": {
+   "dead_count": 0,
+   "last_push": "2026-08-17T07:32:07.817Z",
    "name": "BuMAP Core",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/admin-portal/bumap-ui": {
+   "dead_count": 0,
+   "last_push": "2026-08-13T14:23:30.988Z",
    "name": "BuMAP UI",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/backend/app-config": {
+   "dead_count": 0,
+   "last_push": "2026-08-18T15:10:25.132Z",
    "name": "App Config",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/backend/bum-images": {
-   "name": "BundesMessenger Container Base Image Definitions",
-   "status": 429
+   "dead_count": 0,
+   "last_push": "2026-10-06T10:20:38.149Z",
+   "name": "BundesMessenger Container Image Definitions",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/backend/container-factory": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T11:20:26.601Z",
+   "name": "BundesMessenger Container Image Factory",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/backend/container-images": {
+   "dead_count": 0,
+   "last_push": "2026-08-28T13:05:19.923Z",
+   "name": "BundesMessenger Container Registry",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/backend/helm-chart": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T14:42:55.931Z",
+   "name": "BundesMessenger Helm Chart",
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/backend/schema": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T11:15:03.774Z",
    "name": "BundesMessenger Schema Files",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/backend/synapse-config-operator": {
+   "dead_count": 0,
+   "last_push": "2026-08-28T15:45:40.966Z",
    "name": "Synapse Config Operator",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-android": {
+   "dead_count": 0,
+   "last_push": "2026-09-02T09:32:17.219Z",
+   "name": "BundesMessenger",
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-call": {
+   "dead_count": 0,
+   "last_push": "2026-09-28T14:04:41.472Z",
    "name": "BundesMessenger Call",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-ios": {
+   "dead_count": 0,
+   "last_push": "2026-08-20T10:12:35.991Z",
+   "name": "BundesMessenger",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-ios-matrix-sdk": {
+   "dead_count": 0,
+   "last_push": "2025-10-06T02:35:46.447Z",
+   "name": "BundesMessenger-iOS SDK",
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-matrix-rust-sdk": {
+   "dead_count": 0,
+   "last_push": "2026-08-10T08:52:03.594Z",
    "name": "BundesMessenger Matrix Rust SDK",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T10:50:04.327Z",
+   "name": "BundesMessenger",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-config-and-assets": {
+   "dead_count": 0,
+   "last_push": "2026-08-11T11:46:06.510Z",
+   "name": "BundesMessenger Web - Config and Assets",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-web-matrix-sdk": {
+   "dead_count": 0,
+   "last_push": "2026-09-21T08:50:40.078Z",
+   "name": "BundesMessenger Web - Matrix SDK",
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-x-android": {
+   "dead_count": 0,
+   "last_push": "2026-08-20T15:38:18.523Z",
    "name": "MessengerX",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/clients/bundesmessenger-x-ios": {
+   "dead_count": 0,
+   "last_push": "2026-07-28T08:55:23.643Z",
    "name": "MessengerX",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/info": {
+   "dead_count": 0,
+   "last_push": "2026-05-27T12:34:05.171Z",
+   "name": "BundesMessenger Info",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/learning-portal-group/learning-portal": {
+   "dead_count": 0,
+   "last_push": "2026-06-30T13:52:23.695Z",
+   "name": "Learning Portal Apps",
+   "status": 200
+  },
+  "gitlab.opencode.de/bwi/bundesmessenger/learning-portal-group/learning-portal-backend": {
+   "dead_count": 0,
+   "last_push": "2026-04-24T09:40:03.190Z",
+   "name": "Learning Portal Backend",
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/mls/mls-test-client": {
+   "dead_count": 0,
+   "last_push": "2025-02-13T16:44:22.523Z",
    "name": "BundesMessenger MLS Test Client",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/mls/synapse-mls": {
+   "dead_count": 0,
+   "last_push": "2025-02-07T07:38:58.799Z",
    "name": "BundesMessenger Synapse mit MLS",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-android": {
+   "dead_count": 0,
+   "last_push": "2026-02-16T10:17:42.982Z",
    "name": "Compound Android",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-design-tokens": {
+   "dead_count": 0,
+   "last_push": "2026-07-15T08:46:09.773Z",
    "name": "Compound Design Tokens",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/bwi/bundesmessenger/ui-components/compound-ios": {
+   "dead_count": 0,
+   "last_push": "2026-03-03T08:42:49.116Z",
    "name": "Compound iOS",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/byte-bayerische-agentur-f-r-digitales-gmbh/bytype/bytype": {
+   "dead_count": 0,
+   "last_push": "2026-09-16T14:57:06.925Z",
    "name": "bytype",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/byte-bayerische-agentur-f-r-digitales-gmbh/code-inspector/code-inspector": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T09:11:33.388Z",
    "name": "Code Inspector",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/byte-bayerische-agentur-f-r-digitales-gmbh/schriftsatzgenerator": {
+   "dead_count": 0,
+   "last_push": "2026-09-16T11:49:45.899Z",
+   "name": "Schriftsatzgenerator",
+   "status": 200
   },
   "gitlab.opencode.de/civora/civora-ui": {
+   "dead_count": 0,
+   "last_push": "2026-10-02T14:35:02.156Z",
    "name": "CIVORA UI",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/connected-urban-twins/cut-l-frost-docker": {
+   "dead_count": 0,
+   "last_push": "2026-09-03T07:23:20.098Z",
+   "name": "FROST-Server Docker-Compose-Datei",
+   "status": 200
   },
   "gitlab.opencode.de/connected-urban-twins/cut-masterportal-generic-iot-gfi": {
+   "dead_count": 0,
+   "last_push": "2026-09-03T06:36:13.674Z",
    "name": "Masterportal - generisches GetFeatureInfo Add-on f\u00fcr Sensordaten",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/connected-urban-twins/cut-superset-wfs-dialect": {
+   "dead_count": 0,
+   "last_push": "2026-05-21T08:43:35.951Z",
    "name": "Apache Superset WFS-Dialect",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/connected-urban-twins/frequenzdaten-dashboard": {
+   "dead_count": 0,
+   "last_push": "2025-07-29T06:25:59.233Z",
    "name": "Frequenzdaten4ALL",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/connected-urban-twins/ogc-sensorthings-api-qs-tool": {
+   "dead_count": 0,
+   "last_push": "2026-09-03T07:24:17.158Z",
+   "name": "OGC SensorThings API QS-Tool",
+   "status": 200
   },
   "gitlab.opencode.de/curry-solutions/landratsamt-roth/badeampel": {
+   "dead_count": 0,
+   "last_push": "2024-09-27T09:27:46.756Z",
    "name": "Badeampel",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/datenadler-brandenburg/piveau-hub-ui": {
+   "dead_count": 0,
+   "last_push": "2026-05-05T12:44:09.383Z",
    "name": "Datenadler Piveau Hub UI",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/de-gv6-maintainer/de.gv6-ipv6-specification": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T09:39:39.696Z",
    "name": "de.gv6 IPv6 Specification",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/deutschland.digital/l1/kommunale-raeume-app": {
+   "dead_count": 0,
+   "last_push": "2025-09-02T12:12:06.853Z",
    "name": "Kommunale R\u00e4ume",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/deutschland.digital/plattform/plattform": {
+   "dead_count": 0,
+   "last_push": "2025-10-08T12:55:47.398Z",
    "name": "DEUTSCHLAND.DIGITAL-Plattform",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/digitale-behoerdensprechstunde": {
+   "dead_count": 0,
    "name": "Digitale Beh\u00f6rdensprechstunde",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/digitalisierung-eines-sekundaerwaermenetzes/digitalisierung-sekundaerwaermenetz-data": {
+   "dead_count": 0,
+   "last_push": "2026-03-27T13:36:55.355Z",
+   "name": "Digitalisierung Fernwaermenetz",
+   "status": 200
   },
   "gitlab.opencode.de/digitalservicebund/digitaler-sozialstaat/elterngeldrechner/elterngeldrechner": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T19:06:50.048Z",
    "name": "Elterngeldrechner und Planer",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/digitalservicebund/elterngeldrechner": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T10:56:11.305Z",
    "name": "Elterngeldrechner und Planer",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/diplanung/ozgxplanung": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:39:16.963Z",
+   "name": "ozgxplanung",
+   "status": 200
+  },
+  "gitlab.opencode.de/egovlab/eam-portal": {
+   "dead_count": 0,
+   "last_push": "2026-06-13T15:36:19.852Z",
+   "name": "EAM-Portal Bund",
+   "status": 200
   },
   "gitlab.opencode.de/eifelkreis-verbindet/digitale-hochwassermelder": {
+   "dead_count": 0,
+   "last_push": "2026-09-21T07:04:53.865Z",
    "name": "Digitale Hochwassermelder",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/eingangslotse/eingangslotse": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T00:00:07.687Z",
    "name": "EingangsLotse",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/energielotse-dresden/energielotse-neos-plattform": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T08:28:06.594Z",
    "name": "Energielotse",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/evb-it/digital/evb-it-digital": {
+   "dead_count": 0,
+   "last_push": "2026-09-22T12:25:54.413Z",
    "name": "EVB-IT digital",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/excelano/umwandler": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T03:07:22.907Z",
    "name": "Umwandler",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/f13": {
+   "dead_count": 0,
    "name": "F13 KI Assistenz",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/f13/dokumentation/website": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T12:18:22.307Z",
    "name": "F13 Pr\u00e4senz",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fis-wasser-und-boden/fis-wasser-und-boden-enda": {
+   "dead_count": 0,
+   "last_push": "2026-05-27T15:57:24.973Z",
    "name": "FIS-WABO",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/fitko/discussion": {
+   "dead_count": 0,
+   "last_push": "2026-08-12T12:57:11.000Z",
+   "name": "FITKO - Diskussion",
+   "status": 200
+  },
+  "gitlab.opencode.de/fitko/docs/efa-parametrisierung": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T06:04:12.190Z",
+   "name": "Dokumentation zur EfA-Parametrisierung",
+   "status": 200
+  },
+  "gitlab.opencode.de/fitko/docs/portal": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:39:20.187Z",
+   "name": "F\u00f6derales Entwicklungsportal",
+   "status": 200
+  },
+  "gitlab.opencode.de/fitko/fim/schema-repository": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T17:44:13.343Z",
+   "name": "FIM Datenfelder-Sammelrepository",
+   "status": 200
   },
   "gitlab.opencode.de/fitko/fim/xzufi-konverter": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T09:14:23.764Z",
    "name": "PVOG XZuFi-Konverter",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/fim/xzufi-konverter-backend": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T06:42:48.308Z",
    "name": "PVOG XZuFi-Konverter-Backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/fim/xzufi-validator-backend": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T06:44:04.962Z",
    "name": "PVOG XZuFi-Validator-Backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/govdata": {
+   "dead_count": 0,
    "name": "GovData",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/matrix-g2x": {
+   "dead_count": 0,
    "name": "FITKO Matrix G2C Pilot Project Template",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/matrix-g2x/fit-neo-web": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T07:05:55.329Z",
    "name": "FITKO Matrix G2C Pilot Web Client",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/matrix-g2x/matrix-g2c-pilot-project-template": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T04:57:55.733Z",
    "name": "Neo Project Template",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/matrix-g2x/neo-matrix-java-sdk": {
+   "dead_count": 0,
+   "last_push": "2026-09-30T12:27:06.947Z",
    "name": "FITKO Neo Matrix SDK (JVM bindings)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/matrix-g2x/neo-web-sdk": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T20:13:37.185Z",
    "name": "Neo Web SDK",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/matrix-g2x/solution-architecture": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T15:48:53.414Z",
    "name": "FITKO Matrix G2C Communication Solution Architecture",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/fitko/pvog/bereitstelldienst": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T13:50:06.118Z",
+   "name": "PVOG Bereitstelldienst",
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/bibliotheken/pv-antivirus": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T06:25:21.668Z",
    "name": "PVOG Bibliothek PV-Antivirus",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/bibliotheken/pv-frontend-configs": {
+   "dead_count": 0,
+   "last_push": "2026-10-02T14:56:27.354Z",
    "name": "PVOG Frontend Configs",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/bibliotheken/pv-schema-annotation": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T14:06:16.627Z",
    "name": "PVOG Bibliothek PV-Schema-Annotation",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/bibliotheken/pv-testdatengenerator": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T06:11:58.411Z",
    "name": "PVOG Bibliothek PV-Testdatengenerator",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/bibliotheken/pv-utils": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T06:00:35.668Z",
    "name": "PVOG Bibliothek PV-Utils",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/produkt/backoffice": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T12:45:10.826Z",
    "name": "PVOG Backoffice",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/produktportal": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T07:37:13.924Z",
    "name": "PVOG Produktportal",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/pv_externaldownloader": {
+   "dead_count": 0,
    "name": "PVOG Bibliothek PV-Externaldownloader",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/pv_schema": {
+   "dead_count": 0,
    "name": "PVOG Bibliothek PV-Schema",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/pv_warteschlange": {
+   "dead_count": 0,
    "name": "PVOG Bibliothek PV-Warteschlange",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/fitko/pvog/sammlerdienst": {
+   "dead_count": 0,
+   "last_push": "2026-09-23T12:22:50.801Z",
+   "name": "PVOG Sammlerdienst",
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/suchclient": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T10:11:07.838Z",
    "name": "Suchen & Finden - PVOG Suchclient",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fitko/pvog/suchdienst": {
+   "dead_count": 0,
+   "last_push": "2026-09-23T14:03:00.014Z",
    "name": "PVOG Suchdienst",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fraunhofer-iese/digitale-doerfer/dorffunk": {
+   "dead_count": 0,
+   "last_push": "2025-03-31T13:50:09.752Z",
    "name": "DorfFunk",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/fraunhoferiosb/frost-server": {
+   "dead_count": 0,
+   "last_push": "2026-06-05T00:00:11.961Z",
    "name": "FROST-Server",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/ga-lotse/ga-lotse-code": {
+   "dead_count": 0,
+   "last_push": "2026-09-30T15:15:44.048Z",
    "name": "GA-Lotse",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/gemeinde-kalletal/hochwasserinfosystem": {
+   "dead_count": 0,
+   "last_push": "2025-06-16T09:45:15.072Z",
    "name": "Hochwasserinfosystem",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/geowerkstatt-hamburg/masterportal": {
+   "dead_count": 0,
    "name": "GeoPortal",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/governikus/id-panstar-sdk": {
+   "dead_count": 0,
+   "last_push": "2026-03-26T09:52:53.298Z",
    "name": "Governikus ID Panstar SDK",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/govstack/govstack-specifications": {
+   "dead_count": 0,
    "name": "GovStack Specifications",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/govstack/kitsoft/liquio": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T18:47:42.303Z",
    "name": "Liquio",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/heinrich/code-osr": {
+   "dead_count": 0,
+   "last_push": "2022-11-17T21:55:27.256Z",
+   "name": "Open Source Repository OSR",
+   "status": 200
   },
   "gitlab.opencode.de/hidd": {
+   "dead_count": 0,
    "name": "HIDD_hub",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/ig-bvc": {
+   "dead_count": 0,
    "name": "IG BvC",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/ig-bvc/demo-apps/grafana": {
+   "dead_count": 0,
+   "last_push": "2022-04-11T07:27:59.368Z",
+   "name": "BvC - Grafana Operator",
+   "status": 200
+  },
+  "gitlab.opencode.de/ig-bvc/demo-apps/nextcloud": {
+   "dead_count": 0,
+   "last_push": "2022-06-28T16:07:43.042Z",
+   "name": "BvC - Nextcloud - Installation",
+   "status": 200
   },
   "gitlab.opencode.de/ig-bvc/policy-entwicklung/policy-entwicklung": {
+   "dead_count": 0,
+   "last_push": "2026-09-24T08:11:48.808Z",
    "name": "Richtlinien",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/ig-bvc/policy-entwicklung/richtlinien-umsetzung-kyverno": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T14:46:36.296Z",
    "name": "Richtlinien-Umsetzung Kyverno",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/informationgrid/ingrid-editor": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T04:23:54.370Z",
    "name": "InGrid Editor",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/informationgrid/ingrid-oss.eu": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T16:13:34.568Z",
    "name": "InGrid",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/innowest/ki-chatbot-perplexity": {
+   "dead_count": 0,
+   "last_push": "2026-09-22T12:32:07.518Z",
    "name": "ki-chatbot-perplexity",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/iqsh/collaboration-online-board/index": {
+   "dead_count": 0,
+   "last_push": "2026-04-29T07:38:59.649Z",
+   "name": "Collboration Online Board",
+   "status": 200
   },
   "gitlab.opencode.de/it-architekturrichtlinien": {
+   "dead_count": 0,
    "name": "IT-Architekturrichtlinien auf openCode",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk": {
+   "dead_count": 0,
    "name": "NRW.Desk",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/...": {
+   "dead_count": 0,
    "name": "nrwdesk-helm",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/caddy-jwt": {
+   "dead_count": 0,
+   "last_push": "2026-10-04T02:45:44.194Z",
    "name": "cadddy-jwt",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/calendar-manager": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:38:05.584Z",
    "name": "calendar-manager",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/conference-backend": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:42:10.135Z",
    "name": "conference-backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/conference-cleanup": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T03:03:30.521Z",
    "name": "conference-cleanup",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/conference-frontend": {
+   "dead_count": 0,
+   "last_push": "2026-07-23T09:20:44.453Z",
    "name": "conference-frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/conference-phone-codes": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:45:07.248Z",
    "name": "conference-phone-codes",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/config-check": {
+   "dead_count": 0,
+   "last_push": "2026-10-02T02:48:20.604Z",
    "name": "config-check",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/feedback-backend": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:47:38.175Z",
    "name": "feedback-backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/frontend-shared": {
+   "dead_count": 0,
+   "last_push": "2026-07-23T07:21:13.706Z",
    "name": "frontend-shared",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/gateway-backend": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:49:33.526Z",
    "name": "gateway-backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/gateway-frontend": {
+   "dead_count": 0,
+   "last_push": "2026-08-11T08:12:52.099Z",
    "name": "gateway-frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/identity-curator": {
+   "dead_count": 0,
+   "last_push": "2026-10-02T02:53:21.381Z",
    "name": "identity-curator",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-creator": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T02:53:53.860Z",
    "name": "matrix-bot-conference-creator",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/matrix-bot-conference-notifier": {
+   "dead_count": 0,
+   "last_push": "2026-09-28T02:49:48.249Z",
    "name": "matrix-bot-conference-notifier",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/notification-service": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:57:39.390Z",
    "name": "notification-service",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/portal-backend": {
+   "dead_count": 0,
+   "last_push": "2026-09-28T03:54:42.811Z",
    "name": "portal-backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/it.nrw/nrw.desk/portal-frontend": {
+   "dead_count": 0,
+   "last_push": "2025-04-23T11:30:29.322Z",
    "name": "portal-frontend",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/itdz-berlin/dsgvo-konforme-bildverarbeitung-mit-ki": {
+   "dead_count": 0,
+   "last_push": "2024-11-27T12:52:38.811Z",
+   "name": "DSGVO-konforme Bildverarbeitung mit KI",
+   "status": 200
   },
   "gitlab.opencode.de/julius-kuehn-institut/phenoapp": {
+   "dead_count": 0,
+   "last_push": "2025-03-11T13:02:24.300Z",
    "name": "PhenoApp",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kern-ux/kern-ux-plain": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T13:19:44.175Z",
    "name": "KERN UX-Standard",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kielregion-gmbh/kielregion-gmbh-digitale-mobilit-t/mobil.live": {
+   "dead_count": 0,
+   "last_push": "2026-09-08T13:42:04.578Z",
    "name": "mobil.live",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kielregion-gmbh/quartiersentwicklung/os-ubem-kielregion": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T12:41:52.103Z",
    "name": "OS UBEM KielRegion",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kodi/suite-mobile": {
+   "dead_count": 0,
+   "last_push": "2026-08-24T17:27:52.429Z",
    "name": "KODI Suite Mobile",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kompetenzteam-datenschutz-it-planungsrat/ds-dok-gen": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T15:51:46.812Z",
    "name": "DS-Dok-Gen",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kopexa/sba": {
+   "dead_count": 0,
+   "last_push": "2026-09-30T08:19:25.899Z",
    "name": "Kopexa Schutzbedarfsanalyse",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/f17": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T18:56:05.494Z",
    "name": "F17 \u2014 Next-Gen AI Dokumenten-Manager",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/kosmos-doc": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T18:57:16.504Z",
    "name": "KOSMOS \u2014 Gesamtdokumentation",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/open_taki": {
+   "dead_count": 0,
+   "last_push": "2026-09-08T18:40:29.285Z",
    "name": "open_taki",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/opencloud": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T18:49:48.600Z",
    "name": "OpenCore KOSMOS Edition",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/opencloud-reva": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T18:50:27.818Z",
    "name": "Reva KOSMOS Edition",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/opencloud-web": {
+   "dead_count": 0,
+   "last_push": "2026-08-28T19:38:00.443Z",
    "name": "OpenCore Web KOSMOS Edition",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kosmos/openyard": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T18:49:38.641Z",
    "name": "OpenYard",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kreis-viersen/fotostandort": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:43:03.729Z",
    "name": "Fotostandort",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kreis-viersen/geschichte-eines-grundstuecks": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:44:35.112Z",
    "name": "Die Geschichte eines Grundst\u00fccks",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/kreis-viersen/quattromap": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:45:03.151Z",
    "name": "QuattroMap",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-api": {
+   "dead_count": 0,
+   "last_push": "2026-06-15T07:03:01.795Z",
    "name": "Kusel Gesundheitsplattform API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/land-lieben/gesundheitsplattform-kusel-frontend": {
+   "dead_count": 0,
+   "last_push": "2026-06-15T07:03:26.194Z",
    "name": "Kusel Gesundheitsplattform Frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/landeshauptstadt-hannover/hanno.guide": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T15:06:35.958Z",
    "name": "hanno.guide",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/landeshauptstadt-hannover/smart.light-dashboard": {
+   "dead_count": 0,
+   "last_push": "2026-08-06T09:17:31.843Z",
    "name": "Smart.Light Energie- und Klimadashboard",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/landeshauptstadt-muenchen/bayernid-plugin": {
+   "dead_count": 0,
+   "last_push": "2026-02-23T10:21:51.137Z",
    "name": "bayernID-Plugin f\u00fcr Keycloak/RH-SSO",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/landeshauptstadt-muenchen/elster_nezo_plugin": {
+   "dead_count": 0,
+   "last_push": "2024-12-20T06:00:02.201Z",
    "name": "ELSTER_NEZO-Plugin f\u00fcr Keycloak/RH-SSO",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/lecos-gmbh/leipzigerstrassennamen": {
+   "dead_count": 0,
+   "last_push": "2026-09-08T13:24:44.621Z",
+   "name": "Stra\u00dfennamen",
+   "status": 200
+  },
+  "gitlab.opencode.de/lgvhh/udp/machbarkeitsstudie-integration-von-apache-superset-in-das-masterportal": {
+   "dead_count": 0,
+   "last_push": "2026-03-19T12:29:54.896Z",
+   "name": "Machbarkeitsstudie - Integration von Apache Superset in das Masterportal",
+   "status": 200
   },
   "gitlab.opencode.de/lgvhh/udp/udp-data-automation": {
+   "dead_count": 0,
+   "last_push": "2026-08-21T13:52:31.440Z",
    "name": "UDP Data Automation",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/marx/mappingtool": {
+   "dead_count": 0,
+   "last_push": "2023-06-20T16:55:02.852Z",
+   "name": "MappingTool",
+   "status": 200
   },
   "gitlab.opencode.de/materna-se/tremonia-dxp": {
+   "dead_count": 0,
+   "last_push": "2026-03-12T14:08:10.329Z",
    "name": "Tremonia DXP",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/mein-wnd/mein-wnd-api": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T21:16:28.368Z",
+   "name": "MeinWND API",
+   "status": 200
+  },
+  "gitlab.opencode.de/mein-wnd/mein-wnd-app": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T21:16:35.755Z",
+   "name": "MeinWND App",
+   "status": 200
   },
   "gitlab.opencode.de/metropoleruhr/radwegweiser_lokal": {
+   "dead_count": 0,
+   "last_push": "2024-04-12T13:46:10.062Z",
    "name": "Radwegweiser (lokal)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/mgm-tp/a12/a12platform/a12-kernel": {
+   "dead_count": 0,
+   "last_push": "2026-09-11T08:24:19.845Z",
    "name": "A12",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/nebu/nebu-server": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:13:16.776Z",
    "name": "Nebu",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000008837300/ar-gestuetzte-schnitzeljagd": {
+   "dead_count": 0,
+   "last_push": "2022-11-25T12:57:22.442Z",
+   "name": "AR-gest\u00fctzte Schnitzeljagd",
+   "status": 200
   },
   "gitlab.opencode.de/oc00001179881/digitaler-abfahrtsmonitor": {
+   "dead_count": 0,
+   "last_push": "2026-07-24T08:32:32.550Z",
    "name": "Appgefahren App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc00001179881/thermosensorik-heidenheim": {
+   "dead_count": 0,
+   "last_push": "2024-02-08T08:52:56.502Z",
    "name": "Thermosensorik Heidenheim",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000015165920/rumba-1.6.06-wechselarbeitsplatzverwaltung": {
+   "dead_count": 0,
+   "name": "RUMBA",
+   "status": 200
   },
   "gitlab.opencode.de/oc00003136130/gesundheits-und-pflegeplattform": {
+   "dead_count": 0,
+   "last_push": "2026-02-23T08:17:32.838Z",
    "name": "Gesundheits- und Pflegeplattform",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc00003136130/meinwnd": {
+   "dead_count": 0,
+   "last_push": "2026-02-19T09:27:33.507Z",
    "name": "meinWND \u2013 Projektplattform",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc00003136130/meinwnd-app": {
+   "dead_count": 0,
+   "last_push": "2026-02-20T10:38:52.584Z",
    "name": "meinWND App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc00003136130/smartwendeler-land-api": {
+   "dead_count": 0,
+   "last_push": "2026-02-19T09:30:31.850Z",
    "name": "Smart Wendeler Land API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000039916151/opensource4impact": {
+   "dead_count": 0,
+   "last_push": "2024-09-18T11:04:30.092Z",
    "name": "OpenSource4Impact",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000040228294/aurea-ar-modul-android": {
+   "dead_count": 0,
+   "last_push": "2024-11-12T11:48:09.710Z",
    "name": "Aurea AR Modul Android",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000040228294/aurea-ar-modul-ios": {
+   "dead_count": 0,
+   "last_push": "2024-11-12T11:47:41.325Z",
    "name": "Aurea AR Modul iOS",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000047244955/bovis.net": {
+   "dead_count": 0,
+   "last_push": "2026-09-22T15:49:49.792Z",
    "name": "BoVis",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000061838485/geoloadreplay": {
+   "dead_count": 0,
+   "last_push": "2025-01-16T18:17:48.883Z",
    "name": "GeoLoadReplay",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000063014285/netlock-rmm": {
+   "dead_count": 0,
+   "last_push": "2025-02-24T18:57:53.572Z",
    "name": "NetLock RMM",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000063111458/waldmonitor-arnsberg": {
+   "dead_count": 0,
+   "last_push": "2026-03-29T19:34:22.605Z",
    "name": "Arnsberg React",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000073187576/keycloak-adapter-mhkbd-nrw": {
+   "dead_count": 0,
+   "last_push": "2025-07-03T08:03:20.400Z",
    "name": "BundID Keycloak Adapter MHKBD NRW",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000075481431/ha-py-app": {
+   "dead_count": 0,
+   "last_push": "2026-01-19T07:47:49.283Z",
+   "name": "Ha-Py App",
+   "status": 200
   },
   "gitlab.opencode.de/oc000097948268/formularagent": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T09:09:18.162Z",
    "name": "Formularagent",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000097948268/formulardesigner": {
+   "dead_count": 0,
+   "last_push": "2026-09-30T09:17:48.468Z",
+   "name": "Formulardesigner",
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000097948268/formularschema": {
+   "dead_count": 0,
+   "last_push": "2026-10-02T08:34:33.272Z",
+   "name": "Formularschema",
+   "status": 200
   },
   "gitlab.opencode.de/oc000097948268/kern-react-addons": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T09:25:30.112Z",
    "name": "KERN React-Addons",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000116968177/ki-buddy": {
+   "dead_count": 0,
+   "last_push": "2026-09-23T17:47:10.951Z",
+   "name": "KI-Buddy",
+   "status": 200
+  },
+  "gitlab.opencode.de/oc000117583753/vdstools": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T08:48:35.406Z",
+   "name": "VdsTools",
+   "status": 200
   },
   "gitlab.opencode.de/oc000135514075/basti": {
+   "dead_count": 0,
+   "last_push": "2026-09-12T00:00:07.902Z",
    "name": "BASTI",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000144987350/urban-stack-v1": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T15:44:34.542Z",
    "name": "Urban Stack",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000148042427/tausense-api": {
+   "dead_count": 0,
+   "last_push": "2026-09-21T15:45:33.630Z",
    "name": "TauSense API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc00014819603/consentmanager": {
+   "dead_count": 0,
+   "last_push": "2026-09-29T10:11:57.586Z",
    "name": "ConsentManager",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000166979428/route_visualization_app": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T12:53:19.268Z",
    "name": "Roubikon",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/oc000173593929/kalendersoest": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T15:08:59.246Z",
    "name": "Kalender Soest",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/open-code/badgebackend/badge-api": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:39:29.641Z",
    "name": "Badge API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/open-code/document-writing-tools/document-writing-ci-components": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T12:06:25.969Z",
    "name": "Document Writing CI Components",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/open-code/document-writing-tools/markdown-webbook": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:18:12.466Z",
    "name": "easyWebsite \u2013 Markdown WebBook",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/open-code/document-writing-tools/pa11y-server": {
+   "dead_count": 0,
+   "last_push": "2026-06-18T20:11:47.165Z",
    "name": "Pa11y Server",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/open-playground-manager/ocm-open-playground-manager": {
+   "dead_count": 0,
+   "last_push": "2026-06-17T07:33:59.946Z",
    "name": "OCM Open Playground Manager",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/openadvo/kiwo": {
+   "dead_count": 0,
+   "last_push": "2026-07-14T22:37:19.064Z",
    "name": "OpenForm",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/opencode-analyzer/data-provider": {
+   "dead_count": 0,
+   "last_push": "2025-10-01T00:10:07.769Z",
+   "name": "Data provider",
+   "status": 200
   },
   "gitlab.opencode.de/opencode-analyzer/occmd-public": {
+   "dead_count": 0,
+   "last_push": "2024-09-05T08:54:28.692Z",
    "name": "occmd",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/opencode-analyzer/pod-manager": {
+   "dead_count": 0,
+   "last_push": "2024-12-20T00:10:03.599Z",
    "name": "Pod Manager",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/opencode-analyzer/tool-service": {
+   "dead_count": 0,
+   "last_push": "2024-12-16T14:14:21.271Z",
    "name": "Data provider",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/opentalk": {
+   "dead_count": 0,
+   "name": "OpenTalk",
+   "status": 200
   },
   "gitlab.opencode.de/opentalk/opentalk-outlook-add-in": {
+   "dead_count": 0,
+   "last_push": "2026-10-02T09:53:40.788Z",
    "name": "OpenTalk Add-in for outlook",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/openvisavid/openvisavid": {
+   "dead_count": 0,
+   "last_push": "2026-02-20T17:21:00.295Z",
    "name": "openVisavid",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/progeek/mrija-manager": {
+   "dead_count": 0,
    "name": "Mrija Manager",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/qisutu/qisutu": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T01:03:53.915Z",
    "name": "Qisutu",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/regensburg_next/mein.regensburg": {
+   "dead_count": 0,
+   "last_push": "2026-08-18T16:07:06.207Z",
    "name": "\u00d6ffentlichkeitsbeteiligung in der Stadt Regensburg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/regensburg_next/regensburger-ki-fuehrerschein": {
+   "dead_count": 0,
+   "last_push": "2026-07-13T19:26:55.138Z",
    "name": "Regensburger KI-F\u00fchrerschein",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/riedel/elektronische-clearingstelle": {
+   "dead_count": 0,
+   "last_push": "2022-04-11T13:02:59.377Z",
+   "name": "Elektronische Clearingstelle f\u00fcr OSCI-Transport",
+   "status": 200
   },
   "gitlab.opencode.de/schauder/referenzprojekt-component-1": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:39:50.455Z",
    "name": "Referenzprojekt-Komponente1",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/schauder/referenzprojekt-suite": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:39:48.990Z",
    "name": "Referenzprojekt-Suite",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sgemlichheim/kern-ux-theme-companion-plugin-for-wordpress": {
+   "dead_count": 0,
+   "last_push": "2026-08-20T07:45:50.762Z",
    "name": "KERN-UX Theme Companion for WordPress",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-mkdocs": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T09:50:49.054Z",
    "name": "KERN-UX for MkDocs",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sgemlichheim/kern-ux-theme-for-wordpress": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T07:32:05.780Z",
    "name": "KERN-UX for WordPress",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sgemlichheim/openmelder": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T09:47:42.150Z",
    "name": "OpenMelder",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/interne-projekte/matchingportal": {
+   "dead_count": 0,
    "name": "Matching Portal",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/daz-pilot": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T16:58:19.306Z",
    "name": "DaZ-Pilot",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/digeko/digeko-app": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T15:13:36.993Z",
+   "name": "DiGeKo \u2013 Digitale Gesundheitskompetenz (Frontend)",
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/element-web-ff": {
+   "dead_count": 0,
+   "last_push": "2026-05-09T15:48:44.476Z",
    "name": "Firemon Element Web FF",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-backend": {
+   "dead_count": 0,
+   "last_push": "2026-05-08T12:07:58.098Z",
    "name": "Firemon Backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-blackout": {
+   "dead_count": 0,
+   "last_push": "2026-05-08T12:08:09.163Z",
    "name": "Firemon Blackout",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-connect": {
+   "dead_count": 0,
+   "last_push": "2026-05-08T12:08:27.478Z",
    "name": "Firemon Connect",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-deployment": {
+   "dead_count": 0,
+   "last_push": "2026-07-01T11:15:48.067Z",
    "name": "Firemon Deployment Stack",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-frontend": {
+   "dead_count": 0,
+   "last_push": "2026-05-08T12:08:17.127Z",
    "name": "Firemon Frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/firemon112/firemon-keycloak": {
+   "dead_count": 0,
+   "last_push": "2026-05-08T12:06:57.106Z",
    "name": "Firemon Keycloak",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/ki-bauleitplaene/smartplanai-anwendung": {
+   "dead_count": 0,
+   "last_push": "2026-05-05T08:21:41.798Z",
    "name": "SmartPlanAI",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kiquip": {
+   "dead_count": 0,
+   "last_push": "2026-04-15T00:10:05.865Z",
    "name": "KiQuiP - KiTa Qualit\u00e4tsmanagement Software",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/kommunalenergie": {
+   "dead_count": 0,
    "name": "KommunalEnergie \u2013 Digitale Energiedatenerfassung",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/mach-e-verwaltung/mach-everwaltung": {
+   "dead_count": 0,
+   "last_push": "2026-06-09T11:28:21.747Z",
    "name": "MACH E-Verwaltung Open Code Edition",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/digitalhub-sh/landesprogramm-offene-innovationen/smarter-gemeinschaftskalender": {
+   "dead_count": 0,
+   "last_push": "2026-01-08T12:07:17.123Z",
    "name": "Der Smarte Gemeinschaftskalender",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/lvermgeo/qgis-plugin/flurstuecksfinder-sh": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:40:07.578Z",
    "name": "flurstuecksfinder-sh",
-   "status": 429
-  },
-  "gitlab.opencode.de/sh/zit/five-sh": {
-   "name": "FIVE-SH Grobkonzept",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/zit/opendata/csw2dcat": {
+   "dead_count": 0,
+   "last_push": "2026-07-01T05:45:53.956Z",
    "name": "CSW2DCAT-Bridge",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/zit/opendata/dcat-catalog-check": {
+   "dead_count": 0,
+   "last_push": "2026-09-09T06:02:08.945Z",
    "name": "DCAT Catalog Check",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/sh/zit/x-road-sh": {
+   "dead_count": 0,
    "name": "X-Road Schleswig-Holstein",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/simonwaldherr/invoiceinspector": {
+   "dead_count": 0,
+   "last_push": "2026-09-23T19:44:59.308Z",
+   "name": "InvoiceInspector",
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-arnsberg/datenplattform-stadt-arnsberg": {
+   "dead_count": 0,
+   "last_push": "2026-05-18T11:36:07.553Z",
    "name": "Datenplattform 5fSWF Arnsberg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-arnsberg/knot-dots": {
+   "dead_count": 0,
+   "last_push": "2026-08-27T12:09:00.166Z",
    "name": "Stragety Tool / Knot Dots",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-arnsberg/vc-solar": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T11:35:08.248Z",
    "name": "VC Solar",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-arnsberg/waldmonitor-arnsberg": {
+   "dead_count": 0,
+   "last_push": "2026-04-10T04:27:31.756Z",
    "name": "Waldmonitor Arnsberg",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/smart-city-bamberg/bamboard-interaktiver-stadtteilbildschirm": {
+   "dead_count": 0,
+   "last_push": "2026-03-06T11:59:59.147Z",
+   "name": "Bamboard - interaktiver Stadtteilbildschirm",
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-bamberg/ferienabenteuer": {
+   "dead_count": 0,
+   "last_push": "2026-08-11T14:31:02.835Z",
    "name": "Ferienabenteuer - Ferienangebote einfach online buchen",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/smart-city-bamberg/innovativer-katastrophenschutz\"": {
+   "dead_count": 0,
+   "name": "Innovativer Katastrophenschutz - Smart City Bamberg",
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-bamberg/mobilitaetsplattform": {
+   "dead_count": 0,
+   "last_push": "2026-03-06T11:48:56.746Z",
    "name": "Mobilit\u00e4tsplattform (Mobility-as-a-Service)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-dos/open-smart-city-app": {
+   "dead_count": 0,
+   "last_push": "2025-08-07T21:30:36.308Z",
    "name": "Open Smart City App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-halle-saale/hal-plan/hal-plan": {
+   "dead_count": 0,
+   "last_push": "2026-08-26T12:48:45.327Z",
    "name": "HAL-Plan Open Code",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-muenster/klimadashboard-muenster/klimadashboard-muenster": {
+   "dead_count": 0,
+   "last_push": "2026-09-07T12:38:20.677Z",
    "name": "Klimadashboard M\u00fcnster",
-   "status": 429
-  },
-  "gitlab.opencode.de/smart-city-olpe/bamboard": {
-   "name": "Bamboard - interaktiver Stadtteilbildschirm",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/besucherzaehler": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T07:49:08.880Z",
    "name": "Visi Track",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/bodenfeuchte": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T09:58:10.197Z",
    "name": "Soil Sense",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/co2-ampeln": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T07:51:42.860Z",
    "name": "CO2 Ampel",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/datenplattform-stadt-olpe": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T06:56:32.177Z",
    "name": "Datenplattform Stadt Olpe",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/iot-heatmap": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T11:40:25.401Z",
    "name": "IoT-Heatmap",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/kastanienbaeume-kartenuebersicht": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T10:03:41.783Z",
    "name": "Baumkataster Visualisierung Grafana",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/moodbutton": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T07:57:40.411Z",
    "name": "Smile Check",
-   "status": 429
-  },
-  "gitlab.opencode.de/smart-city-olpe/parken": {
-   "name": "Parkraumerfassung Stadt Olpe",
-   "status": 429
-  },
-  "gitlab.opencode.de/smart-city-olpe/parkplatzerfassung-sonah": {
-   "name": "SONAH Parkplatzdaten",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/pest-control": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T08:28:51.602Z",
    "name": "Nager Track",
-   "status": 429
-  },
-  "gitlab.opencode.de/smart-city-olpe/rauchmelder": {
-   "name": "LoRaWAN-Rauchmelder-Monitoring",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/smart-pedestrian-crosswalk": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T08:45:37.775Z",
    "name": "Lumi Cross",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/stadtsafari": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T08:49:07.177Z",
    "name": "StadtsafARi",
-   "status": 429
-  },
-  "gitlab.opencode.de/smart-city-olpe/tti-gateway-monitoring": {
-   "name": "TTI-Gateway-Monitoring",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-olpe/waste-container": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T08:55:13.981Z",
    "name": "Mr.Fill",
-   "status": 429
-  },
-  "gitlab.opencode.de/smart-city-olpe/xibo-displays-monitoring": {
-   "name": "Xibo-Display-Monitoring",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/co-learning-spaces/display-server": {
+   "dead_count": 0,
+   "last_push": "2026-09-01T09:42:25.633Z",
    "name": "Display Server f\u00fcr Reservierungsanzeigen",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/datenhub/datenhub": {
+   "dead_count": 0,
+   "last_push": "2025-12-09T13:42:21.937Z",
    "name": "Datenhub Ulm",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/digitaler-begleiter/mobile_app": {
+   "dead_count": 0,
+   "last_push": "2025-11-25T15:34:07.333Z",
    "name": "Digitaler Begleiter Mobile App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/engagiert-in-ulm/backend": {
+   "dead_count": 0,
+   "last_push": "2026-06-25T09:02:19.166Z",
    "name": "engagiert in Ulm \u2013 Backend API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/engagiert-in-ulm/frontend": {
+   "dead_count": 0,
+   "last_push": "2026-06-25T05:01:12.674Z",
    "name": "engagiert in Ulm \u2013 Mobile Frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/smart-city-beteiligungsplattform/conword-integration": {
+   "dead_count": 0,
+   "last_push": "2026-02-11T11:26:00.084Z",
    "name": "Conword-Integration",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/smart-city-beteiligungsplattform/eyeable-integration": {
+   "dead_count": 0,
+   "last_push": "2026-05-23T09:08:46.309Z",
    "name": "Eye-Able-Integration",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smart-city-ulm/vima": {
+   "dead_count": 0,
+   "last_push": "2025-07-01T18:25:09.819Z",
    "name": "Digitaler Begleiter",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smarte-region-myk10/digitaler-bewegungstrainer": {
+   "dead_count": 0,
+   "last_push": "2024-10-28T07:06:30.257Z",
    "name": "Digitaler Bewegungstrainer",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smarte.land.regionen/l2/frontend": {
+   "dead_count": 0,
    "name": "kuubu",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smarte.land.regionen/l3/frontend": {
+   "dead_count": 0,
    "name": "LandWohl",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smarte.land.regionen/l4/comby-frontend": {
+   "dead_count": 0,
    "name": "Comby - Mitfahrb\u00e4nke",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/smarte.land.regionen/l4/planbar-fahrbar-frontend": {
+   "dead_count": 0,
    "name": "PlanBar + FahrBar",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-bad-berleburg/datenplattform-stadt-bad-berleburg": {
+   "dead_count": 0,
+   "last_push": "2026-09-11T10:10:10.354Z",
    "name": "Datenplattform 5fSWF Stadt Bad Berleburg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-bad-berleburg/lorawan-connection-heatmap": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T07:07:01.722Z",
    "name": "LoRaWAN Netzabdeckung Bad Berleburg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-bad-berleburg/mikroklima-wetterdaten": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T07:02:05.393Z",
    "name": "Mikroklima Wetterstationen Bad Berleburg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-bad-berleburg/raumklima": {
+   "dead_count": 0,
+   "last_push": "2026-09-25T07:06:05.159Z",
    "name": "Raumklima Bad Berleburg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-detmold/urban-kit-methodensammlung": {
+   "dead_count": 0,
+   "last_push": "2026-09-20T00:00:07.099Z",
    "name": "Urban Kit \u2013 Methodensammlung",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-detmold/urban-kit-plattform": {
+   "dead_count": 0,
+   "last_push": "2026-09-27T17:49:52.404Z",
    "name": "UrbanKIT Plattform",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-freiburg/datenraum-freiburg/smartcityplattform": {
+   "dead_count": 0,
    "name": "DATEN:RAUM:FREIBURG",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/stadt-freiburg/datenraum-freiburg/vermarktungsplattform/vermarktungsplattform": {
+   "dead_count": 0,
+   "last_push": "2026-05-21T10:46:07.608Z",
+   "name": "Vermarktungsplattform f\u00fcr Grundst\u00fccke",
+   "status": 200
   },
   "gitlab.opencode.de/stadt-kaiserslautern1/indexdataexplorer": {
+   "dead_count": 0,
+   "last_push": "2026-06-27T06:17:22.366Z",
    "name": "Index Data Explorer",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-kaiserslautern1/navi4all": {
+   "dead_count": 0,
+   "last_push": "2026-05-13T10:50:22.780Z",
    "name": "Navi4All",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-kaiserslautern1/sci-sensdata": {
+   "dead_count": 0,
+   "last_push": "2026-04-16T11:49:37.140Z",
    "name": "SCI-SENSDATA",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-konstanz/mobilitaet-in-zahlen-grafana": {
+   "dead_count": 0,
+   "last_push": "2026-08-21T15:27:11.022Z",
    "name": "Mobilit\u00e4t in Zahlen",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-konstanz/pdu-monitoring": {
+   "dead_count": 0,
+   "last_push": "2026-09-11T12:44:08.244Z",
    "name": "PDU Monitoring",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/around-menden-virtuelle-stadtfuehrung": {
+   "dead_count": 0,
+   "last_push": "2026-09-15T09:33:07.184Z",
    "name": "ARound Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/dashboard-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T06:54:26.779Z",
    "name": "Smart City Dashboard Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/datenplattform-stadt-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T10:28:23.365Z",
    "name": "Datenplattform 5fSWF Stadt Menden (Sauerland)",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/erlebnis.stadt": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T21:40:18.680Z",
    "name": "Erlebnis.Stadt Menden",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/stadt-menden/sensorik/baumkataster-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T05:54:54.207Z",
+   "name": "Datenbankimplementierung Baumkataster Menden",
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/daten-deutscher-wetterdienst-dwd-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T10:22:52.883Z",
    "name": "Daten Deutscher Wetterdienst DWD Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/daten-lanuk-hochwasserportal.nrw": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T10:23:27.629Z",
    "name": "Daten LANUK Hochwasserportal.NRW",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/daten-zum-arcgis-opendata-portal-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-23T09:52:24.634Z",
    "name": "Datentransfer zum ArcGIS OpenData-Portal Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/parksensorik-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-18T05:57:26.150Z",
    "name": "Parksensorik Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/pegelsensorik-menden": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T09:13:09.541Z",
    "name": "Pegelsensorik Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/raumklimaampeln-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T10:25:33.349Z",
    "name": "Raumklimaampeln Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/verkehrssensorik-menden": {
+   "dead_count": 0,
+   "last_push": "2026-10-01T09:07:17.592Z",
    "name": "Verkehrssensorik Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/sensorik/wettersensorik-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T10:26:39.203Z",
    "name": "Wettersensorik Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-menden/vorschauwebseite-menden": {
+   "dead_count": 0,
+   "last_push": "2026-09-17T10:31:59.047Z",
    "name": "Smart City Webseite Menden",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-wolfsburg/klimacube-wolfsburg": {
+   "dead_count": 0,
+   "last_push": "2025-10-10T06:30:21.107Z",
    "name": "KlimaCube - Wolfsburg",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-wolfsburg/testfeld-smart-parking-wolfsburg": {
+   "dead_count": 0,
+   "last_push": "2025-09-03T16:12:45.141Z",
    "name": "Testfeld Smart Parking",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadt-wolfsburg/was-kehrt-smart": {
+   "dead_count": 0,
+   "last_push": "2025-09-29T08:43:40.317Z",
    "name": "Wolfsburg kehrt smart!",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadtosnabrueck/smart_city_consul": {
+   "dead_count": 0,
+   "last_push": "2026-08-28T15:32:49.236Z",
    "name": "Dialog- und Beteiligungsportal Osnabr\u00fcck",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadtosnabrueck/smart_city_data_game": {
+   "dead_count": 0,
+   "last_push": "2026-04-30T12:53:00.584Z",
    "name": "Smart City - Data game",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/stadtosnabrueck/smart_city_demonstrators": {
+   "dead_count": 0,
+   "last_push": "2026-04-30T12:53:17.241Z",
+   "name": "Smart City Demonstrators",
+   "status": 200
   },
   "gitlab.opencode.de/stadtosnabrueck/smart_city_digital_twin_visualisation": {
+   "dead_count": 0,
+   "last_push": "2026-04-30T12:53:32.046Z",
    "name": "Digital twin - Visualisation",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadtosnabrueck/smart_city_sicherheitskonzept": {
+   "dead_count": 0,
+   "last_push": "2026-08-19T09:30:49.910Z",
    "name": "Smart City - Sicherheitskonzept",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/stadtspielraum/lets-play-klimaanpassung": {
+   "dead_count": 0,
+   "last_push": "2025-12-05T07:48:59.361Z",
    "name": "StadtSpielRaum",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/thlv/agoss": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T16:02:17.648Z",
+   "name": "Landingpage der Th\u00fcringer Arbeitsgemeinschaft Open Source Software",
+   "status": 200
   },
   "gitlab.opencode.de/thlv/tlrz/it-fachplanung": {
+   "dead_count": 0,
+   "last_push": "2026-09-28T08:35:23.217Z",
    "name": "IT-Fachplanung",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/thlv/tmuenf/kommunaler-nachhaltigkeits-check": {
+   "dead_count": 0,
+   "last_push": "2026-05-29T21:47:13.530Z",
+   "name": "nachhaltigkeitscheck",
+   "status": 200
   },
   "gitlab.opencode.de/thomas-vogt/sitzungsgeld2csv": {
+   "dead_count": 0,
+   "last_push": "2025-04-24T05:25:50.833Z",
    "name": "Sitzungsgeld2CSV",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/density_maps": {
+   "dead_count": 0,
    "name": "density_maps",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/evaluation-bundesbot": {
+   "dead_count": 0,
+   "last_push": "2025-01-09T12:29:38.091Z",
    "name": "Evaluation Bundesbot",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/fish_monitoring": {
+   "dead_count": 0,
+   "last_push": "2025-06-23T00:00:07.541Z",
    "name": "fish_monitoring",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/gamma_flow": {
+   "dead_count": 0,
+   "last_push": "2025-12-20T00:10:06.767Z",
    "name": "gamma_flow",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/llm-questionnaire-benchmarking-framework": {
+   "dead_count": 0,
+   "last_push": "2026-07-13T00:00:12.759Z",
    "name": "LLM Questionnaire Benchmarking Framework",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/llm-testframework": {
+   "dead_count": 0,
+   "last_push": "2026-05-13T07:48:58.631Z",
    "name": "LLM Testframework",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/objection-management": {
+   "dead_count": 0,
+   "last_push": "2025-01-13T11:14:51.399Z",
    "name": "Objection management",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/strahlenexposition": {
+   "dead_count": 0,
+   "last_push": "2025-05-19T12:18:40.157Z",
    "name": "strahlenexposition_uba",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/uba-ki-lab/ubair": {
+   "dead_count": 0,
+   "last_push": "2025-03-10T12:00:13.980Z",
    "name": "ubair",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/umwelt-info/data-stories": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T06:52:44.911Z",
    "name": "data-stories",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/umwelt-info/journal-web-ui": {
+   "dead_count": 0,
+   "last_push": "2026-07-24T12:07:55.763Z",
    "name": "journal-web-ui",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/umwelt-info/metadaten": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T17:51:02.431Z",
    "name": "metadaten",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/umwelt-info/usage-stats-api": {
+   "dead_count": 0,
+   "last_push": "2026-09-29T09:53:11.590Z",
    "name": "usage-stats-api",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/umweltnavi": {
+   "dead_count": 0,
    "name": "UmweltNAVI",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/accessiblecity/accessible-city-app": {
+   "dead_count": 0,
+   "last_push": "2025-12-10T22:39:44.222Z",
    "name": "Accessible City App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/accessiblecity/accessible-city-server": {
+   "dead_count": 0,
+   "last_push": "2025-12-10T22:40:49.209Z",
    "name": "Bessere Radwege / Accessible City server",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/unbox-cologne/adaptiontechnologyhub/adapt-map-koeln": {
+   "dead_count": 0,
+   "last_push": "2026-09-20T21:58:31.247Z",
+   "name": "AdaptMap",
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/bessereradwege/bessere-radwege-app": {
+   "dead_count": 0,
+   "last_push": "2025-12-10T22:40:25.040Z",
    "name": "Bessere Radwege App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/cocotechlab/virtuelles-gewaechshaus/daten": {
+   "dead_count": 0,
+   "last_push": "2026-02-11T12:40:40.515Z",
    "name": "Virtuelles Gew\u00e4chshaus",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/colognecultivators/cologne-cultivators": {
+   "dead_count": 0,
+   "last_push": "2026-09-20T09:44:39.491Z",
    "name": "Cologne Cultivators Frontend / Webapp",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/colognecultivators/cologne-cultivators-backend": {
+   "dead_count": 0,
+   "last_push": "2026-07-22T12:39:17.247Z",
    "name": "Cologne Cultivators Backend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/ecodetect/ecodetect": {
+   "dead_count": 0,
+   "last_push": "2026-07-31T14:04:54.131Z",
    "name": "ECO-DETECT",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/m-llmonitoring/dashboard": {
+   "dead_count": 0,
+   "last_push": "2026-09-15T00:00:13.399Z",
    "name": "Meldeeimer",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/unbox-cologne/zyai/zy": {
+   "dead_count": 0,
+   "last_push": "2025-12-15T09:20:59.958Z",
    "name": "Zy",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/urbo-community/urbo": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T02:14:27.469Z",
    "name": "URBO",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/uxma-gmbh-co-kg/jup/jup": {
+   "dead_count": 0,
+   "last_push": "2026-09-15T13:41:49.431Z",
+   "name": "JUP!",
+   "status": 200
   },
   "gitlab.opencode.de/vivodepot/vivodepot": {
+   "dead_count": 0,
+   "last_push": "2026-10-06T13:54:59.263Z",
    "name": "Vivodepot",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/wolfsburg-app": {
+   "dead_count": 0,
    "name": "Wolfsburg-App",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/wuerzburg/heimatforum/mitmachgarten": {
+   "dead_count": 0,
+   "last_push": "2026-06-30T08:44:02.961Z",
    "name": "Interaktive Gartenkarte",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/wuerzburg/hilfekompass/hilfekompass-api": {
+   "dead_count": 0,
+   "last_push": "2026-04-09T07:33:58.159Z",
    "name": "Hilfekompass API",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/wuerzburg/hilfekompass/hilfekompass-frontend": {
+   "dead_count": 0,
+   "last_push": "2026-04-21T05:44:38.455Z",
    "name": "Hilfekompass Frontend",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/wuerzburg/mitmachportal/mitmachportal": {
+   "dead_count": 0,
+   "last_push": "2026-08-06T06:04:17.658Z",
    "name": "Mitmachportal W\u00fcrzburg",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/wuerzburg/smart-city-hub": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T13:38:19.243Z",
+   "name": "Smart City Hub",
+   "status": 200
   },
   "gitlab.opencode.de/xleitstelle/xmas-core": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T18:31:21.425Z",
    "name": "XMAS-Core",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/xleitstelle/xmas-plugin": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T12:00:16.915Z",
    "name": "XMAS-Plugin",
-   "status": 429
+   "status": 200
+  },
+  "gitlab.opencode.de/xleitstelle/xplanung/validierungsregeln/standard": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T08:12:35.082Z",
+   "name": "Standard-Validierungsregeln",
+   "status": 200
   },
   "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/kubernetes-minimal-on-a-vm-1": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T13:54:24.728Z",
    "name": "kubernetes-minimal-on-a-vm",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/limesurvey-1": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T14:35:39.743Z",
    "name": "limesurvey-gehaertet",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/syncthing-1": {
+   "dead_count": 0,
+   "last_push": "2026-10-05T16:55:35.493Z",
    "name": "syncthing-1",
-   "status": 429
+   "status": 200
   },
   "gitlab.opencode.de/zki.de/ak-sec/test-goat-anwendungen/termine-fedi-collect-1": {
+   "dead_count": 0,
+   "last_push": "2026-10-07T11:45:24.081Z",
    "name": "termine-fedi-collect",
-   "status": 429
+   "status": 200
   },
   "gitlab.ow2.org/lemonldap-ng/lemonldap-ng": {
    "dead_count": 0,
@@ -25103,6 +26253,11 @@
    "name": "Orthanc",
    "status": 200
   },
+  "piveau.eu/en": {
+   "dead_count": 0,
+   "name": "piveau",
+   "status": 200
+  },
   "pkg.kali.org": {
    "dead_count": 0,
    "name": "Kali Linux",
@@ -25267,13 +26422,13 @@
    "status": 200
   },
   "turku.fi/github": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "Munpalvelut.fi digitaalinen palvelutori",
    "status": 404
   },
   "turku.fi/github-turkufi": {
-   "dead_count": 30,
+   "dead_count": 31,
    "dead_since": "2026-08-11T13:15:27Z",
    "name": "KADA \u2013 Kuntien avoin digialusta",
    "status": 404
@@ -25291,13 +26446,13 @@
  },
  "summary": {
   "archived": 40,
-  "checked": "2026-10-07T19:24:23Z",
+  "checked": "2026-10-07T19:43:10Z",
   "dead": 27,
   "newly_dead": [],
-  "ok": 3126,
+  "ok": 3530,
   "pending_dead": 1,
   "revived": [],
-  "total": 3529,
-  "unknown": 373
+  "total": 3619,
+  "unknown": 59
  }
 }

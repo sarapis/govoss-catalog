@@ -1,101 +1,105 @@
 {
  "be": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 239
  },
  "bg": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 194
  },
  "ca": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 67
  },
  "ch": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 164
  },
  "de": {
+  "error": "HTTPError: HTTP Error 429: Too Many Requests",
   "fetched_at": "2026-10-07T19:03:44Z",
-  "ok": true,
+  "last_error_at": "2026-10-07T19:33:18Z",
+  "ok": false,
   "records": 450
  },
  "digg": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 48
  },
  "dpg": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 256
  },
  "eu": {
+  "error": "RuntimeError: partial https://code.europa.eu scan: 12 repos vs 23 in the last good checkpoint, after 1 org(s) failed: 956 publiccode.yml fetch(es) failed (429 x956). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from https://code.europa.eu (retry the run later) \u2014 the per-source age on /catalogs is what makes this visible.",
   "fetched_at": "2026-10-07T19:03:44Z",
-  "ok": true,
+  "last_error_at": "2026-10-07T19:33:18Z",
+  "ok": false,
   "records": 12
  },
  "fi": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 72
  },
  "fr": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 691
  },
  "hbg": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 295
  },
  "ie": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 5
  },
  "it": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 552
  },
  "muc": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 145
  },
  "nl": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 205
  },
  "nlreg": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 0
  },
  "os2": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 300
  },
  "pt": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 93
  },
  "se": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 167
  },
  "tw": {
-  "fetched_at": "2026-10-07T19:03:44Z",
+  "fetched_at": "2026-10-07T19:33:18Z",
   "ok": true,
   "records": 58
  }
