@@ -484,6 +484,16 @@ def main():
               (pg.count('<g class="opin"'), bool(re.search(
                   r'@media \(max-width:\d+px\)\{\.omap-svg\{--pin:(?!1;)\d+(\.\d+)?;\}\}', pg))),
               (pg.count('class="odot '), True))
+        # two layouts of one map: side by side, and stacked for phones (each frame at
+        # the full width). Same pins in both, and a phone is shown the stacked one
+        lay = {c: sorted(re.findall(r'data-ids="([^"]+)"', b))
+               for c, b in re.findall(r'<svg class="omap-svg (omap-wide|omap-tall)"(.*?)</svg>', pg, re.S)}
+        check("%s: the side-by-side and stacked maps carry the same pins" % name,
+              (sorted(lay), lay.get("omap-wide") == lay.get("omap-tall"), len(lay.get("omap-wide") or [])),
+              (["omap-tall", "omap-wide"], True, pg.count('class="odot ') // 2))
+        check("%s: phones get the stacked map" % name,
+              bool(re.search(r'\.omap-tall\{display:none;\}\s*@media \(max-width:\d+px\)\{'
+                             r'\.omap-wide\{display:none;\}\.omap-tall\{display:block;', pg)), True)
         check("%s has the pin popup with a labelled close button" % name,
               bool(re.search(r'<div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>'
                              r'.*?<button type="button" class="opop-x" id="opop-x" aria-label="[^"]+">', pg, re.S)), True)

@@ -42,6 +42,9 @@ PIN = "M0,0C-1.6,-3.4 -6,-6.2 -6,-10A6,6 0 1 1 6,-10C6,-6.2 1.6,-3.4 0,0Z"
 # Pins nearer than this (map units, before scaling) merge into one numbered pin.
 MERGE_WITHIN = 9
 
+# Gap between the frames when the map is stacked for phones (map units).
+STACK_GAP = 12
+
 # Code links shown on a card before the rest fold behind "+N more code links".
 CODE_SHOWN = 3
 
@@ -192,29 +195,48 @@ def build(lang, data, locs, geo, res):
                 break
         else:
             merged.append((k, x, y, list(rs)))
-    vx, vy, vw, vh = geo["viewbox"]
-    svg = ['<svg class="omap-svg" viewBox="%s %s %s %s" role="group" aria-label="%s">'
-           % (vx, vy, vw, vh, esc(_("Map of open source program offices")))]
-    for k, fr in geo["frames"].items():
-        rx, ry, rw, rh = fr["rect"]
-        svg.append('<g class="oframe"><rect x="%s" y="%s" width="%s" height="%s" rx="8"/>'
-                   '<path d="%s" aria-hidden="true"/></g>' % (rx, ry, rw, rh, fr["land"]))
     # drawn smallest first, so a numbered pin is never covered by a single one
+    pins = collections.defaultdict(list)
     for k, x, y, rs in reversed(merged):
         places = list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))
         label = "; ".join("%s (%s)" % (r["name"], _("Government") if r["type"] == "government"
                                        else _("Academic")) for r in rs)
         types = sorted({r["type"] for r in rs})
         cls = types[0] if len(types) == 1 else "mixed"
-        svg.append('<a class="odot %s" href="#%s" data-ids="%s" data-place="%s" aria-label="%s" '
-                   'aria-haspopup="dialog"><title>%s</title><g transform="translate(%s %s)">'
-                   '<g class="opin"%s><path d="%s"/>%s</g></g></a>'
-                   % (cls, esc(rs[0]["id"]), esc(" ".join(r["id"] for r in rs)),
-                      esc("; ".join(places)), esc(label), esc(label),
-                      x, y, ' style="--k:1.3"' if len(rs) > 1 else "", PIN,
-                      '<text x="0" y="-7">%d</text>' % len(rs) if len(rs) > 1
-                      else '<circle class="ohole" cx="0" cy="-10" r="2.2"/>'))
-    svg.append("</svg>")
+        pins[k].append('<a class="odot %s" href="#%s" data-ids="%s" data-place="%s" aria-label="%s" '
+                       'aria-haspopup="dialog"><title>%s</title><g transform="translate(%s %s)">'
+                       '<g class="opin"%s><path d="%s"/>%s</g></g></a>'
+                       % (cls, esc(rs[0]["id"]), esc(" ".join(r["id"] for r in rs)),
+                          esc("; ".join(places)), esc(label), esc(label),
+                          x, y, ' style="--k:1.3"' if len(rs) > 1 else "", PIN,
+                          '<text x="0" y="-7">%d</text>' % len(rs) if len(rs) > 1
+                          else '<circle class="ohole" cx="0" cy="-10" r="2.2"/>'))
+
+    def draw(cls, viewbox, shift):
+        """One layout of the map: each frame's land and pins, moved by shift[frame]."""
+        out = ['<svg class="omap-svg %s" viewBox="%s %s %s %s" role="group" aria-label="%s">'
+               % ((cls,) + tuple(viewbox) + (esc(_("Map of open source program offices")),))]
+        for k, fr in geo["frames"].items():
+            rx, ry, rw, rh = fr["rect"]
+            dx, dy = shift[k]
+            out.append('<g transform="translate(%s %s)"><g class="oframe">'
+                       '<rect x="%s" y="%s" width="%s" height="%s" rx="8"/>'
+                       '<path d="%s" aria-hidden="true"/></g>%s</g>'
+                       % (round(dx, 1), round(dy, 1), rx, ry, rw, rh, fr["land"], "".join(pins[k])))
+        out.append("</svg>")
+        return "".join(out)
+
+    # side by side as build_geo laid them out; and, for phones, STACKED - each frame
+    # centred on the widest, one under the other - so each gets the full width
+    wide = draw("omap-wide", geo["viewbox"], {k: (0, 0) for k in geo["frames"]})
+    tw = max(fr["rect"][2] for fr in geo["frames"].values())
+    shift, th = {}, 0.0
+    for k, fr in geo["frames"].items():
+        rx, ry, rw, rh = fr["rect"]
+        shift[k] = ((tw - rw) / 2 - rx, th - ry)
+        th += rh + STACK_GAP
+    tall = draw("omap-tall", [0, 0, tw, round(th - STACK_GAP, 1)], shift)
+    svg = [wide, tall]
     note = ""
     if unplaced:
         note = ('<p class="onote-map">%s</p>'
@@ -305,7 +327,9 @@ PAGE_CSS = """
    narrow screens, about the tip (the place), so a pin stays a usable tap target */
 .opin{transform:scale(calc(var(--pin,1) * var(--k,1)));transform-origin:0 0;}
 @media (max-width:800px){.omap-svg{--pin:1.5;}}
-@media (max-width:520px){.omap-svg{--pin:2.2;}}
+/* phones get the stacked layout: each frame at the full width, so pins need less help */
+.omap-tall{display:none;}
+@media (max-width:520px){.omap-wide{display:none;}.omap-tall{display:block;--pin:1.6;}}
 .odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
 .odot.government path{fill:var(--primary);}
 .odot.academic path{fill:var(--green);}
