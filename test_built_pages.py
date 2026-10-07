@@ -472,6 +472,12 @@ def main():
                   (html.unescape(hd.group(1)) if hd else None, len(re.findall(r"<h1\b", pg)),
                    pg.count('<div class="ph tex">'), 'class="hero' in pg),
                   (want, 1, 1, False))
+            # no figures in a header lede (owner, 2026-10-07): a number there is one
+            # more thing to keep updated; the counts live in cards, tiles and lists
+            led = re.search(r'<div class="ph tex">.*?<p class="lede">(.*?)</p>', pg, re.S)
+            check("%s: the header lede carries no numbers" % pname,
+                  re.findall(r"\d[\d,.]*", re.sub(r"<[^>]+>|&#?\w+;", "", led.group(1))) if led else ["no lede"],
+                  [])
             check("%s: the header's meta line links the page's data, and each file exists" % pname,
                   (len(data) > 0, [d for d in data if not os.path.exists(os.path.join(SITE, d.lstrip("/")))]),
                   (True, []))

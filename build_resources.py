@@ -226,7 +226,7 @@ PAGE_CSS = """
 
 BODY = theme.page_header(
     '⟪Resources⟫',
-    '⟪__N__ documents, decisions and accounts from __NCASES__ public-sector open source program offices, each with what it is for and how to use it when building an OSPO. Compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫',
+    '⟪Documents, decisions and accounts from public-sector open source program offices, each with what it is for and how to use it when building an OSPO. Compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫',
     [theme.data_links('/resources.json')]) + """
 <div class="wrap">
   <main id="main" class="rwrap">

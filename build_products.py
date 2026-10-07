@@ -277,7 +277,7 @@ table.ptab td{padding:9px 14px;vertical-align:top;color:var(--ink-600);}
 
 BODY = theme.page_header(
     '⟪Products⟫',
-    '⟪The other side of the catalogue: __NPROD__ proprietary products governments buy, __NALT__ of them with an open source alternative a government somewhere already publishes &mdash; __NLINKS__ alternatives in all. The other __NGAP__ are listed too, so a gap reads as a gap.⟫',
+    '⟪The other side of the catalogue: proprietary products governments buy, and the open source alternatives a government somewhere already publishes. Products with no known alternative are listed too, so a gap reads as a gap.⟫',
     [theme.data_links('/products.json', '/by-product.json')]) + """
 <!-- No skip link here: theme.utility_bar() emits it, and it is prepended ahead
      of the topbar so it stays the FIRST focusable element. This page carried

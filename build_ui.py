@@ -482,9 +482,7 @@ def render(lang):
         + style + theme.utility_bar(lang=lang) + theme.topbar("software", lang, "/software")
         + theme.page_header(
             "⟪Software⟫",
-            "⟪__NENTRIES__ entries from __N_SOURCES__ government catalogs. Filter by function, "
-            "country, catalog or the product you pay for &mdash; the address bar keeps the view, "
-            "so any search can be shared.⟫",
+            '⟪Open source software from government catalogs. Filter by function, country, catalog or the product you pay for &mdash; the address bar keeps the view, so any search can be shared.⟫',
             [theme.data_links("/entries.json")])
         + T.BODY + theme.footer(lang=lang) + T.SCRIPT
     )
