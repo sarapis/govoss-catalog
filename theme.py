@@ -526,7 +526,9 @@ def _esc(t):
 
 def topbar(active="", lang="en", route="/"):
     """Site header. `active` is one of home | software | catalogs | ospos | docs | resources
-    (products has no nav item, by the owner's choice). Docs is the top-right
+    (products has no nav item, by the owner's choice). Home has no nav item either
+    (owner, 2026-10-07): the wordmark is the way home, and on / it carries
+    aria-current="page" so the current page is still announced. Docs is the top-right
     button rather than a nav item (owner, 2026-10-07: it replaced "Submit a
     catalog", which lives on as the Get involved block on / and /catalogs).
     `route` is this
@@ -542,18 +544,18 @@ def topbar(active="", lang="en", route="/"):
         return '<a href="%s"%s>%s</a>' % (href, cur, label)
     return """
 <header class="topbar"><div class="wrap">
-  <a class="brand" href="/">
+  <a class="brand" href="/"%s>
     <span class="bmark">govoss</span>
     <span class="bsub">⟪Government<br>open source⟫</span>
   </a>
-  <nav class="nav">%s %s %s %s %s</nav>
+  <nav class="nav">%s %s %s %s</nav>
   <div class="t-r">
     %s
     <a class="btn btn-primary" href="/docs"%s>⟪Docs⟫</a>
   </div>
 </div></header>
 """ % (
-       item("/", "⟪Home⟫", "home"),
+       ' aria-current="page"' if active == "home" else "",
        item("/software", "⟪Software⟫", "software"),
        item("/catalogs", "⟪Catalogs⟫", "catalogs"),
        item("/ospos", "⟪OSPOs⟫", "ospos"),

@@ -388,20 +388,25 @@ def main():
               (f.group(1) if f else None, bool(f and 'name="q"' in f.group(2))), (sw, True))
     check("home 'See all, newest first' opens /software sorted newest",
           'href="/software?sort=recent"' in home, True)
-    # Docs is the top-right button, not a nav item (owner, 2026-10-07)
-    NAV = [("/", "home"), ("/software", "software"), ("/catalogs", "catalogs"),
+    # Docs is the top-right button, not a nav item; Home is the wordmark, not a nav
+    # item (owner, 2026-10-07 both)
+    NAV = [("/software", "software"), ("/catalogs", "catalogs"),
            ("/ospos", "ospos"), ("/resources", "resources")]
     for name in ROUTE_OF:
         for lang in i18n.LANGS:
             pname = name if lang == "en" else "%s/%s" % (lang, name)
             nav = re.search(r'<nav class="nav">(.*?)</nav>', pages[pname], re.S)
             hrefs = re.findall(r'href="([^"]+)"', nav.group(1)) if nav else []
-            check("%s nav: the five links, in order" % pname,
+            check("%s nav: the four links, in order" % pname,
                   hrefs, [i18n.path_for(lang, r) for r, _ in NAV])
             cur = re.findall(r'href="([^"]+)" aria-current="page"', nav.group(1)) if nav else []
             want_cur = ([i18n.path_for(lang, ROUTE_OF[name])]
-                        if name not in ("products.html", "docs.html") else [])
+                        if name not in ("products.html", "docs.html", "index.html") else [])
             check("%s nav marks its own page current" % pname, cur, want_cur)
+            brand = re.search(r'<a class="brand" href="([^"]+)"([^>]*)>', pages[pname])
+            check("%s wordmark links home, current only on home" % pname,
+                  (brand.group(1) if brand else None, bool(brand and "aria-current" in brand.group(2))),
+                  (i18n.path_for(lang, "/"), name == "index.html"))
             btn = re.search(r'<div class="t-r">.*?<a class="btn btn-primary" href="([^"]+)"([^>]*)>',
                             pages[pname], re.S)
             check("%s top-right button is Docs (current only on /docs)" % pname,
