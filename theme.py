@@ -525,7 +525,7 @@ def _esc(t):
 
 
 def topbar(active="", lang="en", route="/"):
-    """Site header. `active` is one of home | software | catalogs | docs | resources
+    """Site header. `active` is one of home | software | catalogs | ospos | docs | resources
     (products has no nav item, by the owner's choice). Docs is the top-right
     button rather than a nav item (owner, 2026-10-07: it replaced "Submit a
     catalog", which lives on as the Get involved block on / and /catalogs).
@@ -546,7 +546,7 @@ def topbar(active="", lang="en", route="/"):
     <span class="bmark">govoss</span>
     <span class="bsub">⟪Government<br>open source⟫</span>
   </a>
-  <nav class="nav">%s %s %s %s</nav>
+  <nav class="nav">%s %s %s %s %s</nav>
   <div class="t-r">
     %s
     <a class="btn btn-primary" href="/docs"%s>⟪Docs⟫</a>
@@ -556,6 +556,7 @@ def topbar(active="", lang="en", route="/"):
        item("/", "⟪Home⟫", "home"),
        item("/software", "⟪Software⟫", "software"),
        item("/catalogs", "⟪Catalogs⟫", "catalogs"),
+       item("/ospos", "⟪OSPOs⟫", "ospos"),
        item("/resources", "⟪Resources⟫", "resources"),
        i18n.switcher(lang, route),
        ' aria-current="page"' if active == "docs" else "")
@@ -611,6 +612,7 @@ def footer(nav=None, lang="en"):
         '<a href="/products">⟪Proprietary software⟫</a>'
         '<a href="/catalogs">⟪Catalogs &amp; harvest status⟫</a>'
         '<a href="/docs">⟪API for agents⟫</a>'
+        '<a href="/ospos">⟪OSPOs⟫</a>'
         '<a href="/resources">⟪OSPO resources⟫</a>'
         '</div>'
         '<div class="col"><h4>⟪Data⟫</h4>'

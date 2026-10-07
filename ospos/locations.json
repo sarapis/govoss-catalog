@@ -1,0 +1,348 @@
+{
+ "_about": "Where each OSPO is, for the /ospos map. Neither list gives coordinates (the academic map gives no country either), so they are placed here by hand: `basis` is seat (the office's own city) or hq (its parent organisation's headquarters). FLOSS-PSO coordinates are un.opensource.nyc's hand-placed ones. Keyed by the record id fetch_ospos.py derives from each office's URL. A new OSPO with no entry is still listed on /ospos, which says how many are not on the map.",
+ "locations": {
+  "amap-biohub": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.768,
+   "lon": -122.3878,
+   "place": "San Francisco"
+  },
+  "amap-carnegie-mellon-university": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 40.4433,
+   "lon": -79.9436,
+   "place": "Pittsburgh"
+  },
+  "amap-cern": {
+   "basis": "seat",
+   "country": "INT",
+   "lat": 46.234,
+   "lon": 6.055,
+   "place": "Meyrin (Geneva)"
+  },
+  "amap-george-washington": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 38.8997,
+   "lon": -77.0486,
+   "place": "Washington, DC"
+  },
+  "amap-georgia-institute-of-technology": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 33.7756,
+   "lon": -84.3963,
+   "place": "Atlanta"
+  },
+  "amap-isglobal-barcelona-institute-for-global-health": {
+   "basis": "seat",
+   "country": "ES",
+   "lat": 41.3906,
+   "lon": 2.153,
+   "place": "Barcelona"
+  },
+  "amap-johns-hopkins-university": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 39.3299,
+   "lon": -76.6205,
+   "place": "Baltimore"
+  },
+  "amap-lero": {
+   "basis": "hq",
+   "country": "IE",
+   "lat": 52.6738,
+   "lon": -8.5719,
+   "place": "Limerick"
+  },
+  "amap-mass-general-brigham": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 42.3925,
+   "lon": -71.0789,
+   "place": "Somerville, MA"
+  },
+  "amap-mississippi-state-university": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 33.4552,
+   "lon": -88.7944,
+   "place": "Starkville"
+  },
+  "amap-penn-state": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 40.7982,
+   "lon": -77.8599,
+   "place": "University Park"
+  },
+  "amap-rit": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 43.0848,
+   "lon": -77.6744,
+   "place": "Rochester, NY"
+  },
+  "amap-slu": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 38.6363,
+   "lon": -90.234,
+   "place": "St. Louis"
+  },
+  "amap-snt-university-of-luxembourg": {
+   "basis": "seat",
+   "country": "LU",
+   "lat": 49.6266,
+   "lon": 6.1593,
+   "place": "Luxembourg"
+  },
+  "amap-stanford-university": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 37.4275,
+   "lon": -122.1697,
+   "place": "Stanford"
+  },
+  "amap-syracuse": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 43.0392,
+   "lon": -76.1351,
+   "place": "Syracuse"
+  },
+  "amap-the-alan-turing-institute": {
+   "basis": "hq",
+   "country": "GB",
+   "lat": 51.5299,
+   "lon": -0.1277,
+   "place": "London"
+  },
+  "amap-trinity-college-dublin": {
+   "basis": "seat",
+   "country": "IE",
+   "lat": 53.3438,
+   "lon": -6.2546,
+   "place": "Dublin"
+  },
+  "amap-university-of-california-berkeley": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 37.8719,
+   "lon": -122.2585,
+   "place": "Berkeley"
+  },
+  "amap-university-of-california-davis": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 38.5382,
+   "lon": -121.7617,
+   "place": "Davis"
+  },
+  "amap-university-of-california-los-angeles": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 34.0689,
+   "lon": -118.4452,
+   "place": "Los Angeles"
+  },
+  "amap-university-of-california-san-diego": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 32.8801,
+   "lon": -117.234,
+   "place": "San Diego"
+  },
+  "amap-university-of-california-santa-barbara": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 34.414,
+   "lon": -119.8489,
+   "place": "Santa Barbara"
+  },
+  "amap-university-of-california-santa-cruz": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 36.9914,
+   "lon": -122.0609,
+   "place": "Santa Cruz"
+  },
+  "amap-university-of-texas-austin": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 30.2849,
+   "lon": -97.7341,
+   "place": "Austin"
+  },
+  "amap-university-of-texas-dallas": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 32.9858,
+   "lon": -96.7501,
+   "place": "Richardson, TX"
+  },
+  "amap-university-of-texas-el-paso": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 31.7701,
+   "lon": -106.505,
+   "place": "El Paso"
+  },
+  "amap-university-of-texas-san-antonio": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 29.583,
+   "lon": -98.6197,
+   "place": "San Antonio"
+  },
+  "amap-university-of-vermont": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 44.4779,
+   "lon": -73.1965,
+   "place": "Burlington, VT"
+  },
+  "amap-university-of-washington": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 47.6553,
+   "lon": -122.3035,
+   "place": "Seattle"
+  },
+  "amap-university-of-wisconsin-madison": {
+   "basis": "seat",
+   "country": "US",
+   "lat": 43.0766,
+   "lon": -89.4125,
+   "place": "Madison"
+  },
+  "floss-cms-gov-digital-service-open-source-program-office": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 39.3043,
+   "lon": -76.7519,
+   "place": "Woodlawn, Maryland"
+  },
+  "floss-code-gouv-fr": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 48.8566,
+   "lon": 2.3522,
+   "place": "Paris"
+  },
+  "floss-cyber-gouv-fr-enjeux-technologiques-open-source": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 48.8566,
+   "lon": 2.3522,
+   "place": "Paris"
+  },
+  "floss-developer-overheid-nl": {
+   "basis": "hq",
+   "country": "NL",
+   "lat": 52.0705,
+   "lon": 4.3007,
+   "place": "The Hague"
+  },
+  "floss-echirolles-fr-territoire-numerique": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 45.1436,
+   "lon": 5.7139,
+   "place": "Echirolles"
+  },
+  "floss-francetravail-io-opportunites-innovation-participer-initiatives-open-source": {
+   "basis": "hq",
+   "country": "FR",
+   "lat": 48.873,
+   "lon": 2.404,
+   "place": "Paris"
+  },
+  "floss-ign-fr-institut-des-donnees-et-logiciels-ouverts-au-service-de-la-nation": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 48.845,
+   "lon": 2.418,
+   "place": "Saint-Mande"
+  },
+  "floss-opensource-muenchen-de-ospo-html": {
+   "basis": "seat",
+   "country": "DE",
+   "lat": 48.1351,
+   "lon": 11.582,
+   "place": "Munich"
+  },
+  "floss-opensource-paris-fr": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 48.8566,
+   "lon": 2.3522,
+   "place": "Paris"
+  },
+  "floss-opensourcewerken-nl": {
+   "basis": "hq",
+   "country": "NL",
+   "lat": 52.0705,
+   "lon": 4.3007,
+   "place": "The Hague"
+  },
+  "floss-opentech-auth-gr": {
+   "basis": "seat",
+   "country": "EL",
+   "lat": 40.6318,
+   "lon": 22.956,
+   "place": "Thessaloniki"
+  },
+  "floss-os2-eu": {
+   "basis": "hq",
+   "country": "DK",
+   "lat": 55.6761,
+   "lon": 12.5683,
+   "place": "Copenhagen"
+  },
+  "floss-pcll-ac-dijon-fr": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 47.322,
+   "lon": 5.0415,
+   "place": "Dijon"
+  },
+  "floss-recia-fr": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 47.9029,
+   "lon": 1.9093,
+   "place": "Orleans"
+  },
+  "floss-schleswig-holstein-de-open-source": {
+   "basis": "seat",
+   "country": "DE",
+   "lat": 54.3233,
+   "lon": 10.1228,
+   "place": "Kiel"
+  },
+  "floss-scienceouverte-univ-grenoble-alpes-fr-a-propos-cellule-data-grenoble-alpes": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 45.1885,
+   "lon": 5.7245,
+   "place": "Grenoble"
+  },
+  "floss-strasbourg-eu-strategie-logiciels-libres": {
+   "basis": "seat",
+   "country": "FR",
+   "lat": 48.5734,
+   "lon": 7.7521,
+   "place": "Strasbourg"
+  },
+  "floss-undp-org-digital": {
+   "basis": "hq",
+   "country": "INT",
+   "lat": 40.75,
+   "lon": -73.9686,
+   "place": "New York"
+  }
+ }
+}

@@ -38,6 +38,9 @@ COUNTRY_NAME = {
     "BR": "Brazil",      "CY": "Cyprus",    "ES": "Spain",
     "IN": "India",       "KR": "South Korea", "MD": "Moldova",
     "US": "United States", "CH": "Switzerland", "GB": "United Kingdom",
+    # Only on /ospos: FLOSS-PSO writes Greece as EL (the EU's code) and an
+    # intergovernmental office as INT; LU is SnT, University of Luxembourg.
+    "EL": "Greece",      "LU": "Luxembourg", "INT": "International",
 }
 
 

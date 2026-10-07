@@ -14,11 +14,11 @@ manual, as of 2026-09-23". Open items and traps: `CONTINUE.md`.
 
 ```
 bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> deploy -> record
-bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: no catalogue or liveness traffic
+bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: no catalogue, OSPO-list or liveness traffic
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 12 suites, 652 checks, all manual
+for t in test_*.py; do python3 $t; done     # 13 suites, 725 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -188,7 +188,12 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `BODY`), both from `build_ui.py` + `_ui_template.py`; `/catalogs` (`build_sources.py`, was
   /sources.html), `/docs` (`build_api.py`, was /api.html; the top-right button, not a nav item),
   `/products` (no nav item, owner's call), `/resources` (`build_resources.py` from the committed `resources/ospo-resources.json`,
-  compiled by UN+NYC - replace the file to update; records stay English). Each also under
+  compiled by UN+NYC - replace the file to update; records stay English), `/ospos`
+  (`build_ospos.py`, nav between Catalogs and Resources: the FLOSS-PSO list (CC0) as
+  government, plus the SustainOSS academic map's own "## OSPOs" sections (MIT) as academic,
+  fetched weekly by `fetch_ospos.py` into `cache/ospos.json`, last good copy kept; two FLOSS-PSO
+  universities named in `ACADEMIC_FLOSS`; map dots from the hand-placed `ospos/locations.json`
+  and `geo/ospo_frames.json`; Resources links via `RESOURCE_CASE`). Each also under
   `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.
 - **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, asserted none survive.
@@ -247,7 +252,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Twelve suites, 652 checks, **all manual** - a test that can fail the weekly publish is one someone
+Thirteen suites, 725 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -265,8 +270,9 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin`, the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
-| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, nav and Resources (12e), hosting files |
+| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, nav and Resources (12e), /ospos cards, map, Resources links and projection (12f), hosting files |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
+| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 
 Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only

@@ -32,11 +32,13 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
 - **Last run 2026-10-05 11:26Z**, scheduled, all steps ok, deployed on `token-file`
   (`08e8210`); the Swiss API gave 163 entries. Live `/status.json`: `warn` for one stale
   translation key - TLSAssistant (IT) now ships its own English, so it is redundant, not rot.
-- **COMMITTED, NOT LIVE: the 2026-10-07 reorganisation** - home `/` + `/software`, Sources ->
-  `/catalogs`, API -> `/docs`, `/products`, new `/resources`, clean paths and the 301s in
-  `site-worker.js`. Verified on `wrangler dev --local` (launch config `site-worker`): every
-  route, both languages, no overflow 375-1440px. **Needs the pipeline run to publish, then
-  an MCP Worker redeploy** (its `docs` link moved to `/docs`; `/api.html` 301s meanwhile).
+- **Live since 2026-10-07 (`87b8143`): the reorganisation** - Home, Software, Catalogs, Docs
+  (top-right button), Resources, clean paths and the 301s; MCP Worker `fd7a287d` links `/docs`.
+  The 2026-10-07 runs: openCode published 86 short (fetch failures read as "none"), fixed in
+  `gitlab_scan()` and republished; both GitLab sources then rate-limited (429) and reused their
+  2026-10-05 checkpoints - expect their age to show on /catalogs until Monday.
+- **COMMITTED, NOT LIVE: `/ospos`** (49 offices, map, Resources links). Publish with
+  `bash run.sh --no-harvest` (first real use of the flag - verify it) or Monday's run.
 - Liveness (2026-09-28): 3,501 ok of 3,591, 28 dead, 39 archived, 61 unknown.
   `replaces.json` 348 keys; 444 products, 379 with an alternative (live-checked).
   Variants: 14 linked to 12 cores. MCP Worker `a38a84d4` (search reads `n d o a u rp`).
@@ -89,10 +91,8 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 
 ## Candidates, ranked
 
-1. **After the reorganisation is live**: re-run the route check against govoss.cat (every
-   page, `/sources.html?src=X` -> `/catalogs?src=X`, `/?q=x` -> `/software?q=x`), redeploy
-   `mcp-server` and check its `docs` link, and tell UNNYC if any page of theirs links
-   `/sources.html` or `/api.html` (they redirect, but direct links are better).
+1. **Publish `/ospos`** and check it live: 49 cards, 46 dots, the Munich/Paris/CMS Resources
+   links, `/ospos.json`; then tell UNNYC their OSPO list could read `/ospos.json` too.
 2. **Act on the Helsingborg decision** once made - an allow-list of repo URLs in `filters.py`
    pinned in `test_filters.py` (never a name pattern); stamp returned ids `null` in
    `_first_seen.json` if the owner does not want a week of Helsingborg in the strip.
@@ -110,6 +110,9 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
   checkpoints). A full run for that on 2026-10-07 drew 429s from openCode and code.europa.eu.
   It logs trigger `rebuild` and resets the "last run" age on /catalogs; per-source ages and
   the liveness date stay true. Not yet exercised end to end.
+- **A new OSPO upstream has no map location until `ospos/locations.json` gets it** (keyed by
+  the id `fetch_ospos.py` derives from its URL). It is still listed; /ospos names it as not on
+  the map. Place it at its city (seat) or its organisation's headquarters (hq).
 - **Never edit `run.sh` itself while it runs** - bash reads the script as it executes.
 - **Do not edit page builders while `run.sh` runs** - it builds from the working tree, so a
   half-made edit can publish. Wait for the run to finish.

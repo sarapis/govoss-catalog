@@ -40,7 +40,7 @@ NAMES = {"en": "English", "ca": "Català"}
 # (/entries.json, /fonts/, /llms.txt, /sarapis-mark.png) is language-neutral.
 # Clean paths since 2026-10-07: each is served from <path>.html by
 # deploy-cloudflare/site-worker.js, and the old .html names 301 here (_redirects).
-ROUTES = ("/", "/index.html", "/software", "/catalogs", "/docs", "/products", "/resources")
+ROUTES = ("/", "/index.html", "/software", "/catalogs", "/ospos", "/docs", "/products", "/resources")
 
 _MARK = re.compile(r"⟪(js:)?(.*?)⟫", re.S)
 _TOKENS = re.compile(r"__[A-Z0-9_]{3,}__|\{[a-z_]+\}")

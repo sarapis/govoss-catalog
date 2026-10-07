@@ -123,6 +123,9 @@ if [ "$NO_HARVEST" = 1 ]; then
   step "harvest (from cache)" "$PY" -u harvest.py --from-cache
 else
   step "harvest"      "$PY" -u harvest.py
+  # the OSPO lists for /ospos (FLOSS-PSO + SustainOSS); keeps the last good copy
+  # in cache/ospos.json on any failure and always exits 0, like a harvest source
+  step "ospos fetch"  "$PY" -u fetch_ospos.py
 fi
 step "enrich desc"  "$PY" -u enrich_desc.py    # fills gaps from GitHub; BEFORE translations
 step "translations" "$PY" -u merge_translations.py
@@ -180,6 +183,7 @@ step "catalogs page" "$PY" -u build_sources.py  # /catalogs; also writes status.
 step "docs page"    "$PY" -u build_api.py       # /docs; measures site/*.json, so runs after export
 step "products page" "$PY" -u build_products.py # reads by-product.json, so runs after export
 step "resources page" "$PY" -u build_resources.py # /resources, from resources/ospo-resources.json
+step "ospos page"   "$PY" -u build_ospos.py     # /ospos, from cache/ospos.json + ospos/locations.json
 
 # ---- publish -------------------------------------------------------------
 # Without this the weekly run regenerated everything and published none of it:

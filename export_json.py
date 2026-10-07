@@ -403,6 +403,7 @@ def build():
             "status": "/status.json",
             "catalogue_map": "/catalogues.geo.json",
             "resources": "/resources.json",
+            "ospos": "/ospos.json",
             "versioned": "/v1/entries.json",
         },
         "known_gaps": {
@@ -579,8 +580,10 @@ scraping it is both harder and less complete than one HTTP GET.
                                  counts. Never sum them per country.
   GET /resources.json           OSPO resources: 155 documents from six public-sector
                                  open source program offices (compiled by UN+NYC)
+  GET /ospos.json               open source program offices, government (FLOSS-PSO
+                                 Network, CC0) and academic (SustainOSS map, MIT)
   Human pages: / (home), /software (search + filters), /catalogs (the sources and
-  harvest status), /docs (this, for people), /products, /resources
+  harvest status), /ospos, /docs (this, for people), /products, /resources
 
 These also redirect to /entries.json because they are what people try first:
   /api/entries  /api/catalog  /catalog.json  /data.json
@@ -670,7 +673,7 @@ search all ignore query strings, so only 20 of its 1,084 solutions are reachable
     # listed here because this is where the sitemap is generated. They are static
     # paths, so no ordering problem — only a missing-file one if that step fails,
     # and a failed step blocks the deploy anyway.
-    pages = ["/", "/software", "/catalogs", "/docs", "/products", "/resources"]
+    pages = ["/", "/software", "/catalogs", "/ospos", "/docs", "/products", "/resources"]
     urls = pages + ["/entries.json", "/meta.json", "/by-product.json", "/products.json",
                     "/resources.json", "/llms.txt"] + [
         # the Catalan copies (i18n.py), which search engines otherwise meet only

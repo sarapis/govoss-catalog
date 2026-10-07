@@ -39,6 +39,7 @@ Not wired into run.sh, same as the other five suites: a test that can fail the
 weekly publish is a test someone switches off, and run.sh already gates its deploy
 on every build step exiting 0.
 """
+import collections
 import html
 import json
 import os
@@ -53,7 +54,8 @@ SITE = os.path.join(HERE, "site")
 # (/software); catalogs = the old sources page, docs = the old api page. The
 # keys are site/ file names; site-worker.js serves each at its clean path.
 ROUTE_OF = {"index.html": "/", "software.html": "/software", "catalogs.html": "/catalogs",
-            "docs.html": "/docs", "products.html": "/products", "resources.html": "/resources"}
+            "ospos.html": "/ospos", "docs.html": "/docs", "products.html": "/products",
+            "resources.html": "/resources"}
 PAGES = {n: os.path.join(SITE, n) for n in ROUTE_OF}
 # Catalan copies (i18n.py). Every check that loops over PAGES covers them.
 PAGES.update({"ca/" + n: os.path.join(SITE, "ca", n) for n in ROUTE_OF})
@@ -111,7 +113,7 @@ def main():
     # author `display:` rule outranks; the reset is what makes el.hidden mean
     # hidden. Asserted as PRESENT because its absence is invisible — the attribute
     # is set, the property reads true, and the element renders anyway.
-    for name in ("software.html", "products.html", "resources.html", "catalogs.html"):
+    for name in ("software.html", "products.html", "resources.html", "catalogs.html", "ospos.html"):
         page = pages[name]
         if ".hidden" in page or "hidden>" in page:
             check("%s carries [hidden]{display:none!important}" % name,
@@ -262,7 +264,7 @@ def main():
     # apostrophe unescaped inside a single-quoted JS string would break the whole
     # page while every static check above still passed.
     for name in ("software.html", "ca/software.html", "index.html", "ca/index.html",
-                 "resources.html", "ca/resources.html"):
+                 "resources.html", "ca/resources.html", "ospos.html", "ca/ospos.html"):
         js = "\n".join(re.findall(r"<script>(.*?)</script>", pages[name], re.S))
         tmp = os.path.join(HERE, "out", "_check_%s.js" % name.replace("/", "_"))
         os.makedirs(os.path.dirname(tmp), exist_ok=True)
@@ -388,13 +390,13 @@ def main():
           'href="/software?sort=recent"' in home, True)
     # Docs is the top-right button, not a nav item (owner, 2026-10-07)
     NAV = [("/", "home"), ("/software", "software"), ("/catalogs", "catalogs"),
-           ("/resources", "resources")]
+           ("/ospos", "ospos"), ("/resources", "resources")]
     for name in ROUTE_OF:
         for lang in i18n.LANGS:
             pname = name if lang == "en" else "%s/%s" % (lang, name)
             nav = re.search(r'<nav class="nav">(.*?)</nav>', pages[pname], re.S)
             hrefs = re.findall(r'href="([^"]+)"', nav.group(1)) if nav else []
-            check("%s nav: the four links, in order" % pname,
+            check("%s nav: the five links, in order" % pname,
                   hrefs, [i18n.path_for(lang, r) for r, _ in NAV])
             cur = re.findall(r'href="([^"]+)" aria-current="page"', nav.group(1)) if nav else []
             want_cur = ([i18n.path_for(lang, ROUTE_OF[name])]
@@ -419,11 +421,12 @@ def main():
         sp.loader.exec_module(m); return m
     _T = _mod(os.path.join(HERE, "_ui_template.py"), "_ui_template_t")
     _th = _mod(os.path.join(HERE, "theme.py"), "theme_t")
-    _rsrc = read(os.path.join(HERE, "build_resources.py"))
-    _rcss = _rsrc[_rsrc.index('PAGE_CSS = """'):_rsrc.index('BODY = """')]
     shared_cls = set(re.findall(r"\.([a-zA-Z][\w-]*)", _T.PAGE_CSS + _th.CSS))
-    check("Resources CSS defines no class the shared styles already use",
-          sorted(set(re.findall(r"\.([a-zA-Z][\w-]*)", _rcss)) & shared_cls), [])
+    for _b in ("build_resources.py", "build_ospos.py"):
+        _rsrc = read(os.path.join(HERE, _b))
+        _rcss = _rsrc[_rsrc.index('PAGE_CSS = """'):_rsrc.index('BODY = """')]
+        check("%s CSS defines no class the shared styles already use" % _b,
+              sorted(set(re.findall(r"\.([a-zA-Z][\w-]*)", _rcss)) & shared_cls), [])
     try:
         rj = json.load(open(os.path.join(SITE, "resources.json")))
     except Exception:
@@ -433,6 +436,43 @@ def main():
     check("the pre-2026-10-07 page files are gone from site/",
           [n for n in ("sources.html", "api.html", "ca/sources.html", "ca/api.html")
            if os.path.exists(os.path.join(SITE, n))], [])
+
+    # ---- 12f. /ospos (build_ospos.py, from cache/ospos.json). Every fetched office
+    # is a card and either a map dot or named as not placed; types are only the
+    # two the filter offers; every Resources link lands on a real case with the
+    # count it claims; build_ospos's projection agrees with build_geo's probes.
+    od = json.load(open(os.path.join(HERE, "cache", "ospos.json")))["ospos"]
+    rcases = collections.Counter(r["case"] for r in rfile["resources"])
+    for name in ("ospos.html", "ca/ospos.html"):
+        pg = pages[name]
+        ids = re.findall(r'<li class="ocard" id="([^"]+)" data-type="([^"]+)"', pg)
+        check("%s renders every fetched office" % name, sorted(i for i, _ in ids), sorted(r["id"] for r in od))
+        check("%s types are only government / academic" % name,
+              sorted({t for _, t in ids} - {"government", "academic"}), [])
+        links = re.findall(r'class="ores" href="(?:/ca)?/resources\?case=([a-z]+)">(\d+)', pg)
+        check("%s Resources links land on real cases with the right counts" % name,
+              [(c, n) for c, n in links if rcases.get(c) != int(n)], [])
+        check("%s links to Resources for at least one office" % name, len(links) > 0, True)
+        dotted = set(i for grp in re.findall(r'data-ids="([^"]+)"', pg) for i in grp.split())
+        unplaced_note = re.search(r'<p class="onote-map">(.*?)</p>', pg, re.S)
+        missing = sorted(r["id"] for r in od if r["id"] not in dotted
+                         and not (unplaced_note and html.escape(r["name"], quote=False) in unplaced_note.group(1)))
+        check("%s: every office is a map dot or named as not placed" % name, missing, [])
+    sys.path.insert(0, HERE)
+    import build_ospos as _bo
+    gf = json.load(open(os.path.join(HERE, "geo", "ospo_frames.json")))
+    drift = []
+    for k, fr in gf["frames"].items():
+        x, y = _bo.laea(*fr["centre"])(fr["probe"]["lon"], fr["probe"]["lat"])
+        x, y = x * fr["s"] + fr["ox"], y * fr["s"] + fr["oy"]
+        if abs(x - fr["probe"]["x"]) > 0.01 or abs(y - fr["probe"]["y"]) > 0.01:
+            drift.append(k)
+    check("build_ospos projects exactly as build_geo did (frame probes)", drift, [])
+    try:
+        oj = json.load(open(os.path.join(SITE, "ospos.json")))
+    except Exception:
+        oj = {}
+    check("/ospos.json publishes every office", len(oj.get("ospos") or []), len(od))
 
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by

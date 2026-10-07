@@ -270,7 +270,32 @@
   "__N__ resources": "__N__ recursos",
   "{n} resources": "{n} recursos",
   "{n} of {t} resources": "{n} de {t} recursos",
-  "undated": "sense data"
+  "undated": "sense data",
+  "Academic": "Acadèmic",
+  "All": "Tots",
+  "Any country": "Qualsevol país",
+  "Both, at one place": "Tots dos, al mateix lloc",
+  "Code": "Codi",
+  "Filter by country": "Filtra per país",
+  "Government": "Govern",
+  "Government offices: the <a href=\"https://floss-pso.network/public-sector-ospos/\">FLOSS-PSO Network</a>'s public-sector OSPO list (CC0), fetched __FLOSS_AT__. Academic offices: the <a href=\"https://sustainoss.org/academic-map/\">SustainOSS academic map</a> (MIT), the universities and research institutes it lists under &ldquo;OSPOs&rdquo;, fetched __AMAP_AT__. Two FLOSS-PSO offices are universities and are shown as academic. Locations are placed by govoss at each office&rsquo;s city or its organisation&rsquo;s headquarters. The same data: <a href=\"/ospos.json\">/ospos.json</a>.": "Oficines de govern: la llista d'OSPO del sector públic de la <a href=\"https://floss-pso.network/public-sector-ospos/\">xarxa FLOSS-PSO</a> (CC0), obtinguda el __FLOSS_AT__. Oficines acadèmiques: el <a href=\"https://sustainoss.org/academic-map/\">mapa acadèmic de SustainOSS</a> (MIT), les universitats i els instituts de recerca que hi figuren com a &ldquo;OSPOs&rdquo;, obtingut el __AMAP_AT__. Dues oficines de FLOSS-PSO són universitats i es mostren com a acadèmiques. govoss situa cada oficina a la seva ciutat o a la seu de la seva organització. Les mateixes dades: <a href=\"/ospos.json\">/ospos.json</a>.",
+  "Map of open source program offices": "Mapa d'oficines de programes de codi obert",
+  "OSPO:": "OSPO:",
+  "OSPOs": "OSPO",
+  "OSPOs | govoss": "OSPO | govoss",
+  "Open source policy": "Política de codi obert",
+  "Open source program offices": "Oficines de programes de codi obert",
+  "Search offices": "Cerca oficines",
+  "Search offices&hellip;": "Cerca oficines&hellip;",
+  "Type": "Tipus",
+  "Website": "Lloc web",
+  "__N__ offices": "__N__ oficines",
+  "__N__ offices that help their organisations use, publish and contribute to open source &mdash; __NGOV__ in government and __NACA__ in universities and research institutes.": "__N__ oficines que ajuden les seves organitzacions a fer servir, publicar i contribuir al codi obert &mdash; __NGOV__ en governs i __NACA__ en universitats i instituts de recerca.",
+  "since {y}": "des de {y}",
+  "{n} of {t} offices": "{n} de {t} oficines",
+  "{n} offices": "{n} oficines",
+  "{n} open source program offices - {g} in government, {a} in universities and research institutes - with a map.": "{n} oficines de programes de codi obert - {g} en governs, {a} en universitats i instituts de recerca - amb un mapa.",
+  "{n} resources on how this office was built &rarr;": "{n} recursos sobre com es va crear aquesta oficina &rarr;"
  },
  "functions": {
   "case-workflow": "Gestió d'expedients i fluxos de treball",
@@ -317,6 +342,9 @@
   "MD": "Moldàvia",
   "US": "Estats Units",
   "CH": "Suïssa",
-  "GB": "Regne Unit"
+  "GB": "Regne Unit",
+  "EL": "Grècia",
+  "LU": "Luxemburg",
+  "INT": "Internacional"
  }
 }
