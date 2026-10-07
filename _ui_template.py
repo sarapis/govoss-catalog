@@ -391,6 +391,14 @@ BODY = """
 </div>
 
 <div class="wrap">
+  <div class="stats six">
+    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
+    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
+    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
+    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
+    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
+    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
+  </div>
   <main id="main" class="body">
     <aside class="side">
       <div class="facets">
@@ -481,13 +489,56 @@ BODY = """
 
 # The home page: everything that used to sit above the filters. It carries no
 # DATA (the 2 MB entry list lives on /software only) - just the strip's ten.
+# Home-only rules, added to / alone. PAGE_CSS is shared by every page (the
+# others import it), so a home rule there would leak.
+HOME_CSS = """
+.hm-doors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 32px;}
+@media (max-width:900px){.hm-doors{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:520px){.hm-doors{gap:8px;margin:20px 0 24px;}.hm-door{padding:12px 14px;}
+  .hm-door b{font-size:24px;}}
+.hm-door{display:flex;flex-direction:column;gap:2px;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r-card);padding:16px 18px;color:var(--ink);
+  text-decoration:none;}
+.hm-door:hover{border-color:var(--primary);text-decoration:none;}
+.hm-door:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.hm-dt{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--primary-deep);display:flex;gap:6px;align-items:center;}
+.hm-door b{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--primary);
+  font-variant-numeric:tabular-nums;letter-spacing:-0.02em;margin-top:6px;}
+.hm-dd{font-size:13px;color:var(--ink-600);line-height:1.4;}
+.hm-cats{margin:0 0 36px;}
+.hm-catlist{list-style:none;margin:0;padding:0;display:grid;gap:10px;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));}
+.hm-cat{display:flex;flex-direction:column;gap:4px;height:100%;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r-card);padding:12px 14px;color:var(--ink);
+  text-decoration:none;}
+a.hm-cat:hover{border-color:var(--primary);text-decoration:none;}
+a.hm-cat:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+/* two columns on a phone: twenty cards one per row ran ~2,200px */
+@media (max-width:520px){.hm-catlist{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .hm-cat{padding:10px 12px;}}
+.hm-cn{font-weight:600;font-size:14px;line-height:1.3;overflow-wrap:anywhere;}
+.hm-cc{font-size:12px;color:var(--ink-600);}
+.hm-cc .fl{font-size:14px;line-height:1;margin-right:4px;}
+.hm-ce{font-size:12.5px;color:var(--ink-600);margin-top:auto;padding-top:4px;}
+.hm-ce b{font-family:var(--font-display);font-size:16px;color:var(--primary);
+  font-variant-numeric:tabular-nums;margin-right:4px;}
+.hm-build{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
+  padding:14px 18px;margin:0 0 28px;font-size:14px;color:var(--ink-600);}
+.hm-build p{margin:0;}
+.hm-build .hm-bt{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--primary-deep);display:flex;gap:6px;align-items:center;
+  margin-bottom:4px;}
+.hm-bt svg{width:14px;height:14px;flex:none;}
+"""
+
 HOME_BODY = """
 <div class="hero tex">
   <div class="inner">
-    <h1>⟪Open source software catalog for governments⟫</h1>
-    <p class="lede">⟪An aggregation of open source software catalogs from national, regional,
-      local and global governing institutions &mdash; updated weekly. Are we missing a catalog?
-      <a href="#submit">Submit it here</a>.⟫</p>
+    <h1>⟪Government open source, in one place⟫</h1>
+    <p class="lede">⟪The open source software governments publish, the catalogs it comes from,
+      and the offices that run it &mdash; harvested from national, regional, local and global
+      institutions and updated weekly. Are we missing a catalog? <a href="#submit">Submit it here</a>.⟫</p>
     <!-- A plain GET form: searching from home is a page change, to /software?q=,
          and needs no script. -->
     <form class="searchbar" action="__SOFTWARE_URL__" method="get" role="search">
@@ -514,21 +565,36 @@ HOME_BODY = """
 </div>
 
 <div class="wrap">
-  <div class="stats six">
-    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
-    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
-    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
-    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
-    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
-    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
-  </div>
+  <!-- The four sections, one card each. Every figure is read from the same input
+       its own page reads (build_ui.py), so a card cannot disagree with its page. -->
+  <nav class="hm-doors" aria-label="⟪Sections⟫">
+    <a class="hm-door" href="/software"><span class="hm-dt">⟪Software⟫</span>
+      <b>__N_ENTRIES__</b><span class="hm-dd">⟪entries in __N_FUNCS__ functions⟫</span></a>
+    <a class="hm-door" href="/catalogs"><span class="hm-dt">⟪Catalogs⟫</span>
+      <b>__N_SOURCES__</b><span class="hm-dd">⟪catalogs from __N_COUNTRIES__ countries and bodies⟫</span></a>
+    <a class="hm-door" href="/ospos"><span class="hm-dt">⟪OSPOs⟫</span>
+      <b>__N_OSPOS__</b><span class="hm-dd">⟪open source program offices, __N_OSPO_GOV__ in government⟫</span></a>
+    <a class="hm-door" href="/resources"><span class="hm-dt">⟪Resources⟫</span>
+      <b>__N_RES__</b><span class="hm-dd">⟪documents for building an OSPO⟫</span></a>
+  </nav>
+
+  <!-- One card per harvested catalogue: its name, its entry count (the same count
+       /catalogs shows) and the country of the CATALOGUE. Each opens /software
+       filtered to that catalogue. -->
+  <section class="hm-cats" aria-labelledby="hm-cats-h">
+    <div class="rhead">
+      <h2 id="hm-cats-h">⟪The catalogs we harvest⟫</h2>
+      <a class="rall" href="/catalogs">⟪All catalogs, with sources and health &rarr;⟫</a>
+    </div>
+    <ul class="hm-catlist">__HCATS__</ul>
+  </section>
 
   <!-- Recently added. Hidden entirely when there are no dated entries rather
        than rendered empty: a fresh checkout has no cache/_first_seen.json, and an
        empty strip claiming "recently added" is worse than no strip. -->
   <section class="recent" id="recent" hidden>
     <div class="rhead">
-      <h2>⟪Recently added⟫</h2>
+      <h2>⟪Recently added open source software⟫</h2>
       <div class="rnav">
         <button type="button" class="rbtn" id="rprev" aria-label="⟪Scroll left⟫">&larr;</button>
         <button type="button" class="rbtn" id="rnext" aria-label="⟪Scroll right⟫">&rarr;</button>
@@ -537,6 +603,12 @@ HOME_BODY = """
     </div>
     <ul class="rtrack" id="rtrack"></ul>
   </section>
+
+  <div class="hm-build">
+    <p class="hm-bt">__ICON_CODE__ ⟪For builders⟫</p>
+    <p>⟪The whole catalog is one request, with no key and no pagination, and an MCP server
+      answers agents.⟫ <a href="/docs">⟪API and MCP &rarr;⟫</a></p>
+  </div>
 
   __SUBMIT__
 </div>

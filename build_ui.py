@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generate a self-contained browsable page from catalog.json."""
-import json, os, collections, html, importlib.util
+import json, os, collections, html, importlib.util, urllib.parse
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 c = json.load(open(f"{OUT}/catalog.json"))
@@ -379,6 +379,44 @@ _OUTFILE = {"en": "catalogue.html", "ca": "catalogue.ca.html"}
 _HOMEFILE = {"en": "home.html", "ca": "home.ca.html"}
 
 
+# The home page's section cards read the SAME inputs their pages read, so a card
+# cannot disagree with its page: /catalogs counts from sources.py + the active
+# entries (sources below), /ospos from cache/ospos.json, /resources from the
+# UN+NYC file plus govoss's additions. Pinned cross-page by test_built_pages.py.
+n_countries = len({m["country"] for m in _S.SOURCES.values()})
+_ospos = json.load(open(f"{OUT}/cache/ospos.json"))["ospos"]
+n_ospos = len(_ospos)
+n_ospo_gov = sum(1 for o in _ospos if o.get("type") == "government")
+n_res = (len(json.load(open(f"{OUT}/resources/ospo-resources.json"))["resources"])
+         + len(json.load(open(f"{OUT}/resources/govoss-additions.json"))["resources"]))
+
+
+def _home_cats(lang):
+    """One card per harvested catalogue, largest first: name, the country of the
+    CATALOGUE, and its entry count - the same count /catalogs shows. Each opens
+    /software filtered to it (the value /catalogs' links use: the source label).
+    A catalogue that contributed nothing gets no link: it would open an empty list."""
+    N = lambda n: i18n.num(lang, n)
+    out = []
+    for key, m in sorted(_S.SOURCES.items(), key=lambda kv: (-sources.get(kv[1]["label"], 0),
+                                                              kv[1]["label"].lower())):
+        n = sources.get(m["label"], 0)
+        cc = m.get("country") or ""
+        inner = ('<span class="hm-cn">%s</span>'
+                 '<span class="hm-cc"><span class="fl" aria-hidden="true">%s</span>%s</span>'
+                 '<span class="hm-ce"><b>%s</b>%s</span>'
+                 % (html.escape(m["label"]), m.get("flag") or "",
+                    html.escape(i18n.country(lang, cc, _S.COUNTRY_NAME.get(cc, cc))),
+                    N(n), html.escape(i18n.t(lang, "entries"))))
+        if n:
+            inner = '<a class="hm-cat" href="/software?src=%s">%s</a>' % (
+                urllib.parse.quote(m["label"], safe=""), inner)
+        else:
+            inner = '<div class="hm-cat">%s</div>' % inner
+        out.append('<li>%s</li>' % inner)
+    return "".join(out)
+
+
 def _rpq_text(lang, parts):
     return ", ".join(i18n.t(lang, "via {name}", name=p[1]) if isinstance(p, list)
                      else i18n.t(lang, p) for p in parts)
@@ -425,6 +463,11 @@ def render(lang):
         # stamp. T.ICONS["seal"] stays - build_sources.py still stamps it.
         "__ICON_ALERT__": T.ICONS["alert"],
         "__SOFTWARE_URL__": i18n.path_for(lang, "/software"),
+        "__N_COUNTRIES__": str(n_countries),
+        "__N_OSPOS__": N(n_ospos),
+        "__N_OSPO_GOV__": N(n_ospo_gov),
+        "__N_RES__": N(n_res),
+        "__HCATS__": _home_cats(lang),
     }
     desc = i18n.t(lang, "{n} open source entries harvested first-hand from {k} government "
                         "catalogues worldwide, normalised onto one schema. Free JSON API at "
@@ -432,7 +475,8 @@ def render(lang):
     style = "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
     home = (theme.head(i18n.t(lang, "Government open source software catalog | govoss"),
                        desc, lang=lang, route="/")
-            + style + theme.utility_bar(lang=lang) + theme.topbar("home", lang, "/")
+            + style.replace("</style>", T.HOME_CSS + "</style>")
+            + theme.utility_bar(lang=lang) + theme.topbar("home", lang, "/")
             + T.HOME_BODY + theme.footer(lang=lang) + T.HOME_SCRIPT)
     _finish(home, subs, lang, f"{OUT}/{_HOMEFILE[lang]}", "home page")
     page = (

@@ -306,7 +306,7 @@ def main():
     # rule never leaves an empty (grey) cell, but only .six / .five hold the
     # measured breakpoints; a changed count without its class wraps 4+1 again.
     WANT = {6: "six", 5: "five"}
-    for name in ("index.html", "ca/index.html", "catalogs.html", "ca/catalogs.html"):
+    for name in ("software.html", "ca/software.html", "catalogs.html", "ca/catalogs.html"):
         m = re.search(r'<div class="stats([^"]*)">(.*?)\n\s*</div>', pages[name], re.S)
         n = m.group(2).count('class="stat"') if m else 0
         check("%s: stats row class matches its %d tiles" % (name, n),
@@ -388,6 +388,37 @@ def main():
               (f.group(1) if f else None, bool(f and 'name="q"' in f.group(2))), (sw, True))
     check("home 'See all, newest first' opens /software sorted newest",
           'href="/software?sort=recent"' in home, True)
+    # ---- the home page's section cards and catalogue cards (since 2026-10-07).
+    # Each figure must equal what its own page publishes - they are read from the
+    # same inputs in a different builder, which is how two numbers drift apart.
+    _meta = json.load(open(os.path.join(SITE, "meta.json")))
+    _srcj = json.load(open(os.path.join(SITE, "sources.json")))
+    _osj = json.load(open(os.path.join(SITE, "ospos.json")))
+    _rsj = json.load(open(os.path.join(SITE, "resources.json")))
+    num = lambda v: int(re.sub(r"[^\d]", "", v))
+    for name, lang in (("index.html", "en"), ("ca/index.html", "ca")):
+        pg = pages[name]
+        doors = [(h, num(n)) for h, n in
+                 re.findall(r'<a class="hm-door" href="([^"]+)">.*?<b>([^<]+)</b>', pg, re.S)]
+        check("%s: four section cards, each with the figure its page publishes" % name, doors,
+              [(i18n.path_for(lang, "/software"), _meta["counts"]["entries"]),
+               (i18n.path_for(lang, "/catalogs"), len(_srcj["ingested"])),
+               (i18n.path_for(lang, "/ospos"), len(_osj["ospos"])),
+               (i18n.path_for(lang, "/resources"),
+                len(_rsj["resources"]) + len(_rsj["added_by_govoss"]["resources"]))])
+        cards = re.findall(r'<li>(?:<a class="hm-cat" href="([^"]+)">|<div class="hm-cat">)'
+                           r'<span class="hm-cn">(.*?)</span>.*?<span class="hm-ce"><b>([^<]+)</b>', pg, re.S)
+        want = {html.unescape(i["label"]): i["entries"] for i in _srcj["ingested"]}
+        got = {html.unescape(lbl): num(n) for _h, lbl, n in cards}
+        check("%s: one card per catalogue, with the count /catalogs shows" % name, got, want)
+        badlink = [lbl for h, lbl, n in cards
+                   if (num(n) > 0) != bool(h) or (h and urllib.parse.unquote(h.split("src=", 1)[-1])
+                                                    != html.unescape(lbl))]
+        check("%s: each catalogue card opens /software filtered to it (none for an empty one)" % name,
+              badlink, [])
+        check("%s: the strip says what it is: recently added open source software" % name,
+              bool(re.search(r'<section class="recent" id="recent" hidden>\s*<div class="rhead">\s*<h2>(Recently '
+                             r'added open source software|Programari de codi obert afegit recentment)</h2>', pg)), True)
     # Docs is the top-right button, not a nav item; Home is the wordmark, not a nav
     # item (owner, 2026-10-07 both)
     NAV = [("/software", "software"), ("/catalogs", "catalogs"),
