@@ -471,6 +471,18 @@ def main():
         check("%s Resources links land on real cases with the right counts" % name,
               [(c, n) for c, n in links if rcases.get(c) != int(n)], [])
         check("%s links to Resources for at least one office" % name, len(links) > 0, True)
+        # pins open a popup of their place's cards: each names its place, the
+        # popup and its labelled close button exist, and no character entity sits
+        # inside a script (entities are not decoded there: a "·" once showed as &#183;)
+        pins = re.findall(r'<a class="odot [^"]+" href="#[^"]+" data-ids="[^"]+" data-place="([^"]*)"'
+                          r' aria-label="[^"]+" aria-haspopup="dialog">', pg)
+        check("%s: every map pin names its place and opens a popup" % name,
+              (len(pins), pins.count("")), (pg.count('class="odot '), 0))
+        check("%s has the pin popup with a labelled close button" % name,
+              bool(re.search(r'<div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>'
+                             r'.*?<button type="button" class="opop-x" id="opop-x" aria-label="[^"]+">', pg, re.S)), True)
+        check("%s: no character entity inside a script" % name,
+              [m for s_ in re.findall(r'<script>(.*?)</script>', pg, re.S) for m in re.findall(r'&#\d+;', s_)], [])
         dotted = set(i for grp in re.findall(r'data-ids="([^"]+)"', pg) for i in grp.split())
         unplaced_note = re.search(r'<p class="onote-map">(.*?)</p>', pg, re.S)
         missing = sorted(r["id"] for r in od if r["id"] not in dotted

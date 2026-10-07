@@ -36,6 +36,12 @@ theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 
+# A map pin, tip at (0,0) on the office's place, head a circle of radius 6 at (0,-10).
+PIN = "M0,0C-1.6,-3.4 -6,-6.2 -6,-10A6,6 0 1 1 6,-10C6,-6.2 1.6,-3.4 0,0Z"
+
+# Pins nearer than this (map units, before scaling) merge into one numbered pin.
+MERGE_WITHIN = 9
+
 # Code links shown on a card before the rest fold behind "+N more code links".
 CODE_SHOWN = 3
 
@@ -166,7 +172,7 @@ def build(lang, data, locs, geo, res):
                if r.get("ospo_note") else "",
                " &middot; ".join(links), more, res_link))
 
-    # ---- the map: one dot per spot; offices sharing a spot share a dot
+    # ---- the map: one pin per spot; offices sharing a spot share a pin
     spots = collections.OrderedDict()
     unplaced = []
     for r in os_:
@@ -176,6 +182,16 @@ def build(lang, data, locs, geo, res):
             unplaced.append(r)
             continue
         spots.setdefault(p, []).append(r)
+    # pins closer than MERGE_WITHIN share one (a teardrop hides its neighbour: Saint-Mande
+    # covered Paris's three); greedy, largest spot first, measured from each pin's anchor
+    merged = []
+    for (k, x, y), rs in sorted(spots.items(), key=lambda kv: -len(kv[1])):
+        for m in merged:
+            if m[0] == k and math.hypot(m[1] - x, m[2] - y) < MERGE_WITHIN:
+                m[3].extend(rs)
+                break
+        else:
+            merged.append((k, x, y, list(rs)))
     vx, vy, vw, vh = geo["viewbox"]
     svg = ['<svg class="omap-svg" viewBox="%s %s %s %s" role="group" aria-label="%s">'
            % (vx, vy, vw, vh, esc(_("Map of open source program offices")))]
@@ -183,16 +199,20 @@ def build(lang, data, locs, geo, res):
         rx, ry, rw, rh = fr["rect"]
         svg.append('<g class="oframe"><rect x="%s" y="%s" width="%s" height="%s" rx="8"/>'
                    '<path d="%s" aria-hidden="true"/></g>' % (rx, ry, rw, rh, fr["land"]))
-    for (k, x, y), rs in sorted(spots.items(), key=lambda kv: -len(kv[1])):
+    for k, x, y, rs in merged:
+        places = list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))
         label = "; ".join("%s (%s)" % (r["name"], _("Government") if r["type"] == "government"
                                        else _("Academic")) for r in rs)
         types = sorted({r["type"] for r in rs})
         cls = types[0] if len(types) == 1 else "mixed"
-        svg.append('<a class="odot %s" href="#%s" data-ids="%s" aria-label="%s"><title>%s</title>'
-                   '<circle cx="%s" cy="%s" r="%s"/>%s</a>'
-                   % (cls, esc(rs[0]["id"]), esc(" ".join(r["id"] for r in rs)), esc(label), esc(label),
-                      x, y, 5.5 if len(rs) == 1 else 7.5,
-                      ('<text x="%s" y="%s">%d</text>' % (x, y + 3.2, len(rs))) if len(rs) > 1 else ""))
+        svg.append('<a class="odot %s" href="#%s" data-ids="%s" data-place="%s" aria-label="%s" '
+                   'aria-haspopup="dialog"><title>%s</title><g transform="translate(%s %s) scale(%s)">'
+                   '<path d="%s"/>%s</g></a>'
+                   % (cls, esc(rs[0]["id"]), esc(" ".join(r["id"] for r in rs)),
+                      esc("; ".join(places)), esc(label), esc(label),
+                      x, y, 1 if len(rs) == 1 else 1.3, PIN,
+                      '<text x="0" y="-7">%d</text>' % len(rs) if len(rs) > 1
+                      else '<circle class="ohole" cx="0" cy="-10" r="2.2"/>'))
     svg.append("</svg>")
     note = ""
     if unplaced:
@@ -235,8 +255,8 @@ def build(lang, data, locs, geo, res):
     out = f"{SITE}/ospos.html" if lang == "en" else f"{SITE}/{lang}/ospos.html"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w").write(page)
-    print("ospos page [%s]: %d OSPOs (%d government, %d academic), %d map spots, %d unplaced (%.0f KB)"
-          % (lang, len(os_), n_gov, n_aca, len(spots), len(unplaced), len(page) / 1024))
+    print("ospos page [%s]: %d OSPOs (%d government, %d academic), %d map pins, %d unplaced (%.0f KB)"
+          % (lang, len(os_), n_gov, n_aca, len(merged), len(unplaced), len(page) / 1024))
     return os_
 
 
@@ -279,14 +299,28 @@ PAGE_CSS = """
 .omap-svg{display:block;width:100%;height:auto;}
 .oframe rect{fill:var(--surface);stroke:var(--border);stroke-width:1;}
 .oframe path{fill:var(--bg-alt);stroke:var(--surface);stroke-width:.6;}
-.odot circle{stroke:var(--surface);stroke-width:1.5;}
-.odot.government circle{fill:var(--primary);}
-.odot.academic circle{fill:var(--green);}
-.odot.mixed circle{fill:var(--ink-600);}
-.odot text{font-family:var(--font-ui);font-size:8px;font-weight:700;fill:var(--white);
+.odot{cursor:pointer;}
+.odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
+.odot.government path{fill:var(--primary);}
+.odot.academic path{fill:var(--green);}
+.odot.mixed path{fill:var(--ink-600);}
+.odot .ohole{fill:var(--surface);pointer-events:none;}
+.odot text{font-family:var(--font-ui);font-size:7.5px;font-weight:700;fill:var(--white);
   text-anchor:middle;pointer-events:none;}
-.odot:hover circle,.odot:focus-visible circle{stroke:var(--ink);stroke-width:2;}
+.odot:hover path,.odot:focus-visible path,.odot[aria-expanded="true"] path{stroke:var(--ink);stroke-width:1.8;}
 .odot:focus{outline:none;}
+.omap{position:relative;}
+.opop{position:absolute;z-index:5;width:min(360px,calc(100% - 28px));max-height:min(70vh,480px);
+  overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
+  box-shadow:var(--shadow-soft);padding:8px;}
+.opop-head{display:flex;justify-content:space-between;align-items:center;gap:8px;
+  padding:2px 4px 6px 10px;font-size:12px;color:var(--ink-600);}
+.opop-x{border:0;background:none;font-size:20px;line-height:1;padding:2px 8px;cursor:pointer;
+  color:var(--ink-600);border-radius:var(--r-chip);}
+.opop-x:hover,.opop-x:focus-visible{color:var(--ink);background:var(--bg-alt);}
+.opop .olist{grid-template-columns:minmax(0,1fr);gap:8px;}
+.opop .ocard{border:0;padding:8px 10px;}
+.opop .ocard + .ocard{border-top:1px solid var(--border);border-radius:0;}
 .okey{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12px;color:var(--ink-600);}
 .okey i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
 .onote-map{margin:8px 0 0;font-size:12px;color:var(--ink-faint);}
@@ -323,6 +357,11 @@ BODY = """
     <p class="ocount" id="ocount" aria-live="polite">⟪__N__ offices⟫</p>
     <ul class="olist" id="olist">__CARDS__</ul>
     <div class="omap" id="omap" hidden>__MAP__
+      <div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>
+        <div class="opop-head"><span id="opop-h"></span>
+          <button type="button" class="opop-x" id="opop-x" aria-label="⟪Close⟫">&times;</button></div>
+        <ul class="olist" id="opop-list"></ul>
+      </div>
       <div class="okey"><span><i style="background:var(--primary)"></i>⟪Government⟫</span>
         <span><i style="background:var(--green)"></i>⟪Academic⟫</span>
         <span><i style="background:var(--ink-600)"></i>⟪Both, at one place⟫</span></div>
@@ -352,6 +391,7 @@ SCRIPT = """
   var dots = [].slice.call(document.querySelectorAll('.odot'));
   var type = '', view = 'cards', timer = null;
   function apply(write) {
+    closePop(false);
     var q = (el('oq').value || '').trim().toLowerCase(), cc = el('occ').value, n = 0, shown = {};
     cards.forEach(function (c) {
       var ok = (!q || text.get(c).indexOf(q) >= 0) && (!type || c.dataset.type === type) &&
@@ -397,13 +437,49 @@ SCRIPT = """
   segV.forEach(function (b) { b.onclick = function () { view = b.dataset.view; apply(true); }; });
   el('oq').oninput = function () { apply(true); };
   el('occ').onchange = function () { apply(true); };
-  // a dot opens its office's card in the card view
-  dots.forEach(function (d) {
-    d.addEventListener('click', function (e) {
-      e.preventDefault(); view = 'cards'; apply(true);
-      var c = el(d.dataset.ids.split(' ')[0]);
-      if (c) { c.scrollIntoView({ block: 'center' }); history.replaceState(null, '', location.pathname + location.search + '#' + c.id); }
+  // a pin opens a popup holding COPIES of its place's cards, so the content is
+  // the cards' own; offices hidden by the current filters stay out of it
+  var pop = el('opop'), popList = el('opop-list'), mapBox = el('omap'), openDot = null;
+  function closePop(refocus) {
+    if (!openDot) return;
+    pop.hidden = true; popList.textContent = '';
+    openDot.setAttribute('aria-expanded', 'false');
+    if (refocus) openDot.focus();
+    openDot = null;
+  }
+  function openPop(d) {
+    closePop(false);
+    var ids = d.dataset.ids.split(' ').filter(function (i) { var c = el(i); return c && !c.hidden; });
+    if (!ids.length) return;
+    ids.forEach(function (i) {
+      var c = el(i).cloneNode(true);
+      c.removeAttribute('id');
+      popList.appendChild(c);
     });
+    // the cards carry the names; the header says where (and how many, when shared)
+    el('opop-h').textContent = [d.dataset.place,
+      ids.length > 1 ? '⟪js:{n} offices⟫'.replace('{n}', ids.length) : ''].filter(Boolean).join(' \\u00b7 ');
+    pop.hidden = false; openDot = d; d.setAttribute('aria-expanded', 'true');
+    // beside the pin, kept inside the map box: right of it when there is room, else left
+    var mb = mapBox.getBoundingClientRect(), pb = d.getBoundingClientRect();
+    var w = pop.offsetWidth, x = pb.right - mb.left + 8;
+    if (x + w > mb.width - 8) x = pb.left - mb.left - w - 8;
+    x = Math.max(8, Math.min(x, mb.width - w - 8));
+    pop.style.left = x + 'px';
+    pop.style.top = Math.max(8, pb.top - mb.top - 12) + 'px';
+    el('opop-x').focus();
+  }
+  dots.forEach(function (d) {
+    d.setAttribute('aria-expanded', 'false');
+    d.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (openDot === d) closePop(false); else openPop(d);
+    });
+  });
+  el('opop-x').onclick = function () { closePop(true); };
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openDot) closePop(true); });
+  document.addEventListener('click', function (e) {
+    if (openDot && !pop.contains(e.target) && !openDot.contains(e.target)) closePop(false);
   });
   el('oview').hidden = false;
   apply(false);
