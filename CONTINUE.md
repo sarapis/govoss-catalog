@@ -64,6 +64,12 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 - **A failed fetch is never "no data"**: `gitlab_scan()` counts non-404 failures and refuses a
   short list (`test_harvest_get.py`); `fetch_ospos.py` keeps a failed or halved list's last good
   copy (`test_ospos.py`). The catch-all that read failures as "none" published 86 short.
+- **`/ospos.json` has an outside consumer**: un.opensource.nyc is switching its OSPO list to a
+  snapshot of the FLOSS-PSO rows (decided 2026-10-07). The contract is `ospo_contract.py`,
+  enforced at fetch (refused like a failed fetch) and at build (the publish stops), and pinned in
+  `test_ospos.py` + `test_built_pages.py` 12f. A new FLOSS-PSO office now appears only once it is
+  placed in `ospos/locations.json` - the `/ospos` note "last fetch failed" plus the `error` in
+  `cache/ospos.json` says which id to place.
 - **`/catalogues.geo.json` has an outside consumer**: un.opensource.nyc
   (`~/Antigravity/unnyc/scripts/fetch-govoss-catalogues.mjs`, PR #109) STOPS if a top-level
   key is missing (`about generated_at licence source trimmed not_drawn features`), a feature

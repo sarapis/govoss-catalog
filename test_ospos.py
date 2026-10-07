@@ -15,7 +15,12 @@ two real sources use, and main() runs against a stubbed get(). What it pins:
   * FLOSS-PSO entries are government unless named in ACADEMIC_FLOSS;
   * a duplicate across the lists (same host) keeps the FLOSS-PSO record;
   * a failed or halved source keeps its previous records and records the error,
-    and main() never raises.
+    and main() never raises;
+  * THE /ospos.json CONSUMER CONTRACT (ospo_contract.py; un.opensource.nyc reads
+    it and throws on anything unexpected): its exact licence strings and code
+    sets, every rule failing when broken, ids stable for unchanged upstream
+    entries, ok:false keeping fetched_at and count of the copy kept, and a
+    FLOSS-PSO list that breaks the contract refused like a failed fetch.
 """
 import json
 import os
@@ -25,6 +30,31 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import fetch_ospos as F  # noqa: E402
+import ospo_contract as C  # noqa: E402
+
+# The FLOSS-PSO offices as of 2026-10-07: key URL in their YAML -> our id. A
+# change to how ids are derived changes one of these, and breaks every reader
+# that keys on them.
+IDS_2026_10_07 = {
+    'https://opensource.muenchen.de/ospo.html': 'floss-opensource-muenchen-de-ospo-html',
+    'https://schleswig-holstein.de/open-source': 'floss-schleswig-holstein-de-open-source',
+    'https://os2.eu': 'floss-os2-eu',
+    'https://opentech.auth.gr/': 'floss-opentech-auth-gr',
+    'https://code.gouv.fr': 'floss-code-gouv-fr',
+    'https://cyber.gouv.fr/enjeux-technologiques/open-source/': 'floss-cyber-gouv-fr-enjeux-technologiques-open-source',
+    'https://francetravail.io/opportunites-innovation/participer-initiatives-open-source': 'floss-francetravail-io-opportunites-innovation-participer-initiatives-open-source',
+    'https://opensource.paris.fr': 'floss-opensource-paris-fr',
+    'https://pcll.ac-dijon.fr': 'floss-pcll-ac-dijon-fr',
+    'https://scienceouverte.univ-grenoble-alpes.fr/a-propos/cellule-data-grenoble-alpes': 'floss-scienceouverte-univ-grenoble-alpes-fr-a-propos-cellule-data-grenoble-alpes',
+    'https://www.echirolles.fr/territoire-numerique': 'floss-echirolles-fr-territoire-numerique',
+    'https://www.ign.fr/institut/des-donnees-et-logiciels-ouverts-au-service-de-la-nation': 'floss-ign-fr-institut-des-donnees-et-logiciels-ouverts-au-service-de-la-nation',
+    'https://www.recia.fr': 'floss-recia-fr',
+    'https://www.strasbourg.eu/strategie-logiciels-libres': 'floss-strasbourg-eu-strategie-logiciels-libres',
+    'https://opensourcewerken.nl/': 'floss-opensourcewerken-nl',
+    'https://developer.overheid.nl': 'floss-developer-overheid-nl',
+    'https://undp.org/digital': 'floss-undp-org-digital',
+    'https://cms.gov/digital-service/open-source-program-office': 'floss-cms-gov-digital-service-open-source-program-office',
+}
 
 INDEX = """# Universities
 
@@ -118,10 +148,98 @@ def main():
     check("a duplicate (same host, www ignored) keeps the FLOSS-PSO record",
           sorted(r["id"] for r in merged), sorted([r["id"] for r in fl] + [b["id"]]))
 
+    # ---- the contract's fixed values, written HERE as literals: the test must not
+    # ask ospo_contract.py what they are, or a changed string would pass itself
+    check("contract: the FLOSS-PSO licence string", C.FLOSS_LICENCE,
+          "CC0 1.0 (the FLOSS-PSO Network's OSPO list)")
+    check("contract: fetch_ospos stamps that licence", F.LICENCES["floss-pso"],
+          "CC0 1.0 (the FLOSS-PSO Network's OSPO list)")
+    check("contract: govoss's own licence object", C.LICENCE,
+          {"govoss_fields": "CC0 1.0, govoss (https://govoss.cat)",
+           "lists": "each list's own: sources[*].licence"})
+    check("contract: the documented country codes", sorted(C.COUNTRIES),
+          ["DE", "DK", "EL", "ES", "FR", "GB", "IE", "INT", "LU", "NL", "US"])
+    check("contract: types", sorted(C.TYPES), ["academic", "government"])
+    check("contract: location bases", sorted(C.BASES), ["hq", "seat"])
+
+    # ---- every rule fails when broken, on a document that holds
+    LOC = {"lat": 48.1351, "lon": 11.582, "place": "Munich", "basis": "seat", "country": "DE"}
+    ROW = {"id": "floss-a", "source": "floss-pso", "type": "government", "name": "A",
+           "url": "https://a.example/", "description": "An office.", "email": None,
+           "policy": "https://a.example/p", "code": ["https://github.com/a"], "country": "DE",
+           "location": LOC}
+    AROW = {"id": "amap-b", "source": "academic-map", "type": "academic", "name": "B",
+            "url": "https://b.example/", "description": "", "email": None, "policy": None,
+            "code": [], "country": None, "location": None}
+    DOC = {"generated_at": "2026-10-07T20:54:31Z", "licence": dict(C.LICENCE),
+           "sources": {"floss-pso": {"licence": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
+                                     "url": "https://floss-pso.network/public-sector-ospos/",
+                                     "fetched_at": "2026-10-07T20:10:41Z", "count": 1, "ok": True}},
+           "ospos": [ROW, AROW]}
+    check("contract: a valid document has no problems (an academic row may lack a "
+          "description and, unplaced, a location)", C.doc_problems(DOC), [])
+
+    def broken(path, value):
+        d = json.loads(json.dumps(DOC))
+        o = d
+        for k in path[:-1]:
+            o = o[k]
+        if value is KeyError:
+            del o[path[-1]]
+        else:
+            o[path[-1]] = value
+        return C.doc_problems(d)
+    for path, value in [
+        (("generated_at",), "2026-10-07 20:54"), (("generated_at",), KeyError),
+        (("licence",), {"govoss_fields": "CC BY 4.0"}), (("licence",), KeyError),
+        (("sources",), []), (("ospos",), {}),
+        (("sources", "floss-pso"), KeyError),
+        (("sources", "floss-pso", "licence"), "CC0 1.0"),
+        (("sources", "floss-pso", "url"), ""),
+        (("sources", "floss-pso", "fetched_at"), None),
+        (("sources", "floss-pso", "count"), 2), (("sources", "floss-pso", "count"), True),
+        (("sources", "floss-pso", "ok"), "true"),
+        (("ospos", 0, "id"), ""), (("ospos", 1, "id"), "floss-a"),
+        (("ospos", 0, "source"), None), (("ospos", 0, "type"), "public"),
+        (("ospos", 0, "name"), " "), (("ospos", 0, "url"), None),
+        (("ospos", 0, "description"), ""), (("ospos", 0, "email"), 7),
+        (("ospos", 0, "policy"), ["x"]), (("ospos", 0, "code"), "https://github.com/a"),
+        (("ospos", 0, "code"), ["github.com/a"]),
+        (("ospos", 0, "country"), "GR"), (("ospos", 0, "country"), None),
+        (("ospos", 1, "country"), "XX"),
+        (("ospos", 0, "location"), None), (("ospos", 0, "location", "lat"), "48.1"),
+        (("ospos", 0, "location", "lat"), 91), (("ospos", 0, "location", "lon"), KeyError),
+        (("ospos", 0, "location", "lon"), -181), (("ospos", 0, "location", "place"), ""),
+        (("ospos", 0, "location", "basis"), "city"), (("ospos", 0, "location", "country"), "Germany"),
+        (("ospos", 1, "location"), {"lat": 1}),
+    ]:
+        check("contract: %s = %r is a problem" % ("/".join(map(str, path)), value),
+              len(broken(path, value)) > 0, True)
+
+    # ---- ids: derived from the office's URL alone, so stable for an unchanged
+    # upstream entry whatever else about it, or its file, or the order, changes
+    def floss_doc(urls, origin="yamls/x.yml", **extra):
+        return {origin: {u: dict({"name": "N", "description": {"en": "D"}, "country": "fr"}, **extra)
+                         for u in urls}}
+    urls = list(IDS_2026_10_07)
+    got = {r["url"]: r["id"] for r in F.parse_floss(floss_doc(urls))}
+    check("ids: the 18 offices of 2026-10-07 keep their ids", got, IDS_2026_10_07)
+    got2 = {r["url"]: r["id"] for r in F.parse_floss(floss_doc(
+        list(reversed(urls)), origin="yamls/moved.yml", email="new@x", code=["https://c.example"],
+        floss_policy="https://p.example", created="2030-01-01"))}
+    check("ids: unchanged by order, the YAML file, or any other field", got2, got)
+    check("ids: unique", len(set(got.values())), len(got))
+
     # ---- main(): fallback, error recorded, never raises
     tmp = tempfile.mkdtemp()
-    real_out, real_get = F.OUT, F.get
+    real_out, real_get, real_locs, real_now = F.OUT, F.get, F.LOCATIONS, F.NOW
     F.OUT = os.path.join(tmp, "ospos.json")
+    F.LOCATIONS = os.path.join(tmp, "locations.json")
+    placed = {"floss-ospo-gov-example": {"lat": 48.85, "lon": 2.35, "place": "Paris", "basis": "seat",
+                                         "country": "FR"},
+              "floss-opentech-auth-gr": {"lat": 40.63, "lon": 22.94, "place": "Thessaloniki",
+                                         "basis": "seat", "country": "EL"}}
+    json.dump({"locations": placed}, open(F.LOCATIONS, "w"))
     pages = {F.AMAP_RAW + "universities/index.md": INDEX,
              F.AMAP_RAW + "research-institutions/index.md": "## OSPOs\n\n- [Beta](./beta.md)\n",
              F.AMAP_RAW + "universities/alpha.md": ALPHA, F.AMAP_RAW + "universities/beta.md": BETA,
@@ -140,6 +258,9 @@ def main():
         d = json.load(open(F.OUT))
         check("a clean fetch writes both lists", (d["sources"]["floss-pso"]["ok"],
               d["sources"]["academic-map"]["ok"], len(d["ospos"])), (True, True, 5))
+        good = dict(d["sources"]["floss-pso"])
+        # a later attempt has a later clock: what ok:false must NOT copy
+        F.NOW = "2099-01-01T00:00:00Z"
 
         def broken(url, raw=False, **kw):
             if url == F.FLOSS_URL:
@@ -152,6 +273,38 @@ def main():
               sum(r["source"] == "floss-pso" for r in d["ospos"]), 2)
         check("...and records the failure where /ospos reads it",
               (d["sources"]["floss-pso"]["ok"], "down" in d["sources"]["floss-pso"]["error"]), (False, True))
+        st = d["sources"]["floss-pso"]
+        check("ok:false keeps fetched_at, count, licence and url of the copy kept; "
+              "failed_at is the attempt",
+              (st["fetched_at"], st["count"], st["licence"], st["url"], st["failed_at"]),
+              (good["fetched_at"], 2, good["licence"], good["url"], "2099-01-01T00:00:00Z"))
+
+        # a list that breaks the contract is refused like a failed fetch - here a
+        # new office nobody has placed, and one in an undocumented country
+        F.get = ok_get
+        F.main()
+        good = dict(json.load(open(F.OUT))["sources"]["floss-pso"])
+        for label, extra in [("an unplaced new office", {"https://new.example/": {
+                                 "name": "New", "country": "FR", "description": {"en": "x"}}}),
+                             ("an undocumented country", None)]:
+            doc = json.loads(json.dumps(FLOSS))
+            if extra:
+                doc["yamls/c.yml"] = extra
+            else:
+                doc["yamls/a.yml"]["https://ospo.gov.example/"]["country"] = "IT"
+            F.get = lambda url, raw=False, _d=doc, **kw: (_y.safe_dump(_d).encode()
+                                                          if url == F.FLOSS_URL else ok_get(url, raw=raw))
+            F.main()
+            d = json.load(open(F.OUT))
+            st = d["sources"]["floss-pso"]
+            check("contract break (%s) is refused: last good copy kept, ok false, "
+                  "fetched_at unmoved, error names the contract" % label,
+                  (sorted(r["id"] for r in d["ospos"] if r["source"] == "floss-pso"), st["ok"],
+                   st["fetched_at"], st["count"], st["error"].startswith("ValueError: contract: ")),
+                  (["floss-opentech-auth-gr", "floss-ospo-gov-example"], False,
+                   good["fetched_at"], 2, True))
+        F.get = ok_get
+        F.main()                  # back to a good copy for the size checks below
 
         F.get = lambda url, raw=False, **kw: (_y.safe_dump({"yamls/a.yml": FLOSS["yamls/a.yml"]}).encode()
                                               if url == F.FLOSS_URL else ok_get(url, raw=raw))
@@ -168,7 +321,7 @@ def main():
               (sum(r["source"] == "floss-pso" for r in d["ospos"]), d["sources"]["floss-pso"]["ok"]),
               (1, False))
     finally:
-        F.OUT, F.get = real_out, real_get
+        F.OUT, F.get, F.LOCATIONS, F.NOW = real_out, real_get, real_locs, real_now
 
     for f in failed:
         print("FAIL  " + f)

@@ -17,7 +17,8 @@ never a list govoss curates (the scope rule for sources applies here too):
       Every academic-map entry is ACADEMIC, research institutions included.
 
 Like a harvest source: a source that fails, or comes back under half its last
-size, keeps its previous records and records the error; this script always
+size, or (FLOSS-PSO) breaks the /ospos.json consumer contract in ospo_contract.py,
+keeps its previous records and records the error; this script always
 exits 0 (one flaky list must not block the weekly publish). /ospos shows each
 list's fetch date, so a stale list is visible where people look.
 
@@ -37,8 +38,10 @@ import yaml
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from harvest import get  # noqa: E402  (the tested fetcher: raises, never None)
+import ospo_contract as C  # noqa: E402
 
 OUT = os.path.join(HERE, "cache", "ospos.json")
+LOCATIONS = os.path.join(HERE, "ospos", "locations.json")
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 FLOSS_URL = "https://floss-pso.network/all_public_sector_ospos.yaml"
@@ -55,7 +58,7 @@ ACADEMIC_FLOSS = {
     "https://scienceouverte.univ-grenoble-alpes.fr/a-propos/cellule-data-grenoble-alpes",
 }
 
-LICENCES = {"floss-pso": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
+LICENCES = {"floss-pso": C.FLOSS_LICENCE,
             "academic-map": "MIT (github.com/sustainers/academic-map)"}
 
 
@@ -183,6 +186,27 @@ def fetch_amap():
     return out
 
 
+def floss_contract(recs):
+    """A new FLOSS-PSO list must keep the /ospos.json contract (ospo_contract.py)
+    as it will be exported - each office placed from ospos/locations.json - or it
+    is refused like a failed fetch: un.opensource.nyc reads these rows and throws
+    on anything unexpected, so the last good copy is what they should keep seeing.
+    A new office with no placement lands here: place it, and the next run takes it."""
+    locs = json.load(open(LOCATIONS))["locations"]
+    probs = []
+    for r in recs:
+        loc = locs.get(r["id"])
+        if loc is None:
+            probs.append("%s: not placed - add it to ospos/locations.json" % r["id"])
+            loc = {"lat": 0, "lon": 0, "place": "-", "basis": "seat", "country": r.get("country")}
+        probs += C.row_problems(dict(r, location=loc))
+    ids = [r["id"] for r in recs]
+    probs += ["%s: id is not unique" % i for i in sorted({i for i in ids if ids.count(i) > 1})]
+    if probs:
+        raise ValueError("contract: " + "; ".join(probs[:5]) + (" (+%d more)" % (len(probs) - 5)
+                                                                    if len(probs) > 5 else ""))
+
+
 def merge(floss, amap):
     """FLOSS-PSO wins a duplicate: same host is the same office."""
     hosts = {host_of(r["url"]) for r in floss}
@@ -207,15 +231,20 @@ def main():
             recs = fn()
             if len(recs) < max(1, len(old) // 2):
                 raise RuntimeError("%d records against %d last time" % (len(recs), len(old)))
+            if key == "floss-pso":
+                floss_contract(recs)
             got[key] = recs
             state[key] = {"ok": True, "fetched_at": NOW, "count": len(recs), "licence": LICENCES[key],
                           "url": FLOSS_PAGE if key == "floss-pso" else AMAP_SITE}
             print("    %s: %d OSPOs" % (key, len(recs)))
         except Exception as e:
             got[key] = old
-            st = dict(state.get(key) or {"licence": LICENCES[key]})
-            st.update({"ok": False, "error": "%s: %s" % (type(e).__name__, str(e)[:200]),
-                       "failed_at": NOW})
+            # ok:false means "this is the last good copy, fetched at fetched_at":
+            # fetched_at and count stay those of the copy kept, never this attempt's
+            st = dict(state.get(key) or {})
+            st.update({"ok": False, "error": "%s: %s" % (type(e).__name__, str(e)[:400]),
+                       "failed_at": NOW, "count": len(old), "licence": LICENCES[key],
+                       "url": FLOSS_PAGE if key == "floss-pso" else AMAP_SITE})
             state[key] = st
             print("    %s: FAILED %s - keeping %d from the last good fetch" % (key, st["error"], len(old)))
     ospos = merge(got.get("floss-pso", []), got.get("academic-map", []))

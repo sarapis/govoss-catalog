@@ -519,6 +519,26 @@ def main():
     except Exception:
         oj = {}
     check("/ospos.json publishes every office", len(oj.get("ospos") or []), len(od))
+    # /ospos.json's consumer contract (ospo_contract.py): un.opensource.nyc reads the
+    # FLOSS-PSO rows and throws on anything unexpected. The built file holds it, and
+    # the strings they check verbatim are pinned here as literals, not read back.
+    import ospo_contract as _oc
+    check("/ospos.json keeps its consumer contract", _oc.doc_problems(oj), [])
+    check("/ospos.json: govoss's own licence, exactly", oj.get("licence"),
+          {"govoss_fields": "CC0 1.0, govoss (https://govoss.cat)",
+           "lists": "each list's own: sources[*].licence"})
+    check("/ospos.json: the FLOSS-PSO licence, exactly",
+          ((oj.get("sources") or {}).get("floss-pso") or {}).get("licence"),
+          "CC0 1.0 (the FLOSS-PSO Network's OSPO list)")
+    check("/ospos.json documents its country codes",
+          sorted(oj.get("country_codes") or {}),
+          ["DE", "DK", "EL", "ES", "FR", "GB", "IE", "INT", "LU", "NL", "US"])
+    ab = oj.get("about") or ""
+    check("/ospos.json's about documents basis (hq approximate) and ok:false (last good copy)",
+          (bool(re.search(r"'seat' is the office's own city; 'hq' is its parent organisation's "
+                          r"headquarters, so the point is approximate", ab)),
+           bool(re.search(r"ok false means .*last good copy, fetched at fetched_at \(which is "
+                          r"never moved by a failed attempt", ab))), (True, True))
 
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by

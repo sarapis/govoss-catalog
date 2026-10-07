@@ -25,6 +25,7 @@ import re
 import time
 
 import i18n
+import ospo_contract as C
 import sources as S
 
 OUT = os.path.dirname(os.path.abspath(__file__))
@@ -522,15 +523,41 @@ if __name__ == "__main__":
     data, locs, geo, res = load()
     for _lang in i18n.LANGS:
         rows = build(_lang, data, locs, geo, res)
+    doc = {
+        "generated_at": NOW, "human_page": i18n.BASE + "/ospos",
+        "about": "Open source program offices. Government: the FLOSS-PSO Network's "
+                 "public-sector OSPO list (CC0). Academic: the SustainOSS academic map's "
+                 "'OSPOs' lists (MIT). Two FLOSS-PSO offices are universities and are typed "
+                 "academic. "
+                 "SOURCES: sources[key].ok false means that list's fetch failed and the rows "
+                 "shown are the last good copy, fetched at fetched_at (which is never moved "
+                 "by a failed attempt; failed_at and error say when and why it failed); "
+                 "count is the number of rows from that list. "
+                 "IDS are derived from each office's URL in its list and stay the same while "
+                 "that URL does. "
+                 "LOCATIONS are govoss's hand placement: location.basis 'seat' is the office's "
+                 "own city; 'hq' is its parent organisation's headquarters, so the point is "
+                 "approximate. lat/lon are WGS84 degrees. An academic office not yet placed "
+                 "has location null; every FLOSS-PSO office is placed. "
+                 "COUNTRY codes are listed in country_codes: ISO 3166-1 alpha-2 except EL "
+                 "(Greece, the EU's code) and INT (an international body). "
+                 "LICENCES: each list's rows are under that list's licence (sources[key].licence); "
+                 "govoss's own fields - id, type, location, resources_case, and country where "
+                 "the list gives none - are under licence.govoss_fields.",
+        "licence": C.LICENCE,
+        "country_codes": C.COUNTRIES,
+        "sources": data.get("sources"),
+        "ospos": [dict({k: v for k, v in r.items() if not k.startswith("_")},
+                       country=r["_cc"], location=r["_loc"] or None,
+                       resources_case=r["_case"]) for r in rows],
+    }
+    # un.opensource.nyc reads this file and throws on anything unexpected: a file
+    # that breaks the contract (ospo_contract.py) is never written, and the failed
+    # step stops the publish. Upstream changes are refused earlier, in fetch_ospos.py.
+    probs = C.doc_problems(doc)
+    if probs:
+        raise SystemExit("build_ospos: /ospos.json would break its consumer contract:\n  "
+                         + "\n  ".join(probs))
     with open(f"{SITE}/ospos.json", "w") as fh:
-        json.dump({
-            "generated_at": NOW, "human_page": i18n.BASE + "/ospos",
-            "about": "Open source program offices. Government: the FLOSS-PSO Network's "
-                     "public-sector OSPO list (CC0). Academic: the SustainOSS academic map's "
-                     "'OSPOs' lists (MIT). Locations are govoss's hand placement (basis: seat or hq).",
-            "sources": data.get("sources"),
-            "ospos": [dict({k: v for k, v in r.items() if not k.startswith("_")},
-                           country=r["_cc"], location=r["_loc"] or None,
-                           resources_case=r["_case"]) for r in rows],
-        }, fh, ensure_ascii=False, indent=1)
+        json.dump(doc, fh, ensure_ascii=False, indent=1)
     i18n.report("build_ospos")
