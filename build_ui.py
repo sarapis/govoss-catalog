@@ -480,6 +480,12 @@ def render(lang):
     page = (
         theme.head(i18n.t(lang, "Software | govoss"), desc, lang=lang, route="/software")
         + style + theme.utility_bar(lang=lang) + theme.topbar("software", lang, "/software")
+        + theme.page_header(
+            "⟪Software⟫",
+            "⟪__NENTRIES__ entries from __N_SOURCES__ government catalogs. Filter by function, "
+            "country, catalog or the product you pay for &mdash; the address bar keeps the view, "
+            "so any search can be shared.⟫",
+            [theme.data_links("/entries.json")])
         + T.BODY + theme.footer(lang=lang) + T.SCRIPT
     )
     _finish(page, subs, lang, f"{OUT}/{_OUTFILE[lang]}",

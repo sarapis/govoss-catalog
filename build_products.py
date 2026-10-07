@@ -275,7 +275,10 @@ table.ptab td{padding:9px 14px;vertical-align:top;color:var(--ink-600);}
   white-space:nowrap;}
 """
 
-BODY = """
+BODY = theme.page_header(
+    '⟪Products⟫',
+    '⟪The other side of the catalogue: __NPROD__ proprietary products governments buy, __NALT__ of them with an open source alternative a government somewhere already publishes &mdash; __NLINKS__ alternatives in all. The other __NGAP__ are listed too, so a gap reads as a gap.⟫',
+    [theme.data_links('/products.json', '/by-product.json')]) + """
 <!-- No skip link here: theme.utility_bar() emits it, and it is prepended ahead
      of the topbar so it stays the FIRST focusable element. This page carried
      its own as well, which put two identical "Skip to content" links in the tab
@@ -286,12 +289,6 @@ BODY = """
   <main id="main">
 
   <section class="sec" style="margin-top:28px">
-    <h1 style="font-size:30px;margin:0 0 12px">⟪Proprietary software, and what could replace it⟫</h1>
-    <p class="lede">⟪The catalogue lists government open source. This is the other side of it:
-      <b>__NPROD__ proprietary products</b> governments buy, of which <b>__NALT__</b> have an
-      open source alternative a government somewhere already publishes &mdash; <b>__NLINKS__</b>
-      alternatives in all. The other <b>__NGAP__</b> are listed too, so a gap reads as a gap
-      rather than as an oversight.⟫</p>
     <p class="note">⟪These mappings are <b>hand-curated and unverified</b>, and __NCURATED__ of
       the descriptions are written for this catalogue rather than taken from a source. Absence
       of a mapping is not evidence that no alternative exists. Anything that is not a

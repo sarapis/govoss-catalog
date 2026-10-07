@@ -481,6 +481,23 @@ p{margin:0;}
   .topbar{min-height:0;padding:14px 0;}
   .topbar .wrap{flex-wrap:wrap;row-gap:12px;}
 }
+/* ---- the page header, one for every page but home (owner, 2026-10-07): the
+   nav name as the only h1, one-sentence lede, a meta line carrying the page's
+   own data file. Left-aligned with the content below; one padding, so the
+   headers differ in height only by how their lede wraps. Built by
+   page_header() below. Home keeps its own tall, centred hero. */
+.ph{padding:30px 0 22px;border-bottom:1px solid var(--border);}
+.ph .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.ph h1{font-size:40px;}
+.ph .lede{font-size:17px;line-height:1.5;color:var(--ink-600);max-width:62em;text-wrap:pretty;}
+.ph-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12.5px;
+  color:var(--ink-600);}
+.ph-meta .ph-l{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-faint);}
+.ph-meta a.mono{font-size:12px;}
+@media (max-width:720px){.ph{padding:22px 0 18px;}.ph h1{font-size:30px;}
+  .ph .lede{font-size:16px;}}
+
 /* Five nav items since 2026-10-07. Up to 900px the bar may wrap (the Catalan
    labels are widest; measured: one row overran 768px by 26-59px), and the nav
    itself wraps on a phone (it overran 375px by 20px). */
@@ -522,6 +539,27 @@ def utility_bar(nav=None, lang="en"):
 
 def _esc(t):
     return (str(t).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def page_header(title, lede, meta=()):
+    """The header of every page but home. `title` is the page's nav name and
+    `lede` one sentence, both as ⟪markers⟫ (or placeholders) the builder resolves
+    like the rest of its template; `meta` is a list of inline HTML items for the
+    meta line - by convention a "Data" label and the page's own JSON first.
+    Call it where the page template is built, BEFORE markers are resolved."""
+    return """
+<div class="ph tex"><div class="wrap">
+  <h1>%s</h1>
+  <p class="lede">%s</p>
+  <p class="ph-meta">%s</p>
+</div></div>
+""" % (title, lede, "\n    ".join(meta))
+
+
+def data_links(*paths):
+    """The meta line's data item: a label and each JSON path, monospace."""
+    return ('<span class="ph-l">⟪Data⟫</span> '
+            + " ".join('<a class="mono" href="%s">%s</a>' % (p, p) for p in paths))
 
 
 def topbar(active="", lang="en", route="/"):

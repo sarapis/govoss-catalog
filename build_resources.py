@@ -224,16 +224,10 @@ PAGE_CSS = """
 .rcred{margin-top:18px;font-size:12px;color:var(--ink-faint);}
 """
 
-BODY = """
-<div class="hero hero-sw tex">
-  <div class="inner">
-    <p class="overline">⟪Resources⟫</p>
-    <h1>⟪OSPO resources⟫</h1>
-    <p class="lede">⟪__N__ documents, decisions and accounts from __NCASES__ public-sector open
-      source program offices, each with what it is for and how to use it when building an
-      OSPO. Compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫</p>
-  </div>
-</div>
+BODY = theme.page_header(
+    '⟪Resources⟫',
+    '⟪__N__ documents, decisions and accounts from __NCASES__ public-sector open source program offices, each with what it is for and how to use it when building an OSPO. Compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫',
+    [theme.data_links('/resources.json')]) + """
 <div class="wrap">
   <main id="main" class="rwrap">
     <aside class="rside" aria-label="⟪Filters⟫">__FACETS__</aside>

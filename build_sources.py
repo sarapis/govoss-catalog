@@ -718,19 +718,11 @@ PAGE_CSS = """
 .probs .p-ok{border-left-color:var(--green-line);}
 """
 
-BODY = """
-<div class="hero tex">
-  <div class="inner">
-    <p class="overline">⟪Catalogs⟫</p>
-    <h2>⟪Where the entries come from, and how the last harvest went⟫</h2>
-    <p class="lede">⟪Every entry is harvested first-hand from a government's own catalogue
-      &mdash; never syndicated from an aggregator. This page shows all __N_CAT__ of them, the
-      __N_SURVEY__ that were surveyed and rejected, and whether the machine is still running.⟫</p>
-    <span class="stamp __STATE_CLS__" style="margin-top:4px">__ICON_SEAL__
-      ⟪Last updated __RUN_AT__ &middot; __STATE_TXT__ in __RUN_DUR__⟫</span>
-  </div>
-</div>
-
+BODY = theme.page_header(
+    '⟪Catalogs⟫',
+    "⟪Every entry is harvested first-hand from a government's own catalogue &mdash; never syndicated from an aggregator. This page shows all __N_CAT__ of them, the __N_SURVEY__ that were surveyed and rejected, and whether the machine is still running.⟫",
+    ['<span class="stamp __STATE_CLS__">__ICON_SEAL__ ⟪Last updated __RUN_AT__ &middot; __STATE_TXT__ in __RUN_DUR__⟫</span>',
+     theme.data_links('/sources.json', '/catalogues.geo.json', '/status.json')]) + """
 <div class="wrap">
   <main id="main">
   <div class="stats five">

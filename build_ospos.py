@@ -359,15 +359,10 @@ PAGE_CSS = """
 .ocred{margin-top:18px;font-size:12px;color:var(--ink-faint);line-height:1.6;}
 """
 
-BODY = """
-<div class="hero hero-sw tex">
-  <div class="inner">
-    <p class="overline">⟪OSPOs⟫</p>
-    <h1>⟪Open source program offices⟫</h1>
-    <p class="lede">⟪__N__ offices that help their organisations use, publish and contribute to open
-      source &mdash; __NGOV__ in government and __NACA__ in universities and research institutes.⟫</p>
-  </div>
-</div>
+BODY = theme.page_header(
+    '⟪OSPOs⟫',
+    '⟪__N__ offices that help their organisations use, publish and contribute to open source &mdash; __NGOV__ in government and __NACA__ in universities and research institutes.⟫',
+    [theme.data_links('/ospos.json')]) + """
 <div class="wrap">
   <main id="main">
     <div class="obar">

@@ -194,7 +194,6 @@ PAGE_CSS = """
 .sec{margin-top:44px;}
 .sechead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
   gap:8px 20px;padding-bottom:10px;}
-.hero .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px;}
 
 .egrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
 .ecard{background:var(--surface);border:1px solid var(--border);
@@ -257,21 +256,12 @@ PAGE_CSS = """
   overflow-x:auto;}
 """
 
-BODY = """
-<div class="hero tex">
-  <div class="inner">
-    <p class="overline">⟪For agents and developers⟫</p>
-    <h2>⟪Take the data, don't scrape the page⟫</h2>
-    <p class="lede">⟪Everything this site displays is available as static JSON &mdash;
-      __N_ENTRIES__ entries in one request. No key, no rate limit, no pagination, no
-      account. CORS is open. Last rebuilt __GEN__.⟫</p>
-    <div class="btns">
-      <a class="btn btn-primary" href="/entries.json">⟪Get entries.json⟫</a>
-      <a class="btn btn-ghost" href="#mcp">⟪The MCP server⟫</a>
-    </div>
-  </div>
-</div>
-
+BODY = theme.page_header(
+    '⟪Docs⟫',
+    "⟪Take the data, don't scrape the page: everything this site displays is static JSON, __N_ENTRIES__ entries in one request, with no key, no rate limit, no pagination and no account. CORS is open.⟫",
+    [theme.data_links('/entries.json'),
+     '<a href="#mcp">⟪The MCP server⟫</a>',
+     '<span>⟪Rebuilt __GEN__⟫</span>']) + """
 <div class="wrap">
   <main id="main">
   <section class="sec" style="margin-top:36px">

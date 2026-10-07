@@ -453,6 +453,38 @@ def main():
             check("%s top-right button is Docs (current only on /docs)" % pname,
                   (btn.group(1) if btn else None, bool(btn and "aria-current" in btn.group(2))),
                   (i18n.path_for(lang, "/docs"), name == "docs.html"))
+    # ---- 12g. ONE PAGE HEADER (owner, 2026-10-07). Every page but home uses
+    # theme.page_header(): one .ph band, the nav name as the ONLY h1, a lede, and
+    # a meta line whose Data links resolve. Home keeps its own hero. /catalogs and
+    # /docs had an h2 and no h1 at all; four title styles and four heights before.
+    _ca = json.load(open(os.path.join(HERE, "i18n", "ca.json")))["strings"]
+    TITLE = {"software.html": "Software", "catalogs.html": "Catalogs", "ospos.html": "OSPOs",
+             "resources.html": "Resources", "docs.html": "Docs", "products.html": "Products"}
+    for name, en in TITLE.items():
+        for lang in i18n.LANGS:
+            pname = name if lang == "en" else "%s/%s" % (lang, name)
+            pg = pages[pname]
+            want = en if lang == "en" else _ca.get(en, en)
+            hd = re.search(r'<div class="ph tex"><div class="wrap">\s*<h1>(.*?)</h1>\s*'
+                           r'<p class="lede">.+?</p>\s*<p class="ph-meta">(.*?)</p>', pg, re.S)
+            data = re.findall(r'<a class="mono" href="(/[^"]+\.json)">', hd.group(2)) if hd else []
+            check("%s: the shared header, its h1 the nav name, the only h1, no old hero" % pname,
+                  (html.unescape(hd.group(1)) if hd else None, len(re.findall(r"<h1\b", pg)),
+                   pg.count('<div class="ph tex">'), 'class="hero' in pg),
+                  (want, 1, 1, False))
+            check("%s: the header's meta line links the page's data, and each file exists" % pname,
+                  (len(data) > 0, [d for d in data if not os.path.exists(os.path.join(SITE, d.lstrip("/")))]),
+                  (True, []))
+    for pname in ("software.html", "ca/software.html"):
+        pg = pages[pname]
+        ph, tools = pg.find('<div class="ph tex">'), pg.find('<div class="ph-tools">')
+        t = re.search(r'<div class="ph-tools">\s*<div class="searchbar">.*?</div>\s*'
+                      r'(?:<!--.*?-->\s*)?<p class="apinote">', pg, re.S)
+        check("%s: search sits in the tools band right under the header, the agent note directly "
+              "under it" % pname, (0 < ph < tools, bool(t)), (True, True))
+    for pname in ("index.html", "ca/index.html"):
+        check("%s keeps its own hero and one h1" % pname,
+              ('<div class="hero tex">' in pages[pname], len(re.findall(r"<h1\b", pages[pname]))), (True, 1))
     rfile = json.load(open(os.path.join(HERE, "resources", "ospo-resources.json")))
     # govoss's own additions sit in their own file, every record marked, and the page
     # says so on each card and under the compilation's credit (never credited to UN+NYC)
@@ -483,7 +515,7 @@ def main():
     shared_cls = set(re.findall(r"\.([a-zA-Z][\w-]*)", _T.PAGE_CSS + _th.CSS))
     for _b in ("build_resources.py", "build_ospos.py"):
         _rsrc = read(os.path.join(HERE, _b))
-        _rcss = _rsrc[_rsrc.index('PAGE_CSS = """'):_rsrc.index('BODY = """')]
+        _rcss = _rsrc[_rsrc.index('PAGE_CSS = """'):_rsrc.index('\nBODY = ')]
         check("%s CSS defines no class the shared styles already use" % _b,
               sorted(set(re.findall(r"\.([a-zA-Z][\w-]*)", _rcss)) & shared_cls), [])
     try:

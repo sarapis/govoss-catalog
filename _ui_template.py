@@ -12,8 +12,9 @@ missed pair either raised or silently swallowed a rule. Plain strings + explicit
 PAGE_CSS = """
 /* ---- hero ---- */
 .hero{padding:60px 0 44px;text-align:center;}
-/* /software: the same band, shorter - the list is the point of that page */
-.hero.hero-sw{padding:36px 0 28px;}
+/* the tools band under a page header (/software's search + agent note) */
+.ph-tools{margin:20px 0 0;}
+.ph-tools .searchbar{margin-top:0;}
 .hero .inner{max-width:1440px;margin:0 auto;padding:0 40px;display:flex;
   flex-direction:column;align-items:center;gap:18px;}
 .hero h1{max-width:16em;}
@@ -27,9 +28,8 @@ PAGE_CSS = """
 
 /* The API note: small, but plain visible text. It is an agent affordance, so it
    may not become a tooltip, a collapsed disclosure or an image. */
-/* ⚠ theme.py's icons carry a viewBox and NO width/height, so an unsized one
-   renders at the SVG default — the <> rendered enormous here. Every context that
-   uses an icon has to size it; `.stamp svg` already does the same. */
+/* The icons carry width/height 14 since 2026-10-07 (unsized, the <> once rendered
+   enormous); a context that wants another size still sets it, as here. */
 .apinote svg{width:13px;height:13px;vertical-align:-2px;}
 /* A flex ROW, not an inline paragraph. Inline, the pieces wrapped independently
    and scattered over four lines at 1280px: /meta.json alone on one, "API and MCP"
@@ -361,12 +361,11 @@ ICONS = {
 
 # ---------------------------------------------------------------- markup
 BODY = """
-<div class="hero hero-sw tex">
-  <div class="inner">
-    <h1>⟪Software⟫</h1>
-    <p class="lede">⟪__NENTRIES__ entries from __N_SOURCES__ government catalogs. Filter by
-      function, country, catalog or the product you pay for &mdash; the address bar keeps
-      the view, so any search can be shared.⟫</p>
+<div class="wrap">
+  <!-- The page's tools, directly under the shared header (theme.page_header,
+       composed in build_ui.py) - the same place every page keeps its own. The
+       agent note stays directly under the search field. -->
+  <div class="ph-tools">
     <div class="searchbar">
       <input type="search" id="q" autocomplete="off"
              placeholder="⟪Search __NENTRIES__ entries, or a product you pay for⟫"
@@ -388,9 +387,6 @@ BODY = """
       <a class="apimore" href="/docs">⟪API and MCP &rarr;⟫</a>
     </p>
   </div>
-</div>
-
-<div class="wrap">
   <div class="stats six">
     <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
     <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
