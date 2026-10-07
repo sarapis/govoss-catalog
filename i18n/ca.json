@@ -295,7 +295,8 @@
   "{n} of {t} offices": "{n} de {t} oficines",
   "{n} offices": "{n} oficines",
   "{n} open source program offices - {g} in government, {a} in universities and research institutes - with a map.": "{n} oficines de programes de codi obert - {g} en governs, {a} en universitats i instituts de recerca - amb un mapa.",
-  "{n} resources on how this office was built &rarr;": "{n} recursos sobre com es va crear aquesta oficina &rarr;"
+  "{n} resources on how this office was built &rarr;": "{n} recursos sobre com es va crear aquesta oficina &rarr;",
+  "Code:": "Codi:"
  },
  "functions": {
   "case-workflow": "Gestió d'expedients i fluxos de treball",

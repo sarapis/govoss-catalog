@@ -51,6 +51,19 @@ def esc(s):
         "<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+def flag(cc):
+    """Flag emoji for a country code, as /software shows them. Built from the
+    code (regional-indicator letters), not sources.py's per-catalogue flags:
+    most OSPO countries have no catalogue. EL is the EU's code for Greece (its
+    flag is GR); INT, an intergovernmental office, gets /software's Global sign."""
+    cc = {"EL": "GR"}.get(cc or "", cc or "")
+    if cc == "INT":
+        return "\U0001F310"
+    if len(cc) == 2 and cc.isalpha():
+        return "".join(chr(0x1F1E6 + ord(ch) - ord("A")) for ch in cc.upper())
+    return ""
+
+
 def laea(lon0, lat0):
     """The projection geo/build_geo.py used for these frames (spherical Lambert
     azimuthal equal-area). Pinned against each frame's `probe` by
@@ -107,8 +120,11 @@ def build(lang, data, locs, geo, res):
     for r in os_:
         links = ['<a href="%s" target="_blank" rel="noopener">%s</a>'
                  % (esc(r["url"]), esc(_("Website")))]
+        # each code link named by its account or group (ANSSI lists 13; "Code" x13 said nothing)
         for c in r.get("code") or []:
-            links.append('<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(c), esc(_("Code"))))
+            seg = [x for x in c.split("://", 1)[-1].split("/")[1:] if x and x != "groups"]
+            links.append('<a href="%s" target="_blank" rel="noopener">%s %s</a>'
+                         % (esc(c), esc(_("Code:")), esc(seg[-1] if seg else c.split("://", 1)[-1])))
         if r.get("policy"):
             links.append('<a href="%s" target="_blank" rel="noopener">%s</a>'
                          % (esc(r["policy"]), esc(_("Open source policy"))))
@@ -120,7 +136,8 @@ def build(lang, data, locs, geo, res):
                         % (esc(r["_case"]), _("{n} resources on how this office was built &rarr;",
                                               n=N(rcount[r["_case"]]))))   # own chrome: not escaped again
         typ = _("Government") if r["type"] == "government" else _("Academic")
-        meta = [esc(cname(r["_cc"]))] if r["_cc"] else []
+        meta = (['<span class="oflag" aria-hidden="true">%s</span> %s' % (flag(r["_cc"]), esc(cname(r["_cc"])))]
+                if r["_cc"] else [])
         if r["_loc"].get("place"):
             meta.append(esc(r["_loc"]["place"]))
         if r.get("created"):
@@ -171,7 +188,7 @@ def build(lang, data, locs, geo, res):
                 % esc(_("{n} not on the map yet (no location recorded): {names}",
                         n=len(unplaced), names="; ".join(r["name"] for r in unplaced))))
 
-    copts = "".join('<option value="%s">%s (%s)</option>' % (esc(c), esc(cname(c)), N(n))
+    copts = "".join('<option value="%s">%s %s (%s)</option>' % (esc(c), flag(c), esc(cname(c)), N(n))
                     for c, n in sorted(by_cc.items(), key=lambda kv: cname(kv[0])))
     src = data.get("sources") or {}
     def fetched(key):

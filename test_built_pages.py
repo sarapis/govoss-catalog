@@ -449,6 +449,10 @@ def main():
         check("%s renders every fetched office" % name, sorted(i for i, _ in ids), sorted(r["id"] for r in od))
         check("%s types are only government / academic" % name,
               sorted({t for _, t in ids} - {"government", "academic"}), [])
+        # within EACH card: an unbounded search would find the next card's flag
+        noflag = [i for i, body in re.findall(r'<li class="ocard" id="([^"]+)"[^>]*data-cc="[^"]+">(.*?)</li>', pg, re.S)
+                  if not re.search(r'<span class="oflag" aria-hidden="true">&#\d+;', body)]
+        check("%s: every office with a country shows its flag" % name, noflag, [])
         links = re.findall(r'class="ores" href="(?:/ca)?/resources\?case=([a-z]+)">(\d+)', pg)
         check("%s Resources links land on real cases with the right counts" % name,
               [(c, n) for c, n in links if rcases.get(c) != int(n)], [])
