@@ -29,11 +29,14 @@ curl -s "https://govoss.cat/status.json?v=$(date +%s)"       # live state + prob
 
 - Tree clean on `main`, nothing unpushed, one worktree, no jobs running. Schedule loaded;
   `bash schedule/install.sh --diff` says the plist matches the template.
-- **Last run 2026-09-29 20:33Z**, `manual`, 19 steps ok, deployed on `token-file`,
-  recorded (`16c0bc9`). Everything committed up to `1ed21ae` is live: the five translations,
-  the GeoJSON stamp (live `generated_at` = `meta.json`'s), and the Swiss catalogue source
-  (161 active, all 161 linking to opensource.admin.ch; `ogdch_checker` got its description
-  from `enrich_desc.py`; Loom is one entry). Live `/status.json`: `ok`, no problems.
+- **Last run 2026-10-05 11:26Z**, scheduled, all steps ok, deployed on `token-file`
+  (`08e8210`); the Swiss API gave 163 entries. Live `/status.json`: `warn` for one stale
+  translation key - TLSAssistant (IT) now ships its own English, so it is redundant, not rot.
+- **COMMITTED, NOT LIVE: the 2026-10-07 reorganisation** - home `/` + `/software`, Sources ->
+  `/catalogs`, API -> `/docs`, `/products`, new `/resources`, clean paths and the 301s in
+  `site-worker.js`. Verified on `wrangler dev --local` (launch config `site-worker`): every
+  route, both languages, no overflow 375-1440px. **Needs the pipeline run to publish, then
+  an MCP Worker redeploy** (its `docs` link moved to `/docs`; `/api.html` 301s meanwhile).
 - Liveness (2026-09-28): 3,501 ok of 3,591, 28 dead, 39 archived, 61 unknown.
   `replaces.json` 348 keys; 444 products, 379 with an alternative (live-checked).
   Variants: 14 linked to 12 cores. MCP Worker `a38a84d4` (search reads `n d o a u rp`).
@@ -86,9 +89,10 @@ Tested ones are one line each in `CLAUDE.md` › Tests. These are silent if viol
 
 ## Candidates, ranked
 
-1. **Watch the Monday 2026-10-05 scheduled run** - the first unattended one on the Swiss API:
-   the harvest log should say "162 entries in opensource.admin.ch" (a refusal means the API
-   moved or shrank - see `ch()`); `/status.json` `ok`; Recently added only genuinely new ids.
+1. **After the reorganisation is live**: re-run the route check against govoss.cat (every
+   page, `/sources.html?src=X` -> `/catalogs?src=X`, `/?q=x` -> `/software?q=x`), redeploy
+   `mcp-server` and check its `docs` link, and tell UNNYC if any page of theirs links
+   `/sources.html` or `/api.html` (they redirect, but direct links are better).
 2. **Act on the Helsingborg decision** once made - an allow-list of repo URLs in `filters.py`
    pinned in `test_filters.py` (never a name pattern); stamp returned ids `null` in
    `_first_seen.json` if the owner does not want a week of Helsingborg in the strip.

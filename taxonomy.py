@@ -289,7 +289,7 @@ if __name__ == "__main__":
     # firing unnoticed for weeks ('information-and-communication-technology' on
     # 08-24, 'scheduling' on 09-07). Both shipped unclassified.
     #
-    # Written as a file so runlog can trend it and /sources.html can warn. The
+    # Written as a file so runlog can trend it and /catalogs can warn. The
     # print stays for whoever is watching a live run; the file is for everyone
     # who isn't. Sorted, so a week with the same unmapped set is a zero-line
     # diff rather than churn.

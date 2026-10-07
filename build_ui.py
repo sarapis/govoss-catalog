@@ -40,7 +40,7 @@ def _replaces(r):
                 out.append(m)
     for m in (r.get("replaces") or []):
         # A publisher-declared product with no proprietary.json record has no
-        # anchor on /products.html to link to; export_json.py keeps it out of
+        # anchor on /products to link to; export_json.py keeps it out of
         # by-product.json for the same reason. It stays in /entries.json.
         if isinstance(m, dict) and m.get("via") == "publiccode" and m.get("product") not in _KNOWN:
             continue
@@ -238,7 +238,7 @@ n_multi_cat = sum(1 for r in _inc if (r.get("cc2") or 1) > 1)
 # Proprietary products as a FACET, not a nav item: they are a way into the open
 # source, not a peer of it. Clicking one filters the catalogue to the entries
 # that replace it, which is the whole "what could replace Dropbox?" question
-# answered in place. "Show all" leaves for /products.html, which is also the
+# answered in place. "Show all" leaves for /products, which is also the
 # only place products with NO alternative can live - a facet yielding zero rows
 # would just be broken. Ordered most-replaceable first, name breaking ties so
 # the list is deterministic (most products have exactly one alternative).
@@ -263,7 +263,7 @@ PFACETS = json.dumps([[k, k, n] for k, n in
 # table led with bytype — same date, opposite name order. Sort by name ascending
 # first, then stable-sort by date descending, which is what the JS does.
 # Source label -> flag, for the entry cards. Keyed on the LABEL because that is
-# what the card renders (r.ce[].l and r.ss), the same string /sources.html links
+# what the card renders (r.ce[].l and r.ss), the same string /catalogs links
 # on. Falls back to nothing rather than a placeholder: a wrong flag on a country
 # claim is worse than no flag.
 SRCFLAG = json.dumps({lbl: (_S.SOURCES.get(k) or {}).get("flag") or ""
@@ -311,7 +311,7 @@ NEWEST = json.dumps([
 #
 # ⚠ It is called SOURCE COUNTRY, not Country, and that wording is load-bearing:
 # it is the country of the CATALOGUE that listed the software, not the tier of
-# government that published it. Same caveat as /by-country/ and /sources.html.
+# government that published it. Same caveat as /by-country/ and /catalogs.
 _CC_FLAG = {(m.get("country") or ""): m.get("flag") or ""
             for m in _S.SOURCES.values() if m.get("country")}
 # Label is the country NAME, not the code: "France", not "FR". The code is what
@@ -338,7 +338,7 @@ LOPTS = "".join(f'<option value="{html.escape(k)}">{html.escape(k)} ({v})</optio
 # is a better dropdown than a 6-of-17 facet with a "Show all" expander.
 #
 # The option VALUE is the bare label, because it is matched against r.ss, and
-# /sources.html links here as ?src=<label>. Those two must agree: both read
+# /catalogs links here as /software?src=<label>. Those two must agree: both read
 # sources.py SOURCES[key]["label"].
 SOPTS = "".join(
     f'<option value="{html.escape(lbl)}">{html.escape(lbl)}'
@@ -372,7 +372,11 @@ import re as _re
 n_entries = len(_inc)
 n_srcs = len(sources)
 n_funcs = len(funcs)
+# catalogue*.html is /software (build_site.sh copies it to site/software.html);
+# home*.html is / (site/index.html). Two pages since 2026-10-07: the home page is
+# everything that sat above the filters, and carries no DATA.
 _OUTFILE = {"en": "catalogue.html", "ca": "catalogue.ca.html"}
+_HOMEFILE = {"en": "home.html", "ca": "home.ca.html"}
 
 
 def _rpq_text(lang, parts):
@@ -420,18 +424,28 @@ def render(lang):
         # no __ICON_SEAL__: its only use on this page was the retired Recommended
         # stamp. T.ICONS["seal"] stays - build_sources.py still stamps it.
         "__ICON_ALERT__": T.ICONS["alert"],
+        "__SOFTWARE_URL__": i18n.path_for(lang, "/software"),
     }
+    desc = i18n.t(lang, "{n} open source entries harvested first-hand from {k} government "
+                        "catalogues worldwide, normalised onto one schema. Free JSON API at "
+                        "/entries.json - no key, no pagination.", n=N(n_entries), k=n_srcs)
+    style = "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
+    home = (theme.head(i18n.t(lang, "Government open source software catalog | govoss"),
+                       desc, lang=lang, route="/")
+            + style + theme.utility_bar(lang=lang) + theme.topbar("home", lang, "/")
+            + T.HOME_BODY + theme.footer(lang=lang) + T.HOME_SCRIPT)
+    _finish(home, subs, lang, f"{OUT}/{_HOMEFILE[lang]}", "home page")
     page = (
-        theme.head(
-            i18n.t(lang, "Government open source software catalog | govoss"),
-            i18n.t(lang, "{n} open source entries harvested first-hand from {k} government "
-                         "catalogues worldwide, normalised onto one schema. Free JSON API at "
-                         "/entries.json - no key, no pagination.", n=N(n_entries), k=n_srcs),
-            lang=lang, route="/")
-        + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + "</style>\n"
-        + theme.utility_bar(lang=lang) + theme.topbar("catalog", lang, "/")
+        theme.head(i18n.t(lang, "Software | govoss"), desc, lang=lang, route="/software")
+        + style + theme.utility_bar(lang=lang) + theme.topbar("software", lang, "/software")
         + T.BODY + theme.footer(lang=lang) + T.SCRIPT
     )
+    _finish(page, subs, lang, f"{OUT}/{_OUTFILE[lang]}",
+            f"{len(rows)} rows, {sum(1 for r in rows if r['rp'])} with replaces")
+
+
+def _finish(page, subs, lang, path, what):
+    """Markers -> placeholders -> links (the load-bearing order), then write."""
     page = i18n.markers(page, lang)
     for k, v in subs.items():
         page = page.replace(k, v)
@@ -439,14 +453,12 @@ def render(lang):
     # token. Fail the build instead.
     left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", page)))
     if left:
-        raise SystemExit(f"build_ui: unsubstituted placeholders {left} ({lang})")
+        raise SystemExit(f"build_ui: unsubstituted placeholders {left} ({lang}, {path})")
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)
     page = page.encode("ascii", "xmlcharrefreplace").decode()
-    path = f"{OUT}/{_OUTFILE[lang]}"
     open(path, "w").write(page)
-    print(f"wrote {path}  ({len(page)/1024:.0f} KB, {len(rows)} rows, "
-          f"{sum(1 for r in rows if r['rp'])} with replaces)")
+    print(f"wrote {path}  ({len(page)/1024:.0f} KB, {what})")
 
 
 for _lang in i18n.LANGS:

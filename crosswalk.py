@@ -116,7 +116,7 @@ def cached(name, path, fetch, state, now=None, max_age=MAX_AGE_DAYS):
       * `fetched_at` advances ONLY on a successful fetch - the same invariant as
         cache/_fetched.json - so a failure cannot make old data look new;
       * a failed fetch falls back to the old copy (this step never fails the
-        run) and records `error`, which /sources.html reports once it is old;
+        run) and records `error`, which /catalogs reports once it is old;
       * no old copy and a failed fetch raises, so the caller's best-effort
         handler decides, exactly as before."""
     rec = state.get(name) or {}
@@ -386,7 +386,7 @@ WARN_AFTER_DAYS = 14
 
 
 def cache_problems(state, now=None):
-    """-> [(level, message)] for /sources.html. `warn`, never `critical`: these
+    """-> [(level, message)] for /catalogs. `warn`, never `critical`: these
     inputs only add identity, and the catalogue is correct without them - but a
     reader should know dedupe is working from an old copy.
 

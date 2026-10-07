@@ -27,3 +27,6 @@ secrets.json
 
 # local scratch — design handoffs, working files. Never committed.
 _scratch/
+home.html
+home.ca.html
+.wrangler/

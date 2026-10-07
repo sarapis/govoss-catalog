@@ -95,7 +95,7 @@ SOURCES = {
     "DE/opensource.muenchen.de": {
         "checkpoint": "muc",
         "label": "Munich Open Source", "country": "DE", "flag": "\U0001F1E9\U0001F1EA",
-        # A city catalogue: /sources.html draws it as a dot at the city (lon, lat),
+        # A city catalogue: /catalogs draws it as a dot at the city (lon, lat),
         # not a country shape - Munich is 1-2 pixels at map scale.
         "map_point": (11.576, 48.137),
         "site": "https://opensource.muenchen.de/software/",
@@ -355,7 +355,7 @@ SURVEY = [
                "municipality, likely a handful of repos) and hosting_platform:dmrid_dits "
                "(github.com/DMRID is an individual user with one repo, not a registry)."},
     {"country": "DK/BG", "flag": "\u26A0", "name": "translation debt (OS2 + Bulgaria)",
-     "url": SITE_URL + "/sources.html", "status": "needs-research",
+     "url": SITE_URL + "/catalogs", "status": "needs-research",
      "detail": "English coverage dropped from 100% to 91% when OS2 Denmark and Bulgaria were "
                "added: 265 strings remain untranslated (171 Bulgarian, 82 Danish, 12 other). "
                "Recorded rather than papered over - every entry still carries description_lang "

@@ -706,7 +706,7 @@ def _refuse_short_scan(key, what, out, broke, where):
             f"checkpoint, after {len(broke)} org(s) failed: {', '.join(broke)}. "
             f"Refusing to checkpoint a short list; reusing the previous one. "
             f"If an org is permanently gone, remove it from {where} — the "
-            f"per-source age on /sources.html is what makes this visible."
+            f"per-source age on /catalogs is what makes this visible."
         )
 
 
@@ -1245,7 +1245,7 @@ def ch():
     except Exception:
         pass
     # A catalogue shrinking by a fifth in a week is a broken read, not a policy
-    # change; a failed source reuses its checkpoint and /sources.html shows its age.
+    # change; a failed source reuses its checkpoint and /catalogs shows its age.
     if len(out) < 50 or (prev and len(out) < 0.8 * prev):
         raise RuntimeError(f"opensource.admin.ch API gave {len(out)} entries against "
                            f"{prev} in the last good checkpoint; refusing a short list")

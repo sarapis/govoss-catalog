@@ -1,4 +1,4 @@
-"""The map on /sources.html, and /catalogues.geo.json beside it.
+"""The map on /catalogs, and /catalogues.geo.json beside it.
 
 Reads geo/catalogue_shapes.json (committed; written by geo/build_geo.py, which
 is manual and never part of run.sh) and joins THIS run's per-catalogue counts
@@ -60,7 +60,7 @@ def render(lang, counts, country_name):
         return _("{label}, {n} entries", label=S.SOURCES[key]["label"], n=N(counts.get(key, 0)))
 
     def src_href(key):
-        return "/?src=" + quote(S.SOURCES[key]["label"], safe="")
+        return "/software?src=" + quote(S.SOURCES[key]["label"], safe="")
 
     vx, vy, vw, vh = geo["viewbox"]
     parts = ['<svg class="cmap-svg" viewBox="%s %s %s %s" role="group" aria-label="%s">'
@@ -78,7 +78,7 @@ def render(lang, counts, country_name):
             label = _("{country}: {items}", country=country_name(lang, cc),
                       items="; ".join(item(k) for k in keys))
             tier = "n%d" % min(3, len(keys))
-            out.append('<a href="/?cc=%s" aria-label="%s"><title>%s</title>'
+            out.append('<a href="/software?cc=%s" aria-label="%s"><title>%s</title>'
                        '<path class="%s" d="%s"/></a>'
                        % (cc, esc(label), esc(label), tier, shp["d"]))
         return out

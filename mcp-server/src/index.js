@@ -341,7 +341,7 @@ export default {
         protocol_version: PROTOCOL_VERSION,
         tools: TOOLS.map((t) => t.name),
         the_data_itself: `${env.CATALOG_ORIGIN}/entries.json`,
-        docs: `${env.CATALOG_ORIGIN}/api.html`,
+        docs: `${env.CATALOG_ORIGIN}/docs`,
       }, { headers: CORS });
     }
 

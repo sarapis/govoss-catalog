@@ -12,6 +12,8 @@ missed pair either raised or silently swallowed a rule. Plain strings + explicit
 PAGE_CSS = """
 /* ---- hero ---- */
 .hero{padding:60px 0 44px;text-align:center;}
+/* /software: the same band, shorter - the list is the point of that page */
+.hero.hero-sw{padding:36px 0 28px;}
 .hero .inner{max-width:1440px;margin:0 auto;padding:0 40px;display:flex;
   flex-direction:column;align-items:center;gap:18px;}
 .hero h1{max-width:16em;}
@@ -102,7 +104,7 @@ PAGE_CSS = """
 /* ---- stat tiles ---- */
 /* The 1px gaps show the border-coloured background as grid lines, so an EMPTY
    cell shows as a grey block (auto-fit left 5+1 / 4+2; a fixed 6 columns then did
-   it to the 5-tile /sources.html). Shared by every page, so the default is a
+   it to the 5-tile /catalogs). Shared by every page, so the default is a
    wrapping row whose tiles GROW to fill each line - no empty cell with any count.
    The catalog's six tiles keep measured 6 / 3 / 2 columns via .six. */
 .stats{display:flex;flex-wrap:wrap;
@@ -111,7 +113,7 @@ PAGE_CSS = """
 .stat{background:var(--surface);padding:18px 20px;flex:1 1 200px;}
 @media (max-width:520px){.stat{flex-basis:40%;}}
 .stats.six{display:grid;grid-template-columns:repeat(6,1fr);}
-/* five tiles (/sources.html): 5, then 3+2, then 2+2+1 - never a lone 4+1 */
+/* five tiles (/catalogs): 5, then 3+2, then 2+2+1 - never a lone 4+1 */
 .stats.five .stat{flex-basis:18%;}
 @media (max-width:1080px){.stats.five .stat{flex-basis:30%;}}
 @media (max-width:520px){.stats.five .stat{flex-basis:40%;}}
@@ -359,12 +361,12 @@ ICONS = {
 
 # ---------------------------------------------------------------- markup
 BODY = """
-<div class="hero tex">
+<div class="hero hero-sw tex">
   <div class="inner">
-    <h1>⟪Open source software catalog for governments⟫</h1>
-    <p class="lede">⟪An aggregation of open source software catalogs from national, regional,
-      local and global governing institutions &mdash; updated weekly. Are we missing a catalog?
-      <a href="#submit">Submit it here</a>.⟫</p>
+    <h1>⟪Software⟫</h1>
+    <p class="lede">⟪__NENTRIES__ entries from __N_SOURCES__ government catalogs. Filter by
+      function, country, catalog or the product you pay for &mdash; the address bar keeps
+      the view, so any search can be shared.⟫</p>
     <div class="searchbar">
       <input type="search" id="q" autocomplete="off"
              placeholder="⟪Search __NENTRIES__ entries, or a product you pay for⟫"
@@ -383,36 +385,12 @@ BODY = """
       <a href="/entries.json">/entries.json</a>
       <a href="/sources.json">/sources.json</a>
       <a href="/meta.json">/meta.json</a>
-      <a class="apimore" href="/api.html">⟪API and MCP &rarr;⟫</a>
+      <a class="apimore" href="/docs">⟪API and MCP &rarr;⟫</a>
     </p>
   </div>
 </div>
 
 <div class="wrap">
-  <div class="stats six">
-    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
-    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
-    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
-    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
-    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
-    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
-  </div>
-
-  <!-- Recently added. Hidden entirely when there are no dated entries rather
-       than rendered empty: a fresh checkout has no cache/_first_seen.json, and an
-       empty strip claiming "recently added" is worse than no strip. -->
-  <section class="recent" id="recent" hidden>
-    <div class="rhead">
-      <h2>⟪Recently added⟫</h2>
-      <div class="rnav">
-        <button type="button" class="rbtn" id="rprev" aria-label="⟪Scroll left⟫">&larr;</button>
-        <button type="button" class="rbtn" id="rnext" aria-label="⟪Scroll right⟫">&rarr;</button>
-        <button type="button" class="rall" id="rall">⟪See all, newest first⟫</button>
-      </div>
-    </div>
-    <ul class="rtrack" id="rtrack"></ul>
-  </section>
-
   <main id="main" class="body">
     <aside class="side">
       <div class="facets">
@@ -498,6 +476,67 @@ BODY = """
       is never overridden by a rule of ours.⟫</p>
     </div>
   </main>
+</div>
+"""
+
+# The home page: everything that used to sit above the filters. It carries no
+# DATA (the 2 MB entry list lives on /software only) - just the strip's ten.
+HOME_BODY = """
+<div class="hero tex">
+  <div class="inner">
+    <h1>⟪Open source software catalog for governments⟫</h1>
+    <p class="lede">⟪An aggregation of open source software catalogs from national, regional,
+      local and global governing institutions &mdash; updated weekly. Are we missing a catalog?
+      <a href="#submit">Submit it here</a>.⟫</p>
+    <!-- A plain GET form: searching from home is a page change, to /software?q=,
+         and needs no script. -->
+    <form class="searchbar" action="__SOFTWARE_URL__" method="get" role="search">
+      <input type="search" name="q" id="hq" autocomplete="off"
+             placeholder="⟪Search __NENTRIES__ entries, or a product you pay for⟫"
+             aria-label="⟪Search the catalog⟫">
+      <button class="btn btn-primary" type="submit">⟪Search⟫</button>
+    </form>
+    <!-- Agent affordance 3 of 4. It used to sit above the stat tiles; directly
+         under the search field is EARLIER in the DOM, so a text extraction hits
+         it sooner, not later. Smaller, because it is a standing note rather than
+         an announcement — but it must stay visible text, not a tooltip or a
+         collapsed disclosure, or it stops being an affordance at all. -->
+    <p class="apinote">
+      <b>__ICON_CODE__ ⟪Building something?⟫</b>
+      <span class="m">⟪Don&rsquo;t scrape this page &mdash; the whole catalog is one
+        request:⟫</span>
+      <a href="/entries.json">/entries.json</a>
+      <a href="/sources.json">/sources.json</a>
+      <a href="/meta.json">/meta.json</a>
+      <a class="apimore" href="/docs">⟪API and MCP &rarr;⟫</a>
+    </p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats six">
+    <div class="stat"><b>__N_ENTRIES__</b><span>⟪entries⟫</span></div>
+    <div class="stat"><b>__N_SOURCES__</b><span>⟪source catalogs⟫</span></div>
+    <div class="stat"><b>__N_PC__</b><span>⟪with publiccode.yml⟫</span></div>
+    <div class="stat"><b>__N_EN__</b><span>⟪in English or translated⟫</span></div>
+    <div class="stat"><b>__N_FUNCS__</b><span>⟪functions⟫</span></div>
+    <div class="stat"><b>__N_MULTI__</b><span>⟪in 2+ catalogs⟫</span></div>
+  </div>
+
+  <!-- Recently added. Hidden entirely when there are no dated entries rather
+       than rendered empty: a fresh checkout has no cache/_first_seen.json, and an
+       empty strip claiming "recently added" is worse than no strip. -->
+  <section class="recent" id="recent" hidden>
+    <div class="rhead">
+      <h2>⟪Recently added⟫</h2>
+      <div class="rnav">
+        <button type="button" class="rbtn" id="rprev" aria-label="⟪Scroll left⟫">&larr;</button>
+        <button type="button" class="rbtn" id="rnext" aria-label="⟪Scroll right⟫">&rarr;</button>
+        <a class="rall" href="/software?sort=recent">⟪See all, newest first⟫</a>
+      </div>
+    </div>
+    <ul class="rtrack" id="rtrack"></ul>
+  </section>
 
   __SUBMIT__
 </div>
@@ -509,7 +548,6 @@ SCRIPT = """
 var DATA = __DATA__;
 var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var CCFACETS = __CCFACETS__;
-var NEWEST = __NEWEST__;
 var SRCFLAG = __SRCFLAG__;
 // code -> display name, derived from the facet labels so there is ONE source for
 // them. The flag is stripped: the label is "<flag> Germany" and sorting on that
@@ -558,7 +596,7 @@ function pslug(s) {
 var GROUPS = [
   { key: 'fn', title: '⟪js:Function⟫', rows: FFACETS.map(function (f) { return [f[0], f[1], f[2]]; }) },
   { key: 'rp', title: '⟪js:Replaces⟫', rows: PFACETS.map(function (f) { return [f[0], f[1], f[2]]; }),
-    link: 'products.html', linkLabel: '⟪js:Proprietary software catalog⟫' },
+    link: 'products', linkLabel: '⟪js:Proprietary software catalog⟫' },
   // Source COUNTRY, deliberately named that way: it is the country of the
   // catalogue that listed the software, not the tier of government that published
   // it. Matched against r.cs (all countries), so an entry listed in two countries
@@ -611,7 +649,7 @@ function renderFacets() {
 // is filtered out (e.g. ?src= Munich), the variant stands alone, saying what it
 // is a version of. Never hidden outright: a source filter that silently drops
 // its variants reads as "this catalogue contributed nothing", the claim
-// /sources.html exists to disprove.
+// /catalogs exists to disprove.
 var lastFolded = 0;   // how many the last current() folded, for the count line
 function fold(list) {
   var inSet = new Set(list.map(function (r) { return r.__i; }));
@@ -751,7 +789,7 @@ function render() {
         (r.d ? '<div class="desc">' + esc(r.d) + '</div>' : '') +
         (r.rp && r.rp.length ? '<div class="rp">⟪js:Replaces⟫ ' + r.rp.map(function(p, i){
             var q = (r.rpq || [])[i];
-            return '<a href="products.html#p-' + esc(pslug(p)) + '">' + esc(p) + '</a>' +
+            return '<a href="products#p-' + esc(pslug(p)) + '">' + esc(p) + '</a>' +
               (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
         }).join(', ') + '</div>' : '') +
         (r.vs && r.vs.length ? '<div class="vars">⟪js:Variants:⟫ ' + r.vs.map(function (i) {
@@ -831,7 +869,7 @@ el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
 // Every value is validated against what the page offers and an unknown one is
 // IGNORED, never applied: a stale or hand-edited link that filtered the list to
 // nothing would read as "no entries match". Inbound links keep working:
-// ?rp=<product> from products.html, ?src=<label> from sources.html, ?cc=<code>.
+// ?rp=<product> from /products, ?src=<label> from /catalogs, ?cc=<code>.
 // Keys: q, fn, cc, rp (repeatable), src, lic, lv, sort (omitted at its default),
 // and alt / nodesc / notsoft as =1 flags.
 function offers(sel, v) {
@@ -888,6 +926,28 @@ function writeURL() {
   }, 250);
 }
 
+renderFacets();
+render();
+</script>
+"""
+
+HOME_SCRIPT = """
+<script>
+var NEWEST = __NEWEST__;
+var CCFACETS = __CCFACETS__;
+var CCNAME = {}, CCFLAG = {};
+CCFACETS.forEach(function (f) {
+  var lbl = String(f[1]), sp = lbl.indexOf(' ');
+  CCNAME[f[0]] = sp > 0 ? lbl.slice(sp + 1) : lbl;
+  CCFLAG[f[0]] = sp > 0 ? lbl.slice(0, sp) : '';
+});
+function ccLabel(code) { return CCNAME[code] || code; }
+function ccFlag(code) { return CCFLAG[code] || ccLabel(code); }
+var el = function (id) { return document.getElementById(id); };
+function esc(s) {
+  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 // ---- Recently added strip.
 (function () {
   if (!NEWEST.length) return;            // stays hidden; see the markup comment
@@ -932,16 +992,6 @@ function writeURL() {
   window.addEventListener('resize', arrows);
   arrows();
 
-  // "See all" is the strip's whole reason for being only ten long: it hands the
-  // reader the full list in the table, ordered the same way.
-  el('rall').onclick = function () {
-    el('sort').value = 'recent';
-    reset();
-    el('list').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 })();
-
-renderFacets();
-render();
 </script>
 """

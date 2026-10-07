@@ -17,7 +17,7 @@ bash run.sh                        # full pipeline, ~20 min: harvest -> ... -> d
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 12 suites, 587 checks, all manual
+for t in test_*.py; do python3 $t; done     # 12 suites, 635 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -167,9 +167,11 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `stored-login`. `None` is not `stored-login`. The pre-flight checks whoami CONTENT for the
   pinned account id, and is non-fatal.
 - Headers/redirects: `deploy-cloudflare/_headers` + `_redirects`, copied by `build_site.sh`.
-  **`html_handling` is `"none"`** so `/sources.html` is served as-is (the default 307s it);
-  `site-worker.js` restores `/`, `/ca/` and `/ca`->`/ca/`, running only when no asset matches.
-  Pinned by `test_built_pages.py` check 13.
+  **`html_handling` is `"none"`**: `site-worker.js` owns the URL scheme, running only when no
+  asset matches - clean paths from `<path>.html`, `/` from `index.html`, 301s for the old names
+  and for `/?<catalog key>` -> `/software`, query kept. Redirects that must keep a query live
+  in the Worker, not `_redirects`. `build_site.sh` deletes the old page files (a stale asset
+  would answer first). Pinned by `test_workers.py` and `test_built_pages.py` 12e/13.
 - A Worker custom domain needs the hostname FREE of DNS records (error 100117). Only one
   config may claim a hostname (checked for `www`).
 - `govoss-catalog.vercel.app` 308s every path to govoss.cat (`deploy-vercel.json` is that whole
@@ -179,9 +181,13 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
 
 ## The pages
 
-- Four pages x two languages: `/`, `/sources.html`, `/api.html`, `/products.html`, and each
-  under `/ca/`. `build_ui.py` + `_ui_template.py`, `build_sources.py`, `build_api.py`,
-  `build_products.py`; chrome in `theme.py`. `/status.html` 308s to `/sources.html`, but
+- Six pages x two languages (since 2026-10-07): `/` home (`HOME_BODY`: search, stats, Recently
+  added - NO entry DATA; its search is a GET form to `/software`), `/software` (the catalog,
+  `BODY`), both from `build_ui.py` + `_ui_template.py`; `/catalogs` (`build_sources.py`, was
+  /sources.html), `/docs` (`build_api.py`, was /api.html), `/products` (no nav item, owner's
+  call), `/resources` (`build_resources.py` from the committed `resources/ospo-resources.json`,
+  compiled by UN+NYC - replace the file to update; records stay English). Each also under
+  `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.
 - **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, asserted none survive.
 - Tokens are VENDORED (`vendor/wegovnyc/`), `theme.py` is an alias layer onto `--wg-*` mapped by
@@ -239,7 +245,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Twelve suites, 587 checks, **all manual** - a test that can fail the weekly publish is one someone
+Twelve suites, 635 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -257,9 +263,9 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin`, the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
-| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), hosting files |
+| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, nav and Resources (12e), hosting files |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
-| `test_workers.py` | the three Workers under Node: site indexes and `/ca`, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
+| `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 
 Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only
 through `run()`'s `*_fn` arguments - keep it that way, or the glue is untestable again.

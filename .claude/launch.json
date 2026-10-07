@@ -4,8 +4,27 @@
     {
       "name": "site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8791", "--directory", "site"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8791",
+        "--directory",
+        "site"
+      ],
       "port": 8791
+    },
+    {
+      "name": "site-worker",
+      "runtimeExecutable": "mcp-server/node_modules/.bin/wrangler",
+      "runtimeArgs": [
+        "dev",
+        "--config",
+        "wrangler.site.jsonc",
+        "--port",
+        "8792",
+        "--local"
+      ],
+      "port": 8792
     }
   ]
 }

@@ -3,7 +3,7 @@
 
 Everything here is a STATIC FILE written at build time — no server, no database,
 no framework change, and the existing zero-backend Vercel deploy keeps working.
-The human-facing catalogue.html is untouched; this adds a machine path beside it.
+The human pages (/software and the rest) are untouched; this adds a machine path beside them.
 
 Writes into site/ (the Vercel deploy dir):
 
@@ -402,6 +402,7 @@ def build():
             "sources": "/sources.json",
             "status": "/status.json",
             "catalogue_map": "/catalogues.geo.json",
+            "resources": "/resources.json",
             "versioned": "/v1/entries.json",
         },
         "known_gaps": {
@@ -576,7 +577,10 @@ scraping it is both harder and less complete than one HTTP GET.
   GET /catalogues.geo.json       GeoJSON: where each harvested catalogue is (country
                                  shapes, EU outline, city points), per-catalogue
                                  counts. Never sum them per country.
-  GET /                          the human page
+  GET /resources.json           OSPO resources: 155 documents from six public-sector
+                                 open source program offices (compiled by UN+NYC)
+  Human pages: / (home), /software (search + filters), /catalogs (the sources and
+  harvest status), /docs (this, for people), /products, /resources
 
 These also redirect to /entries.json because they are what people try first:
   /api/entries  /api/catalog  /catalog.json  /data.json
@@ -586,7 +590,7 @@ These also redirect to /entries.json because they are what people try first:
 /by-product.json is keyed by proprietary product name. {meta['counts']['with_replaces']} entries
 carry mappings covering {len(by_product)} products. Two GETs answer a whole licence inventory.
 /products.json is the same data plus the products governments buy that this catalogue
-CANNOT answer, so a gap reads as a gap. /products.html is the human view of both.
+CANNOT answer, so a gap reads as a gap. /products is the human view of both.
 
 Read the `kind` field before reporting a saving:
   software    replaces the software
@@ -662,15 +666,16 @@ search all ignore query strings, so only 20 of its 1,084 solutions are reachable
         "# Structured data - prefer these over parsing the HTML\n"
         "# /entries.json  /meta.json  /by-product.json  /status.json  /llms.txt\n"
         "Sitemap: %s/sitemap.xml\n" % _S.SITE_URL)
-    # products.html/.json are written later by build_products.py, but they are
+    # /products, /resources and their .json are written later in the run, but they are
     # listed here because this is where the sitemap is generated. They are static
     # paths, so no ordering problem — only a missing-file one if that step fails,
     # and a failed step blocks the deploy anyway.
-    urls = ["/", "/sources.html", "/api.html", "/products.html", "/entries.json",
-            "/meta.json", "/by-product.json", "/products.json", "/llms.txt",
-            # the Catalan copies (i18n.py), which search engines otherwise meet
-            # only through the hreflang links
-            "/ca/", "/ca/sources.html", "/ca/api.html", "/ca/products.html"]
+    pages = ["/", "/software", "/catalogs", "/docs", "/products", "/resources"]
+    urls = pages + ["/entries.json", "/meta.json", "/by-product.json", "/products.json",
+                    "/resources.json", "/llms.txt"] + [
+        # the Catalan copies (i18n.py), which search engines otherwise meet only
+        # through the hreflang links
+        "/ca/" if u == "/" else "/ca" + u for u in pages]
     open(f"{SITE}/sitemap.xml", "w").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The MCP server's shape, defined ONCE.
 
-Both the /api.html page and the Worker that implements the server read this
+Both the /docs page and the Worker that implements the server read this
 file. That is the same rule sources.py established for source labels: two copies
 of a contract are two contracts, and a page that documents a tool the server
 does not implement is worse than no page at all - this one is read by agents,

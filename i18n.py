@@ -19,7 +19,7 @@ stops matching instead of showing a stale translation:
 Why not a find-and-replace pass over rendered English: that is the "string-
 replace patching fails silently" bug CLAUDE.md lists. Markers can be checked -
 localize() fails the build if one survives - and a MISSING translation falls
-back to English and is written to out/i18n_missing.json, which /sources.html
+back to English and is written to out/i18n_missing.json, which /catalogs
 warns on, instead of vanishing.
 
 ⚠ JS context escapes. Catalan is full of apostrophes (l'entrada, d'una) and
@@ -38,7 +38,9 @@ NAMES = {"en": "English", "ca": "Català"}
 
 # Page routes that have a Catalan counterpart. Everything else root-relative
 # (/entries.json, /fonts/, /llms.txt, /sarapis-mark.png) is language-neutral.
-ROUTES = ("/", "/index.html", "/sources.html", "/api.html", "/products.html")
+# Clean paths since 2026-10-07: each is served from <path>.html by
+# deploy-cloudflare/site-worker.js, and the old .html names 301 here (_redirects).
+ROUTES = ("/", "/index.html", "/software", "/catalogs", "/docs", "/products", "/resources")
 
 _MARK = re.compile(r"⟪(js:)?(.*?)⟫", re.S)
 _TOKENS = re.compile(r"__[A-Z0-9_]{3,}__|\{[a-z_]+\}")
@@ -125,7 +127,7 @@ def markers(page, lang):
 
 
 def path_for(lang, route):
-    """/sources.html -> /ca/sources.html; / -> /ca/."""
+    """/catalogs -> /ca/catalogs; / -> /ca/."""
     if lang == "en":
         return route
     return "/%s%s" % (lang, "/" if route in ("/", "/index.html") else route)

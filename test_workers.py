@@ -6,9 +6,10 @@
 F8 left "the Workers (JS)" untested. They are small, but each carries a rule
 that cost a real incident, and none of it is visible to the Python suites:
 
-  deploy-cloudflare/site-worker.js   runs only when no asset matches: restores
-      / and /ca/ (html_handling "none" switches directory indexes off) and 308s
-      /ca -> /ca/ keeping the query. Anything else is a genuine 404, untouched.
+  deploy-cloudflare/site-worker.js   runs only when no asset matches: serves
+      / and /ca/ from index.html and clean paths (/software) from <path>.html,
+      301s the old page names and shared searches on / to their new homes
+      keeping the query, 308s /ca -> /ca/. Anything else is a genuine 404.
   deploy-cloudflare/www-redirect.js  www -> apex, 301, path AND query kept, and
       CORS on the redirect itself - a browser checks CORS on each hop, which is
       exactly what the old vercel.app redirect lacks.
@@ -47,7 +48,7 @@ const hdrs = (r) => Object.fromEntries([...r.headers.entries()]);
 const seen = [];
 const ASSETS = { async fetch(req) {
   const u = new URL(req.url); seen.push(u.pathname + u.search);
-  if (u.pathname === "/index.html" || u.pathname === "/ca/index.html")
+  if (["/index.html", "/ca/index.html", "/software.html", "/ca/docs.html"].includes(u.pathname))
     return new Response("<html>" + u.pathname + "</html>", { status: 200,
       headers: { "Content-Type": "application/octet-stream" } });
   return new Response("not found", { status: 404 });
@@ -64,6 +65,19 @@ seen.length = 0; r = await S("/nope/");
 out.dir_without_index = { status: r.status, asked: [...seen] };
 seen.length = 0; r = await S("/missing.json?x=1");
 out.genuine_404 = { status: r.status, asked: [...seen] };
+// the 2026-10-07 URL scheme
+const loc = async (path) => { seen.length = 0; const x = await S(path);
+  return { status: x.status, location: x.headers.get("location"), asked: [...seen] }; };
+seen.length = 0; r = await S("/software?q=gis");
+out.clean = { status: r.status, body: await r.text(), type: r.headers.get("content-type"), asked: [...seen] };
+seen.length = 0; r = await S("/ca/docs");
+out.clean_ca = { status: r.status, asked: [...seen] };
+out.clean_missing = await loc("/nowhere");
+out.old_sources = await loc("/sources.html?src=SILL");
+out.old_api_ca = await loc("/ca/api.html");
+out.shared_search = await loc("/?q=gis&fn=geospatial");
+out.shared_search_ca = await loc("/ca/?cc=DE");
+out.home_other_param = await loc("/?utm_source=x");
 
 // ---------------------------------------------------------------- www-redirect
 r = await www.fetch(new Request("https://www.govoss.cat/entries.json?cc=DE&q=a%20b"));
@@ -206,6 +220,27 @@ def main():
           {"status": 404, "asked": ["/nope/index.html"]})
     check("any other path is passed through untouched", o["genuine_404"],
           {"status": 404, "asked": ["/missing.json?x=1"]})
+    # the 2026-10-07 URL scheme: clean paths, old names, shared searches
+    check("/software is served from /software.html, as HTML, no redirect",
+          (o["clean"]["status"], o["clean"]["body"], o["clean"]["type"], o["clean"]["asked"]),
+          (200, "<html>/software.html</html>", "text/html; charset=utf-8", ["/software.html"]))
+    check("/ca/docs is served from /ca/docs.html", o["clean_ca"],
+          {"status": 200, "asked": ["/ca/docs.html"]})
+    check("an extensionless path with no page is a 404", (o["clean_missing"]["status"],
+          o["clean_missing"]["location"]), (404, None))
+    check("/sources.html 301s to /catalogs, query kept", (o["old_sources"]["status"],
+          o["old_sources"]["location"]), (301, "https://govoss.cat/catalogs?src=SILL"))
+    check("/ca/api.html 301s to /ca/docs", (o["old_api_ca"]["status"],
+          o["old_api_ca"]["location"]), (301, "https://govoss.cat/ca/docs"))
+    check("a shared search on / 301s to /software with its query",
+          (o["shared_search"]["status"], o["shared_search"]["location"]),
+          (301, "https://govoss.cat/software?q=gis&fn=geospatial"))
+    check("a shared search on /ca/ 301s to /ca/software",
+          (o["shared_search_ca"]["status"], o["shared_search_ca"]["location"]),
+          (301, "https://govoss.cat/ca/software?cc=DE"))
+    check("/ with a non-catalog parameter stays the home page",
+          (o["home_other_param"]["status"], o["home_other_param"]["asked"]),
+          (200, ["/index.html"]))
 
     # ---- www-redirect.js
     w = o["www"]["h"]

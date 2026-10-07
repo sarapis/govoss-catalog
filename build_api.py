@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/api.html - the agent-and-developer surface.
+"""Build site/docs.html (served at /docs) - the agent-and-developer surface.
 
 The point of this page is that an agent never needs to open a browser. It exists
 because the first consumer of this catalogue probed eight dead API paths and
@@ -47,7 +47,7 @@ def kb(n):
 
 
 def build(lang="en"):
-    """One language's /api.html. The CONTRACT stays English on every copy: field
+    """One language's /docs. The CONTRACT stays English on every copy: field
     rules, MCP tool definitions and etiquette come from mcp_tools.py, which the
     Worker also serves, and the JSON itself is English. Only the framing is
     translated."""
@@ -165,9 +165,9 @@ def build(lang="en"):
         _("API and MCP for agents | govoss"),
         _("Take the data, don't scrape the page. {n} government open source entries as static "
           "JSON - no key, no rate limit, no pagination - plus an MCP server.",
-          n=N(len(entries))), lang=lang, route="/api.html")
+          n=N(len(entries))), lang=lang, route="/docs")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar(lang=lang) + theme.topbar("api", lang, "/api.html")
+        + theme.utility_bar(lang=lang) + theme.topbar("docs", lang, "/docs")
         + BODY + theme.footer(lang=lang))
 
     page = i18n.markers(page, lang)
@@ -182,7 +182,7 @@ def build(lang="en"):
     theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
-    out = f"{SITE}/api.html" if lang == "en" else f"{SITE}/{lang}/api.html"
+    out = f"{SITE}/docs.html" if lang == "en" else f"{SITE}/{lang}/docs.html"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w").write(page)
     print("api page [%s]: %d endpoints, %d tools, MCP %s (%.0f KB)"

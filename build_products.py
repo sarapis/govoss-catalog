@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/products.html + site/products.json - the proprietary-software side.
+"""Build site/products.html (served at /products) + site/products.json - the proprietary-software side.
 
 The catalogue answers "what open source exists". This page answers the question a
 buyer actually starts from: "we pay for X - what could replace it?". It is the
@@ -66,7 +66,7 @@ def qual(m, lang="en"):
 
 
 def build(lang="en"):
-    """One language's /products.html. Product names and descriptions are data and
+    """One language's /products. Product names and descriptions are data and
     stay English (phase 2 would translate them); products.json is written on the
     English pass only."""
     _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
@@ -128,7 +128,7 @@ def build(lang="en"):
             '<span class="a-none">' + (_("content or data subscription")
                                        if p.get("kind") == "data-service"
                                        else _("none mapped")) + '</span>')
-        act = ('<a href="/?rp=' + quote(name, safe="") + '">' + _("See alternatives &rarr;") + '</a>'
+        act = ('<a href="/software?rp=' + quote(name, safe="") + '">' + _("See alternatives &rarr;") + '</a>'
                if alts else "")
         rows.append(
             '<tr id="p-' + pslug(name) + '" data-n="'
@@ -168,9 +168,9 @@ def build(lang="en"):
         _("Proprietary software and open source alternatives | govoss"),
         _("{n} proprietary products governments buy, {k} of them with a government "
           "open source alternative, filterable by function.", n=N(len(names)), k=N(n_alt)),
-        lang=lang, route="/products.html")
+        lang=lang, route="/products")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
-        + theme.utility_bar(lang=lang) + theme.topbar("", lang, "/products.html")
+        + theme.utility_bar(lang=lang) + theme.topbar("", lang, "/products")
         + BODY + theme.footer(lang=lang))
 
     page = i18n.markers(page, lang)
@@ -193,7 +193,7 @@ def build(lang="en"):
 
     json.dump({
         "generated_at": meta.get("generated_at") or NOW,
-        "human_page": i18n.BASE + "/products.html",
+        "human_page": i18n.BASE + "/products",
         "disclaimer": prop["_README"]["status"],
         "counts": {"products": len(names), "with_alternatives": n_alt,
                    "no_alternative": n_gap, "alternatives": n_links,

@@ -481,6 +481,13 @@ p{margin:0;}
   .topbar{min-height:0;padding:14px 0;}
   .topbar .wrap{flex-wrap:wrap;row-gap:12px;}
 }
+/* Five nav items since 2026-10-07. Up to 900px the bar may wrap (the Catalan
+   labels are widest; measured: one row overran 768px by 26-59px), and the nav
+   itself wraps on a phone (it overran 375px by 20px). */
+@media (max-width:900px){
+  .topbar .wrap{flex-wrap:wrap;row-gap:12px;}
+  .nav{flex-wrap:wrap;gap:6px 18px;}
+}
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important;}
 }
@@ -518,7 +525,8 @@ def _esc(t):
 
 
 def topbar(active="", lang="en", route="/"):
-    """Site header. `active` is one of catalog | sources | api; `route` is this
+    """Site header. `active` is one of home | software | catalogs | docs | resources
+    (products has no nav item, by the owner's choice); `route` is this
     page's English path, so the language switcher can point at its twin.
 
     The CTFG mark that used to sit right of the wordmark is GONE (2026-08-13):
@@ -535,20 +543,22 @@ def topbar(active="", lang="en", route="/"):
     <span class="bmark">govoss</span>
     <span class="bsub">⟪Government<br>open source⟫</span>
   </a>
-  <nav class="nav">%s %s %s</nav>
+  <nav class="nav">%s %s %s %s %s</nav>
   <div class="t-r">
     %s
     <a class="btn btn-primary" href="/#submit">⟪Submit a catalog⟫</a>
   </div>
 </div></header>
 """ % (
-       item("/", "⟪Catalog⟫", "catalog"),
-       item("/sources.html", "⟪Sources⟫", "sources"),
-       item("/api.html", "⟪API⟫", "api"),
+       item("/", "⟪Home⟫", "home"),
+       item("/software", "⟪Software⟫", "software"),
+       item("/catalogs", "⟪Catalogs⟫", "catalogs"),
+       item("/docs", "⟪Docs⟫", "docs"),
+       item("/resources", "⟪Resources⟫", "resources"),
        i18n.switcher(lang, route))
 
 
-# The "Get involved" block, shared by / and /sources.html. It used to be written
+# The "Get involved" block, shared by / and /catalogs. It used to be written
 # out in both page templates, and a fix to one left the other stale. `n` is the
 # catalogue count the calling page already shows, so the block cannot disagree
 # with the stat tile above it.
@@ -594,10 +604,11 @@ def footer(nav=None, lang="en"):
     """`nav` is accepted and ignored, so the four builders keep one call shape."""
     cols = (
         '<div class="col"><h4>⟪This catalogue⟫</h4>'
-        '<a href="/">⟪Browse entries⟫</a>'
-        '<a href="/products.html">⟪Proprietary software⟫</a>'
-        '<a href="/sources.html">⟪Sources &amp; harvest status⟫</a>'
-        '<a href="/api.html">⟪API for agents⟫</a>'
+        '<a href="/software">⟪Browse entries⟫</a>'
+        '<a href="/products">⟪Proprietary software⟫</a>'
+        '<a href="/catalogs">⟪Catalogs &amp; harvest status⟫</a>'
+        '<a href="/docs">⟪API for agents⟫</a>'
+        '<a href="/resources">⟪OSPO resources⟫</a>'
         '</div>'
         '<div class="col"><h4>⟪Data⟫</h4>'
         '<a href="/entries.json">entries.json</a>'
@@ -608,7 +619,7 @@ def footer(nav=None, lang="en"):
         '<div class="col"><h4>⟪Project⟫</h4>'
         '<a href="https://github.com/sarapis/govoss-catalog">⟪Source on GitHub⟫</a>'
         '<a href="https://github.com/sarapis/govoss-catalog/issues">⟪Report a problem⟫</a>'
-        '<a href="/sources.html#surveyed">⟪Catalogues we rejected, and why⟫</a>'
+        '<a href="/catalogs#surveyed">⟪Catalogues we rejected, and why⟫</a>'
         '</div>'
     )
     return """
@@ -653,7 +664,7 @@ def head(title, description, canonical="", lang="en", route=None):
     GET /by-category/<key>.json
     GET /sources.json        the catalogues harvested, and those rejected
     GET /status.json         freshness, last run, changelog
-  CORS is open. Full notes for agents: /llms.txt and /api.html
+  CORS is open. Full notes for agents: /llms.txt and /docs
 -->
 <html lang="__HTML_LANG__" class="wg-govoss" data-brand="govoss">
 <meta charset="utf-8">

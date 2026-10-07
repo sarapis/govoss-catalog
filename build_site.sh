@@ -24,13 +24,20 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 mkdir -p site site/fonts site/ca
-cp catalogue.html site/index.html
-# Catalan copy of the catalog (i18n.py); the other /ca/ pages are written by their builders
-cp catalogue.ca.html site/ca/index.html
+# Since 2026-10-07: / is the home page and /software the catalog (build_ui.py writes
+# both). Clean paths are served from <path>.html by site-worker.js.
+cp home.html site/index.html
+cp catalogue.html site/software.html
+# Catalan copies (i18n.py); the other /ca/ pages are written by their builders
+cp home.ca.html site/ca/index.html
+cp catalogue.ca.html site/ca/software.html
+# The pre-2026-10-07 page files must not linger in site/: _redirects 301s their
+# paths, and a stale asset under the same name would be served instead.
+rm -f site/sources.html site/api.html site/ca/sources.html site/ca/api.html
 # Cloudflare Workers static assets (wrangler.site.jsonc): headers, redirects, and
 # what never to upload. Same rules as deploy-vercel.json, in Cloudflare's format.
 cp deploy-cloudflare/_headers deploy-cloudflare/_redirects deploy-cloudflare/.assetsignore site/
 cp fonts/*.woff2 fonts/OFL-*.txt site/fonts/
 # the real Sarapis mark, pulled from next.sarapis.org - not redrawn
 cp assets/sarapis-mark.png site/
-echo "site/ assembled: index.html + ca/index.html + _headers + _redirects + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"
+echo "site/ assembled: index.html + software.html + ca/ copies + _headers + _redirects + $(ls fonts/*.woff2 | wc -l | tr -d ' ') fonts"

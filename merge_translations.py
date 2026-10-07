@@ -115,7 +115,7 @@ json.dump(c, open(f"{OUT}/catalog.json", "w"), indent=1, default=str)
 # already warns about for replaces.json keys. This is the last instance of this
 # repo's one idea: every failure sensor was a print.
 #
-# Written as a file so /sources.html can warn and runlog.py can trend it, and
+# Written as a file so /catalogs can warn and runlog.py can trend it, and
 # rebuilt from scratch every run so it self-clears — same contract as
 # out/taxonomy_unmapped.json and cache/_fetched.json.
 #

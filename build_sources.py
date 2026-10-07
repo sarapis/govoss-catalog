@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/sources.html + site/sources.json + site/status.json.
+"""Build site/catalogs.html (served at /catalogs) + site/sources.json + site/status.json.
 
 This page ABSORBED the old /status.html (build_status.py is retired). Provenance
 and liveness were always the same question - "where did this come from, and is
@@ -76,7 +76,7 @@ def country_name(lang, code):
 
 
 def build(lang="en"):
-    """One language's /sources.html. The JSON outputs are written on the English
+    """One language's /catalogs. The JSON outputs are written on the English
     pass only; the operator diagnostics in Open items, the per-source notes and
     the survey write-ups stay English on every copy (they are data, and the
     diagnostics are addressed to whoever runs the pipeline)."""
@@ -432,7 +432,7 @@ def build(lang="en"):
         #
         # Only offered where there is something to see: a source contributing 0
         # would hand the reader an empty catalogue.
-        seelink = ('<a class="c-see" href="/?src=%s">%s</a>'
+        seelink = ('<a class="c-see" href="/software?src=%s">%s</a>'
                    % (quote(meta["label"], safe=""), _("See catalog entries &rarr;"))) if n else ""
         crows += (
             '<div class="crow">'
@@ -528,7 +528,7 @@ def build(lang="en"):
         "catalogues": latest.get("catalogues"),
         "problems": [{"level": a, "message": b} for a, b in problems],
         "runs_recorded": len(runs), "history_begins": runs[0]["run_at"],
-        "page": "/sources.html",
+        "page": "/catalogs",
         "schedule": {"cron": "Mondays 07:00 local",
                      "agent": "org.antigravity.govoss-harvest",
                      "redeploy": "automatic - run.sh publishes and commits as its last "
@@ -582,13 +582,13 @@ def build(lang="en"):
     }
 
     page = (theme.head(
-        _("Sources and harvest status | govoss"),
+        _("Catalogs and harvest status | govoss"),
         _("The {n} government catalogues govoss harvests first-hand, how the last harvest "
           "went, and the {s} catalogues that were surveyed and rejected, with reasons.",
-          n=len(S.SOURCES), s=len(S.SURVEY)), lang=lang, route="/sources.html")
+          n=len(S.SOURCES), s=len(S.SURVEY)), lang=lang, route="/catalogs")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS
         + sources_map.CSS + "</style>\n"
-        + theme.utility_bar(lang=lang) + theme.topbar("sources", lang, "/sources.html")
+        + theme.utility_bar(lang=lang) + theme.topbar("catalogs", lang, "/catalogs")
         + BODY + theme.footer(lang=lang))
 
     page = i18n.markers(page, lang)
@@ -603,7 +603,7 @@ def build(lang="en"):
     theme.assert_variant_live(page)
 
     page = page.encode("ascii", "xmlcharrefreplace").decode()
-    out = f"{SITE}/sources.html" if primary else f"{SITE}/{lang}/sources.html"
+    out = f"{SITE}/catalogs.html" if primary else f"{SITE}/{lang}/catalogs.html"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w").write(page)
     print("sources page [%s]: %d catalogues, %d surveyed, state=%s (%.0f KB)%s"
@@ -721,7 +721,7 @@ PAGE_CSS = """
 BODY = """
 <div class="hero tex">
   <div class="inner">
-    <p class="overline">⟪Sources⟫</p>
+    <p class="overline">⟪Catalogs⟫</p>
     <h2>⟪Where the entries come from, and how the last harvest went⟫</h2>
     <p class="lede">⟪Every entry is harvested first-hand from a government's own catalogue
       &mdash; never syndicated from an aggregator. This page shows all __N_CAT__ of them, the

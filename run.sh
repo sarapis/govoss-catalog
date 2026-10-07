@@ -24,7 +24,7 @@
 #                appeared; must run AFTER dedupe so the date attaches to the
 #                surviving identity. Backfilled once from the weekly Data: commits
 #   liveness     diffs against the previous liveness.json to find newly-dead repos
-#   build_ui     regenerates catalogue.html from the finished catalog.json
+#   build_ui     regenerates /software (catalogue.html) and / (home.html) from catalog.json
 #   build_site   assembles site/ from tracked sources (html, headers, redirects)
 #   json export  writes site/entries.json + meta.json + by-product + by-category
 #   api page     documents those files; measures them, so must run AFTER export
@@ -147,9 +147,10 @@ if lv["newly_dead"]:
 PY
 
 step "run log"      "$PY" -u runlog.py "$STARTED" "$TRIGGER"
-step "sources page" "$PY" -u build_sources.py   # also writes status.json
-step "api page"     "$PY" -u build_api.py       # measures site/*.json, so runs after export
+step "catalogs page" "$PY" -u build_sources.py  # /catalogs; also writes status.json
+step "docs page"    "$PY" -u build_api.py       # /docs; measures site/*.json, so runs after export
 step "products page" "$PY" -u build_products.py # reads by-product.json, so runs after export
+step "resources page" "$PY" -u build_resources.py # /resources, from resources/ospo-resources.json
 
 # ---- publish -------------------------------------------------------------
 # Without this the weekly run regenerated everything and published none of it:
@@ -251,7 +252,7 @@ publish () {
   echo "wrangler: $WRANGLER  (node $("$NODE" --version))"
   if [ "$route" = "stored-login" ]; then
     echo "no CLOUDFLARE_API_TOKEN and no $tokfile — using wrangler's stored login;"
-    echo "  /sources.html carries this as a warning until a token is in place."
+    echo "  /catalogs carries this as a warning until a token is in place."
     "$WRANGLER" deploy --config wrangler.site.jsonc
   else
     CLOUDFLARE_API_TOKEN="$token" "$WRANGLER" deploy --config wrangler.site.jsonc

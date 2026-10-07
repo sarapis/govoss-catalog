@@ -389,7 +389,7 @@ if __name__ == "__main__":
     except Exception as e:
         # Exit 0 stays: a monitor that can fail the pipeline gets switched off
         # the first time it is wrong. But until 2026-09-10 exiting 0 was the
-        # WHOLE story — steps.tsv recorded `liveness 0`, /sources.html rendered
+        # WHOLE story — steps.tsv recorded `liveness 0`, /catalogs rendered
         # the step green, and the previous liveness.json kept feeding its counts
         # to the page, the run log and every entry's last_checked. "No newly
         # dead repos" read identically whether the sweep ran clean or never ran

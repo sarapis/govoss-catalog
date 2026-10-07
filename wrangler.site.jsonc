@@ -19,9 +19,9 @@
   "assets": {
     "directory": "./site",
     "binding": "ASSETS",
-    // .html URLs are served as-is: every page, link, canonical and hreflang
-    // uses /sources.html, and the default (auto-trailing-slash) would 307 them
-    // to /sources. Checked against the live copy before switching the domain.
+    // "none": no automatic path<->file mapping or 307s. site-worker.js owns the
+    // URL scheme instead - clean paths (/software, /catalogs, ...) served from
+    // <path>.html, / from index.html, and the 301s for the pre-2026-10-07 names.
     "html_handling": "none",
     "not_found_handling": "none"
   }
