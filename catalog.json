@@ -4968,6 +4968,39 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://github.com/helsingborg-stad/api-alarm-integration",
+    "name": "api-alarm-integration",
+    "repo_url": "https://github.com/helsingborg-stad/api-alarm-integration",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "desc_src": "Alarmtj\u00e4nst f\u00f6r helsingborg stad. ",
+  "desc_src_lang": "sv",
+  "entry_url": "https://github.com/helsingborg-stad/api-alarm-integration",
+  "functions": [
+   "integration"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2026-10-07T13:52:15Z",
+  "license": "MIT",
+  "name": "api-alarm-integration",
+  "repo": "https://github.com/helsingborg-stad/api-alarm-integration",
+  "repo_key": "github.com/helsingborg-stad/api-alarm-integration",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Alarm service for the City of Helsingborg.",
+  "source": "SE/helsingborg",
+  "stars": 1,
+  "tier": "index",
+  "translated": true
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://github.com/helsingborg-stad/api-event-manager-widget-examples",
     "name": "api-event-manager-widget-examples",
     "repo_url": "https://github.com/helsingborg-stad/api-event-manager-widget-examples",
@@ -4990,6 +5023,36 @@
   "short_desc": "Examples of widgets for api.helsingborg.se ",
   "source": "SE/helsingborg",
   "stars": 0,
+  "tier": "index"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/api-volunteer-manager",
+    "name": "api-volunteer-manager",
+    "repo_url": "https://github.com/helsingborg-stad/api-volunteer-manager",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/api-volunteer-manager",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2026-02-23T12:39:56Z",
+  "license": "MIT",
+  "name": "api-volunteer-manager",
+  "repo": "https://github.com/helsingborg-stad/api-volunteer-manager",
+  "repo_key": "github.com/helsingborg-stad/api-volunteer-manager",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Managing data for volunteers and their assignments",
+  "source": "SE/helsingborg",
+  "stars": 1,
   "tier": "index"
  },
  {
@@ -22597,6 +22660,39 @@
    "Regione Emilia-Romagna"
   ],
   "version": "1.0.1"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/Customer-feedback",
+    "name": "Customer-feedback",
+    "repo_url": "https://github.com/helsingborg-stad/Customer-feedback",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "desc_src": "Plugin f\u00f6r att samla in feedback p\u00e5 sidor och hantera chattverktyg",
+  "desc_src_lang": "sv",
+  "entry_url": "https://github.com/helsingborg-stad/Customer-feedback",
+  "functions": [
+   "collaboration"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2026-09-09T14:38:02Z",
+  "license": "MIT",
+  "name": "Customer-feedback",
+  "repo": "https://github.com/helsingborg-stad/Customer-feedback",
+  "repo_key": "github.com/helsingborg-stad/customer-feedback",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Plugin for collecting feedback on pages and managing chat tools.",
+  "source": "SE/helsingborg",
+  "stars": 3,
+  "tier": "index",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -60477,6 +60573,34 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://github.com/helsingborg-stad/idea-manager",
+    "name": "idea-manager",
+    "repo_url": "https://github.com/helsingborg-stad/idea-manager",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/idea-manager",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2019-10-08T14:08:19Z",
+  "license": "NOASSERTION",
+  "name": "idea-manager",
+  "repo": "https://github.com/helsingborg-stad/idea-manager",
+  "repo_key": "github.com/helsingborg-stad/idea-manager",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Submit and manage innovative id\u00e9as from users ",
+  "source": "SE/helsingborg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://github.com/IMIO/ideabox.restapi",
     "name": "ideabox.restapi",
     "repo_url": "https://github.com/IMIO/ideabox.restapi",
@@ -79210,6 +79334,38 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://github.com/helsingborg-stad/lix-calculator",
+    "name": "lix-calculator",
+    "repo_url": "https://github.com/helsingborg-stad/lix-calculator",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "desc_src": "R\u00e4knar ut lix-v\u00e4rde p\u00e5 texter i huvudytan f\u00f6r ett inl\u00e4gg. ",
+  "desc_src_lang": "sv",
+  "entry_url": "https://github.com/helsingborg-stad/lix-calculator",
+  "functions": [
+   "office"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2025-11-20T09:21:47Z",
+  "name": "lix-calculator",
+  "repo": "https://github.com/helsingborg-stad/lix-calculator",
+  "repo_key": "github.com/helsingborg-stad/lix-calculator",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Calculates the LIX readability score of the text in the main area of a post.",
+  "source": "SE/helsingborg",
+  "stars": 1,
+  "tier": "index",
+  "translated": true
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://code.gouv.fr/sill/detail?name=Lizmap",
     "name": "Lizmap",
     "repo_url": "https://github.com/3liz/lizmap-web-client",
@@ -79532,6 +79688,34 @@
    "Scotland",
    "United Kingdom"
   ]
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/location-explorer",
+    "name": "location-explorer",
+    "repo_url": "https://github.com/helsingborg-stad/location-explorer",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/location-explorer",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2018-01-04T08:42:37Z",
+  "license": "MIT",
+  "name": "location-explorer",
+  "repo": "https://github.com/helsingborg-stad/location-explorer",
+  "repo_key": "github.com/helsingborg-stad/location-explorer",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Explore nice places to live",
+  "source": "SE/helsingborg",
+  "stars": 0,
+  "tier": "index"
  },
  {
   "active": true,
@@ -87321,6 +87505,34 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://github.com/helsingborg-stad/municipio-faq-nlp-classification",
+    "name": "municipio-faq-nlp-classification",
+    "repo_url": "https://github.com/helsingborg-stad/municipio-faq-nlp-classification",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/municipio-faq-nlp-classification",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2022-06-16T10:37:17Z",
+  "license": "MIT",
+  "name": "municipio-faq-nlp-classification",
+  "repo": "https://github.com/helsingborg-stad/municipio-faq-nlp-classification",
+  "repo_key": "github.com/helsingborg-stad/municipio-faq-nlp-classification",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Classification of articles and faq ",
+  "source": "SE/helsingborg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://github.com/helsingborg-stad/municipio-project-aggregator",
     "name": "municipio-project-aggregator",
     "repo_url": "https://github.com/helsingborg-stad/municipio-project-aggregator",
@@ -91428,6 +91640,36 @@
   ],
   "version": "3.4.9",
   "wikidata": "Q128944229"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/notification-center",
+    "name": "notification-center",
+    "repo_url": "https://github.com/helsingborg-stad/notification-center",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/notification-center",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2018-10-19T13:44:07Z",
+  "license": "NOASSERTION",
+  "name": "notification-center",
+  "repo": "https://github.com/helsingborg-stad/notification-center",
+  "repo_key": "github.com/helsingborg-stad/notification-center",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Plugin to give logged in users notifications when others react comments etc. ",
+  "source": "SE/helsingborg",
+  "stars": 1,
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -95774,6 +96016,37 @@
   "tier": "publiccode",
   "upstream_id": "ddc5ae92-bd70-4c76-8510-0a7e02b0647e",
   "version": "v1.0.0"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/open-hours",
+    "name": "open-hours",
+    "repo_url": "https://github.com/helsingborg-stad/open-hours",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "desc_src": "Skapar enkla shortcodes f\u00f6r n\u00e4r en verksamhet kopplat till sidan \u00e4r \u00f6ppen",
+  "desc_src_lang": "sv",
+  "entry_url": "https://github.com/helsingborg-stad/open-hours",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2016-11-09T16:01:10Z",
+  "license": "MIT",
+  "name": "open-hours",
+  "repo": "https://github.com/helsingborg-stad/open-hours",
+  "repo_key": "github.com/helsingborg-stad/open-hours",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Creates simple shortcodes for when an operation linked to the page is open.",
+  "source": "SE/helsingborg",
+  "stars": 0,
+  "tier": "index",
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -135531,6 +135804,36 @@
   "catalogue_count": 1,
   "catalogue_entries": [
    {
+    "entry_url": "https://github.com/helsingborg-stad/student-council-protocols",
+    "name": "student-council-protocols",
+    "repo_url": "https://github.com/helsingborg-stad/student-council-protocols",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/student-council-protocols",
+  "functions": [
+   "documents"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2023-01-05T02:38:44Z",
+  "license": "NOASSERTION",
+  "name": "student-council-protocols",
+  "repo": "https://github.com/helsingborg-stad/student-council-protocols",
+  "repo_key": "github.com/helsingborg-stad/student-council-protocols",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Archive of student council protocols with comment functionality",
+  "source": "SE/helsingborg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
     "entry_url": "https://github.com/helsingborg-stad/student-council-protocols-theme",
     "name": "student-council-protocols-theme",
     "repo_url": "https://github.com/helsingborg-stad/student-council-protocols-theme",
@@ -140773,6 +141076,36 @@
   ],
   "version": "3.7c",
   "wikidata": "Q1935361"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/todo",
+    "name": "todo",
+    "repo_url": "https://github.com/helsingborg-stad/todo",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/todo",
+  "functions": [
+   "case-workflow"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2018-05-11T11:32:47Z",
+  "license": "MIT",
+  "name": "todo",
+  "repo": "https://github.com/helsingborg-stad/todo",
+  "repo_key": "github.com/helsingborg-stad/todo",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "A simple support ticket system based on ACF fields. ",
+  "source": "SE/helsingborg",
+  "stars": 3,
+  "tier": "index"
  },
  {
   "active": true,
@@ -152006,6 +152339,36 @@
   "tier": "index"
  },
  {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://github.com/helsingborg-stad/wp-listings",
+    "name": "wp-listings",
+    "repo_url": "https://github.com/helsingborg-stad/wp-listings",
+    "source": "SE/helsingborg"
+   }
+  ],
+  "composer_type": "wordpress-plugin",
+  "country": "SE",
+  "desc_lang": "en",
+  "entry_url": "https://github.com/helsingborg-stad/wp-listings",
+  "functions": [
+   "dev-tools"
+  ],
+  "functions_inferred": true,
+  "is_fork": false,
+  "last_activity": "2019-04-25T15:16:20Z",
+  "license": "MIT",
+  "name": "wp-listings",
+  "repo": "https://github.com/helsingborg-stad/wp-listings",
+  "repo_key": "github.com/helsingborg-stad/wp-listings",
+  "repo_owner": "helsingborg-stad",
+  "short_desc": "Minimalistic listing plugin for stuff like apartments, selling ads and jobs. ",
+  "source": "SE/helsingborg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
   "active": true,
   "catalogue_count": 1,
   "catalogue_entries": [
@@ -156760,32 +157123,6 @@
  {
   "composer_type": "wordpress-plugin",
   "country": "SE",
-  "desc_lang": "en",
-  "desc_src": "Alarmtj\u00e4nst f\u00f6r helsingborg stad. ",
-  "desc_src_lang": "sv",
-  "entry_url": "https://github.com/helsingborg-stad/api-alarm-integration",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "integration"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2026-10-07T13:52:15Z",
-  "license": "MIT",
-  "name": "api-alarm-integration",
-  "repo": "https://github.com/helsingborg-stad/api-alarm-integration",
-  "repo_key": "github.com/helsingborg-stad/api-alarm-integration",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Alarm service for the City of Helsingborg.",
-  "source": "SE/helsingborg",
-  "stars": 1,
-  "tier": "index",
-  "translated": true
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
   "entry_url": "https://github.com/helsingborg-stad/api-alarm-manager",
   "exclude_reason": "wordpress-plugin",
   "excluded": true,
@@ -156992,29 +157329,6 @@
   "repo_owner": "amagovpt",
   "source": "PT/arte",
   "stars": 0,
-  "tier": "index"
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/api-volunteer-manager",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "data-analytics"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2026-02-23T12:39:56Z",
-  "license": "MIT",
-  "name": "api-volunteer-manager",
-  "repo": "https://github.com/helsingborg-stad/api-volunteer-manager",
-  "repo_key": "github.com/helsingborg-stad/api-volunteer-manager",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Managing data for volunteers and their assignments",
-  "source": "SE/helsingborg",
-  "stars": 1,
   "tier": "index"
  },
  {
@@ -158544,32 +158858,6 @@
   "source": "SE/helsingborg",
   "stars": 0,
   "tier": "index"
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "desc_src": "Plugin f\u00f6r att samla in feedback p\u00e5 sidor och hantera chattverktyg",
-  "desc_src_lang": "sv",
-  "entry_url": "https://github.com/helsingborg-stad/Customer-feedback",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "collaboration"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2026-09-09T14:38:02Z",
-  "license": "MIT",
-  "name": "Customer-feedback",
-  "repo": "https://github.com/helsingborg-stad/Customer-feedback",
-  "repo_key": "github.com/helsingborg-stad/customer-feedback",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Plugin for collecting feedback on pages and managing chat tools.",
-  "source": "SE/helsingborg",
-  "stars": 3,
-  "tier": "index",
-  "translated": true
  },
  {
   "country": "FR",
@@ -161163,27 +161451,6 @@
   "tier": "index"
  },
  {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/idea-manager",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [],
-  "functions_inferred": false,
-  "is_fork": false,
-  "last_activity": "2019-10-08T14:08:19Z",
-  "license": "NOASSERTION",
-  "name": "idea-manager",
-  "repo": "https://github.com/helsingborg-stad/idea-manager",
-  "repo_key": "github.com/helsingborg-stad/idea-manager",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Submit and manage innovative id\u00e9as from users ",
-  "source": "SE/helsingborg",
-  "stars": 0,
-  "tier": "index"
- },
- {
   "country": "BE",
   "entry_url": "https://github.com/IMIO/ideabox.policy",
   "exclude_reason": "no-description",
@@ -162554,31 +162821,6 @@
   ]
  },
  {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "desc_src": "R\u00e4knar ut lix-v\u00e4rde p\u00e5 texter i huvudytan f\u00f6r ett inl\u00e4gg. ",
-  "desc_src_lang": "sv",
-  "entry_url": "https://github.com/helsingborg-stad/lix-calculator",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "office"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2025-11-20T09:21:47Z",
-  "name": "lix-calculator",
-  "repo": "https://github.com/helsingborg-stad/lix-calculator",
-  "repo_key": "github.com/helsingborg-stad/lix-calculator",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Calculates the LIX readability score of the text in the main area of a post.",
-  "source": "SE/helsingborg",
-  "stars": 1,
-  "tier": "index",
-  "translated": true
- },
- {
   "categories": [
    "sprakmodeller"
   ],
@@ -162615,27 +162857,6 @@
   "repo_key": "code.overheid.nl/rws/lmwsip",
   "repo_owner": "RWS",
   "source": "NL/code.overheid.nl",
-  "stars": 0,
-  "tier": "index"
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/location-explorer",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [],
-  "functions_inferred": false,
-  "is_fork": false,
-  "last_activity": "2018-01-04T08:42:37Z",
-  "license": "MIT",
-  "name": "location-explorer",
-  "repo": "https://github.com/helsingborg-stad/location-explorer",
-  "repo_key": "github.com/helsingborg-stad/location-explorer",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Explore nice places to live",
-  "source": "SE/helsingborg",
   "stars": 0,
   "tier": "index"
  },
@@ -163761,27 +163982,6 @@
   "tier": "index"
  },
  {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/municipio-faq-nlp-classification",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [],
-  "functions_inferred": false,
-  "is_fork": false,
-  "last_activity": "2022-06-16T10:37:17Z",
-  "license": "MIT",
-  "name": "municipio-faq-nlp-classification",
-  "repo": "https://github.com/helsingborg-stad/municipio-faq-nlp-classification",
-  "repo_key": "github.com/helsingborg-stad/municipio-faq-nlp-classification",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Classification of articles and faq ",
-  "source": "SE/helsingborg",
-  "stars": 0,
-  "tier": "index"
- },
- {
   "country": "SE",
   "entry_url": "https://github.com/helsingborg-stad/municipio-hackaton",
   "exclude_reason": "no-description",
@@ -164879,29 +165079,6 @@
   "wikidata_via": "comptoir:exact_name"
  },
  {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/notification-center",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2018-10-19T13:44:07Z",
-  "license": "NOASSERTION",
-  "name": "notification-center",
-  "repo": "https://github.com/helsingborg-stad/notification-center",
-  "repo_key": "github.com/helsingborg-stad/notification-center",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Plugin to give logged in users notifications when others react comments etc. ",
-  "source": "SE/helsingborg",
-  "stars": 1,
-  "tier": "index"
- },
- {
   "country": "SE",
   "entry_url": "https://github.com/helsingborg-stad/npm-github-package-boilerplate",
   "exclude_reason": "no-description",
@@ -165217,30 +165394,6 @@
    "vastervik_k",
    "valdermarsvik_k"
   ]
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "desc_src": "Skapar enkla shortcodes f\u00f6r n\u00e4r en verksamhet kopplat till sidan \u00e4r \u00f6ppen",
-  "desc_src_lang": "sv",
-  "entry_url": "https://github.com/helsingborg-stad/open-hours",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [],
-  "functions_inferred": false,
-  "is_fork": false,
-  "last_activity": "2016-11-09T16:01:10Z",
-  "license": "MIT",
-  "name": "open-hours",
-  "repo": "https://github.com/helsingborg-stad/open-hours",
-  "repo_key": "github.com/helsingborg-stad/open-hours",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Creates simple shortcodes for when an operation linked to the page is open.",
-  "source": "SE/helsingborg",
-  "stars": 0,
-  "tier": "index",
-  "translated": true
  },
  {
   "country": "DK",
@@ -169137,29 +169290,6 @@
   ]
  },
  {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/student-council-protocols",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "documents"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2023-01-05T02:38:44Z",
-  "license": "NOASSERTION",
-  "name": "student-council-protocols",
-  "repo": "https://github.com/helsingborg-stad/student-council-protocols",
-  "repo_key": "github.com/helsingborg-stad/student-council-protocols",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Archive of student council protocols with comment functionality",
-  "source": "SE/helsingborg",
-  "stars": 0,
-  "tier": "index"
- },
- {
   "composer_type": "wordpress-muplugin",
   "country": "SE",
   "entry_url": "https://github.com/helsingborg-stad/subdirectory-to-subdomain-redirect",
@@ -169446,29 +169576,6 @@
   "repo_owner": "MinVWS",
   "source": "NL/code.overheid.nl",
   "stars": 0,
-  "tier": "index"
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/todo",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "case-workflow"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2018-05-11T11:32:47Z",
-  "license": "MIT",
-  "name": "todo",
-  "repo": "https://github.com/helsingborg-stad/todo",
-  "repo_key": "github.com/helsingborg-stad/todo",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "A simple support ticket system based on ACF fields. ",
-  "source": "SE/helsingborg",
-  "stars": 3,
   "tier": "index"
  },
  {
@@ -170579,29 +170686,6 @@
   "repo": "https://github.com/helsingborg-stad/wp-graphql-municipio",
   "repo_key": "github.com/helsingborg-stad/wp-graphql-municipio",
   "repo_owner": "helsingborg-stad",
-  "source": "SE/helsingborg",
-  "stars": 0,
-  "tier": "index"
- },
- {
-  "composer_type": "wordpress-plugin",
-  "country": "SE",
-  "desc_lang": "en",
-  "entry_url": "https://github.com/helsingborg-stad/wp-listings",
-  "exclude_reason": "wordpress-plugin",
-  "excluded": true,
-  "functions": [
-   "dev-tools"
-  ],
-  "functions_inferred": true,
-  "is_fork": false,
-  "last_activity": "2019-04-25T15:16:20Z",
-  "license": "MIT",
-  "name": "wp-listings",
-  "repo": "https://github.com/helsingborg-stad/wp-listings",
-  "repo_key": "github.com/helsingborg-stad/wp-listings",
-  "repo_owner": "helsingborg-stad",
-  "short_desc": "Minimalistic listing plugin for stuff like apartments, selling ads and jobs. ",
   "source": "SE/helsingborg",
   "stars": 0,
   "tier": "index"
