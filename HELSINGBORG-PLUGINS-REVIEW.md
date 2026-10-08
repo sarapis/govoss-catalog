@@ -1,5 +1,11 @@
 # Helsingborg: the WordPress plugins set aside - for a decision
 
+> **DECIDED 2026-10-08 (owner): option 2.** Group A is reinstated by repo URL in
+> `filters.REINSTATED_PLUGINS`, pinned in `test_filters.py` - 12 repos, not 13:
+> `easy-to-read-alternative` was archived by the city on 2026-10-05 and the org scan skips
+> archived repos. Groups B and C stay set aside; option 3 (Municipio modules under Municipio)
+> was not taken. The 12 arrive as Recently added, by choice. Below is the review as written.
+
 > Prepared 2026-09-29 from the 2026-09-28 run. **Nothing here has been changed**: `filters.py` still sets all 103 aside as `wordpress-plugin` (they declare `wordpress-plugin` / `wordpress-muplugin` in `composer.json`). This is the review CONTINUE.md asked for, done the way the iMio rules were reviewed. Two iMio rules were removed after catching real products, so the question is whether this rule catches real software too.
 
 ## What is actually at stake: 73, not 103

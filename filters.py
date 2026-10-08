@@ -82,6 +82,29 @@ LICENCE_RULES = [
 ]
 
 
+# Helsingborg WordPress plugins that ARE municipal tools, reinstated by the owner
+# 2026-10-08 (HELSINGBORG-PLUGINS-REVIEW.md, group A). An explicit list of REPO
+# URLS, never a name pattern: names are not evidence. Only the plugin rule is
+# lifted - every other rule (fork, licence, no description, names) still applies.
+# Not here: easy-to-read-alternative (group A in the review) - the city archived it
+# on 2026-10-05, and the org scan skips archived repos by design.
+REINSTATED_PLUGINS = {
+    "https://github.com/helsingborg-stad/" + n.lower() for n in (
+        "api-volunteer-manager", "api-alarm-integration", "Customer-feedback",
+        "idea-manager", "student-council-protocols", "todo", "lix-calculator",
+        "municipio-faq-nlp-classification", "open-hours", "location-explorer",
+        "wp-listings", "notification-center",
+    )
+}
+
+
+def _repo_key(url):
+    """https, lower case, no trailing slash or .git - how the list is matched."""
+    u = (url or "").strip().lower().replace("http://", "https://", 1).rstrip("/")
+    u = u[:-4] if u.endswith(".git") else u
+    return u.rstrip("/")
+
+
 def classify(rec):
     """-> (excluded: bool, reason: str|None)"""
     # Never exclude anything that shipped a publiccode.yml: the publisher
@@ -97,7 +120,8 @@ def classify(rec):
     # of a platform (Helsingborg's Municipio) or a site tweak, not a product on its
     # own. EVIDENCE, like is_fork - a repo named "*-plugin" with no such
     # declaration is never caught. Themes are kept: Municipio IS a theme.
-    if rec.get("composer_type") in ("wordpress-plugin", "wordpress-muplugin"):
+    if (rec.get("composer_type") in ("wordpress-plugin", "wordpress-muplugin")
+            and _repo_key(rec.get("repo")) not in REINSTATED_PLUGINS):
         return True, "wordpress-plugin"
 
     lic = (rec.get("license") or "").strip()

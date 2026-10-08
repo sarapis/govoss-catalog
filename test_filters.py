@@ -158,12 +158,54 @@ CASES = [
      r("x", tier="publiccode", composer_type="wordpress-plugin"), (False, None)),
     ("a fork plugin is reported as a fork", r("x", is_fork=True, composer_type="wordpress-plugin"),
      (True, "upstream-fork")),
+    # Reinstated by the owner 2026-10-08 (HELSINGBORG-PLUGINS-REVIEW.md group A): matched
+    # by REPO URL, so the same plugin under any other URL, and every module and
+    # plumbing plugin, stays set aside; the list lifts the plugin rule ONLY.
+] + [
+    # every reinstated repo, written out HERE (never read from filters.py), so a
+    # repo dropped from the list - or one added - fails a check
+    ("reinstated: %s" % n, r(n, composer_type="wordpress-plugin",
+                              repo="https://github.com/helsingborg-stad/" + n), (False, None))
+    for n in ("api-volunteer-manager", "api-alarm-integration", "Customer-feedback",
+              "idea-manager", "student-council-protocols", "todo", "lix-calculator",
+              "municipio-faq-nlp-classification", "open-hours", "location-explorer",
+              "wp-listings", "notification-center")
+] + [
+    ("a reinstated municipal tool is kept",
+     r("lix-calculator", composer_type="wordpress-plugin", repo="https://github.com/helsingborg-stad/lix-calculator"), (False, None)),
+    ("...matched however the URL is written",
+     r("x", composer_type="wordpress-plugin", repo="http://GitHub.com/helsingborg-stad/Customer-feedback.git/"),
+     (False, None)),
+    ("...but only that repo: the same name elsewhere is still a plugin",
+     r("lix-calculator", composer_type="wordpress-plugin", repo="https://github.com/someone/lix-calculator"),
+     (True, "wordpress-plugin")),
+    ("a Municipio module stays set aside (group B)",
+     r("modularity-form-builder", composer_type="wordpress-plugin", repo="https://github.com/helsingborg-stad/modularity-form-builder"),
+     (True, "wordpress-plugin")),
+    ("WordPress plumbing stays set aside (group C)",
+     r("wpmu-security", composer_type="wordpress-muplugin", repo="https://github.com/helsingborg-stad/wpmu-security"),
+     (True, "wordpress-plugin")),
+    ("the archived easy-to-read-alternative is not on the list",
+     r("x", composer_type="wordpress-plugin", repo="https://github.com/helsingborg-stad/easy-to-read-alternative"),
+     (True, "wordpress-plugin")),
+    ("a reinstated repo that turns out a fork is still a fork",
+     r("todo", is_fork=True, composer_type="wordpress-plugin", repo="https://github.com/helsingborg-stad/todo"), (True, "upstream-fork")),
+    ("a reinstated repo with no description is still set aside",
+     r("todo", composer_type="wordpress-plugin", repo="https://github.com/helsingborg-stad/todo", short_desc=""), (True, "no-description")),
 
     # ---- ordinary software passes
     ("plain software", r("QGIS"), (False, None)),
     ("a name merely containing 'action'", r("transaction-manager"), (False, None)),
     ("a name merely containing 'server'", r("mailserver-tools"), (False, None)),
 ]
+
+
+import filters as _F
+# ...and no repo beyond those twelve is on it (a URL added without a decision)
+EXTRA = sorted(_F.REINSTATED_PLUGINS - {"https://github.com/helsingborg-stad/" + n.lower() for n in (
+    "api-volunteer-manager", "api-alarm-integration", "Customer-feedback", "idea-manager",
+    "student-council-protocols", "todo", "lix-calculator", "municipio-faq-nlp-classification",
+    "open-hours", "location-explorer", "wp-listings", "notification-center")})
 
 
 def main():
@@ -177,6 +219,8 @@ def main():
     for label, rec, want in CASES:
         got = filters.classify(rec)
         ok(label, got == want, f"classify: {label}: expected {want!r}, got {got!r}")
+    ok("no repo is reinstated beyond the twelve the owner chose", EXTRA == [],
+       f"REINSTATED_PLUGINS carries repos nobody decided on: {EXTRA}")
 
     # classify() must not mutate its input — filters.py's main loop sets
     # excluded/exclude_reason itself, and a classify() that also wrote them

@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 13 suites, 890 checks, all manual
+for t in test_*.py; do python3 $t; done     # 13 suites, 911 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -30,8 +30,9 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
 
 - **`sources.py` is the single source of truth** for labels, links, routes, `SITE_URL`, country
   names and the survey of rejected catalogues; `/sources.html` + `/sources.json` render it.
-- **Scope: catalogues a government produces (or a government body's own forge org). Never a
-  list govoss curates itself** (owner, 2026-09-23; the parked UK list is `UK-CURATED-DRAFT.md`).
+- **Scope: catalogues a government produces, and a government body's own forge org (GitHub/
+  GitLab/Forgejo; confirmed by the owner 2026-10-08 - 7 of the 20 sources). Never a list
+  govoss curates itself** (owner, 2026-09-23; the parked UK list is `UK-CURATED-DRAFT.md`).
 - **The pattern: find the machine route the catalogue's own site is built from, and read that.**
   Never scrape a rendered page. Every source here was found that way.
 - **Checkpoint keys (`os2`, `ch`) are not `sources.py` keys (`DK/os2`, `CH/swiss`).** Look
@@ -46,6 +47,8 @@ Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/gov
   - Taiwan: use the official open-data export, not the SPA's POST API.
   - Helsingborg: the org scan reads each repo's `composer.json` (`composer=True`); a declared
     `wordpress-plugin`/`wordpress-muplugin` is set aside by filters.py. Themes stay - Municipio IS one.
+    EXCEPT the 12 municipal tools in `filters.REINSTATED_PLUGINS` (owner, 2026-10-08): an explicit
+    REPO-URL list, never a name pattern, lifting the plugin rule only. Pinned by `test_filters.py`.
   - DPG: repo URLs are free text; extras go to `extra_repos`. Deep links are HEAD-verified.
   - Switzerland: the Federal Chancellery's catalogue (opensource.admin.ch) via the API its site
     is built from (a Developers Italia API on the vendor's host); `repo` comes from each
@@ -271,7 +274,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Thirteen suites, 890 checks, **all manual** - a test that can fail the weekly publish is one someone
+Thirteen suites, 911 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -286,7 +289,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
-| `test_filters.py` | `classify()` incl. licence and `wordpress-plugin`, the `replaces.json` gate, publisher `replaces:` |
+| `test_filters.py` | `classify()` incl. licence and `wordpress-plugin` and the 12 reinstated Helsingborg repos (no more, no fewer), the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos cards, map pins (scaled up on narrow screens), the stacked phone map, the pin popup, Resources links, folded code links, no entity in a script, projection (12f), hosting files |
