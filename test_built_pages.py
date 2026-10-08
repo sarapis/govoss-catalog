@@ -475,6 +475,13 @@ def main():
             # no figures in a header lede (owner, 2026-10-07): a number there is one
             # more thing to keep updated; the counts live in cards, tiles and lists
             led = re.search(r'<div class="ph tex">.*?<p class="lede">(.*?)</p>', pg, re.S)
+            # ONE line at 1024px and up (owner, 2026-10-08). Measured: ~113 characters
+            # of the lede font fit the 929px column at 1024; 100 keeps a margin for the
+            # widest words. A static stand-in for a measurement - re-measure in the
+            # browser when the font or the header padding changes.
+            ltext = html.unescape(re.sub(r"<[^>]+>", "", led.group(1))).strip() if led else ""
+            check("%s: the header lede fits one line at 1024px (<= 100 characters)" % pname,
+                  len(ltext) <= 100, True)
             check("%s: the header lede carries no numbers" % pname,
                   re.findall(r"\d[\d,.]*", re.sub(r"<[^>]+>|&#?\w+;", "", led.group(1))) if led else ["no lede"],
                   [])

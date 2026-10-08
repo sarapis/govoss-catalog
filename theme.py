@@ -489,7 +489,9 @@ p{margin:0;}
 .ph{padding:30px 0 22px;border-bottom:1px solid var(--border);}
 .ph .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
 .ph h1{font-size:40px;}
-.ph .lede{font-size:17px;line-height:1.5;color:var(--ink-600);max-width:62em;text-wrap:pretty;}
+/* full width, and ONE line at 1024px and up (owner, 2026-10-08): a lede is written to fit -
+   about 113 characters fit at 1024 - and wraps only on narrower screens */
+.ph .lede{font-size:17px;line-height:1.5;color:var(--ink-600);width:100%;}
 .ph-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12.5px;
   color:var(--ink-600);}
 .ph-meta .ph-l{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.1em;

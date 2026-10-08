@@ -258,7 +258,7 @@ PAGE_CSS = """
 
 BODY = theme.page_header(
     '⟪Docs⟫',
-    "⟪Take the data, don't scrape the page: everything this site displays is static JSON, the whole catalog in one request, with no key, no rate limit, no pagination and no account. CORS is open.⟫",
+    "⟪Take the data, don't scrape the page: static JSON, with no key, no pagination and CORS open.⟫",
     [theme.data_links('/entries.json'),
      '<a href="#mcp">⟪The MCP server⟫</a>',
      '<span>⟪Rebuilt __GEN__⟫</span>']) + """

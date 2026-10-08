@@ -720,7 +720,7 @@ PAGE_CSS = """
 
 BODY = theme.page_header(
     '⟪Catalogs⟫',
-    "⟪Every entry is harvested first-hand from a government's own catalogue &mdash; never syndicated from an aggregator. This page shows each of them, the catalogues that were surveyed and rejected, and whether the machine is still running.⟫",
+    '⟪The government catalogs we harvest first-hand, and how the latest harvest went.⟫',
     ['<span class="stamp __STATE_CLS__">__ICON_SEAL__ ⟪Last updated __RUN_AT__ &middot; __STATE_TXT__ in __RUN_DUR__⟫</span>',
      theme.data_links('/sources.json', '/catalogues.geo.json', '/status.json')]) + """
 <div class="wrap">

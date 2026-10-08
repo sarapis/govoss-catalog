@@ -361,7 +361,7 @@ PAGE_CSS = """
 
 BODY = theme.page_header(
     '⟪OSPOs⟫',
-    '⟪Offices that help their organisations use, publish and contribute to open source, in government and in universities and research institutes.⟫',
+    '⟪Open source program offices in government, universities and research institutes.⟫',
     [theme.data_links('/ospos.json')]) + """
 <div class="wrap">
   <main id="main">
