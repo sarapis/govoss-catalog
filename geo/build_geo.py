@@ -306,64 +306,50 @@ def main():
     ospo_frames(by_code, sha)
 
 
-# ---- the /ospos map (build_ospos.py): North America, Europe and Asia side by side.
-# Points are placed at BUILD time from ospos/locations.json, so this file stores
-# each frame's projection (centre, scale s, offset ox/oy) beside its land - the
-# weekly build then needs no shapely. `probe` pins the projection: build_ospos's
-# own copy of laea() must put these lon/lat at these x/y (test_built_pages 12f).
+# ---- the /ospos map (build_ospos.py): ONE world map (owner, 2026-10-09 - it was
+# three regional frames, each its own projection). Equal Earth (Savric, Patterson &
+# Jenny, 2018): equal-area like the frames' LAEA, but made for the whole world.
+# Points are placed at BUILD time from ospos/locations.json, so this file stores the
+# projection's scale and offset beside the land - the weekly build needs no shapely.
+# `probe` pins the projection: build_ospos's own copy of equal_earth() must put
+# these lon/lat at these x/y (test_built_pages 12f).
 OSPO_OUT = os.path.join(HERE, "geo", "ospo_frames.json")
-OSPO_FRAMES = [
-    ("northam", {"centre": (-96.0, 39.0), "box": (-125.0, 24.0, -66.5, 50.0)}, 500.0),
-    # north to 61.5 and east to 27 since 2026-10-09: Helsinki, Espoo and Stockholm
-    # (TODO's corporate OSPOs) sat above the old 59N edge
-    ("europe", {"centre": (10.0, 51.0), "box": (-11.0, 35.5, 27.0, 61.5)}, 440.0),
-    # 2026-10-09, for TODO's corporate OSPOs in China, Japan, Korea, India, Taiwan.
-    # South America (one company each in Brazil and Argentina) has no frame: the
-    # page names them as not on the map rather than drawing a near-empty continent.
-    ("asia", {"centre": (108.0, 30.0), "box": (68.0, 8.0, 146.0, 46.0)}, 440.0),
-]
+OSPO_WORLD = {"box": (-180.0, -47.0, 180.0, 84.0), "w": 1000.0}   # no Antarctica, no empty Southern Ocean
+
+
+def equal_earth(lon, lat, z=None):
+    A1, A2, A3, A4, M = 1.340264, -0.081106, 0.000893, 0.003796, math.sqrt(3) / 2
+    lam, phi = math.radians(lon), math.radians(lat)
+    t = math.asin(M * math.sin(phi))
+    t2, t6 = t * t, t ** 6
+    x = 2 * math.sqrt(3) * lam * math.cos(t) / (3 * (A1 + 3 * A2 * t2 + t6 * (7 * A3 + 9 * A4 * t2)))
+    y = t * (A1 + A2 * t2 + t6 * (A3 + A4 * t2))
+    return x, -y              # SVG y grows downward
 
 
 def ospo_frames(by_code, sha):
-    gap, x, frames, heights = 18.0, 0.0, {}, []
-    for k, fr, w in OSPO_FRAMES:
-        f, bx, s = fit(fr, w)
-        h = (bx[3] - bx[1]) * s
-        frames[k] = {"centre": list(fr["centre"]), "s": s, "ox": x - bx[0] * s, "oy": -bx[1] * s,
-                     "rect": [round(x, 1), 0.0, w, round(h, 1)], "_f": f}
-        heights.append(h)
-        x += w + gap
-    H = max(heights)
-    for k, fr in frames.items():                      # centre each frame vertically
-        dy = (H - fr["rect"][3]) / 2
-        fr["oy"] += dy
-        fr["rect"][1] = round(dy, 1)
-    out = {"_about": "Land outlines and projections for the /ospos map. Written by "
+    x0, y0, x1, y1 = OSPO_WORLD["box"]
+    bx = proj_geom(densified_box((x0, y0, x1, y1)), equal_earth).bounds
+    s = OSPO_WORLD["w"] / (bx[2] - bx[0])
+    ox, oy = -bx[0] * s, -bx[1] * s
+    W, H = round((bx[2] - bx[0]) * s, 1), round((bx[3] - bx[1]) * s, 1)
+    world = unary_union(list(by_code.values())).intersection(box(x0, y0, x1, y1))
+    pg = proj_geom(world, equal_earth)
+    pg = transform(lambda xs, ys, zs=None: (tuple(v * s + ox for v in xs), tuple(v * s + oy for v in ys)), pg)
+    land = polys_only(make_valid(pg)).simplify(0.5, preserve_topology=True)
+    parts = [q for q in getattr(land, "geoms", [land]) if isinstance(q, Polygon) and q.area >= 1.5]
+    px, py = equal_earth(2.35, 48.85)                               # Paris
+    out = {"_about": "Land outline and projection (Equal Earth) for the /ospos world map. Written by "
                      "geo/build_geo.py beside catalogue_shapes.json; read by build_ospos.py.",
-           "source_sha256": sha, "viewbox": [0, 0, round(x - gap, 1), round(H, 1)], "frames": {}}
-    for (k, fr_def, _w), fr in zip(OSPO_FRAMES, frames.values()):
-        rx, ry, rw, rh = fr["rect"]
-        clip = box(rx, ry, rx + rw, ry + rh)
-        lonlat = box(*fr_def["box"]).buffer(20)
-        near = unary_union([g for g in by_code.values() if g.intersects(lonlat)])
-        f, s_, ox, oy = fr["_f"], fr["s"], fr["ox"], fr["oy"]
-        pg = proj_geom(near.intersection(box(fr_def["box"][0] - 15, fr_def["box"][1] - 10,
-                                             fr_def["box"][2] + 15, fr_def["box"][3] + 10)), f)
-        pg = transform(lambda xs, ys, zs=None: (tuple(v * s_ + ox for v in xs),
-                                               tuple(v * s_ + oy for v in ys)), pg)
-        land = polys_only(make_valid(pg).intersection(clip)).simplify(0.8, preserve_topology=True)
-        parts = [p for p in getattr(land, "geoms", [land]) if isinstance(p, Polygon) and p.area >= 2.0]
-        lon0, lat0 = (fr_def["box"][0] + fr_def["box"][2]) / 2, (fr_def["box"][1] + fr_def["box"][3]) / 2
-        px, py = f(lon0, lat0)
-        out["frames"][k] = {"centre": fr["centre"], "s": s_, "ox": ox, "oy": oy, "rect": fr["rect"],
-                            "land": to_d(MultiPolygon(parts)),
-                            "probe": {"lon": lon0, "lat": lat0,
-                                      "x": round(px * s_ + ox, 3), "y": round(py * s_ + oy, 3)}}
+           "source_sha256": sha, "viewbox": [0, 0, W, H],
+           "frames": {"world": {"projection": "equal-earth", "s": s, "ox": ox, "oy": oy,
+                                "rect": [0.0, 0.0, W, H], "land": to_d(MultiPolygon(parts)),
+                                "probe": {"lon": 2.35, "lat": 48.85,
+                                          "x": round(px * s + ox, 3), "y": round(py * s + oy, 3)}}}}
     with open(OSPO_OUT, "w") as fh:
         fh.write("{\n" + ",\n".join(json.dumps(k) + ": " + json.dumps(out[k], sort_keys=True, separators=(",", ":"))
                                      for k in sorted(out)) + "\n}\n")
-    print("wrote %s (%.0f KB), frames %s" % (OSPO_OUT, os.path.getsize(OSPO_OUT) / 1024,
-                                             {k: v["rect"] for k, v in out["frames"].items()}))
+    print("wrote %s (%.0f KB), world %sx%s" % (OSPO_OUT, os.path.getsize(OSPO_OUT) / 1024, W, H))
 
 
 if __name__ == "__main__":

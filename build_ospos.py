@@ -8,7 +8,7 @@ stay English on every language copy; only the chrome is translated.
 
 Two views of one list, like /catalogs: cards (the default, and all a reader
 without JavaScript gets) and a map. The map is inline SVG from the committed
-geo/ospo_frames.json (North America, Europe, Asia; written by geo/build_geo.py);
+geo/ospo_frames.json (one world map, Equal Earth; written by geo/build_geo.py);
 each office is placed from ospos/locations.json - hand-placed, or for TODO's
 companies their Wikidata headquarters (ospos/place_from_wikidata.py, `via`). Offices sharing a
 spot (three in Paris, two in The Hague) share one dot that names them all.
@@ -46,9 +46,6 @@ PIN = "M0,0C-1.6,-3.4 -6,-6.2 -6,-10A6,6 0 1 1 6,-10C6,-6.2 1.6,-3.4 0,0Z"
 # Pins nearer than this (map units, before scaling) merge into one numbered pin.
 MERGE_WITHIN = 9
 
-# Gap between the frames when the map is stacked for phones (map units).
-STACK_GAP = 12
-
 # Card and filter order: government first, as the site is about government.
 TYPE_ORDER = ("government", "academic", "corporate")
 
@@ -83,25 +80,22 @@ def flag(cc):
     return ""
 
 
-def laea(lon0, lat0):
-    """The projection geo/build_geo.py used for these frames (spherical Lambert
-    azimuthal equal-area). Pinned against each frame's `probe` by
-    test_built_pages.py, so a drift between the two copies fails a check."""
-    l0, p0 = math.radians(lon0), math.radians(lat0)
-    sp0, cp0 = math.sin(p0), math.cos(p0)
-
-    def f(lon, lat):
-        lam, phi = math.radians(lon), math.radians(lat)
-        c = math.cos(phi) * math.cos(lam - l0)
-        k = math.sqrt(2.0 / max(1e-12, 1.0 + sp0 * math.sin(phi) + cp0 * c))
-        return k * math.cos(phi) * math.sin(lam - l0), -k * (cp0 * math.sin(phi) - sp0 * c)
-    return f
+def equal_earth(lon, lat):
+    """The projection geo/build_geo.py draws the world map in (Equal Earth). Pinned
+    against the frame's `probe` by test_built_pages.py, so a drift between the two
+    copies fails a check."""
+    A1, A2, A3, A4, M = 1.340264, -0.081106, 0.000893, 0.003796, math.sqrt(3) / 2
+    lam, phi = math.radians(lon), math.radians(lat)
+    t = math.asin(M * math.sin(phi))
+    t2, t6 = t * t, t ** 6
+    x = 2 * math.sqrt(3) * lam * math.cos(t) / (3 * (A1 + 3 * A2 * t2 + t6 * (7 * A3 + 9 * A4 * t2)))
+    return x, -t * (A1 + A2 * t2 + t6 * (A3 + A4 * t2))
 
 
 def place(frames, lon, lat):
     """(frame, x, y) for the first frame whose rectangle holds the point, else None."""
     for k, fr in frames.items():
-        x, y = laea(*fr["centre"])(lon, lat)
+        x, y = equal_earth(lon, lat)
         x, y = x * fr["s"] + fr["ox"], y * fr["s"] + fr["oy"]
         rx, ry, rw, rh = fr["rect"]
         if rx <= x <= rx + rw and ry <= y <= ry + rh:
@@ -239,19 +233,9 @@ def build(lang, data, locs, geo, res):
         out.append("</svg>")
         return "".join(out)
 
-    # side by side as build_geo laid them out; and, for phones, STACKED - each frame
-    # centred on the widest, one under the other - so each gets the full width
-    wide = draw("omap-wide", geo["viewbox"], {k: (0, 0) for k in geo["frames"]})
-    tw = max(fr["rect"][2] for fr in geo["frames"].values())
-    shift, th = {}, 0.0
-    # stacked in the wide layout's left-to-right order (North America, Europe, Asia);
-    # the file's keys are sorted, which put Asia first on a phone
-    for k, fr in sorted(geo["frames"].items(), key=lambda kv: kv[1]["rect"][0]):
-        rx, ry, rw, rh = fr["rect"]
-        shift[k] = ((tw - rw) / 2 - rx, th - ry)
-        th += rh + STACK_GAP
-    tall = draw("omap-tall", [0, 0, tw, round(th - STACK_GAP, 1)], shift)
-    svg = [wide, tall]
+    # one world map (owner, 2026-10-09; it was three regional frames, and a second,
+    # stacked layout for phones)
+    svg = [draw("omap-world", geo["viewbox"], {k: (0, 0) for k in geo["frames"]})]
     note = ""
     if unplaced:
         note = ('<p class="onote-map">%s</p>'
@@ -345,9 +329,7 @@ PAGE_CSS = """
    narrow screens, about the tip (the place), so a pin stays a usable tap target */
 .opin{transform:scale(calc(var(--pin,1) * var(--k,1)));transform-origin:0 0;}
 @media (max-width:800px){.omap-svg{--pin:1.5;}}
-/* phones get the stacked layout: each frame at the full width, so pins need less help */
-.omap-tall{display:none;}
-@media (max-width:520px){.omap-wide{display:none;}.omap-tall{display:block;--pin:1.6;}}
+@media (max-width:520px){.omap-svg{--pin:2.2;}}
 .odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
 .odot.government path{fill:var(--primary);}
 .odot.academic path{fill:var(--green);}
