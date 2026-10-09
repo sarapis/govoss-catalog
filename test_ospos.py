@@ -176,23 +176,40 @@ def main():
     check("contract: govoss's own licence object", C.LICENCE,
           {"govoss_fields": "CC0 1.0, govoss (https://govoss.cat)",
            "lists": "each list's own: sources[*].licence"})
-    # nine codes and "corporate" added 2026-10-09 with TODO's corporate OSPOs
+    # nine codes and "corporate" added 2026-10-09 with TODO's corporate OSPOs; UY the
+    # same day (Mercado Libre's principal office)
     check("contract: the documented country codes", sorted(C.COUNTRIES),
           ["AR", "BR", "CN", "DE", "DK", "EL", "ES", "FI", "FR", "GB", "IE", "IN", "INT", "JP",
-           "KR", "LU", "NL", "SE", "TW", "US"])
+           "KR", "LU", "NL", "SE", "TW", "US", "UY"])
     check("contract: the display name per code (UNNYC's headings)", C.COUNTRY_NAMES,
           {"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
                      "GB": "United Kingdom", "IE": "Ireland", "INT": "International",
                      "LU": "Luxembourg", "NL": "Netherlands", "US": "United States",
                      "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland",
                      "IN": "India", "JP": "Japan", "KR": "South Korea", "SE": "Sweden",
-                     "TW": "Taiwan"})
+                     "TW": "Taiwan", "UY": "Uruguay"})
     check("contract: types", sorted(C.TYPES), ["academic", "corporate", "government"])
     check("contract: a corporate row with no description and no location is valid",
           C.row_problems({"id": "todo-x", "source": "todo-landscape", "type": "corporate",
                           "name": "X", "url": "https://x.example/", "description": "",
                           "email": None, "policy": None, "code": [], "country": None,
                           "location": None}), [])
+    UNPLACED = {"id": "todo-x", "source": "todo-landscape", "type": "corporate", "name": "X",
+                "url": "https://x.example/", "description": "", "email": None, "policy": None,
+                "code": [], "country": None, "location": None}
+    check("contract: placement is all or nothing outside FLOSS-PSO - a country with no "
+          "location, or a location with no country, is a problem",
+          [len(C.row_problems(dict(UNPLACED, **kw))) > 0 for kw in (
+              {"country": "US"},
+              {"location": {"lat": 1, "lon": 1, "place": "P", "basis": "hq", "country": "US"}},
+              {"country": "US", "location": {"lat": 1, "lon": 1, "place": "P", "basis": "hq",
+                                             "country": "US"}})],
+          [True, True, False])
+    check("contract: the about text states the per-source placement rule",
+          all(x in open(os.path.join(HERE, "build_ospos.py")).read() for x in (
+              "every FLOSS-PSO row (source 'floss-pso') has a ",
+              "'academic-map' and 'todo-landscape' MAY have country null and location null")),
+          True)
     check("contract: location bases", sorted(C.BASES), ["hq", "seat"])
 
     # ---- every rule fails when broken, on a document that holds
@@ -288,12 +305,22 @@ def main():
     g = lambda n, k: (tby.get(n) or {}).get(k, "<missing row>")   # a lost row FAILS, never crashes
     check("todo: only the OSPO Adopter rows, Associates and other categories skipped, "
           "the Cyrillic-named subcategory read",
-          sorted(tby), ["Acme", "China Mobile", "Innovation Platform Agency Japan", "Microsoft"])
+          sorted(tby), ["Acme", "China Mobile", "Information-technology Promotion Agency, Japan (IPA)", "Microsoft"])
     check("todo: ' (Adopter)' trimmed and doubled spaces collapsed", "China Mobile" in tby, True)
     check("todo: an office already listed (TODO_SAME_AS) is dropped", "City of Munich" not in tby, True)
     check("todo: companies are corporate, a named state body government",
-          (g("Acme", "type"), g("Innovation Platform Agency Japan", "type")),
+          (g("Acme", "type"), g("Information-technology Promotion Agency, Japan (IPA)", "type")),
           ("corporate", "government"))
+    check("todo: a misnamed row (TODO_NAMES) gets the right name, keeps the id its listed "
+          "name gives, and records that name; other rows carry no name_in_list",
+          (g("Information-technology Promotion Agency, Japan (IPA)", "id"), g("Information-technology Promotion Agency, Japan (IPA)", "name_in_list"), "name_in_list" in tby.get("Acme", {"name_in_list": 1})),
+          ("todo-innovation-platform-agency-japan", "Innovation Platform Agency Japan", False))
+    fixed = F.parse_todo({"landscape": [{"name": "OSPO Adopter", "subcategories": [{"name": "x",
+              "items": [{"name": "IPA Japan (Adopter)", "homepage_url": "https://www.ipa.go.jp/en/"}]}]}]})
+    check("todo: once the landscape changes the name, the override no longer applies",
+          [(r["name"], "name_in_list" in r) for r in fixed], [("IPA Japan", False)])
+    check("todo: every TODO_NAMES row really renames (listed != right)",
+          [u for u, (a, b) in F.TODO_NAMES.items() if a == b or not a or not b], [])
     check("todo: a TODO case study is joined by name, others have none",
           (g("Microsoft", "case_study"), g("Acme", "case_study")),
           ("https://todogroup.org/resources/case-studies/microsoft/", None))

@@ -565,6 +565,11 @@ def main():
                'href="https://landscape.todogroup.org/"' in pg,
                len(corp) == sum(1 for r in od if r["type"] == "corporate"), len(corp) > 0),
               (True, 1, True, True, True))
+        # the chip's text is the darker --corp-text (5.9:1 on its tint), never --corp
+        # itself (4.62:1, under the audit's lowest) - the rule, not a substring of it
+        chip = re.search(r'\.otype\.corporate\{([^}]*)\}', pg)
+        check("%s: the corporate chip's text is --corp-text" % name,
+              chip and re.search(r'(?:^|;)color:([^;]+)', chip.group(1)).group(1), "var(--corp-text)")
         check("%s: a TODO case-study link on each card that has one, and only those" % name,
               len(re.findall(r'<a href="https://todogroup\.org/resources/case-studies/[a-z-]+/"', pg)), ncase)
         # within EACH card: an unbounded search would find the next card's flag
@@ -654,14 +659,14 @@ def main():
     check("/ospos.json documents its country codes",
           sorted(oj.get("country_codes") or {}),
           ["AR", "BR", "CN", "DE", "DK", "EL", "ES", "FI", "FR", "GB", "IE", "IN", "INT", "JP",
-           "KR", "LU", "NL", "SE", "TW", "US"])
+           "KR", "LU", "NL", "SE", "TW", "US", "UY"])
     check("/ospos.json names every country code, exactly (UNNYC's headings)",
           (oj.get("country_names"), sorted(oj.get("country_names") or {}) == sorted(oj.get("country_codes") or {})),
           ({"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
             "GB": "United Kingdom", "IE": "Ireland", "INT": "International", "LU": "Luxembourg",
             "NL": "Netherlands", "US": "United States", "AR": "Argentina", "BR": "Brazil",
             "CN": "China", "FI": "Finland", "IN": "India", "JP": "Japan", "KR": "South Korea",
-            "SE": "Sweden", "TW": "Taiwan"}, True))
+            "SE": "Sweden", "TW": "Taiwan", "UY": "Uruguay"}, True))
     # the failed-fetch example: the live document with ONLY the floss-pso state
     # changed, the way fetch_ospos.failed_state() writes it, and still in contract
     try:

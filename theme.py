@@ -241,6 +241,10 @@ OVERRIDES_CSS = """
      on a 12% tint of itself for chips. White on it measured 5.2:1. */
   --corp:       var(--wg-nyc-orange-dark);
   --corp-tint:  color-mix(in srgb, var(--wg-nyc-orange-dark) 12%, var(--white));
+  /* the chip's TEXT form, as --green-text is --green's: orange-dark alone on
+     --corp-tint measured 4.62:1, under the 2026-08-13 audit's lowest (4.9).
+     85% of it with black measures 5.9:1 on the tint (re-measured 2026-10-09). */
+  --corp-text:  color-mix(in srgb, var(--wg-nyc-orange-dark) 85%, #000);
   --mint-300:   var(--wg-success-surface);
 
   /* ---- elevation. The hard-offset shadow (2px 2px 0) was the CTFG signature

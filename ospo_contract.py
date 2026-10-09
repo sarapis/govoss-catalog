@@ -16,6 +16,14 @@ Also published: /ospos.example-failed.json, the same document as a failed
 FLOSS-PSO fetch leaves it (built by fetch_ospos.failed_state), so a reader can
 test its ok:false handling without waiting for a real failure.
 
+WHAT IS VALIDATED, by source. Every row gets the shape rules (id, source,
+type, name, url, email, policy, code). Only FLOSS-PSO rows (source ==
+"floss-pso") get the full rules: a description, a `country` that is a key of
+country_codes, and a location object. Rows from the other lists
+("academic-map", "todo-landscape") MAY have `country` null and `location` null
+- an office not yet placed, a designed state the page names - and when either
+is present it is held to the same rules. The published `about` text says so.
+
 Free to change, because they do not read them: human_page, about, created,
 resources_case, kind, ospo_note, source_url, and any NEW key. A change to
 anything checked below is a contract change: tell UNNYC first, then change
@@ -43,6 +51,8 @@ COUNTRIES = {
     # 2026-10-09, with TODO's corporate OSPOs
     "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland", "IN": "India",
     "JP": "Japan", "KR": "South Korea", "SE": "Sweden", "TW": "Taiwan",
+    # 2026-10-09, Mercado Libre's principal office (its 10-K), was Buenos Aires
+    "UY": "Uruguay",
 }
 # A short display name per code, for headings - a SEPARATE key so country_codes
 # keeps its shape (asked for by UNNYC 2026-10-07; a contract addition, not a change).
@@ -52,6 +62,7 @@ COUNTRY_NAMES = {
     "NL": "Netherlands", "US": "United States",
     "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland", "IN": "India",
     "JP": "Japan", "KR": "South Korea", "SE": "Sweden", "TW": "Taiwan",
+    "UY": "Uruguay",
 }
 # "corporate" since 2026-10-09 (owner): the TODO Group landscape's OSPO adopters.
 TYPES = ("government", "academic", "corporate")
@@ -96,7 +107,7 @@ def row_problems(r):
     if not _str(r.get("source")):
         p.append("source is empty")
     if r.get("type") not in TYPES:
-        p.append("type %r is not government/academic" % r.get("type"))
+        p.append("type %r is not government/academic/corporate" % r.get("type"))
     for k in ("name", "url"):
         if not _str(r.get(k)):
             p.append("%s is empty" % k)
@@ -118,6 +129,8 @@ def row_problems(r):
             p.append("country %r is not a documented code" % r.get("country"))
         if r.get("location") is not None:
             p += location_problems(r.get("location"))
+        if (r.get("country") is None) != (r.get("location") is None):
+            p.append("country and location are not both set or both null")
     return ["%s: %s" % (rid, x) for x in p]
 
 

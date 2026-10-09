@@ -856,6 +856,14 @@
    "place": "Newark, California",
    "via": "hand, 2026-10-09"
   },
+  "todo-jihu-gitlab": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 30.5928,
+   "lon": 114.3055,
+   "place": "Wuhan",
+   "via": "hand, 2026-10-09: registered office of JiHu (Hubei), Wuhan East Lake High-tech Zone (36Kr company record; the landscape's Crunchbase id is gitlab-information-hubei-co-ltd)"
+  },
   "todo-line-corporation": {
    "basis": "hq",
    "country": "JP",
@@ -866,11 +874,11 @@
   },
   "todo-mercado-libre": {
    "basis": "hq",
-   "country": "AR",
-   "lat": -34.55,
-   "lon": -58.4833,
-   "place": "Buenos Aires",
-   "via": "wikidata Q950419"
+   "country": "UY",
+   "lat": -34.9011,
+   "lon": -56.1645,
+   "place": "Montevideo",
+   "via": "hand, 2026-10-09: MercadoLibre 10-K FY2025 principal executive offices, Montevideo (Wikidata Q950419 says Buenos Aires)"
   },
   "todo-meta": {
    "basis": "hq",
@@ -1115,10 +1123,10 @@
   "todo-square": {
    "basis": "hq",
    "country": "US",
-   "lat": 37.775,
-   "lon": -122.4194,
-   "place": "San Francisco",
-   "via": "wikidata Q110778747"
+   "lat": 37.8044,
+   "lon": -122.2712,
+   "place": "Oakland",
+   "via": "hand, 2026-10-09: Block, Inc. 10-K principal executive office, Oakland (Wikidata Q110778747 says San Francisco)"
   },
   "todo-stripe": {
    "basis": "hq",
@@ -1223,6 +1231,14 @@
    "lon": -122.16,
    "place": "Palo Alto",
    "via": "wikidata Q11407"
+  },
+  "todo-walmartlabs": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 36.3667,
+   "lon": -94.2133,
+   "place": "Bentonville",
+   "via": "wikidata Q483551 (Walmart, parent of Walmart Labs Q3816562), hand, 2026-10-09"
   },
   "todo-wayfair": {
    "basis": "hq",

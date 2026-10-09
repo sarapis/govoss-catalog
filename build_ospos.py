@@ -309,7 +309,7 @@ PAGE_CSS = """
   text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
 .otype.government{background:var(--primary-tint);color:var(--primary-deep);}
 .otype.academic{background:var(--mint-100);color:var(--green-text);}
-.otype.corporate{background:var(--corp-tint);color:var(--corp);}
+.otype.corporate{background:var(--corp-tint);color:var(--corp-text);}
 .ometa{font-size:12px;color:var(--ink-faint);}
 .ocard h3{font-family:var(--font-display);font-size:16px;margin:2px 0 0;line-height:1.3;}
 .odesc{margin:0;font-size:13.5px;color:var(--ink);line-height:1.5;text-wrap:pretty;}
@@ -547,8 +547,12 @@ if __name__ == "__main__":
                  "LOCATIONS are govoss's placement, by hand or (companies) from Wikidata's "
                  "headquarters, named in location.via: location.basis 'seat' is the office's "
                  "own city; 'hq' is its parent organisation's headquarters, so the point is "
-                 "approximate. lat/lon are WGS84 degrees. An academic or corporate office not "
-                 "yet placed has location null; every FLOSS-PSO office is placed. "
+                 "approximate. lat/lon are WGS84 degrees. "
+                 "PLACEMENT differs by source: every FLOSS-PSO row (source 'floss-pso') has a "
+                 "location object and a country that is a key of country_codes. Rows from "
+                 "'academic-map' and 'todo-landscape' MAY have country null and location null "
+                 "together - an office not yet placed; when present, both follow the same "
+                 "rules. "
                  "COUNTRY codes are listed in country_codes: ISO 3166-1 alpha-2 except EL "
                  "(Greece, the EU's code) and INT (an international body); country_names "
                  "gives a short display name for each. "
