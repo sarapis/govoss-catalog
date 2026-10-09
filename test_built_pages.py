@@ -659,14 +659,14 @@ def main():
     check("/ospos.json documents its country codes",
           sorted(oj.get("country_codes") or {}),
           ["AR", "BR", "CN", "DE", "DK", "EL", "ES", "FI", "FR", "GB", "IE", "IN", "INT", "JP",
-           "KR", "LU", "NL", "SE", "TW", "US", "UY"])
+           "KR", "LU", "NL", "SE", "SG", "TW", "US", "UY"])
     check("/ospos.json names every country code, exactly (UNNYC's headings)",
           (oj.get("country_names"), sorted(oj.get("country_names") or {}) == sorted(oj.get("country_codes") or {})),
           ({"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
             "GB": "United Kingdom", "IE": "Ireland", "INT": "International", "LU": "Luxembourg",
             "NL": "Netherlands", "US": "United States", "AR": "Argentina", "BR": "Brazil",
             "CN": "China", "FI": "Finland", "IN": "India", "JP": "Japan", "KR": "South Korea",
-            "SE": "Sweden", "TW": "Taiwan", "UY": "Uruguay"}, True))
+            "SE": "Sweden", "TW": "Taiwan", "SG": "Singapore", "UY": "Uruguay"}, True))
     # the failed-fetch example: the live document with ONLY the floss-pso state
     # changed, the way fetch_ospos.failed_state() writes it, and still in contract
     try:

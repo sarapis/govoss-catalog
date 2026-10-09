@@ -579,10 +579,10 @@
   "todo-cloudera": {
    "basis": "hq",
    "country": "US",
-   "lat": 37.4444,
-   "lon": -122.16,
-   "place": "Palo Alto",
-   "via": "wikidata Q2979728"
+   "lat": 37.4037,
+   "lon": -121.9766,
+   "place": "Santa Clara",
+   "via": "hand, 2026-10-09: Cloudera's own terms and conditions give 5470 Great America Parkway, Santa Clara (Wikidata Q2979728 says Palo Alto)"
   },
   "todo-comcast": {
    "basis": "hq",
@@ -659,10 +659,10 @@
   "todo-elastic": {
    "basis": "hq",
    "country": "US",
-   "lat": 37.3928,
-   "lon": -122.0419,
-   "place": "Mountain View",
-   "via": "wikidata Q22074922"
+   "lat": 37.7891,
+   "lon": -122.4031,
+   "place": "San Francisco",
+   "via": "hand, 2026-10-09: Elastic N.V. FY2026 10-K - a distributed company with no principal executive office; its shareholder address is San Francisco (Wikidata Q22074922 says Mountain View)"
   },
   "todo-epam": {
    "basis": "hq",
@@ -1082,11 +1082,11 @@
   },
   "todo-seagate": {
    "basis": "hq",
-   "country": "US",
-   "lat": 37.3175,
-   "lon": -122.0419,
-   "place": "Cupertino",
-   "via": "wikidata Q705392"
+   "country": "SG",
+   "lat": 1.437,
+   "lon": 103.7865,
+   "place": "Singapore",
+   "via": "hand, 2026-10-09: Seagate Technology Holdings FY2026 10-K principal executive offices, Singapore (Wikidata Q705392 says Cupertino)"
   },
   "todo-siemens": {
    "basis": "hq",
@@ -1179,10 +1179,10 @@
   "todo-twitter": {
    "basis": "hq",
    "country": "US",
-   "lat": 37.775,
-   "lon": -122.4194,
-   "place": "San Francisco",
-   "via": "wikidata Q1390577"
+   "lat": 30.1105,
+   "lon": -97.3153,
+   "place": "Bastrop",
+   "via": "hand, 2026-10-09: X Corp., Twitter's successor, headquartered in Bastrop, Texas since 2024 per its court filings as reported (Wikidata Q1390577 says San Francisco)"
   },
   "todo-two-sigma": {
    "basis": "hq",

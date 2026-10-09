@@ -176,18 +176,18 @@ def main():
     check("contract: govoss's own licence object", C.LICENCE,
           {"govoss_fields": "CC0 1.0, govoss (https://govoss.cat)",
            "lists": "each list's own: sources[*].licence"})
-    # nine codes and "corporate" added 2026-10-09 with TODO's corporate OSPOs; UY the
-    # same day (Mercado Libre's principal office)
+    # nine codes and "corporate" added 2026-10-09 with TODO's corporate OSPOs; UY and SG the
+    # same day (Mercado Libre's and Seagate's principal offices)
     check("contract: the documented country codes", sorted(C.COUNTRIES),
           ["AR", "BR", "CN", "DE", "DK", "EL", "ES", "FI", "FR", "GB", "IE", "IN", "INT", "JP",
-           "KR", "LU", "NL", "SE", "TW", "US", "UY"])
+           "KR", "LU", "NL", "SE", "SG", "TW", "US", "UY"])
     check("contract: the display name per code (UNNYC's headings)", C.COUNTRY_NAMES,
           {"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
                      "GB": "United Kingdom", "IE": "Ireland", "INT": "International",
                      "LU": "Luxembourg", "NL": "Netherlands", "US": "United States",
                      "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland",
                      "IN": "India", "JP": "Japan", "KR": "South Korea", "SE": "Sweden",
-                     "TW": "Taiwan", "UY": "Uruguay"})
+                     "TW": "Taiwan", "SG": "Singapore", "UY": "Uruguay"})
     check("contract: types", sorted(C.TYPES), ["academic", "corporate", "government"])
     check("contract: a corporate row with no description and no location is valid",
           C.row_problems({"id": "todo-x", "source": "todo-landscape", "type": "corporate",

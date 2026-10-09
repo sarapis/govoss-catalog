@@ -51,8 +51,8 @@ COUNTRIES = {
     # 2026-10-09, with TODO's corporate OSPOs
     "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland", "IN": "India",
     "JP": "Japan", "KR": "South Korea", "SE": "Sweden", "TW": "Taiwan",
-    # 2026-10-09, Mercado Libre's principal office (its 10-K), was Buenos Aires
-    "UY": "Uruguay",
+    # 2026-10-09, Mercado Libre's and Seagate's principal offices (their 10-Ks)
+    "SG": "Singapore", "UY": "Uruguay",
 }
 # A short display name per code, for headings - a SEPARATE key so country_codes
 # keeps its shape (asked for by UNNYC 2026-10-07; a contract addition, not a change).
@@ -62,7 +62,7 @@ COUNTRY_NAMES = {
     "NL": "Netherlands", "US": "United States",
     "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland", "IN": "India",
     "JP": "Japan", "KR": "South Korea", "SE": "Sweden", "TW": "Taiwan",
-    "UY": "Uruguay",
+    "SG": "Singapore", "UY": "Uruguay",
 }
 # "corporate" since 2026-10-09 (owner): the TODO Group landscape's OSPO adopters.
 TYPES = ("government", "academic", "corporate")
