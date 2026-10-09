@@ -305,22 +305,12 @@ def main():
     g = lambda n, k: (tby.get(n) or {}).get(k, "<missing row>")   # a lost row FAILS, never crashes
     check("todo: only the OSPO Adopter rows, Associates and other categories skipped, "
           "the Cyrillic-named subcategory read",
-          sorted(tby), ["Acme", "China Mobile", "Information-technology Promotion Agency, Japan (IPA)", "Microsoft"])
+          sorted(tby), ["Acme", "China Mobile", "Innovation Platform Agency Japan", "Microsoft"])
     check("todo: ' (Adopter)' trimmed and doubled spaces collapsed", "China Mobile" in tby, True)
     check("todo: an office already listed (TODO_SAME_AS) is dropped", "City of Munich" not in tby, True)
     check("todo: companies are corporate, a named state body government",
-          (g("Acme", "type"), g("Information-technology Promotion Agency, Japan (IPA)", "type")),
+          (g("Acme", "type"), g("Innovation Platform Agency Japan", "type")),
           ("corporate", "government"))
-    check("todo: a misnamed row (TODO_NAMES) gets the right name, keeps the id its listed "
-          "name gives, and records that name; other rows carry no name_in_list",
-          (g("Information-technology Promotion Agency, Japan (IPA)", "id"), g("Information-technology Promotion Agency, Japan (IPA)", "name_in_list"), "name_in_list" in tby.get("Acme", {"name_in_list": 1})),
-          ("todo-innovation-platform-agency-japan", "Innovation Platform Agency Japan", False))
-    fixed = F.parse_todo({"landscape": [{"name": "OSPO Adopter", "subcategories": [{"name": "x",
-              "items": [{"name": "IPA Japan (Adopter)", "homepage_url": "https://www.ipa.go.jp/en/"}]}]}]})
-    check("todo: once the landscape changes the name, the override no longer applies",
-          [(r["name"], "name_in_list" in r) for r in fixed], [("IPA Japan", False)])
-    check("todo: every TODO_NAMES row really renames (listed != right)",
-          [u for u, (a, b) in F.TODO_NAMES.items() if a == b or not a or not b], [])
     check("todo: a TODO case study is joined by name, others have none",
           (g("Microsoft", "case_study"), g("Acme", "case_study")),
           ("https://todogroup.org/resources/case-studies/microsoft/", None))

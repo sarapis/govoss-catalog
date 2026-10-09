@@ -78,17 +78,8 @@ TODO_SITE = "https://landscape.todogroup.org/"
 # are dropped, mapped to the id they would duplicate.
 TODO_TYPES = {
     "http://www.caict.ac.cn/": "government",          # China Academy for ICT (state)
-    "https://www.ipa.go.jp/en/": "government",        # Information-technology Promotion Agency, Japan
-}
-# Names the landscape gets wrong, by homepage URL: {url: (its name, the right one)}.
-# Applied only while the landscape still says exactly ITS name, so an upstream fix
-# retires the override by itself (delete the row then). The row keeps the id its
-# landscape name gives and records that name in `name_in_list`. Filed upstream:
-# see the comment on each row.
-TODO_NAMES = {
-    # The IPA is the Information-technology Promotion Agency (its own site, ipa.go.jp/en/).
-    "https://www.ipa.go.jp/en/": ("Innovation Platform Agency Japan",
-                                  "Information-technology Promotion Agency, Japan (IPA)"),
+    "https://www.ipa.go.jp/en/": "government",        # Innovation Platform Agency, Japan - the IPA's English name
+                                                      # since 2026-06-05; before, Information-technology Promotion Agency
 }
 TODO_SAME_AS = {
     "https://opensource.muenchen.de/": "floss-opensource-muenchen-de-ospo-html",
@@ -291,10 +282,9 @@ def parse_todo(doc):
                 if not it.get("name") or not url or url in TODO_SAME_AS:
                     continue
                 name = re.sub(r"\s*\(Adopter\)\s*$", "", re.sub(r"\s+", " ", str(it["name"]))).strip()
-                listed, right = TODO_NAMES.get(url, (None, None))
                 out.append({
                     "id": "todo-" + slug(name),
-                    "name": right if name == listed else name,
+                    "name": name,
                     "type": TODO_TYPES.get(url, "corporate"),
                     "country": None,           # the landscape gives none; ospos/locations.json does
                     "url": url,
@@ -305,8 +295,6 @@ def parse_todo(doc):
                     "source": "todo-landscape",
                     "source_url": TODO_REPO,
                 })
-                if name == listed:
-                    out[-1]["name_in_list"] = name
     return out
 
 
