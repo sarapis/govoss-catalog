@@ -107,6 +107,25 @@ FLOSS = {
 }
 
 
+# The TODO landscape's landscape.yml, in its real shape: the adopter subcategory
+# is spelt "OSPO Ad\u043epter" (a Cyrillic о), exactly as upstream.
+TODO = {"landscape": [
+    {"name": "TODO Group Member", "subcategories": [
+        {"name": "General", "items": [{"name": "Snowflake (Member)", "homepage_url": "https://snowflake.example/"}]}]},
+    {"name": "OSPO Adopter", "subcategories": [
+        {"name": "Associate", "items": [{"name": "CHAOSS (Associate)", "homepage_url": "https://chaoss.example/"}]},
+        {"name": "OSPO Ad\u043epter", "items": [
+            {"name": "Acme (Adopter)", "homepage_url": "https://acme.example/", "crunchbase": "https://www.crunchbase.com/organization/acme"},
+            {"name": "China  Mobile (Adopter)", "homepage_url": "https://chinamobile.example/"},
+            {"name": "City of Munich (Adopter)", "homepage_url": "https://opensource.muenchen.de/"},
+            {"name": "Innovation Platform Agency Japan (Adopter)", "homepage_url": "https://www.ipa.go.jp/en/"},
+            {"name": "Microsoft (Adopter)", "homepage_url": "https://opensource.microsoft.example/"},
+        ]}]},
+    {"name": "OSPO Tools", "subcategories": [
+        {"name": "SCA", "items": [{"name": "SomeTool", "homepage_url": "https://tool.example/"}]}]},
+]}
+
+
 def main():
     failed, ran = [], []
 
@@ -157,13 +176,23 @@ def main():
     check("contract: govoss's own licence object", C.LICENCE,
           {"govoss_fields": "CC0 1.0, govoss (https://govoss.cat)",
            "lists": "each list's own: sources[*].licence"})
+    # nine codes and "corporate" added 2026-10-09 with TODO's corporate OSPOs
     check("contract: the documented country codes", sorted(C.COUNTRIES),
-          ["DE", "DK", "EL", "ES", "FR", "GB", "IE", "INT", "LU", "NL", "US"])
+          ["AR", "BR", "CN", "DE", "DK", "EL", "ES", "FI", "FR", "GB", "IE", "IN", "INT", "JP",
+           "KR", "LU", "NL", "SE", "TW", "US"])
     check("contract: the display name per code (UNNYC's headings)", C.COUNTRY_NAMES,
           {"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
                      "GB": "United Kingdom", "IE": "Ireland", "INT": "International",
-                     "LU": "Luxembourg", "NL": "Netherlands", "US": "United States"})
-    check("contract: types", sorted(C.TYPES), ["academic", "government"])
+                     "LU": "Luxembourg", "NL": "Netherlands", "US": "United States",
+                     "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland",
+                     "IN": "India", "JP": "Japan", "KR": "South Korea", "SE": "Sweden",
+                     "TW": "Taiwan"})
+    check("contract: types", sorted(C.TYPES), ["academic", "corporate", "government"])
+    check("contract: a corporate row with no description and no location is valid",
+          C.row_problems({"id": "todo-x", "source": "todo-landscape", "type": "corporate",
+                          "name": "X", "url": "https://x.example/", "description": "",
+                          "email": None, "policy": None, "code": [], "country": None,
+                          "location": None}), [])
     check("contract: location bases", sorted(C.BASES), ["hq", "seat"])
 
     # ---- every rule fails when broken, on a document that holds
@@ -252,6 +281,31 @@ def main():
     check("ids: unchanged by order, the YAML file, or any other field", got2, got)
     check("ids: unique", len(set(got.values())), len(got))
 
+    # ---- TODO landscape: only "OSPO Adopter", never "Associate"; the adopter
+    # subcategory is spelt with a CYRILLIC о and must still be read
+    T = F.parse_todo(TODO)
+    tby = {r["name"]: r for r in T}
+    g = lambda n, k: (tby.get(n) or {}).get(k, "<missing row>")   # a lost row FAILS, never crashes
+    check("todo: only the OSPO Adopter rows, Associates and other categories skipped, "
+          "the Cyrillic-named subcategory read",
+          sorted(tby), ["Acme", "China Mobile", "Innovation Platform Agency Japan", "Microsoft"])
+    check("todo: ' (Adopter)' trimmed and doubled spaces collapsed", "China Mobile" in tby, True)
+    check("todo: an office already listed (TODO_SAME_AS) is dropped", "City of Munich" not in tby, True)
+    check("todo: companies are corporate, a named state body government",
+          (g("Acme", "type"), g("Innovation Platform Agency Japan", "type")),
+          ("corporate", "government"))
+    check("todo: a TODO case study is joined by name, others have none",
+          (g("Microsoft", "case_study"), g("Acme", "case_study")),
+          ("https://todogroup.org/resources/case-studies/microsoft/", None))
+    check("todo: row shape - id from the name, homepage as url, no description, its source",
+          (g("Acme", "id"), g("Acme", "url"), g("Acme", "description"), g("Acme", "source"),
+           g("Acme", "country")),
+          ("todo-acme", "https://acme.example/", "", "todo-landscape", None))
+    check("todo: its licence, read by consumers", F.LICENCES["todo-landscape"],
+          "Apache-2.0 (github.com/todogroup/ospolandscape)")
+    check("todo: every TODO_SAME_AS target is an id the other lists produce",
+          sorted(v for v in F.TODO_SAME_AS.values() if not v.startswith(("floss-", "amap-"))), [])
+
     # ---- main(): fallback, error recorded, never raises
     tmp = tempfile.mkdtemp()
     real_out, real_get, real_locs, real_now = F.OUT, F.get, F.LOCATIONS, F.NOW
@@ -271,6 +325,8 @@ def main():
     def ok_get(url, raw=False, **kw):
         if url == F.FLOSS_URL:
             return _y.safe_dump(FLOSS).encode()
+        if url == F.TODO_RAW:
+            return _y.safe_dump(TODO, allow_unicode=True).encode()
         if url in pages:
             return pages[url].encode()
         raise OSError("no fixture for " + url)
@@ -278,8 +334,23 @@ def main():
         F.get = ok_get
         F.main()
         d = json.load(open(F.OUT))
-        check("a clean fetch writes both lists", (d["sources"]["floss-pso"]["ok"],
-              d["sources"]["academic-map"]["ok"], len(d["ospos"])), (True, True, 5))
+        check("a clean fetch writes all three lists", (d["sources"]["floss-pso"]["ok"],
+              d["sources"]["academic-map"]["ok"], d["sources"]["todo-landscape"]["ok"],
+              len(d["ospos"])), (True, True, True, 9))
+        # the landscape fails like the other two: its last good rows are kept
+        F.get = lambda url, raw=False, **kw: ((_ for _ in ()).throw(OSError("todo down"))
+                                              if url == F.TODO_RAW else ok_get(url, raw=raw))
+        F.main()
+        dt = json.load(open(F.OUT))
+        check("a failed TODO fetch keeps its last good rows, ok false, fetched_at unmoved",
+              (sum(r["source"] == "todo-landscape" for r in dt["ospos"]),
+               dt["sources"]["todo-landscape"]["ok"],
+               dt["sources"]["todo-landscape"].get("fetched_at", "a") ==
+               d["sources"]["todo-landscape"].get("fetched_at", "b")),
+              (4, False, True))
+        F.get = ok_get
+        F.main()
+        d = json.load(open(F.OUT))
         good = dict(d["sources"]["floss-pso"])
         # a later attempt has a later clock: what ok:false must NOT copy
         F.NOW = "2099-01-01T00:00:00Z"

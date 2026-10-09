@@ -343,6 +343,934 @@
    "lat": 40.75,
    "lon": -73.9686,
    "place": "New York"
+  },
+  "todo-adobe": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3042,
+   "lon": -121.8728,
+   "place": "San Jose",
+   "via": "wikidata Q11463"
+  },
+  "todo-aiven": {
+   "basis": "hq",
+   "country": "FI",
+   "lat": 60.1699,
+   "lon": 24.9384,
+   "place": "Helsinki",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-alibaba": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 30.2108,
+   "lon": 120.2075,
+   "place": "Hangzhou",
+   "via": "wikidata Q1359568"
+  },
+  "todo-alliander": {
+   "basis": "hq",
+   "country": "NL",
+   "lat": 51.9851,
+   "lon": 5.8987,
+   "place": "Arnhem",
+   "via": "wikidata Q2656614; country by hand"
+  },
+  "todo-amd-xilinx": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3042,
+   "lon": -121.8728,
+   "place": "San Jose",
+   "via": "wikidata Q1046482"
+  },
+  "todo-ant-group": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 30.2741,
+   "lon": 120.1551,
+   "place": "Hangzhou",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-apple": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3175,
+   "lon": -122.0419,
+   "place": "Cupertino",
+   "via": "wikidata Q312"
+  },
+  "todo-arm": {
+   "basis": "hq",
+   "country": "GB",
+   "lat": 52.2081,
+   "lon": 0.1225,
+   "place": "Cambridge",
+   "via": "wikidata Q296782"
+  },
+  "todo-autodesk": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q628051"
+  },
+  "todo-avanade": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 47.605,
+   "lon": -122.33,
+   "place": "Seattle",
+   "via": "wikidata Q2277744"
+  },
+  "todo-aws": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 47.6062,
+   "lon": -122.3321,
+   "place": "Seattle",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-baidu": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 39.904,
+   "lon": 116.4075,
+   "place": "Beijing",
+   "via": "wikidata Q14772"
+  },
+  "todo-banco-ita": {
+   "basis": "hq",
+   "country": "BR",
+   "lat": -23.5505,
+   "lon": -46.6333,
+   "place": "São Paulo",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-blackrock": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "place": "New York City",
+   "via": "wikidata Q219635"
+  },
+  "todo-bloomberg": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "place": "New York City",
+   "via": "wikidata Q13977"
+  },
+  "todo-bmw": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 48.1375,
+   "lon": 11.575,
+   "place": "Munich",
+   "via": "wikidata Q26678"
+  },
+  "todo-boeing": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 38.8816,
+   "lon": -77.091,
+   "place": "Arlington, Virginia",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-bosch": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 48.8,
+   "lon": 9.0653,
+   "place": "Gerlingen",
+   "via": "wikidata Q234021"
+  },
+  "todo-box": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.4828,
+   "lon": -122.2361,
+   "place": "Redwood City",
+   "via": "wikidata Q4951483"
+  },
+  "todo-bytedance": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 39.904,
+   "lon": 116.4075,
+   "place": "Beijing",
+   "via": "wikidata Q55606242"
+  },
+  "todo-camunda": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 52.52,
+   "lon": 13.405,
+   "place": "Berlin",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-capital-one": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 38.9283,
+   "lon": -77.1753,
+   "place": "McLean",
+   "via": "wikidata Q1034654"
+  },
+  "todo-cathay-financial": {
+   "basis": "hq",
+   "country": "TW",
+   "lat": 25.033,
+   "lon": 121.5654,
+   "place": "Taipei",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-change-healthcare": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 36.1627,
+   "lon": -86.7816,
+   "place": "Nashville",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-chef": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 47.605,
+   "lon": -122.33,
+   "place": "Seattle",
+   "via": "wikidata Q7098706"
+  },
+  "todo-china-academy-for-information-and-communications-technology": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 39.9581,
+   "lon": 116.2921,
+   "place": "Beijing",
+   "via": "wikidata Q30262729"
+  },
+  "todo-china-mobile": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 39.91,
+   "lon": 116.36,
+   "place": "Beijing",
+   "via": "wikidata Q741618"
+  },
+  "todo-ciq": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 39.5296,
+   "lon": -119.8138,
+   "place": "Reno, Nevada",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-cisco": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3042,
+   "lon": -121.8728,
+   "place": "San Jose",
+   "via": "wikidata Q173395"
+  },
+  "todo-cloudera": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.4444,
+   "lon": -122.16,
+   "place": "Palo Alto",
+   "via": "wikidata Q2979728"
+  },
+  "todo-comcast": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 39.9528,
+   "lon": -75.1636,
+   "place": "Philadelphia",
+   "via": "wikidata Q1113804"
+  },
+  "todo-datadog": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "place": "New York City",
+   "via": "wikidata Q16248637"
+  },
+  "todo-dell-technologies": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 30.5083,
+   "lon": -97.6789,
+   "place": "Round Rock, Texas",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-deutsche-bahn": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 52.5097,
+   "lon": 13.375,
+   "place": "Berlin",
+   "via": "wikidata Q9322"
+  },
+  "todo-didi": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 39.9042,
+   "lon": 116.4074,
+   "place": "Beijing",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-digitalocean": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "place": "New York City",
+   "via": "wikidata Q17052116"
+  },
+  "todo-dropbox": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q15589464"
+  },
+  "todo-dynatrace": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 42.3806,
+   "lon": -71.235,
+   "place": "Waltham",
+   "via": "wikidata Q25048844"
+  },
+  "todo-ebay": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3042,
+   "lon": -121.8728,
+   "place": "San Jose",
+   "via": "wikidata Q58024"
+  },
+  "todo-elastic": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3928,
+   "lon": -122.0419,
+   "place": "Mountain View",
+   "via": "wikidata Q22074922"
+  },
+  "todo-epam": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.229,
+   "lon": -74.9368,
+   "place": "Newtown, Pennsylvania",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-equinix": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.4828,
+   "lon": -122.2361,
+   "place": "Redwood City",
+   "via": "wikidata Q851641"
+  },
+  "todo-ericsson": {
+   "basis": "hq",
+   "country": "SE",
+   "lat": 59.3294,
+   "lon": 18.0686,
+   "place": "Stockholm",
+   "via": "wikidata Q52618"
+  },
+  "todo-esri": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 34.0547,
+   "lon": -117.1825,
+   "place": "Redlands",
+   "via": "wikidata Q1045778"
+  },
+  "todo-f5": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 47.605,
+   "lon": -122.33,
+   "place": "Seattle",
+   "via": "wikidata Q3029296"
+  },
+  "todo-fannie-mae": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 38.9072,
+   "lon": -77.0369,
+   "place": "Washington, DC",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-freddie-mac": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 38.9283,
+   "lon": -77.1753,
+   "place": "McLean",
+   "via": "wikidata Q935969"
+  },
+  "todo-github": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q28771536"
+  },
+  "todo-gitlab": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q55589254"
+  },
+  "todo-goldman-sachs": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "place": "New York City",
+   "via": "wikidata Q193326"
+  },
+  "todo-google": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3928,
+   "lon": -122.0419,
+   "place": "Mountain View",
+   "via": "wikidata Q95"
+  },
+  "todo-hcl-software": {
+   "basis": "hq",
+   "country": "IN",
+   "lat": 28.5355,
+   "lon": 77.391,
+   "place": "Noida",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-here-technologies": {
+   "basis": "hq",
+   "country": "NL",
+   "lat": 51.4416,
+   "lon": 5.4697,
+   "place": "Eindhoven",
+   "via": "wikidata Q129911; country by hand"
+  },
+  "todo-hitachi": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.6814,
+   "lon": 139.7658,
+   "place": "Tokyo",
+   "via": "wikidata Q53238"
+  },
+  "todo-honda": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.658,
+   "lon": 139.7515,
+   "place": "Tokyo",
+   "via": "wikidata Q9584"
+  },
+  "todo-hpe": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 30.0542,
+   "lon": -95.3869,
+   "place": "Spring",
+   "via": "wikidata Q19923099"
+  },
+  "todo-huawei": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 22.5467,
+   "lon": 114.0544,
+   "place": "Shenzhen",
+   "via": "wikidata Q160120"
+  },
+  "todo-ibm": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 41.1286,
+   "lon": -73.7078,
+   "place": "Armonk",
+   "via": "wikidata Q37156"
+  },
+  "todo-iflytek": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 31.8639,
+   "lon": 117.2808,
+   "place": "Hefei",
+   "via": "wikidata Q4764375"
+  },
+  "todo-indeed": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 30.3,
+   "lon": -97.7333,
+   "place": "Austin",
+   "via": "wikidata Q1045367"
+  },
+  "todo-infosys": {
+   "basis": "hq",
+   "country": "IN",
+   "lat": 12.9791,
+   "lon": 77.5913,
+   "place": "Bengaluru",
+   "via": "wikidata Q26989"
+  },
+  "todo-innovation-platform-agency-japan": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.6762,
+   "lon": 139.6503,
+   "place": "Tokyo",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-intel": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.35,
+   "lon": -121.9667,
+   "place": "Santa Clara",
+   "via": "wikidata Q248"
+  },
+  "todo-itrenew": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.5297,
+   "lon": -122.0402,
+   "place": "Newark, California",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-line-corporation": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.6938,
+   "lon": 139.7034,
+   "place": "Tokyo",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-mercado-libre": {
+   "basis": "hq",
+   "country": "AR",
+   "lat": -34.55,
+   "lon": -58.4833,
+   "place": "Buenos Aires",
+   "via": "wikidata Q950419"
+  },
+  "todo-meta": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.4542,
+   "lon": -122.1786,
+   "place": "Menlo Park",
+   "via": "wikidata Q380"
+  },
+  "todo-microsoft": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 47.6694,
+   "lon": -122.1239,
+   "place": "Redmond",
+   "via": "wikidata Q2283"
+  },
+  "todo-mitsubishi-electric": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.6939,
+   "lon": 139.7536,
+   "place": "Tokyo",
+   "via": "wikidata Q53257"
+  },
+  "todo-morgan-stanley": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.006,
+   "place": "New York City",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-national-instruments": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 30.3,
+   "lon": -97.7333,
+   "place": "Austin",
+   "via": "wikidata Q1544413"
+  },
+  "todo-netapp": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3689,
+   "lon": -122.0369,
+   "place": "Sunnyvale",
+   "via": "wikidata Q727883"
+  },
+  "todo-netflix": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.2361,
+   "lon": -121.9617,
+   "place": "Los Gatos",
+   "via": "wikidata Q116452644"
+  },
+  "todo-new-relic": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q7011152"
+  },
+  "todo-nginx": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q6953954"
+  },
+  "todo-nokia": {
+   "basis": "hq",
+   "country": "FI",
+   "lat": 60.2055,
+   "lon": 24.6559,
+   "place": "Espoo",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-optum": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 44.8547,
+   "lon": -93.4708,
+   "place": "Eden Prairie, Minnesota",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-paypal": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3042,
+   "lon": -121.8728,
+   "place": "San Jose",
+   "via": "wikidata Q135683185"
+  },
+  "todo-pinterest": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q96095585"
+  },
+  "todo-porsche": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 48.7775,
+   "lon": 9.18,
+   "place": "Stuttgart",
+   "via": "wikidata Q40993"
+  },
+  "todo-postman": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.7749,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-progressive-insurance": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 41.522,
+   "lon": -81.439,
+   "place": "Mayfield Village, Ohio",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-qingcloud": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 39.9042,
+   "lon": 116.4074,
+   "place": "Beijing",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-qualcomm": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 32.715,
+   "lon": -117.1625,
+   "place": "San Diego",
+   "via": "wikidata Q544847"
+  },
+  "todo-red-hat": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 35.78,
+   "lon": -78.64,
+   "place": "Raleigh",
+   "via": "wikidata Q485593"
+  },
+  "todo-salesforce": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q941127"
+  },
+  "todo-samsung": {
+   "basis": "hq",
+   "country": "KR",
+   "lat": 37.2858,
+   "lon": 127.01,
+   "place": "Suwon",
+   "via": "wikidata Q20718"
+  },
+  "todo-sap": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 49.3,
+   "lon": 8.65,
+   "place": "Walldorf",
+   "via": "wikidata Q552581"
+  },
+  "todo-sas": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 35.7789,
+   "lon": -78.8003,
+   "place": "Cary",
+   "via": "wikidata Q1473820"
+  },
+  "todo-sauce-labs": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q21463469"
+  },
+  "todo-scania": {
+   "basis": "hq",
+   "country": "SE",
+   "lat": 59.1944,
+   "lon": 17.599,
+   "place": "Södertälje",
+   "via": "wikidata Q219960"
+  },
+  "todo-seagate": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3175,
+   "lon": -122.0419,
+   "place": "Cupertino",
+   "via": "wikidata Q705392"
+  },
+  "todo-siemens": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 48.1375,
+   "lon": 11.575,
+   "place": "Munich",
+   "via": "wikidata Q81230"
+  },
+  "todo-slack": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q7808625"
+  },
+  "todo-sony": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.658,
+   "lon": 139.7515,
+   "place": "Tokyo",
+   "via": "wikidata Q41187"
+  },
+  "todo-spotify": {
+   "basis": "hq",
+   "country": "SE",
+   "lat": 59.3294,
+   "lon": 18.0686,
+   "place": "Stockholm",
+   "via": "wikidata Q87067874"
+  },
+  "todo-square": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q110778747"
+  },
+  "todo-stripe": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q7624104"
+  },
+  "todo-target": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 44.9819,
+   "lon": -93.2692,
+   "place": "Minneapolis",
+   "via": "wikidata Q1046951"
+  },
+  "todo-tencent": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 22.5431,
+   "lon": 114.0579,
+   "place": "Shenzhen",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-tomtom": {
+   "basis": "hq",
+   "country": "NL",
+   "lat": 52.3676,
+   "lon": 4.9041,
+   "place": "Amsterdam",
+   "via": "wikidata Q682144; country by hand"
+  },
+  "todo-toshiba": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.658,
+   "lon": 139.7515,
+   "place": "Tokyo",
+   "via": "wikidata Q49125"
+  },
+  "todo-toyota": {
+   "basis": "hq",
+   "country": "JP",
+   "lat": 35.0824,
+   "lon": 137.1563,
+   "place": "Toyota",
+   "via": "wikidata Q53268"
+  },
+  "todo-twitter": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q1390577"
+  },
+  "todo-two-sigma": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "place": "New York City",
+   "via": "wikidata Q18355352"
+  },
+  "todo-uber": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.775,
+   "lon": -122.4194,
+   "place": "San Francisco",
+   "via": "wikidata Q780442"
+  },
+  "todo-us-bank": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 44.9778,
+   "lon": -93.265,
+   "place": "Minneapolis",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-verizon-media": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 40.7128,
+   "lon": -74.006,
+   "place": "New York City",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-vivo": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 23.0207,
+   "lon": 113.7518,
+   "place": "Dongguan",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-vmware": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.4444,
+   "lon": -122.16,
+   "place": "Palo Alto",
+   "via": "wikidata Q11407"
+  },
+  "todo-wayfair": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 42.3603,
+   "lon": -71.0578,
+   "place": "Boston",
+   "via": "wikidata Q3540193"
+  },
+  "todo-western-digital": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.3042,
+   "lon": -121.8728,
+   "place": "San Jose",
+   "via": "wikidata Q738770"
+  },
+  "todo-windriver": {
+   "basis": "hq",
+   "country": "US",
+   "lat": 37.7652,
+   "lon": -122.2416,
+   "place": "Alameda, California",
+   "via": "hand, 2026-10-09"
+  },
+  "todo-wipro": {
+   "basis": "hq",
+   "country": "IN",
+   "lat": 12.9791,
+   "lon": 77.5913,
+   "place": "Bengaluru",
+   "via": "wikidata Q1364176"
+  },
+  "todo-zalando": {
+   "basis": "hq",
+   "country": "DE",
+   "lat": 52.5167,
+   "lon": 13.3833,
+   "place": "Berlin",
+   "via": "wikidata Q136570"
+  },
+  "todo-zte": {
+   "basis": "hq",
+   "country": "CN",
+   "lat": 22.5431,
+   "lon": 114.0579,
+   "place": "Shenzhen",
+   "via": "hand, 2026-10-09"
   }
  }
 }

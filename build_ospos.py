@@ -1,14 +1,16 @@
 """Build site/ospos.html (served at /ospos) + site/ospos.json.
 
-Open source program offices, government and academic, from two published
-lists that fetch_ospos.py reads into cache/ospos.json: the FLOSS-PSO Network's
-public-sector OSPO list (CC0) and the SustainOSS academic map (MIT). Records
+Open source program offices - government, academic and corporate - from three
+published lists that fetch_ospos.py reads into cache/ospos.json: the FLOSS-PSO
+Network's public-sector OSPO list (CC0), the SustainOSS academic map (MIT) and
+the TODO Group's OSPO landscape (Apache-2.0; corporate since 2026-10-09). Records
 stay English on every language copy; only the chrome is translated.
 
 Two views of one list, like /catalogs: cards (the default, and all a reader
 without JavaScript gets) and a map. The map is inline SVG from the committed
-geo/ospo_frames.json (North America + Europe, written by geo/build_geo.py);
-each office is placed from ospos/locations.json, hand-placed. Offices sharing a
+geo/ospo_frames.json (North America, Europe, Asia; written by geo/build_geo.py);
+each office is placed from ospos/locations.json - hand-placed, or for TODO's
+companies their Wikidata headquarters (ospos/place_from_wikidata.py, `via`). Offices sharing a
 spot (three in Paris, two in The Hague) share one dot that names them all.
 
 An office with Resources links to them: RESOURCE_CASE maps an office's URL to
@@ -46,6 +48,9 @@ MERGE_WITHIN = 9
 
 # Gap between the frames when the map is stacked for phones (map units).
 STACK_GAP = 12
+
+# Card and filter order: government first, as the site is about government.
+TYPE_ORDER = ("government", "academic", "corporate")
 
 # Code links shown on a card before the rest fold behind "+N more code links".
 CODE_SHOWN = 3
@@ -117,9 +122,10 @@ def load():
 def build(lang, data, locs, geo, res):
     _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
     N = lambda n: i18n.num(lang, n)
-    cname = lambda c: i18n.country(lang, c, S.COUNTRY_NAME.get(c, c)) if c else ""
+    cname = lambda c: (i18n.country(lang, c, S.COUNTRY_NAME.get(c) or C.COUNTRY_NAMES.get(c, c))
+                       if c else "")
     rcount = collections.Counter(r["case"] for r in res["resources"])
-    os_ = sorted(data["ospos"], key=lambda r: (r["type"] != "government", r["name"].lower()))
+    os_ = sorted(data["ospos"], key=lambda r: (TYPE_ORDER.index(r["type"]), r["name"].lower()))
     for r in os_:
         loc = locs.get(r["id"]) or {}
         r["_cc"] = r.get("country") or loc.get("country")
@@ -127,7 +133,10 @@ def build(lang, data, locs, geo, res):
         case = RESOURCE_CASE.get(r["url"])
         r["_case"] = case if case and rcount.get(case) else None
     n_gov = sum(r["type"] == "government" for r in os_)
-    n_aca = len(os_) - n_gov
+    n_aca = sum(r["type"] == "academic" for r in os_)
+    n_corp = sum(r["type"] == "corporate" for r in os_)
+    tlabel = lambda t: {"government": _("Government"), "academic": _("Academic"),
+                        "corporate": _("Corporate")}[t]
     by_cc = collections.Counter(r["_cc"] for r in os_ if r["_cc"])
 
     cards = []
@@ -148,6 +157,9 @@ def build(lang, data, locs, geo, res):
             more = ('<details class="omore"><summary>%s</summary><p class="olinks">%s</p></details>'
                     % (esc(_("+{n} more code links", n=N(len(code) - CODE_SHOWN))),
                        " &middot; ".join(code[CODE_SHOWN:])))
+        if r.get("case_study"):
+            links.append('<a href="%s" target="_blank" rel="noopener">%s</a>'
+                         % (esc(r["case_study"]), esc(_("TODO Group case study"))))
         if r.get("policy"):
             links.append('<a href="%s" target="_blank" rel="noopener">%s</a>'
                          % (esc(r["policy"]), esc(_("Open source policy"))))
@@ -158,7 +170,7 @@ def build(lang, data, locs, geo, res):
             res_link = ('<a class="ores" href="/resources?case=%s">%s</a>'
                         % (esc(r["_case"]), _("{n} resources on how this office was built &rarr;",
                                               n=N(rcount[r["_case"]]))))   # own chrome: not escaped again
-        typ = _("Government") if r["type"] == "government" else _("Academic")
+        typ = tlabel(r["type"])
         meta = (['<span class="oflag" aria-hidden="true">%s</span> %s' % (flag(r["_cc"]), esc(cname(r["_cc"])))]
                 if r["_cc"] else [])
         if r["_loc"].get("place"):
@@ -201,8 +213,7 @@ def build(lang, data, locs, geo, res):
     pins = collections.defaultdict(list)
     for k, x, y, rs in reversed(merged):
         places = list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))
-        label = "; ".join("%s (%s)" % (r["name"], _("Government") if r["type"] == "government"
-                                       else _("Academic")) for r in rs)
+        label = "; ".join("%s (%s)" % (r["name"], tlabel(r["type"])) for r in rs)
         types = sorted({r["type"] for r in rs})
         cls = types[0] if len(types) == 1 else "mixed"
         pins[k].append('<a class="odot %s" href="#%s" data-ids="%s" data-place="%s" aria-label="%s" '
@@ -233,7 +244,9 @@ def build(lang, data, locs, geo, res):
     wide = draw("omap-wide", geo["viewbox"], {k: (0, 0) for k in geo["frames"]})
     tw = max(fr["rect"][2] for fr in geo["frames"].values())
     shift, th = {}, 0.0
-    for k, fr in geo["frames"].items():
+    # stacked in the wide layout's left-to-right order (North America, Europe, Asia);
+    # the file's keys are sorted, which put Asia first on a phone
+    for k, fr in sorted(geo["frames"].items(), key=lambda kv: kv[1]["rect"][0]):
         rx, ry, rw, rh = fr["rect"]
         shift[k] = ((tw - rw) / 2 - rx, th - ry)
         th += rh + STACK_GAP
@@ -242,7 +255,7 @@ def build(lang, data, locs, geo, res):
     note = ""
     if unplaced:
         note = ('<p class="onote-map">%s</p>'
-                % esc(_("{n} not on the map yet (no location recorded): {names}",
+                % esc(_("{n} not on the map: {names}",
                         n=len(unplaced), names="; ".join(r["name"] for r in unplaced))))
 
     copts = "".join('<option value="%s">%s %s (%s)</option>' % (esc(c), flag(c), esc(cname(c)), N(n))
@@ -254,7 +267,8 @@ def build(lang, data, locs, geo, res):
         return when + ("" if st.get("ok", True) else " &middot; " + esc(_("last fetch failed, showing the previous list")))
 
     subs = {
-        "__N__": N(len(os_)), "__NGOV__": N(n_gov), "__NACA__": N(n_aca),
+        "__N__": N(len(os_)), "__NGOV__": N(n_gov), "__NACA__": N(n_aca), "__NCORP__": N(n_corp),
+        "__TODO_AT__": fetched("todo-landscape"),
         "__CARDS__": "".join(cards), "__MAP__": "".join(svg), "__MAPNOTE__": note,
         "__COPTS__": copts,
         "__FLOSS_AT__": fetched("floss-pso"), "__AMAP_AT__": fetched("academic-map"),
@@ -280,8 +294,9 @@ def build(lang, data, locs, geo, res):
     out = f"{SITE}/ospos.html" if lang == "en" else f"{SITE}/{lang}/ospos.html"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w").write(page)
-    print("ospos page [%s]: %d OSPOs (%d government, %d academic), %d map pins, %d unplaced (%.0f KB)"
-          % (lang, len(os_), n_gov, n_aca, len(merged), len(unplaced), len(page) / 1024))
+    print("ospos page [%s]: %d OSPOs (%d government, %d academic, %d corporate), %d map pins, "
+          "%d unplaced (%.0f KB)" % (lang, len(os_), n_gov, n_aca, n_corp, len(merged), len(unplaced),
+                                    len(page) / 1024))
     return os_
 
 
@@ -310,6 +325,7 @@ PAGE_CSS = """
   text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
 .otype.government{background:var(--primary-tint);color:var(--primary-deep);}
 .otype.academic{background:var(--mint-100);color:var(--green-text);}
+.otype.corporate{background:var(--corp-tint);color:var(--corp);}
 .ometa{font-size:12px;color:var(--ink-faint);}
 .ocard h3{font-family:var(--font-display);font-size:16px;margin:2px 0 0;line-height:1.3;}
 .odesc{margin:0;font-size:13.5px;color:var(--ink);line-height:1.5;text-wrap:pretty;}
@@ -335,6 +351,7 @@ PAGE_CSS = """
 .odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
 .odot.government path{fill:var(--primary);}
 .odot.academic path{fill:var(--green);}
+.odot.corporate path{fill:var(--corp);}
 .odot.mixed path{fill:var(--ink-600);}
 .odot .ohole{fill:var(--surface);pointer-events:none;}
 .odot text{font-family:var(--font-ui);font-size:7.5px;font-weight:700;fill:var(--white);
@@ -372,6 +389,7 @@ BODY = theme.page_header(
         <button type="button" data-type="" aria-pressed="true">⟪All⟫</button>
         <button type="button" data-type="government" aria-pressed="false">⟪Government⟫</button>
         <button type="button" data-type="academic" aria-pressed="false">⟪Academic⟫</button>
+        <button type="button" data-type="corporate" aria-pressed="false">⟪Corporate⟫</button>
       </div>
       <select id="occ" aria-label="⟪Filter by country⟫">
         <option value="">⟪Any country⟫</option>__COPTS__
@@ -391,7 +409,8 @@ BODY = theme.page_header(
       </div>
       <div class="okey"><span><i style="background:var(--primary)"></i>⟪Government⟫</span>
         <span><i style="background:var(--green)"></i>⟪Academic⟫</span>
-        <span><i style="background:var(--ink-600)"></i>⟪Both, at one place⟫</span></div>
+        <span><i style="background:var(--corp)"></i>⟪Corporate⟫</span>
+        <span><i style="background:var(--ink-600)"></i>⟪Several types, at one place⟫</span></div>
       __MAPNOTE__
     </div>
     <p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
@@ -400,8 +419,15 @@ BODY = theme.page_header(
       fetched __FLOSS_AT__. Academic offices: the
       <a href="https://sustainoss.org/academic-map/">SustainOSS academic map</a> (MIT), the
       universities and research institutes it lists under &ldquo;OSPOs&rdquo;, fetched __AMAP_AT__.
-      Two FLOSS-PSO offices are universities and are shown as academic. Locations are placed by
-      govoss at each office&rsquo;s city or its organisation&rsquo;s headquarters. The same data:
+      Two FLOSS-PSO offices are universities and are shown as academic.⟫</p>
+    <p class="ocred">⟪Corporate offices: the &ldquo;OSPO adopters&rdquo; of the
+      <a href="https://landscape.todogroup.org/">TODO Group&rsquo;s OSPO landscape</a> (Apache-2.0),
+      fetched __TODO_AT__, as the landscape names them; two state bodies it lists are shown as
+      government, and offices already listed above are not repeated. Case studies are the TODO
+      Group&rsquo;s own.⟫</p>
+    <p class="ocred">⟪Locations are placed by govoss at each office&rsquo;s city or its
+      organisation&rsquo;s headquarters; companies&rsquo; headquarters come from
+      <a href="https://www.wikidata.org/">Wikidata</a> where it has them. The same data:
       <a href="/ospos.json">/ospos.json</a>.⟫</p>
   </main>
 </div>
@@ -457,7 +483,7 @@ SCRIPT = """
   try {
     var P = new URLSearchParams(location.search);
     if (P.get('q')) el('oq').value = P.get('q');
-    if (['government', 'academic'].indexOf(P.get('type')) >= 0) type = P.get('type');
+    if (['government', 'academic', 'corporate'].indexOf(P.get('type')) >= 0) type = P.get('type');
     var cc = P.get('cc');
     if (cc && [].some.call(el('occ').options, function (o) { return o.value === cc; })) el('occ').value = cc;
     if (P.get('view') === 'map' || location.hash === '#map') view = 'map';
@@ -525,18 +551,22 @@ if __name__ == "__main__":
         "generated_at": NOW, "human_page": i18n.BASE + "/ospos",
         "about": "Open source program offices. Government: the FLOSS-PSO Network's "
                  "public-sector OSPO list (CC0). Academic: the SustainOSS academic map's "
-                 "'OSPOs' lists (MIT). Two FLOSS-PSO offices are universities and are typed "
-                 "academic. "
+                 "'OSPOs' lists (MIT). Corporate: the TODO Group OSPO landscape's 'OSPO "
+                 "Adopter' rows (Apache-2.0), two state bodies among them typed government and "
+                 "offices already listed from the other two not repeated. Two FLOSS-PSO offices "
+                 "are universities and are typed academic. "
                  "SOURCES: sources[key].ok false means that list's fetch failed and the rows "
                  "shown are the last good copy, fetched at fetched_at (which is never moved "
                  "by a failed attempt; failed_at and error say when and why it failed); "
                  "count is the number of rows from that list. "
-                 "IDS are derived from each office's URL in its list and stay the same while "
-                 "that URL does. "
-                 "LOCATIONS are govoss's hand placement: location.basis 'seat' is the office's "
+                 "IDS are derived from each office's URL in its list (FLOSS-PSO), its page "
+                 "path (academic map) or its name (TODO landscape), and stay the same while "
+                 "that does. "
+                 "LOCATIONS are govoss's placement, by hand or (companies) from Wikidata's "
+                 "headquarters, named in location.via: location.basis 'seat' is the office's "
                  "own city; 'hq' is its parent organisation's headquarters, so the point is "
-                 "approximate. lat/lon are WGS84 degrees. An academic office not yet placed "
-                 "has location null; every FLOSS-PSO office is placed. "
+                 "approximate. lat/lon are WGS84 degrees. An academic or corporate office not "
+                 "yet placed has location null; every FLOSS-PSO office is placed. "
                  "COUNTRY codes are listed in country_codes: ISO 3166-1 alpha-2 except EL "
                  "(Greece, the EU's code) and INT (an international body); country_names "
                  "gives a short display name for each. "

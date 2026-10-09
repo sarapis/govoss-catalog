@@ -552,8 +552,21 @@ def main():
         pg = pages[name]
         ids = re.findall(r'<li class="ocard" id="([^"]+)" data-type="([^"]+)"', pg)
         check("%s renders every fetched office" % name, sorted(i for i, _ in ids), sorted(r["id"] for r in od))
-        check("%s types are only government / academic" % name,
-              sorted({t for _, t in ids} - {"government", "academic"}), [])
+        check("%s types are only government / academic / corporate" % name,
+              sorted({t for _, t in ids} - {"government", "academic", "corporate"}), [])
+        # corporate since 2026-10-09 (owner): a filter, a pin colour in the key, a credit
+        # naming the TODO landscape, every corporate card from it, and the TODO case
+        # studies linked on exactly the cards whose rows carry one
+        corp = [i for i, t in ids if t == "corporate"]
+        ncase = sum(1 for r in od if r.get("case_study"))
+        check("%s: Corporate is a filter, in the map key, and credited to the TODO landscape" % name,
+              # the BUTTON, not the attribute: every corporate card carries data-type too
+              ('<button type="button" data-type="corporate"' in pg, pg.count('background:var(--corp)'),
+               'href="https://landscape.todogroup.org/"' in pg,
+               len(corp) == sum(1 for r in od if r["type"] == "corporate"), len(corp) > 0),
+              (True, 1, True, True, True))
+        check("%s: a TODO case-study link on each card that has one, and only those" % name,
+              len(re.findall(r'<a href="https://todogroup\.org/resources/case-studies/[a-z-]+/"', pg)), ncase)
         # within EACH card: an unbounded search would find the next card's flag
         noflag = [i for i, body in re.findall(r'<li class="ocard" id="([^"]+)"[^>]*data-cc="[^"]+">(.*?)</li>', pg, re.S)
                   if not re.search(r'<span class="oflag" aria-hidden="true">&#\d+;', body)]
@@ -611,7 +624,8 @@ def main():
         dotted = set(i for grp in re.findall(r'data-ids="([^"]+)"', pg) for i in grp.split())
         unplaced_note = re.search(r'<p class="onote-map">(.*?)</p>', pg, re.S)
         missing = sorted(r["id"] for r in od if r["id"] not in dotted
-                         and not (unplaced_note and html.escape(r["name"], quote=False) in unplaced_note.group(1)))
+                         # the page is ASCII: "Itaú" is &#250; there - compare unescaped
+                         and not (unplaced_note and r["name"] in html.unescape(unplaced_note.group(1))))
         check("%s: every office is a map dot or named as not placed" % name, missing, [])
     sys.path.insert(0, HERE)
     import build_ospos as _bo
@@ -641,12 +655,15 @@ def main():
           "CC0 1.0 (the FLOSS-PSO Network's OSPO list)")
     check("/ospos.json documents its country codes",
           sorted(oj.get("country_codes") or {}),
-          ["DE", "DK", "EL", "ES", "FR", "GB", "IE", "INT", "LU", "NL", "US"])
+          ["AR", "BR", "CN", "DE", "DK", "EL", "ES", "FI", "FR", "GB", "IE", "IN", "INT", "JP",
+           "KR", "LU", "NL", "SE", "TW", "US"])
     check("/ospos.json names every country code, exactly (UNNYC's headings)",
           (oj.get("country_names"), sorted(oj.get("country_names") or {}) == sorted(oj.get("country_codes") or {})),
           ({"DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
             "GB": "United Kingdom", "IE": "Ireland", "INT": "International", "LU": "Luxembourg",
-            "NL": "Netherlands", "US": "United States"}, True))
+            "NL": "Netherlands", "US": "United States", "AR": "Argentina", "BR": "Brazil",
+            "CN": "China", "FI": "Finland", "IN": "India", "JP": "Japan", "KR": "South Korea",
+            "SE": "Sweden", "TW": "Taiwan"}, True))
     # the failed-fetch example: the live document with ONLY the floss-pso state
     # changed, the way fetch_ospos.failed_state() writes it, and still in contract
     try:

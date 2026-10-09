@@ -1,8 +1,8 @@
-"""Fetch the public-sector and academic OSPO lists into cache/ospos.json.
+"""Fetch the public-sector, academic and corporate OSPO lists into cache/ospos.json.
 
     python3 fetch_ospos.py
 
-Two published lists, read from the route each one's own site is built from -
+Three published lists, read from the route each one's own site is built from -
 never a list govoss curates (the scope rule for sources applies here too):
 
   FLOSS-PSO Network (OSPO Alliance), https://floss-pso.network/public-sector-ospos/
@@ -15,6 +15,16 @@ never a list govoss curates (the scope rule for sources applies here too):
       and other headings ("Labs", "Universities without OSPOs"); ONLY the "## OSPOs"
       sections are read - the map's classification, not ours (owner, 2026-10-07).
       Every academic-map entry is ACADEMIC, research institutions included.
+  TODO Group OSPO landscape, github.com/todogroup/ospolandscape (Apache-2.0)
+      landscape.yml, which landscape.todogroup.org (and todogroup.org's members
+      page, an embed of it) is generated from. ONLY its "OSPO Adopter" category,
+      minus the "Associate" subcategory (foundations and projects, not offices);
+      every TODO Group member but one is also listed there. CORPORATE unless named
+      in TODO_TYPES (owner, 2026-10-09); rows that are an office already listed
+      from the other two are dropped by name in TODO_SAME_AS. Rows carry a name,
+      a homepage and a Crunchbase link only - no country, no description.
+      ⚠ The adopter subcategory is spelt with a CYRILLIC о ("OSPO Adоpter"): the
+      category is matched by its ASCII name and the subcategory never by name.
 
 Like a harvest source: a source that fails, or comes back under half its last
 size, or (FLOSS-PSO) breaks the /ospos.json consumer contract in ospo_contract.py,
@@ -22,7 +32,7 @@ keeps its previous records and records the error; this script always
 exits 0 (one flaky list must not block the weekly publish). /ospos shows each
 list's fetch date, so a stale list is visible where people look.
 
-Locations are not in either list: ospos/locations.json (hand-placed, committed)
+Locations are not in any of the lists: ospos/locations.json (hand-placed, committed)
 places each office for the map. An office with no location is still listed;
 the page says how many are not on the map.
 """
@@ -58,8 +68,43 @@ ACADEMIC_FLOSS = {
     "https://scienceouverte.univ-grenoble-alpes.fr/a-propos/cellule-data-grenoble-alpes",
 }
 
+TODO_RAW = "https://raw.githubusercontent.com/todogroup/ospolandscape/main/landscape.yml"
+TODO_REPO = "https://github.com/todogroup/ospolandscape/blob/main/landscape.yml"
+TODO_SITE = "https://landscape.todogroup.org/"
+
+# TODO "OSPO Adopter" rows that are not companies, by their homepage URL (named,
+# never inferred). Two state bodies are shown as government (owner, 2026-10-09);
+# the six that are offices /ospos already lists from FLOSS-PSO or the academic map
+# are dropped, mapped to the id they would duplicate.
+TODO_TYPES = {
+    "http://www.caict.ac.cn/": "government",          # China Academy for ICT (state)
+    "https://www.ipa.go.jp/en/": "government",        # Information-technology Promotion Agency, Japan
+}
+TODO_SAME_AS = {
+    "https://opensource.muenchen.de/": "floss-opensource-muenchen-de-ospo-html",
+    "https://ospo.gwu.edu/": "amap-george-washington",
+    "https://drcc.library.jhu.edu/open-source-programs-office/": "amap-johns-hopkins-university",
+    "https://www.rit.edu/about-rit": "amap-rit",
+    "https://www.tcd.ie/innovation/OSPO/": "amap-trinity-college-dublin",
+    "https://cross.ucsc.edu": "amap-university-of-california-santa-cruz",
+}
+# TODO Group's own OSPO case studies (todogroup.org, CC BY 4.0), by the cleaned
+# landscape name - linked from the card, never copied. Index:
+# https://todogroup.org/resources/case-studies/ (RIT's is the academic map's office).
+TODO_CASE_STUDIES = {
+    name: "https://todogroup.org/resources/case-studies/%s/" % slug for name, slug in (
+        ("Autodesk", "autodesk"), ("Capital One", "capital-one"), ("Comcast", "comcast"),
+        ("Dropbox", "dropbox"), ("Meta", "meta"), ("Microsoft", "microsoft"),
+        ("National Instruments", "national-instruments"), ("Verizon Media", "oath"),
+        ("Porsche", "porsche"), ("Red Hat", "red-hat"), ("Salesforce", "salesforce"),
+        ("SAP", "sap"), ("Uber", "uber"),
+    )
+}
+
 LICENCES = {"floss-pso": C.FLOSS_LICENCE,
-            "academic-map": "MIT (github.com/sustainers/academic-map)"}
+            "academic-map": "MIT (github.com/sustainers/academic-map)",
+            "todo-landscape": "Apache-2.0 (github.com/todogroup/ospolandscape)"}
+PAGES = {"floss-pso": FLOSS_PAGE, "academic-map": AMAP_SITE, "todo-landscape": TODO_SITE}
 
 
 def host_of(url):
@@ -215,14 +260,49 @@ def failed_state(prev, key, error, kept, now):
     st = dict(prev or {})
     st.update({"ok": False, "error": error,
                "failed_at": now, "count": kept, "licence": LICENCES[key],
-               "url": FLOSS_PAGE if key == "floss-pso" else AMAP_SITE})
+               "url": PAGES[key]})
     return st
 
 
-def merge(floss, amap):
-    """FLOSS-PSO wins a duplicate: same host is the same office."""
+# ------------------------------------------------------------ TODO landscape
+def parse_todo(doc):
+    """landscape.yml -> the OSPO Adopter rows, normalised. The subcategory is
+    never matched by name (its "о" is Cyrillic): every subcategory of the
+    "OSPO Adopter" category but "Associate" is read."""
+    out = []
+    for cat in (doc or {}).get("landscape") or []:
+        if cat.get("name") != "OSPO Adopter":
+            continue
+        for sub in cat.get("subcategories") or []:
+            if sub.get("name") == "Associate":
+                continue
+            for it in sub.get("items") or []:
+                url = (it.get("homepage_url") or "").strip()
+                if not it.get("name") or not url or url in TODO_SAME_AS:
+                    continue
+                name = re.sub(r"\s*\(Adopter\)\s*$", "", re.sub(r"\s+", " ", str(it["name"]))).strip()
+                out.append({
+                    "id": "todo-" + slug(name),
+                    "name": name,
+                    "type": TODO_TYPES.get(url, "corporate"),
+                    "country": None,           # the landscape gives none; ospos/locations.json does
+                    "url": url,
+                    "description": "",
+                    "case_study": TODO_CASE_STUDIES.get(name),
+                    "crunchbase": it.get("crunchbase"),
+                    "code": [], "policy": None, "email": None, "created": None,
+                    "source": "todo-landscape",
+                    "source_url": TODO_REPO,
+                })
+    return out
+
+
+def merge(floss, amap, todo=()):
+    """FLOSS-PSO wins a duplicate: same host is the same office. TODO rows that
+    duplicate one were already dropped by TODO_SAME_AS (their hosts differ - the
+    landscape often links a university or a company, not its office)."""
     hosts = {host_of(r["url"]) for r in floss}
-    return floss + [r for r in amap if host_of(r["url"]) not in hosts]
+    return floss + [r for r in amap if host_of(r["url"]) not in hosts] + list(todo)
 
 
 def main():
@@ -237,7 +317,8 @@ def main():
     state = dict(prev.get("sources") or {})
     got = {}
     for key, fn in (("floss-pso", lambda: parse_floss(yaml.safe_load(get(FLOSS_URL, raw=True)))),
-                    ("academic-map", fetch_amap)):
+                    ("academic-map", fetch_amap),
+                    ("todo-landscape", lambda: parse_todo(yaml.safe_load(get(TODO_RAW, raw=True))))):
         old = prev_by.get(key, [])
         try:
             recs = fn()
@@ -247,7 +328,7 @@ def main():
                 floss_contract(recs)
             got[key] = recs
             state[key] = {"ok": True, "fetched_at": NOW, "count": len(recs), "licence": LICENCES[key],
-                          "url": FLOSS_PAGE if key == "floss-pso" else AMAP_SITE}
+                          "url": PAGES[key]}
             print("    %s: %d OSPOs" % (key, len(recs)))
         except Exception as e:
             got[key] = old
@@ -255,12 +336,12 @@ def main():
                               len(old), NOW)
             state[key] = st
             print("    %s: FAILED %s - keeping %d from the last good fetch" % (key, st["error"], len(old)))
-    ospos = merge(got.get("floss-pso", []), got.get("academic-map", []))
+    ospos = merge(got.get("floss-pso", []), got.get("academic-map", []), got.get("todo-landscape", []))
     with open(OUT, "w") as fh:
         json.dump({"sources": state, "ospos": ospos}, fh, indent=1, sort_keys=True, ensure_ascii=False)
-    print("    %d OSPOs written (%d government, %d academic)"
+    print("    %d OSPOs written (%d government, %d academic, %d corporate)"
           % (len(ospos), sum(r["type"] == "government" for r in ospos),
-             sum(r["type"] == "academic" for r in ospos)))
+             sum(r["type"] == "academic" for r in ospos), sum(r["type"] == "corporate" for r in ospos)))
 
 
 if __name__ == "__main__":

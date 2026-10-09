@@ -237,6 +237,10 @@ OVERRIDES_CSS = """
   --verified:   var(--wg-success);
   --mint:       var(--wg-success-surface);
   --mint-100:   var(--wg-success-surface);
+  /* /ospos's corporate type (2026-10-09): NYC orange-dark as the fill and the text,
+     on a 12% tint of itself for chips. White on it measured 5.2:1. */
+  --corp:       var(--wg-nyc-orange-dark);
+  --corp-tint:  color-mix(in srgb, var(--wg-nyc-orange-dark) 12%, var(--white));
   --mint-300:   var(--wg-success-surface);
 
   /* ---- elevation. The hard-offset shadow (2px 2px 0) was the CTFG signature

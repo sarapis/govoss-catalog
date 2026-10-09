@@ -306,7 +306,7 @@ def main():
     ospo_frames(by_code, sha)
 
 
-# ---- the /ospos map (build_ospos.py): North America and Europe side by side.
+# ---- the /ospos map (build_ospos.py): North America, Europe and Asia side by side.
 # Points are placed at BUILD time from ospos/locations.json, so this file stores
 # each frame's projection (centre, scale s, offset ox/oy) beside its land - the
 # weekly build then needs no shapely. `probe` pins the projection: build_ospos's
@@ -314,7 +314,13 @@ def main():
 OSPO_OUT = os.path.join(HERE, "geo", "ospo_frames.json")
 OSPO_FRAMES = [
     ("northam", {"centre": (-96.0, 39.0), "box": (-125.0, 24.0, -66.5, 50.0)}, 500.0),
-    ("europe", {"centre": (10.0, 50.0), "box": (-11.0, 35.5, 25.0, 59.0)}, 440.0),
+    # north to 61.5 and east to 27 since 2026-10-09: Helsinki, Espoo and Stockholm
+    # (TODO's corporate OSPOs) sat above the old 59N edge
+    ("europe", {"centre": (10.0, 51.0), "box": (-11.0, 35.5, 27.0, 61.5)}, 440.0),
+    # 2026-10-09, for TODO's corporate OSPOs in China, Japan, Korea, India, Taiwan.
+    # South America (one company each in Brazil and Argentina) has no frame: the
+    # page names them as not on the map rather than drawing a near-empty continent.
+    ("asia", {"centre": (108.0, 30.0), "box": (68.0, 8.0, 146.0, 46.0)}, 440.0),
 ]
 
 

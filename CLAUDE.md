@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 13 suites, 911 checks, all manual
+for t in test_*.py; do python3 $t; done     # 13 suites, 925 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
@@ -198,8 +198,13 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   group, never mixed into their file or credited to them), `/ospos`
   (`build_ospos.py`, nav between Catalogs and Resources: the FLOSS-PSO list (CC0) as
   government, plus the SustainOSS academic map's own "## OSPOs" sections (MIT) as academic,
+  plus the TODO Group landscape's "OSPO Adopter" rows (`landscape.yml`, Apache-2.0) as CORPORATE
+  (owner, 2026-10-09; its subcategory name has a CYRILLIC о - match the category, never it;
+  `TODO_TYPES` names two state bodies government, `TODO_SAME_AS` drops offices already listed),
   fetched weekly by `fetch_ospos.py` into `cache/ospos.json`, last good copy kept; two FLOSS-PSO
-  universities named in `ACADEMIC_FLOSS`; map pins (merged within 9 units; a pin opens copies of its cards; frames stacked below 520px) from the hand-placed `ospos/locations.json`
+  universities named in `ACADEMIC_FLOSS`; companies placed at their Wikidata headquarters by the
+  MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` says where each came
+  from); frames North America, Europe, Asia (South America has none); map pins (merged within 9 units; a pin opens copies of its cards; frames stacked below 520px) from the hand-placed `ospos/locations.json`
   and `geo/ospo_frames.json`; Resources links via `RESOURCE_CASE`). Each also under
   `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.
@@ -247,7 +252,8 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   keep its shape, and stamp it from `meta.json`, never a fresh clock (check 12c).
 - **`/ospos.json` has an OUTSIDE consumer too** (un.opensource.nyc reads the FLOSS-PSO rows and
   throws on anything unexpected). Its contract lives once, in `ospo_contract.py`: exact licence
-  strings, `country_codes` + `country_names` (a new code is a contract change), row shapes,
+  strings, `country_codes` + `country_names` (a new code is a contract change - nine were added
+  2026-10-09 with the corporate type), types `government`/`academic`/`corporate`, row shapes,
   `count`, ids from the office URL. `/ospos.example-failed.json` is the same file after a failed
   FLOSS-PSO fetch, written by `fetch_ospos.failed_state()` (the one writer of that state). `fetch_ospos.py` REFUSES an upstream list that breaks it (ok:false, last good copy,
   `fetched_at` unmoved - so a new FLOSS-PSO office waits until it is placed in
@@ -274,7 +280,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed 
 
 ## Tests
 
-Thirteen suites, 911 checks, **all manual** - a test that can fail the weekly publish is one someone
+Thirteen suites, 925 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -294,7 +300,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos cards, map pins (scaled up on narrow screens), the stacked phone map, the pin popup, Resources links, folded code links, no entity in a script, projection (12f), hosting files |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
-| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch) |
+| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch) |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
 
 Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only

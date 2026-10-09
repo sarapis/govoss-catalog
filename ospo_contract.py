@@ -40,6 +40,9 @@ COUNTRIES = {
     "ES": "Spain", "FR": "France", "GB": "United Kingdom", "IE": "Ireland",
     "INT": "an international or intergovernmental body", "LU": "Luxembourg",
     "NL": "Netherlands", "US": "United States",
+    # 2026-10-09, with TODO's corporate OSPOs
+    "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland", "IN": "India",
+    "JP": "Japan", "KR": "South Korea", "SE": "Sweden", "TW": "Taiwan",
 }
 # A short display name per code, for headings - a SEPARATE key so country_codes
 # keeps its shape (asked for by UNNYC 2026-10-07; a contract addition, not a change).
@@ -47,8 +50,11 @@ COUNTRY_NAMES = {
     "DE": "Germany", "DK": "Denmark", "EL": "Greece", "ES": "Spain", "FR": "France",
     "GB": "United Kingdom", "IE": "Ireland", "INT": "International", "LU": "Luxembourg",
     "NL": "Netherlands", "US": "United States",
+    "AR": "Argentina", "BR": "Brazil", "CN": "China", "FI": "Finland", "IN": "India",
+    "JP": "Japan", "KR": "South Korea", "SE": "Sweden", "TW": "Taiwan",
 }
-TYPES = ("government", "academic")
+# "corporate" since 2026-10-09 (owner): the TODO Group landscape's OSPO adopters.
+TYPES = ("government", "academic", "corporate")
 BASES = {"seat": "the office's own city",
          "hq": "its parent organisation's headquarters - the point is approximate"}
 ISO_UTC = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$")
