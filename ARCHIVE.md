@@ -1360,3 +1360,25 @@ QID loans; crosswalk inputs refresh weekly (P1324 dump count-checked); Helsingbo
 20 with a `wordpress-plugin` rule; the one-marker language fix; suites for `get()`, the
 Workers and crosswalk's glue (F8 closed). All went live on the 2026-09-24 run; its check
 against expectations is in `ARCHIVE.md` › "Moved from CONTINUE.md on 2026-09-29".
+
+
+## Moved on 2026-10-09 (handoff)
+
+From CLAUDE.md (no longer a rule anyone needs daily; still true):
+
+- `govoss-catalog.vercel.app` 308s every path to govoss.cat (`deploy-vercel.json` is that whole
+  last deploy); a browser cross-origin fetch of the OLD JSON fails (no CORS on Vercel redirects).
+
+From CONTINUE.md:
+
+### Session 2026-09-23 (late) -> 29, in one screen
+
+Shipped and live-checked unless marked: the deploy token (F7 closed; first scheduled
+Cloudflare deploy on `token-file`); tests count checks instead of hard-coding (four totals
+were wrong, one a phantom pass); +58 `replaces.json` rows / 36 products; dedupe repo
+backfill (Mautic, ckan); MCP search reads repo URLs; catalog URLs carry the whole view
+(`?q=&fn=&cc=...`); stats above Recently added, "Find a filter..."; the `/sources.html` map
+as the Map view of Harvested catalogues, plus `/catalogues.geo.json` (UNNYC now reads it);
+stat rows never leave a grey cell. Not live yet: five translations, the GeoJSON timestamp
+fix (found during handoff: the two stamps matched only by luck). Written, undecided: the
+Helsingborg review.

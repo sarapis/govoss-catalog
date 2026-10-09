@@ -3,7 +3,7 @@
 > Union catalogue of **government open source software**, harvested first-hand from 20
 > national, municipal and international catalogues, normalised onto one schema, translated,
 > categorised by function, de-duplicated, linked to variants and liveness-monitored.
-> **3,163 active entries · 20 catalogues · 16 countries and bodies.** Live at
+> **3,175 active entries · 20 catalogues · 16 countries and bodies.** Live at
 > https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat.
 
 This file is RULES ONLY - it loads into every session, budget 300 lines. The reasoning,
@@ -179,87 +179,60 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   would answer first). Pinned by `test_workers.py` and `test_built_pages.py` 12e/13.
 - A Worker custom domain needs the hostname FREE of DNS records (error 100117). Only one
   config may claim a hostname (checked for `www`).
-- `govoss-catalog.vercel.app` 308s every path to govoss.cat (`deploy-vercel.json` is that whole
-  last deploy); a browser cross-origin fetch of the OLD JSON fails (no CORS on Vercel redirects).
 - **`sources.py:SITE_URL` is the one place the address is written.** Flip it only once the new
   address answers.
 
 ## The pages
 
-- Six pages x two languages (since 2026-10-07): `/` home (`HOME_BODY` + home-only
-  `HOME_CSS`: search, four section cards, the catalogues as a scrolling strip, Recently added open source
-  software, For builders, Get involved - NO entry DATA; its search is a GET form to `/software`;
-  each card figure equals what its page publishes, pinned cross-page), `/software` (the catalog,
-  `BODY`, with the six stats), both from `build_ui.py` + `_ui_template.py`; `/catalogs` (`build_sources.py`, was
-  /sources.html), `/docs` (`build_api.py`, was /api.html; the top-right button, not a nav item),
-  `/products` (no nav item, owner's call), `/resources` (`build_resources.py` from the committed `resources/ospo-resources.json`,
-  compiled by UN+NYC - replace the file to update; records stay English - plus govoss's OWN
-  `resources/govoss-additions.json`, same shape, each record `added_by: govoss`, its own
-  group, never mixed into their file or credited to them), `/ospos`
-  (`build_ospos.py`, nav between Catalogs and Resources: the FLOSS-PSO list (CC0) as
-  government, plus the SustainOSS academic map's own "## OSPOs" sections (MIT) as academic,
-  plus the TODO Group landscape's "OSPO Adopter" rows (`landscape.yml`, Apache-2.0) as CORPORATE
-  (owner, 2026-10-09; its subcategory name has a CYRILLIC о - match the category, never it;
-  `TODO_TYPES` names two state bodies government, `TODO_SAME_AS` drops offices already listed),
-  fetched weekly by `fetch_ospos.py` into `cache/ospos.json`, last good copy kept; two FLOSS-PSO
-  universities named in `ACADEMIC_FLOSS`; companies placed at their Wikidata headquarters by the
-  MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` says where each came
-  from); ONE world map (owner, 2026-10-09: Equal Earth, no Antarctica, one frame `world` in
-  `geo/ospo_frames.json`, written by `geo/build_geo.py`) with pins merged within 9 units (a pin
-  opens copies of its cards), placed from `ospos/locations.json`; Resources links via `RESOURCE_CASE`). Each also under
+- Seven pages x two languages: `/` and `/software` from `build_ui.py` + `_ui_template.py` (home is
+  `HOME_BODY` + home-only `HOME_CSS`, carries NO entry DATA, searches by GET to `/software`, and
+  every card figure equals what its page publishes - 12e); `/catalogs` (`build_sources.py`);
+  `/docs` (`build_api.py`, the top-right button); `/products` (no nav item, owner); `/resources`
+  (`build_resources.py`: UN+NYC's committed `resources/ospo-resources.json`, replaced to update,
+  records English - plus govoss's OWN `resources/govoss-additions.json`, each `added_by: govoss`,
+  never mixed into their file or credited to them); `/ospos` (`build_ospos.py`). Each under
   `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.
-- **One page header** (owner, 2026-10-07): every page but home uses `theme.page_header()` - the
-  nav name as the ONLY `h1`, a one-sentence lede with NO numbers (owner: nothing to keep
-  updated - counts live in cards, tiles and lists), full width and ONE line at 1024px+ (<=100
-  characters in EVERY language; ~113 fit, measured), a meta line led by the page's own data
-  file(s); left-aligned, one padding (~190px at 1280). A page's tools (search, filters, view
-  switch) sit directly under it; /software's agent note stays directly under its search
-  field. Home keeps its own centred hero. Pinned by `test_built_pages.py` 12g.
+- **`/ospos`: three published lists, never one we curate**, fetched weekly by `fetch_ospos.py`
+  (its docstring names every source and exception): FLOSS-PSO -> government, the SustainOSS
+  academic map's "## OSPOs" -> academic, the TODO Group landscape's "OSPO Adopter" rows ->
+  corporate (owner, 2026-10-09). **TODO's subcategory is spelt with a CYRILLIC о** - match the
+  category, never it. Places come from the hand-placed `ospos/locations.json`; companies' were
+  added by the MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` records the
+  source) - read its output by eye: it put Nokia in Canada and Tencent in the Caymans. ONE
+  Equal Earth world map (`geo/build_geo.py`, frame `world`), pins merged within 9 units.
+- **One page header** (owner, 2026-10-07/08): every page but home uses `theme.page_header()` -
+  the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
+  characters in every language), a meta line led by the page's own data file; the page's tools
+  directly under it. All pinned by `test_built_pages.py` 12g.
 - **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, asserted none survive.
 - Tokens are VENDORED (`vendor/wegovnyc/`), `theme.py` is an alias layer onto `--wg-*` mapped by
   ROLE and MEASURED contrast; `assert_variant_live()` checks the ROOT tag. Fonts self-hosted.
-- **Language copies (`i18n.py`, `i18n/ca.json`)**: phase 1 translates chrome only; data and the
-  API contract stay English. Keys are the English text. Templates mark `⟪…⟫`, or `⟪js:…⟫` in a
-  JS string (escapes apostrophes to `\uXXXX`); Python strings use `i18n.t(lang, msg, **kw)` with
-  NAMED args. **Order: markers -> placeholders -> links.** A missing translation falls back to
-  English and lands in `out/i18n_missing.json` (warned on); mismatched placeholders fail the
-  build. Pinned by `test_built_pages.py` check 12 (incl. `node --check` of each copy's script).
-- UI rules that cost a bug each (pinned where static checks can reach, in `test_built_pages.py`):
-  - `el.hidden` works only because `theme.py` ships `[hidden]{display:none!important}`; never
-    `style.display`. Checking `el.hidden` is not checking it is hidden - assert computed display.
-  - Measure rows by vertical CENTRE, not `top`. Check a class name is free before using it.
-  - Toolbar is one row above 940px by `nowrap` + `min-width:0`; `#sort` never shrinks; licence
-    and source share the squeeze on equal bases. Caps are sized for the widest language -
-    re-measure (1024px is the tightest column) when adding one.
-  - `.side` is sticky WITH a max-height; `current()` routes every facet key explicitly.
-  - The URL carries the view (`q fn cc rp src lic lv sort alt nodesc notsoft`): read once at
-    load, written by `reset()` via debounced `replaceState`. Every value is validated and an
-    unknown one IGNORED, never filtered to nothing. A key written must be read back
-    (`test_built_pages.py` 12b). Source country shows names; the facet value stays the code.
-  - Never name a JS variable after an element `id` (ids are globals).
-  - `catalogue.html` is pure ASCII; entities are not decoded inside `<script>`.
+- **Language copies (`i18n.py`, `i18n/ca.json`)**: chrome only; data and the API stay English.
+  Keys are the English text; mark `⟪…⟫` (`⟪js:…⟫` in a JS string), or `i18n.t(lang, msg, **kw)`
+  with NAMED args. **Order: markers -> placeholders -> links.** A missing string falls back to
+  English and lands in `out/i18n_missing.json`. Check 12 (incl. `node --check` per copy).
+- UI rules that cost a bug each (pinned in `test_built_pages.py` where static checks reach):
+  `el.hidden`, never `style.display` (it works via `[hidden]{display:none!important}`; assert
+  COMPUTED display); measure rows by vertical CENTRE; check a class name is free first; the
+  toolbar is one row above 940px, its caps sized for the widest language (re-measure at 1024);
+  `.side` is sticky WITH a max-height; the URL carries the view (`q fn cc rp src lic lv sort alt
+  nodesc notsoft`), every value validated and an unknown one IGNORED, every key written read
+  back (12b); never name a JS variable after an element `id`; pages are pure ASCII and entities
+  are not decoded inside `<script>` (a "·" once shipped as `&#183;`).
 - **Recently added**: `cache/_first_seen.json`, where `null` means BASELINE (never new) and a
   missing id is unseen. `build_ui._fs_ident()` must equal `first_seen.ident()`. Undated sorts last.
-- **The `/sources.html` map** (`sources_map.py`) is the MAP VIEW of "Harvested catalogues"
-  (cards are the default and the no-JS view; `?view=map` or `#map` opens it). Inline SVG from the COMMITTED
-  `geo/catalogue_shapes.json` - no tiles, no map library, nothing fetched at page load. That
-  file is written by `geo/build_geo.py` (manual, needs shapely, never in `run.sh`); re-run it
-  when a catalogue country or a city `map_point` (in `sources.py`) is added - check 12c fails
-  until you do. Natural Earth `ISO_A2` is `-99` for France: `ne_code()` falls through. Also
-  published as `/catalogues.geo.json`. **Never show a per-country sum of counts.**
-  That file has an OUTSIDE consumer (un.opensource.nyc's fetch script stops on a missing key,
-  an unknown feature `kind`, a changed licence string, or `generated_at` != `meta.json`'s) -
-  keep its shape, and stamp it from `meta.json`, never a fresh clock (check 12c).
-- **`/ospos.json` has an OUTSIDE consumer too** (un.opensource.nyc reads the FLOSS-PSO rows and
-  throws on anything unexpected). Its contract lives once, in `ospo_contract.py`: exact licence
-  strings, `country_codes` + `country_names` (a new code is a contract change - nine were added
-  2026-10-09 with the corporate type), types `government`/`academic`/`corporate`, row shapes,
-  `count`, ids from the office URL. `/ospos.example-failed.json` is the same file after a failed
-  FLOSS-PSO fetch, written by `fetch_ospos.failed_state()` (the one writer of that state). `fetch_ospos.py` REFUSES an upstream list that breaks it (ok:false, last good copy,
-  `fetched_at` unmoved - so a new FLOSS-PSO office waits until it is placed in
-  `ospos/locations.json`); `build_ospos.py` refuses to write a breaking file, which stops the
-  publish. Change the contract only together with UNNYC.
+- **The `/catalogs` map** (`sources_map.py`) is the Map view of the catalogue cards: inline SVG
+  from the COMMITTED `geo/catalogue_shapes.json` (no tiles, nothing fetched). Re-run the manual
+  `geo/build_geo.py` when a catalogue country or city `map_point` is added (12c fails until you
+  do); it also rewrites the OSPO map, and re-stamps the shapes' date even when nothing changed -
+  revert that. **Never show a per-country sum of counts.** Also `/catalogues.geo.json`, which has
+  an OUTSIDE consumer (UNNYC): keep its shape, stamp it from `meta.json` (12c).
+- **`/ospos.json` has an OUTSIDE consumer too** (UNNYC reads the FLOSS-PSO rows and throws on
+  anything unexpected). The contract lives once, in `ospo_contract.py` (licences, codes, types,
+  row shapes); a new code or type is a contract change - tell UNNYC. `fetch_ospos.py` refuses a
+  FLOSS-PSO list that breaks it (so a new office waits until placed); `build_ospos.py` refuses to
+  write a breaking file, which stops the publish. `test_ospos.py` + 12f.
 - **The country code is the country of the CATALOGUE, not the tier of government** - the caveat
   ships in the JSON, on the page, in `meta.json` and `llms.txt`.
 - Agents are told not to scrape in four places: the HTML comment above `<title>`, alternate
