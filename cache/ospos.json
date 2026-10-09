@@ -1819,7 +1819,8 @@
    "description": "",
    "email": null,
    "id": "todo-innovation-platform-agency-japan",
-   "name": "Innovation Platform Agency Japan",
+   "name": "Information-technology Promotion Agency, Japan (IPA)",
+   "name_in_list": "Innovation Platform Agency Japan",
    "policy": null,
    "source": "todo-landscape",
    "source_url": "https://github.com/todogroup/ospolandscape/blob/main/landscape.yml",
@@ -2742,21 +2743,21 @@
  "sources": {
   "academic-map": {
    "count": 31,
-   "fetched_at": "2026-10-09T15:06:04Z",
+   "fetched_at": "2026-10-09T15:50:10Z",
    "licence": "MIT (github.com/sustainers/academic-map)",
    "ok": true,
    "url": "https://sustainoss.org/academic-map/"
   },
   "floss-pso": {
    "count": 18,
-   "fetched_at": "2026-10-09T15:06:04Z",
+   "fetched_at": "2026-10-09T15:50:10Z",
    "licence": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
    "ok": true,
    "url": "https://floss-pso.network/public-sector-ospos/"
   },
   "todo-landscape": {
    "count": 120,
-   "fetched_at": "2026-10-09T15:06:04Z",
+   "fetched_at": "2026-10-09T15:50:10Z",
    "licence": "Apache-2.0 (github.com/todogroup/ospolandscape)",
    "ok": true,
    "url": "https://landscape.todogroup.org/"
