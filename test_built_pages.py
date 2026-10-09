@@ -624,6 +624,46 @@ def main():
                              r'.*?<button type="button" class="opop-x" id="opop-x" aria-label="[^"]+">', pg, re.S)), True)
         check("%s: no character entity inside a script" % name,
               [m for s_ in re.findall(r'<script>(.*?)</script>', pg, re.S) for m in re.findall(r'&#\d+;', s_)], [])
+        sys.path.insert(0, HERE)
+        from build_ospos import MERGE_WITHIN
+        # zoom (owner, 2026-10-09): three labelled buttons; the pins live in a group
+        # the script redraws from #ospots; their scale divides --z out; and the
+        # page's ospoCluster(), run under node at zoom 1, IS the build's merge -
+        # same pins, same offices, same places - and splits them when zoomed in
+        zb = re.search(r'<div class="ozoom" id="ozoom" role="group" aria-label="[^"]+">(.*?)</div>', pg, re.S)
+        check("%s: zoom in / out / whole world, each a labelled button" % name,
+              zb and re.findall(r'<button type="button"[^>]* data-zoom="(\w+)" aria-label="[^"]+"', zb.group(1)),
+              ["in", "out", "reset"])
+        check("%s: pins keep their size at any zoom (their scale divides by --z)" % name,
+              '.opin{transform:scale(calc(var(--pin,1) * var(--k,1) / var(--z,1)));' in pg, True)
+        sj = re.search(r'<script type="application/json" id="ospots">(.*?)</script>', pg, re.S)
+        try:
+            spots = json.loads(sj.group(1))
+        except Exception:
+            spots = {}
+        static = sorted((ids, html.unescape(pl))
+                        for ids, pl in re.findall(r'data-ids="([^"]+)" data-place="([^"]*)"', pg))
+        cl = re.search(r'(function ospoCluster\(.*?\n\})', pg, re.S)
+        got = {}
+        if cl and spots:
+            tmp = os.path.join(HERE, "out", "_cluster_%s.js" % name.replace("/", "_"))
+            open(tmp, "w").write(cl.group(1) + "\nvar S = " + json.dumps(spots) +
+                                 ";\nconsole.log(JSON.stringify([1, 24].map(function (z) {"
+                                 " return ospoCluster(S.spots, S.within, z).map(function (m) {"
+                                 " return [m.ids.join(' '), m.places.join('; ')]; }); })));")
+            p = subprocess.run(["node", tmp], capture_output=True, text=True)
+            os.remove(tmp)
+            try:
+                got = dict(zip((1, 24), json.loads(p.stdout)))
+            except Exception:
+                got = {}
+        check("%s: the zoom's merge at zoom 1 is the build's own (same pins, offices, places)" % name,
+              (spots.get("within"), sorted(map(tuple, got.get(1, []))) == static and len(static) > 0),
+              (MERGE_WITHIN, True))
+        check("%s: zoomed in, merged pins split (more pins at 24x, no office lost)" % name,
+              (len(got.get(24, [])) > len(got.get(1, [])),
+               sorted(i for ids, _ in got.get(24, []) for i in ids.split()) ==
+               sorted(i for ids, _ in static for i in ids.split())), (True, True))
         dotted = set(i for grp in re.findall(r'data-ids="([^"]+)"', pg) for i in grp.split())
         unplaced_note = re.search(r'<p class="onote-map">(.*?)</p>', pg, re.S)
         missing = sorted(r["id"] for r in od if r["id"] not in dotted

@@ -195,8 +195,15 @@ def build(lang, data, locs, geo, res):
         spots.setdefault(p, []).append(r)
     # pins closer than MERGE_WITHIN share one (a teardrop hides its neighbour: Saint-Mande
     # covered Paris's three); greedy, largest spot first, measured from each pin's anchor
+    order = sorted(spots.items(), key=lambda kv: -len(kv[1]))
+    # the same spots, in the same order, for the page's zoom: ospoCluster() in SCRIPT
+    # re-merges them at each zoom by this rule, MERGE_WITHIN measured on SCREEN
+    spot_json = json.dumps({"within": MERGE_WITHIN, "pin": PIN, "spots": [
+        [k, x, y, [r["id"] for r in rs],
+         list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))]
+        for (k, x, y), rs in order]}, sort_keys=True).replace("</", "<\\/")
     merged = []
-    for (k, x, y), rs in sorted(spots.items(), key=lambda kv: -len(kv[1])):
+    for (k, x, y), rs in order:
         for m in merged:
             if m[0] == k and math.hypot(m[1] - x, m[2] - y) < MERGE_WITHIN:
                 m[3].extend(rs)
@@ -228,8 +235,8 @@ def build(lang, data, locs, geo, res):
             dx, dy = shift[k]
             out.append('<g transform="translate(%s %s)"><g class="oframe">'
                        '<rect x="%s" y="%s" width="%s" height="%s" rx="8"/>'
-                       '<path d="%s" aria-hidden="true"/></g>%s</g>'
-                       % (round(dx, 1), round(dy, 1), rx, ry, rw, rh, fr["land"], "".join(pins[k])))
+                       '<path d="%s" aria-hidden="true"/></g><g class="opins" data-frame="%s">%s</g></g>'
+                       % (round(dx, 1), round(dy, 1), rx, ry, rw, rh, fr["land"], esc(k), "".join(pins[k])))
         out.append("</svg>")
         return "".join(out)
 
@@ -253,7 +260,7 @@ def build(lang, data, locs, geo, res):
     subs = {
         "__N__": N(len(os_)), "__NGOV__": N(n_gov), "__NACA__": N(n_aca), "__NCORP__": N(n_corp),
         "__TODO_AT__": fetched("todo-landscape"),
-        "__CARDS__": "".join(cards), "__MAP__": "".join(svg), "__MAPNOTE__": note,
+        "__CARDS__": "".join(cards), "__MAP__": "".join(svg), "__MAPNOTE__": note, "__SPOTS__": spot_json,
         "__COPTS__": copts,
         "__FLOSS_AT__": fetched("floss-pso"), "__AMAP_AT__": fetched("academic-map"),
         "__LANG__": lang,
@@ -322,12 +329,32 @@ PAGE_CSS = """
 .omap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
   padding:14px;margin-top:14px;}
 .omap-svg{display:block;width:100%;height:auto;}
-.oframe rect{fill:var(--surface);stroke:var(--border);stroke-width:1;}
-.oframe path{fill:var(--bg-alt);stroke:var(--surface);stroke-width:.6;}
+.oframe rect{fill:var(--surface);stroke:var(--border);stroke-width:1;vector-effect:non-scaling-stroke;}
+.oframe path{fill:var(--bg-alt);stroke:var(--surface);stroke-width:.6;vector-effect:non-scaling-stroke;}
+/* zoom moves the viewBox; --z (set by the script) divides the pins' scale back out,
+   so a pin keeps its size on screen at every zoom */
+.omap-svg{touch-action:pan-y;}
+.omap-svg.zoomed{cursor:grab;touch-action:none;}
+.omap-svg.zoomed:active{cursor:grabbing;}
+.ozoom{position:absolute;top:22px;left:22px;z-index:4;display:flex;flex-direction:column;
+  border:1px solid var(--border);border-radius:var(--r-chip);overflow:hidden;background:var(--surface);
+  box-shadow:var(--shadow-soft);}
+.ozoom button{font:inherit;font-size:18px;font-weight:600;line-height:1;width:34px;height:34px;border:0;
+  background:none;color:var(--ink);cursor:pointer;padding:0;}
+.ozoom button + button{border-top:1px solid var(--border);}
+.ozoom button.oreset{font-size:15px;}
+.ozoom button:hover:not(:disabled),.ozoom button:focus-visible{background:var(--bg-alt);}
+.ozoom button:focus-visible{outline:2px solid var(--primary);outline-offset:-2px;}
+.ozoom button:disabled{color:var(--ink-faint);cursor:default;}
+/* a phone's map is ~124px tall: the column would cover the Americas, so the
+   buttons sit in a row under the map instead */
+@media (max-width:600px){.ozoom{position:static;flex-direction:row;width:max-content;margin-top:10px;
+  box-shadow:none;}.ozoom button + button{border-top:0;border-left:1px solid var(--border);}
+  .ozoom button{width:44px;height:40px;}}
 .odot{cursor:pointer;}
 /* the map shrinks with the page and the pins with it: --pin scales them back up on
    narrow screens, about the tip (the place), so a pin stays a usable tap target */
-.opin{transform:scale(calc(var(--pin,1) * var(--k,1)));transform-origin:0 0;}
+.opin{transform:scale(calc(var(--pin,1) * var(--k,1) / var(--z,1)));transform-origin:0 0;}
 @media (max-width:800px){.omap-svg{--pin:1.5;}}
 @media (max-width:520px){.omap-svg{--pin:2.2;}}
 .odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
@@ -355,6 +382,7 @@ PAGE_CSS = """
 .okey{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12px;color:var(--ink-600);}
 .okey i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
 .onote-map{margin:8px 0 0;font-size:12px;color:var(--ink-faint);}
+.ohint{margin:8px 0 0;font-size:12px;color:var(--ink-faint);}
 .ocred{margin-top:18px;font-size:12px;color:var(--ink-faint);line-height:1.6;}
 """
 
@@ -384,6 +412,12 @@ BODY = theme.page_header(
     <p class="ocount" id="ocount" aria-live="polite">⟪__N__ offices⟫</p>
     <ul class="olist" id="olist">__CARDS__</ul>
     <div class="omap" id="omap" hidden>__MAP__
+      <div class="ozoom" id="ozoom" role="group" aria-label="⟪Zoom⟫">
+        <button type="button" data-zoom="in" aria-label="⟪Zoom in⟫" title="⟪Zoom in⟫">+</button>
+        <button type="button" data-zoom="out" aria-label="⟪Zoom out⟫" title="⟪Zoom out⟫">&minus;</button>
+        <button type="button" class="oreset" data-zoom="reset" aria-label="⟪Show the whole world⟫"
+          title="⟪Show the whole world⟫">&#8634;</button></div>
+      <script type="application/json" id="ospots">__SPOTS__</script>
       <div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>
         <div class="opop-head"><span id="opop-h"></span>
           <button type="button" class="opop-x" id="opop-x" aria-label="⟪Close⟫">&times;</button></div>
@@ -393,6 +427,7 @@ BODY = theme.page_header(
         <span><i style="background:var(--green)"></i>⟪Academic⟫</span>
         <span><i style="background:var(--corp)"></i>⟪Corporate⟫</span>
         <span><i style="background:var(--ink-600)"></i>⟪Several types, at one place⟫</span></div>
+      <p class="ohint">⟪Zoom with the buttons, a pinch, Ctrl + scroll or a double-click; drag to move. Nearby offices share a numbered pin until you zoom in.⟫</p>
       __MAPNOTE__
     </div>
     <p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
@@ -419,29 +454,43 @@ BODY = theme.page_header(
 # /resources: an unknown value is IGNORED. el.hidden throughout.
 SCRIPT = """
 <script>
+// build_ospos.py's merge, re-run at zoom z: greedy over spots already in merge order
+// (largest first); a spot joins the first pin in its frame nearer than `within`
+// SCREEN units, i.e. within / z map units. At z = 1 it is the build's own merge.
+function ospoCluster(spots, within, z) {
+  var out = [];
+  spots.forEach(function (s) {
+    for (var i = 0; i < out.length; i++) {
+      var m = out[i];
+      if (m.k === s[0] && Math.hypot(m.x - s[1], m.y - s[2]) * z < within) {
+        m.ids = m.ids.concat(s[3]); m.places = m.places.concat(s[4]); return;
+      }
+    }
+    out.push({k: s[0], x: s[1], y: s[2], ids: s[3].slice(), places: s[4].slice()});
+  });
+  out.forEach(function (m) { m.places = m.places.filter(function (p, i, a) { return a.indexOf(p) === i; }); });
+  return out;
+}
 (function () {
   var el = function (id) { return document.getElementById(id); };
   var list = el('olist'), cards = [].slice.call(list.children), total = cards.length;
   var text = new Map(cards.map(function (c) { return [c, c.textContent.toLowerCase()]; }));
   var segT = [].slice.call(document.querySelectorAll('.oseg button[data-type]'));
   var segV = [].slice.call(document.querySelectorAll('#oview button'));
-  var dots = [].slice.call(document.querySelectorAll('.odot'));
+  var svg = document.querySelector('.omap-svg'), shown = null;
+  var dots = function () { return [].slice.call(svg.querySelectorAll('.odot')); };
   var type = '', view = 'cards', timer = null;
   function apply(write) {
     closePop(false);
-    var q = (el('oq').value || '').trim().toLowerCase(), cc = el('occ').value, n = 0, shown = {};
+    var q = (el('oq').value || '').trim().toLowerCase(), cc = el('occ').value, n = 0;
+    shown = {};
     cards.forEach(function (c) {
       var ok = (!q || text.get(c).indexOf(q) >= 0) && (!type || c.dataset.type === type) &&
         (!cc || c.dataset.cc === cc);
       c.hidden = !ok;
       if (ok) { n++; shown[c.id] = 1; }
     });
-    // SVG elements have no .hidden property: set the ATTRIBUTE, which theme.py's
-    // [hidden]{display:none!important} matches on SVG as on HTML
-    dots.forEach(function (d) {
-      if (d.dataset.ids.split(' ').some(function (i) { return shown[i]; })) d.removeAttribute('hidden');
-      else d.setAttribute('hidden', '');
-    });
+    hideDots();
     el('ocount').textContent = n === total ? '⟪js:{n} offices⟫'.replace('{n}', total)
       : '⟪js:{n} of {t} offices⟫'.replace('{n}', n).replace('{t}', total);
     segT.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.type === type ? 'true' : 'false'); });
@@ -470,6 +519,14 @@ SCRIPT = """
     if (cc && [].some.call(el('occ').options, function (o) { return o.value === cc; })) el('occ').value = cc;
     if (P.get('view') === 'map' || location.hash === '#map') view = 'map';
   } catch (e) {}
+  // SVG elements have no .hidden property: set the ATTRIBUTE, which theme.py's
+  // [hidden]{display:none!important} matches on SVG as on HTML
+  function hideDots() {
+    dots().forEach(function (d) {
+      if (d.dataset.ids.split(' ').some(function (i) { return shown[i]; })) d.removeAttribute('hidden');
+      else d.setAttribute('hidden', '');
+    });
+  }
   segT.forEach(function (b) { b.onclick = function () { type = b.dataset.type; apply(true); }; });
   segV.forEach(function (b) { b.onclick = function () { view = b.dataset.view; apply(true); }; });
   el('oq').oninput = function () { apply(true); };
@@ -506,13 +563,140 @@ SCRIPT = """
     pop.style.top = Math.max(8, pb.top - mb.top - 12) + 'px';
     el('opop-x').focus();
   }
-  dots.forEach(function (d) {
-    d.setAttribute('aria-expanded', 'false');
-    d.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (openDot === d) closePop(false); else openPop(d);
+  // ---- zoom (owner, 2026-10-09). The viewBox moves; the pins are redrawn from
+  // #ospots at each zoom, merged by ospoCluster(), and --z keeps them one size.
+  var SP = JSON.parse(el('ospots').textContent), NS = 'http://www.w3.org/2000/svg';
+  var VB0 = svg.getAttribute('viewBox').split(' ').map(Number), vb = VB0.slice();
+  var ZMAX = 24, drawnAt = null, redraw = 0, moved = false;
+  var zb = {};
+  [].forEach.call(document.querySelectorAll('#ozoom button'), function (b) { zb[b.dataset.zoom] = b; });
+  function mk(tag, at) {
+    var e = document.createElementNS(NS, tag);
+    for (var a in at) e.setAttribute(a, at[a]);
+    return e;
+  }
+  function drawPins(z) {
+    var groups = {};
+    [].forEach.call(svg.querySelectorAll('.opins'), function (g) { groups[g.dataset.frame] = g; g.textContent = ''; });
+    // drawn smallest first, so a numbered pin is never covered by a single one
+    ospoCluster(SP.spots, SP.within, z).reverse().forEach(function (m) {
+      var cs = m.ids.map(el).filter(Boolean), types = {};
+      cs.forEach(function (c) { types[c.dataset.type] = 1; });
+      var tk = Object.keys(types).sort(), one = m.ids.length === 1;
+      var label = cs.map(function (c) {
+        return c.querySelector('h3').textContent + ' (' + c.querySelector('.otype').textContent + ')';
+      }).join('; ');
+      var a = mk('a', {'class': 'odot ' + (tk.length === 1 ? tk[0] : 'mixed'), href: '#' + m.ids[0],
+        'data-ids': m.ids.join(' '), 'data-place': m.places.join('; '), 'aria-label': label,
+        'aria-haspopup': 'dialog', 'aria-expanded': 'false'});
+      var t = mk('title', {}); t.textContent = label; a.appendChild(t);
+      var g = mk('g', {transform: 'translate(' + m.x + ' ' + m.y + ')'});
+      var p = mk('g', one ? {'class': 'opin'} : {'class': 'opin', style: '--k:1.3'});
+      p.appendChild(mk('path', {d: SP.pin}));
+      if (one) p.appendChild(mk('circle', {'class': 'ohole', cx: 0, cy: -10, r: 2.2}));
+      else { var tx = mk('text', {x: 0, y: -7}); tx.textContent = m.ids.length; p.appendChild(tx); }
+      g.appendChild(p); a.appendChild(g); groups[m.k].appendChild(a);
     });
+    drawnAt = z;
+    if (shown) hideDots();
+  }
+  function zoom() { return VB0[2] / vb[2]; }
+  function setVB(x, y, w) {
+    var z = Math.min(ZMAX, Math.max(1, VB0[2] / w));
+    w = VB0[2] / z;
+    var h = VB0[3] / z;
+    x = Math.min(Math.max(x, VB0[0]), VB0[0] + VB0[2] - w);
+    y = Math.min(Math.max(y, VB0[1]), VB0[1] + VB0[3] - h);
+    vb = [x, y, w, h];
+    closePop(false);
+    svg.setAttribute('viewBox', vb.map(function (v) { return Math.round(v * 100) / 100; }).join(' '));
+    svg.style.setProperty('--z', z);
+    svg.classList.toggle('zoomed', z > 1.001);
+    zb['in'].disabled = z >= ZMAX - 0.001;
+    zb.out.disabled = zb.reset.disabled = z <= 1.001;
+    // re-merge once per frame, not once per pointer event
+    if (z !== drawnAt && !redraw) {
+      redraw = requestAnimationFrame(function () { redraw = 0; if (zoom() !== drawnAt) drawPins(zoom()); });
+    }
+  }
+  // zoom by f, keeping the map point (px, py) where it is on screen
+  function zoomAt(f, px, py) {
+    var z = Math.min(ZMAX, Math.max(1, zoom() * f));
+    f = z / zoom();
+    setVB(px - (px - vb[0]) / f, py - (py - vb[1]) / f, vb[2] / f);
+  }
+  function toMap(cx, cy) {
+    var r = svg.getBoundingClientRect();
+    return [vb[0] + (cx - r.left) / r.width * vb[2], vb[1] + (cy - r.top) / r.height * vb[3]];
+  }
+  function centre() { return [vb[0] + vb[2] / 2, vb[1] + vb[3] / 2]; }
+  zb['in'].onclick = function () { var c = centre(); zoomAt(2, c[0], c[1]); };
+  zb.out.onclick = function () { var c = centre(); zoomAt(0.5, c[0], c[1]); };
+  zb.reset.onclick = function () { setVB(VB0[0], VB0[1], VB0[2]); };
+  svg.addEventListener('wheel', function (e) {
+    // Ctrl (or Cmd) + scroll, which is also what a trackpad pinch sends; a plain
+    // scroll keeps scrolling the page
+    if (!e.ctrlKey && !e.metaKey) return;
+    e.preventDefault();
+    var p = toMap(e.clientX, e.clientY);
+    zoomAt(Math.exp(-Math.max(-60, Math.min(60, e.deltaY)) * 0.01), p[0], p[1]);
+  }, {passive: false});
+  svg.addEventListener('dblclick', function (e) {
+    if (e.target.closest('.odot')) return;
+    e.preventDefault();
+    var p = toMap(e.clientX, e.clientY);
+    zoomAt(e.shiftKey ? 0.5 : 2, p[0], p[1]);
   });
+  // drag pans (when zoomed in); two pointers pinch. A drag is never a click.
+  var ptrs = {}, gest = null;
+  function startGesture() {
+    var ids = Object.keys(ptrs), r = svg.getBoundingClientRect();
+    gest = {vb: vb.slice(), r: r, p: ids.map(function (i) { return [ptrs[i][0], ptrs[i][1]]; })};
+  }
+  svg.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    if (!Object.keys(ptrs).length) moved = false;
+    ptrs[e.pointerId] = [e.clientX, e.clientY];
+    startGesture();
+  });
+  svg.addEventListener('pointermove', function (e) {
+    if (!ptrs[e.pointerId]) return;
+    ptrs[e.pointerId] = [e.clientX, e.clientY];
+    var ids = Object.keys(ptrs), g = gest, u = g.vb[2] / g.r.width;
+    if (ids.length === 1) {
+      var dx = e.clientX - g.p[0][0], dy = e.clientY - g.p[0][1];
+      if (!moved && Math.hypot(dx, dy) < 5) return;
+      if (!moved) { moved = true; try { svg.setPointerCapture(e.pointerId); } catch (x) {} }
+      if (zoom() > 1.001) setVB(g.vb[0] - dx * u, g.vb[1] - dy * u, g.vb[2]);
+    } else if (ids.length === 2 && g.p.length === 2) {
+      moved = true;
+      var a = ptrs[ids[0]], b = ptrs[ids[1]];
+      var d0 = Math.hypot(g.p[0][0] - g.p[1][0], g.p[0][1] - g.p[1][1]) || 1;
+      var f = Math.hypot(a[0] - b[0], a[1] - b[1]) / d0;
+      // the map point under the starting midpoint stays under the current one
+      var m0x = g.vb[0] + ((g.p[0][0] + g.p[1][0]) / 2 - g.r.left) * u;
+      var m0y = g.vb[1] + ((g.p[0][1] + g.p[1][1]) / 2 - g.r.top) * u;
+      var w = g.vb[2] / f, u1 = w / g.r.width;
+      setVB(m0x - ((a[0] + b[0]) / 2 - g.r.left) * u1, m0y - ((a[1] + b[1]) / 2 - g.r.top) * u1, w);
+    }
+  });
+  function lift(e) {
+    if (!ptrs[e.pointerId]) return;
+    delete ptrs[e.pointerId];
+    if (Object.keys(ptrs).length) startGesture();
+  }
+  svg.addEventListener('pointerup', lift);
+  svg.addEventListener('pointercancel', lift);
+  // one listener for every pin, the redrawn ones included
+  svg.addEventListener('click', function (e) {
+    var d = e.target.closest('.odot');
+    if (moved) { moved = false; e.preventDefault(); e.stopPropagation(); return; }
+    if (!d) return;
+    e.preventDefault();
+    if (openDot === d) closePop(false); else openPop(d);
+  }, true);
+  drawPins(1);
+  setVB(VB0[0], VB0[1], VB0[2]);
   el('opop-x').onclick = function () { closePop(true); };
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openDot) closePop(true); });
   document.addEventListener('click', function (e) {
