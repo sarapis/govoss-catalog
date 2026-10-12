@@ -1,105 +1,125 @@
 {
  "be": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 239
  },
  "bg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 194
  },
  "ca": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 67
  },
  "ch": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 164
  },
  "de": {
-  "error": "HTTPError: HTTP Error 429: Too Many Requests",
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-05T11:00:01Z",
-  "last_error_at": "2026-10-07T19:33:18Z",
+  "last_error_at": "2026-10-12T11:00:03Z",
   "ok": false,
   "records": 561
  },
  "digg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 48
  },
  "dpg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 256
  },
  "eu": {
-  "error": "RuntimeError: partial https://code.europa.eu scan: 12 repos vs 23 in the last good checkpoint, after 1 org(s) failed: 956 publiccode.yml fetch(es) failed (429 x956). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from https://code.europa.eu (retry the run later) \u2014 the per-source age on /catalogs is what makes this visible.",
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-05T11:00:01Z",
-  "last_error_at": "2026-10-07T19:33:18Z",
+  "last_error_at": "2026-10-12T11:00:03Z",
   "ok": false,
   "records": 23
  },
  "fi": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 72
  },
  "fr": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 691
  },
  "hbg": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 295
  },
  "ie": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 5
  },
  "it": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 552
  },
  "muc": {
+  "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 145
  },
  "nl": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
-  "records": 205
+  "records": 206
  },
  "nlreg": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 0
  },
  "os2": {
+  "error": "RuntimeError: partial OS2 scan: 0 repos vs 300 in the last good checkpoint, after 20 org(s) failed: OS2web (URLError), OS2WebCore (URLError), OS2mo (URLError), os2sofd (URLError), OS2Forms (URLError), os2display (URLError), OS2borgerPC (URLError), os2ulf (URLError), OS2sandbox (URLError), OS2offdig (URLError), OS2iot (URLError), OS2fleetoptimiser (URLError), OS2Valghalla (URLError), OS2faktor (URLError), os2kitos (URLError), os2indberetning (URLError), OS2rollekatalog (URLError), OS2compliance (URLError), Skadesokonomi (URLError), os2ai (URLError). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from OS2_ORGS \u2014 the per-source age on /catalogs is what makes this visible.",
   "fetched_at": "2026-10-07T19:33:18Z",
-  "ok": true,
+  "last_error_at": "2026-10-12T11:00:03Z",
+  "ok": false,
   "records": 300
  },
  "pt": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 93
  },
  "se": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 167
  },
  "tw": {
-  "fetched_at": "2026-10-07T19:33:18Z",
+  "fetched_at": "2026-10-12T11:00:03Z",
   "ok": true,
   "records": 58
  }

@@ -303,9 +303,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "389 Directory Server is a free LDAP server. The Lightweight Directory Access Protocol (LDAP) is a network protocol for querying and modifying information from distributed directory services.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q228600",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "also_known_as": [
@@ -800,7 +798,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T17:47:58Z",
+  "last_activity": "2026-10-12T09:51:45Z",
   "license": "EUPL-1.2",
   "long_desc": "Abacus is the new software developed by the Dutch Electoral Council\n(Kiesraad) for calculating election results in the Netherlands. It tallies\npolling station results and computes the seat allocation.\n\nAbacus replaces the result-consolidation module of the current election\nsoftware OSV2020 and will be used for all Dutch elections. The first\nversion targets the 2026 municipal council elections (GR26).\n\nThe software runs as a standalone binary accessible via a web browser on a\nlocal network. The backend is written in Rust, the frontend in\nTypeScript/React.\n\nKey design principles are ease-of-use and simplicity. \nFrom the (dutch) report [Stemmen met vertrouwen](https://www.kiesraad.nl/documenten/2007/09/27/eindrapport-commissie-korthals-altes-stemmen-met-vertrouwen) the \nvalues integrity, transparency and verifiability are most important.\n",
   "maintenance": "internal",
@@ -836,7 +834,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-06T13:18:52Z",
+  "last_activity": "2026-10-07T16:27:59Z",
   "name": "Abacus-Documentatie",
   "repo": "https://code.overheid.nl/Kiesraad/Abacus-Documentatie",
   "repo_key": "code.overheid.nl/kiesraad/abacus-documentatie",
@@ -2896,9 +2894,7 @@
   "tier": "index",
   "used_by": [
    "openknowledgesweden"
-  ],
-  "wikidata": "Q4708874",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -3370,7 +3366,7 @@
   "functions_inferred": true,
   "is_fork": false,
   "landing": "https://designsystem.amsterdam",
-  "last_activity": "2026-10-07T13:24:22Z",
+  "last_activity": "2026-10-09T16:02:53Z",
   "license": "EUPL-1.2",
   "long_desc": "Amsterdam Design System is an open-source toolkit of ready-made\ncomponents that are accessible (WCAG), adaptive, and user-friendly.\nTeams reuse them instead of starting from scratch on every project,\nsaving time and money.\n\nPublished as separate packages for CSS, React, and design tokens,\nthe system lets teams adopt just the parts they need. That makes it\nframework-agnostic and suitable for both tailor-made applications and\nSaaS applications.\n\nNL Design System\u2019s layered architecture lets other public organisations\nreuse these components and apply their own design tokens to tailor them\nto their own channels.\n\nThe team actively maintains the library, publishes regular releases,\nand welcomes contributions.\n",
   "maintenance": "internal",
@@ -3850,9 +3846,7 @@
   "repo_key": null,
   "short_desc": "Apache ActiveMQ is a free message broker that fully implements Java Message Service 1.1 (JMS).",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q773135",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -3931,9 +3925,7 @@
   "repo_key": null,
   "short_desc": "Apache Ant is a Java library and command-line tool whose task is to control processes described in build files as interdependent targets and extension points. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q385970",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -4081,9 +4073,7 @@
   "repo_key": null,
   "short_desc": "Development environment for directory services (LDAP). ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q28916293",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -4124,9 +4114,7 @@
   "short_desc": "Fineract provides a reliable, robust, and affordable solution for entrepreneurs, financial institutions, and service providers to offer financial services to the world\u2019s 3 billion underbanked and unbanked.  Fineract is the backend to the branded Mifos solution.  ",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090006",
-  "wikidata": "Q28915157",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": "GID0090006"
  },
  {
   "catalogue_count": 1,
@@ -4171,9 +4159,7 @@
    "DGAC",
    "MI",
    "Sorbonne Universit\u00e9"
-  ],
-  "wikidata": "Q28915196",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -6082,7 +6068,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-22T06:28:16Z",
+  "last_activity": "2026-10-08T11:02:28Z",
   "name": "argocd",
   "repo": "https://code.overheid.nl/RWS/argocd",
   "repo_key": "code.overheid.nl/rws/argocd",
@@ -7051,9 +7037,7 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "translated": true,
-  "upstream_id": 8306,
-  "wikidata": "Q20828705",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": 8306
  },
  {
   "catalogue_count": 1,
@@ -7138,7 +7122,7 @@
   "repo_owner": "amagovpt",
   "short_desc": "Middleware Oficial de Identifica\u00e7\u00e3o Eletr\u00f3nica em Portugal - Cart\u00e3o de Cidad\u00e3o, da Chave M\u00f3vel Digital e Sistema de Certifica\u00e7\u00e3o de atributos profissionais",
   "source": "PT/arte",
-  "stars": 236,
+  "stars": 237,
   "tier": "index"
  },
  {
@@ -10050,9 +10034,7 @@
   "repo_owner": "Hallo Welt! GmbH",
   "short_desc": "BlueSpice MediaWiki is a free software, based on MediaWiki, and specifically developed for companies as an enterprise wiki distribution.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q885586",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -10984,7 +10966,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-05T20:57:20Z",
+  "last_activity": "2026-10-12T07:54:07Z",
   "name": "brp-amsterdam-api",
   "repo": "https://code.overheid.nl/GemAmsterdam/brp-amsterdam-api",
   "repo_key": "code.overheid.nl/gemamsterdam/brp-amsterdam-api",
@@ -13556,9 +13538,7 @@
   "used_by": [
    "MEN: Minist\u00e8re de l'\u00c9ducation nationale",
    "\u00e9ducation nationale"
-  ],
-  "wikidata": "Q104417774",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -15666,9 +15646,7 @@
    "DE/opensource.muenchen.de",
    "GLOBAL/dpg"
   ],
-  "tier": "index",
-  "wikidata": "Q977484",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -17483,9 +17461,7 @@
   "short_desc": "At CodeCarbon, we believe, as Niels Bohr said, that \"Nothing exists until it is measured\". So we found a way to estimate how much carbon  we produce while running our code.\r\nWe did this by creating a Python package that estimates your hardware electricity power consumption.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092888",
-  "wikidata": "Q107382202",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": "GID0092888"
  },
  {
   "catalogue_count": 1,
@@ -24600,7 +24576,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-27T04:02:27Z",
+  "last_activity": "2026-10-10T15:09:58Z",
   "name": "DAWO",
   "repo": "https://code.overheid.nl/MinBZK/DAWO",
   "repo_key": "code.overheid.nl/minbzk/dawo",
@@ -24693,7 +24669,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-07T11:31:54Z",
+  "last_activity": "2026-10-09T13:29:14Z",
   "name": "DAWO-NixOS",
   "repo": "https://code.overheid.nl/MinBZK/DAWO-NixOS",
   "repo_key": "code.overheid.nl/minbzk/dawo-nixos",
@@ -27117,7 +27093,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://developer.overheid.nl",
-  "last_activity": "2026-10-07T09:49:49Z",
+  "last_activity": "2026-10-09T20:51:35Z",
   "license": "EUPL-1.2",
   "long_desc": "Developer Overheid NL is de wegwijzer voor developers die voor of bij de\noverheid ontwikkelen. Zij vervult deze rol door het aanbieden van\nstandaarden, best practices en tools.\n\nEen belangrijke feature van het platform is de API catalogus. Deze maakt\ninzichtelijk welke API's er beschikbaar zijn in het publieke landschap.\nTevens kan je hier per API de informatie vinden die je nodig hebt om met\nde API aan de slag te gaan.\n\nOok biedt het platform inzicht in welke open source software projecten er\nbeschikbaar zijn in het publieke landschap. Per project krijgt de\ngebruiker inzicht in de vitaliteit van de repository en andere waardevolle\ndatapunten.\n",
   "maintenance": "internal",
@@ -27168,7 +27144,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T12:21:47Z",
+  "last_activity": "2026-10-09T14:36:41Z",
   "license": "EUPL-1.2",
   "maintenance": "internal",
   "name": "developer.overheid.nl Register Sites",
@@ -27662,9 +27638,7 @@
   "upstream_id": "GID0090023",
   "used_by": [
    "India"
-  ],
-  "wikidata": "Q115688435",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "active": true,
@@ -33503,7 +33477,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T14:22:41Z",
+  "last_activity": "2026-10-12T10:14:19Z",
   "name": "e-KS",
   "repo": "https://code.overheid.nl/Kiesraad/e-KS",
   "repo_key": "code.overheid.nl/kiesraad/e-ks",
@@ -33995,9 +33969,7 @@
   "upstream_id": "GID0090027",
   "used_by": [
    "New Zealand"
-  ],
-  "wikidata": "Q115688412",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -35331,9 +35303,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "cf2a4912-a8fd-4dd5-a1a3-43b05c47eb19",
-  "version": "v5.1.4",
-  "wikidata": "Q107381202",
-  "wikidata_via": "wikidata:repo"
+  "version": "v5.1.4"
  },
  {
   "catalogue_count": 1,
@@ -39457,9 +39427,7 @@
   "short_desc": "farmOS is a web-based application for farm management, planning, and record keeping.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090033",
-  "wikidata": "Q97644687",
-  "wikidata_via": "wikidata:website"
+  "upstream_id": "GID0090033"
  },
  {
   "catalogue_count": 1,
@@ -39612,9 +39580,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "FastAPI is a modern, high-performance web framework for building APIs with Python, based on standard Python type hints. It supports asynchronous traffic by default and is designed to be easy to use and learn, while also being highly performant, scalable and with low code footprint. FastAPI uses Pydantic for data validation and parsing.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q101119404",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -40690,9 +40656,7 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true,
-  "wikidata": "Q18760310",
-  "wikidata_via": "wikidata:website"
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -41723,9 +41687,7 @@
   "tier": "index",
   "used_by": [
    "gbg_k"
-  ],
-  "wikidata": "Q5456301",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -41801,7 +41763,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-09-29T12:01:49Z",
+  "last_activity": "2026-10-09T10:50:35Z",
   "name": "flow-docs",
   "repo": "https://code.overheid.nl/RWS/flow-docs",
   "repo_key": "code.overheid.nl/rws/flow-docs",
@@ -43180,9 +43142,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "b6ecf45e-ceb6-4060-91af-65d77fdab33d",
-  "version": "16",
-  "wikidata": "Q5499659",
-  "wikidata_via": "wikidata:website"
+  "version": "16"
  },
  {
   "catalogue_count": 2,
@@ -43883,9 +43843,7 @@
   "upstream_id": "GID0090514",
   "used_by": [
    "Italy"
-  ],
-  "wikidata": "Q3737390",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -44899,9 +44857,7 @@
    "Colombia",
    "France",
    "Paraguay"
-  ],
-  "wikidata": "Q3094963",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -45372,7 +45328,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-01T15:14:08Z",
+  "last_activity": "2026-10-09T11:27:23Z",
   "name": "generiekefuncties-docs-test",
   "repo": "https://code.overheid.nl/MinVWS/generiekefuncties-docs-test",
   "repo_key": "code.overheid.nl/minvws/generiekefuncties-docs-test",
@@ -46801,9 +46757,7 @@
   "short_desc": "A free, modern, open platform for independent publishing and journalism.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092823",
-  "wikidata": "Q16251204",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": "GID0092823"
  },
  {
   "also_known_as": [
@@ -54721,9 +54675,7 @@
    "World Trade Center Genoa",
    "Zeroc SpA"
   ],
-  "version": "4.9.5",
-  "wikidata": "Q5570030",
-  "wikidata_via": "wikidata:website"
+  "version": "4.9.5"
  },
  {
   "catalogue_count": 1,
@@ -55149,9 +55101,7 @@
    "Philippines",
    "Tanzania",
    "Venezuela"
-  ],
-  "wikidata": "Q2703769",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -56049,7 +55999,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://ds.services.gov.ie/",
-  "last_activity": "2026-10-06T15:20:10Z",
+  "last_activity": "2026-10-12T10:25:26Z",
   "license": "MIT",
   "long_desc": "The Government of Ireland Design System is an open-source design system developed by the Office of the Government Chief Information Officer (OGCIO). It provides tools for design and development, along with resources and guidelines to help teams create consistent, accessible, and user-centred digital services across government.",
   "maintenance": "internal",
@@ -57027,9 +56977,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Graylog is a platform for central log management, the collection, analysis and visualization of log data.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q104417945",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -59092,7 +59040,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T15:32:31Z",
+  "last_activity": "2026-10-12T08:13:07Z",
   "name": "helm-charts",
   "repo": "https://code.overheid.nl/Dimpact/helm-charts",
   "repo_key": "code.overheid.nl/dimpact/helm-charts",
@@ -59988,9 +59936,7 @@
    "Laos",
    "Lesotho",
    "Liberia"
-  ],
-  "wikidata": "Q100511474",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -62790,9 +62736,7 @@
    "World Intellectual Property Organization (WIPO)",
    "Deutsches Elektronen-Synchrotron (DESY)"
   ],
-  "version": "3.3.13",
-  "wikidata": "Q126084894",
-  "wikidata_via": "wikidata:repo"
+  "version": "3.3.13"
  },
  {
   "catalogue_count": 1,
@@ -64814,7 +64758,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-06T06:54:37Z",
+  "last_activity": "2026-10-07T23:13:36Z",
   "name": "Internet.nl",
   "repo": "https://code.overheid.nl/ForumStandaardisatie/Internet.nl",
   "repo_key": "code.overheid.nl/forumstandaardisatie/internet.nl",
@@ -65494,7 +65438,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://invulhulpen.rijksapp.nl",
-  "last_activity": "2026-10-07T08:28:00Z",
+  "last_activity": "2026-10-11T11:47:58Z",
   "license": "EUPL-1.2",
   "long_desc": "De invulhulp is een browsergebaseerde applicatie waarmee organisaties een Pre-scan, een volledige DPIA (Data Protection Impact Assessment / Gegevensbeschermingseffectbeoordeling) en een IAMA (Impact Assessment Mensenrechten en Algoritmes) kunnen invullen en als rapport kunnen exporteren. De Pre-scan helpt organisaties privacyrisico's van gegevensverwerkingen in te schatten en te bepalen of een volledige DPIA, DTIA (Data Transfer Impact Assessment) of IAMA nodig is.\nDe applicatie is op twee manieren te gebruiken: als losstaande, offline single-file applicatie die zonder installatie of server in de browser draait, en als samenwerkomgeving waarin meerdere personen met rollen (eigenaar, bewerker, commentator, lezer) samen aan dezelfde assessments werken. De assessments volgen het Rijksmodel DPIA en het IAMA van de Nederlandse overheid en zijn gebouwd met het NL Design System / RVO-componentenbibliotheek.\n",
   "maintenance": "internal",
@@ -65568,9 +65512,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "af6056fc-b2b2-4d31-9961-c9bd94e32bd4",
-  "version": "3.34.0-rc.3",
-  "wikidata": "Q96475297",
-  "wikidata_via": "wikidata:repo"
+  "version": "3.34.0-rc.3"
  },
  {
   "active": true,
@@ -66975,6 +66917,35 @@
   ],
   "version": "3.3.0",
   "wikidata": "Q15819811"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.overheid.nl/NDW/its-gegevenscatalogus",
+    "name": "its-gegevenscatalogus",
+    "repo_url": "https://code.overheid.nl/NDW/its-gegevenscatalogus",
+    "source": "NL/code.overheid.nl"
+   }
+  ],
+  "country": "NL",
+  "desc_lang": "nl",
+  "desc_src": "ITS Gegevenscatalogus",
+  "desc_src_lang": "nl",
+  "entry_url": "https://code.overheid.nl/NDW/its-gegevenscatalogus",
+  "forge_path": "NDW/its-gegevenscatalogus",
+  "functions": [],
+  "functions_inferred": false,
+  "is_fork": false,
+  "last_activity": "2026-10-06T09:25:19Z",
+  "name": "its-gegevenscatalogus",
+  "repo": "https://code.overheid.nl/NDW/its-gegevenscatalogus",
+  "repo_key": "code.overheid.nl/ndw/its-gegevenscatalogus",
+  "repo_owner": "NDW",
+  "short_desc": "ITS Gegevenscatalogus",
+  "source": "NL/code.overheid.nl",
+  "stars": 0,
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -70306,9 +70277,7 @@
   "repo_key": null,
   "short_desc": "jEdit is a sophisticated text editor for programmers. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q292976",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -73108,9 +73077,7 @@
   "repo_key": null,
   "short_desc": "Katello is a software stack of various components integrated together to provide a complete lifecycle and configuration management system for server systems.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q16972131",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -73246,9 +73213,7 @@
   "used_by": [
    "Kausal"
   ],
-  "version": "1.0.0",
-  "wikidata": "Q82540532",
-  "wikidata_via": "wikidata:repo"
+  "version": "1.0.0"
  },
  {
   "catalogue_count": 1,
@@ -74992,7 +74957,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T09:10:16Z",
+  "last_activity": "2026-10-09T10:33:59Z",
   "name": "KISS-frontend",
   "repo": "https://code.overheid.nl/Dimpact/KISS-frontend",
   "repo_key": "code.overheid.nl/dimpact/kiss-frontend",
@@ -75505,14 +75470,8 @@
   "version": "rolling"
  },
  {
-  "catalogue_count": 2,
+  "catalogue_count": 1,
   "catalogue_entries": [
-   {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=KNIME%20Analytics%20Platform",
-    "name": "KNIME Analytics Platform",
-    "repo_url": "https://github.com/knime/knime-core",
-    "source": "FR/sill"
-   },
    {
     "entry_url": "https://opensource.muenchen.de/software/knime-analytics-platform.html",
     "name": "KNIME Analytics Platform",
@@ -75520,9 +75479,37 @@
     "source": "DE/opensource.muenchen.de"
    }
   ],
-  "countries": [
-   "DE",
-   "FR"
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/knime-analytics-platform.html",
+  "functions": [
+   "data-analytics"
+  ],
+  "functions_inferred": true,
+  "gov_tier": "municipal",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "landing": "https://www.knime.com",
+  "license": "GPL-3.0",
+  "name": "KNIME Analytics Platform",
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "KNIME is a free software for interactive data analysis. The program enables the integration of numerous machine learning and data mining methods through the modular pipelining concept. ---",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "catalogue_count": 1,
+  "catalogue_entries": [
+   {
+    "entry_url": "https://code.gouv.fr/sill/detail?name=KNIME%20Analytics%20Platform",
+    "name": "KNIME Analytics Platform",
+    "repo_url": "https://github.com/knime/knime-core",
+    "source": "FR/sill"
+   }
   ],
   "country": "FR",
   "desc_lang": "en",
@@ -75537,12 +75524,10 @@
    "Datascience",
    "Datavisualisation",
    "IA",
-   "Deep Learning",
-   "infrastruktur"
+   "Deep Learning"
   ],
   "landing": "http://www.knime.org/",
   "license": "GPL",
-  "merged_count": 2,
   "name": "KNIME Analytics Platform",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -75551,10 +75536,6 @@
   "short_desc": "Modular data processing and analysis software. It supports integrating other languages such as Python, R and Java.",
   "sill_id": 480,
   "source": "FR/sill",
-  "sources": [
-   "DE/opensource.muenchen.de",
-   "FR/sill"
-  ],
   "tier": "index",
   "translated": true,
   "used_by": [
@@ -75705,9 +75686,7 @@
   "short_desc": "KoboToolbox is an open source platform for the collection, management, and visualization of data. As the most widely used primary data collection tool in the nonprofit sector, it is the tool of choice for over 32,000 social impact organizations worldwide.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090130",
-  "wikidata": "Q134127261",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": "GID0090130"
  },
  {
   "catalogue_count": 1,
@@ -77784,9 +77763,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "2e3c6892-995a-4b24-8fd6-d378e5ea2f45",
-  "version": "v1.8.0",
-  "wikidata": "Q13685322",
-  "wikidata_via": "wikidata:repo"
+  "version": "v1.8.0"
  },
  {
   "catalogue_count": 1,
@@ -78193,9 +78170,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Expat is a stream-oriented XML 1.0 parser library written in C.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q2074084",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -79326,9 +79301,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "LiteLLM provides a gateway to access multiple large language models (LLMs) and other AI models via an unified API. It allows usage tracking, caching and access control and provides a web based UI for administration, monitoring and testing of the models.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q136763444",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -79477,9 +79450,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q125998452",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -79873,7 +79844,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T12:55:11Z",
+  "last_activity": "2026-10-08T10:12:33Z",
   "license": "EUPL-1.2",
   "long_desc": "Logboek Dataverwerkingen is a Kotlin library implementing the Dutch government Logboek Dataverwerkingen (LDV) standard for data processing logging. It integrates with Jakarta EE applications via CDI interceptors and exports tracing data to ClickHouse using OpenTelemetry.\n\nThe library provides annotation-based tracing via the @Logboek annotation, automatic extraction of W3C Trace Context from HTTP headers, and a request-scoped context for enriching spans with processing details.\n",
   "maintenance": "internal",
@@ -80897,9 +80868,7 @@
   "translated": true,
   "used_by": [
    "other"
-  ],
-  "wikidata": "Q136412223",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -82576,9 +82545,7 @@
    "Portugal",
    "Qatar",
    "Romania"
-  ],
-  "wikidata": "Q99374512",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -84294,9 +84261,7 @@
   "repo_owner": "eccc",
   "short_desc": "The Model of the Environment and Temperature of Roads (METRo) is a road forecast software.",
   "source": "CA/code.open.canada.ca",
-  "tier": "index",
-  "wikidata": "Q3272898",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "active": true,
@@ -84576,9 +84541,7 @@
   "short_desc": "MijnBureau deployment",
   "software_type": "standalone/web",
   "source": "NL/code.overheid.nl",
-  "tier": "publiccode",
-  "wikidata": "Q140627738",
-  "wikidata_via": "wikidata:repo"
+  "tier": "publiccode"
  },
  {
   "catalogue_count": 1,
@@ -84697,7 +84660,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://mijnoverheidzakelijk.nl",
-  "last_activity": "2026-10-07T09:32:36Z",
+  "last_activity": "2026-10-08T16:04:20Z",
   "license": "EUPL-1.2",
   "long_desc": "\"MijnOverheid Zakelijk\" (My Government Business) provides business users with a central portal where they can find all their data and interactions with the government in one place. The project is currently in prototype phase.\nThis repository contains the documentation for MOZa. The code developed for business services is spread across several other repositories within the MinBZK organisation, identifiable by the moza- prefix or the mijnoverheidzakelijk topic (https://github.com/topics/mijnoverheidzakelijk).\n",
   "maintenance": "internal",
@@ -85075,9 +85038,7 @@
   "repo_key": null,
   "short_desc": "The Open Source Threat Intelligence Platform (''MISP'') is used as a platform for sharing Indicators of Compromise (IOCs) and other relevant information across all parts of the German Cybersecurity network including the City of Munich.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q63017823",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -86190,7 +86151,7 @@
   "functions_inferred": false,
   "is_fork": false,
   "landing": "https://mijnoverheidzakelijk.nl",
-  "last_activity": "2026-10-05T12:33:47Z",
+  "last_activity": "2026-10-08T21:45:04Z",
   "license": "EUPL-1.2",
   "long_desc": "The MOZa Profile Service manages profile data and preferences of business users within \"MijnOverheid Zakelijk\". This service is part of the MOZa platform and provides APIs for storing and retrieving user profiles.\n\nThis repository contains the source code of the profile service. The MOZa project consists of multiple repositories within the MinBZK organisation, identifiable by the moza- prefix or the mijnoverheidzakelijk topic.\n",
   "maintenance": "internal",
@@ -86224,7 +86185,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T07:43:36Z",
+  "last_activity": "2026-10-09T14:18:21Z",
   "name": "moza-poc",
   "repo": "https://code.overheid.nl/MinBZK/moza-poc",
   "repo_key": "code.overheid.nl/minbzk/moza-poc",
@@ -86254,7 +86215,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-05T18:50:26Z",
+  "last_activity": "2026-10-10T22:34:30Z",
   "name": "moza-site",
   "repo": "https://code.overheid.nl/MinBZK/moza-site",
   "repo_key": "code.overheid.nl/minbzk/moza-site",
@@ -86811,9 +86772,7 @@
    "Conseil D\u00e9partemental du Val d'Oise",
    "MD",
    "MTE"
-  ],
-  "wikidata": "Q130280113",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -90820,7 +90779,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-07T11:30:33Z",
+  "last_activity": "2026-10-09T12:59:17Z",
   "name": "nl-design-system",
   "repo": "https://code.overheid.nl/RVO/nl-design-system",
   "repo_key": "code.overheid.nl/rvo/nl-design-system",
@@ -91299,7 +91258,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-07T04:11:31Z",
+  "last_activity": "2026-10-09T13:35:22Z",
   "name": "nls-accessibility-map",
   "repo": "https://code.overheid.nl/NDW/nls-accessibility-map",
   "repo_key": "code.overheid.nl/ndw/nls-accessibility-map",
@@ -92557,9 +92516,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Nuclos is a free enterprise resource planning software that we at it@M use to manage our entire internal IT portfolio and resource planning.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q1265414",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -93154,7 +93111,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-06T13:01:14Z",
+  "last_activity": "2026-10-09T06:27:22Z",
   "name": "observability",
   "repo": "https://code.overheid.nl/RWS/observability",
   "repo_key": "code.overheid.nl/rws/observability",
@@ -93773,9 +93730,7 @@
    "Fiji",
    "Finland",
    "France"
-  ],
-  "wikidata": "Q56291130",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -95323,9 +95278,7 @@
    "Gabon",
    "Gambia",
    "Georgia"
-  ],
-  "wikidata": "Q3353146",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -96145,7 +96098,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-08-21T11:16:25Z",
+  "last_activity": "2026-10-09T13:58:53Z",
   "name": "open-publiceren-v2",
   "repo": "https://code.overheid.nl/ForumStandaardisatie/open-publiceren-v2",
   "repo_key": "code.overheid.nl/forumstandaardisatie/open-publiceren-v2",
@@ -98438,9 +98391,7 @@
    "F\u00f6derale IT-Kooperation (FITKO)",
    "ZenDiS"
   ],
-  "version": "1.19.0",
-  "wikidata": "Q136905151",
-  "wikidata_via": "wikidata:repo"
+  "version": "1.19.0"
  },
  {
   "active": true,
@@ -99264,9 +99215,7 @@
    "Nepal",
    "Niger",
    "Tanzania"
-  ],
-  "wikidata": "Q60785832",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -99682,9 +99631,7 @@
    "North Korea",
    "Pakistan",
    "Palestine State"
-  ],
-  "wikidata": "Q7095826",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "active": true,
@@ -99967,9 +99914,7 @@
   "source": "DE/openCode",
   "tier": "publiccode",
   "upstream_id": 10967,
-  "version": "0.1.15",
-  "wikidata": "Q137188777",
-  "wikidata_via": "wikidata:repo"
+  "version": "0.1.15"
  },
  {
   "catalogue_count": 3,
@@ -101598,9 +101543,7 @@
   "sill_id": 473,
   "source": "FR/sill",
   "tier": "index",
-  "translated": true,
-  "wikidata": "Q19348696",
-  "wikidata_via": "wikidata:website"
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -101761,9 +101704,7 @@
    "Spain",
    "Thailand",
    "United States of America"
-  ],
-  "wikidata": "Q7104382",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -110845,9 +110786,7 @@
   "repo_key": null,
   "short_desc": "pgAdmin is a server-based web application for Postgres database administration. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q310572",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "active": true,
@@ -111083,13 +111022,13 @@
  },
  {
   "also_known_as": [
-   "PHPBB"
+   "PHPBB3"
   ],
   "catalogue_count": 1,
   "catalogue_entries": [
    {
-    "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
-    "name": "PHPBB3",
+    "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
+    "name": "PHPBB",
     "repo_url": "https://github.com/phpbb/phpbb",
     "source": "FR/sill"
    }
@@ -111099,33 +111038,33 @@
   ],
   "country": "FR",
   "desc_lang": "en",
-  "desc_src": "Forum de discussions en PHP",
+  "desc_src": "Outil de forum",
   "desc_src_lang": "fr",
-  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB3",
+  "entry_url": "https://code.gouv.fr/sill/detail?name=PHPBB",
   "functions": [
    "collaboration"
   ],
   "functions_inferred": true,
   "keywords": [
    "forum",
+   "bulletin board",
    "discussion",
    "communaut\u00e9",
    "community",
    "logiciel",
    "software",
-   "web",
-   "bulletin board"
+   "web"
   ],
   "landing": "https://www.phpbb.com/",
-  "license": "GNU",
+  "license": "GPL-2.0-only",
   "merged_count": 2,
-  "name": "PHPBB3",
+  "name": "PHPBB",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
   "repo": "https://github.com/phpbb/phpbb",
   "repo_key": "github.com/phpbb/phpbb",
-  "short_desc": "Discussion forum in PHP.",
-  "sill_id": 325,
+  "short_desc": "Forum tool.",
+  "sill_id": 114,
   "source": "FR/sill",
   "sources": [
    "FR/sill"
@@ -111136,8 +111075,8 @@
    "MI",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "wikidata": "Q14270",
-  "wikidata_via": "wikidata:repo"
+  "version": "3.3.19",
+  "wikidata": "Q14270"
  },
  {
   "catalogue_count": 1,
@@ -112951,9 +112890,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "842688b2-cfcc-4137-ab22-31cb001e63bb",
-  "version": "1.4.4",
-  "wikidata": "Q105731934",
-  "wikidata_via": "wikidata:repo"
+  "version": "1.4.4"
  },
  {
   "catalogue_count": 1,
@@ -113187,9 +113124,7 @@
   "translated": true,
   "used_by": [
    "MD"
-  ],
-  "wikidata": "Q3359740",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "active": true,
@@ -113486,9 +113421,7 @@
   "short_desc": "Polis is a real-time system for gathering, analyzing, and understanding what large groups of people think in their own words, enabled by advanced statistics and machine learning. Polis has been used all over the world by governments, academics, independent media, and citizens.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092151",
-  "wikidata": "Q125803048",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": "GID0092151"
  },
  {
   "catalogue_count": 1,
@@ -115032,9 +114965,7 @@
   "sill_id": 364,
   "source": "FR/sill",
   "tier": "index",
-  "translated": true,
-  "wikidata": "Q121223640",
-  "wikidata_via": "wikidata:website"
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -118458,9 +118389,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Pydantic is the de-facto standard data validation library for Python, with a focus on data integrity and type safety. It integrates with linters and IDEs, is fast and extensible, and uses standard Python type hints for defining data models.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q107381687",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -118773,9 +118702,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Qdrant (read: quadrant) is a container-based vector similarity search engine and vector database.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q137839573",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "active": true,
@@ -118859,9 +118786,7 @@
   ],
   "tier": "publiccode",
   "upstream_id": "5cc14825-0d07-408f-a691-2ea68a298d13",
-  "version": "v2.0.0",
-  "wikidata": "Q135493504",
-  "wikidata_via": "wikidata:repo"
+  "version": "v2.0.0"
  },
  {
   "active": true,
@@ -121021,30 +120946,60 @@
   "catalogue_entries": [
    {
     "entry_url": "https://code.overheid.nl/MinBZK/regelrecht",
-    "name": "regelrecht",
-    "repo_url": "https://code.overheid.nl/MinBZK/regelrecht",
+    "name": "RegelRecht",
+    "repo_url": "https://github.com/MinBZK/regelrecht",
     "source": "NL/code.overheid.nl"
    }
   ],
+  "categories": [
+   "compliance-management",
+   "business-process-management",
+   "knowledge-management"
+  ],
+  "contacts": [
+   "Team RegelRecht"
+  ],
   "country": "NL",
+  "desc_en": "Records Dutch legislation as machine-readable rules and executes them, tracing every outcome back to the legal text.",
   "desc_lang": "en",
-  "desc_src": "RegelRecht",
+  "desc_src": "Legt Nederlandse wet- en regelgeving vast als machineleesbare regels en voert die uit, met bij elke uitkomst de herleiding naar de wettekst.",
   "desc_src_lang": "nl",
+  "dev_status": "beta",
   "entry_url": "https://code.overheid.nl/MinBZK/regelrecht",
+  "fallback_repo": "https://code.overheid.nl/MinBZK/regelrecht",
+  "features": [
+   "Recording legislation as a rulework in YAML, per article next to the legal text",
+   "Executing ruleworks with a traceable trail for every outcome",
+   "References between regulations and delegation to lower regulations",
+   "Gherkin scenarios derived from the explanatory memorandum",
+   "Downloading legal texts from the Basiswettenbestand",
+   "Editor with live execution of the rulework",
+   "Engine in Rust, also available as WebAssembly in the browser"
+  ],
   "forge_path": "MinBZK/regelrecht",
-  "functions": [],
+  "functions": [
+   "case-workflow",
+   "learning-knowledge"
+  ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T14:32:59Z",
-  "name": "regelrecht",
-  "repo": "https://code.overheid.nl/MinBZK/regelrecht",
-  "repo_key": "code.overheid.nl/minbzk/regelrecht",
-  "repo_owner": "MinBZK",
-  "short_desc": "RegelRecht.",
+  "landing": "https://regelrecht.rijks.app",
+  "last_activity": "2026-10-12T08:58:59Z",
+  "license": "EUPL-1.2",
+  "long_desc": "RegelRecht makes Dutch legislation executable. A regulation is recorded\nas a rulework in YAML: the legal text per article, next to the decision\nlogic that follows from that article. The engine evaluates a rulework\nfor a given situation and returns the outcome together with the full\ntrail: which articles were applied, on which data and in which order.\n\nRuleworks refer to each other the way laws do. A ministerial regulation\nfills in an open norm from an act, and a benefits act takes the\nassessment income from the act that defines it. The engine follows\nthose references, so a calculation that spans several regulations\nstays traceable.\n\nEvery rulework is tested with Gherkin scenarios, some of them derived\nfrom the worked examples in the explanatory memorandum. A harvester\ndownloads the texts in force from the Dutch official legislation\nrepository (Basiswettenbestand), and in the editor a legal expert can\nedit a rulework and see it execute right away.\n\nThe project is open so that anyone can read how a law was translated\ninto executable rules and check that translation against the law\nitself. The format is laid down in a versioned JSON schema, and the\ndesign decisions are in public RFCs.",
+  "maintenance": "internal",
+  "name": "RegelRecht",
+  "platforms": [
+   "web",
+   "linux"
+  ],
+  "released": "2026-02-26",
+  "repo": "https://github.com/MinBZK/regelrecht",
+  "repo_key": "github.com/minbzk/regelrecht",
+  "short_desc": "Records Dutch legislation as machine-readable rules and executes them, tracing every outcome back to the legal text.",
+  "software_type": "standalone/web",
   "source": "NL/code.overheid.nl",
-  "stars": 2,
-  "tier": "index",
-  "translated": true
+  "tier": "publiccode"
  },
  {
   "catalogue_count": 1,
@@ -122294,7 +122249,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-05T00:06:24Z",
+  "last_activity": "2026-10-12T00:19:34Z",
   "name": "rfc9068-python-access-token-validator",
   "repo": "https://code.overheid.nl/GemAmsterdam/rfc9068-python-access-token-validator",
   "repo_key": "code.overheid.nl/gemamsterdam/rfc9068-python-access-token-validator",
@@ -123145,9 +123100,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Robot Framework is a generic automation framework that can be used for both test automation and robotic process automation.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q2160022",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -123956,9 +123909,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "Ruff is an extremely fast Python linter and code formatter, written in Rust. It provides essential features for ensuring code quality and consistency in Python projects, including linting, formatting, and automatic fixing of common issues.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q115911873",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -124221,9 +124172,7 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE",
    "other"
-  ],
-  "wikidata": "Q113976362",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -125690,9 +125639,7 @@
   "repo_key": null,
   "short_desc": "Free software for visualization and analysis of measured values. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q1124889",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -126953,9 +126900,7 @@
   "used_by": [
    "Acad\u00e9mie de Dijon",
    "other"
-  ],
-  "wikidata": "Q97351209",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -128254,9 +128199,7 @@
    "MI",
    "MINISTERE INTERIEUR/DGPN/DCSP/DZSP SUD/DDSP34 MONTPELLIER/EMD/SEM",
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne"
-  ],
-  "wikidata": "Q21977736",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -128413,9 +128356,7 @@
   "source": "CH/swiss",
   "tier": "publiccode",
   "upstream_id": "c28d9228-54e8-4839-81ef-37854fdb3f16",
-  "version": "2.2",
-  "wikidata": "Q138745006",
-  "wikidata_via": "wikidata:repo"
+  "version": "2.2"
  },
  {
   "active": true,
@@ -129219,7 +129160,7 @@
   ],
   "functions_inferred": true,
   "is_fork": false,
-  "last_activity": "2026-10-06T09:28:06Z",
+  "last_activity": "2026-10-08T06:52:20Z",
   "name": "signals",
   "repo": "https://code.overheid.nl/GemAmsterdam/signals",
   "repo_key": "code.overheid.nl/gemamsterdam/signals",
@@ -131150,9 +131091,7 @@
    "FI/avoinkoodi"
   ],
   "tier": "index",
-  "translated": true,
-  "wikidata": "Q130281770",
-  "wikidata_via": "wikidata:repo"
+  "translated": true
  },
  {
   "catalogue_count": 1,
@@ -133908,9 +133847,7 @@
   "repo_key": null,
   "short_desc": "Spring open source framework for the Java platform, which is often used for web applications. Spring is modular and offers features like dependency injection or aspect-oriented programming. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q720314",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 2,
@@ -136292,9 +136229,7 @@
   "repo_key": null,
   "short_desc": "sudo is a command in Unix and Unix-like operating systems such as Linux or macOS that is used to start processes with the rights of another user.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q300883",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "active": true,
@@ -136977,9 +136912,7 @@
    "Nepal",
    "Nigeria",
    "Tunisia"
-  ],
-  "wikidata": "Q104533795",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -137102,9 +137035,7 @@
    "United Kingdom",
    "United States of America",
    "Venezuela"
-  ],
-  "wikidata": "Q1759786",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -141293,9 +141224,7 @@
    "Argentina",
    "Bahamas",
    "United States of America"
-  ],
-  "wikidata": "Q202044",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -141368,9 +141297,7 @@
   "repo_key": null,
   "short_desc": "A free, web-based project management tool for software development / version management. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q765385",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -143039,7 +142966,7 @@
    "catalog"
   ],
   "landing": "http://udata.readthedocs.org",
-  "last_activity": "2026-10-07T11:59:30Z",
+  "last_activity": "2026-10-09T10:22:53Z",
   "license": "agpl-3.0",
   "maintenance": "community",
   "merged_count": 3,
@@ -143319,9 +143246,7 @@
   "repo_key": null,
   "short_desc": "UMLet is an open-source UML tool with a simple user interface for drawing UML diagrams, creating sequence and activity diagrams from plain text, etc. ---",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q956141",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -145569,9 +145494,7 @@
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "uv is an extremely fast Python package and project manager, written in Rust. It provides essential features for Python development \u2014 from installing Python and hacking on simple scripts to working on large projects that support multiple Python versions and platforms.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q131743502",
-  "wikidata_via": "wikidata:repo"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -145646,9 +145569,7 @@
    "Vietnam",
    "Yemen",
    "Zimbabwe"
-  ],
-  "wikidata": "Q136891178",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 1,
@@ -148878,9 +148799,7 @@
   "tier": "publiccode",
   "translated": true,
   "upstream_id": "515826f2-7418-4ad8-81aa-ccc5cd278b98",
-  "version": "15.1.1",
-  "wikidata": "Q140431709",
-  "wikidata_via": "wikidata:repo"
+  "version": "15.1.1"
  },
  {
   "catalogue_count": 1,
@@ -149324,9 +149243,7 @@
   "repo_key": null,
   "short_desc": "Vuetify is a UI library for Vue components in Material Design. In the reference architecture, Vuetify is used for almost all custom development.",
   "source": "DE/opensource.muenchen.de",
-  "tier": "index",
-  "wikidata": "Q112943923",
-  "wikidata_via": "wikidata:website"
+  "tier": "index"
  },
  {
   "catalogue_count": 1,
@@ -149509,7 +149426,7 @@
   ],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T02:04:37Z",
+  "last_activity": "2026-10-12T02:10:43Z",
   "license": "EUPL-1.2",
   "long_desc": "NOTE: Waggle is an individual experiment within the Dutch central government and is known not to meet the requirements and standards the Dutch government sets for production software (BIO/ISO 27001, DPIA/GDPR, WCAG 2.2, NeRDS, Forum Standaardisatie). No formal maintenance, no SLA, single-user single-tenant architecture.\nWaggle imports your flagged Mattermost posts into one kanban board with the columns backlog, in progress and done, plus a separate reading list. It has two-way sync with Mattermost (completing a card in Waggle unsaves the post in Mattermost automatically; posts unsaved externally move to done automatically), a rich preview of messages with markdown rendering, attachments, thread context and private notes. Bubble-up to defer cards, a blocked flag for waiting on others, and full keyboard navigation.\nThe user interface is in Dutch; the documentation is in English.\n",
   "maintenance": "internal",
@@ -151220,9 +151137,7 @@
   "short_desc": "Wikidata is Wikimedia's open community-curated knowledge graph. It acts as central storage for the structured data of its Wikimedia sister projects, including Wikipedia, Wikivoyage, Wiktionary, Wikisource, and others.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0092714",
-  "wikidata": "Q2013",
-  "wikidata_via": "wikidata:website"
+  "upstream_id": "GID0092714"
  },
  {
   "catalogue_count": 1,
@@ -152993,9 +152908,7 @@
    "GLOBAL/dpg"
   ],
   "tier": "index",
-  "upstream_id": "GID0090125",
-  "wikidata": "Q12379285",
-  "wikidata_via": "wikidata:repo"
+  "upstream_id": "GID0090125"
  },
  {
   "active": true,
@@ -153468,9 +153381,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e43559c5-f7db-4123-bd3a-31294d9461dd",
-  "version": "v4.3.2",
-  "wikidata": "Q107381204",
-  "wikidata_via": "wikidata:repo"
+  "version": "v4.3.2"
  },
  {
   "catalogue_count": 1,
@@ -154218,9 +154129,7 @@
    "Germany",
    "United Kingdom",
    "United States of America"
-  ],
-  "wikidata": "Q115688411",
-  "wikidata_via": "wikidata:repo"
+  ]
  },
  {
   "catalogue_count": 3,
@@ -156656,7 +156565,6 @@
   "entry_url": "https://github.com/amagovpt/a11y-da",
   "exclude_reason": "upstream-fork",
   "excluded": true,
-  "fork_parent": "https://github.com/jorgeponto/gerador-test",
   "functions": [],
   "functions_inferred": false,
   "is_fork": true,
@@ -157699,7 +157607,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-14T16:07:27Z",
+  "last_activity": "2026-10-09T19:43:26Z",
   "name": "booka11y",
   "repo": "https://github.com/amagovpt/booka11y",
   "repo_key": "github.com/amagovpt/booka11y",
@@ -158048,9 +157956,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q24008327",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -158926,7 +158832,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T16:40:01Z",
+  "last_activity": "2026-10-12T10:26:22Z",
   "name": "dadosgov-fe",
   "repo": "https://github.com/amagovpt/dadosgov-fe",
   "repo_key": "github.com/amagovpt/dadosgov-fe",
@@ -159537,9 +159443,7 @@
   "tier": "index",
   "used_by": [
    "kb"
-  ],
-  "wikidata": "Q842014",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "BE",
@@ -159900,9 +159804,7 @@
   "used_by": [
    "arbetsformedlingen",
    "rps"
-  ],
-  "wikidata": "Q1344673",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "composer_type": "wordpress-plugin",
@@ -160097,7 +159999,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-01T13:04:12Z",
+  "last_activity": "2026-10-08T13:34:27Z",
   "name": "ESA-scenarioviewer",
   "repo": "https://code.overheid.nl/RVO/ESA-scenarioviewer",
   "repo_key": "code.overheid.nl/rvo/esa-scenarioviewer",
@@ -160382,7 +160284,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-06T14:13:27Z",
+  "last_activity": "2026-10-09T13:50:01Z",
   "name": "FLOW",
   "repo": "https://code.overheid.nl/RWS/FLOW",
   "repo_key": "code.overheid.nl/rws/flow",
@@ -160836,9 +160738,7 @@
   "used_by": [
    "lfv",
    "sundsvall_k"
-  ],
-  "wikidata": "Q1502779",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "PT",
@@ -161059,9 +160959,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q139918820",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -161266,9 +161164,7 @@
    "orebro_r",
    "sundsvall_k",
    "fk"
-  ],
-  "wikidata": "Q96869835",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "BE",
@@ -162385,9 +162281,7 @@
    "adda",
    "lfv",
    "fk"
-  ],
-  "wikidata": "Q28974968",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "SE",
@@ -162601,9 +162495,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q117340550",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -162625,9 +162517,7 @@
   "tier": "index",
   "used_by": [
    "svedala_k"
-  ],
-  "wikidata": "Q13634357",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "composer_type": "wordpress-plugin",
@@ -163177,9 +163067,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q107089873",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "NL",
@@ -163190,7 +163078,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T08:55:49Z",
+  "last_activity": "2026-10-08T17:16:49Z",
   "name": "meldingen",
   "repo": "https://code.overheid.nl/GemAmsterdam/meldingen",
   "repo_key": "code.overheid.nl/gemamsterdam/meldingen",
@@ -163208,7 +163096,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-05T19:32:39Z",
+  "last_activity": "2026-10-07T16:41:52Z",
   "name": "meldingen-core",
   "repo": "https://code.overheid.nl/GemAmsterdam/meldingen-core",
   "repo_key": "code.overheid.nl/gemamsterdam/meldingen-core",
@@ -163226,7 +163114,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-07T09:49:19Z",
+  "last_activity": "2026-10-12T07:58:50Z",
   "name": "meldingen-frontend",
   "repo": "https://code.overheid.nl/GemAmsterdam/meldingen-frontend",
   "repo_key": "code.overheid.nl/gemamsterdam/meldingen-frontend",
@@ -165049,9 +164937,7 @@
   "tier": "index",
   "used_by": [
    "digg"
-  ],
-  "wikidata": "Q59417911",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -165327,9 +165213,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q124636097",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "SE",
@@ -165433,9 +165317,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q140646955",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -165457,9 +165339,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q165277",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "SE",
@@ -167044,7 +166924,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-10-05T07:31:11Z",
+  "last_activity": "2026-10-09T01:46:15Z",
   "name": "plugfs",
   "repo": "https://code.overheid.nl/GemAmsterdam/plugfs",
   "repo_key": "code.overheid.nl/gemamsterdam/plugfs",
@@ -167091,9 +166971,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q120549730",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "composer_type": "wordpress-plugin",
@@ -167131,9 +167009,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q64825554",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "composer_type": "wordpress-plugin",
@@ -167872,9 +167748,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q47509047",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -167983,9 +167857,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q117559664",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -168030,9 +167902,7 @@
   "used_by": [
    "stk_datalabb",
    "sundsvall_k"
-  ],
-  "wikidata": "Q19399674",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "SE",
@@ -168405,9 +168275,7 @@
    "lfv",
    "sjov",
    "fk"
-  ],
-  "wikidata": "Q37619598",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "NL",
@@ -168631,9 +168499,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q368367",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "BE",
@@ -169323,9 +169189,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q136776342",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "SE",
@@ -170103,9 +169967,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q19841877",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "categories": [
@@ -170217,7 +170079,7 @@
   "functions": [],
   "functions_inferred": false,
   "is_fork": false,
-  "last_activity": "2026-09-15T15:21:59Z",
+  "last_activity": "2026-10-09T16:39:54Z",
   "name": "wagtail-tinymce-table",
   "repo": "https://github.com/ogcio/wagtail-tinymce-table",
   "repo_key": "github.com/ogcio/wagtail-tinymce-table",
@@ -170479,9 +170341,7 @@
   "tier": "index",
   "used_by": [
    "motala_k"
-  ],
-  "wikidata": "Q28957083",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "FR",
@@ -171133,9 +170993,7 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ],
-  "wikidata": "Q141547237",
-  "wikidata_via": "wikidata:website"
+  ]
  },
  {
   "country": "BE",
