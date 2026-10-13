@@ -7,8 +7,10 @@ the TODO Group's OSPO landscape (Apache-2.0; corporate since 2026-10-09). Record
 stay English on every language copy; only the chrome is translated.
 
 The page is the "OSPO Atlas" (design handoff, 2026-10-13): under the shared page
-header, three columns - a sidebar (search, the Most documented ranking, facets), the
-offices grouped by country, and a world map that follows the country being read.
+header, three columns - a sidebar (search, then Type, which opens on Government, the
+Most documented ranking and the other facets), the offices grouped by country, and a
+world map of every office the filters show. The map never follows the list to a
+country (owner, 2026-10-13): it stays where the reader puts it.
 Everything is rendered here, so a reader without JavaScript gets every office,
 grouped and ranked, with its details open; the script filters, sorts, expands
 and drives the map. The map is inline SVG from the committed geo/ospo_frames.json
@@ -73,6 +75,8 @@ FN_ICON = {
 
 # Focus tags: matched on the office's OWN words (name, description, note), English,
 # whole-word starts. Government offices are public services by definition.
+# ENGLISH keywords only: an office described in French, German or Dutch gets FEWER
+# tags, never a wrong one. Add another language's words to a rule, never loosen one.
 FOCUS = (
     ("research", "Research software", "flask-conical",
      r"\bresearch|\bscien|\breproducib"),
@@ -329,8 +333,9 @@ def build(lang, data, os_, ranked, geo):
         logo = ('<img src="/ospo-img/logo/%s.png" alt="" width="40" height="40" loading="lazy">'
                 % esc(r["_logo"])) if r["_logo"] else ""
         meta = ['%s%s' % (icon(ti, 13, "at-i at-ti"), esc(tl)),
-                esc(r["_loc"].get("place") or _("Location unknown")),
-                esc(_("Since {y}", y=r["_year"]) if r["_year"] else _("Founded n/a"))]
+                esc(r["_loc"].get("place") or _("Location unknown"))]
+        if r["_year"]:     # most lists give no year: say nothing then (owner, 2026-10-13)
+            meta.append(esc(_("Since {y}", y=r["_year"])))
         tags = (['<span class="at-tag at-tfn">%s%s</span>' % (icon(FN_ICON[f], 12), esc(fnlabel(f)))
                  for f in r["_fns"]] +
                 ['<span class="at-tag at-tfo">%s%s</span>' % (icon(ficon[f], 12), esc(flabel[f]))
@@ -450,6 +455,7 @@ def build(lang, data, os_, ranked, geo):
         "pts": {r["id"]: r["_xy"] for r in os_ if r["_xy"]},
         "fns": sorted(nf), "focus": sorted(nfo),
         "L": {"all": _("{n} offices in {c} countries"), "some": _("{n} of {t} offices in {c} countries"),
+              "all1": _("{n} offices in 1 country"), "some1": _("{n} of {t} offices in 1 country"),
               "offices": _("{n} offices"), "office": _("1 office"),
               "top8": _("Show top {n}", n=TOP_SHOWN), "top25": _("Show top {n}", n=TOP_ALL),
               "cluster": _("{n} offices here"),
@@ -458,7 +464,8 @@ def build(lang, data, os_, ranked, geo):
     subs = {
         "__SPRITE__": sprite(used), "__SEARCHI__": icon("search", 15), "__TOPS__": tops,
         "__TOPMORE__": esc(_("Show top {n}", n=TOP_ALL)), "__TYPES__": types, "__FNS__": fns, "__FOCUS__": foc,
-        "__COUNT__": esc(_("{n} offices in {c} countries", n=N(len(os_)), c=N(nctry))),
+        "__COUNT__": esc(_("{n} offices in 1 country", n=N(len(os_))) if nctry == 1
+                         else _("{n} offices in {c} countries", n=N(len(os_)), c=N(nctry))),
         "__GROUPS__": "".join(secs), "__LAND__": fr["land"], "__VB__": " ".join(str(v) for v in vb),
         "__IPLUS__": icon("plus", 16), "__IMINUS__": icon("minus", 16), "__IRESET__": icon("rotate-ccw", 15),
         "__IFILT__": icon("sliders-horizontal", 14),
@@ -672,27 +679,12 @@ PAGE_CSS = """
   border-left:3px solid var(--at-gov);border-radius:6px;background:none;cursor:pointer;}
 .at-popi.academic{border-left-color:var(--at-aca);} .at-popi.corporate{border-left-color:var(--at-cor);}
 .at-popi:hover,.at-popi:focus-visible{background:var(--at-sel);}
-.at-now{position:absolute;left:18px;top:16px;display:flex;align-items:center;gap:10px;background:var(--surface);
-  border-radius:12px;padding:10px 14px;box-shadow:var(--at-sh);z-index:6;max-width:calc(100% - 90px);}
-.at-now span{display:flex;flex-direction:column;min-width:0;}
-.at-now small{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--ink-faint);}
-.at-now b{font-family:var(--font-display);font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .at-zoom{position:absolute;right:16px;top:16px;display:flex;flex-direction:column;background:var(--surface);
   border-radius:10px;box-shadow:var(--at-sh);overflow:hidden;z-index:6;}
 .at-zoom button{width:34px;height:34px;border:0;background:none;cursor:pointer;display:flex;align-items:center;
   justify-content:center;}
 .at-zoom button + button{border-top:1px solid var(--at-line);}
 .at-zoom button:hover{background:var(--primary-tint);}
-.at-chips{position:absolute;left:0;right:0;bottom:0;padding:24px 16px 12px;display:flex;gap:6px;flex-wrap:wrap;
-  max-height:30%;overflow-y:auto;background:linear-gradient(transparent,rgba(238,242,248,.96) 30%);z-index:6;}
-.at-chip{flex:none;display:flex;align-items:center;gap:6px;font-family:var(--font-ui);font-size:12px;
-  font-weight:600;padding:5px 10px;border-radius:999px;cursor:pointer;border:1px solid rgba(22,46,81,.14);
-  background:var(--surface);}
-.at-chip .at-flag{width:16px;height:11px;border-radius:2px;box-shadow:none;}
-.at-chip .at-femoji{font-size:13px;}
-.at-chip small{opacity:.6;font-size:12px;}
-.at-chip.on{background:var(--ink);border-color:var(--ink);color:var(--white);}
 .at-grip{position:absolute;left:0;top:0;bottom:0;width:12px;z-index:8;cursor:col-resize;display:flex;
   align-items:center;touch-action:none;}
 .at-grip:hover,.at-grip:focus-visible{background:rgba(46,110,174,.08);outline:none;}
@@ -712,9 +704,7 @@ PAGE_CSS = """
   .at-scroll{overflow:visible;padding:0 16px 32px;}
   .at-gh{top:38vh;}
   .at-grip{display:none;}
-  .at-now{left:10px;top:10px;padding:6px 10px;} .at-now b{font-size:14px;}
   .at-zoom{right:10px;top:10px;}
-  .at-chips{display:none;}
   .at-more{padding-left:14px;}
   .ocred{padding:0 20px;}
 }
@@ -732,6 +722,7 @@ __SPRITE__
     <div class="at-shead"><div class="at-q">__SEARCHI__<input type="search" id="at-q" autocomplete="off"
       placeholder="⟪Search⟫" aria-label="⟪Search offices⟫"></div></div>
     <div class="at-sbody">
+      <div class="at-blk" role="group" aria-labelledby="at-l-type"><h2 class="at-lbl" id="at-l-type">⟪Type⟫</h2>__TYPES__</div>
       <div class="at-blk"><h2 class="at-lbl">⟪Most documented⟫<small>⟪score⟫</small></h2>
         <div id="at-top">__TOPS__</div>
         <button type="button" class="at-link" id="at-topmore" hidden>__TOPMORE__</button>
@@ -742,7 +733,6 @@ __SPRITE__
             <li>⟪A public contact email: __PTS_EMAIL__⟫</li><li>⟪Running since __AGE_YEAR__ or earlier: __PTS_AGE__⟫</li></ul>
           <p>⟪Only public signals that can be checked. Ranks are across every office; tied scores share a rank.⟫</p>
         </details></div>
-      <div class="at-blk" role="group" aria-labelledby="at-l-type"><h2 class="at-lbl" id="at-l-type">⟪Type⟫</h2>__TYPES__</div>
       <div class="at-blk" role="group" aria-labelledby="at-l-fn"><h2 class="at-lbl" id="at-l-fn">⟪Product category⟫</h2>__FNS__</div>
       <div class="at-blk" role="group" aria-labelledby="at-l-fo"><h2 class="at-lbl" id="at-l-fo">⟪Focus⟫</h2>__FOCUS__</div>
       <label class="at-chk"><input type="checkbox" id="at-code">⟪Publishes code⟫</label>
@@ -767,12 +757,10 @@ __SPRITE__
     <div class="at-pop" id="at-pop" role="group" aria-label="⟪Offices at this place⟫" hidden></div>
     <div class="at-grip" id="at-grip" role="separator" aria-orientation="vertical" tabindex="0"
       aria-label="⟪Resize the list and the map⟫" title="⟪Drag to resize, double-click to reset⟫"><i></i></div>
-    <div class="at-now" aria-live="polite"><span id="at-nowf"></span><span><small>⟪Now reading⟫</small><b id="at-nown"></b></span></div>
     <div class="at-zoom" role="group" aria-label="⟪Zoom⟫">
       <button type="button" data-zoom="in" aria-label="⟪Zoom in⟫" title="⟪Zoom in⟫">__IPLUS__</button>
       <button type="button" data-zoom="out" aria-label="⟪Zoom out⟫" title="⟪Zoom out⟫">__IMINUS__</button>
       <button type="button" data-zoom="reset" aria-label="⟪Show the whole world⟫" title="⟪Show the whole world⟫">__IRESET__</button></div>
-    <div class="at-chips" id="at-chips" role="group" aria-label="⟪Jump to a country⟫"></div>
   </div>
 </div>
 <noscript><style>.at-card .at-more[hidden]{display:flex!important;}</style></noscript>
@@ -822,7 +810,10 @@ SCRIPT = """
     return o;
   });
   var total = all.length;
-  var st = {q: '', type: '', fn: '', focus: '', code: false, sort: 'activity', sel: null, hover: null, active: null};
+  // the page opens on Government (owner, 2026-10-13); "All offices" is type '' and
+  // is written to the hash as type=all, so every view has an address
+  var TYPE0 = 'government';
+  var st = {q: '', type: TYPE0, fn: '', focus: '', code: false, sort: 'activity', sel: null, hover: null};
   var shown = all.slice(), order = [];
   var narrow = function () { return window.matchMedia('(max-width:900px)').matches; };
   var fmt = function (s, kw) { return s.replace(/\\{(\\w+)\\}/g, function (m, k) { return k in kw ? kw[k] : m; }); };
@@ -838,6 +829,7 @@ SCRIPT = """
     } catch (e) { return; }
     if (P.get('q')) st.q = P.get('q');
     if (TYPES.indexOf(P.get('type')) >= 0) st.type = P.get('type');
+    else if (P.get('type') === 'all') st.type = '';
     if (CFG.fns.indexOf(P.get('fn')) >= 0) st.fn = P.get('fn');
     if (CFG.focus.indexOf(P.get('focus')) >= 0) st.focus = P.get('focus');
     if (P.get('code') === '1') st.code = true;
@@ -848,7 +840,8 @@ SCRIPT = """
     var P = new URLSearchParams();
     if (st.sel) P.set('o', st.sel);
     if (st.q.trim()) P.set('q', st.q.trim());
-    ['type', 'fn', 'focus'].forEach(function (k) { if (st[k]) P.set(k, st[k]); });
+    if (st.type !== TYPE0) P.set('type', st.type || 'all');
+    ['fn', 'focus'].forEach(function (k) { if (st[k]) P.set(k, st[k]); });
     if (st.code) P.set('code', '1');
     if (st.sort === 'name') P.set('sort', 'name');
     var s = P.toString();
@@ -888,9 +881,9 @@ SCRIPT = """
     });
     empty.hidden = shown.length > 0;
     var nc = order.filter(function (c) { return c !== 'ZZ' && c !== 'INT'; }).length;
-    $('at-count').textContent = shown.length === total ? fmt(L.all, {n: num(total), c: num(nc)})
-      : fmt(L.some, {n: num(shown.length), t: num(total), c: num(nc)});
-    var any = !!(st.q.trim() || st.type || st.fn || st.focus || st.code);
+    $('at-count').textContent = shown.length === total ? fmt(nc === 1 ? L.all1 : L.all, {n: num(total), c: num(nc)})
+      : fmt(nc === 1 ? L.some1 : L.some, {n: num(shown.length), t: num(total), c: num(nc)});
+    var any = !!(st.q.trim() || st.type !== TYPE0 || st.fn || st.focus || st.code);
     $('at-clear').hidden = !any;
     [].forEach.call(A.querySelectorAll('.at-fb'), function (b) {
       b.setAttribute('aria-pressed', st[b.dataset.f] === b.dataset.v ? 'true' : 'false');
@@ -903,9 +896,6 @@ SCRIPT = """
     $('at-code').checked = st.code;
     if ($('at-q').value !== st.q) $('at-q').value = st.q;
     if (st.sel && !on[st.sel]) setSel(null);
-    chips();
-    lastActive = null;
-    onScroll();
     pins();
   }
   function secById(cc) { return SC.querySelector('.at-grp[data-cc="' + cc + '"]'); }
@@ -960,37 +950,6 @@ SCRIPT = """
     if (narrow()) window.scrollTo({top: window.pageYOffset + dy, behavior: 'smooth'});
     else SC.scrollTo({top: SC.scrollTop + dy, behavior: 'smooth'});
   }
-  var lastActive = null, ft = 0;
-  function onScroll() {
-    var lim = topLine() + 80, cur = order[0] || null;
-    order.forEach(function (cc) { if (secById(cc).getBoundingClientRect().top < lim) cur = cc; });
-    if (cur === lastActive) return;
-    lastActive = cur; st.active = cur;
-    var s = cur && secById(cur);
-    $('at-nown').textContent = s ? s.dataset.name : '\\u2014';
-    var f = s && s.querySelector('.at-flag');
-    $('at-nowf').innerHTML = ''; if (f) $('at-nowf').appendChild(f.cloneNode(true));
-    [].forEach.call($('at-chips').children, function (b) { b.classList.toggle('on', b.dataset.cc === cur); });
-    pins();
-    clearTimeout(ft); ft = setTimeout(function () { fitGroup(cur); }, 120);
-  }
-  SC.addEventListener('scroll', onScroll, {passive: true});
-  window.addEventListener('scroll', function () { if (narrow()) onScroll(); }, {passive: true});
-
-  function chips() {
-    var box = $('at-chips'); box.textContent = '';
-    order.forEach(function (cc) {
-      var s = secById(cc), b = document.createElement('button'), f = s.querySelector('.at-flag');
-      b.type = 'button'; b.className = 'at-chip' + (cc === st.active ? ' on' : ''); b.dataset.cc = cc;
-      if (f) b.appendChild(f.cloneNode(true));
-      b.appendChild(document.createTextNode(s.dataset.name + ' '));
-      var n = document.createElement('small'); n.textContent = num(s.querySelectorAll('.at-card:not([hidden])').length);
-      b.appendChild(n);
-      b.onclick = function () { scrollToEl(s, 0); };
-      box.appendChild(b);
-    });
-  }
-
   // ---- the map: viewBox pan/zoom; the vertical extent follows the pane's shape
   var VB0 = CFG.vb.slice(), vb = VB0.slice(), ZMIN = 0.9, ZMAX = 20, anim = 0, raf = 0;
   function asp() { var r = SVG.getBoundingClientRect(); return r.width ? r.height / r.width : VB0[3] / VB0[2]; }
@@ -1023,14 +982,6 @@ SCRIPT = """
     })(t0);
   }
   function reset() { flyTo(VB0[0] + VB0[2] / 2, VB0[1] + VB0[3] / 2, 1); }
-  function fitGroup(cc) {
-    var it = shown.filter(function (o) { return o.cc === cc && o.x != null; });
-    if (!it.length) return;
-    var xs = it.map(function (o) { return o.x; }), ys = it.map(function (o) { return o.y; });
-    var x0 = Math.min.apply(0, xs), x1 = Math.max.apply(0, xs), y0 = Math.min.apply(0, ys), y1 = Math.max.apply(0, ys);
-    var w = Math.max((x1 - x0) * 2.2, (y1 - y0) * 2.4 / asp(), 110);
-    flyTo((x0 + x1) / 2, (y0 + y1) / 2, VB0[2] / w);
-  }
   var drag = null, moved = false;
   SVG.addEventListener('wheel', function (e) {
     e.preventDefault(); var p = toMap(e.clientX, e.clientY);
@@ -1089,14 +1040,14 @@ SCRIPT = """
       var px = (m.x - vb[0]) * k, py = (m.y - vb[1]) * ky;
       if (px < -40 || py < -40 || px > r.width + 40 || py > r.height + 40) return;
       var one = m.n === 1, o1 = m.items[0];
-      var inA = m.items.some(function (o) { return o.cc === st.active; });
       var hot = m.items.some(function (o) { return o.id === st.hover || o.id === st.sel; });
-      var size = one ? (hot ? 22 : inA ? 14 : 9) : Math.round(Math.min(40, 22 + Math.sqrt(m.n) * 2.2));
+      // every pin at full strength: the map shows all offices, not one country's
+      var size = one ? (hot ? 22 : 14) : Math.round(Math.min(40, 22 + Math.sqrt(m.n) * 2.2));
       var b = document.createElement('button');
       b.type = 'button';
-      b.className = 'at-pin' + (one ? ' ' + o1.type : '') + (inA ? ' in' : '') + (hot ? ' hot' : '');
+      b.className = 'at-pin in' + (one ? ' ' + o1.type : '') + (hot ? ' hot' : '');
       b.style.left = px + 'px'; b.style.top = py + 'px'; b.style.width = b.style.height = size + 'px';
-      b.style.zIndex = hot ? 5 : inA ? 3 : 1;
+      b.style.zIndex = hot ? 5 : 3;
       var label = one ? o1.name : fmt(L.cluster, {n: num(m.n)});
       b.title = label; b.setAttribute('aria-label', label);
       if (!one) {
@@ -1172,19 +1123,19 @@ SCRIPT = """
   });
 
   // the atlas is one viewport tall (CSS); the credits are a page scroll below it
-  window.addEventListener('resize', function () { lastActive = null; onScroll(); });
 
   // ---- wiring
   var qt = 0;
   $('at-q').addEventListener('input', function () { var v = this.value; clearTimeout(qt); qt = setTimeout(function () { set({q: v}); }, 120); });
   [].forEach.call(A.querySelectorAll('.at-fb'), function (b) {
     b.onclick = function () {
-      var p = {}; p[b.dataset.f] = st[b.dataset.f] === b.dataset.v ? '' : b.dataset.v; set(p);
+      // Type is one choice of four (All is one of them); the other facets toggle off
+      var p = {}; p[b.dataset.f] = b.dataset.f === 'type' || st[b.dataset.f] !== b.dataset.v ? b.dataset.v : ''; set(p);
       if (narrow()) scrollToEl(SC, 0);
     };
   });
   $('at-code').onchange = function () { set({code: this.checked}); };
-  $('at-clear').onclick = function () { set({q: '', type: '', fn: '', focus: '', code: false}); };
+  $('at-clear').onclick = function () { set({q: '', type: TYPE0, fn: '', focus: '', code: false}); };
   [].forEach.call($('at-sort').children, function (b) { b.onclick = function () { set({sort: b.dataset.sort}); }; });
   var tm = $('at-topmore'), topAll = false;
   tm.onclick = function () {
@@ -1212,7 +1163,8 @@ SCRIPT = """
   try {
     var Q = new URLSearchParams(location.search), legacyCc = Q.get('cc');
     if (Q.get('q')) st.q = Q.get('q');
-    if (TYPES.indexOf(Q.get('type')) >= 0) st.type = Q.get('type');
+    // an old link was made when the page showed every type: it lands on All
+    if (Q.get('q') || legacyCc || Q.get('type')) st.type = TYPES.indexOf(Q.get('type')) >= 0 ? Q.get('type') : '';
   } catch (e) {}
   readHash();
   MAPBOX.hidden = false; $('at-sort').hidden = false; ftog.hidden = false; tm.hidden = false;

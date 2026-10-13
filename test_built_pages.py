@@ -652,6 +652,21 @@ def main():
         check("%s: zoom in / out / whole world, each a labelled button" % name,
               zb and re.findall(r'<button type="button" data-zoom="(\w+)" aria-label="[^"]+"', zb.group(1)),
               ["in", "out", "reset"])
+        # owner, 2026-10-13: Type is the sidebar's FIRST block and the page opens on
+        # Government (All is type=all, read back); no "Now reading" box, no country
+        # chips, the map never flies to a country; no "Founded n/a"; one country singular
+        first = re.search(r'<div class="at-sbody">\s*<div class="at-blk"[^>]*>\s*<h2 class="at-lbl" id="([^"]+)"', pg)
+        sc = "".join(re.findall(r'<script>(.*?)</script>', pg, re.S))
+        check("%s: Type is the first sidebar block, and the page opens on Government" % name,
+              (first and first.group(1), "var TYPE0 = 'government';" in sc,
+               "P.get('type') === 'all'" in sc and "P.set('type', st.type || 'all')" in sc),
+              ("at-l-type", True, True))
+        check("%s: the map does not follow countries, and no card says Founded n/a" % name,
+              [x for x in ('class="at-now"', 'id="at-chips"', 'fitGroup', 'onScroll', 'Founded', 'Fundaci')
+               if x in pg], [])
+        check("%s: one country is singular" % name,
+              (bool((cfg.get("L") or {}).get("all1")), bool((cfg.get("L") or {}).get("some1")), "nc === 1" in sc),
+              (True, True, True))
         # every office is a map point or in Not yet placed, and each point is the
         # build's own projection of its location
         locs = json.load(open(os.path.join(HERE, "ospos", "locations.json")))["locations"]

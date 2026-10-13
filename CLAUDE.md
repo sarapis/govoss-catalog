@@ -200,11 +200,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   category, never it. Places come from the hand-placed `ospos/locations.json`; companies' were
   added by the MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` records the
   source) - read its output by eye: it put Nokia in Canada and Tencent in the Caymans. ONE
-  Equal Earth world map (`geo/build_geo.py`, frame `world`). The page is the OSPO Atlas
-  (handoff 2026-10-13): sidebar | offices by country | a map that follows the list, NO title of
-  its own under the shared header (owner). Products = catalogue entries whose repo sits under an
-  office's code org (a URL fact); the score counts public signals only, rank is GLOBAL. Logos
-  and flags are local files from the MANUAL `ospos/fetch_images.py`; icons vendored Lucide.
+  Equal Earth world map (`geo/build_geo.py`). The page is the OSPO Atlas (owner, 2026-10-13):
+  Type first, opening on Government (All = `type=all`; old `?q=` links land on All); the map shows
+  every office shown, never following the list; no "Founded n/a"; focus tags match ENGLISH only.
 - **One page header** (owner, 2026-10-07/08): every page but home uses `theme.page_header()` -
   the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
   characters in every language), a meta line led by the page's own data file; the page's tools
