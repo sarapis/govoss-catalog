@@ -6,12 +6,29 @@ Network's public-sector OSPO list (CC0), the SustainOSS academic map (MIT) and
 the TODO Group's OSPO landscape (Apache-2.0; corporate since 2026-10-09). Records
 stay English on every language copy; only the chrome is translated.
 
-Two views of one list, like /catalogs: cards (the default, and all a reader
-without JavaScript gets) and a map. The map is inline SVG from the committed
-geo/ospo_frames.json (one world map, Equal Earth; written by geo/build_geo.py);
-each office is placed from ospos/locations.json - hand-placed, or for TODO's
-companies their Wikidata headquarters (ospos/place_from_wikidata.py, `via`). Offices sharing a
-spot (three in Paris, two in The Hague) share one dot that names them all.
+The page is the "OSPO Atlas" (design handoff, 2026-10-13): under the shared page
+header, three columns - a sidebar (search, then Type, which opens on Government, and the
+other facets), the offices grouped by country, and a
+world map of every office the filters show. The map never follows the list to a
+country (owner, 2026-10-13): it stays where the reader puts it.
+Everything is rendered here, so a reader without JavaScript gets every office,
+grouped and sorted, with its details open; the script filters, sorts, expands
+and drives the map. The map is inline SVG from the committed geo/ospo_frames.json
+(one world map, Equal Earth; written by geo/build_geo.py); each office is placed
+from ospos/locations.json - hand-placed, or for TODO's companies their Wikidata
+headquarters (ospos/place_from_wikidata.py, `via`).
+
+What the page derives, all from committed inputs, never fetched here:
+  products  catalogue entries (catalog.json, set-aside rows skipped) whose repo
+            sits under one of the office's code organisations - a URL fact
+  fns       those products' functions (taxonomy.py's 19), most frequent first
+  focus     FOCUS_RULES matched on the office's own name, description and note
+  score     how many of its software entries govoss lists (len(products)). It SORTS
+            the list (Most software, or A-Z) and shows on the card; there are no
+            ranks (owner, 2026-10-13)
+Logos and flags are local files in ospos/img/ (fetched by the MANUAL
+ospos/fetch_images.py), copied to site/ospo-img/; a missing one falls back to
+initials or the flag emoji. Icons are vendored Lucide (vendor/lucide/).
 
 An office with Resources links to them: RESOURCE_CASE maps an office's URL to
 its case in resources/ospo-resources.json, checked against that file.
@@ -24,12 +41,14 @@ import json
 import math
 import os
 import re
+import shutil
 import time
 
 import fetch_ospos
 import i18n
 import ospo_contract as C
 import sources as S
+import taxonomy
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = f"{OUT}/site"
@@ -40,17 +59,42 @@ theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 
-# A map pin, tip at (0,0) on the office's place, head a circle of radius 6 at (0,-10).
-PIN = "M0,0C-1.6,-3.4 -6,-6.2 -6,-10A6,6 0 1 1 6,-10C6,-6.2 1.6,-3.4 0,0Z"
-
-# Pins nearer than this (map units, before scaling) merge into one numbered pin.
-MERGE_WITHIN = 9
-
-# Card and filter order: government first, as the site is about government.
+# Type order (filters, the country bars): government first, as the site is about government.
 TYPE_ORDER = ("government", "academic", "corporate")
+# fill / tint / text and Lucide icon per type (the handoff's type colours)
+TYPE_ICON = {"government": "landmark", "academic": "graduation-cap", "corporate": "building-2"}
 
-# Code links shown on a card before the rest fold behind "+N more code links".
-CODE_SHOWN = 3
+# Lucide icon per function (taxonomy.FUNCTIONS) and per focus tag
+FN_ICON = {
+    "case-workflow": "workflow", "documents": "file-text", "web-content": "globe",
+    "collaboration": "messages-square", "data-analytics": "bar-chart-3", "geospatial": "map",
+    "identity-security": "shield-check", "citizen-services": "users",
+    "finance-procurement": "receipt", "hr-workforce": "contact", "crm-service": "headset",
+    "dev-tools": "terminal-square", "infrastructure": "server", "integration": "plug",
+    "learning-knowledge": "book-open", "health-social": "heart-pulse",
+    "environment-transport": "leaf", "office": "briefcase", "registers": "list",
+}
+
+# Focus tags: matched on the office's OWN words (name, description, note), English,
+# whole-word starts. Government offices are public services by definition.
+# ENGLISH keywords only: an office described in French, German or Dutch gets FEWER
+# tags, never a wrong one. Add another language's words to a rule, never loosen one.
+FOCUS = (
+    ("research", "Research software", "flask-conical",
+     r"\bresearch|\bscien|\breproducib"),
+    ("education", "Education", "graduation-cap",
+     r"\beducat|\bteach|\bstudent|\bcurricul|\bcourses?\b|\btraining\b"),
+    ("policy", "Policy & guidance", "scroll-text",
+     r"\bpolic(y|ies)\b|\bguidance\b|\bgovernance\b|\bcompliance\b|\bbest practices?\b"),
+    ("sovereignty", "Digital sovereignty", "flag", r"\bsovereign"),
+    ("community", "Community & commons", "handshake",
+     r"\bcommunit|\bcommons\b|\becosystems?\b"),
+    ("health", "Health", "heart-pulse", r"\bhealth|\bmedic|\bclinic|\bhospital"),
+    ("publicsector", "Public services", "landmark",
+     r"\bpublic (sector|services?|administrations?|bod(y|ies)|interest)\b|\bgovernments?\b|"
+     r"\bmunicipal|\bcivic\b"),
+)
+FOCUS_KEYS = [k for k, *_ in FOCUS]
 
 # An office's URL (its key in FLOSS-PSO) -> its case in resources/ospo-resources.json.
 # Named, never guessed: UNDP is NOT the "un" case (that is the UN's OICT and the
@@ -61,6 +105,9 @@ RESOURCE_CASE = {
     "https://cms.gov/digital-service/open-source-program-office": "cms",
 }
 
+IMG = f"{OUT}/ospos/img"            # logo/<host>.png, flag/<code>.svg (ospos/fetch_images.py)
+ICONS = json.load(open(f"{OUT}/vendor/lucide/icons.json", encoding="utf-8"))["icons"]
+
 
 def esc(s):
     return ("" if s is None else str(s)).replace("&", "&amp;").replace(
@@ -68,16 +115,22 @@ def esc(s):
 
 
 def flag(cc):
-    """Flag emoji for a country code, as /software shows them. Built from the
-    code (regional-indicator letters), not sources.py's per-catalogue flags:
-    most OSPO countries have no catalogue. EL is the EU's code for Greece (its
-    flag is GR); INT, an intergovernmental office, gets /software's Global sign."""
+    """Flag emoji for a country code, as /software shows them - the fallback when
+    ospos/img/flag/ has no image. EL is the EU's code for Greece (its flag is GR);
+    INT, an intergovernmental office, gets /software's Global sign."""
     cc = {"EL": "GR"}.get(cc or "", cc or "")
     if cc == "INT":
         return "\U0001F310"
     if len(cc) == 2 and cc.isalpha():
         return "".join(chr(0x1F1E6 + ord(ch) - ord("A")) for ch in cc.upper())
     return ""
+
+
+def flag_file(cc):
+    """ospos/img/flag/<code>.svg, by the flag's code (Greece's EL is gr)."""
+    if not cc or cc in ("INT", "ZZ"):
+        return None
+    return "%s.svg" % {"EL": "gr"}.get(cc, cc.lower())
 
 
 def equal_earth(lon, lat):
@@ -103,172 +156,283 @@ def place(frames, lon, lat):
     return None
 
 
+def norm_url(u):
+    """A forge URL compared by host and path: no scheme, www, case, trailing
+    slash, or GitLab's /groups/ segment."""
+    u = (u or "").split("://", 1)[-1].lower().rstrip("/")
+    u = u[4:] if u.startswith("www.") else u
+    return u.replace("/groups/", "/")
+
+
+def host_of(u):
+    h = (u or "").split("://", 1)[-1].split("/", 1)[0].lower()
+    return h[4:] if h.startswith("www.") else h
+
+
+def code_org(c):
+    """A code link named by its account or group (ANSSI lists 13; "Code" x13 said nothing)."""
+    seg = [x for x in c.split("://", 1)[-1].split("/")[1:] if x and x != "groups"]
+    return seg[-1] if seg else c.split("://", 1)[-1]
+
+
+def office_indices(r, catalog):
+    """Positions in catalog.json of the entries whose repository sits under one of
+    the office's code organisations. A URL fact, never a name guess; set-aside rows
+    are skipped. build_ui.py maps the SAME positions onto its own (name-sorted) rows
+    for /software?ospo=<id>, so the card's count is that view's."""
+    orgs = [norm_url(c) for c in r.get("code") or []]
+    orgs = [o for o in orgs if "/" in o]          # a bare host would claim a whole forge
+    if not orgs:
+        return []
+    out = []
+    for i, e in enumerate(catalog):
+        if e.get("excluded"):
+            continue
+        repos = [e.get("repo")] + [x.get("repo_url") for x in e.get("catalogue_entries") or []]
+        if any(norm_url(u).startswith(o + "/") for u in repos if u for o in orgs):
+            out.append(i)
+    return out
+
+
+def office_products(r, catalog):
+    return [catalog[i] for i in office_indices(r, catalog)]
+
+
+def focus_of(r):
+    text = " ".join(x for x in (r["name"], r.get("description"), r.get("ospo_note")) if x).lower()
+    tags = [k for k, _l, _i, rx in FOCUS if re.search(rx, text)]
+    if r["type"] == "government" and "publicsector" not in tags:
+        tags.append("publicsector")
+    if r.get("kind") == "research" and "research" not in tags:
+        tags.insert(0, "research")
+    return tags
+
+
+def initials(name):
+    """1-2 letters for a logo that is missing (the handoff's mono())."""
+    n = re.sub(r"^(The|OSPO( de| at| of)?( la| l')?|Open Source Program(me)? Office( of| at)?( the)?)\s+",
+               "", name, flags=re.I)
+    words = re.sub(r"[^A-Za-z0-9À-ž ]", "", n).split()
+    return "".join(w[0] for w in words[:2]).upper() or "?"
+
+
+def icon(name, size=14, cls="at-i"):
+    return ('<svg class="%s" width="%d" height="%d" aria-hidden="true" focusable="false">'
+            '<use href="#li-%s"/></svg>' % (cls, size, size, name))
+
+
+def sprite(names):
+    return ('<svg class="at-sprite" aria-hidden="true" focusable="false" width="0" height="0">%s</svg>'
+            % "".join('<symbol id="li-%s" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">%s</symbol>'
+                      % (n, ICONS[n]) for n in sorted(names)))
+
+
 def load():
-    data = json.load(open(f"{OUT}/cache/ospos.json"))
-    locs = json.load(open(f"{OUT}/ospos/locations.json"))["locations"]
-    geo = json.load(open(f"{OUT}/geo/ospo_frames.json"))
-    res = json.load(open(f"{OUT}/resources/ospo-resources.json"))
+    data = json.load(open(f"{OUT}/cache/ospos.json", encoding="utf-8"))
+    locs = json.load(open(f"{OUT}/ospos/locations.json", encoding="utf-8"))["locations"]
+    geo = json.load(open(f"{OUT}/geo/ospo_frames.json", encoding="utf-8"))
+    res = json.load(open(f"{OUT}/resources/ospo-resources.json", encoding="utf-8"))
+    catalog = json.load(open(f"{OUT}/catalog.json", encoding="utf-8"))
     if not data.get("ospos"):
         raise SystemExit("build_ospos: cache/ospos.json has no ospos - run fetch_ospos.py")
-    return data, locs, geo, res
+    return data, locs, geo, res, catalog
 
 
-def build(lang, data, locs, geo, res):
-    _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
-    N = lambda n: i18n.num(lang, n)
-    cname = lambda c: (i18n.country(lang, c, S.COUNTRY_NAME.get(c) or C.COUNTRY_NAMES.get(c, c))
-                       if c else "")
+def derive(data, locs, geo, res, catalog):
+    """Every office with its place, products, tags and score (its software in govoss)."""
     rcount = collections.Counter(r["case"] for r in res["resources"])
-    os_ = sorted(data["ospos"], key=lambda r: (TYPE_ORDER.index(r["type"]), r["name"].lower()))
+    fr = geo["frames"]["world"]
+    os_ = [dict(r) for r in data["ospos"]]
     for r in os_:
         loc = locs.get(r["id"]) or {}
         r["_cc"] = r.get("country") or loc.get("country")
         r["_loc"] = loc
         case = RESOURCE_CASE.get(r["url"])
         r["_case"] = case if case and rcount.get(case) else None
-    n_gov = sum(r["type"] == "government" for r in os_)
-    n_aca = sum(r["type"] == "academic" for r in os_)
-    n_corp = sum(r["type"] == "corporate" for r in os_)
-    tlabel = lambda t: {"government": _("Government"), "academic": _("Academic"),
-                        "corporate": _("Corporate")}[t]
-    by_cc = collections.Counter(r["_cc"] for r in os_ if r["_cc"])
-
-    cards = []
-    for r in os_:
-        links = ['<a href="%s" target="_blank" rel="noopener">%s</a>'
-                 % (esc(r["url"]), esc(_("Website")))]
-        # each code link named by its account or group (ANSSI lists 13; "Code" x13 said nothing)
-        code = []
-        for c in r.get("code") or []:
-            seg = [x for x in c.split("://", 1)[-1].split("/")[1:] if x and x != "groups"]
-            code.append('<a href="%s" target="_blank" rel="noopener">%s %s</a>'
-                        % (esc(c), esc(_("Code:")), esc(seg[-1] if seg else c.split("://", 1)[-1])))
-        # past CODE_SHOWN, the rest fold behind a native <details> (OS2 lists 19): policy
-        # and email stay in the visible row, after the shown code links
-        links += code[:CODE_SHOWN]
-        more = ""
-        if len(code) > CODE_SHOWN:
-            more = ('<details class="omore"><summary>%s</summary><p class="olinks">%s</p></details>'
-                    % (esc(_("+{n} more code links", n=N(len(code) - CODE_SHOWN))),
-                       " &middot; ".join(code[CODE_SHOWN:])))
-        if r.get("case_study"):
-            links.append('<a href="%s" target="_blank" rel="noopener">%s</a>'
-                         % (esc(r["case_study"]), esc(_("TODO Group case study"))))
-        if r.get("policy"):
-            links.append('<a href="%s" target="_blank" rel="noopener">%s</a>'
-                         % (esc(r["policy"]), esc(_("Open source policy"))))
-        if r.get("email"):
-            links.append('<a href="mailto:%s">%s</a>' % (esc(r["email"]), esc(r["email"])))
-        res_link = ""
-        if r["_case"]:
-            res_link = ('<a class="ores" href="/resources?case=%s">%s</a>'
-                        % (esc(r["_case"]), _("{n} resources on how this office was built &rarr;",
-                                              n=N(rcount[r["_case"]]))))   # own chrome: not escaped again
-        typ = tlabel(r["type"])
-        meta = (['<span class="oflag" aria-hidden="true">%s</span> %s' % (flag(r["_cc"]), esc(cname(r["_cc"])))]
-                if r["_cc"] else [])
-        if r["_loc"].get("place"):
-            meta.append(esc(r["_loc"]["place"]))
-        if r.get("created"):
-            meta.append(esc(_("since {y}", y=str(r["created"])[:4])))
-        cards.append(
-            '<li class="ocard" id="%s" data-type="%s" data-cc="%s">'
-            '<div class="ohead"><span class="otype %s">%s</span><span class="ometa">%s</span></div>'
-            '<h3>%s</h3>%s%s'
-            '<p class="olinks">%s</p>%s%s</li>'
-            % (esc(r["id"]), esc(r["type"]), esc(r["_cc"] or ""), esc(r["type"]), esc(typ),
-               " &middot; ".join(meta), esc(r["name"]),
-               ('<p class="odesc">%s</p>' % esc(r["description"])) if r.get("description") else "",
-               ('<p class="onote"><b>%s</b> %s</p>' % (esc(_("OSPO:")), esc(r["ospo_note"])))
-               if r.get("ospo_note") else "",
-               " &middot; ".join(links), more, res_link))
-
-    # ---- the map: one pin per spot; offices sharing a spot share a pin
-    spots = collections.OrderedDict()
-    unplaced = []
-    for r in os_:
-        loc = r["_loc"]
+        r["_ncase"] = rcount.get(case or "", 0)
         p = place(geo["frames"], loc["lon"], loc["lat"]) if loc.get("lat") is not None else None
-        if not p:
-            unplaced.append(r)
-            continue
-        spots.setdefault(p, []).append(r)
-    # pins closer than MERGE_WITHIN share one (a teardrop hides its neighbour: Saint-Mande
-    # covered Paris's three); greedy, largest spot first, measured from each pin's anchor
-    order = sorted(spots.items(), key=lambda kv: -len(kv[1]))
-    # the same spots, in the same order, for the page's zoom: ospoCluster() in SCRIPT
-    # re-merges them at each zoom by this rule, MERGE_WITHIN measured on SCREEN
-    spot_json = json.dumps({"within": MERGE_WITHIN, "pin": PIN, "spots": [
-        [k, x, y, [r["id"] for r in rs],
-         list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))]
-        for (k, x, y), rs in order]}, sort_keys=True).replace("</", "<\\/")
-    merged = []
-    for (k, x, y), rs in order:
-        for m in merged:
-            if m[0] == k and math.hypot(m[1] - x, m[2] - y) < MERGE_WITHIN:
-                m[3].extend(rs)
-                break
-        else:
-            merged.append((k, x, y, list(rs)))
-    # drawn smallest first, so a numbered pin is never covered by a single one
-    pins = collections.defaultdict(list)
-    for k, x, y, rs in reversed(merged):
-        places = list(dict.fromkeys(r["_loc"].get("place") for r in rs if r["_loc"].get("place")))
-        label = "; ".join("%s (%s)" % (r["name"], tlabel(r["type"])) for r in rs)
-        types = sorted({r["type"] for r in rs})
-        cls = types[0] if len(types) == 1 else "mixed"
-        pins[k].append('<a class="odot %s" href="#%s" data-ids="%s" data-place="%s" aria-label="%s" '
-                       'aria-haspopup="dialog"><title>%s</title><g transform="translate(%s %s)">'
-                       '<g class="opin"%s><path d="%s"/>%s</g></g></a>'
-                       % (cls, esc(rs[0]["id"]), esc(" ".join(r["id"] for r in rs)),
-                          esc("; ".join(places)), esc(label), esc(label),
-                          x, y, ' style="--k:1.3"' if len(rs) > 1 else "", PIN,
-                          '<text x="0" y="-7">%d</text>' % len(rs) if len(rs) > 1
-                          else '<circle class="ohole" cx="0" cy="-10" r="2.2"/>'))
+        r["_xy"] = (p[1], p[2]) if p and p[0] == "world" else None
+        r["_prod"] = office_products(r, catalog)
+        fc = collections.Counter(f for e in r["_prod"] for f in e.get("functions") or []
+                                 if f in taxonomy.FUNCTIONS)
+        r["_fns"] = [f for f, _n in sorted(fc.items(), key=lambda kv: (-kv[1], kv[0]))]
+        r["_focus"] = focus_of(r)
+        y = str(r.get("created") or "")[:4]
+        r["_year"] = int(y) if y.isdigit() else None
+        r["_score"] = len(r["_prod"])     # what "Most software" sorts by (owner, 2026-10-13)
+        h = host_of(r["url"])
+        r["_logo"] = (h if h not in ("github.com", "gitlab.com") and h
+                      and os.path.exists(f"{IMG}/logo/{h}.png") else None)
+    return os_
 
-    def draw(cls, viewbox, shift):
-        """One layout of the map: each frame's land and pins, moved by shift[frame]."""
-        out = ['<svg class="omap-svg %s" viewBox="%s %s %s %s" role="group" aria-label="%s">'
-               % ((cls,) + tuple(viewbox) + (esc(_("Map of open source program offices")),))]
-        for k, fr in geo["frames"].items():
-            rx, ry, rw, rh = fr["rect"]
-            dx, dy = shift[k]
-            out.append('<g transform="translate(%s %s)"><g class="oframe">'
-                       '<rect x="%s" y="%s" width="%s" height="%s" rx="8"/>'
-                       '<path d="%s" aria-hidden="true"/></g><g class="opins" data-frame="%s">%s</g></g>'
-                       % (round(dx, 1), round(dy, 1), rx, ry, rw, rh, fr["land"], esc(k), "".join(pins[k])))
-        out.append("</svg>")
-        return "".join(out)
 
-    # one world map (owner, 2026-10-09; it was three regional frames, and a second,
-    # stacked layout for phones)
-    svg = [draw("omap-world", geo["viewbox"], {k: (0, 0) for k in geo["frames"]})]
-    note = ""
-    if unplaced:
-        note = ('<p class="onote-map">%s</p>'
-                % esc(_("{n} not on the map: {names}",
-                        n=len(unplaced), names="; ".join(r["name"] for r in unplaced))))
+def build(lang, data, os_, geo):
+    _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
+    N = lambda n: i18n.num(lang, n)
+    cname = lambda c: (i18n.country(lang, c, S.COUNTRY_NAME.get(c) or C.COUNTRY_NAMES.get(c, c))
+                       if c and c != "ZZ" else _("Not yet placed"))
+    fnlabel = lambda k: i18n.function(lang, k, taxonomy.FUNCTIONS[k])
+    flabel = {k: _(lbl) for k, lbl, _i, _r in FOCUS}
+    ficon = {k: ic for k, _l, ic, _r in FOCUS}
+    tlabel = {"government": _("Government"), "academic": _("Academic"), "corporate": _("Corporate")}
+    used = {"search", "layers", "plus", "minus", "rotate-ccw", "globe", "mail", "scroll-text",
+            "file-check", "book-marked", "package", "sliders-horizontal", "x", "flask-conical"}
+    used |= set(TYPE_ICON.values()) | set(FN_ICON.values()) | set(ficon.values())
+    used |= {"github", "gitlab", "git-branch"}
 
-    copts = "".join('<option value="%s">%s %s (%s)</option>' % (esc(c), flag(c), esc(cname(c)), N(n))
-                    for c, n in sorted(by_cc.items(), key=lambda kv: cname(kv[0])))
-    src = data.get("sources") or {}
-    def fetched(key):
-        st = src.get(key) or {}
-        when = (st.get("fetched_at") or "")[:10] or _("never")
-        return when + ("" if st.get("ok", True) else " &middot; " + esc(_("last fetch failed, showing the previous list")))
+    def flag_html(cc, cls):
+        if cc == "ZZ":
+            return ""
+        f = flag_file(cc)
+        if f and os.path.exists(f"{IMG}/flag/{f}"):
+            return '<img class="%s" src="/ospo-img/flag/%s" alt="" width="26" height="18">' % (cls, f)
+        e = flag(cc)
+        return ('<span class="%s at-femoji" aria-hidden="true">%s</span>' % (cls, e)) if e else ""
 
+    # ---- the cards, grouped by country (ZZ: not yet placed, always last)
+    def card(r):
+        t = r["type"]
+        tl = _("Research") if r.get("kind") == "research" else tlabel[t]
+        ti = "flask-conical" if r.get("kind") == "research" else TYPE_ICON[t]
+        logo = ('<img src="/ospo-img/logo/%s.png" alt="" width="40" height="40" loading="lazy">'
+                % esc(r["_logo"])) if r["_logo"] else ""
+        meta = ['%s%s' % (icon(ti, 13, "at-i at-ti"), esc(tl)),
+                esc(r["_loc"].get("place") or _("Location unknown"))]
+        if r["_year"]:     # most lists give no year: say nothing then (owner, 2026-10-13)
+            meta.append(esc(_("Since {y}", y=r["_year"])))
+        tags = (['<span class="at-tag at-tfn">%s%s</span>' % (icon(FN_ICON[f], 12), esc(fnlabel(f)))
+                 for f in r["_fns"]] +
+                ['<span class="at-tag at-tfo">%s%s</span>' % (icon(ficon[f], 12), esc(flabel[f]))
+                 for f in r["_focus"]])
+        more = []
+        if r.get("description"):
+            more.append('<p class="at-desc">%s</p>' % esc(r["description"]))
+        if r.get("ospo_note"):
+            more.append('<p class="at-note">%s</p>' % esc(r["ospo_note"]))
+        np_ = len(r["_prod"])
+        # its software as ONE link to /software?ospo=<id>, never a list of repos
+        if np_:
+            more.append('<p class="at-swp"><a class="at-sw" href="/software?ospo=%s">%s%s</a></p>'
+                        % (esc(r["id"]), icon("package", 15),
+                           esc(_("{n} software entries in govoss", n=N(np_)) if np_ > 1
+                               else _("1 software entry in govoss"))))
+        links = ['<a class="at-web" href="%s" target="_blank" rel="noopener">%s%s</a>'
+                 % (esc(r["url"]), icon("globe", 13), esc(_("Website")))]
+        # one code profile on the card; the rest behind "+N", opened in the dialog.
+        # The full list is in the card (hidden), so the page without JS still has it.
+        code = r.get("code") or []
+        def code_link(c, cls="at-code"):
+            h = host_of(c)
+            ic = "github" if "github" in h else "gitlab" if ("gitlab" in h or "opencode" in h) else "git-branch"
+            return ('<a class="%s" href="%s" target="_blank" rel="noopener">%s<span>%s</span>'
+                    '<small>%s</small></a>' % (cls, esc(c), icon(ic, 13), esc(code_org(c)), esc(h)))
+        if code:
+            links.append(code_link(code[0]))
+        if len(code) > 1:
+            links.append('<button type="button" class="at-codes-more" aria-haspopup="dialog" '
+                         'data-n="%d" title="%s">%s</button>'
+                         % (len(code), esc(_("All {n} code profiles", n=N(len(code)))),
+                            esc(_("+{n} more", n=N(len(code) - 1)))))
+        if r.get("policy"):
+            links.append('<a href="%s" target="_blank" rel="noopener">%s%s</a>'
+                         % (esc(r["policy"]), icon("scroll-text", 13), esc(_("Open source policy"))))
+        if r.get("case_study"):
+            links.append('<a href="%s" target="_blank" rel="noopener">%s%s</a>'
+                         % (esc(r["case_study"]), icon("file-check", 13), esc(_("TODO Group case study"))))
+        if r.get("email"):
+            links.append('<a href="mailto:%s">%s%s</a>' % (esc(r["email"]), icon("mail", 13), esc(r["email"])))
+        if r["_case"]:
+            links.append('<a class="at-res" href="/resources?case=%s">%s%s</a>'
+                         % (esc(r["_case"]), icon("book-marked", 13),
+                            esc(_("{n} resources on how this office was built", n=N(r["_ncase"])))))
+        more.append('<p class="at-links">%s</p>' % "".join(links))
+        if len(code) > 1:
+            more.append('<ul class="at-codes" hidden>%s</ul>'
+                        % "".join('<li>%s</li>' % code_link(c, "at-codel") for c in code))
+        return (
+            '<article class="at-card %s" id="%s" data-type="%s" data-cc="%s" data-fns="%s" data-focus="%s"'
+            ' data-code="%d" data-score="%d" data-name="%s">'
+            '<div class="at-ch"><div class="at-logo" aria-hidden="true">%s%s</div>'
+            '<div class="at-mid"><h3><button type="button" class="at-tgl" aria-expanded="false" '
+            'aria-controls="%s-x">%s</button></h3><p class="at-meta">%s</p>%s</div>'
+            '%s</div>'
+            '<div class="at-more" id="%s-x" hidden>%s</div></article>'
+            % (esc(t), esc(r["id"]), esc(t), esc(r["_cc"] or "ZZ"), " ".join(r["_fns"]),
+               " ".join(r["_focus"]), 1 if r.get("code") else 0, r["_score"], esc(r["name"]),
+               esc(initials(r["name"])), logo, esc(r["id"]), esc(r["name"]),
+               '<span class="at-dot">&middot;</span>'.join(meta),
+               ('<p class="at-tags">%s</p>' % "".join(tags)) if tags else "",
+               # its software count, what "Most software" sorts by; nothing when none
+               ('<div class="at-sc" title="%s"><span class="at-sn">%s</span><span class="at-sl">%s</span></div>'
+                % (esc(_("{n} software entries in govoss", n=N(r["_score"])) if r["_score"] > 1
+                       else _("1 software entry in govoss")), N(r["_score"]), esc(_("software"))))
+               if r["_score"] else "",
+               esc(r["id"]), "".join(more)))
+
+    groups = collections.defaultdict(list)
+    for r in os_:
+        groups[r["_cc"] or "ZZ"].append(r)
+    keys = sorted(groups, key=lambda c: (c == "ZZ", -len(groups[c]), cname(c)))
+    secs = []
+    for cc in keys:
+        rs = sorted(groups[cc], key=lambda r: (-r["_score"], r["name"].lower()))
+        tc = collections.Counter(r["type"] for r in rs)
+        bar = "".join('<i class="%s" style="width:%.1f%%" title="%s"></i>'
+                      % (t, tc[t] * 100 / len(rs), esc("%s %s" % (N(tc[t]), tlabel[t])))
+                      for t in TYPE_ORDER if tc[t])
+        secs.append('<section class="at-grp" data-cc="%s" data-name="%s" aria-labelledby="g-%s">'
+                    '<div class="at-gh">%s<h2 id="g-%s">%s</h2><span class="at-gn">%s</span>'
+                    '<span class="at-gbar" aria-hidden="true">%s</span></div>%s</section>'
+                    % (cc, esc(cname(cc)), cc, flag_html(cc, "at-flag"), cc, esc(cname(cc)),
+                       esc(_("{n} offices", n=N(len(rs))) if len(rs) > 1 else _("1 office")),
+                       bar, "".join(card(r) for r in rs)))
+
+    # ---- the sidebar: Type, Product category, Focus
+    nt = collections.Counter(r["type"] for r in os_)
+    fbtn = lambda f, v, ic, cls, label, n: (
+        '<button type="button" class="at-fb" data-f="%s" data-v="%s" aria-pressed="false">%s'
+        '<span class="at-fl">%s</span><span class="at-fn" data-n>%s</span></button>'
+        % (f, v, icon(ic, 15, "at-i " + cls), esc(label), N(n)))
+    types = (fbtn("type", "", "layers", "at-iall", _("All offices"), len(os_)) +
+             "".join(fbtn("type", t, TYPE_ICON[t], "at-i" + t[:3], tlabel[t], nt[t]) for t in TYPE_ORDER))
+    nf = collections.Counter(f for r in os_ for f in r["_fns"])
+    fns = "".join(fbtn("fn", f, FN_ICON[f], "at-ifn", fnlabel(f), n)
+                  for f, n in sorted(nf.items(), key=lambda kv: (-kv[1], fnlabel(kv[0]))))
+    nfo = collections.Counter(f for r in os_ for f in r["_focus"])
+    foc = "".join(fbtn("focus", f, ficon[f], "at-ifo", flabel[f], n)
+                  for f, n in sorted(nfo.items(), key=lambda kv: (-kv[1], flabel[kv[0]])))
+
+    vb = geo["viewbox"]
+    fr = geo["frames"]["world"]
+    nctry = len([c for c in keys if c not in ("ZZ", "INT")])
+    cfg = {
+        "vb": vb, "listw_key": "ospo-atlas2-listw",
+        "pts": {r["id"]: r["_xy"] for r in os_ if r["_xy"]},
+        "fns": sorted(nf), "focus": sorted(nfo),
+        "L": {"all": _("{n} offices in {c} countries"), "some": _("{n} of {t} offices in {c} countries"),
+              "all1": _("{n} offices in 1 country"), "some1": _("{n} of {t} offices in 1 country"),
+              "offices": _("{n} offices"), "office": _("1 office"),
+              "codes": _("{name}: code profiles"),
+              "cluster": _("{n} offices here"), "moretags": _("{n} more tags - open the office to see them"),
+              "thou": "." if lang == "ca" else ","},
+    }
     subs = {
-        "__N__": N(len(os_)), "__NGOV__": N(n_gov), "__NACA__": N(n_aca), "__NCORP__": N(n_corp),
-        "__TODO_AT__": fetched("todo-landscape"),
-        "__CARDS__": "".join(cards), "__MAP__": "".join(svg), "__MAPNOTE__": note, "__SPOTS__": spot_json,
-        "__COPTS__": copts,
-        "__FLOSS_AT__": fetched("floss-pso"), "__AMAP_AT__": fetched("academic-map"),
+        "__SPRITE__": sprite(used), "__SEARCHI__": icon("search", 15), "__TYPES__": types, "__FNS__": fns, "__FOCUS__": foc,
+        "__COUNT__": esc(_("{n} offices in 1 country", n=N(len(os_))) if nctry == 1
+                         else _("{n} offices in {c} countries", n=N(len(os_)), c=N(nctry))),
+        "__GROUPS__": "".join(secs), "__LAND__": fr["land"], "__VB__": " ".join(str(v) for v in vb),
+        "__IPLUS__": icon("plus", 16), "__IMINUS__": icon("minus", 16), "__IRESET__": icon("rotate-ccw", 15),
+        "__IFILT__": icon("sliders-horizontal", 14),
+        "__CFG__": json.dumps(cfg, sort_keys=True).replace("</", "<\\/"),
+        "__TODO_AT__": fetched(data, "todo-landscape", _), "__FLOSS_AT__": fetched(data, "floss-pso", _),
+        "__AMAP_AT__": fetched(data, "academic-map", _),
         "__LANG__": lang,
     }
     page = (theme.head(
         _("OSPOs | govoss"),
         _("{n} open source program offices - {g} in government, {a} in universities and "
-          "research institutes - with a map.", n=N(len(os_)), g=N(n_gov), a=N(n_aca)),
+          "research institutes - with a map.", n=N(len(os_)), g=N(nt["government"]), a=N(nt["academic"])),
         lang=lang, route="/ospos")
         + "<style>\n" + theme.FONT_FACE_CSS + theme.CSS + T.PAGE_CSS + PAGE_CSS + "</style>\n"
         + theme.utility_bar(lang=lang) + theme.topbar("ospos", lang, "/ospos")
@@ -284,435 +448,745 @@ def build(lang, data, locs, geo, res):
     page = page.encode("ascii", "xmlcharrefreplace").decode()
     out = f"{SITE}/ospos.html" if lang == "en" else f"{SITE}/{lang}/ospos.html"
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, "w").write(page)
-    print("ospos page [%s]: %d OSPOs (%d government, %d academic, %d corporate), %d map pins, "
-          "%d unplaced (%.0f KB)" % (lang, len(os_), n_gov, n_aca, n_corp, len(merged), len(unplaced),
-                                    len(page) / 1024))
-    return os_
+    open(out, "w", encoding="ascii").write(page)
+    print("ospos page [%s]: %d OSPOs (%d government, %d academic, %d corporate), %d on the map, "
+          "%d with catalogue products (%.0f KB)"
+          % (lang, len(os_), nt["government"], nt["academic"], nt["corporate"],
+             sum(1 for r in os_ if r["_xy"]), sum(1 for r in os_ if r["_prod"]), len(page) / 1024))
 
 
+def fetched(data, key, _):
+    st = (data.get("sources") or {}).get(key) or {}
+    when = (st.get("fetched_at") or "")[:10] or _("never")
+    return when + ("" if st.get("ok", True) else " &middot; " + esc(_("last fetch failed, showing the previous list")))
+
+
+def copy_images():
+    """ospos/img/ -> site/ospo-img/ (logos by host, flags by code)."""
+    dst = f"{SITE}/ospo-img"
+    shutil.rmtree(dst, ignore_errors=True)
+    if os.path.isdir(IMG):
+        shutil.copytree(IMG, dst, ignore=shutil.ignore_patterns("*.json", "*.md"))
+
+
+# Colours are the theme's roles where the handoff's value is one (ink #162e51,
+# #2c4a73, #5A6A82, link #2E6EAE, page #FBFBFB, wells #f3f6fa, the type fills);
+# the handoff's own surfaces are the --at-* below.
 PAGE_CSS = """
-.obar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:28px;}
-.obar input[type=search]{flex:1 1 240px;min-width:0;font:inherit;font-size:15px;padding:10px 14px;
-  border:1px solid var(--border);border-radius:var(--r-chip);background:var(--surface);color:var(--ink);}
-.obar select{font:inherit;font-size:13px;padding:9px 10px;border:1px solid var(--border);
-  border-radius:var(--r-chip);background:var(--surface);color:var(--ink);max-width:100%;}
-.oseg{display:inline-flex;border:1px solid var(--border);border-radius:var(--r-chip);overflow:hidden;
+.atlas{--at-sel:#E7EEF7;--at-track:#e7ecf3;--at-water:#EEF2F8;--at-land:#D5DDE8;--at-off:#9aa6b8;
+  --at-line:rgba(22,46,81,.1);--at-line2:rgba(22,46,81,.16);--at-hover:rgba(22,46,81,.25);
+  --at-sh:0 4px 16px rgba(27,42,74,.1);--at-sh2:0 12px 40px rgba(27,42,74,.12);
+  --at-gov:var(--primary);--at-aca:var(--green);--at-cor:var(--corp);
+  display:grid;grid-template-columns:272px minmax(380px,1fr) minmax(0,1.1fr);
+  height:100vh;height:100dvh;min-height:600px;overflow:hidden;background:var(--bg);color:var(--ink);
+  border-bottom:1px solid var(--at-line);font-family:var(--font-body);letter-spacing:0;}
+.at-sprite{position:absolute;width:0;height:0;overflow:hidden;}
+.at-i{flex:none;vertical-align:middle;}
+:where(.atlas button){font:inherit;color:inherit;}
+/* sidebar */
+.at-side{display:flex;flex-direction:column;min-height:0;background:var(--surface);
+  border-right:1px solid var(--at-line);}
+.at-shead{padding:16px 20px 12px;}
+.at-q{position:relative;}
+.at-q .at-i{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--ink-faint);}
+.at-q input{width:100%;font:inherit;font-size:13.5px;padding:8px 10px 8px 32px;border:1px solid var(--at-line2);
+  border-radius:8px;background:var(--primary-tint);color:var(--ink);}
+.at-sbody{flex:1;overflow-y:auto;overflow-x:hidden;padding:0 12px 16px;display:flex;flex-direction:column;
+  gap:18px;font-family:var(--font-ui);}
+.at-blk{display:flex;flex-direction:column;gap:2px;}
+.at-lbl{padding:0 8px 4px;display:flex;justify-content:space-between;align-items:center;font-size:11px;
+  font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:0;}
+.at-lbl small{font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;}
+.at-link{font-size:12px;font-weight:600;padding:6px 8px;border:0;background:none;color:var(--primary);
+  cursor:pointer;text-align:left;}
+.at-link:hover{color:var(--primary-deep);}
+.at-fb{display:flex;align-items:center;gap:9px;font-size:13px;padding:6px 8px;border:0;border-radius:8px;
+  cursor:pointer;text-align:left;background:none;font-weight:500;}
+.at-fb[data-f="type"]{padding:7px 8px;}
+.at-fb:hover{background:var(--primary-tint);}
+.at-fb[aria-pressed="true"]{background:var(--at-sel);font-weight:700;}
+.at-fl{flex:1;}
+.at-fn{color:var(--ink-faint);font-size:12px;font-weight:500;}
+.at-iall{color:var(--ink);} .at-igov{color:var(--at-gov);} .at-iaca{color:var(--at-aca);}
+.at-icor{color:var(--at-cor);} .at-ifn{color:var(--primary);} .at-ifo{color:var(--ink-600);}
+.at-chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-600);cursor:pointer;padding:0 8px;}
+/* list */
+.at-list{display:flex;flex-direction:column;min-width:0;min-height:0;border-right:1px solid var(--at-line);}
+.at-tool{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--at-line);
+  background:var(--surface);flex-wrap:wrap;font-family:var(--font-ui);}
+.at-count{font-size:13px;color:var(--ink-600);}
+.at-clear{font-size:13px;border:0;background:none;color:var(--primary);cursor:pointer;padding:0;}
+.at-sp{flex:1;}
+.at-ftog{display:none;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:6px 10px;
+  border:1px solid var(--at-line2);border-radius:8px;background:var(--surface);cursor:pointer;}
+.at-seg{display:flex;border:1px solid rgba(22,46,81,.14);border-radius:8px;overflow:hidden;}
+.at-seg button{font-size:12px;font-weight:600;padding:6px 10px;border:0;cursor:pointer;
   background:var(--surface);}
-.oseg button{font:inherit;font-size:12px;font-weight:600;border:0;background:none;padding:8px 13px;
-  color:var(--ink-600);cursor:pointer;}
-.oseg button + button{border-left:1px solid var(--border);}
-.oseg button[aria-pressed="true"]{background:var(--primary-tint);color:var(--ink);}
-.oseg button:focus-visible{outline:2px solid var(--primary);outline-offset:-2px;}
-.ocount{margin:14px 0 10px;font-size:13px;color:var(--ink-600);}
-.olist{list-style:none;margin:0;padding:0;display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;}
-@media (max-width:520px){.olist{grid-template-columns:minmax(0,1fr);}}
-.ocard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
-  padding:16px 18px;display:flex;flex-direction:column;gap:6px;scroll-margin-top:16px;}
-.ocard:target{outline:2px solid var(--primary);}
-.ohead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
-.otype{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;padding:3px 8px;border-radius:var(--r-chip);}
-.otype.government{background:var(--primary-tint);color:var(--primary-deep);}
-.otype.academic{background:var(--mint-100);color:var(--green-text);}
-.otype.corporate{background:var(--corp-tint);color:var(--corp-text);}
-.ometa{font-size:12px;color:var(--ink-faint);}
-.ocard h3{font-family:var(--font-display);font-size:16px;margin:2px 0 0;line-height:1.3;}
-.odesc{margin:0;font-size:13.5px;color:var(--ink);line-height:1.5;text-wrap:pretty;}
-.onote{margin:0;font-size:13px;color:var(--ink-600);line-height:1.5;}
-.olinks{margin:4px 0 0;font-size:12.5px;word-break:break-word;}
-.omore{font-size:12.5px;}
-.omore summary{cursor:pointer;color:var(--ink-600);width:max-content;}
-.omore .olinks{margin-top:2px;}
-.ores{align-self:flex-start;margin-top:4px;font-size:12.5px;font-weight:600;}
-.omap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
-  padding:14px;margin-top:14px;}
-.omap-svg{display:block;width:100%;height:auto;}
-.oframe rect{fill:var(--surface);stroke:var(--border);stroke-width:1;vector-effect:non-scaling-stroke;}
-.oframe path{fill:var(--bg-alt);stroke:var(--surface);stroke-width:.6;vector-effect:non-scaling-stroke;}
-/* zoom moves the viewBox; --z (set by the script) divides the pins' scale back out,
-   so a pin keeps its size on screen at every zoom */
-.omap-svg{touch-action:pan-y;}
-.omap-svg.zoomed{cursor:grab;touch-action:none;}
-.omap-svg.zoomed:active{cursor:grabbing;}
-.ozoom{position:absolute;top:22px;left:22px;z-index:4;display:flex;flex-direction:column;
-  border:1px solid var(--border);border-radius:var(--r-chip);overflow:hidden;background:var(--surface);
-  box-shadow:var(--shadow-soft);}
-.ozoom button{font:inherit;font-size:18px;font-weight:600;line-height:1;width:34px;height:34px;border:0;
-  background:none;color:var(--ink);cursor:pointer;padding:0;}
-.ozoom button + button{border-top:1px solid var(--border);}
-.ozoom button.oreset{font-size:15px;}
-.ozoom button:hover:not(:disabled),.ozoom button:focus-visible{background:var(--bg-alt);}
-.ozoom button:focus-visible{outline:2px solid var(--primary);outline-offset:-2px;}
-.ozoom button:disabled{color:var(--ink-faint);cursor:default;}
-/* a phone's map is ~124px tall: the column would cover the Americas, so the
-   buttons sit in a row under the map instead */
-@media (max-width:600px){.ozoom{position:static;flex-direction:row;width:max-content;margin-top:10px;
-  box-shadow:none;}.ozoom button + button{border-top:0;border-left:1px solid var(--border);}
-  .ozoom button{width:44px;height:40px;}}
-.odot{cursor:pointer;}
-/* the map shrinks with the page and the pins with it: --pin scales them back up on
-   narrow screens, about the tip (the place), so a pin stays a usable tap target */
-.opin{transform:scale(calc(var(--pin,1) * var(--k,1) / var(--z,1)));transform-origin:0 0;}
-@media (max-width:800px){.omap-svg{--pin:1.5;}}
-@media (max-width:520px){.omap-svg{--pin:2.2;}}
-.odot path{stroke:var(--surface);stroke-width:1.2;stroke-linejoin:round;}
-.odot.government path{fill:var(--primary);}
-.odot.academic path{fill:var(--green);}
-.odot.corporate path{fill:var(--corp);}
-.odot.mixed path{fill:var(--ink-600);}
-.odot .ohole{fill:var(--surface);pointer-events:none;}
-.odot text{font-family:var(--font-ui);font-size:7.5px;font-weight:700;fill:var(--white);
-  text-anchor:middle;pointer-events:none;}
-.odot:hover path,.odot:focus-visible path,.odot[aria-expanded="true"] path{stroke:var(--ink);stroke-width:1.8;}
-.odot:focus{outline:none;}
-.omap{position:relative;}
-.opop{position:absolute;z-index:5;width:min(360px,calc(100% - 28px));max-height:min(70vh,480px);
-  overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
-  box-shadow:var(--shadow-soft);padding:8px;}
-.opop-head{display:flex;justify-content:space-between;align-items:center;gap:8px;
-  padding:2px 4px 6px 10px;font-size:12px;color:var(--ink-600);}
-.opop-x{border:0;background:none;font-size:20px;line-height:1;padding:2px 8px;cursor:pointer;
-  color:var(--ink-600);border-radius:var(--r-chip);}
-.opop-x:hover,.opop-x:focus-visible{color:var(--ink);background:var(--bg-alt);}
-.opop .olist{grid-template-columns:minmax(0,1fr);gap:8px;}
-.opop .ocard{border:0;padding:8px 10px;}
-.opop .ocard + .ocard{border-top:1px solid var(--border);border-radius:0;}
-.okey{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12px;color:var(--ink-600);}
-.okey i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;}
-.onote-map{margin:8px 0 0;font-size:12px;color:var(--ink-faint);}
-.ohint{margin:8px 0 0;font-size:12px;color:var(--ink-faint);}
-.ocred{margin-top:18px;font-size:12px;color:var(--ink-faint);line-height:1.6;}
+.at-seg button[aria-pressed="true"]{background:var(--ink);color:var(--white);}
+.at-scroll{flex:1;overflow-y:auto;overflow-x:hidden;padding:0 20px 48px;}
+.at-grp{display:flex;flex-direction:column;gap:10px;padding-bottom:12px;}
+.at-gh{position:sticky;top:0;z-index:3;background:var(--bg);padding:16px 0 8px;display:flex;align-items:center;
+  gap:10px;border-bottom:1px solid rgba(22,46,81,.08);}
+.at-gh h2{font-size:19px;letter-spacing:-0.01em;}
+.at-gn{font-family:var(--font-ui);font-size:12.5px;color:var(--ink-faint);flex:1;}
+.at-gbar{width:80px;height:6px;border-radius:3px;overflow:hidden;display:flex;background:var(--at-track);flex:none;}
+.at-gbar i{height:100%;}
+.at-gbar .government{background:var(--at-gov);} .at-gbar .academic{background:var(--at-aca);}
+.at-gbar .corporate{background:var(--at-cor);}
+.at-flag{width:26px;height:18px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(22,46,81,.12);flex:none;}
+.at-femoji{box-shadow:none;width:auto;height:auto;font-size:18px;line-height:1;}
+.at-card{background:var(--surface);border:1px solid var(--at-line);border-left:4px solid var(--at-gov);
+  border-radius:12px;cursor:pointer;display:flex;flex-direction:column;transition:box-shadow .15s,border-color .15s;
+  scroll-margin-top:64px;}
+.at-card.academic{border-left-color:var(--at-aca);} .at-card.corporate{border-left-color:var(--at-cor);}
+.at-card:hover,.at-card.hov{border-color:var(--at-hover);box-shadow:var(--at-sh);}
+.at-card.government:hover,.at-card.government.hov{border-left-color:var(--at-gov);}
+.at-card.academic:hover,.at-card.academic.hov{border-left-color:var(--at-aca);}
+.at-card.corporate:hover,.at-card.corporate.hov{border-left-color:var(--at-cor);}
+.at-card.at-open{border-color:var(--at-gov);box-shadow:var(--at-sh2);}
+.at-card.academic.at-open{border-color:var(--at-aca);} .at-card.corporate.at-open{border-color:var(--at-cor);}
+.at-ch{padding:12px 14px;display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:start;}
+.at-logo{position:relative;width:40px;height:40px;border-radius:10px;background:var(--at-sel);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;
+  font-size:14px;overflow:hidden;}
+.academic .at-logo{background:var(--mint-100);color:var(--green-text);}
+.corporate .at-logo{background:var(--corp-tint);color:var(--corp-text);}
+.at-logo img{position:absolute;inset:0;width:40px;height:40px;object-fit:contain;background:var(--surface);}
+.at-mid{display:flex;flex-direction:column;gap:6px;min-width:0;}
+.at-mid h3{font-size:15px;font-weight:600;line-height:1.25;letter-spacing:-0.01em;text-wrap:pretty;}
+.at-tgl{all:unset;cursor:pointer;color:var(--ink);}
+.at-tgl:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:3px;}
+.at-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:12px;color:var(--ink-faint);margin-top:-4px;}
+.at-ti{color:var(--at-gov);} .academic .at-ti{color:var(--at-aca);} .corporate .at-ti{color:var(--at-cor);}
+.at-dot{opacity:.5;}
+.at-tags{display:flex;gap:5px;flex-wrap:wrap;}
+.at-tag{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;padding:3px 8px;border-radius:6px;color:var(--ink);}
+.at-tag.at-tmore{font-weight:600;color:var(--ink-600);background:var(--bg-alt);}
+.at-tfn{background:var(--at-sel);} .at-tfn .at-i{color:var(--primary);}
+.at-tfo{background:var(--primary-tint);} .at-tfo .at-i{color:var(--ink-600);}
+.at-sc{display:flex;flex-direction:column;align-items:flex-end;gap:3px;min-width:64px;}
+.at-sn{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1;}
+.at-sl{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-faint);}
+.at-more{padding:12px 14px 14px 66px;display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(22,46,81,.08);
+  cursor:auto;}
+.at-desc{font-size:13.5px;line-height:1.6;text-wrap:pretty;}
+.at-note{font-size:12.5px;line-height:1.5;color:var(--ink-faint);}
+ .at-nums b.at-zero{color:var(--at-off);}
+.at-pmore{font-size:12px;color:var(--ink-faint);}
+.at-links{display:flex;gap:6px;flex-wrap:wrap;}
+.at-swp{margin:0;}
+.at-sw{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:13.5px;font-weight:700;
+  padding:9px 14px;border-radius:999px;background:var(--primary-tint);color:var(--primary-deep);text-decoration:none;
+  border:1px solid var(--at-line2);}
+.at-sw:hover,.at-sw:focus-visible{background:var(--at-sel);color:var(--ink);}
+.at-sw::after{content:"\\2192";}
+.at-links a small,.at-codel small{font-size:11px;color:var(--ink-faint);}
+.at-codes-more{font:inherit;font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--at-line2);background:var(--surface);color:var(--primary);}
+.at-codes-more:hover,.at-codes-more:focus-visible{background:var(--at-sel);color:var(--ink);}
+.at-codes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;}
+.at-dlg{border:0;border-radius:14px;padding:0;width:min(440px,calc(100vw - 32px));max-height:min(80vh,620px);
+  box-shadow:var(--at-sh);color:var(--ink);background:var(--surface);}
+.at-dlg::backdrop{background:rgba(22,46,81,.45);}
+.at-dlg-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 10px 18px;
+  border-bottom:1px solid var(--at-line);position:sticky;top:0;background:var(--surface);}
+.at-dlg-head h2{margin:0;font-family:var(--font-display);font-size:17px;line-height:1.3;}
+.at-dlg-x{border:0;background:none;font-size:24px;line-height:1;padding:2px 8px;cursor:pointer;color:var(--ink-600);
+  border-radius:8px;}
+.at-dlg-x:hover,.at-dlg-x:focus-visible{background:var(--primary-tint);color:var(--ink);}
+.at-dlg-list{list-style:none;margin:0;padding:8px;display:flex;flex-direction:column;gap:2px;}
+.at-codel{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;text-decoration:none;
+  color:var(--ink);font-size:14px;font-weight:600;}
+.at-codel span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;}
+.at-codel .at-i{color:var(--primary);}
+.at-codel:hover,.at-codel:focus-visible{background:var(--at-sel);}
+.at-links a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:6px 10px;
+  border-radius:999px;border:1px solid var(--at-line2);text-decoration:none;color:var(--ink);word-break:break-all;}
+.at-links a .at-i{color:var(--primary);}
+.at-links a:hover{border-color:var(--at-hover);color:var(--ink);}
+.at-links a.at-web{border-color:var(--ink);background:var(--ink);color:var(--white);}
+.at-links a.at-web .at-i{color:var(--white);}
+.at-links a.at-web:hover{border-color:var(--primary-deep);background:var(--primary-deep);color:var(--white);}
+.at-empty{padding:60px 20px;text-align:center;color:var(--ink-faint);}
+/* map */
+.at-map{position:relative;min-width:0;min-height:0;background:var(--at-water);overflow:hidden;}
+.at-svg{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none;}
+.at-svg:active{cursor:grabbing;}
+.at-svg path{fill:var(--at-land);stroke:var(--at-water);stroke-width:.5;vector-effect:non-scaling-stroke;}
+.at-pins{position:absolute;inset:0;pointer-events:none;}
+.at-pin{position:absolute;transform:translate(-50%,-50%);border-radius:50%;border:0;padding:0;cursor:pointer;
+  pointer-events:auto;display:flex;align-items:center;justify-content:center;background:var(--at-gov);
+  box-shadow:0 0 0 2px var(--white),0 1px 3px rgba(22,46,81,.3);opacity:.35;
+  transition:opacity .25s,width .15s,height .15s;}
+.at-pin.academic{background:var(--at-aca);} .at-pin.corporate{background:var(--at-cor);}
+.at-pin.in{opacity:1;}
+.at-pin.hot{opacity:1;box-shadow:0 0 0 3px var(--white),0 0 0 5px var(--ink);}
+.at-pin span{width:calc(100% - 7px);height:calc(100% - 7px);border-radius:50%;background:var(--white);display:flex;
+  align-items:center;justify-content:center;font-family:var(--font-ui);font-weight:700;font-size:11px;color:var(--ink);}
+.at-pin:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+.at-pop{position:absolute;z-index:7;display:flex;flex-direction:column;gap:2px;width:240px;max-height:60%;
+  overflow-y:auto;padding:6px;background:var(--surface);border-radius:12px;box-shadow:var(--at-sh);}
+.at-popi{display:block;text-align:left;font-size:13px;font-weight:600;padding:6px 8px 6px 10px;border:0;
+  border-left:3px solid var(--at-gov);border-radius:6px;background:none;cursor:pointer;}
+.at-popi.academic{border-left-color:var(--at-aca);} .at-popi.corporate{border-left-color:var(--at-cor);}
+.at-popi:hover,.at-popi:focus-visible{background:var(--at-sel);}
+.at-zoom{position:absolute;right:16px;top:16px;display:flex;flex-direction:column;background:var(--surface);
+  border-radius:10px;box-shadow:var(--at-sh);overflow:hidden;z-index:6;}
+.at-zoom button{width:34px;height:34px;border:0;background:none;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;}
+.at-zoom button + button{border-top:1px solid var(--at-line);}
+.at-zoom button:hover{background:var(--primary-tint);}
+.at-grip{position:absolute;left:0;top:0;bottom:0;width:12px;z-index:8;cursor:col-resize;display:flex;
+  align-items:center;touch-action:none;}
+.at-grip:hover,.at-grip:focus-visible{background:rgba(46,110,174,.08);outline:none;}
+.at-grip i{width:4px;height:44px;margin-left:3px;border-radius:2px;background:var(--at-hover);}
+.at-grip.drag i,.at-grip:focus-visible i{background:var(--primary);}
+.ocred{max-width:1440px;margin:18px auto 0;padding:0 40px;font-size:12px;color:var(--ink-faint);line-height:1.6;}
+/* narrow: one column - the map pinned on top, then the list in the page's own
+   scroll; the sidebar folds behind the Filters button */
+@media (max-width:900px){
+  .atlas{display:flex;flex-direction:column;height:auto;min-height:0;overflow:visible;}
+  .at-map{order:-1;position:sticky;top:0;z-index:20;height:38vh;min-height:220px;flex:none;}
+  .at-side{display:none;border-right:0;border-bottom:1px solid var(--at-line);}
+  .atlas.fopen .at-side{display:flex;}
+  .at-sbody{overflow:visible;}
+  .at-list{border-right:0;}
+  .at-ftog{display:inline-flex;}
+  .at-scroll{overflow:visible;padding:0 16px 32px;}
+  .at-gh{top:38vh;}
+  .at-grip{display:none;}
+  .at-zoom{right:10px;top:10px;}
+  .at-more{padding-left:14px;}
+  .ocred{padding:0 20px;}
+}
+@media (max-width:900px) and (max-height:520px){.at-map{height:52vh;}.at-gh{top:52vh;}}
 """
 
 BODY = theme.page_header(
     '⟪OSPOs⟫',
     '⟪Open source program offices in government, universities and research institutes.⟫',
     [theme.data_links('/ospos.json')]) + """
-<div class="wrap">
-  <main id="main">
-    <div class="obar">
-      <input type="search" id="oq" autocomplete="off" placeholder="⟪Search offices&hellip;⟫"
-             aria-label="⟪Search offices⟫">
-      <div class="oseg" role="group" aria-label="⟪Type⟫">
-        <button type="button" data-type="" aria-pressed="true">⟪All⟫</button>
-        <button type="button" data-type="government" aria-pressed="false">⟪Government⟫</button>
-        <button type="button" data-type="academic" aria-pressed="false">⟪Academic⟫</button>
-        <button type="button" data-type="corporate" aria-pressed="false">⟪Corporate⟫</button>
-      </div>
-      <select id="occ" aria-label="⟪Filter by country⟫">
-        <option value="">⟪Any country⟫</option>__COPTS__
-      </select>
-      <div class="oseg" id="oview" role="group" aria-label="⟪View⟫" hidden>
-        <button type="button" data-view="cards" aria-pressed="true">⟪Cards⟫</button>
-        <button type="button" data-view="map" aria-pressed="false">⟪Map⟫</button>
-      </div>
+__SPRITE__
+<main id="main">
+<div class="atlas" id="atlas">
+  <aside class="at-side" id="at-side" aria-label="⟪Search and filters⟫">
+    <div class="at-shead"><div class="at-q">__SEARCHI__<input type="search" id="at-q" autocomplete="off"
+      placeholder="⟪Search⟫" aria-label="⟪Search offices⟫"></div></div>
+    <div class="at-sbody">
+      <div class="at-blk" role="group" aria-labelledby="at-l-type"><h2 class="at-lbl" id="at-l-type">⟪Type⟫</h2>__TYPES__</div>
+      <div class="at-blk" role="group" aria-labelledby="at-l-fn"><h2 class="at-lbl" id="at-l-fn">⟪Product category⟫</h2>__FNS__</div>
+      <div class="at-blk" role="group" aria-labelledby="at-l-fo"><h2 class="at-lbl" id="at-l-fo">⟪Focus⟫</h2>__FOCUS__</div>
+      <label class="at-chk"><input type="checkbox" id="at-code">⟪Publishes code⟫</label>
     </div>
-    <p class="ocount" id="ocount" aria-live="polite">⟪__N__ offices⟫</p>
-    <ul class="olist" id="olist">__CARDS__</ul>
-    <div class="omap" id="omap" hidden>__MAP__
-      <div class="ozoom" id="ozoom" role="group" aria-label="⟪Zoom⟫">
-        <button type="button" data-zoom="in" aria-label="⟪Zoom in⟫" title="⟪Zoom in⟫">+</button>
-        <button type="button" data-zoom="out" aria-label="⟪Zoom out⟫" title="⟪Zoom out⟫">&minus;</button>
-        <button type="button" class="oreset" data-zoom="reset" aria-label="⟪Show the whole world⟫"
-          title="⟪Show the whole world⟫">&#8634;</button></div>
-      <script type="application/json" id="ospots">__SPOTS__</script>
-      <div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>
-        <div class="opop-head"><span id="opop-h"></span>
-          <button type="button" class="opop-x" id="opop-x" aria-label="⟪Close⟫">&times;</button></div>
-        <ul class="olist" id="opop-list"></ul>
-      </div>
-      <div class="okey"><span><i style="background:var(--primary)"></i>⟪Government⟫</span>
-        <span><i style="background:var(--green)"></i>⟪Academic⟫</span>
-        <span><i style="background:var(--corp)"></i>⟪Corporate⟫</span>
-        <span><i style="background:var(--ink-600)"></i>⟪Several types, at one place⟫</span></div>
-      <p class="ohint">⟪Zoom with the buttons, a pinch, Ctrl + scroll or a double-click; drag to move. Nearby offices share a numbered pin until you zoom in.⟫</p>
-      __MAPNOTE__
+  </aside>
+  <section class="at-list" aria-label="⟪Offices⟫">
+    <div class="at-tool">
+      <span class="at-count" id="at-count" aria-live="polite">__COUNT__</span>
+      <button type="button" class="at-clear" id="at-clear" hidden>⟪Clear filters⟫</button>
+      <span class="at-sp"></span>
+      <button type="button" class="at-ftog" id="at-ftog" aria-expanded="false" aria-controls="at-side" hidden>__IFILT__⟪Filters⟫</button>
+      <div class="at-seg" role="group" aria-label="⟪Sort⟫" id="at-sort" hidden>
+        <button type="button" data-sort="software" aria-pressed="true">⟪Most software⟫</button>
+        <button type="button" data-sort="name" aria-pressed="false">⟪A&ndash;Z⟫</button></div>
     </div>
-    <p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
-      <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO Network</a>, a volunteer
-      project under the <a href="https://ospo-alliance.org/">OSPO Alliance</a>&rsquo;s umbrella,
-      fetched __FLOSS_AT__. Academic offices: the
-      <a href="https://sustainoss.org/academic-map/">SustainOSS academic map</a> (MIT), the
-      universities and research institutes it lists under &ldquo;OSPOs&rdquo;, fetched __AMAP_AT__.
-      Two FLOSS-PSO offices are universities and are shown as academic.⟫</p>
-    <p class="ocred">⟪Corporate offices: the &ldquo;OSPO adopters&rdquo; of the
-      <a href="https://landscape.todogroup.org/">TODO Group&rsquo;s OSPO landscape</a> (Apache-2.0),
-      fetched __TODO_AT__, as the landscape names them; two state bodies it lists are shown as
-      government, and offices already listed above are not repeated. Case studies are the TODO
-      Group&rsquo;s own.⟫</p>
-    <p class="ocred">⟪Locations are placed by govoss at each office&rsquo;s city or its
-      organisation&rsquo;s headquarters; companies&rsquo; headquarters come from
-      <a href="https://www.wikidata.org/">Wikidata</a> where it has them. The same data:
-      <a href="/ospos.json">/ospos.json</a>.⟫</p>
-  </main>
+    <div class="at-scroll" id="at-scroll">__GROUPS__
+      <p class="at-empty" id="at-empty" hidden>⟪No offices match these filters.⟫</p></div>
+  </section>
+  <div class="at-map" id="at-map" hidden>
+    <svg class="at-svg" id="at-svg" viewBox="__VB__" role="img" aria-label="⟪Map of open source program offices⟫"><path d="__LAND__"/></svg>
+    <div class="at-pins" id="at-pins"></div>
+    <div class="at-pop" id="at-pop" role="group" aria-label="⟪Offices at this place⟫" hidden></div>
+    <div class="at-grip" id="at-grip" role="separator" aria-orientation="vertical" tabindex="0"
+      aria-label="⟪Resize the list and the map⟫" title="⟪Drag to resize, double-click to reset⟫"><i></i></div>
+    <div class="at-zoom" role="group" aria-label="⟪Zoom⟫">
+      <button type="button" data-zoom="in" aria-label="⟪Zoom in⟫" title="⟪Zoom in⟫">__IPLUS__</button>
+      <button type="button" data-zoom="out" aria-label="⟪Zoom out⟫" title="⟪Zoom out⟫">__IMINUS__</button>
+      <button type="button" data-zoom="reset" aria-label="⟪Show the whole world⟫" title="⟪Show the whole world⟫">__IRESET__</button></div>
+  </div>
 </div>
+<dialog class="at-dlg" id="at-dlg" aria-labelledby="at-dlg-h">
+  <div class="at-dlg-head"><h2 id="at-dlg-h"></h2>
+    <button type="button" class="at-dlg-x" id="at-dlg-x" aria-label="⟪Close⟫">&times;</button></div>
+  <ul class="at-dlg-list" id="at-dlg-list"></ul>
+</dialog>
+<noscript><style>.at-card .at-more[hidden]{display:flex!important;}.at-card .at-codes[hidden]{display:flex!important;}
+.at-codes-more{display:none;}</style></noscript>
+<p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
+  <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO Network</a>, a volunteer
+  project under the <a href="https://ospo-alliance.org/">OSPO Alliance</a>&rsquo;s umbrella,
+  fetched __FLOSS_AT__. Academic offices: the
+  <a href="https://sustainoss.org/academic-map/">SustainOSS academic map</a> (MIT), the
+  universities and research institutes it lists under &ldquo;OSPOs&rdquo;, fetched __AMAP_AT__.
+  Two FLOSS-PSO offices are universities and are shown as academic.⟫</p>
+<p class="ocred">⟪Corporate offices: the &ldquo;OSPO adopters&rdquo; of the
+  <a href="https://landscape.todogroup.org/">TODO Group&rsquo;s OSPO landscape</a> (Apache-2.0),
+  fetched __TODO_AT__, as the landscape names them; two state bodies it lists are shown as
+  government, and offices already listed above are not repeated. Case studies are the TODO
+  Group&rsquo;s own.⟫</p>
+<p class="ocred">⟪Locations are placed by govoss at each office&rsquo;s city or its
+  organisation&rsquo;s headquarters; companies&rsquo; headquarters come from
+  <a href="https://www.wikidata.org/">Wikidata</a> where it has them. The same data:
+  <a href="/ospos.json">/ospos.json</a>.⟫</p>
+<p class="ocred">⟪Product categories come from each office&rsquo;s software in the govoss catalogue
+  (entries whose repository sits under one of its code organisations); focus tags are matched on the
+  office&rsquo;s own name and description. &ldquo;Most software&rdquo; sorts offices by how many of their
+  software entries govoss lists. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
+<p class="ocred" id="logo-notice">⟪Logos are the trademarks of their owners, shown only to identify each office.
+  They are not covered by govoss&rsquo;s licences and no endorsement is implied. To have one removed,
+  <a href="https://github.com/sarapis/govoss-catalog/issues">report it</a>. Flags:
+  <a href="https://github.com/lipis/flag-icons">flag-icons</a> (MIT).⟫</p>
+</main>
+<script type="application/json" id="at-data">__CFG__</script>
 """
 
-# View in the address bar (q, type, cc, view), validated like /software and
-# /resources: an unknown value is IGNORED. el.hidden throughout.
+# State in the address bar's HASH (the handoff's deep links): o q type fn focus code
+# sort, each validated and an unknown value IGNORED; the old ?q=&type=&cc= links and
+# a bare #<office id> still land. el.hidden throughout.
 SCRIPT = """
 <script>
-// build_ospos.py's merge, re-run at zoom z: greedy over spots already in merge order
-// (largest first); a spot joins the first pin in its frame nearer than `within`
-// SCREEN units, i.e. within / z map units. At z = 1 it is the build's own merge.
-function ospoCluster(spots, within, z) {
-  var out = [];
-  spots.forEach(function (s) {
-    for (var i = 0; i < out.length; i++) {
-      var m = out[i];
-      if (m.k === s[0] && Math.hypot(m.x - s[1], m.y - s[2]) * z < within) {
-        m.ids = m.ids.concat(s[3]); m.places = m.places.concat(s[4]); return;
-      }
-    }
-    out.push({k: s[0], x: s[1], y: s[2], ids: s[3].slice(), places: s[4].slice()});
-  });
-  out.forEach(function (m) { m.places = m.places.filter(function (p, i, a) { return a.indexOf(p) === i; }); });
-  return out;
-}
 (function () {
-  var el = function (id) { return document.getElementById(id); };
-  var list = el('olist'), cards = [].slice.call(list.children), total = cards.length;
-  var text = new Map(cards.map(function (c) { return [c, c.textContent.toLowerCase()]; }));
-  var segT = [].slice.call(document.querySelectorAll('.oseg button[data-type]'));
-  var segV = [].slice.call(document.querySelectorAll('#oview button'));
-  var svg = document.querySelector('.omap-svg'), shown = null;
-  var dots = function () { return [].slice.call(svg.querySelectorAll('.odot')); };
-  var type = '', view = 'cards', timer = null;
-  function apply(write) {
-    closePop(false);
-    var q = (el('oq').value || '').trim().toLowerCase(), cc = el('occ').value, n = 0;
-    shown = {};
-    cards.forEach(function (c) {
-      var ok = (!q || text.get(c).indexOf(q) >= 0) && (!type || c.dataset.type === type) &&
-        (!cc || c.dataset.cc === cc);
-      c.hidden = !ok;
-      if (ok) { n++; shown[c.id] = 1; }
+  var $ = function (id) { return document.getElementById(id); };
+  var A = $('atlas'), CFG = JSON.parse($('at-data').textContent), L = CFG.L;
+  var SC = $('at-scroll'), MAPBOX = $('at-map'), SVG = $('at-svg'), PINS = $('at-pins');
+  var TYPES = ['government', 'academic', 'corporate'];
+  var FILL = {};
+  var cards = [].slice.call(SC.querySelectorAll('.at-card'));
+  var secs = [].slice.call(SC.querySelectorAll('.at-grp'));
+  var O = {}, all = cards.map(function (c) {
+    var p = CFG.pts[c.id] || null;
+    var o = {id: c.id, el: c, type: c.dataset.type, cc: c.dataset.cc, name: c.dataset.name,
+      fns: c.dataset.fns ? c.dataset.fns.split(' ') : [], focus: c.dataset.focus ? c.dataset.focus.split(' ') : [],
+      code: c.dataset.code === '1', score: +c.dataset.score, x: p ? p[0] : null, y: p ? p[1] : null,
+      text: c.textContent.toLowerCase()};
+    O[c.id] = o;
+    return o;
+  });
+  var total = all.length;
+  // the page opens on Government (owner, 2026-10-13); "All offices" is type '' and
+  // is written to the hash as type=all, so every view has an address
+  var TYPE0 = 'government';
+  var st = {q: '', type: TYPE0, fn: '', focus: '', code: false, sort: 'software', sel: null, hover: null};
+  var shown = all.slice(), order = [];
+  var narrow = function () { return window.matchMedia('(max-width:900px)').matches; };
+  var fmt = function (s, kw) { return s.replace(/\\{(\\w+)\\}/g, function (m, k) { return k in kw ? kw[k] : m; }); };
+  var num = function (n) { return String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, L.thou); };
+  TYPES.forEach(function (t) { FILL[t] = getComputedStyle(A).getPropertyValue(t === 'government' ? '--primary' : t === 'academic' ? '--green' : '--corp').trim(); });
+
+  // ---- hash state
+  function readHash() {
+    var h = location.hash.slice(1), P;
+    try {
+      if (h && h.indexOf('=') < 0) { h = decodeURIComponent(h); if (O[h]) st.sel = h; return; }
+      P = new URLSearchParams(h);
+    } catch (e) { return; }
+    if (P.get('q')) st.q = P.get('q');
+    if (TYPES.indexOf(P.get('type')) >= 0) st.type = P.get('type');
+    else if (P.get('type') === 'all') st.type = '';
+    if (CFG.fns.indexOf(P.get('fn')) >= 0) st.fn = P.get('fn');
+    if (CFG.focus.indexOf(P.get('focus')) >= 0) st.focus = P.get('focus');
+    if (P.get('code') === '1') st.code = true;
+    if (P.get('sort') === 'name') st.sort = 'name';
+    if (O[P.get('o')]) st.sel = P.get('o');
+  }
+  function writeHash() {
+    var P = new URLSearchParams();
+    if (st.sel) P.set('o', st.sel);
+    if (st.q.trim()) P.set('q', st.q.trim());
+    if (st.type !== TYPE0) P.set('type', st.type || 'all');
+    ['fn', 'focus'].forEach(function (k) { if (st[k]) P.set(k, st[k]); });
+    if (st.code) P.set('code', '1');
+    if (st.sort === 'name') P.set('sort', 'name');
+    var s = P.toString();
+    try { history.replaceState(null, '', location.pathname + (s ? '#' + s : '')); } catch (e) {}
+  }
+
+  // ---- filter, group, sort (Most software, or A-Z)
+  function pass(o, skipType) {
+    if (!skipType && st.type && o.type !== st.type) return false;
+    if (st.fn && o.fns.indexOf(st.fn) < 0) return false;
+    if (st.focus && o.focus.indexOf(st.focus) < 0) return false;
+    if (st.code && !o.code) return false;
+    var q = st.q.trim().toLowerCase();
+    return !q || o.text.indexOf(q) >= 0;
+  }
+  var cmp = function (a, b) {
+    return st.sort === 'name' ? a.name.localeCompare(b.name) : b.score - a.score || a.name.localeCompare(b.name);
+  };
+  function apply() {
+    shown = all.filter(function (o) { return pass(o); });
+    var on = {}, gm = {};
+    shown.forEach(function (o) { on[o.id] = 1; (gm[o.cc] = gm[o.cc] || []).push(o); });
+    all.forEach(function (o) { o.el.hidden = !on[o.id]; });
+    order = Object.keys(gm).sort(function (a, b) {
+      return (a === 'ZZ') - (b === 'ZZ') || gm[b].length - gm[a].length ||
+        secById(a).dataset.name.localeCompare(secById(b).dataset.name);
     });
-    hideDots();
-    el('ocount').textContent = n === total ? '⟪js:{n} offices⟫'.replace('{n}', total)
-      : '⟪js:{n} of {t} offices⟫'.replace('{n}', n).replace('{t}', total);
-    segT.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.type === type ? 'true' : 'false'); });
-    segV.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.view === view ? 'true' : 'false'); });
-    list.hidden = view === 'map'; el('omap').hidden = view !== 'map';
-    if (write) {
-      var P = new URLSearchParams();
-      if (q) P.set('q', el('oq').value.trim());
-      if (type) P.set('type', type);
-      if (cc) P.set('cc', cc);
-      if (view === 'map') P.set('view', 'map');
-      var qs = P.toString();
-      clearTimeout(timer);
-      // the hash is read when the write HAPPENS: a dot click sets #<office> after
-      // calling apply(), and an earlier copy here dropped it
-      timer = setTimeout(function () {
-        try { history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (e) {}
-      }, 250);
+    var empty = $('at-empty');
+    secs.forEach(function (s) { s.hidden = !gm[s.dataset.cc]; });
+    order.forEach(function (cc) {
+      var s = secById(cc), items = gm[cc].slice().sort(cmp), tc = {};
+      items.forEach(function (o) { s.appendChild(o.el); tc[o.type] = (tc[o.type] || 0) + 1; });
+      s.querySelector('.at-gn').textContent = items.length > 1 ? fmt(L.offices, {n: num(items.length)}) : L.office;
+      var bar = s.querySelector('.at-gbar');
+      [].forEach.call(bar.children, function (i) { i.style.width = (tc[i.className] || 0) / items.length * 100 + '%'; });
+      SC.insertBefore(s, empty);
+    });
+    empty.hidden = shown.length > 0;
+    var nc = order.filter(function (c) { return c !== 'ZZ' && c !== 'INT'; }).length;
+    $('at-count').textContent = shown.length === total ? fmt(nc === 1 ? L.all1 : L.all, {n: num(total), c: num(nc)})
+      : fmt(nc === 1 ? L.some1 : L.some, {n: num(shown.length), t: num(total), c: num(nc)});
+    var any = !!(st.q.trim() || st.type !== TYPE0 || st.fn || st.focus || st.code);
+    $('at-clear').hidden = !any;
+    [].forEach.call(A.querySelectorAll('.at-fb'), function (b) {
+      b.setAttribute('aria-pressed', st[b.dataset.f] === b.dataset.v ? 'true' : 'false');
+      if (b.dataset.f === 'type') {
+        b.querySelector('[data-n]').textContent = num(all.filter(function (o) {
+          return pass(o, true) && (!b.dataset.v || o.type === b.dataset.v); }).length);
+      }
+    });
+    [].forEach.call($('at-sort').children, function (b) { b.setAttribute('aria-pressed', b.dataset.sort === st.sort ? 'true' : 'false'); });
+    $('at-code').checked = st.code;
+    if ($('at-q').value !== st.q) $('at-q').value = st.q;
+    if (st.sel && !on[st.sel]) setSel(null);
+    clampAll();
+    pins();
+  }
+  function secById(cc) { return SC.querySelector('.at-grp[data-cc="' + cc + '"]'); }
+  function set(p) { for (var k in p) st[k] = p[k]; apply(); writeHash(); }
+
+  // ---- select / expand: one card open at a time
+  function setSel(id) {
+    if (st.sel && O[st.sel]) {
+      var c = O[st.sel].el; c.classList.remove('at-open'); clampTags(c);
+      c.querySelector('.at-more').hidden = true;
+      c.querySelector('.at-tgl').setAttribute('aria-expanded', 'false');
+    }
+    st.sel = id;
+    if (id) {
+      var d = O[id].el; d.classList.add('at-open'); clampTags(d);
+      d.querySelector('.at-more').hidden = false;
+      d.querySelector('.at-tgl').setAttribute('aria-expanded', 'true');
     }
   }
-  try {
-    var P = new URLSearchParams(location.search);
-    if (P.get('q')) el('oq').value = P.get('q');
-    if (['government', 'academic', 'corporate'].indexOf(P.get('type')) >= 0) type = P.get('type');
-    var cc = P.get('cc');
-    if (cc && [].some.call(el('occ').options, function (o) { return o.value === cc; })) el('occ').value = cc;
-    if (P.get('view') === 'map' || location.hash === '#map') view = 'map';
-  } catch (e) {}
-  // SVG elements have no .hidden property: set the ATTRIBUTE, which theme.py's
-  // [hidden]{display:none!important} matches on SVG as on HTML
-  function hideDots() {
-    dots().forEach(function (d) {
-      if (d.dataset.ids.split(' ').some(function (i) { return shown[i]; })) d.removeAttribute('hidden');
-      else d.setAttribute('hidden', '');
-    });
+  // a CLOSED card shows at most TAGROWS rows of tags, the last ending in "+N"; an
+  // open one shows them all (owner, 2026-10-13). Measured: a tag's width is its words.
+  var TAGROWS = 2;
+  function clampTags(c) {
+    var box = c.querySelector('.at-tags');
+    if (!box) return;
+    var more = box.querySelector('.at-tmore');
+    if (more) box.removeChild(more);
+    var tags = [].slice.call(box.querySelectorAll('.at-tag'));
+    tags.forEach(function (t) { t.hidden = false; });
+    if (c.hidden || c.classList.contains('at-open')) return;
+    var tops = [];
+    tags.forEach(function (t) { if (tops.indexOf(t.offsetTop) < 0) tops.push(t.offsetTop); });
+    if (tops.length <= TAGROWS) return;
+    var lim = tops[TAGROWS], keep = tags.filter(function (t) { return t.offsetTop < lim; }).length;
+    tags.forEach(function (t, i) { t.hidden = i >= keep; });
+    more = document.createElement('span');
+    more.className = 'at-tag at-tmore';
+    box.appendChild(more);
+    // the chip itself must fit on the last row: give up one more tag until it does
+    do {
+      more.textContent = '+' + (tags.length - keep);
+      more.title = fmt(L.moretags, {n: tags.length - keep});
+      if (more.offsetTop < lim) break;
+      tags[--keep].hidden = true;
+    } while (keep > 0);
   }
-  segT.forEach(function (b) { b.onclick = function () { type = b.dataset.type; apply(true); }; });
-  segV.forEach(function (b) { b.onclick = function () { view = b.dataset.view; apply(true); }; });
-  el('oq').oninput = function () { apply(true); };
-  el('occ').onchange = function () { apply(true); };
-  // a pin opens a popup holding COPIES of its place's cards, so the content is
-  // the cards' own; offices hidden by the current filters stay out of it
-  var pop = el('opop'), popList = el('opop-list'), mapBox = el('omap'), openDot = null;
-  function closePop(refocus) {
-    if (!openDot) return;
-    pop.hidden = true; popList.textContent = '';
-    openDot.setAttribute('aria-expanded', 'false');
-    if (refocus) openDot.focus();
-    openDot = null;
+  // debounced on a timer, not a frame: a frame never comes in a background tab, and
+  // a card clamped at one width would keep its "+N" at another
+  var clampT = 0;
+  function clampAll() {
+    clearTimeout(clampT);
+    clampT = setTimeout(function () { cards.forEach(function (c) { if (!c.hidden) clampTags(c); }); }, 40);
   }
-  function openPop(d) {
-    closePop(false);
-    var ids = d.dataset.ids.split(' ').filter(function (i) { var c = el(i); return c && !c.hidden; });
-    if (!ids.length) return;
-    ids.forEach(function (i) {
-      var c = el(i).cloneNode(true);
-      c.removeAttribute('id');
-      popList.appendChild(c);
-    });
-    // the cards carry the names; the header says where (and how many, when shared)
-    el('opop-h').textContent = [d.dataset.place,
-      ids.length > 1 ? '⟪js:{n} offices⟫'.replace('{n}', ids.length) : ''].filter(Boolean).join(' \\u00b7 ');
-    pop.hidden = false; openDot = d; d.setAttribute('aria-expanded', 'true');
-    // beside the pin, kept inside the map box: right of it when there is room, else left
-    var mb = mapBox.getBoundingClientRect(), pb = d.getBoundingClientRect();
-    var w = pop.offsetWidth, x = pb.right - mb.left + 8;
-    if (x + w > mb.width - 8) x = pb.left - mb.left - w - 8;
-    x = Math.max(8, Math.min(x, mb.width - w - 8));
-    pop.style.left = x + 'px';
-    pop.style.top = Math.max(8, pb.top - mb.top - 12) + 'px';
-    el('opop-x').focus();
+  // the open office, picked again (its pin, its name in a pin's list), closes
+  function deselect() { setSel(null); writeHash(); pins(); }
+  function select(id, scroll) {
+    setSel(st.sel === id ? null : id);
+    writeHash(); pins();
+    if (scroll && st.sel) setTimeout(function () { scrollToEl(O[id].el, 64); }, 50);
   }
-  // ---- zoom (owner, 2026-10-09). The viewBox moves; the pins are redrawn from
-  // #ospots at each zoom, merged by ospoCluster(), and --z keeps them one size.
-  var SP = JSON.parse(el('ospots').textContent), NS = 'http://www.w3.org/2000/svg';
-  var VB0 = svg.getAttribute('viewBox').split(' ').map(Number), vb = VB0.slice();
-  var ZMAX = 24, drawnAt = null, redraw = 0, moved = false;
-  var zb = {};
-  [].forEach.call(document.querySelectorAll('#ozoom button'), function (b) { zb[b.dataset.zoom] = b; });
-  function mk(tag, at) {
-    var e = document.createElementNS(NS, tag);
-    for (var a in at) e.setAttribute(a, at[a]);
-    return e;
+  // pin: hovering FROM a pin restyles that pin in place - redrawing the pins would
+  // swap the button under the pointer between press and release, and the click never lands
+  function hover(id, pin) {
+    st.hover = id;
+    all.forEach(function (o) { o.el.classList.toggle('hov', o.id === id); });
+    if (!pin) return pins();
+    var hot = !!id || (pin.dataset.id === st.sel);
+    pin.classList.toggle('hot', hot);
+    pin.style.width = pin.style.height = (hot ? 22 : pin.classList.contains('in') ? 14 : 9) + 'px';
+    pin.style.zIndex = hot ? 5 : pin.classList.contains('in') ? 3 : 1;
   }
-  function drawPins(z) {
-    var groups = {};
-    [].forEach.call(svg.querySelectorAll('.opins'), function (g) { groups[g.dataset.frame] = g; g.textContent = ''; });
-    // drawn smallest first, so a numbered pin is never covered by a single one
-    ospoCluster(SP.spots, SP.within, z).reverse().forEach(function (m) {
-      var cs = m.ids.map(el).filter(Boolean), types = {};
-      cs.forEach(function (c) { types[c.dataset.type] = 1; });
-      var tk = Object.keys(types).sort(), one = m.ids.length === 1;
-      var label = cs.map(function (c) {
-        return c.querySelector('h3').textContent + ' (' + c.querySelector('.otype').textContent + ')';
-      }).join('; ');
-      var a = mk('a', {'class': 'odot ' + (tk.length === 1 ? tk[0] : 'mixed'), href: '#' + m.ids[0],
-        'data-ids': m.ids.join(' '), 'data-place': m.places.join('; '), 'aria-label': label,
-        'aria-haspopup': 'dialog', 'aria-expanded': 'false'});
-      var t = mk('title', {}); t.textContent = label; a.appendChild(t);
-      var g = mk('g', {transform: 'translate(' + m.x + ' ' + m.y + ')'});
-      var p = mk('g', one ? {'class': 'opin'} : {'class': 'opin', style: '--k:1.3'});
-      p.appendChild(mk('path', {d: SP.pin}));
-      if (one) p.appendChild(mk('circle', {'class': 'ohole', cx: 0, cy: -10, r: 2.2}));
-      else { var tx = mk('text', {x: 0, y: -7}); tx.textContent = m.ids.length; p.appendChild(tx); }
-      g.appendChild(p); a.appendChild(g); groups[m.k].appendChild(a);
-    });
-    drawnAt = z;
-    if (shown) hideDots();
+
+  // ---- the list's scroll: the list column, or the page on a narrow screen
+  function topLine() { return narrow() ? MAPBOX.getBoundingClientRect().bottom : SC.getBoundingClientRect().top; }
+  function scrollToEl(el, off) {
+    var dy = el.getBoundingClientRect().top - topLine() - (off || 0);
+    if (narrow()) window.scrollTo({top: window.pageYOffset + dy, behavior: 'smooth'});
+    else SC.scrollTo({top: SC.scrollTop + dy, behavior: 'smooth'});
   }
+  // ---- the map: viewBox pan/zoom; the vertical extent follows the pane's shape
+  var VB0 = CFG.vb.slice(), vb = VB0.slice(), ZMIN = 0.9, ZMAX = 20, anim = 0, raf = 0;
+  function asp() { var r = SVG.getBoundingClientRect(); return r.width ? r.height / r.width : VB0[3] / VB0[2]; }
   function zoom() { return VB0[2] / vb[2]; }
   function setVB(x, y, w) {
-    var z = Math.min(ZMAX, Math.max(1, VB0[2] / w));
-    w = VB0[2] / z;
-    var h = VB0[3] / z;
-    x = Math.min(Math.max(x, VB0[0]), VB0[0] + VB0[2] - w);
-    y = Math.min(Math.max(y, VB0[1]), VB0[1] + VB0[3] - h);
+    var z = Math.min(ZMAX, Math.max(ZMIN, VB0[2] / w)); w = VB0[2] / z;
+    var h = w * asp();
+    x = Math.min(Math.max(x, VB0[0] - w * 0.3), VB0[0] + VB0[2] - w * 0.7);
+    if (h >= VB0[3]) y = VB0[1] + (VB0[3] - h) / 2;
+    else y = Math.min(Math.max(y, VB0[1] - h * 0.2), VB0[1] + VB0[3] - h * 0.8);
     vb = [x, y, w, h];
-    closePop(false);
-    svg.setAttribute('viewBox', vb.map(function (v) { return Math.round(v * 100) / 100; }).join(' '));
-    svg.style.setProperty('--z', z);
-    svg.classList.toggle('zoomed', z > 1.001);
-    zb['in'].disabled = z >= ZMAX - 0.001;
-    zb.out.disabled = zb.reset.disabled = z <= 1.001;
-    // re-merge once per frame, not once per pointer event
-    if (z !== drawnAt && !redraw) {
-      redraw = requestAnimationFrame(function () { redraw = 0; if (zoom() !== drawnAt) drawPins(zoom()); });
-    }
+    if (POP && !POP.hidden) closePop();
+    SVG.setAttribute('viewBox', vb.map(function (v) { return Math.round(v * 100) / 100; }).join(' '));
+    if (!raf) raf = requestAnimationFrame(function () { raf = 0; pins(); });
   }
-  // zoom by f, keeping the map point (px, py) where it is on screen
+  function toMap(cx, cy) { var r = SVG.getBoundingClientRect(); return [vb[0] + (cx - r.left) / r.width * vb[2], vb[1] + (cy - r.top) / r.height * vb[3]]; }
   function zoomAt(f, px, py) {
-    var z = Math.min(ZMAX, Math.max(1, zoom() * f));
-    f = z / zoom();
+    var z = Math.min(ZMAX, Math.max(ZMIN, zoom() * f)); f = z / zoom();
     setVB(px - (px - vb[0]) / f, py - (py - vb[1]) / f, vb[2] / f);
   }
-  function toMap(cx, cy) {
-    var r = svg.getBoundingClientRect();
-    return [vb[0] + (cx - r.left) / r.width * vb[2], vb[1] + (cy - r.top) / r.height * vb[3]];
+  function flyTo(x, y, z) {
+    cancelAnimationFrame(anim);
+    var from = vb.slice(), w1 = VB0[2] / Math.min(ZMAX, Math.max(ZMIN, z)), h1 = w1 * asp();
+    var to = [x - w1 / 2, y - h1 / 2, w1], t0 = performance.now();
+    if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return setVB(to[0], to[1], to[2]);
+    (function step(now) {
+      var t = Math.min(1, (now - t0) / 650), e = 1 - Math.pow(1 - t, 3);
+      setVB(from[0] + (to[0] - from[0]) * e, from[1] + (to[1] - from[1]) * e, from[2] + (to[2] - from[2]) * e);
+      if (t < 1) anim = requestAnimationFrame(step);
+    })(t0);
   }
-  function centre() { return [vb[0] + vb[2] / 2, vb[1] + vb[3] / 2]; }
-  zb['in'].onclick = function () { var c = centre(); zoomAt(2, c[0], c[1]); };
-  zb.out.onclick = function () { var c = centre(); zoomAt(0.5, c[0], c[1]); };
-  zb.reset.onclick = function () { setVB(VB0[0], VB0[1], VB0[2]); };
-  svg.addEventListener('wheel', function (e) {
-    // Ctrl (or Cmd) + scroll, which is also what a trackpad pinch sends; a plain
-    // scroll keeps scrolling the page
-    if (!e.ctrlKey && !e.metaKey) return;
-    e.preventDefault();
-    var p = toMap(e.clientX, e.clientY);
-    zoomAt(Math.exp(-Math.max(-60, Math.min(60, e.deltaY)) * 0.01), p[0], p[1]);
+  function reset() { flyTo(VB0[0] + VB0[2] / 2, VB0[1] + VB0[3] / 2, 1); }
+  var drag = null, moved = false;
+  SVG.addEventListener('wheel', function (e) {
+    e.preventDefault(); var p = toMap(e.clientX, e.clientY);
+    zoomAt(Math.exp(-Math.max(-60, Math.min(60, e.deltaY)) * 0.006), p[0], p[1]);
   }, {passive: false});
-  svg.addEventListener('dblclick', function (e) {
-    if (e.target.closest('.odot')) return;
-    e.preventDefault();
-    var p = toMap(e.clientX, e.clientY);
-    zoomAt(e.shiftKey ? 0.5 : 2, p[0], p[1]);
+  SVG.addEventListener('dblclick', function (e) { e.preventDefault(); var p = toMap(e.clientX, e.clientY); zoomAt(e.shiftKey ? 0.5 : 2, p[0], p[1]); });
+  // a click on the open map (not a drag, not a pin) closes the open office
+  SVG.addEventListener('click', function () { if (!moved && st.sel) deselect(); });
+  SVG.addEventListener('pointerdown', function (e) {
+    if (e.button !== 0) return; cancelAnimationFrame(anim);
+    drag = {x: e.clientX, y: e.clientY, vb: vb.slice(), r: SVG.getBoundingClientRect()}; moved = false;
   });
-  // drag pans (when zoomed in); two pointers pinch. A drag is never a click.
-  var ptrs = {}, gest = null;
-  function startGesture() {
-    var ids = Object.keys(ptrs), r = svg.getBoundingClientRect();
-    gest = {vb: vb.slice(), r: r, p: ids.map(function (i) { return [ptrs[i][0], ptrs[i][1]]; })};
+  window.addEventListener('pointermove', function (e) {
+    if (!drag) return; var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!moved && Math.hypot(dx, dy) < 4) return; moved = true;
+    var u = drag.vb[2] / drag.r.width; setVB(drag.vb[0] - dx * u, drag.vb[1] - dy * u, drag.vb[2]);
+  });
+  window.addEventListener('pointerup', function () { drag = null; setTimeout(function () { moved = false; }, 0); });
+  [].forEach.call(A.querySelectorAll('.at-zoom button'), function (b) {
+    b.onclick = function () {
+      if (b.dataset.zoom === 'reset') return reset();
+      zoomAt(b.dataset.zoom === 'in' ? 2 : 0.5, vb[0] + vb[2] / 2, vb[1] + vb[3] / 2);
+    };
+  });
+  if (window.ResizeObserver) new ResizeObserver(function () {
+    var cx = vb[0] + vb[2] / 2, cy = vb[1] + vb[3] / 2, w = vb[2];
+    setVB(cx - w / 2, cy - w * asp() / 2, w);
+  }).observe(SVG);
+
+  // pins: greedy screen-space clusters within 18px of the offices shown
+  function conic(tc, n) {
+    var acc = 0, parts = [];
+    TYPES.forEach(function (t) { if (!tc[t]) return; var a = acc + tc[t] / n * 100; parts.push(FILL[t] + ' ' + acc.toFixed(1) + '% ' + a.toFixed(1) + '%'); acc = a; });
+    return 'conic-gradient(' + parts.join(',') + ')';
   }
-  svg.addEventListener('pointerdown', function (e) {
-    if (e.pointerType === 'mouse' && e.button !== 0) return;
-    if (!Object.keys(ptrs).length) moved = false;
-    ptrs[e.pointerId] = [e.clientX, e.clientY];
-    startGesture();
-  });
-  svg.addEventListener('pointermove', function (e) {
-    if (!ptrs[e.pointerId]) return;
-    ptrs[e.pointerId] = [e.clientX, e.clientY];
-    var ids = Object.keys(ptrs), g = gest, u = g.vb[2] / g.r.width;
-    if (ids.length === 1) {
-      var dx = e.clientX - g.p[0][0], dy = e.clientY - g.p[0][1];
-      if (!moved && Math.hypot(dx, dy) < 5) return;
-      if (!moved) { moved = true; try { svg.setPointerCapture(e.pointerId); } catch (x) {} }
-      if (zoom() > 1.001) setVB(g.vb[0] - dx * u, g.vb[1] - dy * u, g.vb[2]);
-    } else if (ids.length === 2 && g.p.length === 2) {
-      moved = true;
-      var a = ptrs[ids[0]], b = ptrs[ids[1]];
-      var d0 = Math.hypot(g.p[0][0] - g.p[1][0], g.p[0][1] - g.p[1][1]) || 1;
-      var f = Math.hypot(a[0] - b[0], a[1] - b[1]) / d0;
-      // the map point under the starting midpoint stays under the current one
-      var m0x = g.vb[0] + ((g.p[0][0] + g.p[1][0]) / 2 - g.r.left) * u;
-      var m0y = g.vb[1] + ((g.p[0][1] + g.p[1][1]) / 2 - g.r.top) * u;
-      var w = g.vb[2] / f, u1 = w / g.r.width;
-      setVB(m0x - ((a[0] + b[0]) / 2 - g.r.left) * u1, m0y - ((a[1] + b[1]) / 2 - g.r.top) * u1, w);
-    }
-  });
-  function lift(e) {
-    if (!ptrs[e.pointerId]) return;
-    delete ptrs[e.pointerId];
-    if (Object.keys(ptrs).length) startGesture();
+  function pins() {
+    var r = SVG.getBoundingClientRect(); if (!r.width) return;
+    var k = r.width / vb[2], ky = r.height / vb[3], cl = [];
+    shown.forEach(function (o) {
+      if (o.x == null) return;
+      for (var i = 0; i < cl.length; i++) {
+        if (Math.hypot((cl[i].x - o.x) * k, (cl[i].y - o.y) * k) < 18) { cl[i].items.push(o); return; }
+      }
+      cl.push({x: o.x, y: o.y, items: [o]});
+    });
+    cl.forEach(function (m) {
+      var n = m.items.length; m.n = n;
+      if (n > 1) {
+        m.x = m.items.reduce(function (a, o) { return a + o.x; }, 0) / n;
+        m.y = m.items.reduce(function (a, o) { return a + o.y; }, 0) / n;
+      }
+    });
+    cl.sort(function (a, b) { return a.n - b.n; });
+    PINS.textContent = '';
+    cl.forEach(function (m) {
+      var px = (m.x - vb[0]) * k, py = (m.y - vb[1]) * ky;
+      if (px < -40 || py < -40 || px > r.width + 40 || py > r.height + 40) return;
+      var one = m.n === 1, o1 = m.items[0];
+      var hot = m.items.some(function (o) { return o.id === st.hover || o.id === st.sel; });
+      // every pin at full strength: the map shows all offices, not one country's
+      var size = one ? (hot ? 22 : 14) : Math.round(Math.min(40, 22 + Math.sqrt(m.n) * 2.2));
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'at-pin in' + (one ? ' ' + o1.type : '') + (hot ? ' hot' : '');
+      b.style.left = px + 'px'; b.style.top = py + 'px'; b.style.width = b.style.height = size + 'px';
+      b.style.zIndex = hot ? 5 : 3;
+      var label = one ? o1.name : fmt(L.cluster, {n: num(m.n)});
+      b.title = label; b.setAttribute('aria-label', label);
+      if (!one) {
+        var tc = {}; m.items.forEach(function (o) { tc[o.type] = (tc[o.type] || 0) + 1; });
+        b.style.background = conic(tc, m.n);
+        var s = document.createElement('span'); s.textContent = m.n; b.appendChild(s);
+      }
+      if (one) b.dataset.id = o1.id;
+      // a single office opens in the list; a cluster zooms in, unless it cannot split
+      // (offices at one address, or already at full zoom) - then its first office opens
+      var spread = Math.max.apply(0, m.items.map(function (o) { return Math.hypot(o.x - m.x, o.y - m.y); }));
+      var stuck = !one && (spread < 0.05 || zoom() >= ZMAX * 0.99);
+      b.onclick = function (e) {
+        if (moved) return;
+        e.stopPropagation();
+        if (one) { closePop(); select(o1.id, true); }
+        else if (stuck) openPop(m.items.slice().sort(cmp), b);
+        else { closePop(); flyTo(m.x, m.y, Math.min(ZMAX, zoom() * 2.6)); }
+      };
+      b.onmouseenter = function () { if (one) hover(o1.id, b); };
+      b.onmouseleave = function () { if (one) hover(null, b); };
+      PINS.appendChild(b);
+    });
   }
-  svg.addEventListener('pointerup', lift);
-  svg.addEventListener('pointercancel', lift);
-  // one listener for every pin, the redrawn ones included
-  svg.addEventListener('click', function (e) {
-    var d = e.target.closest('.odot');
-    if (moved) { moved = false; e.preventDefault(); e.stopPropagation(); return; }
-    if (!d) return;
-    e.preventDefault();
-    if (openDot === d) closePop(false); else openPop(d);
-  }, true);
-  drawPins(1);
+
+  // offices at one address never split: their pin lists them to pick from
+  var POP = $('at-pop');
+  function closePop() { POP.hidden = true; POP.textContent = ''; }
+  function openPop(items, pin) {
+    POP.textContent = '';
+    items.forEach(function (o) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'at-popi ' + o.type; b.textContent = o.name;
+      b.onclick = function (e) {
+        e.stopPropagation(); closePop();
+        select(o.id, true);
+      };
+      POP.appendChild(b);
+    });
+    POP.hidden = false;
+    var mb = MAPBOX.getBoundingClientRect(), pb = pin.getBoundingClientRect();
+    var w = POP.offsetWidth, h = POP.offsetHeight, x = pb.right - mb.left + 8;
+    if (x + w > mb.width - 8) x = pb.left - mb.left - w - 8;
+    POP.style.left = Math.max(8, x) + 'px';
+    POP.style.top = Math.max(8, Math.min(pb.top - mb.top - 12, mb.height - h - 8)) + 'px';
+    POP.firstChild.focus();
+  }
+  document.addEventListener('click', function (e) { if (!POP.hidden && !POP.contains(e.target)) closePop(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+
+  // ---- the divider between list and map
+  var grip = $('at-grip'), listW = null;
+  try { listW = +localStorage.getItem(CFG.listw_key) || null; } catch (e) {}
+  function cols() {
+    A.style.gridTemplateColumns = listW ? '272px ' + listW + 'px minmax(0,1fr)' : '';
+  }
+  function clampW(w) { var r = A.getBoundingClientRect(); return Math.round(Math.max(320, Math.min(r.width - 272 - 280, w))); }
+  function saveW() { try { if (listW) localStorage.setItem(CFG.listw_key, listW); else localStorage.removeItem(CFG.listw_key); } catch (e) {} }
+  grip.addEventListener('pointerdown', function (e) {
+    e.preventDefault(); grip.classList.add('drag');
+    var move = function (ev) { listW = clampW(ev.clientX - A.getBoundingClientRect().left - 272); cols(); };
+    var up = function () {
+      window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up);
+      grip.classList.remove('drag'); saveW();
+    };
+    window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+  });
+  grip.addEventListener('dblclick', function () { listW = null; cols(); saveW(); });
+  grip.addEventListener('keydown', function (e) {
+    var d = e.key === 'ArrowLeft' ? -24 : e.key === 'ArrowRight' ? 24 : 0;
+    if (!d) return; e.preventDefault();
+    listW = clampW((listW || $('at-scroll').getBoundingClientRect().width + 0) + d); cols(); saveW();
+  });
+
+  // the atlas is one viewport tall (CSS); the credits are a page scroll below it
+  var lastW = 0;
+  if (window.ResizeObserver) new ResizeObserver(function () {
+    var w = SC.getBoundingClientRect().width;
+    if (w !== lastW) { lastW = w; clampAll(); }
+  }).observe(SC);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(clampAll);
+
+  // ---- wiring
+  var qt = 0;
+  $('at-q').addEventListener('input', function () { var v = this.value; clearTimeout(qt); qt = setTimeout(function () { set({q: v}); }, 120); });
+  [].forEach.call(A.querySelectorAll('.at-fb'), function (b) {
+    b.onclick = function () {
+      // Type is one choice of four (All is one of them); the other facets toggle off
+      var p = {}; p[b.dataset.f] = b.dataset.f === 'type' || st[b.dataset.f] !== b.dataset.v ? b.dataset.v : ''; set(p);
+      if (narrow()) scrollToEl(SC, 0);
+    };
+  });
+  $('at-code').onchange = function () { set({code: this.checked}); };
+  $('at-clear').onclick = function () { set({q: '', type: TYPE0, fn: '', focus: '', code: false}); };
+  [].forEach.call($('at-sort').children, function (b) { b.onclick = function () { set({sort: b.dataset.sort}); }; });
+  cards.forEach(function (c) {
+    c.querySelector('.at-ch').onclick = function () { select(c.id, false); };
+    c.onmouseenter = function () { hover(c.id); };
+    c.onmouseleave = function () { hover(null); };
+  });
+  // the button inside the h3 is the keyboard's way in; its click bubbles to .at-ch
+  var ftog = $('at-ftog');
+  ftog.onclick = function () {
+    var o = !A.classList.contains('fopen'); A.classList.toggle('fopen', o); ftog.setAttribute('aria-expanded', o ? 'true' : 'false');
+  };
+
+  // ---- an office's code profiles: one on the card, all of them in a dialog. The
+  // dialog holds COPIES of the card's own (hidden) list, so the links are the card's.
+  var DLG = $('at-dlg');
+  function openCodes(c, btn) {
+    var list = $('at-dlg-list'); list.textContent = '';
+    [].forEach.call(c.querySelectorAll('.at-codes li'), function (li) { list.appendChild(li.cloneNode(true)); });
+    $('at-dlg-h').textContent = fmt(L.codes, {name: c.dataset.name});
+    DLG._from = btn;
+    if (DLG.showModal) DLG.showModal(); else DLG.setAttribute('open', '');
+  }
+  function closeCodes() {
+    if (DLG.close) DLG.close(); else DLG.removeAttribute('open');
+  }
+  $('at-dlg-x').onclick = closeCodes;
+  // a click on the backdrop lands on the dialog itself, outside its box
+  DLG.addEventListener('click', function (e) {
+    if (e.target !== DLG) return;
+    var r = DLG.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeCodes();
+  });
+  DLG.addEventListener('close', function () { if (DLG._from) DLG._from.focus(); DLG._from = null; });
+  cards.forEach(function (c) {
+    var b = c.querySelector('.at-codes-more');
+    if (b) b.onclick = function (e) { e.stopPropagation(); openCodes(c, b); };
+  });
+
+  // ---- boot: the old ?q= / ?type= / ?cc= links still land
+  try {
+    var Q = new URLSearchParams(location.search), legacyCc = Q.get('cc');
+    if (Q.get('q')) st.q = Q.get('q');
+    // an old link was made when the page showed every type: it lands on All
+    if (Q.get('q') || legacyCc || Q.get('type')) st.type = TYPES.indexOf(Q.get('type')) >= 0 ? Q.get('type') : '';
+  } catch (e) {}
+  readHash();
+  MAPBOX.hidden = false; $('at-sort').hidden = false; ftog.hidden = false;
+  cols();
   setVB(VB0[0], VB0[1], VB0[2]);
-  el('opop-x').onclick = function () { closePop(true); };
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openDot) closePop(true); });
-  document.addEventListener('click', function (e) {
-    if (openDot && !pop.contains(e.target) && !openDot.contains(e.target)) closePop(false);
-  });
-  el('oview').hidden = false;
-  apply(false);
+  var sel0 = st.sel; st.sel = null;
+  apply();
+  if (sel0) { setSel(sel0); pins(); setTimeout(function () { scrollToEl(O[sel0].el, 64); }, 300); }
+  else if (legacyCc && secById(legacyCc) && !secById(legacyCc).hidden) setTimeout(function () { scrollToEl(secById(legacyCc), 0); }, 300);
+  writeHash();
 })();
 </script>
 """
 
 
 if __name__ == "__main__":
-    data, locs, geo, res = load()
+    data, locs, geo, res, catalog = load()
+    rows = derive(data, locs, geo, res, catalog)
+    copy_images()
     for _lang in i18n.LANGS:
-        rows = build(_lang, data, locs, geo, res)
+        build(_lang, data, rows, geo)
+    rows = sorted(rows, key=lambda r: (TYPE_ORDER.index(r["type"]), r["name"].lower()))
     doc = {
         "generated_at": NOW, "human_page": i18n.BASE + "/ospos",
         "about": "Open source program offices. Government: the FLOSS-PSO Network's "
