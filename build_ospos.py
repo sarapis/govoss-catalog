@@ -12,7 +12,7 @@ other facets), the offices grouped by country, and a
 world map of every office the filters show. The map never follows the list to a
 country (owner, 2026-10-13): it stays where the reader puts it.
 Everything is rendered here, so a reader without JavaScript gets every office,
-grouped and ranked, with its details open; the script filters, sorts, expands
+grouped and sorted, with its details open; the script filters, sorts, expands
 and drives the map. The map is inline SVG from the committed geo/ospo_frames.json
 (one world map, Equal Earth; written by geo/build_geo.py); each office is placed
 from ospos/locations.json - hand-placed, or for TODO's companies their Wikidata
@@ -23,8 +23,9 @@ What the page derives, all from committed inputs, never fetched here:
             sits under one of the office's code organisations - a URL fact
   fns       those products' functions (taxonomy.py's 19), most frequent first
   focus     FOCUS_RULES matched on the office's own name, description and note
-  score     how many of its software entries govoss lists (len(products)), owner
-            2026-10-13; rank is global, ties share one, 0 is Unranked
+  score     how many of its software entries govoss lists (len(products)). It SORTS
+            the list (Most software, or A-Z) and shows on the card; there are no
+            ranks (owner, 2026-10-13)
 Logos and flags are local files in ospos/img/ (fetched by the MANUAL
 ospos/fetch_images.py), copied to site/ospo-img/; a missing one falls back to
 initials or the flag emoji. Icons are vendored Lucide (vendor/lucide/).
@@ -239,7 +240,7 @@ def load():
 
 
 def derive(data, locs, geo, res, catalog):
-    """Every office with its place, products, tags and score; ranks set globally."""
+    """Every office with its place, products, tags and score (its software in govoss)."""
     rcount = collections.Counter(r["case"] for r in res["resources"])
     fr = geo["frames"]["world"]
     os_ = [dict(r) for r in data["ospos"]]
@@ -259,23 +260,14 @@ def derive(data, locs, geo, res, catalog):
         r["_focus"] = focus_of(r)
         y = str(r.get("created") or "")[:4]
         r["_year"] = int(y) if y.isdigit() else None
-        r["_score"] = len(r["_prod"])     # the ranking: software in govoss (owner, 2026-10-13)
+        r["_score"] = len(r["_prod"])     # what "Most software" sorts by (owner, 2026-10-13)
         h = host_of(r["url"])
         r["_logo"] = (h if h not in ("github.com", "gitlab.com") and h
                       and os.path.exists(f"{IMG}/logo/{h}.png") else None)
-    # rank is GLOBAL (filters never change it): score descending, then name; ties share
-    ranked = sorted((r for r in os_ if r["_score"] > 0), key=lambda r: (-r["_score"], r["name"].lower()))
-    prev, rk = None, 0
-    for i, r in enumerate(ranked):
-        if r["_score"] != prev:
-            rk, prev = i + 1, r["_score"]
-        r["_rank"] = rk
-    for r in os_:
-        r.setdefault("_rank", None)
-    return os_, ranked
+    return os_
 
 
-def build(lang, data, os_, ranked, geo):
+def build(lang, data, os_, geo):
     _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
     N = lambda n: i18n.num(lang, n)
     cname = lambda c: (i18n.country(lang, c, S.COUNTRY_NAME.get(c) or C.COUNTRY_NAMES.get(c, c))
@@ -298,9 +290,6 @@ def build(lang, data, os_, ranked, geo):
         e = flag(cc)
         return ('<span class="%s at-femoji" aria-hidden="true">%s</span>' % (cls, e)) if e else ""
 
-    top = ranked[0]["_score"] if ranked else 1
-    pct = lambda s: "%d%%" % (max(4, round(s / top * 100)) if s else 0)
-
     # ---- the cards, grouped by country (ZZ: not yet placed, always last)
     def card(r):
         t = r["type"]
@@ -316,7 +305,6 @@ def build(lang, data, os_, ranked, geo):
                  for f in r["_fns"]] +
                 ['<span class="at-tag at-tfo">%s%s</span>' % (icon(ficon[f], 12), esc(flabel[f]))
                  for f in r["_focus"]])
-        rk = r["_rank"]
         more = []
         if r.get("description"):
             more.append('<p class="at-desc">%s</p>' % esc(r["description"]))
@@ -368,16 +356,18 @@ def build(lang, data, os_, ranked, geo):
             '<div class="at-ch"><div class="at-logo" aria-hidden="true">%s%s</div>'
             '<div class="at-mid"><h3><button type="button" class="at-tgl" aria-expanded="false" '
             'aria-controls="%s-x">%s</button></h3><p class="at-meta">%s</p>%s</div>'
-            '<div class="at-sc"><span class="at-rk%s">%s</span><span class="at-sn%s">%d</span>'
-            '<span class="at-bar"><i style="width:%s"></i></span></div></div>'
+            '%s</div>'
             '<div class="at-more" id="%s-x" hidden>%s</div></article>'
             % (esc(t), esc(r["id"]), esc(t), esc(r["_cc"] or "ZZ"), " ".join(r["_fns"]),
                " ".join(r["_focus"]), 1 if r.get("code") else 0, r["_score"], esc(r["name"]),
                esc(initials(r["name"])), logo, esc(r["id"]), esc(r["name"]),
                '<span class="at-dot">&middot;</span>'.join(meta),
                ('<p class="at-tags">%s</p>' % "".join(tags)) if tags else "",
-               " at-top" if rk and rk <= 10 else "", esc("#%d" % rk if rk else _("Unranked")),
-               "" if r["_score"] else " at-zero", r["_score"], pct(r["_score"]),
+               # its software count, what "Most software" sorts by; nothing when none
+               ('<div class="at-sc" title="%s"><span class="at-sn">%s</span><span class="at-sl">%s</span></div>'
+                % (esc(_("{n} software entries in govoss", n=N(r["_score"])) if r["_score"] > 1
+                       else _("1 software entry in govoss")), N(r["_score"]), esc(_("software"))))
+               if r["_score"] else "",
                esc(r["id"]), "".join(more)))
 
     groups = collections.defaultdict(list)
@@ -460,9 +450,9 @@ def build(lang, data, os_, ranked, geo):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w", encoding="ascii").write(page)
     print("ospos page [%s]: %d OSPOs (%d government, %d academic, %d corporate), %d on the map, "
-          "%d ranked, %d with catalogue products (%.0f KB)"
+          "%d with catalogue products (%.0f KB)"
           % (lang, len(os_), nt["government"], nt["academic"], nt["corporate"],
-             sum(1 for r in os_ if r["_xy"]), len(ranked), sum(1 for r in os_ if r["_prod"]), len(page) / 1024))
+             sum(1 for r in os_ if r["_xy"]), sum(1 for r in os_ if r["_prod"]), len(page) / 1024))
 
 
 def fetched(data, key, _):
@@ -507,10 +497,6 @@ PAGE_CSS = """
 .at-lbl{padding:0 8px 4px;display:flex;justify-content:space-between;align-items:center;font-size:11px;
   font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:0;}
 .at-lbl small{font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;}
-.at-bar{display:block;height:5px;border-radius:3px;background:var(--at-track);overflow:hidden;}
-.at-bar i{display:block;height:100%;background:var(--at-gov);}
-.at-bar i.academic,.academic .at-bar i{background:var(--at-aca);}
-.at-bar i.corporate,.corporate .at-bar i{background:var(--at-cor);}
 .at-link{font-size:12px;font-weight:600;padding:6px 8px;border:0;background:none;color:var(--primary);
   cursor:pointer;text-align:left;}
 .at-link:hover{color:var(--primary-deep);}
@@ -578,13 +564,10 @@ PAGE_CSS = """
 .at-tag.at-tmore{font-weight:600;color:var(--ink-600);background:var(--bg-alt);}
 .at-tfn{background:var(--at-sel);} .at-tfn .at-i{color:var(--primary);}
 .at-tfo{background:var(--primary-tint);} .at-tfo .at-i{color:var(--ink-600);}
-.at-sc{display:flex;flex-direction:column;align-items:flex-end;gap:4px;min-width:64px;}
-.at-rk{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ink-faint);}
-.at-rk.at-top{color:var(--ink);}
+.at-sc{display:flex;flex-direction:column;align-items:flex-end;gap:3px;min-width:64px;}
 .at-sn{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1;}
-.at-sn.at-zero{color:var(--at-off);}
-.at-sc .at-bar{width:56px;height:4px;border-radius:2px;}
+.at-sl{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-faint);}
 .at-more{padding:12px 14px 14px 66px;display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(22,46,81,.08);
   cursor:auto;}
 .at-desc{font-size:13.5px;line-height:1.6;text-wrap:pretty;}
@@ -704,7 +687,7 @@ __SPRITE__
       <span class="at-sp"></span>
       <button type="button" class="at-ftog" id="at-ftog" aria-expanded="false" aria-controls="at-side" hidden>__IFILT__⟪Filters⟫</button>
       <div class="at-seg" role="group" aria-label="⟪Sort⟫" id="at-sort" hidden>
-        <button type="button" data-sort="activity" aria-pressed="true">⟪Most software⟫</button>
+        <button type="button" data-sort="software" aria-pressed="true">⟪Most software⟫</button>
         <button type="button" data-sort="name" aria-pressed="false">⟪A&ndash;Z⟫</button></div>
     </div>
     <div class="at-scroll" id="at-scroll">__GROUPS__
@@ -747,8 +730,8 @@ __SPRITE__
   <a href="/ospos.json">/ospos.json</a>.⟫</p>
 <p class="ocred">⟪Product categories come from each office&rsquo;s software in the govoss catalogue
   (entries whose repository sits under one of its code organisations); focus tags are matched on the
-  office&rsquo;s own name and description. Offices are ranked by how many of their software entries
-  govoss lists. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
+  office&rsquo;s own name and description. &ldquo;Most software&rdquo; sorts offices by how many of their
+  software entries govoss lists. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
 <p class="ocred" id="logo-notice">⟪Logos are the trademarks of their owners, shown only to identify each office.
   They are not covered by govoss&rsquo;s licences and no endorsement is implied. To have one removed,
   <a href="https://github.com/sarapis/govoss-catalog/issues">report it</a>. Flags:
@@ -783,7 +766,7 @@ SCRIPT = """
   // the page opens on Government (owner, 2026-10-13); "All offices" is type '' and
   // is written to the hash as type=all, so every view has an address
   var TYPE0 = 'government';
-  var st = {q: '', type: TYPE0, fn: '', focus: '', code: false, sort: 'activity', sel: null, hover: null};
+  var st = {q: '', type: TYPE0, fn: '', focus: '', code: false, sort: 'software', sel: null, hover: null};
   var shown = all.slice(), order = [];
   var narrow = function () { return window.matchMedia('(max-width:900px)').matches; };
   var fmt = function (s, kw) { return s.replace(/\\{(\\w+)\\}/g, function (m, k) { return k in kw ? kw[k] : m; }); };
@@ -818,7 +801,7 @@ SCRIPT = """
     try { history.replaceState(null, '', location.pathname + (s ? '#' + s : '')); } catch (e) {}
   }
 
-  // ---- filter, group, sort (rank never changes: it is printed on the card)
+  // ---- filter, group, sort (Most software, or A-Z)
   function pass(o, skipType) {
     if (!skipType && st.type && o.type !== st.type) return false;
     if (st.fn && o.fns.indexOf(st.fn) < 0) return false;
@@ -1199,10 +1182,10 @@ SCRIPT = """
 
 if __name__ == "__main__":
     data, locs, geo, res, catalog = load()
-    rows, ranked = derive(data, locs, geo, res, catalog)
+    rows = derive(data, locs, geo, res, catalog)
     copy_images()
     for _lang in i18n.LANGS:
-        build(_lang, data, rows, ranked, geo)
+        build(_lang, data, rows, geo)
     rows = sorted(rows, key=lambda r: (TYPE_ORDER.index(r["type"]), r["name"].lower()))
     doc = {
         "generated_at": NOW, "human_page": i18n.BASE + "/ospos",

@@ -546,7 +546,7 @@ def main():
     # (design handoff, 2026-10-13). Every fetched office is a card in its country's
     # group and either a map point or in "Not yet placed"; types are only the three
     # the filter offers; every Resources link lands on a real case with the count it
-    # claims; ranks are global with ties shared; build_ospos's projection agrees with
+    # claims; no ranks, a software count; build_ospos's projection agrees with
     # build_geo's probes.
     od = json.load(open(os.path.join(HERE, "cache", "ospos.json")))["ospos"]
     rcases = collections.Counter(r["case"] for r in rfile["resources"])
@@ -620,10 +620,9 @@ def main():
         check("%s credits the FLOSS-PSO Network and the OSPO Alliance, its umbrella" % name,
               bool(cred and 'href="https://floss-pso.network/public-sector-ospos/"' in cred.group(1)
                    and 'href="https://ospo-alliance.org/">OSPO Alliance</a>' in cred.group(1)), True)
-        # the ranking is the office's software in govoss (owner, 2026-10-13): the score
-        # is office_indices()'s count; the card's button says it and opens
-        # /software?ospo=<id>, whose list is those SAME positions; ranks are GLOBAL,
-        # competition-style (1, 2, 2, 4), 0 is Unranked; no sidebar ranking any more
+        # the score is the office's software in govoss (owner, 2026-10-13):
+        # office_indices()'s count; the card's button says it and opens
+        # /software?ospo=<id>, whose list is those SAME entries
         catj = json.load(open(os.path.join(HERE, "catalog.json")))
         want_ix = {r["id"]: _bo.office_indices(r, catj) for r in od}
         swm = re.search(r"var OSPOSW = (\{.*?\});\n", pages["ca/software.html" if name.startswith("ca/") else "software.html"])
@@ -646,11 +645,18 @@ def main():
         check("%s: score = software in govoss = its button = /software?ospo= (same entries)" % name,
               (sum(1 for v in scores.values() if v) > 0, bad,
                sorted(osw) == sorted(i for i, v in want_ix.items() if v)), (True, [], True))
-        want_rank = {i: (1 + sum(1 for v in scores.values() if v > s_)) if s_ else None for i, s_ in scores.items()}
-        got_rank = {c[1]: re.search(r'<span class="at-rk[^"]*">(#(\d+)|[^<]+)</span>', c[4]) for c in cards}
-        check("%s: ranks are global, ties shared, score 0 unranked" % name,
-              sorted(i for i, m in got_rank.items()
-                     if (int(m.group(2)) if m and m.group(2) else None) != want_rank[i]), [])
+        # no ranks (owner, 2026-10-13): a card shows its software count when it has any,
+        # and the list sorts by it or A-Z - two buttons, nothing else
+        badc = []
+        for c in cards:
+            m = re.search(r'<div class="at-sc"[^>]*><span class="at-sn">([\d.,]+)</span>', c[4])
+            if (int(re.sub(r"[.,]", "", m.group(1))) if m else 0) != scores[c[1]]:
+                badc.append(c[1])
+        check("%s: each card shows its software count (none at 0), no rank" % name,
+              (badc, [x for x in ('class="at-rk', 'Unranked', 'class="at-bar"') if x in pg]), ([], []))
+        srt = re.search(r'<div class="at-seg"[^>]*id="at-sort"[^>]*>(.*?)</div>', pg, re.S)
+        check("%s: the list sorts by software or A-Z" % name,
+              re.findall(r'data-sort="(\w+)"', srt.group(1)) if srt else None, ["software", "name"])
         check("%s: no sidebar ranking, no score signals, no per-product links" % name,
               [x for x in ('class="at-trow"', 'id="at-top"', 'class="at-sigs"', 'class="at-prod"', 'at-how')
                if x in pg], [])
