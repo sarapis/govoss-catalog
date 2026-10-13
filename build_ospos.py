@@ -783,6 +783,10 @@ __SPRITE__
 <p class="ocred">⟪Product categories come from each office&rsquo;s software in the govoss catalogue
   (entries whose repository sits under one of its code organisations); focus tags are matched on the
   office&rsquo;s own name and description. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
+<p class="ocred" id="logo-notice">⟪Logos are the trademarks of their owners, shown only to identify each office.
+  They are not covered by govoss&rsquo;s licences and no endorsement is implied. To have one removed,
+  <a href="https://github.com/sarapis/govoss-catalog/issues">report it</a>. Flags:
+  <a href="https://github.com/lipis/flag-icons">flag-icons</a> (MIT).⟫</p>
 </main>
 <script type="application/json" id="at-data">__CFG__</script>
 """

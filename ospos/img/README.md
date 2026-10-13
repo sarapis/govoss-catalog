@@ -5,7 +5,10 @@ copies it to `site/ospo-img/` (this file and any `.json` stay behind), so the pa
 third-party request.
 
 - `logo/<host>.png` - each office's own site icon, from Google's favicon service, used to
-  identify the office on its card. A logo that looks wrong is deleted (or replaced by a better
+  identify the office on its card. **These are their owners' trademarks and artwork. They are
+  NOT covered by this repository's licences or govoss's data licences, no endorsement is
+  implied, and one is removed on its owner's request** (owner, 2026-10-13; the page says so
+  under the credits, `#logo-notice`). Never put a logo in `/ospos.json` or any data export. A logo that looks wrong is deleted (or replaced by a better
   file of the same name) by hand; the script never overwrites one without `--refresh`.
   An office with no file shows its initials.
 - `flag/<code>.svg` - [flag-icons](https://github.com/lipis/flag-icons) 7.2.3, the 4x3 set,

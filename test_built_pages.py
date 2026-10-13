@@ -664,6 +664,14 @@ def main():
         check("%s: the map does not follow countries, and no card says Founded n/a" % name,
               [x for x in ('class="at-now"', 'id="at-chips"', 'fitGroup', 'onScroll', 'Founded', 'Fundaci')
                if x in pg], [])
+        # logos stay, with a notice (owner, 2026-10-13): their owners' trademarks, outside
+        # govoss's licences, no endorsement, removed on request - and never in the data
+        ln = re.search(r'<p class="ocred" id="logo-notice">(.*?)</p>', pg, re.S)
+        oj_raw = open(os.path.join(SITE, "ospos.json")).read()
+        check("%s: the logo notice is on the page, and no logo is in /ospos.json" % name,
+              (bool(ln) and 'href="https://github.com/sarapis/govoss-catalog/issues"' in ln.group(1),
+               "/ospo-img/logo/" in pg, "ospo-img" in oj_raw or '"logo"' in oj_raw),
+              (True, True, False))
         check("%s: one country is singular" % name,
               (bool((cfg.get("L") or {}).get("all1")), bool((cfg.get("L") or {}).get("some1")), "nc === 1" in sc),
               (True, True, True))
