@@ -592,11 +592,26 @@ def main():
         check("%s: every flag and logo image the page names was copied to site/" % name,
               sorted(u for u in re.findall(r'src="(/ospo-img/[^"]+)"', pg)
                      if not os.path.exists(os.path.join(SITE, u.lstrip("/")))), [])
-        # every listed code organisation is linked on its card (no fold now)
-        ncode = {r["id"]: len(r.get("code") or []) for r in od}
-        check("%s: every code organisation linked on its card" % name,
-              [(c[1], len(re.findall(r'<a class="at-code"', c[4]))) for c in cards
-               if len(re.findall(r'<a class="at-code"', c[4])) != ncode.get(c[1])], [])
+        # code profiles (owner, 2026-10-13): the card links the FIRST; with more, a
+        # "+N more" button (data-n = all of them) opens the dialog, which copies the
+        # card's own hidden list - every profile, in the list's order
+        bad = []
+        for c in cards:
+            code = next((r.get("code") or [] for r in od if r["id"] == c[1]), [])
+            first = re.findall(r'<a class="at-code" href="([^"]+)"', c[4])
+            more = re.search(r'<button type="button" class="at-codes-more"[^>]*data-n="(\d+)"', c[4])
+            lst = re.search(r'<ul class="at-codes" hidden>(.*?)</ul>', c[4])
+            got = (first, int(more.group(1)) if more else None,
+                   re.findall(r'<a class="at-codel" href="([^"]+)"', lst.group(1)) if lst else None)
+            want = (code[:1], len(code) if len(code) > 1 else None, code if len(code) > 1 else None)
+            if [html.unescape(x) if isinstance(x, str) else x for x in got[0]] != want[0] or got[1] != want[1] or \
+                    (got[2] and [html.unescape(x) for x in got[2]]) != want[2]:
+                bad.append(c[1])
+        check("%s: one code profile on the card, the rest behind +N, all in its dialog list" % name,
+              (sum(1 for r in od if len(r.get("code") or []) > 1) > 0, bad), (True, []))
+        check("%s has the code-profiles dialog with a labelled close button" % name,
+              bool(re.search(r'<dialog class="at-dlg" id="at-dlg" aria-labelledby="at-dlg-h">.*?'
+                             r'<button type="button" class="at-dlg-x" id="at-dlg-x" aria-label="[^"]+">', pg, re.S)), True)
         links = re.findall(r'class="at-res" href="(?:/ca)?/resources\?case=([a-z]+)">.*?</svg>(\d+)', pg)
         check("%s Resources links land on real cases with the right counts" % name,
               [(c, n) for c, n in links if rcases.get(c) != int(n)], [])
@@ -605,36 +620,53 @@ def main():
         check("%s credits the FLOSS-PSO Network and the OSPO Alliance, its umbrella" % name,
               bool(cred and 'href="https://floss-pso.network/public-sector-ospos/"' in cred.group(1)
                    and 'href="https://ospo-alliance.org/">OSPO Alliance</a>' in cred.group(1)), True)
-        # the score is the sum of the signal chips the card shows; ranks are GLOBAL,
-        # competition-style (1, 2, 2, 4), score 0 is Unranked; the sidebar agrees
+        # the ranking is the office's software in govoss (owner, 2026-10-13): the score
+        # is office_indices()'s count; the card's button says it and opens
+        # /software?ospo=<id>, whose list is those SAME positions; ranks are GLOBAL,
+        # competition-style (1, 2, 2, 4), 0 is Unranked; no sidebar ranking any more
+        catj = json.load(open(os.path.join(HERE, "catalog.json")))
+        want_ix = {r["id"]: _bo.office_indices(r, catj) for r in od}
+        swm = re.search(r"var OSPOSW = (\{.*?\});\n", pages["ca/software.html" if name.startswith("ca/") else "software.html"])
+        osw = json.loads(swm.group(1)) if swm else {}
+        dm = re.search(r"var DATA = (\[.*?\]);\n", pages["ca/software.html" if name.startswith("ca/") else "software.html"])
+        D = json.loads(dm.group(1)) if dm else []
         bad, scores = [], {}
         for c in cards:
             sc = int(re.search(r'data-score="(\d+)"', c[4]).group(1))
             scores[c[1]] = sc
-            sg = re.search(r'<p class="at-sigs">(.*?)</p>', c[4])
-            pts_ = sum(int(x) for x in re.findall(r'&middot; (\d+)</span>', sg.group(1))) if sg else 0
-            if pts_ != sc:
-                bad.append((c[1], sc, pts_))
-        check("%s: each card's score is the sum of its signal chips" % name, (len(scores) > 0, bad), (True, []))
+            btn = re.search(r'<a class="at-sw" href="(?:/ca)?/software\?ospo=([^"]+)">.*?</svg>([\d.,]+) ', c[4])
+            n_btn = int(re.sub(r"[.,]", "", btn.group(2))) if btn else 0
+            # the SAME entries, by what they are - positions differ (DATA is name-sorted)
+            got = sorted((D[i]["n"], D[i]["u"], D[i]["ex"]) for i in osw.get(c[1], [None, []])[1])
+            want = sorted(((catj[i].get("name") or "(unnamed)"), catj[i].get("repo") or "", "")
+                          for i in want_ix[c[1]])
+            if not (sc == len(want_ix[c[1]]) == n_btn and (btn is None or btn.group(1) == c[1])
+                    and got == want):
+                bad.append((c[1], sc, n_btn, len(want_ix[c[1]])))
+        check("%s: score = software in govoss = its button = /software?ospo= (same entries)" % name,
+              (sum(1 for v in scores.values() if v) > 0, bad,
+               sorted(osw) == sorted(i for i, v in want_ix.items() if v)), (True, [], True))
         want_rank = {i: (1 + sum(1 for v in scores.values() if v > s_)) if s_ else None for i, s_ in scores.items()}
         got_rank = {c[1]: re.search(r'<span class="at-rk[^"]*">(#(\d+)|[^<]+)</span>', c[4]) for c in cards}
         check("%s: ranks are global, ties shared, score 0 unranked" % name,
               sorted(i for i, m in got_rank.items()
                      if (int(m.group(2)) if m and m.group(2) else None) != want_rank[i]), [])
-        tops = re.findall(r'<a class="at-trow" href="#([^"]+)" data-id="[^"]+"(?: hidden)?><span class="at-tr">(\d+)</span>'
-                          r'.*?<span class="at-ts">(\d+)</span>', pg)
-        check("%s: Most documented lists the top by score, with the cards' ranks and scores" % name,
-              (len(tops), [i for i, rk, sc in tops if int(rk) != want_rank[i] or int(sc) != scores[i]],
-               [int(sc) for _i, _r, sc in tops] == sorted((int(sc) for _i, _r, sc in tops), reverse=True)),
-              (min(_bo.TOP_ALL, sum(1 for v in scores.values() if v)), [], True))
+        check("%s: no sidebar ranking, no score signals, no per-product links" % name,
+              [x for x in ('class="at-trow"', 'id="at-top"', 'class="at-sigs"', 'class="at-prod"', 'at-how')
+               if x in pg], [])
         # each card toggles its own details panel, closed in the HTML (open without JS)
         check("%s: every card has a toggle controlling its own closed details panel" % name,
               [c[1] for c in cards if 'aria-controls="%s-x"' % c[1] not in c[4]
                or '<div class="at-more" id="%s-x" hidden>' % c[1] not in c[4]], [])
         check("%s: without JavaScript the details show" % name,
-              '<noscript><style>.at-card .at-more[hidden]{display:flex!important;}</style></noscript>' in pg, True)
+              bool(re.search(r'<noscript><style>\.at-card \.at-more\[hidden\]\{display:flex!important;\}'
+                             r'\.at-card \.at-codes\[hidden\]\{display:flex!important;\}', pg)), True)
         # no character entity inside a script, JSON ones included (entities are not
         # decoded there: a "·" once showed as &#183;)
+        # a CSS escape written into a Python string ("\2192") once shipped as a control
+        # character + "92" - no built page may carry one
+        check("%s: no control character in the page" % name,
+              sorted({hex(ord(ch)) for ch in pg if ord(ch) < 32 and ch not in "\n\r\t"}), [])
         check("%s: no character entity inside a script" % name,
               [m for s_ in re.findall(r'<script[^>]*>(.*?)</script>', pg, re.S) for m in re.findall(r'&#\d+;', s_)], [])
         try:
@@ -698,7 +730,7 @@ def main():
                 off.append(i)
         check("%s: each map point is its office's projected location" % name, off, [])
         check("%s: the script's strings are all there" % name,
-              sorted({"all", "some", "offices", "office", "top8", "top25", "cluster", "thou"}
+              sorted({"all", "some", "all1", "some1", "offices", "office", "cluster", "moretags", "codes", "thou"}
                      - set((cfg.get("L") or {}))), [])
     gf = json.load(open(os.path.join(HERE, "geo", "ospo_frames.json")))
     drift = []

@@ -189,7 +189,12 @@ for r in c:
 for x, r in zip(rows, c):
     if x["_core"] is not None and not _replaces(r):
         x["rpi"] = 1          # inherited rows; absent otherwise, ~27 KB saved
+# the rows are built one per catalog.json entry, in its order, then sorted by name:
+# _ROW_POS maps a catalog.json position to the row's position in DATA (/software?ospo=)
+_ci_of = {id(x): i for i, x in enumerate(rows)}
 rows.sort(key=lambda x: (x["n"] or "").lower())
+_ROW_POS = {_ci_of[id(x)]: p for p, x in enumerate(rows)}
+del _ci_of
 
 # Positions are only final after the sort. vo = index of the core row (or absent),
 # vs = indices of a core's variants. The page folds a variant under its core
@@ -387,6 +392,15 @@ n_countries = len({m["country"] for m in _S.SOURCES.values()})
 _ospos = json.load(open(f"{OUT}/cache/ospos.json"))["ospos"]
 n_ospos = len(_ospos)
 n_ospo_gov = sum(1 for o in _ospos if o.get("type") == "government")
+# /software?ospo=<id>: an office's software, by build_ospos.office_indices() - the
+# one rule, so the "N software entries" button on /ospos is exactly this view.
+# office_indices() gives catalog.json positions; _ROW_POS turns them into DATA's.
+import build_ospos as _BO
+_OSPO_SW = {}
+for _o in _ospos:
+    _ix = _BO.office_indices(_o, c)
+    if _ix:
+        _OSPO_SW[_o["id"]] = [_o["name"], sorted(_ROW_POS[i] for i in _ix)]
 n_res = (len(json.load(open(f"{OUT}/resources/ospo-resources.json"))["resources"])
          + len(json.load(open(f"{OUT}/resources/govoss-additions.json"))["resources"]))
 
@@ -435,6 +449,7 @@ def render(lang):
                            for k, v in sorted(countries.items(), key=lambda x: -x[1])])
     subs = {
         "__DATA__": data,
+        "__OSPOSW__": json.dumps(_OSPO_SW, sort_keys=True).replace("</", "<\\/"),
         "__FFACETS__": ffacets,
         "__SFACETS__": SFACETS,
         "__CCFACETS__": ccfacets,

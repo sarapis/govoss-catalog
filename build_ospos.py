@@ -7,8 +7,8 @@ the TODO Group's OSPO landscape (Apache-2.0; corporate since 2026-10-09). Record
 stay English on every language copy; only the chrome is translated.
 
 The page is the "OSPO Atlas" (design handoff, 2026-10-13): under the shared page
-header, three columns - a sidebar (search, then Type, which opens on Government, the
-Most documented ranking and the other facets), the offices grouped by country, and a
+header, three columns - a sidebar (search, then Type, which opens on Government, and the
+other facets), the offices grouped by country, and a
 world map of every office the filters show. The map never follows the list to a
 country (owner, 2026-10-13): it stays where the reader puts it.
 Everything is rendered here, so a reader without JavaScript gets every office,
@@ -23,7 +23,8 @@ What the page derives, all from committed inputs, never fetched here:
             sits under one of the office's code organisations - a URL fact
   fns       those products' functions (taxonomy.py's 19), most frequent first
   focus     FOCUS_RULES matched on the office's own name, description and note
-  score     ACTIVITY points from public signals; rank is global, ties share one
+  score     how many of its software entries govoss lists (len(products)), owner
+            2026-10-13; rank is global, ties share one, 0 is Unranked
 Logos and flags are local files in ospos/img/ (fetched by the MANUAL
 ospos/fetch_images.py), copied to site/ospo-img/; a missing one falls back to
 initials or the flag emoji. Icons are vendored Lucide (vendor/lucide/).
@@ -93,18 +94,6 @@ FOCUS = (
      r"\bmunicipal|\bcivic\b"),
 )
 FOCUS_KEYS = [k for k, *_ in FOCUS]
-
-# The Most documented score: public, checkable signals only (the handoff's rule; named
-# "Most active" there - renamed by the owner, 2026-10-13, since it measures what each
-# office's source list documents, not activity).
-PTS_PRODUCT, MAX_PRODUCTS = 2, 40
-PTS_CODE, MAX_CODE = 5, 25
-PTS_POLICY, PTS_CASE, PTS_EMAIL, PTS_AGE, AGE_YEAR = 6, 5, 2, 2, 2020
-
-# Products listed in an expanded card before "+N more in the catalogue".
-PRODUCTS_SHOWN = 6
-# Most documented rows: shown, and behind "Show top 25".
-TOP_SHOWN, TOP_ALL = 8, 25
 
 # An office's URL (its key in FLOSS-PSO) -> its case in resources/ospo-resources.json.
 # Named, never guessed: UNDP is NOT the "un" case (that is the UN's OICT and the
@@ -185,21 +174,27 @@ def code_org(c):
     return seg[-1] if seg else c.split("://", 1)[-1]
 
 
-def office_products(r, catalog):
-    """Catalogue entries whose repository sits under one of the office's code
-    organisations. A URL fact, never a name guess; set-aside rows are skipped."""
+def office_indices(r, catalog):
+    """Positions in catalog.json of the entries whose repository sits under one of
+    the office's code organisations. A URL fact, never a name guess; set-aside rows
+    are skipped. build_ui.py maps the SAME positions onto its own (name-sorted) rows
+    for /software?ospo=<id>, so the card's count is that view's."""
     orgs = [norm_url(c) for c in r.get("code") or []]
     orgs = [o for o in orgs if "/" in o]          # a bare host would claim a whole forge
     if not orgs:
         return []
     out = []
-    for e in catalog:
+    for i, e in enumerate(catalog):
         if e.get("excluded"):
             continue
         repos = [e.get("repo")] + [x.get("repo_url") for x in e.get("catalogue_entries") or []]
         if any(norm_url(u).startswith(o + "/") for u in repos if u for o in orgs):
-            out.append(e)
-    return sorted(out, key=lambda e: (-(e.get("catalogue_count") or 1), e["name"].lower()))
+            out.append(i)
+    return out
+
+
+def office_products(r, catalog):
+    return [catalog[i] for i in office_indices(r, catalog)]
 
 
 def focus_of(r):
@@ -218,24 +213,6 @@ def initials(name):
                "", name, flags=re.I)
     words = re.sub(r"[^A-Za-z0-9À-ž ]", "", n).split()
     return "".join(w[0] for w in words[:2]).upper() or "?"
-
-
-def signals(r):
-    """[(key, points, n)] - the public signals the Most documented score counts."""
-    out = []
-    if r["_prod"]:
-        out.append(("products", min(MAX_PRODUCTS, len(r["_prod"]) * PTS_PRODUCT), len(r["_prod"])))
-    if r.get("code"):
-        out.append(("code", min(MAX_CODE, len(r["code"]) * PTS_CODE), len(r["code"])))
-    if r.get("policy"):
-        out.append(("policy", PTS_POLICY, 0))
-    if r.get("case_study"):
-        out.append(("case", PTS_CASE, 0))
-    if r.get("email"):
-        out.append(("email", PTS_EMAIL, 0))
-    if r["_year"] and r["_year"] <= AGE_YEAR:
-        out.append(("age", PTS_AGE, r["_year"]))
-    return out
 
 
 def icon(name, size=14, cls="at-i"):
@@ -282,8 +259,7 @@ def derive(data, locs, geo, res, catalog):
         r["_focus"] = focus_of(r)
         y = str(r.get("created") or "")[:4]
         r["_year"] = int(y) if y.isdigit() else None
-        r["_sig"] = signals(r)
-        r["_score"] = sum(p for _k, p, _n in r["_sig"])
+        r["_score"] = len(r["_prod"])     # the ranking: software in govoss (owner, 2026-10-13)
         h = host_of(r["url"])
         r["_logo"] = (h if h not in ("github.com", "gitlab.com") and h
                       and os.path.exists(f"{IMG}/logo/{h}.png") else None)
@@ -341,42 +317,35 @@ def build(lang, data, os_, ranked, geo):
                 ['<span class="at-tag at-tfo">%s%s</span>' % (icon(ficon[f], 12), esc(flabel[f]))
                  for f in r["_focus"]])
         rk = r["_rank"]
-        # expanded: description, counts, signals, products, links
-        sig_lbl = {"products": lambda n: _("{n} products in govoss", n=N(n)) if n > 1 else _("1 product in govoss"),
-                   "code": lambda n: _("{n} public code orgs", n=N(n)) if n > 1 else _("1 public code org"),
-                   "policy": lambda n: _("Published policy"), "case": lambda n: _("TODO case study"),
-                   "email": lambda n: _("Public contact"), "age": lambda n: _("Running since {y}", y=n)}
         more = []
         if r.get("description"):
             more.append('<p class="at-desc">%s</p>' % esc(r["description"]))
         if r.get("ospo_note"):
             more.append('<p class="at-note">%s</p>' % esc(r["ospo_note"]))
-        np_, nc = len(r["_prod"]), len(r.get("code") or [])
-        more.append('<p class="at-nums"><span><b%s>%s</b> %s</span><span><b%s>%s</b> %s</span></p>'
-                    % ("" if np_ else ' class="at-zero"', N(np_), esc(_("products in govoss")),
-                       "" if nc else ' class="at-zero"', N(nc), esc(_("code orgs"))))
-        if r["_sig"]:
-            more.append('<p class="at-sigs">%s</p>' % "".join(
-                '<span>%s &middot; %d</span>' % (esc(sig_lbl[k](n)), p) for k, p, n in r["_sig"]))
-        if r["_prod"]:
-            rows = []
-            for e in r["_prod"][:PRODUCTS_SHOWN]:
-                f = next((x for x in e.get("functions") or [] if x in taxonomy.FUNCTIONS), None)
-                rows.append('<a class="at-prod" href="%s" target="_blank" rel="noopener">%s'
-                            '<span class="at-pn">%s</span><span class="at-pf">%s</span></a>'
-                            % (esc(e.get("entry_url") or e.get("repo")), icon(FN_ICON.get(f, "package"), 14),
-                               esc(e["name"]), esc(fnlabel(f) if f else _("Uncategorised"))))
-            if np_ > PRODUCTS_SHOWN:
-                rows.append('<span class="at-pmore">%s</span>'
-                            % esc(_("+{n} more in the catalogue", n=N(np_ - PRODUCTS_SHOWN))))
-            more.append('<div class="at-prods">%s</div>' % "".join(rows))
+        np_ = len(r["_prod"])
+        # its software as ONE link to /software?ospo=<id>, never a list of repos
+        if np_:
+            more.append('<p class="at-swp"><a class="at-sw" href="/software?ospo=%s">%s%s</a></p>'
+                        % (esc(r["id"]), icon("package", 15),
+                           esc(_("{n} software entries in govoss", n=N(np_)) if np_ > 1
+                               else _("1 software entry in govoss"))))
         links = ['<a class="at-web" href="%s" target="_blank" rel="noopener">%s%s</a>'
                  % (esc(r["url"]), icon("globe", 13), esc(_("Website")))]
-        for c in r.get("code") or []:
+        # one code profile on the card; the rest behind "+N", opened in the dialog.
+        # The full list is in the card (hidden), so the page without JS still has it.
+        code = r.get("code") or []
+        def code_link(c, cls="at-code"):
             h = host_of(c)
             ic = "github" if "github" in h else "gitlab" if ("gitlab" in h or "opencode" in h) else "git-branch"
-            links.append('<a class="at-code" href="%s" target="_blank" rel="noopener">%s%s</a>'
-                         % (esc(c), icon(ic, 13), esc(code_org(c))))
+            return ('<a class="%s" href="%s" target="_blank" rel="noopener">%s<span>%s</span>'
+                    '<small>%s</small></a>' % (cls, esc(c), icon(ic, 13), esc(code_org(c)), esc(h)))
+        if code:
+            links.append(code_link(code[0]))
+        if len(code) > 1:
+            links.append('<button type="button" class="at-codes-more" aria-haspopup="dialog" '
+                         'data-n="%d" title="%s">%s</button>'
+                         % (len(code), esc(_("All {n} code profiles", n=N(len(code)))),
+                            esc(_("+{n} more", n=N(len(code) - 1)))))
         if r.get("policy"):
             links.append('<a href="%s" target="_blank" rel="noopener">%s%s</a>'
                          % (esc(r["policy"]), icon("scroll-text", 13), esc(_("Open source policy"))))
@@ -390,6 +359,9 @@ def build(lang, data, os_, ranked, geo):
                          % (esc(r["_case"]), icon("book-marked", 13),
                             esc(_("{n} resources on how this office was built", n=N(r["_ncase"])))))
         more.append('<p class="at-links">%s</p>' % "".join(links))
+        if len(code) > 1:
+            more.append('<ul class="at-codes" hidden>%s</ul>'
+                        % "".join('<li>%s</li>' % code_link(c, "at-codel") for c in code))
         return (
             '<article class="at-card %s" id="%s" data-type="%s" data-cc="%s" data-fns="%s" data-focus="%s"'
             ' data-code="%d" data-score="%d" data-name="%s">'
@@ -426,13 +398,7 @@ def build(lang, data, os_, ranked, geo):
                        esc(_("{n} offices", n=N(len(rs))) if len(rs) > 1 else _("1 office")),
                        bar, "".join(card(r) for r in rs)))
 
-    # ---- the sidebar: Most documented, Type, Product category, Focus
-    tops = "".join(
-        '<a class="at-trow" href="#%s" data-id="%s"%s><span class="at-tr">%d</span><span class="at-tn">%s</span>'
-        '<span class="at-bar"><i class="%s" style="width:%s"></i></span><span class="at-ts">%d</span></a>'
-        % (esc(r["id"]), esc(r["id"]), " hidden" if i >= TOP_SHOWN else "", r["_rank"], esc(r["name"]),
-           r["type"], pct(r["_score"]), r["_score"])
-        for i, r in enumerate(ranked[:TOP_ALL]))
+    # ---- the sidebar: Type, Product category, Focus
     nt = collections.Counter(r["type"] for r in os_)
     fbtn = lambda f, v, ic, cls, label, n: (
         '<button type="button" class="at-fb" data-f="%s" data-v="%s" aria-pressed="false">%s'
@@ -457,23 +423,18 @@ def build(lang, data, os_, ranked, geo):
         "L": {"all": _("{n} offices in {c} countries"), "some": _("{n} of {t} offices in {c} countries"),
               "all1": _("{n} offices in 1 country"), "some1": _("{n} of {t} offices in 1 country"),
               "offices": _("{n} offices"), "office": _("1 office"),
-              "top8": _("Show top {n}", n=TOP_SHOWN), "top25": _("Show top {n}", n=TOP_ALL),
+              "codes": _("{name}: code profiles"),
               "cluster": _("{n} offices here"), "moretags": _("{n} more tags - open the office to see them"),
               "thou": "." if lang == "ca" else ","},
     }
     subs = {
-        "__SPRITE__": sprite(used), "__SEARCHI__": icon("search", 15), "__TOPS__": tops,
-        "__TOPMORE__": esc(_("Show top {n}", n=TOP_ALL)), "__TYPES__": types, "__FNS__": fns, "__FOCUS__": foc,
+        "__SPRITE__": sprite(used), "__SEARCHI__": icon("search", 15), "__TYPES__": types, "__FNS__": fns, "__FOCUS__": foc,
         "__COUNT__": esc(_("{n} offices in 1 country", n=N(len(os_))) if nctry == 1
                          else _("{n} offices in {c} countries", n=N(len(os_)), c=N(nctry))),
         "__GROUPS__": "".join(secs), "__LAND__": fr["land"], "__VB__": " ".join(str(v) for v in vb),
         "__IPLUS__": icon("plus", 16), "__IMINUS__": icon("minus", 16), "__IRESET__": icon("rotate-ccw", 15),
         "__IFILT__": icon("sliders-horizontal", 14),
         "__CFG__": json.dumps(cfg, sort_keys=True).replace("</", "<\\/"),
-        "__PTS_PRODUCT__": str(PTS_PRODUCT), "__MAX_PRODUCTS__": str(MAX_PRODUCTS),
-        "__PTS_CODE__": str(PTS_CODE), "__MAX_CODE__": str(MAX_CODE), "__PTS_POLICY__": str(PTS_POLICY),
-        "__PTS_CASE__": str(PTS_CASE), "__PTS_EMAIL__": str(PTS_EMAIL), "__PTS_AGE__": str(PTS_AGE),
-        "__AGE_YEAR__": str(AGE_YEAR),
         "__TODO_AT__": fetched(data, "todo-landscape", _), "__FLOSS_AT__": fetched(data, "floss-pso", _),
         "__AMAP_AT__": fetched(data, "academic-map", _),
         "__LANG__": lang,
@@ -546,12 +507,6 @@ PAGE_CSS = """
 .at-lbl{padding:0 8px 4px;display:flex;justify-content:space-between;align-items:center;font-size:11px;
   font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:0;}
 .at-lbl small{font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;}
-.at-trow{display:grid;grid-template-columns:20px minmax(0,1fr) 44px 22px;gap:8px;align-items:center;
-  font-size:12.5px;padding:6px 8px;border-radius:8px;text-decoration:none;color:var(--ink);}
-.at-trow:hover,.at-trow.on{background:var(--at-sel);color:var(--ink);}
-.at-tr{font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--ink-faint);text-align:right;}
-.at-tn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;}
-.at-ts{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;}
 .at-bar{display:block;height:5px;border-radius:3px;background:var(--at-track);overflow:hidden;}
 .at-bar i{display:block;height:100%;background:var(--at-gov);}
 .at-bar i.academic,.academic .at-bar i{background:var(--at-aca);}
@@ -569,9 +524,6 @@ PAGE_CSS = """
 .at-iall{color:var(--ink);} .at-igov{color:var(--at-gov);} .at-iaca{color:var(--at-aca);}
 .at-icor{color:var(--at-cor);} .at-ifn{color:var(--primary);} .at-ifo{color:var(--ink-600);}
 .at-chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-600);cursor:pointer;padding:0 8px;}
-.at-how{font-size:12px;color:var(--ink-faint);padding:0 8px;line-height:1.5;}
-.at-how summary{cursor:pointer;color:var(--ink-600);font-weight:600;}
-.at-how ul{margin:6px 0 0;padding-left:16px;}
 /* list */
 .at-list{display:flex;flex-direction:column;min-width:0;min-height:0;border-right:1px solid var(--at-line);}
 .at-tool{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--at-line);
@@ -637,19 +589,35 @@ PAGE_CSS = """
   cursor:auto;}
 .at-desc{font-size:13.5px;line-height:1.6;text-wrap:pretty;}
 .at-note{font-size:12.5px;line-height:1.5;color:var(--ink-faint);}
-.at-nums{display:flex;gap:16px;font-size:12.5px;color:var(--ink-600);flex-wrap:wrap;}
-.at-nums b{color:var(--ink);} .at-nums b.at-zero{color:var(--at-off);}
-.at-sigs{display:flex;gap:6px;flex-wrap:wrap;}
-.at-sigs span{font-size:12px;padding:3px 8px;border-radius:6px;background:var(--mint-100);color:var(--green-text);}
-.at-prods{display:flex;flex-direction:column;gap:4px;}
-.at-prod{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;background:var(--primary-tint);
-  text-decoration:none;color:var(--ink);font-size:13px;}
-.at-prod:hover{background:var(--at-sel);color:var(--ink);}
-.at-prod .at-i{color:var(--primary);}
-.at-pn{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.at-pf{font-size:11px;color:var(--ink-faint);}
+ .at-nums b.at-zero{color:var(--at-off);}
 .at-pmore{font-size:12px;color:var(--ink-faint);}
 .at-links{display:flex;gap:6px;flex-wrap:wrap;}
+.at-swp{margin:0;}
+.at-sw{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:13.5px;font-weight:700;
+  padding:9px 14px;border-radius:999px;background:var(--primary-tint);color:var(--primary-deep);text-decoration:none;
+  border:1px solid var(--at-line2);}
+.at-sw:hover,.at-sw:focus-visible{background:var(--at-sel);color:var(--ink);}
+.at-sw::after{content:"\\2192";}
+.at-links a small,.at-codel small{font-size:11px;color:var(--ink-faint);}
+.at-codes-more{font:inherit;font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--at-line2);background:var(--surface);color:var(--primary);}
+.at-codes-more:hover,.at-codes-more:focus-visible{background:var(--at-sel);color:var(--ink);}
+.at-codes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;}
+.at-dlg{border:0;border-radius:14px;padding:0;width:min(440px,calc(100vw - 32px));max-height:min(80vh,620px);
+  box-shadow:var(--at-sh);color:var(--ink);background:var(--surface);}
+.at-dlg::backdrop{background:rgba(22,46,81,.45);}
+.at-dlg-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 10px 18px;
+  border-bottom:1px solid var(--at-line);position:sticky;top:0;background:var(--surface);}
+.at-dlg-head h2{margin:0;font-family:var(--font-display);font-size:17px;line-height:1.3;}
+.at-dlg-x{border:0;background:none;font-size:24px;line-height:1;padding:2px 8px;cursor:pointer;color:var(--ink-600);
+  border-radius:8px;}
+.at-dlg-x:hover,.at-dlg-x:focus-visible{background:var(--primary-tint);color:var(--ink);}
+.at-dlg-list{list-style:none;margin:0;padding:8px;display:flex;flex-direction:column;gap:2px;}
+.at-codel{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;text-decoration:none;
+  color:var(--ink);font-size:14px;font-weight:600;}
+.at-codel span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;}
+.at-codel .at-i{color:var(--primary);}
+.at-codel:hover,.at-codel:focus-visible{background:var(--at-sel);}
 .at-links a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:6px 10px;
   border-radius:999px;border:1px solid var(--at-line2);text-decoration:none;color:var(--ink);word-break:break-all;}
 .at-links a .at-i{color:var(--primary);}
@@ -724,16 +692,6 @@ __SPRITE__
       placeholder="⟪Search⟫" aria-label="⟪Search offices⟫"></div></div>
     <div class="at-sbody">
       <div class="at-blk" role="group" aria-labelledby="at-l-type"><h2 class="at-lbl" id="at-l-type">⟪Type⟫</h2>__TYPES__</div>
-      <div class="at-blk"><h2 class="at-lbl">⟪Most documented⟫<small>⟪score⟫</small></h2>
-        <div id="at-top">__TOPS__</div>
-        <button type="button" class="at-link" id="at-topmore" hidden>__TOPMORE__</button>
-        <details class="at-how"><summary>⟪How the score works⟫</summary>
-          <ul><li>⟪Products in the govoss catalogue: __PTS_PRODUCT__ points each, up to __MAX_PRODUCTS__⟫</li>
-            <li>⟪Public code organisations: __PTS_CODE__ points each, up to __MAX_CODE__⟫</li>
-            <li>⟪A published policy: __PTS_POLICY__⟫</li><li>⟪A TODO Group case study: __PTS_CASE__⟫</li>
-            <li>⟪A public contact email: __PTS_EMAIL__⟫</li><li>⟪Running since __AGE_YEAR__ or earlier: __PTS_AGE__⟫</li></ul>
-          <p>⟪Only public signals that can be checked. Ranks are across every office; tied scores share a rank.⟫</p>
-        </details></div>
       <div class="at-blk" role="group" aria-labelledby="at-l-fn"><h2 class="at-lbl" id="at-l-fn">⟪Product category⟫</h2>__FNS__</div>
       <div class="at-blk" role="group" aria-labelledby="at-l-fo"><h2 class="at-lbl" id="at-l-fo">⟪Focus⟫</h2>__FOCUS__</div>
       <label class="at-chk"><input type="checkbox" id="at-code">⟪Publishes code⟫</label>
@@ -746,7 +704,7 @@ __SPRITE__
       <span class="at-sp"></span>
       <button type="button" class="at-ftog" id="at-ftog" aria-expanded="false" aria-controls="at-side" hidden>__IFILT__⟪Filters⟫</button>
       <div class="at-seg" role="group" aria-label="⟪Sort⟫" id="at-sort" hidden>
-        <button type="button" data-sort="activity" aria-pressed="true">⟪Most documented⟫</button>
+        <button type="button" data-sort="activity" aria-pressed="true">⟪Most software⟫</button>
         <button type="button" data-sort="name" aria-pressed="false">⟪A&ndash;Z⟫</button></div>
     </div>
     <div class="at-scroll" id="at-scroll">__GROUPS__
@@ -764,7 +722,13 @@ __SPRITE__
       <button type="button" data-zoom="reset" aria-label="⟪Show the whole world⟫" title="⟪Show the whole world⟫">__IRESET__</button></div>
   </div>
 </div>
-<noscript><style>.at-card .at-more[hidden]{display:flex!important;}</style></noscript>
+<dialog class="at-dlg" id="at-dlg" aria-labelledby="at-dlg-h">
+  <div class="at-dlg-head"><h2 id="at-dlg-h"></h2>
+    <button type="button" class="at-dlg-x" id="at-dlg-x" aria-label="⟪Close⟫">&times;</button></div>
+  <ul class="at-dlg-list" id="at-dlg-list"></ul>
+</dialog>
+<noscript><style>.at-card .at-more[hidden]{display:flex!important;}.at-card .at-codes[hidden]{display:flex!important;}
+.at-codes-more{display:none;}</style></noscript>
 <p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
   <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO Network</a>, a volunteer
   project under the <a href="https://ospo-alliance.org/">OSPO Alliance</a>&rsquo;s umbrella,
@@ -783,7 +747,8 @@ __SPRITE__
   <a href="/ospos.json">/ospos.json</a>.⟫</p>
 <p class="ocred">⟪Product categories come from each office&rsquo;s software in the govoss catalogue
   (entries whose repository sits under one of its code organisations); focus tags are matched on the
-  office&rsquo;s own name and description. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
+  office&rsquo;s own name and description. Offices are ranked by how many of their software entries
+  govoss lists. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
 <p class="ocred" id="logo-notice">⟪Logos are the trademarks of their owners, shown only to identify each office.
   They are not covered by govoss&rsquo;s licences and no endorsement is implied. To have one removed,
   <a href="https://github.com/sarapis/govoss-catalog/issues">report it</a>. Flags:
@@ -920,7 +885,6 @@ SCRIPT = """
       d.querySelector('.at-more').hidden = false;
       d.querySelector('.at-tgl').setAttribute('aria-expanded', 'true');
     }
-    [].forEach.call($('at-top').children, function (r) { r.classList.toggle('on', r.dataset.id === id || r.dataset.id === st.hover); });
   }
   // a CLOSED card shows at most TAGROWS rows of tags, the last ending in "+N"; an
   // open one shows them all (owner, 2026-10-13). Measured: a tag's width is its words.
@@ -956,26 +920,18 @@ SCRIPT = """
     clearTimeout(clampT);
     clampT = setTimeout(function () { cards.forEach(function (c) { if (!c.hidden) clampTags(c); }); }, 40);
   }
+  // the open office, picked again (its pin, its name in a pin's list), closes
+  function deselect() { setSel(null); writeHash(); pins(); }
   function select(id, scroll) {
     setSel(st.sel === id ? null : id);
     writeHash(); pins();
     if (scroll && st.sel) setTimeout(function () { scrollToEl(O[id].el, 64); }, 50);
-  }
-  // the open office, picked again (a ranking row, its pin, its name in a pin's list), closes
-  function deselect() { setSel(null); writeHash(); pins(); }
-  function pick(id) {
-    if (st.sel === id) return deselect();
-    if (O[id].el.hidden) set({q: '', type: '', fn: '', focus: '', code: false});
-    if (st.sel !== id) setSel(id);
-    writeHash(); pins();
-    setTimeout(function () { scrollToEl(O[id].el, 64); }, 60);
   }
   // pin: hovering FROM a pin restyles that pin in place - redrawing the pins would
   // swap the button under the pointer between press and release, and the click never lands
   function hover(id, pin) {
     st.hover = id;
     all.forEach(function (o) { o.el.classList.toggle('hov', o.id === id); });
-    [].forEach.call($('at-top').children, function (r) { r.classList.toggle('on', r.dataset.id === id || r.dataset.id === st.sel); });
     if (!pin) return pins();
     var hot = !!id || (pin.dataset.id === st.sel);
     pin.classList.toggle('hot', hot);
@@ -1183,17 +1139,6 @@ SCRIPT = """
   $('at-code').onchange = function () { set({code: this.checked}); };
   $('at-clear').onclick = function () { set({q: '', type: TYPE0, fn: '', focus: '', code: false}); };
   [].forEach.call($('at-sort').children, function (b) { b.onclick = function () { set({sort: b.dataset.sort}); }; });
-  var tm = $('at-topmore'), topAll = false;
-  tm.onclick = function () {
-    topAll = !topAll;
-    [].forEach.call($('at-top').children, function (r, i) { r.hidden = !topAll && i >= 8; });
-    tm.textContent = topAll ? L.top8 : L.top25;
-  };
-  [].forEach.call($('at-top').children, function (r) {
-    r.onclick = function (e) { e.preventDefault(); pick(r.dataset.id); };
-    r.onmouseenter = function () { hover(r.dataset.id); };
-    r.onmouseleave = function () { hover(null); };
-  });
   cards.forEach(function (c) {
     c.querySelector('.at-ch').onclick = function () { select(c.id, false); };
     c.onmouseenter = function () { hover(c.id); };
@@ -1205,6 +1150,32 @@ SCRIPT = """
     var o = !A.classList.contains('fopen'); A.classList.toggle('fopen', o); ftog.setAttribute('aria-expanded', o ? 'true' : 'false');
   };
 
+  // ---- an office's code profiles: one on the card, all of them in a dialog. The
+  // dialog holds COPIES of the card's own (hidden) list, so the links are the card's.
+  var DLG = $('at-dlg');
+  function openCodes(c, btn) {
+    var list = $('at-dlg-list'); list.textContent = '';
+    [].forEach.call(c.querySelectorAll('.at-codes li'), function (li) { list.appendChild(li.cloneNode(true)); });
+    $('at-dlg-h').textContent = fmt(L.codes, {name: c.dataset.name});
+    DLG._from = btn;
+    if (DLG.showModal) DLG.showModal(); else DLG.setAttribute('open', '');
+  }
+  function closeCodes() {
+    if (DLG.close) DLG.close(); else DLG.removeAttribute('open');
+  }
+  $('at-dlg-x').onclick = closeCodes;
+  // a click on the backdrop lands on the dialog itself, outside its box
+  DLG.addEventListener('click', function (e) {
+    if (e.target !== DLG) return;
+    var r = DLG.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeCodes();
+  });
+  DLG.addEventListener('close', function () { if (DLG._from) DLG._from.focus(); DLG._from = null; });
+  cards.forEach(function (c) {
+    var b = c.querySelector('.at-codes-more');
+    if (b) b.onclick = function (e) { e.stopPropagation(); openCodes(c, b); };
+  });
+
   // ---- boot: the old ?q= / ?type= / ?cc= links still land
   try {
     var Q = new URLSearchParams(location.search), legacyCc = Q.get('cc');
@@ -1213,7 +1184,7 @@ SCRIPT = """
     if (Q.get('q') || legacyCc || Q.get('type')) st.type = TYPES.indexOf(Q.get('type')) >= 0 ? Q.get('type') : '';
   } catch (e) {}
   readHash();
-  MAPBOX.hidden = false; $('at-sort').hidden = false; ftog.hidden = false; tm.hidden = false;
+  MAPBOX.hidden = false; $('at-sort').hidden = false; ftog.hidden = false;
   cols();
   setVB(VB0[0], VB0[1], VB0[2]);
   var sel0 = st.sel; st.sel = null;

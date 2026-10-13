@@ -259,6 +259,9 @@ PAGE_CSS = """
 #lic{max-width:220px;}
 .tog[aria-pressed="true"]{background:var(--primary-tint);color:var(--ink);
   border-color:var(--primary);font-weight:600;}
+.ospof{margin:10px 0 0;padding:10px 14px;border-radius:var(--r-chip);background:var(--primary-tint);
+  font-size:14px;color:var(--ink);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;}
+.ospof a{font-weight:700;}
 .countline{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
   font-size:13px;color:var(--ink-600);margin-bottom:10px;}
 .countline b{font-family:var(--font-display);font-size:16px;color:var(--ink);
@@ -460,6 +463,7 @@ BODY = """
       </div>
 
       <div class="countline"><span id="count"></span><span id="fcount"></span></div>
+      <p class="ospof" id="ospof" hidden></p>
       <hr class="dashed">
       <div class="colhead"><span class="c1">CC</span><span class="c2">⟪Entry⟫</span>
         <span class="c3">⟪Function &middot; harvested from⟫</span></div>
@@ -607,6 +611,9 @@ HOME_BODY = """
 SCRIPT = """
 <script>
 var DATA = __DATA__;
+// ?ospo=<office id>: one office's software - the entries its /ospos card counts
+// (build_ospos.office_indices), as positions in DATA. {id: [name, [index, ...]]}
+var OSPOSW = __OSPOSW__;
 var FFACETS = __FFACETS__, SFACETS = __SFACETS__, PFACETS = __PFACETS__;
 var CCFACETS = __CCFACETS__;
 var SRCFLAG = __SRCFLAG__;
@@ -635,6 +642,11 @@ var LANG = '__LANG__';   // number format for this copy of the page
 var activeFacets = new Set();
 var facetQuery = '';
 var onlyReplaces = false;
+var ospoSel = null, ospoSet = null;
+function setOspo(id) {
+  ospoSel = id && OSPOSW[id] ? id : null;
+  ospoSet = ospoSel ? new Set(OSPOSW[ospoSel][1].map(function (i) { return DATA[i]; })) : null;
+}
 // Two flags, not one: the old single `showSetAside` could not express "show me
 // the undescribed ones but not the forks", and the label could not say which was
 // which. r.ex carries the reason, so the split is in the data already.
@@ -752,6 +764,7 @@ function current() {
     if (lic && r.l !== lic) return false;
     if (lvf && (lvf === 'ok' ? !!r.lv : r.lv !== lvf)) return false;
     if (onlyReplaces && !(r.rp && r.rp.length)) return false;
+    if (ospoSet && !ospoSet.has(r)) return false;
     if (q) {
       var hay = (r.n + ' ' + r.d + ' ' + r.o + ' ' + (r.g || []).join(' ') + ' ' +
                  (r.aka || []).join(' ') + ' ' + (r.rp || []).join(' ') + ' ' +
@@ -811,7 +824,15 @@ function render() {
                       : ' ⟪js:variants listed under their core⟫') : '');
   var nf = activeFacets.size + (onlyReplaces ? 1 : 0) +
            (el('lic').value ? 1 : 0) + (el('lv').value ? 1 : 0) +
-           (el('src').value ? 1 : 0);
+           (el('src').value ? 1 : 0) + (ospoSel ? 1 : 0);
+  // whose software this is, said where the list starts, with the way back
+  var of = el('ospof');
+  if (ospoSel) {
+    of.innerHTML = '⟪js:Software from⟫ <a href="ospos#o=' + encodeURIComponent(ospoSel) + '">' +
+      esc(OSPOSW[ospoSel][0]) + '</a> <button type="button" class="fmore" id="ospofx">⟪js:Show all software⟫</button>';
+    of.hidden = false;
+    el('ospofx').onclick = function () { setOspo(null); reset(); };
+  } else { of.hidden = true; of.textContent = ''; }
   el('fcount').textContent = nf ? (nf + (nf === 1 ? ' ⟪js:filter applied⟫' : ' ⟪js:filters applied⟫')) : '';
 
   if (!rs.length) {
@@ -871,7 +892,7 @@ function render() {
 
 function reset() { visibleCount = PAGE_SIZE; render(); writeURL(); }
 function clearAll() {
-  activeFacets.clear(); facetQuery = ''; onlyReplaces = false;
+  activeFacets.clear(); facetQuery = ''; onlyReplaces = false; setOspo(null);
   showNoDesc = false; showNotSoft = false;
   el('fq').value = ''; el('lic').value = ''; el('lv').value = ''; el('src').value = '';
   el('onlyrep').setAttribute('aria-pressed', 'false');
@@ -930,9 +951,10 @@ el('more').onclick = function () { visibleCount += PAGE_SIZE; render(); };
 // Every value is validated against what the page offers and an unknown one is
 // IGNORED, never applied: a stale or hand-edited link that filtered the list to
 // nothing would read as "no entries match". Inbound links keep working:
-// ?rp=<product> from /products, ?src=<label> from /catalogs, ?cc=<code>.
+// ?rp=<product> from /products, ?src=<label> from /catalogs, ?cc=<code>,
+// ?ospo=<office id> from /ospos.
 // Keys: q, fn, cc, rp (repeatable), src, lic, lv, sort (omitted at its default),
-// and alt / nodesc / notsoft as =1 flags.
+// ospo, and alt / nodesc / notsoft as =1 flags.
 function offers(sel, v) {
   for (var i = 0; i < sel.options.length; i++) if (sel.options[i].value === v) return true;
   return false;
@@ -953,6 +975,7 @@ function offers(sel, v) {
     var v = P.get(k);
     if (v && offers(el(k), v)) el(k).value = v;
   });
+  if (OSPOSW[P.get('ospo')]) setOspo(P.get('ospo'));
   if (P.get('alt') === '1') { onlyReplaces = true; el('onlyrep').setAttribute('aria-pressed', 'true'); }
   if (P.get('nodesc') === '1') { showNoDesc = true; el('exnodesc').setAttribute('aria-pressed', 'true'); }
   if (P.get('notsoft') === '1') { showNotSoft = true; el('exnotsoft').setAttribute('aria-pressed', 'true'); }
@@ -977,6 +1000,7 @@ function writeURL() {
   if (onlyReplaces) P.set('alt', '1');
   if (showNoDesc) P.set('nodesc', '1');
   if (showNotSoft) P.set('notsoft', '1');
+  if (ospoSel) P.set('ospo', ospoSel);
   var qs = P.toString();
   var url = location.pathname + (qs ? '?' + qs : '') + location.hash;
   // Debounced, and guarded: Safari throws after ~100 replaceState calls in 30s,

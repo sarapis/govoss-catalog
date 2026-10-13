@@ -200,9 +200,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   category, never it. Places come from the hand-placed `ospos/locations.json`; companies' were
   added by the MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` records the
   source) - read its output by eye: it put Nokia in Canada and Tencent in the Caymans. ONE
-  Equal Earth world map (`geo/build_geo.py`). The page is the OSPO Atlas (owner, 2026-10-13):
-  Type first, opening on Government (All = `type=all`; old `?q=` links land on All); the map shows
-  every office shown, never following the list; no "Founded n/a"; focus tags match ENGLISH only.
+  Equal Earth world map (`geo/build_geo.py`). The OSPO Atlas (owner, 2026-10-13): Type first, on
+  Government (All = `type=all`); the map shows all, never follows the list; ranked by software in
+  govoss, ONE link to `/software?ospo=<id>` (same entries: `office_indices()`); focus tags ENGLISH only.
 - **One page header** (owner, 2026-10-07/08): every page but home uses `theme.page_header()` -
   the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
   characters in every language), a meta line led by the page's own data file; the page's tools
@@ -219,7 +219,7 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   COMPUTED display); measure rows by vertical CENTRE; check a class name is free first; the
   toolbar is one row above 940px, its caps sized for the widest language (re-measure at 1024);
   `.side` is sticky WITH a max-height; the URL carries the view (`q fn cc rp src lic lv sort alt
-  nodesc notsoft`), every value validated and an unknown one IGNORED, every key written read
+  nodesc notsoft ospo`), every value validated and an unknown one IGNORED, every key written read
   back (12b); never name a JS variable after an element `id`; pages are pure ASCII and entities
   are not decoded inside `<script>` (a "·" once shipped as `&#183;`).
 - **Recently added**: `cache/_first_seen.json`, where `null` means BASELINE (never new) and a
