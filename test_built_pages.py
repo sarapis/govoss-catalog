@@ -668,7 +668,7 @@ def main():
                 off.append(i)
         check("%s: each map point is its office's projected location" % name, off, [])
         check("%s: the script's strings are all there" % name,
-              sorted({"all", "some", "offices", "office", "top8", "top25", "copy", "copied", "cluster", "thou"}
+              sorted({"all", "some", "offices", "office", "top8", "top25", "cluster", "thou"}
                      - set((cfg.get("L") or {}))), [])
     gf = json.load(open(os.path.join(HERE, "geo", "ospo_frames.json")))
     drift = []

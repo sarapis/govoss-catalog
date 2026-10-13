@@ -304,7 +304,7 @@ def build(lang, data, os_, ranked, geo):
     flabel = {k: _(lbl) for k, lbl, _i, _r in FOCUS}
     ficon = {k: ic for k, _l, ic, _r in FOCUS}
     tlabel = {"government": _("Government"), "academic": _("Academic"), "corporate": _("Corporate")}
-    used = {"search", "layers", "plus", "minus", "rotate-ccw", "link", "globe", "mail", "scroll-text",
+    used = {"search", "layers", "plus", "minus", "rotate-ccw", "globe", "mail", "scroll-text",
             "file-check", "book-marked", "package", "sliders-horizontal", "x", "flask-conical"}
     used |= set(TYPE_ICON.values()) | set(FN_ICON.values()) | set(ficon.values())
     used |= {"github", "gitlab", "git-branch"}
@@ -365,7 +365,8 @@ def build(lang, data, os_, ranked, geo):
                 rows.append('<span class="at-pmore">%s</span>'
                             % esc(_("+{n} more in the catalogue", n=N(np_ - PRODUCTS_SHOWN))))
             more.append('<div class="at-prods">%s</div>' % "".join(rows))
-        links = ['<a href="%s" target="_blank" rel="noopener">%s%s</a>' % (esc(r["url"]), icon("globe", 13), esc(_("Website")))]
+        links = ['<a class="at-web" href="%s" target="_blank" rel="noopener">%s%s</a>'
+                 % (esc(r["url"]), icon("globe", 13), esc(_("Website")))]
         for c in r.get("code") or []:
             h = host_of(c)
             ic = "github" if "github" in h else "gitlab" if ("gitlab" in h or "opencode" in h) else "git-branch"
@@ -383,8 +384,6 @@ def build(lang, data, os_, ranked, geo):
             links.append('<a class="at-res" href="/resources?case=%s">%s%s</a>'
                          % (esc(r["_case"]), icon("book-marked", 13),
                             esc(_("{n} resources on how this office was built", n=N(r["_ncase"])))))
-        links.append('<button type="button" class="at-copy">%s<span>%s</span></button>'
-                     % (icon("link", 13), esc(_("Copy link"))))
         more.append('<p class="at-links">%s</p>' % "".join(links))
         return (
             '<article class="at-card %s" id="%s" data-type="%s" data-cc="%s" data-fns="%s" data-focus="%s"'
@@ -453,7 +452,7 @@ def build(lang, data, os_, ranked, geo):
         "L": {"all": _("{n} offices in {c} countries"), "some": _("{n} of {t} offices in {c} countries"),
               "offices": _("{n} offices"), "office": _("1 office"),
               "top8": _("Show top {n}", n=TOP_SHOWN), "top25": _("Show top {n}", n=TOP_ALL),
-              "copy": _("Copy link"), "copied": _("Link copied"), "cluster": _("{n} offices here"),
+              "cluster": _("{n} offices here"),
               "thou": "." if lang == "ca" else ","},
     }
     subs = {
@@ -643,11 +642,13 @@ PAGE_CSS = """
 .at-pf{font-size:11px;color:var(--ink-faint);}
 .at-pmore{font-size:12px;color:var(--ink-faint);}
 .at-links{display:flex;gap:6px;flex-wrap:wrap;}
-.at-links a,.at-copy{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:6px 10px;
+.at-links a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:6px 10px;
   border-radius:999px;border:1px solid var(--at-line2);text-decoration:none;color:var(--ink);word-break:break-all;}
 .at-links a .at-i{color:var(--primary);}
 .at-links a:hover{border-color:var(--at-hover);color:var(--ink);}
-.at-copy{border:0;background:var(--ink);color:var(--white);cursor:pointer;}
+.at-links a.at-web{border-color:var(--ink);background:var(--ink);color:var(--white);}
+.at-links a.at-web .at-i{color:var(--white);}
+.at-links a.at-web:hover{border-color:var(--primary-deep);background:var(--primary-deep);color:var(--white);}
 .at-empty{padding:60px 20px;text-align:center;color:var(--ink-faint);}
 /* map */
 .at-map{position:relative;min-width:0;min-height:0;background:var(--at-water);overflow:hidden;}
@@ -922,7 +923,6 @@ SCRIPT = """
       var d = O[id].el; d.classList.add('at-open');
       d.querySelector('.at-more').hidden = false;
       d.querySelector('.at-tgl').setAttribute('aria-expanded', 'true');
-      var cp = d.querySelector('.at-copy span'); if (cp) cp.textContent = L.copy;
     }
     [].forEach.call($('at-top').children, function (r) { r.classList.toggle('on', r.dataset.id === id || r.dataset.id === st.hover); });
   }
@@ -1201,11 +1201,6 @@ SCRIPT = """
     c.querySelector('.at-ch').onclick = function () { select(c.id, false); };
     c.onmouseenter = function () { hover(c.id); };
     c.onmouseleave = function () { hover(null); };
-    c.querySelector('.at-copy').onclick = function (e) {
-      e.stopPropagation(); var s = this.querySelector('span');
-      try { navigator.clipboard.writeText(location.href); } catch (x) {}
-      s.textContent = L.copied;
-    };
   });
   // the button inside the h3 is the keyboard's way in; its click bubbles to .at-ch
   var ftog = $('at-ftog');
