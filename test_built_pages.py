@@ -542,55 +542,62 @@ def main():
           [n for n in ("sources.html", "api.html", "ca/sources.html", "ca/api.html")
            if os.path.exists(os.path.join(SITE, n))], [])
 
-    # ---- 12f. /ospos (build_ospos.py, from cache/ospos.json). Every fetched office
-    # is a card and either a map dot or named as not placed; types are only the
-    # two the filter offers; every Resources link lands on a real case with the
-    # count it claims; build_ospos's projection agrees with build_geo's probes.
+    # ---- 12f. /ospos (build_ospos.py, from cache/ospos.json): the OSPO Atlas
+    # (design handoff, 2026-10-13). Every fetched office is a card in its country's
+    # group and either a map point or in "Not yet placed"; types are only the three
+    # the filter offers; every Resources link lands on a real case with the count it
+    # claims; ranks are global with ties shared; build_ospos's projection agrees with
+    # build_geo's probes.
     od = json.load(open(os.path.join(HERE, "cache", "ospos.json")))["ospos"]
     rcases = collections.Counter(r["case"] for r in rfile["resources"])
+    sys.path.insert(0, HERE)
+    import build_ospos as _bo
     for name in ("ospos.html", "ca/ospos.html"):
         pg = pages[name]
-        ids = re.findall(r'<li class="ocard" id="([^"]+)" data-type="([^"]+)"', pg)
-        check("%s renders every fetched office" % name, sorted(i for i, _ in ids), sorted(r["id"] for r in od))
-        check("%s types are only government / academic / corporate" % name,
-              sorted({t for _, t in ids} - {"government", "academic", "corporate"}), [])
-        # corporate since 2026-10-09 (owner): a filter, a pin colour in the key, a credit
-        # naming the TODO landscape, every corporate card from it, and the TODO case
-        # studies linked on exactly the cards whose rows carry one
-        corp = [i for i, t in ids if t == "corporate"]
+        cards = re.findall(r'<article class="at-card ([a-z]+)" id="([^"]+)" data-type="([a-z]+)" '
+                           r'data-cc="([A-Z]+)"(.*?)</article>', pg, re.S)
+        check("%s renders every fetched office" % name, sorted(c[1] for c in cards), sorted(r["id"] for r in od))
+        check("%s types are only government / academic / corporate, class and data-type agreeing" % name,
+              (sorted({c[2] for c in cards} - {"government", "academic", "corporate"}),
+               [c[1] for c in cards if c[0] != c[2]]), ([], []))
+        # the sidebar restated the page header ("govoss · Atlas / Open source program
+        # offices"); the shared header is the page's only title (owner, 2026-10-13)
+        check("%s: no second page title in the sidebar (the shared header names the page)" % name,
+              ("Atlas" in re.sub(r"<[^>]+>", " ", html.unescape(pg)),
+               bool(re.search(r'<aside class="at-side"[^>]*>\s*<div class="at-shead"><div class="at-q">', pg))),
+              (False, True))
+        # corporate since 2026-10-09 (owner): a filter, a credit naming the TODO
+        # landscape, every corporate office a card, and the TODO case studies linked
+        # on exactly the cards whose rows carry one
+        corp = [c[1] for c in cards if c[2] == "corporate"]
         ncase = sum(1 for r in od if r.get("case_study"))
-        check("%s: Corporate is a filter, in the map key, and credited to the TODO landscape" % name,
-              # the BUTTON, not the attribute: every corporate card carries data-type too
-              ('<button type="button" data-type="corporate"' in pg, pg.count('background:var(--corp)'),
-               'href="https://landscape.todogroup.org/"' in pg,
+        check("%s: Corporate is a filter and credited to the TODO landscape" % name,
+              ('data-f="type" data-v="corporate"' in pg, 'href="https://landscape.todogroup.org/"' in pg,
                len(corp) == sum(1 for r in od if r["type"] == "corporate"), len(corp) > 0),
-              (True, 1, True, True, True))
-        # the chip's text is the darker --corp-text (5.9:1 on its tint), never --corp
+              (True, True, True, True))
+        # corporate text on its tint is the darker --corp-text (5.9:1), never --corp
         # itself (4.62:1, under the audit's lowest) - the rule, not a substring of it
-        chip = re.search(r'\.otype\.corporate\{([^}]*)\}', pg)
-        check("%s: the corporate chip's text is --corp-text" % name,
-              chip and re.search(r'(?:^|;)color:([^;]+)', chip.group(1)).group(1), "var(--corp-text)")
+        lg = re.search(r'\.corporate \.at-logo\{([^}]*)\}', pg)
+        check("%s: corporate initials are --corp-text on --corp-tint" % name,
+              lg and sorted(re.findall(r'(?:^|;)((?:background|color):[^;]+)', lg.group(1))),
+              ["background:var(--corp-tint)", "color:var(--corp-text)"])
         check("%s: a TODO case-study link on each card that has one, and only those" % name,
               len(re.findall(r'<a href="https://todogroup\.org/resources/case-studies/[a-z-]+/"', pg)), ncase)
-        # within EACH card: an unbounded search would find the next card's flag
-        noflag = [i for i, body in re.findall(r'<li class="ocard" id="([^"]+)"[^>]*data-cc="[^"]+">(.*?)</li>', pg, re.S)
-                  if not re.search(r'<span class="oflag" aria-hidden="true">&#\d+;', body)]
-        check("%s: every office with a country shows its flag" % name, noflag, [])
-        # code links: every listed one is on its card, at most CODE_SHOWN outside the
-        # fold, and the fold's "+N" counts what it holds
+        # every country group shows its flag (an image, or the emoji where none is
+        # fetched); "Not yet placed" (ZZ) has none
+        grp = re.findall(r'<section class="at-grp" data-cc="([A-Z]+)"[^>]*><div class="at-gh">(<img class="at-flag"|'
+                         r'<span class="at-flag at-femoji")?', pg)
+        check("%s: every country group shows a flag, Not yet placed none" % name,
+              (len(grp) > 1, sorted(cc for cc, f in grp if bool(f) == (cc == "ZZ"))), (True, []))
+        check("%s: every flag and logo image the page names was copied to site/" % name,
+              sorted(u for u in re.findall(r'src="(/ospo-img/[^"]+)"', pg)
+                     if not os.path.exists(os.path.join(SITE, u.lstrip("/")))), [])
+        # every listed code organisation is linked on its card (no fold now)
         ncode = {r["id"]: len(r.get("code") or []) for r in od}
-        badcode = []
-        for i, body in re.findall(r'<li class="ocard" id="([^"]+)"[^>]*>(.*?)</li>', pg, re.S):
-            fold = re.search(r'<details class="omore"><summary>\+(\d+) .*?</summary>(.*?)</details>', body, re.S)
-            shown = (body[:fold.start()] + body[fold.end():]) if fold else body
-            n_shown = len(re.findall(r'rel="noopener">(?:Code|Codi):', shown))
-            n_fold = len(re.findall(r'rel="noopener">(?:Code|Codi):', fold.group(2))) if fold else 0
-            if (n_shown + n_fold != ncode.get(i) or n_shown > 3
-                    or (fold and int(fold.group(1)) != n_fold) or (n_fold == 0) != (fold is None)):
-                badcode.append((i, n_shown, n_fold))
-        check("%s: code links all present, at most %d shown, the rest folded and counted"
-              % (name, 3), badcode, [])
-        links = re.findall(r'class="ores" href="(?:/ca)?/resources\?case=([a-z]+)">(\d+)', pg)
+        check("%s: every code organisation linked on its card" % name,
+              [(c[1], len(re.findall(r'<a class="at-code"', c[4]))) for c in cards
+               if len(re.findall(r'<a class="at-code"', c[4])) != ncode.get(c[1])], [])
+        links = re.findall(r'class="at-res" href="(?:/ca)?/resources\?case=([a-z]+)">.*?</svg>(\d+)', pg)
         check("%s Resources links land on real cases with the right counts" % name,
               [(c, n) for c, n in links if rcases.get(c) != int(n)], [])
         check("%s links to Resources for at least one office" % name, len(links) > 0, True)
@@ -598,80 +605,71 @@ def main():
         check("%s credits the FLOSS-PSO Network and the OSPO Alliance, its umbrella" % name,
               bool(cred and 'href="https://floss-pso.network/public-sector-ospos/"' in cred.group(1)
                    and 'href="https://ospo-alliance.org/">OSPO Alliance</a>' in cred.group(1)), True)
-        # pins open a popup of their place's cards: each names its place, the
-        # popup and its labelled close button exist, and no character entity sits
-        # inside a script (entities are not decoded there: a "·" once showed as &#183;)
-        pins = re.findall(r'<a class="odot [^"]+" href="#[^"]+" data-ids="[^"]+" data-place="([^"]*)"'
-                          r' aria-label="[^"]+" aria-haspopup="dialog">', pg)
-        check("%s: every map pin names its place and opens a popup" % name,
-              (len(pins), pins.count("")), (pg.count('class="odot '), 0))
-        # pins scale back up on narrow screens: each pin's shape sits in a .opin
-        # group, and a max-width rule sets --pin above 1 (they were ~5px on a phone)
-        check("%s: every pin is scalable, and scaled up on narrow screens" % name,
-              (pg.count('<g class="opin"'), bool(re.search(
-                  r'@media \(max-width:\d+px\)\{\.omap-svg\{--pin:(?!1;)\d+(\.\d+)?;\}\}', pg))),
-              (pg.count('class="odot '), True))
-        # ONE world map (owner, 2026-10-09): it was three regional frames side by
-        # side, plus a second stacked layout for phones
-        gfw = json.load(open(os.path.join(HERE, "geo", "ospo_frames.json")))
-        check("%s: one world map - a single map, a single Equal Earth frame, no old layouts" % name,
-              (pg.count('<svg class="omap-svg omap-world"'), pg.count("<svg class=\"omap-svg"),
-               sorted(gfw["frames"]), [f.get("projection") for f in gfw["frames"].values()],
-               "omap-tall" in pg or "omap-wide" in pg),
-              (1, 1, ["world"], ["equal-earth"], False))
-        check("%s has the pin popup with a labelled close button" % name,
-              bool(re.search(r'<div class="opop" id="opop" role="dialog" aria-labelledby="opop-h" hidden>'
-                             r'.*?<button type="button" class="opop-x" id="opop-x" aria-label="[^"]+">', pg, re.S)), True)
+        # the score is the sum of the signal chips the card shows; ranks are GLOBAL,
+        # competition-style (1, 2, 2, 4), score 0 is Unranked; the sidebar agrees
+        bad, scores = [], {}
+        for c in cards:
+            sc = int(re.search(r'data-score="(\d+)"', c[4]).group(1))
+            scores[c[1]] = sc
+            sg = re.search(r'<p class="at-sigs">(.*?)</p>', c[4])
+            pts_ = sum(int(x) for x in re.findall(r'&middot; (\d+)</span>', sg.group(1))) if sg else 0
+            if pts_ != sc:
+                bad.append((c[1], sc, pts_))
+        check("%s: each card's score is the sum of its signal chips" % name, (len(scores) > 0, bad), (True, []))
+        want_rank = {i: (1 + sum(1 for v in scores.values() if v > s_)) if s_ else None for i, s_ in scores.items()}
+        got_rank = {c[1]: re.search(r'<span class="at-rk[^"]*">(#(\d+)|[^<]+)</span>', c[4]) for c in cards}
+        check("%s: ranks are global, ties shared, score 0 unranked" % name,
+              sorted(i for i, m in got_rank.items()
+                     if (int(m.group(2)) if m and m.group(2) else None) != want_rank[i]), [])
+        tops = re.findall(r'<a class="at-trow" href="#([^"]+)" data-id="[^"]+"(?: hidden)?><span class="at-tr">(\d+)</span>'
+                          r'.*?<span class="at-ts">(\d+)</span>', pg)
+        check("%s: Most documented lists the top by score, with the cards' ranks and scores" % name,
+              (len(tops), [i for i, rk, sc in tops if int(rk) != want_rank[i] or int(sc) != scores[i]],
+               [int(sc) for _i, _r, sc in tops] == sorted((int(sc) for _i, _r, sc in tops), reverse=True)),
+              (min(_bo.TOP_ALL, sum(1 for v in scores.values() if v)), [], True))
+        # each card toggles its own details panel, closed in the HTML (open without JS)
+        check("%s: every card has a toggle controlling its own closed details panel" % name,
+              [c[1] for c in cards if 'aria-controls="%s-x"' % c[1] not in c[4]
+               or '<div class="at-more" id="%s-x" hidden>' % c[1] not in c[4]], [])
+        check("%s: without JavaScript the details show" % name,
+              '<noscript><style>.at-card .at-more[hidden]{display:flex!important;}</style></noscript>' in pg, True)
+        # no character entity inside a script, JSON ones included (entities are not
+        # decoded there: a "·" once showed as &#183;)
         check("%s: no character entity inside a script" % name,
-              [m for s_ in re.findall(r'<script>(.*?)</script>', pg, re.S) for m in re.findall(r'&#\d+;', s_)], [])
-        sys.path.insert(0, HERE)
-        from build_ospos import MERGE_WITHIN
-        # zoom (owner, 2026-10-09): three labelled buttons; the pins live in a group
-        # the script redraws from #ospots; their scale divides --z out; and the
-        # page's ospoCluster(), run under node at zoom 1, IS the build's merge -
-        # same pins, same offices, same places - and splits them when zoomed in
-        zb = re.search(r'<div class="ozoom" id="ozoom" role="group" aria-label="[^"]+">(.*?)</div>', pg, re.S)
-        check("%s: zoom in / out / whole world, each a labelled button" % name,
-              zb and re.findall(r'<button type="button"[^>]* data-zoom="(\w+)" aria-label="[^"]+"', zb.group(1)),
-              ["in", "out", "reset"])
-        check("%s: pins keep their size at any zoom (their scale divides by --z)" % name,
-              '.opin{transform:scale(calc(var(--pin,1) * var(--k,1) / var(--z,1)));' in pg, True)
-        sj = re.search(r'<script type="application/json" id="ospots">(.*?)</script>', pg, re.S)
+              [m for s_ in re.findall(r'<script[^>]*>(.*?)</script>', pg, re.S) for m in re.findall(r'&#\d+;', s_)], [])
         try:
-            spots = json.loads(sj.group(1))
+            cfg = json.loads(re.search(r'<script type="application/json" id="at-data">(.*?)</script>', pg, re.S).group(1))
         except Exception:
-            spots = {}
-        static = sorted((ids, html.unescape(pl))
-                        for ids, pl in re.findall(r'data-ids="([^"]+)" data-place="([^"]*)"', pg))
-        cl = re.search(r'(function ospoCluster\(.*?\n\})', pg, re.S)
-        got = {}
-        if cl and spots:
-            tmp = os.path.join(HERE, "out", "_cluster_%s.js" % name.replace("/", "_"))
-            open(tmp, "w").write(cl.group(1) + "\nvar S = " + json.dumps(spots) +
-                                 ";\nconsole.log(JSON.stringify([1, 24].map(function (z) {"
-                                 " return ospoCluster(S.spots, S.within, z).map(function (m) {"
-                                 " return [m.ids.join(' '), m.places.join('; ')]; }); })));")
-            p = subprocess.run(["node", tmp], capture_output=True, text=True)
-            os.remove(tmp)
-            try:
-                got = dict(zip((1, 24), json.loads(p.stdout)))
-            except Exception:
-                got = {}
-        check("%s: the zoom's merge at zoom 1 is the build's own (same pins, offices, places)" % name,
-              (spots.get("within"), sorted(map(tuple, got.get(1, []))) == static and len(static) > 0),
-              (MERGE_WITHIN, True))
-        check("%s: zoomed in, merged pins split (more pins at 24x, no office lost)" % name,
-              (len(got.get(24, [])) > len(got.get(1, [])),
-               sorted(i for ids, _ in got.get(24, []) for i in ids.split()) ==
-               sorted(i for ids, _ in static for i in ids.split())), (True, True))
-        dotted = set(i for grp in re.findall(r'data-ids="([^"]+)"', pg) for i in grp.split())
-        unplaced_note = re.search(r'<p class="onote-map">(.*?)</p>', pg, re.S)
-        missing = sorted(r["id"] for r in od if r["id"] not in dotted
-                         # the page is ASCII: "Itaú" is &#250; there - compare unescaped
-                         and not (unplaced_note and r["name"] in html.unescape(unplaced_note.group(1))))
-        check("%s: every office is a map dot or named as not placed" % name, missing, [])
-    sys.path.insert(0, HERE)
-    import build_ospos as _bo
+            cfg = {}
+        # ONE world map (owner, 2026-10-09): a single SVG of the Equal Earth frame
+        gfw = json.load(open(os.path.join(HERE, "geo", "ospo_frames.json")))
+        check("%s: one world map - a single SVG, the single Equal Earth frame's land" % name,
+              (pg.count('<svg class="at-svg"'), sorted(gfw["frames"]),
+               [f.get("projection") for f in gfw["frames"].values()],
+               '<path d="%s"/>' % gfw["frames"]["world"]["land"] in pg, cfg.get("vb")),
+              (1, ["world"], ["equal-earth"], True, gfw["viewbox"]))
+        zb = re.search(r'<div class="at-zoom" role="group" aria-label="[^"]+">(.*?)</div>', pg, re.S)
+        check("%s: zoom in / out / whole world, each a labelled button" % name,
+              zb and re.findall(r'<button type="button" data-zoom="(\w+)" aria-label="[^"]+"', zb.group(1)),
+              ["in", "out", "reset"])
+        # every office is a map point or in Not yet placed, and each point is the
+        # build's own projection of its location
+        locs = json.load(open(os.path.join(HERE, "ospos", "locations.json")))["locations"]
+        pts = cfg.get("pts") or {}
+        zz = {c[1] for c in cards if c[3] == "ZZ"}
+        check("%s: every office is a map point or in Not yet placed" % name,
+              (len(pts) > 0, sorted(r["id"] for r in od if r["id"] not in pts and r["id"] not in zz)), (True, []))
+        fr = gfw["frames"]["world"]
+        off = []
+        for i, (x, y) in pts.items():
+            l = locs.get(i) or {}
+            ex, ey = _bo.equal_earth(l["lon"], l["lat"])
+            if abs(ex * fr["s"] + fr["ox"] - x) > 0.06 or abs(ey * fr["s"] + fr["oy"] - y) > 0.06:
+                off.append(i)
+        check("%s: each map point is its office's projected location" % name, off, [])
+        check("%s: the script's strings are all there" % name,
+              sorted({"all", "some", "offices", "office", "top8", "top25", "copy", "copied", "cluster", "thou"}
+                     - set((cfg.get("L") or {}))), [])
     gf = json.load(open(os.path.join(HERE, "geo", "ospo_frames.json")))
     drift = []
     for k, fr in gf["frames"].items():

@@ -200,7 +200,11 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   category, never it. Places come from the hand-placed `ospos/locations.json`; companies' were
   added by the MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` records the
   source) - read its output by eye: it put Nokia in Canada and Tencent in the Caymans. ONE
-  Equal Earth world map (`geo/build_geo.py`, frame `world`), pins merged within 9 units.
+  Equal Earth world map (`geo/build_geo.py`, frame `world`). The page is the OSPO Atlas
+  (handoff 2026-10-13): sidebar | offices by country | a map that follows the list, NO title of
+  its own under the shared header (owner). Products = catalogue entries whose repo sits under an
+  office's code org (a URL fact); the score counts public signals only, rank is GLOBAL. Logos
+  and flags are local files from the MANUAL `ospos/fetch_images.py`; icons vendored Lucide.
 - **One page header** (owner, 2026-10-07/08): every page but home uses `theme.page_header()` -
   the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
   characters in every language), a meta line led by the page's own data file; the page's tools
@@ -272,7 +276,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin` and the 12 reinstated Helsingborg repos (no more, no fewer), the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
-| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos cards, map pins (scaled up on narrow screens), the one world map, the pin popup, Resources links, folded code links, no entity in a script, projection (12f), hosting files |
+| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos atlas: every office a card or Not yet placed, no sidebar title, score = its signal chips, global ranks, Resources links, code links, flags and images present, the one world map, map points = projection, no entity in a script (12f), hosting files |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
 | `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch) |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, and the tool contract vs `mcp_tools.py` |
