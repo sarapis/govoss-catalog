@@ -458,7 +458,7 @@ def build(lang, data, os_, ranked, geo):
               "all1": _("{n} offices in 1 country"), "some1": _("{n} of {t} offices in 1 country"),
               "offices": _("{n} offices"), "office": _("1 office"),
               "top8": _("Show top {n}", n=TOP_SHOWN), "top25": _("Show top {n}", n=TOP_ALL),
-              "cluster": _("{n} offices here"),
+              "cluster": _("{n} offices here"), "moretags": _("{n} more tags - open the office to see them"),
               "thou": "." if lang == "ca" else ","},
     }
     subs = {
@@ -623,6 +623,7 @@ PAGE_CSS = """
 .at-dot{opacity:.5;}
 .at-tags{display:flex;gap:5px;flex-wrap:wrap;}
 .at-tag{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;padding:3px 8px;border-radius:6px;color:var(--ink);}
+.at-tag.at-tmore{font-weight:600;color:var(--ink-600);background:var(--bg-alt);}
 .at-tfn{background:var(--at-sel);} .at-tfn .at-i{color:var(--primary);}
 .at-tfo{background:var(--primary-tint);} .at-tfo .at-i{color:var(--ink-600);}
 .at-sc{display:flex;flex-direction:column;align-items:flex-end;gap:4px;min-width:64px;}
@@ -900,6 +901,7 @@ SCRIPT = """
     $('at-code').checked = st.code;
     if ($('at-q').value !== st.q) $('at-q').value = st.q;
     if (st.sel && !on[st.sel]) setSel(null);
+    clampAll();
     pins();
   }
   function secById(cc) { return SC.querySelector('.at-grp[data-cc="' + cc + '"]'); }
@@ -908,17 +910,51 @@ SCRIPT = """
   // ---- select / expand: one card open at a time
   function setSel(id) {
     if (st.sel && O[st.sel]) {
-      var c = O[st.sel].el; c.classList.remove('at-open');
+      var c = O[st.sel].el; c.classList.remove('at-open'); clampTags(c);
       c.querySelector('.at-more').hidden = true;
       c.querySelector('.at-tgl').setAttribute('aria-expanded', 'false');
     }
     st.sel = id;
     if (id) {
-      var d = O[id].el; d.classList.add('at-open');
+      var d = O[id].el; d.classList.add('at-open'); clampTags(d);
       d.querySelector('.at-more').hidden = false;
       d.querySelector('.at-tgl').setAttribute('aria-expanded', 'true');
     }
     [].forEach.call($('at-top').children, function (r) { r.classList.toggle('on', r.dataset.id === id || r.dataset.id === st.hover); });
+  }
+  // a CLOSED card shows at most TAGROWS rows of tags, the last ending in "+N"; an
+  // open one shows them all (owner, 2026-10-13). Measured: a tag's width is its words.
+  var TAGROWS = 2;
+  function clampTags(c) {
+    var box = c.querySelector('.at-tags');
+    if (!box) return;
+    var more = box.querySelector('.at-tmore');
+    if (more) box.removeChild(more);
+    var tags = [].slice.call(box.querySelectorAll('.at-tag'));
+    tags.forEach(function (t) { t.hidden = false; });
+    if (c.hidden || c.classList.contains('at-open')) return;
+    var tops = [];
+    tags.forEach(function (t) { if (tops.indexOf(t.offsetTop) < 0) tops.push(t.offsetTop); });
+    if (tops.length <= TAGROWS) return;
+    var lim = tops[TAGROWS], keep = tags.filter(function (t) { return t.offsetTop < lim; }).length;
+    tags.forEach(function (t, i) { t.hidden = i >= keep; });
+    more = document.createElement('span');
+    more.className = 'at-tag at-tmore';
+    box.appendChild(more);
+    // the chip itself must fit on the last row: give up one more tag until it does
+    do {
+      more.textContent = '+' + (tags.length - keep);
+      more.title = fmt(L.moretags, {n: tags.length - keep});
+      if (more.offsetTop < lim) break;
+      tags[--keep].hidden = true;
+    } while (keep > 0);
+  }
+  // debounced on a timer, not a frame: a frame never comes in a background tab, and
+  // a card clamped at one width would keep its "+N" at another
+  var clampT = 0;
+  function clampAll() {
+    clearTimeout(clampT);
+    clampT = setTimeout(function () { cards.forEach(function (c) { if (!c.hidden) clampTags(c); }); }, 40);
   }
   function select(id, scroll) {
     setSel(st.sel === id ? null : id);
@@ -1127,6 +1163,12 @@ SCRIPT = """
   });
 
   // the atlas is one viewport tall (CSS); the credits are a page scroll below it
+  var lastW = 0;
+  if (window.ResizeObserver) new ResizeObserver(function () {
+    var w = SC.getBoundingClientRect().width;
+    if (w !== lastW) { lastW = w; clampAll(); }
+  }).observe(SC);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(clampAll);
 
   // ---- wiring
   var qt = 0;

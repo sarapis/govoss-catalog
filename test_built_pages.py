@@ -672,6 +672,13 @@ def main():
               (bool(ln) and 'href="https://github.com/sarapis/govoss-catalog/issues"' in ln.group(1),
                "/ospo-img/logo/" in pg, "ospo-img" in oj_raw or '"logo"' in oj_raw),
               (True, True, False))
+        # a closed card shows at most two rows of tags, then "+N"; an open one all
+        # (owner, 2026-10-13). Measured in the browser - the static part pinned here
+        check("%s: closed cards clamp their tags to two rows, open ones show all" % name,
+              ("var TAGROWS = 2;" in sc, "c.classList.contains('at-open')) return;" in sc,
+               "clampTags(c);" in sc and "clampTags(d);" in sc, ".at-tag.at-tmore{" in pg,
+               bool((cfg.get("L") or {}).get("moretags"))),
+              (True, True, True, True, True))
         check("%s: one country is singular" % name,
               (bool((cfg.get("L") or {}).get("all1")), bool((cfg.get("L") or {}).get("some1")), "nc === 1" in sc),
               (True, True, True))
