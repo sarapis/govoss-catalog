@@ -655,6 +655,20 @@ def main():
         check("%s: each card shows its software count (none at 0), no rank" % name,
               (badc, [x for x in ('class="at-rk', 'Unranked', 'class="at-bar"') if x in pg]), ([], []))
         srt = re.search(r'<div class="at-seg"[^>]*id="at-sort"[^>]*>(.*?)</div>', pg, re.S)
+        # Group by country (owner, 2026-10-13): a toggle beside the sort, OFF by default
+        # (one flat list), written to the hash as group=country and read back
+        scr = "".join(re.findall(r'<script>(.*?)</script>', pg, re.S))
+        tool = re.search(r'id="at-sort"[^>]*>.*?</div>\s*(<button[^>]*id="at-group"[^>]*>)', pg, re.S)
+        check("%s: Group by country sits beside the sort, off by default, kept in the hash" % name,
+              (bool(tool) and 'aria-pressed="false"' in tool.group(1), "group: false" in scr,
+               "P.get('group') === 'country'" in scr and "P.set('group', 'country')" in scr,
+               '<div class="at-flat" id="at-flat" hidden></div>' in pg),
+              (True, True, True, True))
+        # every placed card names its country beside its city, with the flag emoji
+        noflag = [c[1] for c in cards if c[3] != "ZZ" and not re.search(
+            r'<span class="at-ccm"><span class="at-cflag" aria-hidden="true">(&#\d+;)+</span> [^<]+</span>', c[4])]
+        check("%s: each card shows its country's flag emoji and name beside the city" % name,
+              (len(cards) > 0, noflag), (True, []))
         check("%s: the list sorts by software or A-Z" % name,
               re.findall(r'data-sort="(\w+)"', srt.group(1)) if srt else None, ["software", "name"])
         check("%s: no sidebar ranking, no score signals, no per-product links" % name,

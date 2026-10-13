@@ -8,7 +8,8 @@ stay English on every language copy; only the chrome is translated.
 
 The page is the "OSPO Atlas" (design handoff, 2026-10-13): under the shared page
 header, three columns - a sidebar (search, then Type, which opens on Government, and the
-other facets), the offices grouped by country, and a
+other facets), the offices - one list sorted by software or A-Z, or, with "Group by
+country" (off by default, owner 2026-10-13), in country sections - and a
 world map of every office the filters show. The map never follows the list to a
 country (owner, 2026-10-13): it stays where the reader puts it.
 Everything is rendered here, so a reader without JavaScript gets every office,
@@ -299,6 +300,10 @@ def build(lang, data, os_, geo):
                 % esc(r["_logo"])) if r["_logo"] else ""
         meta = ['%s%s' % (icon(ti, 13, "at-i at-ti"), esc(tl)),
                 esc(r["_loc"].get("place") or _("Location unknown"))]
+        # its country beside the city, with the flag emoji, on every card (owner, 2026-10-13)
+        if r["_cc"] and r["_cc"] != "ZZ":
+            meta.append('<span class="at-ccm"><span class="at-cflag" aria-hidden="true">%s</span> %s</span>'
+                        % (flag(r["_cc"]), esc(cname(r["_cc"]))))
         if r["_year"]:     # most lists give no year: say nothing then (owner, 2026-10-13)
             meta.append(esc(_("Since {y}", y=r["_year"])))
         tags = (['<span class="at-tag at-tfn">%s%s</span>' % (icon(FN_ICON[f], 12), esc(fnlabel(f)))
@@ -423,7 +428,7 @@ def build(lang, data, os_, geo):
                          else _("{n} offices in {c} countries", n=N(len(os_)), c=N(nctry))),
         "__GROUPS__": "".join(secs), "__LAND__": fr["land"], "__VB__": " ".join(str(v) for v in vb),
         "__IPLUS__": icon("plus", 16), "__IMINUS__": icon("minus", 16), "__IRESET__": icon("rotate-ccw", 15),
-        "__IFILT__": icon("sliders-horizontal", 14),
+        "__IFILT__": icon("sliders-horizontal", 14), "__IGROUP__": icon("globe", 14),
         "__CFG__": json.dumps(cfg, sort_keys=True).replace("</", "<\\/"),
         "__TODO_AT__": fetched(data, "todo-landscape", _), "__FLOSS_AT__": fetched(data, "floss-pso", _),
         "__AMAP_AT__": fetched(data, "academic-map", _),
@@ -520,6 +525,16 @@ PAGE_CSS = """
 .at-ftog{display:none;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:6px 10px;
   border:1px solid var(--at-line2);border-radius:8px;background:var(--surface);cursor:pointer;}
 .at-seg{display:flex;border:1px solid rgba(22,46,81,.14);border-radius:8px;overflow:hidden;}
+/* the sort and Group by country wrap TOGETHER, never one without the other */
+.at-ctl{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.at-gtog{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:6px 10px;
+  border:1px solid rgba(22,46,81,.14);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer;}
+.at-gtog .at-i{color:var(--ink-600);}
+.at-gtog[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--white);}
+.at-gtog[aria-pressed="true"] .at-i{color:var(--white);}
+.at-gtog:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
+.at-flat{display:flex;flex-direction:column;gap:10px;padding:16px 0 12px;}
+.at-ccm{white-space:nowrap;}
 .at-seg button{font-size:12px;font-weight:600;padding:6px 10px;border:0;cursor:pointer;
   background:var(--surface);}
 .at-seg button[aria-pressed="true"]{background:var(--ink);color:var(--white);}
@@ -686,11 +701,15 @@ __SPRITE__
       <button type="button" class="at-clear" id="at-clear" hidden>⟪Clear filters⟫</button>
       <span class="at-sp"></span>
       <button type="button" class="at-ftog" id="at-ftog" aria-expanded="false" aria-controls="at-side" hidden>__IFILT__⟪Filters⟫</button>
+      <div class="at-ctl">
       <div class="at-seg" role="group" aria-label="⟪Sort⟫" id="at-sort" hidden>
         <button type="button" data-sort="software" aria-pressed="true">⟪Most software⟫</button>
         <button type="button" data-sort="name" aria-pressed="false">⟪A&ndash;Z⟫</button></div>
+      <button type="button" class="at-gtog" id="at-group" aria-pressed="false" hidden>__IGROUP__⟪Group by country⟫</button>
+      </div>
     </div>
     <div class="at-scroll" id="at-scroll">__GROUPS__
+      <div class="at-flat" id="at-flat" hidden></div>
       <p class="at-empty" id="at-empty" hidden>⟪No offices match these filters.⟫</p></div>
   </section>
   <div class="at-map" id="at-map" hidden>
@@ -766,7 +785,7 @@ SCRIPT = """
   // the page opens on Government (owner, 2026-10-13); "All offices" is type '' and
   // is written to the hash as type=all, so every view has an address
   var TYPE0 = 'government';
-  var st = {q: '', type: TYPE0, fn: '', focus: '', code: false, sort: 'software', sel: null, hover: null};
+  var st = {q: '', type: TYPE0, fn: '', focus: '', code: false, sort: 'software', group: false, sel: null, hover: null};
   var shown = all.slice(), order = [];
   var narrow = function () { return window.matchMedia('(max-width:900px)').matches; };
   var fmt = function (s, kw) { return s.replace(/\\{(\\w+)\\}/g, function (m, k) { return k in kw ? kw[k] : m; }); };
@@ -787,6 +806,7 @@ SCRIPT = """
     if (CFG.focus.indexOf(P.get('focus')) >= 0) st.focus = P.get('focus');
     if (P.get('code') === '1') st.code = true;
     if (P.get('sort') === 'name') st.sort = 'name';
+    if (P.get('group') === 'country') st.group = true;
     if (O[P.get('o')]) st.sel = P.get('o');
   }
   function writeHash() {
@@ -797,6 +817,7 @@ SCRIPT = """
     ['fn', 'focus'].forEach(function (k) { if (st[k]) P.set(k, st[k]); });
     if (st.code) P.set('code', '1');
     if (st.sort === 'name') P.set('sort', 'name');
+    if (st.group) P.set('group', 'country');
     var s = P.toString();
     try { history.replaceState(null, '', location.pathname + (s ? '#' + s : '')); } catch (e) {}
   }
@@ -822,9 +843,12 @@ SCRIPT = """
       return (a === 'ZZ') - (b === 'ZZ') || gm[b].length - gm[a].length ||
         secById(a).dataset.name.localeCompare(secById(b).dataset.name);
     });
-    var empty = $('at-empty');
-    secs.forEach(function (s) { s.hidden = !gm[s.dataset.cc]; });
-    order.forEach(function (cc) {
+    var empty = $('at-empty'), flat = $('at-flat');
+    // one list (the default) or, grouped, a section per country - same sort either way
+    flat.hidden = st.group || !shown.length;
+    if (!st.group) shown.slice().sort(cmp).forEach(function (o) { flat.appendChild(o.el); });
+    secs.forEach(function (s) { s.hidden = !st.group || !gm[s.dataset.cc]; });
+    if (st.group) order.forEach(function (cc) {
       var s = secById(cc), items = gm[cc].slice().sort(cmp), tc = {};
       items.forEach(function (o) { s.appendChild(o.el); tc[o.type] = (tc[o.type] || 0) + 1; });
       s.querySelector('.at-gn').textContent = items.length > 1 ? fmt(L.offices, {n: num(items.length)}) : L.office;
@@ -846,6 +870,7 @@ SCRIPT = """
       }
     });
     [].forEach.call($('at-sort').children, function (b) { b.setAttribute('aria-pressed', b.dataset.sort === st.sort ? 'true' : 'false'); });
+    $('at-group').setAttribute('aria-pressed', st.group ? 'true' : 'false');
     $('at-code').checked = st.code;
     if ($('at-q').value !== st.q) $('at-q').value = st.q;
     if (st.sel && !on[st.sel]) setSel(null);
@@ -1122,6 +1147,7 @@ SCRIPT = """
   $('at-code').onchange = function () { set({code: this.checked}); };
   $('at-clear').onclick = function () { set({q: '', type: TYPE0, fn: '', focus: '', code: false}); };
   [].forEach.call($('at-sort').children, function (b) { b.onclick = function () { set({sort: b.dataset.sort}); }; });
+  $('at-group').onclick = function () { set({group: !st.group}); };
   cards.forEach(function (c) {
     c.querySelector('.at-ch').onclick = function () { select(c.id, false); };
     c.onmouseenter = function () { hover(c.id); };
@@ -1164,10 +1190,11 @@ SCRIPT = """
     var Q = new URLSearchParams(location.search), legacyCc = Q.get('cc');
     if (Q.get('q')) st.q = Q.get('q');
     // an old link was made when the page showed every type: it lands on All
+    if (legacyCc) st.group = true;     // an old ?cc= link meant "that country's section"
     if (Q.get('q') || legacyCc || Q.get('type')) st.type = TYPES.indexOf(Q.get('type')) >= 0 ? Q.get('type') : '';
   } catch (e) {}
   readHash();
-  MAPBOX.hidden = false; $('at-sort').hidden = false; ftog.hidden = false;
+  MAPBOX.hidden = false; $('at-sort').hidden = false; $('at-group').hidden = false; ftog.hidden = false;
   cols();
   setVB(VB0[0], VB0[1], VB0[2]);
   var sel0 = st.sel; st.sel = null;

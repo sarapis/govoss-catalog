@@ -200,9 +200,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   category, never it. Places come from the hand-placed `ospos/locations.json`; companies' were
   added by the MANUAL `ospos/place_from_wikidata.py` (adds, never overwrites; `via` records the
   source) - read its output by eye: it put Nokia in Canada and Tencent in the Caymans. ONE
-  Equal Earth world map (`geo/build_geo.py`). The OSPO Atlas (owner, 2026-10-13): Type first, on
-  Government (All = `type=all`); the map shows all, never follows the list; sorted by software in
-  govoss or A-Z (no ranks), ONE link to `/software?ospo=<id>` (same entries: `office_indices()`); focus tags ENGLISH only.
+  Equal Earth world map (`geo/build_geo.py`). OSPO Atlas (owner, 2026-10-13): Type first, on Government
+  (`type=all`); one flat list, Group by country OFF (`group=country`); flag + country on each card; map shows
+  all, never follows; sort by software or A-Z, no ranks; ONE link to `/software?ospo=<id>`; focus ENGLISH only.
 - **One page header** (owner, 2026-10-07/08): every page but home uses `theme.page_header()` -
   the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
   characters in every language), a meta line led by the page's own data file; the page's tools
