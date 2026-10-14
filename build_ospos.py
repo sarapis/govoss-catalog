@@ -483,8 +483,11 @@ PAGE_CSS = """
   --at-sh:0 4px 16px rgba(27,42,74,.1);--at-sh2:0 12px 40px rgba(27,42,74,.12);
   --at-gov:var(--primary);--at-aca:var(--green);--at-cor:var(--corp);
   display:grid;grid-template-columns:272px minmax(380px,1fr) minmax(0,1.1fr);
-  height:100vh;height:100dvh;min-height:600px;overflow:hidden;background:var(--bg);color:var(--ink);
-  border-bottom:1px solid var(--at-line);font-family:var(--font-body);letter-spacing:0;}
+  height:calc(100vh - 32px);height:calc(100dvh - 32px);min-height:600px;overflow:hidden;background:var(--bg);
+  color:var(--ink);border:1px solid var(--at-line);border-radius:var(--r-card);font-family:var(--font-body);
+  letter-spacing:0;}
+/* inside the shared page container (theme), so its gutters are every page's: 40px, 20px on phones */
+.at-wrap{margin-top:16px;}
 .at-sprite{position:absolute;width:0;height:0;overflow:hidden;}
 .at-i{flex:none;vertical-align:middle;}
 :where(.atlas button){font:inherit;color:inherit;}
@@ -657,7 +660,7 @@ PAGE_CSS = """
 .at-grip:hover,.at-grip:focus-visible{background:rgba(46,110,174,.08);outline:none;}
 .at-grip i{width:4px;height:44px;margin-left:3px;border-radius:2px;background:var(--at-hover);}
 .at-grip.drag i,.at-grip:focus-visible i{background:var(--primary);}
-.ocred{max-width:1440px;margin:18px auto 0;padding:0 40px;font-size:12px;color:var(--ink-faint);line-height:1.6;}
+.ocred{margin:18px 0 0;font-size:12px;color:var(--ink-faint);line-height:1.6;}
 /* narrow: one column - the map pinned on top, then the list in the page's own
    scroll; the sidebar folds behind the Filters button */
 @media (max-width:900px){
@@ -673,7 +676,6 @@ PAGE_CSS = """
   .at-grip{display:none;}
   .at-zoom{right:10px;top:10px;}
   .at-more{padding-left:14px;}
-  .ocred{padding:0 20px;}
 }
 @media (max-width:900px) and (max-height:520px){.at-map{height:52vh;}.at-gh{top:52vh;}}
 """
@@ -684,6 +686,7 @@ BODY = theme.page_header(
     [theme.data_links('/ospos.json')]) + """
 __SPRITE__
 <main id="main">
+<div class="wrap at-wrap">
 <div class="atlas" id="atlas">
   <aside class="at-side" id="at-side" aria-label="⟪Search and filters⟫">
     <div class="at-shead"><div class="at-q">__SEARCHI__<input type="search" id="at-q" autocomplete="off"
@@ -755,6 +758,7 @@ __SPRITE__
   They are not covered by govoss&rsquo;s licences and no endorsement is implied. To have one removed,
   <a href="https://github.com/sarapis/govoss-catalog/issues">report it</a>. Flags:
   <a href="https://github.com/lipis/flag-icons">flag-icons</a> (MIT).⟫</p>
+</div>
 </main>
 <script type="application/json" id="at-data">__CFG__</script>
 """
@@ -1199,6 +1203,8 @@ SCRIPT = """
   setVB(VB0[0], VB0[1], VB0[2]);
   var sel0 = st.sel; st.sel = null;
   apply();
+  // the first clamp now, not on clampAll's timer: no flash of every tag on load
+  clearTimeout(clampT); cards.forEach(function (c) { if (!c.hidden) clampTags(c); });
   if (sel0) { setSel(sel0); pins(); setTimeout(function () { scrollToEl(O[sel0].el, 64); }, 300); }
   else if (legacyCc && secById(legacyCc) && !secById(legacyCc).hidden) setTimeout(function () { scrollToEl(secById(legacyCc), 0); }, 300);
   writeHash();

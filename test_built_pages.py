@@ -669,6 +669,14 @@ def main():
             r'<span class="at-ccm"><span class="at-cflag" aria-hidden="true">(&#\d+;)+</span> [^<]+</span>', c[4])]
         check("%s: each card shows its country's flag emoji and name beside the city" % name,
               (len(cards) > 0, noflag), (True, []))
+        # the same side margins as every page (owner, 2026-10-13): the atlas and its
+        # credits sit in theme.py's .wrap, and nothing sets its own gutter
+        check("%s: the atlas and credits sit in the shared .wrap gutters" % name,
+              (bool(re.search(r'<main id="main">\s*<div class="wrap at-wrap">\s*<div class="atlas" id="atlas">', pg)),
+               'class="wrap at-wrap"' in pg and '<p class="ocred"' in pg
+               and pg.index('class="wrap at-wrap"') < pg.index('<p class="ocred"'),
+               re.findall(r'\.(?:atlas|ocred|at-wrap)\{[^}]*padding:0 \d+px', pg)),
+              (True, True, []))
         check("%s: the list sorts by software or A-Z" % name,
               re.findall(r'data-sort="(\w+)"', srt.group(1)) if srt else None, ["software", "name"])
         check("%s: no sidebar ranking, no score signals, no per-product links" % name,
