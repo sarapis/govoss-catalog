@@ -75,6 +75,70 @@ def country_name(lang, code):
     return S.country_label(code)
 
 
+def _days_since(iso, now):
+    """Days from an ISO-Z stamp to `now` (mktime of gmtime, as the callers use), or None."""
+    try:
+        return (now - time.mktime(time.strptime(iso, "%Y-%m-%dT%H:%M:%SZ"))) / 86400
+    except Exception:
+        return None
+
+
+def _brief(err, n=160):
+    err = " ".join(str(err or "no reason recorded").split())
+    return err if len(err) <= n else err[:n - 3].rstrip() + "..."
+
+
+def harvest_problems(fetched, ospo_sources, sources, now):
+    """(level, message) for every harvested source whose data is not this week's.
+
+    Read from the FILES (cache/_fetched.json, cache/ospos.json), never from the
+    last run: `last_run` is whatever ran last, so a --no-harvest publish after a
+    failed Monday reported `ok, []` - Monday 2026-10-12 lost DNS, 12 sources and
+    all three OSPO lists failed, and /status.json said ok through six publishes.
+
+    * A FAILED LAST ATTEMPT (`ok: false`) is reported at once, as warn: it is an
+      event that happened, not an age inferred from a missed schedule, and it
+      clears on the next success. Critical once the copy kept is >29 days old.
+    * A source whose last attempt succeeded is judged by AGE, in RUNS (weekly):
+      >15 days warn, >29 critical - a run that never happened has no ok:false.
+
+    ⚠ Look up by the CHECKPOINT key ("os2"), never the SOURCES key ("DK/os2"):
+    keyed wrong, this matched nothing for all 17 sources and was a silent no-op.
+    """
+    out = []
+    for k, meta in sources.items():
+        rec = fetched.get(meta.get("checkpoint")) or {}
+        days = _days_since(rec.get("fetched_at"), now)
+        if days is None:
+            continue
+        label = meta["label"]
+        if rec.get("ok", True) is False:
+            out.append(("critical" if days > 29 else "warn",
+                        "catalogue '%s': the last harvest attempt failed (%s), so it shows "
+                        "its copy from %d day(s) ago - %s"
+                        % (label, (rec.get("last_error_at") or "date not recorded")[:10],
+                           int(days), _brief(rec.get("error")))))
+        elif days > 29:
+            out.append(("critical", "catalogue '%s' has not fetched successfully in "
+                                    "%d days - the page is showing its last good copy"
+                                    % (label, int(days))))
+        elif days > 15:
+            out.append(("warn", "catalogue '%s' last fetched %d days ago (%s)"
+                                % (label, int(days), rec.get("error") or "reason not recorded")))
+    for key in sorted(ospo_sources):
+        st = ospo_sources[key] or {}
+        if st.get("ok", True) is not False:
+            continue
+        days = _days_since(st.get("fetched_at"), now)
+        out.append(("critical" if days is not None and days > 29 else "warn",
+                    "OSPO list '%s': the last fetch failed (%s), so /ospos and /ospos.json "
+                    "show its copy from %s - %s"
+                    % (key, (st.get("failed_at") or "date not recorded")[:10],
+                       "%d day(s) ago" % int(days) if days is not None else "an unknown date",
+                       _brief(st.get("error")))))
+    return out
+
+
 def build(lang="en"):
     """One language's /catalogs. The JSON outputs are written on the English
     pass only; the operator diagnostics in Open items, the per-source notes and
@@ -114,53 +178,28 @@ def build(lang="en"):
         if counts.get(k, 0) == 0:
             problems.append(("warn", "catalogue '%s' contributed 0 entries" % meta["label"]))
 
-    # ---- per-source FRESHNESS, from cache/_fetched.json (harvest.py stamps it,
-    # and only ever advances it on a SUCCESS).
-    #
-    # The zero-entries rule above cannot catch a stale source, and that was the
-    # gap: a failed source reuses its last good checkpoint and keeps contributing
-    # its old NON-ZERO count, so the only alarm watching per-source health stayed
-    # silent while a country's data aged indefinitely. The catalogue rendered as
-    # current and this page said "ok". Age is the signal the counts cannot carry.
-    #
-    # Thresholds are in RUNS, not days, because the schedule is weekly: >2 missed
-    # runs is warn, >4 is critical. A single missed week is normal enough
-    # (throttling, a slow upstream) that alarming on it would train the reader to
-    # ignore this page — the same objection this repo makes to a monitor nobody
-    # opens.
-    fetched = {}
+    # ---- per-source FRESHNESS and FAILED ATTEMPTS: harvest_problems(), from the
+    # files (cache/_fetched.json, cache/ospos.json), never from the last run.
+    fetched, ospo_sources = {}, {}
     try:
         with open(f"{OUT}/cache/_fetched.json") as fh:
             fetched = json.load(fh)
     except Exception:
         pass
+    try:
+        with open(f"{OUT}/cache/ospos.json") as fh:
+            ospo_sources = (json.load(fh) or {}).get("sources") or {}
+    except Exception:
+        pass
+    problems.extend(harvest_problems(fetched, ospo_sources, S.SOURCES,
+                                     time.mktime(time.gmtime())))
     src_age = {}
     for k, meta in S.SOURCES.items():
-        # ⚠ Look up by the CHECKPOINT key, not the SOURCES key. S.SOURCES is
-        # keyed "DK/os2" while _fetched.json (like _timing.json) is keyed "os2",
-        # so `fetched.get(k)` matched nothing for all 17 sources and this whole
-        # block was a silent no-op — it built, rendered "ok", and warned about
-        # nothing. Caught only by seeding a stale entry and watching for the
-        # alarm that never came. A guard that cannot fire is not a guard.
         ck = meta.get("checkpoint")
         rec = fetched.get(ck) or {}
-        ts = rec.get("fetched_at")
-        if not ts:
-            continue
-        try:
-            days = (time.mktime(time.gmtime())
-                    - time.mktime(time.strptime(ts, "%Y-%m-%dT%H:%M:%SZ"))) / 86400
-        except Exception:
-            continue
-        src_age[ck] = {"days": days, "ok": rec.get("ok", True), "error": rec.get("error")}
-        if days > 29:
-            problems.append(("critical", "catalogue '%s' has not fetched successfully in "
-                                         "%d days — the page is showing its last good copy"
-                                         % (meta["label"], int(days))))
-        elif days > 15:
-            problems.append(("warn", "catalogue '%s' last fetched %d days ago (%s)"
-                                     % (meta["label"], int(days),
-                                        rec.get("error") or "reason not recorded")))
+        days = _days_since(rec.get("fetched_at"), time.mktime(time.gmtime()))
+        if days is not None:
+            src_age[ck] = {"days": days, "ok": rec.get("ok", True), "error": rec.get("error")}
     # ---- did the LIVENESS MONITOR actually run? (F3)
     #
     # liveness.py exits 0 even when it throws — correct, a monitor that can fail

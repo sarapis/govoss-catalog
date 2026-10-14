@@ -886,6 +886,58 @@ def main():
            bool(re.search(r"ok false means .*last good copy, fetched at fetched_at \(which is "
                           r"never moved by a failed attempt", ab))), (True, True))
 
+    # ---- 14. /status.json REPORTS A FAILED HARVEST FROM THE FILES (2026-10-14).
+    # `last_run` is whatever ran last, so a --no-harvest publish after a failed
+    # Monday said `ok, []` through six publishes while 12 sources and all three
+    # OSPO lists had failed. build_sources.harvest_problems() reads
+    # cache/_fetched.json and cache/ospos.json instead. Synthetic cases first (the
+    # live files may hold no failure at all), then the built file against the real ones.
+    import importlib.util, time as _t
+    _bs = importlib.util.spec_from_file_location("build_sources", os.path.join(HERE, "build_sources.py"))
+    BS = importlib.util.module_from_spec(_bs); _bs.loader.exec_module(BS)
+    now = _t.mktime(_t.gmtime())
+    def stamp(days):
+        return _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime(_t.time() - days * 86400))
+    srcs = {"XX/demo": {"label": "Demo", "checkpoint": "demo"}}
+    def hp(rec=None, ospo=None):
+        return BS.harvest_problems({"demo": rec} if rec else {}, ospo or {}, srcs, now)
+    def levels(ps):
+        return [a for a, _ in ps]
+    got = hp({"ok": False, "fetched_at": stamp(2), "last_error_at": stamp(0), "error": "URLError x"})
+    check("14 a failed last attempt warns at once, even on a 2-day-old copy", levels(got), ["warn"])
+    check("14 ...naming the catalogue, the failure and its reason",
+          bool(got) and all(w in got[0][1] for w in ("'Demo'", "attempt failed", "URLError x")), True)
+    check("14 a failed attempt on a copy >29 days old is critical",
+          levels(hp({"ok": False, "fetched_at": stamp(40)})), ["critical"])
+    check("14 a fresh success reports nothing", hp({"ok": True, "fetched_at": stamp(3)}), [])
+    check("14 a record with no `ok` is read as a success", hp({"fetched_at": stamp(3)}), [])
+    check("14 a success aged >15 days warns, >29 is critical",
+          (levels(hp({"ok": True, "fetched_at": stamp(20)})),
+           levels(hp({"ok": True, "fetched_at": stamp(40)}))), (["warn"], ["critical"]))
+    check("14 looked up by CHECKPOINT key, never the sources.py key",
+          BS.harvest_problems({"XX/demo": {"ok": False, "fetched_at": stamp(2)}}, {}, srcs, now), [])
+    ok_l = {"ok": True, "fetched_at": stamp(1)}
+    got = hp(ospo={"floss-pso": {"ok": False, "fetched_at": stamp(5), "failed_at": stamp(2),
+                                 "error": "URLError y"}, "academic-map": ok_l})
+    check("14 a failed OSPO list warns, naming the list; an ok one says nothing",
+          (levels(got), bool(got) and "'floss-pso'" in got[0][1] and "URLError y" in got[0][1]),
+          (["warn"], True))
+    check("14 a failed OSPO list whose copy is >29 days old is critical",
+          levels(hp(ospo={"todo-landscape": {"ok": False, "fetched_at": stamp(40)}})), ["critical"])
+    # the built file vs the real cache files: one problem per failed source, by name
+    st = json.load(open(os.path.join(SITE, "status.json")))
+    msgs = [p["message"] for p in st.get("problems") or []]
+    fetched = json.load(open(os.path.join(HERE, "cache", "_fetched.json")))
+    ospo_src = json.load(open(os.path.join(HERE, "cache", "ospos.json"))).get("sources") or {}
+    label_of = {m.get("checkpoint"): m["label"] for m in BS.S.SOURCES.values()}
+    want = sorted(["catalogue '%s': the last harvest attempt" % label_of[k]
+                   for k, r in fetched.items() if r.get("ok") is False and k in label_of]
+                  + ["OSPO list '%s': the last fetch failed" % k
+                     for k, r in ospo_src.items() if r.get("ok") is False])
+    have = sorted(w for w in want if any(m.startswith(w) for m in msgs))
+    check("14 built status.json names every source whose last attempt failed (%d)" % len(want),
+          have, want)
+
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by
     # build_site.sh. Losing either is silent in a browser: pages still render,
