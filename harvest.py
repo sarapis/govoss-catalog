@@ -21,7 +21,7 @@ Env:
     NL_API_KEY     x-api-key for the Dutch OSS register (see SOURCES['nl'])
     GITHUB_TOKEN   optional, raises the GitHub API rate limit
 """
-import collections, json, os, re, ssl, sys, time, urllib.error, urllib.parse, urllib.request
+import collections, json, os, re, ssl, sys, threading, time, urllib.error, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 import certifi, yaml
@@ -52,23 +52,75 @@ def stable_order(r):
 
 
 # ------------------------------------------------------------------ plumbing
+# A per-host hold, shared by every thread: when a server says its budget is spent
+# (a 429, or RateLimit-Remaining: 0 on a success), no thread asks that host again
+# until the server's own reset time. 2026-10-14: openCode's unauthenticated API
+# allows 1,800 requests per 30 minutes and code.europa.eu 120 per minute; a scan
+# needs ~3,700 and ~1,950, and 12 threads retrying after 1.5s burned 1,943 and 960
+# fetches into 429s, so both sources stayed on a 9-day-old checkpoint.
+RATE_WAITS = 4          # 429 waits per call before it is raised as a failure
+RATE_WAIT_MAX = 1860    # one wait is capped at openCode's 30-minute window + 1 min
+_HOLD, _HOLD_LOCK = {}, threading.Lock()
+
+
+def _rate_wait(headers):
+    """Seconds until the server's budget resets, from its own headers.
+
+    Retry-After is seconds; GitLab's RateLimit-Reset is an epoch time. Neither ->
+    60s. Clamped to [1, RATE_WAIT_MAX], +1s so the first request lands after it.
+    """
+    headers = headers or {}
+    now = time.time()
+    for name, epoch in (("Retry-After", False), ("RateLimit-Reset", True)):
+        try:
+            v = float(headers.get(name))
+        except (TypeError, ValueError):
+            continue
+        if epoch and v > 1e9:
+            v -= now
+        return max(1.0, min(RATE_WAIT_MAX, v + 1))
+    return 60.0
+
+
+def _hold(host, seconds):
+    with _HOLD_LOCK:
+        _HOLD[host] = max(_HOLD.get(host, 0), time.time() + seconds)
+
+
 def get(url, timeout=60, raw=False, headers=None, tries=3):
     h = dict(UA)
     h.update(headers or {})
-    last = None
-    for attempt in range(tries):
+    host = urllib.parse.urlsplit(url).netloc
+    last, attempt, waits = None, 0, 0
+    while attempt < tries:
+        with _HOLD_LOCK:
+            pause = _HOLD.get(host, 0) - time.time()
+        if pause > 0:
+            time.sleep(pause)
         try:
             req = urllib.request.Request(url, headers=h)
             with urllib.request.urlopen(req, timeout=timeout, context=CTX) as r:
                 b = r.read()
+                rh = getattr(r, "headers", None) or {}
+            if str(rh.get("RateLimit-Remaining", "")).strip() == "0":
+                _hold(host, _rate_wait(rh))
             return b if raw else json.loads(b)
         except urllib.error.HTTPError as e:
             if e.code in (404, 401, 403):
                 raise
+            if e.code == 429:
+                # Load, not a refusal - and not a spent try: wait out the
+                # server's window. Bounded, then raised like any failure.
+                if waits >= RATE_WAITS:
+                    raise
+                waits += 1
+                _hold(host, _rate_wait(e.headers))
+                continue
             last = e
         except Exception as e:
             last = e
-        time.sleep(1.5 * (attempt + 1))
+        attempt += 1
+        time.sleep(1.5 * attempt)
     raise last
 
 

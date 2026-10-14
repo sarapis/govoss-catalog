@@ -10,7 +10,10 @@ overwrites it. So get() must never turn a failure into data:
 
   * 401/403/404 raise at once - retrying a refusal or a missing page wastes the
     rate budget and changes nothing;
-  * anything else (5xx, 429, a dropped connection) is retried, then RAISED;
+  * anything else (5xx, a dropped connection) is retried, then RAISED;
+  * a 429 waits out the SERVER'S window (Retry-After / RateLimit-Reset) for every
+    thread on that host, without spending a try; bounded, then raised (2026-10-14:
+    1.5s retries burned 2,903 openCode and code.europa.eu fetches into 429s);
   * a 200 whose body is not JSON raises too - a bot-challenge page answers 200
     (the Adullact forge did), and "a responding endpoint is not a working
     source" is recurring bug 1 in CLAUDE.md;
@@ -35,6 +38,8 @@ _s.loader.exec_module(h)
 
 
 class Resp(io.BytesIO):
+    headers = {}
+
     def __enter__(self):
         return self
 
@@ -49,12 +54,19 @@ def opener(script):
 
     def urlopen(req, timeout=None, context=None):
         calls.append(req)
+        if len(calls) > 50:                  # a retry loop with no bound fails, not hangs
+            raise RuntimeError("runaway: more than 50 attempts")
         step = script[min(len(calls), len(script)) - 1]
+        hdrs = {}
+        if isinstance(step, tuple):          # (status or body, response headers)
+            step, hdrs = step
         if isinstance(step, int):
-            raise urllib.error.HTTPError(req.full_url, step, "status %d" % step, {}, None)
+            raise urllib.error.HTTPError(req.full_url, step, "status %d" % step, hdrs, None)
         if isinstance(step, Exception):
             raise step
-        return Resp(step)
+        r = Resp(step)
+        r.headers = hdrs
+        return r
     return urlopen, calls
 
 
@@ -67,14 +79,18 @@ def main():
             failed.append(f"{label}: expected {want!r}, got {got!r}")
 
     real_open, real_sleep = h.urllib.request.urlopen, h.time.sleep
-    h.time.sleep = lambda s: None
+    slept = []
+    h.time.sleep = slept.append
 
-    def run(script, **kw):
+    def run(script, url="https://example.org/api", keep_hold=False, **kw):
         """-> (result or the exception's type name, number of attempts)"""
+        if not keep_hold:
+            h._HOLD.clear()
+        del slept[:]
         fake, calls = opener(script)
         h.urllib.request.urlopen = fake
         try:
-            return h.get("https://example.org/api", **kw), len(calls), calls
+            return h.get(url, **kw), len(calls), calls
         except Exception as ex:
             return type(ex).__name__ + (":%d" % ex.code if isinstance(ex, urllib.error.HTTPError) else ""), len(calls), calls
 
@@ -93,8 +109,32 @@ def main():
         # ---- transient failures are retried, then raised - never None
         got, n, _ = run([503, 503, 503])
         check("503 x3 is retried, then raised", (got, n), ("HTTPError:503", 3))
-        got, n, _ = run([429, 429, 429])
-        check("429 is load, not a refusal: retried", n, 3)
+        # ---- 429: wait out the server's window, shared by every thread on the host
+        got, n, _ = run([(429, {"Retry-After": "30"}), b'{"ok": 1}'])
+        check("429 + Retry-After waits that long (+1s), then recovers",
+              (got, n, [round(x) for x in slept]), ({"ok": 1}, 2, [31]))
+        reset = h.time.time() + 600
+        got, n, _ = run([(429, {"RateLimit-Reset": str(int(reset))}), b"{}"])
+        check("429 + GitLab RateLimit-Reset (an epoch) waits until it",
+              len(slept) == 1 and 595 < slept[0] <= 602, True)
+        got, n, _ = run([429, b"{}"])
+        check("429 with no header waits 60s", [round(x) for x in slept], [60])
+        got, n, _ = run([(429, {"Retry-After": "99999"}), b"{}"])
+        check("one wait is capped at RATE_WAIT_MAX", [round(x) for x in slept], [h.RATE_WAIT_MAX])
+        got, n, _ = run([429, b"{}"], tries=1)
+        check("a 429 does not spend a try (tries=1 still recovers)", (got, n), ({}, 2))
+        got, n, _ = run([429])
+        check("429 forever is bounded, then RAISED - never None",
+              (got, n), ("HTTPError:429", h.RATE_WAITS + 1))
+        got, n, _ = run([(b"{}", {"RateLimit-Remaining": "0", "Retry-After": "40"})])
+        run([b"{}"], keep_hold=True)
+        check("Remaining: 0 on a SUCCESS holds the next call to that host",
+              len(slept) == 1 and 39 < slept[0] <= 41, True)
+        run([b"{}"], url="https://other.example/api", keep_hold=True)
+        check("...but not a call to another host", slept, [])
+        got, n, _ = run([(b"{}", {"RateLimit-Remaining": "7"})])
+        run([b"{}"], keep_hold=True)
+        check("Remaining > 0 holds nothing", slept, [])
         got, n, _ = run([OSError("reset"), b'{"ok": true}'])
         check("a dropped connection then a 200 recovers", (got, n), ({"ok": True}, 2))
         got, n, _ = run([502, 500, b"[]"])
