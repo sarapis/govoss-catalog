@@ -685,9 +685,9 @@ def signup_form(where, lang="en"):
     one page. Posts to /api/subscribe; SIGNUP_SCRIPT (in the footer) sends it with
     fetch and shows the answer, and without JavaScript the post still works. `page`
     is filled from location.pathname by the script. The honeypot `website` is
-    off-screen and out of the tab order. The fine print promises no unsubscribe link
-    and no frequency: neither exists yet on any Sarapis list (un.opensource.nyc words
-    it the same way)."""
+    off-screen and out of the tab order. The fine print (owner's words, 2026-10-14)
+    names Sarapis as the publisher and promises no unsubscribe link or frequency:
+    neither exists yet on any Sarapis list."""
     i = "su-" + where
     h = "h2" if where == "home" else "h4"
     return ("""<form class="signup" action="/api/subscribe" method="post" aria-labelledby="%(i)s-h">
@@ -702,7 +702,8 @@ def signup_form(where, lang="en"):
   <input type="hidden" name="lang" value="%(lang)s"><input type="hidden" name="page" value="/">
   <div class="hp" aria-hidden="true"><label>⟪Leave this empty⟫ <input type="text" name="website"
     tabindex="-1" autocomplete="off"></label></div>
-  <p class="signup-fine">⟪We&rsquo;ll email you news from govoss.cat, and use your address for nothing else.⟫</p>
+  <p class="signup-fine">⟪GovOSS is a product of the US-based nonprofit Sarapis. We keep your address in
+    Sarapis&rsquo;s contact list only to send these updates, and never share it.⟫</p>
   <p class="signup-msg" role="status" aria-live="polite" hidden></p>
 </form>""" % {"i": i, "h": h, "lang": lang})
 
