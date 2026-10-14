@@ -597,15 +597,15 @@ HOME_BODY = """
     <ul class="rtrack" id="rtrack"></ul>
   </section>
 
-  <section class="hm-signup"><!--SIGNUP--></section>
-
   <div class="hm-build">
     <p class="hm-bt">⟪For builders⟫</p>
     <p>⟪The whole catalog is one request, with no key and no pagination, and an MCP server
       answers agents.⟫ <a href="/docs">⟪API and MCP &rarr;⟫</a></p>
   </div>
 
-  __SUBMIT__
+  <!-- Project updates beside Get involved: two cards, one structure (owner, 2026-10-14) -->
+  <div class="hm-pair"><!--SIGNUP-->
+  __SUBMIT__</div>
 </div>
 """
 

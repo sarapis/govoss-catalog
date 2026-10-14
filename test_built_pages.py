@@ -385,7 +385,7 @@ def main():
         if name.startswith("catalogue"):
             continue
         lang = "ca" if name.startswith("ca/") else "en"
-        forms = re.findall(r'<form class="signup" action="/api/subscribe" method="post" aria-labelledby="([^"]+)">(.*?)</form>',
+        forms = re.findall(r'<form class="signup(?: submit)?" action="/api/subscribe" method="post" aria-labelledby="([^"]+)">(.*?)</form>',
                            pg, re.S)
         want = 2 if name in ("index.html", "ca/index.html") else 1
         ok = len(forms) == want and pg.count("form.signup") == 1
@@ -400,6 +400,18 @@ def main():
             bad.append(name)
     check("every page has the signup form (home twice), labelled, its language, honeypot, live status, unique ids",
           bad, [])
+    # on home the signup and Get involved sit side by side as two cards of ONE
+    # structure (owner, 2026-10-14): the same card class, an overline, an h3, a
+    # primary button
+    shape = lambda html_: (bool(re.match(r'\s*<p class="overline">[^<]+</p>\s*<h3[ >]', html_)),
+                           'class="btn btn-primary"' in html_)
+    bad = []
+    for name in ("index.html", "ca/index.html"):
+        m = re.search(r'<div class="hm-pair">\s*<form class="signup submit"[^>]*>(.*?)</form>\s*'
+                      r'<div class="submit" id="submit">(.*?)</div>\s*</div>', pages[name], re.S)
+        if not m or shape(m.group(1)) != (True, True) or shape(m.group(2)) != (True, True):
+            bad.append(name)
+    check("home: Project updates and Get involved are paired cards of one structure", bad, [])
 
     # ---- 12e. THE PAGE SPLIT (2026-10-07). Home is light and hands its search to
     # /software; every page carries the same five nav links; Resources renders

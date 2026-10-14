@@ -468,9 +468,9 @@ p{margin:0;}
 .signup-row{display:flex;gap:8px;flex-wrap:wrap;max-width:460px;}
 .signup-row input{flex:1 1 200px;min-width:0;font:inherit;font-size:14px;padding:9px 12px;
   border:1px solid var(--border);border-radius:var(--r-chip);background:var(--surface);color:var(--ink);}
-.signup-row button{font-family:var(--font-ui);font-size:13px;font-weight:600;padding:9px 16px;border:0;
+.foot .signup-row button{font-family:var(--font-ui);font-size:13px;font-weight:600;padding:9px 16px;border:0;
   border-radius:var(--r-chip);background:var(--primary);color:var(--white);cursor:pointer;}
-.signup-row button:hover,.signup-row button:focus-visible{background:var(--primary-deep);}
+.foot .signup-row button:hover,.foot .signup-row button:focus-visible{background:var(--primary-deep);}
 .signup-row button:disabled{opacity:.6;cursor:default;}
 .signup-fine{margin:0;font-size:12px;line-height:1.5;color:var(--ink-faint);max-width:520px;}
 .signup-msg{margin:0;font-size:13px;font-weight:600;color:var(--green-text);}
@@ -481,9 +481,19 @@ p{margin:0;}
 .foot .signup h4{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.08em;
   text-transform:uppercase;color:var(--ink-faint);}
 .foot .signup-lede{font-size:13px;}
-.hm-signup{margin-top:48px;padding:28px;border:1px solid var(--border);border-radius:var(--r-card);
-  background:var(--surface);}
-.hm-signup h2{font-size:22px;}
+/* home: the signup card and Get involved side by side, one structure (owner, 2026-10-14) */
+.hm-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px;align-items:stretch;}
+.hm-pair > .submit{margin:0;}
+.hm-pair .signup-lede,.hm-pair .submit > p:not(.overline){font-size:15px;line-height:1.6;color:var(--ink-600);
+  margin:0;max-width:none;}
+.hm-pair .signup-row{max-width:none;align-self:stretch;align-items:center;}
+/* the field is the button's height (.btn: 44px), so the row reads as one control */
+.hm-pair .signup-row input{box-sizing:border-box;height:44px;border-radius:var(--r-pill);padding:0 18px;font-size:15px;
+  border-color:var(--ink-faint);}
+/* a <button> takes line-height normal; the Get involved .btn is a link, so match it */
+.hm-pair .signup .btn{line-height:inherit;}
+/* below 960px a half-width card cannot hold the field and the button on one row */
+@media (max-width:960px){.hm-pair{grid-template-columns:minmax(0,1fr);}}
 .foot .cols{display:flex;flex-wrap:wrap;gap:32px 48px;}
 .foot .col{display:flex;flex-direction:column;gap:8px;min-width:150px;}
 .foot .col h4{font-family:var(--font-ui);font-size:11px;font-weight:600;
@@ -689,15 +699,17 @@ def signup_form(where, lang="en"):
     names Sarapis as the publisher and promises no unsubscribe link or frequency:
     neither exists yet on any Sarapis list."""
     i = "su-" + where
-    h = "h2" if where == "home" else "h4"
-    return ("""<form class="signup" action="/api/subscribe" method="post" aria-labelledby="%(i)s-h">
-  <%(h)s id="%(i)s-h">⟪Get project updates⟫</%(h)s>
+    home = where == "home"
+    # on home it is a card shaped like submit_block()'s Get involved, which sits
+    # beside it (owner, 2026-10-14): overline, h3, text, primary button
+    return ("""<form class="signup%(card)s" action="/api/subscribe" method="post" aria-labelledby="%(i)s-h">
+  %(over)s<%(h)s id="%(i)s-h">⟪Get project updates⟫</%(h)s>
   <p class="signup-lede">⟪Get regular updates about new tools, catalogs, resources and more from the team behind govoss.cat.⟫</p>
   <div class="signup-row">
     <label class="vh" for="%(i)s-email">⟪Email address⟫</label>
     <input id="%(i)s-email" type="email" name="email" required maxlength="254" autocomplete="email"
       placeholder="⟪you@example.org⟫">
-    <button type="submit">⟪Subscribe⟫</button>
+    <button type="submit"%(btn)s>⟪Subscribe⟫</button>
   </div>
   <input type="hidden" name="lang" value="%(lang)s"><input type="hidden" name="page" value="/">
   <div class="hp" aria-hidden="true"><label>⟪Leave this empty⟫ <input type="text" name="website"
@@ -705,7 +717,10 @@ def signup_form(where, lang="en"):
   <p class="signup-fine">⟪GovOSS is a product of the US-based nonprofit Sarapis. We keep your address in
     Sarapis&rsquo;s contact list only to send these updates, and never share it.⟫</p>
   <p class="signup-msg" role="status" aria-live="polite" hidden></p>
-</form>""" % {"i": i, "h": h, "lang": lang})
+</form>""" % {"i": i, "h": "h3" if home else "h4", "lang": lang,
+                "card": " submit" if home else "",
+                "over": '<p class="overline">⟪Project updates⟫</p>\n  ' if home else "",
+                "btn": ' class="btn btn-primary"' if home else ""})
 
 
 # Every signup form on the page, sent with fetch (JSON back); the server's message
