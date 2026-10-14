@@ -917,13 +917,21 @@ SCRIPT = """
     clampAll();
     pins();
   }
-  // Product category: the first L.fnshown, the rest behind "Show all N"; a pressed
-  // one is never folded away (it would filter while out of sight)
+  // Product category: L.fnshown, the rest behind "Show all N"; a pressed one is never
+  // folded away (it would filter while out of sight). The six are the first ones
+  // that still have offices (not .at-none), in build order, topped up with greyed
+  // ones only when fewer have any: the counts follow the other filters but the
+  // order does not, so "the first six" alone put greyed zeros in view while a
+  // category with offices sat folded (Government + Community, 2026-10-14). Buttons
+  // are hidden, never reordered - nothing moves under the pointer.
   var fnOpen = false, fnMore = $('at-fnmore');
   function fnFold() {
     if (!fnMore) return;
-    [].forEach.call(A.querySelectorAll('.at-fb[data-f="fn"]'), function (b, i) {
-      b.hidden = !fnOpen && i >= L.fnshown && b.getAttribute('aria-pressed') !== 'true';
+    var bs = [].slice.call(A.querySelectorAll('.at-fb[data-f="fn"]'));
+    var live = function (b) { return !b.classList.contains('at-none'); };
+    var keep = bs.filter(live).concat(bs.filter(function (b) { return !live(b); })).slice(0, L.fnshown);
+    bs.forEach(function (b) {
+      b.hidden = !fnOpen && keep.indexOf(b) < 0 && b.getAttribute('aria-pressed') !== 'true';
     });
     fnMore.textContent = fnOpen ? L.fewer : L.fnall;
     fnMore.setAttribute('aria-expanded', fnOpen ? 'true' : 'false');

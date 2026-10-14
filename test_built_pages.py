@@ -716,7 +716,7 @@ def main():
                re.findall(r'\.(?:atlas|ocred|at-wrap)\{[^}]*padding:0 \d+px', pg)),
               (True, True, []))
         # owner, 2026-10-14: no type colour down the cards' left edge; Product category
-        # shows the first FN_SHOWN, the rest behind "Show all N" (folded by the
+        # shows FN_SHOWN, the rest behind "Show all N" (folded by the
         # script, a pressed one never folded away), so the sidebar fits the atlas
         card_css = "".join(re.findall(r'\.at-card[^{]*\{[^}]*\}', pg))
         nfn = len(re.findall(r'class="at-fb" data-f="fn"', pg))
@@ -724,7 +724,11 @@ def main():
               ("border-left" in card_css, "--at-gov" in card_css or "--at-aca" in card_css or "--at-cor" in card_css,
                nfn > _bo.FN_SHOWN, bool(re.search(r'<button type="button" class="at-link at-fnmore" id="at-fnmore" '
                                                   r'aria-expanded="false" hidden>[^<]+ %d [^<]*</button>' % nfn, pg)),
-               "i >= L.fnshown && b.getAttribute('aria-pressed') !== 'true'" in scr,
+               # the six are the first WITH offices (not .at-none), topped up with greyed
+               # ones; a pressed one is never folded (Government + Community, 2026-10-14)
+               all(t in scr for t in ("classList.contains('at-none')",
+                                      "bs.filter(live).concat(bs.filter(function (b) { return !live(b); })).slice(0, L.fnshown)",
+                                      "keep.indexOf(b) < 0 && b.getAttribute('aria-pressed') !== 'true'")),
                ((json.loads(re.search(r'<script type="application/json" id="at-data">(.*?)</script>', pg, re.S).group(1))
                  .get("L") or {}).get("fnshown")) == _bo.FN_SHOWN == 6),
               (False, False, True, True, True, True))
