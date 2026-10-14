@@ -1382,3 +1382,26 @@ as the Map view of Harvested catalogues, plus `/catalogues.geo.json` (UNNYC now 
 stat rows never leave a grey cell. Not live yet: five translations, the GeoJSON timestamp
 fix (found during handoff: the two stamps matched only by luck). Written, undecided: the
 Helsingborg review.
+
+## Moved on 2026-10-14 (handoff)
+
+### Session 2026-10-07, in one screen
+
+Shipped and live-checked: the reorganisation (Home + `/software` split from the catalog, Sources
+-> `/catalogs`, API -> `/docs` as the top-right button, `/resources` from UN+NYC's OSPO resources
+file, clean paths and 301s in `site-worker.js`); `/ospos` (FLOSS-PSO + SustainOSS academic map,
+filters, a regional map, flags, Resources links); `run.sh --no-harvest`; the GitLab failed-fetch
+guard after openCode published 86 short. Mistakes: a full re-run to republish drew the 429s that
+`--no-harvest` now avoids; a Resources class reused `.rhead` (now pinned by a check).
+
+### Candidates retired 2026-10-14 (done, or superseded)
+
+- Unplaced companies: WalmartLabs (Bentonville, Walmart's HQ) and JiHu (Wuhan, its registered
+  office) placed 2026-10-09; Cuemby (sources disagree: Medellin / Delray Beach) and Intersect MBO
+  (Wyoming-incorporated, no office) stay unplaced on purpose. Six Wikidata HQs corrected by hand
+  from SEC filings (Square/Block, Mercado Libre, Cloudera, Elastic, Seagate, Twitter -> X Corp).
+- Corporate chip contrast (4.62:1) fixed with `--corp-text` (5.92:1) on 2026-10-09; the atlas
+  redesign of 2026-10-13 replaced the chips, and on 2026-10-14 the cards lost type colour entirely.
+- OSPO map density: superseded by the atlas's zoom with screen-space pin clustering (2026-10-13).
+- The UNNYC corporate-OSPO prompt: sent; UNNYC verified the 2026-10-09 publish and withdrew its
+  IPA report (IPA's English name has been "Innovation Platform Agency, Japan" since 2026-06-05).
