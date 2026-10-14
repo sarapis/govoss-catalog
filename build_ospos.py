@@ -492,7 +492,7 @@ PAGE_CSS = """
   --at-sh:0 4px 16px rgba(27,42,74,.1);--at-sh2:0 12px 40px rgba(27,42,74,.12);
   --at-gov:var(--primary);--at-aca:var(--green);--at-cor:var(--corp);
   display:grid;grid-template-columns:272px minmax(380px,1fr) minmax(0,1.1fr);
-  height:calc(100vh - 32px);height:calc(100dvh - 32px);min-height:600px;overflow:hidden;background:var(--bg);
+  height:calc(130vh - 32px);height:calc(130dvh - 32px);min-height:760px;overflow:hidden;background:var(--bg);
   color:var(--ink);border:1px solid var(--at-line);border-radius:var(--r-card);font-family:var(--font-body);
   letter-spacing:0;}
 /* inside the shared page container (theme), so its gutters are every page's: 40px, 20px on phones */
@@ -667,6 +667,11 @@ PAGE_CSS = """
 .at-grip i{width:4px;height:44px;margin-left:3px;border-radius:2px;background:var(--at-hover);}
 .at-grip.drag i,.at-grip:focus-visible i{background:var(--primary);}
 .ocred{margin:18px 0 0;font-size:12px;color:var(--ink-faint);line-height:1.6;}
+.ocred-more{margin-top:10px;font-size:12px;color:var(--ink-faint);}
+.ocred-more summary{cursor:pointer;width:max-content;font-weight:600;color:var(--primary);}
+.ocred-more summary:hover{color:var(--primary-deep);}
+.ocred-more summary:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px;}
+.ocred-more .ocred{margin-top:10px;}
 /* narrow: one column - the map pinned on top, then the list in the page's own
    scroll; the sidebar folds behind the Filters button */
 @media (max-width:900px){
@@ -740,6 +745,20 @@ __SPRITE__
 </dialog>
 <noscript><style>.at-card .at-more[hidden]{display:flex!important;}.at-card .at-codes[hidden]{display:flex!important;}
 .at-codes-more{display:none;}</style></noscript>
+<!-- Credits (owner, 2026-10-14): one line of what the licences and trademarks
+     require - every source and its licence, the icon and flag licences, the logo
+     notice with its removal route - and the rest behind "More info" (native
+     <details>: no script, and open-able without one). -->
+<p class="ocred" id="logo-notice">⟪Sources: the
+  <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO Network</a>
+  (<a href="https://ospo-alliance.org/">OSPO Alliance</a>; CC0), the
+  <a href="https://sustainoss.org/academic-map/">SustainOSS academic map</a> (MIT), the
+  <a href="https://landscape.todogroup.org/">TODO Group&rsquo;s OSPO landscape</a> (Apache-2.0) and
+  <a href="https://www.wikidata.org/">Wikidata</a> (CC0). Icons: <a href="https://lucide.dev/">Lucide</a> (ISC);
+  flags: <a href="https://github.com/lipis/flag-icons">flag-icons</a> (MIT). Logos are their owners&rsquo;
+  trademarks, shown only to identify each office; no endorsement is implied, and we remove one
+  <a href="https://github.com/sarapis/govoss-catalog/issues">on request</a>.⟫</p>
+<details class="ocred-more"><summary>⟪More info⟫</summary>
 <p class="ocred">⟪Government offices: the public-sector OSPO list (CC0) of the
   <a href="https://floss-pso.network/public-sector-ospos/">FLOSS-PSO Network</a>, a volunteer
   project under the <a href="https://ospo-alliance.org/">OSPO Alliance</a>&rsquo;s umbrella,
@@ -759,11 +778,10 @@ __SPRITE__
 <p class="ocred">⟪Product categories come from each office&rsquo;s software in the govoss catalogue
   (entries whose repository sits under one of its code organisations); focus tags are matched on the
   office&rsquo;s own name and description. &ldquo;Most software&rdquo; sorts offices by how many of their
-  software entries govoss lists. Icons: <a href="https://lucide.dev/">Lucide</a> (ISC).⟫</p>
-<p class="ocred" id="logo-notice">⟪Logos are the trademarks of their owners, shown only to identify each office.
-  They are not covered by govoss&rsquo;s licences and no endorsement is implied. To have one removed,
-  <a href="https://github.com/sarapis/govoss-catalog/issues">report it</a>. Flags:
-  <a href="https://github.com/lipis/flag-icons">flag-icons</a> (MIT).⟫</p>
+  software entries govoss lists.⟫</p>
+<p class="ocred">⟪Logos are not covered by govoss&rsquo;s licences. The flag files ship with their
+  MIT licence.⟫</p>
+</details>
 </div>
 </main>
 <script type="application/json" id="at-data">__CFG__</script>

@@ -728,6 +728,20 @@ def main():
                ((json.loads(re.search(r'<script type="application/json" id="at-data">(.*?)</script>', pg, re.S).group(1))
                  .get("L") or {}).get("fnshown")) == _bo.FN_SHOWN == 6),
               (False, False, True, True, True, True))
+        # credits (owner, 2026-10-14): ONE visible line with what the licences and
+        # trademarks require - each source linked with its licence, icons and flags,
+        # the logo notice and its removal route - the rest behind a closed "More info"
+        line = re.search(r'<p class="ocred" id="logo-notice">(.*?)</p>\s*<details class="ocred-more"><summary>[^<]+</summary>(.*?)</details>',
+                         pg, re.S)
+        need = ["https://floss-pso.network/public-sector-ospos/", "https://sustainoss.org/academic-map/",
+                "https://landscape.todogroup.org/", "https://www.wikidata.org/", "https://lucide.dev/",
+                "https://github.com/lipis/flag-icons", "https://github.com/sarapis/govoss-catalog/issues"]
+        check("%s: credits: one line with every source, licence and the logo notice; details behind More info" % name,
+              (bool(line), [u for u in need if not line or ('href="%s"' % u) not in line.group(1)],
+               [lic for lic in ("CC0", "(MIT)", "(Apache-2.0)", "(ISC)") if not line or lic not in line.group(1)],
+               bool(line) and line.group(2).count('<p class="ocred">') >= 4,
+               pg.count('<p class="ocred"') - (line.group(2).count('<p class="ocred">') if line else 0)),
+              (True, [], [], True, 1))
         check("%s: the list sorts by software or A-Z" % name,
               re.findall(r'data-sort="(\w+)"', srt.group(1)) if srt else None, ["software", "name"])
         check("%s: no sidebar ranking, no score signals, no per-product links" % name,
