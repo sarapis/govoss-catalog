@@ -97,6 +97,10 @@ FOCUS = (
 )
 FOCUS_KEYS = [k for k, *_ in FOCUS]
 
+# Product categories shown before "Show all N" (owner, 2026-10-14; /software shows 6),
+# so the sidebar fits the atlas without scrolling inside itself.
+FN_SHOWN = 6
+
 # An office's URL (its key in FLOSS-PSO) -> its case in resources/ospo-resources.json.
 # Named, never guessed: UNDP is NOT the "un" case (that is the UN's OICT and the
 # Open Source United community, a different office).
@@ -404,6 +408,10 @@ def build(lang, data, os_, geo):
     nf = collections.Counter(f for r in os_ for f in r["_fns"])
     fns = "".join(fbtn("fn", f, FN_ICON[f], "at-ifn", fnlabel(f), n)
                   for f, n in sorted(nf.items(), key=lambda kv: (-kv[1], fnlabel(kv[0]))))
+    # the rest fold behind "Show all N" - folded by the script, so without it all show
+    if len(nf) > FN_SHOWN:
+        fns += ('<button type="button" class="at-link at-fnmore" id="at-fnmore" aria-expanded="false" hidden>'
+                '%s</button>' % esc("%s %s \u2192" % (_("Show all"), N(len(nf)))))
     nfo = collections.Counter(f for r in os_ for f in r["_focus"])
     foc = "".join(fbtn("focus", f, ficon[f], "at-ifo", flabel[f], n)
                   for f, n in sorted(nfo.items(), key=lambda kv: (-kv[1], flabel[kv[0]])))
@@ -420,6 +428,7 @@ def build(lang, data, os_, geo):
               "offices": _("{n} offices"), "office": _("1 office"),
               "codes": _("{name}: code profiles"),
               "cluster": _("{n} offices here"), "moretags": _("{n} more tags - open the office to see them"),
+              "fnall": "%s %s \u2192" % (_("Show all"), N(len(nf))), "fewer": _("Show fewer"), "fnshown": FN_SHOWN,
               "thou": "." if lang == "ca" else ","},
     }
     subs = {
@@ -553,16 +562,13 @@ PAGE_CSS = """
 .at-gbar .corporate{background:var(--at-cor);}
 .at-flag{width:26px;height:18px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(22,46,81,.12);flex:none;}
 .at-femoji{box-shadow:none;width:auto;height:auto;font-size:18px;line-height:1;}
-.at-card{background:var(--surface);border:1px solid var(--at-line);border-left:4px solid var(--at-gov);
+/* one neutral frame - no type colour down the left (owner, 2026-10-14); the type is
+   the labelled icon in the meta line */
+.at-card{background:var(--surface);border:1px solid var(--at-line);
   border-radius:12px;cursor:pointer;display:flex;flex-direction:column;transition:box-shadow .15s,border-color .15s;
   scroll-margin-top:64px;}
-.at-card.academic{border-left-color:var(--at-aca);} .at-card.corporate{border-left-color:var(--at-cor);}
 .at-card:hover,.at-card.hov{border-color:var(--at-hover);box-shadow:var(--at-sh);}
-.at-card.government:hover,.at-card.government.hov{border-left-color:var(--at-gov);}
-.at-card.academic:hover,.at-card.academic.hov{border-left-color:var(--at-aca);}
-.at-card.corporate:hover,.at-card.corporate.hov{border-left-color:var(--at-cor);}
-.at-card.at-open{border-color:var(--at-gov);box-shadow:var(--at-sh2);}
-.at-card.academic.at-open{border-color:var(--at-aca);} .at-card.corporate.at-open{border-color:var(--at-cor);}
+.at-card.at-open{border-color:var(--ink);box-shadow:var(--at-sh2);}
 .at-ch{padding:12px 14px;display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:start;}
 .at-logo{position:relative;width:40px;height:40px;border-radius:10px;background:var(--at-sel);color:var(--ink);
   display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;
@@ -875,12 +881,25 @@ SCRIPT = """
     });
     [].forEach.call($('at-sort').children, function (b) { b.setAttribute('aria-pressed', b.dataset.sort === st.sort ? 'true' : 'false'); });
     $('at-group').setAttribute('aria-pressed', st.group ? 'true' : 'false');
+    fnFold();
     $('at-code').checked = st.code;
     if ($('at-q').value !== st.q) $('at-q').value = st.q;
     if (st.sel && !on[st.sel]) setSel(null);
     clampAll();
     pins();
   }
+  // Product category: the first L.fnshown, the rest behind "Show all N"; a pressed
+  // one is never folded away (it would filter while out of sight)
+  var fnOpen = false, fnMore = $('at-fnmore');
+  function fnFold() {
+    if (!fnMore) return;
+    [].forEach.call(A.querySelectorAll('.at-fb[data-f="fn"]'), function (b, i) {
+      b.hidden = !fnOpen && i >= L.fnshown && b.getAttribute('aria-pressed') !== 'true';
+    });
+    fnMore.textContent = fnOpen ? L.fewer : L.fnall;
+    fnMore.setAttribute('aria-expanded', fnOpen ? 'true' : 'false');
+  }
+  if (fnMore) { fnMore.hidden = false; fnMore.onclick = function () { fnOpen = !fnOpen; fnFold(); }; }
   function secById(cc) { return SC.querySelector('.at-grp[data-cc="' + cc + '"]'); }
   function set(p) { for (var k in p) st[k] = p[k]; apply(); writeHash(); }
 
