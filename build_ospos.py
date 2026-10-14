@@ -521,6 +521,7 @@ PAGE_CSS = """
   cursor:pointer;text-align:left;background:none;font-weight:500;}
 .at-fb[data-f="type"]{padding:7px 8px;}
 .at-fb:hover{background:var(--primary-tint);}
+.at-fb.at-none{color:var(--ink-faint);} .at-fb.at-none .at-i{opacity:.45;}
 .at-fb[aria-pressed="true"]{background:var(--at-sel);font-weight:700;}
 .at-fl{flex:1;}
 .at-fn{color:var(--ink-faint);font-size:12px;font-weight:500;}
@@ -851,10 +852,11 @@ SCRIPT = """
   }
 
   // ---- filter, group, sort (Most software, or A-Z)
-  function pass(o, skipType) {
-    if (!skipType && st.type && o.type !== st.type) return false;
-    if (st.fn && o.fns.indexOf(st.fn) < 0) return false;
-    if (st.focus && o.focus.indexOf(st.focus) < 0) return false;
+  // skip: one facet ('type', 'fn', 'focus') left out - how a facet's own counts are taken
+  function pass(o, skip) {
+    if (skip !== 'type' && st.type && o.type !== st.type) return false;
+    if (skip !== 'fn' && st.fn && o.fns.indexOf(st.fn) < 0) return false;
+    if (skip !== 'focus' && st.focus && o.focus.indexOf(st.focus) < 0) return false;
     if (st.code && !o.code) return false;
     var q = st.q.trim().toLowerCase();
     return !q || o.text.indexOf(q) >= 0;
@@ -890,12 +892,21 @@ SCRIPT = """
       : fmt(nc === 1 ? L.some1 : L.some, {n: num(shown.length), t: num(total), c: num(nc)});
     var any = !!(st.q.trim() || st.type !== TYPE0 || st.fn || st.focus || st.code);
     $('at-clear').hidden = !any;
+    // each facet counts the offices every OTHER active filter leaves, so a number is
+    // what that choice would show (Corporate picked: every category reads 0)
+    var base = {type: [], fn: [], focus: []};
+    all.forEach(function (o) { for (var f in base) if (pass(o, f)) base[f].push(o); });
+    var has = {
+      type: function (o, v) { return !v || o.type === v; },
+      fn: function (o, v) { return o.fns.indexOf(v) >= 0; },
+      focus: function (o, v) { return o.focus.indexOf(v) >= 0; }
+    };
     [].forEach.call(A.querySelectorAll('.at-fb'), function (b) {
-      b.setAttribute('aria-pressed', st[b.dataset.f] === b.dataset.v ? 'true' : 'false');
-      if (b.dataset.f === 'type') {
-        b.querySelector('[data-n]').textContent = num(all.filter(function (o) {
-          return pass(o, true) && (!b.dataset.v || o.type === b.dataset.v); }).length);
-      }
+      var f = b.dataset.f, v = b.dataset.v, on = st[f] === v;
+      var n = base[f].filter(function (o) { return has[f](o, v); }).length;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.querySelector('[data-n]').textContent = num(n);
+      b.classList.toggle('at-none', !n && !on);
     });
     [].forEach.call($('at-sort').children, function (b) { b.setAttribute('aria-pressed', b.dataset.sort === st.sort ? 'true' : 'false'); });
     $('at-group').setAttribute('aria-pressed', st.group ? 'true' : 'false');
