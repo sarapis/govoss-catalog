@@ -2,6 +2,10 @@
 # Full pipeline: harvest -> translate -> categorise -> liveness -> page.
 #
 # Ordering matters and is not arbitrary:
+#   netgate      BEFORE everything, both modes: waits (up to 12h) until the Mac is
+#                in a FULL wake and DNS resolves, then holds it awake with
+#                caffeinate until run.sh exits. Gives up -> exit 1, nothing runs.
+#                See netgate.py (2026-10-12: a dark-waking laptop lost 12 sources)
 #   harvest      rewrites catalog.json from the eight national sources
 #   merge        re-applies stored translations (keyed on sha1 of source text,
 #                so they survive a re-harvest as long as upstream wording is)
@@ -84,6 +88,16 @@ if [ -z "$PY" ]; then
   exit 1
 fi
 echo "interpreter: $PY"
+
+# Wait until the Mac is awake and online (netgate.py), then keep it awake: on
+# battery this Mac idle-sleeps after 1 minute, and the run takes over an hour.
+# caffeinate -i -w $$ holds an idle-sleep assertion until THIS script exits.
+if ! "$PY" -u netgate.py; then
+  echo "NOT RUNNING: netgate gave up waiting for a full wake with DNS." >&2
+  echo "  nothing was harvested or published; every checkpoint is kept." >&2
+  exit 1
+fi
+[ -x /usr/bin/caffeinate ] && /usr/bin/caffeinate -i -w $$ &
 
 STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 echo "════════════════════════════════════════════════════════════"

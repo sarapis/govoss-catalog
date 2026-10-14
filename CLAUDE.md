@@ -18,13 +18,13 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 13 suites, 954 checks, all manual
+for t in test_*.py; do python3 $t; done     # 14 suites, 978 checks, all manual
 ```
 
-Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`).
-**The template in `schedule/` is the source of truth**; never edit the installed plist -
-`install.sh --diff` shows drift. The run order is load-bearing and documented at the top of
-`run.sh`; run the script, not the steps from memory. **The run publishes and commits itself.**
+Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`);
+it first waits (`netgate.py`, up to 12h) for a FULL wake with DNS, then holds `caffeinate -i`.
+**The template in `schedule/` is the source of truth**; never edit the installed plist - `install.sh
+--diff` shows drift. The run order is load-bearing and documented at the top of `run.sh`; run the script, not the steps from memory. **The run publishes and commits itself.**
 
 ## Sources
 
@@ -256,7 +256,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 (lowest 4.9:1). **No screen-reader te
 
 ## Tests
 
-Thirteen suites, 954 checks, **all manual** - a test that can fail the weekly publish is one someone
+Fourteen suites, 978 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -277,6 +277,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos atlas: every office a card or Not yet placed, no sidebar title, score = its signal chips, global ranks, Resources links, code links, flags and images present, the one world map, map points = projection, no entity in a script (12f), the signup form on every page (12h), `/software?ospo=` = the card's entries, the one-line credits, no control character, hosting files, `/status.json` names every source and OSPO list whose last attempt failed, read from the files (14) |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; a 429 waits out the server's window per host (bounded, spends no try); `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
 | `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch) |
+| `test_netgate.py` | `netgate.wait()`: full wake AND DNS (a dark wake with DNS waits), any host resolving, give-up on the WALL clock, log cadence; `run.sh` run with a failing gate exits 1 having run nothing (both modes); gate before `caffeinate -i -w $$` before the first step |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, the tool contract vs `mcp_tools.py`, and `/api/subscribe` (same-origin, honeypot, forward to Payload) |
 
 Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only
@@ -296,5 +297,4 @@ through `run()`'s `*_fn` arguments - keep it that way, or the glue is untestable
   "Works in my shell, not under launchd" is a PATH question first, every time.
 - Harvest checkpoints per source the moment one succeeds; `catalog.json` is assembled from
   every checkpoint on disk. `run.sh` warns if the catalogue shrinks >10%.
-- France's 24,440-repo inventory is excluded on purpose - an enrichment join at most.
-- `out/` and `site/` are gitignored per-run artefacts; a fresh checkout has neither.
+- France's 24,440-repo inventory is excluded on purpose (an enrichment join at most). `out/` and `site/` are gitignored per-run artefacts; a fresh checkout has neither.
