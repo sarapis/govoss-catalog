@@ -1,26 +1,25 @@
 // POST /api/subscribe - "Get project updates" (owner, 2026-10-14).
 //
 // The form is in every page's footer and on the home page (theme.signup_form).
-// A signup goes to the Sarapis CRM (Airtable, base "Sarapis CRM", table People),
-// whose rule is ONE ROW PER EMAIL ADDRESS:
-//   - an address already there gains Brand "govoss", list "govoss updates" and
-//     source "govoss.cat signup" ALONGSIDE what it has (read, union, write back -
-//     never an upsert, which would replace the select fields wholesale)
-//   - a new address is created with those, First Seen and a note of where and when
-// `typecast` lets Airtable create those three select options on first use.
+// A signup is FORWARDED to the Sarapis Payload CMS's shared multi-brand list,
+// `campaign-signups` at next.sarapis.org - the same list un.opensource.nyc writes
+// to (owner, 2026-10-14: align with the sister sites, not a separate store).
+//   { email, campaign: "govoss", source: <page path> }
+// `site` is left empty: the CMS reads that as Sarapis, govoss.cat's publisher.
+// Anonymous create needs no credential; Payload validates the address again and
+// refuses anonymous reads, so nothing here can list the subscribers.
 //
-// Guards: same-origin POST only; a filled honeypot (`website`) is answered "ok"
-// and dropped; the address is checked against a strict pattern that admits no
-// quote, so it can never break out of the filterByFormula string.
-// The Airtable token is a Worker SECRET (wrangler secret put AIRTABLE_TOKEN
-// --config wrangler.site.jsonc); without it the endpoint answers 503 and stores
-// nothing. Single opt-in: the form says what the address is used for.
+// Server to server, so the CMS needs no CORS entry for govoss.cat, and the form
+// still works without JavaScript. Guards here: same-origin POST only; a filled
+// honeypot (`website`) is answered "ok" and NOT forwarded; a strict address
+// pattern; the address is never logged.
+// Single opt-in, no unsubscribe link and no automated sending - as on the sister
+// sites - so the form promises neither (see theme.signup_form).
 //
-// A fetch() from the page asks for JSON; a plain form post (no JavaScript) gets a
-// short HTML page.
+// A fetch() from the page asks for JSON; a plain form post gets a short HTML page.
 
-export const CRM = { base: "app6KkPPGq9NVEAsM", table: "tblcx9dun5fAyGRCn" };
-export const BRAND = "govoss", LIST = "govoss updates", SOURCE = "govoss.cat signup";
+export const CMS = "https://next.sarapis.org/api/campaign-signups";
+export const CAMPAIGN = "govoss";
 const EMAIL = /^[A-Za-z0-9.!#$%&*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -68,34 +67,15 @@ export async function subscribe(request, env, url) {
   if (!sameOrigin(request, url)) return new Response("Forbidden", { status: 403 });
   const f = await readForm(request);
   const lang = f.lang === "ca" ? "ca" : "en";
-  if (f.website) return reply(request, lang, 200, "ok");          // the honeypot: say yes, store nothing
+  if (f.website) return reply(request, lang, 200, "ok");          // the honeypot: say yes, send nothing
   const email = String(f.email || "").trim().toLowerCase();
   if (email.length > 254 || !EMAIL.test(email)) return reply(request, lang, 400, "bad");
-  if (!env.AIRTABLE_TOKEN) return reply(request, lang, 503, "fail");
   const page = /^\/[A-Za-z0-9/_.-]{0,120}$/.test(String(f.page || "")) ? f.page : "/";
-  const api = `https://api.airtable.com/v0/${CRM.base}/${CRM.table}`;
-  const auth = { Authorization: `Bearer ${env.AIRTABLE_TOKEN}`, "Content-Type": "application/json" };
-  const today = new Date().toISOString().slice(0, 10);
   try {
-    const q = new URLSearchParams({ filterByFormula: `LOWER({Email})='${email}'`, maxRecords: "1" });
-    ["Brands", "Tags", "Sources"].forEach((k) => q.append("fields[]", k));
-    const found = await fetch(`${api}?${q}`, { headers: auth });
-    if (!found.ok) throw new Error("search " + found.status);
-    const rec = ((await found.json()).records || [])[0];
-    const add = (have, v) => [...new Set([...(have || []), v])];
-    let res;
-    if (rec) {
-      const fl = rec.fields || {};
-      res = await fetch(api, { method: "PATCH", headers: auth, body: JSON.stringify({ typecast: true, records: [{
-        id: rec.id, fields: { Brands: add(fl.Brands, BRAND), Tags: add(fl.Tags, LIST),
-                              Sources: add(fl.Sources, SOURCE), "Last Interaction": today } }] }) });
-    } else {
-      res = await fetch(api, { method: "POST", headers: auth, body: JSON.stringify({ typecast: true, records: [{
-        fields: { Name: email, Email: email, Brands: [BRAND], Tags: [LIST], Sources: [SOURCE],
-                  "First Seen": today, "Last Interaction": today,
-                  Notes: `Signed up for govoss.cat updates on ${new Date().toISOString()} from ${page} (${lang}).` } }] }) });
-    }
-    if (!res.ok) throw new Error("write " + res.status);
+    const res = await fetch(CMS, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ email, campaign: CAMPAIGN, source: page }) });
+    if (res.status === 400) return reply(request, lang, 400, "bad");   // Payload refused the address
+    if (!res.ok) throw new Error("cms " + res.status);
   } catch (e) {
     console.error("subscribe failed: " + e.message);             // never the address
     return reply(request, lang, 502, "fail");

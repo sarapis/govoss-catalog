@@ -460,7 +460,8 @@ p{margin:0;}
 /* footer */
 .foot{margin-top:56px;padding:48px 0 44px;border-top:var(--divider);}
 /* "Get project updates" (owner, 2026-10-14): signup_form(), in every footer and on
-   home; posts to /api/subscribe (deploy-cloudflare/subscribe.js) -> the Sarapis CRM */
+   home; posts to /api/subscribe (deploy-cloudflare/subscribe.js), which forwards to
+   the Sarapis Payload CMS's campaign-signups, as un.opensource.nyc's form does */
 .signup{display:flex;flex-direction:column;gap:8px;}
 .signup h2,.signup h4{margin:0;}
 .signup-lede{margin:0;font-size:14px;line-height:1.55;color:var(--ink-600);max-width:520px;}
@@ -684,7 +685,9 @@ def signup_form(where, lang="en"):
     one page. Posts to /api/subscribe; SIGNUP_SCRIPT (in the footer) sends it with
     fetch and shows the answer, and without JavaScript the post still works. `page`
     is filled from location.pathname by the script. The honeypot `website` is
-    off-screen and out of the tab order."""
+    off-screen and out of the tab order. The fine print promises no unsubscribe link
+    and no frequency: neither exists yet on any Sarapis list (un.opensource.nyc words
+    it the same way)."""
     i = "su-" + where
     h = "h2" if where == "home" else "h4"
     return ("""<form class="signup" action="/api/subscribe" method="post" aria-labelledby="%(i)s-h">
@@ -699,8 +702,7 @@ def signup_form(where, lang="en"):
   <input type="hidden" name="lang" value="%(lang)s"><input type="hidden" name="page" value="/">
   <div class="hp" aria-hidden="true"><label>⟪Leave this empty⟫ <input type="text" name="website"
     tabindex="-1" autocomplete="off"></label></div>
-  <p class="signup-fine">⟪We keep your address in Sarapis&rsquo;s contact list only to send these updates,
-    and never share it. Reply to any update to unsubscribe.⟫</p>
+  <p class="signup-fine">⟪We&rsquo;ll email you news from govoss.cat, and use your address for nothing else.⟫</p>
   <p class="signup-msg" role="status" aria-live="polite" hidden></p>
 </form>""" % {"i": i, "h": h, "lang": lang})
 

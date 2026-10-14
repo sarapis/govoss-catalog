@@ -80,41 +80,35 @@ out.shared_search_ca = await loc("/ca/?cc=DE");
 out.home_other_param = await loc("/?utm_source=x");
 
 // ---------------------------------------------------------------- /api/subscribe
-// the Sarapis CRM stubbed: one known address, writes recorded, a switch to fail
-const AT = { calls: [], known: { id: "recKNOWN000000001", fields: { Brands: ["Sarapis"], Tags: ["Friends"] } },
-             failWrite: false };
+// the Sarapis Payload CMS stubbed: records what is forwarded; a status to answer with
+const CMSCALLS = []; let cmsStatus = 201;
 const realFetch = globalThis.fetch;
 globalThis.fetch = async (u, init = {}) => {
-  const x = new URL(u), body = init.body ? JSON.parse(init.body) : null;
-  AT.calls.push({ method: init.method || "GET", host: x.host, path: x.pathname,
-                  formula: x.searchParams.get("filterByFormula"), auth: (init.headers || {}).Authorization, body });
-  if ((init.method || "GET") === "GET")
-    return Response.json({ records: (x.searchParams.get("filterByFormula") || "").includes("known@") ? [AT.known] : [] });
-  if (AT.failWrite) return new Response("{}", { status: 422 });
-  return Response.json({ records: [{ id: "recNEW" }] });
+  CMSCALLS.push({ url: String(u), method: init.method || "GET", headers: init.headers || {},
+                  body: init.body ? JSON.parse(init.body) : null });
+  return new Response(JSON.stringify(cmsStatus === 400 ? { errors: [{ message: "The following field is invalid: Email" }] }
+                                                        : { doc: { id: 1 } }), { status: cmsStatus });
 };
-const SUB = async (fields, { json = true, origin = "https://govoss.cat", method = "POST", token = "patTEST" } = {}) => {
-  AT.calls.length = 0;
+const SUB = async (fields, { json = true, origin = "https://govoss.cat", method = "POST" } = {}) => {
+  CMSCALLS.length = 0;
   const headers = { "content-type": "application/json" };
   if (json) headers.accept = "application/json";
   if (origin) headers.origin = origin;
   const res = await site.fetch(new Request("https://govoss.cat/api/subscribe", {
-    method, headers, body: method === "POST" ? JSON.stringify(fields) : undefined }),
-    { ASSETS, ...(token ? { AIRTABLE_TOKEN: token } : {}) });
+    method, headers, body: method === "POST" ? JSON.stringify(fields) : undefined }), { ASSETS });
   const text = await res.text();
   let j = null; try { j = JSON.parse(text); } catch {}
-  return { status: res.status, json: j, text, type: res.headers.get("content-type"),
-           calls: AT.calls.map((c) => ({ ...c })) };
+  return { status: res.status, json: j, text, type: res.headers.get("content-type"), calls: CMSCALLS.map((c) => ({ ...c })) };
 };
 out.sub_get = await SUB(null, { method: "GET" });
 out.sub_cross = await SUB({ email: "a@b.org" }, { origin: "https://evil.example" });
 out.sub_bad = await SUB({ email: "not-an-email" });
 out.sub_quote = await SUB({ email: "x'or'1'='1@b.org" });
 out.sub_honeypot = await SUB({ email: "bot@b.org", website: "http://spam" });
-out.sub_notoken = await SUB({ email: "a@b.org" }, { token: null });
 out.sub_new = await SUB({ email: "  New.Person@Example.ORG ", page: "/ospos", lang: "ca" });
-out.sub_known = await SUB({ email: "known@sarapis.org", page: "/" });
-AT.failWrite = true; out.sub_fail = await SUB({ email: "a@b.org" }); AT.failWrite = false;
+out.sub_badpage = await SUB({ email: "a@b.org", page: "https://evil.example/x" });
+cmsStatus = 400; out.sub_cms400 = await SUB({ email: "a@b.org" });
+cmsStatus = 500; out.sub_fail = await SUB({ email: "a@b.org" }); cmsStatus = 201;
 out.sub_html = await SUB({ email: "<b>@b.org" }, { json: false });
 out.sub_html_ok = await SUB({ email: "html@b.org", lang: "ca" }, { json: false });
 globalThis.fetch = realFetch;
@@ -282,41 +276,30 @@ def main():
           (o["home_other_param"]["status"], o["home_other_param"]["asked"]),
           (200, ["/index.html"]))
 
-    # ---- /api/subscribe: the "Get project updates" form -> the Sarapis CRM
-    w = lambda k: [c for c in o[k]["calls"] if c["method"] != "GET"]
+    # ---- /api/subscribe: the "Get project updates" form -> Payload campaign-signups
     check("subscribe: GET is 405", o["sub_get"]["status"], 405)
-    check("subscribe: a cross-origin POST is 403 and touches nothing",
+    check("subscribe: a cross-origin POST is 403 and forwards nothing",
           (o["sub_cross"]["status"], o["sub_cross"]["calls"]), (403, []))
-    check("subscribe: an invalid address is 400 and touches nothing",
+    check("subscribe: an invalid address is 400 and forwards nothing",
           (o["sub_bad"]["status"], o["sub_bad"]["json"]["ok"], o["sub_bad"]["calls"]), (400, False, []))
-    check("subscribe: an address with a quote is refused before any formula is built",
+    check("subscribe: an address with a quote is refused here",
           (o["sub_quote"]["status"], o["sub_quote"]["calls"]), (400, []))
-    check("subscribe: a filled honeypot is answered ok and stores nothing",
+    check("subscribe: a filled honeypot is answered ok and NOT forwarded",
           (o["sub_honeypot"]["status"], o["sub_honeypot"]["json"]["ok"], o["sub_honeypot"]["calls"]), (200, True, []))
-    check("subscribe: no AIRTABLE_TOKEN secret is 503 and stores nothing",
-          (o["sub_notoken"]["status"], o["sub_notoken"]["calls"]), (503, []))
     n = o["sub_new"]
-    srch = n["calls"][0] if n["calls"] else {}
-    made = (w("sub_new") or [{}])[0]
-    f = ((made.get("body") or {}).get("records") or [{}])[0].get("fields", {})
-    check("subscribe: a new address is looked up (lower-cased, trimmed) in the CRM's People table",
-          (srch.get("host"), srch.get("path"), srch.get("formula"), srch.get("auth")),
-          ("api.airtable.com", "/v0/app6KkPPGq9NVEAsM/tblcx9dun5fAyGRCn",
-           "LOWER({Email})='new.person@example.org'", "Bearer patTEST"))
-    check("subscribe: ...then CREATED once, with govoss brand, list and source, typecast on",
-          (n["status"], n["json"]["ok"], made.get("method"), made["body"]["typecast"] if made.get("body") else None,
-           f.get("Email"), f.get("Name"), f.get("Brands"), f.get("Tags"), f.get("Sources"),
-           bool(f.get("First Seen")), "/ospos (ca)" in (f.get("Notes") or "")),
-          (200, True, "POST", True, "new.person@example.org", "new.person@example.org",
-           ["govoss"], ["govoss updates"], ["govoss.cat signup"], True, True))
-    k = (w("sub_known") or [{}])[0]
-    kf = ((k.get("body") or {}).get("records") or [{}])[0]
-    check("subscribe: a known address is PATCHED by id, its brands and lists kept beside govoss's",
-          (k.get("method"), kf.get("id"), kf.get("fields", {}).get("Brands"), kf.get("fields", {}).get("Tags"),
-           kf.get("fields", {}).get("Sources"), "Email" in kf.get("fields", {}), len(w("sub_known"))),
-          ("PATCH", "recKNOWN000000001", ["Sarapis", "govoss"], ["Friends", "govoss updates"],
-           ["govoss.cat signup"], False, 1))
-    check("subscribe: a CRM failure is a 502 saying you were NOT added",
+    c = n["calls"][0] if n["calls"] else {}
+    check("subscribe: forwarded ONCE to Payload campaign-signups: the address lower-cased and trimmed, "
+          "campaign govoss, the page as source, no site, no credential",
+          (n["status"], n["json"]["ok"], len(n["calls"]), c.get("url"), c.get("method"), c.get("body"),
+           "Authorization" in (c.get("headers") or {})),
+          (200, True, 1, "https://next.sarapis.org/api/campaign-signups", "POST",
+           {"email": "new.person@example.org", "campaign": "govoss", "source": "/ospos"}, False))
+    check("subscribe: a page that is not a path is sent as /",
+          [x["body"]["source"] for x in o["sub_badpage"]["calls"]], ["/"])
+    check("subscribe: Payload refusing the address is a 400 'enter a valid address'",
+          (o["sub_cms400"]["status"], o["sub_cms400"]["json"]["ok"], "valid" in o["sub_cms400"]["json"]["message"]),
+          (400, False, True))
+    check("subscribe: a CMS failure is a 502 saying you were NOT added",
           (o["sub_fail"]["status"], o["sub_fail"]["json"]["ok"], "not added" in o["sub_fail"]["json"]["message"]),
           (502, False, True))
     check("subscribe: without JavaScript the answer is a small HTML page, nothing echoed",

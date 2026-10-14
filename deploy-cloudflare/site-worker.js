@@ -15,8 +15,8 @@
 //       and test_workers.py can pin it. build_site.sh deletes those old files, or
 //       an asset would answer before this script ran
 //   /ca  308 -> /ca/
-//   /api/subscribe  POST, the "Get project updates" form -> the Sarapis CRM
-//       (subscribe.js; needs the AIRTABLE_TOKEN secret)
+//   /api/subscribe  POST, the "Get project updates" form, forwarded to the
+//       Sarapis Payload CMS's campaign-signups (subscribe.js; no secret)
 import { subscribe } from "./subscribe.js";
 
 const OLD = {
