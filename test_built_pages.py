@@ -375,6 +375,32 @@ def main():
           [f["properties"]["code"] for f in gj.get("features", [])
            if set(f["properties"]) & {"entries", "total", "total_entries"}], [])
 
+    # ---- 12h. "GET PROJECT UPDATES" (owner, 2026-10-14): every page's footer has the
+    # signup form, home has a second one in its own section. Each posts to
+    # /api/subscribe, labels its email field, says the page's language, keeps the
+    # honeypot out of the tab order, announces the answer, and the one script that
+    # sends them is on the page once. Ids stay unique with two forms on a page.
+    bad = []
+    for name, pg in pages.items():
+        if name.startswith("catalogue"):
+            continue
+        lang = "ca" if name.startswith("ca/") else "en"
+        forms = re.findall(r'<form class="signup" action="/api/subscribe" method="post" aria-labelledby="([^"]+)">(.*?)</form>',
+                           pg, re.S)
+        want = 2 if name in ("index.html", "ca/index.html") else 1
+        ok = len(forms) == want and pg.count("form.signup") == 1
+        for hid, body in forms:
+            em = re.search(r'<input id="([^"]+)" type="email" name="email" required', body)
+            ok = ok and bool(em) and ('<label class="vh" for="%s">' % em.group(1)) in body \
+                and ('id="%s"' % hid) in body and ('name="lang" value="%s"' % lang) in body \
+                and bool(re.search(r'name="website"\s+tabindex="-1"', body)) \
+                and '<p class="signup-msg" role="status" aria-live="polite" hidden></p>' in body
+        ids = re.findall(r'\sid="([^"]+)"', pg)
+        if not ok or len(ids) != len(set(ids)):
+            bad.append(name)
+    check("every page has the signup form (home twice), labelled, its language, honeypot, live status, unique ids",
+          bad, [])
+
     # ---- 12e. THE PAGE SPLIT (2026-10-07). Home is light and hands its search to
     # /software; every page carries the same five nav links; Resources renders
     # every record of its file; the old page files are gone from site/.

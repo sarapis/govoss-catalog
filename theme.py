@@ -459,6 +459,30 @@ p{margin:0;}
 
 /* footer */
 .foot{margin-top:56px;padding:48px 0 44px;border-top:var(--divider);}
+/* "Get project updates" (owner, 2026-10-14): signup_form(), in every footer and on
+   home; posts to /api/subscribe (deploy-cloudflare/subscribe.js) -> the Sarapis CRM */
+.signup{display:flex;flex-direction:column;gap:8px;}
+.signup h2,.signup h4{margin:0;}
+.signup-lede{margin:0;font-size:14px;line-height:1.55;color:var(--ink-600);max-width:520px;}
+.signup-row{display:flex;gap:8px;flex-wrap:wrap;max-width:460px;}
+.signup-row input{flex:1 1 200px;min-width:0;font:inherit;font-size:14px;padding:9px 12px;
+  border:1px solid var(--border);border-radius:var(--r-chip);background:var(--surface);color:var(--ink);}
+.signup-row button{font-family:var(--font-ui);font-size:13px;font-weight:600;padding:9px 16px;border:0;
+  border-radius:var(--r-chip);background:var(--primary);color:var(--white);cursor:pointer;}
+.signup-row button:hover,.signup-row button:focus-visible{background:var(--primary-deep);}
+.signup-row button:disabled{opacity:.6;cursor:default;}
+.signup-fine{margin:0;font-size:12px;line-height:1.5;color:var(--ink-faint);max-width:520px;}
+.signup-msg{margin:0;font-size:13px;font-weight:600;color:var(--green-text);}
+.signup-msg.err{color:var(--ink);}
+.signup .vh,.signup .hp{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);
+  clip-path:inset(50%);white-space:nowrap;}
+.foot .signup{flex:1 1 300px;max-width:440px;}
+.foot .signup h4{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-faint);}
+.foot .signup-lede{font-size:13px;}
+.hm-signup{margin-top:48px;padding:28px;border:1px solid var(--border);border-radius:var(--r-card);
+  background:var(--surface);}
+.hm-signup h2{font-size:22px;}
 .foot .cols{display:flex;flex-wrap:wrap;gap:32px 48px;}
 .foot .col{display:flex;flex-direction:column;gap:8px;min-width:150px;}
 .foot .col h4{font-family:var(--font-ui);font-size:11px;font-weight:600;
@@ -654,6 +678,59 @@ def submit_block(n, lang="en"):
 # Side effect worth having: with ctfg_nav.py retired, the build makes no network
 # request at all. A weekly unattended run can no longer be affected by a third
 # party's CMS being slow or down.
+def signup_form(where, lang="en"):
+    """The "Get project updates" form (owner, 2026-10-14): `where` is "foot" (every
+    page) or "home" (the home section); ids are prefixed by it, so both can sit on
+    one page. Posts to /api/subscribe; SIGNUP_SCRIPT (in the footer) sends it with
+    fetch and shows the answer, and without JavaScript the post still works. `page`
+    is filled from location.pathname by the script. The honeypot `website` is
+    off-screen and out of the tab order."""
+    i = "su-" + where
+    h = "h2" if where == "home" else "h4"
+    return ("""<form class="signup" action="/api/subscribe" method="post" aria-labelledby="%(i)s-h">
+  <%(h)s id="%(i)s-h">⟪Get project updates⟫</%(h)s>
+  <p class="signup-lede">⟪Get regular updates about new tools, catalogs, resources and more from the team behind govoss.cat.⟫</p>
+  <div class="signup-row">
+    <label class="vh" for="%(i)s-email">⟪Email address⟫</label>
+    <input id="%(i)s-email" type="email" name="email" required maxlength="254" autocomplete="email"
+      placeholder="⟪you@example.org⟫">
+    <button type="submit">⟪Subscribe⟫</button>
+  </div>
+  <input type="hidden" name="lang" value="%(lang)s"><input type="hidden" name="page" value="/">
+  <div class="hp" aria-hidden="true"><label>⟪Leave this empty⟫ <input type="text" name="website"
+    tabindex="-1" autocomplete="off"></label></div>
+  <p class="signup-fine">⟪We keep your address in Sarapis&rsquo;s contact list only to send these updates,
+    and never share it. Reply to any update to unsubscribe.⟫</p>
+  <p class="signup-msg" role="status" aria-live="polite" hidden></p>
+</form>""" % {"i": i, "h": h, "lang": lang})
+
+
+# Every signup form on the page, sent with fetch (JSON back); the server's message
+# is shown, already in the page's language. A plain post still works without it.
+SIGNUP_SCRIPT = """<script>
+(function () {
+  [].forEach.call(document.querySelectorAll('form.signup'), function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = f.querySelector('.signup-msg'), btn = f.querySelector('button[type="submit"]');
+      var say = function (t, err) { msg.textContent = t; msg.className = 'signup-msg' + (err ? ' err' : ''); msg.hidden = false; };
+      btn.disabled = true; say('⟪js:Sending...⟫');
+      fetch(f.action, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: f.elements.email.value, website: f.elements.website.value,
+                               lang: f.elements.lang.value, page: location.pathname }) })
+        .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+        .then(function (j) {
+          say(j.message || '⟪js:Something went wrong and you were not added. Please try again later.⟫', !j.ok);
+          if (j.ok) f.elements.email.value = '';
+        })
+        .catch(function () { say('⟪js:Something went wrong and you were not added. Please try again later.⟫', true); })
+        .then(function () { btn.disabled = false; });
+    });
+  });
+})();
+</script>"""
+
+
 def footer(nav=None, lang="en"):
     """`nav` is accepted and ignored, so the four builders keep one call shape."""
     cols = (
@@ -679,7 +756,7 @@ def footer(nav=None, lang="en"):
     )
     return """
 <footer class="foot tex"><div class="wrap">
-  <div class="cols">__COLS__</div>
+  <div class="cols">__SIGNUP__ __COLS__</div>
   <hr class="dashed" style="margin:28px 0 20px">
   <div class="pub">
     <a class="sds-logo" href="https://sarapis.org">
@@ -694,7 +771,7 @@ def footer(nav=None, lang="en"):
       published them &mdash; every entry links back to its source.⟫</span>
   </div>
 </div></footer>
-""".replace("__COLS__", cols)
+""".replace("__COLS__", cols).replace("__SIGNUP__", signup_form("foot", lang)) + SIGNUP_SCRIPT
 
 
 def head(title, description, canonical="", lang="en", route=None):

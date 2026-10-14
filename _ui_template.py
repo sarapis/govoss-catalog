@@ -597,6 +597,8 @@ HOME_BODY = """
     <ul class="rtrack" id="rtrack"></ul>
   </section>
 
+  <section class="hm-signup"><!--SIGNUP--></section>
+
   <div class="hm-build">
     <p class="hm-bt">⟪For builders⟫</p>
     <p>⟪The whole catalog is one request, with no key and no pagination, and an MCP server

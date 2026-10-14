@@ -171,6 +171,7 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   login, recorded to `out/deploy_auth.txt` -> `history.json`; `/sources.html` warns while it is
   `stored-login`. `None` is not `stored-login`. The pre-flight checks whoami CONTENT for the
   pinned account id, and is non-fatal.
+- **Signup** (`theme.signup_form`) -> `/api/subscribe` -> Sarapis CRM: 1 row/email, UNION, never upsert; secret `AIRTABLE_TOKEN`.
 - Headers/redirects: `deploy-cloudflare/_headers` + `_redirects`, copied by `build_site.sh`.
   **`html_handling` is `"none"`**: `site-worker.js` owns the URL scheme, running only when no
   asset matches - clean paths from `<path>.html`, `/` from `index.html`, 301s for the old names
@@ -251,8 +252,7 @@ the tool promises: `n d o a u rp` - add to `compact()` in `export_json.py` and `
 
 ## Accessibility
 
-WCAG 2.1 AA contrast re-audited 2026-08-13 on every text node including pressed states (lowest
-4.9:1). **No screen-reader testing has been done** - never read the audit as conformance.
+WCAG 2.1 AA contrast re-audited 2026-08-13 (lowest 4.9:1). **No screen-reader testing yet** - never conformance.
 
 ## Tests
 

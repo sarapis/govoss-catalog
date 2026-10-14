@@ -15,6 +15,10 @@
 //       and test_workers.py can pin it. build_site.sh deletes those old files, or
 //       an asset would answer before this script ran
 //   /ca  308 -> /ca/
+//   /api/subscribe  POST, the "Get project updates" form -> the Sarapis CRM
+//       (subscribe.js; needs the AIRTABLE_TOKEN secret)
+import { subscribe } from "./subscribe.js";
+
 const OLD = {
   "/sources.html": "/catalogs",
   "/api.html": "/docs",
@@ -38,6 +42,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const p = url.pathname;
+    if (p === "/api/subscribe") return subscribe(request, env, url);
     if (p === "/ca") {
       return Response.redirect(url.origin + "/ca/" + url.search, 308);
     }

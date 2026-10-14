@@ -490,7 +490,8 @@ def render(lang):
                        desc, lang=lang, route="/")
             + style.replace("</style>", T.HOME_CSS + "</style>")
             + theme.utility_bar(lang=lang) + theme.topbar("home", lang, "/")
-            + T.HOME_BODY + theme.footer(lang=lang) + T.HOME_SCRIPT)
+            + T.HOME_BODY.replace("<!--SIGNUP-->", theme.signup_form("home", lang))
+            + theme.footer(lang=lang) + T.HOME_SCRIPT)
     _finish(home, subs, lang, f"{OUT}/{_HOMEFILE[lang]}", "home page")
     page = (
         theme.head(i18n.t(lang, "Software | govoss"), desc, lang=lang, route="/software")
