@@ -1021,6 +1021,54 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/danny-avila/librechat"
+  ],
+  "categories": [
+   "productivity-suite",
+   "other",
+   "collaboration"
+  ],
+  "contacts": [
+   "Supporto airpa"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "La soluzione mette a disposizione strumenti conversazionali evoluti e funzionalit\u00e0 di supporto alla produttivit\u00e0 individuale.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/regione-piemonte/auxiliapiemonte.git",
+  "features": [
+   "Analizzare e sintetizzare documenti",
+   "Ricercare informazioni attraverso l'interazione conversazionale",
+   "Produrre contenuti testuali",
+   "Supportare la predisposizione dei contenuti",
+   "Tradurre e rielaborare testi",
+   "Utilizzare assistenti specializzati"
+  ],
+  "landing": "https://github.com/regione-piemonte/auxiliapiemonte",
+  "license": "EUPL-1.2",
+  "long_desc": "La soluzione mette a disposizione strumenti conversazionali evoluti e funzionalit\u00e0 di supporto alla produttivit\u00e0 individuale; con questa soluzione si pu\u00f2\n\n- analizzare e sintetizzare documenti\n- ricercare informazioni attraverso l'interazione conversazionale\n- produrre contenuti testuali\n- supportare la predisposizione dei contenuti\n- tradurre e rielaborare testi\n- utilizzare assistenti specializzati",
+  "maintenance": "internal",
+  "name": "auxiliapiemonte",
+  "platforms": [
+   "linux"
+  ],
+  "released": "2026-10-01",
+  "repo": "https://github.com/regione-piemonte/auxiliapiemonte",
+  "repo_key": "github.com/regione-piemonte/auxiliapiemonte",
+  "short_desc": "La soluzione mette a disposizione strumenti conversazionali evoluti e funzionalit\u00e0 di supporto alla produttivit\u00e0 individuale.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "6545fc45-2e9e-4d21-81ab-b635337b744c",
+  "used_by": [
+   "Regione Piemonte"
+  ],
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
   "categories": [
    "accounting"
   ],
@@ -2234,6 +2282,51 @@
  {
   "active": true,
   "categories": [
+   "communications",
+   "digital-citizenship",
+   "taxes-management",
+   "document-management"
+  ],
+  "contacts": [
+   "Comune di Montesilvano \u2014 Innovazione Tecnologica"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "HUB open-source per l'invio massivo asincrono di comunicazioni della PA (TARI, avvisi, sanzioni) su PEC, Email, App IO, SEND, Postalizzazione.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/Comune-di-Montesilvano/ComunicaPA.git",
+  "features": [
+   "Invio massivo multicanale (PEC, Email, App IO, SEND, Postalizzazione)",
+   "Co-consegna App IO in parallelo o esclusiva sul canale primario",
+   "Coda asincrona BullMQ/Redis con retry automatico e motori pausabili",
+   "Integrazione SEND (PN) con protocollazione preventiva obbligatoria",
+   "Autenticazione cittadini via SPID/CIE (OIDC + PKCE)",
+   "Dirottamento automatico su domicilio digitale via INAD",
+   "Verifica anagrafica e domicilio digitale via ANPR (PDND)",
+   "Integrazione pagoPA per avvisi di pagamento"
+  ],
+  "landing": "https://github.com/Comune-di-Montesilvano/ComunicaPA",
+  "license": "EUPL-1.2",
+  "long_desc": "ComunicaPA consente agli enti pubblici di inviare comunicazioni di massa (TARI, avvisi tributari, sanzioni, notifiche) su canali multipli in modo asincrono, scalabile e conforme alla normativa italiana ed europea. Un operatore carica un CSV di destinatari dal portale admin, sceglie canale e template, e il sistema gestisce invio, retry, tracciamento esiti e download degli allegati \u2014 senza intervento manuale per singolo destinatario.\n\nOgni campagna pu\u00f2 usare un canale primario (PEC, Email, SEND, Postalizzazione) e co-consegnare in parallelo su App IO, con contenuto differenziato per canale. Le code BullMQ/Redis gestiscono retry automatico, motori pausabili/riprendibili dalla UI e log per singolo job, senza richieste HTTP bloccanti su migliaia di destinatari.\n\nIl canale SEND (Servizio Notifiche Digitali, D.Lgs. 82/2005) \u00e8 integrato con protocollazione preventiva obbligatoria e autenticazione PDND. L'accesso cittadini avviene via SPID/CIE (OIDC, Authorization Code + PKCE). Un dirottamento automatico via INAD (Indice Nazionale dei Domicili Digitali) reindirizza le comunicazioni a un domicilio digitale pi\u00f9 aggiornato quando disponibile, sempre garantendo il canale legalmente valido.\n\nL'i",
+  "maintenance": "internal",
+  "name": "ComunicaPA",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-10-13",
+  "repo": "https://github.com/Comune-di-Montesilvano/ComunicaPA.git",
+  "repo_key": "github.com/comune-di-montesilvano/comunicapa",
+  "short_desc": "HUB open-source per l'invio massivo asincrono di comunicazioni della PA (TARI, avvisi, sanzioni) su PEC, Email, App IO, SEND, Postalizzazione.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "e3bb9350-dc26-4137-a9b2-2af786d9fcf6",
+  "version": "v1.10.2"
+ },
+ {
+  "active": true,
+  "categories": [
    "content-management",
    "communications",
    "digital-citizenship"
@@ -2795,7 +2888,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-06",
+  "released": "2026-10-13",
   "repo": "https://github.com/Comune-di-Montesilvano/CruscottoPA",
   "repo_key": "github.com/comune-di-montesilvano/cruscottopa",
   "repo_owner": "Comune di Montesilvano",
@@ -2807,7 +2900,7 @@
   "used_by": [
    "Comune di Montesilvano"
   ],
-  "version": "0.4.0"
+  "version": "0.13.0"
  },
  {
   "active": true,
@@ -4713,7 +4806,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-05",
+  "released": "2026-10-13",
   "repo": "https://github.com/consiglionazionaledellericerche/epas",
   "repo_key": "github.com/consiglionazionaledellericerche/epas",
   "short_desc": "ePAS \u00e8 il nuovo sistema di rilevazione e gestione delle presenze del personale pensato per le specifiche esigenze degli Enti Pubblici di Ricerca.",
@@ -4727,7 +4820,7 @@
    "Consorzio LAMMA",
    "Ministero dei Trasporti"
   ],
-  "version": "2.34.0"
+  "version": "2.36.0"
  },
  {
   "active": true,
@@ -13649,7 +13742,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-02",
+  "released": "2026-10-09",
   "repo": "https://github.com/link-it/govpay",
   "repo_key": "github.com/link-it/govpay",
   "repo_owner": "Link.it s.r.l.",
@@ -13664,7 +13757,7 @@
    "MIC - Ministero della Cultura",
    "MISE - Ministero dello Sviluppo Economico"
   ],
-  "version": "3.9.3.p5"
+  "version": "3.9.3.p6"
  },
  {
   "active": true,
@@ -13700,7 +13793,6 @@
   "released": "2026-09-29",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
-  "repo_owner": "Comune di Montesilvano",
   "short_desc": "Piattaforma containerizzata per la gestione dei pagamenti PagoPA, rendicontazione, marca da bollo e integrazione GovPay per enti locali.\n",
   "software_type": "standalone/web",
   "source": "IT/developers-italia",
@@ -13710,7 +13802,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.5.78"
+  "version": "1.5.81"
  },
  {
   "active": true,
@@ -18505,7 +18597,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-06",
+  "released": "2026-10-12",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -18993,7 +19085,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.18.0-rc.3"
+  "version": "4.18.1"
  },
  {
   "active": true,
@@ -19143,7 +19235,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-06",
+  "released": "2026-10-09",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19405,7 +19497,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.5"
+  "version": "4.1.7"
  },
  {
   "active": true,
@@ -19752,6 +19844,52 @@
   "used_by": [
    "Area Vasta Bari"
   ]
+ },
+ {
+  "active": true,
+  "categories": [
+   "it-security",
+   "identity-management",
+   "application-development"
+  ],
+  "contacts": [
+   "Provincia di Pescara"
+  ],
+  "country": "IT",
+  "desc_en": "SPID/CIE/eIDAS SSO proxy for Italian Public Administration.",
+  "desc_lang": "en",
+  "desc_src": "SPID/CIE/eIDAS SSO proxy per Pubblica Amministrazione italiana.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/Provincia-di-Pescara/pa-sso-proxy.git",
+  "features": [
+   "SPID SAML (all official AgID IdPs)",
+   "CIE SAML (Ministry of the Interior)",
+   "CIE OIDC Federation 1.0",
+   "eIDAS SAML (login of European citizens via FICEP)",
+   "Multi-client OIDC",
+   "Configuration WebUI",
+   "Automatic SPID certificate renewal",
+   "Automatic IdP metadata updates"
+  ],
+  "landing": "https://github.com/Provincia-di-Pescara/pa-sso-proxy",
+  "license": "EUPL-1.2",
+  "long_desc": "Allows any application of the public administration to authenticate citizens through SPID, CIE and eIDAS, exposing a single standard OIDC interface. The organization configures the proxy once; each app connects as an OIDC client with PKCE.\nSupports SPID SAML (all official AgID IdPs), CIE SAML (Ministry of the Interior), CIE OIDC Federation 1.0, eIDAS SAML (FICEP), multi-client OIDC, configuration web UI, automatic certificate renewal, and automatic IdP metadata updates.\n",
+  "maintenance": "internal",
+  "name": "pa-sso-proxy",
+  "platforms": [
+   "web",
+   "linux"
+  ],
+  "released": "2026-10-01",
+  "repo": "https://github.com/Provincia-di-Pescara/pa-sso-proxy",
+  "repo_key": "github.com/provincia-di-pescara/pa-sso-proxy",
+  "short_desc": "SPID/CIE/eIDAS SSO proxy for Italian Public Administration.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "92192e38-8fae-4d6c-8329-3847a37f5114",
+  "version": "0.9.14"
  },
  {
   "active": true,
@@ -21388,6 +21526,60 @@
    "ISPRA"
   ],
   "version": "0.1.21"
+ },
+ {
+  "active": true,
+  "categories": [
+   "application-development",
+   "geographic-information-systems",
+   "data-collection",
+   "data-visualization",
+   "workflow-management",
+   "it-development",
+   "it-security",
+   "content-management"
+  ],
+  "contacts": [
+   "Francesco Loreti"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Client QGIS per PDND",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/isprambiente/pdnd-qgis-client.git",
+  "features": [
+   "Gestione connessioni PDND (clientId, privateKey, kid, apiUrl)",
+   "Generazione JWT + richiesta token PDND",
+   "Parsing automatico del documento OAS3",
+   "Individuazione degli endpoint WMS",
+   "Individuazione degli endpoint GeoJSON",
+   "Caricamento dei layer nel progetto QGIS",
+   "Messaggi colorati tramite QGIS MessageBar",
+   "Gestione errori PDND (token, API, OAS3)"
+  ],
+  "landing": "https://github.com/isprambiente/pdnd-qgis-client",
+  "license": "MIT",
+  "long_desc": "PDND QGIS Client \u00e8 un plugin QGIS che permette di:\n- configurare connessioni PDND tramite file JSON  \n- generare automaticamente JWT e token PDND  \n- interrogare API OAS3  \n- estrarre endpoint WMS  \n- estrarre endpoint GeoJSON \n- caricare layer WMS e GeoJSON protetti direttamente in QGIS  \n\n\u00c8 pensato per enti pubblici, ricercatori e sviluppatori che devono integrare servizi geospaziali protetti tramite la Piattaforma Digitale Nazionale Dati (PDND).",
+  "maintenance": "internal",
+  "name": "PDND QGIS Client",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux"
+  ],
+  "released": "2026-08-23",
+  "repo": "https://github.com/isprambiente/pdnd-qgis-client.git",
+  "repo_key": "github.com/isprambiente/pdnd-qgis-client",
+  "short_desc": "Client QGIS per PDND",
+  "software_type": "addon",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "627f8803-ce51-4c86-8af2-f8b6a9ace05f",
+  "used_by": [
+   "ISPRA"
+  ],
+  "version": "1.0.0"
  },
  {
   "active": true,
@@ -23160,6 +23352,49 @@
  {
   "active": true,
   "categories": [
+   "facility-management",
+   "it-service-management",
+   "workflow-management"
+  ],
+  "contacts": [
+   "Ufficio Tecnico \u2014 Comune di Montesilvano"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Segnalazioni di manutenzione PA: da scuole/URP a imprese e operatori, workflow tracciato fino alla chiusura.",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/Comune-di-Montesilvano/ProntoPA.git",
+  "features": [
+   "Gestione segnalazioni con workflow a 10 stati",
+   "Assegnazione a imprese esterne o squadre di operai interni",
+   "Anti-duplicato con adesioni e merge segnalazioni simili",
+   "Notifiche email e bot Telegram sul cambio stato",
+   "Rapportino fotografico prima/dopo con approvazione gestore",
+   "Magic link per imprese senza account",
+   "Assistente locale opzionale (LLM on-premise, dati mai in cloud)",
+   "Dashboard e KPI per gestori, operai e imprese"
+  ],
+  "landing": "https://github.com/Comune-di-Montesilvano/ProntoPA",
+  "license": "EUPL-1.2",
+  "long_desc": "ProntoPA \u00e8 il sistema con cui un ente locale raccoglie, smista e chiude le segnalazioni di manutenzione ordinaria e straordinaria su scuole, plessi ed edifici pubblici.\n\nScuole, URP e uffici interni segnalano un guasto in meno di 30 secondi; il gestore valuta, assegna a un'impresa esterna o a una squadra di operai interni, e il workflow (10 stati, transizioni tracciate) accompagna la pratica fino alla chiusura, con notifiche email e Telegram a ogni passaggio.\n\nPunti di forza pensati per l'uso quotidiano in un ufficio tecnico:\n- anti-duplicato con adesioni multiple e merge a posteriori;\n- digest mattutino automatico per i gestori;\n- rapportino fotografico con prova documentale prima/dopo;\n- magic link per le imprese non registrate (zero login via email);\n- assistente locale opzionale (LLM on-premise via Ollama) per\n  titoli automatici, triage suggerito e dedup semantico \u2014 i dati\n  non escono mai dall'ente;\n\n- report mensili, export XLSX e fascicolo PDF per la\n  rendicontazione;\n\n- API REST e webhook HMAC per integrarsi col sito istituzionale\n  del Comune;\n\n- accessi senza utenze da gestire a mano: dipendenti con Active\n  Directory (ruoli dai gruppi), scuole con SPID/CIE, ditte con\n ",
+  "maintenance": "internal",
+  "name": "ProntoPA",
+  "platforms": [
+   "web"
+  ],
+  "repo": "https://github.com/Comune-di-Montesilvano/ProntoPA.git",
+  "repo_key": "github.com/comune-di-montesilvano/prontopa",
+  "short_desc": "Segnalazioni di manutenzione PA: da scuole/URP a imprese e operatori, workflow tracciato fino alla chiusura.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "0c1127af-c1cc-4c16-89d7-539cbaa3c430",
+  "version": "0.8.0"
+ },
+ {
+  "active": true,
+  "categories": [
    "document-management",
    "workflow-management"
   ],
@@ -23904,6 +24139,44 @@
  {
   "active": true,
   "contacts": [
+   "Davide Elia",
+   "Laura Lo Russo"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Registro lavoratori ex esposti amianto sottoposti a vigilanza sanitaria",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/regione-piemonte/reea.git",
+  "features": [
+   "Gestione anagrafica assistiti",
+   "Caricamento elenco preadesioni",
+   "caricamento dati di monitoraggio",
+   "scarico dati per analisi epidemiologica",
+   "scarico dati per reportistica regionale e ministeriale",
+   "valutazione delle preadesioni",
+   "presa in carico delle preadesioni"
+  ],
+  "license": "EUPL-1.2",
+  "long_desc": "La soluzione informatizzata, denominata \u201cREEA \u2013 Registro Ex Esposti Amianto\u201d, rappresenta un sistema integrato all\u2019interno dell\u2019ecosistema dei servizi della sanit\u00e0 digitale del Piemonte, interoperabile con la base dati anagrafica nazionale e rispondente alla normativa in corso relativa allo specifico tema, finalizzato alla gestione di un archivio regionale dei soggetti ex esposti ad amianto avviati all\u2019attivit\u00e0 di sorveglianza sanitaria da parte delle ASL piemontesi.\nGli attori principali che concorrono alla gestione completa dell\u2019attivit\u00e0 di sorveglianza sono il CRPT dell\u2019AOU CDSS di Torino, titolare del Registro, e gli SPreSAL, deputati alla presa in carico degli assistiti di competenza di ciascuna ASL. Le funzionalit\u00e0 messe a disposizione dal Registro sono di seguito sintetizzate:\ncaricamento e valutazione delle preadesioni da parte del CRPT;\ncaricamento degli elenchi INAIL A e B da parte dell\u2019operatore INAIL;\npresa in carico delle preadesioni e avvio della sorveglianza da parte degli SPreSAL delle ASL;\ncaricamento dei dati di sorveglianza e degli elenchi NPLA (notifiche e piani di lavoro amianto) da parte degli SPreSAL;\nestrazione dati a fini epidemiologici e produzione report ",
+  "maintenance": "internal",
+  "name": "REEA (Registro Ex Esposti Amianto)",
+  "platforms": [
+   "linux",
+   "windows"
+  ],
+  "repo": "https://github.com/regione-piemonte/reea",
+  "repo_key": "github.com/regione-piemonte/reea",
+  "short_desc": "Registro lavoratori ex esposti amianto sottoposti a vigilanza sanitaria",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "ee995839-136e-4e3c-87b1-f81543799054",
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "contacts": [
    "Claudio Marcopoli"
   ],
   "country": "IT",
@@ -24019,6 +24292,44 @@
    "Regione Emilia-Romagna"
   ],
   "version": "0.1.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "application-development"
+  ],
+  "contacts": [
+   "Sara Turra"
+  ],
+  "country": "IT",
+  "desc_en": "Link map addon for Plone",
+  "desc_lang": "en",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/RegioneER/rer.linkmap.git",
+  "features": [
+   "JSON and XML link map of the Amministrazione Trasparente section",
+   "Configuration of the link map via control panel"
+  ],
+  "license": "GPL-2.0-or-later",
+  "long_desc": "This product gives the ability to configure via a control panel the list of all links specified here: https://guida-servizi.anticorruzione.it/it/help/trasparenza/amministrazione-trasparente/#la-mappa-dei-link-della-sezione-at\nThe link map can be exposed in JSON or XML formats, accessible through a Plone browserview.\n",
+  "maintenance": "contract",
+  "name": "rer.linkmap",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-06-22",
+  "repo": "https://github.com/RegioneER/rer.linkmap",
+  "repo_key": "github.com/regioneer/rer.linkmap",
+  "repo_owner": "Regione Emilia-Romagna",
+  "short_desc": "Link map addon for Plone",
+  "software_type": "addon",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "651d39b1-28e7-4cd9-a20d-826907a8b71e",
+  "used_by": [
+   "Regione Emilia-Romagna"
+  ],
+  "version": "1.0.0"
  },
  {
   "active": true,
@@ -26013,6 +26324,39 @@
    "https://www.unical.it"
   ],
   "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "knowledge-management"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "ShowVoc is a web-based, multilingual, platform for publishing and consulting  OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons and generic RDF datasets",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://bitbucket.org/art-uniroma2/showvoc.git",
+  "features": [
+   "RDF Collaborative Editing"
+  ],
+  "landing": "https://showvoc.uniroma2.it/",
+  "license": "BSD-3-Clause",
+  "long_desc": "ShowVoc\u00a0is a web-based, multilingual, platform for publishing and consulting [OWL](https://www.w3.org/TR/owl2-overview/) ontologies, [SKOS](https://www.w3.org/TR/skos-reference/)(/[XL](https://www.w3.org/TR/skos-reference/skos-xl.html)) thesauri, [Ontolex-lemon](https://www.w3.org/2016/05/ontolex/) lexicons and generic RDF datasets.\n\nShowVoc business and data access layers are realized on top of [Semantic Turkey](https://semanticturkey.uniroma2.it/), an open-source platform for Knowledge Acquisition and Management realized by the [University of Rome Tor Vergata](https://www.uniroma2.it/).\n",
+  "maintenance": "contract",
+  "name": "ShowVoc",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-05-08",
+  "repo": "https://bitbucket.org/art-uniroma2/showvoc.git",
+  "repo_key": "bitbucket.org/art-uniroma2/showvoc",
+  "repo_owner": "University of Rome Tor Vergata",
+  "short_desc": "ShowVoc is a web-based, multilingual, platform for publishing and consulting  OWL ontologies, SKOS(/XL) thesauri, Ontolex-lemon lexicons and generic RDF datasets",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "e5bd0971-bf51-4025-819d-7384c6577f1f",
+  "version": "6.1.1"
  },
  {
   "active": true,
@@ -28815,6 +29159,76 @@
  },
  {
   "active": true,
+  "contacts": [
+   "Supporto Tecnico Regione Marche"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Backend in Quarkus per il sistema di monitoraggio meteorologico della Regione Marche.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/regione-marche/temporeale-backend.git",
+  "features": [
+   "Gestione stazioni meteorologiche e sensori",
+   "Calcolo isocurve territoriali",
+   "API REST con autenticazione OIDC (Keycloak)",
+   "Rate Limiting e audit log delle modifiche"
+  ],
+  "license": "EUPL-1.2",
+  "long_desc": "Il modulo backend del sistema Temporeale si occupa dell'elaborazione della logica di business, \ndella persistenza dei dati meteorologici storici e in tempo reale e della sicurezza dell'applicazione.\n\nFunzionalit\u00e0 principali:\n- Gestione e anagrafica stazioni meteorologiche e sensori.\n- Elaborazione dati storici territoriali.\n- Motore di calcolo per la generazione automatica di isolinee (isoiete, isoterme, nivometria).\n- Integrazione con Keycloak per autenticazione/autorizzazione degli amministratori tramite protocollo OIDC (OAuth 2.0).\n- Esposizione di API REST pubbliche e protette documentate con OpenAPI.\n- Tracciabilit\u00e0 delle modifiche amministrative tramite Audit Log (Hibernate Envers).\n- Misure di sicurezza multilivello (Rate Limiting, Bean Validation).\n",
+  "maintenance": "contract",
+  "name": "Temporeale Backend",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-06-30",
+  "repo": "https://github.com/regione-marche/temporeale-backend",
+  "repo_key": "github.com/regione-marche/temporeale-backend",
+  "repo_owner": "Regione Marche",
+  "short_desc": "Backend in Quarkus per il sistema di monitoraggio meteorologico della Regione Marche.",
+  "software_type": "standalone/backend",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "46b33849-6b65-4622-ab34-bf721f2aeab7",
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "contacts": [
+   "Supporto Tecnico Regione Marche"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Portale web in Angular per il monitoraggio meteorologico della Regione Marche conforme alle linee guida di design AGID.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/regione-marche/temporeale-frontend.git",
+  "features": [
+   "Interfaccia cartografica Leaflet interattiva",
+   "Grafici storici meteorologici con ECharts",
+   "Layout conforme agli standard di design della PA italiana (Design Angular Kit)",
+   "Accessibilit\u00e0 conforme a WCAG 2.1 AA e Legge Stanca"
+  ],
+  "license": "EUPL-1.2",
+  "long_desc": "L'applicazione frontend di Temporeale offre al cittadino e agli operatori un'interfaccia \nmoderna, fluida e accessibile per consultare le stazioni meteorologiche e le relative misurazioni territoriali.\n\nFunzionalit\u00e0 principali:\n- Visualizzazione cartografica interattiva su mappe Leaflet.\n- Grafici temporali dinamici (storici e tendenze) basati su ECharts.\n- Area amministrativa protetta tramite Keycloak per la gestione anagrafica e la configurazione dei sensori.\n- Interfaccia coerente basata su Design Angular Kit (conforme agli standard di Bootstrap Italia e Designers Italia/AgID).\n- Piena accessibilit\u00e0 conforme ai requisiti della legge italiana (Legge Stanca) e delle linee guida WCAG 2.1 AA (WAI-ARIA, navigabilit\u00e0 da tastiera, contrasti adatti).\n- Ottimizzazione mobile responsiva (\"mobile-first\").\n",
+  "maintenance": "contract",
+  "name": "Temporeale Frontend",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-06-30",
+  "repo": "https://github.com/regione-marche/temporeale-frontend",
+  "repo_key": "github.com/regione-marche/temporeale-frontend",
+  "repo_owner": "Regione Marche",
+  "short_desc": "Portale web in Angular per il monitoraggio meteorologico della Regione Marche conforme alle linee guida di design AGID.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "2ba1bf24-4caf-4043-b75c-e7e2a0d9d5fe",
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
   "categories": [
    "workflow-management",
    "business-process-management",
@@ -28945,6 +29359,46 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "597920c7-a202-4920-8a57-f11de50f56b6"
+ },
+ {
+  "active": true,
+  "categories": [
+   "compliance-management"
+  ],
+  "contacts": [
+   "Guido Pera"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Ausilio per la valutazione comparativa fra soluzioni software",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/ComuneMontelupoFiorentino/ccros-valcomp.git",
+  "features": [
+   "Raccolta dati sulle soluzioni software",
+   "Confronto delle soluzioni software",
+   "Produzione di un report di valutazione"
+  ],
+  "license": "AGPL-3.0-only",
+  "long_desc": "Le [\"Linee Guida su acquisizione e riuso di software per le pubbliche\namministrazioni\"](https://docs.italia.it/italia/developers-italia/lg-acquisizione-e-riuso-software-per-pa-docs/it/stabile/index.html) \nentrate in vigore il 9 maggio 2019 hanno cambiato i paradigmi per \nl'acquisizione del software da parte delle pubbliche amministrazioni. Da \nquesta data l'acquisizione di software attraverso il riuso di soluzioni \ndi propriet\u00e0 delle amministrazioni deve essere preceduta dall'**obbligo di\napporre una licenza aperta** sul codice e la relativa documentazione,\nrendendo la **scelta open source strategica**.\n\n\nPer rendere pi\u00f9 efficiente, econonomica e neutrale questa scelta \u00e8 stato\nprevisto che le amministrazioni predisponessero [**un documento di\nvalutazione comparativa che analizzasse le soluzioni open\nsource**](https://docs.italia.it/italia/developers-italia/lg-acquisizione-e-riuso-software-per-pa-docs/it/stabile/acquisizione-software/valutazione-comparativa.html)\nrese disponibili dalle altre amministrazioni.\n\n\nPer rendere la stesura di questo documento pi\u00f9 agevole si \u00e8 realizzato un\n**tool per supportare le amministrazioni**  in questa attivit\u00e0, composto\nda alcuni fogli di calcolo c",
+  "maintenance": "internal",
+  "name": "Tool per la Valutazione Comparativa nell'Acquisizione e Riuso di Software",
+  "platforms": [
+   "windows",
+   "mac",
+   "linux",
+   "ios",
+   "android"
+  ],
+  "released": "2021-02-11",
+  "repo": "https://github.com/AgID/ccros-valcomp",
+  "repo_key": "github.com/agid/ccros-valcomp",
+  "repo_owner": "AgID",
+  "short_desc": "Ausilio per la valutazione comparativa fra soluzioni software",
+  "software_type": "standalone/other",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "14c6e643-02bc-4683-a80f-06f6ed084304"
  },
  {
   "active": true,
@@ -29542,7 +29996,7 @@
    "linux",
    "web"
   ],
-  "released": "2026-09-03",
+  "released": "2026-10-07",
   "repo": "https://github.com/UniversitaDellaCalabria/unicms-template-unical",
   "repo_key": "github.com/universitadellacalabria/unicms-template-unical",
   "short_desc": "Universit\u00e0 della Calabria template for uniCMS",
@@ -29553,7 +30007,7 @@
   "used_by": [
    "Universit\u00e0 della Calabria - https://www.unical.it"
   ],
-  "version": "1.9.3"
+  "version": "1.9.4"
  },
  {
   "active": true,
@@ -29874,6 +30328,47 @@
  {
   "active": true,
   "categories": [
+   "it-service-management",
+   "facility-management"
+  ],
+  "contacts": [
+   "Comune di Montesilvano \u2014 Innovazione Tecnologica"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Gestionale per il patrimonio, le utenze, i fornitori e le fatture del Comune di Montesilvano.",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/Comune-di-Montesilvano/UtenzePA.git",
+  "features": [
+   "Gestione patrimonio immobiliare (asset e aggregatori)",
+   "Gestione utenze, tipologie e aggregatori di utenze",
+   "Gestione fornitori e fatture collegate",
+   "Capitoli di bilancio e convenzioni CONSIP",
+   "Autenticazione JWT con OTP via email per reset password e bootstrap Admin",
+   "Documentazione API via Swagger"
+  ],
+  "landing": "https://github.com/Comune-di-Montesilvano/UtenzePA",
+  "license": "EUPL-1.2",
+  "long_desc": "UtenzePA consente all'ente di gestire il patrimonio immobiliare (asset), le utenze e i relativi contratti, i fornitori e le fatture collegate, con aggregatori e capitoli di bilancio associati. Un backend REST (NestJS) espone le risorse di dominio, un frontend Angular fornisce l'interfaccia operativa per gli utenti di sistema.\n\nL'autenticazione degli operatori \u00e8 basata su JWT (solo access token) con password con hashing bcrypt; il reset password e il bootstrap del primo Admin usano un OTP inviato via email.\n\nLo stack gira interamente in Docker (backend NestJS, frontend Angular/nginx, MySQL), senza dipendenze da servizi cloud esterni.",
+  "maintenance": "internal",
+  "name": "UtenzePA",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-10-13",
+  "repo": "https://github.com/Comune-di-Montesilvano/UtenzePA.git",
+  "repo_key": "github.com/comune-di-montesilvano/utenzepa",
+  "short_desc": "Gestionale per il patrimonio, le utenze, i fornitori e le fatture del Comune di Montesilvano.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "57151f0b-06a8-416e-95bd-66a200fe6390",
+  "version": "v1.26.0"
+ },
+ {
+  "active": true,
+  "categories": [
    "content-management",
    "document-management"
   ],
@@ -29941,7 +30436,6 @@
   "released": "2026-04-01",
   "repo": "https://github.com/Comune-di-Montesilvano/valori-venali",
   "repo_key": "github.com/comune-di-montesilvano/valori-venali",
-  "repo_owner": "Comune di Montesilvano",
   "short_desc": "Applicativo web per il calcolo dei valori venali delle aree fabbricabili basato sui dati OMI dell'Agenzia delle Entrate.\n",
   "software_type": "standalone/web",
   "source": "IT/developers-italia",

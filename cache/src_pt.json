@@ -16,6 +16,7 @@
   "country": "PT",
   "desc_lang": "en",
   "entry_url": "https://github.com/amagovpt/a11y-da",
+  "fork_parent": "https://github.com/jorgeponto/gerador-test",
   "is_fork": true,
   "last_activity": "2026-08-17T11:01:44Z",
   "name": "a11y-da",
@@ -78,7 +79,7 @@
   "country": "PT",
   "entry_url": "https://github.com/amagovpt/a11yNPM",
   "is_fork": false,
-  "last_activity": "2026-09-24T10:51:42Z",
+  "last_activity": "2026-10-12T16:12:32Z",
   "license": "MIT",
   "name": "a11yNPM",
   "repo": "https://github.com/amagovpt/a11yNPM",
@@ -184,7 +185,7 @@
   "desc_lang": "en",
   "entry_url": "https://github.com/amagovpt/admin-monitor-suite",
   "is_fork": false,
-  "last_activity": "2026-10-07T06:52:06Z",
+  "last_activity": "2026-10-12T22:13:32Z",
   "name": "admin-monitor-suite",
   "repo": "https://github.com/amagovpt/admin-monitor-suite",
   "repo_key": "github.com/amagovpt/admin-monitor-suite",
@@ -279,7 +280,7 @@
   "repo_owner": "amagovpt",
   "short_desc": "Middleware Oficial de Identifica\u00e7\u00e3o Eletr\u00f3nica em Portugal - Cart\u00e3o de Cidad\u00e3o, da Chave M\u00f3vel Digital e Sistema de Certifica\u00e7\u00e3o de atributos profissionais",
   "source": "PT/arte",
-  "stars": 237,
+  "stars": 239,
   "tier": "index"
  },
  {
@@ -410,7 +411,7 @@
   "country": "PT",
   "entry_url": "https://github.com/amagovpt/dadosgov-fe",
   "is_fork": false,
-  "last_activity": "2026-10-12T10:26:22Z",
+  "last_activity": "2026-10-14T16:56:19Z",
   "name": "dadosgov-fe",
   "repo": "https://github.com/amagovpt/dadosgov-fe",
   "repo_key": "github.com/amagovpt/dadosgov-fe",
@@ -483,7 +484,7 @@
   "repo_owner": "amagovpt",
   "short_desc": "Documenta\u00e7\u00e3o t\u00e9cnica relativa ao servi\u00e7o de autentica\u00e7\u00e3o do Autentica\u00e7\u00e3o.Gov e Chave M\u00f3vel Digital",
   "source": "PT/arte",
-  "stars": 44,
+  "stars": 45,
   "tier": "index"
  },
  {
@@ -513,7 +514,7 @@
   "repo_owner": "amagovpt",
   "short_desc": "Documenta\u00e7\u00e3o t\u00e9cnica relativa ao servi\u00e7o de assinatura da Chave M\u00f3vel Digital",
   "source": "PT/arte",
-  "stars": 12,
+  "stars": 13,
   "tier": "index"
  },
  {
@@ -1259,7 +1260,7 @@
   "fallback_repo": "https://github.com/amagovpt/udata-pt",
   "is_fork": false,
   "landing": "http://udata.readthedocs.org",
-  "last_activity": "2026-10-09T10:22:53Z",
+  "last_activity": "2026-10-14T17:53:47Z",
   "license": "agpl-3.0",
   "maintenance": "community",
   "name": "udata",

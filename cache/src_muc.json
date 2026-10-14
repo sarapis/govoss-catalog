@@ -1962,6 +1962,25 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/openvox.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "infrastruktur"
+  ],
+  "landing": "https://voxpupuli.org/openvox/",
+  "license": "Apache-2.0",
+  "name": "OpenVox",
+  "note": "in production use at the City of Munich",
+  "recommended_for_gov": true,
+  "repo": null,
+  "repo_key": null,
+  "short_desc": "OpenVox is a tool for configuration management of servers with operating systems such as Unix, Linux and FreeBSD.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/owncloud.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -2144,19 +2163,20 @@
  {
   "country": "DE",
   "desc_lang": "en",
-  "entry_url": "https://opensource.muenchen.de/software/puppet.html",
+  "entry_url": "https://opensource.muenchen.de/software/proxmox.html",
   "gov_tier": "municipal",
   "keywords": [
-   "infrastruktur"
+   "infrastruktur",
+   "support",
+   "featurefunding"
   ],
-  "landing": "https://puppet.com",
-  "license": "Apache-2.0",
-  "name": "Puppet",
+  "license": "AGPL",
+  "name": "Proxmox",
   "note": "in production use at the City of Munich",
   "recommended_for_gov": true,
   "repo": null,
   "repo_key": null,
-  "short_desc": "Puppet is a tool for configuration management of servers with operating systems such as Unix, Linux and FreeBSD.",
+  "short_desc": "Proxmox VE is an open-source virtualization platform for running virtual machines to set up and manage x86 virtualization.",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
