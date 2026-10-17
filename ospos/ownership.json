@@ -1,0 +1,203 @@
+{
+ "about": "Who runs each ACADEMIC office: hand-checked, one source per office in `via`, date in `checked`. The rule is the LEGAL FORM of the body that runs the office, never who funds it (so a charity the state founded is private, with a note). Values and their meaning: ospo_contract.OWNERSHIP. An academic office missing here is published as null - not yet checked, never guessed. Keys are office ids; build_ospos.py refuses a key that matches no academic office.",
+ "ownership": {
+  "amap-biohub": {
+   "checked": "2026-10-16",
+   "note": "a nonprofit research organisation",
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q28403765"
+  },
+  "amap-carnegie-mellon-university": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q190080"
+  },
+  "amap-cern": {
+   "checked": "2026-10-16",
+   "note": "an intergovernmental organisation, set up by a convention between European states in force since 1954",
+   "value": "intergovernmental",
+   "via": "https://en.wikipedia.org/wiki/CERN"
+  },
+  "amap-george-washington": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q432637"
+  },
+  "amap-georgia-institute-of-technology": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q864855"
+  },
+  "amap-isglobal-barcelona-institute-for-global-health": {
+   "checked": "2026-10-16",
+   "note": "a private foundation under Catalan law (Fundacion Privada), founded by the Generalitat de Catalunya and \"la Caixa\"",
+   "value": "private",
+   "via": "https://www.isglobal.org/documents/d/guest/informe-gobierno-corporativo-2025-isglobal-web"
+  },
+  "amap-johns-hopkins-university": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q193727"
+  },
+  "amap-lero": {
+   "checked": "2026-10-16",
+   "note": "a Research Ireland centre, not a legal body of its own, hosted by the University of Limerick (a university under the Universities Act 1997)",
+   "value": "public",
+   "via": "https://www.irishstatutebook.ie/eli/1997/act/24/section/4"
+  },
+  "amap-mass-general-brigham": {
+   "checked": "2026-10-16",
+   "note": "a not-for-profit health care system",
+   "value": "private",
+   "via": "https://en.wikipedia.org/wiki/Mass_General_Brigham"
+  },
+  "amap-mississippi-state-university": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q1939211"
+  },
+  "amap-penn-state": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q739627"
+  },
+  "amap-rit": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q2140778"
+  },
+  "amap-slu": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q734774"
+  },
+  "amap-snt-university-of-luxembourg": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q59668"
+  },
+  "amap-stanford-university": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q41506"
+  },
+  "amap-syracuse": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "private",
+   "via": "https://www.wikidata.org/wiki/Q617433"
+  },
+  "amap-the-alan-turing-institute": {
+   "checked": "2026-10-16",
+   "note": "an independent charity (England and Wales 09512457), though founded and mainly funded by the UK Government through EPSRC",
+   "value": "private",
+   "via": "https://en.wikipedia.org/wiki/Alan_Turing_Institute"
+  },
+  "amap-trinity-college-dublin": {
+   "checked": "2026-10-16",
+   "note": "a designated, state-funded university under the Universities Act 1997",
+   "value": "public",
+   "via": "https://www.irishstatutebook.ie/eli/1997/act/24/section/4"
+  },
+  "amap-university-of-california-berkeley": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q168756"
+  },
+  "amap-university-of-california-davis": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q129421"
+  },
+  "amap-university-of-california-los-angeles": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q174710"
+  },
+  "amap-university-of-california-san-diego": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q622664"
+  },
+  "amap-university-of-california-santa-barbara": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q263064"
+  },
+  "amap-university-of-california-santa-cruz": {
+   "checked": "2026-10-16",
+   "note": "a campus of the University of California, a public university",
+   "value": "public",
+   "via": "https://en.wikipedia.org/wiki/University_of_California,_Santa_Cruz"
+  },
+  "amap-university-of-texas-austin": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q49213"
+  },
+  "amap-university-of-texas-dallas": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q1781394"
+  },
+  "amap-university-of-texas-el-paso": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q2093110"
+  },
+  "amap-university-of-texas-san-antonio": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q183170"
+  },
+  "amap-university-of-vermont": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q1048898"
+  },
+  "amap-university-of-washington": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q219563"
+  },
+  "amap-university-of-wisconsin-madison": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q838330"
+  },
+  "floss-opentech-auth-gr": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q667568"
+  },
+  "floss-scienceouverte-univ-grenoble-alpes-fr-a-propos-cellule-data-grenoble-alpes": {
+   "checked": "2026-10-16",
+   "note": null,
+   "value": "public",
+   "via": "https://www.wikidata.org/wiki/Q945876"
+  }
+ }
+}

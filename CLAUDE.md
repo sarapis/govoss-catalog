@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 14 suites, 978 checks, all manual
+for t in test_*.py; do python3 $t; done     # 14 suites, 1,041 checks, all manual
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`);
@@ -235,7 +235,7 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   anything unexpected). The contract lives once, in `ospo_contract.py` (licences, codes, types,
   row shapes); a new code or type is a contract change - tell UNNYC. `fetch_ospos.py` refuses a
   FLOSS-PSO list that breaks it (so a new office waits until placed); `build_ospos.py` refuses to
-  write a breaking file, which stops the publish. `test_ospos.py` + 12f.
+  write a breaking file, which stops the publish. `test_ospos.py` + 12f. ACADEMIC rows carry `ownership` from the hand-checked `ospos/ownership.json` (legal form, never funding; null = unchecked, never guessed).
 - **The country code is the country of the CATALOGUE, not the tier of government** - the caveat
   ships in the JSON, on the page, in `meta.json` and `llms.txt`.
 - Agents are told not to scrape in four places: the HTML comment above `<title>`, alternate
@@ -256,7 +256,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 (lowest 4.9:1). **No screen-reader te
 
 ## Tests
 
-Fourteen suites, 978 checks, **all manual** - a test that can fail the weekly publish is one someone
+Fourteen suites, 1,041 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -274,9 +274,9 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin` and the 12 reinstated Helsingborg repos (no more, no fewer), the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
-| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos atlas: every office a card or Not yet placed, no sidebar title, score = its signal chips, global ranks, Resources links, code links, flags and images present, the one world map, map points = projection, no entity in a script (12f), the signup form on every page (12h), `/software?ospo=` = the card's entries, the one-line credits, no control character, hosting files, `/status.json` names every source and OSPO list whose last attempt failed, read from the files (14) |
+| `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos atlas: every office a card or Not yet placed, no sidebar title, score = its signal chips, global ranks, Resources links, code links, flags and images present, the one world map, map points = projection, no entity in a script (12f), the signup form on every page (12h), `/software?ospo=` = the card's entries, the one-line credits, no control character, hosting files, `/status.json` names every source and OSPO list whose last attempt failed, read from the files (14), `/ospos.json` ownership = `ospos/ownership.json` fact by fact |
 | `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; a 429 waits out the server's window per host (bounded, spends no try); `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
-| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch) |
+| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch); `ownership` values and `attach_ownership()` (stale keys refused) |
 | `test_netgate.py` | `netgate.wait()`: full wake AND DNS (a dark wake with DNS waits), any host resolving, give-up on the WALL clock, log cadence; `run.sh` run with a failing gate exits 1 having run nothing (both modes); gate before `caffeinate -i -w $$` before the first step |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, the tool contract vs `mcp_tools.py`, and `/api/subscribe` (same-origin, honeypot, forward to Payload) |
 

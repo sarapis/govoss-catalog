@@ -193,10 +193,10 @@ def main():
           C.row_problems({"id": "todo-x", "source": "todo-landscape", "type": "corporate",
                           "name": "X", "url": "https://x.example/", "description": "",
                           "email": None, "policy": None, "code": [], "country": None,
-                          "location": None}), [])
+                          "location": None, "ownership": None}), [])
     UNPLACED = {"id": "todo-x", "source": "todo-landscape", "type": "corporate", "name": "X",
                 "url": "https://x.example/", "description": "", "email": None, "policy": None,
-                "code": [], "country": None, "location": None}
+                "code": [], "country": None, "location": None, "ownership": None}
     check("contract: placement is all or nothing outside FLOSS-PSO - a country with no "
           "location, or a location with no country, is a problem",
           [len(C.row_problems(dict(UNPLACED, **kw))) > 0 for kw in (
@@ -211,18 +211,42 @@ def main():
               "'academic-map' and 'todo-landscape' MAY have country null and location null")),
           True)
     check("contract: location bases", sorted(C.BASES), ["hq", "seat"])
+    check("contract: ownership values", sorted(C.OWNERSHIP), ["intergovernmental", "private", "public"])
+    # build_ospos.attach_ownership(): academic rows only, null when unchecked, and a
+    # key naming no academic office REFUSED (a renamed id would drop its fact silently)
+    import build_ospos as B
+    rows = [{"id": "a1", "type": "academic"}, {"id": "a2", "type": "academic"},
+            {"id": "g1", "type": "government"}]
+    own = {"a1": {"value": "private", "via": "https://x.example/", "checked": "2026-10-16", "note": "n"}}
+    got = {r["id"]: r["ownership"] for r in B.attach_ownership(rows, own)}
+    check("attach_ownership: the fact, without its `checked` date; unchecked academic and "
+          "every non-academic row null",
+          got, {"a1": {"value": "private", "via": "https://x.example/", "note": "n"},
+                "a2": None, "g1": None})
+    for bad, label in (({"zz": own["a1"]}, "an id no office has"),
+                       ({"g1": own["a1"]}, "a government office")):
+        try:
+            B.attach_ownership(rows, bad)
+            r = "kept"
+        except SystemExit:
+            r = "refused"
+        check("attach_ownership: a key naming %s is refused" % label, r, "refused")
+    check("contract: an academic row with ownership null (not yet checked) is valid",
+          C.ownership_problems({"type": "academic", "ownership": None}), [])
 
     # ---- every rule fails when broken, on a document that holds
     LOC = {"lat": 48.1351, "lon": 11.582, "place": "Munich", "basis": "seat", "country": "DE"}
     ROW = {"id": "floss-a", "source": "floss-pso", "type": "government", "name": "A",
            "url": "https://a.example/", "description": "An office.", "email": None,
            "policy": "https://a.example/p", "code": ["https://github.com/a"], "country": "DE",
-           "location": LOC}
+           "location": LOC, "ownership": None}
     AROW = {"id": "amap-b", "source": "academic-map", "type": "academic", "name": "B",
             "url": "https://b.example/", "description": "", "email": None, "policy": None,
-            "code": [], "country": None, "location": None}
+            "code": [], "country": None, "location": None,
+            "ownership": {"value": "public", "via": "https://www.wikidata.org/wiki/Q1", "note": None}}
     DOC = {"generated_at": "2026-10-07T20:54:31Z", "licence": dict(C.LICENCE),
            "country_codes": dict(C.COUNTRIES), "country_names": dict(C.COUNTRY_NAMES),
+           "ownership_values": dict(C.OWNERSHIP),
            "sources": {"floss-pso": {"licence": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
                                      "url": "https://floss-pso.network/public-sector-ospos/",
                                      "fetched_at": "2026-10-07T20:10:41Z", "count": 1, "ok": True}},
@@ -267,6 +291,15 @@ def main():
         (("ospos", 0, "location", "lon"), -181), (("ospos", 0, "location", "place"), ""),
         (("ospos", 0, "location", "basis"), "city"), (("ospos", 0, "location", "country"), "Germany"),
         (("ospos", 1, "location"), {"lat": 1}),
+        # ownership (2026-10-16): documented values, academic rows only, a source each
+        (("ownership_values",), KeyError), (("ownership_values", "public"), "state"),
+        (("ownership_values", "mixed"), "both"),
+        (("ospos", 0, "ownership"), KeyError),
+        (("ospos", 0, "ownership"), {"value": "public", "via": "https://x.example/", "note": None}),
+        (("ospos", 1, "ownership", "value"), "Public"), (("ospos", 1, "ownership", "value"), "mixed"),
+        (("ospos", 1, "ownership", "via"), ""), (("ospos", 1, "ownership", "via"), "wikidata Q1"),
+        (("ospos", 1, "ownership", "note"), ""), (("ospos", 1, "ownership", "note"), KeyError),
+        (("ospos", 1, "ownership", "extra"), 1), (("ospos", 1, "ownership"), "public"),
     ]:
         check("contract: %s = %r is a problem" % ("/".join(map(str, path)), value),
               len(broken(path, value)) > 0, True)

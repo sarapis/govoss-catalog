@@ -239,9 +239,29 @@ def load():
     geo = json.load(open(f"{OUT}/geo/ospo_frames.json", encoding="utf-8"))
     res = json.load(open(f"{OUT}/resources/ospo-resources.json", encoding="utf-8"))
     catalog = json.load(open(f"{OUT}/catalog.json", encoding="utf-8"))
+    own = json.load(open(f"{OUT}/ospos/ownership.json", encoding="utf-8"))["ownership"]
+    data["_ownership"] = own
     if not data.get("ospos"):
         raise SystemExit("build_ospos: cache/ospos.json has no ospos - run fetch_ospos.py")
     return data, locs, geo, res, catalog
+
+
+def attach_ownership(rows, own):
+    """Each ACADEMIC row's `ownership` from the hand-checked ospos/ownership.json:
+    {value, via, note}, or null when not yet checked (never guessed). Every other
+    row is null. REFUSES a key that names no academic office - a renamed id or a
+    retyped office would otherwise drop its fact without a word."""
+    academic = {r["id"] for r in rows if r.get("type") == "academic"}
+    stale = sorted(k for k in own if k not in academic)
+    if stale:
+        raise SystemExit("build_ospos: ospos/ownership.json names no academic office: %s"
+                         % ", ".join(stale))
+    out = []
+    for r in rows:
+        o = own.get(r["id"])        # only academic ids get past the refusal above
+        out.append(dict(r, ownership=({"value": o["value"], "via": o["via"], "note": o.get("note")}
+                                      if o else None)))
+    return out
 
 
 def derive(data, locs, geo, res, catalog):
@@ -249,6 +269,7 @@ def derive(data, locs, geo, res, catalog):
     rcount = collections.Counter(r["case"] for r in res["resources"])
     fr = geo["frames"]["world"]
     os_ = [dict(r) for r in data["ospos"]]
+    os_ = attach_ownership(os_, data.get("_ownership") or {})
     for r in os_:
         loc = locs.get(r["id"]) or {}
         r["_cc"] = r.get("country") or loc.get("country")
@@ -1303,14 +1324,20 @@ if __name__ == "__main__":
                  "COUNTRY codes are listed in country_codes: ISO 3166-1 alpha-2 except EL "
                  "(Greece, the EU's code) and INT (an international body); country_names "
                  "gives a short display name for each. "
+                 "OWNERSHIP, on academic rows only (null elsewhere): who runs the office, by "
+                 "the LEGAL FORM of that body, never by who funds it - {value, via, note}, value "
+                 "a key of ownership_values (which says what each means), via the source it "
+                 "was checked against, note a qualification or null. null on an academic row "
+                 "means not yet checked, never a guess. "
                  "An EXAMPLE of a failed FLOSS-PSO fetch, as this file would then read, is "
                  "published at /ospos.example-failed.json. "
                  "LICENCES: each list's rows are under that list's licence (sources[key].licence); "
-                 "govoss's own fields - id, type, location, resources_case, and country where "
-                 "the list gives none - are under licence.govoss_fields.",
+                 "govoss's own fields - id, type, location, ownership, resources_case, and "
+                 "country where the list gives none - are under licence.govoss_fields.",
         "licence": C.LICENCE,
         "country_codes": C.COUNTRIES,
         "country_names": C.COUNTRY_NAMES,
+        "ownership_values": C.OWNERSHIP,
         "sources": data.get("sources"),
         "ospos": [dict({k: v for k, v in r.items() if not k.startswith("_")},
                        country=r["_cc"], location=r["_loc"] or None,

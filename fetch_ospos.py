@@ -245,7 +245,9 @@ def floss_contract(recs):
         if loc is None:
             probs.append("%s: not placed - add it to ospos/locations.json" % r["id"])
             loc = {"lat": 0, "lon": 0, "place": "-", "basis": "seat", "country": r.get("country")}
-        probs += C.row_problems(dict(r, location=loc))
+        # ownership is govoss's, attached at export from ospos/ownership.json; null
+        # (not yet checked) is always valid, so the list is judged without it
+        probs += C.row_problems(dict(r, location=loc, ownership=r.get("ownership")))
     ids = [r["id"] for r in recs]
     probs += ["%s: id is not unique" % i for i in sorted({i for i in ids if ids.count(i) > 1})]
     if probs:

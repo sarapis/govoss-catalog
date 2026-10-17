@@ -24,6 +24,12 @@ country_codes, and a location object. Rows from the other lists
 - an office not yet placed, a designed state the page names - and when either
 is present it is held to the same rules. The published `about` text says so.
 
+OWNERSHIP (asked for by UNNYC, added 2026-10-16 - an addition, not a change):
+every row carries `ownership`, null or {value, via, note}. Only ACADEMIC rows may
+set it (government and corporate say it by their type); value is a key of
+OWNERSHIP, published as `ownership_values` with its meaning; via is the source it
+rests on. null on an academic row means not yet checked - never a guess.
+
 Free to change, because they do not read them: human_page, about, created,
 resources_case, kind, ospo_note, source_url, and any NEW key. A change to
 anything checked below is a contract change: tell UNNYC first, then change
@@ -33,7 +39,7 @@ import re
 
 # Exact strings. A licence is read by the consumer and checked verbatim.
 FLOSS_LICENCE = "CC0 1.0 (the FLOSS-PSO Network's OSPO list)"
-# govoss's OWN fields - id, type, location, resources_case, and country where
+# govoss's OWN fields - id, type, location, ownership, resources_case, and country where
 # the list gives none. CC0 because most FLOSS-PSO placements are un.opensource.nyc's,
 # published CC0, and placing an office at a city is a fact we want reused freely
 # (the rest of the site's data is CC BY 4.0; this file says which applies).
@@ -66,6 +72,13 @@ COUNTRY_NAMES = {
 }
 # "corporate" since 2026-10-09 (owner): the TODO Group landscape's OSPO adopters.
 TYPES = ("government", "academic", "corporate")
+# Who runs an ACADEMIC office, by the LEGAL FORM of that body - never by who funds it.
+OWNERSHIP = {
+    "public": "a public body: a state, regional or national public university or institute",
+    "private": "a privately governed body, non-profit included (a charity or foundation, "
+               "even one a government founded or funds)",
+    "intergovernmental": "an organisation set up by a treaty or convention between states",
+}
 BASES = {"seat": "the office's own city",
          "hq": "its parent organisation's headquarters - the point is approximate"}
 ISO_UTC = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$")
@@ -96,6 +109,26 @@ def location_problems(loc):
     return p
 
 
+def ownership_problems(r):
+    if "ownership" not in r:
+        return ["ownership is missing (null when unknown)"]
+    o = r["ownership"]
+    if o is None:
+        return []
+    if r.get("type") != "academic":
+        return ["ownership is set on a %s row; only academic rows carry it" % r.get("type")]
+    if not isinstance(o, dict) or set(o) != {"value", "via", "note"}:
+        return ["ownership is not {value, via, note}"]
+    p = []
+    if o.get("value") not in OWNERSHIP:
+        p.append("ownership.value %r is not public/private/intergovernmental" % o.get("value"))
+    if not (_str(o.get("via")) and re.match(r"^https?://\S+$", o["via"])):
+        p.append("ownership.via is not a source URL")
+    if o.get("note") is not None and not _str(o.get("note")):
+        p.append("ownership.note is neither text nor null")
+    return p
+
+
 def row_problems(r):
     """One row's problems, as '<id>: <rule>'. A FLOSS-PSO row gets every rule;
     other rows the shape rules only (the academic map can lack a description,
@@ -118,6 +151,7 @@ def row_problems(r):
     if not isinstance(code, list) or not all(isinstance(c, str) and re.match(r"^https?://\S+$", c)
                                              for c in code):
         p.append("code is not a list of URLs")
+    p += ownership_problems(r)
     if r.get("source") == "floss-pso":
         if not _str(r.get("description")):
             p.append("description is empty")
@@ -147,6 +181,8 @@ def doc_problems(doc):
         p.append("country_codes is not the documented set")
     if doc.get("country_names") != COUNTRY_NAMES:
         p.append("country_names is not the documented set")
+    if doc.get("ownership_values") != OWNERSHIP:
+        p.append("ownership_values is not the documented set")
     rows = doc.get("ospos")
     if not isinstance(rows, list):
         return p + ["ospos is not an array"]

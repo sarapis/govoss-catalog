@@ -847,6 +847,15 @@ def main():
     # the strings they check verbatim are pinned here as literals, not read back.
     import ospo_contract as _oc
     check("/ospos.json keeps its consumer contract", _oc.doc_problems(oj), [])
+    # ownership (2026-10-16): the built rows carry EXACTLY the hand-checked facts -
+    # compared fact by fact, not by count - and every academic office has one
+    own = json.load(open(os.path.join(HERE, "ospos", "ownership.json")))["ownership"]
+    built_own = {r["id"]: r["ownership"] for r in oj["ospos"] if r.get("ownership") is not None}
+    check("/ospos.json ownership = ospos/ownership.json, office by office",
+          built_own, {k: {"value": v["value"], "via": v["via"], "note": v.get("note")}
+                      for k, v in own.items()})
+    check("/ospos.json: every academic office's ownership has been checked",
+          sorted(r["id"] for r in oj["ospos"] if r["type"] == "academic" and r["ownership"] is None), [])
     check("/ospos.json: govoss's own licence, exactly", oj.get("licence"),
           {"govoss_fields": "CC0 1.0, govoss (https://govoss.cat)",
            "lists": "each list's own: sources[*].licence"})
