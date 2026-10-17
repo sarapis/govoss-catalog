@@ -302,6 +302,9 @@ def build(lang, data, os_, geo):
     flabel = {k: _(lbl) for k, lbl, _i, _r in FOCUS}
     ficon = {k: ic for k, _l, ic, _r in FOCUS}
     tlabel = {"government": _("Government"), "academic": _("Academic"), "corporate": _("Corporate")}
+    olabel = {"public": _("Public"), "private": _("Private"), "intergovernmental": _("Intergovernmental")}
+    orunby = {"public": _("Run by a public body"), "private": _("Run by a private body"),
+              "intergovernmental": _("Run by an intergovernmental organisation")}
     used = {"search", "layers", "plus", "minus", "rotate-ccw", "globe", "mail", "scroll-text",
             "file-check", "book-marked", "package", "sliders-horizontal", "x", "flask-conical"}
     used |= set(TYPE_ICON.values()) | set(FN_ICON.values()) | set(ficon.values())
@@ -323,8 +326,13 @@ def build(lang, data, os_, geo):
         ti = "flask-conical" if r.get("kind") == "research" else TYPE_ICON[t]
         logo = ('<img src="/ospo-img/logo/%s.png" alt="" width="40" height="40" loading="lazy">'
                 % esc(r["_logo"])) if r["_logo"] else ""
-        meta = ['%s%s' % (icon(ti, 13, "at-i at-ti"), esc(tl)),
-                esc(r["_loc"].get("place") or _("Location unknown"))]
+        meta = ['%s%s' % (icon(ti, 13, "at-i at-ti"), esc(tl))]
+        own = r.get("ownership")
+        # academic offices: who runs it, beside the type (owner, 2026-10-16); the
+        # note and its source are in the expanded card
+        if own:
+            meta.append('<span class="at-ownm">%s</span>' % esc(olabel[own["value"]]))
+        meta.append(esc(r["_loc"].get("place") or _("Location unknown")))
         # its country beside the city, with the flag emoji, on every card (owner, 2026-10-13)
         if r["_cc"] and r["_cc"] != "ZZ":
             meta.append('<span class="at-ccm"><span class="at-cflag" aria-hidden="true">%s</span> %s</span>'
@@ -340,6 +348,10 @@ def build(lang, data, os_, geo):
             more.append('<p class="at-desc">%s</p>' % esc(r["description"]))
         if r.get("ospo_note"):
             more.append('<p class="at-note">%s</p>' % esc(r["ospo_note"]))
+        if own:
+            more.append('<p class="at-own">%s%s <a href="%s" target="_blank" rel="noopener">%s</a></p>'
+                        % (esc(orunby[own["value"]]), esc(": " + own["note"] + ".") if own.get("note")
+                           else ".", esc(own["via"]), esc(_("Source"))))
         np_ = len(r["_prod"])
         # its software as ONE link to /software?ospo=<id>, never a list of repos
         if np_:
@@ -618,6 +630,7 @@ PAGE_CSS = """
   cursor:auto;}
 .at-desc{font-size:13.5px;line-height:1.6;text-wrap:pretty;}
 .at-note{font-size:12.5px;line-height:1.5;color:var(--ink-faint);}
+.at-own{font-size:13px;line-height:1.5;margin:0;} .at-own a{white-space:nowrap;}
  .at-nums b.at-zero{color:var(--at-off);}
 .at-pmore{font-size:12px;color:var(--ink-faint);}
 .at-links{display:flex;gap:6px;flex-wrap:wrap;}

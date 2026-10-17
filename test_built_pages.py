@@ -854,6 +854,19 @@ def main():
     check("/ospos.json ownership = ospos/ownership.json, office by office",
           built_own, {k: {"value": v["value"], "via": v["via"], "note": v.get("note")}
                       for k, v in own.items()})
+    # ...and each card shows its OWN office's value (owner, 2026-10-16): the label
+    # beside the type, and in the expanded card the source link - compared card by card
+    want_lbl = {"en": {"public": "Public", "private": "Private", "intergovernmental": "Intergovernmental"},
+                "ca": {"public": "P&#250;blic", "private": "Privat", "intergovernmental": "Intergovernamental"}}
+    for _lang, _pg in (("en", "ospos.html"), ("ca", "ca/ospos.html")):
+        page = pages[_pg]
+        cards = dict(re.findall(r'<article class="at-card [^"]*" id="([^"]+)"(.*?)</article>', page, re.S))
+        got_lbl = {i: (re.findall(r'<span class="at-ownm">([^<]*)</span>', c),
+                       re.findall(r'<p class="at-own">.*?<a href="([^"]+)"', c, re.S)) for i, c in cards.items()}
+        want = {r["id"]: (([want_lbl[_lang][r["ownership"]["value"]]], [html.escape(r["ownership"]["via"])])
+                          if r.get("ownership") else ([], [])) for r in oj["ospos"]}
+        check("%s: every card's ownership label and source are its own office's (%d set)"
+              % (_pg, sum(1 for v in want.values() if v[0])), got_lbl, want)
     check("/ospos.json: every academic office's ownership has been checked",
           sorted(r["id"] for r in oj["ospos"] if r["type"] == "academic" and r["ownership"] is None), [])
     check("/ospos.json: govoss's own licence, exactly", oj.get("licence"),

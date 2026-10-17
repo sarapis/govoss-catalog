@@ -374,7 +374,14 @@
   "{n} more tags - open the office to see them": "{n} etiquetes més: obre l'oficina per veure-les",
   "{n} of {t} offices in 1 country": "{n} de {t} oficines en 1 país",
   "{n} resources on how this office was built": "{n} recursos sobre com es va crear aquesta oficina",
-  "Offices at this place": "Oficines en aquest lloc"
+  "Offices at this place": "Oficines en aquest lloc",
+  "Public": "Públic",
+  "Private": "Privat",
+  "Intergovernmental": "Intergovernamental",
+  "Run by a public body": "Gestionada per un ens públic",
+  "Run by a private body": "Gestionada per un ens privat",
+  "Run by an intergovernmental organisation": "Gestionada per una organització intergovernamental",
+  "Source": "Font"
  },
  "functions": {
   "case-workflow": "Gestió d'expedients i fluxos de treball",
