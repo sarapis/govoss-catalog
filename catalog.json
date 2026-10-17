@@ -171095,7 +171095,9 @@
   "tier": "index",
   "used_by": [
    "stk_datalabb"
-  ]
+  ],
+  "wikidata": "Q137793309",
+  "wikidata_via": "wikidata:website"
  },
  {
   "country": "SE",
