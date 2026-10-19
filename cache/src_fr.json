@@ -399,6 +399,7 @@
   "used_by": [
    "AP-HP",
    "ARS",
+   "ASP",
    "Arcep",
    "CNAM",
    "CNAPS",
@@ -1627,7 +1628,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "3.0.39",
+  "version": "4.0.0",
   "wikidata": "Q4904858"
  },
  {
@@ -1669,7 +1670,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "1.48.1",
+  "version": "2026.10.0",
   "wikidata": "Q56319818"
  },
  {
@@ -1994,7 +1995,7 @@
   "used_by": [
    "Campus Num\u00e9rique 47"
   ],
-  "version": "1.6.15",
+  "version": "1.6.16",
   "wikidata": "Q122929604"
  },
  {
@@ -2703,7 +2704,7 @@
   "used_by": [
    "other"
   ],
-  "version": "4.1.1",
+  "version": "4.1.3",
   "wikidata": "Q135450643"
  },
  {
@@ -3590,7 +3591,7 @@
    "Rectorat de l'acad\u00e9mie de Reims",
    "other"
   ],
-  "version": "9.9.2",
+  "version": "9.9.3",
   "wikidata": "Q16526613"
  },
  {
@@ -3691,7 +3692,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "16.1.1",
+  "version": "16.2.0",
   "wikidata": "Q115978662"
  },
  {
@@ -4524,7 +4525,7 @@
    "aefe",
    "other"
   ],
-  "version": "29.9.0",
+  "version": "29.9.1",
   "wikidata": "Q15206305"
  },
  {
@@ -4556,7 +4557,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "R\u00e9seau Canop\u00e9"
   ],
-  "version": "6.0.0",
+  "version": "6.0.1",
   "wikidata": "Q133821372"
  },
  {
@@ -5741,6 +5742,7 @@
   "tier": "index",
   "used_by": [
    "AP-HP",
+   "Acad\u00e9mie d'Orl\u00e9ans-Tours",
    "Acad\u00e9mie de Nice",
    "Acad\u00e9mie de Normandie",
    "Assemblee nationale",
@@ -6777,6 +6779,7 @@
    "CNRS",
    "CONSEIL DEPARTEMENTAL DU JURA",
    "CREPS de Nancy",
+   "Centre de gestion de la fonction publique territoriale de la Savoie Cdg73",
    "DDSI/DSRM/DBP",
    "DGAL",
    "DGDDI",
@@ -7036,7 +7039,7 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE"
   ],
-  "version": "3.0.1",
+  "version": "3.0.2",
   "wikidata": "Q1502779"
  },
  {
@@ -7073,7 +7076,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.4",
+  "version": "2.126.5",
   "wikidata": "Q116819111"
  },
  {
@@ -8084,7 +8087,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.12.22",
+  "version": "4.12.23",
   "wikidata": "Q97819945"
  },
  {
@@ -8151,6 +8154,14 @@
   "desc_src": "Tableur collaboratif open-source",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Grist",
+  "keywords": [
+   "excel",
+   "donn\u00e9es",
+   "python",
+   "low-code",
+   "no-code",
+   "formulaire"
+  ],
   "landing": "https://getgrist.com",
   "license": "Apache License v2.0",
   "name": "Grist",
@@ -8280,8 +8291,8 @@
   "name": "H2",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/h2database",
-  "repo_key": "github.com/h2database",
+  "repo": "https://github.com/h2database/h2database",
+  "repo_key": "github.com/h2database/h2database",
   "short_desc": "Base de donn\u00e9es",
   "sill_id": 59,
   "source": "FR/sill",
@@ -8289,7 +8300,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "2.4.240",
+  "version": "2.5.252",
   "wikidata": "Q1562670"
  },
  {
@@ -8810,7 +8821,7 @@
   "used_by": [
    "DGFIP"
   ],
-  "version": "3.3.1",
+  "version": "3.3.3",
   "wikidata": "Q127016931"
  },
  {
@@ -9648,7 +9659,7 @@
    "DGFIP",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "6.0.1",
+  "version": "6.1.0",
   "wikidata": "Q99439688"
  },
  {
@@ -10035,7 +10046,7 @@
   "used_by": [
    "CentraleSup\u00e9lec"
   ],
-  "version": "4.5.5",
+  "version": "4.5.6",
   "wikidata": "Q110662710"
  },
  {
@@ -10128,7 +10139,7 @@
    "Institut Laue Langevin (ILL)",
    "MS"
   ],
-  "version": "26.8.0",
+  "version": "26.8.1",
   "wikidata": "Q42916195"
  },
  {
@@ -10163,7 +10174,7 @@
    "AP-HP",
    "DINUM"
   ],
-  "version": "11.16.1",
+  "version": "11.16.3",
   "wikidata": "Q107693197"
  },
  {
@@ -10666,7 +10677,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.36.0",
+  "version": "13.37.0",
   "wikidata": "Q13634357"
  },
  {
@@ -11380,7 +11391,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "6.0.6",
+  "version": "7.0",
   "wikidata": "Q2597211"
  },
  {
@@ -11409,7 +11420,7 @@
    "CNRS",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "2.5.1",
+  "version": "2.5.3",
   "wikidata": "Q823591"
  },
  {
@@ -12427,6 +12438,7 @@
    "Acad\u00e9mie de Rennes",
    "Avignon Universit\u00e9",
    "Beta.gouv",
+   "CC Pays Sostranien",
    "CCAS Saint-Paul de la R\u00e9union",
    "CDC des pays de L'Aigle",
    "CEA",
@@ -12488,7 +12500,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "158.0",
+  "version": "159.0b3",
   "wikidata": "Q698"
  },
  {
@@ -12574,7 +12586,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "157.0.1",
+  "version": "158.0",
   "wikidata": "Q483604"
  },
  {
@@ -13157,7 +13169,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.4.0",
+  "version": "16.4.2",
   "wikidata": "Q56062435"
  },
  {
@@ -13242,7 +13254,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "35.0.1",
+  "version": "35.0.2",
   "wikidata": "Q25874683"
  },
  {
@@ -13278,7 +13290,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.96.4-01",
+  "version": "3.97.0-13",
   "wikidata": "Q119269051"
  },
  {
@@ -13318,7 +13330,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "other"
   ],
-  "version": "1.31.6",
+  "version": "1.31.7",
   "wikidata": "Q306144"
  },
  {
@@ -13432,7 +13444,7 @@
    "MEAE",
    "MS"
   ],
-  "version": "26.11.1",
+  "version": "26.12.0",
   "wikidata": "Q756100"
  },
  {
@@ -13588,7 +13600,7 @@
    "Acad\u00e9mie de Nancy-Metz",
    "DGFIP"
   ],
-  "version": "7.3-rc7",
+  "version": "7.3",
   "wikidata": "Q14579"
  },
  {
@@ -13625,7 +13637,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "12.2.0",
+  "version": "12.2.1",
   "wikidata": "Q7067518"
  },
  {
@@ -14010,7 +14022,7 @@
    "Sciences Po",
    "VIGINUM"
   ],
-  "version": "0.40.3",
+  "version": "0.40.6",
   "wikidata": "Q124636097"
  },
  {
@@ -15024,7 +15036,7 @@
    "Prefecture 974",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "17.9.1",
+  "version": "17.9.2",
   "wikidata": "Q14468709"
  },
  {
@@ -16272,7 +16284,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.4.2",
+  "version": "13.4.3",
   "wikidata": "Q1663673"
  },
  {
@@ -16334,7 +16346,7 @@
    "Sciences Po",
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
-  "version": "26.04.10",
+  "version": "26.10.00",
   "wikidata": "Q133265141"
  },
  {
@@ -16672,7 +16684,7 @@
    "other",
    "vetagro sup"
   ],
-  "version": "19 beta 4",
+  "version": "19 release candidate 1",
   "wikidata": "Q192490"
  },
  {
@@ -17457,6 +17469,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "communaute de communes Le Grand Charolais",
+   "dgscgc",
    "insee",
    "other",
    "pr\u00e9fecture 81",
@@ -17727,7 +17740,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "19.3.0",
+  "version": "19.3.1",
   "wikidata": "Q19399674"
  },
  {
@@ -18562,7 +18575,7 @@
    "Universit\u00e9 de technologie de Compi\u00e8gne",
    "cour descomptes"
   ],
-  "version": "2026.1.0",
+  "version": "2027.0.0",
   "wikidata": "Q828742"
  },
  {
@@ -18620,7 +18633,8 @@
   "tier": "index",
   "used_by": [
    "ENS de Lyon",
-   "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire"
+   "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
+   "pr\u00e9fecture 83"
   ]
  },
  {
@@ -19167,7 +19181,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "0.49",
+  "version": "1.00",
   "wikidata": "Q130224405"
  },
  {
@@ -19931,7 +19945,7 @@
   "used_by": [
    "SG/DNUM/UNI/DSP/GASTA/PSTITM"
   ],
-  "version": "5.2.0",
+  "version": "5.3.0",
   "wikidata": "Q7632233"
  },
  {
@@ -20641,7 +20655,7 @@
   "sill_id": 472,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.16.5",
+  "version": "1.16.6",
   "wikidata": "Q28957072"
  },
  {
@@ -20971,7 +20985,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "3.7.14",
+  "version": "3.7.15",
   "wikidata": "Q96332968"
  },
  {
@@ -21099,7 +21113,7 @@
    "DGDDI",
    "DGFIP"
   ],
-  "version": "25.10.6",
+  "version": "25.10.7",
   "wikidata": "Q1328132"
  },
  {
@@ -21369,7 +21383,7 @@
    "Universit\u00e9 Grenoble Alpes",
    "ac-bordeaux.fr"
   ],
-  "version": "26.04.1 LTS",
+  "version": "26.10",
   "wikidata": "Q381"
  },
  {
@@ -21443,7 +21457,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.13.0",
+  "version": "17.14.0",
   "wikidata": "Q99493159"
  },
  {
@@ -21771,7 +21785,7 @@
    "INSEE",
    "MESR"
   ],
-  "version": "2.1.2",
+  "version": "2.2.0",
   "wikidata": "Q88664426"
  },
  {
@@ -21923,7 +21937,7 @@
    "ENSP",
    "MI"
   ],
-  "version": "4.11.3",
+  "version": "4.11.4",
   "wikidata": "Q287012"
  },
  {
@@ -22137,7 +22151,7 @@
   "used_by": [
    "CentraleSup\u00e9lec"
   ],
-  "version": "1.142.0-insiders",
+  "version": "1.142.0",
   "wikidata": "Q19841877"
  },
  {
@@ -22368,6 +22382,7 @@
    "MINISTERE INTERIEUR/SG/US REGROUPEMENT SGAMI/SGAMI33 BORDEAUX/DSIC/DSSD33",
    "Prefecture 21",
    "SGC-SIC82",
+   "SGCD du Nord",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Claude Bernanrd lyon1",
    "Universit\u00e9 de Rennes",
@@ -22526,7 +22541,7 @@
    "MC",
    "MESR"
   ],
-  "version": "2.6.1.17834",
+  "version": "2.7.0.19598",
   "wikidata": "Q50829216"
  },
  {
@@ -22744,7 +22759,7 @@
    "MD",
    "MI"
   ],
-  "version": "6.5.8",
+  "version": "6.7",
   "wikidata": "Q1160381"
  },
  {
@@ -23187,8 +23202,8 @@
   "name": "YesWiki",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": null,
-  "repo_key": null,
+  "repo": "https://github.com/YesWiki/yeswiki",
+  "repo_key": "github.com/yeswiki/yeswiki",
   "short_desc": "Plateforme de partage et de collaboration en ligne",
   "sill_id": 507,
   "source": "FR/sill",
@@ -23196,6 +23211,7 @@
   "used_by": [
    "CNFPT"
   ],
+  "version": "4.7.0",
   "wikidata": "Q126974643"
  },
  {
@@ -23347,7 +23363,7 @@
    "CNRS",
    "MAASA :  : Minist\u00e8re de l'Agriculture, de l'Agro-alimentaire et de la Souverainet\u00e9 Alimentaire"
   ],
-  "version": "1.23.3",
+  "version": "1.24.2",
   "wikidata": "Q112301707"
  },
  {

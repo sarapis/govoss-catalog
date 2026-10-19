@@ -1,105 +1,101 @@
 {
  "be": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 243
  },
  "bg": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 194
  },
  "ca": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 67
  },
  "ch": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
-  "records": 164
+  "records": 166
  },
  "de": {
-  "error": "RuntimeError: partial https://gitlab.opencode.de scan: 278 repos vs 561 in the last good checkpoint, after 1 org(s) failed: 1943 publiccode.yml fetch(es) failed (429 x1943). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from https://gitlab.opencode.de (retry the run later) \u2014 the per-source age on /catalogs is what makes this visible.",
-  "fetched_at": "2026-10-05T11:00:01Z",
-  "last_error_at": "2026-10-14T17:35:14Z",
-  "ok": false,
-  "records": 561
+  "fetched_at": "2026-10-19T11:00:02Z",
+  "ok": true,
+  "records": 587
  },
  "digg": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 52
  },
  "dpg": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 256
  },
  "eu": {
-  "error": "RuntimeError: partial https://code.europa.eu scan: 12 repos vs 23 in the last good checkpoint, after 1 org(s) failed: 960 publiccode.yml fetch(es) failed (429 x960). Refusing to checkpoint a short list; reusing the previous one. If an org is permanently gone, remove it from https://code.europa.eu (retry the run later) \u2014 the per-source age on /catalogs is what makes this visible.",
-  "fetched_at": "2026-10-05T11:00:01Z",
-  "last_error_at": "2026-10-14T17:35:14Z",
-  "ok": false,
-  "records": 23
+  "fetched_at": "2026-10-19T11:00:02Z",
+  "ok": true,
+  "records": 31
  },
  "fi": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 72
  },
  "fr": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 691
  },
  "hbg": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
-  "records": 297
+  "records": 298
  },
  "ie": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 5
  },
  "it": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 564
  },
  "muc": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 146
  },
  "nl": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
-  "records": 206
+  "records": 207
  },
  "nlreg": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 0
  },
  "os2": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 300
  },
  "pt": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 93
  },
  "se": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 167
  },
  "tw": {
-  "fetched_at": "2026-10-14T17:35:14Z",
+  "fetched_at": "2026-10-19T11:00:02Z",
   "ok": true,
   "records": 58
  }
