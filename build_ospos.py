@@ -264,6 +264,12 @@ def attach_ownership(rows, own):
     return out
 
 
+def unchecked_ownership(rows):
+    """Academic offices with no ownership fact yet - a new office on the academic map.
+    Valid in the contract, but the card shows nothing, so the run log names them."""
+    return sorted(r["id"] for r in rows if r.get("type") == "academic" and r.get("ownership") is None)
+
+
 def derive(data, locs, geo, res, catalog):
     """Every office with its place, products, tags and score (its software in govoss)."""
     rcount = collections.Counter(r["case"] for r in res["resources"])
@@ -1306,6 +1312,10 @@ SCRIPT = """
 if __name__ == "__main__":
     data, locs, geo, res, catalog = load()
     rows = derive(data, locs, geo, res, catalog)
+    unchecked = unchecked_ownership(rows)
+    if unchecked:
+        print("build_ospos: WARNING %d academic office(s) with no ospos/ownership.json entry, "
+              "published with ownership null: %s" % (len(unchecked), ", ".join(unchecked)))
     copy_images()
     for _lang in i18n.LANGS:
         build(_lang, data, rows, geo)
