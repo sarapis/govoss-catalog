@@ -231,6 +231,9 @@ def main():
         except SystemExit:
             r = "refused"
         check("attach_ownership: a key naming %s is refused" % label, r, "refused")
+    # an academic office with no fact yet is named at run time, not only by the manual suite
+    check("unchecked_ownership: academic rows with ownership null, nothing else",
+          B.unchecked_ownership(B.attach_ownership(rows, own)), ["a2"])
     check("contract: an academic row with ownership null (not yet checked) is valid",
           C.ownership_problems({"type": "academic", "ownership": None}), [])
 
