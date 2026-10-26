@@ -2888,7 +2888,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-14",
+  "released": "2026-10-25",
   "repo": "https://github.com/Comune-di-Montesilvano/CruscottoPA",
   "repo_key": "github.com/comune-di-montesilvano/cruscottopa",
   "repo_owner": "Comune di Montesilvano",
@@ -2900,7 +2900,7 @@
   "used_by": [
    "Comune di Montesilvano"
   ],
-  "version": "0.13.1"
+  "version": "0.15.0"
  },
  {
   "active": true,
@@ -3641,6 +3641,92 @@
  {
   "active": true,
   "categories": [
+   "website-builder",
+   "integrated-library-system",
+   "it-development",
+   "design"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Libreria di componenti Angular per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-angular-kit.git",
+  "features": [
+   "Componenti Angular pronti all'uso",
+   "Basato su Bootstrap Italia",
+   "Implementa lo UI Kit Italia",
+   "Realizzazione di interfacce responsive e accessibili",
+   "Integrazione in applicazioni Angular",
+   "Riutilizzo dei componenti",
+   "Conformit\u00e0 alle Linee guida di design per i siti internet e servizi digitali della PA"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "Il Design Angular Kit, risorsa ufficiale del Design system Italia, \u00e8 una libreria di componenti sviluppati con Angular, pensata per supportare la realizzazione di interfacce web per siti e servizi digitali della Pubblica Amministrazione. Costruito sulle fondamenta di Bootstrap Italia, ne eredita funzionalit\u00e0, componenti, griglia e classi di utilit\u00e0, rendendoli disponibili in forma riutilizzabile all'interno di applicazioni Angular. Il kit consente di sviluppare interfacce accessibili, inclusive e semplici da mantenere, supportando la creazione di applicazioni web dinamiche.",
+  "maintenance": "community",
+  "name": "Design Angular Kit",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-04-13",
+  "repo": "https://github.com/italia/design-angular-kit",
+  "repo_key": "github.com/italia/design-angular-kit",
+  "short_desc": "Libreria di componenti Angular per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "5299a59a-27e6-4d79-aae1-bf0cfb76ad8e",
+  "version": "v21.2.0"
+ },
+ {
+  "active": true,
+  "based_on": [
+   "https://github.com/italia/design-comuni-pagine-statiche"
+  ],
+  "categories": [
+   "it-development",
+   "design",
+   "content-management"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Tema WordPress per realizzare e gestire siti web comunali basati sul Modello Comuni di Designers Italia.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-comuni-wordpress-theme.git",
+  "features": [
+   "Tema WordPress pronto all'uso per i siti web dei Comuni",
+   "Permette di creare, aggiornare e organizzare i contenuti tramite CMS",
+   "Struttura automaticamente navigazione e pagine sulla base del Modello Comuni di Designers Italia",
+   "Supporta tipologie di contenuto dedicate",
+   "Consente la gestione dei contenuti da parte degli editor senza interventi tecnici"
+  ],
+  "license": "AGPL-3.0-only",
+  "long_desc": "Il tema WordPress del Modello Comuni \u00e8 una soluzione pronta all'uso per il content management system (CMS) WordPress per realizzare e gestire i siti web dei Comuni. Basato sul modello di sito istituzionale dei Comuni italiani di Designers Italia, consente di adottare rapidamente una struttura informativa coerente e di gestire i contenuti tramite il CMS WordPress. Il tema definisce automaticamente l'organizzazione del sito, i layout delle pagine e la navigazione, permettendo di concentrarsi sulla creazione e gestione dei contenuti. Supporta inoltre diverse tipologie di contenuto, come uffici, servizi, notizie e informazioni sull'organizzazione comunale, facilitando la pubblicazione e l'aggiornamento delle informazioni.",
+  "maintenance": "community",
+  "name": "Design Comuni Italia (WordPress)",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-09-15",
+  "repo": "https://github.com/italia/design-comuni-wordpress-theme",
+  "repo_key": "github.com/italia/design-comuni-wordpress-theme",
+  "short_desc": "Tema WordPress per realizzare e gestire siti web comunali basati sul Modello Comuni di Designers Italia.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "56ba4082-9d4a-46d7-a377-a1955ca93219",
+  "version": "v1.12.8"
+ },
+ {
+  "active": true,
+  "categories": [
    "website-builder"
   ],
   "contacts": [
@@ -3753,7 +3839,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-15",
+  "released": "2026-10-16",
   "repo": "https://github.com/ScuolaNormaleSuperiore/design-laboratori-wordpress-theme",
   "repo_key": "github.com/scuolanormalesuperiore/design-laboratori-wordpress-theme",
   "repo_owner": "Scuola Normale Superiore",
@@ -3771,7 +3857,97 @@
    "Bio@SNS - Laboratorio di Biologia - Scuola Normale Superiore - https://laboratoriobiologia.sns.it",
    "Il PNRR alla Normale - Scuola Normale Superiore - https://pnrr.sns.it"
   ],
-  "version": "2.0.0"
+  "version": "2.0.2"
+ },
+ {
+  "active": true,
+  "categories": [
+   "design",
+   "design-system"
+  ],
+  "contacts": [
+   "Igor Smoleac"
+  ],
+  "country": "IT",
+  "desc_en": "Composer package with Blade components compliant with Bootstrap Italia and the Italian Public Administration design guidelines.\n",
+  "desc_lang": "en",
+  "desc_src": "Componenti Blade per Laravel conformi a Bootstrap Italia e alle Linee guida di design per i siti e i servizi digitali della PA.\n",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/igorsmoleac/design-laravel-kit.git",
+  "features": [
+   "Three-tier institutional header (slim, center, navbar)",
+   "AgID-compliant footer with data-element attributes",
+   "Forms with automatic Laravel validation error binding",
+   "ARIA attributes designed for WCAG 2.1 AA",
+   "UI components: button, alert, badge, card, modal, spinner",
+   "SPID and CIE login buttons with official logos",
+   "Complete layout for an institutional page",
+   "Zero-config asset pipeline via vendor:publish"
+  ],
+  "landing": "https://igorsmoleac.github.io/design-laravel-kit/",
+  "license": "BSD-3-Clause",
+  "long_desc": "Design Laravel Kit provides ready-to-use Blade components for building Italian Public Administration websites and digital services with Laravel 12 and 13. The package includes a three-tier institutional header (slim, center, navbar), an AgID-compliant footer with data-element attributes, forms with automatic Laravel validation error binding, ARIA attributes and focus management for WCAG 2.1 AA compliance, a complete layout for an institutional page, and SPID and CIE login buttons with official logos.\nCSS, JavaScript, font and SVG sprite assets are distributed with the package and published through a dedicated Artisan command, without requiring Node.js in the final application.\n",
+  "maintenance": "community",
+  "name": "Design Laravel Kit",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-10-22",
+  "repo": "https://github.com/igorsmoleac/design-laravel-kit",
+  "repo_key": "github.com/igorsmoleac/design-laravel-kit",
+  "short_desc": "Composer package with Blade components compliant with Bootstrap Italia and the Italian Public Administration design guidelines.\n",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "ba117856-1ce2-491c-befb-279bf00db715",
+  "used_by": [
+   "Agenzie digitali e system integrator della Pubblica Amministrazione italiana"
+  ],
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "website-builder",
+   "integrated-library-system",
+   "it-development",
+   "design"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Libreria di componenti React per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-react-kit.git",
+  "features": [
+   "Componenti React pronti all'uso",
+   "Basato su Bootstrap Italia",
+   "Implementa lo UI Kit Italia",
+   "Realizzazione di interfacce responsive e accessibili",
+   "Integrazione in applicazioni React",
+   "Riutilizzo dei componenti",
+   "Conformit\u00e0 alle Linee guida di design per i siti internet e servizi digitali della PA"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "Il Design React Kit, risorsa ufficiale del Design system Italia, \u00e8 una libreria di componenti sviluppati con React, pensata per supportare la realizzazione di interfacce web per siti e servizi digitali della Pubblica Amministrazione. Costruito sulle fondamenta di Bootstrap Italia, ne eredita funzionalit\u00e0, componenti, griglia e classi di utilit\u00e0, rendendoli disponibili in forma riutilizzabile all'interno di applicazioni React. Il kit consente di sviluppare interfacce accessibili, inclusive e semplici da mantenere, supportando la creazione di applicazioni web dinamiche.",
+  "maintenance": "community",
+  "name": "Design React Kit",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-03-17",
+  "repo": "https://github.com/italia/design-react-kit",
+  "repo_key": "github.com/italia/design-react-kit",
+  "short_desc": "Libreria di componenti React per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "94d85d44-d052-4208-a4ae-5856a4a9e93c",
+  "version": "v5.10.0"
  },
  {
   "active": true,
@@ -4811,7 +4987,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-16",
+  "released": "2026-10-19",
   "repo": "https://github.com/consiglionazionaledellericerche/epas",
   "repo_key": "github.com/consiglionazionaledellericerche/epas",
   "short_desc": "ePAS \u00e8 il nuovo sistema di rilevazione e gestione delle presenze del personale pensato per le specifiche esigenze degli Enti Pubblici di Ricerca.",
@@ -4825,7 +5001,7 @@
    "Consorzio LAMMA",
    "Ministero dei Trasporti"
   ],
-  "version": "2.37.0"
+  "version": "2.37.3"
  },
  {
   "active": true,
@@ -8420,7 +8596,7 @@
    "ios",
    "android"
   ],
-  "released": "2026-07-24",
+  "released": "2026-10-15",
   "repo": "https://github.com/globaleaks/globaleaks-whistleblowing-software",
   "repo_key": "github.com/globaleaks/globaleaks-whistleblowing-software",
   "short_desc": "GlobaLeaks is a free and open-source whistleblowing software enabling anyone to easily set up and maintain a secure reporting platform",
@@ -13632,7 +13808,7 @@
    "World Trade Center Genoa",
    "Zeroc SpA"
   ],
-  "version": "5.0.99"
+  "version": "5.0.100"
  },
  {
   "active": true,
@@ -13795,7 +13971,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-15",
+  "released": "2026-10-22",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
   "short_desc": "Piattaforma containerizzata per la gestione dei pagamenti PagoPA, rendicontazione, marca da bollo e integrazione GovPay per enti locali.\n",
@@ -13807,7 +13983,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.6.1"
+  "version": "1.6.8"
  },
  {
   "active": true,
@@ -15430,7 +15606,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-10-22",
   "repo": "https://github.com/italia/design-comuni-plone-theme",
   "repo_key": "github.com/italia/design-comuni-plone-theme",
   "repo_owner": "RedTurtle Technology srl",
@@ -15551,7 +15727,7 @@
    "Unione Val di Bisenzio",
    "Unioncamere Emilia-Romagna"
   ],
-  "version": "12.16.0"
+  "version": "12.16.2"
  },
  {
   "active": true,
@@ -18602,7 +18778,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-16",
+  "released": "2026-10-22",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -19090,7 +19266,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.19.0-rc.5"
+  "version": "4.19.0"
  },
  {
   "active": true,
@@ -19127,7 +19303,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-21",
+  "released": "2026-10-21",
   "repo": "https://gitlab.com/opencontent/opensegnalazioni",
   "repo_key": "gitlab.com/opencontent/opensegnalazioni",
   "repo_owner": "OpenCity Labs srl",
@@ -19155,7 +19331,7 @@
    "Comune di Monselice (PD)",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.2.6"
+  "version": "4.2.7"
  },
  {
   "active": true,
@@ -19191,7 +19367,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-08",
+  "released": "2026-10-22",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/opencityitalia-asl",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/opencityitalia-asl",
   "repo_owner": "OpenCity Labs srl",
@@ -19203,7 +19379,7 @@
   "used_by": [
    "ASP Siracusa"
   ],
-  "version": "1.1.7"
+  "version": "1.1.9"
  },
  {
   "active": true,
@@ -19240,7 +19416,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-09",
+  "released": "2026-10-22",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19502,7 +19678,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.7"
+  "version": "4.1.11"
  },
  {
   "active": true,
@@ -19589,7 +19765,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-05-04",
+  "released": "2026-10-25",
   "repo": "https://github.com/lsantalu/OpenMSP",
   "repo_key": "github.com/lsantalu/openmsp",
   "short_desc": "Multi-service portal for PA digitization: PDND interoperability, national database consultation, and App IO integration.",
@@ -19597,7 +19773,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "830f5734-a115-4682-8c79-a71742bf4f17",
-  "version": "1.3.0"
+  "version": "1.4.0"
  },
  {
   "active": true,
@@ -19886,7 +20062,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-01",
+  "released": "2026-10-22",
   "repo": "https://github.com/Provincia-di-Pescara/pa-sso-proxy",
   "repo_key": "github.com/provincia-di-pescara/pa-sso-proxy",
   "short_desc": "SPID/CIE/eIDAS SSO proxy for Italian Public Administration.",
@@ -19894,7 +20070,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "92192e38-8fae-4d6c-8329-3847a37f5114",
-  "version": "0.9.14"
+  "version": "0.9.19"
  },
  {
   "active": true,
@@ -23612,7 +23788,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "0c1127af-c1cc-4c16-89d7-539cbaa3c430",
-  "version": "0.8.0"
+  "version": "0.8.22"
  },
  {
   "active": true,
@@ -29314,6 +29490,48 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/italia/bootstrap-italia"
+  ],
+  "categories": [
+   "it-development",
+   "design"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Codice pronto all'uso per creare rapidamente il front-end dei siti scolastici in modo accessibile e coerente.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-scuole-pagine-statiche.git",
+  "features": [
+   "Codice HTML, CSS e JavaScript pronto all'uso per realizzare il front-end del sito scolastico",
+   "Esempi di pagine e interfacce per il sito scolastico",
+   "Integra i fondamenti di UI Kit Italia e Bootstrap Italia",
+   "Garantisce accessibilit\u00e0 e conformit\u00e0 alle Linee guida di design per i siti internet e servizi digitali della PA",
+   "Aderenza al modello di sito scolastico di Designers Italia"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "I template HTML del Modello Scuole mettono a disposizione pagine statiche esemplificative e codice pronto all'uso per realizzare il front-end del sito scolastico. Sono costruiti sulle fondamenta di UI Kit Italia e Bootstrap Italia e permettono di lavorare in modo indipendente dalle soluzioni tecnologiche adottate dall'amministrazione. I template sono gi\u00e0 validati in termini di accessibilit\u00e0 e conformit\u00e0 alle Linee guida di design per i siti internet e i servizi digitali della PA e Linee guida sull'accessibilit\u00e0 degli strumenti informatici, facilitando l'adozione del modello di sito istituzionale delle scuole e velocizzando la realizzazione delle interfacce web.\n\n[Vai alle anteprime dei template HTML](https://italia.github.io/design-scuole-pagine-statiche/)\n[Vai alla documentazione del Modello Scuole](https://designers.italia.it/modelli/scuole/)",
+  "maintenance": "community",
+  "name": "Template HTML per i siti scolastici",
+  "platforms": [
+   "web"
+  ],
+  "released": "2024-09-25",
+  "repo": "https://github.com/italia/design-scuole-pagine-statiche",
+  "repo_key": "github.com/italia/design-scuole-pagine-statiche",
+  "short_desc": "Codice pronto all'uso per creare rapidamente il front-end dei siti scolastici in modo accessibile e coerente.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "c7894ee9-b74e-4636-bb2b-93bc7fda9bf3",
+  "version": "v2.4.3"
+ },
+ {
+  "active": true,
   "categories": [
    "cad",
    "geographic-information-systems"
@@ -30578,7 +30796,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-16",
+  "released": "2026-10-25",
   "repo": "https://github.com/Comune-di-Montesilvano/UtenzePA.git",
   "repo_key": "github.com/comune-di-montesilvano/utenzepa",
   "short_desc": "Gestionale per il patrimonio, le utenze, i fornitori e le fatture del Comune di Montesilvano.",
@@ -30586,7 +30804,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "57151f0b-06a8-416e-95bd-66a200fe6390",
-  "version": "v1.32.0"
+  "version": "v1.48.0"
  },
  {
   "active": true,
@@ -30655,7 +30873,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-04-01",
+  "released": "2026-10-21",
   "repo": "https://github.com/Comune-di-Montesilvano/valori-venali",
   "repo_key": "github.com/comune-di-montesilvano/valori-venali",
   "short_desc": "Applicativo web per il calcolo dei valori venali delle aree fabbricabili basato sui dati OMI dell'Agenzia delle Entrate.\n",
@@ -30666,7 +30884,51 @@
   "used_by": [
    "Comune di Montesilvano"
   ],
-  "version": "1.0.0"
+  "version": "2.4.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "it-development",
+   "document-management",
+   "e-signature"
+  ],
+  "contacts": [
+   "Lorenzo Nannicini"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Libreria aperta per i medici di medicina generale: ricetta dematerializzata via SAC del Sistema TS e Profilo Sanitario Sintetico FSE 2.0.",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/varco-sanita/varco.git",
+  "features": [
+   "Invio della ricetta dematerializzata farmaceutica e specialistica al SAC",
+   "Visualizzazione e annullamento della ricetta",
+   "Medico sostituto e lista degli NRE utilizzati",
+   "Cifratura di codice fiscale e pincode con il certificato SanitelCF",
+   "Profilo Sanitario Sintetico FSE 2.0 in CDA2 HL7 Italia",
+   "Validazione con il codice del validatore ufficiale del gateway FSE",
+   "PDF con CDA allegato e firma PAdES",
+   "Suite di conformit\u00e0 pubblica in JSON, indipendente dal linguaggio"
+  ],
+  "landing": "https://github.com/varco-sanita/varco",
+  "license": "EUPL-1.2",
+  "long_desc": "Varco permette a qualsiasi programma di parlare direttamente con i servizi pubblici della sanit\u00e0, senza passare per un gestionale commerciale. Implementa una volta sola, in chiaro, le specifiche pubbliche del Sistema Tessera Sanitaria (MEF) e del Fascicolo Sanitario Elettronico 2.0.\n\nIl modulo ricetta, dalla parte del medico prescrittore, invia al SAC la ricetta farmaceutica e specialistica, la visualizza, la annulla, gestisce il medico sostituto e la lista degli NRE utilizzati. \u00c8 stato provato contro l'ambiente di TEST del MEF con le utenze pubbliche del kit di sviluppo; le chiamate verso la produzione sono bloccate in codice.\n\nIl modulo FSE genera il Profilo Sanitario Sintetico in CDA2 HL7 Italia a partire dagli stessi oggetti della ricetta, lo valida con il codice del validatore ufficiale del gateway (XSD, schematron PSS v4.0, vocabolari) eseguito in locale, lo allega a un PDF e lo firma PAdES. L'invio al gateway FSE non \u00e8 ancora implementato.\n\nIl nome: un varco \u00e8 un'apertura in una barriera. Varco non abbatte i cancelli dei sistemi pubblici, apre un passaggio uguale per tutti.\n\nVarco comprende una suite di conformit\u00e0 pubblica: casi in JSON con uno schema che li specifica, riese",
+  "maintenance": "internal",
+  "name": "varco",
+  "platforms": [
+   "mac"
+  ],
+  "released": "2026-10-03",
+  "repo": "https://github.com/varco-sanita/varco",
+  "repo_key": "github.com/varco-sanita/varco",
+  "short_desc": "Libreria aperta per i medici di medicina generale: ricetta dematerializzata via SAC del Sistema TS e Profilo Sanitario Sintetico FSE 2.0.",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "c95d8536-98a9-476e-ac19-e258097d6563",
+  "version": "0.1.1"
  },
  {
   "active": true,

@@ -74,7 +74,7 @@
    ],
    "country": "EL",
    "created": "2022-03-30",
-   "description": "Το promote and harness the transformative potential of open technologies — technologies defined by their openness to free use, analysis, modification, and redistribution by any user",
+   "description": "To promote and harness the transformative potential of open technologies — technologies defined by their openness to free use, analysis, modification, and redistribution by any user.",
    "email": "opentech@auth.gr",
    "id": "floss-opentech-auth-gr",
    "name": "Open Technologies Centre at the Aristotle University of Thessaloniki",
@@ -231,7 +231,7 @@
    ],
    "country": "FR",
    "created": "2003-10-08",
-   "description": "RECIA Public Interest Group",
+   "description": "GIP RECIA is a public digital services provider helping educational communities and local authorities with their digital transformation, in the Centre-Val de Loire region, France.",
    "email": "contact@recia.fr",
    "id": "floss-recia-fr",
    "name": "RECIA",
@@ -2742,21 +2742,21 @@
  "sources": {
   "academic-map": {
    "count": 31,
-   "fetched_at": "2026-10-19T12:30:06Z",
+   "fetched_at": "2026-10-26T13:25:23Z",
    "licence": "MIT (github.com/sustainers/academic-map)",
    "ok": true,
    "url": "https://sustainoss.org/academic-map/"
   },
   "floss-pso": {
    "count": 18,
-   "fetched_at": "2026-10-19T12:30:06Z",
+   "fetched_at": "2026-10-26T13:25:23Z",
    "licence": "CC0 1.0 (the FLOSS-PSO Network's OSPO list)",
    "ok": true,
    "url": "https://floss-pso.network/public-sector-ospos/"
   },
   "todo-landscape": {
    "count": 120,
-   "fetched_at": "2026-10-19T12:30:06Z",
+   "fetched_at": "2026-10-26T13:25:23Z",
    "licence": "Apache-2.0 (github.com/todogroup/ospolandscape)",
    "ok": true,
    "url": "https://landscape.todogroup.org/"
