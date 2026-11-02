@@ -82,8 +82,7 @@
    "other",
    "\u00e9ducation"
   ],
-  "version": "26.05",
-  "wikidata": "Q215051"
+  "version": "26.05"
  },
  {
   "country": "FR",
@@ -113,8 +112,7 @@
    "MD",
    "MEN"
   ],
-  "version": "3.7.9",
-  "wikidata": "Q2822666"
+  "version": "3.7.9"
  },
  {
   "categories": [
@@ -141,8 +139,7 @@
   "short_desc": "Notifications suppl\u00e9mentaires \u00e0 celles incluses dans GLPI",
   "sill_id": 3,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731889"
+  "tier": "index"
  },
  {
   "categories": [
@@ -258,7 +255,7 @@
    "AP-HP",
    "CNRS"
   ],
-  "version": "3.24.2",
+  "version": "3.24.3",
   "wikidata": "Q4033826"
  },
  {
@@ -314,7 +311,8 @@
    "development",
    "application",
    "SPA",
-   "single-page application"
+   "single-page application",
+   "angular"
   ],
   "landing": "https://angular.dev",
   "license": "MIT licence",
@@ -332,8 +330,7 @@
    "MEN",
    "MJ"
   ],
-  "version": "22.1.0",
-  "wikidata": "Q28925578"
+  "version": "zone.js-0.16.3"
  },
  {
   "categories": [
@@ -369,8 +366,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "1.8.3",
-  "wikidata": "Q2849803"
+  "version": "1.8.3"
  },
  {
   "country": "FR",
@@ -383,7 +379,9 @@
    "configuration",
    "automation",
    "orchestration",
-   ""
+   "",
+   "ansible",
+   "python"
   ],
   "landing": "https://www.ansible.com/",
   "license": "GPLv3+",
@@ -427,8 +425,7 @@
    "irsn",
    "other"
   ],
-  "version": "2.21.5",
-  "wikidata": "Q2852503"
+  "version": "v2.22.0rc2"
  },
  {
   "country": "FR",
@@ -493,8 +490,7 @@
    "MI",
    "MI/SG/DTNUM/SDID"
   ],
-  "version": "3.3.0",
-  "wikidata": "Q28915062"
+  "version": "3.3.0"
  },
  {
   "categories": [
@@ -552,8 +548,7 @@
   "sill_id": 471,
   "source": "FR/sill",
   "tier": "index",
-  "version": "3.5.3",
-  "wikidata": "Q1136882"
+  "version": "3.5.3"
  },
  {
   "country": "FR",
@@ -690,8 +685,7 @@
    "DGFIP",
    "Education Nationale"
   ],
-  "version": "5.6.3",
-  "wikidata": "Q616885"
+  "version": "5.6.3"
  },
  {
   "categories": [
@@ -707,9 +701,13 @@
    "construction",
    "build",
    "project",
-   "maven"
+   "maven",
+   "apache-maven",
+   "build-management",
+   "hacktoberfest",
+   "java"
   ],
-  "landing": "https://maven.apache.org/",
+  "landing": "https://maven.apache.org/ref/current",
   "license": "Apache-2.0",
   "name": "Apache Maven",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -727,8 +725,7 @@
    "a",
    "other"
   ],
-  "version": "3.10.0",
-  "wikidata": "Q139941"
+  "version": "workspace-v0"
  },
  {
   "country": "FR",
@@ -783,8 +780,7 @@
    "INSEE",
    "MC"
   ],
-  "version": "10.0.0",
-  "wikidata": "Q2858103"
+  "version": "10.1.0"
  },
  {
   "country": "FR",
@@ -823,8 +819,7 @@
    "MINISTERE INTERIEUR/SG/DNUM/SDSI/BRR/BRR LE CHESNAY",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "6.1.0",
-  "wikidata": "Q68705831"
+  "version": "6.1.0"
  },
  {
   "categories": [
@@ -1019,8 +1014,7 @@
    "MC",
    "MS"
   ],
-  "version": "13.1",
-  "wikidata": "Q77064547"
+  "version": "13.1"
  },
  {
   "country": "FR",
@@ -1057,8 +1051,7 @@
    "Universit\u00e9 Grenoble Alpes",
    "\u00e9ducation"
   ],
-  "version": "2.3.9",
-  "wikidata": "Q55080330"
+  "version": "2.3.9"
  },
  {
   "categories": [
@@ -1155,8 +1148,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "5.0.0",
-  "wikidata": "Q24026504"
+  "version": "5.0.0"
  },
  {
   "categories": [
@@ -1336,8 +1328,7 @@
   "sill_id": 548,
   "source": "FR/sill",
   "tier": "index",
-  "version": "2.0.31",
-  "wikidata": "Q784816"
+  "version": "2.0.31"
  },
  {
   "categories": [
@@ -1374,8 +1365,7 @@
    "INRAE",
    "Lyc\u00e9e les Lombards"
   ],
-  "version": "2.8.1",
-  "wikidata": "Q790931"
+  "version": "2.8.1"
  },
  {
   "country": "FR",
@@ -1436,7 +1426,8 @@
   "tier": "index",
   "used_by": [
    "MESR",
-   "Universit\u00e9 de Rennes"
+   "Universit\u00e9 de Rennes",
+   "minist\u00e8re de l'int\u00e9rieur"
   ],
   "version": "4.4.0",
   "wikidata": "Q798540"
@@ -1497,8 +1488,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "25.1.1",
-  "wikidata": "Q25387280"
+  "version": "25.1.2"
  },
  {
   "country": "FR",
@@ -1551,8 +1541,7 @@
   "sill_id": 250,
   "source": "FR/sill",
   "tier": "index",
-  "version": "4.0.3",
-  "wikidata": "Q93533441"
+  "version": "4.0.3"
  },
  {
   "categories": [
@@ -1628,8 +1617,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "4.0.0",
-  "wikidata": "Q4904858"
+  "version": "4.0.1"
  },
  {
   "country": "FR",
@@ -1670,8 +1658,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "2026.10.0",
-  "wikidata": "Q56319818"
+  "version": "2026.10.0"
  },
  {
   "country": "FR",
@@ -1697,8 +1684,7 @@
    "Centre Hospitalier de L'Isle-sur-la-Sorgue",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "v2022.9.1",
-  "wikidata": "Q111142350"
+  "version": "v2022.9.1"
  },
  {
   "country": "FR",
@@ -1724,8 +1710,7 @@
   "used_by": [
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "2022.10.0",
-  "wikidata": "Q111142362"
+  "version": "2022.10.0"
  },
  {
   "country": "FR",
@@ -1805,8 +1790,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.1",
-  "wikidata": "Q885580"
+  "version": "3.1"
  },
  {
   "categories": [
@@ -1843,8 +1827,7 @@
    "Institut Laue Langevin (ILL)",
    "MI",
    "Mairie de Saint-Joseph (La R\u00e9union)"
-  ],
-  "wikidata": "Q2907192"
+  ]
  },
  {
   "country": "FR",
@@ -1912,8 +1895,7 @@
    "MEN",
    "ville de claix"
   ],
-  "version": "26.09.2",
-  "wikidata": "Q107122654"
+  "version": "26.09.2"
  },
  {
   "categories": [
@@ -1996,8 +1978,7 @@
   "used_by": [
    "Campus Num\u00e9rique 47"
   ],
-  "version": "1.6.17",
-  "wikidata": "Q122929604"
+  "version": "1.6.17"
  },
  {
   "country": "FR",
@@ -2062,8 +2043,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "2.4.1",
-  "wikidata": "Q98731969"
+  "version": "2.4.1"
  },
  {
   "country": "FR",
@@ -2274,8 +2254,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "5.0.9",
-  "wikidata": "Q616639"
+  "version": "5.0.9"
  },
  {
   "contacts": [
@@ -2478,8 +2457,7 @@
    "Universit\u00e9 Grenoble Alpes",
    "other"
   ],
-  "version": "3.0.1",
-  "wikidata": "Q423221"
+  "version": "3.0.1"
  },
  {
   "country": "FR",
@@ -2533,8 +2511,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "2.2.0",
-  "wikidata": "Q5089075"
+  "version": "2.2.0"
  },
  {
   "country": "FR",
@@ -2567,8 +2544,7 @@
    "MEN",
    "PREF"
   ],
-  "version": "1.0.4",
-  "wikidata": "Q105029197"
+  "version": "1.0.4"
  },
  {
   "country": "FR",
@@ -2629,8 +2605,7 @@
    "MI",
    "Universit\u00e9 de Guyane"
   ],
-  "version": "2.7.4",
-  "wikidata": "Q16988239"
+  "version": "2.7.5"
  },
  {
   "categories": [
@@ -2705,8 +2680,7 @@
   "used_by": [
    "other"
   ],
-  "version": "4.1.5",
-  "wikidata": "Q135450643"
+  "version": "4.2.1"
  },
  {
   "country": "FR",
@@ -2737,8 +2711,7 @@
   "sill_id": 561,
   "source": "FR/sill",
   "tier": "index",
-  "version": "6.11",
-  "wikidata": "Q142028"
+  "version": "6.11"
  },
  {
   "categories": [
@@ -2777,8 +2750,7 @@
    "MTE",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "1.5.4",
-  "wikidata": "Q852000"
+  "version": "1.5.4"
  },
  {
   "country": "FR",
@@ -2848,8 +2820,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "1.12.6",
-  "wikidata": "Q51798"
+  "version": "1.12.6"
  },
  {
   "country": "FR",
@@ -3062,8 +3033,7 @@
    "MI",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "4.6.4",
-  "wikidata": "Q339829"
+  "version": "4.6.4"
  },
  {
   "country": "FR",
@@ -3268,6 +3238,7 @@
   "tier": "index",
   "used_by": [
    "DINUM",
+   "INSERM",
    "MI",
    "Minist\u00e8re des Arm\u00e9es",
    "Minsit\u00e8re de la Justice"
@@ -3308,8 +3279,7 @@
    "IGN",
    "MEN"
   ],
-  "version": "2.10.3",
-  "wikidata": "Q15252222"
+  "version": "2.11.1"
  },
  {
   "country": "FR",
@@ -3369,8 +3339,7 @@
   "used_by": [
    "CDC des pays de L'Aigle"
   ],
-  "version": "1.20.5",
-  "wikidata": "Q28709844"
+  "version": "1.20.5"
  },
  {
   "categories": [
@@ -3402,8 +3371,7 @@
    "DGDDI",
    "MESR"
   ],
-  "version": "3.1.10",
-  "wikidata": "Q5172336"
+  "version": "3.2.0"
  },
  {
   "categories": [
@@ -3556,8 +3524,7 @@
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
    "other"
   ],
-  "version": "1.19.4",
-  "wikidata": "Q64024537"
+  "version": "1.19.6"
  },
  {
   "country": "FR",
@@ -3592,8 +3559,7 @@
    "Rectorat de l'acad\u00e9mie de Reims",
    "other"
   ],
-  "version": "9.9.3",
-  "wikidata": "Q16526613"
+  "version": "9.9.3"
  },
  {
   "categories": [
@@ -3608,15 +3574,19 @@
    "impression",
    "serveur",
    "printing",
-   "server"
+   "server",
+   "ipp",
+   "ipp-protocol",
+   "printer",
+   "snmp"
   ],
-  "landing": "https://openprinting.github.io/cups/",
+  "landing": "https://www.cups.org",
   "license": "Apache-2.0",
   "name": "CUPS",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/openprinting/cups",
-  "repo_key": "github.com/openprinting/cups",
+  "repo": "https://github.com/apple/cups",
+  "repo_key": "github.com/apple/cups",
   "short_desc": "Serveur d'impression",
   "sill_id": 28,
   "source": "FR/sill",
@@ -3632,8 +3602,7 @@
    "Universit\u00e9 d'Angers",
    "other"
   ],
-  "version": "2.4.20",
-  "wikidata": "Q868171"
+  "version": "v2.3.6"
  },
  {
   "country": "FR",
@@ -3693,7 +3662,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "16.2.0",
+  "version": "16.2.1",
   "wikidata": "Q115978662"
  },
  {
@@ -3728,8 +3697,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "4.4.1",
-  "wikidata": "Q106081011"
+  "version": "4.5.0"
  },
  {
   "contacts": [
@@ -3790,8 +3758,7 @@
   "used_by": [
    "DINUM",
    "MS"
-  ],
-  "wikidata": "Q115326091"
+  ]
  },
  {
   "categories": [
@@ -3975,8 +3942,7 @@
    "administration centrale",
    "other"
   ],
-  "version": "26.2.3",
-  "wikidata": "Q28956992"
+  "version": "26.2.3"
  },
  {
   "categories": [
@@ -4110,8 +4076,7 @@
   "sill_id": 234,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.32.1",
-  "wikidata": "Q20105575"
+  "version": "0.32.2"
  },
  {
   "country": "FR",
@@ -4266,8 +4231,7 @@
    "CNRS",
    "dngcd"
   ],
-  "version": "0.97.3",
-  "wikidata": "Q958908"
+  "version": "0.97.3"
  },
  {
   "country": "FR",
@@ -4297,8 +4261,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "9.1.0",
-  "wikidata": "Q1050872"
+  "version": "9.1.0"
  },
  {
   "categories": [
@@ -4334,8 +4297,7 @@
    "DREAL Nouvelle-Aquitaine",
    "PREF"
   ],
-  "version": "23.5.0",
-  "wikidata": "Q112299414"
+  "version": "23.6.0"
  },
  {
   "categories": [
@@ -4368,8 +4330,7 @@
    "DINUM",
    "Instituts Nationaux Polytechniques (INP)"
   ],
-  "version": "v2026.1.0",
-  "wikidata": "Q15054354"
+  "version": "v2026.1.0"
  },
  {
   "country": "FR",
@@ -4401,8 +4362,7 @@
    "MI/SG/DTNUM/SDAIT/BS",
    "MINISTERE INTERIEUR/SG/SHFD/C2MI"
   ],
-  "version": "6.1.2",
-  "wikidata": "Q842014"
+  "version": "6.1.2"
  },
  {
   "country": "FR",
@@ -4527,8 +4487,7 @@
    "aefe",
    "other"
   ],
-  "version": "29.9.2",
-  "wikidata": "Q15206305"
+  "version": "29.9.2"
  },
  {
   "country": "FR",
@@ -4559,8 +4518,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "R\u00e9seau Canop\u00e9"
   ],
-  "version": "6.0.3",
-  "wikidata": "Q133821372"
+  "version": "6.0.4"
  },
  {
   "country": "FR",
@@ -4644,8 +4602,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.38.32",
-  "wikidata": "Q112073283"
+  "version": "0.38.34"
  },
  {
   "country": "FR",
@@ -4675,8 +4632,7 @@
    "IRD: Institut de Recherche pour le D\u00e9veloppement",
    "MI"
   ],
-  "version": "2026-07-14c",
-  "wikidata": "Q851864"
+  "version": "2026-07-14c"
  },
  {
   "categories": [
@@ -4747,8 +4703,7 @@
    "CentraleSup\u00e9lec",
    "MI"
   ],
-  "version": "2.4.5",
-  "wikidata": "Q742820"
+  "version": "2.4.5"
  },
  {
   "country": "FR",
@@ -4796,9 +4751,11 @@
    "dessin",
    "diagramme",
    "drawing",
-   "diagram"
+   "diagram",
+   "javascript",
+   "whiteboard"
   ],
-  "landing": "https://www.drawio.com/",
+  "landing": "https://www.drawio.com",
   "license": "Apache-2.0",
   "name": "Draw.io Desktop",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4850,8 +4807,7 @@
    "academie de clermont ",
    "other"
   ],
-  "version": "32.0.2",
-  "wikidata": "Q59339175"
+  "version": "v32.6.9"
  },
  {
   "country": "FR",
@@ -4873,8 +4829,7 @@
   "sill_id": 432,
   "source": "FR/sill",
   "tier": "index",
-  "version": "9.44.0",
-  "wikidata": "Q634004"
+  "version": "9.44.0"
  },
  {
   "categories": [
@@ -4913,8 +4868,7 @@
    "Universit\u00e9 de Strasbourg",
    "inrae"
   ],
-  "version": "11.4.1",
-  "wikidata": "Q170855"
+  "version": "11.4.1"
  },
  {
   "country": "FR",
@@ -4979,8 +4933,7 @@
    "MESR",
    "PREF"
   ],
-  "version": "2.1.0.5",
-  "wikidata": "Q1266534"
+  "version": "2.1.0.5"
  },
  {
   "categories": [
@@ -5111,8 +5064,7 @@
    "DNUM/PNM/PNM2",
    "acad\u00e9mie de montpellier"
   ],
-  "version": "2.0",
-  "wikidata": "Q93597458"
+  "version": "2.0"
  },
  {
   "country": "FR",
@@ -5252,8 +5204,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sciences Po"
   ],
-  "version": "9.5.5",
-  "wikidata": "Q3050461"
+  "version": "9.5.5"
  },
  {
   "categories": [
@@ -5355,8 +5306,7 @@
   "used_by": [
    "CEA"
   ],
-  "version": "5.7.0",
-  "wikidata": "Q17105199"
+  "version": "5.7.0"
  },
  {
   "categories": [
@@ -5562,8 +5512,7 @@
    "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne",
    "Universit\u00e9 de Rouen Normandie"
   ],
-  "version": "1.5.4",
-  "wikidata": "Q135439705"
+  "version": "1.5.4"
  },
  {
   "categories": [
@@ -5688,8 +5637,7 @@
    "Universit\u00e9 du Littoral C\u00f4te d'Opale",
    "other"
   ],
-  "version": "4.4.0",
-  "wikidata": "Q109851936"
+  "version": "4.4.0"
  },
  {
   "country": "FR",
@@ -5956,8 +5904,8 @@
   "name": "Filezilla",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://svn.filezilla-project.org/filezilla/FileZilla3/",
-  "repo_key": "svn.filezilla-project.org/filezilla/filezilla3",
+  "repo": "https://svn.filezilla-project.org/svn/FileZilla3/",
+  "repo_key": "svn.filezilla-project.org/svn/filezilla3",
   "short_desc": "Client FTP",
   "sill_id": 43,
   "source": "FR/sill",
@@ -6016,8 +5964,7 @@
   "tier": "index",
   "used_by": [
    "MEN"
-  ],
-  "wikidata": "Q5455377"
+  ]
  },
  {
   "categories": [
@@ -6055,8 +6002,7 @@
    "MESR",
    "MI/SG/DTNUM/SDAIT/BS"
   ],
-  "version": "3.1.3",
-  "wikidata": "Q289281"
+  "version": "3.1.3"
  },
  {
   "categories": [
@@ -6332,8 +6278,7 @@
    "MEN",
    "MESR"
   ],
-  "version": "1.1.4",
-  "wikidata": "Q251322"
+  "version": "1.1.4"
  },
  {
   "categories": [
@@ -6367,8 +6312,7 @@
   "tier": "index",
   "used_by": [
    "MESR"
-  ],
-  "wikidata": "Q5499643"
+  ]
  },
  {
   "country": "FR",
@@ -6520,8 +6464,7 @@
    "inrae",
    "pr\u00e9fecture"
   ],
-  "version": "1.12.11",
-  "wikidata": "Q3028675"
+  "version": "1.12.11"
  },
  {
   "country": "FR",
@@ -6677,8 +6620,7 @@
    "Mairie de Cuges les Pins",
    "Universit\u00e9 de Lille"
   ],
-  "version": "2.6",
-  "wikidata": "Q3091186"
+  "version": "2.6"
  },
  {
   "categories": [
@@ -6714,8 +6656,7 @@
    "INRAE",
    "MESR"
   ],
-  "version": "4.0.5",
-  "wikidata": "Q21041255"
+  "version": "4.0.7"
  },
  {
   "country": "FR",
@@ -6806,8 +6747,7 @@
    "prefecture 2B",
    "twb"
   ],
-  "version": "3.3.3312",
-  "wikidata": "Q1493695"
+  "version": "3.3.3312"
  },
  {
   "country": "FR",
@@ -6843,8 +6783,7 @@
    "MEN",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "26.1",
-  "wikidata": "Q1147042"
+  "version": "26.1"
  },
  {
   "country": "FR",
@@ -6873,8 +6812,7 @@
    "CNRS",
    "Education Nationale"
   ],
-  "version": "2.1.0",
-  "wikidata": "Q1122464"
+  "version": "2.1.0"
  },
  {
   "categories": [
@@ -6911,8 +6849,7 @@
    "AFB",
    "DIRN"
   ],
-  "version": "2.17.5",
-  "wikidata": "Q109038131"
+  "version": "2.17.5"
  },
  {
   "country": "FR",
@@ -6941,8 +6878,7 @@
    "INRAE",
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
-  "version": "4.4.12",
-  "wikidata": "Q477787"
+  "version": "4.4.12"
  },
  {
   "country": "FR",
@@ -6979,8 +6915,7 @@
    "Rennes M\u00e9tropole",
    "R\u00e9gion bretagne"
   ],
-  "version": "26.0.0",
-  "wikidata": "Q112611351"
+  "version": "26.0.0"
  },
  {
   "categories": [
@@ -7042,8 +6977,7 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE"
   ],
-  "version": "3.0.2",
-  "wikidata": "Q1502779"
+  "version": "3.0.2"
  },
  {
   "categories": [
@@ -7079,8 +7013,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.5",
-  "wikidata": "Q116819111"
+  "version": "2.126.6"
  },
  {
   "country": "FR",
@@ -7191,8 +7124,7 @@
    "ecole de comps",
    "other"
   ],
-  "version": "3.2.6",
-  "wikidata": "Q8038"
+  "version": "3.2.6"
  },
  {
   "country": "FR",
@@ -7313,7 +7245,7 @@
    "DINUM",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "28.2.0",
+  "version": "28.3.0",
   "wikidata": "Q28714270"
  },
  {
@@ -7373,8 +7305,7 @@
    "Universit\u00e9 de technologie de Compi\u00e8gne",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "18.11",
-  "wikidata": "Q16639197"
+  "version": "18.11"
  },
  {
   "categories": [
@@ -7462,8 +7393,7 @@
    "Universit\u00e9 de Lille",
    "other"
   ],
-  "version": "11.0.5",
-  "wikidata": "Q3104570"
+  "version": "11.0.5"
  },
  {
   "country": "FR",
@@ -7496,8 +7426,7 @@
    "MD",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "51",
-  "wikidata": "Q44316"
+  "version": "51"
  },
  {
   "categories": [
@@ -7531,8 +7460,7 @@
   "used_by": [
    "other"
   ],
-  "version": "1.1.3",
-  "wikidata": "Q929932"
+  "version": "1.1.3"
  },
  {
   "country": "FR",
@@ -7845,8 +7773,7 @@
   "tier": "index",
   "used_by": [
    "Minist\u00e8re de la Sant\u00e9 et de la Pr\u00e9vention"
-  ],
-  "wikidata": "Q120131804"
+  ]
  },
  {
   "country": "FR",
@@ -7880,8 +7807,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
-  "version": "1.8.1",
-  "wikidata": "Q843156"
+  "version": "1.8.1"
  },
  {
   "country": "FR",
@@ -7953,7 +7879,7 @@
    "Sorbonne Universit\u00e9",
    "inrae"
   ],
-  "version": "13.2.4",
+  "version": "13.3.0",
   "wikidata": "Q43399271"
  },
  {
@@ -8091,8 +8017,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.13.1",
-  "wikidata": "Q97819945"
+  "version": "4.13.1"
  },
  {
   "country": "FR",
@@ -8103,7 +8028,9 @@
   "keywords": [
    "capture d'\u00e9cran",
    "screenshot",
-   "EPLE"
+   "EPLE",
+   "hacktoberfest",
+   "hacktoberfest2021"
   ],
   "landing": "https://getgreenshot.org",
   "license": "GPL-3.0-only",
@@ -8149,8 +8076,7 @@
    "amU",
    "other"
   ],
-  "version": "1.3.328",
-  "wikidata": "Q1544791"
+  "version": "v1.4.389-gee6eee90c9"
  },
  {
   "country": "FR",
@@ -8210,7 +8136,7 @@
    "acad\u00e9mie de Poitiers",
    "\u00cele-de-France Mobilit\u00e9s"
   ],
-  "version": "1.7.21",
+  "version": "1.7.22",
   "wikidata": "Q123573961"
  },
  {
@@ -8304,8 +8230,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "2.5.252",
-  "wikidata": "Q1562670"
+  "version": "2.5.252"
  },
  {
   "country": "FR",
@@ -8406,8 +8331,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "2.0.2",
-  "wikidata": "Q131897282"
+  "version": "2.0.2"
  },
  {
   "country": "FR",
@@ -8463,8 +8387,7 @@
    "DINUM",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "1.12.0",
-  "wikidata": "Q98731953"
+  "version": "1.12.0"
  },
  {
   "country": "FR",
@@ -8491,8 +8414,7 @@
   "used_by": [
    "DGDDI"
   ],
-  "version": "12.15.1.1",
-  "wikidata": "Q1478140"
+  "version": "12.15.1.1"
  },
  {
   "country": "FR",
@@ -8556,8 +8478,7 @@
    "CentraleSup\u00e9lec",
    "DGFIP"
   ],
-  "version": "25.07.1",
-  "wikidata": "Q107478236"
+  "version": "25.07.1"
  },
  {
   "country": "FR",
@@ -8618,8 +8539,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "7.0.10",
-  "wikidata": "Q11223506"
+  "version": "7.0.11"
  },
  {
   "country": "FR",
@@ -8730,8 +8650,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "2.16.5",
-  "wikidata": "Q3499542"
+  "version": "2.16.6"
  },
  {
   "categories": [
@@ -8765,8 +8684,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "11.5",
-  "wikidata": "Q1623223"
+  "version": "11.5"
  },
  {
   "country": "FR",
@@ -8893,8 +8811,7 @@
    "academie d'Aix marseille",
    "other"
   ],
-  "version": "1.4.4",
-  "wikidata": "Q8041"
+  "version": "1.4.4"
  },
  {
   "categories": [
@@ -8994,6 +8911,7 @@
    "Haut-Chablais Interco",
    "Universit\u00e9 Grenoble Alpes",
    "Universit\u00e9 Le Havre Normandie",
+   "maire",
    "other"
   ],
   "wikidata": "Q114244260"
@@ -9117,8 +9035,7 @@
    "MC",
    "other"
   ],
-  "version": "3.3.0",
-  "wikidata": "Q15819811"
+  "version": "3.3.0"
  },
  {
   "country": "FR",
@@ -9178,8 +9095,7 @@
    "INRAE",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "5.15",
-  "wikidata": "Q1676802"
+  "version": "5.15"
  },
  {
   "categories": [
@@ -9208,8 +9124,7 @@
   "used_by": [
    "DGFIP",
    "INRAE"
-  ],
-  "wikidata": "Q6109486"
+  ]
  },
  {
   "categories": [
@@ -9301,8 +9216,7 @@
   "used_by": [
    "IGN"
   ],
-  "version": "4.4.1",
-  "wikidata": "Q17067385"
+  "version": "4.4.1"
  },
  {
   "categories": [
@@ -9333,8 +9247,7 @@
    "MEN",
    "SG"
   ],
-  "version": "2.587",
-  "wikidata": "Q7491312"
+  "version": "2.588"
  },
  {
   "country": "FR",
@@ -9442,8 +9355,7 @@
    "MINISTERE INTERIEUR/DGPN/DCCRS/DZCRSPARIS/CRS05",
    "other"
   ],
-  "version": "6.2.0 RC 1",
-  "wikidata": "Q13167"
+  "version": "6.2.0 RC 1"
  },
  {
   "country": "FR",
@@ -9482,6 +9394,7 @@
    "DEAL R\u00e9union",
    "DINUM",
    "Eurom\u00e9tropole de Strasbourg",
+   "Lyc\u00e9e des m\u00e9tiers entre Meurthe et Sanon",
    "MD",
    "MI",
    "MIOM",
@@ -9494,8 +9407,7 @@
    "ddtm 56",
    "dzpn-nord"
   ],
-  "version": "3.7.21",
-  "wikidata": "Q97175797"
+  "version": "3.7.22"
  },
  {
   "categories": [
@@ -9562,6 +9474,7 @@
   "used_by": [
    "CentraleSup\u00e9lec"
   ],
+  "version": "1.13.3",
   "wikidata": "Q2613697"
  },
  {
@@ -9590,8 +9503,7 @@
    "INRAE",
    "other"
   ],
-  "version": "6.1.3",
-  "wikidata": "Q847675"
+  "version": "6.1.3"
  },
  {
   "country": "FR",
@@ -9635,8 +9547,7 @@
    "Universit\u00e9 de Limoges",
    "administration centrale"
   ],
-  "version": "7.6.3",
-  "wikidata": "Q105099901"
+  "version": "7.6.4"
  },
  {
   "country": "FR",
@@ -9663,8 +9574,7 @@
    "DGFIP",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "6.1.1",
-  "wikidata": "Q99439688"
+  "version": "6.1.1"
  },
  {
   "country": "FR",
@@ -9702,7 +9612,7 @@
    "MINISTERE INTERIEUR/DGPN/ANDV",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "4.6.4",
+  "version": "4.6.5",
   "wikidata": "Q99439725"
  },
  {
@@ -9736,8 +9646,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Lille"
   ],
-  "version": "20.0",
-  "wikidata": "Q14565723"
+  "version": "20.0"
  },
  {
   "country": "FR",
@@ -9772,7 +9681,7 @@
    "MJ",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "2026.2",
+  "version": "2026.3",
   "wikidata": "Q8364850"
  },
  {
@@ -9807,8 +9716,7 @@
    "DINUM",
    "MENJ"
   ],
-  "version": "1.2.56",
-  "wikidata": "Q106199750"
+  "version": "1.2.57"
  },
  {
   "categories": [
@@ -9846,8 +9754,7 @@
    "MEN",
    "MI"
   ],
-  "version": "25.12.2",
-  "wikidata": "Q261933"
+  "version": "25.12.2"
  },
  {
   "categories": [
@@ -9918,8 +9825,7 @@
    "GRETA",
    "MEN"
   ],
-  "version": "26.08.1",
-  "wikidata": "Q572226"
+  "version": "26.08.2"
  },
  {
   "categories": [
@@ -9950,8 +9856,7 @@
    "35",
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation"
   ],
-  "version": "4.0.7",
-  "wikidata": "Q61694243"
+  "version": "4.0.7"
  },
  {
   "country": "FR",
@@ -10050,8 +9955,7 @@
   "used_by": [
    "CentraleSup\u00e9lec"
   ],
-  "version": "4.5.6",
-  "wikidata": "Q110662710"
+  "version": "4.5.8"
  },
  {
   "country": "FR",
@@ -10085,8 +9989,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "dreets pays de la loire"
   ],
-  "version": "2.8.0",
-  "wikidata": "Q28974968"
+  "version": "2.8.0"
  },
  {
   "country": "FR",
@@ -10111,8 +10014,7 @@
   "sill_id": 433,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.18.9",
-  "wikidata": "Q96385555"
+  "version": "1.18.9"
  },
  {
   "country": "FR",
@@ -10143,8 +10045,7 @@
    "Institut Laue Langevin (ILL)",
    "MS"
   ],
-  "version": "26.8.1",
-  "wikidata": "Q42916195"
+  "version": "26.8.1"
  },
  {
   "categories": [
@@ -10178,8 +10079,7 @@
    "AP-HP",
    "DINUM"
   ],
-  "version": "11.16.4",
-  "wikidata": "Q107693197"
+  "version": "11.16.4"
  },
  {
   "country": "FR",
@@ -10246,8 +10146,7 @@
    "CNRS",
    "INSEE"
   ],
-  "version": "9.5.5",
-  "wikidata": "Q21156460"
+  "version": "9.5.5"
  },
  {
   "categories": [
@@ -10357,8 +10256,7 @@
    "OFFICE ",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "24.11.90",
-  "wikidata": "Q28883021"
+  "version": "24.11.90"
  },
  {
   "country": "FR",
@@ -10497,8 +10395,7 @@
    "MS",
    "SG"
   ],
-  "version": "1.37.1",
-  "wikidata": "Q22661306"
+  "version": "1.37.2"
  },
  {
   "categories": [
@@ -10556,8 +10453,7 @@
   "sill_id": 601,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.25.3",
-  "wikidata": "Q135432577"
+  "version": "0.25.3"
  },
  {
   "country": "FR",
@@ -10587,8 +10483,7 @@
    "DINUM",
    "Minsit\u00e8re de la Justice"
   ],
-  "version": "1.34.0",
-  "wikidata": "Q135433339"
+  "version": "1.36.3"
  },
  {
   "categories": [
@@ -10651,8 +10546,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "2.12.1",
-  "wikidata": "Q379908"
+  "version": "2.12.1"
  },
  {
   "country": "FR",
@@ -10681,8 +10575,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.38.0",
-  "wikidata": "Q13634357"
+  "version": "13.39.0"
  },
  {
   "categories": [
@@ -10738,8 +10631,7 @@
    "Universit\u00e9 Perpignan Via Domitia",
    "dgfip"
   ],
-  "version": "June 2026 LaTeX release",
-  "wikidata": "Q5310"
+  "version": "June 2026 LaTeX release"
  },
  {
   "categories": [
@@ -10771,8 +10663,7 @@
    "CNRS",
    "INRAE"
   ],
-  "version": "4.6.0",
-  "wikidata": "Q258448"
+  "version": "4.6.0"
  },
  {
   "country": "FR",
@@ -10810,8 +10701,7 @@
    "Sorbonne Universit\u00e9",
    "other"
   ],
-  "version": "2.20.1",
-  "wikidata": "Q3229380"
+  "version": "2.20.1"
  },
  {
   "country": "FR",
@@ -10973,8 +10863,7 @@
    "pr\u00e9fecture 81",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "26.8.1",
-  "wikidata": "Q10135"
+  "version": "26.8.2"
  },
  {
   "categories": [
@@ -11042,6 +10931,7 @@
   "tier": "index",
   "used_by": [
    "Acad\u00e9mie de Lille",
+   "Acad\u00e9mie de Martinique",
    "CNRS",
    "CentraleSup\u00e9lec",
    "DGDDI",
@@ -11120,8 +11010,7 @@
   "used_by": [
    "DGITM"
   ],
-  "version": "6.5.5",
-  "wikidata": "Q16655955"
+  "version": "6.5.5"
  },
  {
   "country": "FR",
@@ -11185,8 +11074,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire et de la For\u00eat",
    "MEN",
    "MI"
-  ],
-  "wikidata": "Q98731931"
+  ]
  },
  {
   "categories": [
@@ -11226,8 +11114,7 @@
    "Ville de Marseille",
    "other"
   ],
-  "version": "4.2.2",
-  "wikidata": "Q112208571"
+  "version": "4.2.2"
  },
  {
   "country": "FR",
@@ -11297,8 +11184,7 @@
   "used_by": [
    "INSEE"
   ],
-  "version": "8.16.2",
-  "wikidata": "Q17620247"
+  "version": "8.16.2"
  },
  {
   "country": "FR",
@@ -11572,8 +11458,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "2.4.2",
-  "wikidata": "Q98732050"
+  "version": "2.4.2"
  },
  {
   "country": "FR",
@@ -11631,8 +11516,7 @@
   "used_by": [
    "Inria"
   ],
-  "version": "4.1.1",
-  "wikidata": "Q133252448"
+  "version": "4.1.1"
  },
  {
   "country": "FR",
@@ -11665,8 +11549,7 @@
    "MEFR",
    "Sciences Po"
   ],
-  "version": "2.28.4",
-  "wikidata": "Q1421571"
+  "version": "2.28.4"
  },
  {
   "categories": [
@@ -11709,8 +11592,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "13.0.2",
-  "wikidata": "Q787177"
+  "version": "13.0.2"
  },
  {
   "categories": [
@@ -11745,8 +11627,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "other"
   ],
-  "version": "4.7.3",
-  "wikidata": "Q27986619"
+  "version": "4.7.4"
  },
  {
   "country": "FR",
@@ -11828,8 +11709,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "5.14.2",
-  "wikidata": "Q34162"
+  "version": "5.14.2"
  },
  {
   "categories": [
@@ -11871,8 +11751,7 @@
    "MS",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "11.2.1",
-  "wikidata": "Q55478510"
+  "version": "11.2.1"
  },
  {
   "country": "FR",
@@ -12073,8 +11952,7 @@
   "tier": "index",
   "used_by": [
    "ANCT"
-  ],
-  "wikidata": "Q123012596"
+  ]
  },
  {
   "country": "FR",
@@ -12105,8 +11983,7 @@
    "MESR",
    "other"
   ],
-  "version": "1.52.2",
-  "wikidata": "Q56556624"
+  "version": "1.52.2"
  },
  {
   "country": "FR",
@@ -12168,8 +12045,7 @@
    "MEN",
    "SIDSIC"
   ],
-  "version": "5.8.0",
-  "wikidata": "Q722334"
+  "version": "5.8.0"
  },
  {
   "categories": [
@@ -12206,8 +12082,7 @@
    "MS",
    "other"
   ],
-  "version": "2025-06-13T11-33-47Z",
-  "wikidata": "Q28956397"
+  "version": "2025-06-13T11-33-47Z"
  },
  {
   "country": "FR",
@@ -12270,8 +12145,7 @@
    "DINUM",
    "MEN"
   ],
-  "version": "1.6.1",
-  "wikidata": "Q102565362"
+  "version": "1.6.1"
  },
  {
   "country": "FR",
@@ -12396,7 +12270,7 @@
    "acad\u00e9mie strasbourg",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "5.2.3",
+  "version": "5.3",
   "wikidata": "Q190434"
  },
  {
@@ -12505,8 +12379,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "159.0b5",
-  "wikidata": "Q698"
+  "version": "160.0b3"
  },
  {
   "country": "FR",
@@ -12591,7 +12464,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "158.0.1",
+  "version": "159.0",
   "wikidata": "Q483604"
  },
  {
@@ -12623,8 +12496,7 @@
   "used_by": [
    "Acad\u00e9mie de Nancy-Metz"
   ],
-  "version": "0.41.0",
-  "wikidata": "Q20760334"
+  "version": "0.41.0"
  },
  {
   "country": "FR",
@@ -12688,8 +12560,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "9.5.0",
-  "wikidata": "Q118628169"
+  "version": "9.5.0"
  },
  {
   "categories": [
@@ -12758,8 +12629,7 @@
    "D\u00e9veloppement durable",
    "Universit\u00e9 d'Angers"
   ],
-  "version": "1.28.5",
-  "wikidata": "Q6930567"
+  "version": "1.28.6"
  },
  {
   "categories": [
@@ -12850,8 +12720,7 @@
    "MTE",
    "R\u00e9gion bretagne"
   ],
-  "version": "4.1",
-  "wikidata": "Q112610504"
+  "version": "4.1"
  },
  {
   "country": "FR",
@@ -12873,8 +12742,7 @@
   "sill_id": 468,
   "source": "FR/sill",
   "tier": "index",
-  "version": "8.0.47",
-  "wikidata": "Q640741"
+  "version": "8.0.47"
  },
  {
   "country": "FR",
@@ -12928,8 +12796,7 @@
   "sill_id": 46,
   "source": "FR/sill",
   "tier": "index",
-  "version": "4.5.14",
-  "wikidata": "Q1134360"
+  "version": "4.5.14"
  },
  {
   "country": "FR",
@@ -12962,8 +12829,7 @@
    "Mairie d'Arcueil",
    "Prefecture 06"
   ],
-  "version": "8.5.1",
-  "wikidata": "Q98731937"
+  "version": "8.6.0"
  },
  {
   "country": "FR",
@@ -13053,8 +12919,7 @@
    "MEN",
    "MI"
   ],
-  "version": "0.12.5",
-  "wikidata": "Q28975246"
+  "version": "0.12.5"
  },
  {
   "country": "FR",
@@ -13083,8 +12948,7 @@
    "MD",
    "Nantes M\u00e9tropole"
   ],
-  "version": "4.7.3",
-  "wikidata": "Q132952391"
+  "version": "4.7.4"
  },
  {
   "country": "FR",
@@ -13140,8 +13004,7 @@
   "used_by": [
    "DGFIP"
   ],
-  "version": "2.042.010",
-  "wikidata": "Q6998848"
+  "version": "2.042.010"
  },
  {
   "country": "FR",
@@ -13174,8 +13037,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.4.3",
-  "wikidata": "Q56062435"
+  "version": "16.4.3"
  },
  {
   "country": "FR",
@@ -13260,8 +13122,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "35.0.2",
-  "wikidata": "Q25874683"
+  "version": "35.0.2"
  },
  {
   "categories": [
@@ -13296,8 +13157,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.97.2-02",
-  "wikidata": "Q119269051"
+  "version": "3.97.2-02"
  },
  {
   "categories": [
@@ -13391,8 +13251,7 @@
    "ASP",
    "Eurom\u00e9tropole de Strasbourg"
   ],
-  "version": "26.05",
-  "wikidata": "Q21998874"
+  "version": "26.05"
  },
  {
   "country": "FR",
@@ -13450,8 +13309,7 @@
    "MEAE",
    "MS"
   ],
-  "version": "26.12.0",
-  "wikidata": "Q756100"
+  "version": "26.13.0"
  },
  {
   "country": "FR",
@@ -13544,8 +13402,7 @@
    "iut d'auxerre",
    "other"
   ],
-  "version": "8.9.8.1",
-  "wikidata": "Q2033"
+  "version": "8.9.8.1"
  },
  {
   "country": "FR",
@@ -13575,8 +13432,7 @@
    "Eurom\u00e9tropole de Strasbourg",
    "rectorat acad\u00e9mie orl\u00e9ans tours"
   ],
-  "version": "3.4.10",
-  "wikidata": "Q128944229"
+  "version": "3.4.11"
  },
  {
   "country": "FR",
@@ -13606,7 +13462,7 @@
    "Acad\u00e9mie de Nancy-Metz",
    "DGFIP"
   ],
-  "version": "7.3",
+  "version": "7.3.1",
   "wikidata": "Q14579"
  },
  {
@@ -13643,8 +13499,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "12.2.1",
-  "wikidata": "Q7067518"
+  "version": "12.2.1"
  },
  {
   "country": "FR",
@@ -13683,8 +13538,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 de Tours"
   ],
-  "version": "26.09",
-  "wikidata": "Q133854397"
+  "version": "26.09"
  },
  {
   "categories": [
@@ -13718,8 +13572,7 @@
    "P\u00f4le Emploi",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "2026.3",
-  "wikidata": "Q1116614"
+  "version": "2026.3"
  },
  {
   "country": "FR",
@@ -13804,8 +13657,7 @@
    "Universit\u00e9 d'Angers",
    "dgfip"
   ],
-  "version": "33.0.0",
-  "wikidata": "Q21707789"
+  "version": "33.0.1"
  },
  {
   "country": "FR",
@@ -13893,8 +13745,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "5.5.0",
-  "wikidata": "Q212587"
+  "version": "5.5.0"
  },
  {
   "categories": [
@@ -13999,8 +13850,7 @@
    "Ville de Paris",
    "academie de Lyon"
   ],
-  "version": "26.04.0",
-  "wikidata": "Q1165933"
+  "version": "26.04.0"
  },
  {
   "country": "FR",
@@ -14028,8 +13878,7 @@
    "Sciences Po",
    "VIGINUM"
   ],
-  "version": "0.40.11",
-  "wikidata": "Q124636097"
+  "version": "0.40.13"
  },
  {
   "country": "FR",
@@ -14081,8 +13930,7 @@
    "CNRS",
    "other"
   ],
-  "version": "3.2.2",
-  "wikidata": "Q3524651"
+  "version": "3.2.2"
  },
  {
   "country": "FR",
@@ -14196,8 +14044,7 @@
    "Universit\u00e9 de Rennes",
    "acad\u00e9mie de Grenoble"
   ],
-  "version": "10.0",
-  "wikidata": "Q1582500"
+  "version": "10.0"
  },
  {
   "categories": [
@@ -14272,8 +14119,7 @@
    "INSEE",
    "MINEFI-SAFI"
   ],
-  "version": "8.6.2",
-  "wikidata": "Q110492908"
+  "version": "8.6.2"
  },
  {
   "country": "FR",
@@ -14442,8 +14288,7 @@
   "used_by": [
    "ville de claix"
   ],
-  "version": "8.33.5",
-  "wikidata": "Q641086"
+  "version": "8.33.5"
  },
  {
   "country": "FR",
@@ -14552,8 +14397,7 @@
    "Universit\u00e9 de Lorraine",
    "ac-bordeaux.fr"
   ],
-  "version": "1.7.7",
-  "wikidata": "Q24705110"
+  "version": "1.7.7"
  },
  {
   "country": "FR",
@@ -14643,8 +14487,7 @@
   "used_by": [
    "VIGINUM"
   ],
-  "version": "6.9.29",
-  "wikidata": "Q122757685"
+  "version": "6.9.29"
  },
  {
   "categories": [
@@ -14799,8 +14642,7 @@
   "sill_id": 200,
   "source": "FR/sill",
   "tier": "index",
-  "version": "46.0.1",
-  "wikidata": "Q64777688"
+  "version": "46.0.1"
  },
  {
   "country": "FR",
@@ -14942,8 +14784,7 @@
    "Sorbonne Universit\u00e9",
    "other"
   ],
-  "version": "2.7.1",
-  "wikidata": "Q682918"
+  "version": "2.7.2"
  },
  {
   "country": "FR",
@@ -14975,8 +14816,7 @@
    "Acad\u00e9mie de Versailles",
    "MEN"
   ],
-  "version": "1.27.1",
-  "wikidata": "Q24027074"
+  "version": "1.27.2"
  },
  {
   "country": "FR",
@@ -15042,7 +14882,7 @@
    "Prefecture 974",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "17.9.3",
+  "version": "17.9.6",
   "wikidata": "Q14468709"
  },
  {
@@ -15076,8 +14916,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "Universit\u00e9 de Strasbourg"
   ],
-  "version": "3.10.1",
-  "wikidata": "Q5583871"
+  "version": "3.10.1"
  },
  {
   "country": "FR",
@@ -15163,8 +15002,7 @@
    "MC",
    "MI"
   ],
-  "version": "3.9.0",
-  "wikidata": "Q106497646"
+  "version": "3.9.0"
  },
  {
   "country": "FR",
@@ -15179,15 +15017,18 @@
    "multimedia",
    "effets",
    "effects",
-   "EPLE"
+   "EPLE",
+   "c-plus-plus",
+   "ffmpeg",
+   "gplv3"
   ],
-  "landing": "https://www.openshot.org/",
+  "landing": "http://www.openshot.org",
   "license": "GPLv3+",
   "name": "OpenShot",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/OpenShot",
-  "repo_key": "github.com/openshot",
+  "repo": "https://github.com/OpenShot/openshot-qt",
+  "repo_key": "github.com/openshot/openshot-qt",
   "short_desc": "Logiciel d'\u00e9dition de vid\u00e9os",
   "sill_id": 193,
   "source": "FR/sill",
@@ -15206,8 +15047,7 @@
    "Universit\u00e9 de Lorraine",
    "centre de "
   ],
-  "version": "4.0.1",
-  "wikidata": "Q769346"
+  "version": "v4.0.1"
  },
  {
   "country": "FR",
@@ -15277,8 +15117,7 @@
    "MESR",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "2026.1 Gazpacho",
-  "wikidata": "Q1470293"
+  "version": "2026.1 Gazpacho"
  },
  {
   "country": "FR",
@@ -15548,8 +15387,7 @@
   "sill_id": 586,
   "source": "FR/sill",
   "tier": "index",
-  "version": "2.3.4",
-  "wikidata": "Q59555213"
+  "version": "2.3.4"
  },
  {
   "categories": [
@@ -15580,8 +15418,7 @@
   "used_by": [
    "DGDDI"
   ],
-  "version": "3.0.3",
-  "wikidata": "Q2045329"
+  "version": "3.0.3"
  },
  {
   "categories": [
@@ -15609,8 +15446,7 @@
   "sill_id": 110,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.16.2",
-  "wikidata": "Q62858956"
+  "version": "1.16.2"
  },
  {
   "categories": [
@@ -15645,8 +15481,7 @@
   "used_by": [
    "other"
   ],
-  "version": "13.1.0",
-  "wikidata": "Q3360235"
+  "version": "13.1.0"
  },
  {
   "country": "FR",
@@ -15676,8 +15511,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire et de la For\u00eat",
    "PREF"
   ],
-  "version": "3.12.1",
-  "wikidata": "Q2049294"
+  "version": "3.13"
  },
  {
   "country": "FR",
@@ -15770,8 +15604,7 @@
    "SSIC",
    "sdis62"
   ],
-  "version": "1.14.0",
-  "wikidata": "Q135271145"
+  "version": "1.14.0"
  },
  {
   "country": "FR",
@@ -15794,7 +15627,7 @@
   "sill_id": 528,
   "source": "FR/sill",
   "tier": "index",
-  "version": "11.31.0",
+  "version": "11.31.1",
   "wikidata": "Q16529629"
  },
  {
@@ -15894,8 +15727,7 @@
    "other",
    "socia"
   ],
-  "version": "6.0.6",
-  "wikidata": "Q3898451"
+  "version": "6.0.9"
  },
  {
   "categories": [
@@ -15934,8 +15766,7 @@
    "R\u00e9seau Canop\u00e9",
    "Setra_5192"
   ],
-  "version": "8.3.1",
-  "wikidata": "Q50938515"
+  "version": "8.3.2"
  },
  {
   "country": "FR",
@@ -15963,8 +15794,7 @@
   "tier": "index",
   "used_by": [
    "DGFIP"
-  ],
-  "wikidata": "Q3374635"
+  ]
  },
  {
   "categories": [
@@ -15999,7 +15829,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.18.4",
+  "version": "2.18.5",
   "wikidata": "Q111586053"
  },
  {
@@ -16071,8 +15901,7 @@
    "Acad\u00e9mie de Nantes",
    "DGFIP"
   ],
-  "version": "5.44.0",
-  "wikidata": "Q42478"
+  "version": "5.44.0"
  },
  {
   "country": "FR",
@@ -16112,8 +15941,7 @@
    "MJ",
    "Mairie de LOURDES"
   ],
-  "version": "2.9.0",
-  "wikidata": "Q310946"
+  "version": "2.9.0"
  },
  {
   "country": "FR",
@@ -16156,9 +15984,13 @@
    "forum",
    "bulletin board",
    "discussion",
-   "communaut\u00e9"
+   "communaut\u00e9",
+   "bulletin-board",
+   "hacktoberfest",
+   "php",
+   "phpbb"
   ],
-  "landing": "https://www.phpbb.com/",
+  "landing": "https://www.phpbb.com",
   "license": "GPL-2.0-only",
   "name": "PHPBB",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -16169,8 +16001,7 @@
   "sill_id": 114,
   "source": "FR/sill",
   "tier": "index",
-  "version": "3.3.19",
-  "wikidata": "Q14270"
+  "version": "start"
  },
  {
   "country": "FR",
@@ -16291,8 +16122,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.4.3",
-  "wikidata": "Q1663673"
+  "version": "13.4.5"
  },
  {
   "country": "FR",
@@ -16320,8 +16150,7 @@
    "MD",
    "UMR 7357 : Laboratoire ICube"
   ],
-  "version": "16.4.0",
-  "wikidata": "Q1511947"
+  "version": "16.4.0"
  },
  {
   "country": "FR",
@@ -16353,8 +16182,7 @@
    "Sciences Po",
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
-  "version": "26.10.00",
-  "wikidata": "Q133265141"
+  "version": "26.10.02"
  },
  {
   "categories": [
@@ -16392,8 +16220,7 @@
    "FRANCEAGRIMER",
    "INRAE"
   ],
-  "version": "v1.2026.7",
-  "wikidata": "Q18346546"
+  "version": "v1.2026.7"
  },
  {
   "country": "FR",
@@ -16453,8 +16280,7 @@
    "CentraleSup\u00e9lec",
    "MESR"
   ],
-  "version": "6.1.4",
-  "wikidata": "Q70876440"
+  "version": "6.1.4"
  },
  {
   "country": "FR",
@@ -16872,8 +16698,7 @@
   "used_by": [
    "\u00e9cole sup\u00e9rieure d'art et design Le Havre Rouen"
   ],
-  "version": "4.5.7",
-  "wikidata": "Q1053535"
+  "version": "4.5.7"
  },
  {
   "country": "FR",
@@ -16999,7 +16824,10 @@
    "metrics",
    "syst\u00e8me",
    "system",
-   ""
+   "",
+   "alerting",
+   "graphing",
+   "hacktoberfest"
   ],
   "landing": "https://prometheus.io/",
   "license": "Apache-2.0",
@@ -17019,8 +16847,7 @@
    "SG",
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
-  "version": "3.15.1",
-  "wikidata": "Q52534999"
+  "version": "v3.16.0-rc.2"
  },
  {
   "country": "FR",
@@ -17289,8 +17116,8 @@
   "name": "PuTTY",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://git.tartarus.org/?p=simon/putty.git",
-  "repo_key": "git.tartarus.org/?p=simon/putty",
+  "repo": "https://git.tartarus.org",
+  "repo_key": "git.tartarus.org",
   "short_desc": "\u00c9mulateur de terminal doubl\u00e9 d'un client pour les protocoles SSH, Telnet, rlogin, et TCP brut.",
   "sill_id": 400,
   "source": "FR/sill",
@@ -17347,8 +17174,7 @@
    "SGDSN: Secr\u00e9tariat G\u00e9n\u00e9ral \u00e0 la D\u00e9fense et \u00e0 la S\u00e9curit\u00e9 Nationale (SPM)",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "2022.1.1",
-  "wikidata": "Q50557308"
+  "version": "2022.1.1"
  },
  {
   "categories": [
@@ -17407,7 +17233,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "3.15.0",
+  "version": "3.15.2",
   "wikidata": "Q28865"
  },
  {
@@ -17483,8 +17309,7 @@
    "pr\u00e9fecture 81",
    "sdjes dsden 54"
   ],
-  "version": "4.2.3",
-  "wikidata": "Q1329181"
+  "version": "4.2.3"
  },
  {
   "country": "FR",
@@ -17615,7 +17440,7 @@
    "MESR",
    "Setra_5192"
   ],
-  "version": "4.6.1",
+  "version": "4.6.2",
   "wikidata": "Q206904"
  },
  {
@@ -17716,8 +17541,7 @@
    "06",
    "Arcep"
   ],
-  "version": "1.75.2",
-  "wikidata": "Q56795481"
+  "version": "1.75.2"
  },
  {
   "country": "FR",
@@ -17748,8 +17572,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "19.3.1",
-  "wikidata": "Q19399674"
+  "version": "19.3.1"
  },
  {
   "country": "FR",
@@ -17855,8 +17678,7 @@
    "CNAM",
    "other"
   ],
-  "version": "8.10.2",
-  "wikidata": "Q2136322"
+  "version": "8.10.3"
  },
  {
   "categories": [
@@ -17891,7 +17713,7 @@
    "DIRN",
    "MEN"
   ],
-  "version": "7.0.2",
+  "version": "7.0.3",
   "wikidata": "Q1149365"
  },
  {
@@ -17926,8 +17748,7 @@
    "MD",
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
-  "version": "1.4.39",
-  "wikidata": "Q82148"
+  "version": "1.4.39"
  },
  {
   "categories": [
@@ -17997,8 +17818,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "0.19.1",
-  "wikidata": "Q113170086"
+  "version": "0.19.1"
  },
  {
   "country": "FR",
@@ -18024,8 +17844,7 @@
    "DGFIP",
    "DINUM"
   ],
-  "version": "15.2.0",
-  "wikidata": "Q91665055"
+  "version": "15.2.0"
  },
  {
   "country": "FR",
@@ -18063,7 +17882,12 @@
    "chat",
    "communication",
    "collaboration",
-   "\u00e9quipe"
+   "\u00e9quipe",
+   "foss",
+   "free",
+   "hacktoberfest",
+   "javascript",
+   "meteor"
   ],
   "landing": "https://rocket.chat/",
   "license": "MIT",
@@ -18084,8 +17908,7 @@
    "Universit\u00e9 de Lille",
    "academie de Lyon"
   ],
-  "version": "8.9.0",
-  "wikidata": "Q24050001"
+  "version": "9.0.0-rc.3"
  },
  {
   "country": "FR",
@@ -18222,8 +18045,7 @@
    "MESR",
    "MTE"
   ],
-  "version": "8.2608.0",
-  "wikidata": "Q995115"
+  "version": "8.2608.0"
  },
  {
   "categories": [
@@ -18256,8 +18078,7 @@
   "tier": "index",
   "used_by": [
    "MD"
-  ],
-  "wikidata": "Q16673801"
+  ]
  },
  {
   "country": "FR",
@@ -18285,8 +18106,7 @@
    "Universit\u00e9 de Lorraine",
    "other"
   ],
-  "version": "4.15",
-  "wikidata": "Q25209781"
+  "version": "4.15"
  },
  {
   "country": "FR",
@@ -18320,8 +18140,7 @@
    "DGDDI",
    "MEN"
   ],
-  "version": "7.0.1",
-  "wikidata": "Q56317793"
+  "version": "7.0.1"
  },
  {
   "country": "FR",
@@ -18384,8 +18203,7 @@
    "MESR",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "3006.1",
-  "wikidata": "Q7405800"
+  "version": "3006.1"
  },
  {
   "categories": [
@@ -18424,7 +18242,7 @@
    "MESR",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "4.25",
+  "version": "4.25.1",
   "wikidata": "Q1830735"
  },
  {
@@ -18583,8 +18401,7 @@
    "Universit\u00e9 de technologie de Compi\u00e8gne",
    "cour descomptes"
   ],
-  "version": "2027.0.0",
-  "wikidata": "Q828742"
+  "version": "2027.0.0"
  },
  {
   "country": "FR",
@@ -18716,7 +18533,7 @@
    "Pr\u00e9fecture de Police de Paris",
    "Universit\u00e9 d'Angers"
   ],
-  "version": "1.7.3",
+  "version": "1.7.4",
   "wikidata": "Q8295"
  },
  {
@@ -18766,8 +18583,7 @@
   "short_desc": "[Affichage d'une carte dynamique avec les donn\u00e9es G\u00e9oportail](https://geoservices.ign.fr/documentation/utilisation_web/sdk.html)",
   "sill_id": 201,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98732015"
+  "tier": "index"
  },
  {
   "categories": [
@@ -18827,8 +18643,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "9.0.15",
-  "wikidata": "Q12072480"
+  "version": "9.0.15"
  },
  {
   "categories": [
@@ -18895,8 +18710,7 @@
    "DGFIP",
    "D\u00e9partement de la Vend\u00e9e"
   ],
-  "version": "4.51.0",
-  "wikidata": "Q752522"
+  "version": "4.52.0"
  },
  {
   "categories": [
@@ -18929,8 +18743,7 @@
   "tier": "index",
   "used_by": [
    "DGFIP"
-  ],
-  "wikidata": "Q98731948"
+  ]
  },
  {
   "country": "FR",
@@ -18996,8 +18809,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "2.4.4",
-  "wikidata": "Q3482264"
+  "version": "2.4.4"
  },
  {
   "country": "FR",
@@ -19095,8 +18907,7 @@
    "MTE",
    "SGCD 62"
   ],
-  "version": "v2024.11_27_x86-64_0.38",
-  "wikidata": "Q115679750"
+  "version": "v2024.11_27_x86-64_0.38"
  },
  {
   "country": "FR",
@@ -19146,8 +18957,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "1.4.2",
-  "wikidata": "Q73512921"
+  "version": "1.4.2"
  },
  {
   "country": "FR",
@@ -19189,8 +18999,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "1.00",
-  "wikidata": "Q130224405"
+  "version": "1.01"
  },
  {
   "categories": [
@@ -19227,8 +19036,7 @@
    "MI",
    "MI/SG/DTNUM/SDID"
   ],
-  "version": "5.10.0",
-  "wikidata": "Q2296314"
+  "version": "5.10.0"
  },
  {
   "categories": [
@@ -19268,8 +19076,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "5.12.12",
-  "wikidata": "Q1523357"
+  "version": "5.12.12"
  },
  {
   "categories": [
@@ -19302,8 +19109,7 @@
   "used_by": [
    "DGFIP"
   ],
-  "version": "25.12.0",
-  "wikidata": "Q541691"
+  "version": "25.12.0"
  },
  {
   "categories": [
@@ -19331,8 +19137,7 @@
   "short_desc": "Tableau de bord d'indicateurs de qualit\u00e9",
   "sill_id": 165,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731977"
+  "tier": "index"
  },
  {
   "categories": [
@@ -19427,8 +19232,7 @@
    "CentraleSup\u00e9lec",
    "MEN"
   ],
-  "version": "24.12.0",
-  "wikidata": "Q48892923"
+  "version": "24.12.0"
  },
  {
   "categories": [
@@ -19471,8 +19275,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.28",
-  "wikidata": "Q1536426"
+  "version": "4.4.28"
  },
  {
   "categories": [
@@ -19488,7 +19291,9 @@
    "framework",
    "d\u00e9veloppement",
    "microservices",
-   "development"
+   "development",
+   "spring",
+   "spring-boot"
   ],
   "landing": "https://spring.io/projects/spring-boot",
   "license": "Apache-2.0",
@@ -19506,8 +19311,7 @@
    "MI",
    "other"
   ],
-  "version": "4.1.2",
-  "wikidata": "Q98731994"
+  "version": "v4.2.0-RC1"
  },
  {
   "country": "FR",
@@ -19565,8 +19369,7 @@
    "ACADEMIE DE PARIS",
    "Acad\u00e9mie de Limoges"
   ],
-  "version": "6.1.8",
-  "wikidata": "Q7581736"
+  "version": "6.1.8"
  },
  {
   "categories": [
@@ -19601,8 +19404,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2023-05",
-  "wikidata": "Q110620332"
+  "version": "2023-05"
  },
  {
   "categories": [
@@ -19797,8 +19599,7 @@
    "AC",
    "MEN"
   ],
-  "version": "11.0.0",
-  "wikidata": "Q98731991"
+  "version": "11.0.0"
  },
  {
   "categories": [
@@ -19872,8 +19673,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "3.9.0",
-  "wikidata": "Q55633858"
+  "version": "3.9.0"
  },
  {
   "country": "FR",
@@ -19989,8 +19789,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2.0.0",
-  "wikidata": "Q114097965"
+  "version": "2.0.0"
  },
  {
   "categories": [
@@ -20023,8 +19822,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "8.5.1",
-  "wikidata": "Q16294867"
+  "version": "8.5.1"
  },
  {
   "country": "FR",
@@ -20075,8 +19873,7 @@
    "acad\u00e9mie de Nouvelle-Cal\u00e9donie",
    "other"
   ],
-  "version": "3.6.1",
-  "wikidata": "Q479808"
+  "version": "3.6.1"
  },
  {
   "categories": [
@@ -20229,8 +20026,7 @@
   "used_by": [
    "EMA",
    "MESR"
-  ],
-  "wikidata": "Q113775006"
+  ]
  },
  {
   "country": "FR",
@@ -20266,8 +20062,7 @@
    "MESR",
    "MI"
   ],
-  "version": "8.1.9",
-  "wikidata": "Q1322933"
+  "version": "8.1.10"
  },
  {
   "categories": [
@@ -20336,8 +20131,7 @@
   "tier": "index",
   "used_by": [
    "Mairie de Saint-Joseph (La R\u00e9union)"
-  ],
-  "wikidata": "Q138316711"
+  ]
  },
  {
   "country": "FR",
@@ -20362,8 +20156,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.1.7",
-  "wikidata": "Q17089344"
+  "version": "2.1.7"
  },
  {
   "categories": [
@@ -20438,8 +20231,7 @@
    "MD",
    "MS"
   ],
-  "version": "4.12.0",
-  "wikidata": "Q467865"
+  "version": "4.12.0"
  },
  {
   "categories": [
@@ -20544,8 +20336,7 @@
    "MC",
    "SIU Unisciel - Universit\u00e9 de Lille"
   ],
-  "version": "5.3.0",
-  "wikidata": "Q94086638"
+  "version": "5.3.0"
  },
  {
   "country": "FR",
@@ -20609,8 +20400,7 @@
   "used_by": [
    "DGFIP"
   ],
-  "version": "2.0",
-  "wikidata": "Q112194385"
+  "version": "2.0"
  },
  {
   "country": "FR",
@@ -20640,7 +20430,7 @@
   "used_by": [
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "3.6.1",
+  "version": "3.6.2",
   "wikidata": "Q6140868"
  },
  {
@@ -20663,8 +20453,7 @@
   "sill_id": 472,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.17.0",
-  "wikidata": "Q28957072"
+  "version": "1.17.1"
  },
  {
   "country": "FR",
@@ -20750,8 +20539,7 @@
   "used_by": [
    "AC"
   ],
-  "version": "1.9.20-20251208",
-  "wikidata": "Q248384"
+  "version": "1.9.20-20251208"
  },
  {
   "country": "FR",
@@ -20781,8 +20569,7 @@
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation",
    "academie d'Aix marseille"
   ],
-  "version": "5.0.0",
-  "wikidata": "Q22909401"
+  "version": "5.0.1"
  },
  {
   "country": "FR",
@@ -20865,8 +20652,7 @@
   "used_by": [
    "Acad\u00e9mie de Nantes"
   ],
-  "version": "3.8",
-  "wikidata": "Q1935361"
+  "version": "3.8"
  },
  {
   "country": "FR",
@@ -20947,7 +20733,7 @@
    "project",
    "management"
   ],
-  "landing": "http://tracim.fr/",
+  "landing": "https://tracim.fr/",
   "license": "MIT, LGPL-3.0-only, AGPL-3.0-only",
   "name": "Tracim",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20993,7 +20779,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "3.7.16",
+  "version": "3.7.17",
   "wikidata": "Q96332968"
  },
  {
@@ -21086,7 +20872,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "11.19.0",
+  "version": "11.22.1",
   "wikidata": "Q118629419"
  },
  {
@@ -21152,8 +20938,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "4.9.21",
-  "wikidata": "Q118610618"
+  "version": "4.9.21"
  },
  {
   "categories": [
@@ -21294,8 +21079,7 @@
    "DINUM",
    "Education Nationale"
   ],
-  "version": "0.15.1",
-  "wikidata": "Q117858460"
+  "version": "0.15.1"
  },
  {
   "country": "FR",
@@ -21351,8 +21135,7 @@
    "academie d'Aix marseille",
    "dipn78/sdan"
   ],
-  "version": "1.75.0",
-  "wikidata": "Q19881587"
+  "version": "1.75.0"
  },
  {
   "country": "FR",
@@ -21465,7 +21248,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.16.0",
+  "version": "17.20.0",
   "wikidata": "Q99493159"
  },
  {
@@ -21664,8 +21447,7 @@
   "used_by": [
    "other"
   ],
-  "version": "5.17.9",
-  "wikidata": "Q3547301"
+  "version": "5.17.9"
  },
  {
   "country": "FR",
@@ -21695,7 +21477,7 @@
    "MD",
    "MEN"
   ],
-  "version": "2.5.7",
+  "version": "2.5.9",
   "wikidata": "Q118611125"
  },
  {
@@ -21722,8 +21504,7 @@
    "DINUM",
    "MD"
   ],
-  "version": "2.4.9",
-  "wikidata": "Q7725312"
+  "version": "2.4.9"
  },
  {
   "categories": [
@@ -21880,8 +21661,7 @@
    "MI",
    "Prefecture 21"
   ],
-  "version": "1.1.18",
-  "wikidata": "Q106129644"
+  "version": "1.1.18"
  },
  {
   "categories": [
@@ -21947,8 +21727,7 @@
    "MI",
    "acad\u00e9mie de Nouvelle-Cal\u00e9donie"
   ],
-  "version": "4.11.4",
-  "wikidata": "Q287012"
+  "version": "4.11.4"
  },
  {
   "country": "FR",
@@ -22009,7 +21788,7 @@
   "used_by": [
    "Arcep"
   ],
-  "version": "1.154.1",
+  "version": "1.155.0",
   "wikidata": "Q122753170"
  },
  {
@@ -22064,8 +21843,7 @@
    "other",
    "universit\u00e9 caen normandie"
   ],
-  "version": "9.2",
-  "wikidata": "Q131382"
+  "version": "9.2"
  },
  {
   "country": "FR",
@@ -22127,8 +21905,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "3.4",
-  "wikidata": "Q61101023"
+  "version": "3.5"
  },
  {
   "country": "FR",
@@ -22161,8 +21938,7 @@
   "used_by": [
    "CentraleSup\u00e9lec"
   ],
-  "version": "1.142.0",
-  "wikidata": "Q19841877"
+  "version": "1.142.0"
  },
  {
   "country": "FR",
@@ -22219,8 +21995,7 @@
    "Prefecture 21",
    "Sciences Po"
   ],
-  "version": "version 9",
-  "wikidata": "Q65130365"
+  "version": "version 9"
  },
  {
   "country": "FR",
@@ -22251,8 +22026,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "8.3.5",
-  "wikidata": "Q111590996"
+  "version": "8.3.5"
  },
  {
   "country": "FR",
@@ -22315,8 +22089,7 @@
    "academie de Lyon",
    "other"
   ],
-  "version": "3.0.24",
-  "wikidata": "Q171477"
+  "version": "3.0.24"
  },
  {
   "categories": [
@@ -22401,8 +22174,7 @@
    "minist\u00e8re int\u00e9rieur",
    "other"
   ],
-  "version": "1.135.06055",
-  "wikidata": "Q111967621"
+  "version": "1.135.06055"
  },
  {
   "country": "FR",
@@ -22517,8 +22289,7 @@
   "sill_id": 598,
   "source": "FR/sill",
   "tier": "index",
-  "version": "8.0.1",
-  "wikidata": "Q25206006"
+  "version": "8.0.1"
  },
  {
   "country": "FR",
@@ -22682,8 +22453,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "8.17",
-  "wikidata": "Q50558592"
+  "version": "8.17"
  },
  {
   "country": "FR",
@@ -22712,8 +22482,7 @@
    "MINISTERE INTERIEUR/SG/SHFD/C2MI",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "2.5.315",
-  "wikidata": "Q28957083"
+  "version": "3.0.1"
  },
  {
   "country": "FR",
@@ -22770,8 +22539,7 @@
    "MD",
    "MI"
   ],
-  "version": "6.7",
-  "wikidata": "Q1160381"
+  "version": "6.7"
  },
  {
   "country": "FR",
@@ -22836,8 +22604,7 @@
    "MJ",
    "MJ/DSJ/Cour de cassation"
   ],
-  "version": "4.7.3",
-  "wikidata": "Q403539"
+  "version": "4.7.4"
  },
  {
   "country": "FR",
@@ -22908,7 +22675,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "7.1.3",
+  "version": "7.1.4",
   "wikidata": "Q13166"
  },
  {
@@ -23020,8 +22787,7 @@
    "CDC des pays de L'Aigle",
    "DREAL Occitanie",
    "MESR"
-  ],
-  "wikidata": "Q3570950"
+  ]
  },
  {
   "categories": [
@@ -23125,8 +22891,7 @@
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne",
    "Universit\u00e9 d'Angers"
   ],
-  "version": "0.999",
-  "wikidata": "Q4053335"
+  "version": "0.999"
  },
  {
   "categories": [
@@ -23161,7 +22926,7 @@
    "MD",
    "MTE"
   ],
-  "version": "18.8.0",
+  "version": "18.9.0",
   "wikidata": "Q526699"
  },
  {
@@ -23195,8 +22960,7 @@
    "MC",
    "MS"
   ],
-  "version": "4.18.1",
-  "wikidata": "Q28975591"
+  "version": "4.18.1"
  },
  {
   "country": "FR",
@@ -23222,8 +22986,7 @@
   "used_by": [
    "CNFPT"
   ],
-  "version": "4.7.1",
-  "wikidata": "Q126974643"
+  "version": "4.7.1"
  },
  {
   "categories": [
@@ -23260,8 +23023,7 @@
    "DSDEN 56",
    "FPH GHT8"
   ],
-  "version": "12.1.6.1",
-  "wikidata": "Q15971793"
+  "version": "12.1.6.1"
  },
  {
   "categories": [
@@ -23347,8 +23109,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "7.0",
-  "wikidata": "Q71389626"
+  "version": "7.0"
  },
  {
   "country": "FR",
@@ -23374,7 +23135,7 @@
    "CNRS",
    "MAASA :  : Minist\u00e8re de l'Agriculture, de l'Agro-alimentaire et de la Souverainet\u00e9 Alimentaire"
   ],
-  "version": "1.25.3",
+  "version": "1.26.2",
   "wikidata": "Q112301707"
  },
  {
@@ -23451,8 +23212,7 @@
    "Universit\u00e9 de Lorraine",
    "other"
   ],
-  "version": "10.1.21",
-  "wikidata": "Q203485"
+  "version": "sit-10.1-2026-07-09"
  },
  {
   "country": "FR",
@@ -23521,8 +23281,7 @@
    "universit\u00e9 caen normandie",
    "zotero"
   ],
-  "version": "10.0.6",
-  "wikidata": "Q226915"
+  "version": "10.0.7"
  },
  {
   "contacts": [
