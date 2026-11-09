@@ -2433,35 +2433,6 @@
   "dpg_type": [
    "Open Software"
   ],
-  "entry_url": "https://www.digitalpublicgoods.net/r/eco-index-biodiversity-dashboards",
-  "keywords": [
-   "SDG15"
-  ],
-  "landing": "https://eco-index.nz/",
-  "license": "GPL-3.0",
-  "name": "Eco-Index Biodiversity Dashboards",
-  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
-  "repo": "https://github.com/eco-index/ecoindex-stack",
-  "repo_key": "github.com/eco-index/ecoindex-stack",
-  "repo_owner": "Eco-Index Biodiversity Dashboards",
-  "sdgs": [
-   "SDG15: Life on Land"
-  ],
-  "short_desc": "Digital dashboards and related tools help users to monitor and set goals around biodiversity levels.",
-  "source": "GLOBAL/dpg",
-  "tier": "index",
-  "upstream_id": "GID0090027",
-  "used_by": [
-   "New Zealand"
-  ]
- },
- {
-  "country": "GLOBAL",
-  "desc_lang": "en",
-  "dpg": true,
-  "dpg_type": [
-   "Open Software"
-  ],
   "entry_url": "https://www.digitalpublicgoods.net/r/ekshop-marketplace",
   "keywords": [
    "SDG1",
@@ -3161,6 +3132,36 @@
    "France",
    "Paraguay"
   ]
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/geoid",
+  "keywords": [
+   "SDG2",
+   "SDG12",
+   "SDG13"
+  ],
+  "landing": "https://data.apps.fao.org/geoid/docs",
+  "license": "Apache-2.0",
+  "name": "GeoID",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/un-fao/fao-geoid",
+  "repo_key": "github.com/un-fao/fao-geoid",
+  "repo_owner": "GeoID",
+  "sdgs": [
+   "SDG2: Zero Hunger",
+   "SDG12: Responsible Consumption and Production",
+   "SDG13: Climate Action"
+  ],
+  "short_desc": "GeoID is open-source software for running a federated \u201cplaces\u201d registry. It stores, manages, and retrieves geospatial locations (points and polygons) under deterministic, anonymous identifiers, and exposes them through OGC API - Features endpoints.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0094166"
  },
  {
   "country": "GLOBAL",
@@ -6264,7 +6265,7 @@
   "repo_key": "github.com/opencrvs/opencrvs-core",
   "repo_owner": "OpenCRVS",
   "sdgs": [
-   "SDG16: Peace&#184; Justice and Strong Institutions",
+   "SDG16: Peace\u00b8 Justice and Strong Institutions",
    "SDG17: Partnerships for the Goals"
   ],
   "short_desc": "OpenCRVS is an open-source software for civil registration, designed for low resource settings",
@@ -6272,7 +6273,8 @@
   "tier": "index",
   "upstream_id": "GID0090077",
   "used_by": [
-   "Bangladesh"
+   "Cameroon",
+   "Madagascar"
   ]
  },
  {
@@ -8086,6 +8088,38 @@
   "dpg_type": [
    "Open Software"
   ],
+  "entry_url": "https://www.digitalpublicgoods.net/r/rural-environmental-registry-data-sharing-platform",
+  "keywords": [
+   "SDG13",
+   "SDG15",
+   "SDG16",
+   "SDG17"
+  ],
+  "landing": "https://dsp.dataprev.gov.br/dsp/",
+  "license": "GPL-3.0",
+  "name": "Rural Environmental Registry Data Sharing Platform",
+  "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
+  "repo": "https://github.com/Rural-Environmental-Registry/rer-dsp-core",
+  "repo_key": "github.com/rural-environmental-registry/rer-dsp-core",
+  "repo_owner": "Rural Environmental Registry Data Sharing Platform",
+  "sdgs": [
+   "SDG13: Climate Action",
+   "SDG15: Life on Land",
+   "SDG16: Peace\u00b8 Justice and Strong Institutions",
+   "SDG17: Partnerships for the Goals"
+  ],
+  "short_desc": "A RER module that enables governments and organizations to securely share geospatial data, including land and environmental data, through interactive maps, indicators, territorial filters and downloads, supporting transparency, informed decisions and environmental action.",
+  "source": "GLOBAL/dpg",
+  "tier": "index",
+  "upstream_id": "GID0094306"
+ },
+ {
+  "country": "GLOBAL",
+  "desc_lang": "en",
+  "dpg": true,
+  "dpg_type": [
+   "Open Software"
+  ],
   "entry_url": "https://www.digitalpublicgoods.net/r/rural-environmental-registry-registration-module",
   "keywords": [
    "SDG2",
@@ -9674,8 +9708,8 @@
    "SDG13",
    "SDG17"
   ],
-  "landing": "https://wapor.apps.fao.org/home/WAPOR_2/1",
-  "license": "CC-BY-NC-SA-4.0",
+  "landing": "https://data.apps.fao.org/wapor",
+  "license": "CC-BY-SA-4.0",
   "name": "WaPOR",
   "note": "Digital Public Good (DPG Standard); may be NGO- or university-built rather than government-published",
   "repo": "https://data.apps.fao.org/wapor/",
@@ -9691,45 +9725,7 @@
   "short_desc": "The FAO portal to monitor water productivity through open access of remotely sensed derived data.",
   "source": "GLOBAL/dpg",
   "tier": "index",
-  "upstream_id": "GID0090124",
-  "used_by": [
-   "Algeria",
-   "Benin",
-   "Burkina Faso",
-   "Burundi",
-   "Cambodia",
-   "Chad",
-   "Egypt",
-   "Ethiopia",
-   "Ghana",
-   "India",
-   "Iran",
-   "Iraq",
-   "Jordan",
-   "Kazakhstan",
-   "Kenya",
-   "Lebanon",
-   "Libya",
-   "Malawi",
-   "Mali",
-   "Mongolia",
-   "Morocco",
-   "Mozambique",
-   "Niger",
-   "Palestine State",
-   "Philippines",
-   "Rwanda",
-   "Senegal",
-   "Somalia",
-   "South Sudan",
-   "Sri Lanka",
-   "Sudan",
-   "Syria",
-   "Togo",
-   "Tunisia",
-   "Uganda",
-   "Yemen"
-  ]
+  "upstream_id": "GID0090124"
  },
  {
   "country": "GLOBAL",

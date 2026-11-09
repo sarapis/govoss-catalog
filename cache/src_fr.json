@@ -129,12 +129,11 @@
    "alerts",
    "additional"
   ],
-  "landing": "http://plugins.glpi-project.org/#/plugin/additionalalerts",
   "license": "GPL-2.0-only",
   "name": "Additional Alerts",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/InfotelGLPI/additionalalerts.git",
+  "repo": "https://github.com/InfotelGLPI/additionalalerts",
   "repo_key": "github.com/infotelglpi/additionalalerts",
   "short_desc": "Notifications suppl\u00e9mentaires \u00e0 celles incluses dans GLPI",
   "sill_id": 3,
@@ -155,14 +154,19 @@
    "gestion",
    "inventory",
    "management",
-   "agent"
+   "agent",
+   "deployment",
+   "ocs",
+   "ocs-deployment",
+   "ocs-inventory",
+   "windows"
   ],
-  "landing": "https://ocsinventory-ng.org",
+  "landing": "http://www.ocsinventory-ng.org/",
   "license": "GPL-2.0-only",
   "name": "Agent OCS",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/OCSInventory-NG/WindowsAgent.git",
+  "repo": "https://github.com/OCSInventory-NG/WindowsAgent",
   "repo_key": "github.com/ocsinventory-ng/windowsagent",
   "short_desc": "Inventaire, t\u00e9l\u00e9d\u00e9ploiement et d\u00e9couverte du r\u00e9seau",
   "sill_id": 4,
@@ -175,8 +179,7 @@
    "MI",
    "MS",
    "Universit\u00e9 de technologie de Compi\u00e8gne"
-  ],
-  "wikidata": "Q98731892"
+  ]
  },
  {
   "country": "FR",
@@ -186,9 +189,11 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=AgentJ",
   "keywords": [
    "antispam",
-   "spam"
+   "spam",
+   "docker",
+   "mail"
   ],
-  "landing": "https://agentj.io/",
+  "landing": "https://agentj.io",
   "license": "AGPLv3",
   "name": "AgentJ",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -255,7 +260,7 @@
    "AP-HP",
    "CNRS"
   ],
-  "version": "3.24.3",
+  "version": "3.24.4",
   "wikidata": "Q4033826"
  },
  {
@@ -366,7 +371,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "1.8.3"
+  "version": "v1.8.3"
  },
  {
   "country": "FR",
@@ -470,9 +475,15 @@
    "orchestration",
    "workflows",
    "schedule",
-   "monitor"
+   "monitor",
+   "airflow",
+   "apache",
+   "apache-airflow",
+   "automation",
+   "dag",
+   "data-engineering"
   ],
-  "landing": "https://airflow.apache.org",
+  "landing": "https://airflow.apache.org/",
   "license": "Apache License v2.0",
   "name": "Apache Airflow",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -490,7 +501,7 @@
    "MI",
    "MI/SG/DTNUM/SDID"
   ],
-  "version": "3.3.0"
+  "version": "v1.8.2"
  },
  {
   "categories": [
@@ -535,7 +546,16 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Apache%20CouchDB",
   "keywords": [
-   "couchdb"
+   "couchdb",
+   "big-data",
+   "cloud",
+   "content",
+   "database",
+   "erlang",
+   "http",
+   "javascript",
+   "network-client",
+   "network-server"
   ],
   "landing": "https://couchdb.apache.org/",
   "license": "Apache License v2.0",
@@ -548,7 +568,7 @@
   "sill_id": 471,
   "source": "FR/sill",
   "tier": "index",
-  "version": "3.5.3"
+  "version": "nouveau-0.1"
  },
  {
   "country": "FR",
@@ -560,7 +580,13 @@
    "VNC",
    "RDP",
    "SSH",
-   "remote desktop"
+   "remote desktop",
+   "c",
+   "guacamole",
+   "java",
+   "javascript",
+   "network-client",
+   "network-server"
   ],
   "landing": "https://guacamole.apache.org/",
   "license": "Apache License, Version 2.0",
@@ -619,7 +645,9 @@
    "http",
    "web",
    "server",
-   "apache"
+   "apache",
+   "http-server",
+   "httpd"
   ],
   "landing": "https://httpd.apache.org/",
   "license": "Apache-2.0",
@@ -650,8 +678,7 @@
    "Sorbonne Universit\u00e9",
    "other"
   ],
-  "version": "2.4.69",
-  "wikidata": "Q11354"
+  "version": "pre_ajp_proxy"
  },
  {
   "categories": [
@@ -668,7 +695,8 @@
    "charge",
    "testing",
    "load",
-   "jmeter"
+   "jmeter",
+   "java"
   ],
   "landing": "https://jmeter.apache.org/",
   "license": "Apache-2.0",
@@ -685,7 +713,7 @@
    "DGFIP",
    "Education Nationale"
   ],
-  "version": "5.6.3"
+  "version": "v5.6.3-rc2"
  },
  {
   "categories": [
@@ -796,7 +824,9 @@
    "business",
    "intelligence",
    "data",
-   "visualization"
+   "visualization",
+   "analytics",
+   "apache"
   ],
   "landing": "https://superset.apache.org/",
   "license": "Apache-2.0",
@@ -819,7 +849,7 @@
    "MINISTERE INTERIEUR/SG/DNUM/SDSI/BRR/BRR LE CHESNAY",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "6.1.0"
+  "version": "v2021.41.0"
  },
  {
   "categories": [
@@ -945,9 +975,11 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Archi",
   "keywords": [
-   ""
+   "",
+   "archimate",
+   "archimatetool"
   ],
-  "landing": "https://www.archimatetool.com/",
+  "landing": "https://www.archimatetool.com",
   "license": "MIT licence",
   "name": "Archi",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -961,8 +993,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "5.10.0",
-  "wikidata": "Q123516453"
+  "version": "release_5.10.0"
  },
  {
   "country": "FR",
@@ -994,9 +1025,10 @@
    "visualisation",
    "archive",
    "archivage",
-   "vracs num\u00e9riques"
+   "vracs num\u00e9riques",
+   "archives"
   ],
-  "landing": "https://www.archifiltre.org",
+  "landing": "https://archifiltre.fabrique.social.gouv.fr/archifiltre-doc/",
   "license": "Apache 2.0",
   "name": "Archifiltre",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1014,7 +1046,7 @@
    "MC",
    "MS"
   ],
-  "version": "13.1"
+  "version": "v13.1"
  },
  {
   "country": "FR",
@@ -1031,12 +1063,12 @@
    "d\u00e9veloppement",
    "development"
   ],
-  "landing": "https://www.arduino.cc/en/Main/Software",
+  "landing": "https://www.arduino.cc/en/software",
   "license": "GPLv2+",
   "name": "Arduino IDE",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/arduino/Arduino.git",
+  "repo": "https://github.com/arduino/Arduino",
   "repo_key": "github.com/arduino/arduino",
   "short_desc": "Environnement de d\u00e9veloppement int\u00e9gr\u00e9 pour la programmation de microcontr\u00f4leurs",
   "sill_id": 326,
@@ -1051,7 +1083,7 @@
    "Universit\u00e9 Grenoble Alpes",
    "\u00e9ducation"
   ],
-  "version": "2.3.9"
+  "version": "old_compiler_removal"
  },
  {
   "categories": [
@@ -1098,9 +1130,15 @@
    "anonymisation",
    "donn\u00e9es",
    "data",
-   "anonymization"
+   "anonymization",
+   "arx",
+   "cross-platform",
+   "data-analytics",
+   "data-anonymization",
+   "de-identification",
+   "open-source"
   ],
-  "landing": "https://arx.deidentifier.org/",
+  "landing": "http://arx.deidentifier.org/",
   "license": "Apache-2.0",
   "name": "ARX Data Anonymization Tool",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1114,8 +1152,7 @@
   "used_by": [
    "MC",
    "URSSAF"
-  ],
-  "wikidata": "Q98731895"
+  ]
  },
  {
   "categories": [
@@ -1132,7 +1169,11 @@
    "test",
    "accessibility",
    "testing",
-   ""
+   "",
+   "a11y",
+   "a11y-testing",
+   "asqatasun",
+   "rgaa"
   ],
   "landing": "https://asqatasun.org/",
   "license": "AGPL-3.0-only",
@@ -1148,7 +1189,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "5.0.0"
+  "version": "6.0.0-rc.6"
  },
  {
   "categories": [
@@ -1200,7 +1241,7 @@
    "recherche",
    "research"
   ],
-  "landing": "https://www.accesstomemory.org",
+  "landing": "http://www.accesstomemory.org",
   "license": "AGPLv3",
   "name": "AtoM - Access to Memory",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1214,8 +1255,7 @@
   "used_by": [
    "other"
   ],
-  "version": "2.10.2",
-  "wikidata": "Q73673993"
+  "version": "v2.10.2"
  },
  {
   "categories": [
@@ -1248,7 +1288,7 @@
    "MEN",
    "MISC"
   ],
-  "version": "4.0.1",
+  "version": "4.0.2",
   "wikidata": "Q191782"
  },
  {
@@ -1315,9 +1355,15 @@
   "keywords": [
    "raccourcis",
    "automation",
-   "b\u00e9po"
+   "b\u00e9po",
+   "autohotkey",
+   "c-plus-plus",
+   "hotkeys",
+   "scripting",
+   "scripting-language",
+   "windows"
   ],
-  "landing": "https://www.autohotkey.com/",
+  "landing": "https://autohotkey.com/",
   "license": "GNU GPLv2",
   "name": "AutoHotkey",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1328,7 +1374,7 @@
   "sill_id": 548,
   "source": "FR/sill",
   "tier": "index",
-  "version": "2.0.31"
+  "version": "v2.1-alpha.38"
  },
  {
   "categories": [
@@ -1413,7 +1459,6 @@
    "compression",
    "open-source"
   ],
-  "landing": "https://backuppc.github.io/backuppc/",
   "license": "GNU GPLv2",
   "name": "BackupPC",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1429,8 +1474,7 @@
    "Universit\u00e9 de Rennes",
    "minist\u00e8re de l'int\u00e9rieur"
   ],
-  "version": "4.4.0",
-  "wikidata": "Q798540"
+  "version": "4.4.1rc1"
  },
  {
   "country": "FR",
@@ -1472,9 +1516,15 @@
    "sauvegarde",
    "restauration",
    "backup",
-   "restore"
+   "restore",
+   "archiving",
+   "backup-solution",
+   "backup-utility",
+   "bareos",
+   "ceph",
+   "compression"
   ],
-  "landing": "https://www.bareos.com/",
+  "landing": "http://www.bareos.org",
   "license": "AGPL-3.0-only",
   "name": "Bareos",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1488,7 +1538,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "25.1.2"
+  "version": "WIP/26.0.0-pre"
  },
  {
   "country": "FR",
@@ -1528,9 +1578,13 @@
    "SQL",
    "client",
    "outil",
-   "tool"
+   "tool",
+   "cockroachdb",
+   "database-client",
+   "database-gui",
+   "database-management"
   ],
-  "landing": "https://www.beekeeperstudio.io/",
+  "landing": "https://www.beekeeperstudio.io",
   "license": "GPL-3.0-only",
   "name": "Beekeeper Studio",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1541,7 +1595,7 @@
   "sill_id": 250,
   "source": "FR/sill",
   "tier": "index",
-  "version": "4.0.3"
+  "version": "v-mac-06"
  },
  {
   "categories": [
@@ -1588,9 +1642,13 @@
    "\u00e9ducation",
    "videoconference",
    "webinar",
-   "education"
+   "education",
+   "bigbluebutton",
+   "collaboration",
+   "conferencing",
+   "video"
   ],
-  "landing": "https://bigbluebutton.org/",
+  "landing": "https://bigbluebutton.org",
   "license": "LGPL-3.0-only",
   "name": "BigBlueButton",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1617,7 +1675,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "4.0.1"
+  "version": "v4.0.2"
  },
  {
   "country": "FR",
@@ -1632,9 +1690,12 @@
    "security",
    "cryptage",
    "encryption",
-   "chiffrement"
+   "chiffrement",
+   "api",
+   "aspnet",
+   "aspnetcore"
   ],
-  "landing": "https://bitwarden.com/",
+  "landing": "https://bitwarden.com",
   "license": "AGPLv3",
   "name": "Bitwarden",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1658,7 +1719,7 @@
    "acad\u00e9mie de montpellier",
    "other"
   ],
-  "version": "2026.10.0"
+  "version": "v2026.10.1"
  },
  {
   "country": "FR",
@@ -1667,9 +1728,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Bitwarden%20Browser%20Extensions",
   "keywords": [
-   ""
+   "",
+   "angular",
+   "bitwarden",
+   "browser-extension",
+   "chrome",
+   "cli",
+   "desktop",
+   "electron",
+   "firefox",
+   "javascript"
   ],
-  "landing": "https://bitwarden.com/",
+  "landing": "https://bitwarden.com",
   "license": "GNU aGPL v3",
   "name": "Bitwarden Browser Extensions",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1684,7 +1754,7 @@
    "Centre Hospitalier de L'Isle-sur-la-Sorgue",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "v2022.9.1"
+  "version": "web-v2026.10.1"
  },
  {
   "country": "FR",
@@ -1694,9 +1764,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Bitwarden%20Mobile",
   "keywords": [
    "client",
-   "coffre-fort"
+   "coffre-fort",
+   "android",
+   "bitwarden",
+   "csharp",
+   "dotnet",
+   "ios",
+   "maui",
+   "xamarin",
+   "xamarin-forms"
   ],
-  "landing": "https://bitwarden.com/",
+  "landing": "https://bitwarden.com",
   "license": "GNU aGPL v3",
   "name": "Bitwarden Mobile",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1710,7 +1788,7 @@
   "used_by": [
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "2022.10.0"
+  "version": "v2024.10.0"
  },
  {
   "country": "FR",
@@ -1774,7 +1852,11 @@
    "\u00e9diteur",
    "html",
    "web",
-   "editor"
+   "editor",
+   "css",
+   "gecko",
+   "wysiwyg-editor",
+   "wysiwyg-html-editor"
   ],
   "landing": "http://www.bluegriffon.org",
   "license": "LGPL-3.0-only, GPL-3.0-only, MPL-2.0",
@@ -1790,7 +1872,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.1"
+  "version": "v2.1.1.99"
  },
  {
   "categories": [
@@ -1875,9 +1957,13 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=BookStack",
   "keywords": [
    "documentation",
-   "wiki"
+   "wiki",
+   "bookstack",
+   "laravel",
+   "php",
+   "selfhosted"
   ],
-  "landing": "https://www.bookstackapp.com",
+  "landing": "https://codeberg.org/bookstack/bookstack",
   "license": "MIT licence",
   "name": "BookStack",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1895,7 +1981,7 @@
    "MEN",
    "ville de claix"
   ],
-  "version": "26.09.2"
+  "version": "v26.09.2"
  },
  {
   "categories": [
@@ -1962,9 +2048,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=bunkerweb",
   "keywords": [
-   "waf"
+   "waf",
+   "antibot",
+   "cybersecurity",
+   "devops",
+   "devsecops",
+   "dnsbl",
+   "docker",
+   "hardening",
+   "hosting",
+   "kubernetes"
   ],
-  "landing": "https://www.bunkerweb.io/",
+  "landing": "https://www.bunkerweb.io",
   "license": "AGPLv3",
   "name": "bunkerweb",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -1978,7 +2073,7 @@
   "used_by": [
    "Campus Num\u00e9rique 47"
   ],
-  "version": "1.6.17"
+  "version": "v1.6.18-rc3"
  },
  {
   "country": "FR",
@@ -2027,9 +2122,14 @@
    "status dashboard",
    "maintenance",
    "disponibilit\u00e9",
-   "availability"
+   "availability",
+   "cachet",
+   "laravel",
+   "php",
+   "self-hosted",
+   "selfhosted"
   ],
-  "landing": "http://cachethq.io/",
+  "landing": "https://cachethq.io",
   "license": "BSD-3-Clause",
   "name": "Cachet",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2043,7 +2143,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "2.4.1"
+  "version": "v2.4.1"
  },
  {
   "country": "FR",
@@ -2078,8 +2178,7 @@
    "INRAE",
    "MINISTERE INTERIEUR/PP/DSPAP/PT/RF/BCO"
   ],
-  "version": "2.11.7",
-  "wikidata": "Q24008327"
+  "version": "v2.11.9"
  },
  {
   "categories": [
@@ -2098,9 +2197,11 @@
    "\u00e9v\u00e9nements",
    "events",
    "synchronisation",
-   "synchronization"
+   "synchronization",
+   "next-auth",
+   "nextjs"
   ],
-  "landing": "https://cal.com/fr/blog/cal-com-goes-closed-source-why",
+  "landing": "https://cal.diy",
   "license": "GNU AGPLv3",
   "name": "cal.com",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2238,9 +2339,12 @@
   "keywords": [
    "wide-column store",
    "colonne",
-   "nosql"
+   "nosql",
+   "cassandra",
+   "database",
+   "java"
   ],
-  "landing": "https://cassandra.apache.org",
+  "landing": "https://cassandra.apache.org/",
   "license": "Apache License v2.0",
   "name": "Cassandra",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2254,7 +2358,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "5.0.9"
+  "version": "cassandra-6.0-alpha2"
  },
  {
   "contacts": [
@@ -2362,9 +2466,14 @@
    "monitoring",
    "performance",
    "gestion",
-   "management"
+   "management",
+   "alerting",
+   "analytics",
+   "dashboard",
+   "devops",
+   "graphing"
   ],
-  "landing": "https://centreon.com/",
+  "landing": "https://www.centreon.com",
   "license": "Apache 2.0, GPL-2.0",
   "name": "Centreon",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2386,8 +2495,7 @@
    "Nantes M\u00e9tropole",
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
-  "version": "23.10",
-  "wikidata": "Q2946121"
+  "version": "working_build_publish"
  },
  {
   "categories": [
@@ -2440,7 +2548,11 @@
    "LMS",
    "elearning",
    "platform",
-   "learning"
+   "learning",
+   "chamilo",
+   "php",
+   "skills",
+   "twig"
   ],
   "landing": "https://chamilo.org",
   "license": "GPL-3.0-or-later",
@@ -2457,7 +2569,7 @@
    "Universit\u00e9 Grenoble Alpes",
    "other"
   ],
-  "version": "3.0.1"
+  "version": "v3.0.2"
  },
  {
   "country": "FR",
@@ -2484,7 +2596,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "8.12.1",
+  "version": "9.0.0",
   "wikidata": "Q134006490"
  },
  {
@@ -2502,7 +2614,7 @@
   "name": "Checkmk",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/checkmk/checkmk",
+  "repo": "https://github.com/Checkmk/checkmk",
   "repo_key": "github.com/checkmk/checkmk",
   "short_desc": "Logiciel de supervision / monitoring",
   "sill_id": 492,
@@ -2511,7 +2623,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "2.2.0"
+  "version": "v2.5.0"
  },
  {
   "country": "FR",
@@ -2528,7 +2640,7 @@
    "texte",
    "text"
   ],
-  "landing": "https://www.giuspen.com/cherrytree/",
+  "landing": "https://www.giuspen.net/cherrytree/",
   "license": "GPL-3.0-or-later",
   "name": "Cherrytree",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2544,7 +2656,7 @@
    "MEN",
    "PREF"
   ],
-  "version": "1.0.4"
+  "version": "v1.7.2"
  },
  {
   "country": "FR",
@@ -2556,7 +2668,10 @@
    "LoRaWAN",
    "IoT",
    "web-interface",
-   "LNS"
+   "LNS",
+   "chirpstack",
+   "internet-of-things",
+   "lora"
   ],
   "landing": "https://www.chirpstack.io/",
   "license": "MIT licence",
@@ -2572,8 +2687,7 @@
   "used_by": [
    "INRAE"
   ],
-  "version": "4.20.0",
-  "wikidata": "Q120147501"
+  "version": "v4.20.1-test.2"
  },
  {
   "country": "FR",
@@ -2587,7 +2701,11 @@
    "Windows",
    "installation",
    "logiciels",
-   "software"
+   "software",
+   "c-sharp",
+   "chocolatey",
+   "hacktoberfest",
+   "package-management"
   ],
   "landing": "https://chocolatey.org",
   "license": "Apache License v2.0",
@@ -2605,7 +2723,7 @@
    "MI",
    "Universit\u00e9 de Guyane"
   ],
-  "version": "2.7.5"
+  "version": "versioning.for.uc"
  },
  {
   "categories": [
@@ -2664,9 +2782,12 @@
    "ebiosrm",
    "iso27000",
    "iso27001",
-   "GRC"
+   "GRC",
+   "audit",
+   "automation",
+   "bsi"
   ],
-  "landing": "https://intuitem.com/ciso-assistant/",
+  "landing": "https://intuitem.com",
   "license": "AGPL v3",
   "name": "CISO-Assistant CE",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2680,7 +2801,7 @@
   "used_by": [
    "other"
   ],
-  "version": "4.2.1"
+  "version": "v4.2.1"
  },
  {
   "country": "FR",
@@ -2727,9 +2848,12 @@
    "s\u00e9curit\u00e9",
    "security",
    "virus",
-   "malware"
+   "malware",
+   "clamav",
+   "gplv2",
+   "open-source"
   ],
-  "landing": "https://www.clamav.net",
+  "landing": "https://www.clamav.net/",
   "license": "GPL-2.0-only",
   "name": "ClamAV",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2750,7 +2874,7 @@
    "MTE",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "1.5.4"
+  "version": "test_prefiltering_disable"
  },
  {
   "country": "FR",
@@ -2806,7 +2930,7 @@
    "JVM",
    "Java"
   ],
-  "landing": "https://clojure.org/",
+  "landing": "https://clojure.org",
   "license": "EPL",
   "name": "Clojure",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2820,7 +2944,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "1.12.6"
+  "version": "clojure-1.13.0-alpha11"
  },
  {
   "country": "FR",
@@ -2861,9 +2985,11 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=CloudCompare",
   "keywords": [
-   ""
+   "",
+   "3d-point-clouds",
+   "point-cloud"
   ],
-  "landing": "http://www.cloudcompare.org/",
+  "landing": "https://cloudcompare.org",
   "license": "GPL",
   "name": "CloudCompare",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2878,8 +3004,7 @@
    "MTE",
    "Universit\u00e9 de Lorraine"
   ],
-  "version": "2.13.2",
-  "wikidata": "Q2979718"
+  "version": "v2.14.beta3"
  },
  {
   "country": "FR",
@@ -2892,9 +3017,14 @@
    "postgres",
    "pg",
    "kubernetes",
-   "kube"
+   "kube",
+   "automated-failover",
+   "business-continuity",
+   "database",
+   "database-management",
+   "devops"
   ],
-  "landing": "https://cloudnative-pg.io/",
+  "landing": "https://cloudnative-pg.io",
   "license": "Apache License v2.0",
   "name": "CloudNativePG",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2908,8 +3038,7 @@
   "used_by": [
    "MS"
   ],
-  "version": "1.30.1",
-  "wikidata": "Q123516142"
+  "version": "v1.30.1"
  },
  {
   "country": "FR",
@@ -2948,9 +3077,12 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Cockpit",
   "keywords": [
-   ""
+   "",
+   "cockpit",
+   "javascript",
+   "linux-servers"
   ],
-  "landing": "https://cockpit-project.org/",
+  "landing": "http://www.cockpit-project.org/",
   "license": "LGPL",
   "name": "Cockpit",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -2964,8 +3096,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "370",
-  "wikidata": "Q114691201"
+  "version": "v1.2.0"
  },
  {
   "categories": [
@@ -2981,23 +3112,27 @@
    "javascript",
    "automatisation",
    "testing",
-   "automation"
+   "automation",
+   "acceptance-testing",
+   "bdd",
+   "bdd-framework",
+   "codeceptjs",
+   "e2e-tests"
   ],
-  "landing": "https://codecept.io/",
+  "landing": "http://codecept.io",
   "license": "MIT",
   "name": "CodeceptJS",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/codeception/codeceptjs",
-  "repo_key": "github.com/codeception/codeceptjs",
+  "repo": "https://github.com/codeceptjs/CodeceptJS",
+  "repo_key": "github.com/codeceptjs/codeceptjs",
   "short_desc": "Cadriciel de tests backend",
   "sill_id": 25,
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
    "MC"
-  ],
-  "wikidata": "Q98731900"
+  ]
  },
  {
   "categories": [
@@ -3015,7 +3150,10 @@
    "d\u00e9veloppement",
    "development",
    "application",
-   "code"
+   "code",
+   "php-framework",
+   "php7",
+   "php8"
   ],
   "landing": "https://codeigniter.com/",
   "license": "MIT",
@@ -3033,7 +3171,7 @@
    "MI",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "4.6.4"
+  "version": "v2.1.0"
  },
  {
   "country": "FR",
@@ -3223,9 +3361,12 @@
    "contraste",
    "couleurs",
    "accessibilit\u00e9",
-   "RGAA"
+   "RGAA",
+   "cca",
+   "colour-contrast-analyser",
+   "electron"
   ],
-  "landing": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+  "landing": "https://www.tpgi.com/color-contrast-checker/",
   "license": "GPL-3.0-only",
   "name": "Colour Contrast Analyser",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3260,7 +3401,10 @@
    "dependencies",
    "PHP",
    "biblioth\u00e8ques",
-   "libraries"
+   "libraries",
+   "composer",
+   "dependency-manager",
+   "package-manager"
   ],
   "landing": "https://getcomposer.org/",
   "license": "MIT licence",
@@ -3292,23 +3436,26 @@
    "science citoyenne",
    "SFIP",
    "libp2p",
-   "donn\u00e9es distribu\u00e9es"
+   "donn\u00e9es distribu\u00e9es",
+   "constellation",
+   "ipfs",
+   "orbit-db",
+   "p2p"
   ],
-  "landing": "https://r\u00e9seau-constellation.ca",
+  "landing": "https://appli.r\u00e9seau-constellation.ca",
   "license": "AGPL-3.0",
   "name": "Constellation (logiciel)",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/reseau-constellation",
-  "repo_key": "github.com/reseau-constellation",
+  "repo": "https://github.com/reseau-constellation/iug",
+  "repo_key": "github.com/reseau-constellation/iug",
   "short_desc": "Le r\u00e9seau distribu\u00e9 pour les donn\u00e9es scientifiques",
   "sill_id": 506,
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
    "ird"
-  ],
-  "wikidata": "Q126736797"
+  ]
  },
  {
   "categories": [
@@ -3479,15 +3626,17 @@
    "javascript",
    "typescript",
    "SPA",
-   "npm"
+   "npm",
+   "build-tools",
+   "zero-configuration"
   ],
   "landing": "https://create-react-app.dev/",
   "license": "MIT licence",
   "name": "create-react-app",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/facebook/create-react-app",
-  "repo_key": "github.com/facebook/create-react-app",
+  "repo": "https://github.com/react/create-react-app",
+  "repo_key": "github.com/react/create-react-app",
   "short_desc": "Un meta framework pour cr\u00e9er des applications React",
   "sill_id": 380,
   "source": "FR/sill",
@@ -3495,8 +3644,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "5.0.1",
-  "wikidata": "Q118629387"
+  "version": "v5.0.1"
  },
  {
   "country": "FR",
@@ -3506,9 +3654,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Cryptomator",
   "keywords": [
    "Chiffrement",
-   "cryptage"
+   "cryptage",
+   "cloud-storage",
+   "crypto",
+   "cryptography",
+   "cryptomator",
+   "encryption",
+   "java",
+   "privacy",
+   "security"
   ],
-  "landing": "https://cryptomator.org/",
+  "landing": "https://cryptomator.org",
   "license": "GPL",
   "name": "Cryptomator",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3524,7 +3680,7 @@
    "Acad\u00e9mie d'Orl\u00e9ans-Tours",
    "other"
   ],
-  "version": "1.19.6"
+  "version": "nightly"
  },
  {
   "country": "FR",
@@ -3538,9 +3694,11 @@
    "nvme",
    "ssd",
    "hdd",
-   "disk"
+   "disk",
+   "ata",
+   "crystaldiskinfo"
   ],
-  "landing": "https://crystalmark.info/en/software/crystaldiskinfo/",
+  "landing": "https://github.com/hiyohiyo/CrystalDiskInfo",
   "license": "MIT licence",
   "name": "CrystalDiskInfo",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3559,7 +3717,7 @@
    "Rectorat de l'acad\u00e9mie de Reims",
    "other"
   ],
-  "version": "9.9.3"
+  "version": "9.9.4"
  },
  {
   "categories": [
@@ -3646,9 +3804,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Cypress",
   "keywords": [
-   "Cypress"
+   "Cypress",
+   "angular-testing-library",
+   "component-testing",
+   "cypress-cloud",
+   "cypress-schematic",
+   "end-to-end-testing",
+   "react-testing-library",
+   "svelte-testing-library",
+   "test-replay",
+   "testing-framework"
   ],
-  "landing": "https://www.cypress.io",
+  "landing": "https://cypress.io",
   "license": "MIT licence",
   "name": "Cypress",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3662,8 +3829,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "16.2.1",
-  "wikidata": "Q115978662"
+  "version": "v16.2.1"
  },
  {
   "categories": [
@@ -3681,9 +3847,12 @@
    "bord",
    "data",
    "visualization",
-   "dashboard"
+   "dashboard",
+   "ai",
+   "bioinformatics",
+   "charting"
   ],
-  "landing": "https://dash.plotly.com/",
+  "landing": "https://plotly.com/dash",
   "license": "MIT",
   "name": "Dash",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3697,7 +3866,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "4.5.0"
+  "version": "v-test"
  },
  {
   "contacts": [
@@ -3742,9 +3911,11 @@
    "dashboard",
    "vuln\u00e9rabilit\u00e9",
    "vulnerability",
-   "audit"
+   "audit",
+   "best-practices",
+   "web"
   ],
-  "landing": "https://socialgouv.github.io/dashlord/",
+  "landing": "https://socialgouv.github.io/dashlord",
   "license": "Apache License v2.0",
   "name": "DashLord",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3773,14 +3944,15 @@
    "injection",
    "donn\u00e9es",
    "data",
-   "import"
+   "import",
+   "sync-org-files"
   ],
   "landing": "http://plugins.glpi-project.org/#/plugin/datainjection",
   "license": "GPL-2.0-only",
   "name": "Data Injection",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/pluginsGLPI/datainjection.git",
+  "repo": "https://github.com/pluginsGLPI/datainjection",
   "repo_key": "github.com/pluginsglpi/datainjection",
   "short_desc": "Injection de donn\u00e9es dans GLPI \u00e0 l'aide de fichiers CSV",
   "sill_id": 29,
@@ -3789,8 +3961,7 @@
   "used_by": [
    "CNAF",
    "MTE"
-  ],
-  "wikidata": "Q98731908"
+  ]
  },
  {
   "country": "FR",
@@ -3906,9 +4077,11 @@
    "outil",
    "tool",
    "gestion",
-   "management"
+   "management",
+   "ai",
+   "databricks"
   ],
-  "landing": "https://dbeaver.io/",
+  "landing": "https://dbeaver.io",
   "license": "Apache",
   "name": "DBeaver",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3942,7 +4115,7 @@
    "administration centrale",
    "other"
   ],
-  "version": "26.2.3"
+  "version": "26.2.4"
  },
  {
   "categories": [
@@ -3959,7 +4132,7 @@
    "database",
    "testing"
   ],
-  "landing": "http://dbfit.github.io/dbfit/",
+  "landing": "http://dbfit.github.io/dbfit",
   "license": "GPL-2.0-only",
   "name": "DbFit",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -3972,8 +4145,7 @@
   "tier": "index",
   "used_by": [
    "MEN"
-  ],
-  "wikidata": "Q98731909"
+  ]
  },
  {
   "country": "FR",
@@ -4043,7 +4215,9 @@
    "Universit\u00e9 de Guyane",
    "Universit\u00e9 de technologie de Compi\u00e8gne",
    "Ville de Rive de Gier",
-   "other"
+   "academie de Lyon",
+   "other",
+   "sgamisud/pese"
   ],
   "version": "13.7",
   "wikidata": "Q7715973"
@@ -4063,9 +4237,13 @@
    "participation",
    "gouvernance",
    "governance",
-   "d\u00e9cision"
+   "d\u00e9cision",
+   "citizen-participation",
+   "civic-tech",
+   "civictech",
+   "collective-intelligence"
   ],
-  "landing": "https://decidim.org",
+  "landing": "https://decidim.org/",
   "license": "AGPL-3.0-only",
   "name": "Decidim",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4076,7 +4254,7 @@
   "sill_id": 234,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.32.2"
+  "version": "v0.32.2"
  },
  {
   "country": "FR",
@@ -4152,7 +4330,9 @@
    "runtime",
    "serveur",
    "server",
-   "Node.js"
+   "Node.js",
+   "deno",
+   "rust"
   ],
   "landing": "https://deno.com",
   "license": "MIT licence",
@@ -4168,8 +4348,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2.9.8",
-  "wikidata": "Q65070939"
+  "version": "v2.9.8"
  },
  {
   "country": "FR",
@@ -4280,7 +4459,9 @@
    "\u00e9valuation",
    "assessment",
    "management",
-   "gestion"
+   "gestion",
+   "dolibarr-module",
+   "safety"
   ],
   "landing": "https://www.digirisk.com",
   "license": "GPLv3+",
@@ -4297,7 +4478,7 @@
    "DREAL Nouvelle-Aquitaine",
    "PREF"
   ],
-  "version": "23.6.0"
+  "version": "23.7.0"
  },
  {
   "categories": [
@@ -4340,7 +4521,15 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=django",
   "keywords": [
    "python",
-   "web framework"
+   "web framework",
+   "apps",
+   "django",
+   "framework",
+   "models",
+   "orm",
+   "templates",
+   "views",
+   "web"
   ],
   "landing": "https://www.djangoproject.com/",
   "license": "BSD 3-clauses",
@@ -4362,7 +4551,7 @@
    "MI/SG/DTNUM/SDAIT/BS",
    "MINISTERE INTERIEUR/SG/SHFD/C2MI"
   ],
-  "version": "6.1.2"
+  "version": "stable/5.1.x"
  },
  {
   "country": "FR",
@@ -4441,15 +4630,19 @@
    "conteneurs",
    "virtualisation",
    "containers",
-   "deployment"
+   "deployment",
+   "docker",
+   "git",
+   "golang",
+   "moby"
   ],
-  "landing": "https://www.docker.com",
+  "landing": "https://www.docker.com/products/container-runtime",
   "license": "Apache-2.0",
   "name": "Docker",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/docker",
-  "repo_key": "github.com/docker",
+  "repo": "https://github.com/docker-archive/docker-ce",
+  "repo_key": "github.com/docker-archive/docker-ce",
   "short_desc": "Conteneurs logiciels",
   "sill_id": 34,
   "source": "FR/sill",
@@ -4487,7 +4680,7 @@
    "aefe",
    "other"
   ],
-  "version": "29.9.2"
+  "version": "v19.03.15"
  },
  {
   "country": "FR",
@@ -4496,9 +4689,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Docs",
   "keywords": [
-   "La Suite"
+   "La Suite",
+   "blocknotejs",
+   "collaborative",
+   "django",
+   "documentation",
+   "g2g",
+   "government",
+   "knowledge",
+   "knowledge-base",
+   "mit"
   ],
-  "landing": "https://docs.numerique.gouv.fr/",
+  "landing": "https://docs.la-suite.eu/",
   "license": "MIT",
   "name": "Docs",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4518,7 +4720,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "R\u00e9seau Canop\u00e9"
   ],
-  "version": "6.0.4"
+  "version": "vdemo"
  },
  {
   "country": "FR",
@@ -4586,7 +4788,10 @@
    "hosting",
    "application",
    "d\u00e9ploiement",
-   "deployment"
+   "deployment",
+   "buildpack",
+   "containers",
+   "devops"
   ],
   "landing": "https://dokku.com",
   "license": "MIT licence",
@@ -4602,7 +4807,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.38.34"
+  "version": "v0.38.34"
  },
  {
   "country": "FR",
@@ -4614,9 +4819,12 @@
    "wiki",
    "collaboratif",
    "documentation",
-   "collaboration"
+   "collaboration",
+   "dokuwiki",
+   "php",
+   "wiki-engine"
   ],
-  "landing": "https://www.dokuwiki.org/",
+  "landing": "http://www.dokuwiki.org",
   "license": "GNU GPLv2",
   "name": "DokuWiki",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4632,7 +4840,7 @@
    "IRD: Institut de Recherche pour le D\u00e9veloppement",
    "MI"
   ],
-  "version": "2026-07-14c"
+  "version": "release-2026-07-14"
  },
  {
   "categories": [
@@ -4686,9 +4894,13 @@
    "email",
    "courriel",
    "IMAP",
-   "POP3"
+   "POP3",
+   "imap4",
+   "lmtp",
+   "mail",
+   "smtp"
   ],
-  "landing": "https://www.dovecot.org/",
+  "landing": "http://www.dovecot.org/",
   "license": "MIT, LGPLv2.1",
   "name": "Dovecot",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4703,7 +4915,7 @@
    "CentraleSup\u00e9lec",
    "MI"
   ],
-  "version": "2.4.5"
+  "version": "show"
  },
  {
   "country": "FR",
@@ -4807,7 +5019,7 @@
    "academie de clermont ",
    "other"
   ],
-  "version": "v32.6.9"
+  "version": "v32.6.10"
  },
  {
   "country": "FR",
@@ -4816,9 +5028,10 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Drools",
   "keywords": [
-   "BRMS"
+   "BRMS",
+   "hacktoberfest"
   ],
-  "landing": "https://www.drools.org/",
+  "landing": "http://www.drools.org",
   "license": "Apache License v2.0",
   "name": "Drools",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4829,7 +5042,7 @@
   "sill_id": 432,
   "source": "FR/sill",
   "tier": "index",
-  "version": "9.44.0"
+  "version": "999-20240428"
  },
  {
   "categories": [
@@ -4914,9 +5127,10 @@
    "cryptage",
    "encryption",
    "s\u00e9curit\u00e9",
-   "security"
+   "security",
+   "c-sharp",
+   "client-only-backup"
   ],
-  "landing": "https://www.duplicati.com/",
   "license": "LGPL-2.1 license",
   "name": "Duplicati",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -4933,7 +5147,7 @@
    "MESR",
    "PREF"
   ],
-  "version": "2.1.0.5"
+  "version": "v2.4.1.101_canary_2026-11-07"
  },
  {
   "categories": [
@@ -5048,7 +5262,7 @@
    "procedures",
    "e-government"
   ],
-  "landing": "https://demarches.numerique.gouv.fr",
+  "landing": "https://demarche.numerique.gouv.fr",
   "license": "AGPL-3.0-only",
   "name": "D\u00e9marches simplifi\u00e9es",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -5064,7 +5278,7 @@
    "DNUM/PNM/PNM2",
    "acad\u00e9mie de montpellier"
   ],
-  "version": "2.0"
+  "version": "v2.0"
  },
  {
   "country": "FR",
@@ -5204,7 +5418,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sciences Po"
   ],
-  "version": "9.5.5"
+  "version": "9.5.6"
  },
  {
   "categories": [
@@ -5221,7 +5435,8 @@
    "chat",
    "Matrix",
    "s\u00e9curit\u00e9",
-   "security"
+   "security",
+   "hacktoberfest"
   ],
   "landing": "https://element.io",
   "license": "Apache-2.0",
@@ -5243,8 +5458,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "1.11.97-rc.0",
-  "wikidata": "Q47004029"
+  "version": "v1.12.34-rc.0"
  },
  {
   "country": "FR",
@@ -5292,7 +5506,7 @@
    "modulefiles",
    "environment-modules"
   ],
-  "landing": "http://modules.sourceforge.net/",
+  "landing": "https://envmodules.io",
   "license": "GNU GPLv2",
   "name": "Environment Modules",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -5306,7 +5520,7 @@
   "used_by": [
    "CEA"
   ],
-  "version": "5.7.0"
+  "version": "v5.7.0"
  },
  {
   "categories": [
@@ -5476,8 +5690,7 @@
   "short_desc": "Escalade de tickets",
   "sill_id": 42,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731916"
+  "tier": "index"
  },
  {
   "country": "FR",
@@ -5497,12 +5710,12 @@
    "s\u00e9curit\u00e9",
    "ESUP"
   ],
-  "landing": "https://www.esup-portail.org/wiki/spaces/esupotp/pages/1104871427/ESUP-OTP",
+  "landing": "https://www.esup-portail.org/wiki/display/esupotp",
   "license": "Apache License v2.0",
   "name": "ESUP-OTP",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/EsupPortail/esup-otp-api/",
+  "repo": "https://github.com/EsupPortail/esup-otp-api",
   "repo_key": "github.com/esupportail/esup-otp-api",
   "short_desc": "ESUP-OTP est une solution de MFA libre int\u00e9gr\u00e9e dans le Syst\u00e8me Central d'Authentification CAS de l'\u00e9tablissement.",
   "sill_id": 602,
@@ -5512,7 +5725,7 @@
    "Universit\u00e9 Paris 1 Panth\u00e9on-Sorbonne",
    "Universit\u00e9 de Rouen Normandie"
   ],
-  "version": "1.5.4"
+  "version": "v2.4.0"
  },
  {
   "categories": [
@@ -5613,9 +5826,11 @@
    "\u00e9ducation",
    "video",
    "sharing",
-   "education"
+   "education",
+   "django",
+   "python3"
   ],
-  "landing": "https://pod.esup-portail.org",
+  "landing": "https://pod.esup-portail.org/",
   "license": "LGPL-3.0-only",
   "name": "Esup-Pod",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -5637,7 +5852,7 @@
    "Universit\u00e9 du Littoral C\u00f4te d'Opale",
    "other"
   ],
-  "version": "4.4.0"
+  "version": "v5.0.0_alpha26-04-02"
  },
  {
   "country": "FR",
@@ -5677,9 +5892,13 @@
    "documents",
    "validation",
    "s\u00e9curit\u00e9",
-   "security"
+   "security",
+   "dss",
+   "esup",
+   "java",
+   "signature"
   ],
-  "landing": "https://www.esup-portail.org/wiki/display/SIGN/Accueil",
+  "landing": "https://www.esup-portail.org/wiki/display/SIGN",
   "license": "Apache License v2.0",
   "name": "Esup-Signature",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -5718,8 +5937,7 @@
    "emse",
    "universit\u00e9 caen normandie"
   ],
-  "version": "1.37.12",
-  "wikidata": "Q116160106"
+  "version": "1.37.29"
  },
  {
   "categories": [
@@ -5785,8 +6003,7 @@
   "tier": "index",
   "used_by": [
    "MEN"
-  ],
-  "wikidata": "Q60348651"
+  ]
  },
  {
   "country": "FR",
@@ -5846,7 +6063,7 @@
    "DINUM",
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire"
   ],
-  "version": "0.25.3",
+  "version": "0.26.0",
   "wikidata": "Q137909707"
  },
  {
@@ -5866,7 +6083,7 @@
    "s\u00e9curit\u00e9",
    "security"
   ],
-  "landing": "https://filesender.org/",
+  "landing": "http://filesender.org",
   "license": "BSD 3",
   "name": "FileSender",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -5933,7 +6150,7 @@
    "universit\u00e9 de guyane",
    "\u00e9ducation"
   ],
-  "version": "3.70.5",
+  "version": "3.71.1",
   "wikidata": "Q300662"
  },
  {
@@ -5981,9 +6198,13 @@
    "web",
    "d\u00e9veloppement",
    "development",
-   "application"
+   "application",
+   "flask",
+   "jinja",
+   "pallets",
+   "web-framework"
   ],
-  "landing": "https://flask.palletsprojects.com/",
+  "landing": "https://flask.palletsprojects.com",
   "license": "Modified BSD License",
   "name": "Flask",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6155,8 +6376,7 @@
    "CentraleSup\u00e9lec",
    "MESR"
   ],
-  "version": "1.7.1",
-  "wikidata": "Q109606717"
+  "version": "fpart-1.7.1"
  },
  {
   "country": "FR",
@@ -6255,7 +6475,7 @@
    "CAM",
    "FAO"
   ],
-  "landing": "https://www.freecad.org/",
+  "landing": "https://www.freecad.org",
   "license": "LGPLv2.0+",
   "name": "FreeCAD",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6278,7 +6498,7 @@
    "MEN",
    "MESR"
   ],
-  "version": "1.1.4"
+  "version": "weekly-2026.11.04"
  },
  {
   "categories": [
@@ -6297,9 +6517,11 @@
    "partial differential equations",
    "PDE",
    "maillage",
-   "meshing"
+   "meshing",
+   "finite-element-analysis",
+   "finite-element-methods"
   ],
-  "landing": "http://www.freefem.org",
+  "landing": "https://freefem.org/",
   "license": "LGPL",
   "name": "FreeFem++",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6326,12 +6548,11 @@
    "sync",
    "files"
   ],
-  "landing": "https://freefilesync.org/",
   "license": "N'est plus libre et open-source",
   "name": "FreeFileSync",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/feinstaub/freefilesync-pak.git",
+  "repo": "https://github.com/feinstaub/freefilesync-pak",
   "repo_key": "github.com/feinstaub/freefilesync-pak",
   "short_desc": "Utilitaire qui compare des dossiers entre eux et les synchronise afin de cr\u00e9er des sauvegardes.",
   "sill_id": 47,
@@ -6351,8 +6572,7 @@
    "Universit\u00e9 Gustave Eiffel",
    "\u00e9ducation"
   ],
-  "version": "14.11",
-  "wikidata": "Q18150468"
+  "version": "14.11"
  },
  {
   "country": "FR",
@@ -6464,7 +6684,7 @@
    "inrae",
    "pr\u00e9fecture"
   ],
-  "version": "1.12.11"
+  "version": "1.13.4"
  },
  {
   "country": "FR",
@@ -6601,9 +6821,15 @@
    "inventaire",
    "ressources",
    "inventory",
-   "assets"
+   "assets",
+   "agent",
+   "configuration-management",
+   "daemon",
+   "deployment",
+   "edid",
+   "fusioninventory"
   ],
-  "landing": "http://www.fusioninventory.org/",
+  "landing": "http://fusioninventory.org/",
   "license": "AGPL-3.0-or-later",
   "name": "FusionInventory",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6620,7 +6846,7 @@
    "Mairie de Cuges les Pins",
    "Universit\u00e9 de Lille"
   ],
-  "version": "2.6"
+  "version": "task-network/1.0.2"
  },
  {
   "categories": [
@@ -6637,9 +6863,13 @@
    "processing",
    "filtre",
    "filter",
-   "manipulation"
+   "manipulation",
+   "art",
+   "creativecoding",
+   "floss",
+   "foss"
   ],
-  "landing": "https://gmic.eu/",
+  "landing": "https://gmic.eu",
   "license": "CECILL-2.1",
   "name": "G'MIC",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6656,7 +6886,7 @@
    "INRAE",
    "MESR"
   ],
-  "version": "4.0.7"
+  "version": "v.4.0.7"
  },
  {
   "country": "FR",
@@ -6697,14 +6927,18 @@
    "diagramme de Gantt",
    "Gantt chart",
    "planification",
-   "planning"
+   "planning",
+   "gantt-chart",
+   "ganttproject",
+   "java",
+   "kotlin"
   ],
-  "landing": "https://www.ganttproject.biz/",
+  "landing": "http://ganttproject.biz",
   "license": "GPLv3+",
   "name": "GanttProject",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/bardsoftware/ganttproject.git",
+  "repo": "https://github.com/bardsoftware/ganttproject",
   "repo_key": "github.com/bardsoftware/ganttproject",
   "short_desc": "L'outil GanttProject permet de planifier un projet \u00e0 travers la r\u00e9alisation de diagrammes de Gantt ainsi que des diagrammes de ressources et des r\u00e9seaux PERT.",
   "sill_id": 260,
@@ -6747,7 +6981,7 @@
    "prefecture 2B",
    "twb"
   ],
-  "version": "3.3.3312"
+  "version": "v2.99.test27"
  },
  {
   "country": "FR",
@@ -6795,9 +7029,11 @@
    "Editeur de texte",
    "IDE",
    "programmation",
-   "python"
+   "python",
+   "geany",
+   "text-editor"
   ],
-  "landing": "https://www.geany.org/",
+  "landing": "https://www.geany.org",
   "license": "GPLv2+",
   "name": "Geany",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6832,9 +7068,9 @@
    "cartographie",
    "mapping",
    "g\u00e9ospatial",
-   "geospatial"
+   "geospatial",
+   "angular"
   ],
-  "landing": "https://geonature.fr",
   "license": "GPL-3.0-only",
   "name": "GeoNature",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6849,7 +7085,7 @@
    "AFB",
    "DIRN"
   ],
-  "version": "2.17.5"
+  "version": "v1.7.4"
  },
  {
   "country": "FR",
@@ -6860,7 +7096,14 @@
   "keywords": [
    "catalogage",
    "inspire",
-   "geospatial"
+   "geospatial",
+   "api",
+   "catalog",
+   "csw",
+   "dcat",
+   "iso19110",
+   "iso19115",
+   "iso19119"
   ],
   "landing": "http://geonetwork-opensource.org/",
   "license": "GPL",
@@ -6878,7 +7121,7 @@
    "INRAE",
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
-  "version": "4.4.12"
+  "version": "start-migration"
  },
  {
   "country": "FR",
@@ -6898,7 +7141,7 @@
    "tableaux de bord",
    "cartes"
   ],
-  "landing": "https://www.georchestra.org/",
+  "landing": "http://www.georchestra.org/",
   "license": "GPL-3.0-only",
   "name": "geOrchestra",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6915,7 +7158,7 @@
    "Rennes M\u00e9tropole",
    "R\u00e9gion bretagne"
   ],
-  "version": "26.0.0"
+  "version": "v19.04"
  },
  {
   "categories": [
@@ -6957,9 +7200,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=GeoServer",
   "keywords": [
-   ""
+   "",
+   "geoserver",
+   "java",
+   "mapping",
+   "maps",
+   "wcs",
+   "web",
+   "web-mapping",
+   "wfs",
+   "wms"
   ],
-  "landing": "https://geoserver.org/",
+  "landing": "http://geoserver.org/",
   "license": "GNU GPLv2",
   "name": "GeoServer",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -6977,7 +7229,7 @@
    "EFA - \u00c9cole fran\u00e7aise d'Ath\u00e8nes",
    "INRAE"
   ],
-  "version": "3.0.2"
+  "version": "_tag_2.26.1"
  },
  {
   "categories": [
@@ -6996,9 +7248,11 @@
    "cartographie",
    "mapping",
    "plein air",
-   "outdoor"
+   "outdoor",
+   "django",
+   "gis"
   ],
-  "landing": "https://geotrek.fr",
+  "landing": "https://geotrek.readthedocs.io",
   "license": "BSD-2-Clause",
   "name": "Geotrek",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -7013,7 +7267,7 @@
    "AFB",
    "DDPN 18"
   ],
-  "version": "2.126.6"
+  "version": "v0.35.1"
  },
  {
   "country": "FR",
@@ -7022,9 +7276,15 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Gephi",
   "keywords": [
-   ""
+   "",
+   "graph",
+   "graph-analytics",
+   "interactive",
+   "java",
+   "opengl",
+   "visualization"
   ],
-  "landing": "https://gephi.org/",
+  "landing": "http://gephi.org",
   "license": "GPL",
   "name": "Gephi",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -7039,8 +7299,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "0.11.3",
-  "wikidata": "Q5548660"
+  "version": "v0.11.4"
  },
  {
   "country": "FR",
@@ -7124,7 +7383,7 @@
    "ecole de comps",
    "other"
   ],
-  "version": "3.2.6"
+  "version": "3.2.8"
  },
  {
   "country": "FR",
@@ -7214,8 +7473,7 @@
    "AP-HP",
    "Prefecture 21"
   ],
-  "version": "0.8.0",
-  "wikidata": "Q112578876"
+  "version": "debian/0.6.0-1"
  },
  {
   "country": "FR",
@@ -7227,15 +7485,21 @@
    "forge",
    "git",
    "d\u00e9veloppement",
-   "code"
+   "code",
+   "bitbucket",
+   "cicd",
+   "devops",
+   "docker-registry-v2",
+   "git-gui",
+   "git-lfs"
   ],
   "landing": "https://gitea.com",
   "license": "MIT licence",
   "name": "Gitea",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/go-gitea",
-  "repo_key": "github.com/go-gitea",
+  "repo": "https://github.com/go-gitea/gitea",
+  "repo_key": "github.com/go-gitea/gitea",
   "short_desc": "Forge libre bas\u00e9e sur Git.",
   "sill_id": 369,
   "source": "FR/sill",
@@ -7245,8 +7509,7 @@
    "DINUM",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "28.3.0",
-  "wikidata": "Q28714270"
+  "version": "v29.0.0-dev"
  },
  {
   "country": "FR",
@@ -7323,7 +7586,10 @@
    "r\u00e9pertoire",
    "repository",
    "d\u00e9veloppement",
-   "development"
+   "development",
+   "github-pages",
+   "landing-page",
+   "react"
   ],
   "landing": "https://www.gitlanding.dev",
   "license": "MIT licence",
@@ -7339,8 +7605,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2.3.24",
-  "wikidata": "Q112595096"
+  "version": "v2.3.24"
  },
  {
   "country": "FR",
@@ -7353,15 +7618,20 @@
    "ticket",
    "IT management",
    "parc informatique",
-   "gestion"
+   "gestion",
+   "asset-manager",
+   "assets-management",
+   "cmdb",
+   "data-center",
+   "dcim"
   ],
-  "landing": "http://glpi-project.org/",
+  "landing": "https://glpi-project.org",
   "license": "GPL-2.0 license",
   "name": "GLPI",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/glpi-project/glpi/releases",
-  "repo_key": "github.com/glpi-project/glpi/releases",
+  "repo": "https://github.com/glpi-project/glpi",
+  "repo_key": "github.com/glpi-project/glpi",
   "short_desc": "Gestion de parc et suivi d'incidents",
   "sill_id": 54,
   "source": "FR/sill",
@@ -7393,7 +7663,7 @@
    "Universit\u00e9 de Lille",
    "other"
   ],
-  "version": "11.0.5"
+  "version": "12.0.1"
  },
  {
   "country": "FR",
@@ -7444,9 +7714,11 @@
    "analyse",
    "analysis",
    "donn\u00e9es",
-   "data"
+   "data",
+   "antlr",
+   "astronomy",
+   "data-analysis"
   ],
-  "landing": "https://gnudatalanguage.github.io/",
   "license": "GPL-2.0-only",
   "name": "GNU Data Language",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -7460,7 +7732,7 @@
   "used_by": [
    "other"
   ],
-  "version": "1.1.3"
+  "version": "weekly-release"
  },
  {
   "country": "FR",
@@ -7593,9 +7865,6 @@
   "wikidata": "Q306101"
  },
  {
-  "categories": [
-   "Programming Languages"
-  ],
   "country": "FR",
   "desc_lang": "fr",
   "desc_src": "Logiciel de calcul num\u00e9rique.",
@@ -7735,9 +8004,10 @@
    "gestion",
    "management",
    "inventaire",
-   "inventory"
+   "inventory",
+   "database",
+   "golang"
   ],
-  "landing": "https://github.com/tbellembois/gochimitheque",
   "license": "GPL-3.0-only",
   "name": "gochimitheque",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -7853,7 +8123,11 @@
    "visualisation",
    "visualization",
    "m\u00e9triques",
-   "metrics"
+   "metrics",
+   "alerting",
+   "analytics",
+   "business-intelligence",
+   "data-visualization"
   ],
   "landing": "https://grafana.com",
   "license": "Apache-2.0",
@@ -7879,8 +8153,7 @@
    "Sorbonne Universit\u00e9",
    "inrae"
   ],
-  "version": "13.3.0",
-  "wikidata": "Q43399271"
+  "version": "vtest-new-release-pipeline"
  },
  {
   "categories": [
@@ -7998,9 +8271,14 @@
    "gestion",
    "s\u00e9curit\u00e9",
    "management",
-   "security"
+   "security",
+   "api-gateway",
+   "api-management",
+   "gateway",
+   "java",
+   "security-scan"
   ],
-  "landing": "https://www.gravitee.io/products/api-management",
+  "landing": "https://www.gravitee.io/platform/api-management",
   "license": "Apache-2.0",
   "name": "Gravitee Community Edition",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8017,7 +8295,7 @@
    "MESR",
    "Minist\u00e8re des arm\u00e9es"
   ],
-  "version": "4.13.1"
+  "version": "core_4.13.8"
  },
  {
   "country": "FR",
@@ -8076,7 +8354,7 @@
    "amU",
    "other"
   ],
-  "version": "v1.4.389-gee6eee90c9"
+  "version": "v1.4.444-g6f53d1d595"
  },
  {
   "country": "FR",
@@ -8090,9 +8368,12 @@
    "python",
    "low-code",
    "no-code",
-   "formulaire"
+   "formulaire",
+   "awesome",
+   "database",
+   "spreadsheet"
   ],
-  "landing": "https://getgrist.com",
+  "landing": "https://www.getgrist.com",
   "license": "Apache License v2.0",
   "name": "Grist",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8136,8 +8417,7 @@
    "acad\u00e9mie de Poitiers",
    "\u00cele-de-France Mobilit\u00e9s"
   ],
-  "version": "1.7.22",
-  "wikidata": "Q123573961"
+  "version": "v1.7.22"
  },
  {
   "categories": [
@@ -8170,7 +8450,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "1.24.2",
+  "version": "1.25.0",
   "wikidata": "Q288684"
  },
  {
@@ -8214,9 +8494,12 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=H2",
   "keywords": [
    "base de donn\u00e9es",
-   "database"
+   "database",
+   "java",
+   "jdbc",
+   "sql"
   ],
-  "landing": "https://www.h2database.com",
+  "landing": "https://h2database.com",
   "license": "MPL 2.0 et EPL 1.0",
   "name": "H2",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8230,7 +8513,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "2.5.252"
+  "version": "version-2.5.252"
  },
  {
   "country": "FR",
@@ -8331,7 +8614,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "academie d'Aix marseille"
   ],
-  "version": "2.0.2"
+  "version": "v2.0.2"
  },
  {
   "country": "FR",
@@ -8370,9 +8653,14 @@
    "collaboratif",
    "markdown",
    "collaborative",
-   "writing"
+   "writing",
+   "codimd",
+   "collaboration",
+   "diagrams",
+   "editor",
+   "hackmd"
   ],
-  "landing": "https://hedgedoc.org/",
+  "landing": "https://hedgedoc.org",
   "license": "AGPL-3.0-only",
   "name": "Hedgedoc",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8387,7 +8675,7 @@
    "DINUM",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "1.12.0"
+  "version": "v2.0.0-alpha.3"
  },
  {
   "country": "FR",
@@ -8398,9 +8686,16 @@
   "keywords": [
    "base de donn\u00e9e",
    "Administration BDD",
-   "SQL"
+   "SQL",
+   "delphi",
+   "firebird-database",
+   "freepascal",
+   "gtk2",
+   "heidisql",
+   "icons8",
+   "interbase"
   ],
-  "landing": "https://www.heidisql.com",
+  "landing": "https://www.heidisql.com/",
   "license": "GPL",
   "name": "HeidiSQL",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8414,7 +8709,7 @@
   "used_by": [
    "DGDDI"
   ],
-  "version": "12.15.1.1"
+  "version": "v12.22"
  },
  {
   "country": "FR",
@@ -8460,9 +8755,12 @@
    "d\u00e9veloppement",
    "development",
    "programmation",
-   "programming"
+   "programming",
+   "kakoune",
+   "rust",
+   "text-editor"
   ],
-  "landing": "https://helix-editor.com/",
+  "landing": "https://helix-editor.com",
   "license": "MPL-2.0",
   "name": "Helix",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8478,33 +8776,37 @@
    "CentraleSup\u00e9lec",
    "DGFIP"
   ],
-  "version": "25.07.1"
+  "version": "v0.6.0"
  },
  {
   "country": "FR",
-  "desc_lang": "fr",
-  "desc_src": "Researcher-oriented database builder and web publisher for rich linked Humanities data",
-  "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Heurist",
   "keywords": [
-   "Base de donn\u00e9es"
+   "Base de donn\u00e9es",
+   "archaeological-information-system",
+   "archaeology",
+   "archive",
+   "data-management",
+   "data-management-plan",
+   "database",
+   "database-as-a-service",
+   "database-design",
+   "database-management"
   ],
-  "landing": "http://heuristnetwork.org/",
-  "license": "GPL",
+  "landing": "http://HeuristNetwork.org",
+  "license": "GNU General Public License v3.0",
   "name": "Heurist",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
   "repo": "https://github.com/HeuristNetwork/heurist",
   "repo_key": "github.com/heuristnetwork/heurist",
-  "short_desc": "Researcher-oriented database builder and web publisher for rich linked Humanities data",
   "sill_id": 676,
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
-  "version": "4.2.18",
-  "wikidata": "Q5748237"
+  "version": "Vsn4.2.18"
  },
  {
   "categories": [
@@ -8522,7 +8824,10 @@
    "Linux",
    "installation",
    "logiciels",
-   "software"
+   "software",
+   "brew",
+   "homebrew",
+   "package-manager"
   ],
   "landing": "https://brew.sh",
   "license": "2-clause BSD",
@@ -8539,7 +8844,7 @@
    "CNRS",
    "DINUM"
   ],
-  "version": "7.0.11"
+  "version": "7.0.12"
  },
  {
   "country": "FR",
@@ -8596,7 +8901,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "4.0.0",
+  "version": "4.0.1",
   "wikidata": "Q109462071"
  },
  {
@@ -8634,9 +8939,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Icinga",
   "keywords": [
-   ""
+   "",
+   "cluster",
+   "distributed-monitoring",
+   "elastic",
+   "graphite",
+   "graylog",
+   "icinga",
+   "influxdb",
+   "metrics",
+   "monitoring"
   ],
-  "landing": "https://icinga.com",
+  "landing": "https://icinga.com/docs/icinga2/latest",
   "license": "GNU GPLv2",
   "name": "Icinga",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8650,7 +8964,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "2.16.6"
+  "version": "v2.16.6"
  },
  {
   "categories": [
@@ -8668,9 +8982,12 @@
    "plateforme",
    "platform",
    "apprentissage",
-   "learning"
+   "learning",
+   "hacktoberfest",
+   "ilias",
+   "ilias-elearning"
   ],
-  "landing": "https://www.ilias.de/",
+  "landing": "http://www.ilias.de/docu/goto_docu_cat_582.html",
   "license": "GPL-3.0-only",
   "name": "ILIAS",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8684,7 +9001,7 @@
   "used_by": [
    "MD"
   ],
-  "version": "11.5"
+  "version": "vrelease_7"
  },
  {
   "country": "FR",
@@ -8700,9 +9017,11 @@
    "processing",
    "science",
    "recherche",
-   "research"
+   "research",
+   "computer-vision",
+   "image-processing"
   ],
-  "landing": "https://imagej.net/ij/",
+  "landing": "http://imagej.org",
   "license": "Public Domain",
   "name": "ImageJ",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -8716,8 +9035,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "1.54r",
-  "wikidata": "Q1659584"
+  "version": "v1.54r"
  },
  {
   "country": "FR",
@@ -8727,7 +9045,15 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Immich",
   "keywords": [
    "photo",
-   "vid\u00e9o"
+   "vid\u00e9o",
+   "backup-tool",
+   "flutter",
+   "google-photos",
+   "google-photos-alternative",
+   "javascript",
+   "mobile-app",
+   "nestjs",
+   "nodejs"
   ],
   "landing": "https://immich.app",
   "license": "GNU AGPL v3",
@@ -8743,8 +9069,7 @@
   "used_by": [
    "DGFIP"
   ],
-  "version": "3.3.5",
-  "wikidata": "Q127016931"
+  "version": "v3.4.0-rc.3"
  },
  {
   "country": "FR",
@@ -8755,7 +9080,13 @@
   "keywords": [
    "dessin vectoriel",
    "vector drawing",
-   "EPLE"
+   "EPLE",
+   "C++",
+   "GTK4",
+   "gtkmm",
+   "hacktoberfest",
+   "svg",
+   "vectorgraphics"
   ],
   "landing": "https://inkscape.org",
   "license": "GPLv3+",
@@ -8809,9 +9140,10 @@
    "Universit\u00e9 Jean Moulin Lyon 3",
    "Universit\u00e9 de Strasbourg",
    "academie d'Aix marseille",
+   "m2A",
    "other"
   ],
-  "version": "1.4.4"
+  "version": "INKSCAPE_1_4"
  },
  {
   "categories": [
@@ -8971,8 +9303,7 @@
    "MEN",
    "MEN: Minist\u00e8re de l'\u00c9ducation nationale"
   ],
-  "version": "6.0.0",
-  "wikidata": "Q112578937"
+  "version": "v1.7.0"
  },
  {
   "country": "FR",
@@ -9018,9 +9349,14 @@
    "gestion des services informatiques",
    "IT service management",
    "CMDB",
-   "base de donn\u00e9es de gestion des configurations"
+   "base de donn\u00e9es de gestion des configurations",
+   "hacktoberfest",
+   "helpdesk",
+   "impact-analysis",
+   "it-services",
+   "itil"
   ],
-  "landing": "https://www.combodo.com/itop",
+  "landing": "https://combodo.com/features/",
   "license": "AGPL-3.0-only",
   "name": "iTop",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9035,7 +9371,7 @@
    "MC",
    "other"
   ],
-  "version": "3.3.0"
+  "version": "saas-1.0.18"
  },
  {
   "country": "FR",
@@ -9076,9 +9412,13 @@
    "bibliographie",
    "bibliography",
    "gestion",
-   "management"
+   "management",
+   "academia",
+   "academic-publications",
+   "ai",
+   "biblatex"
   ],
-  "landing": "https://www.jabref.org/",
+  "landing": "https://www.jabref.org",
   "license": "MIT licence",
   "name": "JabRef",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9095,7 +9435,7 @@
    "INRAE",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "5.15"
+  "version": "v6.0-beta.1"
  },
  {
   "categories": [
@@ -9138,9 +9478,16 @@
   "keywords": [
    "base de donn\u00e9es",
    "extraction",
-   "database"
+   "database",
+   "db2",
+   "export",
+   "extract",
+   "frontend",
+   "gui",
+   "jailer",
+   "java"
   ],
-  "landing": "http://jailer.sourceforge.net/",
+  "landing": "https://wisser.github.io/Jailer",
   "license": "Apache-2.0",
   "name": "Jailer",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9153,8 +9500,7 @@
   "tier": "index",
   "used_by": [
    "MEN"
-  ],
-  "wikidata": "Q98731922"
+  ]
  },
  {
   "categories": [
@@ -9168,9 +9514,10 @@
   "keywords": [
    "performance",
    "surveillance",
-   "monitoring"
+   "monitoring",
+   "apm",
+   "metrics"
   ],
-  "landing": "https://github.com/javamelody/javamelody/wiki",
   "license": "Apache-2.0",
   "name": "Javamelody",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9183,8 +9530,7 @@
   "tier": "index",
   "used_by": [
    "MD"
-  ],
-  "wikidata": "Q98731926"
+  ]
  },
  {
   "categories": [
@@ -9229,9 +9575,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Jenkins",
   "keywords": [
    "int\u00e9gration continue",
-   "continuous integration"
+   "continuous integration",
+   "cicd",
+   "continuous-delivery",
+   "continuous-deployment",
+   "continuous-integration",
+   "devops",
+   "groovy",
+   "hacktoberfest",
+   "java"
   ],
-  "landing": "https://www.jenkins.io/",
+  "landing": "https://www.jenkins.io",
   "license": "MIT",
   "name": "Jenkins",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9247,7 +9601,7 @@
    "MEN",
    "SG"
   ],
-  "version": "2.588"
+  "version": "untagged-refs/heads/master"
  },
  {
   "country": "FR",
@@ -9258,9 +9612,16 @@
   "keywords": [
    "video conference",
    "communication",
-   "vid\u00e9oconf\u00e9rence"
+   "vid\u00e9oconf\u00e9rence",
+   "debian",
+   "deep-video",
+   "jitsi",
+   "jitsi-meet",
+   "scalable-video-conferences",
+   "sfu",
+   "video"
   ],
-  "landing": "https://jitsi.org/jitsi-meet",
+  "landing": "https://jitsi.org/meet",
   "license": "Apache-2.0",
   "name": "Jitsi Meet",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9320,8 +9681,7 @@
    "minst\u00e8res sociaux",
    "other"
   ],
-  "version": "2.0.11031",
-  "wikidata": "Q87849488"
+  "version": "vtesting1.2.3"
  },
  {
   "country": "FR",
@@ -9334,7 +9694,12 @@
    "SGC",
    "portail",
    "hebergement",
-   "syst\u00e8me de gestion de contenu"
+   "syst\u00e8me de gestion de contenu",
+   "content-management",
+   "hacktoberfest",
+   "joomla",
+   "multilingual-websites",
+   "php"
   ],
   "landing": "https://www.joomla.org",
   "license": "GPLv2+",
@@ -9355,7 +9720,7 @@
    "MINISTERE INTERIEUR/DGPN/DCCRS/DZCRSPARIS/CRS05",
    "other"
   ],
-  "version": "6.2.0 RC 1"
+  "version": "vPBF4"
  },
  {
   "country": "FR",
@@ -9370,9 +9735,12 @@
    "organisation",
    "organization",
    "synchronisation",
-   "synchronization"
+   "synchronization",
+   "android",
+   "dropbox",
+   "electron"
   ],
-  "landing": "https://joplinapp.org/",
+  "landing": "https://joplinapp.org",
   "license": "MIT licence",
   "name": "Joplin",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9407,7 +9775,7 @@
    "ddtm 56",
    "dzpn-nord"
   ],
-  "version": "3.7.22"
+  "version": "v3.7.22"
  },
  {
   "categories": [
@@ -9520,9 +9888,10 @@
    "donn\u00e9es",
    "data",
    "visualisation",
-   "visualization"
+   "visualization",
+   "closember"
   ],
-  "landing": "https://jupyter.org",
+  "landing": "https://jupyter-notebook.readthedocs.io/",
   "license": "Modified BSD License",
   "name": "Jupyter Notebook",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9547,7 +9916,7 @@
    "Universit\u00e9 de Limoges",
    "administration centrale"
   ],
-  "version": "7.6.4"
+  "version": "v7.7.0b0"
  },
  {
   "country": "FR",
@@ -9556,9 +9925,14 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=JupyterHub",
   "keywords": [
-   ""
+   "",
+   "ipython",
+   "jupyter-notebook",
+   "jupyterhub",
+   "multi-user",
+   "python"
   ],
-  "landing": "https://jupyterhub.readthedocs.io/en/stable/",
+  "landing": "https://jupyterhub.readthedocs.io",
   "license": "GNU",
   "name": "JupyterHub",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9574,7 +9948,7 @@
    "DGFIP",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "6.1.1"
+  "version": "6.2.0"
  },
  {
   "country": "FR",
@@ -9590,14 +9964,16 @@
    "R",
    "Julia",
    "donn\u00e9es",
-   "data"
+   "data",
+   "jupyter",
+   "jupyterlab"
   ],
-  "landing": "https://github.com/jupyterlab/jupyterlab",
+  "landing": "https://jupyterlab.readthedocs.io/",
   "license": "Modified BSD License",
   "name": "JupyterLab",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/jupyterlab/jupyterlab.git",
+  "repo": "https://github.com/jupyterlab/jupyterlab",
   "repo_key": "github.com/jupyterlab/jupyterlab",
   "short_desc": "logiciel",
   "sill_id": 317,
@@ -9612,8 +9988,7 @@
    "MINISTERE INTERIEUR/DGPN/ANDV",
    "Universit\u00e9 de Limoges"
   ],
-  "version": "4.6.5",
-  "wikidata": "Q99439725"
+  "version": "v4.7.0b1"
  },
  {
   "country": "FR",
@@ -9624,9 +9999,12 @@
   "keywords": [
    "email",
    "client",
-   "courriel"
+   "courriel",
+   "android",
+   "communication",
+   "mozilla"
   ],
-  "landing": "https://k9mail.app/",
+  "landing": "https://thunderbird.net/mobile",
   "license": "Apache License v2.0",
   "name": "K-9 Mail",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9646,7 +10024,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Lille"
   ],
-  "version": "20.0"
+  "version": "build_2101"
  },
  {
   "country": "FR",
@@ -9697,7 +10075,10 @@
    "organisation",
    "organization",
    "t\u00e2ches",
-   "tasks"
+   "tasks",
+   "agile",
+   "kanboard",
+   "project-management"
   ],
   "landing": "https://kanboard.org",
   "license": "MIT",
@@ -9716,7 +10097,7 @@
    "DINUM",
    "MENJ"
   ],
-  "version": "1.2.57"
+  "version": "v1.2.57"
  },
  {
   "categories": [
@@ -9839,9 +10220,16 @@
   "keywords": [
    "gestionnaire",
    "mots de passe",
-   "password manager"
+   "password manager",
+   "chrome",
+   "chrome-extension",
+   "edge-extension",
+   "firefox",
+   "firefox-addon",
+   "firefox-extension",
+   "keefox"
   ],
-  "landing": "https://www.kee.pm/",
+  "landing": "https://www.kee.pm",
   "license": "GPL-2.0-only",
   "name": "KeeFox",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9856,7 +10244,7 @@
    "35",
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation"
   ],
-  "version": "4.0.7"
+  "version": "4.1.4"
  },
  {
   "country": "FR",
@@ -9929,7 +10317,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "2.61",
+  "version": "2.62",
   "wikidata": "Q762660"
  },
  {
@@ -9939,7 +10327,16 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=KeePassDX",
   "keywords": [
-   ""
+   "",
+   "android",
+   "android-application",
+   "autofill",
+   "credential-manager",
+   "fingerprint",
+   "keepass",
+   "keepass-dx",
+   "keepassdx",
+   "material"
   ],
   "landing": "https://www.keepassdx.com/",
   "license": "GNU GPLv3",
@@ -9963,7 +10360,19 @@
   "desc_src": "gestionnaire de mots de passes libre",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=KeePassXC",
-  "landing": "https://keepassxc.org",
+  "keywords": [
+   "cross-platform",
+   "hacktoberfest",
+   "keepass",
+   "keepassxc",
+   "linux",
+   "macos",
+   "password",
+   "password-manager",
+   "privacy",
+   "security"
+  ],
+  "landing": "https://keepassxc.org/",
   "license": "GNU GPLv2",
   "name": "KeePassXC",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -9989,7 +10398,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "dreets pays de la loire"
   ],
-  "version": "2.8.0"
+  "version": "latest"
  },
  {
   "country": "FR",
@@ -10001,9 +10410,14 @@
    "keepass",
    "password",
    "gestionnaire",
-   "web"
+   "web",
+   "electron",
+   "javascript",
+   "keeweb",
+   "password-manager",
+   "security"
   ],
-  "landing": "https://keeweb.info/",
+  "landing": "https://keeweb.info",
   "license": "MIT licence",
   "name": "KeeWeb",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10014,7 +10428,7 @@
   "sill_id": 433,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.18.9"
+  "version": "v1.18.9"
  },
  {
   "country": "FR",
@@ -10062,9 +10476,13 @@
    "SSO",
    "single sign-on",
    "s\u00e9curit\u00e9",
-   "security"
+   "security",
+   "freemarker",
+   "ftl",
+   "keycloak",
+   "keycloak-theme"
   ],
-  "landing": "https://keycloakify.dev",
+  "landing": "https://www.keycloakify.dev",
   "license": "MIT",
   "name": "Keycloakify",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10079,7 +10497,7 @@
    "AP-HP",
    "DINUM"
   ],
-  "version": "11.16.4"
+  "version": "v11.16.4"
  },
  {
   "country": "FR",
@@ -10095,9 +10513,11 @@
    "visualisation",
    "visualization",
    "donn\u00e9es",
-   "data"
+   "data",
+   "cartography",
+   "d3"
   ],
-  "landing": "https://www.sciencespo.fr/cartographie/khartis/",
+  "landing": "http://www.sciencespo.fr/cartographie/khartis/",
   "license": "MIT",
   "name": "Khartis",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10112,8 +10532,7 @@
    "DINUM",
    "Sciences Po"
   ],
-  "version": "2.1.0",
-  "wikidata": "Q98732055"
+  "version": "v1.3"
  },
  {
   "categories": [
@@ -10129,7 +10548,12 @@
    "visualisation",
    "visualisation de donn\u00e9es",
    "data visualization",
-   "Elasticsearch"
+   "Elasticsearch",
+   "dashboards",
+   "hacktoberfest",
+   "metrics",
+   "observability",
+   "visualizations"
   ],
   "landing": "https://www.elastic.co/products/kibana",
   "license": "Double licence SSPL + Elastic License",
@@ -10146,7 +10570,7 @@
    "CNRS",
    "INSEE"
   ],
-  "version": "9.5.5"
+  "version": "v9.5.6"
  },
  {
   "categories": [
@@ -10204,9 +10628,12 @@
    "client",
    "Windows",
    "connexion",
-   "connection"
+   "connection",
+   "kitty",
+   "putty",
+   "ssh-client"
   ],
-  "landing": "http://www.9bis.net/kitty/",
+  "landing": "https://www.9bis.com/kitty",
   "license": "MIT",
   "name": "KiTTY",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10282,7 +10709,8 @@
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
-   "Acad\u00e9mie d'Orl\u00e9ans-Tours"
+   "Acad\u00e9mie d'Orl\u00e9ans-Tours",
+   "Universit\u00e9 Grenoble Alpes"
   ],
   "version": "5.9",
   "wikidata": "Q639194"
@@ -10440,9 +10868,15 @@
   "keywords": [
    "GED",
    "partage de fichiers",
-   "espace collaboratif"
+   "espace collaboratif",
+   "django",
+   "document-management",
+   "drive",
+   "file-sharing",
+   "g2g",
+   "government",
+   "mit"
   ],
-  "landing": "https://fichiers.numerique.gouv.fr/",
   "license": "MIT licence",
   "name": "La Suite Drive",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10453,7 +10887,7 @@
   "sill_id": 601,
   "source": "FR/sill",
   "tier": "index",
-  "version": "0.25.3"
+  "version": "v0.26.0"
  },
  {
   "country": "FR",
@@ -10464,9 +10898,16 @@
   "keywords": [
    "visio",
    "vid\u00e9o-conf\u00e9rence",
-   "livekit"
+   "livekit",
+   "django",
+   "help-wanted",
+   "open-source-project",
+   "react",
+   "reactjs",
+   "video-conferencing",
+   "webrtc"
   ],
-  "landing": "https://lasuite.numerique.gouv.fr/produits/visio",
+  "landing": "https://visio.numerique.gouv.fr",
   "license": "MIT licence",
   "name": "La Suite Meet",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10483,7 +10924,7 @@
    "DINUM",
    "Minsit\u00e8re de la Justice"
   ],
-  "version": "1.36.3"
+  "version": "v-hackathon"
  },
  {
   "categories": [
@@ -10557,9 +10998,10 @@
   "keywords": [
    "PHP",
    "framework",
-   "d\u00e9veloppement web"
+   "d\u00e9veloppement web",
+   "laravel"
   ],
-  "landing": "https://laravel.com/",
+  "landing": "https://laravel.com",
   "license": "MIT licence",
   "name": "Laravel",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10575,7 +11017,7 @@
    "CNRS",
    "DGDDI"
   ],
-  "version": "13.39.0"
+  "version": "v13.40.0"
  },
  {
   "categories": [
@@ -10594,7 +11036,9 @@
    "typographie",
    "typography",
    "\u00e9criture",
-   "writing"
+   "writing",
+   "latex",
+   "latex-kernel"
   ],
   "landing": "https://www.latex-project.org/",
   "license": "LPPL",
@@ -10619,6 +11063,7 @@
    "CentraleSup\u00e9lec",
    "Cerema",
    "DINUM",
+   "DRAAF PACA",
    "ENSEA",
    "Education Nationale",
    "INRAE",
@@ -10631,7 +11076,7 @@
    "Universit\u00e9 Perpignan Via Domitia",
    "dgfip"
   ],
-  "version": "June 2026 LaTeX release"
+  "version": "tools-2024-06-01a"
  },
  {
   "categories": [
@@ -10712,9 +11157,16 @@
   "keywords": [
    "NMS",
    "network monitoring",
-   "supervision r\u00e9seau"
+   "supervision r\u00e9seau",
+   "hacktoberfest",
+   "laravel",
+   "librenms",
+   "monitoring",
+   "network",
+   "php",
+   "rrd"
   ],
-  "landing": "https://www.librenms.org/",
+  "landing": "https://www.librenms.org",
   "license": "GPLv3+",
   "name": "LibreNMS",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10728,8 +11180,7 @@
   "used_by": [
    "Institut Laue Langevin (ILL)"
   ],
-  "version": "26.10.2",
-  "wikidata": "Q77554277"
+  "version": "20160828"
  },
  {
   "country": "FR",
@@ -10789,6 +11240,7 @@
    "DDFIP 19",
    "DDPP 76",
    "DDPP du Bas-Rhin",
+   "DDT 41",
    "DDTM 44/SEE/EMA",
    "DGDDI",
    "DGE",
@@ -10857,13 +11309,15 @@
    "academie d'Aix marseille",
    "academie de Lyon",
    "academie de nice",
+   "acad\u00e9mie de Grenoble",
    "acad\u00e9mie de Nouvelle-Cal\u00e9donie",
    "acad\u00e9mie de montpellier",
+   "m2A",
    "other",
    "pr\u00e9fecture 81",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "26.8.2"
+  "version": "26.2.7"
  },
  {
   "categories": [
@@ -10880,9 +11334,12 @@
    "online editor",
    "collaboration",
    "document",
-   "cloud"
+   "cloud",
+   "libreoffice",
+   "libreoffice-online",
+   "wopi"
   ],
-  "landing": "https://www.libreoffice.org/download/libreoffice-online/",
+  "landing": "https://www.libreoffice.org/",
   "license": "MPL-2.0",
   "name": "LibreOffice (Collabora) online",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -10901,8 +11358,7 @@
    "MTE",
    "PREF",
    "Universit\u00e9 de Lille"
-  ],
-  "wikidata": "Q30584920"
+  ]
  },
  {
   "country": "FR",
@@ -10916,15 +11372,19 @@
    "survey",
    "questionnaire",
    "cr\u00e9ation de sondages",
-   "survey creation"
+   "survey creation",
+   "html5",
+   "javascript",
+   "mssql",
+   "mysql"
   ],
-  "landing": "https://www.limesurvey.org/",
+  "landing": "https://www.limesurvey.org",
   "license": "GPL-3.0-only",
   "name": "Limesurvey",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/LimeSurvey",
-  "repo_key": "github.com/limesurvey",
+  "repo": "https://github.com/LimeSurvey/LimeSurvey",
+  "repo_key": "github.com/limesurvey/limesurvey",
   "short_desc": "Outil d'enqu\u00eate en ligne simple, rapide et anonyme.",
   "sill_id": 80,
   "source": "FR/sill",
@@ -10951,8 +11411,7 @@
    "Universit\u00e9 Jean Monnet de Saint-\u00c9tienne",
    "administration centrale"
   ],
-  "version": "6.10.0+250106",
-  "wikidata": "Q1514978"
+  "version": "remove"
  },
  {
   "country": "FR",
@@ -10994,9 +11453,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=LinShare",
   "keywords": [
-   ""
+   "",
+   "cloud",
+   "collaboration",
+   "enterprise",
+   "file-sharing",
+   "free-software",
+   "open-source",
+   "premise",
+   "self-hosted",
+   "sharing"
   ],
-  "landing": "http://www.linshare.org/new/en/",
+  "landing": "https://linshare.app",
   "license": "AGPLv3",
   "name": "LinShare",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11093,9 +11561,11 @@
    "SIG",
    "QGIS",
    "serveur",
-   "server"
+   "server",
+   "javascript",
+   "lizmap"
   ],
-  "landing": "https://lizmap.com",
+  "landing": "https://www.lizmap.com",
   "license": "MPL-2.0",
   "name": "Lizmap",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11114,7 +11584,7 @@
    "Ville de Marseille",
    "other"
   ],
-  "version": "4.2.2"
+  "version": "3.10.0-rc.3"
  },
  {
   "country": "FR",
@@ -11168,9 +11638,13 @@
    "log collection",
    "logs",
    "Elasticsearch",
-   "ELK"
+   "ELK",
+   "etl-framework",
+   "java",
+   "jruby",
+   "logging"
   ],
-  "landing": "https://www.elastic.co/logstash/",
+  "landing": "https://www.elastic.co/products/logstash",
   "license": "Apache-2.0",
   "name": "Logstash",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11184,7 +11658,7 @@
   "used_by": [
    "INSEE"
   ],
-  "version": "8.16.2"
+  "version": "v9.5.6"
  },
  {
   "country": "FR",
@@ -11237,9 +11711,12 @@
    "annuaire",
    "directory",
    "serveur",
-   "server"
+   "server",
+   "etl",
+   "identity-management",
+   "ldap-synchronization-connector"
   ],
-  "landing": "https://lsc-project.org",
+  "landing": "http://lsc-project.org/wiki/documentation/latest/start",
   "license": "BSD",
   "name": "LSC-Project",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11442,9 +11919,15 @@
    "g\u00e9ographie",
    "cartographie statistique",
    "cartographie th\u00e9matique",
-   "cartographie"
+   "cartographie",
+   "cartography",
+   "d3js",
+   "geography",
+   "mapping",
+   "maps",
+   "solidjs"
   ],
-  "landing": "https://magrit.cnrs.fr/",
+  "landing": "https://magrit.cnrs.fr",
   "license": "GPL-3.0-or-later",
   "name": "Magrit",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11458,7 +11941,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "2.4.2"
+  "version": "v2.4.2"
  },
  {
   "country": "FR",
@@ -11500,7 +11983,8 @@
    "Auth",
    "Storage",
    "YAML",
-   "Webserver"
+   "Webserver",
+   "ai"
   ],
   "landing": "https://manifest.build",
   "license": "MIT licence",
@@ -11516,7 +12000,7 @@
   "used_by": [
    "Inria"
   ],
-  "version": "4.1.1"
+  "version": "v5.0.5"
  },
  {
   "country": "FR",
@@ -11609,9 +12093,13 @@
    "social network",
    "microblogging",
    "d\u00e9centralis\u00e9",
-   "decentralized"
+   "decentralized",
+   "activity-stream",
+   "activitypub",
+   "docker",
+   "fediverse"
   ],
-  "landing": "https://joinmastodon.org/",
+  "landing": "https://joinmastodon.org",
   "license": "AGPL-3.0-only",
   "name": "Mastodon",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11627,7 +12115,7 @@
    "Universit\u00e9 C\u00f4te d'Azur",
    "other"
   ],
-  "version": "4.7.4"
+  "version": "v5.0.0-beta.1"
  },
  {
   "country": "FR",
@@ -11727,9 +12215,12 @@
    "collaboration",
    "\u00e9quipe",
    "team",
-   "communication"
+   "communication",
+   "golang",
+   "hacktoberfest",
+   "mattermost"
   ],
-  "landing": "https://mattermost.com/",
+  "landing": "https://mattermost.com",
   "license": "MIT licence",
   "name": "Mattermost",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11751,7 +12242,7 @@
    "MS",
    "Universit\u00e9 de Bordeaux"
   ],
-  "version": "11.2.1"
+  "version": "v12.1.0"
  },
  {
   "country": "FR",
@@ -11850,7 +12341,10 @@
    "planning",
    "\u00e9quipe",
    "team",
-   "anciennement Pulse"
+   "anciennement Pulse",
+   "asset-manager",
+   "automated-deployment",
+   "backup-tool"
   ],
   "landing": "https://medulla-tech.io/",
   "license": "GPL-2.0-only",
@@ -11866,8 +12360,7 @@
   "used_by": [
    "CNAM",
    "MEN"
-  ],
-  "wikidata": "Q136325195"
+  ]
  },
  {
   "country": "FR",
@@ -11937,9 +12430,11 @@
    "adresses",
    "base adresse locale",
    "base adresse nationale",
-   "communes"
+   "communes",
+   "addresses",
+   "france"
   ],
-  "landing": "https://mes-adresses.data.gouv.fr/",
+  "landing": "https://mes-adresses.data.gouv.fr",
   "license": "MIT licence",
   "name": "Mes Adresses",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11964,9 +12459,15 @@
    "stats",
    "analytics",
    "dashboard",
-   "graphe"
+   "graphe",
+   "bi",
+   "business-intelligence",
+   "businessintelligence",
+   "clojure",
+   "data",
+   "data-analysis"
   ],
-  "landing": "https://www.metabase.com/start/",
+  "landing": "https://metabase.com",
   "license": "Affero GPL",
   "name": "Metabase",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -11983,12 +12484,12 @@
    "MESR",
    "other"
   ],
-  "version": "1.52.2"
+  "version": "v20150604-alpha"
  },
  {
   "country": "FR",
   "desc_lang": "fr",
-  "desc_src": "Ensemble d\u2019utilitaires permettant d\u2019affiner, simplifier et personnaliser leur exp\u00e9rience de Windows pour am\u00e9liorer leur productivit\u00e9. https://learn.microsoft.com/fr-fr/windows/powertoys/",
+  "desc_src": "Microsoft PowerToys est un ensemble d\u2019utilitaires open source gratuits con\u00e7us pour aider les utilisateurs et les d\u00e9veloppeurs \u00e0 tirer parti de Windows. Il s\u2019appuie sur des exp\u00e9riences famili\u00e8res Windows et ajoute des outils r\u00e9fl\u00e9chis qui optimisent la productivit\u00e9, simplifient les flux de travail et d\u00e9verrouillent les options de personnalisation qui n\u2019existent pas. De la gestion des dispositions d",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Microsoft%20Powertoys",
   "keywords": [
@@ -11996,7 +12497,11 @@
    "personnaliser Windows",
    "remapping",
    "FancyZones",
-   ""
+   {
+    "entity-type": "item",
+    "id": "Q63615947",
+    "numeric-id": 63615947
+   }
   ],
   "license": "MIT licence",
   "name": "Microsoft Powertoys",
@@ -12004,7 +12509,7 @@
   "recommended_for_gov": true,
   "repo": null,
   "repo_key": null,
-  "short_desc": "Ensemble d\u2019utilitaires permettant d\u2019affiner, simplifier et personnaliser leur exp\u00e9rience de Windows pour am\u00e9liorer leur productivit\u00e9. https://learn.microsoft.com/fr-fr/windows/powertoys/",
+  "short_desc": "Microsoft PowerToys est un ensemble d\u2019utilitaires open source gratuits con\u00e7us pour aider les utilisateurs et les d\u00e9veloppeurs \u00e0 tirer parti de Windows. Il s\u2019appuie sur des exp\u00e9riences famili\u00e8res Windows et ajoute des outils r\u00e9fl\u00e9chis qui optimisent la productivit\u00e9, simplifient les flux de travail et d\u00e9verrouillent les options de personnalisation qui n\u2019existent pas. De la gestion des dispositions d",
   "sill_id": 520,
   "source": "FR/sill",
   "tier": "index",
@@ -12027,9 +12532,13 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Minetest",
   "keywords": [
-   "EPLE"
+   "EPLE",
+   "game",
+   "luanti",
+   "luanti-game",
+   "minetest",
+   "minetest-game"
   ],
-  "landing": "https://content.luanti.org/packages/Luanti/minetest_game/",
   "license": "LGPL",
   "name": "Minetest",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12064,9 +12573,10 @@
    "serveur",
    "server",
    "S3",
-   "API"
+   "API",
+   "amazon-s3",
+   "cloud"
   ],
-  "landing": "https://min.io/",
   "license": "AGPL-3.0-only",
   "name": "Minio",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12082,7 +12592,7 @@
    "MS",
    "other"
   ],
-  "version": "2025-06-13T11-33-47Z"
+  "version": "release-1434511043"
  },
  {
   "country": "FR",
@@ -12126,9 +12636,11 @@
    "statique",
    "static",
    "site web",
-   "website"
+   "website",
+   "mkdocs",
+   "python"
   ],
-  "landing": "https://www.mkdocs.org/",
+  "landing": "https://www.mkdocs.org",
   "license": "2-clause BSD",
   "name": "MkDocs",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12289,7 +12801,7 @@
    "security",
    "EPLE"
   ],
-  "landing": "https://www.firefox.com",
+  "landing": "https://www.firefox.com/",
   "license": "MPL-2.0",
   "name": "Mozilla Firefox (Extended Support Release)",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12379,7 +12891,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "160.0b3"
+  "version": "last-mozilla-central"
  },
  {
   "country": "FR",
@@ -12480,14 +12992,17 @@
    "multimedia",
    "audio",
    "musique",
-   "music"
+   "music",
+   "c",
+   "ffmpeg",
+   "mplayer"
   ],
-  "landing": "https://mpv.io/",
+  "landing": "https://mpv.io",
   "license": "GPLv2+",
   "name": "mpv",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/mpv-player/mpv.git",
+  "repo": "https://github.com/mpv-player/mpv",
   "repo_key": "github.com/mpv-player/mpv",
   "short_desc": "lecteur multim\u00e9dia libre",
   "sill_id": 500,
@@ -12496,7 +13011,7 @@
   "used_by": [
    "Acad\u00e9mie de Nancy-Metz"
   ],
-  "version": "0.41.0"
+  "version": "v0.42.0"
  },
  {
   "country": "FR",
@@ -12509,9 +13024,14 @@
    "vnc",
    "ssh",
    "distance",
-   "bureau"
+   "bureau",
+   "c-sharp",
+   "mremoteng",
+   "multi-protocol",
+   "remote-access",
+   "remote-desktop"
   ],
-  "landing": "https://mremoteng.org",
+  "landing": "https://mRemoteNG.org/",
   "license": " GNU GPLv2 ",
   "name": "mRemoteNG",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12546,7 +13066,7 @@
    "typescript",
    "npm"
   ],
-  "landing": "https://mui.com/core/",
+  "landing": "https://mui.com/material-ui/",
   "license": "MIT licence",
   "name": "MUI",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12560,7 +13080,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "9.5.0"
+  "version": "v10.0.0-alpha.0"
  },
  {
   "categories": [
@@ -12702,9 +13222,11 @@
    "visualization",
    "visualisation",
    "map",
-   "carte"
+   "carte",
+   "bootstrap",
+   "openlayers6"
   ],
-  "landing": "https://mviewer.netlify.app/en/",
+  "landing": "https://mviewer.github.io/fr/",
   "license": "GPLv3+",
   "name": "mviewer",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12720,7 +13242,7 @@
    "MTE",
    "R\u00e9gion bretagne"
   ],
-  "version": "4.1"
+  "version": "v4.1"
  },
  {
   "country": "FR",
@@ -12731,7 +13253,6 @@
   "keywords": [
    ""
   ],
-  "landing": "https://www.mysql.com/products/workbench/",
   "license": "GPL",
   "name": "MySQL Workbench",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12810,9 +13331,13 @@
    "scanning",
    "scanner",
    "PDF",
-   "images"
+   "images",
+   "csharp",
+   "dotnet",
+   "escl",
+   "linux"
   ],
-  "landing": "https://www.naps2.com/",
+  "landing": "https://www.naps2.com",
   "license": "GPLv2+",
   "name": "NAPS2",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12829,7 +13354,7 @@
    "Mairie d'Arcueil",
    "Prefecture 06"
   ],
-  "version": "8.6.0"
+  "version": "v8.6.0"
  },
  {
   "country": "FR",
@@ -12900,9 +13425,11 @@
    "development",
    "Vim",
    "programmation",
-   "programming"
+   "programming",
+   "api",
+   "c"
   ],
-  "landing": "https://neovim.io/",
+  "landing": "https://neovim.io",
   "license": "Apache License v2.0",
   "name": "neovim",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12919,7 +13446,7 @@
    "MEN",
    "MI"
   ],
-  "version": "0.12.5"
+  "version": "v0.12.6"
  },
  {
   "country": "FR",
@@ -12929,9 +13456,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Netbox",
   "keywords": [
    "IMAP",
-   "DCIM"
+   "DCIM",
+   "cabling",
+   "django",
+   "infrastructure-management",
+   "ipam",
+   "netbox",
+   "network",
+   "network-automation",
+   "python"
   ],
-  "landing": "https://netboxlabs.com/",
+  "landing": "https://netboxlabs.com/products/netbox/",
   "license": "Apache License 2.0",
   "name": "Netbox",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -12948,7 +13483,7 @@
    "MD",
    "Nantes M\u00e9tropole"
   ],
-  "version": "4.7.4"
+  "version": "v4.7.4"
  },
  {
   "country": "FR",
@@ -12978,7 +13513,7 @@
   "used_by": [
    "Acad\u00e9mie de Nantes"
   ],
-  "version": "11.0",
+  "version": "11.1",
   "wikidata": "Q34225"
  },
  {
@@ -12988,9 +13523,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Netdisco",
   "keywords": [
-   "LAN d\u00e9couverte structure r\u00e9seau local"
+   "LAN d\u00e9couverte structure r\u00e9seau local",
+   "application",
+   "cpan",
+   "netdisco",
+   "network-monitoring",
+   "network-visualization",
+   "open-source",
+   "perl",
+   "postgresql-database",
+   "python3"
   ],
-  "landing": "http://netdisco.org",
+  "landing": "http://netdisco.org/",
   "license": "Modified BSD License",
   "name": "Netdisco",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13004,7 +13548,7 @@
   "used_by": [
    "DGFIP"
   ],
-  "version": "2.042.010"
+  "version": "v0.7"
  },
  {
   "country": "FR",
@@ -13020,7 +13564,9 @@
    "SSR",
    "SSG",
    "node",
-   "npm"
+   "npm",
+   "blog",
+   "browser"
   ],
   "landing": "https://nextjs.org",
   "license": "MIT licence",
@@ -13037,7 +13583,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "16.4.3"
+  "version": "@vercel/devlow-bench@0.3.4"
  },
  {
   "country": "FR",
@@ -13057,7 +13603,7 @@
    "contacts",
    "notes"
   ],
-  "landing": "https://nextcloud.com/",
+  "landing": "https://nextcloud.com",
   "license": "AGPL-3.0-or-later",
   "name": "NextCloud",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13120,9 +13666,10 @@
    "academie de Lyon",
    "acad\u00e9mie de Poitiers",
    "acad\u00e9mie de montpellier",
+   "m2A",
    "other"
   ],
-  "version": "35.0.2"
+  "version": "v35.0.3rc1"
  },
  {
   "categories": [
@@ -13140,9 +13687,10 @@
    "d\u00e9p\u00f4t",
    "artifacts",
    "binaires",
-   "binary"
+   "binary",
+   "repository-management"
   ],
-  "landing": "https://sonatype.com/nexus-repository-sonatype",
+  "landing": "https://www.sonatype.com/products/repository-oss-download",
   "license": "EPL-1.0",
   "name": "Nexus",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13157,7 +13705,7 @@
    "ASP",
    "MEN"
   ],
-  "version": "3.97.2-02"
+  "version": "release-3.98.1-01"
  },
  {
   "categories": [
@@ -13172,7 +13720,13 @@
    "serveur web",
    "reverse proxy",
    "web server",
-   "load balancer"
+   "load balancer",
+   "content-cache",
+   "http",
+   "http2",
+   "http3",
+   "https",
+   "load-balancer"
   ],
   "landing": "https://nginx.org/",
   "license": "BSD-2-Clause",
@@ -13196,8 +13750,7 @@
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "other"
   ],
-  "version": "1.31.8",
-  "wikidata": "Q306144"
+  "version": "release-1.31.8"
  },
  {
   "country": "FR",
@@ -13209,7 +13762,8 @@
    "reverse",
    "proxy",
    "reverse-proxy",
-   "nginx"
+   "nginx",
+   "nginx-proxy"
   ],
   "landing": "https://nginxproxymanager.com",
   "license": "MIT",
@@ -13234,9 +13788,13 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=NixOS",
   "keywords": [
-   ""
+   "",
+   "hacktoberfest",
+   "linux",
+   "nix",
+   "nixos",
+   "nixpkgs"
   ],
-  "landing": "https://nixos.org/",
   "license": "MIT licence",
   "name": "NixOS",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13251,7 +13809,7 @@
    "ASP",
    "Eurom\u00e9tropole de Strasbourg"
   ],
-  "version": "26.05"
+  "version": "v208"
  },
  {
   "country": "FR",
@@ -13341,7 +13899,7 @@
    "Acad\u00e9mie de La R\u00e9union",
    "DDT 77/STAC/PSIT/UACIG"
   ],
-  "version": "3.22.4",
+  "version": "3.22.5",
   "wikidata": "Q53407524"
  },
  {
@@ -13402,7 +13960,7 @@
    "iut d'auxerre",
    "other"
   ],
-  "version": "8.9.8.1"
+  "version": "8.9.9"
  },
  {
   "country": "FR",
@@ -13415,7 +13973,12 @@
    "markdown",
    "\u00e9diteur de texte",
    "partage",
-   "chiffrer"
+   "chiffrer",
+   "asp-net-core",
+   "dotnet-core",
+   "electron",
+   "foss",
+   "hacktoberfest"
   ],
   "landing": "https://notesnook.com/",
   "license": "gpl-3.0",
@@ -13432,7 +13995,7 @@
    "Eurom\u00e9tropole de Strasbourg",
    "rectorat acad\u00e9mie orl\u00e9ans tours"
   ],
-  "version": "3.4.11"
+  "version": "v3.4.12"
  },
  {
   "country": "FR",
@@ -13462,7 +14025,7 @@
    "Acad\u00e9mie de Nancy-Metz",
    "DGFIP"
   ],
-  "version": "7.3.1",
+  "version": "7.4-rc2",
   "wikidata": "Q14579"
  },
  {
@@ -13478,9 +14041,14 @@
    "gestionnaire de paquets",
    "package manager",
    "Node.js",
-   "javascript"
+   "javascript",
+   "nodejs",
+   "npm",
+   "npm-cli",
+   "package-manager",
+   "tools"
   ],
-  "landing": "https://www.npmjs.com/",
+  "landing": "https://docs.npmjs.com/cli/",
   "license": "Artistic-2.0",
   "name": "Npm",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13499,7 +14067,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "12.2.1"
+  "version": "v12.2.2"
  },
  {
   "country": "FR",
@@ -13519,7 +14087,7 @@
    "archivage p\u00e9renne",
    "connecteur Omeka"
   ],
-  "landing": "https://www.numahop.fr/",
+  "landing": "https://www.numahop.fr",
   "license": "Licence GNU Affero General Public License v3.0",
   "name": "NumaHOP",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13538,7 +14106,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 de Tours"
   ],
-  "version": "26.09"
+  "version": "v26.09"
  },
  {
   "categories": [
@@ -13553,9 +14121,11 @@
    "lecteur d'\u00e9cran",
    "screen reader",
    "accessibilit\u00e9",
-   "accessibility"
+   "accessibility",
+   "blind",
+   "screen-reader"
   ],
-  "landing": "https://nvaccess.org",
+  "landing": "https://www.nvaccess.org/",
   "license": "GPL-2.0-only",
   "name": "NVDA",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13572,7 +14142,7 @@
    "P\u00f4le Emploi",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "2026.3"
+  "version": "try-logTest1"
  },
  {
   "country": "FR",
@@ -13612,9 +14182,15 @@
    "diffusion",
    "streaming",
    "enregistrement vid\u00e9o",
-   "video recording"
+   "video recording",
+   "c",
+   "c-plus-plus",
+   "directshow",
+   "facebook-live",
+   "ffmpeg",
+   "game-capture"
   ],
-  "landing": "https://obsproject.com/",
+  "landing": "https://obsproject.com",
   "license": "GPLv2+",
   "name": "OBS Studio",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13711,7 +14287,7 @@
    "DGFiP - Direction G\u00e9n\u00e9rale des Finances Publiques",
    "MTE"
   ],
-  "version": "1.14.4",
+  "version": "1.15.1",
   "wikidata": "Q103994532"
  },
  {
@@ -13729,9 +14305,12 @@
    "d\u00e9veloppement",
    "development",
    "fonctionnel",
-   "functional"
+   "functional",
+   "compiler",
+   "functional-language",
+   "ocaml"
   ],
-  "landing": "https://ocaml.org/",
+  "landing": "https://ocaml.org",
   "license": "The GNU Lesser General Public License, version 2.1",
   "name": "OCaml",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13745,7 +14324,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "5.5.0"
+  "version": "modular-implicits-testing"
  },
  {
   "categories": [
@@ -13762,9 +14341,13 @@
    "mat\u00e9riel",
    "hardware",
    "logiciel",
-   "software"
+   "software",
+   "assets",
+   "assets-management",
+   "ocs",
+   "ocs-deployment"
   ],
-  "landing": "https://www.ocsinventory-ng.org/",
+  "landing": "http://www.ocsinventory-ng.org/",
   "license": "GPL-2.0-only",
   "name": "OCS Inventory",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13779,8 +14362,7 @@
    "DGDDI",
    "MTE"
   ],
-  "version": "2.12.3",
-  "wikidata": "Q1135744"
+  "version": "2.8.1"
  },
  {
   "categories": [
@@ -13797,12 +14379,11 @@
    "nouvelle g\u00e9n\u00e9ration",
    "next generation"
   ],
-  "landing": "https://github.com/pluginsGLPI/ocsinventoryng",
   "license": "GPL-2.0-only",
   "name": "OCS Inventory NG",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/pluginsGLPI/ocsinventoryng.git",
+  "repo": "https://github.com/pluginsGLPI/ocsinventoryng",
   "repo_key": "github.com/pluginsglpi/ocsinventoryng",
   "short_desc": "Automatisation de l'import OCS Inventory-NG",
   "sill_id": 102,
@@ -13859,9 +14440,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Ollama",
   "keywords": [
-   ""
+   "",
+   "deepseek",
+   "gemma",
+   "glm",
+   "go",
+   "golang",
+   "gpt-oss",
+   "llama",
+   "llm",
+   "llms"
   ],
-  "landing": "https://ollama.com/",
+  "landing": "https://ollama.com",
   "license": "MIT licence",
   "name": "Ollama",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -13878,7 +14468,7 @@
    "Sciences Po",
    "VIGINUM"
   ],
-  "version": "0.40.13"
+  "version": "v0.40.15-rc1"
  },
  {
   "country": "FR",
@@ -13930,7 +14520,7 @@
    "CNRS",
    "other"
   ],
-  "version": "3.2.2"
+  "version": "v3.2.2"
  },
  {
   "country": "FR",
@@ -14013,13 +14603,13 @@
    "office",
    "bureautique"
   ],
-  "landing": "https://www.onlyoffice.com",
+  "landing": "https://www.onlyoffice.com/see-it-in-action",
   "license": "GNU AGPL",
   "name": "OnlyOffice",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/ONLYOFFICE/DesktopEditors",
-  "repo_key": "github.com/onlyoffice/desktopeditors",
+  "repo": "https://github.com/ONLYOFFICE/DocumentServer",
+  "repo_key": "github.com/onlyoffice/documentserver",
   "short_desc": "Suite bureautique collaborative en ligne ou sur le poste de travail",
   "sill_id": 296,
   "source": "FR/sill",
@@ -14044,7 +14634,7 @@
    "Universit\u00e9 de Rennes",
    "acad\u00e9mie de Grenoble"
   ],
-  "version": "10.0"
+  "version": "v10.0.0"
  },
  {
   "categories": [
@@ -14100,7 +14690,11 @@
    "plateforme",
    "platform",
    "cloud",
-   "nuage"
+   "nuage",
+   "bluehats",
+   "data-science",
+   "datalab",
+   "helm"
   ],
   "landing": "https://onyxia.sh",
   "license": "MIT",
@@ -14119,7 +14713,7 @@
    "INSEE",
    "MINEFI-SAFI"
   ],
-  "version": "8.6.2"
+  "version": "web-v5.9.0-rc.1"
  },
  {
   "country": "FR",
@@ -14225,7 +14819,7 @@
    "courses",
    "platform"
   ],
-  "landing": "https://www.edx.org/",
+  "landing": "https://edx.org",
   "license": "AGPL-3.0-only",
   "name": "Open EDX",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -14235,8 +14829,7 @@
   "short_desc": "Plateforme d'apprentissage \u00e0 distance",
   "sill_id": 209,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q2106448"
+  "tier": "index"
  },
  {
   "country": "FR",
@@ -14251,14 +14844,17 @@
    "scanning",
    "OCR",
    "reconnaissance de caract\u00e8res",
-   "character recognition"
+   "character recognition",
+   "intelligent",
+   "invoices",
+   "lad"
   ],
-  "landing": "http://www.open-capture.com",
+  "landing": "https://open-capture.com/",
   "license": "GPL-3.0",
   "name": "Open-Capture",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/edissyum/opencapture/",
+  "repo": "https://github.com/edissyum/opencapture",
   "repo_key": "github.com/edissyum/opencapture",
   "short_desc": "Gestion Electronique du Courrier ",
   "sill_id": 341,
@@ -14378,7 +14974,7 @@
    "Tableau blanc",
    "EPLE"
   ],
-  "landing": "http://openboard.ch/",
+  "landing": "https://openboard.ch/",
   "license": "GPLv3+",
   "name": "OpenBoard",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -14397,7 +14993,7 @@
    "Universit\u00e9 de Lorraine",
    "ac-bordeaux.fr"
   ],
-  "version": "1.7.7"
+  "version": "v1.7.7"
  },
  {
   "country": "FR",
@@ -14471,9 +15067,15 @@
   "keywords": [
    "CTI",
    "LMI",
-   "knowledge graph"
+   "knowledge graph",
+   "cyber",
+   "cybersecurity",
+   "intelligence",
+   "osint",
+   "security",
+   "threat-intelligence"
   ],
-  "landing": "https://filigran.io/solutions/products/opencti-threat-intelligence/",
+  "landing": "https://opencti.io",
   "license": "Apache License v2.0",
   "name": "OpenCTI",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -14487,7 +15089,7 @@
   "used_by": [
    "VIGINUM"
   ],
-  "version": "6.9.29"
+  "version": "7.261106.0"
  },
  {
   "categories": [
@@ -14507,7 +15109,7 @@
    "inventaire",
    "inventory"
   ],
-  "landing": "https://opendcim.org",
+  "landing": "http://opendcim.org",
   "license": "GPL-3.0-only",
   "name": "opendcim",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -14521,7 +15123,8 @@
   "used_by": [
    "DGFIP",
    "MC",
-   "MESR"
+   "MESR",
+   "SI3"
   ]
  },
  {
@@ -14538,23 +15141,26 @@
    "lecteur",
    "reader",
    "ODF",
-   "formats ouverts"
+   "formats ouverts",
+   "android",
+   "f-droid",
+   "fdroid",
+   "kotlin"
   ],
-  "landing": "https://opendocument-reader.fr.uptodown.com/android",
+  "landing": "https://opendocument.app/",
   "license": "GPL-3.0-or-later",
   "name": "OpenDocument Reader",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/TomTasche/OpenDocument.droid",
-  "repo_key": "github.com/tomtasche/opendocument.droid",
+  "repo": "https://github.com/opendocument-app/OpenDocument.droid",
+  "repo_key": "github.com/opendocument-app/opendocument.droid",
   "short_desc": "Lecteur de fichiers OpenDocument",
   "sill_id": 103,
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
    "D\u00e9veloppement durable"
-  ],
-  "wikidata": "Q98731929"
+  ]
  },
  {
   "country": "FR",
@@ -14629,7 +15235,11 @@
    "l\u00e9gislation",
    "tax",
    "benefit",
-   "legislation"
+   "legislation",
+   "better-rules",
+   "legislation-as-code",
+   "microsimulation",
+   "rules-as-code"
   ],
   "landing": "https://openfisca.org",
   "license": "AGPL-3.0-only",
@@ -14642,7 +15252,7 @@
   "sill_id": 200,
   "source": "FR/sill",
   "tier": "index",
-  "version": "46.0.1"
+  "version": "v0.2"
  },
  {
   "country": "FR",
@@ -14668,7 +15278,7 @@
    "ia",
    "conversation"
   ],
-  "license": "MIT",
+  "license": "Mass Tech",
   "name": "OpenGateLLM",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
@@ -14681,7 +15291,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "0.8.0",
+  "version": "0.9.1",
   "wikidata": "Q140290134"
  },
  {
@@ -14797,9 +15407,11 @@
    "technologie",
    "multiphysique",
    "modelisation",
-   "sciences industrielles"
+   "sciences industrielles",
+   "compiler",
+   "modelica"
   ],
-  "landing": "http://www.openmodelica.org",
+  "landing": "https://openmodelica.org",
   "license": "GPL",
   "name": "Openmodelica",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -14816,7 +15428,7 @@
    "Acad\u00e9mie de Versailles",
    "MEN"
   ],
-  "version": "1.27.2"
+  "version": "v1.28.0-dev"
  },
  {
   "country": "FR",
@@ -14828,9 +15440,15 @@
    "cloud",
    "nuage",
    "infrastructure",
-   "virtualisation"
+   "virtualisation",
+   "kvm",
+   "lxc",
+   "open-source",
+   "opennebula",
+   "orchestration",
+   "virtual-machine"
   ],
-  "landing": "https://opennebula.org",
+  "landing": "http://opennebula.io",
   "license": "Apache-2.0",
   "name": "OpenNebula Community Edition",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -14844,8 +15462,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "7.4.1",
-  "wikidata": "Q1164484"
+  "version": "release-7.4.1"
  },
  {
   "country": "FR",
@@ -14860,7 +15477,10 @@
    "organisation",
    "organization",
    "planification",
-   "planning"
+   "planning",
+   "agile-development",
+   "angular",
+   "bcf"
   ],
   "landing": "https://www.openproject.org",
   "license": "GPL",
@@ -14882,8 +15502,7 @@
    "Prefecture 974",
    "Universit\u00e9 Grenoble Alpes"
   ],
-  "version": "17.9.6",
-  "wikidata": "Q14468709"
+  "version": "v17.9.6"
  },
  {
   "country": "FR",
@@ -14897,7 +15516,11 @@
    "wikimedia",
    "nettoyage",
    "alignement",
-   "enrichissement"
+   "enrichissement",
+   "data-analysis",
+   "data-science",
+   "data-wrangling",
+   "datacleaning"
   ],
   "landing": "https://openrefine.org/",
   "license": "BSD",
@@ -14916,7 +15539,7 @@
    "Universit\u00e9 de Pau et des Pays de l'Adour",
    "Universit\u00e9 de Strasbourg"
   ],
-  "version": "3.10.1"
+  "version": "v2.6-rc1"
  },
  {
   "country": "FR",
@@ -14983,7 +15606,12 @@
    "search",
    "indexation",
    "information retrieval",
-   "vector search"
+   "vector search",
+   "analytics",
+   "apache2",
+   "foss",
+   "java",
+   "search-engine"
   ],
   "landing": "https://opensearch.org/docs/latest/opensearch/index/",
   "license": "Apache License v2.0",
@@ -15047,7 +15675,7 @@
    "Universit\u00e9 de Lorraine",
    "centre de "
   ],
-  "version": "v4.0.1"
+  "version": "v4.1.1"
  },
  {
   "country": "FR",
@@ -15130,12 +15758,12 @@
    "suse",
    "syst\u00e8me d'exploitation"
   ],
-  "landing": "https://www.opensuse.org/",
+  "landing": "https://www.opensuse.org",
   "license": "GPL",
   "name": "openSUSE",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://build.opensuse.org/",
+  "repo": "https://build.opensuse.org",
   "repo_key": "build.opensuse.org",
   "short_desc": "distribution Linux communautaire",
   "sill_id": 467,
@@ -15144,7 +15772,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "16.0",
+  "version": "16.1",
   "wikidata": "Q16691"
  },
  {
@@ -15158,7 +15786,12 @@
    "services",
    "virtualisation",
    "management",
-   "virtualization"
+   "virtualization",
+   "clustering",
+   "configuration-management",
+   "containers",
+   "discovery",
+   "docker"
   ],
   "landing": "https://www.opensvc.com",
   "license": "GPL-2.0-only",
@@ -15174,8 +15807,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.1",
-  "wikidata": "Q100588070"
+  "version": "2.1"
  },
  {
   "categories": [
@@ -15244,7 +15876,16 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Opnsense",
   "keywords": [
-   "firewall"
+   "firewall",
+   "api",
+   "bsd",
+   "captive-portal",
+   "gui",
+   "hacktoberfest",
+   "ips",
+   "proxy",
+   "routing",
+   "shaping"
   ],
   "landing": "https://opnsense.org/",
   "license": "BSD",
@@ -15306,15 +15947,17 @@
    "syst\u00e8me",
    "system",
    "\u00e9ducation",
-   "education"
+   "education",
+   "accessibilite",
+   "accessibility"
   ],
   "landing": "https://www.osuny.org",
   "license": "MIT licence",
   "name": "osuny",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/osunyorg",
-  "repo_key": "github.com/osunyorg",
+  "repo": "https://github.com/osunyorg/admin",
+  "repo_key": "github.com/osunyorg/admin",
   "short_desc": "Open Source University, la plateforme num\u00e9rique en source ouverte des Universit\u00e9s & des \u00c9coles",
   "sill_id": 336,
   "source": "FR/sill",
@@ -15323,8 +15966,7 @@
    "noesya",
    "other"
   ],
-  "version": "5.2.1",
-  "wikidata": "Q114333380"
+  "version": "v4.1.0"
  },
  {
   "country": "FR",
@@ -15336,9 +15978,15 @@
    "Testing Tool",
    "S\u00e9curit\u00e9",
    "Zed Attack Proxy",
-   "Pentesting"
+   "Pentesting",
+   "appsec",
+   "dast",
+   "hacktoberfest",
+   "opensource",
+   "security",
+   "security-scanner"
   ],
-  "landing": "https://www.zaproxy.org/",
+  "landing": "https://www.zaproxy.org",
   "license": "Apache License v2.0",
   "name": "OWASP ZAP",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15355,8 +16003,7 @@
    "MI/SG/DTNUM/SDAS/BACI/SCPI",
    "MJ"
   ],
-  "version": "2.17.0",
-  "wikidata": "Q18385319"
+  "version": "w2026-11-02"
  },
  {
   "country": "FR",
@@ -15376,7 +16023,7 @@
    "sketch",
    "code cr\u00e9atif"
   ],
-  "landing": "https://p5js.org",
+  "landing": "http://p5js.org/",
   "license": "LGPL",
   "name": "P5.js",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15387,7 +16034,7 @@
   "sill_id": 586,
   "source": "FR/sill",
   "tier": "index",
-  "version": "2.3.4"
+  "version": "v2.4.0-rc.5"
  },
  {
   "categories": [
@@ -15404,7 +16051,7 @@
    "cluster",
    "gestion"
   ],
-  "landing": "https://clusterlabs.org/pacemaker/",
+  "landing": "https://www.clusterlabs.org/pacemaker/",
   "license": "GPL-2.0-only",
   "name": "Pacemaker",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15418,7 +16065,7 @@
   "used_by": [
    "DGDDI"
   ],
-  "version": "3.0.3"
+  "version": "pacemaker-1.1.2-6.el6"
  },
  {
   "categories": [
@@ -15465,7 +16112,8 @@
    "acc\u00e8s",
    "access",
    "NAC",
-   "contr\u00f4le"
+   "contr\u00f4le",
+   "packetfence"
   ],
   "landing": "https://packetfence.org",
   "license": "GNU GPLv2",
@@ -15481,7 +16129,7 @@
   "used_by": [
    "other"
   ],
-  "version": "13.1.0"
+  "version": "v15.2.0"
  },
  {
   "country": "FR",
@@ -15489,7 +16137,18 @@
   "desc_src": "logiciel de conversion de documents",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Pandoc",
-  "landing": "https://pandoc.org/",
+  "keywords": [
+   "commonmark",
+   "converter",
+   "document",
+   "haskell",
+   "markdown",
+   "markup",
+   "pandoc",
+   "presentation",
+   "publishing"
+  ],
+  "landing": "https://pandoc.org",
   "license": "GNU GPLv2",
   "name": "Pandoc",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15511,7 +16170,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire et de la For\u00eat",
    "PREF"
   ],
-  "version": "3.13"
+  "version": "pandoc-server-0.1.4.2"
  },
  {
   "country": "FR",
@@ -15582,13 +16241,17 @@
   "keywords": [
    "PDF",
    "drag & drop",
-   "WYSIWYG"
+   "WYSIWYG",
+   "gtk",
+   "gtk3",
+   "linux",
+   "python3"
   ],
   "license": "GNU General Public License",
   "name": "PDF Arranger",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/pdfarranger/pdfarranger/tree/main",
+  "repo": "https://github.com/pdfarranger/pdfarranger",
   "repo_key": "github.com/pdfarranger/pdfarranger",
   "short_desc": "Diviser, Fusionner, R\u00e9arranger les PDF en Drag &Drop et WYSIWYG",
   "sill_id": 594,
@@ -15604,7 +16267,7 @@
    "SSIC",
    "sdis62"
   ],
-  "version": "1.14.0"
+  "version": "release-0.6"
  },
  {
   "country": "FR",
@@ -15684,6 +16347,7 @@
    "CNRS",
    "CREPS de Nancy",
    "Collectivit\u00e9 territoriale de Martinique",
+   "DDT 41",
    "DDT 72",
    "DDTM 06/DDI",
    "DDTM 56/SUHC/UO",
@@ -15727,7 +16391,7 @@
    "other",
    "socia"
   ],
-  "version": "6.0.9"
+  "version": "6.0.10"
  },
  {
   "categories": [
@@ -15744,7 +16408,10 @@
    "d\u00e9centralis\u00e9",
    "video",
    "sharing",
-   "decentralized"
+   "decentralized",
+   "activitypub",
+   "angular",
+   "p2p"
   ],
   "landing": "https://joinpeertube.org/",
   "license": "AGPL-3.0-or-later",
@@ -15766,7 +16433,7 @@
    "R\u00e9seau Canop\u00e9",
    "Setra_5192"
   ],
-  "version": "8.3.2"
+  "version": "v8.3.2"
  },
  {
   "country": "FR",
@@ -15779,9 +16446,14 @@
    "wireframe",
    "prototypage",
    "prototype",
-   "interface utilisateur"
+   "interface utilisateur",
+   "drawing",
+   "electron",
+   "javascript",
+   "mockup",
+   "nodejs"
   ],
-  "landing": "http://pencil.evolus.vn/",
+  "landing": "http://pencil.evolus.vn",
   "license": "GPL-2.0-only",
   "name": "Pencil Project",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15829,7 +16501,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.18.5",
+  "version": "2.18.6",
   "wikidata": "Q111586053"
  },
  {
@@ -15886,7 +16558,7 @@
    "unveil",
    "pledge"
   ],
-  "landing": "https://perl.org",
+  "landing": "https://dev.perl.org/perl5/",
   "license": "GNU GPLv3",
   "name": "Perl",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15901,7 +16573,7 @@
    "Acad\u00e9mie de Nantes",
    "DGFIP"
   ],
-  "version": "5.44.0"
+  "version": "v5.45.4"
  },
  {
   "country": "FR",
@@ -15921,7 +16593,7 @@
    "WAN",
    "LAN"
   ],
-  "landing": "https://www.pfsense.org/",
+  "landing": "http://www.pfsense.org",
   "license": "Apache License 2.0",
   "name": "pfSense",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -15941,7 +16613,7 @@
    "MJ",
    "Mairie de LOURDES"
   ],
-  "version": "2.9.0"
+  "version": "v2.5.2"
  },
  {
   "country": "FR",
@@ -16072,9 +16744,16 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=phpIPAM",
   "keywords": [
    "gestion",
-   "ip"
+   "ip",
+   "ip-address",
+   "ipam",
+   "management-system",
+   "network-admin",
+   "network-discovery",
+   "network-visualization",
+   "subnet"
   ],
-  "landing": "https://phpipam.net/",
+  "landing": "https://phpipam.net",
   "license": "GNU GPLv3",
   "name": "phpIPAM",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -16106,7 +16785,9 @@
    "unitaire",
    "unit",
    "d\u00e9veloppement",
-   "development"
+   "development",
+   "phpunit",
+   "testing-tools"
   ],
   "landing": "https://phpunit.de/",
   "license": "MIT",
@@ -16122,7 +16803,7 @@
   "used_by": [
    "MEN"
   ],
-  "version": "13.4.5"
+  "version": "13.4.6"
  },
  {
   "country": "FR",
@@ -16133,14 +16814,21 @@
   "keywords": [
    "logiciel",
    "photo",
-   "gestion"
+   "gestion",
+   "cms",
+   "image-gallery",
+   "open-source",
+   "photo-gallery",
+   "photography",
+   "php",
+   "piwigo"
   ],
   "landing": "https://piwigo.org",
   "license": "GNU GPLv2",
   "name": "Piwigo",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/piwigo/piwigo",
+  "repo": "https://github.com/Piwigo/Piwigo",
   "repo_key": "github.com/piwigo/piwigo",
   "short_desc": "Piwigo est une application de gestion d'albums photo pour le web, disponible sous licence GPL.",
   "sill_id": 388,
@@ -16165,7 +16853,7 @@
    "emploi du temps",
    "planning"
   ],
-  "landing": "https://www.planno.fr/",
+  "landing": "www.planningbiblio.fr",
   "license": "GNU GPLv2",
   "name": "Planno",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -16182,7 +16870,7 @@
    "Sciences Po",
    "Universit\u00e9 Jean Moulin Lyon 3"
   ],
-  "version": "26.10.02"
+  "version": "v26.10.02"
  },
  {
   "categories": [
@@ -16200,7 +16888,10 @@
    "mod\u00e9lisation",
    "modeling",
    "sch\u00e9ma",
-   "schematic"
+   "schematic",
+   "diagram-as-code",
+   "diagrams",
+   "diagrams-as-code"
   ],
   "landing": "https://plantuml.com",
   "license": "GPL-3.0-only",
@@ -16220,7 +16911,7 @@
    "FRANCEAGRIMER",
    "INRAE"
   ],
-  "version": "v1.2026.7"
+  "version": "v8059"
  },
  {
   "country": "FR",
@@ -16263,7 +16954,11 @@
    "Docker",
    "d\u00e9ploiement",
    "deployment",
-   "runtime"
+   "runtime",
+   "containers",
+   "kubernetes",
+   "linux",
+   "oci"
   ],
   "landing": "https://podman.io",
   "license": "Apache License v2.0",
@@ -16280,7 +16975,7 @@
    "CentraleSup\u00e9lec",
    "MESR"
   ],
-  "version": "6.1.4"
+  "version": "v6.2.0-rc1"
  },
  {
   "country": "FR",
@@ -16381,8 +17076,7 @@
    "MTE",
    "Sorbonne Universit\u00e9"
   ],
-  "version": "3.11.7",
-  "wikidata": "Q1121334"
+  "version": "v20010228"
  },
  {
   "categories": [
@@ -16397,9 +17091,15 @@
    "administration",
    "serveur de messagerie",
    "mail server",
-   "email"
+   "email",
+   "administration-interface",
+   "mysql",
+   "php",
+   "postfix",
+   "postfixadmin",
+   "postgresql"
   ],
-  "landing": "http://postfixadmin.sourceforge.net/",
+  "landing": "https://postfixadmin.github.io/postfixadmin",
   "license": "GPL-2.0-or-later",
   "name": "postfix.admin",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -16413,8 +17113,7 @@
   "used_by": [
    "INSERM",
    "MTE"
-  ],
-  "wikidata": "Q98731960"
+  ]
  },
  {
   "country": "FR",
@@ -16509,6 +17208,7 @@
    "Rectorat de Strasbourg",
    "SDIS26",
    "SGAMI OUEST",
+   "SGAMI SUD",
    "Saint-Nazaire Agglom\u00e9ration (Carene)",
    "Sorbonne Universit\u00e9",
    "academie d'Aix marseille",
@@ -16588,6 +17288,18 @@
   "desc_src": "Outil d'organisation de conf\u00e9rence : Appel \u00e0 contributions, revue en double-aveugle, affichage du programme, communications avec les conf\u00e9renciers, collecte des diaporamas, collecte des enregistrements vid\u00e9os des conf\u00e9rences ...",
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Pretalx",
+  "keywords": [
+   "call-for-paper",
+   "call-for-papers",
+   "cfp",
+   "conference",
+   "conference-management",
+   "django",
+   "events",
+   "pretalx",
+   "python",
+   "scheduling"
+  ],
   "landing": "https://pretalx.com",
   "license": "Apache 2.0",
   "name": "Pretalx",
@@ -16684,7 +17396,7 @@
    "sketch",
    "code cr\u00e9atif"
   ],
-  "landing": "https://processing.org/",
+  "landing": "https://processing.org",
   "license": "LGPL",
   "name": "Processing",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -16698,7 +17410,7 @@
   "used_by": [
    "\u00e9cole sup\u00e9rieure d'art et design Le Havre Rouen"
   ],
-  "version": "4.5.7"
+  "version": "start"
  },
  {
   "country": "FR",
@@ -16847,7 +17559,7 @@
    "SG",
    "Universit\u00e9 de Franche-Comt\u00e9"
   ],
-  "version": "v3.16.0-rc.2"
+  "version": "v3.16.0"
  },
  {
   "country": "FR",
@@ -17048,23 +17760,24 @@
    "calcul",
    "calculation",
    "droit",
-   "law"
+   "law",
+   "programming-language",
+   "simulation-modeling"
   ],
   "landing": "https://publi.codes",
   "license": "MIT licence",
   "name": "Publicodes",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/betagouv/publicodes",
-  "repo_key": "github.com/betagouv/publicodes",
+  "repo": "https://github.com/publicodes/publicodes",
+  "repo_key": "github.com/publicodes/publicodes",
   "short_desc": "Langage d\u00e9claratif pour mod\u00e9liser des domaines m\u00e9tiers complexes",
   "sill_id": 242,
   "source": "FR/sill",
   "tier": "index",
   "used_by": [
    "other"
-  ],
-  "wikidata": "Q111974596"
+  ]
  },
  {
   "country": "FR",
@@ -17151,14 +17864,18 @@
    "IDE",
    "Python",
    "d\u00e9veloppement",
-   "development"
+   "development",
+   "code-editor",
+   "intellij",
+   "intellij-community",
+   "intellij-platform"
   ],
-  "landing": "https://www.jetbrains.com/pycharm/",
+  "landing": "https://jetbrains.com/idea",
   "license": "Apache-2.0",
   "name": "Pycharm Community Edition",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/JetBrains/intellij-community/tree/master/python",
+  "repo": "https://github.com/JetBrains/intellij-community",
   "repo_key": "github.com/jetbrains/intellij-community",
   "short_desc": "Environnement de d\u00e9veloppement",
   "sill_id": 215,
@@ -17174,7 +17891,7 @@
    "SGDSN: Secr\u00e9tariat G\u00e9n\u00e9ral \u00e0 la D\u00e9fense et \u00e0 la S\u00e9curit\u00e9 Nationale (SPM)",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "2022.1.1"
+  "version": "webstorm/193.5233.13"
  },
  {
   "categories": [
@@ -17193,13 +17910,13 @@
    "code",
    "scripting"
   ],
-  "landing": "https://www.python.org/",
+  "landing": "https://www.python.org",
   "license": "PSF license",
   "name": "Python",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://www.python.org/downloads/source/",
-  "repo_key": "python.org/downloads/source",
+  "repo": "https://github.com/python/cpython",
+  "repo_key": "github.com/python/cpython",
   "short_desc": "Langage de programmation objet, multi-paradigme et multi-plateformes.",
   "sill_id": 294,
   "source": "FR/sill",
@@ -17225,6 +17942,7 @@
    "MESR",
    "MI",
    "MI/SG/DTNUM/SDAIT/BS",
+   "SGAMI SUD",
    "SGC-SIC82",
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 C\u00f4te d'Azur",
@@ -17233,8 +17951,7 @@
    "other",
    "universit\u00e9 lumi\u00e8re lyon 2"
   ],
-  "version": "3.15.2",
-  "wikidata": "Q28865"
+  "version": "v3.16.0a1"
  },
  {
   "country": "FR",
@@ -17309,7 +18026,7 @@
    "pr\u00e9fecture 81",
    "sdjes dsden 54"
   ],
-  "version": "4.2.3"
+  "version": "version1"
  },
  {
   "country": "FR",
@@ -17457,9 +18174,13 @@
    "gestion",
    "conteneurs",
    "management",
-   "containers"
+   "containers",
+   "cattle",
+   "docker",
+   "orchestration",
+   "rancher"
   ],
-  "landing": "https://rancher.com/",
+  "landing": "http://rancher.com",
   "license": "Apache-2.0",
   "name": "Rancher",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -17473,8 +18194,7 @@
   "used_by": [
    "CISR",
    "DGDDI"
-  ],
-  "wikidata": "Q98732014"
+  ]
  },
  {
   "country": "FR",
@@ -17524,9 +18244,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Rclone",
   "keywords": [
-   ""
+   "",
+   "azure-blob",
+   "azure-blob-storage",
+   "azure-files",
+   "backblaze-b2",
+   "cloud-storage",
+   "dropbox",
+   "encryption",
+   "ftp",
+   "fuse-filesystem"
   ],
-  "landing": "https://rclone.org/",
+  "landing": "https://rclone.org",
   "license": "MIT licence",
   "name": "Rclone",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -17541,7 +18270,7 @@
    "06",
    "Arcep"
   ],
-  "version": "1.75.2"
+  "version": "v1.75.2"
  },
  {
   "country": "FR",
@@ -17554,9 +18283,13 @@
    "web",
    "UI",
    "javascript",
-   "typescript"
+   "typescript",
+   "declarative",
+   "frontend",
+   "library",
+   "react"
   ],
-  "landing": "https://react.dev/",
+  "landing": "https://react.dev",
   "license": "MIT licence",
   "name": "React",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -17572,7 +18305,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "19.3.1"
+  "version": "v19.3.1"
  },
  {
   "country": "FR",
@@ -17727,14 +18460,16 @@
    "vnc",
    "ssh",
    "distance",
-   "bureau"
+   "bureau",
+   "gtk",
+   "spice"
   ],
   "landing": "https://remmina.org",
   "license": "GPLv2+",
   "name": "Remmina",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://gitlab.com/Remmina/Remmina.git",
+  "repo": "https://gitlab.com/Remmina/Remmina",
   "repo_key": "gitlab.com/remmina/remmina",
   "short_desc": "Client de contr\u00f4le de bureau \u00e0 distance multi-protocoles.",
   "sill_id": 389,
@@ -17748,7 +18483,7 @@
    "MD",
    "Saint-Nazaire Agglom\u00e9ration (Carene)"
   ],
-  "version": "1.4.39"
+  "version": "v1.4.43"
  },
  {
   "categories": [
@@ -17804,7 +18539,7 @@
    "s\u00e9curit\u00e9",
    "security"
   ],
-  "landing": "https://restic.net/",
+  "landing": "https://restic.net",
   "license": "2-clause BSD",
   "name": "restic",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -17818,7 +18553,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "0.19.1"
+  "version": "v0.19.1"
  },
  {
   "country": "FR",
@@ -17827,14 +18562,22 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=ripgrep",
   "keywords": [
-   "recherche texte cli"
+   "recherche texte cli",
+   "cli",
+   "command-line",
+   "command-line-tool",
+   "gitignore",
+   "grep",
+   "recursively-search",
+   "regex",
+   "ripgrep",
+   "rust"
   ],
-  "landing": "https://github.com/BurntSushi/ripgrep",
   "license": "MIT license",
   "name": "ripgrep",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/BurntSushi/ripgrep.git",
+  "repo": "https://github.com/BurntSushi/ripgrep",
   "repo_key": "github.com/burntsushi/ripgrep",
   "short_desc": "outil de recherche ligne par ligne",
   "sill_id": 429,
@@ -17844,7 +18587,7 @@
    "DGFIP",
    "DINUM"
   ],
-  "version": "15.2.0"
+  "version": "wincolor-0.1.6"
  },
  {
   "country": "FR",
@@ -17865,8 +18608,7 @@
   "sill_id": 516,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.5.2",
-  "wikidata": "Q127784165"
+  "version": "1.5.2"
  },
  {
   "categories": [
@@ -17908,7 +18650,7 @@
    "Universit\u00e9 de Lille",
    "academie de Lyon"
   ],
-  "version": "9.0.0-rc.3"
+  "version": "9.0.0-rc.8"
  },
  {
   "country": "FR",
@@ -18016,8 +18758,7 @@
    "SGCD 51",
    "Setra_5192"
   ],
-  "version": "2025.09.2",
-  "wikidata": "Q4798119"
+  "version": "v2026.10.1+239"
  },
  {
   "country": "FR",
@@ -18026,14 +18767,21 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Rsyslog",
   "keywords": [
-   ""
+   "",
+   "c",
+   "elasticsearch",
+   "kafka",
+   "logging",
+   "mongodb",
+   "rsyslog",
+   "syslog"
   ],
-  "landing": "https://www.rsyslog.com/",
+  "landing": "http://www.rsyslog.com",
   "license": "GNU GPLv3",
   "name": "Rsyslog",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/rsyslog/rsyslog.git",
+  "repo": "https://github.com/rsyslog/rsyslog",
   "repo_key": "github.com/rsyslog/rsyslog",
   "short_desc": "Logiciel libre transf\u00e9rant les messages des journaux d'\u00e9v\u00e9nements sur un r\u00e9seau IP.",
   "sill_id": 387,
@@ -18045,7 +18793,7 @@
    "MESR",
    "MTE"
   ],
-  "version": "8.2608.0"
+  "version": "v8.2610.0"
  },
  {
   "categories": [
@@ -18063,7 +18811,10 @@
    "gestion",
    "management",
    "serveur",
-   "server"
+   "server",
+   "auditing",
+   "compliance",
+   "configuration-management"
   ],
   "landing": "https://www.rudder.io",
   "license": "GPL-3.0-or-later",
@@ -18087,7 +18838,16 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Rufus",
   "keywords": [
-   ""
+   "",
+   "bios",
+   "boot",
+   "bootable-drives",
+   "freedos",
+   "gpt",
+   "grub",
+   "grub4dos",
+   "iso",
+   "mbr"
   ],
   "landing": "https://rufus.ie",
   "license": "GNU GPLv3",
@@ -18106,7 +18866,7 @@
    "Universit\u00e9 de Lorraine",
    "other"
   ],
-  "version": "4.15"
+  "version": "v4.16_BETA"
  },
  {
   "country": "FR",
@@ -18121,9 +18881,12 @@
    "jobs",
    "workflow",
    "automatisation",
-   "ordonnancement"
+   "ordonnancement",
+   "ansible",
+   "audit",
+   "category-distributed"
   ],
-  "landing": "https://www.rundeck.com/",
+  "landing": "http://rundeck.org",
   "license": "Apache-2.0",
   "name": "Rundeck",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -18140,7 +18903,7 @@
    "DGDDI",
    "MEN"
   ],
-  "version": "7.0.1"
+  "version": "v6.3.0"
  },
  {
   "country": "FR",
@@ -18150,9 +18913,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=RustDesk",
   "keywords": [
    "bureau",
-   "distance"
+   "distance",
+   "android",
+   "anydesk",
+   "dart",
+   "flatpak",
+   "flutter",
+   "flutter-apps",
+   "ios",
+   "linux"
   ],
-  "landing": "https://rustdesk.com/",
+  "landing": "https://rustdesk.com",
   "license": "GNU aGPL v3",
   "name": "RustDesk",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -18571,9 +19342,13 @@
    "g\u00e9olocalisation",
    "API",
    "mapping",
-   "geolocation"
+   "geolocation",
+   "3d",
+   "geoportail",
+   "geoportal-access-lib",
+   "geoportal-extensions",
+   "itowns"
   ],
-  "landing": "https://geoservices.ign.fr/documentation/utilisation_web/sdk.html",
   "license": "CECILL-B",
   "name": "SDK G\u00e9oportail",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -18627,9 +19402,16 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Seafile",
   "keywords": [
    "dropbox alternative",
-   "nextcloud avec delta sync"
+   "nextcloud avec delta sync",
+   "cloud-storage",
+   "document-management",
+   "file-sharing",
+   "file-sync",
+   "knowledge-management",
+   "markdown",
+   "wiki"
   ],
-  "landing": "https://www.seafile.com/en/home/",
+  "landing": "http://seafile.com/",
   "license": "GNU GPLv3",
   "name": "Seafile",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -18643,7 +19425,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "9.0.15"
+  "version": "v9.0.22"
  },
  {
   "categories": [
@@ -18691,15 +19473,18 @@
    "web",
    "browser testing",
    "automation",
-   "web testing"
+   "web testing",
+   "electron",
+   "playback",
+   "record"
   ],
-  "landing": "https://selenium.dev/",
+  "landing": "https://selenium.dev/selenium-ide/",
   "license": "Apache-2.0",
   "name": "Selenium IDE",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/SeleniumHQ/",
-  "repo_key": "github.com/seleniumhq",
+  "repo": "https://github.com/SeleniumHQ/selenium-ide",
+  "repo_key": "github.com/seleniumhq/selenium-ide",
   "short_desc": "Automatisation des tests Web",
   "sill_id": 129,
   "source": "FR/sill",
@@ -18710,7 +19495,7 @@
    "DGFIP",
    "D\u00e9partement de la Vend\u00e9e"
   ],
-  "version": "4.52.0"
+  "version": "v4.1.0-beta.3"
  },
  {
   "categories": [
@@ -18756,7 +19541,12 @@
    "sharex",
    "getsharex",
    "share",
-   "x"
+   "x",
+   "avalonia",
+   "capture",
+   "color-picker",
+   "csharp",
+   "dropbox"
   ],
   "landing": "https://getsharex.com",
   "license": "GPL",
@@ -18775,8 +19565,7 @@
    "MI",
    "Universit\u00e9 de Lille"
   ],
-  "version": "21.0.0",
-  "wikidata": "Q17048664"
+  "version": "v22.3.0"
  },
  {
   "categories": [
@@ -18846,9 +19635,14 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Shotcut",
   "keywords": [
-   "EPLE"
+   "EPLE",
+   "cross-platform",
+   "gplv3",
+   "mlt",
+   "shotcut",
+   "video-editor"
   ],
-  "landing": "https://shotcut.org/",
+  "landing": "https://www.shotcut.org",
   "license": "GNU GPLv3",
   "name": "Shotcut",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -18887,9 +19681,9 @@
    "data protection",
    "outil",
    "tool",
-   "pas les SSD"
+   "pas les SSD",
+   "buildroot"
   ],
-  "landing": "https://github.com/PartialVolume/shredos.x86_64",
   "license": "GPL v2",
   "name": "ShredOS",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -18907,7 +19701,7 @@
    "MTE",
    "SGCD 62"
   ],
-  "version": "v2024.11_27_x86-64_0.38"
+  "version": "v2025.11_32_x86-64_0.43.1"
  },
  {
   "country": "FR",
@@ -18941,7 +19735,13 @@
   "keywords": [
    "Astrophotographie",
    "Photom\u00e9trie",
-   "Traitement d'images"
+   "Traitement d'images",
+   "astronomy",
+   "image processing software",
+   "linux",
+   "osx",
+   "preprocessing",
+   "windows"
   ],
   "landing": "https://siril.org",
   "license": "GPLv3+",
@@ -18957,7 +19757,7 @@
   "used_by": [
    "CNRS"
   ],
-  "version": "1.4.2"
+  "version": "1.4.5"
  },
  {
   "country": "FR",
@@ -18983,7 +19783,14 @@
   "keywords": [
    "snclient",
    "nrpe",
-   "nsclient"
+   "nsclient",
+   "agent",
+   "bsd",
+   "golang",
+   "icinga",
+   "linux",
+   "macos",
+   "monitoring"
   ],
   "landing": "https://omd.consol.de/docs/snclient/",
   "license": "MIT licence",
@@ -18999,7 +19806,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "1.01"
+  "version": "v1.01"
  },
  {
   "categories": [
@@ -19055,9 +19862,11 @@
    "calendar",
    "contacts",
    "synchronisation",
-   "synchronization"
+   "synchronization",
+   "angularjs-material",
+   "objective-c"
   ],
-  "landing": "https://sogo.nu/",
+  "landing": "http://sogo.nu/",
   "license": "GPL-3.0-only",
   "name": "SOGo",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19076,7 +19885,7 @@
    "Universit\u00e9 Le Havre Normandie",
    "other"
   ],
-  "version": "5.12.12"
+  "version": "SOGo-5.12.13"
  },
  {
   "categories": [
@@ -19125,9 +19934,14 @@
    "code analysis",
    "CheckStyle",
    "qualit\u00e9",
-   "quality"
+   "quality",
+   "code-quality",
+   "command-line-tool",
+   "hacktoberfest",
+   "java",
+   "static-analysis"
   ],
-  "landing": "http://checkstyle.sourceforge.net/",
+  "landing": "https://checkstyle.org",
   "license": "LGPL-3.0-only",
   "name": "SonarQube Plugins : CheckStyle",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19158,7 +19972,6 @@
    "static analysis",
    "bug detection"
   ],
-  "landing": "http://findbugs.sourceforge.net/",
   "license": "LGPL-3.0-only",
   "name": "SonarQube Plugins : FindBugs",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19168,8 +19981,7 @@
   "short_desc": "Tableau de bord d'indicateurs de qualit\u00e9",
   "sill_id": 134,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731946"
+  "tier": "index"
  },
  {
   "categories": [
@@ -19185,9 +19997,14 @@
    "code analysis",
    "Pmd",
    "qualit\u00e9",
-   "quality"
+   "quality",
+   "apex",
+   "code-analysis",
+   "code-quality",
+   "hacktoberfest",
+   "java"
   ],
-  "landing": "https://pmd.github.io/",
+  "landing": "https://pmd.github.io",
   "license": "LGPL-3.0-only",
   "name": "SonarQube Plugins : Pmd",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19197,8 +20014,7 @@
   "short_desc": "Tableau de bord d'indicateurs de qualit\u00e9",
   "sill_id": 166,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731974"
+  "tier": "index"
  },
  {
   "categories": [
@@ -19275,7 +20091,7 @@
    "Sorbonne Universit\u00e9",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "4.4.28"
+  "version": "4.4.30"
  },
  {
   "categories": [
@@ -19311,7 +20127,7 @@
    "MI",
    "other"
   ],
-  "version": "v4.2.0-RC1"
+  "version": "v4.2.0-RC2"
  },
  {
   "country": "FR",
@@ -19352,9 +20168,12 @@
    "code",
    "coder",
    "programmer",
-   "debugger"
+   "debugger",
+   "anaconda",
+   "anaconda-distribution",
+   "ide"
   ],
-  "landing": "https://www.spyder-ide.org/",
+  "landing": "https://www.spyder-ide.org",
   "license": "MIT",
   "name": "Spyder",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19369,7 +20188,7 @@
    "ACADEMIE DE PARIS",
    "Acad\u00e9mie de Limoges"
   ],
-  "version": "6.1.8"
+  "version": "v6.2.0a3"
  },
  {
   "categories": [
@@ -19617,14 +20436,17 @@
    "web",
    "proxy server",
    "caching",
-   "web filtering"
+   "web filtering",
+   "ecap",
+   "ftp",
+   "http"
   ],
   "landing": "https://www.squid-cache.org/",
   "license": "GPL-3.0-only",
   "name": "Squid",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/squid-cache/squid.git",
+  "repo": "https://github.com/squid-cache/squid",
   "repo_key": "github.com/squid-cache/squid",
   "short_desc": "Proxy",
   "sill_id": 138,
@@ -19637,8 +20459,7 @@
    "MESR",
    "eipi"
   ],
-  "version": "7.7",
-  "wikidata": "Q841783"
+  "version": "take09"
  },
  {
   "categories": [
@@ -19657,7 +20478,9 @@
    "integration",
    "r\u00e9seau",
    "network",
-   "DevOps"
+   "DevOps",
+   "auto-remediation",
+   "chatops"
   ],
   "landing": "https://stackstorm.com/",
   "license": "Apache License v2.0",
@@ -19673,7 +20496,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "3.9.0"
+  "version": "v3.9.0"
  },
  {
   "country": "FR",
@@ -19739,7 +20562,7 @@
   "keywords": [
    ""
   ],
-  "landing": "https://nikse.dk/subtitleedit/",
+  "landing": "http://www.nikse.dk/SubtitleEdit/Help",
   "license": "GNU GPLv3",
   "name": "Subtitle Edit",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19753,8 +20576,7 @@
   "used_by": [
    "SG/DNUM/UNI/DSP/GASTA/PSTITM"
   ],
-  "version": "5.3.0",
-  "wikidata": "Q7632233"
+  "version": "v5.5.0-beta2"
  },
  {
   "categories": [
@@ -19789,7 +20611,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "2.0.0"
+  "version": "v2.0.0"
  },
  {
   "categories": [
@@ -19813,8 +20635,8 @@
   "name": "SuiteCRM",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/SuiteCRM/SuiteCRM-Core/releases",
-  "repo_key": "github.com/suitecrm/suitecrm-core/releases",
+  "repo": "https://github.com/SuiteCRM/SuiteCRM-Core",
+  "repo_key": "github.com/suitecrm/suitecrm-core",
   "short_desc": "Free and open source customer relationship management software",
   "sill_id": 257,
   "source": "FR/sill",
@@ -19822,7 +20644,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "8.5.1"
+  "version": "v8.10.2"
  },
  {
   "country": "FR",
@@ -19837,9 +20659,12 @@
    "rapide",
    "l\u00e9ger",
    "lecteur",
-   "PDF"
+   "PDF",
+   "c",
+   "c-plus-plus",
+   "pdf-viewer"
   ],
-  "landing": "https://www.sumatrapdfreader.org",
+  "landing": "http://www.sumatrapdfreader.org",
   "license": "GNU GPLv3",
   "name": "SumatraPDF",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -19873,7 +20698,7 @@
    "acad\u00e9mie de Nouvelle-Cal\u00e9donie",
    "other"
   ],
-  "version": "3.6.1"
+  "version": "3.6.1rel"
  },
  {
   "categories": [
@@ -19951,13 +20776,12 @@
    "container orchestration",
    "clustering"
   ],
-  "landing": "http://www.swarm.org",
   "license": "AGPL-3.0-only",
   "name": "Swarm",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/docker/swarm",
-  "repo_key": "github.com/docker/swarm",
+  "repo": "https://github.com/docker-archive/classicswarm",
+  "repo_key": "github.com/docker-archive/classicswarm",
   "short_desc": "Orchestration",
   "sill_id": 140,
   "source": "FR/sill",
@@ -19965,8 +20789,7 @@
   "used_by": [
    "ASP",
    "CNRS"
-  ],
-  "wikidata": "Q7653883"
+  ]
  },
  {
   "categories": [
@@ -20010,9 +20833,13 @@
    "gestion",
    "management",
    "syst\u00e8me",
-   "system"
+   "system",
+   "angular",
+   "elasticsearch",
+   "managment",
+   "php"
   ],
-  "landing": "https://sygefor.reseau-urfist.fr/",
+  "landing": "http://sygefor.conjecto.com",
   "license": "CEA CNRS INRIA Logiciel Libre",
   "name": "SYGEFOR (SYst\u00e8me de GEstion des FORmations)",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20040,7 +20867,11 @@
    "d\u00e9veloppement",
    "development",
    "web",
-   "application"
+   "application",
+   "bundle",
+   "hacktoberfest",
+   "php-framework",
+   "symfony"
   ],
   "landing": "https://symfony.com",
   "license": "MIT licence",
@@ -20062,7 +20893,7 @@
    "MESR",
    "MI"
   ],
-  "version": "8.1.10"
+  "version": "vPR12"
  },
  {
   "categories": [
@@ -20116,7 +20947,10 @@
    "file storage",
    "sharing",
    "collaboration",
-   "syncing"
+   "syncing",
+   "cloud-alternative",
+   "collaborative-editing",
+   "dropbox"
   ],
   "landing": "https://sync-in.com",
   "license": "AGPLv3+",
@@ -20131,7 +20965,8 @@
   "tier": "index",
   "used_by": [
    "Mairie de Saint-Joseph (La R\u00e9union)"
-  ]
+  ],
+  "version": "v2.6.2"
  },
  {
   "country": "FR",
@@ -20140,7 +20975,11 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Syncthing",
   "keywords": [
-   ""
+   "",
+   "go",
+   "p2p",
+   "peer-to-peer",
+   "synchronization"
   ],
   "landing": "https://syncthing.net/",
   "license": "MPL-2.0",
@@ -20156,7 +20995,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "2.1.7"
+  "version": "v2.1.7"
  },
  {
   "categories": [
@@ -20214,9 +21053,12 @@
    "serveur",
    "log management",
    "centralization",
-   "server"
+   "server",
+   "c",
+   "elastic",
+   "kafka"
   ],
-  "landing": "https://www.syslog-ng.com/products/open-source-log-management/",
+  "landing": "https://www.syslog-ng.com",
   "license": "LGPL-2.1-only, LGPL-2.0-only, LGPL-3.0-only",
   "name": "Syslog-ng",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20231,7 +21073,7 @@
    "MD",
    "MS"
   ],
-  "version": "4.12.0"
+  "version": "v3.5.6"
  },
  {
   "categories": [
@@ -20256,8 +21098,8 @@
   "name": "Taiga",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/kaleidos-ventures/taiga-back",
-  "repo_key": "github.com/kaleidos-ventures/taiga-back",
+  "repo": "https://github.com/taigaio/taiga-back",
+  "repo_key": "github.com/taigaio/taiga-back",
   "short_desc": "Syst\u00e8me de gestion de projet gratuit et open-source.",
   "sill_id": 282,
   "source": "FR/sill",
@@ -20266,8 +21108,7 @@
    "MTE",
    "Rectorat de Strasbourg",
    "Universit\u00e9 Grenoble Alpes"
-  ],
-  "wikidata": "Q22909254"
+  ]
  },
  {
   "categories": [
@@ -20319,9 +21160,12 @@
    "audit",
    "web accessibility",
    "testing",
-   "auditing"
+   "auditing",
+   "a11y",
+   "a11y-testing",
+   "accessibility"
   ],
-  "landing": "http://www.tanaguru.com/fr/",
+  "landing": "my.tanaguru.com",
   "license": "AGPL-3.0-only",
   "name": "Tanaguru",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20336,7 +21180,7 @@
    "MC",
    "SIU Unisciel - Universit\u00e9 de Lille"
   ],
-  "version": "5.3.0"
+  "version": "6.1.0"
  },
  {
   "country": "FR",
@@ -20347,9 +21191,10 @@
   "keywords": [
    "messagerie instantan\u00e9e",
    "matrix",
-   "element"
+   "element",
+   "tchap"
   ],
-  "landing": "https://tchap.numerique.gouv.fr/",
+  "landing": "https://www.tchap.gouv.fr/",
   "license": "AGPLv3",
   "name": "Tchap",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20366,8 +21211,7 @@
    "MASAF : Minist\u00e8re de l'Agriculture et de la Souverainet\u00e9 Alimentaire",
    "academie d'Aix marseille"
   ],
-  "version": "1.11.44",
-  "wikidata": "Q137106265"
+  "version": "v1.11.44"
  },
  {
   "categories": [
@@ -20386,7 +21230,7 @@
    "gestion",
    "management"
   ],
-  "landing": "https://trunkdataplatform.io",
+  "landing": "https://trunkdataplatform.io/",
   "license": "Apache License v2.0",
   "name": "TDP",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20414,7 +21258,11 @@
    "taxonomies",
    "multilingue",
    "serveur",
-   "SKOS"
+   "SKOS",
+   "classification",
+   "glossary",
+   "knowledge",
+   "thesaurus"
   ],
   "landing": "https://vocabularyserver.com",
   "license": "GPL",
@@ -20430,8 +21278,7 @@
   "used_by": [
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "3.6.2",
-  "wikidata": "Q6140868"
+  "version": "v3.6.2"
  },
  {
   "country": "FR",
@@ -20440,9 +21287,14 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Terraform",
   "keywords": [
-   ""
+   "",
+   "cloud",
+   "cloud-management",
+   "graph",
+   "infrastructure-as-code",
+   "terraform"
   ],
-  "landing": "https://www.terraform.io/",
+  "landing": "http://developer.hashicorp.com/terraform",
   "license": "MPL-2.0",
   "name": "Terraform",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20453,7 +21305,7 @@
   "sill_id": 472,
   "source": "FR/sill",
   "tier": "index",
-  "version": "1.17.1"
+  "version": "v1.17.1"
  },
  {
   "country": "FR",
@@ -20473,7 +21325,7 @@
    "organisation",
    "gestion de donn\u00e9es"
   ],
-  "landing": "https://territoires.makina-corpus.com/terrra-visu",
+  "landing": "https://demo-terravisu-territoires.makina-corpus.com/",
   "license": "MIT",
   "name": "TerraVisu",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20539,7 +21391,7 @@
   "used_by": [
    "AC"
   ],
-  "version": "1.9.20-20251208"
+  "version": "PRE-DB-CHANGES-1.9.18"
  },
  {
   "country": "FR",
@@ -20551,9 +21403,12 @@
    "python",
    "programmation",
    "IDE",
-   "\u00e9ducation"
+   "\u00e9ducation",
+   "learning-programming",
+   "learning-python",
+   "thonny"
   ],
-  "landing": "https://thonny.org/",
+  "landing": "https://thonny.org",
   "license": "MIT licence",
   "name": "Thonny",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20569,7 +21424,7 @@
    "MESRI: Minist\u00e8re de l'Enseignement Sup\u00e9rieur, de la Recherche et de l'Innovation",
    "academie d'Aix marseille"
   ],
-  "version": "5.0.1"
+  "version": "v5.0.1"
  },
  {
   "country": "FR",
@@ -20585,18 +21440,17 @@
    "ticket management",
    "project tracking"
   ],
-  "landing": "http://plugins.glpi-project.org/#/plugin/timelineticket",
+  "landing": "https://github.com/pluginsGLPI/timelineticket",
   "license": "GPL-2.0-only",
   "name": "TimeLineTicket",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/pluginsGLPI/timelineticket.git",
+  "repo": "https://github.com/pluginsGLPI/timelineticket",
   "repo_key": "github.com/pluginsglpi/timelineticket",
   "short_desc": "Affichage graphique des d\u00e9lais de prise en compte des incidents + indicateurs sous forme de rapports",
   "sill_id": 148,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731982"
+  "tier": "index"
  },
  {
   "country": "FR",
@@ -20605,9 +21459,18 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Tiptap",
   "keywords": [
-   "text editor"
+   "text editor",
+   "editor",
+   "javascript",
+   "js",
+   "prosemirror",
+   "react",
+   "renderless-components",
+   "rich-text",
+   "tiptap",
+   "vue"
   ],
-  "landing": "https://tiptap.dev/",
+  "landing": "https://tiptap.dev",
   "license": "MIT",
   "name": "Tiptap",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20621,8 +21484,7 @@
   "used_by": [
    "MI"
   ],
-  "version": "3.32.0",
-  "wikidata": "Q110643961"
+  "version": "v3.33.0"
  },
  {
   "country": "FR",
@@ -20638,7 +21500,6 @@
    "Debian GNU/Linux",
    "d\u00e9veloppement"
   ],
-  "landing": "https://tmux.github.io/",
   "license": "OpenBSD License",
   "name": "tmux",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20762,9 +21623,11 @@
    "network",
    "HTTP",
    "s\u00e9curit\u00e9",
-   "security"
+   "security",
+   "consul",
+   "docker"
   ],
-  "landing": "https://traefik.io/traefik/",
+  "landing": "https://traefik.io",
   "license": "MIT license",
   "name": "Traefik Proxy",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20779,8 +21642,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "3.7.17",
-  "wikidata": "Q96332968"
+  "version": "v3.8.0-rc.1"
  },
  {
   "country": "FR",
@@ -20790,9 +21652,16 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=transfer.sh",
   "keywords": [
    "transfert",
-   "fichiers"
+   "fichiers",
+   "docker",
+   "golang",
+   "hacktoberfest",
+   "hacktoberfest2021",
+   "share",
+   "transfer",
+   "transfersh"
   ],
-  "landing": "https://transfer.sh",
+  "landing": "https://github.com/dutchcoders/transfer.sh",
   "license": "MIT",
   "name": "transfer.sh",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20824,9 +21693,11 @@
    "security",
    "conteneur",
    "container",
-   "image"
+   "image",
+   "containers",
+   "devsecops"
   ],
-  "landing": "https://aquasecurity.github.io/trivy",
+  "landing": "https://trivy.dev",
   "license": "Apache-2.0",
   "name": "Trivy",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20855,9 +21726,11 @@
    "JavaScript",
    "TypeScript",
    "backend",
-   "server"
+   "server",
+   "next",
+   "nextjs"
   ],
-  "landing": "https://trpc.io/",
+  "landing": "https://tRPC.io",
   "license": "MIT licence",
   "name": "trpc",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -20872,8 +21745,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "11.22.1",
-  "wikidata": "Q118629419"
+  "version": "v11.25.2"
  },
  {
   "country": "FR",
@@ -20921,7 +21793,12 @@
    "emotion",
    "framwork",
    "npm",
-   "library"
+   "library",
+   "css-in-js",
+   "jss",
+   "material-ui",
+   "nextjs",
+   "react"
   ],
   "landing": "https://tss-react.dev",
   "license": "MIT",
@@ -20938,7 +21815,7 @@
    "DINUM",
    "MS"
   ],
-  "version": "4.9.21"
+  "version": "v4.9.21"
  },
  {
   "categories": [
@@ -21059,9 +21936,12 @@
    "latex",
    "typesetting",
    "balisage l\u00e9ger",
-   "markdown"
+   "markdown",
+   "compiler",
+   "markup",
+   "typst"
   ],
-  "landing": "https://typst.app/",
+  "landing": "https://typst.app",
   "license": "Apache License v2.0",
   "name": "Typst",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21079,7 +21959,7 @@
    "DINUM",
    "Education Nationale"
   ],
-  "version": "0.15.1"
+  "version": "v23-03-28"
  },
  {
   "country": "FR",
@@ -21093,9 +21973,12 @@
    "ads",
    "publicit\u00e9s",
    "adblocker",
-   "bloqueur de publicit\u00e9s"
+   "bloqueur de publicit\u00e9s",
+   "blocker",
+   "browser-extension",
+   "chromium",
+   "firefox"
   ],
-  "landing": "https://github.com/gorhill/uBlock",
   "license": "GPL-3.0-only",
   "name": "uBlock Origin",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21135,7 +22018,7 @@
    "academie d'Aix marseille",
    "dipn78/sdan"
   ],
-  "version": "1.75.0"
+  "version": "npm_0.1.11"
  },
  {
   "country": "FR",
@@ -21232,7 +22115,11 @@
    "open data",
    "donn\u00e9es ouvertes",
    "catalogue",
-   "catalog"
+   "catalog",
+   "flask",
+   "flask-restplus",
+   "opendata",
+   "portal"
   ],
   "landing": "http://udata.readthedocs.org",
   "license": "AGPL-3.0-only",
@@ -21248,8 +22135,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "17.20.0",
-  "wikidata": "Q99493159"
+  "version": "v17.23.0"
  },
  {
   "country": "FR",
@@ -21295,7 +22181,7 @@
    "g\u00e9ographie",
    "webmapping"
   ],
-  "landing": "https://umap.openstreetmap.fr/",
+  "landing": "https://umap-project.org",
   "license": "BSD-3.0",
   "name": "uMap",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21312,8 +22198,7 @@
    "Fabrique de la donn\u00e9e territoriale de l'IGN",
    "Lyc\u00e9e des m\u00e9tiers entre Meurthe et Sanon"
   ],
-  "version": "3.8.1",
-  "wikidata": "Q28502462"
+  "version": "4.0.0a0"
  },
  {
   "country": "FR",
@@ -21357,20 +22242,19 @@
    "supprimer",
    "remove",
    "logiciel",
-   "software"
+   "software",
+   "sync-org-files"
   ],
-  "landing": "http://plugins.glpi-project.org/#/plugin/uninstall",
   "license": "GPL-2.0-only",
   "name": "Uninstall",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/pluginsGLPI/uninstall.git",
+  "repo": "https://github.com/pluginsGLPI/uninstall",
   "repo_key": "github.com/pluginsglpi/uninstall",
   "short_desc": "D\u00e9sinstallation d'objets inventori\u00e9s",
   "sill_id": 151,
   "source": "FR/sill",
-  "tier": "index",
-  "wikidata": "Q98731985"
+  "tier": "index"
  },
  {
   "country": "FR",
@@ -21400,9 +22284,11 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=UpdatEngine-NG",
   "keywords": [
    "installation",
-   "packages"
+   "packages",
+   "deploy-tool",
+   "deployment",
+   "deployment-automation"
   ],
-  "landing": "https://updatengine-ng.com/",
   "license": "GNU GPLv2 ",
   "name": "UpdatEngine-NG",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21431,14 +22317,19 @@
    "web",
    "\u00e9ducation",
    "portal",
-   "education"
+   "education",
+   "academic",
+   "college",
+   "enterprise",
+   "gradle",
+   "hacktoberfest"
   ],
   "landing": "https://www.apereo.org/projects/uportal",
   "license": "Apache-2.0",
   "name": "uPortal",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/uPortal-Project/uPortal/",
+  "repo": "https://github.com/uPortal-Project/uPortal",
   "repo_key": "github.com/uportal-project/uportal",
   "short_desc": "Portail pour l'enseignement sup\u00e9rieur et le secondaire",
   "sill_id": 220,
@@ -21447,7 +22338,7 @@
   "used_by": [
    "other"
   ],
-  "version": "5.17.9"
+  "version": "v5.17.9"
  },
  {
   "country": "FR",
@@ -21458,9 +22349,16 @@
   "keywords": [
    "supervision",
    "monitoring",
-   "sonde"
+   "sonde",
+   "docker",
+   "monitor",
+   "responsive",
+   "self-hosted",
+   "selfhosted",
+   "single-page-app",
+   "socket-io"
   ],
-  "landing": "https://uptime.kuma.pet/",
+  "landing": "https://uptime.kuma.pet",
   "license": "MIT",
   "name": "Uptime Kuma",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21477,8 +22375,7 @@
    "MD",
    "MEN"
   ],
-  "version": "2.5.9",
-  "wikidata": "Q118611125"
+  "version": "2.5.9"
  },
  {
   "country": "FR",
@@ -21487,7 +22384,11 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Vagrant",
   "keywords": [
-   "virtualisation"
+   "virtualisation",
+   "automation",
+   "ruby",
+   "vagrant",
+   "virtualization"
   ],
   "landing": "https://www.vagrantup.com",
   "license": "MIT licence",
@@ -21504,7 +22405,7 @@
    "DINUM",
    "MD"
   ],
-  "version": "2.4.9"
+  "version": "v2.4.9"
  },
  {
   "categories": [
@@ -21521,15 +22422,19 @@
    "acc\u00e9l\u00e9ration",
    "acceleration",
    "serveur web",
-   "web server"
+   "web server",
+   "caching",
+   "high-performance",
+   "http",
+   "reverse-proxy"
   ],
-  "landing": "https://vinyl-cache.org",
+  "landing": "https://www.varnish-cache.org",
   "license": "BSD-3-Clause",
   "name": "Varnish",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://code.vinyl-cache.org/vinyl-cache/vinyl-cache",
-  "repo_key": "code.vinyl-cache.org/vinyl-cache/vinyl-cache",
+  "repo": "https://github.com/varnishcache/varnish-cache",
+  "repo_key": "github.com/varnishcache/varnish-cache",
   "short_desc": "Cache web",
   "sill_id": 152,
   "source": "FR/sill",
@@ -21537,8 +22442,7 @@
   "used_by": [
    "DR67-SNSSI"
   ],
-  "version": "9.0.0",
-  "wikidata": "Q1602447"
+  "version": "varnish-8.0.0"
  },
  {
   "categories": [
@@ -21638,9 +22542,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Ventoy",
   "keywords": [
    "usb",
-   "iso"
+   "iso",
+   "arm64",
+   "auto-install",
+   "bootable-usb",
+   "bsd",
+   "chromeos",
+   "iso-files",
+   "legacy",
+   "linux"
   ],
-  "landing": "https://www.ventoy.net/en/",
+  "landing": "https://www.ventoy.net",
   "license": "GNU GPLv3",
   "name": "Ventoy",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21661,7 +22573,7 @@
    "MI",
    "Prefecture 21"
   ],
-  "version": "1.1.18"
+  "version": "v1.1.18"
  },
  {
   "categories": [
@@ -21727,7 +22639,7 @@
    "MI",
    "acad\u00e9mie de Nouvelle-Cal\u00e9donie"
   ],
-  "version": "4.11.4"
+  "version": "v4.99.0"
  },
  {
   "country": "FR",
@@ -21807,9 +22719,12 @@
    "d\u00e9veloppement",
    "development",
    "programmation",
-   "programming"
+   "programming",
+   "c",
+   "cross-platform",
+   "text-editor"
   ],
-  "landing": "https://www.vim.org/",
+  "landing": "https://www.vim.org",
   "license": "Vim license",
   "name": "Vim",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21843,7 +22758,7 @@
    "other",
    "universit\u00e9 caen normandie"
   ],
-  "version": "9.2"
+  "version": "v9.2.1302"
  },
  {
   "country": "FR",
@@ -21889,9 +22804,11 @@
    "tableur",
    "spreadsheet",
    "terminal",
-   "CLI"
+   "CLI",
+   "csv",
+   "datajournalism"
   ],
-  "landing": "https://visidata.org/",
+  "landing": "http://visidata.org",
   "license": "GNU GPLv3",
   "name": "VisiData",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -21905,7 +22822,7 @@
   "used_by": [
    "DINUM"
   ],
-  "version": "3.5"
+  "version": "v3.5"
  },
  {
   "country": "FR",
@@ -21922,7 +22839,8 @@
    "EDI",
    "integrated development environment",
    "IDE",
-   ""
+   "",
+   "editor"
   ],
   "landing": "https://code.visualstudio.com",
   "license": "MIT licence",
@@ -21938,7 +22856,7 @@
   "used_by": [
    "CentraleSup\u00e9lec"
   ],
-  "version": "1.142.0"
+  "version": "vsda-v1.39.1"
  },
  {
   "country": "FR",
@@ -21976,7 +22894,8 @@
    "num\u00e9rique",
    "digital",
    "documents",
-   "administration"
+   "administration",
+   "vitam"
   ],
   "landing": "https://www.programmevitam.fr/",
   "license": "licence ouverte 2.0",
@@ -21995,7 +22914,7 @@
    "Prefecture 21",
    "Sciences Po"
   ],
-  "version": "version 9"
+  "version": "9.1.0"
  },
  {
   "country": "FR",
@@ -22008,9 +22927,14 @@
    "SPA",
    "npm",
    "react",
-   "javascript bundler"
+   "javascript bundler",
+   "build-tool",
+   "dev-server",
+   "frontend",
+   "hmr",
+   "vite"
   ],
-  "landing": "https://vite.dev/",
+  "landing": "http://vite.dev",
   "license": "MIT licence",
   "name": "ViteJS",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22026,7 +22950,7 @@
    "Beta.gouv",
    "DINUM"
   ],
-  "version": "8.3.5"
+  "version": "v8.3.6"
  },
  {
   "country": "FR",
@@ -22131,9 +23055,13 @@
    "code",
    "d\u00e9veloppement",
    "development",
-   "vscode"
+   "vscode",
+   "editor",
+   "floss",
+   "ide",
+   "open-source-licensing"
   ],
-  "landing": "https://vscodium.com/",
+  "landing": "https://vscodium.com",
   "license": "MIT licence",
   "name": "VSCodium",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22174,7 +23102,7 @@
    "minist\u00e8re int\u00e9rieur",
    "other"
   ],
-  "version": "1.135.06055"
+  "version": "1.143.17232"
  },
  {
   "country": "FR",
@@ -22276,9 +23204,13 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Wagtail",
   "keywords": [
-   "CMS"
+   "CMS",
+   "django",
+   "hacktoberfest",
+   "python",
+   "wagtail"
   ],
-  "landing": "http://wagtail.io",
+  "landing": "https://wagtail.org",
   "license": "BSD",
   "name": "Wagtail",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22289,7 +23221,7 @@
   "sill_id": 598,
   "source": "FR/sill",
   "tier": "index",
-  "version": "8.0.1"
+  "version": "v8.1"
  },
  {
   "country": "FR",
@@ -22304,7 +23236,7 @@
    "software",
    "logiciel"
   ],
-  "landing": "https://www.tranquil.it/",
+  "landing": "https://www.wapt.fr/en",
   "license": "GPL-3.0-only",
   "name": "WAPT Community",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22323,8 +23255,7 @@
    "MC",
    "MESR"
   ],
-  "version": "2.7.0.19598",
-  "wikidata": "Q50829216"
+  "version": "wapt-1.5.0.12-amo"
  },
  {
   "country": "FR",
@@ -22427,9 +23358,12 @@
    "t\u00e2ches",
    "tasks",
    "productivit\u00e9",
-   "productivity"
+   "productivity",
+   "docker-image",
+   "foss",
+   "javascript"
   ],
-  "landing": "https://wekan.github.io",
+  "landing": "https://wekan.fi",
   "license": "MIT",
   "name": "Wekan",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22453,7 +23387,7 @@
    "Universit\u00e9 de Limoges",
    "other"
   ],
-  "version": "8.17"
+  "version": "v13.00"
  },
  {
   "country": "FR",
@@ -22463,14 +23397,19 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=Wiki.js",
   "keywords": [
    "wiki",
-   "documentation"
+   "documentation",
+   "cross-platform",
+   "git",
+   "markdown",
+   "nodejs",
+   "open-source"
   ],
-  "landing": "https://js.wiki/",
+  "landing": "https://beta.js.wiki",
   "license": "AGPLv3",
   "name": "Wiki.js",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/Requarks/wiki",
+  "repo": "https://github.com/requarks/wiki",
   "repo_key": "github.com/requarks/wiki",
   "short_desc": "wiki software",
   "sill_id": 446,
@@ -22482,7 +23421,7 @@
    "MINISTERE INTERIEUR/SG/SHFD/C2MI",
    "Universit\u00e9 Le Havre Normandie"
   ],
-  "version": "3.0.1"
+  "version": "v2.5.315"
  },
  {
   "country": "FR",
@@ -22518,9 +23457,17 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=WinSCP",
   "keywords": [
    "transfert",
-   "fichiers"
+   "fichiers",
+   "ftp",
+   "ftp-client",
+   "ftps",
+   "s3",
+   "scp",
+   "sftp",
+   "ssh",
+   "webdav"
   ],
-  "landing": "https://winscp.net/",
+  "landing": "https://winscp.net",
   "license": "GPLv3+",
   "name": "WinSCP",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22584,14 +23531,18 @@
    "analyseur",
    "trame",
    "r\u00e9seau",
-   "protocole"
+   "protocole",
+   "network analysis",
+   "packet capture",
+   "protocol analysis",
+   "stratoshark"
   ],
   "landing": "https://www.wireshark.org/",
   "license": "GNU GPL",
   "name": "Wireshark",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://gitlab.com/wireshark/wireshark.git",
+  "repo": "https://gitlab.com/wireshark/wireshark",
   "repo_key": "gitlab.com/wireshark/wireshark",
   "short_desc": "capture/analyseur paquets trames r\u00e9seau protocole",
   "sill_id": 420,
@@ -22655,8 +23606,8 @@
   "name": "Wordpress",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://core.trac.wordpress.org/browser",
-  "repo_key": "core.trac.wordpress.org/browser",
+  "repo": "https://github.com/WordPress/WordPress",
+  "repo_key": "github.com/wordpress/wordpress",
   "short_desc": "Syst\u00e8me de gestion de contenus web",
   "sill_id": 162,
   "source": "FR/sill",
@@ -22675,8 +23626,7 @@
    "Universit\u00e9 d'Angers",
    "Universit\u00e9 de Pau et des Pays de l'Adour"
   ],
-  "version": "7.1.4",
-  "wikidata": "Q13166"
+  "version": "7.1.4"
  },
  {
   "country": "FR",
@@ -22777,8 +23727,8 @@
   "name": "XiVO",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://gitlab.com/groups/xivo.solutions",
-  "repo_key": "gitlab.com/groups/xivo.solutions",
+  "repo": "https://gitlab.com/cypress-learn/xucmgt",
+  "repo_key": "gitlab.com/cypress-learn/xucmgt",
   "short_desc": "Logiciel libre d'autocommutateur t\u00e9l\u00e9phonique priv\u00e9 (PBX) ou IPBX, bas\u00e9 sur Asterisk.",
   "sill_id": 276,
   "source": "FR/sill",
@@ -22911,7 +23861,7 @@
    "content",
    "management"
   ],
-  "landing": "https://www.xwiki.org",
+  "landing": "http://platform.xwiki.org/",
   "license": "LGPL-2.1-only",
   "name": "XWiki",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -22926,8 +23876,7 @@
    "MD",
    "MTE"
   ],
-  "version": "18.9.0",
-  "wikidata": "Q526699"
+  "version": "xwiki-xmldoc-update-plugin-1.4"
  },
  {
   "categories": [
@@ -22970,7 +23919,10 @@
   "entry_url": "https://code.gouv.fr/sill/detail?name=YesWiki",
   "keywords": [
    "wiki",
-   "Php"
+   "Php",
+   "collaborative",
+   "french",
+   "open-source-licensing"
   ],
   "landing": "https://yeswiki.net",
   "license": "AGPL-3.0",
@@ -22986,7 +23938,7 @@
   "used_by": [
    "CNFPT"
   ],
-  "version": "4.7.1"
+  "version": "v5.0.0-alpha8"
  },
  {
   "categories": [
@@ -23003,9 +23955,13 @@
    "serveur",
    "server",
    "applications web",
-   "web apps"
+   "web apps",
+   "python",
+   "self-hosted",
+   "selfhosted",
+   "yunohost"
   ],
-  "landing": "https://yunohost.org/#/index_fr",
+  "landing": "https://yunohost.org",
   "license": "AGPL-3.0-only",
   "name": "Yunohost",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -23023,7 +23979,7 @@
    "DSDEN 56",
    "FPH GHT8"
   ],
-  "version": "12.1.6.1"
+  "version": "v2-rc1"
  },
  {
   "categories": [
@@ -23043,15 +23999,16 @@
    "server",
    "performance",
    "s\u00e9curit\u00e9",
-   "security"
+   "security",
+   "alerting"
   ],
   "landing": "https://www.zabbix.com/",
   "license": "GNU GPLv2",
   "name": "Zabbix",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://git.zabbix.com/scm/zbx/zabbix.git",
-  "repo_key": "git.zabbix.com/scm/zbx/zabbix",
+  "repo": "https://github.com/zabbix/zabbix",
+  "repo_key": "github.com/zabbix/zabbix",
   "short_desc": "Solution de monitoring opensource et libre.",
   "sill_id": 353,
   "source": "FR/sill",
@@ -23073,8 +24030,7 @@
    "Ville de Rive de Gier",
    "other"
   ],
-  "version": "7.4.3",
-  "wikidata": "Q136722"
+  "version": "8.0.0"
  },
  {
   "categories": [
@@ -23093,9 +24049,11 @@
    "service client",
    "customer service",
    "gestion",
-   "management"
+   "management",
+   "coffeescript",
+   "customer-care"
   ],
-  "landing": "https://zammad.com",
+  "landing": "https://zammad.org",
   "license": "AGPL-3.0-only",
   "name": "Zammad",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -23109,7 +24067,7 @@
   "used_by": [
    "MESR"
   ],
-  "version": "7.0"
+  "version": "7.4.0-alpha"
  },
  {
   "country": "FR",
@@ -23118,9 +24076,13 @@
   "desc_src_lang": "fr",
   "entry_url": "https://code.gouv.fr/sill/detail?name=Zed",
   "keywords": [
-   "IA Albert editeur \"collaboration en temps r\u00e9el\"  \"multi-utilisateurs\""
+   "IA Albert editeur \"collaboration en temps r\u00e9el\"  \"multi-utilisateurs\"",
+   "gpui",
+   "rust-lang",
+   "text-editor",
+   "zed"
   ],
-  "landing": "https://zed.dev/",
+  "landing": "https://zed.dev",
   "license": "GPL 3.0",
   "name": "Zed",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -23135,8 +24097,7 @@
    "CNRS",
    "MAASA :  : Minist\u00e8re de l'Agriculture, de l'Agro-alimentaire et de la Souverainet\u00e9 Alimentaire"
   ],
-  "version": "1.26.2",
-  "wikidata": "Q112301707"
+  "version": "v1.28.0-pre"
  },
  {
   "categories": [
@@ -23157,13 +24118,13 @@
    "gestion",
    "management"
   ],
-  "landing": "https://zim-wiki.org/",
+  "landing": "http://zim-wiki.org",
   "license": "GPLv2+",
   "name": "Zim",
   "note": "recommended to public agents; not necessarily gov-authored",
   "recommended_for_gov": true,
-  "repo": "https://github.com/jaap-karssenberg/zim-desktop-wiki",
-  "repo_key": "github.com/jaap-karssenberg/zim-desktop-wiki",
+  "repo": "https://github.com/zim-desktop-wiki/zim-desktop-wiki",
+  "repo_key": "github.com/zim-desktop-wiki/zim-desktop-wiki",
   "short_desc": "Wiki local et personnel",
   "sill_id": 330,
   "source": "FR/sill",
@@ -23175,8 +24136,7 @@
    "Nantes Universit\u00e9",
    "PREF"
   ],
-  "version": "0.77.2",
-  "wikidata": "Q203374"
+  "version": "0.77.2"
  },
  {
   "categories": [
@@ -23248,7 +24208,7 @@
    "recherche",
    "research"
   ],
-  "landing": "https://zotero.org",
+  "landing": "https://www.zotero.org",
   "license": "AGPL-3.0-or-later",
   "name": "Zotero",
   "note": "recommended to public agents; not necessarily gov-authored",
@@ -23281,7 +24241,7 @@
    "universit\u00e9 caen normandie",
    "zotero"
   ],
-  "version": "10.0.7"
+  "version": "10.0.8"
  },
  {
   "contacts": [

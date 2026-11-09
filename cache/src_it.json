@@ -2155,7 +2155,7 @@
   ],
   "landing": "https://gbetorre.github.io/convenzioni/",
   "license": "GPL-3.0-or-later",
-  "long_desc": "Il software gestionale delle convenzioni (COL-GECO, ovvero Convenzioni On Line-Gestione Convenzioni) \n\u00e8 un software modulare che nasce dall\u2019esigenza, interna alla Pubblica Amministrazione, di tracciare \naccordi e convenzioni intercorrenti tra soggetti esterni e la PA stessa, \nsia allo scopo di redigere un registro organizzato e sempre aggiornato, \nsia al fine di ottenere uno scadenzario atto a informare e notificare \ncirca le prossime convenzioni in scadenza e in grado di erogare riepiloghi mensili \ne fornire remind riguardo le scadenze imminenti.\n\nAttualmente, l'oggetto del software \u00e8 la gestione delle convenzioni, \nma il software stesso \u00e8 concepito con la mission di estendere progressivamente \nil dominio agli altri oggetti di contratto e accordo con la PA.\n\nIl software \u00e8 progettato in maniera modulare, allo scopo di essere adattabile \na qualunque amministrazione che sia interessata a dotarsi di uno scadenzario Open Source.\nInoltre, le modalit\u00e0 tramite cui il software avvisa circa scadenze e riepiloga le attivit\u00e0, possono estendersi a varie modalit\u00e0:\n    - e-mail\n    - calendario condiviso\n    - notifiche push\n    - riepiloghi periodici creati in automatico in percorsi condivisi\n ",
+  "long_desc": "## Presentazione\n\nIl software gestionale delle convenzioni (COL-GECO, ovvero Convenzioni On Line-Gestione Convenzioni) \n\u00e8 un software modulare che nasce dall\u2019esigenza, interna alla Pubblica Amministrazione, di tracciare \naccordi e convenzioni intercorrenti tra soggetti esterni e la PA stessa, \nsia allo scopo di redigere un registro organizzato e sempre aggiornato, \nsia al fine di ottenere uno scadenzario atto a informare e notificare \ncirca le prossime convenzioni in scadenza e in grado di erogare riepiloghi mensili \ne fornire remind riguardo le scadenze imminenti.\n\n\n## Storia\n\nOriginariamente, la richiesta di sviluppare un software ad-hoc \u00e8 partita \ndall\u2019esigenza degli uffici, che non trovavano sufficiente appoggiarsi \nad uno strumento predefinito, in quanto, per tracciare le scadenze\ndelle convenzioni gestite e attivare meccanismi di alert riguardo\nle operazioni da mettere in atto per effettuare i rinnovi delle convenzioni\nesistenti, gi\u00e0 utilizzavano tipicamente, oltre a calendari e applicazioni, \nanche le cartelle Excel.\n\nTuttavia, un software come COL-GECO rappresenta invece un hub unico in cui, \nuna volta inserite le informazioni relative alle convenzioni, \ntutto il workflow p",
   "maintenance": "internal",
   "name": "COL-GeCo",
   "platforms": [
@@ -2363,7 +2363,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-27",
+  "released": "2026-11-07",
   "repo": "https://github.com/Comune-di-Montesilvano/ComunicaPA.git",
   "repo_key": "github.com/comune-di-montesilvano/comunicapa",
   "short_desc": "HUB open-source per l'invio massivo asincrono di comunicazioni della PA (TARI, avvisi, sanzioni) su PEC, Email, App IO, SEND, Postalizzazione.",
@@ -2371,7 +2371,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e3bb9350-dc26-4137-a9b2-2af786d9fcf6",
-  "version": "v1.12.0"
+  "version": "v1.19.1"
  },
  {
   "active": true,
@@ -2937,7 +2937,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-28",
+  "released": "2026-11-05",
   "repo": "https://github.com/Comune-di-Montesilvano/CruscottoPA",
   "repo_key": "github.com/comune-di-montesilvano/cruscottopa",
   "repo_owner": "Comune di Montesilvano",
@@ -2949,7 +2949,7 @@
   "used_by": [
    "Comune di Montesilvano"
   ],
-  "version": "0.15.1"
+  "version": "0.17.0"
  },
  {
   "active": true,
@@ -3916,7 +3916,7 @@
   "features": [
    "Popolamento automatico del sito (pagine e menu).",
    "Sezione per la configurazione del tema e dei contenuti.",
-   "Personalizzazione del layout della home page.",
+   "Home page configurabile con sezioni ordinabili, sfondi e numero massimo di elementi per sezione.",
    "Gestione delle persone del laboratorio.",
    "Gestione dei progetti del laboratorio.",
    "Gestione delle news e degli eventi del laboratorio.",
@@ -3931,7 +3931,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-26",
+  "released": "2026-11-06",
   "repo": "https://github.com/ScuolaNormaleSuperiore/design-laboratori-wordpress-theme",
   "repo_key": "github.com/scuolanormalesuperiore/design-laboratori-wordpress-theme",
   "repo_owner": "Scuola Normale Superiore",
@@ -3949,7 +3949,7 @@
    "Bio@SNS - Laboratorio di Biologia - Scuola Normale Superiore - https://laboratoriobiologia.sns.it",
    "Il PNRR alla Normale - Scuola Normale Superiore - https://pnrr.sns.it"
   ],
-  "version": "2.0.3"
+  "version": "2.0.6"
  },
  {
   "active": true,
@@ -5079,7 +5079,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-28",
+  "released": "2026-11-06",
   "repo": "https://github.com/consiglionazionaledellericerche/epas",
   "repo_key": "github.com/consiglionazionaledellericerche/epas",
   "short_desc": "ePAS \u00e8 il nuovo sistema di rilevazione e gestione delle presenze del personale pensato per le specifiche esigenze degli Enti Pubblici di Ricerca.",
@@ -5093,7 +5093,7 @@
    "Consorzio LAMMA",
    "Ministero dei Trasporti"
   ],
-  "version": "2.38.0"
+  "version": "2.39.0"
  },
  {
   "active": true,
@@ -14015,7 +14015,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-09",
+  "released": "2026-11-06",
   "repo": "https://github.com/link-it/govpay",
   "repo_key": "github.com/link-it/govpay",
   "repo_owner": "Link.it s.r.l.",
@@ -14030,7 +14030,7 @@
    "MIC - Ministero della Cultura",
    "MISE - Ministero dello Sviluppo Economico"
   ],
-  "version": "3.9.3.p6"
+  "version": "3.9.3.p7"
  },
  {
   "active": true,
@@ -14063,7 +14063,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-22",
+  "released": "2026-11-03",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
   "short_desc": "Piattaforma containerizzata per la gestione dei pagamenti PagoPA, rendicontazione, marca da bollo e integrazione GovPay per enti locali.\n",
@@ -14075,7 +14075,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.6.8"
+  "version": "1.8.1"
  },
  {
   "active": true,
@@ -15610,7 +15610,7 @@
    "ios",
    "android"
   ],
-  "released": "2026-10-30",
+  "released": "2026-11-06",
   "repo": "https://github.com/pagopa/io-app",
   "repo_key": "github.com/pagopa/io-app",
   "repo_owner": "https://www.pagopa.it/",
@@ -15619,7 +15619,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "af6056fc-b2b2-4d31-9961-c9bd94e32bd4",
-  "version": "3.43.0-rc.1"
+  "version": "3.43.0-rc.6"
  },
  {
   "active": true,
@@ -18655,7 +18655,13 @@
    "Camera di commercio della Romagna - Forl\u00ec-Cesena e Rimini",
    "Regione Toscana",
    "Finlombarda S.p.A.",
-   "Regione del Veneto"
+   "Regione del Veneto",
+   "Agenzia Regionale per Le Politiche Attive del Lavoro - Arpal Umbria",
+   "Comune di Potenza",
+   "Regione Liguria",
+   "Comune di Napoli",
+   "Regione Lazio",
+   "Comune di Sesto San Giovanni"
   ]
  },
  {
@@ -18902,7 +18908,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-30",
+  "released": "2026-11-06",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -19390,7 +19396,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.20.0-rc.1"
+  "version": "4.20.1"
  },
  {
   "active": true,
@@ -19540,7 +19546,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-26",
+  "released": "2026-11-06",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19802,7 +19808,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.12"
+  "version": "4.2.1"
  },
  {
   "active": true,
@@ -20236,7 +20242,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-22",
+  "released": "2026-11-05",
   "repo": "https://github.com/Provincia-di-Pescara/pa-sso-proxy",
   "repo_key": "github.com/provincia-di-pescara/pa-sso-proxy",
   "short_desc": "SPID/CIE/eIDAS SSO proxy for Italian Public Administration.",
@@ -20244,7 +20250,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "92192e38-8fae-4d6c-8329-3847a37f5114",
-  "version": "0.9.19"
+  "version": "0.10.1"
  },
  {
   "active": true,
@@ -25367,13 +25373,13 @@
   ],
   "landing": "https://github.com/gbetorre/rischi/blob/main/rol/index.html",
   "license": "GPL-2.0-or-later",
-  "long_desc": "## Introduzione\n\n\nL'applicazione web per la mappatura dei rischi corruttivi `ROL-RMS` serve\nad aiutare Enti, Pubbliche Amministrazioni, aziende partecipate \u2013 e\nchiunque sia interessato a monitorare e gestire il rischio corruttivo \u2013\n**a quantificare automaticamente i rischi corruttivi** cui i loro processi\norganizzativi sono esposti e ad indirizzare questi soggetti a mettere in\natto **le contromisure adeguate**. \n\n Il workflow generale \u00e8 suddiviso in 4 distinti step, o filoni di lavoro: \n\n1. Step 1: caricamento di strutture e processi \n\n2. Step 2: calcolo del rischio corruttivo di ogni processo \n\n3. Step 3: scelta delle misure di mitigazione da applicare ad ogni\nprocesso \n\n4. Step 4: monitoraggio al fine di verificare se le misure previste sono\nstate applicate.\n\n\nQuesti 4 step si svolgono entro un flusso sincrono; sono pensati, ovvero,\nper essere portati a compimento in sequenza, non in parallelo. Ad esempio,\nnon si pu\u00f2 passare allo Step 2 se non \u00e8 stato completato lo Step 1; n\u00e9 si\npu\u00f2 passare allo Step 3 se non \u00e8 stato completato lo Step 2; e cos\u00ed via.\n\nQuesta modalit\u00e0 \"lineare\" guida gli attori nel processo di mappatura e\ngestione e permette di gestire in modo semplificato la comp",
+  "long_desc": "## Introduzione\n\nL'applicazione web per la mappatura dei rischi corruttivi `ROL-RMS` serve\nad aiutare Enti, Pubbliche Amministrazioni, aziende partecipate \u2013 e\nchiunque sia interessato a monitorare e gestire il rischio corruttivo \u2013\n**a quantificare automaticamente i rischi corruttivi** cui i loro processi\norganizzativi sono esposti e ad indirizzare questi soggetti a mettere in\natto **le contromisure adeguate**. \n\n Il workflow generale \u00e8 suddiviso in 4 distinti step, o filoni di lavoro: \n\n1. Step 1: caricamento di strutture e processi \n\n2. Step 2: calcolo del rischio corruttivo di ogni processo \n\n3. Step 3: scelta delle misure di mitigazione da applicare ad ogni\nprocesso \n\n4. Step 4: monitoraggio al fine di verificare se le misure previste sono\nstate applicate.\n\n\nQuesti 4 step si svolgono entro un flusso sincrono; sono pensati, ovvero,\nper essere portati a compimento in sequenza, non in parallelo. Ad esempio,\nnon si pu\u00f2 passare allo Step 2 se non \u00e8 stato completato lo Step 1; n\u00e9 si\npu\u00f2 passare allo Step 3 se non \u00e8 stato completato lo Step 2; e cos\u00ed via.\n\nQuesta modalit\u00e0 \"lineare\" guida gli attori nel processo di mappatura e\ngestione e permette di gestire in modo semplificato la compl",
   "maintenance": "internal",
   "name": "ROL-RMS",
   "platforms": [
    "web"
   ],
-  "released": "2025-05-06",
+  "released": "2026-10-27",
   "repo": "https://github.com/gbetorre/rischi",
   "repo_key": "github.com/gbetorre/rischi",
   "repo_owner": "Giovanroberto Torre",
@@ -25385,7 +25391,7 @@
   "used_by": [
    "Universit\u00e0 degli Studi di Verona"
   ],
-  "version": "2.3.0"
+  "version": "2.8.6"
  },
  {
   "active": true,
@@ -30266,6 +30272,71 @@
   "active": true,
   "categories": [
    "budgeting",
+   "erp"
+  ],
+  "contacts": [
+   "Barbara Malano",
+   "Antonino Cicala",
+   "Massimo Molino",
+   "Massimiliano Purpura"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "UNICA Accrual \u00e8 il modulo della suite UNICA dedicato alla contabilit\u00e0 economico-patrimoniale della PA",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/unica-open/uaccrual.git",
+  "features": [
+   "Acquisizione e ricerca flusso di alimentazione",
+   "Ricerca e gestione della prima nota",
+   "Elaborazione e ricerca Report",
+   "Popolamento del modello di raccordo",
+   "Gestione dei Conti accrual",
+   "Gestione delle causali"
+  ],
+  "landing": "https://suiteunica.csi.it/la-suite/unica-accrual.php",
+  "license": "EUPL-1.2",
+  "long_desc": "### Sistema Informativo per la contabilit\u00e0 Economico-Patrimoniale per gli Enti\nUNICA Accrual \u00e8 il modulo open source della suite UNICA dedicato alla gestione della contabilit\u00e0 economico-patrimoniale della Pubblica Amministrazione, progettato per accompagnare gli enti nella transizione verso il nuovo modello contabile Accrual e i principi ITAS. La soluzione integra dati contabili, patrimonio e processi amministrativi, supportando la gestione delle scritture economico-patrimoniali, delle prime note, delle rettifiche e delle integrazioni contabili. Consente la riconciliazione delle informazioni provenienti dai diversi sistemi gestionali, la gestione delle operazioni di chiusura e la produzione di giornale, mastrini, prospetti e report. Integrato con gli altri moduli della suite UNICA, contribuisce a migliorare qualit\u00e0, tracciabilit\u00e0, coerenza e trasparenza delle informazioni economiche e patrimoniali degli enti pubblici.\n",
+  "maintenance": "internal",
+  "name": "UNICA accrual",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-11-03",
+  "repo": "https://github.com/unica-open/uaccrual.git",
+  "repo_key": "github.com/unica-open/uaccrual",
+  "repo_owner": "CSI Piemonte",
+  "short_desc": "UNICA Accrual \u00e8 il modulo della suite UNICA dedicato alla contabilit\u00e0 economico-patrimoniale della PA",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "7ba2f8f1-7f4d-47aa-a80f-4609174bfe96",
+  "used_by": [
+   "Regione Piemonte",
+   "Regione Sicilia",
+   "Citt\u00e0 Metropolitana di Torino",
+   "Consiglio Regionale Piemonte",
+   "Agenzia Interregionale Fiume Po",
+   "Agenzia Regionale Piemontese per le Erogazioni in Agricoltura",
+   "Ente di Gestione delle Aree Protette dell'Appennino Piemontese",
+   "Comune di Palermo",
+   "Comune di Genova",
+   "Comune di Reggio Calabria",
+   "Comune di Ravenna",
+   "Comune di Modena",
+   "Citt\u00e0 Metropolitana di Roma",
+   "Citt\u00e0 Metropolitana Reggio Calabria",
+   "Comune di Imola",
+   "Comune di Quarto",
+   "Comune di Frattamaggiore",
+   "Comune di Capurso"
+  ],
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "budgeting",
    "erp",
    "procurement"
   ],
@@ -30339,7 +30410,7 @@
    "Predisposizione del Rendiconto della gestione",
    "Predisposizione degli allegati normativi previsti per rendiconto di gestione"
   ],
-  "landing": "https://suiteunica.csi.it/la-suite/unica-contabilia.php",
+  "landing": "https://github.com/unica-open/contabilia",
   "license": "EUPL-1.2",
   "long_desc": "### Sistema Informativo Amministrativo Contabile per gli Enti\nLa contabilit\u00e0 finanziaria rileva informazioni atte a garantire un controllo preventivo, concomitante e consuntivo sul corretto utilizzo delle risorse e sul rispetto dei vincoli formulati in sede di previsione (logica autorizzatoria) oltre a garantire il mantenimento di condizioni di equilibrio finanziario (pareggio di bilancio). A tal riguardo \u00e8 possibile distinguere tre distinte fasi: la fase di previsione, di gestione e di rendicontazione. La fase di previsione ha il compito di trasporre gli indirizzi degli organi politici in previsioni di spesa ed entrata mantenendo saldo il vincolo di equilibrio di bilancio; si contraddistingue per il carattere autorizzatorio in quanto determina i limiti agli impegni di spesa per l'esercizio successivo.  La fase di gestione \u00e8 caratterizzata dalla rilevazione contabile dei fatti amministrativi (la cosiddetta \"gestione del bilancio\"), rilevazione che risulta normata e strettamente vincolata dall'iter da seguirsi per il pagamento delle spese e la riscossione delle entrate (fasi dell'entrata e della spesa). La rendicontazione ha la finalit\u00e0 di rappresentare i risultati della gestione; s",
   "maintenance": "internal",
@@ -30348,7 +30419,7 @@
    "web"
   ],
   "released": "2023-12-11",
-  "repo": "https://github.com/unica-open/contabilia",
+  "repo": "https://github.com/unica-open/contabilia.git",
   "repo_key": "github.com/unica-open/contabilia",
   "repo_owner": "CSI Piemonte",
   "short_desc": "UNICA contabilia - La soluzione per la gestione Amministrativo Contabile degli enti",

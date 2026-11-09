@@ -64,6 +64,27 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/ag-ui.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "development",
+   "ai"
+  ],
+  "landing": "https://docs.ag-ui.com/",
+  "license": "MIT",
+  "name": "AG-UI",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/ag-ui-protocol/ag-ui",
+  "repo_key": "github.com/ag-ui-protocol/ag-ui",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "AG-UI (Agent\u2013User Interaction Protocol) is an open, event-based protocol for the communication between AI agents and user-facing frontends. It standardizes how streaming text, tool calls and agent state are exchanged \u2014 complementary to the MCP standard for tools and data sources.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/alfresco.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -327,6 +348,27 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/bib-pods.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application",
+   "eigenentwicklung"
+  ],
+  "landing": "https://it-at-m.github.io/bib-pods/",
+  "license": "MIT",
+  "name": "Bibliotheks-Pods",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/it-at-m/bib-pods",
+  "repo_key": "github.com/it-at-m/bib-pods",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "With Bibliotheks-Pods, library users get recommendations that suit them, and their data stays with them.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/bluespice.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -460,6 +502,27 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/copier.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "development",
+   "python"
+  ],
+  "landing": "https://copier.readthedocs.io/",
+  "license": "MIT",
+  "name": "Copier",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/copier-org/copier",
+  "repo_key": "github.com/copier-org/copier",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Copier is a command-line tool for rendering project templates: New projects are generated from a Python template repository \u2014 files and file names can contain Jinja-expressions that are filled in based on structured configuration questions.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/cove.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -519,6 +582,28 @@
   "repo_key": "github.com/dbt-labs/dbt-core",
   "repo_owner": "Landeshauptstadt Muenchen",
   "short_desc": "dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/dienstleistungsfinder-ki.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2025",
+   "ai"
+  ],
+  "license": "MIT",
+  "name": "Dienstleistungsfinder KI-Suche",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/it-at-m/dienstleistungsfinder-ki",
+  "repo_key": "github.com/it-at-m/dienstleistungsfinder-ki",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Dienstleistungsfinder KI-Suche lets citizens find municipal services on muenchen.de with everyday language. Based on a Retrieval-Augmented-Generation (RAG) approach it understands questions like \"Meine Oma braucht einen Rechner, gibt es einen Zuschuss?\" and answers with grounded quotes from the official service pages.",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
@@ -718,7 +803,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "development",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://fastapi.tiangolo.com/",
   "license": "MIT",
@@ -1375,7 +1461,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "development",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://python.langchain.com/docs/introduction/",
   "license": "MIT",
@@ -1385,7 +1472,7 @@
   "repo": "https://github.com/langchain-ai/langchain/",
   "repo_key": "github.com/langchain-ai/langchain",
   "repo_owner": "Landeshauptstadt Muenchen",
-  "short_desc": "LangChain is a framework for developing applications powered by large language models (LLMs).",
+  "short_desc": "LangChain is a framework for developing applications powered by large language models (LLMs). The MIT-licensed ecosystem provides the whole stack for agentic applications in three layers: LangChain as the framework with integrations for models, tools and vector databases; LangGraph as the low-level runtime for durable, stateful agent workflows; and DeepAgents, which builds ready-to-run deep agents",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
@@ -1520,7 +1607,8 @@
   "keywords": [
    "infrastruktur",
    "k8s",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://www.litellm.ai/",
   "license": "MIT",
@@ -1771,6 +1859,28 @@
   "repo": null,
   "repo_key": null,
   "short_desc": "The Open Source Threat Intelligence Platform (''MISP'') is used as a platform for sharing Indicators of Compromise (IOCs) and other relevant information across all parts of the German Cybersecurity network including the City of Munich.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/model2vec-serve.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "infrastruktur",
+   "eigenentwicklung",
+   "start2026",
+   "ai"
+  ],
+  "license": "MIT",
+  "name": "model2vec-serve",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/it-at-m/model2vec-serve",
+  "repo_key": "github.com/it-at-m/model2vec-serve",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "model2vec-serve is our lightweight server for model2vec static embedding models: a small, self-hosted embeddings API that serves optimized static embedding models on CPU \u2014 without complex ML infrastructure.",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
@@ -2207,7 +2317,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "development",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://fastapi.tiangolo.com/",
   "license": "MIT",
@@ -2228,7 +2339,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "development",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://www.python.org/",
   "license": "PSF2",
@@ -2307,6 +2419,28 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/riski.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2025",
+   "ai"
+  ],
+  "license": "MIT",
+  "name": "RIS-KI",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/it-at-m/riski",
+  "repo_key": "github.com/it-at-m/riski",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "RIS-KI is the AI search of the Munich Ratsinformationssystem (RIS). It supplements the existing keyword search at riski.muenchen.de with a semantic, agent-based search over council motions, resolutions and committee documents.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/robotframework.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -2332,7 +2466,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "development",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://astral.sh/ruff",
   "license": "MIT",
@@ -2665,6 +2800,28 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/ty.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "development",
+   "ai",
+   "python"
+  ],
+  "landing": "https://docs.astral.sh/ty/",
+  "license": "MIT",
+  "name": "ty",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/astral-sh/ty",
+  "repo_key": "github.com/astral-sh/ty",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "ty is an extremely fast type checker and language server for Python, written in Rust. It comes from the makers of Ruff and uv and is meant as a modern, high-performance alternative to mypy.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/typescript.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -2749,7 +2906,8 @@
   "gov_tier": "municipal",
   "keywords": [
    "development",
-   "ai"
+   "ai",
+   "python"
   ],
   "landing": "https://docs.astral.sh/uv/",
   "license": "MIT/Apache-2.0",
@@ -2953,6 +3111,28 @@
  {
   "country": "DE",
   "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/xberg.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "development",
+   "ai",
+   "python"
+  ],
+  "landing": "https://xberg.io/",
+  "license": "MIT",
+  "name": "Xberg",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/xberg-io/xberg",
+  "repo_key": "github.com/xberg-io/xberg",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Xberg is an extremely fast document intelligence engine, written in Rust with bindings for more languages (Python, Node, Go, Java, C#\u2026). It extracts and structures text, tables and metadata from over 100 file formats \u2014 PDFs, Office and OpenDocument files, spreadsheets, presentations, images, e-mail and more \u2014 fully local and offline, with OCR fallback (Tesseract, Paddle) and content-hash caching.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
   "entry_url": "https://opensource.muenchen.de/software/zammad.html",
   "gov_tier": "municipal",
   "keywords": [
@@ -2969,6 +3149,28 @@
   "repo": null,
   "repo_key": null,
   "short_desc": "Zammad is a free helpdesk and issue tracking system that enables the connection of various channels such as e-mail and telephone.",
+  "source": "DE/opensource.muenchen.de",
+  "tier": "index"
+ },
+ {
+  "country": "DE",
+  "desc_lang": "en",
+  "entry_url": "https://opensource.muenchen.de/software/zammad-ai.html",
+  "gov_tier": "municipal",
+  "keywords": [
+   "application",
+   "eigenentwicklung",
+   "start2025",
+   "ai"
+  ],
+  "license": "MIT",
+  "name": "Zammad-AI",
+  "note": "in-house development by the City of Munich",
+  "recommended_for_gov": false,
+  "repo": "https://github.com/it-at-m/zammad-ai",
+  "repo_key": "github.com/it-at-m/zammad-ai",
+  "repo_owner": "Landeshauptstadt Muenchen",
+  "short_desc": "Zammad-AI is a GenAI middleware layer for the Zammad ticket system. It supports helpdesk teams with AI-based ticket triage, suggested answers and knowledge-based responses, while the final responsibility always stays with the staff.",
   "source": "DE/opensource.muenchen.de",
   "tier": "index"
  },
