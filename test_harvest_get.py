@@ -28,6 +28,7 @@ import importlib.util
 import io
 import json
 import os
+import re
 import sys
 import tempfile
 import urllib.error
@@ -284,6 +285,108 @@ def main():
               scan({0: "ok", 1: 500, 2: "ok", 3: "ok"}), 3)
     finally:
         h.get, h.CACHE = real_get, real_cache
+
+    # ---- github_org_scan() and nl_forgejo(): the same rule, which had reached
+    # only gitlab_scan (review 2026-11-10, M8). A failed publiccode.yml fetch
+    # used to downgrade the repo to index tier silently (GitHub, Forgejo).
+    def gh_get(mode):
+        def fake(url, **kw):
+            if "/orgs/o/repos" in url:
+                return ([{"name": "r%d" % i, "full_name": "o/r%d" % i, "html_url": "https://github.com/o/r%d" % i,
+                          "description": "d", "default_branch": "main"} for i in range(4)]
+                        if url.endswith("page=1") else [])
+            if "/repos/search" in url:
+                return ({"data": [{"name": "r%d" % i, "full_name": "o/r%d" % i,
+                                   "html_url": "https://code.overheid.nl/o/r%d" % i,
+                                   "description": "d", "default_branch": "main"} for i in range(4)]}
+                        if url.endswith("page=1") else {"data": []})
+            i = int(re.search(r"/r(\d)/", url).group(1))
+            code = mode.get(i)
+            if code == "ok":
+                return PCY % (i, i)
+            if isinstance(code, int):
+                raise urllib.error.HTTPError(url, code, "x", {}, io.BytesIO(b""))
+            raise TimeoutError("slow")
+        return fake
+    tmp = tempfile.mkdtemp()
+    real_get, real_cache = h.get, h.CACHE
+    h.CACHE = tmp
+    try:
+        def scan2(fn, key, mode, prev=None):
+            ck = os.path.join(tmp, "src_%s.json" % key)
+            if prev is not None:
+                json.dump([{}] * prev, open(ck, "w"))
+            elif os.path.exists(ck):
+                os.remove(ck)
+            h.get = gh_get(mode)
+            try:
+                out = fn()
+                out = out[0] if isinstance(out, tuple) else out
+                return (len(out), sum(1 for r in out if r["tier"] == "publiccode"))
+            except RuntimeError:
+                return "refused"
+        for label, fn, key in (("github_org_scan", lambda: h.github_org_scan("o", "X/o", "XX", key="gho"), "gho"),
+                               ("nl_forgejo", h.nl_forgejo, "nl")):
+            check(f"{label}: 404 means no publiccode.yml (index tier), never a failure",
+                  scan2(fn, key, {0: "ok", 1: 404, 2: "ok", 3: "ok"}, prev=4), (4, 3))
+            check(f"{label}: a timeout is NOT 'none' - never downgraded to index tier",
+                  scan2(fn, key, {0: "ok", 1: "slow", 2: "ok", 3: "ok"}), (3, 3))
+            check(f"{label}: a 500 that shrinks the list is refused",
+                  scan2(fn, key, {0: "ok", 1: 500, 2: "ok", 3: "ok"}, prev=4), "refused")
+        fails = []
+        h.get = gh_get({0: "ok", 1: 503, 2: "ok", 3: "ok"})
+        h.github_org_scan("o", "X/o", "XX", failures=fails)
+        check("github_org_scan: failures= collects the failed fetches (os2 refuses on them)",
+              fails, ["o: 503"])
+    finally:
+        h.get, h.CACHE = real_get, real_cache
+
+    # ---- from_publiccode(): someone else's file is coerced, never raised on (M1).
+    # One malformed publiccode.yml used to fail its whole source, and an integer
+    # name passed harvest and crashed four later stages on .strip().
+    base = {"name": "X", "url": "https://example.org/x",
+            "description": {"it": {"shortDescription": "ciao"}}}
+    for label, extra in (("legal: MIT", {"legal": "MIT"}),
+                         ("maintenance: internal", {"maintenance": "internal"}),
+                         ("description: a string", {"description": "hello"}),
+                         ("description: a list", {"description": ["a"]}),
+                         ("shortDescription: an int", {"description": {"en": {"shortDescription": 5}}}),
+                         ("features: a string", {"description": {"en": {"shortDescription": "s", "features": "f"}}}),
+                         ("contacts: a string", {"maintenance": {"contacts": "bob"}}),
+                         ("categories: a string", {"categories": "cms"}),
+                         ("url: a list", {"url": ["x"]})):
+        try:
+            r = h.from_publiccode(dict(base, **extra), "X/s", "XX")
+            got = all(isinstance(r.get(k), str) for k in ("name",)) and \
+                all(isinstance(r[k], str) for k in ("short_desc", "repo", "license") if r.get(k) is not None)
+        except Exception as ex:
+            got = "raised %s" % type(ex).__name__
+        check(f"from_publiccode: {label} is coerced, not raised", got, True)
+    check("parse_pc + from_publiccode: name: 2048 becomes the TEXT '2048'",
+          h.from_publiccode(h.parse_pc(b"name: 2048\nurl: https://e.org/x\n"), "X/s", "XX")["name"], "2048")
+    check("parse_pc: a name that is not text at all is no name", h.parse_pc(b"name: [a, b]\n"), None)
+    r = h.from_publiccode({"name": " Keep Me ", "url": "https://e.org/k", "legal": {"license": "MIT"},
+                           "categories": ["cms"], "description": {"en": {"shortDescription": "s",
+                                                                        "features": ["a", "b"]}}}, "X/s", "XX")
+    check("from_publiccode: a well-formed file is read exactly as before (name not stripped)",
+          (r["name"], r["license"], r["categories"], r["short_desc"], r["features"], r["desc_lang"]),
+          (" Keep Me ", "MIT", ["cms"], "s", ["a", "b"], "en"))
+
+    # ---- enrich_desc: only a 404/410 is cached as "no description", only a real
+    # rate limit stops the run, and a cached "" is re-asked once stale (M14).
+    import enrich_desc as ed
+    check("enrich: 404/410 gone", (ed.http_outcome(404, {}), ed.http_outcome(410, {})), ("gone", "gone"))
+    check("enrich: 401 / 500 / permission 403 are retried, never cached as empty",
+          [ed.http_outcome(c, {"X-RateLimit-Remaining": "4000"}) for c in (401, 500, 403)],
+          ["retry"] * 3)
+    check("enrich: 429, or 403 with no requests left / Retry-After, stops",
+          [ed.http_outcome(429, {}), ed.http_outcome(403, {"X-RateLimit-Remaining": "0"}),
+           ed.http_outcome(403, {"Retry-After": "60"})], ["stop"] * 3)
+    c = {"a/b": "", "c/d": "", "e/f": "", "g/h": "text",
+         "_empty_checked": {"a/b": "2026-11-01", "c/d": "2026-09-01"}}
+    check("enrich: a cached '' is re-asked when stale or undated, kept when fresh",
+          [ed.stale_empty(c, k, "2026-11-11") for k in ("a/b", "c/d", "e/f", "g/h")],
+          [False, True, True, False])
 
     for f in failed:
         print(f"FAIL  {f}")

@@ -103,7 +103,7 @@ def _save_state(state, path=None):
     json.dump(state, open(path or CACHE_STATE, "w"), indent=1, sort_keys=True)
 
 
-def cached(name, path, fetch, state, now=None, max_age=MAX_AGE_DAYS):
+def cached(name, path, fetch, state, now=None, max_age=MAX_AGE_DAYS, validate=None):
     """Return the cached copy of one crosswalk input, refreshing it when old.
 
     WHY. Until 2026-09-23 every input here was reused for as long as its file
@@ -118,13 +118,25 @@ def cached(name, path, fetch, state, now=None, max_age=MAX_AGE_DAYS):
       * a failed fetch falls back to the old copy (this step never fails the
         run) and records `error`, which /catalogs reports once it is old;
       * no old copy and a failed fetch raises, so the caller's best-effort
-        handler decides, exactly as before."""
+        handler decides, exactly as before;
+      * `validate(new, old)`, when given, runs on the fetched data BEFORE it is
+        written; raising there counts as a failed fetch. A 200 is not a working
+        source (CLAUDE.md, recurring bug 1): an empty or reshaped answer used to
+        overwrite the good copy and move fetched_at (review 2026-11-10, M15)."""
     rec = state.get(name) or {}
     age = _age_days(rec.get("fetched_at"), now)
     if os.path.exists(path) and age is not None and age < max_age:
         return json.load(open(path))
     try:
         data = fetch()
+        if validate:
+            old = None
+            if os.path.exists(path):
+                try:
+                    old = json.load(open(path))
+                except Exception:
+                    old = None
+            validate(data, old)
     except Exception as ex:
         state[name] = dict(rec, error=f"{type(ex).__name__}: {ex}"[:300])
         if not os.path.exists(path):
@@ -146,12 +158,29 @@ def _fetch_comptoir():
         return json.load(r)
 
 
-def load_comptoir(state):
-    d = cached("comptoir", SRC, _fetch_comptoir, state)
-    rows = d if isinstance(d, list) else (d.get("softwares") or list(d.values())[0])
+def comptoir_rows(d):
+    """The software rows of a Comptoir du Libre answer, in any of the shapes it
+    has used, or [] for a shape it has not (never an IndexError)."""
+    if isinstance(d, dict):
+        d = d.get("softwares") or next((v for v in d.values() if isinstance(v, list)), [])
+    rows = d if isinstance(d, list) else []
     if rows and isinstance(rows[0], dict) and "software" in rows[0]:
-        rows = [r["software"] for r in rows]
-    return rows
+        rows = [r.get("software") for r in rows]
+    return [r for r in rows if isinstance(r, dict)]
+
+
+def check_comptoir(new, old):
+    """Refuse an answer with no software rows, or under half the old copy's
+    (Comptoir stamps ~236 QIDs; an empty answer would silently drop them all
+    while /catalogs called the input fresh). Raises -> the old copy is kept."""
+    n, prev = len(comptoir_rows(new)), len(comptoir_rows(old)) if old is not None else 0
+    if n == 0 or n < prev / 2:
+        raise ValueError(f"Comptoir answered {n} software rows against {prev} in the last "
+                         f"good copy; keeping the old copy")
+
+
+def load_comptoir(state):
+    return comptoir_rows(cached("comptoir", SRC, _fetch_comptoir, state, validate=check_comptoir))
 
 
 def _sparql(query, timeout=300):
@@ -625,7 +654,11 @@ def run(catalog, rows, state, by_repo_fn=None, by_site_fn=None, verify_fn=None,
                 _tok.append(liveness.gh_token())
             return resolve_github_repo(k, _tok[0])
 
-    hits = comptoir_stamp(catalog, rows)
+    try:
+        hits = comptoir_stamp(catalog, rows)
+    except Exception as ex:      # best effort, like every other route (M15)
+        print(f"comptoir: SKIPPED ({type(ex).__name__}: {ex})")
+        hits = collections.Counter()
 
     # ---- second source: Wikidata, by URL only. Best effort.
     active = [e for e in catalog if not e.get("excluded")]
@@ -697,7 +730,11 @@ def run(catalog, rows, state, by_repo_fn=None, by_site_fn=None, verify_fn=None,
 
 if __name__ == "__main__":
     state = _load_state()
-    rows = load_comptoir(state)
+    try:
+        rows = load_comptoir(state)
+    except Exception as ex:      # no copy at all AND a failed fetch: never fail the step
+        print(f"comptoir: SKIPPED ({type(ex).__name__}: {ex})")
+        rows = []
     catalog = json.load(open(f"{OUT}/catalog.json"))
     hits = run(catalog, rows, state)
     _save_state(state)
