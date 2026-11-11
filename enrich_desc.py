@@ -26,7 +26,7 @@ Best effort. Unauthenticated GitHub allows 60 requests an hour, which is not
 enough for the candidate set, so set GITHUB_TOKEN. Without it this step fills
 what it can, says so, and exits 0 — it must never fail a gated run.
 """
-import json, os, re, ssl, time, urllib.request, urllib.error, importlib.util
+import datetime, json, os, re, ssl, time, urllib.request, urllib.error, importlib.util
 import certifi
 
 OUT = os.path.dirname(os.path.abspath(__file__))
@@ -74,9 +74,46 @@ def slug(repo_url):
     return f"{m.group(1)}/{re.sub(r'\.git$', '', m.group(2))}"
 
 
+EMPTY_TTL_DAYS = 30
+
+
+def http_outcome(code, headers):
+    """What a GitHub API error means for the cache (review 2026-11-10, M14):
+      "gone"  - 404/410: the repo is gone; cache "" (no description to fetch).
+      "stop"  - a RATE limit: 429, or 403 with X-RateLimit-Remaining: 0 or a
+                Retry-After. Stop, keep what we have.
+      "retry" - anything else (401 expired token, 5xx, a permission 403): NOT
+                evidence of an empty description; ask again next run. These
+                used to be cached as "" forever, and any 403 stopped the run
+                while the log said "rate limited"."""
+    headers = headers or {}
+    if code in (404, 410):
+        return "gone"
+    if code == 429 or (code == 403 and (str(headers.get("X-RateLimit-Remaining")) == "0"
+                                        or headers.get("Retry-After"))):
+        return "stop"
+    return "retry"
+
+
+def stale_empty(cache, s, today):
+    """A cached "" is re-asked after EMPTY_TTL_DAYS (a description can be added
+    later; and entries cached before 2026-11 may be failures, not empties).
+    Undated "" is stale."""
+    if cache.get(s) != "":
+        return False
+    at = (cache.get("_empty_checked") or {}).get(s)
+    try:
+        return (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(at)).days \
+            >= EMPTY_TTL_DAYS
+    except (TypeError, ValueError):
+        return True
+
+
 def main():
     catalog = json.load(open(f"{OUT}/catalog.json"))
     cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
+    today = datetime.date.today().isoformat()
+    checked = cache.setdefault("_empty_checked", {})
 
     todo = []
     for r in catalog:
@@ -85,7 +122,7 @@ def main():
         s = slug(r.get("repo"))
         if s:
             todo.append((s, r))
-    want = sorted({s for s, _ in todo if s not in cache})
+    want = sorted({s for s, _ in todo if s not in cache or stale_empty(cache, s, today)})
     print(f"{len(todo)} entries with a GitHub repo and no description; "
           f"{len(want)} not yet cached")
 
@@ -103,14 +140,20 @@ def main():
             req = urllib.request.Request(f"https://api.github.com/repos/{s}", headers=hdr)
             with urllib.request.urlopen(req, timeout=25, context=CTX) as resp:
                 cache[s] = (json.load(resp).get("description") or "").strip()
+            if cache[s] == "":
+                checked[s] = today
             asked += 1
         except urllib.error.HTTPError as ex:
-            if ex.code in (403, 429):          # rate limited — stop, keep what we have
+            what = http_outcome(ex.code, ex.headers)
+            if what == "stop":                  # rate limited — stop, keep what we have
                 stopped = 1
                 print(f"   rate limited after {asked} requests; "
                       f"{len(want) - asked} left for the next run")
                 break
-            cache[s] = ""                       # 404/410: repo gone, nothing to fetch
+            if what == "gone":
+                cache[s] = ""                   # 404/410: repo gone, nothing to fetch
+                checked[s] = today
+            # "retry": not cached, asked again next run
         except Exception:
             pass                                # transient: retry next run, do not cache
         time.sleep(0.05)

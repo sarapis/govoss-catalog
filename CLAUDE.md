@@ -62,7 +62,9 @@ it first waits (`netgate.py`, up to 12h) for a FULL wake with DNS, then holds `c
   `/sources.html`. `--from-cache` must never write `_fetched.json` or `_timing.json`.
 - **`os2` and the GitLab scans (`de`, `eu`) use `_refuse_short_scan()`**: raise when sub-sources
   or file fetches failed AND the result shrank, so a partial scan never overwrites a good
-  checkpoint. A failed fetch is never "no publiccode.yml" (only 401/403/404 are).
+  checkpoint. A failed fetch is never "no publiccode.yml" (only 401/403/404 are) - in EVERY scan:
+  `gitlab_scan`, `github_org_scan` (`key=`, or `failures=` for os2), `nl_forgejo`, `muc`, via `_fetch_failed()`.
+- `from_publiccode` runs `_clean_pc()` first: someone else's file is coerced to the expected shapes, never raised on.
 - `github_org_scan` authenticates via `liveness.gh_token()`; `GITHUB_TOKEN` is not in the plist.
 
 ## Identity, dedupe, variants
@@ -271,14 +273,14 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en`, shared ä/ö, org hints |
 | `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url` |
 | `test_crosswalk_run.py` | crosswalk `run()` glue: Comptoir precedence, ask only rows without a QID, org-shared skip, software gate, route order, best-effort |
-| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
+| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped, a Comptoir answer that is empty/reshaped/halved keeps the old copy |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, a confirmed verdict survives an unknown week, revival; `apply_confirm()` (only a web 404/410 confirms); a GraphQL errors-only 200 is a batch error |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin` and the 12 reinstated Helsingborg repos (no more, no fewer), the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos atlas: every office a card or Not yet placed, no sidebar title, score = its signal chips, global ranks, Resources links, code links, flags and images present, the one world map, map points = projection, no entity in a script (12f), the signup form on every page (12h), `/software?ospo=` = the card's entries, the one-line credits, no control character, hosting files, `/status.json` names every source and OSPO list whose last attempt failed, read from the files (14), `/ospos.json` ownership = `ospos/ownership.json` fact by fact, and each card's label + source its own office's |
-| `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; a 429 waits out the server's window per host (bounded, spends no try); `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
+| `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; a 429 waits out the server's window per host (bounded, spends no try); `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals); `github_org_scan`/`nl_forgejo` failed fetches (not "none", refused on a shrink); `from_publiccode` coerces malformed files; `enrich_desc.http_outcome`/`stale_empty` |
 | `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch); `ownership` values and `attach_ownership()` (stale keys refused) |
 | `test_netgate.py` | `netgate.wait()`: full wake AND DNS (a dark wake with DNS waits), any host resolving, give-up on the WALL clock, log cadence; `run.sh` run with a failing gate exits 1 having run nothing (both modes); gate before `caffeinate -i -w $$` before the first step; `step()` records a failed step's REAL exit code and both gates see it (run on the function lifted from `run.sh`) |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, the tool contract vs `mcp_tools.py`, and `/api/subscribe` (same-origin, honeypot, forward to Payload) |
