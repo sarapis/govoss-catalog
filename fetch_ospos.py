@@ -36,6 +36,7 @@ Locations are not in any of the lists: ospos/locations.json (hand-placed, commit
 places each office for the map. An office with no location is still listed;
 the page says how many are not on the map.
 """
+import collections
 import json
 import os
 import re
@@ -52,6 +53,8 @@ import ospo_contract as C  # noqa: E402
 
 OUT = os.path.join(HERE, "cache", "ospos.json")
 LOCATIONS = os.path.join(HERE, "ospos", "locations.json")
+OWNERSHIP = os.path.join(HERE, "ospos", "ownership.json")
+ID_PREFIX = {"floss-pso": "floss-", "academic-map": "amap-", "todo-landscape": "todo-"}
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 FLOSS_URL = "https://floss-pso.network/all_public_sector_ospos.yaml"
@@ -300,6 +303,46 @@ def parse_todo(doc):
     return out
 
 
+def collapse_repeats(recs):
+    """The SAME office listed twice in one list (same id AND same url - e.g. the
+    academic map naming one page under both universities/ and
+    research-institutions/) is one office: keep the first. Same id with a
+    DIFFERENT url is a collision, left for list_problems() to refuse."""
+    out, seen = [], set()
+    for r in recs:
+        k = (r.get("id"), r.get("url"))
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(r)
+    return out
+
+
+def list_problems(key, recs):
+    """What would make build_ospos.py refuse this list, checked HERE so the list
+    falls back to its last good copy instead of stopping the build. FLOSS-PSO
+    already had floss_contract(); the academic map and the TODO landscape had
+    only the shrink check, so two TODO names that slug alike ("Foo Inc",
+    "Foo, Inc.") or an academic page renamed under a hand-checked ownership key
+    passed the fetch and failed the build (review 2026-11-10, M13) - which
+    ospo_contract.py says only our own code or data can do.
+      * every id is unique within the list (ids carry the list's prefix, so
+        lists cannot collide with each other);
+      * every ospos/ownership.json key with this list's prefix still names an
+        ACADEMIC office in it (attach_ownership refuses a stale key)."""
+    p = []
+    ids = collections.Counter(r.get("id") for r in recs)
+    p += ["id %s is not unique" % i for i, n in sorted(ids.items(), key=lambda x: str(x[0])) if n > 1]
+    try:
+        own = json.load(open(OWNERSHIP, encoding="utf-8"))["ownership"]
+    except FileNotFoundError:
+        own = {}
+    academic = {r.get("id") for r in recs if r.get("type") == "academic"}
+    p += ["ospos/ownership.json key %s names no academic office in this list" % k
+          for k in sorted(own) if k.startswith(ID_PREFIX[key]) and k not in academic]
+    return p
+
+
 def merge(floss, amap, todo=()):
     """FLOSS-PSO wins a duplicate: same host is the same office. TODO rows that
     duplicate one were already dropped by TODO_SAME_AS (their hosts differ - the
@@ -324,11 +367,14 @@ def main():
                     ("todo-landscape", lambda: parse_todo(yaml.safe_load(get(TODO_RAW, raw=True))))):
         old = prev_by.get(key, [])
         try:
-            recs = fn()
+            recs = collapse_repeats(fn())
             if len(recs) < max(1, len(old) // 2):
                 raise RuntimeError("%d records against %d last time" % (len(recs), len(old)))
             if key == "floss-pso":
                 floss_contract(recs)
+            lp = list_problems(key, recs)
+            if lp:
+                raise ValueError("contract: " + "; ".join(lp[:5]))
             got[key] = recs
             state[key] = {"ok": True, "fetched_at": NOW, "count": len(recs), "licence": LICENCES[key],
                           "url": PAGES[key]}

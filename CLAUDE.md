@@ -235,7 +235,8 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   anything unexpected). The contract lives once, in `ospo_contract.py` (licences, codes, types,
   row shapes); a new code or type is a contract change - tell UNNYC. `fetch_ospos.py` refuses a
   FLOSS-PSO list that breaks it (so a new office waits until placed); `build_ospos.py` refuses to
-  write a breaking file, which stops the publish. `test_ospos.py` + 12f. ACADEMIC rows carry `ownership` from the hand-checked `ospos/ownership.json` (legal form, never funding; null = unchecked, never guessed).
+  write a breaking file, which stops the publish. The academic map and TODO lists get the same refusal AT
+  FETCH (`list_problems()`: unique ids, no stale `ownership.json` key), so they fall back instead. `test_ospos.py` + 12f. ACADEMIC rows carry `ownership` from the hand-checked `ospos/ownership.json` (legal form, never funding; null = unchecked, never guessed).
 - **The country code is the country of the CATALOGUE, not the tier of government** - the caveat
   ships in the JSON, on the page, in `meta.json` and `llms.txt`.
 - Agents are told not to scrape in four places: the HTML comment above `<title>`, alternate
