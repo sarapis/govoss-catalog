@@ -96,6 +96,19 @@ except Exception:
 def _fs_ident(r):
     """Must match first_seen.ident() exactly, or every entry reads as undated."""
     return r.get("repo_key") or "%s|%s" % (r.get("name"), r.get("source"))
+
+
+_fsm = importlib.util.spec_from_file_location("first_seen", f"{OUT}/first_seen.py")
+_FS = importlib.util.module_from_spec(_fsm); _fsm.loader.exec_module(_FS)
+
+
+def _fs_date(r):
+    """A merged group's first-seen date is the EARLIEST across its members'
+    identities (first_seen.members), so it does not depend on which member won
+    survivorship (review 2026-11-10, M16). None = baseline, the oldest; no
+    identity on file reads as undated, as before."""
+    known = [_FIRST_SEEN[k] for k in _FS.members(r) if k in _FIRST_SEEN]
+    return _FS._earliest(known) if known else None
 CLAIM = {
     "IT/developers-italia": "built for public administration",
     "DE/openCode": "built for public administration",
@@ -131,7 +144,7 @@ for r in c:
         _rp = _replaces(_cr)
     rows.append({
         "n": r.get("name") or "(unnamed)",
-        "fs": _FIRST_SEEN.get(_fs_ident(r)),
+        "fs": _fs_date(r),
         "dl": r.get("desc_lang"),
         "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
         "cs": r.get("countries") or ([r["country"]] if r.get("country") else []),

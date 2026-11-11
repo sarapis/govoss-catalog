@@ -231,6 +231,8 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   href only through `safeHref()` (JS) or `theme.safe_url()` (Python): http(s) or no link (12i).
 - **Recently added**: `cache/_first_seen.json`, where `null` means BASELINE (never new) and a
   missing id is unseen. `build_ui._fs_ident()` must equal `first_seen.ident()`. Undated sorts last.
+  EVERY member identity of a merged group is stamped (`first_seen.members()`), and a group reads its EARLIEST
+  member date, so a survivor flip never dates old software to today.
 - **The `/catalogs` map** (`sources_map.py`) is the Map view of the catalogue cards: inline SVG
   from the COMMITTED `geo/catalogue_shapes.json` (no tiles, nothing fetched). Re-run the manual
   `geo/build_geo.py` when a catalogue country or city `map_point` is added (12c fails until you
@@ -273,7 +275,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | file | pins |
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en`, shared ä/ö, org hints |
-| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url` |
+| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url`; `first_seen.members()`/`stamp()` (every member stamped, earliest date) |
 | `test_crosswalk_run.py` | crosswalk `run()` glue: Comptoir precedence, ask only rows without a QID, org-shared skip, software gate, route order, best-effort |
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped, a Comptoir answer that is empty/reshaped/halved keeps the old copy |
 | `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, a confirmed verdict survives an unknown week, revival; `apply_confirm()` (only a web 404/410 confirms); a GraphQL errors-only 200 is a batch error |
