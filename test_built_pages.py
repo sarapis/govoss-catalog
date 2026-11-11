@@ -994,6 +994,20 @@ def main():
           ('"pattern": "www.govoss.cat"' in cfg, '"pattern": "www.govoss.cat"' in wcfg),
           (False, True))
 
+    # ---- the MCP index carries each entry's FUNCTION KEYS in `f`, as entries.json
+    # does in category_keys. compact() once read a field exported rows do not have,
+    # so every `f` was empty and search_entries(function=...) answered 0 for every
+    # function - while test_workers.py's hand-written fixture had `f` filled in
+    # (review 2026-11-10, M4). Checked on the BUILT files, not a fixture.
+    idx = json.load(open(os.path.join(SITE, "mcp-index.json")))
+    idx = idx.get("entries", idx) if isinstance(idx, dict) else idx
+    ents = json.load(open(os.path.join(SITE, "entries.json")))
+    ents = ents.get("entries", ents) if isinstance(ents, dict) else ents
+    want_f = {e["id"]: e.get("category_keys") or [] for e in ents if not e.get("excluded")}
+    check("mcp-index: some entry has functions in f", any(e.get("f") for e in idx), True)
+    check("mcp-index: f = entries.json category_keys, entry by entry",
+          [e["id"] for e in idx if e["id"] in want_f and (e.get("f") or []) != want_f[e["id"]]][:5], [])
+
     for f in failed:
         print("FAIL  %s" % f)
     total = len(ran)

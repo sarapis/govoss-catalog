@@ -123,6 +123,44 @@ def main():
         verdicts.append(bool(prev.get("dead_since")))
     check("oscillating repo never declared dead", verdicts, [False] * 4)
 
+    # ---- a CONFIRMED verdict survives an unknown week (review 2026-11-10, M5):
+    # dead, then a 503/transport error, then dead again is ONE death, same date.
+    for st in (503, "error:URLError", "unconfirmed:403", "error:graphql"):
+        rec, nd, rv = fold(st, prev={"status": 404, "dead_count": 2, "dead_since": OLD})
+        check(f"dead then {st}: dead_since kept", rec.get("dead_since"), OLD)
+        check(f"dead then {st}: not revived", rv, [])
+        rec2, nd2, rv2 = fold(404, prev=rec)
+        check(f"dead, {st}, dead: same date, not newly dead",
+              (rec2.get("dead_since"), nd2), (OLD, []))
+        rec3, nd3, rv3 = fold(200, prev=rec)
+        check(f"dead, {st}, 200: revived", rv3, ["k"])
+
+    # ---- the confirm pass (M6): only a 200 rescues, only 404/410 confirms
+    res = {"a": {"status": 404}, "b": {"status": 404}, "c": {"status": 404},
+           "d": {"status": 404}, "e": {"status": 404}}
+    got = liveness.apply_confirm(res, {"a": {"status": 200}, "b": {"status": 404},
+                                       "c": {"status": 403}, "d": {"status": "error:timeout"},
+                                       "e": {"status": 410}})
+    check("confirm: counts (rescued, unconfirmed)", got, (1, 2))
+    check("confirm: statuses", {k: v["status"] for k, v in res.items()},
+          {"a": 200, "b": 404, "c": "unconfirmed:403", "d": "unconfirmed:error:timeout",
+           "e": 404})
+    rec, nd, rv = fold(res["c"]["status"], prev={"status": 404, "dead_count": 1,
+                                                 "unconfirmed_dead": True})
+    check("confirm: an unconfirmed 404 is no strike", rec.get("dead_since"), None)
+
+    # ---- a GraphQL 200 with only top-level errors is a failed batch, not 100 x 404
+    # (both the first pass and the small-batch re-sweep read the response)
+    real_post, real_sleep = liveness.post_json, liveness.time.sleep
+    try:
+        liveness.post_json = lambda *a, **k: {"errors": [{"message": "boom"}]}
+        liveness.time.sleep = lambda s: None
+        out = liveness.check_github(["github.com/o/r1", "github.com/o/r2"], "t")
+    finally:
+        liveness.post_json, liveness.time.sleep = real_post, real_sleep
+    check("graphql errors-only: batch error, never 404",
+          sorted(v["status"] for v in (out or {}).values()), ["error:graphql"] * 2)
+
     # ---- extra fields ride along only when present, and no per-run timestamp
     # is ever written onto a record.
     rec, nd, rv = fold(200, archived=True, last_push="2024-01-01T00:00:00Z", empty=None)
