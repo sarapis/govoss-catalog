@@ -123,7 +123,11 @@ def main():
         print("SKIP  not built: %s\n      run `bash run.sh` (or the page builders) first."
               % ", ".join(missing))
         print("%d checks run (pure only), %d failed" % (len(ran), len(failed)))
-        return 1 if failed else 0
+        # NOT RUN is not a pass: exit 2, so a wrapper that reads exit codes says
+        # so. It used to exit 0 here, and on a fresh checkout (site/ and out/ are
+        # gitignored) ~370 checks silently did not run (review 2026-11-10, M17).
+        print("NOT RUN  the built-page checks need site/: build the pages first.")
+        return 1 if failed else 2
 
     pages = {n: read(p) for n, p in PAGES.items()}
 
