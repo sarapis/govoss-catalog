@@ -106,12 +106,26 @@ def harvest_problems(fetched, ospo_sources, sources, now):
     keyed wrong, this matched nothing for all 17 sources and was a silent no-op.
     """
     out = []
-    for k, meta in sources.items():
+    # NO RECORD is its own state, never silence (review 2026-11-10, M12): a
+    # missing _fetched.json, a catalogue with no record in it, and one whose
+    # every attempt failed (fetched_at None) all used to report nothing.
+    if sources and not fetched:
+        out.append(("warn", "cache/_fetched.json is missing or empty, so no catalogue's "
+                            "freshness can be checked"))
+    for k, meta in (sources.items() if fetched else ()):
         rec = fetched.get(meta.get("checkpoint")) or {}
         days = _days_since(rec.get("fetched_at"), now)
-        if days is None:
-            continue
         label = meta["label"]
+        if not rec:
+            out.append(("warn", "catalogue '%s' has no harvest record in cache/_fetched.json "
+                                "(checkpoint key '%s')" % (label, meta.get("checkpoint"))))
+            continue
+        if days is None:
+            out.append(("warn", "catalogue '%s' has never fetched successfully%s"
+                                % (label, " - " + _brief(rec.get("error"))
+                                   if rec.get("ok") is False else
+                                   " (no fetch date recorded)")))
+            continue
         if rec.get("ok", True) is False:
             out.append(("critical" if days > 29 else "warn",
                         "catalogue '%s': the last harvest attempt failed (%s), so it shows "
@@ -607,6 +621,7 @@ def build(lang="en"):
         "__N_RUNS__": str(len(runs)),
         "__N_SURVEY__": str(len(S.SURVEY)),
         "__RUN_AT__": esc(latest["run_at"]),
+        "__RUN_ISO__": esc(latest["run_at"]),
         "__RUN_AGO__": esc(ago(latest["run_at"], lang)),
         "__RUN_DUR__": dur(latest.get("duration_s")),
         "__STATE_CLS__": {"ok": "rec", "warn": "warn", "critical": "warn"}[state],
@@ -838,8 +853,19 @@ BODY = theme.page_header(
   <section class="sec">
     <div class="sechead"><h3>⟪Open items⟫</h3></div>
     <hr class="dashed">
-    <ul class="probs" style="margin-top:14px">__PROBLEMS__</ul>
+    <ul class="probs" style="margin-top:14px"><li class="p-critical" id="stalerun" data-run="__RUN_ISO__" hidden><b>⟪critical⟫</b> ⟪The last run recorded on this page is more than 8 days old: the weekly schedule appears to have stopped.⟫</li>__PROBLEMS__</ul>
   </section>
+<script>
+// The overdue check above runs at BUILD time, seconds after the run it judges,
+// so it can never trip: a stopped pipeline also stops rebuilding this page,
+// which then says "published" for ever (review 2026-11-10, M12). The reader's
+// clock is the only one still running, so the age is checked here.
+(function () {
+  var li = document.getElementById('stalerun');
+  var t = li ? Date.parse(li.getAttribute('data-run')) : NaN;
+  if (t && Date.now() - t > 8 * 864e5) li.hidden = false;
+})();
+</script>
 
   <section class="sec">
     <div class="two">

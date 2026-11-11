@@ -358,9 +358,11 @@ def main():
 
     # ---- main(): fallback, error recorded, never raises
     tmp = tempfile.mkdtemp()
-    real_out, real_get, real_locs, real_now = F.OUT, F.get, F.LOCATIONS, F.NOW
+    real_out, real_get, real_locs, real_now, real_own = F.OUT, F.get, F.LOCATIONS, F.NOW, F.OWNERSHIP
     F.OUT = os.path.join(tmp, "ospos.json")
     F.LOCATIONS = os.path.join(tmp, "locations.json")
+    F.OWNERSHIP = os.path.join(tmp, "ownership.json")
+    json.dump({"ownership": {}}, open(F.OWNERSHIP, "w"))
     placed = {"floss-ospo-gov-example": {"lat": 48.85, "lon": 2.35, "place": "Paris", "basis": "seat",
                                          "country": "FR"},
               "floss-opentech-auth-gr": {"lat": 40.63, "lon": 22.94, "place": "Thessaloniki",
@@ -386,7 +388,9 @@ def main():
         d = json.load(open(F.OUT))
         check("a clean fetch writes all three lists", (d["sources"]["floss-pso"]["ok"],
               d["sources"]["academic-map"]["ok"], d["sources"]["todo-landscape"]["ok"],
-              len(d["ospos"])), (True, True, True, 9))
+              len(d["ospos"])), (True, True, True, 8))
+        check("one office listed under both academic folders is ONE row (collapse_repeats)",
+              [r["id"] for r in d["ospos"]].count("amap-beta"), 1)
         # the landscape fails like the other two: its last good rows are kept
         F.get = lambda url, raw=False, **kw: ((_ for _ in ()).throw(OSError("todo down"))
                                               if url == F.TODO_RAW else ok_get(url, raw=raw))
@@ -463,8 +467,44 @@ def main():
         check("an emptied list is refused and the previous kept",
               (sum(r["source"] == "floss-pso" for r in d["ospos"]), d["sources"]["floss-pso"]["ok"]),
               (1, False))
+
+        # ---- M13 (review 2026-11-10): what build_ospos would refuse is refused AT
+        # FETCH for the academic map and TODO too, so the list falls back instead
+        # of the build stopping.
+        F.get = ok_get
+        F.main()
+        good = json.load(open(F.OUT))
+        todo2 = json.loads(json.dumps(TODO))
+        todo2["landscape"][1]["subcategories"][1]["items"].append(
+            {"name": "Acme, (Adopter)", "homepage_url": "https://acme2.example/"})
+        F.get = lambda url, raw=False, **kw: (_y.safe_dump(todo2, allow_unicode=True).encode()
+                                              if url == F.TODO_RAW else ok_get(url, raw=raw))
+        F.main()
+        d = json.load(open(F.OUT))
+        st = d["sources"]["todo-landscape"]
+        check("TODO: two names that slug alike are refused at fetch, last good kept",
+              (sorted(r["id"] for r in d["ospos"] if r["source"] == "todo-landscape") ==
+               sorted(r["id"] for r in good["ospos"] if r["source"] == "todo-landscape"),
+               st["ok"], "todo-acme is not unique" in st.get("error", "")), (True, False, True))
+        amap_ids = sorted(r["id"] for r in good["ospos"] if r["source"] == "academic-map")
+        json.dump({"ownership": {"amap-renamed-away": {"value": "public", "via": "https://x"}}},
+                  open(F.OWNERSHIP, "w"))
+        F.get = ok_get
+        F.main()
+        d = json.load(open(F.OUT))
+        st = d["sources"]["academic-map"]
+        check("academic map: a stale ownership key is refused at fetch, last good kept",
+              (sorted(r["id"] for r in d["ospos"] if r["source"] == "academic-map") == amap_ids,
+               st["ok"], "amap-renamed-away" in st.get("error", "")), (True, False, True))
+        check("...and the other lists are unaffected by it",
+              (d["sources"]["floss-pso"]["ok"], d["sources"]["todo-landscape"]["ok"]), (True, True))
+        json.dump({"ownership": {amap_ids[0]: {"value": "public", "via": "https://x"}}},
+                  open(F.OWNERSHIP, "w"))
+        F.main()
+        check("academic map: a live ownership key is fine",
+              json.load(open(F.OUT))["sources"]["academic-map"]["ok"], True)
     finally:
-        F.OUT, F.get, F.LOCATIONS, F.NOW = real_out, real_get, real_locs, real_now
+        F.OUT, F.get, F.LOCATIONS, F.NOW, F.OWNERSHIP = real_out, real_get, real_locs, real_now, real_own
 
     for f in failed:
         print("FAIL  " + f)

@@ -1009,7 +1009,9 @@ def main():
         return _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime(_t.time() - days * 86400))
     srcs = {"XX/demo": {"label": "Demo", "checkpoint": "demo"}}
     def hp(rec=None, ospo=None):
-        return BS.harvest_problems({"demo": rec} if rec else {}, ospo or {}, srcs, now)
+        # no rec = a fresh catalogue record, so the OSPO cases are judged alone
+        return BS.harvest_problems({"demo": rec or {"ok": True, "fetched_at": stamp(1)}},
+                                   ospo or {}, srcs, now)
     def levels(ps):
         return [a for a, _ in ps]
     got = hp({"ok": False, "fetched_at": stamp(2), "last_error_at": stamp(0), "error": "URLError x"})
@@ -1023,8 +1025,17 @@ def main():
     check("14 a success aged >15 days warns, >29 is critical",
           (levels(hp({"ok": True, "fetched_at": stamp(20)})),
            levels(hp({"ok": True, "fetched_at": stamp(40)}))), (["warn"], ["critical"]))
-    check("14 looked up by CHECKPOINT key, never the sources.py key",
-          BS.harvest_problems({"XX/demo": {"ok": False, "fetched_at": stamp(2)}}, {}, srcs, now), [])
+    got = BS.harvest_problems({"XX/demo": {"ok": False, "fetched_at": stamp(2)}}, {}, srcs, now)
+    check("14 looked up by CHECKPOINT key, never the sources.py key (keyed wrong = no record, said so)",
+          (levels(got), bool(got) and "no harvest record" in got[0][1]
+           and "attempt failed" not in got[0][1]), (["warn"], True))
+    # M12 (review 2026-11-10): no record is its own state, never silence
+    got = hp({"ok": False, "fetched_at": None, "error": "URLError z"})
+    check("14 a catalogue whose every attempt failed (fetched_at None) warns, with the reason",
+          (levels(got), bool(got) and "never fetched successfully" in got[0][1] and "URLError z" in got[0][1]),
+          (["warn"], True))
+    check("14 a missing _fetched.json warns once",
+          levels(BS.harvest_problems({}, {}, srcs, now)), ["warn"])
     ok_l = {"ok": True, "fetched_at": stamp(1)}
     got = hp(ospo={"floss-pso": {"ok": False, "fetched_at": stamp(5), "failed_at": stamp(2),
                                  "error": "URLError y"}, "academic-map": ok_l})
@@ -1035,6 +1046,7 @@ def main():
           levels(hp(ospo={"todo-landscape": {"ok": False, "fetched_at": stamp(40)}})), ["critical"])
     # the built file vs the real cache files: one problem per failed source, by name
     st = json.load(open(os.path.join(SITE, "status.json")))
+    runs_at_latest = json.load(open(os.path.join(HERE, "history.json")))["runs"][-1]["run_at"]
     msgs = [p["message"] for p in st.get("problems") or []]
     fetched = json.load(open(os.path.join(HERE, "cache", "_fetched.json")))
     ospo_src = json.load(open(os.path.join(HERE, "cache", "ospos.json"))).get("sources") or {}
@@ -1046,6 +1058,27 @@ def main():
     have = sorted(w for w in want if any(m.startswith(w) for m in msgs))
     check("14 built status.json names every source whose last attempt failed (%d)" % len(want),
           have, want)
+    # M12: /catalogs ages its own run in the READER's clock (the build-time check
+    # cannot trip). Run the page's script under node: a 41-day-old run unhides
+    # the warning, a fresh one leaves it hidden.
+    import subprocess as _sp
+    for name in ("catalogs.html", "ca/catalogs.html"):
+        pg = pages[name]
+        m = re.search(r'<li class="p-critical" id="stalerun" data-run="([^"]*)" hidden>', pg)
+        js = re.search(r"(\(function \(\) \{\s*var li = document\.getElementById\('stalerun'\);.*?\}\)\(\);)", pg, re.S)
+        check("14 %s carries the hidden stale-run warning, stamped with the run" % name,
+              bool(m) and m.group(1) == runs_at_latest, True)
+        if js:
+            res = []
+            for run in ("2026-01-01T00:00:00Z", _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime())):
+                stub = ("var li={hidden:true,getAttribute:function(){return %s;}};"
+                        "var document={getElementById:function(){return li;}};" % json.dumps(run))
+                o = _sp.run(["node", "-e", stub + js.group(1) + "console.log(li.hidden)"],
+                            capture_output=True, text=True)
+                res.append(o.stdout.strip())
+            check("14 %s: an old run shows the warning, a fresh one does not" % name, res, ["false", "true"])
+        else:
+            check("14 %s: the stale-run script is present" % name, False, True)
 
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by
