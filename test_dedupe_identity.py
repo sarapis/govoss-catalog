@@ -341,6 +341,37 @@ def main():
         urllib.request.urlopen = real
     check("resolve_github_repo refuses a non-GitHub key without asking", (got, len(asked)), (None, 0))
 
+    # ---- first_seen: a merged group is dated by EVERY member's identity, not
+    # only the survivor's, so a survivor flip or a one-week split never dates old
+    # software to today (review 2026-11-10, M16).
+    import first_seen as FS
+    grp = {"repo_key": "github.com/a/new", "name": "N", "source": "X/b",
+           "catalogue_entries": [{"source": "X/b", "name": "N", "repo_url": "https://github.com/a/new"},
+                                 {"source": "Y/c", "name": "Old", "repo_url": "https://github.com/a/old"},
+                                 {"source": "Z/d", "name": "NoRepo", "repo_url": None}]}
+    check("first_seen.members: survivor first, then every listing (repo key, else name|source)",
+          FS.members(grp), ["github.com/a/new", "github.com/a/old", "NoRepo|Z/d"])
+    seen = {"github.com/a/old": "2026-08-18"}
+    new = FS.stamp(seen, [grp], "2026-11-11")
+    check("stamp: a group with one known member is not new", new, [])
+    check("stamp: its unseen members take the group's earliest date, not today",
+          (seen["github.com/a/new"], seen["NoRepo|Z/d"]), ("2026-08-18", "2026-08-18"))
+    seen = {"github.com/a/old": None, "github.com/a/new": "2026-10-05"}
+    FS.stamp(seen, [grp], "2026-11-11")
+    check("stamp: never re-dates a known identity", seen["github.com/a/new"], "2026-10-05")
+    check("stamp: a baseline (None) member makes the group baseline",
+          (seen["NoRepo|Z/d"], FS._earliest([None, "2026-10-05"])), (None, None))
+    seen = {}
+    check("stamp: a group with no member known is new, stamped today",
+          (FS.stamp(seen, [grp], "2026-11-11"), sorted(set(seen.values()))),
+          (["github.com/a/new"], ["2026-11-11"]))
+    # the flip itself: next week the old listing survives instead
+    seen = {"github.com/a/old": "2026-08-18"}
+    FS.stamp(seen, [grp], "2026-11-11")
+    flipped = dict(grp, repo_key="github.com/a/old", name="Old", source="Y/c")
+    check("stamp: after a survivor flip nothing is new and the date holds",
+          (FS.stamp(seen, [flipped], "2026-11-18"), seen[FS.ident(flipped)]), ([], "2026-08-18"))
+
     for f in failed:
         print(f"FAIL  {f}")
     n = len(ran)

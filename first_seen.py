@@ -48,6 +48,45 @@ def ident(r):
     return r.get("repo_key") or "%s|%s" % (r.get("name"), r.get("source"))
 
 
+def members(r):
+    """Every identity a (possibly merged) row stands for: its own, plus each
+    catalogue listing's (catalogue_entries, written by dedupe). Stamping only the
+    survivor's identity meant a survivor flip, or a merge that split for a week,
+    met an identity never recorded and dated old software to today, for good
+    (review 2026-11-10, M16: 55 member identities of merged groups were unknown)."""
+    import harvest                       # norm_repo: the same key dedupe joins on
+    out = [ident(r)]
+    for e in r.get("catalogue_entries") or []:
+        k = harvest.norm_repo(e.get("repo_url")) or "%s|%s" % (e.get("name"), e.get("source"))
+        if k not in out:
+            out.append(k)
+    return out
+
+
+def _earliest(dates):
+    """None (baseline: present before the record began) is the oldest of all."""
+    return None if None in dates else min(dates)
+
+
+def stamp(seen, active, today):
+    """Stamp every identity of every active row. A row whose identities are all
+    unseen is new (today); otherwise each unseen identity takes the group's
+    EARLIEST known date, so the group reads the same whichever member is the
+    survivor. Known identities are never re-dated. -> the newly-arrived rows'
+    survivor identities."""
+    new = []
+    for r in active:
+        ids = members(r)
+        known = [seen[k] for k in ids if k in seen]
+        if not known:
+            new.append(ids[0])
+        date = _earliest(known) if known else today
+        for k in ids:
+            if k not in seen:
+                seen[k] = date
+    return new
+
+
 def load():
     try:
         with open(PATH) as fh:
@@ -150,9 +189,7 @@ def main():
     # `not in seen` — NOT `not seen.get(...)`. A baseline entry carries None, and
     # a falsy test would restamp all 3,070 of them every run.
     active = [r for r in catalog if not r.get("excluded")]
-    new = [ident(r) for r in active if ident(r) not in seen]
-    for k in new:
-        seen[k] = TODAY
+    new = stamp(seen, active, TODAY)
     save(seen)
 
     dated = sum(1 for v in seen.values() if v)
