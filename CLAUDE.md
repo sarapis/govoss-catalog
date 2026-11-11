@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 14 suites, 1,043 checks, all manual
+for t in test_*.py; do python3 $t || echo "!! $t exit $?"; done   # 14 suites, all manual; exit 2 = NOT RUN (no site/)
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`);
@@ -208,7 +208,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
   characters in every language), a meta line led by the page's own data file; the page's tools
   directly under it. All pinned by `test_built_pages.py` 12g.
-- **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, asserted none survive.
+- **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, filled by `theme.fill()` in ONE
+  pass with the TEMPLATE checked first (data is never re-scanned). JSON into a `<script>` goes through
+  `theme.script_json()` (escapes `< > &`), never bare `json.dumps` - harvested text once closed the block.
 - Tokens are VENDORED (`vendor/wegovnyc/`), `theme.py` is an alias layer onto `--wg-*` mapped by
   ROLE and MEASURED contrast; `assert_variant_live()` checks the ROOT tag. Fonts self-hosted.
 - **Language copies (`i18n.py`, `i18n/ca.json`)**: chrome only; data and the API stay English.
