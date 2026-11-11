@@ -74,18 +74,39 @@ def py_pslug(s):
 
 
 def extract_js_array(page, var):
-    m = re.search(r"var %s = (\[.*?\]);" % re.escape(var), page, re.S)
-    return json.loads(m.group(1)) if m else None
+    # raw_decode from the "[", not a regex to the first "];": harvested text can
+    # contain "];" inside a string (review 2026-11-10, H2).
+    m = re.search(r"var %s = (?=\[)" % re.escape(var), page)
+    return json.JSONDecoder().raw_decode(page, m.end())[0] if m else None
+
+
+def untrusted_text_checks(check):
+    """theme.script_json() and theme.fill(), the two ways harvested text enters a
+    page (review 2026-11-10, H2 and M11). Pure functions, so these run on a clean
+    checkout too, before the built-page checks that need site/."""
+    sys.path.insert(0, HERE)
+    import theme
+    evil = "x</script><img src=x onerror=alert(1)><!-- & __LOPTS__ \u2028"
+    blob = theme.script_json([{"n": evil}])
+    check("script_json: no '<', '>' or '&' survives (no </script, <!--, tag)",
+          [c for c in "<>&" if c in blob], [])
+    check("script_json: same JSON value after the escapes", json.loads(blob), [{"n": evil}])
+    check("script_json: pure ASCII (U+2028 escaped)", blob.isascii(), True)
+    tpl = "var DATA = __DATA__; var L = '__LOPTS__';"
+    out = theme.fill(tpl, {"__DATA__": theme.script_json(evil), "__LOPTS__": "<option>"}, "t")
+    check("fill: a token INSIDE data is not substituted (one pass)", out.count("<option>"), 1)
+    check("fill: data that looks like a token does not fail the build",
+          theme.fill("a __N__", {"__N__": "__MACOSX__"}, "t"), "a __MACOSX__")
+    try:
+        theme.fill("a __N__ __MISSED__", {"__N__": "1"}, "t")
+        missed = None
+    except SystemExit as e:
+        missed = str(e)
+    check("fill: a token in the TEMPLATE with no value still fails the build",
+          bool(missed) and "__MISSED__" in missed, True)
 
 
 def main():
-    missing = [n for n, p in PAGES.items() if not os.path.exists(p)]
-    if missing:
-        print("SKIP  not built: %s\n      run `bash run.sh` (or the page builders) first."
-              % ", ".join(missing))
-        return 0
-
-    pages = {n: read(p) for n, p in PAGES.items()}
     failed, ran = [], []
 
     def check(label, got, want):
@@ -93,12 +114,40 @@ def main():
         if got != want:
             failed.append("%s: expected %r, got %r" % (label, want, got))
 
+    untrusted_text_checks(check)
+
+    missing = [n for n, p in PAGES.items() if not os.path.exists(p)]
+    if missing:
+        for f in failed:
+            print("FAIL  " + f)
+        print("SKIP  not built: %s\n      run `bash run.sh` (or the page builders) first."
+              % ", ".join(missing))
+        print("%d checks run (pure only), %d failed" % (len(ran), len(failed)))
+        return 1 if failed else 0
+
+    pages = {n: read(p) for n, p in PAGES.items()}
+
+    # ---- 0. every JSON blob inlined into a <script> went through script_json:
+    # no raw "<", ">" or "&" on its line, so harvested text cannot close the block.
+    for name, page in pages.items():
+        for m in re.finditer(r"^var (DATA|NEWEST|OSPOSW|SRCFLAG|CCFACETS|FFACETS) = (.*)$",
+                             page, re.M):
+            check("0: %s var %s has no raw < > &" % (name, m.group(1)),
+                  [c for c in "<>&" if c in m.group(2)], [])
+        for m in re.finditer(r'<script type="application/json"[^>]*>(.*?)</script>', page, re.S):
+            check("0: %s inline application/json has no raw < > &" % name,
+                  [c for c in "<>&" if c in m.group(1)], [])
+
     # ---- 1. no unsubstituted placeholders.
     # theme.py and _ui_template.py hold markup as PLAIN strings with
     # __TOKEN__ substituted at the end. The builders assert none survive, but only
-    # for the pages they write; this covers every page at once.
+    # for the pages they write; this covers every page at once. The inlined data
+    # blobs are left out: harvested text may legitimately contain "__MACOSX__",
+    # and theme.fill() never substitutes into it (review 2026-11-10, M11).
+    blob = re.compile(r"^var (DATA|NEWEST|OSPOSW|SRCFLAG|CCFACETS|FFACETS) = .*$"
+                      r'|<script type="application/json"[^>]*>.*?</script>', re.M | re.S)
     for name, page in pages.items():
-        left = sorted(set(re.findall(r"__[A-Z][A-Z0-9_]*__", page)))
+        left = sorted(set(re.findall(r"__[A-Z][A-Z0-9_]*__", blob.sub("", page))))
         check("%s has no unsubstituted placeholder" % name, left, [])
 
     # ---- 2. catalogue.html is pure ASCII.
