@@ -222,7 +222,8 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `.side` is sticky WITH a max-height; the URL carries the view (`q fn cc rp src lic lv sort alt
   nodesc notsoft ospo`), every value validated and an unknown one IGNORED, every key written read
   back (12b); never name a JS variable after an element `id`; pages are pure ASCII and entities
-  are not decoded inside `<script>` (a "·" once shipped as `&#183;`).
+  are not decoded inside `<script>` (a "·" once shipped as `&#183;`); a harvested or listed URL becomes an
+  href only through `safeHref()` (JS) or `theme.safe_url()` (Python): http(s) or no link (12i).
 - **Recently added**: `cache/_first_seen.json`, where `null` means BASELINE (never new) and a
   missing id is unseen. `build_ui._fs_ident()` must equal `first_seen.ident()`. Undated sorts last.
 - **The `/catalogs` map** (`sources_map.py`) is the Map view of the catalogue cards: inline SVG

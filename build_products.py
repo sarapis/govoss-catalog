@@ -115,7 +115,7 @@ def build(lang="en"):
         links = []
         for a in alts:
             q = qual(a, lang)
-            url = a.get("repo_url") or ""
+            url = theme.safe_url(a.get("repo_url"))   # http(s) only (M10)
             nm = ('<a href="%s">%s</a>' % (esc(url), esc(a["name"]))) if url \
                 else '<span class="a-x">' + esc(a["name"]) + '</span>'
             # variant_count: other governments run their own version of this one
