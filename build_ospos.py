@@ -474,7 +474,7 @@ def build(lang, data, os_, geo):
         "__GROUPS__": "".join(secs), "__LAND__": fr["land"], "__VB__": " ".join(str(v) for v in vb),
         "__IPLUS__": icon("plus", 16), "__IMINUS__": icon("minus", 16), "__IRESET__": icon("rotate-ccw", 15),
         "__IFILT__": icon("sliders-horizontal", 14), "__IGROUP__": icon("globe", 14),
-        "__CFG__": json.dumps(cfg, sort_keys=True).replace("</", "<\\/"),
+        "__CFG__": theme.script_json(cfg, sort_keys=True),
         "__TODO_AT__": fetched(data, "todo-landscape", _), "__FLOSS_AT__": fetched(data, "floss-pso", _),
         "__AMAP_AT__": fetched(data, "academic-map", _),
         "__LANG__": lang,
@@ -488,11 +488,7 @@ def build(lang, data, os_, geo):
         + theme.utility_bar(lang=lang) + theme.topbar("ospos", lang, "/ospos")
         + BODY + theme.footer(lang=lang) + SCRIPT)
     page = i18n.markers(page, lang)
-    for k, v in subs.items():
-        page = page.replace(k, v)
-    left = sorted(set(re.findall(r"__[A-Z_]{3,}__", page)))
-    if left:
-        raise SystemExit("build_ospos: unsubstituted placeholders %s" % left)
+    page = theme.fill(page, subs, "build_ospos")  # one pass, template checked first
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)
     page = page.encode("ascii", "xmlcharrefreplace").decode()

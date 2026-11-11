@@ -163,11 +163,7 @@ def build(lang, d, rs, add):
         + theme.utility_bar(lang=lang) + theme.topbar("resources", lang, "/resources")
         + BODY + theme.footer(lang=lang) + SCRIPT)
     page = i18n.markers(page, lang)
-    for k, v in subs.items():
-        page = page.replace(k, v)
-    left = sorted(set(re.findall(r"__[A-Z_]{3,}__", page)))
-    if left:
-        raise SystemExit("build_resources: unsubstituted placeholders %s" % left)
+    page = theme.fill(page, subs, "build_resources")  # one pass, template checked first
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)
     page = page.encode("ascii", "xmlcharrefreplace").decode()

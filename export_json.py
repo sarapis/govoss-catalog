@@ -451,7 +451,7 @@ def build():
         return {"id": r.get("id"), "n": r.get("name"),
                 "d": (r.get("description") or "")[:180],
                 "c": r.get("country"), "cs": r.get("countries") or [],
-                "s": r.get("sources") or [], "f": r.get("functions") or [],
+                "s": r.get("sources") or [], "f": r.get("category_keys") or [],
                 "l": r.get("licence"), "u": r.get("repo_url"),
                 "cc": r.get("catalogue_count", 1),
                 # variants.py: vo = the core's id when this is a version of another
