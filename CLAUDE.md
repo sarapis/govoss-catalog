@@ -127,7 +127,8 @@ the entry is already classified by another value, and check for a sibling spelli
 
 `liveness.py` reports the DELTA. `403/429/5xx` are unknown, never dead; two consecutive dead
 observations before a verdict; every dead verdict confirmed by a plain web HEAD of the
-ORIGINAL url. Always exits 0; a crash leaves `summary.checked` standing (last good sweep).
+ORIGINAL url, and only a 404/410 there confirms it (anything else leaves it unknown). An unknown week never erases a
+confirmed verdict. Always exits 0; a crash leaves `summary.checked` standing (last good sweep).
 State machine pinned by `test_liveness_strikes.py`.
 
 ## Filters
@@ -271,7 +272,7 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url` |
 | `test_crosswalk_run.py` | crosswalk `run()` glue: Comptoir precedence, ask only rows without a QID, org-shared skip, software gate, route order, best-effort |
 | `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
-| `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
+| `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, a confirmed verdict survives an unknown week, revival; `apply_confirm()` (only a web 404/410 confirms); a GraphQL errors-only 200 is a batch error |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin` and the 12 reinstated Helsingborg repos (no more, no fewer), the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
