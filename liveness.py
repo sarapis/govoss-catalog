@@ -126,7 +126,14 @@ def check_github(keys, token):
             for k, _, _ in batch:
                 out[k] = {"status": f"error:{type(err).__name__}"}
             continue
-        data = (d or {}).get("data") or {}
+        data = (d or {}).get("data")
+        if not isinstance(data, dict):
+            # A 200 carrying only top-level "errors" (bad query, abuse limit, an
+            # outage) is a failed BATCH, not 100 missing repos. Reading it as
+            # {} turned every repo in it into a 404 strike (review 2026-11-10, M6).
+            for k, _, _ in batch:
+                out[k] = {"status": "error:graphql"}
+            continue
         for n, (k, _, _) in enumerate(batch):
             node = data.get(f"r{n}")
             if node is None:
@@ -165,7 +172,9 @@ def check_github(keys, token):
             except Exception:
                 time.sleep(5)
                 continue
-            data2 = (d2 or {}).get("data") or {}
+            data2 = (d2 or {}).get("data")
+            if not isinstance(data2, dict):
+                continue     # errors-only 200: still unknown, never 404 (M6)
             for n, k in enumerate(chunk):
                 node = data2.get(f"r{n}")
                 out[k] = ({"status": 404} if node is None else
@@ -284,8 +293,34 @@ def fold_history(results, prev, names, now):
             if p.get("dead_since"):
                 revived.append(k)
             rec["dead_count"] = 0
+        elif p.get("dead_since"):
+            # UNKNOWN on something already CONFIRMED dead: an unknown is not
+            # evidence of life, so the verdict and its date stand. Dropping them
+            # made one 503 week erase the verdict and two 404s later re-report
+            # the repo as "newly dead" with a new date (review 2026-11-10, M5;
+            # didoc4, dead 2026-09-07, erased by an error on 2026-09-14). A
+            # merely PENDING strike is still reset, as before: only 200 revives.
+            rec["dead_count"] = p.get("dead_count", 2)
+            rec["dead_since"] = p["dead_since"]
         repos[k] = rec
     return repos, newly_dead, revived
+
+
+def apply_confirm(results, confirm):
+    """Fold the confirming web HEADs into `results`, in place. A 200 rescues; a
+    404/410 confirms the API's verdict; anything else (403, 429, 5xx, timeout)
+    neither served it nor said it is gone, so the API's 404 is NOT confirmed and
+    becomes unknown, never a strike (review 2026-11-10, M6). Returns
+    (rescued, unconfirmed)."""
+    rescued = unconfirmed = 0
+    for k, v in confirm.items():
+        if v.get("status") == 200:
+            results[k] = {"status": 200, "api_404_but_web_ok": True}
+            rescued += 1
+        elif v.get("status") not in DEAD:
+            results[k] = {"status": f"unconfirmed:{v.get('status')}"}
+            unconfirmed += 1
+    return rescued, unconfirmed
 
 
 def main():
@@ -336,12 +371,9 @@ def main():
         for k in suspect:
             by_h[k.split("/")[0]].append(k)
         confirm = check_head_per_host(by_h, URLS)
-        rescued = 0
-        for k, v in confirm.items():
-            if v.get("status") == 200:
-                results[k] = {"status": 200, "api_404_but_web_ok": True}
-                rescued += 1
-        print(f"    rescued {rescued} that the API called 404 but the web serves fine")
+        rescued, unconfirmed = apply_confirm(results, confirm)
+        print(f"    rescued {rescued} that the API called 404 but the web serves fine; "
+              f"{unconfirmed} left unknown (the web HEAD could not confirm)")
 
     # ---- fold in history so "dead since" is meaningful
     repos, newly_dead, revived = fold_history(results, prev, names, NOW)
