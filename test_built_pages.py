@@ -355,6 +355,36 @@ def main():
     check("every URL key written is read back at load", sorted(written - readback), [])
     check("reset() writes the URL", "render(); writeURL(); }" in idx, True)
 
+    # ---- 12i. LINK SCHEMES (review 2026-11-10, M10). Harvested and listed URLs
+    # become hrefs; html escaping stops markup but not a javascript: URL. Every
+    # static href with a scheme is http(s) or mailto, and the pages' safeHref()
+    # (which builds the links from DATA in the browser) passes http(s) only.
+    scheme = re.compile(r'href="([a-zA-Z][a-zA-Z0-9+.-]*):', re.I)
+    for name, page in pages.items():
+        bad = sorted({m.group(1).lower() for m in scheme.finditer(page)} - {"http", "https", "mailto"})
+        check("12i: %s static hrefs use only http(s)/mailto schemes" % name, bad, [])
+    import subprocess
+    for name in ("software.html", "index.html"):
+        fn = re.search(r"function safeHref\(u\) \{.*?\n\}", pages[name], re.S)
+        check("12i: %s defines safeHref()" % name, bool(fn), True)
+        if not fn:
+            continue
+        js = fn.group(0) + ("\nconsole.log(JSON.stringify(['https://a.b/x', ' HTTP://a.b ', "
+                            "'javascript:alert(1)', 'JavaScript:x', 'data:text/html,x', 'git://a/b', "
+                            "'www.a.b', '-', null, undefined].map(safeHref)));")
+        out = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+        check("12i: %s safeHref passes http(s) only" % name,
+              json.loads(out.stdout or "null"),
+              ["https://a.b/x", "HTTP://a.b", "", "", "", "", "", "", "", ""])
+        # and every link built from DATA goes through it: the variables the
+        # anchors are built from, and flagged()'s href argument.
+        assigns = re.findall(r"var (?:link|ru) = [^;]*;|vl = [^;]*;", pages[name])
+        check("12i: %s link variables are all set through safeHref" % name,
+              [a for a in assigns if "safeHref" not in a], [])
+        if name == "software.html":
+            check("12i: software.html flagged() sanitises its href",
+                  "href = safeHref(href);" in pages[name], True)
+
     # ---- 12d. STAT ROWS: each carries the class for its tile count. The shared
     # rule never leaves an empty (grey) cell, but only .six / .five hold the
     # measured breakpoints; a changed count without its class wraps 4+1 again.

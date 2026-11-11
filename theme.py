@@ -86,6 +86,15 @@ def fill(page, subs, who):
     pat = re.compile("|".join(re.escape(k) for k in sorted(subs, key=len, reverse=True)))
     return pat.sub(lambda m: subs[m.group(0)], page)
 
+
+def safe_url(u):
+    """A harvested or listed URL, only if it is http(s); else "". html.escape
+    stops markup but not a javascript: URL in an href, and on /products the link
+    opens in the govoss.cat origin (review 2026-11-10, M10). The pages' JS has
+    the same rule as safeHref()."""
+    u = (u if isinstance(u, str) else "").strip()
+    return u if re.match(r"(?i)https?://", u) else ""
+
 # --------------------------------------------------------------------------
 # Fonts. Self-hosted, NOT a CDN.
 #

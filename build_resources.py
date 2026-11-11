@@ -131,7 +131,7 @@ def build(lang, d, rs, add):
             % (esc(r["id"]), esc(r["case"]), esc(r["category"]), esc(r["language"]),
                "" if pb is None else pb, esc(r.get("date") or ""), i,
                esc((cases.get(r["case"]) or {}).get("name") or ""), esc(short(r["case"])), tags,
-               esc(r["url"]), esc(r["title"]),
+               esc(theme.safe_url(r["url"]) or "#"), esc(r["title"]),   # http(s) only (M10)
                " &middot; ".join(meta),
                esc(r["what_it_is_for"]),
                esc(_("For building an OSPO:")), esc(r["use_for_ospo_construction"]), extra,

@@ -359,11 +359,14 @@ def build(lang, data, os_, geo):
                         % (esc(r["id"]), icon("package", 15),
                            esc(_("{n} software entries in govoss", n=N(np_)) if np_ > 1
                                else _("1 software entry in govoss"))))
-        links = ['<a class="at-web" href="%s" target="_blank" rel="noopener">%s%s</a>'
-                 % (esc(r["url"]), icon("globe", 13), esc(_("Website")))]
+        # every href here is http(s) only (theme.safe_url, review 2026-11-10 M10):
+        # these come from three lists other people publish.
+        web = theme.safe_url(r["url"])
+        links = (['<a class="at-web" href="%s" target="_blank" rel="noopener">%s%s</a>'
+                  % (esc(web), icon("globe", 13), esc(_("Website")))] if web else [])
         # one code profile on the card; the rest behind "+N", opened in the dialog.
         # The full list is in the card (hidden), so the page without JS still has it.
-        code = r.get("code") or []
+        code = [c for c in (theme.safe_url(c) for c in (r.get("code") or [])) if c]
         def code_link(c, cls="at-code"):
             h = host_of(c)
             ic = "github" if "github" in h else "gitlab" if ("gitlab" in h or "opencode" in h) else "git-branch"
@@ -376,12 +379,12 @@ def build(lang, data, os_, geo):
                          'data-n="%d" title="%s">%s</button>'
                          % (len(code), esc(_("All {n} code profiles", n=N(len(code)))),
                             esc(_("+{n} more", n=N(len(code) - 1)))))
-        if r.get("policy"):
+        if theme.safe_url(r.get("policy")):
             links.append('<a href="%s" target="_blank" rel="noopener">%s%s</a>'
-                         % (esc(r["policy"]), icon("scroll-text", 13), esc(_("Open source policy"))))
-        if r.get("case_study"):
+                         % (esc(theme.safe_url(r["policy"])), icon("scroll-text", 13), esc(_("Open source policy"))))
+        if theme.safe_url(r.get("case_study")):
             links.append('<a href="%s" target="_blank" rel="noopener">%s%s</a>'
-                         % (esc(r["case_study"]), icon("file-check", 13), esc(_("TODO Group case study"))))
+                         % (esc(theme.safe_url(r["case_study"])), icon("file-check", 13), esc(_("TODO Group case study"))))
         if r.get("email"):
             links.append('<a href="mailto:%s">%s%s</a>' % (esc(r["email"]), icon("mail", 13), esc(r["email"])))
         if r["_case"]:
