@@ -105,9 +105,10 @@ echo "govoss-catalog run  $STAMP"
 echo "════════════════════════════════════════════════════════════"
 
 # Keep the previous catalogue as a rollback point and to diff counts against.
+# out/ first: on a fresh checkout the copy had nowhere to go.
+mkdir -p out
 [ -f catalog.json ] && cp catalog.json out/catalog.prev.json
 
-mkdir -p out
 : > out/steps.tsv          # fresh per run; runlog.py reads it
 STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 TRIGGER="${GOVOSS_TRIGGER:-manual}"
@@ -122,11 +123,18 @@ step () {
   local t0=$SECONDS
   echo ""
   echo "── $label ──────────────────────────────────────────"
-  if "$@"; then
+  # Capture the status BEFORE branching on it. The old form, `if "$@"; then ...
+  # fi; local code=$?`, read the status of the `if` itself, which is 0 when the
+  # condition fails and there is no else: every failed step was recorded as exit
+  # 0, so the deploy and record gates below could never trip (review 2026-11-10,
+  # H1). `local code` on its own line: `local code=$?` would read local's status.
+  local code
+  "$@"
+  code=$?
+  if [ "$code" -eq 0 ]; then
     printf '%s\t0\t%s\n' "$label" "$((SECONDS - t0))" >> out/steps.tsv
     return 0
   fi
-  local code=$?
   printf '%s\t%s\t%s\n' "$label" "$code" "$((SECONDS - t0))" >> out/steps.tsv
   echo "!! step failed: $* (exit $code; continuing — later steps still add value)"
   return $code
