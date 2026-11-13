@@ -1,14 +1,11 @@
 # govoss-catalog
 
-> Union catalogue of **government open source software**, harvested first-hand from 20
-> national, municipal and international catalogues, normalised onto one schema, translated,
-> categorised by function, de-duplicated, linked to variants and liveness-monitored.
-> **3,175 active entries · 20 catalogues · 16 countries and bodies.** Live at
-> https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat.
+> Union catalogue of **government open source software** from 20 catalogues, harvested first-hand,
+> normalised, translated, categorised, de-duplicated and liveness-monitored. Live at
+> https://govoss.cat (Catalan at `/ca/`), MCP at https://mcp.govoss.cat. Counts: `/meta.json`.
 
-This file is RULES ONLY - it loads into every session, budget 300 lines. The reasoning,
-numbers and incidents behind each rule are in `ARCHIVE.md` › "The long-form operating
-manual, as of 2026-09-23". Open items and traps: `CONTINUE.md`.
+This file is RULES ONLY - it loads into every session, budget 300 lines, no counts. The reasoning
+behind each rule: `ARCHIVE.md` › "The long-form operating manual". Open items and traps: `CONTINUE.md`.
 
 ## Commands
 
@@ -109,12 +106,10 @@ it first waits (`netgate.py`, up to 12h) for a FULL wake with DNS, then holds `c
   code.overheid.nl use `lang_with_prior()`; Munich and DPG use `lang_assume_en()`; forges use
   `detect_lang(text, hint=)`: the hint breaks ties, AND decides when the text carries one marker
   for it that is not an English homograph ("Ett childtema för Municipio" is Swedish). `ä`/`ö` count for de, sv AND fi;
-  Finnish `se` never matches after `. - /`. **Over-correcting toward English is the worse
-  failure.** All pinned by `test_detect_lang.py` (59 real strings).
+  Finnish `se` never matches after `. - /`. **Over-correcting toward English is the worse failure.** (`test_detect_lang.py`)
 - Entries with no description are set aside (`no-description`), not deleted.
-- Orphaned keys -> `out/translation_orphans.json`; the trigger is GROWTH, and a missing
-  previous figure is not zero. `merge_translations.py` WARNS on merged input (count misleads).
-  Pinned by `test_translation_orphans.py`.
+- Orphaned keys -> `out/translation_orphans.json`; the trigger is GROWTH, and a missing previous
+  figure is not zero. `merge_translations.py` WARNS on merged input. (`test_translation_orphans.py`)
 
 ## Categorisation
 
@@ -128,10 +123,9 @@ the entry is already classified by another value, and check for a sibling spelli
 ## Liveness
 
 `liveness.py` reports the DELTA. `403/429/5xx` are unknown, never dead; two consecutive dead
-observations before a verdict; every dead verdict confirmed by a plain web HEAD of the
-ORIGINAL url, and only a 404/410 there confirms it (anything else leaves it unknown). An unknown week never erases a
-confirmed verdict. Always exits 0; a crash leaves `summary.checked` standing (last good sweep).
-State machine pinned by `test_liveness_strikes.py`.
+observations before a verdict; every dead verdict confirmed by a plain web HEAD of the ORIGINAL
+url, and only a 404/410 there confirms it. An unknown week never erases a confirmed verdict. Always
+exits 0; a crash leaves `summary.checked` standing (last good sweep). (`test_liveness_strikes.py`)
 
 ## Filters
 
@@ -165,15 +159,14 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   redirect Worker (301, query kept, CORS on the redirect); MCP is `mcp-server/` at
   `mcp.govoss.cat`. All in Devin@sarapis.org's Account, **`account_id` pinned in every
   wrangler config** - a cached login for another account once took a deploy.
-- **`deploy` is gated on `out/steps.tsv`**: any failed step and nothing publishes. **`record`**
-  commits `catalog.json`, `history.json`, `liveness.json`, `cache/` with an explicit path list,
-  only on `main`, never force-pushes, same gate.
+- **`deploy` is gated on `out/steps.tsv`**: any failed step and nothing publishes. **`record`** commits
+  `catalog.json`, `history.json`, `liveness.json`, `cache/` by explicit path, only on `main`, never
+  force-pushes, same gate.
 - `publish()` resolves wrangler AND node itself (a node-script CLI under launchd's PATH reads
   as an auth failure when it is not). Verify with `publish()` under `env -i PATH=<plist PATH>`.
 - **Deploy auth is REPORTED (F7)**: token env -> `~/.config/govoss/cloudflare-token` -> stored
   login, recorded to `out/deploy_auth.txt` -> `history.json`; `/sources.html` warns while it is
-  `stored-login`. `None` is not `stored-login`. The pre-flight checks whoami CONTENT for the
-  pinned account id, and is non-fatal.
+  `stored-login`. `None` is not `stored-login`. The non-fatal pre-flight checks whoami CONTENT for the account id.
 - **Signup** (`theme.signup_form`) -> `/api/subscribe` -> Payload `campaign-signups` (next.sarapis.org), `campaign: govoss`.
 - Headers/redirects: `deploy-cloudflare/_headers` + `_redirects`, copied by `build_site.sh`.
   **`html_handling` is `"none"`**: `site-worker.js` owns the URL scheme, running only when no
@@ -181,10 +174,8 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   and for `/?<catalog key>` -> `/software`, query kept. Redirects that must keep a query live
   in the Worker, not `_redirects`. `build_site.sh` deletes the old page files (a stale asset
   would answer first). Pinned by `test_workers.py` and `test_built_pages.py` 12e/13.
-- A Worker custom domain needs the hostname FREE of DNS records (error 100117). Only one
-  config may claim a hostname (checked for `www`).
-- **`sources.py:SITE_URL` is the one place the address is written.** Flip it only once the new
-  address answers.
+- A Worker custom domain needs its hostname FREE of DNS records (error 100117); one config per hostname.
+- **`sources.py:SITE_URL` is the one place the address is written**; flip it only once the new one answers.
 
 ## The pages
 
@@ -265,7 +256,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 (lowest 4.9:1). **No screen-reader te
 
 ## Tests
 
-Fourteen suites, 1,191 checks, **all manual** - a test that can fail the weekly publish is one someone
+Fourteen suites, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -289,16 +280,14 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | `test_netgate.py` | `netgate.wait()`: full wake AND DNS (a dark wake with DNS waits), any host resolving, give-up on the WALL clock, log cadence; `run.sh` run with a failing gate exits 1 having run nothing (both modes); gate before `caffeinate -i -w $$` before the first step; `step()` records a failed step's REAL exit code and both gates see it (run on the function lifted from `run.sh`) |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, the tool contract vs `mcp_tools.py`, and `/api/subscribe` (same-origin, honeypot, forward to Payload) |
 
-Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only
-through `run()`'s `*_fn` arguments - keep it that way, or the glue is untestable again.
+Network enters crosswalk only through `run()`'s `*_fn` arguments - or the glue is untestable again.
 
 ## Four bugs that recurred - suspect these first
 
 1. **A responding endpoint is not a working source.** Verify content, not status codes.
 2. **Language tagging** - broken six times. See Language above; run `test_detect_lang.py`.
 3. **Absence of evidence treated as evidence of absence.** Confirm through a second channel.
-4. **String-replace patching fails silently.** Verify the built output; after a structural edit,
-   grep for what should still be there.
+4. **String-replace patching fails silently.** Verify the built output; grep for what should remain.
 
 ## Gotchas
 
