@@ -55,9 +55,7 @@ SITE = os.path.join(HERE, "site")
 # keys are site/ file names; site-worker.js serves each at its clean path.
 ROUTE_OF = {"index.html": "/", "software.html": "/software", "catalogs.html": "/catalogs",
             "ospos.html": "/ospos", "docs.html": "/docs", "products.html": "/products",
-            "resources.html": "/resources", "resources/nyc-ospo.html": "/resources/nyc-ospo"}
-# a page under another's nav item: the nav marks that item current
-NAV_PARENT = {"resources/nyc-ospo.html": "/resources"}
+            "resources.html": "/resources"}
 PAGES = {n: os.path.join(SITE, n) for n in ROUTE_OF}
 # Catalan copies (i18n.py). Every check that loops over PAGES covers them.
 PAGES.update({"ca/" + n: os.path.join(SITE, "ca", n) for n in ROUTE_OF})
@@ -319,8 +317,7 @@ def main():
     # apostrophe unescaped inside a single-quoted JS string would break the whole
     # page while every static check above still passed.
     for name in ("software.html", "ca/software.html", "index.html", "ca/index.html",
-                 "resources.html", "ca/resources.html", "ospos.html", "ca/ospos.html",
-                 "resources/nyc-ospo.html", "ca/resources/nyc-ospo.html"):
+                 "resources.html", "ca/resources.html", "ospos.html", "ca/ospos.html"):
         js = "\n".join(re.findall(r"<script>(.*?)</script>", pages[name], re.S))
         tmp = os.path.join(HERE, "out", "_check_%s.js" % name.replace("/", "_"))
         os.makedirs(os.path.dirname(tmp), exist_ok=True)
@@ -565,7 +562,7 @@ def main():
             check("%s nav: the four links, in order" % pname,
                   hrefs, [i18n.path_for(lang, r) for r, _ in NAV])
             cur = re.findall(r'href="([^"]+)" aria-current="page"', nav.group(1)) if nav else []
-            want_cur = ([i18n.path_for(lang, NAV_PARENT.get(name, ROUTE_OF[name]))]
+            want_cur = ([i18n.path_for(lang, ROUTE_OF[name])]
                         if name not in ("products.html", "docs.html", "index.html") else [])
             check("%s nav marks its own page current" % pname, cur, want_cur)
             brand = re.search(r'<a class="brand" href="([^"]+)"([^>]*)>', pages[pname])
@@ -646,7 +643,7 @@ def main():
     # compilation's records get theirs from govoss-tags.json, keyed by id (their file
     # is never edited). The artifact's NOTES never enter a record or a tag.
     rtags = json.load(open(os.path.join(HERE, "resources", "govoss-tags.json")))["tags"]
-    tagged = {r["id"]: r for r in radd["resources"] if r.get("exec_sections")}
+    tagged = {r["id"]: r for r in radd["resources"] if r.get("reuse_role")}
     tagged.update(rtags)
     check("govoss-tags.json tags only records of the compilation, with tags and no notes",
           (len(rtags) > 0, sorted(set(rtags) - {r["id"] for r in rfile["resources"]}),
@@ -676,68 +673,12 @@ def main():
                 if len(s) > 40 and s in " ".join(str(v) for v in r.values())]
         check("no sentence of the research artifact's notes is in a govoss record", leak, [])
 
-    # ---- 12h. /resources/nyc-ospo (build_nyc_ospo.py, owner 2026-11-13): how to compile
-    # an OSPO executive summary, through NYC's. Every source is an entry, every citation
-    # resolves to one with its status, and nothing the redaction removed is on the page.
-    nd = os.path.join(HERE, "resources", "nyc-ospo")
-    nbib = json.load(open(os.path.join(nd, "bibliography.json"), encoding="utf-8"))["entries"]
-    nst = {e["id"]: e["status"] for e in nbib}
-    for name in ("resources/nyc-ospo.html", "ca/resources/nyc-ospo.html"):
-        pg = pages[name]
-        check("%s renders every source as an entry, sorted by label" % name,
-              re.findall(r'<details class="xs-ent" id="([^"]+)"', pg),
-              [e["id"] for e in sorted(nbib, key=lambda e: [int(p) if p.isdigit() else p
-                                                            for p in re.split(r"(\d+)", e["label"].lower())])])
-        cites = re.findall(r'<a class="xs-cite xs-c-([a-z]+)" href="#([^"]+)"', pg)
-        check("%s: every citation resolves to an entry, styled by its status" % name,
-              (len(cites) > 0, sorted({(s, i) for s, i in cites if nst.get(i) != s})), (True, []))
-        check("%s: three tabs, Executive Summary first" % name,
-              re.findall(r'role="tab" id="xs-t-([a-z]+)"', pg), ["exec", "concepts", "sources"])
-        txt = html.unescape(re.sub(r"<[^>]+>", " ", pg))
-        check("%s: no authoring hints, word counts, interview footer or 'internal use'" % name,
-              [p for p in (r"Target: about", r"words of about", r"Interview points", r"internal use",
-                           r"\bthe interview\b", r"\bRemy (said|recommended|pointed)")
-               if re.search(p, txt, re.I)], [])
-    check("/resources links to the executive summary page, in both languages",
-          ('class="rkit" href="/resources/nyc-ospo"' in pages["resources.html"],
-           'class="rkit" href="/ca/resources/nyc-ospo"' in pages["ca/resources.html"]), (True, True))
-    try:
-        nj = json.load(open(os.path.join(SITE, "resources", "nyc-ospo.json"), encoding="utf-8"))
-    except Exception:
-        nj = {}
-    check("/resources/nyc-ospo.json publishes the same sources as the page",
-          [e["id"] for e in (nj.get("bibliography") or {}).get("entries", [])], [e["id"] for e in nbib])
-    # The PRIVATE export, when it is here (never on CI): every sentence of its notes
-    # that the public copy does not carry was removed by the redaction, and none may
-    # be on the page - this catches a build that reads the wrong copy. Read from the
-    # export at test time - never copied into this file. A private line put back INTO
-    # the public copy is caught by the generic patterns above, not here.
-    _pd = os.path.join(HERE, "resources", "opensource-nyc-export")
-    if os.path.exists(os.path.join(_pd, "bibliography.json")):
-        plain = lambda s: re.sub(r"\s+", " ", re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1",
-                                                     re.sub(r"\*+|`", "", s))).strip()
-        pub = {e["id"]: plain(" ".join([e.get("summary_and_credibility_md") or "",
-                                        e.get("relevant_content_md") or ""])) for e in nbib}
-        pcon = json.load(open(os.path.join(nd, "concepts.json"), encoding="utf-8"))["sections"]
-        pub_c = {c["id"]: plain(c["body_md"]) for c in pcon}
-        removed = []
-        for e in json.load(open(os.path.join(_pd, "bibliography.json"), encoding="utf-8"))["entries"]:
-            for f in ("summary_and_credibility_md", "relevant_content_md"):
-                for s in re.split(r"(?<=[.!?])\s+|\n+", e.get(f) or ""):
-                    s = plain(re.sub(r"^\s*[-*]\s+", "", s))
-                    if len(s) > 30 and s not in pub.get(e["id"], ""):
-                        removed.append(s)
-        _pc = os.path.join(_pd, "concepts.json")
-        if os.path.exists(_pc):
-            for c in json.load(open(_pc, encoding="utf-8")).get("sections", []):
-                for s in re.split(r"(?<=[.!?])\s+|\n+", c.get("body_md") or ""):
-                    s = plain(re.sub(r"^\s*[-*]\s+", "", s))
-                    if len(s) > 30 and s not in pub_c.get(c.get("id"), ""):
-                        removed.append(s)
-        for name in ("resources/nyc-ospo.html", "ca/resources/nyc-ospo.html"):
-            txt = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", pages[name])))
-            check("%s: none of the %d passages the redaction removed is on the page" % (name, len(removed)),
-                  (len(removed) > 0, sum(1 for s in removed if s in txt)), (True, 0))
+    # The executive summary page lives on ospo.opensource.nyc (#research), not
+    # here (owner, 2026-11-13): /resources links out to it, in both languages.
+    check("/resources links to the executive summary on ospo.opensource.nyc, in both languages",
+          [n for n in ("resources.html", "ca/resources.html")
+           if 'class="rkit" href="https://ospo.opensource.nyc/#research"' not in pages[n]], [])
+
     # "Check a class name is free before using it": the Resources page's own CSS
     # once reused .rhead (the Recently added header, a space-between flex row) and
     # spread every card's tags across its width.

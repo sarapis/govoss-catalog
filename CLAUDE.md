@@ -185,9 +185,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `/docs` (`build_api.py`, the top-right button); `/products` (no nav item, owner); `/resources`
   (`build_resources.py`: UN+NYC's committed `resources/ospo-resources.json`, replaced to update,
   records English - plus govoss's OWN `resources/govoss-additions.json`, each `added_by: govoss`,
-  never mixed into theirs; their records' tags in `resources/govoss-tags.json`); `/resources/nyc-ospo`
-  (`build_nyc_ospo.py`, REDACTED `resources/nyc-ospo/` ONLY - the gitignored private export holds
-  off-the-record interview notes: never publish or copy them; 12h); `/ospos` (`build_ospos.py`). Each under
+  never mixed into theirs; their records' tags in `resources/govoss-tags.json`; the executive summary
+  page is ospo.opensource.nyc/#research, linked from the top; the gitignored opensource-nyc-export holds
+  off-the-record interview notes: never publish or copy them); `/ospos` (`build_ospos.py`). Each under
   `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.
 - **`/ospos`: three published lists, never one we curate**, fetched weekly by `fetch_ospos.py`

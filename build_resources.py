@@ -54,7 +54,7 @@ CASE_SHORT = {"munich": "Munich", "paris": "Paris", "barcelona": "Barcelona",
 # how another city can use it. Labels are chrome, so translated; a value not listed
 # here is a data error and fails the build.
 SECTIONS = (("context", "Context"), ("definition", "OSPO definition"), ("stage", "Current stage"),
-            ("case", "Benefits and risks"), ("how", "How it would work"),
+            ("case", "Benefits and risks"), ("how", "Working structure"),
             ("metrics", "Measuring success"), ("mission", "Mission and goals"),
             ("precedents", "Precedents"))
 ROLES = (("framework", "Any city"), ("example", "Peer example"), ("local", "Local context"))
@@ -168,7 +168,7 @@ def build(lang, d, rs, add, rtags):
                                                        esc(r["use_for_ospo_construction"]))
         if secs:
             use += ('<p class="ruse rsecs"><b>%s</b> %s</p>'
-                    % (esc(_("Supports these executive summary sections:")),
+                    % (esc(_("Cited in these executive summary sections:")),
                        " &middot; ".join(esc(sec_label[k]) for k, _v in SECTIONS if k in secs)))
         extra = ""
         if r.get("notes"):
@@ -295,7 +295,7 @@ BODY = theme.page_header(
     '⟪Documents and decisions for building an OSPO, compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫',
     [theme.data_links('/resources.json')]) + """
 <div class="wrap">
-  <a class="rkit" href="/resources/nyc-ospo"><b>⟪How to compile an OSPO executive summary&nbsp;&rarr;⟫</b>
+  <a class="rkit" href="https://ospo.opensource.nyc/#research" target="_blank" rel="noopener"><b>⟪How to compile an OSPO executive summary&nbsp;&rarr;⟫</b>
     <span>⟪A worked example for New York City: the summary, the notes behind it and its sources, tagged by
       the same sections you can filter these resources by.⟫</span></a>
   <main id="main" class="rwrap">
