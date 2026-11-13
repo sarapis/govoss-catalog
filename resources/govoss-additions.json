@@ -1,9 +1,21 @@
 {
- "_about": "Resources govoss adds to /resources, in the same record shape as resources/ospo-resources.json (compiled by UN+NYC). Kept in a separate file so replacing theirs never drops these, and so these are never credited to them. Every record carries added_by: govoss.",
+ "_about": "Resources govoss adds to /resources, in the same record shape as resources/ospo-resources.json (compiled by UN+NYC). Kept in a separate file so replacing theirs never drops these, and so these are never credited to them. Every record carries added_by: govoss. Records from the opensource.nyc OSPO research also carry reuse_role (framework = any city, example = a peer's example, local = one jurisdiction's own law or policy, named in jurisdiction) and exec_sections (the OSPO executive summary sections they support: context, definition, stage, case, how, metrics, mission, precedents). They have no use_for_ospo_construction yet, and verification_status listed: not yet checked against the source.",
  "cases": [
   {
    "id": "networks",
    "name": "Networks of open source program offices (added by govoss)"
+  },
+  {
+   "id": "general",
+   "name": "Frameworks and research for any OSPO (added by govoss)"
+  },
+  {
+   "id": "us-federal",
+   "name": "US federal government (added by govoss)"
+  },
+  {
+   "id": "nyc",
+   "name": "New York City (added by govoss)"
   }
  ],
  "resources": [
@@ -23,6 +35,470 @@
    "url": "https://ospo-alliance.org/",
    "citation": "OSPO Alliance. n.d. \"OSPO Alliance.\" Accessed October 7, 2026. https://ospo-alliance.org/",
    "notes": "Added by govoss; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "general",
+   "id": "apache-software-foundation-n-d",
+   "added_by": "govoss",
+   "title": "Project Maturity Model",
+   "publisher": "Apache Software Foundation",
+   "date": "n.d.",
+   "type": "standard",
+   "category": "context",
+   "language": "en",
+   "what_it_is_for": "The Apache Software Foundation's maturity model for judging how far an open source project has developed",
+   "verification_status": "listed",
+   "url": "https://community.apache.org/apache-way/apache-project-maturity-model.html",
+   "citation": "Apache Software Foundation. n.d. \"Apache Project Maturity Model.\" Apache Community Development. https://community.apache.org/apache-way/apache-project-maturity-model.html. Accessed November 10, 2026.",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "metrics"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "chaoss-2024",
+   "added_by": "govoss",
+   "title": "CHAOSScast Episode 81",
+   "publisher": "CHAOSS",
+   "date": "2024-03-12",
+   "type": "interview",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "CHAOSScast podcast episode 81, on managing open source community health metrics at CMS.gov",
+   "verification_status": "listed",
+   "url": "https://podcast.chaoss.community/81",
+   "citation": "CHAOSS. 2024. \"CHAOSScast Episode 81: Managing Federal CHAOSS at CMS.gov.\" Podcast, March 12, 2024. https://podcast.chaoss.community/81",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "metrics"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "cms-ospo-n-d-h",
+   "added_by": "govoss",
+   "title": "Want to Start an OSPO",
+   "publisher": "CMS OSPO",
+   "date": "n.d.",
+   "type": "guide",
+   "category": "program",
+   "language": "en",
+   "what_it_is_for": "The CMS OSPO guide's page for organisations that want to start their own open source program office",
+   "verification_status": "listed",
+   "url": "https://dsacms.github.io/ospo-guide/growing/want-to-start-an-ospo/",
+   "citation": "CMS OSPO. n.d.-h. \"Want to Start an OSPO.\" https://dsacms.github.io/ospo-guide/growing/want-to-start-an-ospo/",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "us-federal",
+   "id": "code-mil-2026",
+   "added_by": "govoss",
+   "title": "DoW Open Source Software FAQ",
+   "publisher": "Code.mil (U.S. Department of Defense)",
+   "date": "2026-07-28",
+   "type": "guide",
+   "category": "policy",
+   "language": "en",
+   "what_it_is_for": "The U.S. Department of Defense (now styled Department of War) FAQ on using and releasing open source software",
+   "verification_status": "listed",
+   "url": "https://code.mil/oss-faq.html",
+   "citation": "Code.mil. 2026. \"DoW Open Source Software FAQ.\" U.S. Department of Defense (now styled Department of War). Last updated July 28, 2026. https://code.mil/oss-faq.html",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "decausemaker-2022",
+   "added_by": "govoss",
+   "title": "Linux Foundation Member Summit deck",
+   "publisher": "Remy DeCausemaker",
+   "date": "2022-11",
+   "type": "presentation",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "Slides from a Linux Foundation Member Summit talk on open source and the Digital Service at CMS",
+   "verification_status": "listed",
+   "url": "https://github.com/decause-gov/decks/blob/main/lfms-2022.pdf",
+   "citation": "DeCausemaker, Remy. 2022. \"Open Source and The Digital Service at the Centers for Medicare & Medicaid Services (CMS.gov).\" Presentation slides, Linux Foundation Member Summit, November 2022. https://github.com/decause-gov/decks/blob/main/lfms-2022.pdf",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "decausemaker-2024a",
+   "added_by": "govoss",
+   "title": "CMS OSPO at DEF CON",
+   "publisher": "Remy DeCausemaker",
+   "date": "2024-08",
+   "type": "presentation",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "DEF CON 32 slides on establishing the first open source program office at a U.S. federal agency",
+   "verification_status": "listed",
+   "url": "https://github.com/decause-gov/decks/blob/main/defcon2024/defcon2024.pdf",
+   "citation": "DeCausemaker, Remy. 2024a. \"Establishing the First Open Source Program Office (OSPO) at a United States Federal Agency.\" Presentation slides, DEF CON 32, Las Vegas, August 2024. https://github.com/decause-gov/decks/blob/main/defcon2024/defcon2024.pdf",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "case",
+    "how",
+    "mission"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "decausemaker-2024b",
+   "added_by": "govoss",
+   "title": "FCSM conference deck",
+   "publisher": "Remy DeCausemaker",
+   "date": "2024-10",
+   "type": "presentation",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "Slides from the Federal Committee on Statistical Methodology conference on establishing the CMS.gov OSPO",
+   "verification_status": "listed",
+   "url": "https://statspolicy.gov/assets/fcsm/files/docs/2024-conference-docs/B/B3.4_DeCausemaker.pdf",
+   "citation": "DeCausemaker, Remy. 2024b. \"Establishing the First US Federal Open Source Program Office (OSPO) at CMS.gov.\" Presentation slides, Federal Committee on Statistical Methodology Research and Policy Conference, October 2024. https://statspolicy.gov/assets/fcsm/files/docs/2024-conference-docs/B/B3.4_DeCausemaker.pdf",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "decausemaker-and-eggleston-2022",
+   "added_by": "govoss",
+   "title": "All Things Open talk",
+   "publisher": "Remy DeCausemaker and Melissa Eggleston",
+   "date": "2022-11",
+   "type": "talk",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "All Things Open 2022 talk, with slides and video, on open source and the Digital Service at CMS",
+   "verification_status": "listed",
+   "url": "https://github.com/decause-gov/decks/blob/main/ato-110122.pdf",
+   "citation": "DeCausemaker, Remy, and Melissa Eggleston. 2022. \"Open Source and The Digital Service at CMS.\" Presentation, All Things Open 2022, Raleigh, NC, November 2022. Slides: https://github.com/decause-gov/decks/blob/main/ato-110122.pdf. Video: https://www.youtube.com/watch?v=Q0EJIevZS0I",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "us-federal",
+   "id": "dow-cio-2026",
+   "added_by": "govoss",
+   "title": "DoW Open Source Software FAQ (GitHub version)",
+   "publisher": "Office of the DoW CIO",
+   "date": "2026-07-28",
+   "type": "guide",
+   "category": "policy",
+   "language": "en",
+   "what_it_is_for": "The GitHub Pages version of the U.S. Department of War open source software FAQ",
+   "verification_status": "listed",
+   "url": "https://risacher.github.io/DoD-OSS-FAQ/",
+   "citation": "Office of the DoW CIO. 2026. United States Department of War Open Source Software FAQ. GitHub Pages version, repository risacher/DoD-OSS-FAQ. Last updated July 28, 2026. https://risacher.github.io/DoD-OSS-FAQ/. Accessed November 11, 2026.",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "fletcher-and-decausemaker-2024",
+   "added_by": "govoss",
+   "title": "Nava Open Source Summit deck",
+   "publisher": "Andrea Fletcher and Remy DeCausemaker",
+   "date": "2024-10-24",
+   "type": "presentation",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "Nava Open Source Summit slides on open source and the Digital Service at CMS.gov",
+   "verification_status": "listed",
+   "url": "https://github.com/decause-gov/decks/blob/main/navaosssummit2024.pdf",
+   "citation": "Fletcher, Andrea, and Remy DeCausemaker. 2024. \"Open Source & The Digital Service at CMS.gov.\" Presentation slides, Nava Open Source Summit: Advancing IT Solutions in Federal Health and Beyond, Washington, DC, October 24, 2024. https://github.com/decause-gov/decks/blob/main/navaosssummit2024.pdf. Video: Nava's summit playlist, https://youtube.com/playlist?list=PLLbut-Ow2h4kJa9cXUvkMiGaWY1uWgFiE (which video is this talk is unconfirmed).",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "fletcher-decausemaker-and-col-n-viera-2022",
+   "added_by": "govoss",
+   "title": "Linux Foundation Public Health webinar",
+   "publisher": "Linux Foundation Public Health",
+   "date": "2022-09-20",
+   "type": "talk",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "Linux Foundation Public Health webinar, with slides and video, on modernising healthcare with open source at CMS",
+   "verification_status": "listed",
+   "url": "https://github.com/decause-gov/decks/blob/main/lfph-webinar-091922.pdf",
+   "citation": "Fletcher, Andrea, Remy DeCausemaker, and Alberto Colón Viera. 2022. \"Modernizing Healthcare at the Federal Level with Open Source at the Centers for Medicare & Medicaid Services (CMS.gov).\" Webinar, Linux Foundation Public Health, September 20, 2022. Slides: https://github.com/decause-gov/decks/blob/main/lfph-webinar-091922.pdf. Video: https://www.youtube.com/watch?v=iCs0-pFO7JQ",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "how"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "general",
+   "id": "haddad-2022",
+   "added_by": "govoss",
+   "title": "A Deep Dive into OSPOs",
+   "publisher": "The Linux Foundation",
+   "date": "2022",
+   "type": "report",
+   "category": "context",
+   "language": "en",
+   "what_it_is_for": "Linux Foundation report on the structure, roles, responsibilities and challenges of open source program offices",
+   "verification_status": "listed",
+   "url": "https://doi.org/10.70828/TDWK4785",
+   "citation": "Haddad, Ibrahim. 2022. A Deep Dive into Open Source Program Offices: Structure, Roles, Responsibilities, and Challenges. Foreword by Chris Aniszczyk. The Linux Foundation. https://doi.org/10.70828/TDWK4785",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "definition",
+    "stage",
+    "case",
+    "how",
+    "metrics"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "miller-2024",
+   "added_by": "govoss",
+   "title": "Federal News Network, Cloud Exchange",
+   "publisher": "Federal News Network",
+   "date": "2024-06",
+   "type": "interview",
+   "category": "leadership_perspective",
+   "language": "en",
+   "what_it_is_for": "Federal News Network video interview and article with CMS's Andrea Fletcher and Remy DeCausemaker on extending digital services through open source",
+   "verification_status": "listed",
+   "url": "https://federalnewsnetwork.com/cloud-computing/2024/06/cloud-exchange-2024-cms-andrea-fletcher-remy-decausemaker-on-extending-digital-services-through-open-source/",
+   "citation": "Miller, Jason. 2024. \"Cloud Exchange 2024: CMS' Andrea Fletcher, Remy DeCausemaker on Extending Digital Services through Open Source.\" Video interview and article, Federal News Network, June 2024. https://federalnewsnetwork.com/cloud-computing/2024/06/cloud-exchange-2024-cms-andrea-fletcher-remy-decausemaker-on-extending-digital-services-through-open-source/",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "definition",
+    "case",
+    "metrics"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "nyc",
+   "id": "nyc-open-data-law-2012",
+   "added_by": "govoss",
+   "title": "Local Law 11 of 2012 and amendments",
+   "publisher": "New York City Council",
+   "date": "2012",
+   "type": "statute",
+   "category": "policy",
+   "language": "en",
+   "what_it_is_for": "New York City's Open Data Law (Local Law 11 of 2012), which requires City agencies to publish open data",
+   "verification_status": "listed",
+   "url": "https://intro.nyc/local-laws/2012-11",
+   "citation": "New York City Council. 2012. Local Law 11 of 2012 (Int. No. 29-A), \"A Local Law to amend the administrative code of the city of New York, in relation to publishing open data.\" Codified at N.Y.C. Admin. Code § 23-501 et seq. https://intro.nyc/local-laws/2012-11",
+   "reuse_role": "local",
+   "jurisdiction": "New York City",
+   "exec_sections": [
+    "context",
+    "how",
+    "metrics"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "paris",
+   "id": "osor-2023",
+   "added_by": "govoss",
+   "title": "Presentations from the OSOR webinar on solutions for public sector",
+   "publisher": "Open Source Observatory (OSOR), European Commission",
+   "date": "2023-09-27",
+   "type": "event_page",
+   "category": "third_party_account",
+   "language": "en",
+   "what_it_is_for": "The presentations from an OSOR webinar on open source solutions for the public sector",
+   "verification_status": "listed",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/presentations-osor-webinar-solutions-public-sector",
+   "citation": "OSOR. 2023. \"Presentations from the OSOR Webinar on Solutions for Public Sector.\" European Commission, September 27, 2023. https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/presentations-osor-webinar-solutions-public-sector",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "ec",
+   "id": "ospo-alliance-2025b",
+   "added_by": "govoss",
+   "title": "FLOSS-PSO support (news)",
+   "publisher": "OSPO Alliance",
+   "date": "2025-09-15",
+   "type": "announcement",
+   "category": "context",
+   "language": "en",
+   "what_it_is_for": "OSPO Alliance news item on support for the FLOSS-PSO network of public-sector OSPOs",
+   "verification_status": "listed",
+   "url": "https://ospo-alliance.org/news/20250915_floss_pso_support/",
+   "citation": "OSPO Alliance. 2025b. News, September 15, 2025. https://ospo-alliance.org/news/20250915_floss_pso_support/",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "us-federal",
+   "id": "share-it-act-2024",
+   "added_by": "govoss",
+   "title": "Source code Harmonization And Reuse in Information Technology Act",
+   "publisher": "U.S. Congress",
+   "date": "2024",
+   "type": "statute",
+   "category": "policy",
+   "language": "en",
+   "what_it_is_for": "The SHARE IT Act (Pub. L. 118-187), the U.S. federal law on sharing and reusing custom source code across agencies",
+   "verification_status": "listed",
+   "url": "https://www.congress.gov/118/plaws/publ187/PLAW-118publ187.pdf",
+   "citation": "Source code Harmonization And Reuse in Information Technology Act (SHARE IT Act). Pub. L. No. 118-187, 138 Stat. 2638 (2024). https://www.congress.gov/118/plaws/publ187/PLAW-118publ187.pdf",
+   "reuse_role": "local",
+   "jurisdiction": "United States",
+   "exec_sections": [
+    "context",
+    "case"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "general",
+   "id": "todo-group-n-d",
+   "added_by": "govoss",
+   "title": "Repolinter",
+   "publisher": "TODO Group",
+   "date": "n.d.",
+   "type": "tool",
+   "category": "code",
+   "language": "en",
+   "what_it_is_for": "Repolinter, the TODO Group's tool for checking repositories against open source best practices (archived 2026)",
+   "verification_status": "listed",
+   "url": "https://github.com/todogroup/repolinter",
+   "citation": "TODO Group. n.d. Repolinter: The Open Source Repository Linter. GitHub repository, Apache-2.0. Archived February 6, 2026. https://github.com/todogroup/repolinter. Accessed November 10, 2026.",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "un",
+   "id": "tridgell-2026",
+   "added_by": "govoss",
+   "title": "Coding Multilateralism: the UN's governance of free and open-source software",
+   "publisher": "Computer Law & Security Review",
+   "date": "2026-09-16",
+   "type": "academic",
+   "category": "third_party_account",
+   "language": "en",
+   "what_it_is_for": "Open-access study of how the United Nations governs free and open source software, and what it means for international organisations",
+   "verification_status": "listed",
+   "url": "https://doi.org/10.1016/j.clsr.2026.106384",
+   "citation": "Tridgell, Jennifer. 2026. \"'Coding Multilateralism': Implications of the United Nations' Governance of Free and Open-Source Software for International Organisations in the Digital Age.\" Computer Law & Security Review 63: 106384. Published online September 16, 2026. Open access. https://doi.org/10.1016/j.clsr.2026.106384",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "how",
+    "precedents"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+  },
+  {
+   "case": "cms",
+   "id": "u-s-digital-response-n-d",
+   "added_by": "govoss",
+   "title": "CMS release case study",
+   "publisher": "U.S. Digital Response",
+   "date": "n.d.",
+   "type": "case_study",
+   "category": "third_party_account",
+   "language": "en",
+   "what_it_is_for": "U.S. Digital Response case study on how CMS released open source software responsibly",
+   "verification_status": "listed",
+   "url": "https://web.archive.org/web/20260412052402/https://www.usdigitalresponse.org/resources/cms-open-source-software",
+   "citation": "U.S. Digital Response. n.d. \"How One Federal Agency Worked to Release Open Source Software Responsibly.\" https://www.usdigitalresponse.org/resources/cms-open-source-software",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation. The original page was removed by 2026-11-13; the link is the Internet Archive's copy of 2026-04-12."
+  },
+  {
+   "case": "general",
+   "id": "ucl-n-d",
+   "added_by": "govoss",
+   "title": "UCL's Open Source Programme Office: Business Case",
+   "publisher": "University College London",
+   "date": "n.d.",
+   "type": "report",
+   "category": "office_description",
+   "language": "en",
+   "what_it_is_for": "The business case for University College London's Open Source Programme Office",
+   "verification_status": "listed",
+   "url": "https://github-pages.ucl.ac.uk/open-source/ospo/business-case",
+   "citation": "UCL. n.d. \"UCL's Open Source Programme Office - Business Case.\" University College London, Open Source Programme Office. Accessed November 13, 2026. https://github-pages.ucl.ac.uk/open-source/ospo/business-case",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "definition",
+    "case",
+    "how",
+    "mission"
+   ],
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
   }
  ]
 }

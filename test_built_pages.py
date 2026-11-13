@@ -637,6 +637,32 @@ def main():
           ([r.get("added_by") for r in radd["resources"]].count("govoss") == len(radd["resources"]),
            sorted({r["id"] for r in radd["resources"]} & {r["id"] for r in rfile["resources"]})),
           (True, []))
+    # the opensource.nyc sources (owner, 2026-11-13): each card carries its executive
+    # summary sections and its role for other cities, and the two filter groups count
+    # exactly the cards that carry each value. The artifact's NOTES never enter a record.
+    tagged = [r for r in radd["resources"] if r.get("exec_sections")]
+    for name in ("resources.html", "ca/resources.html"):
+        pg = pages[name]
+        got = {i: (s.split(), ro) for i, s, ro in
+               re.findall(r'<li class="res" id="([^"]+)"[^>]*data-sec="([^"]*)" data-role="([^"]*)"', pg)}
+        check("%s: every tagged source carries its sections and role on its card" % name,
+              (len(tagged) > 0, [r["id"] for r in tagged
+                                 if got.get(r["id"]) != (r["exec_sections"], r["reuse_role"])]), (True, []))
+        for g, key in (("sec", lambda r: r.get("exec_sections") or []),
+                       ("role", lambda r: [r["reuse_role"]] if r.get("reuse_role") else [])):
+            shown = {v: int(n.replace(".", "").replace(",", "")) for v, n in re.findall(
+                r'<button type="button" class="rfopt" data-g="%s" data-v="([^"]+)"[^>]*><span>[^<]*</span>'
+                r'<span class="rn">([\d.,]+)</span>' % g, pg)}
+            check("%s: the %s filter counts the cards that carry each value" % (name, g),
+                  shown, dict(collections.Counter(v for r in radd["resources"] for v in key(r))))
+    _exp = os.path.join(HERE, "resources", "opensource-nyc-export", "bibliography.json")
+    if os.path.exists(_exp):
+        _notes = {e["id"]: [e.get("summary_and_credibility_md") or "", e.get("relevant_content_md") or ""]
+                  for e in json.load(open(_exp, encoding="utf-8"))["entries"]}
+        leak = [r["id"] for r in radd["resources"] for n in _notes.get(r["id"], [])
+                for s in re.split(r"(?<=[.!?])\s+", n)
+                if len(s) > 40 and s in " ".join(str(v) for v in r.values())]
+        check("no sentence of the research artifact's notes is in a govoss record", leak, [])
     # "Check a class name is free before using it": the Resources page's own CSS
     # once reused .rhead (the Recently added header, a space-between flex row) and
     # spread every card's tags across its width.
