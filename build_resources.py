@@ -130,6 +130,7 @@ def build(lang, d, rs, add, rtags):
 
     sec_label = {k: _(v) for k, v in SECTIONS}
     role_label = {k: _(v) for k, v in ROLES}
+    by_sec = collections.Counter(s for r in rs for s in tg(r).get("exec_sections") or [])
     by_role = collections.Counter(tg(r)["reuse_role"] for r in rs if tg(r).get("reuse_role"))
 
     def ordered(key, title, keys, counter, label):
@@ -141,9 +142,8 @@ def build(lang, d, rs, add, rtags):
         return ('<div class="rfgroup"><h3>%s</h3><div class="rfopts">%s</div></div>'
                 % (esc(title), opts)) if opts else ""
 
-    # the summary sections show on each card but are not a filter here (owner, 2026-11-13);
-    # /resources/nyc-ospo filters its sources by them
-    facets = (ordered("role", _("For other cities"), [k for k, _v in ROLES], by_role, role_label)
+    facets = (ordered("sec", _("Executive summary section"), [k for k, _v in SECTIONS], by_sec, sec_label)
+              + ordered("role", _("For other cities"), [k for k, _v in ROLES], by_role, role_label)
               + group("case", _("OSPO"), by_case, short)
               + group("cat", _("Category"), by_cat, human)
               + group("lang", _("Language"), by_lang, lambda v: LANG_NAME.get(v, v)))
@@ -296,7 +296,8 @@ BODY = theme.page_header(
     [theme.data_links('/resources.json')]) + """
 <div class="wrap">
   <a class="rkit" href="/resources/nyc-ospo"><b>⟪How to compile an OSPO executive summary&nbsp;&rarr;⟫</b>
-    <span>⟪A worked example for New York City: the summary, the notes behind it and its sources.⟫</span></a>
+    <span>⟪A worked example for New York City: the summary, the notes behind it and its sources, tagged by
+      the same sections you can filter these resources by.⟫</span></a>
   <main id="main" class="rwrap">
     <aside class="rside" aria-label="⟪Filters⟫">__FACETS__</aside>
     <div class="rmain">
@@ -322,7 +323,7 @@ BODY = theme.page_header(
 </div>
 """
 
-# The view lives in the address bar (q, role, case, cat, lang, pb, sort), read once
+# The view lives in the address bar (q, sec, role, case, cat, lang, pb, sort), read once
 # and written by every change - the same contract as /software: every value is
 # validated against what the page offers, and an unknown one is IGNORED.
 SCRIPT = """
@@ -333,7 +334,7 @@ SCRIPT = """
   // search reads each card's own text (title, publisher, both notes, citation,
   // tags), lower-cased once - not a hidden copy, which doubled the page
   var text = new Map(cards.map(function (c) { return [c, c.textContent.toLowerCase()]; }));
-  var on = { role: new Set(), 'case': new Set(), cat: new Set(), lang: new Set() };
+  var on = { sec: new Set(), role: new Set(), 'case': new Set(), cat: new Set(), lang: new Set() };
   var opts = [].slice.call(document.querySelectorAll('.rfopt'));
   var offered = {};
   opts.forEach(function (b) {
@@ -345,7 +346,10 @@ SCRIPT = """
   function apply(write) {
     var q = (el('rq').value || '').trim().toLowerCase(), n = 0;
     cards.forEach(function (c) {
+      // a source supports several sections: it matches when any of them is picked
+      var secs = c.dataset.sec ? c.dataset.sec.split(' ') : [];
       var ok = (!q || text.get(c).indexOf(q) >= 0) &&
+        (!on.sec.size || secs.some(function (s) { return on.sec.has(s); })) &&
         (!on.role.size || on.role.has(c.dataset.role)) &&
         (!on['case'].size || on['case'].has(c.dataset['case'])) &&
         (!on.cat.size || on.cat.has(c.dataset.cat)) &&
@@ -387,7 +391,7 @@ SCRIPT = """
   function writeURL() {
     var P = new URLSearchParams(), q = (el('rq').value || '').trim();
     if (q) P.set('q', q);
-    ['role', 'case', 'cat', 'lang'].forEach(function (k) { on[k].forEach(function (v) { P.append(k, v); }); });
+    ['sec', 'role', 'case', 'cat', 'lang'].forEach(function (k) { on[k].forEach(function (v) { P.append(k, v); }); });
     if (pbOnly) P.set('pb', '1');
     if (el('rsort').value !== 'case') P.set('sort', el('rsort').value);
     var qs = P.toString(), url = location.pathname + (qs ? '?' + qs : '') + location.hash;
@@ -397,7 +401,7 @@ SCRIPT = """
   try {
     var P = new URLSearchParams(location.search);
     if (P.get('q')) el('rq').value = P.get('q');
-    ['role', 'case', 'cat', 'lang'].forEach(function (k) {
+    ['sec', 'role', 'case', 'cat', 'lang'].forEach(function (k) {
       P.getAll(k).forEach(function (v) { if (offered[k] && offered[k].has(v)) on[k].add(v); });
     });
     if (P.get('pb') === '1') pbOnly = true;

@@ -660,9 +660,8 @@ def main():
               [i for i, t in tagged.items() if got.get(i) != (t["exec_sections"], t["reuse_role"])], [])
         check("%s: an untagged card carries no sections or role" % name,
               sorted(i for i, v in got.items() if i not in tagged and v != ([], "")), [])
-        check("%s: the summary sections are on the cards, not a sidebar filter (owner, 2026-11-13)" % name,
-              'data-g="sec"' in pg, False)
-        for g, key in (("role", lambda t: [t["reuse_role"]] if t.get("reuse_role") else []),):
+        for g, key in (("sec", lambda t: t.get("exec_sections") or []),
+                       ("role", lambda t: [t["reuse_role"]] if t.get("reuse_role") else [])):
             shown = {v: int(n.replace(".", "").replace(",", "")) for v, n in re.findall(
                 r'<button type="button" class="rfopt" data-g="%s" data-v="([^"]+)"[^>]*><span>[^<]*</span>'
                 r'<span class="rn">([\d.,]+)</span>' % g, pg)}
