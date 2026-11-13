@@ -33,6 +33,9 @@ SRC = f"{OUT}/resources/ospo-resources.json"
 # govoss's OWN additions, same record shape, kept out of the UN+NYC file so a
 # replacement of that file never drops them and never credits them to UN+NYC.
 ADD = f"{OUT}/resources/govoss-additions.json"
+# govoss's research tags for COMPILATION records, keyed by their id: the UN+NYC file is
+# never edited, so its records' tags live here (the additions carry their own).
+TAGS = f"{OUT}/resources/govoss-tags.json"
 NOW = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 _th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
@@ -80,22 +83,31 @@ def load():
         raise SystemExit("build_resources: file says total=%s but carries %d records"
                          % (d.get("total"), len(rs)))
     add = json.load(open(ADD))
-    bad = [r["id"] for r in add["resources"]
-           if not set(r.get("exec_sections") or []) <= {k for k, _ in SECTIONS}
-           or r.get("reuse_role") not in (None,) + tuple(k for k, _ in ROLES)
-           or (r.get("reuse_role") == "local") != bool(r.get("jurisdiction"))]
-    if bad:
-        raise SystemExit("build_resources: %s: unknown exec_sections or reuse_role, or a local "
-                         "source without its jurisdiction: %s" % (ADD, bad))
+    tags = json.load(open(TAGS))["tags"]
+    bad = lambda items: [i for i, t in items
+                         if not set(t.get("exec_sections") or []) <= {k for k, _ in SECTIONS}
+                         or t.get("reuse_role") not in (None,) + tuple(k for k, _ in ROLES)
+                         or (t.get("reuse_role") == "local") != bool(t.get("jurisdiction"))]
+    for path, b in ((ADD, bad((r["id"], r) for r in add["resources"])), (TAGS, bad(tags.items()))):
+        if b:
+            raise SystemExit("build_resources: %s: unknown exec_sections or reuse_role, or a local "
+                             "source without its jurisdiction: %s" % (path, b))
+    # tags name compilation records only (additions carry their own); a stale id means
+    # the compilation was replaced and dropped or renamed a record - fix the tags file
+    stale = sorted(set(tags) - {r["id"] for r in rs})
+    if stale:
+        raise SystemExit("build_resources: %s tags ids the compilation does not have: %s" % (TAGS, stale))
     clash = {r["id"] for r in add["resources"]} & {r["id"] for r in rs}
     if clash or any(r.get("added_by") != "govoss" for r in add["resources"]):
         raise SystemExit("build_resources: %s must use new ids and mark each record "
                          "added_by govoss (clash: %s)" % (ADD, sorted(clash)))
-    return d, rs, add
+    return d, rs, add, tags
 
 
-def build(lang, d, rs, add):
+def build(lang, d, rs, add, rtags):
     _ = lambda msg, **kw: i18n.t(lang, msg, **kw)
+    # a record's research tags: govoss-tags.json for the compilation, its own for an addition
+    tg = lambda r: rtags.get(r["id"]) or r
     N = lambda n: i18n.num(lang, n)
     cases = {c["id"]: c for c in (d.get("cases") or []) + (add.get("cases") or [])}
     short = lambda cid: CASE_SHORT.get(cid) or (cases.get(cid) or {}).get("name") or cid
@@ -118,8 +130,8 @@ def build(lang, d, rs, add):
 
     sec_label = {k: _(v) for k, v in SECTIONS}
     role_label = {k: _(v) for k, v in ROLES}
-    by_sec = collections.Counter(s for r in rs for s in r.get("exec_sections") or [])
-    by_role = collections.Counter(r["reuse_role"] for r in rs if r.get("reuse_role"))
+    by_sec = collections.Counter(s for r in rs for s in tg(r).get("exec_sections") or [])
+    by_role = collections.Counter(tg(r)["reuse_role"] for r in rs if tg(r).get("reuse_role"))
 
     def ordered(key, title, keys, counter, label):
         """a group in a FIXED order (the summary's sections), not by count"""
@@ -145,11 +157,11 @@ def build(lang, d, rs, add):
                 % (esc(human(r["category"])), esc(human(r["type"]))))
         if pb is not None:
             tags = '<span class="tag pb">%s</span>' % esc(_("Playbook #{n}", n=pb)) + tags
-        role = r.get("reuse_role")
+        role = tg(r).get("reuse_role")
         if role:
-            rl = role_label[role] + (": " + r["jurisdiction"] if role == "local" else "")
+            rl = role_label[role] + (": " + tg(r)["jurisdiction"] if role == "local" else "")
             tags = '<span class="tag rrole">%s</span>' % esc(rl) + tags
-        secs = r.get("exec_sections") or []
+        secs = tg(r).get("exec_sections") or []
         use = ""
         if r.get("use_for_ospo_construction"):
             use = '<p class="ruse"><b>%s</b> %s</p>' % (esc(_("For building an OSPO:")),
@@ -225,7 +237,13 @@ def build(lang, d, rs, add):
 
 
 PAGE_CSS = """
-.rwrap{display:flex;gap:28px;align-items:flex-start;margin-top:28px;}
+.rkit{display:flex;flex-direction:column;gap:2px;margin-top:24px;padding:14px 18px;border:1px solid var(--border);
+  border-left:4px solid var(--primary);border-radius:var(--r-card);background:var(--surface);text-decoration:none;color:var(--ink);}
+.rkit b{font-family:var(--font-display);font-size:16px;color:var(--primary);}
+.rkit span{font-size:13.5px;color:var(--ink-600);}
+.rkit:hover{border-color:var(--primary);}
+.rkit:hover b{text-decoration:underline;}
+.rwrap{display:flex;gap:28px;align-items:flex-start;margin-top:20px;}
 .rside{flex:0 0 250px;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;
   background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:16px;}
 .rmain{flex:1 1 auto;min-width:0;}
@@ -277,6 +295,9 @@ BODY = theme.page_header(
     '⟪Documents and decisions for building an OSPO, compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫',
     [theme.data_links('/resources.json')]) + """
 <div class="wrap">
+  <a class="rkit" href="/resources/nyc-ospo"><b>⟪How to compile an OSPO executive summary&nbsp;&rarr;⟫</b>
+    <span>⟪A worked example for New York City: the summary, the notes behind it and its sources, tagged by
+      the same sections you can filter these resources by.⟫</span></a>
   <main id="main" class="rwrap">
     <aside class="rside" aria-label="⟪Filters⟫">__FACETS__</aside>
     <div class="rmain">
@@ -404,12 +425,13 @@ SCRIPT = """
 
 
 if __name__ == "__main__":
-    d, rs, add = load()
+    d, rs, add, rtags = load()
     for _lang in i18n.LANGS:
-        build(_lang, d, rs, add)
+        build(_lang, d, rs, add, rtags)
     # the data as one request, for agents: the file as compiled, plus where it is shown,
-    # and govoss's own additions under their own key - never mixed into resources[]
+    # and govoss's own additions and tags under their own keys - never mixed into resources[]
     with open(f"{SITE}/resources.json", "w") as fh:
         json.dump({"generated_at": NOW, "human_page": i18n.BASE + "/resources", **d,
-                   "added_by_govoss": add}, fh, ensure_ascii=False, indent=1)
+                   "added_by_govoss": add, "govoss_tags": json.load(open(TAGS))},
+                  fh, ensure_ascii=False, indent=1)
     i18n.report("build_resources")

@@ -194,7 +194,13 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `/docs` (`build_api.py`, the top-right button); `/products` (no nav item, owner); `/resources`
   (`build_resources.py`: UN+NYC's committed `resources/ospo-resources.json`, replaced to update,
   records English - plus govoss's OWN `resources/govoss-additions.json`, each `added_by: govoss`,
-  never mixed into their file or credited to them); `/ospos` (`build_ospos.py`). Each under
+  never mixed into their file or credited to them; their records' research tags - summary section,
+  role for other cities - live in `resources/govoss-tags.json` by id, never in their file, and no
+  research NOTES enter a `/resources` record); `/resources/nyc-ospo` (`build_nyc_ospo.py`: how to
+  compile an OSPO executive summary, through NYC's - from the REDACTED copy in `resources/nyc-ospo/`
+  ONLY. The private export, `resources/opensource-nyc-export/`, is gitignored: interview notes Remy
+  DeCausemaker gave off the record - never publish them, never copy its text into a tracked file,
+  and he is told before anything naming him ships. Test 12h); `/ospos` (`build_ospos.py`). Each under
   `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.
 - **`/ospos`: three published lists, never one we curate**, fetched weekly by `fetch_ospos.py`

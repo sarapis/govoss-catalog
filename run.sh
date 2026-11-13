@@ -205,6 +205,7 @@ step "catalogs page" "$PY" -u build_sources.py  # /catalogs; also writes status.
 step "docs page"    "$PY" -u build_api.py       # /docs; measures site/*.json, so runs after export
 step "products page" "$PY" -u build_products.py # reads by-product.json, so runs after export
 step "resources page" "$PY" -u build_resources.py # /resources, from resources/ospo-resources.json
+step "nyc ospo page" "$PY" -u build_nyc_ospo.py  # /resources/nyc-ospo, from resources/nyc-ospo/ (redacted)
 step "ospos page"   "$PY" -u build_ospos.py     # /ospos, from cache/ospos.json + ospos/locations.json
 
 # ---- publish -------------------------------------------------------------

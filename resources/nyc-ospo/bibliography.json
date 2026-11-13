@@ -1,0 +1,3146 @@
+{
+ "source_artifact": "https://claude.ai/artifact/RNg3dgXPsmLJjuojVGr4BJ",
+ "exported_at": "2026-11-13T17:11:45Z",
+ "total": 106,
+ "_about": "Public data for the NYC OSPO research page on govoss.cat: the annotated bibliography, with private passages removed. Text fields are Markdown.",
+ "counts": {
+  "final": 10,
+  "draft": 96,
+  "todo": 0,
+  "already_in_govoss": 85,
+  "by_role": {
+   "framework": 23,
+   "example": 78,
+   "local": 5,
+   "null": 0
+  }
+ },
+ "fields": [
+  "id",
+  "label",
+  "title",
+  "type",
+  "cases",
+  "status",
+  "status_label",
+  "citation_md",
+  "url",
+  "all_urls",
+  "summary_and_credibility_md",
+  "relevant_content_md",
+  "has_todo",
+  "already_in_govoss",
+  "updated_at",
+  "role",
+  "role_label",
+  "jurisdiction",
+  "exec_sections"
+ ],
+ "entries": [
+  {
+   "id": "acteurs-publics-2023",
+   "label": "Acteurs publics 2023",
+   "title": "Free software and pooling: Paris leads the way",
+   "type": "Article",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Acteurs publics. 2023. Émile Marzolf, \"Logiciels libres et mutualisation : quand Paris montre l'exemple.\" July 17, 2023. https://acteurspublics.fr/articles/logiciels-libres-et-mutualisation-quand-paris-montre-lexemple",
+   "url": "https://acteurspublics.fr/articles/logiciels-libres-et-mutualisation-quand-paris-montre-lexemple",
+   "all_urls": [
+    "https://acteurspublics.fr/articles/logiciels-libres-et-mutualisation-quand-paris-montre-lexemple"
+   ],
+   "summary_and_credibility_md": "A news article from Acteurs publics, a French trade publication covering the public sector. It's credible reporting and the main press source for the office's early shape. In French.",
+   "relevant_content_md": "- The Council of Paris voted in September 2002 to publish Lutece's code\n- Pooling (\"mutualisation\") is the city's justification: software paid for once by Paris is maintained by a community and deployed by others at no license cost\n- In July 2023 \"work is under way to define an organization as a true Open Source Programme Office\"\n- By July 2023 \"a hospital group and one municipality\" had deployed CiteLibre and about ten authorities were interested",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-07"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "alposs-2025",
+   "label": "AlpOSS 2025",
+   "title": "From Lutece to CiteLibre (conference talk)",
+   "type": "Talk",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "AlpOSS. 2025. \"De Lutece à CiteLibre, retour sur la politique open source de la Ville de Paris.\" February 20, 2025. https://pretalx.com/alposs-2025/talk/PKZXCZ/",
+   "url": "https://pretalx.com/alposs-2025/talk/PKZXCZ/",
+   "all_urls": [
+    "https://pretalx.com/alposs-2025/talk/PKZXCZ/"
+   ],
+   "summary_and_credibility_md": "A talk listing from the AlpOSS conference. The abstract was written by the speaker, so it's self-description.",
+   "relevant_content_md": "- Describes Philippe Bareille as the project officer \"in charge of implementing the open source policy\" in the city's IT department\n- One of the sources for the office's founding date, which is self-reported",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-06"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "apache-software-foundation-n-d",
+   "label": "Apache Software Foundation n.d.",
+   "title": "Project Maturity Model",
+   "type": "Standard",
+   "cases": [
+    "General"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Apache Software Foundation. n.d. \"Apache Project Maturity Model.\" Apache Community Development. https://community.apache.org/apache-way/apache-project-maturity-model.html. Accessed November 10, 2026.",
+   "url": "https://community.apache.org/apache-way/apache-project-maturity-model.html",
+   "all_urls": [
+    "https://community.apache.org/apache-way/apache-project-maturity-model.html"
+   ],
+   "summary_and_credibility_md": "The checklist the Apache Software Foundation uses to judge whether a project is ready to graduate from its incubator. It covers code, licensing, releases, quality, community, consensus building and independence. It's the foundation's own standard and is widely used by projects outside Apache to assess themselves. It's about individual projects, not OSPOs.",
+   "relevant_content_md": "- Could use it to assess Databook and govoss before trying to hand either off to a foundation\n- Pairs with the CMS maturity model: CMS's tiers describe how open a repo is, Apache's describes how healthy its community is",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "metrics"
+   ]
+  },
+  {
+   "id": "april-2008",
+   "label": "April 2008",
+   "title": "Microsoft partnership argument (political document)",
+   "type": "Political document",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "April. 2008. \"Les Parisiens sont les premiers bénéficiaires du partenariat Microsoft\" [argumentaire], list archive, January 30, 2008. https://listes.april.org/wws/arc/candidatsfr-locaux/2008-02/msg00121/argumentaire.doc",
+   "url": "https://listes.april.org/wws/arc/candidatsfr-locaux/2008-02/msg00121/argumentaire.doc",
+   "all_urls": [
+    "https://listes.april.org/wws/arc/candidatsfr-locaux/2008-02/msg00121/argumentaire.doc"
+   ],
+   "summary_and_credibility_md": "A 2008 political campaign document, preserved on the mailing list of April, the French free software association. It's partisan and should be used with care.",
+   "relevant_content_md": "- One of two sources for Paris studying, then shelving, a desktop migration of about 17,000 workstations in 2003 and 2004\n- Supports the lesson \"start where the city builds\": Paris put its effort into services it builds, not desktops\n- TODO: confirm the desktop study in a second source before adding detail",
+   "has_todo": true,
+   "already_in_govoss": [
+    "par-21"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "april-2020",
+   "label": "April 2020",
+   "title": "The EC's free software strategy: Think Open but not too big",
+   "type": "Article",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "April. 2020. \"Free Software Strategy of the European Commission: 'Think Open' But Not Too Big.\" October 26, 2020. https://april.org/en/free-software-strategy-european-commission-think-open-not-too-big",
+   "url": "https://april.org/en/free-software-strategy-european-commission-think-open-not-too-big",
+   "all_urls": [
+    "https://april.org/en/free-software-strategy-european-commission-think-open-not-too-big"
+   ],
+   "summary_and_credibility_md": "Commentary from April, the French free software association. It's an advocate's critique, sympathetic but critical.",
+   "relevant_content_md": "- Noted that \"no information regarding either its budget or manpower is given\" for the new office. The figures are still unpublished\n- Lesson: name the team and the budget in the founding document, as Munich did",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-20"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "barcelona-2025",
+   "label": "Barcelona 2025",
+   "title": "Barcelona first city to endorse the UN Open Source Principles",
+   "type": "Press release",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Barcelona. 2025. \"Barcelona Is the First City in the World to Endorse the UN Open Source Principles.\" Ajuntament de Barcelona, October 30, 2025. https://ajuntament.barcelona.cat/digital/en/news/news/barcelona-is-the-first-city-in-the-world-to-endorse-the-un-open-source-principles-1567058",
+   "url": "https://ajuntament.barcelona.cat/digital/en/news/news/barcelona-is-the-first-city-in-the-world-to-endorse-the-un-open-source-principles-1567058",
+   "all_urls": [
+    "https://ajuntament.barcelona.cat/digital/en/news/news/barcelona-is-the-first-city-in-the-world-to-endorse-the-un-open-source-principles-1567058"
+   ],
+   "summary_and_credibility_md": "The City of Barcelona's own announcement. It's official, though promotional.",
+   "relevant_content_md": "- Barcelona endorsed the UN principles on October 30, 2025, the first city to do so\n- It pledged to build its own OSPO \"inspired by Paris and Munich models\"\n- The closest example of a city doing what New York could do\n- TODO: who signed for the UN. Spanish press names Omar Mohsine and Mostafa Elkordy, with Amandeep Singh Gill remote; the UN portal references Bernardo Mariano and Gill. Confirm with Omar",
+   "has_todo": true,
+   "already_in_govoss": [
+    "bcn-07",
+    "un-28"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "bareille-2023",
+   "label": "Bareille 2023",
+   "title": "The City's commitment to open source through its OSPO",
+   "type": "Slides",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Bareille, Philippe. 2023. \"The City's Commitment to Open Source through Its OSPO.\" OSOR webinar slides, September 2023. https://interoperable-europe.ec.europa.eu/sites/default/files/news/2023-10/OSOR%20Webinar%20Philippe%20Bareille%20presentation.pdf",
+   "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/news/2023-10/OSOR%20Webinar%20Philippe%20Bareille%20presentation.pdf",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/sites/default/files/news/2023-10/OSOR%20Webinar%20Philippe%20Bareille%20presentation.pdf"
+   ],
+   "summary_and_credibility_md": "Slides from Paris's open source officer, presented at a European Commission webinar. It's the nearest thing to a written mission for the office. Primary but self-reported.",
+   "relevant_content_md": "- Mission: \"professionalize our use and production of open source,\" \"find a sustainable way to scale the Lutece community,\" and \"acculturate the teams on OSS\"\n- Activities: the opensource.paris.fr portal, CiteLibre, community events and webinars, support for other authorities, faster internal pull requests, \"a complete inventory of OS bricks and their environment,\" contributor guides and \"definition of shared governance rules\"\n- The Lutece team is \"an internal team of 15, completed with procurement of 60+ for departments' projects and maintenance\"\n- Candid self-assessment: \"a community that is challenging to bring together,\" \"inconsistent efforts depending on the period,\" \"a hard time merging PRs\"\n- TODO: the 15-person figure is the Lutece engineering team, not the OSPO. OSPO headcount beyond one officer is unverified",
+   "has_todo": true,
+   "already_in_govoss": [
+    "par-03"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "mission"
+   ]
+  },
+  {
+   "id": "canodrom-2026",
+   "label": "Canòdrom 2026",
+   "title": "Barcelona officially invited to the European network of public OSPOs",
+   "type": "News",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Canòdrom. 2026. \"Barcelona, convidada oficialment a la xarxa europea d'OSPOs públiques.\" January 29, 2026. https://canodrom.barcelona/ca/noticies/barcelona-convidada-oficialment-a-la-xarxa-europea-dospos-publiques-1599668",
+   "url": "https://canodrom.barcelona/ca/noticies/barcelona-convidada-oficialment-a-la-xarxa-europea-dospos-publiques-1599668",
+   "all_urls": [
+    "https://canodrom.barcelona/ca/noticies/barcelona-convidada-oficialment-a-la-xarxa-europea-dospos-publiques-1599668"
+   ],
+   "summary_and_credibility_md": "A news post from Canòdrom, Barcelona's digital innovation center. It's a city-affiliated source. In Catalan.",
+   "relevant_content_md": "- Barcelona said on January 29, 2026 that it had been \"officially invited to join the OSPO Network as an institutional member\"\n- TODO: Barcelona isn't on the members page yet. Re-check before publishing",
+   "has_todo": true,
+   "already_in_govoss": [
+    "bcn-09",
+    "ec-23"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "ceb-2023",
+   "label": "CEB 2023",
+   "title": "Digital and Technology Network spring session report, 2023",
+   "type": "Meeting report",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CEB. 2023. *CEB/2023/HLCM/DTN/10: Digital and Technology Network Spring Session Report.* June 12, 2023. https://unsceb.org/assets/media/reports/report-3775-20230612-DTN-Meeting-Report.pdf",
+   "url": "https://unsceb.org/assets/media/reports/report-3775-20230612-DTN-Meeting-Report.pdf",
+   "all_urls": [
+    "https://unsceb.org/assets/media/reports/report-3775-20230612-DTN-Meeting-Report.pdf"
+   ],
+   "summary_and_credibility_md": "The official report of the UN system chief information officers' network. It's a primary record.",
+   "relevant_content_md": "- Mohsine \"put forward the proposal,\" and the network approved \"a community of open-source specialists\" and its terms of reference\n- The founding record for Open Source United, which began work in September 2023",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-05"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "ceb-2024",
+   "label": "CEB 2024",
+   "title": "Digital and Technology Network autumn session report, 2024",
+   "type": "Meeting report",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CEB. 2024. *CEB/2024/HLCM/DTN/10: Digital and Technology Network Autumn Session Report.* December 12, 2024. https://www.unsceb.org/assets/media/reports/report-3844-20241212-DTN-Session-Report.pdf",
+   "url": "https://www.unsceb.org/assets/media/reports/report-3844-20241212-DTN-Session-Report.pdf",
+   "all_urls": [
+    "https://www.unsceb.org/assets/media/reports/report-3844-20241212-DTN-Session-Report.pdf"
+   ],
+   "summary_and_credibility_md": "The official report of the CIO network's November 2024 session in Rome. It's a primary record.",
+   "relevant_content_md": "- The CIO network approved the eight UN Open Source Principles at this session",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-06"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "ceb-2025",
+   "label": "CEB 2025",
+   "title": "Digital and Technology Network session report, 2025",
+   "type": "Meeting report",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CEB. 2025. *CEB/2025/HLCM/DTN/3: Digital and Technology Network Session Report.* June 17, 2025. https://unsceb.org/sites/default/files/2025-06/20250617%20DTN%20Session%20Report.pdf",
+   "url": "https://unsceb.org/sites/default/files/2025-06/20250617%20DTN%20Session%20Report.pdf",
+   "all_urls": [
+    "https://unsceb.org/sites/default/files/2025-06/20250617%20DTN%20Session%20Report.pdf"
+   ],
+   "summary_and_credibility_md": "The official report of the CIO network's 2025 session. It's a primary record.",
+   "relevant_content_md": "- A shared code platform for the whole UN system, hosted by UNICC, launched on January 1, 2025\n- The network \"approved the funding proposal that all agencies contribute USD 10k for the GitLab platform\"\n- Shows a shared platform can run on a modest contribution from each agency. Relevant to the Support function's budget line",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-07"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "chaoss-2024",
+   "label": "CHAOSS 2024",
+   "title": "CHAOSScast Episode 81",
+   "type": "Podcast",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CHAOSS. 2024. \"CHAOSScast Episode 81: Managing Federal CHAOSS at CMS.gov.\" Podcast, March 12, 2024. https://podcast.chaoss.community/81",
+   "url": "https://podcast.chaoss.community/81",
+   "all_urls": [
+    "https://podcast.chaoss.community/81"
+   ],
+   "summary_and_credibility_md": "A podcast interview with Remy from the CHAOSS project, which works on open source health metrics, recorded a few months after the CMS OSPO launched. Only the show notes were reviewed, not a full transcript. It's public, so it can be cited by name.",
+   "relevant_content_md": "- Remy names the four-year term limit for digital service staff as a constraint, and says the office needed to show impact within a year\n- He consulted the CIO and CISO on which metrics to prioritize, and worked with the CHAOSS OSPO metrics working group\n- Early wins he points to: the metrics website and a deduplication tool\n- Credits Isaac Milarsky and Natalia Luzuriaga joining with transforming the office",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "metrics"
+   ]
+  },
+  {
+   "id": "cms-2016",
+   "label": "CMS 2016",
+   "title": "CMS Open Source Policy",
+   "type": "Policy",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS. 2016. *CMS Open Source Policy.* GitHub, CMSgov. https://github.com/CMSgov/cms-open-source-policy",
+   "url": "https://github.com/CMSgov/cms-open-source-policy",
+   "all_urls": [
+    "https://github.com/CMSgov/cms-open-source-policy"
+   ],
+   "summary_and_credibility_md": "The agency's own open source policy, published on GitHub. It's a primary source.",
+   "relevant_content_md": "- CMS's policy is pegged to OMB memo M-16-21, the 2016 Federal Source Code Policy\n- Shows the policy existed years before the office. The OSPO's job was to act on it",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-11"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context"
+   ]
+  },
+  {
+   "id": "cms-2026",
+   "label": "CMS 2026",
+   "title": "Federal Register reorganization",
+   "type": "Policy",
+   "cases": [
+    "CMS",
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Centers for Medicare & Medicaid Services. 2026. \"Statement of Organization, Functions, and Delegations of Authority.\" *Federal Register* 91: 35478, June 11, 2026. FR Doc. 2026-11743. https://public-inspection.federalregister.gov/2026-11743.pdf",
+   "url": "https://public-inspection.federalregister.gov/2026-11743.pdf",
+   "all_urls": [
+    "https://public-inspection.federalregister.gov/2026-11743.pdf"
+   ],
+   "summary_and_credibility_md": "The official notice creating CMS's Office of Health Technology and Products, signed by the HHS Secretary. One of its four components is the Open Source Program Group, the new name for the OSPO. It's a primary legal document, so it's the most authoritative source on the office's current mandate.",
+   "relevant_content_md": "- The office ran on a one-paragraph functional statement for almost three years before getting a formal charter\n- The charter requires at least 20% of newly developed custom code to be released as open source\n- Shows the path we might expect in NYC: start informally inside OTI, get a formal mandate once the office has proven itself\n- TODO: what would the NYC equivalent of a charter be? An executive order, an OTI directive, or a Local Law?",
+   "has_todo": true,
+   "already_in_govoss": [
+    "cms-12"
+   ],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "precedents"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-a",
+   "label": "CMS OSPO n.d.-a",
+   "title": "Functional Statement",
+   "type": "Web page",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-a. \"Functional Statement.\" OSPO Guide. https://dsacms.github.io/ospo-guide/about/functional-statement/",
+   "url": "https://dsacms.github.io/ospo-guide/about/functional-statement/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/about/functional-statement/"
+   ],
+   "summary_and_credibility_md": "The one-paragraph statement that was the office's only basis for its first two and a half years. It's a primary source.",
+   "relevant_content_md": "- The office \"establishes and maintains guidance, policies, practices, and talent pipelines that advance equity, build trust, and amplify impact across CMS, HHS, and Federal Open Source Ecosystems by working and sharing openly\"\n- Lesson: write the mandate down early. CMS ran on this paragraph until the June 2026 charter",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-03"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "definition",
+    "mission"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-b",
+   "label": "CMS OSPO n.d.-b",
+   "title": "Outbound Checklists",
+   "type": "Guide",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-b. \"Outbound Checklists.\" https://dsacms.github.io/ospo-guide/outbound/outbound-checklists/",
+   "url": "https://dsacms.github.io/ospo-guide/outbound/outbound-checklists/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/outbound/outbound-checklists/"
+   ],
+   "summary_and_credibility_md": "The office's release checklists for code going public. It's a primary source and public domain (CC0).",
+   "relevant_content_md": "- Four tiers of release checklist\n- Teams must \"populate metadata in a code.json file per federal requirements\"\n- Sign-off from technical, business and security stakeholders before a repository goes public\n- A New York office could adopt it in its first month: the Support function",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-05"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-c",
+   "label": "CMS OSPO n.d.-c",
+   "title": "SHARE IT Act landing page",
+   "type": "Guide",
+   "cases": [
+    "CMS",
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-c. \"SHARE IT Act\" landing page. https://dsacms.github.io/share-it-act-lp/",
+   "url": "https://dsacms.github.io/share-it-act-lp/",
+   "all_urls": [
+    "https://dsacms.github.io/share-it-act-lp/"
+   ],
+   "summary_and_credibility_md": "The office's guide to complying with the SHARE IT Act, with its tools. It's a primary source and public domain.",
+   "relevant_content_md": "- The office built the code.json tooling HHS and CMS use to inventory custom code\n- Stack: a web-form code.json generator, a GitHub Action that automates it, a command-line index generator, a savings calculator and repository archival tooling\n- Model for the Find function: an inventory of an agency's code built automatically\n- See also the SHARE IT Act entry",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-15"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-d",
+   "label": "CMS OSPO n.d.-d",
+   "title": "Risk Acceptance and Exemption Criteria of Open Sourcing",
+   "type": "Guide",
+   "cases": [
+    "CMS"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "CMS OSPO. n.d.-d. \"Risk Acceptance and Exemption Criteria of Open Sourcing.\" https://dsacms.github.io/ospo-guide/outbound/exemption-criteria/",
+   "url": "https://dsacms.github.io/ospo-guide/outbound/exemption-criteria/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/outbound/exemption-criteria/"
+   ],
+   "summary_and_credibility_md": "The office's criteria for when code should stay closed. It's a primary source.",
+   "relevant_content_md": "- Categories include personal and health information, national security and export control\n- Useful for answering the obvious objection in NYC: what about code that shouldn't be public?",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-06"
+   ],
+   "updated_at": "2026-11-11T19:51:22.590Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-f",
+   "label": "CMS OSPO n.d.-f",
+   "title": "Inbound Review Checklist",
+   "type": "Guide",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-f. \"Inbound Review Checklist.\" https://dsacms.github.io/ospo-guide/inbound/inbound-review-checklist/",
+   "url": "https://dsacms.github.io/ospo-guide/inbound/inbound-review-checklist/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/inbound/inbound-review-checklist/"
+   ],
+   "summary_and_credibility_md": "The office's process for approving outside open source tools. It's a primary source.",
+   "relevant_content_md": "- \"A review process to approve open source software to be used in the agency\"\n- Sign-off from a code reviewer, the security officer, the infrastructure group and the business owner before a team adopts a tool\n- A ready-made model for the procurement advisory role: helping teams evaluate an open source tool before adopting it",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-04"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-g",
+   "label": "CMS OSPO n.d.-g",
+   "title": "Maturity Models",
+   "type": "Guide",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-g. \"Maturity Models.\" https://dsacms.github.io/ospo-guide/outbound/maturity-models/",
+   "url": "https://dsacms.github.io/ospo-guide/outbound/maturity-models/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/outbound/maturity-models/"
+   ],
+   "summary_and_credibility_md": "The office's tiered model for how open a repository is. It's a primary source and public domain.",
+   "relevant_content_md": "- Five tiers: private; one-time release; close collaboration; working in public; community governance\n- Pairs with Apache's maturity model, which measures community health rather than openness\n- Could be used for every City repository on day one: the Manage function",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-07"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-h",
+   "label": "CMS OSPO n.d.-h",
+   "title": "Want to Start an OSPO",
+   "type": "Guide",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-h. \"Want to Start an OSPO.\" https://dsacms.github.io/ospo-guide/growing/want-to-start-an-ospo/",
+   "url": "https://dsacms.github.io/ospo-guide/growing/want-to-start-an-ospo/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/growing/want-to-start-an-ospo/"
+   ],
+   "summary_and_credibility_md": "The office's guide for other organizations starting an OSPO. It's a primary source.",
+   "relevant_content_md": "- Part of the handbook's \"growing\" section on community and the talent pipeline\n- A manual other offices can follow. Directly relevant to how New York would start",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "cms-ospo-n-d-i",
+   "label": "CMS OSPO n.d.-i",
+   "title": "share-it-savings calculator",
+   "type": "Tool",
+   "cases": [
+    "CMS",
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "CMS OSPO. n.d.-i. \"share-it-savings.\" https://dsacms.github.io/share-it-savings/",
+   "url": "https://dsacms.github.io/share-it-savings/",
+   "all_urls": [
+    "https://dsacms.github.io/share-it-savings/"
+   ],
+   "summary_and_credibility_md": "The office's calculator for the savings from SHARE IT Act tooling. The figures are its own projections, not an audit.",
+   "relevant_content_md": "- Estimates a \"94% reduction in processing time\" for code.json compliance and \"$752K saved in year one\"\n- Projects \"$56,000,000\" a year across government at 10% reuse\n- Point: compliance got cheaper because the office built tools instead of writing memos\n- TODO: label these as projections wherever they're used",
+   "has_todo": true,
+   "already_in_govoss": [
+    "cms-16"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "metrics"
+   ]
+  },
+  {
+   "id": "code-mil-2026",
+   "label": "Code.mil 2026",
+   "title": "DoW Open Source Software FAQ",
+   "type": "FAQ",
+   "cases": [
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Code.mil. 2026. \"DoW Open Source Software FAQ.\" U.S. Department of Defense (now styled Department of War). Last updated July 28, 2026. https://code.mil/oss-faq.html",
+   "url": "https://code.mil/oss-faq.html",
+   "all_urls": [
+    "https://code.mil/oss-faq.html"
+   ],
+   "summary_and_credibility_md": "A long FAQ on using and releasing open source in the Defense Department, originally developed by the DoD CIO; the 2021 version is at https://dodcio.defense.gov/Open-Source-Software-FAQ/. It's an official .mil source and answers the usual objections: whether open source is allowed, whether it counts as commercial software, how secure it is, licensing, and releasing code. It's written for federal and DoD law, so the legal answers don't carry over to the City directly.",
+   "relevant_content_md": "- CMS used it to dispel myths about open source and \"sell\" it up the leadership chain (Miller 2024)\n- We could write an NYC version answering City-specific questions: procurement rules, Cyber Command review, records law. That could be one of our materials now, or one of the OSPO's first products",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "decausemaker-2022",
+   "label": "DeCausemaker 2022",
+   "title": "Linux Foundation Member Summit deck",
+   "type": "Slides",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "DeCausemaker, Remy. 2022. \"Open Source and The Digital Service at the Centers for Medicare & Medicaid Services (CMS.gov).\" Presentation slides, Linux Foundation Member Summit, November 2022. https://github.com/decause-gov/decks/blob/main/lfms-2022.pdf",
+   "url": "https://github.com/decause-gov/decks/blob/main/lfms-2022.pdf",
+   "all_urls": [
+    "https://github.com/decause-gov/decks/blob/main/lfms-2022.pdf"
+   ],
+   "summary_and_credibility_md": "A 34-slide deck from before the OSPO formally existed, when Remy was the Digital Service's Open Source Lead. It's nearly the same deck as the All Things Open 2022 talk and builds on the September 2022 Linux Foundation Public Health webinar. Many slides are images, and no recording was found.",
+   "relevant_content_md": "- Same content as the Public Health webinar deck; see that entry for the roadmap, the challenges grid and the inbound review criteria\n- Ends with a \"start by volunteering\" slide pointing to Code for America and U.S. Digital Response: \"Anyone can make a difference, local, state, or federal!\"",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "decausemaker-2024a",
+   "label": "DeCausemaker 2024a",
+   "title": "CMS OSPO at DEF CON",
+   "type": "Slides",
+   "cases": [
+    "CMS"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "DeCausemaker, Remy. 2024a. \"Establishing the First Open Source Program Office (OSPO) at a United States Federal Agency.\" Presentation slides, DEF CON 32, Las Vegas, August 2024. https://github.com/decause-gov/decks/blob/main/defcon2024/defcon2024.pdf",
+   "url": "https://github.com/decause-gov/decks/blob/main/defcon2024/defcon2024.pdf",
+   "all_urls": [
+    "https://github.com/decause-gov/decks/blob/main/defcon2024/defcon2024.pdf"
+   ],
+   "summary_and_credibility_md": "A 31-slide deck by the head of the CMS OSPO on why the office was set up and how it works: its functional statement, five-tier repository maturity model, release checklists, metrics dashboard and automated repository checks, with a case for supporting the outside open source projects the agency depends on. As a primary source from the office's own lead, it is authoritative on what CMS built, and nearly every claim links to a public repository or page that can be checked. It is also self-reported. Figures about CMS's scale come from CMS Fast Facts and the 2022 Medicare Trustees Report and date from 2019 to 2022.",
+   "relevant_content_md": "- A slide deck of our own could be modeled off of this one to promote an OSPO\n- Emphasizing serving the American people, saving taxpayers money, and NYC government itself\n- Going through the risks/myths of open source and debunking them\n- Saving time and money, accountability for contract performance, reducing duplicate work and costs, reducing security and continuity risks\n- Repo Maturity Model can be copied exactly for use within OTI\n- Additional tooling mentioned, such as repo scaffolder, outbound review checklists, metrics are reviewed below as their own sources, which largely automate a lot of the heavy lifting that we would be tasking the OSPO with",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "case",
+    "how",
+    "mission"
+   ]
+  },
+  {
+   "id": "decausemaker-2024b",
+   "label": "DeCausemaker 2024b",
+   "title": "FCSM conference deck",
+   "type": "Slides",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "DeCausemaker, Remy. 2024b. \"Establishing the First US Federal Open Source Program Office (OSPO) at CMS.gov.\" Presentation slides, Federal Committee on Statistical Methodology Research and Policy Conference, October 2024. https://statspolicy.gov/assets/fcsm/files/docs/2024-conference-docs/B/B3.4_DeCausemaker.pdf",
+   "url": "https://statspolicy.gov/assets/fcsm/files/docs/2024-conference-docs/B/B3.4_DeCausemaker.pdf",
+   "all_urls": [
+    "https://statspolicy.gov/assets/fcsm/files/docs/2024-conference-docs/B/B3.4_DeCausemaker.pdf"
+   ],
+   "summary_and_credibility_md": "A version of the DEF CON deck given to federal statisticians two months later. Same strengths and limits as the DEF CON deck (primary, self-reported, slides only), but it goes further into metrics. It sorts them into three families: maturity (how risky a repo is), cost (how much effort went into it) and burden (how hard it is for others to contribute). It also shows a worked cost estimate.",
+   "relevant_content_md": "- Cost estimate example: COCOMO, a standard model that estimates development cost from code size, puts 87,298 lines of code at about 21.8 person-years, or roughly $5.24 million. A number like this for City-built code could make the case for looking after it\n- \"Libyears\" as a risk metric: the total years a project's dependencies are behind their latest versions, a simple measure of technical debt\n- Calls the federal retirement cliff the \"biggest risk\": for every federal employee under 30, there are about seven over 50\n  - TODO: is there a City version of this number? DatabookNYC's workforce data might have it",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ]
+  },
+  {
+   "id": "decausemaker-and-eggleston-2022",
+   "label": "DeCausemaker and Eggleston 2022",
+   "title": "All Things Open talk",
+   "type": "Talk + video",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "DeCausemaker, Remy, and Melissa Eggleston. 2022. \"Open Source and The Digital Service at CMS.\" Presentation, All Things Open 2022, Raleigh, NC, November 2022. Slides: https://github.com/decause-gov/decks/blob/main/ato-110122.pdf. Video: https://www.youtube.com/watch?v=Q0EJIevZS0I",
+   "url": "https://github.com/decause-gov/decks/blob/main/ato-110122.pdf",
+   "all_urls": [
+    "https://github.com/decause-gov/decks/blob/main/ato-110122.pdf",
+    "https://www.youtube.com/watch?v=Q0EJIevZS0I"
+   ],
+   "summary_and_credibility_md": "Nearly the same deck as the Linux Foundation Member Summit talk the same month, given with Melissa Eggleston, a user experience researcher at the Digital Service. It's the only one of the 2022 decks with a recording of the talk itself.",
+   "relevant_content_md": "- Same content as the Public Health webinar and Member Summit decks\n- Worth watching the video for how they pitched it out loud, before the OSPO formally existed",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "digital-service-at-cms-2025",
+   "label": "Digital Service at CMS 2025",
+   "title": "Open Source Program Office (CMS.gov page)",
+   "type": "Web page",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Digital Service at CMS. 2025. \"Open Source Program Office.\" CMS.gov. Last modified May 2, 2025. https://www.cms.gov/digital-service/open-source-program-office",
+   "url": "https://www.cms.gov/digital-service/open-source-program-office",
+   "all_urls": [
+    "https://www.cms.gov/digital-service/open-source-program-office"
+   ],
+   "summary_and_credibility_md": "The CMS OSPO's page on the agency's official website. It's a primary source for how CMS itself defines an OSPO and the office's function, though it's brief and descriptive.",
+   "relevant_content_md": "- Definition: an OSPO \"serves as the center of competency for an organization's open source operations\" and \"is responsible for defining and implementing strategies and policies to guide these efforts.\" Used in the Executive Summary's \"What an OSPO is\"\n- The office's function, in the same words as its functional statement: \"Establish and maintain guidance, policies, practices, and talent pipelines that advance equity, build trust, and amplify impact across CMS, HHS, and Federal Open Source Ecosystems by working and sharing openly.\" (see CMS OSPO n.d.-a)\n- Doesn't spell out inbound and outbound work; for that see Miller 2024",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-01"
+   ],
+   "updated_at": "2026-11-13T02:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "definition"
+   ]
+  },
+  {
+   "id": "digital-service-at-cms-n-d-a",
+   "label": "Digital Service at CMS n.d.-a",
+   "title": "metrics",
+   "type": "Tool",
+   "cases": [
+    "CMS"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "Digital Service at CMS. n.d.-a. *CMS Open Source Repository Metrics Website* (metrics). GitHub repository, CC0 1.0. https://github.com/DSACMS/metrics. Live site: https://dsacms.github.io/metrics/. Accessed November 10, 2026.",
+   "url": "https://github.com/DSACMS/metrics",
+   "all_urls": [
+    "https://github.com/DSACMS/metrics",
+    "https://dsacms.github.io/metrics/"
+   ],
+   "summary_and_credibility_md": "The code behind the CMS OSPO's public dashboard. It gives developers and program managers an overview of development activity and repository health across a GitHub organization. A scheduled GitHub Action pulls data every week from the GitHub API and from an instance of Augur, an open source metrics tool from the CHAOSS project, and the site turns it into statistics and charts. It is credible as working tooling: CMS uses it in production, and it is actively maintained, with over 2,600 commits. Uptake outside CMS looks small: the repository shows 6 forks and 10 stars, and the README doesn't list the metrics it reports. It is public domain (CC0), so the City could copy and adapt it freely.",
+   "relevant_content_md": "- Also automates a lot of metrics tracking. This could be a good starting place, should be customized to the metrics needs of NYC OSPO\n- *Gap filled:* Augur needs a server and database, which may be a hurdle inside OTI. TODO: check whether it can run on GitHub API data alone.\n- *Gap filled:* The live site describes what it analyzes as \"contributor activity, issue resolution times, code complexity and dependency health\" (https://dsacms.github.io/metrics/, checked November 13, 2026). It doesn't name individual metrics on its front page",
+   "has_todo": true,
+   "already_in_govoss": [
+    "cms-18",
+    "cms-19"
+   ],
+   "updated_at": "2026-11-13T18:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "metrics"
+   ]
+  },
+  {
+   "id": "digital-service-at-cms-n-d-b",
+   "label": "Digital Service at CMS n.d.-b",
+   "title": "OSPO Guide",
+   "type": "Guide",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Digital Service at CMS. n.d.-b. *OSPO Guide.* https://dsacms.github.io/ospo-guide/ (repository: https://github.com/DSACMS/ospo-guide). Accessed November 10, 2026.",
+   "url": "https://dsacms.github.io/ospo-guide/",
+   "all_urls": [
+    "https://dsacms.github.io/ospo-guide/",
+    "https://github.com/DSACMS/ospo-guide"
+   ],
+   "summary_and_credibility_md": "The CMS OSPO's public handbook, in five sections:\n\n- **Inbound:** acceptable licenses and the inbound review checklist.\n- **Outbound:** release checklists, exemption criteria, maturity models and a contributor ladder.\n- **Growing:** mentorship, the early-career talent pipeline and a \"Want to Start an OSPO\" page.\n- **Resources:** a GitHub management policy, cybersecurity and an XZ supply chain write-up.\n- **About:** the office's functional statement.\n\nIt's authoritative on how CMS actually runs its office, but it's written around federal rules. The repository itself is modest (19 stars, 5 forks).",
+   "relevant_content_md": "- The \"Want to Start an OSPO\" page should be a first stop when we draft the NYC plan (not yet reviewed in detail)\n- The Inbound Review Checklist needs sign-off from a code reviewer, the security officer, the infrastructure group and the business owner before a team adopts an open source tool. It's the closest thing to the procurement advisory role on our site\n- Contributor ladder page could help with Databook and govoss\n- GitHub management policy is a model for City rules on a shared GitHub organization:\n  - new repos are requested through an OSPO help desk;\n  - public repos need a benefits and risks assessment;\n  - two-factor authentication is required;\n  - access is reviewed monthly.",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-02"
+   ],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "digital-service-at-cms-n-d-c",
+   "label": "Digital Service at CMS n.d.-c",
+   "title": "repo-scaffolder",
+   "type": "Tool",
+   "cases": [
+    "CMS"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "Digital Service at CMS. n.d.-c. *repo-scaffolder: Templates and Command-Line Tools for Creating Repositories for US Federal Open Source Projects.* GitHub repository, CC0 1.0. https://github.com/DSACMS/repo-scaffolder. Accessed November 10, 2026.",
+   "url": "https://github.com/DSACMS/repo-scaffolder",
+   "all_urls": [
+    "https://github.com/DSACMS/repo-scaffolder"
+   ],
+   "summary_and_credibility_md": "The CMS OSPO's main toolkit. It packages the five-tier maturity model with a script that works out a project's tier, templates that generate the files each tier needs, a release checklist per tier, Repolinter configs that flag missing files, GitHub Actions that push template updates, and a generator for code.json (the metadata file federal agencies use to inventory their code). It came out of a collaboration between USDS, HHS, the Digital Service at CMS and U.S. Digital Response, and is actively maintained (about 1,200 commits, 48 stars, 19 forks). It's public domain (CC0), but built for federal requirements, so parts would need adapting for City rules. It also depends on Repolinter, which was archived in February 2026.",
+   "relevant_content_md": "- Largely automates a lot of the heavy lifting that we would be tasking the OSPO with\n- *Gap filled:* code.json gives every repo a standard metadata file. An NYC version could be the basis for the Catalog function.",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-17"
+   ],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "how"
+   ]
+  },
+  {
+   "id": "dow-cio-2026",
+   "label": "DoW CIO 2026",
+   "title": "DoW Open Source Software FAQ (GitHub version)",
+   "type": "FAQ",
+   "cases": [
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Office of the DoW CIO. 2026. *United States Department of War Open Source Software FAQ.* GitHub Pages version, repository risacher/DoD-OSS-FAQ. Last updated July 28, 2026. https://risacher.github.io/DoD-OSS-FAQ/. Accessed November 11, 2026.",
+   "url": "https://risacher.github.io/DoD-OSS-FAQ/",
+   "all_urls": [
+    "https://risacher.github.io/DoD-OSS-FAQ/"
+   ],
+   "summary_and_credibility_md": "The Defense Department's open source FAQ, now styled Department of War, published from a GitHub repository. The byline is the Office of the DoW CIO, and the date matches the version on code.mil (see Code.mil 2026), so this looks like the same FAQ in its working form. The repository's README calls it an \"experiment in collaborative tools for public engagement\" on policy documents, and anyone can suggest changes by pull request. It's an official source and calls itself an educational resource, not legal advice. Its answers rest on federal and DoD law, so they don't apply to the City directly. The repository is small (16 stars, 5 forks, 8 commits), and its license isn't stated on the page.",
+   "relevant_content_md": "- **Model for an NYC FAQ.** A policy FAQ kept on GitHub that anyone can suggest changes to. An NYC open source FAQ could be maintained the same way, next to the Open Data Technical Standards Manual the City already keeps on GitHub. Fits the *Toolkit* and *Guardrails* sections\n- **Open source is commercial software.** Under the DoD CIO's 2022 memo, open source \"meets the definition of commercial computer software,\" so it gets equal consideration with proprietary products. Federal market research has to consider it. TODO: is there a City procurement rule that treats it the same way?\n- **Sharing is not public release.** The FAQ separates the SHARE IT Act's government-wide sharing from releasing code publicly: sharing is \"not the same thing as public release as OSS.\" Useful for the executive summary: an inventory and sharing between agencies come first, and public release is a separate decision\n- **Open by default.** The 2022 memo says software not tied to national security \"should be open-by-default and released (under an open source software license)\" unless specific conditions apply\n- **Staff can contribute.** The 2022 memo authorizes government employees to contribute to open source projects as part of their official duties. A model for the participant stage\n- **Security.** \"Merely hiding source code does not counter attacks.\" Security depends on review and timely fixes, and both open and proprietary software need case-by-case evaluation. Good answer to the most common objection\n- **Support is required.** Community support alone isn't enough. The 2022 memo requires a support and sustainment plan, and support for open source \"is often sold separately.\" Backs the *Support* function\n- **Evaluating open source.** Judge it on need, cost and risk, using total cost of ownership over the system's life. Points to outside frameworks such as QSOS and OSMM. A ready-made input for Haddad's classification scheme\n- **Migration.** Summarizes guidelines that start with non-critical systems and avoid ties to proprietary formats. Supports phasing the work in\n- **Who owns the code.** Under current DoW contracting, \"the contractor usually retains the copyright for software developed with government funding,\" though the government can release code it holds unlimited rights to. TODO: what rights does the City get in its software contracts?\n- Several answers are federal-only (the Antideficiency Act, Navy and Army rules, federal copyright rules) and don't carry over to the City",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-11T02:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "dsacms-n-d-c",
+   "label": "DSACMS n.d.-c",
+   "title": "codejson-index-generator",
+   "type": "Tool",
+   "cases": [
+    "CMS",
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "DSACMS. n.d.-c. codejson-index-generator. GitHub. https://github.com/DSACMS/codejson-index-generator",
+   "url": "https://github.com/DSACMS/codejson-index-generator",
+   "all_urls": [
+    "https://github.com/DSACMS/codejson-index-generator"
+   ],
+   "summary_and_credibility_md": "The office's command-line tool for building an agency-wide inventory from code.json files. It's a primary source and public domain.",
+   "relevant_content_md": "- Scans an organization's repositories and builds an agency index file\n- Part of the SHARE IT Act stack. Could build a City code inventory automatically: the Find function",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-20"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "how"
+   ]
+  },
+  {
+   "id": "dsacms-n-d-d",
+   "label": "DSACMS n.d.-d",
+   "title": "DSACMS GitHub organization",
+   "type": "Repository",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "DSACMS. n.d.-d. GitHub organization. https://github.com/DSACMS",
+   "url": "https://github.com/DSACMS",
+   "all_urls": [
+    "https://github.com/DSACMS"
+   ],
+   "summary_and_credibility_md": "The Digital Service at CMS's GitHub organization. It's primary, but counts change over time.",
+   "relevant_content_md": "- Holds 98 repositories, against \"249+ repositories\" tracked on the metrics site\n- Everything is public, which is why the tooling survived the 2025 upheaval\n- TODO: confirm the scope of the 249+ figure. It likely spans CMSgov and other organizations",
+   "has_todo": true,
+   "already_in_govoss": [
+    "cms-21"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "ec-ospo-2024",
+   "label": "EC OSPO 2024",
+   "title": "Code.europa.eu: a story of sharing code",
+   "type": "Article",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "EC OSPO. 2024. \"Code.europa.eu: A Story of Sharing Code.\" December 17, 2024. https://interoperable-europe.ec.europa.eu/collection/ec-ospo/news/spotlight-projects",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/ec-ospo/news/spotlight-projects",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/ec-ospo/news/spotlight-projects"
+   ],
+   "summary_and_credibility_md": "The Commission OSPO's own account of its code platform. It's a primary source for the figures.",
+   "relevant_content_md": "- Code.europa.eu launched in September 2022 on a GitLab Ultimate instance at \"€0 cost license\"\n- \"214 main projects\" and \"737 code repositories\" by December 2024\n- Shows a shared platform can be cheap to start\n- TODO: a June 2025 source says \"over 800 external projects.\" Cite the 2024 figure as primary",
+   "has_todo": true,
+   "already_in_govoss": [
+    "ec-06"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "ec-ospo-n-d",
+   "label": "EC OSPO n.d.",
+   "title": "EC OSPO collection",
+   "type": "Web page",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "EC OSPO. n.d. EC OSPO collection. Interoperable Europe. https://interoperable-europe.ec.europa.eu/collection/ec-ospo",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/ec-ospo",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/ec-ospo"
+   ],
+   "summary_and_credibility_md": "The office's own page on the Interoperable Europe portal. It's a primary source.",
+   "relevant_content_md": "- The office sits in DG DIGIT. Its head is Miguel Díez Blanco, and Gijs Hillenius is its most visible presenter\n- Contact: DIGIT-OSPO@ec.europa.eu",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-01"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "eu-ospo-network-n-d-a",
+   "label": "EU OSPO Network n.d.-a",
+   "title": "EU OSPO Network collection page",
+   "type": "Web page",
+   "cases": [
+    "European Commission",
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "EU OSPO Network. n.d.-a. Collection page. https://interoperable-europe.ec.europa.eu/collection/eu-ospo-network",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/eu-ospo-network",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/eu-ospo-network"
+   ],
+   "summary_and_credibility_md": "The network's own page. It's a primary source.",
+   "relevant_content_md": "- \"A community connecting Open Source Programme Offices and similar initiatives across EU public services\"\n- Founded through \"a joint initiative of the City of Paris and the European Commission's Directorate-General for Digital Services\"; first meeting May 2022; \"the European Commission's OSPO is the secretariat\"\n- Meets monthly online and once a year in person. Open to \"all OSPOs and similar organisations from public services in the European Union Member States\"\n- TODO: no written membership commitments were found",
+   "has_todo": true,
+   "already_in_govoss": [
+    "ec-13"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "local",
+   "role_label": "Local context",
+   "jurisdiction": "European Union",
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "eu-ospo-network-n-d-b",
+   "label": "EU OSPO Network n.d.-b",
+   "title": "Network Members",
+   "type": "Web page",
+   "cases": [
+    "European Commission",
+    "Paris",
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "EU OSPO Network. n.d.-b. \"Network Members.\" https://interoperable-europe.ec.europa.eu/collection/eu-ospo-network/network-members",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/eu-ospo-network/network-members",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/eu-ospo-network/network-members"
+   ],
+   "summary_and_credibility_md": "The network's member list. It's a primary source, but it changes.",
+   "relevant_content_md": "- 28 members, including Belgium's FPS BOSA, the Czech national OSPO, Denmark's OS2, Paris, France's DINUM, Germany's ZenDiS, Munich, Schleswig-Holstein, Italy's PagoPA, seven Dutch public bodies, Sweden's NOSAD and Digg, CERN and the EC\n- The network is EU-only. The venue open to a U.S. city is the global FLOSS-PSO registry",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-14"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "local",
+   "role_label": "Local context",
+   "jurisdiction": "European Union",
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "european-commission-2020a",
+   "label": "European Commission 2020a",
+   "title": "Open Source Software Strategy 2020-2023: Think Open",
+   "type": "Policy",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "European Commission. 2020a. *Open Source Software Strategy 2020-2023: Think Open.* C(2020) 7149 final, October 21, 2020. https://interoperable-europe.ec.europa.eu/sites/default/files/inline-files/The-Commission-Open-Source-Strategy.pdf",
+   "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/inline-files/The-Commission-Open-Source-Strategy.pdf",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/sites/default/files/inline-files/The-Commission-Open-Source-Strategy.pdf"
+   ],
+   "summary_and_credibility_md": "The Commission's official open source strategy. It's the founding policy document for the office.",
+   "relevant_content_md": "- Treats open source as a route to digital autonomy, savings through sharing and reuse, and more secure software\n- \"The pivotal point will be an Open Source Programme Office that enjoys genuine political and organisational support, involving all directorates-general\"\n- DG DIGIT \"will make an annual budget request for the Programme Office and the action plan\"\n- \"Open-source solutions will be preferred when equivalent in functionalities, total cost and cybersecurity.\" A stated preference needs people to help apply it: the procurement advisory role\n- TODO: check whether a new internal strategy for 2024 onward exists. Only the June 2026 EU-wide strategy was found",
+   "has_todo": true,
+   "already_in_govoss": [
+    "ec-02"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "european-commission-2021a",
+   "label": "European Commission 2021a",
+   "title": "Decision on the open source licensing and reuse of Commission software",
+   "type": "Policy",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "European Commission. 2021a. *Commission Decision of 8 December 2021 on the Open Source Licensing and Reuse of Commission Software.* C(2021) 8759; OJ 2021/C 495 I/01. https://lexaris.de/book/version/documentflat/head/2121049",
+   "url": "https://lexaris.de/book/version/documentflat/head/2121049",
+   "all_urls": [
+    "https://lexaris.de/book/version/documentflat/head/2121049"
+   ],
+   "summary_and_credibility_md": "The legal basis for publishing Commission code. It's a primary legal source, though the brief read it from a mirror of the Official Journal.",
+   "relevant_content_md": "- Article 3: services \"may choose\" to make software available for reuse. It permits; it doesn't require\n- Article 5: the license \"shall be the EUPL,\" with exceptions. Article 6: a single repository as point of access\n- Article 9: services \"shall be allowed to take part in and contribute to external open source projects deemed to be in the interests of the Union\"\n- Article 4 lists grounds for not publishing; Article 11 creates an inter-service group\n- TODO: confirm the citation against EUR-Lex directly (CELEX 32021D1209(01))",
+   "has_todo": true,
+   "already_in_govoss": [
+    "ec-04"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "european-commission-2021b",
+   "label": "European Commission 2021b",
+   "title": "Commission adopts new rules on open source software distribution",
+   "type": "Press release",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "European Commission. 2021b. \"Commission Adopts New Rules on Open Source Software Distribution.\" December 8, 2021. https://commission.europa.eu/news-and-media/news/commission-adopts-new-rules-open-source-software-distribution-2021-12-08_en",
+   "url": "https://commission.europa.eu/news-and-media/news/commission-adopts-new-rules-open-source-software-distribution-2021-12-08_en",
+   "all_urls": [
+    "https://commission.europa.eu/news-and-media/news/commission-adopts-new-rules-open-source-software-distribution-2021-12-08_en"
+   ],
+   "summary_and_credibility_md": "The Commission's press release announcing the 2021 Decision. It's official, but a summary.",
+   "relevant_content_md": "- A plain-language companion to the Decision (European Commission 2021a)",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-05"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "european-commission-2025",
+   "label": "European Commission 2025",
+   "title": "The EU Open Source Solutions Catalogue is now live",
+   "type": "News",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "European Commission. 2025. \"The EU Open Source Solutions Catalogue Is Now Live.\" March 31, 2025. https://interoperable-europe.ec.europa.eu/interoperable-europe/news/eu-open-source-solutions-catalogue-now-live",
+   "url": "https://interoperable-europe.ec.europa.eu/interoperable-europe/news/eu-open-source-solutions-catalogue-now-live",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/interoperable-europe/news/eu-open-source-solutions-catalogue-now-live"
+   ],
+   "summary_and_credibility_md": "The Commission's launch announcement for the catalogue. It's a primary source for the launch figures.",
+   "relevant_content_md": "- Launched March 31, 2025 with the Interoperable Europe programme, with \"over 640 solutions\" federated from five national catalogs\n- Model for the Catalog function: a solution built in one place is findable everywhere\n- TODO: the catalog was about 800 by June 2025. Date whichever figure is used",
+   "has_todo": true,
+   "already_in_govoss": [
+    "ec-12"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "fedscoop-2025",
+   "label": "FedScoop 2025",
+   "title": "FedScoop 50: Remy DeCausemaker",
+   "type": "Profile",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "FedScoop. 2025. \"Remy DeCausemaker.\" FedScoop 50, September 5, 2025. https://develop.fedscoop.com/?p=86705",
+   "url": "https://develop.fedscoop.com/?p=86705",
+   "all_urls": [
+    "https://develop.fedscoop.com/?p=86705"
+   ],
+   "summary_and_credibility_md": "An awards listing from FedScoop, a federal IT trade publication. It's credible for the recognition, not for detail.",
+   "relevant_content_md": "- DeCausemaker was named a FedScoop 50 \"Most Inspiring Up & Comer\" in 2025",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-27"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "fletcher-and-decausemaker-2024",
+   "label": "Fletcher and DeCausemaker 2024",
+   "title": "Nava Open Source Summit deck",
+   "type": "Slides",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Fletcher, Andrea, and Remy DeCausemaker. 2024. \"Open Source & The Digital Service at CMS.gov.\" Presentation slides, Nava Open Source Summit: Advancing IT Solutions in Federal Health and Beyond, Washington, DC, October 24, 2024. https://github.com/decause-gov/decks/blob/main/navaosssummit2024.pdf. Video: Nava's summit playlist, https://youtube.com/playlist?list=PLLbut-Ow2h4kJa9cXUvkMiGaWY1uWgFiE (which video is this talk is unconfirmed).",
+   "url": "https://github.com/decause-gov/decks/blob/main/navaosssummit2024.pdf",
+   "all_urls": [
+    "https://github.com/decause-gov/decks/blob/main/navaosssummit2024.pdf",
+    "https://youtube.com/playlist?list=PLLbut-Ow2h4kJa9cXUvkMiGaWY1uWgFiE"
+   ],
+   "summary_and_credibility_md": "A 21-slide version of the DEF CON deck, given by Remy and Andrea Fletcher, then CMS's Chief Digital Strategy Officer, two months later. Same strengths and limits as the DEF CON deck. It adds two things the other decks don't have: a bug bounty program and a city youth jobs partnership.",
+   "relevant_content_md": "- CMS ran a vulnerability disclosure program with CISA on Bugcrowd. That was the prerequisite for its first bug bounty, launched in early October 2024 with a $70,000+ reward pool. A concrete security win at a small cost\n- Restates the federal retirement cliff as a risk, with the early-career talent pipeline as the answer\n- Its Code in the Schools internships run through Baltimore's YouthWorks summer jobs program, managed by the Mayor's Office of Employment Development. A city partnership model\n  - TODO: could an NYC OSPO do the same through the Summer Youth Employment Program?",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ]
+  },
+  {
+   "id": "fletcher-decausemaker-and-col-n-viera-2022",
+   "label": "Fletcher, DeCausemaker and Colón Viera 2022",
+   "title": "Linux Foundation Public Health webinar",
+   "type": "Webinar + video",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Fletcher, Andrea, Remy DeCausemaker, and Alberto Colón Viera. 2022. \"Modernizing Healthcare at the Federal Level with Open Source at the Centers for Medicare & Medicaid Services (CMS.gov).\" Webinar, Linux Foundation Public Health, September 20, 2022. Slides: https://github.com/decause-gov/decks/blob/main/lfph-webinar-091922.pdf. Video: https://www.youtube.com/watch?v=iCs0-pFO7JQ",
+   "url": "https://github.com/decause-gov/decks/blob/main/lfph-webinar-091922.pdf",
+   "all_urls": [
+    "https://github.com/decause-gov/decks/blob/main/lfph-webinar-091922.pdf",
+    "https://www.youtube.com/watch?v=iCs0-pFO7JQ"
+   ],
+   "summary_and_credibility_md": "The earliest public CMS open source deck, from a year before the OSPO was stood up. Speakers are the Digital Service's director, Remy, and a CMS staff engineer. It's a primary source with a recording, so it's the best of the early decks to cite. Several key slides are images, so the notes below come from viewing them.",
+   "relevant_content_md": "- **Myths slide.** Each myth is flipped:\n  - Open source is *more* secure, not less: \"Many eyes make any bug shallow.\"\n  - Open source is *good* for for-profit businesses.\n  - Open source doesn't mean all data must be public: \"Open source is not a binary, it is a spectrum.\"\n  - Open by default is something the federal government *already* does, because federal work can't be copyrighted.\n  - *Gap filled:* The last one doesn't carry over to NYC. The no-copyright rule (17 U.S.C. § 105) only covers federal work, and City work can be copyrighted.\n- **Benefits slide**, quoting CMS's own technical reference architecture. Good marketing language:\n  - considerable savings and greater efficiency in reusing software;\n  - less vendor lock-in;\n  - transparency;\n  - interoperability through open standards;\n  - open collaboration;\n  - early adoption of new technology.\n- **Inbound evaluation criteria**, a ready-made version of Haddad's \"classification scheme\" for deciding which open source to use:\n  - Existing products: is there an approved commercial product that already does this?\n  - Maturity: market share, documentation, community, code quality, rate of change, vulnerability tracking.\n  - Costs and risks: integration, talent pool, security prohibitions, availability of paid support, cost compared with a commercial product.\n  - Licensing.\n- **Challenges grid.** It sorts the work into education, tools, policy and process, communication, and continuity. Items include inbound and outbound checklists, a checklist for open source procurement, SBOM, repository linters, a bug bounty policy, succession planning and hackathons. The deck uses Haddad's four strategy stages to frame it.\n- **Aspirational roadmap, Q3 2022 to Q1 2024.** A model for an NYC roadmap:\n  - first quarter: hire an open source lead, start gathering repository metrics, set up repo templates, pilot Hacktoberfest;\n  - then: policy review, an internal \"roadshow,\" inbound and outbound checklists, staff training, a repository inventory, and fellows arriving;\n  - ending with internal and external portals.",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "how"
+   ]
+  },
+  {
+   "id": "floss-pso-n-d",
+   "label": "FLOSS-PSO n.d.",
+   "title": "About this initiative",
+   "type": "Web page",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "FLOSS-PSO. n.d. \"About This Initiative.\" https://floss-pso.network/about/",
+   "url": "https://floss-pso.network/about/",
+   "all_urls": [
+    "https://floss-pso.network/about/"
+   ],
+   "summary_and_credibility_md": "The FLOSS-PSO registry's about page. It's a primary source on what the registry is.",
+   "relevant_content_md": "- The global registry of public-sector OSPOs, under the OSPO Alliance\n- It already lists Munich, Paris and the CMS Digital Service, and a Paris officer helps maintain it\n- The network a New York OSPO could join on day one. It would be the first U.S. city",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-15"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "precedents"
+   ]
+  },
+  {
+   "id": "floss-pso-network-n-d",
+   "label": "FLOSS-PSO Network n.d.",
+   "title": "List of public sector OSPOs",
+   "type": "Directory",
+   "cases": [
+    "Paris",
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "FLOSS-PSO Network. n.d. \"List of Public Sector OSPOs.\" https://floss-pso.network/public-sector-ospos/",
+   "url": "https://floss-pso.network/public-sector-ospos/",
+   "all_urls": [
+    "https://floss-pso.network/public-sector-ospos/"
+   ],
+   "summary_and_credibility_md": "A volunteer directory of public-sector OSPOs. Organizations fill in their own entries, so dates are self-reported.",
+   "relevant_content_md": "- Lists \"OSPO de la Ville de Paris, created 2022-06-01\"\n- Records CMS's OSPO as August 1, 2023 (the CMS brief treats it as stood up in August 2023 and launched in January 2024)\n- CMS is the only American public-sector OSPO on it. A New York OSPO would be the first U.S. city\n- TODO: ask Paris (opensource@paris.fr) whether a founding deliberation or charter exists before saying \"created in 2022\"",
+   "has_todo": true,
+   "already_in_govoss": [
+    "cms-33",
+    "ec-16",
+    "par-22"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "fortune-2025",
+   "label": "Fortune 2025",
+   "title": "Musk overhauled the digital services agency and turned it into DOGE",
+   "type": "Article",
+   "cases": [
+    "CMS",
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Fortune. 2025. Sharon Goldman, \"Elon Musk Overhauled the Obama-Era Digital Services Agency and Turned It into DOGE.\" February 28, 2025. https://fortune.com/2025/02/28/elon-musk-doge-us-digital-service-betrayal-ex-employees",
+   "url": "https://fortune.com/2025/02/28/elon-musk-doge-us-digital-service-betrayal-ex-employees",
+   "all_urls": [
+    "https://fortune.com/2025/02/28/elon-musk-doge-us-digital-service-betrayal-ex-employees"
+   ],
+   "summary_and_credibility_md": "A Fortune news article based on interviews with former staff. It's credible mainstream reporting.",
+   "relevant_content_md": "- In 2025 the CMS office's parent agency was renamed and lost a third of its staff\n- The office's tooling came through intact because it was public and in the public domain\n- Lesson for NYC: make the work public, and it lasts",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-30"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ]
+  },
+  {
+   "id": "foss-backstage-2025",
+   "label": "FOSS Backstage 2025",
+   "title": "From Lutece to CiteLibre (conference session)",
+   "type": "Talk",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "FOSS Backstage. 2025. \"From Lutece to CiteLibre: The City of Paris' Journey in OS.\" March 11, 2025. https://25.foss-backstage.de/session/from-lutece-to-citelibre-the-city-of-paris-journey-in-os/index.html",
+   "url": "https://25.foss-backstage.de/session/from-lutece-to-citelibre-the-city-of-paris-journey-in-os/index.html",
+   "all_urls": [
+    "https://25.foss-backstage.de/session/from-lutece-to-citelibre-the-city-of-paris-journey-in-os/index.html"
+   ],
+   "summary_and_credibility_md": "A session page from FOSS Backstage, a Berlin conference on open source governance. The speaker bio is self-description.",
+   "relevant_content_md": "- Gives Philippe Bareille's title: \"Open Source program officer at the City of Paris' CIO office\"",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-05"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "fsfe-2020",
+   "label": "FSFE 2020",
+   "title": "Munich commits to Public Money? Public Code!",
+   "type": "Article",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "FSFE. 2020. \"Munich Commits to 'Public Money? Public Code!'\" May 6, 2020. https://fsfe.org/news/2020/news-20200506-01.html",
+   "url": "https://fsfe.org/news/2020/news-20200506-01.html",
+   "all_urls": [
+    "https://fsfe.org/news/2020/news-20200506-01.html"
+   ],
+   "summary_and_credibility_md": "A news post from the Free Software Foundation Europe, the advocacy group that runs the \"Public Money? Public Code!\" campaign, on Munich's 2020 governing coalition taking up the principle. It's a supporter, not a neutral observer. It's useful as evidence of the political commitment, but it doesn't describe the office.",
+   "relevant_content_md": "- The Munich brief cites it with the October 2020 council motions as background: council members asked for an Open Source Hub because open source \"no longer has the priority now demanded in the coalition agreement\"\n- Shows that the office started as a political commitment before it was an IT decision\n- TODO: check what the May 2020 post covers (the coalition agreement) versus the October 2020 motions, so the two aren't conflated",
+   "has_todo": true,
+   "already_in_govoss": [
+    "mun-19"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "precedents"
+   ]
+  },
+  {
+   "id": "github-social-impact-2023",
+   "label": "GitHub Social Impact 2023",
+   "title": "Skills-based volunteering case study with UNOICT",
+   "type": "Case study",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "GitHub Social Impact. 2023. \"Skills-Based Volunteering Case Study with UNOICT.\" April 3, 2023. https://socialimpact.github.com/insights/Skills-Based-Volunteering-case-study-with-UNOICT/",
+   "url": "https://socialimpact.github.com/insights/Skills-Based-Volunteering-case-study-with-UNOICT/",
+   "all_urls": [
+    "https://socialimpact.github.com/insights/Skills-Based-Volunteering-case-study-with-UNOICT/"
+   ],
+   "summary_and_credibility_md": "A case study by GitHub's social impact team about its own work with the UN. It's a partner's account, so somewhat promotional.",
+   "relevant_content_md": "- In September 2022 Mohsine, as Open Source Coordinator, approached GitHub to help build staff capacity\n- \"Nearly 500 UN staff\" took the first \"Mind the Open Source Gap\" workshop in 2022\n- Capacity building can reach many people at low cost",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-24"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "gwu-ospo-2026",
+   "label": "GWU OSPO 2026",
+   "title": "2026 UN Open Source Week reflections",
+   "type": "Article",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "GWU OSPO. 2026. David Lippert, \"2026 UN Open Source Week Reflections.\" June 27, 2026. https://ospo.gwu.edu/node/626",
+   "url": "https://ospo.gwu.edu/node/626",
+   "all_urls": [
+    "https://ospo.gwu.edu/node/626"
+   ],
+   "summary_and_credibility_md": "A recap from George Washington University's OSPO. It's a firsthand attendee account from a peer institution.",
+   "relevant_content_md": "- In 2026, \"over 2,600 participants from 120+ countries registered,\" and about 1,400 attended\n- Open Source Week is held every June at UN Headquarters in Manhattan, a subway ride from City Hall\n- TODO: the CMS brief notes that only a GWU recap (not the UN agenda) says CMS presented at OSPOs for Good 2024. Check whether it's this one",
+   "has_todo": true,
+   "already_in_govoss": [
+    "un-21"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "haddad-2022",
+   "label": "Haddad 2022",
+   "title": "A Deep Dive into OSPOs",
+   "type": "Report",
+   "cases": [
+    "General"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "Haddad, Ibrahim. 2022. *A Deep Dive into Open Source Program Offices: Structure, Roles, Responsibilities, and Challenges.* Foreword by Chris Aniszczyk. The Linux Foundation. https://doi.org/10.70828/TDWK4785",
+   "url": "https://doi.org/10.70828/TDWK4785",
+   "all_urls": [
+    "https://doi.org/10.70828/TDWK4785"
+   ],
+   "summary_and_credibility_md": "A Linux Foundation Research report on how OSPOs are set up: where they sit in an organization, what they do, how they're staffed and the problems they run into. Haddad leads LF AI & Data Foundation and draws mainly on corporate OSPOs, so public-sector cases are thin. However, it describes the structures most directly applicable to corporate OSPOs, which generally assumes different internal structures and greater budget availability than we can expect for a municipal OSPO.",
+   "relevant_content_md": "- Marketing language\n\n*Where NYC stands*\n\n- NYC gov is currently in the ad-hoc stage 0 of the maturity model, meaning agencies are consistently using OSS internally. Moving into stage 1 means committing to compliant licensing, educating developers, and inventory tracking.\n- *Gap filled:* Haddad on where OSPOs start: \"In general, an organization forms an OSPO when it realizes that its people are consuming open source products and code. This usage is typically internal rather than part of its products or services to its customers or users.\" (p. 9). This is where NYC is now\n- *Gap filled:* \"The common starting point is the adoption of OSS and integration of OSS in products and services.\" \"Typically, the early stages are engineering-driven due to engineers using open source components\" (p. 16)\n- *Gap filled:* Stage 0 in his words: \"the earliest form of adoption is ad hoc due to developers solving problems using readily available tools and technologies\" (p. 9). He calls Stage 1 \"Legal-driven\" (p. 8)\n- TODO: quotes were pulled through a summarizing tool; check wording and page numbers against the PDF before quoting: https://www.linuxfoundation.org/hubfs/LF%20Research/LFR_LFAID_Deep_Dive_Open_Source_Program_Offices_081922.pdf\n\n*Structure*\n\n- The most applicable OSPO structure example appears to be a Virtual OSPO in which there is a Head of Open Source (for NYC perhaps a small team) who works with a team composed of individuals from different teams who dedicate a certain percentage of their time to support the OSPO. This typically does not have a dedicated budget; dedicated spending would come through OTI.\n\n*Staffing*\n\n- Lists the following roles as needing to be covered by the hired staff:\n  - Head of OSPO who has a comprehensive understanding of open source first and foremost, strong technical background, knowledge of licensing and industry best practices, who is connected to the OSPO communities etc. I believe this would likely be the primary hire.\n  - Senior engineer, ideally a full-stack generalist like those hired to PIT Crew.\n  - Technical evangelists who do the public work and technical documentation that build critical support. Currently we are serving that function.\n  - Compliance engineer responsible for licensing obligations\n  - Legal counsel, general not in-house.\n- I believe the roles of several of these could be combined. The OSPO's head would likely be responsible for evangelist work that needs to be done alongside champion counterparts already within OTI.\n\n*Strategy: the Consumer stage*\n\n- There are four stages of strategy with open source code: consumer, participant, contributor, and leader. For our initial purposes and marketing, NYC's OSPO is a consumer. Strategic consumption would mean:\n  - Reviewing all open source activities, including license compliance\n  - Build a classification scheme to determine which OSS to consume, with explicit criteria such as availability of features, maturity of source code, size/composition of the dev community etc.\n  - Inventory OSS used throughout NYC gov via SBOM to identify unmet license obligations and identify security vulnerabilities.\n  - Deploy automated workflow software for evaluating open source usage. This would mean metrics pulled through the GitHub API and git logs, automated security checks, repo scaffolding and CI harnesses that run checks every time code is deployed. This meta layer scales horizontally across repos.\n- A plan for incremental investment in headcount and infrastructure is also mentioned, though we may not include that at this time.\n- Strategy needs to be communicated throughout OTI with education for staff. Encourage them to identify and adopt, be transparent about tooling, subscribe to mailing lists, attend conferences, join OS foundations, host events and invite other community members to present.\n\n*Looking ahead: the Participant stage*\n\n- Moving into the Participant stage would be an eventual necessity, and beyond would be phenomenal for NYC's visibility in the world of technological governance, but we are not there yet. But it may be strategic marketing to project 'Where We Could Go from Here.' Some of the highlights are:\n  - File bug reports, contribute fixes, improve or extend functionality, implement new features, or take security measures to improve NYC's products\n  - Contribute source code from internal development to demonstrate good faith and status\n  - Many others but these will land the most cleanly from a gov product standpoint\n\n*Compliance and outside organizations*\n\n- Significant information on compliance; unknown if this is relevant to our messaging at this time, other than to say that an OSPO provides the mechanism for maintaining compliance\n- The OSPO should engage with organizations such as the TODO Group and the Apache Foundation, or the Software Freedom Law Center and Open Invention Network if the primary concern is legal dynamics. The relationships may provide resources and legitimacy to the OSPO, especially if the OSPO is making regular product contributions.\n\n*Metrics*\n\n- Metrics should be tracked.\n  - TODO: identify who those champions are, and their needs, so we can list the most applicable metrics.\n- *Gap filled:* The report itself doesn't list metrics or tie them to champions. It says choosing them is \"one of the more difficult tasks for an OSPO\" and that \"the traditional metrics, which are often used in product organizations, do not apply in the context of open source development. Therefore, new metrics are required\" (p. 22). It also notes that many OSPOs \"use specialized tools to track their organization's contributions to open source projects\" (p. 22). TODO: quotes pulled through a summarizing tool; check against the PDF\n\n*Internal collaboration and education*\n\n- Foster internal collaboration through innersource practices\n- The doc identifies education and training of staff as a core function of an OSPO, and this is the key to a successful long-standing bit of infrastructure. We may decide that this is not in scope for this OSPO in its early stages, but I do believe it would be critical to its long-term success and reputation.\n\n*Infrastructure*\n\n- Open Source IT Infrastructure is listed as being critical to function, and it may be a large blocker if OTI's IT infrastructure is too strict for open knowledge sharing and open source contributions.\n  - TODO: research IT infrastructure or get someone in OTI to tell us about it.\n- Flexibility to communicate with external participants and more blanket approval to contribute to projects will reduce friction",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-13T18:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "definition",
+    "stage",
+    "case",
+    "how",
+    "metrics"
+   ]
+  },
+  {
+   "id": "heise-online-2025",
+   "label": "heise online 2025",
+   "title": "Munich launches first Open Source Sabbatical",
+   "type": "Article",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "heise online. 2025. \"After LiMux Shutdown: Munich Launches First Open Source Sabbatical.\" 2025. https://heise.de/-10266612",
+   "url": "https://heise.de/-10266612",
+   "all_urls": [
+    "https://heise.de/-10266612"
+   ],
+   "summary_and_credibility_md": "A news article from heise, a long-running German technology publisher and generally reliable trade press. It reports on the city's paid sabbatical for outside developers.",
+   "relevant_content_md": "- The first sabbatical, on the Integreat chat project, finished in 2025\n- Co-cited for the office's practices: funding outside developers for three or six months on projects the city needs, and co-founding the Municipal Open Source Board with ZenDiS, KGSt and Dortmund\n- heise's October 2024 report gives €75,000 a year for sponsorship, against €85,000 in the November 2023 council decision. The brief uses the council figure\n- TODO: the article's date wasn't visible in the fetched text. Confirm before citing it by date",
+   "has_todo": true,
+   "already_in_govoss": [
+    "mun-16"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "libre-a-vous-2024",
+   "label": "Libre à vous 2024",
+   "title": "Paris and free software, episode 228",
+   "type": "Podcast",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Libre à vous. 2024. \"Paris et logiciels libres,\" episode 228, April, December 3, 2024. https://libreavous.org/228",
+   "url": "https://libreavous.org/228",
+   "all_urls": [
+    "https://libreavous.org/228"
+   ],
+   "summary_and_credibility_md": "An episode of April's radio show on free software, with City of Paris guests. It's good for who does what, but it's conversation, not documentation. In French.",
+   "relevant_content_md": "- Suggests the officer's manager is Magali Lemaire, head of the software engineering bureau\n- TODO: confirm the reporting line. The brief says she \"appears to be\" his manager",
+   "has_todo": true,
+   "already_in_govoss": [
+    "par-19"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "linuxfr-2004",
+   "label": "LinuxFr 2004",
+   "title": "Linux in Paris, in small doses for now",
+   "type": "Article",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "LinuxFr. 2004. \"Linux à Paris mais à petite dose pour le moment.\" October 19, 2004. https://linuxfr.org/news/linux-a-paris-mais-a-petite-dose-pour-le-moment",
+   "url": "https://linuxfr.org/news/linux-a-paris-mais-a-petite-dose-pour-le-moment",
+   "all_urls": [
+    "https://linuxfr.org/news/linux-a-paris-mais-a-petite-dose-pour-le-moment"
+   ],
+   "summary_and_credibility_md": "A contemporaneous news item from LinuxFr, a French open source community site. It's community journalism, useful for dating events.",
+   "relevant_content_md": "- The other source for the 2003-2004 desktop migration study of about 17,000 workstations that Paris shelved\n- TODO: confirm in a second source before adding detail",
+   "has_todo": true,
+   "already_in_govoss": [
+    "par-20"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "lin-ker-et-al-2026",
+   "label": "Linåker et al. 2026",
+   "title": "Public Sector OSPOs",
+   "type": "Study",
+   "cases": [
+    "General",
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Linåker, Johan, Astor Nummelin Carlberg, and Ciarán O'Riordan. 2026. \"Public Sector Open Source Program Offices.\" arXiv 2603.04891. https://arxiv.org/abs/2603.04891",
+   "url": "https://arxiv.org/abs/2603.04891",
+   "all_urls": [
+    "https://arxiv.org/abs/2603.04891"
+   ],
+   "summary_and_credibility_md": "An academic study of 16 public-sector OSPOs, mostly European (including DINUM, Developers Italia, the European Commission, Paris and OS2), which sorts them into six types. It's the best comparison of public OSPOs we've found. It's an arXiv preprint, so it may not have been peer reviewed yet, and it doesn't include CMS or any U.S. office.",
+   "relevant_content_md": "- Public OSPOs are framed around policy goals like reuse, digital sovereignty and interoperability, where company OSPOs are framed around business goals\n- Offices inside a single institution are usually small, two to four staff. Supports our two-or-three-person ask\n- The constraints it names are the ones we expect in NYC: reliance on outsourcing, procurement rules, short-term political incentives and risk-averse IT culture\n- Several national OSPOs skip innersource and build in the open from the start. A counterpoint to Haddad's innersource advice",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-17"
+   ],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "definition",
+    "how",
+    "precedents"
+   ]
+  },
+  {
+   "id": "lutece-n-d",
+   "label": "Lutece n.d.",
+   "title": "Lutece project site",
+   "type": "Web page",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Lutece. n.d. Project site, community and press pages. Ville de Paris. https://lutece.paris.fr/",
+   "url": "https://lutece.paris.fr/",
+   "all_urls": [
+    "https://lutece.paris.fr/"
+   ],
+   "summary_and_credibility_md": "The Lutece project's own site, run by the City of Paris. It's authoritative on the platform, but promotional on reach and awards.",
+   "relevant_content_md": "- \"More than 500 modules\" and \"200+ contributors\"\n- Reach: Météo-France adopted it in 2008, Budapest reused and contributed to the participatory budgeting module, and Accra deployed its own version of the DansMaRue reporting app\n- Awards: OW2 \"Mature Project\" in 2016 and \"Best Community\" in 2020, a \"Best Open Source Strategy\" award in 2018, and the top level of France's \"Territoire Numérique Libre\" label\n- CiteLibre, announced June 8, 2022, is Lutece \"pre-assembled and containerized\" into packs for appointment booking, forms, identity and contact. It's the model for packaging PITCrews' tools",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-11"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "metrics"
+   ]
+  },
+  {
+   "id": "miller-2024",
+   "label": "Miller 2024",
+   "title": "Federal News Network, Cloud Exchange",
+   "type": "Video + article",
+   "cases": [
+    "CMS"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "Miller, Jason. 2024. \"Cloud Exchange 2024: CMS' Andrea Fletcher, Remy DeCausemaker on Extending Digital Services through Open Source.\" Video interview and article, *Federal News Network*, June 2024. https://federalnewsnetwork.com/cloud-computing/2024/06/cloud-exchange-2024-cms-andrea-fletcher-remy-decausemaker-on-extending-digital-services-through-open-source/",
+   "url": "https://federalnewsnetwork.com/cloud-computing/2024/06/cloud-exchange-2024-cms-andrea-fletcher-remy-decausemaker-on-extending-digital-services-through-open-source/",
+   "all_urls": [
+    "https://federalnewsnetwork.com/cloud-computing/2024/06/cloud-exchange-2024-cms-andrea-fletcher-remy-decausemaker-on-extending-digital-services-through-open-source/"
+   ],
+   "summary_and_credibility_md": "A Federal News Network Cloud Exchange interview with Andrea Fletcher, then CMS's Chief Digital Strategy Officer, and Remy DeCausemaker, about six months after the OSPO launched, with a written article by Jason Miller. Federal News Network is a reliable federal IT outlet. The notes below are from watching the full video, so they're the speakers' own points rather than the article's paraphrase. It's a public interview, so Remy can be cited by name here.",
+   "relevant_content_md": "*The case for an OSPO*\n\n- CMS already had many open source projects. The OSPO was a way to make use of that work and do more of it (Fletcher). NYC is in the same position: agencies already use and build open source\n- Open source and open source policy weren't new at CMS. What was missing was someone to recognize the ecosystem the agency depends on, make it more secure, and build in the open (Fletcher). Fits the \"policy has been sitting there\" framing in Myatt 2023\n- Building the same thing twice wastes \"valuable resources that we don't have enough of.\" It happens because of separate funding streams and contracts (Fletcher). The same cause likely applies across NYC agencies, so this is good language for the problem section\n- The main benefit is innersource: code reused across the agency and the rest of government (Fletcher). Supports \"share inside first\"\n- On contractor-built code that CMS owns: \"It was bought and paid for by the American people with taxpayer dollars, it belongs to the American people\" (Fletcher). A strong framing line that could be adapted for New Yorkers\n- Transparency forces accountability: a hospital can notice a bug and fix it for everybody (Fletcher). Backs the \"accountability for contractor performance\" outcome\n\n*Answering objections*\n\n- The first myth to clear up: that open source means putting data on the internet. The code that runs on data is separate from the data. Once that was understood, they were \"off to the races\" (Fletcher). Belongs in Guardrails\n- The DoD FAQ helped dispel myths and show that open source is \"normal and boring\" (DeCausemaker). Supports writing a City FAQ (see DoW CIO 2026)\n- Breaking down silos between contractors inside CMS is one of the hard parts (Fletcher)\n\n*Security*\n\n- After Log4J, CMS had to write to each contractor and take their word that the vulnerability wasn't in their software. Automated tools show where the code is and what dependencies and vulnerabilities it has, so fixes go out faster. This was an easy case to make internally (Fletcher). The clearest argument for the SBOM inventory\n- CMS runs the OpenSSF Scorecard, from the Open Source Security Foundation, which scores projects on 12+ security metrics (DeCausemaker)\n- Repolinter by the TODO Group checks repositories for common problems and runs in automation (DeCausemaker)\n\n*Tools, metrics and results*\n\n- The five-tier maturity model and templates give engineers practical, day-to-day guidance below the level of legislation and regulation (DeCausemaker)\n- The tools are used across CMS centers and by the Department of Education (DeCausemaker). Public evidence of reuse outside CMS\n- The public metrics site sets a baseline for each project: commits, pull requests and issues, contributors, time to respond to issues, and time to merge a patch (DeCausemaker). A ready list for Measuring results\n- Goal: raise the floor for every open source project at CMS, and raise the ceiling for the projects already doing well (DeCausemaker). Good language for the Manage and Support functions\n- The office covers inbound code CMS depends on and outbound code it shares (DeCausemaker)\n- Modeled on the European Commission, the TODO Group, WHO and CHAOSS (DeCausemaker). Shows CMS drew on the same international examples we cite\n\n*A practical example*\n\n- Hospital price transparency: the law said hospitals' files had to be machine-readable, but not how. CMS built a static open source website where hospitals can check their files against it, a working reference the legislation didn't provide (DeCausemaker). Model for an OSPO turning a legal requirement into a usable tool\n  - TODO: is there an NYC requirement (e.g. under the Open Data Law) where a tool like this would help agencies comply?\n\n*People and talent*\n\n- Software is made of code and people. The office helps people meet, breaks down silos, spreads information, makes leaders visible, and gives people a place to come together when new vulnerabilities hit (DeCausemaker). The community building role\n- Bringing in early-career talent has been a major impact. Maintenance (\"janitorial\") work suits students, and they can show it because it's open. It's a recruiting tool for fellows, graduates, and organizations that might contract with CMS (Fletcher)\n- Coding it Forward fellows took CMS from 0 to 7 public repositories in 8 months (DeCausemaker)\n  - TODO: my notes also say \"averaging 2 projects per month,\" which doesn't match 7 in 8 months. Rewatch to check\n- Fletcher calls the whole effort a culture shift\n\n*From the written article*\n\n- *Gap filled:* Fletcher's line on the goal, as quoted in the article: \"build it once and be able to reuse it\"",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-11T06:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "definition",
+    "case",
+    "metrics"
+   ]
+  },
+  {
+   "id": "myatt-2023",
+   "label": "Myatt 2023",
+   "title": "GovConWire on the OSPO launch",
+   "type": "Article",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Myatt, Summer. 2023. \"Inside CMS' Ground-Breaking Open Source Program Office.\" *GovConWire*, October 31, 2023. https://www.govconwire.com/2023/10/inside-cms-ground-breaking-open-source-program-office/",
+   "url": "https://www.govconwire.com/2023/10/inside-cms-ground-breaking-open-source-program-office/",
+   "all_urls": [
+    "https://www.govconwire.com/2023/10/inside-cms-ground-breaking-open-source-program-office/"
+   ],
+   "summary_and_credibility_md": "A short trade press piece on the OSPO as it was being stood up, quoting Andrea Fletcher only. It's a government contracting news site, so it's light on detail, but it's the earliest public account of the office.",
+   "relevant_content_md": "- Fletcher: \"It's the first in the government. We're trying it out\"\n- Fletcher on why now: \"the policy has been sitting there. It's just been waiting for somebody to come and pick it up\"\n- Good framing for NYC: the office isn't a new mandate, it's someone picking up commitments that already exist",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-25"
+   ],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "precedents"
+   ]
+  },
+  {
+   "id": "nyc-open-data-law-2012",
+   "label": "NYC Open Data Law 2012",
+   "title": "Local Law 11 of 2012 and amendments",
+   "type": "Law",
+   "cases": [
+    "NYC"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "New York City Council. 2012. Local Law 11 of 2012 (Int. No. 29-A), \"A Local Law to amend the administrative code of the city of New York, in relation to publishing open data.\" Codified at N.Y.C. Admin. Code § 23-501 et seq. https://intro.nyc/local-laws/2012-11",
+   "url": "https://intro.nyc/local-laws/2012-11",
+   "all_urls": [
+    "https://intro.nyc/local-laws/2012-11"
+   ],
+   "summary_and_credibility_md": "New York City's Open Data Law, sponsored by Gale Brewer and passed by the Council on February 29, 2012. Mayor Bloomberg signed it on March 7, 2012. It required every agency's public data to be on one portal by the end of 2018. The Council added nine amendments between 2015 and 2017, and Local Law 251 of 2017 made the mandate permanent. It's the law itself, so it's the most authoritative source. OTI's Open Data team carries it out, and its \"Laws and Reports\" page lists every amendment and annual report: https://opendata.cityofnewyork.us/open-data-law/",
+   "relevant_content_md": "*What it requires*\n\n- Public data sets go on a single portal, in machine-readable formats, with no registration or license needed\n- A Technical Standards Manual that favors open standards. The City keeps it on GitHub: https://cityofnewyork.github.io/opendatatsm/\n- Agency compliance plans, updated every year (now published each September 15), with an annual Open Data for All report. The latest is the 2025 Progress Report and Plan\n- Amendments:\n  - LL 106/2015: archive old versions of data sets\n  - LL 107/2015: plain-language data dictionaries\n  - LL 108/2015: geocode addresses\n  - LL 109/2015: deadlines for answering public data requests\n  - LL 110/2015: keep the portal in sync with agency websites\n  - LL 7/2016 and LL 244/2017: review FOIL responses for data sets that should be public\n  - LL 8/2016: MODA spot-checks agencies\n  - LL 251/2017: makes the mandate permanent and requires every agency to name an Open Data Coordinator\n\n*Why it matters for an OSPO*\n\n- NYC has already written \"open by default\" into local law once. The Open Data Law is the closest local precedent for an OSPO\n- It covers data, not source code. Nothing in it requires the City to inventory or share the code it pays for. That's the gap an OSPO would fill\n- Open Data Coordinators in each agency are a ready-made model for OSPO liaisons\n- The compliance plan and annual report could work the same way for a City code inventory, like the SHARE IT Act's reporting\n- The open data team already works in public on GitHub, so OTI has some open-source practice to build on\n- A caution: at the Council's February 27, 2024 oversight hearing, Reinvent Albany testified that OTI's open data team was six people. About half of the 872 data sets flagged for automation still weren't automated, and agencies had dropped 22% of the data sets in their plans since 2018. A law isn't enough without staff to run it: https://reinventalbany.org/wp-content/uploads/2024/02/2024-Reinvent-Albany-Testimony-to-the-NYC-Council-For-Oversight-Hearing-on-Open-Data-Compliance-February-2024.pdf",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T20:03:20.494Z",
+   "role": "local",
+   "role_label": "Local context",
+   "jurisdiction": "New York City",
+   "exec_sections": [
+    "context",
+    "how",
+    "metrics"
+   ]
+  },
+  {
+   "id": "oict-2022",
+   "label": "OICT 2022",
+   "title": "OICT becomes newest member of the Digital Public Goods Alliance",
+   "type": "News",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OICT. 2022. \"OICT Becomes Newest Member of the Digital Public Goods Alliance.\" November 28, 2022. https://unite.un.org/en/node/2897",
+   "url": "https://unite.un.org/en/node/2897",
+   "all_urls": [
+    "https://unite.un.org/en/node/2897"
+   ],
+   "summary_and_credibility_md": "A UN Office of Information and Communications Technology announcement. It's official.",
+   "relevant_content_md": "- OICT joined the Digital Public Goods Alliance, which treats open source as public infrastructure any country can adopt without a license fee",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-13"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "oict-2025a",
+   "label": "OICT 2025a",
+   "title": "The OSI first to endorse UN Open Source Principles",
+   "type": "News",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OICT. 2025a. \"The OSI First to Endorse UN Open Source Principles.\" February 26, 2025. https://unite.un.org/en/node/2864",
+   "url": "https://unite.un.org/en/node/2864",
+   "all_urls": [
+    "https://unite.un.org/en/node/2864"
+   ],
+   "summary_and_credibility_md": "A UN OICT announcement. It's official.",
+   "relevant_content_md": "- Endorsement of the principles opened on February 26, 2025, with the Open Source Initiative as the first endorser",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-09"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "oict-2025b",
+   "label": "OICT 2025b",
+   "title": "France first government to endorse the UN Open Source Principles",
+   "type": "News",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OICT. 2025b. \"France Becomes First Government to Endorse the UN Open Source Principles.\" May 14, 2025. https://unite.un.org/node/2327",
+   "url": "https://unite.un.org/node/2327",
+   "all_urls": [
+    "https://unite.un.org/node/2327"
+   ],
+   "summary_and_credibility_md": "A UN OICT announcement. It's official.",
+   "relevant_content_md": "- Endorsements reached 36 by May 2025, when France became the first government to sign",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-11"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "oict-2025c",
+   "label": "OICT 2025c",
+   "title": "UN Open Source Principles endorsements reach 60",
+   "type": "News",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OICT. 2025c. \"Milestone Reached: UN Open Source Principles Endorsements Reach 60.\" July 21, 2025. https://unite.un.org/node/2371",
+   "url": "https://unite.un.org/node/2371",
+   "all_urls": [
+    "https://unite.un.org/node/2371"
+   ],
+   "summary_and_credibility_md": "A UN OICT announcement. It's official.",
+   "relevant_content_md": "- Endorsements reached 60 by July 2025",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-12"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "omb-2016",
+   "label": "OMB 2016",
+   "title": "M-16-21: Federal Source Code Policy",
+   "type": "Policy",
+   "cases": [
+    "CMS",
+    "U.S. Federal"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OMB. 2016. *M-16-21: Federal Source Code Policy.* August 8, 2016. https://obamawhitehouse.archives.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf",
+   "url": "https://obamawhitehouse.archives.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf",
+   "all_urls": [
+    "https://obamawhitehouse.archives.gov/sites/default/files/omb/memoranda/2016/m_16_21.pdf"
+   ],
+   "summary_and_credibility_md": "The White House Office of Management and Budget memo that set federal source code policy. It's a primary policy document.",
+   "relevant_content_md": "- Asks agencies to look for existing and shared solutions before building custom software\n- Asks agencies to release at least 20% of new custom code as open source\n- The policy that had been \"sitting there\" until CMS's office acted on it. Lawmakers later said it lacked enforcement, which the SHARE IT Act addressed\n- The 20% rule is now written into the CMS group's charter (CMS 2026)",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-13"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "local",
+   "role_label": "Local context",
+   "jurisdiction": "United States",
+   "exec_sections": [
+    "context"
+   ]
+  },
+  {
+   "id": "open-source-united-2024",
+   "label": "Open Source United 2024",
+   "title": "Common Policy Framework (release candidate 1)",
+   "type": "Policy",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Open Source United. 2024. *Common Policy Framework*, release candidate 1, November 2024. https://opensource.un.org/sites/default/files/2025-07/common_policy_framework.pdf",
+   "url": "https://opensource.un.org/sites/default/files/2025-07/common_policy_framework.pdf",
+   "all_urls": [
+    "https://opensource.un.org/sites/default/files/2025-07/common_policy_framework.pdf"
+   ],
+   "summary_and_credibility_md": "The UN system's shared framework for adopting open source, written by its community of practice (developed by the ITU). It's a primary source and still a release candidate.",
+   "relevant_content_md": "- A \"phased engagement model\" so each organization can \"gradually adopt open source practices, ensuring they align with organizational capacities and needs\"\n- Four stages and six activities: a governance structure, core policy statements, licensing and compliance, a software catalog, a code-hosting platform, and capacity building. An OSPO is \"required\" only at stages three and four\n- Projects are made public \"after a committee review approves their release\"\n- Survey: 22% of UN organizations had an OSPO in 2023, and 47% were establishing one by 2024\n- Lesson for NYC: phase it in. Start with an inventory, a catalog and a support desk",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-03"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "how"
+   ]
+  },
+  {
+   "id": "open-source-united-n-d",
+   "label": "Open Source United n.d.",
+   "title": "United Nations Open Source Principles and portal",
+   "type": "Web page",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Open Source United. n.d. \"United Nations Open Source Principles\" and portal pages. https://opensource.un.org/en/news/united-nations-open-source-principles",
+   "url": "https://opensource.un.org/en/news/united-nations-open-source-principles",
+   "all_urls": [
+    "https://opensource.un.org/en/news/united-nations-open-source-principles"
+   ],
+   "summary_and_credibility_md": "The community of practice's own portal. It's a primary source.",
+   "relevant_content_md": "- The eight principles: Open by Default; Contribute Back; Secure by Design; Foster Inclusive Participation; Design for Reusability; Provide Documentation; RISE (recognize, incentivize, support and empower); Sustain and Scale\n- Co-chaired by Omar Mohsine and Mostafa Elkordy (UNICC), with David Manset (ITU) as vice-chair. Contact: opensourceunited@un.org\n- The principles are open for endorsement through the portal. New York City government hasn't taken part yet\n- TODO: the endorsement count. \"More than 150\" on the portal as of May 2026 (per Tridgell) versus \"now passed 250\" on June 25, 2026. Date whichever is used",
+   "has_todo": true,
+   "already_in_govoss": [
+    "bcn-23",
+    "un-01"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "mission"
+   ]
+  },
+  {
+   "id": "osor-2020",
+   "label": "OSOR 2020",
+   "title": "Lutece: case study on sustainability of public sector open source communities",
+   "type": "Case study",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2020. \"Lutece: Case Studies on Sustainability of Public Sector Open Source Communities.\" European Commission, August 5, 2020. https://interoperable-europe.ec.europa.eu/node/702996",
+   "url": "https://interoperable-europe.ec.europa.eu/node/702996",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/node/702996"
+   ],
+   "summary_and_credibility_md": "A European Commission Open Source Observatory case study. It's credible and independent of the city, though the figures are from 2020.",
+   "relevant_content_md": "- Lutece's funding \"stems exclusively from the city budget\"\n- Runs in Lyon, Marseille and Mont-de-Marsan and \"in over 50 medium and large French organisations\"\n- TODO: the \"over 50 organisations\" figure is from 2020, not from the city. Date it when used",
+   "has_todo": true,
+   "already_in_govoss": [
+    "par-09"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "osor-2021",
+   "label": "OSOR 2021",
+   "title": "From open software to open culture",
+   "type": "Article",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2021. \"From Open Software to Open Culture.\" European Commission, October 18, 2021. https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/united-nations-event-open-source",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/united-nations-event-open-source",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/united-nations-event-open-source"
+   ],
+   "summary_and_credibility_md": "A European Commission Open Source Observatory report on a UN event. It's credible secondary reporting.",
+   "relevant_content_md": "- In 2021, Assistant Secretary-General and Chief Information Technology Officer Bernardo Mariano Jr. said \"OICT and the UN Secretariat will build an Open Source Program Office with the work started in the WHO\"\n- The UN's case for an office came from the top of its IT organization",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-23"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "osor-2023",
+   "label": "OSOR 2023",
+   "title": "Presentations from the OSOR webinar on solutions for public sector",
+   "type": "Web page",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2023. \"Presentations from the OSOR Webinar on Solutions for Public Sector.\" European Commission, September 27, 2023. https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/presentations-osor-webinar-solutions-public-sector",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/presentations-osor-webinar-solutions-public-sector",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/presentations-osor-webinar-solutions-public-sector"
+   ],
+   "summary_and_credibility_md": "The European Commission's page collecting the September 2023 webinar slides, including Bareille's. It's credible as a record of what was presented.",
+   "relevant_content_md": "- The EC called Paris's office \"the newly created OSPO\" in September 2023\n- Links to Bareille's slides (Bareille 2023)",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "osor-2024",
+   "label": "OSOR 2024",
+   "title": "Munich's long history with open source in public administration",
+   "type": "Article",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2024. Ola Adach, \"Munich's Long History with Open Source in Public Administration.\" European Commission, January 31, 2024. https://interoperable-europe.ec.europa.eu/node/707462",
+   "url": "https://interoperable-europe.ec.europa.eu/node/707462",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/node/707462"
+   ],
+   "summary_and_credibility_md": "An article from the European Commission's Open Source Observatory (OSOR), which tracks public-sector open source across Europe. It's a credible, independent EU source, published the month Munich's office opened.",
+   "relevant_content_md": "- The observatory counted 32 open source applications in Munich's catalog\n- Munich adopted Berlin's appointment-booking system rather than buying or writing its own. That's a clear example of the Expand function\n- Useful for the LiMux backstory without making it the subject",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-14"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "osor-2025a",
+   "label": "OSOR 2025a",
+   "title": "The role of OSPOs in transforming public services with open source",
+   "type": "Article",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2025a. \"The Role of OSPOs in Transforming Public Services with Open Source.\" June 19, 2025. https://interoperable-europe.ec.europa.eu/node/731054",
+   "url": "https://interoperable-europe.ec.europa.eu/node/731054",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/node/731054"
+   ],
+   "summary_and_credibility_md": "A European Commission Open Source Observatory article. It's credible and close to the source.",
+   "relevant_content_md": "- Co-cited for who runs the EC OSPO (Miguel Díez Blanco as head)",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-10"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "osor-2026-meetup-slides",
+   "label": "OSOR 2026 (meetup slides)",
+   "title": "OSOR Community Meetup, January 2026",
+   "type": "Slides",
+   "cases": [
+    "European Commission",
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2026. OSOR Community Meetup January 2026, master slide deck. January 28, 2026. https://interoperable-europe.ec.europa.eu/sites/default/files/news/2026-02/osor-community-meetup-jan-2026-master-slide-deck.pdf",
+   "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/news/2026-02/osor-community-meetup-jan-2026-master-slide-deck.pdf",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/sites/default/files/news/2026-02/osor-community-meetup-jan-2026-master-slide-deck.pdf"
+   ],
+   "summary_and_credibility_md": "The master slide deck from the EC observatory's January 2026 meetup, with sections from several offices. It's primary for each office's own figures.",
+   "relevant_content_md": "- The EC OSPO's purpose: \"enable and scale the use of open source across the European Commission\" and \"act as custodians of the EC Open Source Strategy\"\n- The share of internal repositories open to other Commission services rose from about 10% in 2021 to \"more than 30%,\" with a target to \"increase 5% every year until we get to 90%\"\n- The catalog drew on nine national catalogs by January 2026. Labs for Jitsi, CryptPad and Discourse; bug bounties and hackathons\n- Inner source is the piece most relevant to PITCrews: share between agencies first, with a modest yearly target\n- The UN brief cites \"OSOR 2026\" for UNDP helping Trinidad and Tobago set up a national OSPO, and an \"OSPO-in-a-Box\" track\n- TODO: confirm which OSOR 2026 source the Trinidad and Tobago point comes from",
+   "has_todo": true,
+   "already_in_govoss": [
+    "ec-08"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "metrics",
+    "mission"
+   ]
+  },
+  {
+   "id": "osor-2026-un-portal",
+   "label": "OSOR 2026 (UN portal)",
+   "title": "United Nations launches Open Source United portal",
+   "type": "Article",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSOR. 2026. \"United Nations Launches Open Source United Portal.\" European Commission, May 28, 2026. https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/united-nations-launches-open-source-united-portal",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/united-nations-launches-open-source-united-portal",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/united-nations-launches-open-source-united-portal"
+   ],
+   "summary_and_credibility_md": "A European Commission Open Source Observatory news item. It's credible secondary reporting.",
+   "relevant_content_md": "- The Open Source United portal, where staff and partners can find projects across the UN system, opened publicly in May 2026\n- An example of the Catalog function at system scale",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-22"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "ospo-alliance-2024",
+   "label": "OSPO Alliance 2024",
+   "title": "City of Paris confirms support to the OSPO Alliance",
+   "type": "News",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSPO Alliance. 2024. \"City of Paris Confirms Support to the OSPO Alliance.\" November 20, 2024. https://ospo-alliance.org/news/20241120_member_city_of_paris/",
+   "url": "https://ospo-alliance.org/news/20241120_member_city_of_paris/",
+   "all_urls": [
+    "https://ospo-alliance.org/news/20241120_member_city_of_paris/"
+   ],
+   "summary_and_credibility_md": "A membership announcement from the OSPO Alliance. It's reliable for the fact of membership.",
+   "relevant_content_md": "- Paris joined the OSPO Alliance in November 2024, after April (2015), the EU OSPO Network (co-founded 2022), OW2 and OSPO++\n- Shows Paris building its office's network ties step by step",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-08"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "ospo-alliance-2025a",
+   "label": "OSPO Alliance 2025a",
+   "title": "Open Source at the EC (OSPO OnRamp slides)",
+   "type": "Slides",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSPO Alliance. 2025a. \"Open Source at the EC.\" OSPO OnRamp slides, May 16, 2025. https://ospo-alliance.org/resources/onramp/20250516_ospo_onramp_open_source_at_the_ec.pdf",
+   "url": "https://ospo-alliance.org/resources/onramp/20250516_ospo_onramp_open_source_at_the_ec.pdf",
+   "all_urls": [
+    "https://ospo-alliance.org/resources/onramp/20250516_ospo_onramp_open_source_at_the_ec.pdf"
+   ],
+   "summary_and_credibility_md": "Slides from the EC OSPO presented at the OSPO Alliance's OnRamp series. It's primary, self-reported.",
+   "relevant_content_md": "- The office has worked on \"integrating open source into IT governance tools via PM² guidelines,\" the Commission's project management method\n- Model for the procurement advisory role: putting open source into the method teams already use to plan projects",
+   "has_todo": false,
+   "already_in_govoss": [
+    "ec-11"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "ospo-alliance-2025b",
+   "label": "OSPO Alliance 2025b",
+   "title": "FLOSS-PSO support (news)",
+   "type": "News",
+   "cases": [
+    "European Commission"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "OSPO Alliance. 2025b. News, September 15, 2025. https://ospo-alliance.org/news/20250915_floss_pso_support/",
+   "url": "https://ospo-alliance.org/news/20250915_floss_pso_support/",
+   "all_urls": [
+    "https://ospo-alliance.org/news/20250915_floss_pso_support/"
+   ],
+   "summary_and_credibility_md": "An OSPO Alliance news post about the FLOSS-PSO registry. It's reliable for the arrangement.",
+   "relevant_content_md": "- The FLOSS-PSO registry sits under the OSPO Alliance\n- Supports the point that the global registry is the network open to a U.S. city",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "paris-2021",
+   "label": "Paris 2021",
+   "title": "How the City of Paris committed to open source",
+   "type": "Slides",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Paris. 2021. \"How the City of Paris Committed to Open Source.\" OSOR webinar slides, June 2021. https://interoperable-europe.ec.europa.eu/sites/default/files/news/2021-07/PB_OSOR%20Webinar%20-%20OSS%20dev%20Culture_Final.pdf",
+   "url": "https://interoperable-europe.ec.europa.eu/sites/default/files/news/2021-07/PB_OSOR%20Webinar%20-%20OSS%20dev%20Culture_Final.pdf",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/sites/default/files/news/2021-07/PB_OSOR%20Webinar%20-%20OSS%20dev%20Culture_Final.pdf"
+   ],
+   "summary_and_credibility_md": "The city's own slides from a 2021 European Commission webinar. It's a primary source on the city's reasoning.",
+   "relevant_content_md": "- Lutece is BSD 3-Clause, \"a licence chosen to make it easy to reuse and hack, not to protect our codebase\"\n- Claimed 300-plus services in 2021\n- TODO: service counts conflict (300+, 200+, about 100, 80%). The brief uses \"200-plus\" from the city portal",
+   "has_todo": true,
+   "already_in_govoss": [
+    "par-04"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "precedents"
+   ]
+  },
+  {
+   "id": "paris-n-d",
+   "label": "Paris n.d.",
+   "title": "Paris Open Source portal",
+   "type": "Web page",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Paris. n.d. Paris Open Source portal. Ville de Paris. https://opensource.paris.fr",
+   "url": "https://opensource.paris.fr",
+   "all_urls": [
+    "https://opensource.paris.fr"
+   ],
+   "summary_and_credibility_md": "The city's open source portal, run by the office. It's authoritative for current counts, but undated.",
+   "relevant_content_md": "- Current count: Lutece runs \"200+ city services\"\n- The portal itself is one of the office's activities, an example of the Catalog function\n- Contact: opensource@paris.fr",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-01"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "queram-2025",
+   "label": "Queram 2025",
+   "title": "Beeck Center profile of the CMS OSPO",
+   "type": "Profile",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Queram, Kate. 2025. \"Sharing Is Caring: How CMS Is Leading on Federal Open Source Requirements. A FormFest 2025 Profile.\" Digital Government Hub, Beeck Center for Social Impact + Innovation, October 29, 2025. https://digitalgovernmenthub.org/publications/sharing-is-caring-how-cms-is-leading-on-federal-open-source-requirements-a-formfest-2025-profile/",
+   "url": "https://digitalgovernmenthub.org/publications/sharing-is-caring-how-cms-is-leading-on-federal-open-source-requirements-a-formfest-2025-profile/",
+   "all_urls": [
+    "https://digitalgovernmenthub.org/publications/sharing-is-caring-how-cms-is-leading-on-federal-open-source-requirements-a-formfest-2025-profile/"
+   ],
+   "summary_and_credibility_md": "A profile of the CMS OSPO team from Georgetown's Beeck Center, focused on its work helping agencies comply with the SHARE IT Act. It introduces each team member and their background. It's based on interviews with the team, so it's friendly and mostly descriptive, and it doesn't quote Remy.",
+   "relevant_content_md": "- Team of about five: Remy plus engineers Dinne Kopelevich, Sachin Panayil, Natalia Luzuriaga and Isaac Milarsky\n- Their backgrounds include a career changer from film and event planning, a self-taught engineer, and someone whose first job out of college was in public service. Supports hiring early-career and non-traditional talent\n- The SHARE IT Act passed about a year after the OSPO launched, and the team built a compliance toolkit for it (go.cms.gov/shareit)\n- They adapted scripts CDC had already written instead of building new ones. Reuse in practice",
+   "has_todo": false,
+   "already_in_govoss": [
+    "cms-22"
+   ],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "share-it-act-2024",
+   "label": "SHARE IT Act 2024",
+   "title": "Source code Harmonization And Reuse in Information Technology Act",
+   "type": "Law",
+   "cases": [
+    "U.S. Federal",
+    "CMS"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "Source code Harmonization And Reuse in Information Technology Act (SHARE IT Act). Pub. L. No. 118-187, 138 Stat. 2638 (2024). https://www.congress.gov/118/plaws/publ187/PLAW-118publ187.pdf",
+   "url": "https://www.congress.gov/118/plaws/publ187/PLAW-118publ187.pdf",
+   "all_urls": [
+    "https://www.congress.gov/118/plaws/publ187/PLAW-118publ187.pdf"
+   ],
+   "summary_and_credibility_md": "The federal law requiring agencies to share the custom code they pay for. It was introduced by Sens. Ted Cruz and Gary Peters, with Rep. Nick Langworthy leading in the House, and signed on December 23, 2024. It's the statute itself, so it's the most authoritative source on what federal agencies now have to do. It only covers federal agencies. It doesn't apply to New York City.",
+   "relevant_content_md": "- Agencies have to store custom-developed code, plus its documentation and build files, in a public or private repository that other federal employees can reach (within 210 days of enactment)\n- Metadata for new custom code has to be public, so other agencies can find it\n- When agencies contract for custom software, they have to get rights that let the whole government use, share and change the code\n- Each agency CIO writes an agency-wide policy (within 180 days). OMB's Office of Electronic Government sets reporting standards and publishes an annual report of exemptions\n- Exemptions: classified and national security code is out automatically. A CIO can also exempt code for export-control or security laws, or an identifiable privacy risk, and has to report each exemption every year\n- GAO reports to Congress on implementation within 2 years\n- It applies to code written or revised at least 180 days after enactment, so older code isn't covered\n- The CMS OSPO maintains the SHARE IT Act implementation guide and tools: the code.json metadata schema, a form and a GitHub Action that generate code.json, and an index generator for agency-wide inventories. Code.gov is the federal inventory: https://dsacms.github.io/share-it-act-lp\n- It's a working model for NYC: a short law that turns code sharing from a policy (the 2016 Federal Source Code Policy, which had no enforcement) into a requirement with deadlines and reporting\n- code.json could work as-is for City agencies. Databook or govoss could publish a City code inventory in the same format\n- TODO: find out whether the 2025 deadlines were met. I couldn't find a public tracker of agency compliance or the first exemptions report",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T19:56:28.996Z",
+   "role": "local",
+   "role_label": "Local context",
+   "jurisdiction": "United States",
+   "exec_sections": [
+    "context",
+    "case"
+   ]
+  },
+  {
+   "id": "stadt-munchen-2020",
+   "label": "Stadt München 2020",
+   "title": "Open-Source-Hub and Open Source Sabbatical motions",
+   "type": "Council paper",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. 2020. Anträge \"Open-Source-Hub\" and \"Munich Open Source Sabbatical,\" SPD/Volt and Grüne–Rosa Liste, October 22, 2020. https://muenchen-transparent.de/dokumente/7546869/datei",
+   "url": "https://muenchen-transparent.de/dokumente/7546869/datei",
+   "all_urls": [
+    "https://muenchen-transparent.de/dokumente/7546869/datei"
+   ],
+   "summary_and_credibility_md": "The two council motions, filed by the SPD/Volt and Green groups, that asked the city to create the office. It's a primary source, in German.",
+   "relevant_content_md": "- Asked the IT department for an \"Open Source Hub\" with \"firmly assigned personnel and financial resources,\" plus a funded sabbatical for outside programmers\n- Gave the reason: open source \"no longer has the priority now demanded in the coalition agreement\"\n- The council members wanted a permanent team to hold the work. That's the brief's first lesson: give the work a permanent home",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-03"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "precedents"
+   ]
+  },
+  {
+   "id": "stadt-munchen-2023a",
+   "label": "Stadt München 2023a",
+   "title": "Open Source Hub und Open Source Sabbatical (founding decision)",
+   "type": "Council paper",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. 2023a. Sitzungsvorlage 20-26 / V 08681, \"Open Source Hub und Open Source Sabbatical,\" IT-Ausschuss, February 15, 2023. https://risi.muenchen.de/risi/dokument/v/7546873",
+   "url": "https://risi.muenchen.de/risi/dokument/v/7546873",
+   "all_urls": [
+    "https://risi.muenchen.de/risi/dokument/v/7546873"
+   ],
+   "summary_and_credibility_md": "The council decision that created Munich's OSPO. It's the founding document and the most authoritative source on the office's mandate, budget and staff. In German.",
+   "relevant_content_md": "- Commissions \"a newly created and permanently established team within it@M,\" the city's IT provider, covering both \"giving and taking\" under \"public money, public code\"\n- Four staff at launch, two of them permanent, €500,000 in start-up funding, and a start in the third quarter of 2023\n- Four jobs: license questions, evaluating and prioritizing initiatives, managing the city's presence on public code platforms, and running the sabbatical\n- The founding act New York could copy: it names the team, the host department, the headcount and the money\n- TODO: current headcount. The council planned two permanent posts, and nothing confirms the number today",
+   "has_todo": true,
+   "already_in_govoss": [
+    "mun-02"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "stadt-munchen-2023b",
+   "label": "Stadt München 2023b",
+   "title": "Strategy for funding open source libraries",
+   "type": "Council paper",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. 2023b. Sitzungsvorlage 20-26 / V 11273, \"Strategie zur Finanzierung von Open-Source-Bibliotheken,\" November 15, 2023. https://muenchen-transparent.de/dokumente/8063319/datei",
+   "url": "https://muenchen-transparent.de/dokumente/8063319/datei",
+   "all_urls": [
+    "https://muenchen-transparent.de/dokumente/8063319/datei"
+   ],
+   "summary_and_credibility_md": "The second council decision, which funds the open source libraries the city depends on. It's a primary source, in German.",
+   "relevant_content_md": "- Adds €85,000 a year to sponsor the open source libraries the city relies on\n- Places the Hub in the Competence Center for Software Engineering\n- A practice New York could adopt as is: a modest budget line that keeps the software the city depends on healthy\n- TODO: heise reported €75,000 in October 2024. Use the council figure and note the discrepancy",
+   "has_todo": true,
+   "already_in_govoss": [
+    "mun-06"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "stadt-munchen-2024",
+   "label": "Stadt München 2024",
+   "title": "Dornheim's answer to a council question (F 00892)",
+   "type": "Council paper",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. 2024. Anfrage 20-26 / F 00892, answer by Dr. Laura Dornheim, April 19, 2024. https://muenchen-transparent.de/dokumente/8390624/datei",
+   "url": "https://muenchen-transparent.de/dokumente/8390624/datei",
+   "all_urls": [
+    "https://muenchen-transparent.de/dokumente/8390624/datei"
+   ],
+   "summary_and_credibility_md": "The IT commissioner's written answer to a councillor's question, four months after the office opened. It's an official primary source and the best published account of early results. In German.",
+   "relevant_content_md": "- The office opened in January 2024 under Klaus Mueller\n- \"Our OSPO has now been integrated into the governance processes for procurement\"; open source options are \"checked with priority wherever technically and financially sensible\"\n- it@M had \"published 110 code repositories, on which over 90 employees work\"\n- Sponsorship went to Vue.js, Vuetify and Robot Framework, libraries the city's own applications are built on\n- TODO: the 110 repositories figure is from April 2024. The city's repositories page may show a different count now",
+   "has_todo": true,
+   "already_in_govoss": [
+    "mun-07"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "metrics"
+   ]
+  },
+  {
+   "id": "stadt-munchen-n-d-a",
+   "label": "Stadt München n.d.-a",
+   "title": "OSPO page",
+   "type": "Web page",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. n.d.-a. \"OSPO.\" opensource.muenchen.de. https://opensource.muenchen.de/ospo.html",
+   "url": "https://opensource.muenchen.de/ospo.html",
+   "all_urls": [
+    "https://opensource.muenchen.de/ospo.html"
+   ],
+   "summary_and_credibility_md": "The office's own page describing what it does and who runs it. It's the most direct source on its functions, though it's self-description.",
+   "relevant_content_md": "- Staff: Klaus Mueller heads the office, Dr. Dirk Gernhardt is Open Source Representative, and IT commissioner Dr. Laura Dornheim is the political owner\n- Runs a biweekly municipal open source community and manages the city's GitHub organization\n- Helps teams that are buying software: \"advice on new software solutions,\" market research on open alternatives, and \"cooperation if there is no practicable open source solution.\" It describes that role as advisory\n- Model for the procurement advisory and community building roles proposed for New York",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-01"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "stadt-munchen-n-d-b",
+   "label": "Stadt München n.d.-b",
+   "title": "Licenses",
+   "type": "Web page",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. n.d.-b. \"Licenses.\" https://opensource.muenchen.de/licenses.html",
+   "url": "https://opensource.muenchen.de/licenses.html",
+   "all_urls": [
+    "https://opensource.muenchen.de/licenses.html"
+   ],
+   "summary_and_credibility_md": "The office's own page on licensing. It's a primary source for the city's license practice.",
+   "relevant_content_md": "- Sets MIT as the default license for city code\n- One default license is part of what makes coordination work: the Manage function and the code management role",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-10"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "stadt-munchen-n-d-c",
+   "label": "Stadt München n.d.-c",
+   "title": "Sabbatical",
+   "type": "Web page",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. n.d.-c. \"Sabbatical.\" https://opensource.muenchen.de/sabbatical.html",
+   "url": "https://opensource.muenchen.de/sabbatical.html",
+   "all_urls": [
+    "https://opensource.muenchen.de/sabbatical.html"
+   ],
+   "summary_and_credibility_md": "The office's page on its Open Source Sabbatical. It's a primary source for how the program works.",
+   "relevant_content_md": "- Funds outside developers for three or six months on projects the city needs\n- A second sabbatical is scheduled for late 2026\n- Could be adopted as is. New York's civic technology community is ready for something like it",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-12"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "stadt-munchen-n-d-d",
+   "label": "Stadt München n.d.-d",
+   "title": "Principles",
+   "type": "Web page",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Stadt München. n.d.-d. \"Principles.\" https://opensource.muenchen.de/principles.html",
+   "url": "https://opensource.muenchen.de/principles.html",
+   "all_urls": [
+    "https://opensource.muenchen.de/principles.html"
+   ],
+   "summary_and_credibility_md": "Munich's published open source principles, in the city's own words. It's the best source on why the city does this.",
+   "relevant_content_md": "- Seven reasons: vendor independence (\"by being able to switch vendors and solutions, we can avoid unilateral dictation\"), reuse, cooperation with other public bodies, security (\"publicly accessible code can be easily checked\"), transparency, citizen participation, and recruitment\n- Notes that Bavaria's Digital Act says authorities \"shall use open software and open exchange standards,\" and that the federal Online Access Act gives open source priority in public IT\n- Good language for the reasoning section of any NYC proposal",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-09"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "mission"
+   ]
+  },
+  {
+   "id": "sustain-2024",
+   "label": "Sustain 2024",
+   "title": "Episode 214: Laura Dornheim on Munich's open source journey",
+   "type": "Podcast",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Sustain. 2024. \"Episode 214: Dr. Laura Dornheim on Munich's Open Source Journey.\" January 5, 2024. https://podcast.sustainoss.org/214",
+   "url": "https://podcast.sustainoss.org/214",
+   "all_urls": [
+    "https://podcast.sustainoss.org/214"
+   ],
+   "summary_and_credibility_md": "An interview with Munich's IT commissioner on Sustain, a podcast about open source sustainability. It's her own words, so it's good for her stance, not for facts that need a document.",
+   "relevant_content_md": "- Dornheim's working rule: \"use as much open source as possible, and where that is not possible, we should use good commercial products\"\n- A balanced framing that fits the gentle approach for New York",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-20"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ]
+  },
+  {
+   "id": "technical-ly-2019",
+   "label": "Technical.ly 2019",
+   "title": "Paris' open source platform comes to a West Baltimore community center",
+   "type": "Article",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Technical.ly. 2019. Stephen Babcock, \"Paris' Open Source Platform for City Services Is Being Introduced at a West Baltimore Community Center.\" April 19, 2019. https://technical.ly/civic-news/paris-lutece-open-source-platform-city-services-west-baltimore-community-center-st-francis.md",
+   "url": "https://technical.ly/civic-news/paris-lutece-open-source-platform-city-services-west-baltimore-community-center-st-francis.md",
+   "all_urls": [
+    "https://technical.ly/civic-news/paris-lutece-open-source-platform-city-services-west-baltimore-community-center-st-francis.md"
+   ],
+   "summary_and_credibility_md": "A local tech news story from Technical.ly Baltimore. It's credible reporting, and the only U.S. deployment of Lutece we know of.",
+   "relevant_content_md": "- Baltimore's city government showed no interest in Lutece in 2019, so a West Baltimore community center deployed it instead\n- Johns Hopkins University's OSPO and Paris staff helped. It was the platform's first use outside France\n- Shows that open city software can reach a U.S. community even when the city doesn't take it up",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-16"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "thebert-2025",
+   "label": "Thébert 2025",
+   "title": "Barcelona first city globally to adopt UN Open Source Principles",
+   "type": "Article",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Thébert, Clara. 2025. \"Barcelona First City Globally to Adopt UN Open Source Principles.\" OSOR, December 15, 2025. https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/barcelona-first-city-globally-adopt-un-open-source-principles",
+   "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/barcelona-first-city-globally-adopt-un-open-source-principles",
+   "all_urls": [
+    "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/barcelona-first-city-globally-adopt-un-open-source-principles"
+   ],
+   "summary_and_credibility_md": "A European Commission Open Source Observatory article. It's an independent confirmation of Barcelona's announcement.",
+   "relevant_content_md": "- Co-cited for Barcelona's October 30, 2025 endorsement and its pledge to build an OSPO \"inspired by Paris and Munich models\"",
+   "has_todo": false,
+   "already_in_govoss": [
+    "bcn-08",
+    "un-29"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "todo-group-n-d",
+   "label": "TODO Group n.d.",
+   "title": "Repolinter",
+   "type": "Tool",
+   "cases": [
+    "General"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "TODO Group. n.d. *Repolinter: The Open Source Repository Linter.* GitHub repository, Apache-2.0. Archived February 6, 2026. https://github.com/todogroup/repolinter. Accessed November 10, 2026.",
+   "url": "https://github.com/todogroup/repolinter",
+   "all_urls": [
+    "https://github.com/todogroup/repolinter"
+   ],
+   "summary_and_credibility_md": "A command-line tool from the TODO Group, the main network of OSPO practitioners, that checks a repository for common open source files (LICENSE, README, CONTRIBUTING, code of conduct, changelog) against a ruleset. It can run on its own, before a commit, or in CI. It's widely used (465 stars, 74 forks), but the TODO Group archived it in February 2026, so it's now read-only and no longer maintained. It still works, but anything built on it, including CMS's repo-scaffolder, depends on code nobody is updating.",
+   "relevant_content_md": "- A version of the repolinter has been built into Tier3 of the CMS repo-scaffolder\n- *Gap filled:* It's built in as a repolinter.json config for each tier's template, not just Tier 3. The DEF CON deck credits the Comcast OSPO for mapping the rules to each tier.\n- *Gap filled:* Because it's archived, it's worth asking Remy or the TODO Group what CMS plans to replace it with before NYC adopts it.",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "tridgell-2026",
+   "label": "Tridgell 2026",
+   "title": "Coding Multilateralism: the UN's governance of free and open-source software",
+   "type": "Study",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "final",
+   "status_label": "Final notes",
+   "citation_md": "Tridgell, Jennifer. 2026. \"'Coding Multilateralism': Implications of the United Nations' Governance of Free and Open-Source Software for International Organisations in the Digital Age.\" *Computer Law & Security Review* 63: 106384. Published online September 16, 2026. Open access. https://doi.org/10.1016/j.clsr.2026.106384",
+   "url": "https://doi.org/10.1016/j.clsr.2026.106384",
+   "all_urls": [
+    "https://doi.org/10.1016/j.clsr.2026.106384"
+   ],
+   "summary_and_credibility_md": "A peer-reviewed, open-access article by Jennifer Tridgell (University of Cambridge) on how the UN moved from scattered, ad hoc use of open source to a coordinated, system-wide approach from 2023. It's the most complete independent account of the UN's open source work, with survey figures the UN hasn't published separately, and the strongest academic source we have for the UN case. It's desk research from public documents, so it maps what the UN has done but doesn't judge how well each initiative works. Notes below are from reading the paper directly (https://www.sciencedirect.com/science/article/pii/S2212473X26001252).",
+   "relevant_content_md": "*The survey: find out what's in use first*\n\n- In September 2023 the UN surveyed 16 of its organizations before writing any rules. All of them used open source \"as part of implementing their mandate,\" and none had a governance framework for open source projects. Model for the Find function: take stock before setting policy\n- 72% used open source \"with the goal of reducing costs,\" but only 7% had \"allocated a specific budget for [FOSS] costs.\" The UN's CIO network: open source \"is not inherently free and requires ongoing investment in maintenance, training, and governance.\" Strong support for a budget line in the Cost section\n- 22% of surveyed organizations had an OSPO in 2023. By 2024 nearly 47% were establishing one, and 30% had finished\n\n*How the work is organized*\n\n- Open Source United launched in September 2023 under the UN system's CIO network (the CEB Digital and Technology Network), chaired jointly by OICT and UNICC. Its high-level framework was adopted September 28, 2023\n- The work is split across six organizations instead of one central office: the ITU wrote the Common Policy Framework, the IAEA and WHO are drafting a common license, UNFPA is building a catalog of open source and potentially open-sourceable software, UNICC runs the shared code platform (on GitLab), and OICT leads training. A model for spreading the work across agencies, which fits Haddad's virtual OSPO\n- The Common Policy Framework is phased: four stages and six activities. Licensing and compliance is mandatory from Stage 1; everything else is optional at first and required by Stage 4. An OSPO is one option in the toolkit, not a requirement. Matches Haddad: compliant licensing is the first step\n\n*Scale and setting*\n\n- The UN system is \"over 50 UN system organisations with a presence in nearly 4000 locations worldwide.\" The same coordination problem NYC has across its agencies\n- The eight UN Open Source Principles, including \"open by default\" and \"secure by design,\" are non-binding and were adopted by the CIO network in February 2025. Over 150 signatories as of May 2026, including the governments of France and South Africa, the German state of Schleswig-Holstein, and the City of Barcelona. Endorsing them could be an early, low-cost step for NYC\n- Open Source Week is held at UN Headquarters in New York City\n- UNICEF has had a GitHub organization since 2007, now with 320 public repositories and over 350 contributors\n- The UNDP–ITU Open Source Ecosystem Enabler, supported by the EU, drew 23 applications from 20 countries for two national OSPO pilots. Shows demand for help setting up OSPOs\n\n*Useful quotes*\n\n- Amandeep Singh Gill, the Secretary-General's Envoy on Technology: \"Open-source software is everywhere\"\n- Omar Mohsine, UN Open Source Coordinator, on security: \"continuous scrutiny of the code, leading to rapid identification and patching of security vulnerabilities.\" Fits Guardrails\n\n*A policy alone isn't enough*\n\n- A 2006 UN report already called for an \"enabling environment\" and system-wide coordination on open source. The author presumes those recommendations weren't carried out. Same lesson as the Open Data Law: a mandate needs people to carry it out\n\n*The author's argument*\n\n- International organizations aren't only adopting open source to save money. They're building and maintaining their own digital infrastructure to protect their autonomy, security and resilience. Where states call that \"digital sovereignty,\" the UN frames it in terms of its immunities and privileges\n- Limits she names: desk research only, using public materials that mention open source; covers September 2023 onward; doesn't assess how well individual initiatives work; many policies are still waiting to be put into practice\n\n*Checked against our other notes*\n\n- TODO: these points from the UN brief are attributed to this paper, but I couldn't find them in it: UNICEF writing open source licenses into vendor contracts; training \"600+ registrations\" and 650+ \"Open Source Heroes\"; Trinidad and Tobago and \"OSPO-in-a-Box.\" Check the brief's sources for them\n- TODO: the paper only has the first part of Gill's quote (\"many [UN] organisations […] are building [open source] applications, tools\"). Find the source for the \"reinventing the wheel\" ending before quoting it\n- TODO: the paper dates the Principles' adoption to February 2025; CEB 2024 says the CIO network approved them in November 2024. Reconcile before citing a date\n- TODO: locate the 2006 report itself (a Joint Inspection Unit report, \"Policies of the UN system organizations towards the use of OSS in the Secretariats\") rather than citing it through Tridgell",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-11T19:54:36.507Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "how",
+    "precedents"
+   ]
+  },
+  {
+   "id": "u-s-digital-response-n-d",
+   "label": "U.S. Digital Response n.d.",
+   "title": "CMS release case study",
+   "type": "Case study",
+   "cases": [
+    "CMS"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "U.S. Digital Response. n.d. \"How One Federal Agency Worked to Release Open Source Software Responsibly.\" https://www.usdigitalresponse.org/resources/cms-open-source-software",
+   "url": "https://www.usdigitalresponse.org/resources/cms-open-source-software",
+   "all_urls": [
+    "https://www.usdigitalresponse.org/resources/cms-open-source-software"
+   ],
+   "summary_and_credibility_md": "A case study by U.S. Digital Response, the volunteer organization that helped CMS build its release tooling. It's written by a partner, so it's partly promotional, and it gives no dates. It's the only public account of how the repo-scaffolder came about.",
+   "relevant_content_md": "- USDR first helped HHS open source the Simpler Grants project, and learned that written instructions alone weren't enough. That's why they built reusable tools instead of a handbook\n- At least four CMS repositories were released using the toolkit, and the Departments of Education and Labor expressed interest\n- USDR volunteers work for free.",
+   "has_todo": false,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-10T12:00:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how"
+   ]
+  },
+  {
+   "id": "ucl-n-d",
+   "label": "UCL n.d.",
+   "title": "UCL's Open Source Programme Office: Business Case",
+   "type": "Proposal",
+   "cases": [
+    "General"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "UCL. n.d. \"UCL's Open Source Programme Office - Business Case.\" University College London, Open Source Programme Office. Accessed November 13, 2026. https://github-pages.ucl.ac.uk/open-source/ospo/business-case",
+   "url": "https://github-pages.ucl.ac.uk/open-source/ospo/business-case",
+   "all_urls": [
+    "https://github-pages.ucl.ac.uk/open-source/ospo/business-case"
+   ],
+   "summary_and_credibility_md": "University College London's own proposal for creating an OSPO, published on the university's website. No individual author or date is given; UCL's Advanced Research Computing Centre (ARC) is the main supporter. It's a real internal business case rather than research, so it's best used as a model for structure and argument, not as evidence. It's about 4,000 words, much longer than our summary. Two of its links point to google.com instead of their intended pages.",
+   "relevant_content_md": "- **The structure our Executive Summary follows:** executive summary; context; what is an OSPO; why the institution needs one, including the risks of not having one; how it would work (plan by year, resources, financial appraisal, governance, supporters); how we'll know it worked; mission, vision and goals\n- **Frames the problem as a hidden dependency:** \"We do not know how much we depend on it.\" Close to our point that no one in City government has an inventory\n- **Uses a local number to make the risk concrete:** \"36.1% of UCL's open-source projects are unlicensed,\" from the authors' own study of UCL's projects. A model for the New York number we still need\n- **A small, staged staffing ask:** 0.3 FTE now, 1 FTE combined in year 1, an aim of 3 FTE by year 5, with 0.2 to 0.4 FTE contributed by each participating department. Similar to the virtual OSPO structure we propose\n- **Asks for little new money:** core work comes from refocusing existing staff, with grants sought for extra activities\n- **Benchmarks against peers:** CERN, Johns Hopkins and ETH Zurich OSPOs\n- **Governance:** a committee with a delegate from each stakeholder area, with public minutes. Similar to our agency liaisons\n- TODO: check whether to cite it in the Executive Summary (e.g. as the model for a staged staffing ask), or keep it as a structural reference only",
+   "has_todo": true,
+   "already_in_govoss": [],
+   "updated_at": "2026-11-13T08:00:00Z",
+   "role": "framework",
+   "role_label": "Any city",
+   "jurisdiction": null,
+   "exec_sections": [
+    "context",
+    "definition",
+    "case",
+    "how",
+    "mission"
+   ]
+  },
+  {
+   "id": "un-2023",
+   "label": "UN 2023",
+   "title": "OSPOs for Good: building and designing cooperative digital infrastructure",
+   "type": "Report",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "UN. 2023. *OSPOs for Good: Building and Designing Cooperative Digital Infrastructure.* Office of the Tech Envoy and RISE. https://www.un.org/digital-emerging-technologies/sites/www.un.org.techenvoy/files/OSPOs_for_Good_Report_1.pdf",
+   "url": "https://www.un.org/digital-emerging-technologies/sites/www.un.org.techenvoy/files/OSPOs_for_Good_Report_1.pdf",
+   "all_urls": [
+    "https://www.un.org/digital-emerging-technologies/sites/www.un.org.techenvoy/files/OSPOs_for_Good_Report_1.pdf"
+   ],
+   "summary_and_credibility_md": "The UN's report on the first OSPOs for Good event. It's official.",
+   "relevant_content_md": "- \"The potential of Open Source technology often remains underutilized even within our own organization\"\n- \"More than 60\" people attended in 2023",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-16"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "un-2024",
+   "label": "UN 2024",
+   "title": "OSPOs for Good 2024",
+   "type": "Web page",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "UN. 2024. \"OSPOs for Good 2024.\" Office for Digital and Emerging Technologies. https://www.un.org/digital-emerging-technologies/node/1110",
+   "url": "https://www.un.org/digital-emerging-technologies/node/1110",
+   "all_urls": [
+    "https://www.un.org/digital-emerging-technologies/node/1110"
+   ],
+   "summary_and_credibility_md": "The UN's event page. It's official.",
+   "relevant_content_md": "- \"Over 500\" attended in 2024\n- TODO: Tridgell gives 600 to 700. The brief uses the UN's figure",
+   "has_todo": true,
+   "already_in_govoss": [
+    "un-18"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "un-2025",
+   "label": "UN 2025",
+   "title": "UN Open Source Week 2025",
+   "type": "Web page",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "UN. 2025. \"UN Open Source Week 2025.\" Office for Digital and Emerging Technologies. https://www.un.org/digital-emerging-technologies/node/1137",
+   "url": "https://www.un.org/digital-emerging-technologies/node/1137",
+   "all_urls": [
+    "https://www.un.org/digital-emerging-technologies/node/1137"
+   ],
+   "summary_and_credibility_md": "The UN's event page. It's official.",
+   "relevant_content_md": "- \"Over 1,000 participants from 75 countries\" in 2025\n- TODO: the two 2025 conference reports (large PDFs) couldn't be fetched",
+   "has_todo": true,
+   "already_in_govoss": [
+    "un-19"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "un-open-source-week-2026",
+   "label": "UN Open Source Week 2026",
+   "title": "Speaker page: Omar Mohsine",
+   "type": "Web page",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "UN Open Source Week. 2026. Speaker page, Omar Mohsine. https://www.unopensource.org/speaker/omar-mohsine",
+   "url": "https://www.unopensource.org/speaker/omar-mohsine",
+   "all_urls": [
+    "https://www.unopensource.org/speaker/omar-mohsine"
+   ],
+   "summary_and_credibility_md": "The event's speaker bio. It's self-description.",
+   "relevant_content_md": "- Co-cited for Mohsine's role as UN Open Source Coordinator and co-chair of Open Source United, and for the community's contact details\n- Omar has met with this project",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-20"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "un-web-tv-2026",
+   "label": "UN Web TV 2026",
+   "title": "OSPOs for Good, UN Open Source Week 2026 (Part 5)",
+   "type": "Video + transcript",
+   "cases": [
+    "United Nations"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "UN Web TV. 2026. \"OSPOs for Good, UN Open Source Week 2026 (Part 5),\" transcript, June 25, 2026. https://transcripts.un.org/en/asset/k12/k12620x8tm",
+   "url": "https://transcripts.un.org/en/asset/k12/k12620x8tm",
+   "all_urls": [
+    "https://transcripts.un.org/en/asset/k12/k12620x8tm"
+   ],
+   "summary_and_credibility_md": "The official UN video transcript of the session. It's a primary record of what was said.",
+   "relevant_content_md": "- Mohsine said endorsements of the principles had \"now passed 250 organizations around the world\"",
+   "has_todo": false,
+   "already_in_govoss": [
+    "un-15"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "ville-de-paris-2015",
+   "label": "Ville de Paris 2015",
+   "title": "Paris strengthens its commitment to free software",
+   "type": "Press release",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Ville de Paris. 2015. \"Paris renforce son engagement pour le logiciel libre.\" Press release, March 13, 2015. https://cdn.paris.fr/presse/2020/03/23/d541e951e6f0a72dedfd4fb864bbc60b.pdf",
+   "url": "https://cdn.paris.fr/presse/2020/03/23/d541e951e6f0a72dedfd4fb864bbc60b.pdf",
+   "all_urls": [
+    "https://cdn.paris.fr/presse/2020/03/23/d541e951e6f0a72dedfd4fb864bbc60b.pdf"
+   ],
+   "summary_and_credibility_md": "An official city press release. It's authoritative for what the city announced, though promotional.",
+   "relevant_content_md": "- By 2015, 60% of the city's servers ran GNU/Linux\n- Paris joined April, the French free software association, in 2015",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-18"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "winfuture-2026",
+   "label": "WinFuture 2026",
+   "title": "After LiMux, Munich tries open source a second time",
+   "type": "Article",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "WinFuture. 2026. Felix Krauth, \"Nach LiMux: München wagt zweiten Anlauf mit Open-Source-Software.\" May 14, 2026. https://winfuture.de/news,158694.html",
+   "url": "https://winfuture.de/news,158694.html",
+   "all_urls": [
+    "https://winfuture.de/news,158694.html"
+   ],
+   "summary_and_credibility_md": "A German technology news article on the May 2026 coalition agreement. It's secondary reporting. Cybernews also reported it.",
+   "relevant_content_md": "- The new coalition that formed in May 2026 extended the office's mandate and made open source the default choice for city software\n- Shows the office outlasting a change of government because it was written into council decisions\n- TODO: open the coalition agreement text itself before quoting it",
+   "has_todo": true,
+   "already_in_govoss": [
+    "mun-22"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case",
+    "precedents"
+   ]
+  },
+  {
+   "id": "worth-2022",
+   "label": "Worth 2022",
+   "title": "How open-source software makes cities more livable",
+   "type": "Article",
+   "cases": [
+    "Paris"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Worth. 2022. Steve Hamm, \"How Open-Source Software Makes Cities More Livable.\" February 15, 2022. https://worth.com/how-open-source-software-makes-cities-more-livable/",
+   "url": "https://worth.com/how-open-source-software-makes-cities-more-livable/",
+   "all_urls": [
+    "https://worth.com/how-open-source-software-makes-cities-more-livable/"
+   ],
+   "summary_and_credibility_md": "A magazine feature for a general audience. It's useful for the story, less so for figures.",
+   "relevant_content_md": "- Reports the city's claim of 300-plus Lutece services in 2022\n- Co-cited for the Baltimore deployment",
+   "has_todo": false,
+   "already_in_govoss": [
+    "par-15"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "precedents"
+   ]
+  },
+  {
+   "id": "zammad-2025",
+   "label": "Zammad 2025",
+   "title": "Interview with Klaus Mueller",
+   "type": "Interview",
+   "cases": [
+    "Munich"
+   ],
+   "status": "draft",
+   "status_label": "Draft Notes",
+   "citation_md": "Zammad. 2025. \"Interview with Klaus Mueller: Seven Questions on Open Source in Munich's City Administration.\" June 23, 2025. https://zammad.com/en/blog/open-source-public-services",
+   "url": "https://zammad.com/en/blog/open-source-public-services",
+   "all_urls": [
+    "https://zammad.com/en/blog/open-source-public-services"
+   ],
+   "summary_and_credibility_md": "An interview with the head of Munich's OSPO, published on the blog of Zammad, an open source software company. It's his own words, but on a vendor's site.",
+   "relevant_content_md": "- \"Open source isn't a short-term cost-saving measure, but a strategic investment in digital sovereignty and future viability\"\n- A one-line summary of the case from the person who runs the office",
+   "has_todo": false,
+   "already_in_govoss": [
+    "mun-21"
+   ],
+   "updated_at": "2026-11-10T20:30:00Z",
+   "role": "example",
+   "role_label": "Peer example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "case"
+   ]
+  }
+ ]
+}
