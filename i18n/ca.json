@@ -461,7 +461,7 @@
   "{n} resources for this section": "{n} recursos per a aquesta secció",
   "{n} sources · {f} final · {d} draft · {t} with TODOs · last updated {u}": "{n} fonts · {f} finals · {d} provisionals · {t} amb tasques pendents · actualitzat el {u}",
   "How to compile an OSPO executive summary&nbsp;&rarr;": "Com elaborar el resum executiu d'una OSPO&nbsp;&rarr;",
-  "A worked example for New York City: the summary, the notes behind it and its sources, tagged by the same sections you can filter these resources by.": "Un exemple resolt per a Nova York: el resum, les notes i les fonts, etiquetades amb les mateixes seccions per les quals podeu filtrar aquests recursos."
+  "A worked example for New York City: the summary, the notes behind it and its sources.": "Un exemple resolt per a Nova York: el resum, les notes i les fonts."
  },
  "functions": {
   "case-workflow": "Gestió d'expedients i fluxos de treball",
