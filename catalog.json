@@ -131829,7 +131829,8 @@
   ],
   "forge_path": "thd/shk-zeiterfassung",
   "functions": [
-   "case-workflow"
+   "case-workflow",
+   "hr-workforce"
   ],
   "functions_inferred": false,
   "last_activity": "2026-11-03T12:50:17.768Z",
