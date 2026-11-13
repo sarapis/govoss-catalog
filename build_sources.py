@@ -88,6 +88,19 @@ def _brief(err, n=160):
     return err if len(err) <= n else err[:n - 3].rstrip() + "..."
 
 
+def ownership_problems(ospo_rows, ownership):
+    """A warn naming each ACADEMIC office with no ospos/ownership.json entry: a new
+    office on the academic map publishes with ownership null - valid, but nobody has
+    checked it, and its card says nothing. build_ospos.py names them in the run log
+    too; this is where the page already looks (review 2026-10-21, PR #3)."""
+    ids = sorted(r.get("id") for r in ospo_rows
+                 if r.get("type") == "academic" and r.get("id") not in ownership)
+    if not ids:
+        return []
+    return [("warn", "%d academic OSPO(s) published with ownership not yet checked - add each "
+                     "to ospos/ownership.json with its source: %s" % (len(ids), ", ".join(ids)))]
+
+
 def harvest_problems(fetched, ospo_sources, sources, now):
     """(level, message) for every harvested source whose data is not this week's.
 
@@ -194,7 +207,7 @@ def build(lang="en"):
 
     # ---- per-source FRESHNESS and FAILED ATTEMPTS: harvest_problems(), from the
     # files (cache/_fetched.json, cache/ospos.json), never from the last run.
-    fetched, ospo_sources = {}, {}
+    fetched, ospo_sources, ospo_rows, ownership = {}, {}, [], {}
     try:
         with open(f"{OUT}/cache/_fetched.json") as fh:
             fetched = json.load(fh)
@@ -202,11 +215,18 @@ def build(lang="en"):
         pass
     try:
         with open(f"{OUT}/cache/ospos.json") as fh:
-            ospo_sources = (json.load(fh) or {}).get("sources") or {}
+            od = json.load(fh) or {}
+            ospo_sources, ospo_rows = od.get("sources") or {}, od.get("ospos") or []
+    except Exception:
+        pass
+    try:
+        with open(f"{OUT}/ospos/ownership.json") as fh:
+            ownership = (json.load(fh) or {}).get("ownership") or {}
     except Exception:
         pass
     problems.extend(harvest_problems(fetched, ospo_sources, S.SOURCES,
                                      time.mktime(time.gmtime())))
+    problems.extend(ownership_problems(ospo_rows, ownership))
     src_age = {}
     for k, meta in S.SOURCES.items():
         ck = meta.get("checkpoint")
