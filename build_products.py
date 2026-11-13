@@ -115,7 +115,7 @@ def build(lang="en"):
         links = []
         for a in alts:
             q = qual(a, lang)
-            url = a.get("repo_url") or ""
+            url = theme.safe_url(a.get("repo_url"))   # http(s) only (M10)
             nm = ('<a href="%s">%s</a>' % (esc(url), esc(a["name"]))) if url \
                 else '<span class="a-x">' + esc(a["name"]) + '</span>'
             # variant_count: other governments run their own version of this one
@@ -174,11 +174,7 @@ def build(lang="en"):
         + BODY + theme.footer(lang=lang))
 
     page = i18n.markers(page, lang)
-    for k, v in subs.items():
-        page = page.replace(k, v)
-    left = sorted(set(re.findall(r"__[A-Z_]{3,}__", page)))
-    if left:
-        raise SystemExit("build_products: unsubstituted placeholders %s" % left)
+    page = theme.fill(page, subs, "build_products")  # one pass, template checked first
 
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)

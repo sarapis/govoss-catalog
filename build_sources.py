@@ -88,6 +88,19 @@ def _brief(err, n=160):
     return err if len(err) <= n else err[:n - 3].rstrip() + "..."
 
 
+def ownership_problems(ospo_rows, ownership):
+    """A warn naming each ACADEMIC office with no ospos/ownership.json entry: a new
+    office on the academic map publishes with ownership null - valid, but nobody has
+    checked it, and its card says nothing. build_ospos.py names them in the run log
+    too; this is where the page already looks (review 2026-10-21, PR #3)."""
+    ids = sorted(r.get("id") for r in ospo_rows
+                 if r.get("type") == "academic" and r.get("id") not in ownership)
+    if not ids:
+        return []
+    return [("warn", "%d academic OSPO(s) published with ownership not yet checked - add each "
+                     "to ospos/ownership.json with its source: %s" % (len(ids), ", ".join(ids)))]
+
+
 def harvest_problems(fetched, ospo_sources, sources, now):
     """(level, message) for every harvested source whose data is not this week's.
 
@@ -106,12 +119,26 @@ def harvest_problems(fetched, ospo_sources, sources, now):
     keyed wrong, this matched nothing for all 17 sources and was a silent no-op.
     """
     out = []
-    for k, meta in sources.items():
+    # NO RECORD is its own state, never silence (review 2026-11-10, M12): a
+    # missing _fetched.json, a catalogue with no record in it, and one whose
+    # every attempt failed (fetched_at None) all used to report nothing.
+    if sources and not fetched:
+        out.append(("warn", "cache/_fetched.json is missing or empty, so no catalogue's "
+                            "freshness can be checked"))
+    for k, meta in (sources.items() if fetched else ()):
         rec = fetched.get(meta.get("checkpoint")) or {}
         days = _days_since(rec.get("fetched_at"), now)
-        if days is None:
-            continue
         label = meta["label"]
+        if not rec:
+            out.append(("warn", "catalogue '%s' has no harvest record in cache/_fetched.json "
+                                "(checkpoint key '%s')" % (label, meta.get("checkpoint"))))
+            continue
+        if days is None:
+            out.append(("warn", "catalogue '%s' has never fetched successfully%s"
+                                % (label, " - " + _brief(rec.get("error"))
+                                   if rec.get("ok") is False else
+                                   " (no fetch date recorded)")))
+            continue
         if rec.get("ok", True) is False:
             out.append(("critical" if days > 29 else "warn",
                         "catalogue '%s': the last harvest attempt failed (%s), so it shows "
@@ -180,7 +207,7 @@ def build(lang="en"):
 
     # ---- per-source FRESHNESS and FAILED ATTEMPTS: harvest_problems(), from the
     # files (cache/_fetched.json, cache/ospos.json), never from the last run.
-    fetched, ospo_sources = {}, {}
+    fetched, ospo_sources, ospo_rows, ownership = {}, {}, [], {}
     try:
         with open(f"{OUT}/cache/_fetched.json") as fh:
             fetched = json.load(fh)
@@ -188,11 +215,18 @@ def build(lang="en"):
         pass
     try:
         with open(f"{OUT}/cache/ospos.json") as fh:
-            ospo_sources = (json.load(fh) or {}).get("sources") or {}
+            od = json.load(fh) or {}
+            ospo_sources, ospo_rows = od.get("sources") or {}, od.get("ospos") or []
+    except Exception:
+        pass
+    try:
+        with open(f"{OUT}/ospos/ownership.json") as fh:
+            ownership = (json.load(fh) or {}).get("ownership") or {}
     except Exception:
         pass
     problems.extend(harvest_problems(fetched, ospo_sources, S.SOURCES,
                                      time.mktime(time.gmtime())))
+    problems.extend(ownership_problems(ospo_rows, ownership))
     src_age = {}
     for k, meta in S.SOURCES.items():
         ck = meta.get("checkpoint")
@@ -607,6 +641,7 @@ def build(lang="en"):
         "__N_RUNS__": str(len(runs)),
         "__N_SURVEY__": str(len(S.SURVEY)),
         "__RUN_AT__": esc(latest["run_at"]),
+        "__RUN_ISO__": esc(latest["run_at"]),
         "__RUN_AGO__": esc(ago(latest["run_at"], lang)),
         "__RUN_DUR__": dur(latest.get("duration_s")),
         "__STATE_CLS__": {"ok": "rec", "warn": "warn", "critical": "warn"}[state],
@@ -631,12 +666,7 @@ def build(lang="en"):
         + BODY + theme.footer(lang=lang))
 
     page = i18n.markers(page, lang)
-    for k, v in subs.items():
-        page = page.replace(k, v)
-    import re as _re
-    left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", page)))
-    if left:
-        raise SystemExit("build_sources: unsubstituted placeholders %s" % left)
+    page = theme.fill(page, subs, "build_sources")  # one pass, template checked first
 
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)
@@ -843,8 +873,19 @@ BODY = theme.page_header(
   <section class="sec">
     <div class="sechead"><h3>⟪Open items⟫</h3></div>
     <hr class="dashed">
-    <ul class="probs" style="margin-top:14px">__PROBLEMS__</ul>
+    <ul class="probs" style="margin-top:14px"><li class="p-critical" id="stalerun" data-run="__RUN_ISO__" hidden><b>⟪critical⟫</b> ⟪The last run recorded on this page is more than 8 days old: the weekly schedule appears to have stopped.⟫</li>__PROBLEMS__</ul>
   </section>
+<script>
+// The overdue check above runs at BUILD time, seconds after the run it judges,
+// so it can never trip: a stopped pipeline also stops rebuilding this page,
+// which then says "published" for ever (review 2026-11-10, M12). The reader's
+// clock is the only one still running, so the age is checked here.
+(function () {
+  var li = document.getElementById('stalerun');
+  var t = li ? Date.parse(li.getAttribute('data-run')) : NaN;
+  if (t && Date.now() - t > 8 * 864e5) li.hidden = false;
+})();
+</script>
 
   <section class="sec">
     <div class="two">

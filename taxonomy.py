@@ -130,7 +130,7 @@ M = {
  "warehouse-management":"finance-procurement",
  # hr
  "hr":"hr-workforce","employee-management":"hr-workforce",
- "applicant-tracking":"hr-workforce",
+ "applicant-tracking":"hr-workforce","human-resources":"hr-workforce",   # openCode, 2026-11-09
  # crm / service desk
  "crm":"crm-service","customer-service-and-support":"crm-service",
  "customer service and support":"crm-service","help-desk":"crm-service",
@@ -198,6 +198,9 @@ M = {
  # A TEMPLATE PLACEHOLDER left in a publiccode.yml (DIGG, 2026-09-23): says
  # nothing about function, so it falls through to text inference like the above.
  "<TBD>":None,
+ # An ARTEFACT label (openCode's Lohmar App Android/iOS, 2026-11-09): says the
+ # software is an app, not what it does, so it falls through to text inference.
+ "app":None,
 }
 
 # multilingual keyword rules for entries with NO source categories

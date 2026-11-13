@@ -18,6 +18,22 @@
  {
   "country": "BG",
   "desc_lang": "bg",
+  "entry_url": "https://github.com/governmentbg/-CEIS-NKR",
+  "is_fork": false,
+  "last_activity": "2026-11-05T09:38:29Z",
+  "license": "EUPL-1.2",
+  "name": "-CEIS-NKR",
+  "repo": "https://github.com/governmentbg/-CEIS-NKR",
+  "repo_key": "github.com/governmentbg/-ceis-nkr",
+  "repo_owner": "governmentbg",
+  "short_desc": "\u041c\u0421-117 \u043e\u0442 09.10.2024 \u0433 \u041f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u0438 \u043d\u0430\u0434\u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u0426\u0435\u043d\u0442\u0440\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0430 \u0435\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u0435\u043d \u043a\u043e\u043d\u0446\u0435\u0441\u0438\u043e\u043d\u0435\u043d \u0440\u0435\u0433\u0438\u0441\u0442\u044a\u0440 (\u0426\u0415\u0418\u0421 \u041d\u041a\u0420)",
+  "source": "BG/governmentbg",
+  "stars": 0,
+  "tier": "index"
+ },
+ {
+  "country": "BG",
+  "desc_lang": "bg",
   "entry_url": "https://github.com/governmentbg/-DCIS",
   "is_fork": false,
   "last_activity": "2026-08-12T08:40:00Z",

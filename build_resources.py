@@ -44,7 +44,17 @@ T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 # the card's title attribute. A case not listed here falls back to its long name.
 CASE_SHORT = {"munich": "Munich", "paris": "Paris", "barcelona": "Barcelona",
               "ec": "European Commission", "un": "United Nations", "cms": "US CMS",
-              "networks": "OSPO networks"}
+              "networks": "OSPO networks", "general": "Frameworks & research",
+              "us-federal": "US federal", "nyc": "New York City"}
+# govoss's tags from the opensource.nyc OSPO research (govoss-additions.json only):
+# the executive summary section a source supports, in the summary's own order, and
+# how another city can use it. Labels are chrome, so translated; a value not listed
+# here is a data error and fails the build.
+SECTIONS = (("context", "Context"), ("definition", "OSPO definition"), ("stage", "Current stage"),
+            ("case", "Benefits and risks"), ("how", "How it would work"),
+            ("metrics", "Measuring success"), ("mission", "Mission and goals"),
+            ("precedents", "Precedents"))
+ROLES = (("framework", "Any city"), ("example", "Peer example"), ("local", "Local context"))
 LANG_NAME = {"en": "English", "de": "German", "fr": "French", "ca": "Catalan"}
 
 
@@ -70,6 +80,13 @@ def load():
         raise SystemExit("build_resources: file says total=%s but carries %d records"
                          % (d.get("total"), len(rs)))
     add = json.load(open(ADD))
+    bad = [r["id"] for r in add["resources"]
+           if not set(r.get("exec_sections") or []) <= {k for k, _ in SECTIONS}
+           or r.get("reuse_role") not in (None,) + tuple(k for k, _ in ROLES)
+           or (r.get("reuse_role") == "local") != bool(r.get("jurisdiction"))]
+    if bad:
+        raise SystemExit("build_resources: %s: unknown exec_sections or reuse_role, or a local "
+                         "source without its jurisdiction: %s" % (ADD, bad))
     clash = {r["id"] for r in add["resources"]} & {r["id"] for r in rs}
     if clash or any(r.get("added_by") != "govoss" for r in add["resources"]):
         raise SystemExit("build_resources: %s must use new ids and mark each record "
@@ -99,7 +116,23 @@ def build(lang, d, rs, add):
         return ('<div class="rfgroup"><h3>%s</h3><div class="rfopts">%s</div></div>'
                 % (esc(title), opts))
 
-    facets = (group("case", _("OSPO"), by_case, short)
+    sec_label = {k: _(v) for k, v in SECTIONS}
+    role_label = {k: _(v) for k, v in ROLES}
+    by_sec = collections.Counter(s for r in rs for s in r.get("exec_sections") or [])
+    by_role = collections.Counter(r["reuse_role"] for r in rs if r.get("reuse_role"))
+
+    def ordered(key, title, keys, counter, label):
+        """a group in a FIXED order (the summary's sections), not by count"""
+        opts = "".join(
+            '<button type="button" class="rfopt" data-g="%s" data-v="%s" aria-pressed="false">'
+            '<span>%s</span><span class="rn">%s</span></button>'
+            % (key, k, esc(label[k]), N(counter[k])) for k in keys if counter[k])
+        return ('<div class="rfgroup"><h3>%s</h3><div class="rfopts">%s</div></div>'
+                % (esc(title), opts)) if opts else ""
+
+    facets = (ordered("sec", _("Executive summary section"), [k for k, _v in SECTIONS], by_sec, sec_label)
+              + ordered("role", _("For other cities"), [k for k, _v in ROLES], by_role, role_label)
+              + group("case", _("OSPO"), by_case, short)
               + group("cat", _("Category"), by_cat, human)
               + group("lang", _("Language"), by_lang, lambda v: LANG_NAME.get(v, v)))
 
@@ -112,37 +145,54 @@ def build(lang, d, rs, add):
                 % (esc(human(r["category"])), esc(human(r["type"]))))
         if pb is not None:
             tags = '<span class="tag pb">%s</span>' % esc(_("Playbook #{n}", n=pb)) + tags
+        role = r.get("reuse_role")
+        if role:
+            rl = role_label[role] + (": " + r["jurisdiction"] if role == "local" else "")
+            tags = '<span class="tag rrole">%s</span>' % esc(rl) + tags
+        secs = r.get("exec_sections") or []
+        use = ""
+        if r.get("use_for_ospo_construction"):
+            use = '<p class="ruse"><b>%s</b> %s</p>' % (esc(_("For building an OSPO:")),
+                                                       esc(r["use_for_ospo_construction"]))
+        if secs:
+            use += ('<p class="ruse rsecs"><b>%s</b> %s</p>'
+                    % (esc(_("Supports these executive summary sections:")),
+                       " &middot; ".join(esc(sec_label[k]) for k, _v in SECTIONS if k in secs)))
         extra = ""
         if r.get("notes"):
             extra += '<p class="rnote">%s</p>' % esc(r["notes"])
         if r.get("verification_status") and r["verification_status"] != "opened":
             extra += ('<p class="rnote">%s</p>'
-                      % esc(_("Listed but not opened by the compilers - check the link before relying on it.")))
+                      % esc(_("Listed by govoss, not yet checked against the source - check the link before relying on it.")
+                            if r.get("added_by") == "govoss" else
+                            _("Listed but not opened by the compilers - check the link before relying on it.")))
         cards.append(
             '<li class="res" id="%s" data-case="%s" data-cat="%s" data-lang="%s" data-pb="%s" '
-            'data-date="%s" data-i="%d">'
+            'data-date="%s" data-sec="%s" data-role="%s" data-i="%d">'
             '<div class="reshead"><span class="rcase" title="%s">%s</span>%s</div>'
             '<h3><a href="%s" target="_blank" rel="noopener">%s</a></h3>'
             '<p class="rmeta">%s</p>'
             '<p class="rfor">%s</p>'
-            '<p class="ruse"><b>%s</b> %s</p>%s'
+            '%s%s'
             '<details><summary>%s</summary><p class="rcite">%s</p></details>'
             '</li>'
             % (esc(r["id"]), esc(r["case"]), esc(r["category"]), esc(r["language"]),
-               "" if pb is None else pb, esc(r.get("date") or ""), i,
+               "" if pb is None else pb, esc(r.get("date") or ""), " ".join(secs), role or "", i,
                esc((cases.get(r["case"]) or {}).get("name") or ""), esc(short(r["case"])), tags,
-               esc(r["url"]), esc(r["title"]),
+               esc(theme.safe_url(r["url"]) or "#"), esc(r["title"]),   # http(s) only (M10)
                " &middot; ".join(meta),
                esc(r["what_it_is_for"]),
-               esc(_("For building an OSPO:")), esc(r["use_for_ospo_construction"]), extra,
+               use, extra,
                esc(_("Citation")), esc(r["citation"])))
 
     added = ""
     if add["resources"]:
         added = ('<p class="rcred">%s</p>'
                  % _("{n} more added by govoss, marked on each card: networks of open source "
-                     "program offices rather than offices. In /resources.json they are kept apart "
-                     "from the compilation, under added_by_govoss.", n=N(len(add["resources"]))))
+                     "program offices, and sources from the opensource.nyc OSPO research, tagged by the "
+                     "executive summary section they support and how another city can use them. In "
+                     "/resources.json they are kept apart from the compilation, under added_by_govoss.",
+                     n=N(len(add["resources"]))))
     subs = {
         "__N__": N(n_compiled),
         "__NALL__": N(len(rs)),
@@ -163,11 +213,7 @@ def build(lang, d, rs, add):
         + theme.utility_bar(lang=lang) + theme.topbar("resources", lang, "/resources")
         + BODY + theme.footer(lang=lang) + SCRIPT)
     page = i18n.markers(page, lang)
-    for k, v in subs.items():
-        page = page.replace(k, v)
-    left = sorted(set(re.findall(r"__[A-Z_]{3,}__", page)))
-    if left:
-        raise SystemExit("build_resources: unsubstituted placeholders %s" % left)
+    page = theme.fill(page, subs, "build_resources")  # one pass, template checked first
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)
     page = page.encode("ascii", "xmlcharrefreplace").decode()
@@ -211,6 +257,8 @@ PAGE_CSS = """
   text-transform:uppercase;color:var(--primary);margin-right:4px;}
 .tag{font-size:11px;padding:2px 8px;border-radius:var(--r-chip);background:var(--bg-alt);color:var(--ink-600);}
 .tag.pb{background:var(--mint-100);color:var(--green-text);font-weight:600;}
+.tag.rrole{background:var(--primary-tint);color:var(--ink);font-weight:600;}
+.rsecs{margin-top:4px;}
 .res h3{font-family:var(--font-display);font-size:17px;margin:8px 0 2px;line-height:1.3;}
 .res h3 a{color:var(--ink);text-decoration:none;}
 .res h3 a:hover{color:var(--primary);text-decoration:underline;}
@@ -254,7 +302,7 @@ BODY = theme.page_header(
 </div>
 """
 
-# The view lives in the address bar (q, case, cat, lang, pb, sort), read once
+# The view lives in the address bar (q, sec, role, case, cat, lang, pb, sort), read once
 # and written by every change - the same contract as /software: every value is
 # validated against what the page offers, and an unknown one is IGNORED.
 SCRIPT = """
@@ -265,7 +313,7 @@ SCRIPT = """
   // search reads each card's own text (title, publisher, both notes, citation,
   // tags), lower-cased once - not a hidden copy, which doubled the page
   var text = new Map(cards.map(function (c) { return [c, c.textContent.toLowerCase()]; }));
-  var on = { 'case': new Set(), cat: new Set(), lang: new Set() };
+  var on = { sec: new Set(), role: new Set(), 'case': new Set(), cat: new Set(), lang: new Set() };
   var opts = [].slice.call(document.querySelectorAll('.rfopt'));
   var offered = {};
   opts.forEach(function (b) {
@@ -277,7 +325,11 @@ SCRIPT = """
   function apply(write) {
     var q = (el('rq').value || '').trim().toLowerCase(), n = 0;
     cards.forEach(function (c) {
+      // a source supports several sections: it matches when any of them is picked
+      var secs = c.dataset.sec ? c.dataset.sec.split(' ') : [];
       var ok = (!q || text.get(c).indexOf(q) >= 0) &&
+        (!on.sec.size || secs.some(function (s) { return on.sec.has(s); })) &&
+        (!on.role.size || on.role.has(c.dataset.role)) &&
         (!on['case'].size || on['case'].has(c.dataset['case'])) &&
         (!on.cat.size || on.cat.has(c.dataset.cat)) &&
         (!on.lang.size || on.lang.has(c.dataset.lang)) &&
@@ -318,7 +370,7 @@ SCRIPT = """
   function writeURL() {
     var P = new URLSearchParams(), q = (el('rq').value || '').trim();
     if (q) P.set('q', q);
-    ['case', 'cat', 'lang'].forEach(function (k) { on[k].forEach(function (v) { P.append(k, v); }); });
+    ['sec', 'role', 'case', 'cat', 'lang'].forEach(function (k) { on[k].forEach(function (v) { P.append(k, v); }); });
     if (pbOnly) P.set('pb', '1');
     if (el('rsort').value !== 'case') P.set('sort', el('rsort').value);
     var qs = P.toString(), url = location.pathname + (qs ? '?' + qs : '') + location.hash;
@@ -328,7 +380,7 @@ SCRIPT = """
   try {
     var P = new URLSearchParams(location.search);
     if (P.get('q')) el('rq').value = P.get('q');
-    ['case', 'cat', 'lang'].forEach(function (k) {
+    ['sec', 'role', 'case', 'cat', 'lang'].forEach(function (k) {
       P.getAll(k).forEach(function (v) { if (offered[k] && offered[k].has(v)) on[k].add(v); });
     });
     if (P.get('pb') === '1') pbOnly = true;

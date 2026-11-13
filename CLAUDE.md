@@ -18,7 +18,7 @@ bash run.sh --no-harvest           # rebuild + publish from cache/ checkpoints: 
 python3 harvest.py --from-cache    # rebuild catalog.json from checkpoints, no network
 python3 harvest.py ch digg         # re-harvest named sources (checkpoint keys)
 python3 liveness.py                # monitor only, ~5 min
-for t in test_*.py; do python3 $t; done     # 14 suites, 1,044 checks, all manual
+for t in test_*.py; do python3 $t || echo "!! $t exit $?"; done   # 14 suites, all manual; exit 2 = NOT RUN (no site/)
 ```
 
 Scheduled **Mondays 07:00** (`bash schedule/install.sh`; log `~/Library/Logs/govoss-harvest.log`);
@@ -62,7 +62,9 @@ it first waits (`netgate.py`, up to 12h) for a FULL wake with DNS, then holds `c
   `/sources.html`. `--from-cache` must never write `_fetched.json` or `_timing.json`.
 - **`os2` and the GitLab scans (`de`, `eu`) use `_refuse_short_scan()`**: raise when sub-sources
   or file fetches failed AND the result shrank, so a partial scan never overwrites a good
-  checkpoint. A failed fetch is never "no publiccode.yml" (only 401/403/404 are).
+  checkpoint. A failed fetch is never "no publiccode.yml" (only 401/403/404 are) - in EVERY scan:
+  `gitlab_scan`, `github_org_scan` (`key=`, or `failures=` for os2), `nl_forgejo`, `muc`, via `_fetch_failed()`.
+- `from_publiccode` runs `_clean_pc()` first: someone else's file is coerced to the expected shapes, never raised on.
 - `github_org_scan` authenticates via `liveness.gh_token()`; `GITHUB_TOKEN` is not in the plist.
 
 ## Identity, dedupe, variants
@@ -127,7 +129,8 @@ the entry is already classified by another value, and check for a sibling spelli
 
 `liveness.py` reports the DELTA. `403/429/5xx` are unknown, never dead; two consecutive dead
 observations before a verdict; every dead verdict confirmed by a plain web HEAD of the
-ORIGINAL url. Always exits 0; a crash leaves `summary.checked` standing (last good sweep).
+ORIGINAL url, and only a 404/410 there confirms it (anything else leaves it unknown). An unknown week never erases a
+confirmed verdict. Always exits 0; a crash leaves `summary.checked` standing (last good sweep).
 State machine pinned by `test_liveness_strikes.py`.
 
 ## Filters
@@ -208,7 +211,9 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   the nav name as the only `h1`, a lede with NO numbers that fits ONE line at 1024px (<=100
   characters in every language), a meta line led by the page's own data file; the page's tools
   directly under it. All pinned by `test_built_pages.py` 12g.
-- **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, asserted none survive.
+- **No f-strings for markup**: plain strings with `__PLACEHOLDER__` tokens, filled by `theme.fill()` in ONE
+  pass with the TEMPLATE checked first (data is never re-scanned). JSON into a `<script>` goes through
+  `theme.script_json()` (escapes `< > &`), never bare `json.dumps` - harvested text once closed the block.
 - Tokens are VENDORED (`vendor/wegovnyc/`), `theme.py` is an alias layer onto `--wg-*` mapped by
   ROLE and MEASURED contrast; `assert_variant_live()` checks the ROOT tag. Fonts self-hosted.
 - **Language copies (`i18n.py`, `i18n/ca.json`)**: chrome only; data and the API stay English.
@@ -222,9 +227,12 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   `.side` is sticky WITH a max-height; the URL carries the view (`q fn cc rp src lic lv sort alt
   nodesc notsoft ospo`), every value validated and an unknown one IGNORED, every key written read
   back (12b); never name a JS variable after an element `id`; pages are pure ASCII and entities
-  are not decoded inside `<script>` (a "·" once shipped as `&#183;`).
+  are not decoded inside `<script>` (a "·" once shipped as `&#183;`); a harvested or listed URL becomes an
+  href only through `safeHref()` (JS) or `theme.safe_url()` (Python): http(s) or no link (12i).
 - **Recently added**: `cache/_first_seen.json`, where `null` means BASELINE (never new) and a
   missing id is unseen. `build_ui._fs_ident()` must equal `first_seen.ident()`. Undated sorts last.
+  EVERY member identity of a merged group is stamped (`first_seen.members()`), and a group reads its EARLIEST
+  member date, so a survivor flip never dates old software to today.
 - **The `/catalogs` map** (`sources_map.py`) is the Map view of the catalogue cards: inline SVG
   from the COMMITTED `geo/catalogue_shapes.json` (no tiles, nothing fetched). Re-run the manual
   `geo/build_geo.py` when a catalogue country or city `map_point` is added (12c fails until you
@@ -235,7 +243,8 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   anything unexpected). The contract lives once, in `ospo_contract.py` (licences, codes, types,
   row shapes); a new code or type is a contract change - tell UNNYC. `fetch_ospos.py` refuses a
   FLOSS-PSO list that breaks it (so a new office waits until placed); `build_ospos.py` refuses to
-  write a breaking file, which stops the publish. `test_ospos.py` + 12f. ACADEMIC rows carry `ownership` from the hand-checked `ospos/ownership.json` (legal form, never funding; null = unchecked, never guessed).
+  write a breaking file, which stops the publish. The academic map and TODO lists get the same refusal AT
+  FETCH (`list_problems()`: unique ids, no stale `ownership.json` key), so they fall back instead. `test_ospos.py` + 12f. ACADEMIC rows carry `ownership` from the hand-checked `ospos/ownership.json` (legal form, never funding; null = unchecked, never guessed).
 - **The country code is the country of the CATALOGUE, not the tier of government** - the caveat
   ships in the JSON, on the page, in `meta.json` and `llms.txt`.
 - Agents are told not to scrape in four places: the HTML comment above `<title>`, alternate
@@ -256,7 +265,7 @@ WCAG 2.1 AA contrast re-audited 2026-08-13 (lowest 4.9:1). **No screen-reader te
 
 ## Tests
 
-Fourteen suites, 1,044 checks, **all manual** - a test that can fail the weekly publish is one someone
+Fourteen suites, 1,191 checks, **all manual** - a test that can fail the weekly publish is one someone
 switches off. Run before touching any stage or page builder. **Validate every suite by SABOTAGE,
 and sabotage with `PYTHONDONTWRITEBYTECODE=1 python3 -B`** (a same-second, same-size edit
 otherwise runs the previous bytecode). Rules from doing it: a test must never ask the thing it
@@ -266,18 +275,18 @@ config's ROUTE, not its text (a comment once satisfied a check).
 | file | pins |
 |---|---|
 | `test_detect_lang.py` | language tagging, incl. `lang_with_prior`/`lang_assume_en`, shared ä/ö, org hints |
-| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url` |
+| `test_dedupe_identity.py` | the three identity rules, `norm_repo`/`norm_site`, survivor, unions, a repo-less survivor's repo backfill, redirect/repo-rename QID loans, `is_repo_url`; `first_seen.members()`/`stamp()` (every member stamped, earliest date) |
 | `test_crosswalk_run.py` | crosswalk `run()` glue: Comptoir precedence, ask only rows without a QID, org-shared skip, software gate, route order, best-effort |
-| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped |
-| `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, revival |
+| `test_crosswalk_cache.py` | crosswalk input refresh: stale-when-unstamped, stamp-only-on-success, asked-set, sensor, retry, unverified-not-stamped, a Comptoir answer that is empty/reshaped/halved keeps the old copy |
+| `test_liveness_strikes.py` | `fold_history()`: two strikes, unknown-never-dead, a confirmed verdict survives an unknown week, revival; `apply_confirm()` (only a web 404/410 confirms); a GraphQL errors-only 200 is a batch error |
 | `test_translation_orphans.py` | orphan detection, and the naive rule it rejects |
 | `test_filters.py` | `classify()` incl. licence and `wordpress-plugin` and the 12 reinstated Helsingborg repos (no more, no fewer), the `replaces.json` gate, publisher `replaces:` |
 | `test_stage_guard.py` | refuse-on-merged-input, both directions |
 | `test_variants.py` | every `variants.resolve()` rule, forks, reinstatement, real cases |
 | `test_built_pages.py` | built pages, cross-page contracts, language copies, URL view keys (12b), the one page header (12g), the map + Cards/Map switch + GeoJSON (12c), stat-row classes (12d), the page split, the home cards vs their pages, nav (four items; the wordmark is home) and Resources (12e), /ospos atlas: every office a card or Not yet placed, no sidebar title, score = its signal chips, global ranks, Resources links, code links, flags and images present, the one world map, map points = projection, no entity in a script (12f), the signup form on every page (12h), `/software?ospo=` = the card's entries, the one-line credits, no control character, hosting files, `/status.json` names every source and OSPO list whose last attempt failed, read from the files (14), `/ospos.json` ownership = `ospos/ownership.json` fact by fact, and each card's label + source its own office's |
-| `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; a 429 waits out the server's window per host (bounded, spends no try); `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals) |
-| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch); `ownership` values and `attach_ownership()` (stale keys refused), `unchecked_ownership()` (named in the run log) |
-| `test_netgate.py` | `netgate.wait()`: full wake AND DNS (a dark wake with DNS waits), any host resolving, give-up on the WALL clock, log cadence; `run.sh` run with a failing gate exits 1 having run nothing (both modes); gate before `caffeinate -i -w $$` before the first step |
+| `test_harvest_get.py` | `get()`: 401/403/404 raise at once, the rest retried then raised, a non-JSON 200 raises, never None; a 429 waits out the server's window per host (bounded, spends no try); `_refuse_short_scan()`; the Swiss adapter (page ids, repo field, refusals); `github_org_scan`/`nl_forgejo` failed fetches (not "none", refused on a shrink); `from_publiccode` coerces malformed files; `enrich_desc.http_outcome`/`stale_empty` |
+| `test_ospos.py` | `fetch_ospos.py`: only the index's `## OSPOs` lists, both bullet styles, no line-spanning link, notes, ACADEMIC_FLOSS, host dedupe, last-good fallback; `parse_todo` (Cyrillic subcategory, Associates skipped, SAME_AS, state bodies, case studies, its failure path); the `/ospos.json` contract (literal licences and codes, every rule by sabotage, stable ids, ok:false keeps fetched_at via `failed_state()`, a contract break refused like a failed fetch); `ownership` values and `attach_ownership()` (stale keys refused), `unchecked_ownership()` (named in the run log and `/status.json`) |
+| `test_netgate.py` | `netgate.wait()`: full wake AND DNS (a dark wake with DNS waits), any host resolving, give-up on the WALL clock, log cadence; `run.sh` run with a failing gate exits 1 having run nothing (both modes); gate before `caffeinate -i -w $$` before the first step; `step()` records a failed step's REAL exit code and both gates see it (run on the function lifted from `run.sh`) |
 | `test_workers.py` | the three Workers under Node: site indexes, `/ca`, clean paths and the old-name/shared-search 301s, `www` 301 + CORS, MCP JSON-RPC, search fields, cache-KEY retry, the tool contract vs `mcp_tools.py`, and `/api/subscribe` (same-origin, honeypot, forward to Payload) |
 
 Every stage with logic is now under a suite (F8 closed 2026-09-23). Network enters crosswalk only

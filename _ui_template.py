@@ -662,6 +662,13 @@ function esc(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// A harvested URL becomes a link only when it is http(s). esc() stops markup,
+// not a javascript: or data: URL in an href (review 2026-11-10, M10); anything
+// else - git://, a bare "www.x", "-" - renders as plain text instead.
+function safeHref(u) {
+  u = String(u == null ? '' : u).trim();
+  return /^https?:\\/\\//i.test(u) ? u : '';
+}
 // Anchor id for a product on products.html. MUST match pslug() in
 // build_products.py, which owns the ids this links to.
 function pslug(s) {
@@ -845,7 +852,7 @@ function render() {
     return;
   }
   el('list').innerHTML = rs.slice(0, visibleCount).map(function (r) {
-    var link = r.u || r.h;
+    var link = safeHref(r.u) || safeHref(r.h);
     var meta = [];
     if (r.l) meta.push(esc(r.l)); else meta.push('⟪js:Licence not stated by the source⟫');
     if (r.qid) meta.push(esc(r.qid));
@@ -856,6 +863,7 @@ function render() {
     // country the data never claimed.
     function flagged(label, href) {
       var f = SRCFLAG[label] ? SRCFLAG[label] + ' ' : '';
+      href = safeHref(href);
       return href
         ? f + '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(label) + '</a>'
         : f + esc(label);
@@ -877,7 +885,7 @@ function render() {
               (q ? ' <span class="rpq">(' + esc(q) + ')</span>' : '');
         }).join(', ') + '</div>' : '') +
         (r.vs && r.vs.length ? '<div class="vars">⟪js:Variants:⟫ ' + r.vs.map(function (i) {
-            var v = DATA[i], vl = v.u || v.h;
+            var v = DATA[i], vl = safeHref(v.u) || safeHref(v.h);
             var nm = esc(v.n) + (v.o ? ' <span class="rpq">(' + esc(v.o) + ')</span>' : '');
             return vl ? '<a href="' + esc(vl) + '" target="_blank" rel="noopener">' + nm + '</a>' : nm;
           }).join(', ') + '</div>' : '') +
@@ -1035,13 +1043,21 @@ function esc(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// A harvested URL becomes a link only when it is http(s). esc() stops markup,
+// not a javascript: or data: URL in an href (review 2026-11-10, M10); anything
+// else - git://, a bare "www.x", "-" - renders as plain text instead.
+function safeHref(u) {
+  u = String(u == null ? '' : u).trim();
+  return /^https?:\\/\\//i.test(u) ? u : '';
+}
 // ---- Recently added strip.
 (function () {
   if (!NEWEST.length) return;            // stays hidden; see the markup comment
   el('recent').hidden = false;
   el('rtrack').innerHTML = NEWEST.map(function (r) {
-    var title = r.u
-      ? '<a href="' + esc(r.u) + '" target="_blank" rel="noopener">' + esc(r.n) + '</a>'
+    var ru = safeHref(r.u);
+    var title = ru
+      ? '<a href="' + esc(ru) + '" target="_blank" rel="noopener">' + esc(r.n) + '</a>'
       : esc(r.n);
     return '<li class="rcard"><div class="rt">' + title + '</div>' +
       (r.d ? '<div class="rd">' + esc(r.d) + '</div>' : '') +

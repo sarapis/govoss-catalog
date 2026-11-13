@@ -30,3 +30,7 @@ _scratch/
 home.html
 home.ca.html
 .wrangler/
+
+# opensource.nyc research export: staging material with PRIVATE interview notes and
+# unpublished drafts. Only records written into resources/govoss-additions.json are public.
+resources/opensource-nyc-export/

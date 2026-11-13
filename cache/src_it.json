@@ -2129,6 +2129,55 @@
  {
   "active": true,
   "categories": [
+   "workflow-management",
+   "web-collaboration",
+   "business-process-management"
+  ],
+  "contacts": [
+   "Giovanroberto Torre",
+   "Linda Maria Frigo"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Applicazione web per la gestione delle convenzioni della pubblica amministrazione.",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/gbetorre/convenzioni.git",
+  "features": [
+   "Rappresentazione dinamica delle convenzioni e dei soggetti contraenti",
+   "Integrazione con sistemi di identit\u00e0 digitale",
+   "Interfaccia web responsive e accessibile",
+   "Aggregazione delle convenzioni sulla base del contraente",
+   "Possibilit\u00e0 di aggiungere i contraenti alle convenzioni",
+   "Possibilit\u00e0 di modificare tutti gli estremi delle convenzioni esistenti",
+   "Possibilit\u00e0 di inserire nuove convenzioni in maniera semplice",
+   "Possibilit\u00e0 di filtrare i dati presentati in modo facile e rapido"
+  ],
+  "landing": "https://gbetorre.github.io/convenzioni/",
+  "license": "GPL-3.0-or-later",
+  "long_desc": "## Presentazione\n\nIl software gestionale delle convenzioni (COL-GECO, ovvero Convenzioni On Line-Gestione Convenzioni) \n\u00e8 un software modulare che nasce dall\u2019esigenza, interna alla Pubblica Amministrazione, di tracciare \naccordi e convenzioni intercorrenti tra soggetti esterni e la PA stessa, \nsia allo scopo di redigere un registro organizzato e sempre aggiornato, \nsia al fine di ottenere uno scadenzario atto a informare e notificare \ncirca le prossime convenzioni in scadenza e in grado di erogare riepiloghi mensili \ne fornire remind riguardo le scadenze imminenti.\n\n\n## Storia\n\nOriginariamente, la richiesta di sviluppare un software ad-hoc \u00e8 partita \ndall\u2019esigenza degli uffici, che non trovavano sufficiente appoggiarsi \nad uno strumento predefinito, in quanto, per tracciare le scadenze\ndelle convenzioni gestite e attivare meccanismi di alert riguardo\nle operazioni da mettere in atto per effettuare i rinnovi delle convenzioni\nesistenti, gi\u00e0 utilizzavano tipicamente, oltre a calendari e applicazioni, \nanche le cartelle Excel.\n\nTuttavia, un software come COL-GECO rappresenta invece un hub unico in cui, \nuna volta inserite le informazioni relative alle convenzioni, \ntutto il workflow p",
+  "maintenance": "internal",
+  "name": "COL-GeCo",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-03-11",
+  "repo": "https://github.com/gbetorre/convenzioni/",
+  "repo_key": "github.com/gbetorre/convenzioni",
+  "repo_owner": "Giovanroberto Torre",
+  "short_desc": "Applicazione web per la gestione delle convenzioni della pubblica amministrazione.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "bd31d951-c010-4ceb-9a12-a44abd871c7e",
+  "used_by": [
+   "Universit\u00e0 degli Studi di Verona"
+  ],
+  "version": "0.5.7"
+ },
+ {
+  "active": true,
+  "categories": [
    "business-process-management"
   ],
   "contacts": [
@@ -2314,7 +2363,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-15",
+  "released": "2026-11-07",
   "repo": "https://github.com/Comune-di-Montesilvano/ComunicaPA.git",
   "repo_key": "github.com/comune-di-montesilvano/comunicapa",
   "short_desc": "HUB open-source per l'invio massivo asincrono di comunicazioni della PA (TARI, avvisi, sanzioni) su PEC, Email, App IO, SEND, Postalizzazione.",
@@ -2322,7 +2371,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "e3bb9350-dc26-4137-a9b2-2af786d9fcf6",
-  "version": "v1.11.7"
+  "version": "v1.19.1"
  },
  {
   "active": true,
@@ -2888,7 +2937,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-14",
+  "released": "2026-11-05",
   "repo": "https://github.com/Comune-di-Montesilvano/CruscottoPA",
   "repo_key": "github.com/comune-di-montesilvano/cruscottopa",
   "repo_owner": "Comune di Montesilvano",
@@ -2900,7 +2949,7 @@
   "used_by": [
    "Comune di Montesilvano"
   ],
-  "version": "0.13.1"
+  "version": "0.17.0"
  },
  {
   "active": true,
@@ -3641,6 +3690,135 @@
  {
   "active": true,
   "categories": [
+   "website-builder",
+   "integrated-library-system",
+   "it-development",
+   "design"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Libreria di componenti Angular per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-angular-kit.git",
+  "features": [
+   "Componenti Angular pronti all'uso",
+   "Basato su Bootstrap Italia",
+   "Implementa lo UI Kit Italia",
+   "Realizzazione di interfacce responsive e accessibili",
+   "Integrazione in applicazioni Angular",
+   "Riutilizzo dei componenti",
+   "Conformit\u00e0 alle Linee guida di design per i siti internet e servizi digitali della PA"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "Il Design Angular Kit, risorsa ufficiale del Design system Italia, \u00e8 una libreria di componenti sviluppati con Angular, pensata per supportare la realizzazione di interfacce web per siti e servizi digitali della Pubblica Amministrazione. Costruito sulle fondamenta di Bootstrap Italia, ne eredita funzionalit\u00e0, componenti, griglia e classi di utilit\u00e0, rendendoli disponibili in forma riutilizzabile all'interno di applicazioni Angular. Il kit consente di sviluppare interfacce accessibili, inclusive e semplici da mantenere, supportando la creazione di applicazioni web dinamiche.",
+  "maintenance": "community",
+  "name": "Design Angular Kit",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-04-13",
+  "repo": "https://github.com/italia/design-angular-kit",
+  "repo_key": "github.com/italia/design-angular-kit",
+  "short_desc": "Libreria di componenti Angular per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "5299a59a-27e6-4d79-aae1-bf0cfb76ad8e",
+  "version": "v21.2.0"
+ },
+ {
+  "active": true,
+  "based_on": [
+   "https://github.com/italia/design-comuni-pagine-statiche"
+  ],
+  "categories": [
+   "it-development",
+   "design",
+   "content-management"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Tema Drupal per realizzare e gestire siti web comunali basati sul Modello Comuni di Designers Italia.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-comuni-drupal-theme.git",
+  "features": [
+   "Tema Drupal pronto all'uso per i siti web dei Comuni",
+   "Permette di creare, aggiornare e organizzare i contenuti tramite CMS",
+   "Struttura automaticamente navigazione e pagine sulla base del Modello Comuni di Designers Italia",
+   "Supporta tipologie di contenuto dedicate",
+   "Consente la gestione dei contenuti da parte degli editor senza interventi tecnici"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "Il tema Drupal del Modello Comuni \u00e8 una soluzione pronta all'uso per il content management system (CMS) Drupal per realizzare e gestire i siti web dei Comuni. Basato sul modello di sito istituzionale dei Comuni italiani di Designers Italia, consente di adottare rapidamente una struttura informativa coerente e di gestire i contenuti tramite il CMS Drupal. Il tema definisce automaticamente l'organizzazione del sito, i layout delle pagine e la navigazione, permettendo di concentrarsi sulla creazione e gestione dei contenuti. Supporta inoltre diverse tipologie di contenuto, come uffici, servizi, notizie e informazioni sull'organizzazione comunale, facilitando la pubblicazione e l'aggiornamento delle informazioni.",
+  "maintenance": "community",
+  "name": "Design Comuni Italia (Drupal)",
+  "platforms": [
+   "web"
+  ],
+  "released": "2025-01-23",
+  "repo": "https://github.com/italia/design-comuni-drupal-theme",
+  "repo_key": "github.com/italia/design-comuni-drupal-theme",
+  "short_desc": "Tema Drupal per realizzare e gestire siti web comunali basati sul Modello Comuni di Designers Italia.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "824e2388-1af9-466c-afaa-389125ca0486",
+  "version": "v1.8.1"
+ },
+ {
+  "active": true,
+  "based_on": [
+   "https://github.com/italia/design-comuni-pagine-statiche"
+  ],
+  "categories": [
+   "it-development",
+   "design",
+   "content-management"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Tema WordPress per realizzare e gestire siti web comunali basati sul Modello Comuni di Designers Italia.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-comuni-wordpress-theme.git",
+  "features": [
+   "Tema WordPress pronto all'uso per i siti web dei Comuni",
+   "Permette di creare, aggiornare e organizzare i contenuti tramite CMS",
+   "Struttura automaticamente navigazione e pagine sulla base del Modello Comuni di Designers Italia",
+   "Supporta tipologie di contenuto dedicate",
+   "Consente la gestione dei contenuti da parte degli editor senza interventi tecnici"
+  ],
+  "license": "AGPL-3.0-only",
+  "long_desc": "Il tema WordPress del Modello Comuni \u00e8 una soluzione pronta all'uso per il content management system (CMS) WordPress per realizzare e gestire i siti web dei Comuni. Basato sul modello di sito istituzionale dei Comuni italiani di Designers Italia, consente di adottare rapidamente una struttura informativa coerente e di gestire i contenuti tramite il CMS WordPress. Il tema definisce automaticamente l'organizzazione del sito, i layout delle pagine e la navigazione, permettendo di concentrarsi sulla creazione e gestione dei contenuti. Supporta inoltre diverse tipologie di contenuto, come uffici, servizi, notizie e informazioni sull'organizzazione comunale, facilitando la pubblicazione e l'aggiornamento delle informazioni.",
+  "maintenance": "community",
+  "name": "Design Comuni Italia (WordPress)",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-09-15",
+  "repo": "https://github.com/italia/design-comuni-wordpress-theme",
+  "repo_key": "github.com/italia/design-comuni-wordpress-theme",
+  "short_desc": "Tema WordPress per realizzare e gestire siti web comunali basati sul Modello Comuni di Designers Italia.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "56ba4082-9d4a-46d7-a377-a1955ca93219",
+  "version": "v1.12.8"
+ },
+ {
+  "active": true,
+  "categories": [
    "website-builder"
   ],
   "contacts": [
@@ -3738,7 +3916,7 @@
   "features": [
    "Popolamento automatico del sito (pagine e menu).",
    "Sezione per la configurazione del tema e dei contenuti.",
-   "Personalizzazione del layout della home page.",
+   "Home page configurabile con sezioni ordinabili, sfondi e numero massimo di elementi per sezione.",
    "Gestione delle persone del laboratorio.",
    "Gestione dei progetti del laboratorio.",
    "Gestione delle news e degli eventi del laboratorio.",
@@ -3753,7 +3931,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-15",
+  "released": "2026-11-06",
   "repo": "https://github.com/ScuolaNormaleSuperiore/design-laboratori-wordpress-theme",
   "repo_key": "github.com/scuolanormalesuperiore/design-laboratori-wordpress-theme",
   "repo_owner": "Scuola Normale Superiore",
@@ -3771,7 +3949,97 @@
    "Bio@SNS - Laboratorio di Biologia - Scuola Normale Superiore - https://laboratoriobiologia.sns.it",
    "Il PNRR alla Normale - Scuola Normale Superiore - https://pnrr.sns.it"
   ],
-  "version": "2.0.0"
+  "version": "2.0.6"
+ },
+ {
+  "active": true,
+  "categories": [
+   "design",
+   "design-system"
+  ],
+  "contacts": [
+   "Igor Smoleac"
+  ],
+  "country": "IT",
+  "desc_en": "Composer package with Blade components compliant with Bootstrap Italia and the Italian Public Administration design guidelines.\n",
+  "desc_lang": "en",
+  "desc_src": "Componenti Blade per Laravel conformi a Bootstrap Italia e alle Linee guida di design per i siti e i servizi digitali della PA.\n",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/igorsmoleac/design-laravel-kit.git",
+  "features": [
+   "Three-tier institutional header (slim, center, navbar)",
+   "AgID-compliant footer with data-element attributes",
+   "Forms with automatic Laravel validation error binding",
+   "ARIA attributes designed for WCAG 2.1 AA",
+   "UI components: button, alert, badge, card, modal, spinner",
+   "SPID and CIE login buttons with official logos",
+   "Complete layout for an institutional page",
+   "Zero-config asset pipeline via vendor:publish"
+  ],
+  "landing": "https://igorsmoleac.github.io/design-laravel-kit/",
+  "license": "BSD-3-Clause",
+  "long_desc": "Design Laravel Kit provides ready-to-use Blade components for building Italian Public Administration websites and digital services with Laravel 12 and 13. The package includes a three-tier institutional header (slim, center, navbar), an AgID-compliant footer with data-element attributes, forms with automatic Laravel validation error binding, ARIA attributes and focus management for WCAG 2.1 AA compliance, a complete layout for an institutional page, and SPID and CIE login buttons with official logos.\nCSS, JavaScript, font and SVG sprite assets are distributed with the package and published through a dedicated Artisan command, without requiring Node.js in the final application.\n",
+  "maintenance": "community",
+  "name": "Design Laravel Kit",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-10-22",
+  "repo": "https://github.com/igorsmoleac/design-laravel-kit",
+  "repo_key": "github.com/igorsmoleac/design-laravel-kit",
+  "short_desc": "Composer package with Blade components compliant with Bootstrap Italia and the Italian Public Administration design guidelines.\n",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "ba117856-1ce2-491c-befb-279bf00db715",
+  "used_by": [
+   "Agenzie digitali e system integrator della Pubblica Amministrazione italiana"
+  ],
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "website-builder",
+   "integrated-library-system",
+   "it-development",
+   "design"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Libreria di componenti React per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-react-kit.git",
+  "features": [
+   "Componenti React pronti all'uso",
+   "Basato su Bootstrap Italia",
+   "Implementa lo UI Kit Italia",
+   "Realizzazione di interfacce responsive e accessibili",
+   "Integrazione in applicazioni React",
+   "Riutilizzo dei componenti",
+   "Conformit\u00e0 alle Linee guida di design per i siti internet e servizi digitali della PA"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "Il Design React Kit, risorsa ufficiale del Design system Italia, \u00e8 una libreria di componenti sviluppati con React, pensata per supportare la realizzazione di interfacce web per siti e servizi digitali della Pubblica Amministrazione. Costruito sulle fondamenta di Bootstrap Italia, ne eredita funzionalit\u00e0, componenti, griglia e classi di utilit\u00e0, rendendoli disponibili in forma riutilizzabile all'interno di applicazioni React. Il kit consente di sviluppare interfacce accessibili, inclusive e semplici da mantenere, supportando la creazione di applicazioni web dinamiche.",
+  "maintenance": "community",
+  "name": "Design React Kit",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-03-17",
+  "repo": "https://github.com/italia/design-react-kit",
+  "repo_key": "github.com/italia/design-react-kit",
+  "short_desc": "Libreria di componenti React per sviluppare interfacce web accessibili e coerenti per i siti e i servizi digitali della PA.",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "94d85d44-d052-4208-a4ae-5856a4a9e93c",
+  "version": "v5.10.0"
  },
  {
   "active": true,
@@ -4811,7 +5079,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-16",
+  "released": "2026-11-06",
   "repo": "https://github.com/consiglionazionaledellericerche/epas",
   "repo_key": "github.com/consiglionazionaledellericerche/epas",
   "short_desc": "ePAS \u00e8 il nuovo sistema di rilevazione e gestione delle presenze del personale pensato per le specifiche esigenze degli Enti Pubblici di Ricerca.",
@@ -4825,7 +5093,7 @@
    "Consorzio LAMMA",
    "Ministero dei Trasporti"
   ],
-  "version": "2.37.0"
+  "version": "2.39.0"
  },
  {
   "active": true,
@@ -8420,7 +8688,7 @@
    "ios",
    "android"
   ],
-  "released": "2026-07-24",
+  "released": "2026-10-28",
   "repo": "https://github.com/globaleaks/globaleaks-whistleblowing-software",
   "repo_key": "github.com/globaleaks/globaleaks-whistleblowing-software",
   "short_desc": "GlobaLeaks is a free and open-source whistleblowing software enabling anyone to easily set up and maintain a secure reporting platform",
@@ -13632,7 +13900,7 @@
    "World Trade Center Genoa",
    "Zeroc SpA"
   ],
-  "version": "5.0.99"
+  "version": "5.0.101"
  },
  {
   "active": true,
@@ -13747,7 +14015,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-09",
+  "released": "2026-11-06",
   "repo": "https://github.com/link-it/govpay",
   "repo_key": "github.com/link-it/govpay",
   "repo_owner": "Link.it s.r.l.",
@@ -13762,7 +14030,7 @@
    "MIC - Ministero della Cultura",
    "MISE - Ministero dello Sviluppo Economico"
   ],
-  "version": "3.9.3.p6"
+  "version": "3.9.3.p7"
  },
  {
   "active": true,
@@ -13795,7 +14063,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-15",
+  "released": "2026-11-03",
   "repo": "https://github.com/Comune-di-Montesilvano/GovPay-Interaction-Layer",
   "repo_key": "github.com/comune-di-montesilvano/govpay-interaction-layer",
   "short_desc": "Piattaforma containerizzata per la gestione dei pagamenti PagoPA, rendicontazione, marca da bollo e integrazione GovPay per enti locali.\n",
@@ -13807,7 +14075,7 @@
    "Comune di Montesilvano",
    "Provincia di Pescara"
   ],
-  "version": "1.6.1"
+  "version": "1.8.1"
  },
  {
   "active": true,
@@ -13842,7 +14110,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-06-12",
+  "released": "2026-10-26",
   "repo": "https://github.com/link-it/govway",
   "repo_key": "github.com/link-it/govway",
   "short_desc": "Conforme alle linee guida AGID per l'interoperabilit\u00e0 (profilo ModI) e predisposto per l'accesso ai principali servizi pubblici italiani",
@@ -13858,7 +14126,39 @@
    "Conservatorio di Musica di Livorno - Pietro Mascagni",
    "Unione dei Comuni della Bassa Romagna"
   ],
-  "version": "3.4.3"
+  "version": "3.4.4"
+ },
+ {
+  "active": true,
+  "contacts": [
+   "Lorenzo Ponticelli"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Un tool per creare grafici",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/graph-italia.git",
+  "features": [
+   "permette di creare e condividere grafici"
+  ],
+  "landing": "https://graph.italia.it/",
+  "license": "AGPL-3.0-only",
+  "long_desc": "Graph Italia \u00e8 progettato per semplificare il processo di creazione di visualizzazioni dati, rendendolo accessibile sia a utenti tecnici che non tecnici. Le principali funzionalit\u00e0 includono:\n\nCreazione Grafici: Upload dati CSV o caricamento da URL remoti, selezione del tipo di grafico pi\u00f9 appropriato (barre, linee, torta, mappe geografiche, KPI), e personalizzazione completa di colori, legende e stili\nDashboard Interattive: Creazione di dashboard personalizzate con layout drag-and-drop, combinando multipli grafici in un'unica vista\nPubblicazione e Condivisione: Pubblicazione pubblica di grafici e dashboard con URL dedicati per la condivisione o l'embed in altri siti web\nPersistenza e Gestione: Salvataggio di grafici e dashboard nel database per accesso futuro e modifica\nAutenticazione Utenti: Sistema di autenticazione completo con registrazione, verifica email e gestione password\nSuggerimenti AI: Integrazione con OpenAI per suggerimenti automatici nella creazione di grafici\nIl progetto \u00e8 strutturato come monorepo per massimizzare la riusabilit\u00e0 dei componenti: la libreria React pu\u00f2 essere utilizzata indipendentemente, mentre l'applicazione web completa offre un'interfaccia utente ",
+  "maintenance": "internal",
+  "name": "GraphItalia",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-05-01",
+  "repo": "https://github.com/italia/graph-italia",
+  "repo_key": "github.com/italia/graph-italia",
+  "short_desc": "Un tool per creare grafici",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "f84b1639-68fa-48a0-b7c6-3bc9c700bc0d",
+  "version": "1.0"
  },
  {
   "active": true,
@@ -15310,7 +15610,7 @@
    "ios",
    "android"
   ],
-  "released": "2024-11-21",
+  "released": "2026-11-06",
   "repo": "https://github.com/pagopa/io-app",
   "repo_key": "github.com/pagopa/io-app",
   "repo_owner": "https://www.pagopa.it/",
@@ -15319,7 +15619,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "af6056fc-b2b2-4d31-9961-c9bd94e32bd4",
-  "version": "3.34.0-rc.3"
+  "version": "3.43.0-rc.6"
  },
  {
   "active": true,
@@ -15430,7 +15730,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-23",
+  "released": "2026-10-22",
   "repo": "https://github.com/italia/design-comuni-plone-theme",
   "repo_key": "github.com/italia/design-comuni-plone-theme",
   "repo_owner": "RedTurtle Technology srl",
@@ -15551,7 +15851,7 @@
    "Unione Val di Bisenzio",
    "Unioncamere Emilia-Romagna"
   ],
-  "version": "12.16.0"
+  "version": "12.16.2"
  },
  {
   "active": true,
@@ -16323,7 +16623,7 @@
    "linux",
    "android"
   ],
-  "released": "2026-09-17",
+  "released": "2026-10-27",
   "repo": "https://github.com/tdf/libreoffice-metadata",
   "repo_key": "github.com/tdf/libreoffice-metadata",
   "repo_owner": "The Document Foundation",
@@ -16332,7 +16632,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "14ee01d2-ef4b-46ac-a7cb-21df6af68d01",
-  "version": "26.8.1.1"
+  "version": "26.8.2.2"
  },
  {
   "active": true,
@@ -18355,7 +18655,13 @@
    "Camera di commercio della Romagna - Forl\u00ec-Cesena e Rimini",
    "Regione Toscana",
    "Finlombarda S.p.A.",
-   "Regione del Veneto"
+   "Regione del Veneto",
+   "Agenzia Regionale per Le Politiche Attive del Lavoro - Arpal Umbria",
+   "Comune di Potenza",
+   "Regione Liguria",
+   "Comune di Napoli",
+   "Regione Lazio",
+   "Comune di Sesto San Giovanni"
   ]
  },
  {
@@ -18602,7 +18908,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-16",
+  "released": "2026-11-06",
   "repo": "https://gitlab.com/opencity-labs/area-personale/core",
   "repo_key": "gitlab.com/opencity-labs/area-personale/core",
   "repo_owner": "OpenCity Labs srl",
@@ -19090,7 +19396,7 @@
    "Comune di Villadossola",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.19.0-rc.5"
+  "version": "4.20.1"
  },
  {
   "active": true,
@@ -19127,7 +19433,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-08-21",
+  "released": "2026-10-21",
   "repo": "https://gitlab.com/opencontent/opensegnalazioni",
   "repo_key": "gitlab.com/opencontent/opensegnalazioni",
   "repo_owner": "OpenCity Labs srl",
@@ -19155,7 +19461,7 @@
    "Comune di Monselice (PD)",
    "Citt\u00e0 Metropolitana di Genova"
   ],
-  "version": "4.2.6"
+  "version": "4.2.7"
  },
  {
   "active": true,
@@ -19191,7 +19497,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-09-08",
+  "released": "2026-10-26",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/opencityitalia-asl",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/opencityitalia-asl",
   "repo_owner": "OpenCity Labs srl",
@@ -19203,7 +19509,7 @@
   "used_by": [
    "ASP Siracusa"
   ],
-  "version": "1.1.7"
+  "version": "1.1.10"
  },
  {
   "active": true,
@@ -19240,7 +19546,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-09",
+  "released": "2026-11-06",
   "repo": "https://gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_key": "gitlab.com/opencity-labs/sito-istituzionale/cms",
   "repo_owner": "OpenCity Labs srl",
@@ -19502,7 +19808,7 @@
    "Comune di Ville di Fiemme",
    "Comune di Volano"
   ],
-  "version": "4.1.7"
+  "version": "4.2.1"
  },
  {
   "active": true,
@@ -19589,7 +19895,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-05-04",
+  "released": "2026-10-25",
   "repo": "https://github.com/lsantalu/OpenMSP",
   "repo_key": "github.com/lsantalu/openmsp",
   "short_desc": "Multi-service portal for PA digitization: PDND interoperability, national database consultation, and App IO integration.",
@@ -19597,7 +19903,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "830f5734-a115-4682-8c79-a71742bf4f17",
-  "version": "1.3.0"
+  "version": "1.4.0"
  },
  {
   "active": true,
@@ -19853,6 +20159,56 @@
  {
   "active": true,
   "categories": [
+   "event-management",
+   "video-conferencing",
+   "web-conferencing",
+   "collaboration",
+   "communications"
+  ],
+  "contacts": [
+   "Dipartimento per la Trasformazione Digitale"
+  ],
+  "country": "IT",
+  "desc_en": "Open-source platform for the public online events of public administrations, built on Jitsi Meet and the .italia design system.\n",
+  "desc_lang": "en",
+  "desc_src": "Piattaforma open source per gli eventi pubblici online della PA, basata su Jitsi Meet e sul design system .italia.\n",
+  "desc_src_lang": "it",
+  "dev_status": "beta",
+  "fallback_repo": "https://github.com/italia/pa-webinar.git",
+  "features": [
+   "Public event page, registration with consents never pre-ticked, invitation list",
+   "Confirmation emails with calendar files, and reminders",
+   "Jitsi Meet room embedded in the portal, with a waiting room and a device check",
+   "Chat, Q&A with upvotes, polls, word cloud, reactions and a raised-hand queue",
+   "Moderators and speakers join through a magic link, without an account",
+   "Control of participants' microphones and cameras, including giving the floor",
+   "Video recording, optionally with one audio track per participant, with their consent",
+   "Video library, event analytics, pre-event and post-event questionnaires"
+  ],
+  "landing": "https://github.com/italia/pa-webinar",
+  "license": "EUPL-1.2",
+  "long_desc": "PA Webinar is a web platform that public administrations use to run public online events (webinars, presentations, open meetings) on their own infrastructure. It uses self-hosted Jitsi Meet as its audio and video engine and the .italia design system (Bootstrap Italia and design-react-kit) for the interface, which is available in the 24 official languages of the European Union.\nEach event has a public page, registration with consents that are never pre-ticked, and a room that opens and closes on schedule. In the room the audience takes part through chat, Q&A with upvotes, polls, word clouds, reactions and raised hands; moderators and speakers join with a link and need no account. After the event the recording is published to the video library. The optional AI post-production, which runs inside the cluster, adds subtitles, a transcript, a summary, translations and dubbing.\nIt installs on Kubernetes with a single Helm chart, from one k3s server to a managed cluster. A conference stays on one bridge (Jitsi Videobridge). More bridges carry more conferences and, in the full profile, they start before scheduled events and scale to zero between them. Branding, offered languages and registr",
+  "maintenance": "internal",
+  "name": "PA Webinar",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-09-28",
+  "repo": "https://github.com/italia/pa-webinar",
+  "repo_key": "github.com/italia/pa-webinar",
+  "short_desc": "Open-source platform for the public online events of public administrations, built on Jitsi Meet and the .italia design system.\n",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "c393b6e7-3ea1-4cce-8895-4e1ce1132b77",
+  "used_by": [
+   "Dipartimento per la Trasformazione Digitale"
+  ],
+  "version": "0.13.0"
+ },
+ {
+  "active": true,
+  "categories": [
    "it-security",
    "identity-management",
    "application-development"
@@ -19886,7 +20242,7 @@
    "web",
    "linux"
   ],
-  "released": "2026-10-01",
+  "released": "2026-11-05",
   "repo": "https://github.com/Provincia-di-Pescara/pa-sso-proxy",
   "repo_key": "github.com/provincia-di-pescara/pa-sso-proxy",
   "short_desc": "SPID/CIE/eIDAS SSO proxy for Italian Public Administration.",
@@ -19894,7 +20250,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "92192e38-8fae-4d6c-8329-3847a37f5114",
-  "version": "0.9.14"
+  "version": "0.10.1"
  },
  {
   "active": true,
@@ -23612,7 +23968,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "0c1127af-c1cc-4c16-89d7-539cbaa3c430",
-  "version": "0.8.0"
+  "version": "0.9.7"
  },
  {
   "active": true,
@@ -25017,13 +25373,13 @@
   ],
   "landing": "https://github.com/gbetorre/rischi/blob/main/rol/index.html",
   "license": "GPL-2.0-or-later",
-  "long_desc": "## Introduzione\n\n\nL'applicazione web per la mappatura dei rischi corruttivi `ROL-RMS` serve\nad aiutare Enti, Pubbliche Amministrazioni, aziende partecipate \u2013 e\nchiunque sia interessato a monitorare e gestire il rischio corruttivo \u2013\n**a quantificare automaticamente i rischi corruttivi** cui i loro processi\norganizzativi sono esposti e ad indirizzare questi soggetti a mettere in\natto **le contromisure adeguate**. \n\n Il workflow generale \u00e8 suddiviso in 4 distinti step, o filoni di lavoro: \n\n1. Step 1: caricamento di strutture e processi \n\n2. Step 2: calcolo del rischio corruttivo di ogni processo \n\n3. Step 3: scelta delle misure di mitigazione da applicare ad ogni\nprocesso \n\n4. Step 4: monitoraggio al fine di verificare se le misure previste sono\nstate applicate.\n\n\nQuesti 4 step si svolgono entro un flusso sincrono; sono pensati, ovvero,\nper essere portati a compimento in sequenza, non in parallelo. Ad esempio,\nnon si pu\u00f2 passare allo Step 2 se non \u00e8 stato completato lo Step 1; n\u00e9 si\npu\u00f2 passare allo Step 3 se non \u00e8 stato completato lo Step 2; e cos\u00ed via.\n\nQuesta modalit\u00e0 \"lineare\" guida gli attori nel processo di mappatura e\ngestione e permette di gestire in modo semplificato la comp",
+  "long_desc": "## Introduzione\n\nL'applicazione web per la mappatura dei rischi corruttivi `ROL-RMS` serve\nad aiutare Enti, Pubbliche Amministrazioni, aziende partecipate \u2013 e\nchiunque sia interessato a monitorare e gestire il rischio corruttivo \u2013\n**a quantificare automaticamente i rischi corruttivi** cui i loro processi\norganizzativi sono esposti e ad indirizzare questi soggetti a mettere in\natto **le contromisure adeguate**. \n\n Il workflow generale \u00e8 suddiviso in 4 distinti step, o filoni di lavoro: \n\n1. Step 1: caricamento di strutture e processi \n\n2. Step 2: calcolo del rischio corruttivo di ogni processo \n\n3. Step 3: scelta delle misure di mitigazione da applicare ad ogni\nprocesso \n\n4. Step 4: monitoraggio al fine di verificare se le misure previste sono\nstate applicate.\n\n\nQuesti 4 step si svolgono entro un flusso sincrono; sono pensati, ovvero,\nper essere portati a compimento in sequenza, non in parallelo. Ad esempio,\nnon si pu\u00f2 passare allo Step 2 se non \u00e8 stato completato lo Step 1; n\u00e9 si\npu\u00f2 passare allo Step 3 se non \u00e8 stato completato lo Step 2; e cos\u00ed via.\n\nQuesta modalit\u00e0 \"lineare\" guida gli attori nel processo di mappatura e\ngestione e permette di gestire in modo semplificato la compl",
   "maintenance": "internal",
   "name": "ROL-RMS",
   "platforms": [
    "web"
   ],
-  "released": "2025-05-06",
+  "released": "2026-10-27",
   "repo": "https://github.com/gbetorre/rischi",
   "repo_key": "github.com/gbetorre/rischi",
   "repo_owner": "Giovanroberto Torre",
@@ -25033,9 +25389,9 @@
   "tier": "publiccode",
   "upstream_id": "e87a5c40-7c1c-4723-b7c4-d495dacfb50a",
   "used_by": [
-   "Alberto Maria Arena Agostino"
+   "Universit\u00e0 degli Studi di Verona"
   ],
-  "version": "2.3.0"
+  "version": "2.8.6"
  },
  {
   "active": true,
@@ -29314,6 +29670,48 @@
  },
  {
   "active": true,
+  "based_on": [
+   "https://github.com/italia/bootstrap-italia"
+  ],
+  "categories": [
+   "it-development",
+   "design"
+  ],
+  "contacts": [
+   "Designers Italia"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Codice pronto all'uso per creare rapidamente il front-end dei siti scolastici in modo accessibile e coerente.",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/italia/design-scuole-pagine-statiche.git",
+  "features": [
+   "Codice HTML, CSS e JavaScript pronto all'uso per realizzare il front-end del sito scolastico",
+   "Esempi di pagine e interfacce per il sito scolastico",
+   "Integra i fondamenti di UI Kit Italia e Bootstrap Italia",
+   "Garantisce accessibilit\u00e0 e conformit\u00e0 alle Linee guida di design per i siti internet e servizi digitali della PA",
+   "Aderenza al modello di sito scolastico di Designers Italia"
+  ],
+  "license": "BSD-3-Clause-Clear",
+  "long_desc": "I template HTML del Modello Scuole mettono a disposizione pagine statiche esemplificative e codice pronto all'uso per realizzare il front-end del sito scolastico. Sono costruiti sulle fondamenta di UI Kit Italia e Bootstrap Italia e permettono di lavorare in modo indipendente dalle soluzioni tecnologiche adottate dall'amministrazione. I template sono gi\u00e0 validati in termini di accessibilit\u00e0 e conformit\u00e0 alle Linee guida di design per i siti internet e i servizi digitali della PA e Linee guida sull'accessibilit\u00e0 degli strumenti informatici, facilitando l'adozione del modello di sito istituzionale delle scuole e velocizzando la realizzazione delle interfacce web.\n\n[Vai alle anteprime dei template HTML](https://italia.github.io/design-scuole-pagine-statiche/)\n[Vai alla documentazione del Modello Scuole](https://designers.italia.it/modelli/scuole/)",
+  "maintenance": "community",
+  "name": "Template HTML per i siti scolastici",
+  "platforms": [
+   "web"
+  ],
+  "released": "2024-09-25",
+  "repo": "https://github.com/italia/design-scuole-pagine-statiche",
+  "repo_key": "github.com/italia/design-scuole-pagine-statiche",
+  "short_desc": "Codice pronto all'uso per creare rapidamente il front-end dei siti scolastici in modo accessibile e coerente.",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "c7894ee9-b74e-4636-bb2b-93bc7fda9bf3",
+  "version": "v2.4.3"
+ },
+ {
+  "active": true,
   "categories": [
    "cad",
    "geographic-information-systems"
@@ -29874,6 +30272,71 @@
   "active": true,
   "categories": [
    "budgeting",
+   "erp"
+  ],
+  "contacts": [
+   "Barbara Malano",
+   "Antonino Cicala",
+   "Massimo Molino",
+   "Massimiliano Purpura"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "UNICA Accrual \u00e8 il modulo della suite UNICA dedicato alla contabilit\u00e0 economico-patrimoniale della PA",
+  "desc_src_lang": "it",
+  "dev_status": "stable",
+  "fallback_repo": "https://github.com/unica-open/uaccrual.git",
+  "features": [
+   "Acquisizione e ricerca flusso di alimentazione",
+   "Ricerca e gestione della prima nota",
+   "Elaborazione e ricerca Report",
+   "Popolamento del modello di raccordo",
+   "Gestione dei Conti accrual",
+   "Gestione delle causali"
+  ],
+  "landing": "https://suiteunica.csi.it/la-suite/unica-accrual.php",
+  "license": "EUPL-1.2",
+  "long_desc": "### Sistema Informativo per la contabilit\u00e0 Economico-Patrimoniale per gli Enti\nUNICA Accrual \u00e8 il modulo open source della suite UNICA dedicato alla gestione della contabilit\u00e0 economico-patrimoniale della Pubblica Amministrazione, progettato per accompagnare gli enti nella transizione verso il nuovo modello contabile Accrual e i principi ITAS. La soluzione integra dati contabili, patrimonio e processi amministrativi, supportando la gestione delle scritture economico-patrimoniali, delle prime note, delle rettifiche e delle integrazioni contabili. Consente la riconciliazione delle informazioni provenienti dai diversi sistemi gestionali, la gestione delle operazioni di chiusura e la produzione di giornale, mastrini, prospetti e report. Integrato con gli altri moduli della suite UNICA, contribuisce a migliorare qualit\u00e0, tracciabilit\u00e0, coerenza e trasparenza delle informazioni economiche e patrimoniali degli enti pubblici.\n",
+  "maintenance": "internal",
+  "name": "UNICA accrual",
+  "platforms": [
+   "web"
+  ],
+  "released": "2026-11-03",
+  "repo": "https://github.com/unica-open/uaccrual.git",
+  "repo_key": "github.com/unica-open/uaccrual",
+  "repo_owner": "CSI Piemonte",
+  "short_desc": "UNICA Accrual \u00e8 il modulo della suite UNICA dedicato alla contabilit\u00e0 economico-patrimoniale della PA",
+  "software_type": "standalone/web",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "7ba2f8f1-7f4d-47aa-a80f-4609174bfe96",
+  "used_by": [
+   "Regione Piemonte",
+   "Regione Sicilia",
+   "Citt\u00e0 Metropolitana di Torino",
+   "Consiglio Regionale Piemonte",
+   "Agenzia Interregionale Fiume Po",
+   "Agenzia Regionale Piemontese per le Erogazioni in Agricoltura",
+   "Ente di Gestione delle Aree Protette dell'Appennino Piemontese",
+   "Comune di Palermo",
+   "Comune di Genova",
+   "Comune di Reggio Calabria",
+   "Comune di Ravenna",
+   "Comune di Modena",
+   "Citt\u00e0 Metropolitana di Roma",
+   "Citt\u00e0 Metropolitana Reggio Calabria",
+   "Comune di Imola",
+   "Comune di Quarto",
+   "Comune di Frattamaggiore",
+   "Comune di Capurso"
+  ],
+  "version": "1.0.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "budgeting",
    "erp",
    "procurement"
   ],
@@ -29947,7 +30410,7 @@
    "Predisposizione del Rendiconto della gestione",
    "Predisposizione degli allegati normativi previsti per rendiconto di gestione"
   ],
-  "landing": "https://suiteunica.csi.it/la-suite/unica-contabilia.php",
+  "landing": "https://github.com/unica-open/contabilia",
   "license": "EUPL-1.2",
   "long_desc": "### Sistema Informativo Amministrativo Contabile per gli Enti\nLa contabilit\u00e0 finanziaria rileva informazioni atte a garantire un controllo preventivo, concomitante e consuntivo sul corretto utilizzo delle risorse e sul rispetto dei vincoli formulati in sede di previsione (logica autorizzatoria) oltre a garantire il mantenimento di condizioni di equilibrio finanziario (pareggio di bilancio). A tal riguardo \u00e8 possibile distinguere tre distinte fasi: la fase di previsione, di gestione e di rendicontazione. La fase di previsione ha il compito di trasporre gli indirizzi degli organi politici in previsioni di spesa ed entrata mantenendo saldo il vincolo di equilibrio di bilancio; si contraddistingue per il carattere autorizzatorio in quanto determina i limiti agli impegni di spesa per l'esercizio successivo.  La fase di gestione \u00e8 caratterizzata dalla rilevazione contabile dei fatti amministrativi (la cosiddetta \"gestione del bilancio\"), rilevazione che risulta normata e strettamente vincolata dall'iter da seguirsi per il pagamento delle spese e la riscossione delle entrate (fasi dell'entrata e della spesa). La rendicontazione ha la finalit\u00e0 di rappresentare i risultati della gestione; s",
   "maintenance": "internal",
@@ -29956,7 +30419,7 @@
    "web"
   ],
   "released": "2023-12-11",
-  "repo": "https://github.com/unica-open/contabilia",
+  "repo": "https://github.com/unica-open/contabilia.git",
   "repo_key": "github.com/unica-open/contabilia",
   "repo_owner": "CSI Piemonte",
   "short_desc": "UNICA contabilia - La soluzione per la gestione Amministrativo Contabile degli enti",
@@ -30578,7 +31041,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-10-16",
+  "released": "2026-10-28",
   "repo": "https://github.com/Comune-di-Montesilvano/UtenzePA.git",
   "repo_key": "github.com/comune-di-montesilvano/utenzepa",
   "short_desc": "Gestionale per il patrimonio, le utenze, i fornitori e le fatture del Comune di Montesilvano.",
@@ -30586,7 +31049,7 @@
   "source": "IT/developers-italia",
   "tier": "publiccode",
   "upstream_id": "57151f0b-06a8-416e-95bd-66a200fe6390",
-  "version": "v1.32.0"
+  "version": "v1.54.1"
  },
  {
   "active": true,
@@ -30655,7 +31118,7 @@
   "platforms": [
    "web"
   ],
-  "released": "2026-04-01",
+  "released": "2026-10-21",
   "repo": "https://github.com/Comune-di-Montesilvano/valori-venali",
   "repo_key": "github.com/comune-di-montesilvano/valori-venali",
   "short_desc": "Applicativo web per il calcolo dei valori venali delle aree fabbricabili basato sui dati OMI dell'Agenzia delle Entrate.\n",
@@ -30666,7 +31129,51 @@
   "used_by": [
    "Comune di Montesilvano"
   ],
-  "version": "1.0.0"
+  "version": "2.4.0"
+ },
+ {
+  "active": true,
+  "categories": [
+   "it-development",
+   "document-management",
+   "e-signature"
+  ],
+  "contacts": [
+   "Lorenzo Nannicini"
+  ],
+  "country": "IT",
+  "desc_lang": "it",
+  "desc_src": "Libreria aperta per i medici di medicina generale: ricetta dematerializzata via SAC del Sistema TS e Profilo Sanitario Sintetico FSE 2.0.",
+  "desc_src_lang": "it",
+  "dev_status": "development",
+  "fallback_repo": "https://github.com/varco-sanita/varco.git",
+  "features": [
+   "Invio della ricetta dematerializzata farmaceutica e specialistica al SAC",
+   "Visualizzazione e annullamento della ricetta",
+   "Medico sostituto e lista degli NRE utilizzati",
+   "Cifratura di codice fiscale e pincode con il certificato SanitelCF",
+   "Profilo Sanitario Sintetico FSE 2.0 in CDA2 HL7 Italia",
+   "Validazione con il codice del validatore ufficiale del gateway FSE",
+   "PDF con CDA allegato e firma PAdES",
+   "Suite di conformit\u00e0 pubblica in JSON, indipendente dal linguaggio"
+  ],
+  "landing": "https://github.com/varco-sanita/varco",
+  "license": "EUPL-1.2",
+  "long_desc": "Varco permette a qualsiasi programma di parlare direttamente con i servizi pubblici della sanit\u00e0, senza passare per un gestionale commerciale. Implementa una volta sola, in chiaro, le specifiche pubbliche del Sistema Tessera Sanitaria (MEF) e del Fascicolo Sanitario Elettronico 2.0.\n\nIl modulo ricetta, dalla parte del medico prescrittore, invia al SAC la ricetta farmaceutica e specialistica, la visualizza, la annulla, gestisce il medico sostituto e la lista degli NRE utilizzati. \u00c8 stato provato contro l'ambiente di TEST del MEF con le utenze pubbliche del kit di sviluppo; le chiamate verso la produzione sono bloccate in codice.\n\nIl modulo FSE genera il Profilo Sanitario Sintetico in CDA2 HL7 Italia a partire dagli stessi oggetti della ricetta, lo valida con il codice del validatore ufficiale del gateway (XSD, schematron PSS v4.0, vocabolari) eseguito in locale, lo allega a un PDF e lo firma PAdES. L'invio al gateway FSE non \u00e8 ancora implementato.\n\nIl nome: un varco \u00e8 un'apertura in una barriera. Varco non abbatte i cancelli dei sistemi pubblici, apre un passaggio uguale per tutti.\n\nVarco comprende una suite di conformit\u00e0 pubblica: casi in JSON con uno schema che li specifica, riese",
+  "maintenance": "internal",
+  "name": "varco",
+  "platforms": [
+   "mac"
+  ],
+  "released": "2026-10-03",
+  "repo": "https://github.com/varco-sanita/varco",
+  "repo_key": "github.com/varco-sanita/varco",
+  "short_desc": "Libreria aperta per i medici di medicina generale: ricetta dematerializzata via SAC del Sistema TS e Profilo Sanitario Sintetico FSE 2.0.",
+  "software_type": "library",
+  "source": "IT/developers-italia",
+  "tier": "publiccode",
+  "upstream_id": "c95d8536-98a9-476e-ac19-e258097d6563",
+  "version": "0.1.1"
  },
  {
   "active": true,

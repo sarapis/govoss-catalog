@@ -11,6 +11,7 @@ sleeping Mac suspends the process), and run.sh must stop before harvesting when
 it gives up. Offline: the clock, sleep, pmset and DNS are all faked.
 """
 import os
+import re
 import shutil
 import socket
 import subprocess
@@ -166,6 +167,38 @@ try:
           -1 < gate < hold < harvest and code.find("step ") > gate, True)
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
+
+# ---- run.sh: step() records a failed step's REAL exit code, and the gates see it.
+# Behavioural, on the function and gate text lifted out of run.sh itself (not a
+# copy of them here): for three months every failed step was written as exit 0,
+# because the status was read after an `if ... fi`, so the deploy and record
+# gates could never trip (review 2026-11-10, H1). This is the test that would
+# have caught it: a step that fails must leave a non-zero row.
+src = open(os.path.join(here, "run.sh")).read()
+fn = re.search(r"^step \(\) \{\n.*?^\}\n", src, re.S | re.M)
+gates = re.findall(r"^\s*failed=\$\((awk .*? out/steps\.tsv)\)$", src, re.M)
+check("run.sh: step() found", bool(fn), True)
+check("run.sh: both gates (publish, record) read steps.tsv with the same awk", len(set(gates)) == 1
+      and len(gates) == 2, True)
+if fn and gates:
+    tmp = tempfile.mkdtemp()
+    try:
+        script = ("set -u\nmkdir -p out\n: > out/steps.tsv\n" + fn.group(0) +
+                  "step ok true\nstep plain false; echo \"rc=$?\"\n"
+                  "step seven bash -c 'exit 7'; echo \"rc=$?\"\n"
+                  "echo \"gate=$(%s)\"\n" % gates[0])
+        p = subprocess.run(["/bin/bash", "-c", script], cwd=tmp, capture_output=True,
+                           text=True, timeout=30)
+        rows = [l.split("\t")[:2] for l in
+                open(os.path.join(tmp, "out", "steps.tsv")).read().splitlines()]
+        check("step(): steps.tsv rows carry each step's real exit code",
+              rows, [["ok", "0"], ["plain", "1"], ["seven", "7"]])
+        check("step(): returns the step's exit code", re.findall(r"rc=(\d+)", p.stdout), ["1", "7"])
+        check("step(): the log line names the real code", "(exit 7;" in p.stdout, True)
+        check("gate: the publish/record awk lists exactly the failed steps",
+              re.search(r"gate=(.*)", p.stdout).group(1).split(), ["plain", "seven"])
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 for f in failed:
     print("FAIL  " + f)

@@ -1,102 +1,102 @@
 {
  "be": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 243
+  "records": 247
  },
  "bg": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 194
+  "records": 195
  },
  "ca": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 67
  },
  "ch": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 166
+  "records": 170
  },
  "de": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 587
+  "records": 619
  },
  "digg": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 52
  },
  "dpg": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 256
+  "records": 257
  },
  "eu": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 31
  },
  "fi": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 72
  },
  "fr": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 691
  },
  "hbg": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 298
+  "records": 155
  },
  "ie": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 5
  },
  "it": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 564
+  "records": 575
  },
  "muc": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 146
+  "records": 155
  },
  "nl": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 207
+  "records": 209
  },
  "nlreg": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 0
  },
  "os2": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 300
+  "records": 301
  },
  "pt": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 93
  },
  "se": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
   "records": 167
  },
  "tw": {
-  "fetched_at": "2026-10-19T11:00:02Z",
+  "fetched_at": "2026-11-09T13:41:46Z",
   "ok": true,
-  "records": 58
+  "records": 59
  }
 }

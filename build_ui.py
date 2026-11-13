@@ -7,6 +7,9 @@ c = json.load(open(f"{OUT}/catalog.json"))
 _spec = importlib.util.spec_from_file_location("taxonomy", f"{OUT}/taxonomy.py")
 _tax = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_tax)
 FUNCTIONS = _tax.FUNCTIONS
+# theme early: the JSON blobs below go through theme.script_json (see theme.py).
+_th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
+theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _ss = importlib.util.spec_from_file_location("sources", f"{OUT}/sources.py")
 _S = importlib.util.module_from_spec(_ss); _ss.loader.exec_module(_S)
 SRC_SITE = {k: v["site"] for k, v in _S.SOURCES.items()}
@@ -93,6 +96,19 @@ except Exception:
 def _fs_ident(r):
     """Must match first_seen.ident() exactly, or every entry reads as undated."""
     return r.get("repo_key") or "%s|%s" % (r.get("name"), r.get("source"))
+
+
+_fsm = importlib.util.spec_from_file_location("first_seen", f"{OUT}/first_seen.py")
+_FS = importlib.util.module_from_spec(_fsm); _fsm.loader.exec_module(_FS)
+
+
+def _fs_date(r):
+    """A merged group's first-seen date is the EARLIEST across its members'
+    identities (first_seen.members), so it does not depend on which member won
+    survivorship (review 2026-11-10, M16). None = baseline, the oldest; no
+    identity on file reads as undated, as before."""
+    known = [_FIRST_SEEN[k] for k in _FS.members(r) if k in _FIRST_SEEN]
+    return _FS._earliest(known) if known else None
 CLAIM = {
     "IT/developers-italia": "built for public administration",
     "DE/openCode": "built for public administration",
@@ -128,7 +144,7 @@ for r in c:
         _rp = _replaces(_cr)
     rows.append({
         "n": r.get("name") or "(unnamed)",
-        "fs": _FIRST_SEEN.get(_fs_ident(r)),
+        "fs": _fs_date(r),
         "dl": r.get("desc_lang"),
         "c": (r.get("countries") or [r.get("country")])[0] if (r.get("countries") or r.get("country")) else "",
         "cs": r.get("countries") or ([r["country"]] if r.get("country") else []),
@@ -250,7 +266,7 @@ n_multi_cat = sum(1 for r in _inc if (r.get("cc2") or 1) > 1)
 # Direct mappings only: an inherited row folds under its core on the page, so
 # counting it would advertise more results than the facet returns.
 prods = collections.Counter(p for r in _inc if not r.get("rpi") for p in (r["rp"] or []))
-PFACETS = json.dumps([[k, k, n] for k, n in
+PFACETS = theme.script_json([[k, k, n] for k, n in
                       sorted(prods.items(), key=lambda kv: (-kv[1], kv[0].lower()))])
 
 # ---- Recently added: the 10 newest ACTIVE entries, newest first.
@@ -271,7 +287,7 @@ PFACETS = json.dumps([[k, k, n] for k, n in
 # what the card renders (r.ce[].l and r.ss), the same string /catalogs links
 # on. Falls back to nothing rather than a placeholder: a wrong flag on a country
 # claim is worse than no flag.
-SRCFLAG = json.dumps({lbl: (_S.SOURCES.get(k) or {}).get("flag") or ""
+SRCFLAG = theme.script_json({lbl: (_S.SOURCES.get(k) or {}).get("flag") or ""
                       for k, lbl in SRC_LABEL.items()})
 
 _dated = sorted((r for r in _inc if r.get("fs")), key=lambda r: r["n"].lower())
@@ -282,7 +298,7 @@ _dated.sort(key=lambda r: r["fs"], reverse=True)
 # The name, country, catalogue and date still identify it, and the full entry is
 # one click away. Translations land on the next run, so a card can gain its
 # description without any change here.
-NEWEST = json.dumps([
+NEWEST = theme.script_json([
     {"n": r["n"], "c": r["c"], "s": r["s"], "fs": r["fs"], "u": r.get("u"),
      "d": (r.get("d") or "")[:110] if r.get("dl") == "en" else ""}
     for r in _dated[:10]
@@ -330,7 +346,7 @@ _CC_FLAG = {(m.get("country") or ""): m.get("flag") or ""
 # the display label carries the country. Entry cards keep the plain label.
 _SRC_CC = {lbl: (_S.SOURCES.get(k) or {}).get("country")
            for k, lbl in SRC_LABEL.items() if (_S.SOURCES.get(k) or {}).get("country")}
-SFACETS = json.dumps([[k, ("%s (%s)" % (k, _SRC_CC[k])) if k in _SRC_CC else k, v]
+SFACETS = theme.script_json([[k, ("%s (%s)" % (k, _SRC_CC[k])) if k in _SRC_CC else k, v]
                       for k, v in sorted(sources.items(), key=lambda x: -x[1])])
 LOPTS = "".join(f'<option value="{html.escape(k)}">{html.escape(k)} ({v})</option>'
                 for k, v in licenses.most_common()
@@ -364,15 +380,12 @@ n_ex_notsoft = sum(1 for r in rows if r["ex"] and r["ex"] != "no-description")
 # Presentation. The markup, CSS and JS live in _ui_template.py and theme.py as
 # PLAIN strings with __PLACEHOLDER__ tokens, not f-strings, so no literal CSS or
 # JS brace ever needs doubling. That was the single most common way this file
-# broke. Substitution is explicit below and asserted after, so a typo'd token
+# broke. Substitution is explicit below and its template checked first (theme.fill), so a typo'd token
 # fails loudly instead of shipping "__N_ENTRIES__" to production.
 # --------------------------------------------------------------------------
-_th = importlib.util.spec_from_file_location("theme", f"{OUT}/theme.py")
-theme = importlib.util.module_from_spec(_th); _th.loader.exec_module(theme)
 _tp = importlib.util.spec_from_file_location("_ui_template", f"{OUT}/_ui_template.py")
 T = importlib.util.module_from_spec(_tp); _tp.loader.exec_module(T)
 import i18n
-import re as _re
 
 n_entries = len(_inc)
 n_srcs = len(sources)
@@ -440,16 +453,16 @@ def render(lang):
     markers resolve while __PLACEHOLDERS__ are intact, then values go in, then
     page links are pointed at this language's copies (i18n.py)."""
     N = lambda n: i18n.num(lang, n)
-    data = json.dumps([dict(r, rpq=[_rpq_text(lang, q) for q in r["rpq"]]) for r in rows],
+    data = theme.script_json([dict(r, rpq=[_rpq_text(lang, q) for q in r["rpq"]]) for r in rows],
                       separators=(",", ":"))
-    ffacets = json.dumps([[k, i18n.function(lang, k, FUNCTIONS[k]), n]
+    ffacets = theme.script_json([[k, i18n.function(lang, k, FUNCTIONS[k]), n]
                           for k, n in funcs.most_common()])
-    ccfacets = json.dumps([[k, ("%s %s" % (_CC_FLAG.get(k, ""),
+    ccfacets = theme.script_json([[k, ("%s %s" % (_CC_FLAG.get(k, ""),
                                            i18n.country(lang, k, _S.COUNTRY_NAME.get(k, k)))).strip(), v]
                            for k, v in sorted(countries.items(), key=lambda x: -x[1])])
     subs = {
         "__DATA__": data,
-        "__OSPOSW__": json.dumps(_OSPO_SW, sort_keys=True).replace("</", "<\\/"),
+        "__OSPOSW__": theme.script_json(_OSPO_SW, sort_keys=True),
         "__FFACETS__": ffacets,
         "__SFACETS__": SFACETS,
         "__CCFACETS__": ccfacets,
@@ -509,13 +522,9 @@ def render(lang):
 def _finish(page, subs, lang, path, what):
     """Markers -> placeholders -> links (the load-bearing order), then write."""
     page = i18n.markers(page, lang)
-    for k, v in subs.items():
-        page = page.replace(k, v)
-    # A missed placeholder is a silent visual bug - the page would render the raw
-    # token. Fail the build instead.
-    left = sorted(set(_re.findall(r"__[A-Z_]{3,}__", page)))
-    if left:
-        raise SystemExit(f"build_ui: unsubstituted placeholders {left} ({lang}, {path})")
+    # One pass, template checked first (theme.fill): a missed placeholder fails
+    # the build, and harvested text inside a value is never substituted into.
+    page = theme.fill(page, subs, f"build_ui ({lang}, {path})")
     page = i18n.links(page, lang)
     theme.assert_variant_live(page)
     page = page.encode("ascii", "xmlcharrefreplace").decode()

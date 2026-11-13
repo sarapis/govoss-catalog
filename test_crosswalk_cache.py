@@ -210,6 +210,31 @@ def main():
     check("a batch that fails twice is unverified, not stamped", (sorted(unver), "Q2" in ok), (["Q2"], False))
     check("other batches still verified", "Q3" in ok, True)
 
+    # ---- validate: a 200 that is not a working answer keeps the old copy (M15)
+    vpath = os.path.join(tmp, "comptoir.json")
+    goodrows = {"softwares": [{"id": i, "name": "s%d" % i} for i in range(10)]}
+    json.dump(goodrows, open(vpath, "w"))
+    for label, answer in (("empty list", []), ("error object", {"error": "maintenance"}),
+                          ("empty softwares", {"softwares": []}),
+                          ("shrank by more than half", {"softwares": [{"id": 1}] * 4})):
+        st = {"comptoir": {"fetched_at": DAY(10), "error": None}}
+        got = cw.cached("comptoir", vpath, lambda a=answer: a, st, now=NOW,
+                        validate=cw.check_comptoir)
+        check(f"comptoir {label}: old copy served", len(cw.comptoir_rows(got)), 10)
+        check(f"comptoir {label}: old copy NOT overwritten",
+              len(cw.comptoir_rows(json.load(open(vpath)))), 10)
+        check(f"comptoir {label}: fetched_at not advanced, error recorded",
+              (st["comptoir"]["fetched_at"], bool(st["comptoir"].get("error"))), (DAY(10), True))
+    st = {"comptoir": {"fetched_at": DAY(10), "error": None}}
+    bigger = {"softwares": [{"id": i} for i in range(12)]}
+    cw.cached("comptoir", vpath, lambda: bigger, st, now=NOW, validate=cw.check_comptoir)
+    check("comptoir: a good answer is written and dated",
+          (len(cw.comptoir_rows(json.load(open(vpath)))), st["comptoir"]["fetched_at"]), (12, NOW))
+    check("comptoir_rows: wrapped {software: ...} rows unwrapped",
+          cw.comptoir_rows([{"software": {"id": 1}}, {"software": {"id": 2}}]), [{"id": 1}, {"id": 2}])
+    check("comptoir_rows: an unknown shape is [], never an IndexError",
+          (cw.comptoir_rows({}), cw.comptoir_rows("x"), cw.comptoir_rows(None)), ([], [], []))
+
     # ---- cache_problems(): the /sources.html sensor
     good = {n: {"fetched_at": DAY(1), "error": None} for n in cw.CACHE_NAMES}
     check("all fresh: silent", cw.cache_problems(good, NOW), [])

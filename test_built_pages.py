@@ -74,18 +74,39 @@ def py_pslug(s):
 
 
 def extract_js_array(page, var):
-    m = re.search(r"var %s = (\[.*?\]);" % re.escape(var), page, re.S)
-    return json.loads(m.group(1)) if m else None
+    # raw_decode from the "[", not a regex to the first "];": harvested text can
+    # contain "];" inside a string (review 2026-11-10, H2).
+    m = re.search(r"var %s = (?=\[)" % re.escape(var), page)
+    return json.JSONDecoder().raw_decode(page, m.end())[0] if m else None
+
+
+def untrusted_text_checks(check):
+    """theme.script_json() and theme.fill(), the two ways harvested text enters a
+    page (review 2026-11-10, H2 and M11). Pure functions, so these run on a clean
+    checkout too, before the built-page checks that need site/."""
+    sys.path.insert(0, HERE)
+    import theme
+    evil = "x</script><img src=x onerror=alert(1)><!-- & __LOPTS__ \u2028"
+    blob = theme.script_json([{"n": evil}])
+    check("script_json: no '<', '>' or '&' survives (no </script, <!--, tag)",
+          [c for c in "<>&" if c in blob], [])
+    check("script_json: same JSON value after the escapes", json.loads(blob), [{"n": evil}])
+    check("script_json: pure ASCII (U+2028 escaped)", blob.isascii(), True)
+    tpl = "var DATA = __DATA__; var L = '__LOPTS__';"
+    out = theme.fill(tpl, {"__DATA__": theme.script_json(evil), "__LOPTS__": "<option>"}, "t")
+    check("fill: a token INSIDE data is not substituted (one pass)", out.count("<option>"), 1)
+    check("fill: data that looks like a token does not fail the build",
+          theme.fill("a __N__", {"__N__": "__MACOSX__"}, "t"), "a __MACOSX__")
+    try:
+        theme.fill("a __N__ __MISSED__", {"__N__": "1"}, "t")
+        missed = None
+    except SystemExit as e:
+        missed = str(e)
+    check("fill: a token in the TEMPLATE with no value still fails the build",
+          bool(missed) and "__MISSED__" in missed, True)
 
 
 def main():
-    missing = [n for n, p in PAGES.items() if not os.path.exists(p)]
-    if missing:
-        print("SKIP  not built: %s\n      run `bash run.sh` (or the page builders) first."
-              % ", ".join(missing))
-        return 0
-
-    pages = {n: read(p) for n, p in PAGES.items()}
     failed, ran = [], []
 
     def check(label, got, want):
@@ -93,12 +114,44 @@ def main():
         if got != want:
             failed.append("%s: expected %r, got %r" % (label, want, got))
 
+    untrusted_text_checks(check)
+
+    missing = [n for n, p in PAGES.items() if not os.path.exists(p)]
+    if missing:
+        for f in failed:
+            print("FAIL  " + f)
+        print("SKIP  not built: %s\n      run `bash run.sh` (or the page builders) first."
+              % ", ".join(missing))
+        print("%d checks run (pure only), %d failed" % (len(ran), len(failed)))
+        # NOT RUN is not a pass: exit 2, so a wrapper that reads exit codes says
+        # so. It used to exit 0 here, and on a fresh checkout (site/ and out/ are
+        # gitignored) ~370 checks silently did not run (review 2026-11-10, M17).
+        print("NOT RUN  the built-page checks need site/: build the pages first.")
+        return 1 if failed else 2
+
+    pages = {n: read(p) for n, p in PAGES.items()}
+
+    # ---- 0. every JSON blob inlined into a <script> went through script_json:
+    # no raw "<", ">" or "&" on its line, so harvested text cannot close the block.
+    for name, page in pages.items():
+        for m in re.finditer(r"^var (DATA|NEWEST|OSPOSW|SRCFLAG|CCFACETS|FFACETS) = (.*)$",
+                             page, re.M):
+            check("0: %s var %s has no raw < > &" % (name, m.group(1)),
+                  [c for c in "<>&" if c in m.group(2)], [])
+        for m in re.finditer(r'<script type="application/json"[^>]*>(.*?)</script>', page, re.S):
+            check("0: %s inline application/json has no raw < > &" % name,
+                  [c for c in "<>&" if c in m.group(1)], [])
+
     # ---- 1. no unsubstituted placeholders.
     # theme.py and _ui_template.py hold markup as PLAIN strings with
     # __TOKEN__ substituted at the end. The builders assert none survive, but only
-    # for the pages they write; this covers every page at once.
+    # for the pages they write; this covers every page at once. The inlined data
+    # blobs are left out: harvested text may legitimately contain "__MACOSX__",
+    # and theme.fill() never substitutes into it (review 2026-11-10, M11).
+    blob = re.compile(r"^var (DATA|NEWEST|OSPOSW|SRCFLAG|CCFACETS|FFACETS) = .*$"
+                      r'|<script type="application/json"[^>]*>.*?</script>', re.M | re.S)
     for name, page in pages.items():
-        left = sorted(set(re.findall(r"__[A-Z][A-Z0-9_]*__", page)))
+        left = sorted(set(re.findall(r"__[A-Z][A-Z0-9_]*__", blob.sub("", page))))
         check("%s has no unsubstituted placeholder" % name, left, [])
 
     # ---- 2. catalogue.html is pure ASCII.
@@ -301,6 +354,36 @@ def main():
           len(written) >= 10, True)
     check("every URL key written is read back at load", sorted(written - readback), [])
     check("reset() writes the URL", "render(); writeURL(); }" in idx, True)
+
+    # ---- 12i. LINK SCHEMES (review 2026-11-10, M10). Harvested and listed URLs
+    # become hrefs; html escaping stops markup but not a javascript: URL. Every
+    # static href with a scheme is http(s) or mailto, and the pages' safeHref()
+    # (which builds the links from DATA in the browser) passes http(s) only.
+    scheme = re.compile(r'href="([a-zA-Z][a-zA-Z0-9+.-]*):', re.I)
+    for name, page in pages.items():
+        bad = sorted({m.group(1).lower() for m in scheme.finditer(page)} - {"http", "https", "mailto"})
+        check("12i: %s static hrefs use only http(s)/mailto schemes" % name, bad, [])
+    import subprocess
+    for name in ("software.html", "index.html"):
+        fn = re.search(r"function safeHref\(u\) \{.*?\n\}", pages[name], re.S)
+        check("12i: %s defines safeHref()" % name, bool(fn), True)
+        if not fn:
+            continue
+        js = fn.group(0) + ("\nconsole.log(JSON.stringify(['https://a.b/x', ' HTTP://a.b ', "
+                            "'javascript:alert(1)', 'JavaScript:x', 'data:text/html,x', 'git://a/b', "
+                            "'www.a.b', '-', null, undefined].map(safeHref)));")
+        out = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+        check("12i: %s safeHref passes http(s) only" % name,
+              json.loads(out.stdout or "null"),
+              ["https://a.b/x", "HTTP://a.b", "", "", "", "", "", "", "", ""])
+        # and every link built from DATA goes through it: the variables the
+        # anchors are built from, and flagged()'s href argument.
+        assigns = re.findall(r"var (?:link|ru) = [^;]*;|vl = [^;]*;", pages[name])
+        check("12i: %s link variables are all set through safeHref" % name,
+              [a for a in assigns if "safeHref" not in a], [])
+        if name == "software.html":
+            check("12i: software.html flagged() sanitises its href",
+                  "href = safeHref(href);" in pages[name], True)
 
     # ---- 12d. STAT ROWS: each carries the class for its tile count. The shared
     # rule never leaves an empty (grey) cell, but only .six / .five hold the
@@ -554,6 +637,32 @@ def main():
           ([r.get("added_by") for r in radd["resources"]].count("govoss") == len(radd["resources"]),
            sorted({r["id"] for r in radd["resources"]} & {r["id"] for r in rfile["resources"]})),
           (True, []))
+    # the opensource.nyc sources (owner, 2026-11-13): each card carries its executive
+    # summary sections and its role for other cities, and the two filter groups count
+    # exactly the cards that carry each value. The artifact's NOTES never enter a record.
+    tagged = [r for r in radd["resources"] if r.get("exec_sections")]
+    for name in ("resources.html", "ca/resources.html"):
+        pg = pages[name]
+        got = {i: (s.split(), ro) for i, s, ro in
+               re.findall(r'<li class="res" id="([^"]+)"[^>]*data-sec="([^"]*)" data-role="([^"]*)"', pg)}
+        check("%s: every tagged source carries its sections and role on its card" % name,
+              (len(tagged) > 0, [r["id"] for r in tagged
+                                 if got.get(r["id"]) != (r["exec_sections"], r["reuse_role"])]), (True, []))
+        for g, key in (("sec", lambda r: r.get("exec_sections") or []),
+                       ("role", lambda r: [r["reuse_role"]] if r.get("reuse_role") else [])):
+            shown = {v: int(n.replace(".", "").replace(",", "")) for v, n in re.findall(
+                r'<button type="button" class="rfopt" data-g="%s" data-v="([^"]+)"[^>]*><span>[^<]*</span>'
+                r'<span class="rn">([\d.,]+)</span>' % g, pg)}
+            check("%s: the %s filter counts the cards that carry each value" % (name, g),
+                  shown, dict(collections.Counter(v for r in radd["resources"] for v in key(r))))
+    _exp = os.path.join(HERE, "resources", "opensource-nyc-export", "bibliography.json")
+    if os.path.exists(_exp):
+        _notes = {e["id"]: [e.get("summary_and_credibility_md") or "", e.get("relevant_content_md") or ""]
+                  for e in json.load(open(_exp, encoding="utf-8"))["entries"]}
+        leak = [r["id"] for r in radd["resources"] for n in _notes.get(r["id"], [])
+                for s in re.split(r"(?<=[.!?])\s+", n)
+                if len(s) > 40 and s in " ".join(str(v) for v in r.values())]
+        check("no sentence of the research artifact's notes is in a govoss record", leak, [])
     # "Check a class name is free before using it": the Resources page's own CSS
     # once reused .rhead (the Recently added header, a space-between flex row) and
     # spread every card's tags across its width.
@@ -926,7 +1035,9 @@ def main():
         return _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime(_t.time() - days * 86400))
     srcs = {"XX/demo": {"label": "Demo", "checkpoint": "demo"}}
     def hp(rec=None, ospo=None):
-        return BS.harvest_problems({"demo": rec} if rec else {}, ospo or {}, srcs, now)
+        # no rec = a fresh catalogue record, so the OSPO cases are judged alone
+        return BS.harvest_problems({"demo": rec or {"ok": True, "fetched_at": stamp(1)}},
+                                   ospo or {}, srcs, now)
     def levels(ps):
         return [a for a, _ in ps]
     got = hp({"ok": False, "fetched_at": stamp(2), "last_error_at": stamp(0), "error": "URLError x"})
@@ -940,18 +1051,37 @@ def main():
     check("14 a success aged >15 days warns, >29 is critical",
           (levels(hp({"ok": True, "fetched_at": stamp(20)})),
            levels(hp({"ok": True, "fetched_at": stamp(40)}))), (["warn"], ["critical"]))
-    check("14 looked up by CHECKPOINT key, never the sources.py key",
-          BS.harvest_problems({"XX/demo": {"ok": False, "fetched_at": stamp(2)}}, {}, srcs, now), [])
+    got = BS.harvest_problems({"XX/demo": {"ok": False, "fetched_at": stamp(2)}}, {}, srcs, now)
+    check("14 looked up by CHECKPOINT key, never the sources.py key (keyed wrong = no record, said so)",
+          (levels(got), bool(got) and "no harvest record" in got[0][1]
+           and "attempt failed" not in got[0][1]), (["warn"], True))
+    # M12 (review 2026-11-10): no record is its own state, never silence
+    got = hp({"ok": False, "fetched_at": None, "error": "URLError z"})
+    check("14 a catalogue whose every attempt failed (fetched_at None) warns, with the reason",
+          (levels(got), bool(got) and "never fetched successfully" in got[0][1] and "URLError z" in got[0][1]),
+          (["warn"], True))
+    check("14 a missing _fetched.json warns once",
+          levels(BS.harvest_problems({}, {}, srcs, now)), ["warn"])
     ok_l = {"ok": True, "fetched_at": stamp(1)}
     got = hp(ospo={"floss-pso": {"ok": False, "fetched_at": stamp(5), "failed_at": stamp(2),
                                  "error": "URLError y"}, "academic-map": ok_l})
     check("14 a failed OSPO list warns, naming the list; an ok one says nothing",
           (levels(got), bool(got) and "'floss-pso'" in got[0][1] and "URLError y" in got[0][1]),
           (["warn"], True))
+    # an academic office no one has checked is named in /status.json (PR #3)
+    rows3 = [{"id": "a1", "type": "academic"}, {"id": "a2", "type": "academic"},
+             {"id": "g1", "type": "government"}]
+    got = BS.ownership_problems(rows3, {"a1": {"value": "public"}})
+    check("14 an academic office with no ownership entry warns, naming only it",
+          (levels(got), bool(got) and "a2" in got[0][1] and "a1" not in got[0][1]
+           and "g1" not in got[0][1]), (["warn"], True))
+    check("14 every academic office checked: no ownership problem",
+          BS.ownership_problems(rows3, {"a1": {}, "a2": {}}), [])
     check("14 a failed OSPO list whose copy is >29 days old is critical",
           levels(hp(ospo={"todo-landscape": {"ok": False, "fetched_at": stamp(40)}})), ["critical"])
     # the built file vs the real cache files: one problem per failed source, by name
     st = json.load(open(os.path.join(SITE, "status.json")))
+    runs_at_latest = json.load(open(os.path.join(HERE, "history.json")))["runs"][-1]["run_at"]
     msgs = [p["message"] for p in st.get("problems") or []]
     fetched = json.load(open(os.path.join(HERE, "cache", "_fetched.json")))
     ospo_src = json.load(open(os.path.join(HERE, "cache", "ospos.json"))).get("sources") or {}
@@ -963,6 +1093,27 @@ def main():
     have = sorted(w for w in want if any(m.startswith(w) for m in msgs))
     check("14 built status.json names every source whose last attempt failed (%d)" % len(want),
           have, want)
+    # M12: /catalogs ages its own run in the READER's clock (the build-time check
+    # cannot trip). Run the page's script under node: a 41-day-old run unhides
+    # the warning, a fresh one leaves it hidden.
+    import subprocess as _sp
+    for name in ("catalogs.html", "ca/catalogs.html"):
+        pg = pages[name]
+        m = re.search(r'<li class="p-critical" id="stalerun" data-run="([^"]*)" hidden>', pg)
+        js = re.search(r"(\(function \(\) \{\s*var li = document\.getElementById\('stalerun'\);.*?\}\)\(\);)", pg, re.S)
+        check("14 %s carries the hidden stale-run warning, stamped with the run" % name,
+              bool(m) and m.group(1) == runs_at_latest, True)
+        if js:
+            res = []
+            for run in ("2026-01-01T00:00:00Z", _t.strftime("%Y-%m-%dT%H:%M:%SZ", _t.gmtime())):
+                stub = ("var li={hidden:true,getAttribute:function(){return %s;}};"
+                        "var document={getElementById:function(){return li;}};" % json.dumps(run))
+                o = _sp.run(["node", "-e", stub + js.group(1) + "console.log(li.hidden)"],
+                            capture_output=True, text=True)
+                res.append(o.stdout.strip())
+            check("14 %s: an old run shows the warning, a fresh one does not" % name, res, ["false", "true"])
+        else:
+            check("14 %s: the stale-run script is present" % name, False, True)
 
     # ---- 13. HOSTING (Cloudflare Workers static assets since 2026-09-23). The
     # headers and redirects live in site/_headers and site/_redirects, copied by
@@ -993,6 +1144,20 @@ def main():
           # match the ROUTE, not the text: the site config's own comment names www
           ('"pattern": "www.govoss.cat"' in cfg, '"pattern": "www.govoss.cat"' in wcfg),
           (False, True))
+
+    # ---- the MCP index carries each entry's FUNCTION KEYS in `f`, as entries.json
+    # does in category_keys. compact() once read a field exported rows do not have,
+    # so every `f` was empty and search_entries(function=...) answered 0 for every
+    # function - while test_workers.py's hand-written fixture had `f` filled in
+    # (review 2026-11-10, M4). Checked on the BUILT files, not a fixture.
+    idx = json.load(open(os.path.join(SITE, "mcp-index.json")))
+    idx = idx.get("entries", idx) if isinstance(idx, dict) else idx
+    ents = json.load(open(os.path.join(SITE, "entries.json")))
+    ents = ents.get("entries", ents) if isinstance(ents, dict) else ents
+    want_f = {e["id"]: e.get("category_keys") or [] for e in ents if not e.get("excluded")}
+    check("mcp-index: some entry has functions in f", any(e.get("f") for e in idx), True)
+    check("mcp-index: f = entries.json category_keys, entry by entry",
+          [e["id"] for e in idx if e["id"] in want_f and (e.get("f") or []) != want_f[e["id"]]][:5], [])
 
     for f in failed:
         print("FAIL  %s" % f)

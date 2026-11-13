@@ -32,10 +32,68 @@ and CMS-fed footer columns are gone. DESIGN-BRIEF.md and UPSTREAM-CTFG.md are
 kept as the historical record of that relationship — including three defects we
 reported that CTFG fixed in its v2.0.0.
 """
+import json
 import os
 import re
 
 import i18n
+
+
+# --------------------------------------------------------------------------
+# Untrusted text into a page. Every name, description, licence and URL on these
+# pages was written by a third party (a publiccode.yml, a repo description), so
+# the two ways a builder puts data into markup are both done here, once.
+#
+# 1. script_json(): JSON for an inline <script>. json.dumps does not escape "<",
+#    so a description containing "</script><img src=x onerror=...>" closed the
+#    block and the rest parsed as HTML (review 2026-11-10, H2). "<", ">" and "&"
+#    become \u003c \u003e \u0026: still the same JSON value, and no "</script",
+#    "<!--" or tag can appear in the page. ensure_ascii stays on, which also
+#    escapes U+2028/2029 and keeps the page pure ASCII.
+#
+# 2. fill(): ONE pass of placeholder substitution. The old loop replaced each
+#    token in turn over the whole page, so a description containing "__LOPTS__"
+#    pulled the licence <option> list INTO the DATA string, and a licence value
+#    could then close the array (H2b); and the leftover-token check ran AFTER the
+#    data went in, so a name like "__MACOSX__" stopped the build (M11). Now the
+#    template is checked first and replacement text is never re-scanned.
+_SCRIPT_UNSAFE = {"<": "\\u003c", ">": "\\u003e", "&": "\\u0026"}
+_TOKEN = re.compile(r"__[A-Z_]{3,}__")
+
+
+def script_json(obj, **kw):
+    """json.dumps(obj, **kw), safe to place inside an inline <script>."""
+    if kw.get("ensure_ascii") is False:
+        raise ValueError("script_json: ensure_ascii must stay on")
+    s = json.dumps(obj, **kw)
+    for ch, esc in _SCRIPT_UNSAFE.items():
+        s = s.replace(ch, esc)
+    return s
+
+
+def fill(page, subs, who):
+    """Substitute every __TOKEN__ in `page` from `subs` in a single pass.
+
+    Raises SystemExit naming any token in the TEMPLATE that `subs` does not
+    cover - a missed placeholder would otherwise render raw on the page. Text
+    that arrives inside a value is never looked at again, so data can neither
+    trigger a substitution nor fail this check."""
+    left = sorted(set(_TOKEN.findall(page)) - set(subs))
+    if left:
+        raise SystemExit("%s: unsubstituted placeholders %s" % (who, left))
+    if not subs:
+        return page
+    pat = re.compile("|".join(re.escape(k) for k in sorted(subs, key=len, reverse=True)))
+    return pat.sub(lambda m: subs[m.group(0)], page)
+
+
+def safe_url(u):
+    """A harvested or listed URL, only if it is http(s); else "". html.escape
+    stops markup but not a javascript: URL in an href, and on /products the link
+    opens in the govoss.cat origin (review 2026-11-10, M10). The pages' JS has
+    the same rule as safeHref()."""
+    u = (u if isinstance(u, str) else "").strip()
+    return u if re.match(r"(?i)https?://", u) else ""
 
 # --------------------------------------------------------------------------
 # Fonts. Self-hosted, NOT a CDN.

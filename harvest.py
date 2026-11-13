@@ -352,6 +352,61 @@ def base_lang(code):
     return (code or "").split("-")[0].lower() or None
 
 
+def _pc_str(v):
+    """A scalar publiccode.yml field as a string, or None. YAML reads `2048`,
+    `1.0` and `2024-01-01` as int, float and date; a publisher's typo can make
+    any field a list or a dict. Only text is text."""
+    if isinstance(v, bool) or v is None:
+        return None
+    if isinstance(v, (int, float)) or hasattr(v, "isoformat"):
+        return str(v)
+    return v if isinstance(v, str) else None
+
+
+def _pc_dict(v):
+    return v if isinstance(v, dict) else {}
+
+
+def _pc_strs(v):
+    """A list of strings: a bare string becomes [it], non-strings are dropped."""
+    if isinstance(v, str):
+        v = [v]
+    return [x for x in (_pc_str(i) for i in (v if isinstance(v, list) else [])) if x]
+
+
+def _clean_pc(pc):
+    """Coerce a parsed publiccode.yml to the shapes from_publiccode reads.
+
+    parse_pc only checked for a dict with a truthy name, so `legal: MIT`,
+    `maintenance: internal`, a string `description` or an integer
+    `shortDescription` raised inside the adapter and failed the WHOLE source
+    until that one repo was fixed; and `name: 2048` (an int) passed harvest and
+    crashed dedupe, first_seen, build_ui and export_json on .strip() (review
+    2026-11-10, M1). It is someone else's file: coerce, never raise."""
+    pc = dict(pc)
+    pc["name"] = _pc_str(pc.get("name"))    # NOT stripped: names feed identity
+    for k in ("url", "landingURL", "softwareType", "developmentStatus", "softwareVersion"):
+        pc[k] = _pc_str(pc.get(k))
+    for k in ("categories", "platforms", "usedBy"):
+        pc[k] = _pc_strs(pc.get(k))
+    legal, maint = _pc_dict(pc.get("legal")), _pc_dict(pc.get("maintenance"))
+    pc["legal"] = {"license": _pc_str(legal.get("license")),
+                   "repoOwner": _pc_str(legal.get("repoOwner"))}
+    pc["maintenance"] = {"type": _pc_str(maint.get("type")),
+                         "contacts": [c for c in (maint.get("contacts") or [])
+                                      if isinstance(c, dict)]
+                         if isinstance(maint.get("contacts"), list) else []}
+    desc = {}
+    for lang, body in _pc_dict(pc.get("description")).items():
+        if isinstance(lang, str) and isinstance(body, dict):
+            desc[lang] = {"shortDescription": _pc_str(body.get("shortDescription")),
+                          "longDescription": _pc_str(body.get("longDescription")),
+                          "features": _pc_strs(body.get("features")),
+                          "usedBy": _pc_strs(body.get("usedBy"))}
+    pc["description"] = desc
+    return pc
+
+
 def from_publiccode(pc, source, country, **kw):
     """Flatten a parsed publiccode.yml into the common record.
 
@@ -360,6 +415,7 @@ def from_publiccode(pc, source, country, **kw):
     next(iter(desc)) — the FIRST key — which silently discarded English
     whenever it wasn't listed first.
     """
+    pc = _clean_pc(pc)
     desc = pc.get("description") or {}
     by_lang = {}
     for raw_lang, body in desc.items():
@@ -451,7 +507,9 @@ def parse_pc(blob):
         pc = yaml.safe_load(blob.decode("utf-8", "replace") if isinstance(blob, bytes) else blob)
     except Exception:
         return None
-    return pc if isinstance(pc, dict) and pc.get("name") else None
+    # name may be an int ("name: 2048"); _clean_pc makes it text, and a name
+    # that is not text at all is no name (review 2026-11-10, M1).
+    return pc if isinstance(pc, dict) and _pc_str(pc.get("name")) else None
 
 
 # ------------------------------------------------- generic forge adapters
@@ -519,7 +577,29 @@ def gitlab_scan(base, source, country, cap_pages=60, workers=12, key=None):
     return out, len(projs)
 
 
-def github_org_scan(org, source, country, workers=12, composer=False):
+def _fetch_failed(e, failed):
+    """Classify a failed file fetch. Only 401/403/404 mean "no such file"; any
+    other failure (timeout, 5xx, reset) is NOT absence, so it is counted for
+    _refuse_short_scan() (review 2026-11-10, M8 - the 2026-10-07 rule, which
+    reached only gitlab_scan)."""
+    if isinstance(e, urllib.error.HTTPError) and e.code in (401, 403, 404):
+        return
+    failed.append(str(e.code) if isinstance(e, urllib.error.HTTPError) else type(e).__name__)
+
+
+def _report_failed(failed, key, what, out, where):
+    """Print a scan's failed fetches; with a checkpoint `key`, refuse the result
+    if it ALSO shrank against that checkpoint (_refuse_short_scan)."""
+    if not failed:
+        return
+    kinds = collections.Counter(failed).most_common(4)
+    msg = "%d file fetch(es) failed (%s)" % (len(failed), ", ".join("%s x%d" % k for k in kinds))
+    print("    " + msg)
+    if key:
+        _refuse_short_scan(key, what, out, [msg], where)
+
+
+def github_org_scan(org, source, country, workers=12, composer=False, key=None, failures=None):
     """GitHub org: list repos, then hit raw.githubusercontent (not rate-limited
     like the REST API, so a 380-repo org costs 4 API calls, not 380).
 
@@ -563,9 +643,12 @@ def github_org_scan(org, source, country, workers=12, composer=False):
         fork_parent = parent_of(r)
         try:
             pc = parse_pc(get(f"https://raw.githubusercontent.com/{org}/{r['name']}/HEAD/publiccode.yml",
-                              timeout=25, raw=True, tries=1))
-        except Exception:
-            pass
+                              timeout=25, raw=True, tries=2))
+        except Exception as e:
+            n = len(failed)
+            _fetch_failed(e, failed)
+            if len(failed) > n:
+                return None   # unknown, not "none": never downgrade it to index tier
         if pc:
             return from_publiccode(pc, source, country,
                                    fallback_repo=r.get("html_url"),
@@ -599,8 +682,12 @@ def github_org_scan(org, source, country, workers=12, composer=False):
                    stars=r.get("stargazers_count"), last_activity=r.get("pushed_at"),
                    is_fork=bool(r.get("fork")), fork_parent=fork_parent)
 
+    failed = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
         out = [x for x in ex.map(one, repos) if x]
+    if failures is not None:
+        failures += ["%s: %s" % (org, f) for f in failed]
+    _report_failed(failed, key, "github.com/" + org, out, "github.com/" + org + " (retry the run later)")
     return out, len(repos)
 
 
@@ -695,7 +782,7 @@ def eu():
 
 
 def be():
-    out, _ = github_org_scan("IMIO", "BE/iMio", "BE")
+    out, _ = github_org_scan("IMIO", "BE/iMio", "BE", key="be")
     return out
 
 
@@ -731,7 +818,7 @@ def os2():
     out, broke = [], []
     for org in OS2_ORGS:
         try:
-            got, _ = github_org_scan(org, "DK/os2", "DK")
+            got, _ = github_org_scan(org, "DK/os2", "DK", failures=broke)  # M8
             out += got
         except Exception as e:
             broke.append(f"{org} ({type(e).__name__})")
@@ -791,7 +878,7 @@ def bg():
     developer portal (dev.egov.bg, a JSF app with no data route); the GitHub org
     is the actual code.
     """
-    out, _ = github_org_scan("governmentbg", "BG/governmentbg", "BG")
+    out, _ = github_org_scan("governmentbg", "BG/governmentbg", "BG", key="bg")
     return out
 
 
@@ -830,7 +917,8 @@ def muc():
         try:
             txt = get(RAW + urllib.parse.quote(fn), timeout=25, raw=True,
                       tries=2).decode("utf-8", "replace")
-        except Exception:
+        except Exception as e:
+            _fetch_failed(e, failed)   # a listed file that 404s is gone; else unknown (M8)
             return None
         if not txt.startswith("---"):
             return None
@@ -866,8 +954,11 @@ def muc():
                    note=("in-house development by the City of Munich" if built
                          else "in production use at the City of Munich"))
 
+    failed = []
     with ThreadPoolExecutor(max_workers=10) as ex:
         out = [r for r in ex.map(one, names) if r]
+    _report_failed(failed, "muc", "opensource.muenchen.de", out,
+                   "opensource.muenchen.de (retry the run later)")
     b = sum(1 for r in out if r.get("repo"))
     print(f"    -> {len(out)} entries ({b} built in-house with a repo, "
           f"{len(out)-b} third-party in production use)")
@@ -885,7 +976,7 @@ def pt():
     88 non-archived repos, actively developed: the dadosgov open data portal front end,
     udata-pt, accessibility collections, MyMonitor, authentication service docs.
     """
-    out, _ = github_org_scan("amagovpt", "PT/arte", "PT")
+    out, _ = github_org_scan("amagovpt", "PT/arte", "PT", key="pt")
     return out
 
 
@@ -900,7 +991,7 @@ def ie():
     Two of the six are forks of upstream tools (unleash, logto); the fork filter
     handles them.
     """
-    out, _ = github_org_scan("ogcio", "IE/ogcio", "IE")
+    out, _ = github_org_scan("ogcio", "IE/ogcio", "IE", key="ie")
     return out
 
 
@@ -992,9 +1083,12 @@ def nl_forgejo():
         br = r.get("default_branch") or "main"
         try:
             pc = parse_pc(get(f"{api}/repos/{r['full_name']}/raw/publiccode.yml?ref={br}",
-                              timeout=25, raw=True, tries=1))
-        except Exception:
-            pc = None
+                              timeout=25, raw=True, tries=2))
+        except Exception as e:
+            pc, n = None, len(failed)
+            _fetch_failed(e, failed)
+            if len(failed) > n:
+                return None   # unknown, not "none" (M8)
         if pc:
             return from_publiccode(pc, "NL/code.overheid.nl", "NL",
                                    fallback_repo=r.get("html_url"),
@@ -1017,9 +1111,11 @@ def nl_forgejo():
                    stars=r.get("stars_count"),
                    last_activity=r.get("updated_at"))
 
+    failed = []
     with ThreadPoolExecutor(max_workers=8) as ex:
         out = [x for x in ex.map(one, repos) if x]
     print(f"    -> {sum(1 for x in out if x['tier']=='publiccode')} with publiccode.yml")
+    _report_failed(failed, "nl", "code.overheid.nl", out, "code.overheid.nl (retry the run later)")
     return out
 
 
@@ -1335,7 +1431,7 @@ def digg():
     Descriptions mix Swedish and English, so detect_lang gets `sv` only as a
     tie-break hint, never as an assumption.
     """
-    out, _ = github_org_scan("diggsweden", "SE/digg", "SE")
+    out, _ = github_org_scan("diggsweden", "SE/digg", "SE", key="digg")
     return out
 
 
@@ -1351,7 +1447,7 @@ def hbg():
     (reason `wordpress-plugin`), never on a name. Themes, apps and everything else
     stay. Descriptions mix Swedish and English: `sv` is a tie-break hint only.
     """
-    out, _ = github_org_scan("helsingborg-stad", "SE/helsingborg", "SE", composer=True)
+    out, _ = github_org_scan("helsingborg-stad", "SE/helsingborg", "SE", composer=True, key="hbg")
     return out
 
 
