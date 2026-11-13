@@ -466,14 +466,14 @@
    "language": "en",
    "what_it_is_for": "U.S. Digital Response case study on how CMS released open source software responsibly",
    "verification_status": "listed",
-   "url": "https://www.usdigitalresponse.org/resources/cms-open-source-software",
+   "url": "https://web.archive.org/web/20260412052402/https://www.usdigitalresponse.org/resources/cms-open-source-software",
    "citation": "U.S. Digital Response. n.d. \"How One Federal Agency Worked to Release Open Source Software Responsibly.\" https://www.usdigitalresponse.org/resources/cms-open-source-software",
    "reuse_role": "example",
    "jurisdiction": null,
    "exec_sections": [
     "how"
    ],
-   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation."
+   "notes": "Added by govoss from the opensource.nyc OSPO research; not part of the UN+NYC compilation. The original page was removed by 2026-11-13; the link is the Internet Archive's copy of 2026-04-12."
   },
   {
    "case": "general",

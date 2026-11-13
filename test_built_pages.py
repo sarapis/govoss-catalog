@@ -1143,6 +1143,15 @@ def main():
     check("14 a failed OSPO list warns, naming the list; an ok one says nothing",
           (levels(got), bool(got) and "'floss-pso'" in got[0][1] and "URLError y" in got[0][1]),
           (["warn"], True))
+    # an academic office no one has checked is named in /status.json (PR #3)
+    rows3 = [{"id": "a1", "type": "academic"}, {"id": "a2", "type": "academic"},
+             {"id": "g1", "type": "government"}]
+    got = BS.ownership_problems(rows3, {"a1": {"value": "public"}})
+    check("14 an academic office with no ownership entry warns, naming only it",
+          (levels(got), bool(got) and "a2" in got[0][1] and "a1" not in got[0][1]
+           and "g1" not in got[0][1]), (["warn"], True))
+    check("14 every academic office checked: no ownership problem",
+          BS.ownership_problems(rows3, {"a1": {}, "a2": {}}), [])
     check("14 a failed OSPO list whose copy is >29 days old is critical",
           levels(hp(ospo={"todo-landscape": {"ok": False, "fetched_at": stamp(40)}})), ["critical"])
     # the built file vs the real cache files: one problem per failed source, by name
