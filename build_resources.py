@@ -295,7 +295,7 @@ BODY = theme.page_header(
     '⟪Documents and decisions for building an OSPO, compiled by <a href="https://un.opensource.nyc">UN+NYC</a>.⟫',
     [theme.data_links('/resources.json')]) + """
 <div class="wrap">
-  <a class="rkit" href="https://ospo.opensource.nyc/#research" target="_blank" rel="noopener"><b>⟪How to compile an OSPO executive summary&nbsp;&rarr;⟫</b>
+  <a class="rkit" href="https://ospo.opensource.nyc/research" target="_blank" rel="noopener"><b>⟪How to compile an OSPO executive summary&nbsp;&rarr;⟫</b>
     <span>⟪A worked example for New York City: the summary, the notes behind it and its sources, tagged by
       the same sections you can filter these resources by.⟫</span></a>
   <main id="main" class="rwrap">

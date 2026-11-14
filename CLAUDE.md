@@ -186,7 +186,7 @@ unknown (`N/A`, `Je ne sais pas`) - unknown is not closed.
   (`build_resources.py`: UN+NYC's committed `resources/ospo-resources.json`, replaced to update,
   records English - plus govoss's OWN `resources/govoss-additions.json`, each `added_by: govoss`,
   never mixed into theirs; their records' tags in `resources/govoss-tags.json`; the executive summary
-  page is ospo.opensource.nyc/#research, linked from the top; the gitignored opensource-nyc-export holds
+  page is ospo.opensource.nyc/research, linked from the top; the gitignored opensource-nyc-export holds
   off-the-record interview notes: never publish or copy them); `/ospos` (`build_ospos.py`). Each under
   `/ca/`; chrome in `theme.py`; routes in `i18n.ROUTES`. `/status.html` 308s to `/catalogs`, but
   `/status.json` is still written - retiring an endpoint breaks agents.

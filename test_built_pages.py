@@ -677,7 +677,7 @@ def main():
     # here (owner, 2026-11-13): /resources links out to it, in both languages.
     check("/resources links to the executive summary on ospo.opensource.nyc, in both languages",
           [n for n in ("resources.html", "ca/resources.html")
-           if 'class="rkit" href="https://ospo.opensource.nyc/#research"' not in pages[n]], [])
+           if 'class="rkit" href="https://ospo.opensource.nyc/research"' not in pages[n]], [])
 
     # "Check a class name is free before using it": the Resources page's own CSS
     # once reused .rhead (the Recently added header, a space-between flex row) and
