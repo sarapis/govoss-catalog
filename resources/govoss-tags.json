@@ -1,0 +1,570 @@
+{
+ "_about": "govoss's tags for records of the UN+NYC compilation (resources/ospo-resources.json), kept apart so that file is never edited and replacing it never drops them. Keyed by the compilation's record id. From the opensource.nyc OSPO research (exported 2026-11-13), matched by URL: reuse_role (framework = any city, example = a peer's example, local = one jurisdiction's own law or policy, named in jurisdiction) and exec_sections (the OSPO executive summary sections that CITE the source, in a footnote or in the section's notes: context, definition, stage, case, how, metrics, mission). research_id is the source's id in that research. Tags only: no notes.",
+ "tags": {
+  "bcn-07": {
+   "research_id": "barcelona-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "bcn-08": {
+   "research_id": "thebert-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "bcn-09": {
+   "research_id": "canodrom-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "bcn-23": {
+   "research_id": "open-source-united-n-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-01": {
+   "research_id": "digital-service-at-cms-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": [
+    "definition"
+   ]
+  },
+  "cms-02": {
+   "research_id": "digital-service-at-cms-n-d-b",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-03": {
+   "research_id": "cms-ospo-n-d-a",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-04": {
+   "research_id": "cms-ospo-n-d-f",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-05": {
+   "research_id": "cms-ospo-n-d-b",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-06": {
+   "research_id": "cms-ospo-n-d-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-07": {
+   "research_id": "cms-ospo-n-d-g",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-11": {
+   "research_id": "cms-2016",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-12": {
+   "research_id": "cms-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-13": {
+   "research_id": "omb-2016",
+   "reuse_role": "local",
+   "jurisdiction": "United States",
+   "exec_sections": []
+  },
+  "cms-15": {
+   "research_id": "cms-ospo-n-d-c",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-16": {
+   "research_id": "cms-ospo-n-d-i",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "metrics"
+   ]
+  },
+  "cms-17": {
+   "research_id": "digital-service-at-cms-n-d-c",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "stage",
+    "how"
+   ]
+  },
+  "cms-18": {
+   "research_id": "digital-service-at-cms-n-d-a",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "metrics"
+   ]
+  },
+  "cms-19": {
+   "research_id": "digital-service-at-cms-n-d-a",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": [
+    "how",
+    "metrics"
+   ]
+  },
+  "cms-20": {
+   "research_id": "dsacms-n-d-c",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-21": {
+   "research_id": "dsacms-n-d-d",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-22": {
+   "research_id": "queram-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-25": {
+   "research_id": "myatt-2023",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-27": {
+   "research_id": "fedscoop-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-30": {
+   "research_id": "fortune-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "cms-33": {
+   "research_id": "floss-pso-network-n-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-01": {
+   "research_id": "ec-ospo-n-d",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-02": {
+   "research_id": "european-commission-2020a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-04": {
+   "research_id": "european-commission-2021a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-05": {
+   "research_id": "european-commission-2021b",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-06": {
+   "research_id": "ec-ospo-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-08": {
+   "research_id": "osor-2026-meetup-slides",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-10": {
+   "research_id": "osor-2025a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-11": {
+   "research_id": "ospo-alliance-2025a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-12": {
+   "research_id": "european-commission-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-13": {
+   "research_id": "eu-ospo-network-n-d-a",
+   "reuse_role": "local",
+   "jurisdiction": "European Union",
+   "exec_sections": []
+  },
+  "ec-14": {
+   "research_id": "eu-ospo-network-n-d-b",
+   "reuse_role": "local",
+   "jurisdiction": "European Union",
+   "exec_sections": []
+  },
+  "ec-15": {
+   "research_id": "floss-pso-n-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-16": {
+   "research_id": "floss-pso-network-n-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-20": {
+   "research_id": "april-2020",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "ec-23": {
+   "research_id": "canodrom-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-01": {
+   "research_id": "stadt-munchen-n-d-a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-02": {
+   "research_id": "stadt-munchen-2023a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-03": {
+   "research_id": "stadt-munchen-2020",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-06": {
+   "research_id": "stadt-munchen-2023b",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-07": {
+   "research_id": "stadt-munchen-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-09": {
+   "research_id": "stadt-munchen-n-d-d",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-10": {
+   "research_id": "stadt-munchen-n-d-b",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-12": {
+   "research_id": "stadt-munchen-n-d-c",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-14": {
+   "research_id": "osor-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-16": {
+   "research_id": "heise-online-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-19": {
+   "research_id": "fsfe-2020",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-20": {
+   "research_id": "sustain-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-21": {
+   "research_id": "zammad-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "mun-22": {
+   "research_id": "winfuture-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-01": {
+   "research_id": "paris-n-d",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-03": {
+   "research_id": "bareille-2023",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-04": {
+   "research_id": "paris-2021",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-05": {
+   "research_id": "foss-backstage-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-06": {
+   "research_id": "alposs-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-07": {
+   "research_id": "acteurs-publics-2023",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-08": {
+   "research_id": "ospo-alliance-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-09": {
+   "research_id": "osor-2020",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-11": {
+   "research_id": "lutece-n-d",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-15": {
+   "research_id": "worth-2022",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-16": {
+   "research_id": "technical-ly-2019",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-17": {
+   "research_id": "lin-ker-et-al-2026",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-18": {
+   "research_id": "ville-de-paris-2015",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-19": {
+   "research_id": "libre-a-vous-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-20": {
+   "research_id": "linuxfr-2004",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-21": {
+   "research_id": "april-2008",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "par-22": {
+   "research_id": "floss-pso-network-n-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-01": {
+   "research_id": "open-source-united-n-d",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-03": {
+   "research_id": "open-source-united-2024",
+   "reuse_role": "framework",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-05": {
+   "research_id": "ceb-2023",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-06": {
+   "research_id": "ceb-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-07": {
+   "research_id": "ceb-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-09": {
+   "research_id": "oict-2025a",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-11": {
+   "research_id": "oict-2025b",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-12": {
+   "research_id": "oict-2025c",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-13": {
+   "research_id": "oict-2022",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-15": {
+   "research_id": "un-web-tv-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-16": {
+   "research_id": "un-2023",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-18": {
+   "research_id": "un-2024",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-19": {
+   "research_id": "un-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-20": {
+   "research_id": "un-open-source-week-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-21": {
+   "research_id": "gwu-ospo-2026",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-22": {
+   "research_id": "osor-2026-un-portal",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-23": {
+   "research_id": "osor-2021",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-24": {
+   "research_id": "github-social-impact-2023",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-28": {
+   "research_id": "barcelona-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  },
+  "un-29": {
+   "research_id": "thebert-2025",
+   "reuse_role": "example",
+   "jurisdiction": null,
+   "exec_sections": []
+  }
+ }
+}

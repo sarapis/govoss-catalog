@@ -639,22 +639,31 @@ def main():
           (True, []))
     # the opensource.nyc sources (owner, 2026-11-13): each card carries its executive
     # summary sections and its role for other cities, and the two filter groups count
-    # exactly the cards that carry each value. The artifact's NOTES never enter a record.
-    tagged = [r for r in radd["resources"] if r.get("exec_sections")]
+    # exactly the cards that carry each value. Additions carry their own tags; the
+    # compilation's records get theirs from govoss-tags.json, keyed by id (their file
+    # is never edited). The artifact's NOTES never enter a record or a tag.
+    rtags = json.load(open(os.path.join(HERE, "resources", "govoss-tags.json")))["tags"]
+    tagged = {r["id"]: r for r in radd["resources"] if r.get("reuse_role")}
+    tagged.update(rtags)
+    check("govoss-tags.json tags only records of the compilation, with tags and no notes",
+          (len(rtags) > 0, sorted(set(rtags) - {r["id"] for r in rfile["resources"]}),
+           sorted({k for t in rtags.values() for k in t} - {"research_id", "reuse_role", "jurisdiction",
+                                                            "exec_sections"})), (True, [], []))
     for name in ("resources.html", "ca/resources.html"):
         pg = pages[name]
         got = {i: (s.split(), ro) for i, s, ro in
                re.findall(r'<li class="res" id="([^"]+)"[^>]*data-sec="([^"]*)" data-role="([^"]*)"', pg)}
         check("%s: every tagged source carries its sections and role on its card" % name,
-              (len(tagged) > 0, [r["id"] for r in tagged
-                                 if got.get(r["id"]) != (r["exec_sections"], r["reuse_role"])]), (True, []))
-        for g, key in (("sec", lambda r: r.get("exec_sections") or []),
-                       ("role", lambda r: [r["reuse_role"]] if r.get("reuse_role") else [])):
+              [i for i, t in tagged.items() if got.get(i) != (t["exec_sections"], t["reuse_role"])], [])
+        check("%s: an untagged card carries no sections or role" % name,
+              sorted(i for i, v in got.items() if i not in tagged and v != ([], "")), [])
+        for g, key in (("sec", lambda t: t.get("exec_sections") or []),
+                       ("role", lambda t: [t["reuse_role"]] if t.get("reuse_role") else [])):
             shown = {v: int(n.replace(".", "").replace(",", "")) for v, n in re.findall(
                 r'<button type="button" class="rfopt" data-g="%s" data-v="([^"]+)"[^>]*><span>[^<]*</span>'
                 r'<span class="rn">([\d.,]+)</span>' % g, pg)}
             check("%s: the %s filter counts the cards that carry each value" % (name, g),
-                  shown, dict(collections.Counter(v for r in radd["resources"] for v in key(r))))
+                  shown, dict(collections.Counter(v for t in tagged.values() for v in key(t))))
     _exp = os.path.join(HERE, "resources", "opensource-nyc-export", "bibliography.json")
     if os.path.exists(_exp):
         _notes = {e["id"]: [e.get("summary_and_credibility_md") or "", e.get("relevant_content_md") or ""]
@@ -663,6 +672,13 @@ def main():
                 for s in re.split(r"(?<=[.!?])\s+", n)
                 if len(s) > 40 and s in " ".join(str(v) for v in r.values())]
         check("no sentence of the research artifact's notes is in a govoss record", leak, [])
+
+    # The executive summary page lives on ospo.opensource.nyc (#research), not
+    # here (owner, 2026-11-13): /resources links out to it, in both languages.
+    check("/resources links to the executive summary on ospo.opensource.nyc, in both languages",
+          [n for n in ("resources.html", "ca/resources.html")
+           if 'class="rkit" href="https://ospo.opensource.nyc/research"' not in pages[n]], [])
+
     # "Check a class name is free before using it": the Resources page's own CSS
     # once reused .rhead (the Recently added header, a space-between flex row) and
     # spread every card's tags across its width.
